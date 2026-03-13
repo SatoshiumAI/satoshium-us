@@ -1,6 +1,6 @@
-# 🪐 Satoshium — Link
+# 🪐 Satoshium — U.S.
 
-Satoshium Link serves as the navigation and routing layer of the Satoshium Universe. It exists to provide simple entry points into the broader ecosystem of platforms, knowledge systems, experimental environments, infrastructure layers, and community resources.
+Satoshium.us is the future U.S. operational layer of the Satoshium ecosystem. This domain is intended to provide a jurisdiction-aware surface for U.S.-specific context, public policy interpretation, regulatory framing, and infrastructure explanations as the broader platform matures.
 
 This repository is part of the **Satoshium platform**, an experimental system exploring how decentralized intelligence, AI agents, and cryptographic infrastructure can evolve together over long time horizons.
 
