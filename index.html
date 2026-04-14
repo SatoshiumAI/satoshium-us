@@ -8,7 +8,34 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Satoshium — U.S. Layer</title>
-
+ 
+<!-- TIER 3 — SEO: meta description -->
+<meta name="description" content="Satoshium U.S. Layer — the future U.S. operational surface of the Satoshium ecosystem. Jurisdiction-aware context, regulatory framing, and infrastructure explanations for a U.S. audience.">
+ 
+<!-- TIER 3 — SEO: Open Graph -->
+<meta property="og:title" content="Satoshium — U.S. Layer">
+<meta property="og:description" content="The future U.S. operational surface of the Satoshium ecosystem — jurisdiction-aware context, regulatory framing, and infrastructure explanations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://satoshium.us/">
+<meta property="og:image" content="https://satoshium.ai/assets/og-us.png">
+<meta property="og:site_name" content="Satoshium">
+<meta property="og:locale" content="en_US">
+ 
+<!-- TIER 3 — SEO: Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Satoshium — U.S. Layer">
+<meta name="twitter:description" content="The future U.S. operational surface of the Satoshium ecosystem — jurisdiction-aware context, regulatory framing, and infrastructure explanations.">
+<meta name="twitter:image" content="https://satoshium.ai/assets/og-us.png">
+<meta name="twitter:site" content="@SatoshiumAI">
+ 
+<!-- TIER 3 — SEO: canonical URL -->
+<link rel="canonical" href="https://satoshium.us/">
+ 
+<!-- TIER 3 — PERFORMANCE: preconnect + dns-prefetch for external origins -->
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+ 
 <style>
 :root{
  --card-wm: url('https://satoshium.link/assets/seal.png');
@@ -27,34 +54,42 @@ html,body{
  background:var(--bg);
  color:var(--text);
  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
- line-height:1.55
+ line-height:1.55;
+ /* TIER 3 — UX: smooth scroll for in-page anchors */
+ scroll-behavior:smooth;
 }
 body{padding-top:80px}
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
-
+ 
+/* TIER 3 — ACCESSIBILITY: visible keyboard focus ring */
+:focus-visible{
+ outline:2px solid var(--gold2);
+ outline-offset:3px;
+}
+ 
 .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
 .content{padding:34px 18px 60px}
-
+ 
  .wrap.content{
   opacity:0;
   transform:translateY(6px);
   animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
 }
-
+ 
 @keyframes pageEnter{
  to{
  opacity:1;
  transform:translateY(0);
  }
 }
-
+ 
 h1{font-size:34px;color:var(--gold2);line-height:1.15}
 h2{font-size:22px;color:var(--gold2)}
 h3{font-size:15px;color:var(--text)}
-
+ 
 .muted{color:var(--muted)}
-
+ 
 .hero{
  position:relative;
  overflow:hidden;
@@ -67,7 +102,7 @@ h3{font-size:15px;color:var(--text)}
  linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
  box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
 }
-
+ 
 .card{
  background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
  border:1px solid rgba(214,163,74,.15);
@@ -81,13 +116,13 @@ h3{font-size:15px;color:var(--text)}
  transform:translateY(-3px);
  box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
-
+ 
 .grid-2{
  display:grid;
  grid-template-columns:1fr 1fr;
  gap:16px
 }
-
+ 
 .note{
  margin-top:10px;
  padding:12px 14px;
@@ -97,76 +132,87 @@ h3{font-size:15px;color:var(--text)}
  color:var(--muted);
  font-size:14px;
 }
-
+ 
 .span-2{
  grid-column: 1 / -1;
 }
-
+ 
 .mini{font-size:13px}
-
+ 
 ul{
  margin:8px 0 0 18px;
 }
-
+ 
 @media (max-width:760px){
  .grid-2{grid-template-columns:1fr}
  .span-2{grid-column:auto}
  h1{font-size:30px}
 }
-
-  function setActive(key){
-      const el = document.querySelector(`.topbar .nav a[data-nav="${key}"]`);
-      if (el) el.classList.add("active");
-    }
-
-    setActive("us");
-  });
-</script>
-
-  
+ 
+/* TIER 3 — ACCESSIBILITY: reduced-motion guard */
+@media (prefers-reduced-motion:reduce){
+ html,body{
+  scroll-behavior:auto;
+ }
+ 
+ .wrap.content{
+  animation:none;
+  opacity:1;
+  transform:none;
+ }
+ 
+ .card{
+  transition:none;
+ }
+ 
+ .card:hover{
+  transform:none;
+ }
+}
 </style>
 </head>
-
+ 
 <body>
-
+ 
 <div id="topbar-slot" data-topbar="universe"></div>
 <script src="/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-<section class="hero">
-  <h1>🗽Satoshium U.S. Layer</h1>
-
+ 
+<!-- TIER 3 — ACCESSIBILITY: id="main-content" for landmark targeting -->
+<main id="main-content" class="wrap content">
+ 
+<section class="hero" aria-labelledby="heading-hero">
+  <h1 id="heading-hero">🗽Satoshium U.S. Layer</h1>
+ 
   <p class="muted" style="max-width:900px;">
     Satoshium.us is the future U.S. operational layer of the Satoshium ecosystem.
     This domain is intended to provide a jurisdiction-aware surface for U.S.-specific context,
     public policy interpretation, regulatory framing, and infrastructure explanations as the broader platform matures.
   </p>
-
+ 
   <p class="muted">
     If <strong>satoshium.ai</strong> represents the public platform, then <strong>satoshium.us</strong>
     can eventually become the U.S.-specific layer where legal context, operational considerations,
     and jurisdictional clarity are explained in a structured and accessible way.
   </p>
 </section>
-
-  <div class="card">
-    <h2>Why This Layer Exists</h2>
-
+ 
+  <div class="card" aria-labelledby="heading-why">
+    <h2 id="heading-why">Why This Layer Exists</h2>
+ 
     <p class="muted">
       Large systems eventually encounter real-world jurisdictional questions. The U.S. layer exists to create
       a structured place where regional considerations can be explained clearly without cluttering the broader,
       platform-wide surfaces of Satoshium.
     </p>
-
+ 
     <div class="note">
       This domain is intended to support long-horizon clarity around U.S.-specific operational and public-facing topics.
     </div>
   </div>
-
-  <div class="card">
-    <h2>What This Layer May Contain</h2>
-
+ 
+  <div class="card" aria-labelledby="heading-contain">
+    <h2 id="heading-contain">What This Layer May Contain</h2>
+ 
     <ul>
       <li>U.S.-specific infrastructure explanations</li>
       <li>Regulatory context and interpretive notes</li>
@@ -178,57 +224,56 @@ ul{
       <li>Structured educational content for American audiences</li>
     </ul>
   </div>
-</div>
-
-<div class="card">
-  <h2>🇺🇸 The U.S. Operational Surface</h2>
-
+ 
+<div class="card" aria-labelledby="heading-surface">
+  <h2 id="heading-surface">🇺🇸 The U.S. Operational Surface</h2>
+ 
   <p class="muted">
     Over time, satoshium.us can become the part of the ecosystem that helps translate
     Satoshium’s broader ideas into a U.S.-specific context.
   </p>
-
+ 
   <p class="muted">
     This does not mean the project becomes jurisdiction-bound. Rather, it creates a practical layer
     where American legal, regulatory, and operational realities can be addressed without distorting
     the platform’s larger global architecture.
   </p>
-
+ 
   <div class="note">
     In the early phases of the project, this domain primarily serves as a conceptual placeholder
     for a future jurisdiction-aware public layer.
   </div>
 </div>
-
-<div class="card">
-  <h2>How This Layer Fits the Satoshium Universe</h2>
-
+ 
+<div class="card" aria-labelledby="heading-fits">
+  <h2 id="heading-fits">How This Layer Fits the Satoshium Universe</h2>
+ 
   <p class="muted">
     Satoshium is growing as a multi-domain ecosystem where each domain reflects a different public layer:
     platform, knowledge, experimentation, infrastructure, commerce, routing, development, and jurisdictional presence.
   </p>
-
+ 
   <p class="muted">
     Within that architecture, <strong>satoshium.us</strong> represents the future U.S. presence layer —
     a place where globally-oriented infrastructure can be interpreted through the lens of one specific national context.
   </p>
-
+ 
   <div class="note">
     This layer is not meant to replace the broader platform. It exists to make one regional perspective easier to understand.
   </div>
 </div>
-
+ 
 </main>
-             
+ 
 <div class="wrap reflection">
 <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
   Satoshium is being built slowly, in public, and with architectural discipline.
 </div>
 <hr />
-
+ 
 <div id="footer-container"></div>
-
+ 
 <script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
@@ -237,7 +282,7 @@ fetch("https://satoshium.link/components/footer.html")
  document.getElementById("footer-container").innerHTML = data;
  });
 </script>
+</div>
  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-
