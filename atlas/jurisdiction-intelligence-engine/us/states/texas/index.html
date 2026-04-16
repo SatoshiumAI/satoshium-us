@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Texas — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+  <style>
+    /* ══════════════════════════════════════════
+       DESIGN SYSTEM TOKENS
+    ══════════════════════════════════════════ */
+    :root {
+      --bg-primary:      #0a0c10;
+      --bg-secondary:    #0f1218;
+      --bg-card:         #13171f;
+      --border:          #1e2535;
+      --border-accent:   #2a3348;
+      --text-primary:    #e8ecf4;
+      --text-secondary:  #8b95a8;
+      --text-muted:      #4e5a70;
+      --accent-gold:     #f5a623;
+      --accent-blue:     #4a9eff;
+      --signal-red:      #ef4444;
+      --signal-orange:   #f97316;
+      --signal-yellow:   #eab308;
+      --signal-green:    #22c55e;
+      --signal-teal:     #14b8a6;
+      --grad-gold:       linear-gradient(135deg, #f5a623, #e8841a);
+      --font-main:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono:       'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      --radius-sm:       6px;
+      --radius-md:       10px;
+      --radius-lg:       14px;
+    }
+ 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+ 
+    /* ══════════════════════════════════════════
+       BREADCRUMB BAR
+    ══════════════════════════════════════════ */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 44px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,12,16,0.97);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+    }
+ 
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+    }
+ 
+    .nav-logo {
+      width: 26px;
+      height: 26px;
+      background: var(--grad-gold);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+      color: #0a0c10;
+    }
+ 
+    .nav-wordmark {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+ 
+    .nav-wordmark em { color: var(--accent-gold); font-style: normal; }
+ 
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+ 
+    .breadcrumb a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .breadcrumb a:hover { color: var(--accent-gold); }
+    .breadcrumb .sep { color: var(--border-accent); }
+    .breadcrumb .current { color: var(--text-primary); font-weight: 600; }
+ 
+    .bar-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+ 
+    .live-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--signal-green);
+      border-radius: 50%;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+ 
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+ 
+ 
+    /* ══════════════════════════════════════════
+       HERO — "Texas at a glance first"
+    ══════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 52px 40px 40px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-secondary);
+    }
+ 
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(34,197,94,0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,197,94,0.028) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+ 
+    .hero-glow {
+      position: absolute;
+      top: -80px;
+      right: -100px;
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, rgba(34,197,94,0.07) 0%, transparent 58%);
+      pointer-events: none;
+    }
+ 
+    .hero-inner {
+      position: relative;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+ 
+    .hero-identity {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+ 
+    .hero-id-left {}
+ 
+    .jurisdiction-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 9px;
+      background: rgba(34,197,94,0.07);
+      border: 1px solid rgba(34,197,94,0.16);
+      border-radius: var(--radius-sm);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--signal-green);
+      margin-bottom: 14px;
+    }
+ 
+    .hero-title {
+      font-size: 58px;
+      font-weight: 800;
+      letter-spacing: -0.028em;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+ 
+    .hero-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      letter-spacing: 0.06em;
+    }
+ 
+    .hero-overall {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(34,197,94,0.06);
+      border: 1px solid rgba(34,197,94,0.17);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+      flex-shrink: 0;
+      min-width: 280px;
+      max-width: 340px;
+    }
+ 
+    .overall-ring {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: conic-gradient(var(--signal-green) 79%, rgba(42,51,72,0.7) 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+ 
+    .overall-ring::before {
+      content: '';
+      position: absolute;
+      width: 37px;
+      height: 37px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+    }
+ 
+    .overall-ring-inner {
+      position: relative;
+      z-index: 1;
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--signal-green);
+    }
+ 
+    .overall-text { flex: 1; }
+ 
+    .overall-eyebrow {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+ 
+    .overall-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--signal-green);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+ 
+    .overall-desc {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+ 
+    /* 8-Dimension Signal Grid */
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+    }
+ 
+    .signal-tile {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 13px 14px;
+    }
+ 
+    .st-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 7px;
+    }
+ 
+    .st-icon { font-size: 15px; line-height: 1; }
+ 
+    .st-trend {
+      font-size: 10px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+    }
+ 
+    .tr-hi  { color: var(--signal-red); }
+    .tr-mod { color: var(--signal-orange); }
+    .tr-ss  { color: var(--signal-yellow); }
+    .tr-dn  { color: var(--signal-green); }
+    .tr-pos { color: var(--signal-teal); }
+ 
+    .st-label {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+ 
+    .st-value {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+ 
+    .st-bar {
+      height: 2px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+ 
+    .st-bar-fill { height: 100%; border-radius: 2px; }
+ 
+ 
+    /* ══════════════════════════════════════════
+       PAGE BODY — 2-column grid
+    ══════════════════════════════════════════ */
+    .page-body {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 36px 40px 0;
+      display: grid;
+      grid-template-columns: 1fr 268px;
+      gap: 26px;
+      align-items: start;
+    }
+ 
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+ 
+    .section-header-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+ 
+    .section-header-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+ 
+    /* ══════════════════════════════════════════
+       POLICY LAYER CARDS
+    ══════════════════════════════════════════ */
+    .policy-layers { display: flex; flex-direction: column; gap: 10px; }
+ 
+    .layer-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+ 
+    .layer-card:hover   { border-color: var(--border-accent); }
+    .layer-card.open    { border-color: var(--border-accent); }
+ 
+    .layer-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 18px;
+      cursor: pointer;
+      user-select: none;
+    }
+ 
+    .layer-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+ 
+    .layer-meta { flex: 1; min-width: 0; }
+ 
+    .layer-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1px;
+    }
+ 
+    .layer-tagline {
+      font-size: 10px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+ 
+    .layer-right {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+ 
+    .pill {
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+ 
+    .p-red    { background: rgba(239,68,68,0.12);  color: #ef4444; border: 1px solid rgba(239,68,68,0.2);  }
+    .p-orange { background: rgba(249,115,22,0.12); color: #f97316; border: 1px solid rgba(249,115,22,0.2); }
+    .p-yellow { background: rgba(234,179,8,0.12);  color: #eab308; border: 1px solid rgba(234,179,8,0.2);  }
+    .p-blue   { background: rgba(74,158,255,0.12); color: #4a9eff; border: 1px solid rgba(74,158,255,0.2); }
+    .p-teal   { background: rgba(20,184,166,0.12); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.2); }
+    .p-gold   { background: rgba(245,166,35,0.12); color: #f5a623; border: 1px solid rgba(245,166,35,0.2); }
+    .p-green  { background: rgba(34,197,94,0.12);  color: #22c55e; border: 1px solid rgba(34,197,94,0.2);  }
+ 
+    .layer-trend {
+      font-size: 10px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      width: 22px;
+      text-align: center;
+    }
+ 
+    .layer-chevron {
+      color: var(--text-muted);
+      font-size: 9px;
+      transition: transform 0.2s;
+    }
+ 
+    .layer-card.open .layer-chevron { transform: rotate(180deg); }
+ 
+    .layer-body {
+      display: none;
+      border-top: 1px solid var(--border);
+    }
+ 
+    .layer-card.open .layer-body { display: block; }
+ 
+    .layer-body-inner { padding: 18px 20px; }
+ 
+    .layer-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 16px;
+      max-width: 660px;
+    }
+ 
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+ 
+    .chip {
+      padding: 2px 7px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-size: 9px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+ 
+    .chip.key {
+      background: rgba(34,197,94,0.06);
+      border-color: rgba(34,197,94,0.17);
+      color: #4ade80;
+    }
+ 
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+ 
+    .metric {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 10px 11px;
+    }
+ 
+    .metric-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+ 
+    .metric-value {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+ 
+    .callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      background: rgba(34,197,94,0.05);
+      border: 1px solid rgba(34,197,94,0.12);
+      border-radius: 7px;
+      padding: 10px 13px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+ 
+    .callout-icon { font-size: 12px; margin-top: 2px; flex-shrink: 0; }
+ 
+    .risk-meter { margin: 12px 0 0; }
+ 
+    .risk-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 6px;
+    }
+ 
+    .risk-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      width: 110px;
+      flex-shrink: 0;
+    }
+ 
+    .risk-track {
+      flex: 1;
+      height: 3px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+ 
+    .risk-fill { height: 100%; border-radius: 3px; }
+ 
+    .risk-score {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+      width: 24px;
+      text-align: right;
+    }
+ 
+    .dot-list { display: flex; flex-direction: column; gap: 10px; }
+ 
+    .dot-item { display: flex; align-items: flex-start; gap: 8px; }
+ 
+    .dot-arrow {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+ 
+    .da-hi  { background: rgba(239,68,68,0.13);  color: #ef4444; }
+    .da-mod { background: rgba(249,115,22,0.13); color: #f97316; }
+    .da-ss  { background: rgba(234,179,8,0.13);  color: #eab308; }
+    .da-dn  { background: rgba(34,197,94,0.13);  color: #22c55e; }
+ 
+    .dot-text {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+ 
+    .dot-text strong { color: var(--text-primary); font-weight: 600; }
+ 
+ 
+    /* ══════════════════════════════════════════
+       SIDEBAR
+    ══════════════════════════════════════════ */
+    .sidebar { display: flex; flex-direction: column; gap: 12px; }
+ 
+    .s-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+ 
+    .s-card-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 13px;
+    }
+ 
+    .qsi-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+ 
+    .qsi-row:last-child { border-bottom: none; }
+ 
+    .qsi-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+ 
+    .qsi-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+ 
+    .date-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 9px;
+    }
+ 
+    .date-item:last-child { margin-bottom: 0; }
+ 
+    .date-badge {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 9px;
+      font-family: var(--font-mono);
+      color: var(--accent-gold);
+      font-weight: 700;
+      white-space: nowrap;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+ 
+    .date-text {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+ 
+    .s-dot-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+    }
+ 
+    .s-dot-item:last-child { border-bottom: none; }
+ 
+    .s-dot-arrow {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+ 
+    .s-dot-text {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+ 
+    .s-dot-text .label { color: var(--text-primary); font-weight: 600; }
+    .s-dot-text .status { color: var(--text-muted); font-size: 10px; }
+ 
+ 
+    /* ══════════════════════════════════════════
+       CONCLUDING PANELS
+    ══════════════════════════════════════════ */
+    .concluding-section {
+      max-width: 1140px;
+      margin: 24px auto 0;
+      padding: 0 40px 56px;
+    }
+ 
+    .concluding-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 14px;
+    }
+ 
+    .builder-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+    }
+ 
+    .builder-card-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+ 
+    .builder-quote {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.6;
+      border-left: 3px solid var(--signal-green);
+      padding-left: 15px;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+ 
+    .builder-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+ 
+    .builder-col-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+ 
+    .bc-for   { color: var(--signal-teal); }
+    .bc-avoid { color: var(--signal-orange); }
+ 
+    .builder-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+ 
+    .builder-list li {
+      font-size: 12px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      line-height: 1.4;
+    }
+ 
+    .builder-list li::before {
+      content: '—';
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+ 
+    .builder-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+ 
+    .btag {
+      padding: 3px 7px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+ 
+    .op-card {
+      background: rgba(34,197,94,0.04);
+      border: 1px solid rgba(34,197,94,0.18);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px;
+    }
+ 
+    .op-card-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--signal-green);
+      margin-bottom: 12px;
+    }
+ 
+    .op-classification {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 11px;
+      background: rgba(34,197,94,0.09);
+      border: 1px solid rgba(34,197,94,0.22);
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--signal-green);
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+ 
+    .op-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+ 
+    .op-divider {
+      height: 1px;
+      background: rgba(34,197,94,0.1);
+      margin-bottom: 14px;
+    }
+ 
+    .op-stats {}
+ 
+    .op-stat {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(34,197,94,0.07);
+    }
+ 
+    .op-stat:last-child { border-bottom: none; }
+ 
+    .op-stat-label {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+ 
+    .op-stat-value {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+ 
+ 
+    /* ══════════════════════════════════════════
+       PAGE FOOTER
+    ══════════════════════════════════════════ */
+    .page-footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+ 
+    .footer-brand {
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+ 
+    .footer-brand em { color: var(--accent-gold); font-style: normal; }
+ 
+    .footer-disclaimer {
+      max-width: 440px;
+      line-height: 1.5;
+      text-align: right;
+    }
+ 
+ 
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 960px) {
+      .page-body          { grid-template-columns: 1fr; padding: 28px 20px 0; }
+      .concluding-section { padding: 0 20px 40px; }
+      .concluding-grid    { grid-template-columns: 1fr; }
+      .hero               { padding: 40px 20px 32px; }
+      .hero-title         { font-size: 44px; }
+      .breadcrumb-bar     { padding: 0 20px; }
+      .breadcrumb         { display: none; }
+      .hero-identity      { flex-direction: column; gap: 20px; }
+      .hero-overall       { max-width: 100%; }
+      .signal-grid        { grid-template-columns: repeat(4, 1fr); }
+    }
+ 
+    @media (max-width: 640px) {
+      .hero-title    { font-size: 34px; }
+      .signal-grid   { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .metrics       { grid-template-columns: 1fr 1fr; }
+      .builder-split { grid-template-columns: 1fr; }
+      .page-footer   { flex-direction: column; gap: 8px; }
+      .footer-disclaimer { text-align: center; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+ 
+<!-- ═══════════════════════════════════════════
+     BREADCRUMB BAR
+════════════════════════════════════════════ -->
+<nav class="breadcrumb-bar">
+  <a href="https://satoshium.us" class="nav-brand">
+    <div class="nav-logo">S</div>
+    <div class="nav-wordmark">SATOSHI<em>UM</em></div>
+  </a>
+ 
+  <div class="breadcrumb">
+    <a href="https://satoshium.us/atlas/">Atlas</a>
+    <span class="sep">›</span>
+    <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/">Jurisdiction Engine</a>
+    <span class="sep">›</span>
+    <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/">United States</a>
+    <span class="sep">›</span>
+    <span class="current">Texas</span>
+  </div>
+ 
+  <div class="bar-right">
+    <div class="live-dot"></div>
+    <span>Updated Apr 2026</span>
+  </div>
+</nav>
+ 
+ 
+<!-- ═══════════════════════════════════════════
+     HERO — Texas at a glance
+════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+ 
+  <div class="hero-inner">
+ 
+    <!-- Title + Overall Signal -->
+    <div class="hero-identity">
+ 
+      <div class="hero-id-left">
+        <div class="jurisdiction-badge">⬡ US State · South Central · #1 Bitcoin Mining State · 2nd Largest US Economy</div>
+        <h1 class="hero-title">Texas</h1>
+        <div class="hero-subtitle">TX · US-TEX · Austin Capital · ERCOT Energy Zone · No State Income Tax</div>
+      </div>
+ 
+      <div class="hero-overall">
+        <div class="overall-ring">
+          <div class="overall-ring-inner">L</div>
+        </div>
+        <div class="overall-text">
+          <div class="overall-eyebrow">Overall Signal</div>
+          <div class="overall-name">Low-Friction · Pro-Bitcoin</div>
+          <div class="overall-desc">Nation's leading Bitcoin mining jurisdiction. Business-first posture, cheap power, and zero income tax. Strategic Bitcoin Reserve adopted 2025.</div>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <!-- 8-Dimension Signal Grid -->
+    <div class="signal-grid">
+ 
+      <div class="signal-tile">
+        <div class="st-header">
+          <span class="st-icon">🤖</span>
+          <span class="st-trend tr-ss">→</span>
+        </div>
+        <div class="st-label">AI Policy</div>
+        <div class="st-value">Permissive · Watching</div>
+        <div class="st-bar"><div class="st-bar-fill" style="width:28%;background:var(--signal-teal)"></div></div>
+      </div>
+ 
+      <div class="signal-tile">
+        <div class="st-header">
+          <span class="st-icon">₿</span>
+          <span class="st-trend tr-dn">↓↓</span>
+        </div>
+        <div class="st-label">Bitcoin / Digital Assets</div>
+        <div class="st-value">Pro-Bitcoin · Leader</div>
+        <div class="st-bar"><div class="st-bar-fill" style="width:92%;background:var(--signal-green)"></div></div>
+      </div>
+ 
+      <div class="signal-tile">
+        <div class="st-header">
+          <span class="st-icon">🔐</span>
+          <span class="st-trend tr-ss">→</span>
+        </div>
+        <div class="st-label">Privacy / Data</div>
+        <div class="st-value">Moderate · Emerging</div>
+        <div class="st-bar"><div class="st-bar-fill" style="width:42%;background:var(--signal-yellow)"></div></div>
+      </div>
+ 
+      <div class="signal-tile">
+        <div class="st-header">
+          <span class="st-icon">👁</span>
+          <span class="st-trend tr-mod">↑</span>
+        </div>
+        <div class="st-label">Biometrics / Identity</div>
+        <div class="st-value">CUBI · Private Action</div>
+        <div class="st-bar"><div class="st-bar-fill" style="width:58%;background:var(--signal-orange)"></div></div>
+      </div>
+ 
+      <div class="signal-tile">
+        <div class="st-header">
+          <span class="st-icon">🏛</span>
+          <span class="st-trend tr-ss">→</span>
+        </div>
+        <div class="st-label">Education / Public Sector AI</div>
+        <div class="st-value">Open · Cautious Adoption</div>
+        <div class="st-bar"><div class="st-bar-fill" style="width:48%;background:var(--signal-teal)"></div></div>
+      </div>
+ 
+      <div class="signal-tile">
+        <div class="st-header">
+          <span class="st-icon">⟨/⟩</span>
+          <span class="st-trend tr-dn">↓</span>
+        </div>
+        <div class="st-label">Open Source / Developer</div>
+        <div class="st-value">Best-in-Class · Friendly</div>
+        <div class="st-bar"><div class="st-bar-fill" style="width:84%;background:var(--signal-green)"></div></div>
+      </div>
+ 
+      <div class="signal-tile">
+        <div class="st-header">
+          <span class="st-icon">⚡</span>
+          <span class="st-trend tr-dn">↓↓</span>
+        </div>
+        <div class="st-label">Energy / Mining / Compute</div>
+        <div class="st-value">Mining Favorable · Cheap Power</div>
+        <div class="st-bar"><div class="st-bar-fill" style="width:95%;background:var(--signal-green)"></div></div>
+      </div>
+ 
+      <div class="signal-tile">
+        <div class="st-header">
+          <span class="st-icon">📡</span>
+          <span class="st-trend tr-dn">↓</span>
+        </div>
+        <div class="st-label">Signal Rating</div>
+        <div class="st-value">Expanding</div>
+        <div class="st-bar"><div class="st-bar-fill" style="width:82%;background:var(--signal-green)"></div></div>
+      </div>
+ 
+    </div><!-- /signal-grid -->
+ 
+  </div>
+</section>
+ 
+ 
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT — Policy Layers + Sidebar
+════════════════════════════════════════════ -->
+<div class="page-body">
+ 
+  <!-- ── LEFT: Policy Layers ────────────────── -->
+  <div class="main-col">
+ 
+    <div class="section-header">
+      <span class="section-header-label">Policy Layers</span>
+      <div class="section-header-line"></div>
+      <span class="section-header-label">8 Dimensions — expand for full analysis</span>
+    </div>
+ 
+    <div class="policy-layers">
+ 
+      <!-- ── LAYER 1: AI POLICY ── -->
+      <div class="layer-card open">
+        <div class="layer-header" onclick="toggleLayer(this)">
+          <div class="layer-icon" style="background:rgba(20,184,166,0.11)">🤖</div>
+          <div class="layer-meta">
+            <div class="layer-title">AI Policy</div>
+            <div class="layer-tagline">Legislation · Executive Action · Advisory Posture</div>
+          </div>
+          <div class="layer-right">
+            <span class="pill p-teal">Permissive · Light Touch</span>
+            <span class="layer-trend tr-ss">→</span>
+            <span class="layer-chevron">▼</span>
+          </div>
+        </div>
+        <div class="layer-body">
+          <div class="layer-body-inner">
+            <p class="layer-desc">
+              Texas has taken a deliberately hands-off approach to AI regulation, positioning itself as the anti-California on tech governance. Governor Abbott's 2023 Executive Order GA-44 established a state AI advisory council to explore AI use in government while explicitly avoiding premature restriction. The Texas AI Advisory Council, housed under the Department of Information Resources (DIR), produced its first report in 2024 recommending voluntary frameworks rather than mandates. The 2025 legislative session produced no binding AI-specific statutes — a signal that Texas is intentionally preserving a low-friction build environment. AI procurement in state agencies remains governed by existing risk management frameworks, not AI-specific rules.
+            </p>
+            <div class="chips">
+              <span class="chip key">EO GA-44</span>
+              <span class="chip key">TX AI Advisory Council</span>
+              <span class="chip">DIR Risk Framework</span>
+              <span class="chip">HB 1709 (2023, failed)</span>
+              <span class="chip">Voluntary Standards Posture</span>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">AI Legislation</div>
+                <div class="metric-value">None enacted</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Posture</div>
+                <div class="metric-value">Voluntary / Advisory</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Enforcement Body</div>
+                <div class="metric-value">None (AI-specific)</div>
+              </div>
+            </div>
+            <div class="callout">
+              <span class="callout-icon">⚡</span>
+              <span>Texas is one of the most open US jurisdictions for AI product development. No mandatory transparency reports, no frontier model restrictions, no dataset disclosure obligations. Builders seeking low-overhead AI deployment should consider Texas as a primary base of operations through at least 2027.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── LAYER 2: BITCOIN / DIGITAL ASSETS ── -->
+      <div class="layer-card">
+        <div class="layer-header" onclick="toggleLayer(this)">
+          <div class="layer-icon" style="background:rgba(34,197,94,0.11)">₿</div>
+          <div class="layer-meta">
+            <div class="layer-title">Bitcoin / Digital Asset Policy</div>
+            <div class="layer-tagline">Strategic Reserve · HB 1576 · Mining Rights · Taxation</div>
+          </div>
+          <div class="layer-right">
+            <span class="pill p-green">Pro-Bitcoin · National Leader</span>
+            <span class="layer-trend tr-dn">↓↓</span>
+            <span class="layer-chevron">▼</span>
+          </div>
+        </div>
+        <div class="layer-body">
+          <div class="layer-body-inner">
+            <p class="layer-desc">
+              Texas has emerged as the most Bitcoin-friendly state legislature in the US. Senate Bill 21, signed into law in June 2025, established a Texas Strategic Bitcoin Reserve — authorizing the state comptroller to accept Bitcoin donations and hold them in a dedicated reserve fund for a minimum of five years. This makes Texas one of the first US states to formally hold Bitcoin as a state asset. The Texas Virtual Currency Bill (HB 1576, 2023) established a legal framework for virtual currency operations, defining custody, exchange, and payment activities. Texas has no state capital gains tax, creating a structurally favorable environment for Bitcoin holders, traders, and institutional operators. The Texas Blockchain Council remains one of the most organized and effective industry advocacy bodies in any US state.
+            </p>
+            <div class="chips">
+              <span class="chip key">SB 21 (Strategic BTC Reserve)</span>
+              <span class="chip key">HB 1576 (Virtual Currency)</span>
+              <span class="chip">Texas Blockchain Council</span>
+              <span class="chip">No State Capital Gains Tax</span>
+              <span class="chip">TDOB (TX Dept of Banking)</span>
+              <span class="chip">AML / BSA (Federal)</span>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">State BTC Reserve</div>
+                <div class="metric-value">Active (SB 21)</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Capital Gains Tax</div>
+                <div class="metric-value">None (state level)</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Mining Status</div>
+                <div class="metric-value">Explicitly Legal</div>
+              </div>
+            </div>
+            <div class="callout">
+              <span class="callout-icon">₿</span>
+              <span>Texas is one of only a handful of states with a statutory Bitcoin reserve. Bitcoin custody, exchange, and payment businesses operate under the Texas Money Services Act via the TDOB. The state actively courts Bitcoin companies relocating from high-regulation states. No DFAL-equivalent licensing regime — significantly lower compliance cost than California.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── LAYER 3: PRIVACY / DATA ── -->
+      <div class="layer-card">
+        <div class="layer-header" onclick="toggleLayer(this)">
+          <div class="layer-icon" style="background:rgba(234,179,8,0.11)">🔐</div>
+          <div class="layer-meta">
+            <div class="layer-title">Privacy / Data Handling</div>
+            <div class="layer-tagline">TDPSA · AG Enforcement · 30-Day Cure · No Private Action</div>
+          </div>
+          <div class="layer-right">
+            <span class="pill p-yellow">Moderate · Emerging</span>
+            <span class="layer-trend tr-ss">→</span>
+            <span class="layer-chevron">▼</span>
+          </div>
+        </div>
+        <div class="layer-body">
+          <div class="layer-body-inner">
+            <p class="layer-desc">
+              The Texas Data Privacy and Security Act (TDPSA) took effect July 1, 2024, placing Texas among the growing cohort of states with comprehensive privacy law. Enforced by the Texas Attorney General — not a dedicated privacy agency — the TDPSA covers controllers and processors that conduct business in Texas or produce products/services consumed by Texas residents. Key provisions include consumer rights to access, correct, delete, and opt out of data sales and targeted advertising. Critically, there is no private right of action; enforcement rests solely with the AG. Businesses have a 30-day cure period before the AG may bring action, making the TDPSA substantially less aggressive than California's CCPA/CPRA regime. Penalty ceiling is $7,500 per violation — significantly lower compliance pressure than the California model.
+            </p>
+            <div class="chips">
+              <span class="chip key">TDPSA (eff. Jul 1, 2024)</span>
+              <span class="chip">TX Attorney General</span>
+              <span class="chip">30-Day Cure Period</span>
+              <span class="chip">No Private Right of Action</span>
+              <span class="chip">Opt-Out Advertising Rights</span>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">Enforcer</div>
+                <div class="metric-value">TX Attorney General</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Max Penalty</div>
+                <div class="metric-value">$7,500 / violation</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Private Action</div>
+                <div class="metric-value">None</div>
+              </div>
+            </div>
+            <div class="callout">
+              <span class="callout-icon">🔐</span>
+              <span>TDPSA compliance is significantly lighter than CCPA/CPRA. No dedicated enforcement agency, no ADMT risk assessment mandates, and a cure period before penalties can attach. Teams already CCPA-compliant will find TDPSA requirements easily satisfied. Expect gradual strengthening as Texas monitors the national regulatory landscape.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── LAYER 4: BIOMETRICS / IDENTITY ── -->
+      <div class="layer-card">
+        <div class="layer-header" onclick="toggleLayer(this)">
+          <div class="layer-icon" style="background:rgba(249,115,22,0.11)">👁</div>
+          <div class="layer-meta">
+            <div class="layer-title">Biometrics / Identity</div>
+            <div class="layer-tagline">CUBI · Private Right of Action · $25K Per Violation</div>
+          </div>
+          <div class="layer-right">
+            <span class="pill p-orange">CUBI · Notable Risk</span>
+            <span class="layer-trend tr-mod">↑</span>
+            <span class="layer-chevron">▼</span>
+          </div>
+        </div>
+        <div class="layer-body">
+          <div class="layer-body-inner">
+            <p class="layer-desc">
+              Texas's biometric law — the Capture or Use of Biometric Identifier Act (CUBI) — stands as one of the most consequential state biometric statutes alongside Illinois's BIPA. Enacted in 2009 and enforced by the AG (not through private right of action in all circumstances), CUBI prohibits commercial entities from capturing biometric identifiers — including fingerprints, retina scans, hand geometry, and facial geometry — without informed consent. Penalties reach $25,000 per intentional or knowing violation and $1,000 per negligent violation. Unlike the TDPSA, CUBI lacks a cure period. In 2022, Facebook (Meta) settled a Texas CUBI action for $650 million. CUBI is increasingly the primary biometric compliance concern for Texas-operating tech companies.
+            </p>
+            <div class="chips">
+              <span class="chip key">CUBI (Bus. &amp; Comm. Code §503)</span>
+              <span class="chip key">Meta $650M Settlement (2022)</span>
+              <span class="chip">AG Enforcement + Private Action</span>
+              <span class="chip">No Cure Period</span>
+              <span class="chip">Facial Geometry Covered</span>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">Max Penalty</div>
+                <div class="metric-value">$25K / intentional</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Cure Period</div>
+                <div class="metric-value">None</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Gov Facial Rec</div>
+                <div class="metric-value">Permitted (no ban)</div>
+              </div>
+            </div>
+            <div class="callout">
+              <span class="callout-icon">⚠️</span>
+              <span>CUBI is the significant exception to Texas's light-touch regulatory profile. Any product collecting facial geometry, fingerprints, or other biometric identifiers must obtain explicit written consent and follow retention/destruction schedules. The Meta precedent signals that large settlements are possible. Biometric-dependent identity products require dedicated compliance counsel in Texas.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── LAYER 5: EDUCATION / PUBLIC SECTOR AI ── -->
+      <div class="layer-card">
+        <div class="layer-header" onclick="toggleLayer(this)">
+          <div class="layer-icon" style="background:rgba(20,184,166,0.11)">🏛</div>
+          <div class="layer-meta">
+            <div class="layer-title">Education / Public Sector AI</div>
+            <div class="layer-tagline">TEA Guidance · UT System · State Procurement · Workforce AI</div>
+          </div>
+          <div class="layer-right">
+            <span class="pill p-teal">Open · Cautious Adoption</span>
+            <span class="layer-trend tr-ss">→</span>
+            <span class="layer-chevron">▼</span>
+          </div>
+        </div>
+        <div class="layer-body">
+          <div class="layer-body-inner">
+            <p class="layer-desc">
+              Texas's public sector AI posture is pragmatic and increasingly active. The Texas Education Agency (TEA) issued AI guidance for K-12 schools in 2024, providing a flexible framework rather than restrictive mandates — focusing on academic integrity, responsible use, and staff training rather than prohibition. The University of Texas system has developed AI research initiatives, including UT Austin's Machine Learning Lab and newly formed AI policy centers. State agency procurement rules do not include AI-specific attestation requirements (unlike California's EO N-5-26), giving vendors significant operational latitude. Governor Abbott's DIR-based advisory approach continues to position AI as an economic opportunity rather than a governance challenge. Texas A&amp;M's AI research programs and UT Austin's proximity to the Austin tech corridor strengthen the state's applied AI pipeline.
+            </p>
+            <div class="chips">
+              <span class="chip key">TEA AI Guidance (2024)</span>
+              <span class="chip key">UT Austin ML Lab</span>
+              <span class="chip">EO GA-44 (Advisory)</span>
+              <span class="chip">DIR AI Council</span>
+              <span class="chip">Texas A&amp;M AI Research</span>
+              <span class="chip">No Vendor Attestation Reqs</span>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">Posture</div>
+                <div class="metric-value">Permissive / Advisory</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">School Policy</div>
+                <div class="metric-value">Guidance (not mandate)</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Procurement AI Reqs</div>
+                <div class="metric-value">None specific</div>
+              </div>
+            </div>
+            <div class="callout">
+              <span class="callout-icon">🏛</span>
+              <span>Texas represents a significant B2G opportunity for AI vendors: no mandatory attestation requirements, no dedicated privacy agency review, and a government culture oriented toward efficiency and adoption. UT Austin and Texas A&amp;M serve as strong applied research and talent pipelines feeding the Austin-Dallas-Houston tech triangle.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── LAYER 6: OPEN SOURCE / DEVELOPER CLIMATE ── -->
+      <div class="layer-card">
+        <div class="layer-header" onclick="toggleLayer(this)">
+          <div class="layer-icon" style="background:rgba(74,158,255,0.11)">⟨/⟩</div>
+          <div class="layer-meta">
+            <div class="layer-title">Open Source / Developer Climate</div>
+            <div class="layer-tagline">Austin Tech Hub · No Income Tax · Low Overhead · Corporate HQ Density</div>
+          </div>
+          <div class="layer-right">
+            <span class="pill p-green">Best-in-Class · Favorable</span>
+            <span class="layer-trend tr-dn">↓</span>
+            <span class="layer-chevron">▼</span>
+          </div>
+        </div>
+        <div class="layer-body">
+          <div class="layer-body-inner">
+            <p class="layer-desc">
+              Austin has established itself as the second most important US technology hub after Silicon Valley — and by many measures, the most founder-friendly. Tesla, Oracle, Apple (second campus), Dell, SpaceX, and dozens of mid-market tech companies have relocated or expanded Texas operations since 2020, drawing a dense developer talent pool. Critically, Texas imposes no state income tax — a structural advantage that compounds for high-earning engineers and founders. The state's regulatory philosophy minimizes compliance overhead for software companies, with no AI-specific disclosure mandates, no ADMT risk assessments, and no dataset reporting requirements. The Texas Open Source community is vibrant but informally organized compared to California's government-sponsored code.ca.gov initiative. GitHub, Stack Overflow, and major conference activity increasingly reflects Austin's growing developer gravity.
+            </p>
+            <div class="chips">
+              <span class="chip key">No State Income Tax</span>
+              <span class="chip key">Tesla HQ Austin</span>
+              <span class="chip">Oracle HQ Austin</span>
+              <span class="chip">Apple Austin Campus</span>
+              <span class="chip">Dell Technologies (Round Rock)</span>
+              <span class="chip">SpaceX (Starbase / Bastrop)</span>
+              <span class="chip">No AI Dev Mandates</span>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">Income Tax</div>
+                <div class="metric-value">None (state)</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Compliance Load</div>
+                <div class="metric-value">Low / Stable</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Dev Hub Rank</div>
+                <div class="metric-value">#2 in US (Austin)</div>
+              </div>
+            </div>
+            <div class="callout">
+              <span class="callout-icon">⟨/⟩</span>
+              <span>For early-stage teams, solo developers, and open-source maintainers, Texas provides the lowest friction regulatory environment of any major US tech hub. No ADMT rules, no dataset disclosure, no AI safety attestations. The talent market has grown competitive following the corporate migration wave, but compensation expectations remain below Bay Area levels.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── LAYER 7: ENERGY / MINING / COMPUTE ── -->
+      <div class="layer-card">
+        <div class="layer-header" onclick="toggleLayer(this)">
+          <div class="layer-icon" style="background:rgba(34,197,94,0.11)">⚡</div>
+          <div class="layer-meta">
+            <div class="layer-title">Energy / Mining / Compute Posture</div>
+            <div class="layer-tagline">ERCOT Grid · #1 Mining State · Cheap Power · Demand Response</div>
+          </div>
+          <div class="layer-right">
+            <span class="pill p-green">Mining Favorable · Best-in-Class</span>
+            <span class="layer-trend tr-dn">↓↓</span>
+            <span class="layer-chevron">▼</span>
+          </div>
+        </div>
+        <div class="layer-body">
+          <div class="layer-body-inner">
+            <p class="layer-desc">
+              Texas is the undisputed US leader in Bitcoin mining, hosting an estimated 25–30% of US hash rate. The ERCOT deregulated electricity market creates a uniquely favorable environment: abundant renewable energy capacity (wind and solar), competitive wholesale pricing, and demand response programs that allow miners to curtail operations during grid stress events — earning incentive payments while reducing grid strain. Industrial electricity rates in West Texas can fall below $0.02/kWh during off-peak periods, among the lowest in the world. Major mining operations including Riot Platforms, Core Scientific, and Marathon Digital have established large-scale Texas facilities. The state has no mining-specific restrictions and has actively courted miners through favorable permitting and grid access. AI data center expansion is also accelerating: Oracle, Microsoft, and Google have announced multi-billion dollar Texas compute investments targeting the state's energy advantages.
+            </p>
+            <div class="chips">
+              <span class="chip key">ERCOT Deregulated Grid</span>
+              <span class="chip key">Demand Response Programs</span>
+              <span class="chip">Riot Platforms (Rockdale)</span>
+              <span class="chip">Core Scientific (Multiple TX sites)</span>
+              <span class="chip">Marathon Digital (TX facilities)</span>
+              <span class="chip">No Mining Restrictions</span>
+              <span class="chip">Oracle / Microsoft DC Buildout</span>
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">Mining Status</div>
+                <div class="metric-value">Fully Legal + Encouraged</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Industrial kWh Rate</div>
+                <div class="metric-value">~$0.03–0.05 avg</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">US Hash Rate Share</div>
+                <div class="metric-value">~25–30%</div>
+              </div>
+            </div>
+            <div class="risk-meter">
+              <div class="risk-row">
+                <span class="risk-label">Mining Reg Risk</span>
+                <div class="risk-track"><div class="risk-fill" style="width:12%;background:var(--signal-green)"></div></div>
+                <span class="risk-score">12</span>
+              </div>
+              <div class="risk-row">
+                <span class="risk-label">Energy Cost Risk</span>
+                <div class="risk-track"><div class="risk-fill" style="width:15%;background:var(--signal-green)"></div></div>
+                <span class="risk-score">15</span>
+              </div>
+              <div class="risk-row">
+                <span class="risk-label">Compute Viability</span>
+                <div class="risk-track"><div class="risk-fill" style="width:92%;background:var(--signal-green)"></div></div>
+                <span class="risk-score">92</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── LAYER 8: SIGNAL RATING / DIRECTION OF TRAVEL ── -->
+      <div class="layer-card">
+        <div class="layer-header" onclick="toggleLayer(this)">
+          <div class="layer-icon" style="background:rgba(34,197,94,0.11)">📡</div>
+          <div class="layer-meta">
+            <div class="layer-title">Signal Rating / Direction of Travel</div>
+            <div class="layer-tagline">Trend Vector · 12-Month Outlook · Risk Trajectory</div>
+          </div>
+          <div class="layer-right">
+            <span class="pill p-green">Expanding ↓↓</span>
+            <span class="layer-trend tr-dn">↓↓</span>
+            <span class="layer-chevron">▼</span>
+          </div>
+        </div>
+        <div class="layer-body">
+          <div class="layer-body-inner">
+            <p class="layer-desc">
+              Texas's trajectory is distinctly favorable and accelerating. The state is deliberately positioning itself as the primary beneficiary of corporate and capital migration away from high-regulation states — particularly California. The Strategic Bitcoin Reserve signals political leadership that views digital assets as strategic state assets rather than compliance burdens. Absent a significant federal regulatory shift, Texas is expected to maintain its low-friction posture through 2027 while continuing to attract mining operations, AI data centers, and tech headquarters relocations.
+            </p>
+ 
+            <div class="dot-list" style="margin-bottom:16px">
+              <div class="dot-item">
+                <div class="dot-arrow da-dn">↓↓</div>
+                <div class="dot-text"><strong>Regulatory Burden</strong> — Decreasing. Texas is actively resisting federal regulatory creep and state-level mimicry of California's framework. Friction expected to remain low through 2027.</div>
+              </div>
+              <div class="dot-item">
+                <div class="dot-arrow da-dn">↓↓</div>
+                <div class="dot-text"><strong>Bitcoin Posture</strong> — Strengthening. Strategic Bitcoin Reserve enacted 2025. Expect additional pro-Bitcoin legislation in 2026–2027 legislative sessions building on SB 21 precedent.</div>
+              </div>
+              <div class="dot-item">
+                <div class="dot-arrow da-ss">→</div>
+                <div class="dot-text"><strong>Privacy Enforcement</strong> — Stable. TDPSA active but AG enforcement posture is measured. No imminent escalation to California-style CPPA model anticipated. Cure period remains intact.</div>
+              </div>
+              <div class="dot-item">
+                <div class="dot-arrow da-mod">↑</div>
+                <div class="dot-text"><strong>Biometric Scrutiny</strong> — Rising. CUBI enforcement activity increasing post-Meta settlement. Biometric product teams must treat CUBI as a meaningful litigation risk regardless of overall low-friction environment.</div>
+              </div>
+              <div class="dot-item">
+                <div class="dot-arrow da-dn">↓↓</div>
+                <div class="dot-text"><strong>Mining &amp; Compute</strong> — Expanding. Grid capacity additions and data center buildout accelerating. Texas is absorbing compute demand displaced from high-energy-cost states and countries.</div>
+              </div>
+              <div class="dot-item">
+                <div class="dot-arrow da-dn">↓</div>
+                <div class="dot-text"><strong>Developer Climate</strong> — Improving. Corporate migration wave continues. Talent pool deepening. No income tax differential widens as tech compensation increases nationally.</div>
+              </div>
+            </div>
+ 
+            <div class="callout">
+              <span class="callout-icon">📡</span>
+              <span>12-month outlook: Texas is expected to expand its Bitcoin Reserve program, potentially add a self-custody rights bill, and attract additional mining and data center investment. No AI-specific legislation anticipated in 2026 session. CUBI is the one area where compliance risk is rising. Overall trajectory: most favorable US state for Bitcoin-native builders and compute-intensive operations through 2027.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div><!-- /policy-layers -->
+  </div><!-- /main-col -->
+ 
+ 
+  <!-- ── RIGHT: Sidebar ──────────────────────── -->
+  <div class="sidebar">
+ 
+    <!-- Quick Signal Index -->
+    <div class="s-card">
+      <div class="s-card-title">Quick Signal Index</div>
+ 
+      <div class="qsi-row">
+        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-teal)"></div>AI Policy</div>
+        <span class="pill p-teal" style="font-size:9px;padding:2px 7px">Permissive</span>
+      </div>
+      <div class="qsi-row">
+        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-green)"></div>Bitcoin / Digital Assets</div>
+        <span class="pill p-green" style="font-size:9px;padding:2px 7px">Pro-Bitcoin</span>
+      </div>
+      <div class="qsi-row">
+        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-yellow)"></div>Privacy / Data</div>
+        <span class="pill p-yellow" style="font-size:9px;padding:2px 7px">Moderate</span>
+      </div>
+      <div class="qsi-row">
+        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-orange)"></div>Biometrics</div>
+        <span class="pill p-orange" style="font-size:9px;padding:2px 7px">CUBI Risk</span>
+      </div>
+      <div class="qsi-row">
+        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-teal)"></div>Public Sector AI</div>
+        <span class="pill p-teal" style="font-size:9px;padding:2px 7px">Open / Cautious</span>
+      </div>
+      <div class="qsi-row">
+        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-green)"></div>Open Source / Dev</div>
+        <span class="pill p-green" style="font-size:9px;padding:2px 7px">Best-in-Class</span>
+      </div>
+      <div class="qsi-row">
+        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-green)"></div>Energy / Mining</div>
+        <span class="pill p-green" style="font-size:9px;padding:2px 7px">National Leader</span>
+      </div>
+    </div>
+ 
+    <!-- Key Compliance Dates -->
+    <div class="s-card">
+      <div class="s-card-title">Key Compliance Dates</div>
+ 
+      <div class="date-item">
+        <div class="date-badge">Jul 2024</div>
+        <div class="date-text">Texas Data Privacy and Security Act (TDPSA) takes effect. AG enforcement authority activated.</div>
+      </div>
+      <div class="date-item">
+        <div class="date-badge">Jun 2025</div>
+        <div class="date-text">SB 21 signed — Texas Strategic Bitcoin Reserve established. Comptroller authorized to hold BTC as state asset.</div>
+      </div>
+      <div class="date-item">
+        <div class="date-badge">Ongoing</div>
+        <div class="date-text">CUBI enforcement active. Biometric data collectors must maintain consent records and destruction schedules.</div>
+      </div>
+      <div class="date-item">
+        <div class="date-badge">2026 Session</div>
+        <div class="date-text">Texas Legislature convenes Jan 2027 (biennial). Watch for additional Bitcoin rights legislation and potential self-custody protections.</div>
+      </div>
+    </div>
+ 
+    <!-- Direction of Travel (compact) -->
+    <div class="s-card">
+      <div class="s-card-title">Direction of Travel</div>
+ 
+      <div class="s-dot-item">
+        <div class="s-dot-arrow da-dn">↓↓</div>
+        <div class="s-dot-text">
+          <span class="label">Reg Burden</span>
+          <span class="status">Decreasing</span>
+        </div>
+      </div>
+      <div class="s-dot-item">
+        <div class="s-dot-arrow da-dn">↓↓</div>
+        <div class="s-dot-text">
+          <span class="label">Bitcoin Climate</span>
+          <span class="status">Strengthening</span>
+        </div>
+      </div>
+      <div class="s-dot-item">
+        <div class="s-dot-arrow da-dn">↓↓</div>
+        <div class="s-dot-text">
+          <span class="label">Mining &amp; Compute</span>
+          <span class="status">Expanding</span>
+        </div>
+      </div>
+      <div class="s-dot-item">
+        <div class="s-dot-arrow da-mod">↑</div>
+        <div class="s-dot-text">
+          <span class="label">CUBI Risk</span>
+          <span class="status">Rising</span>
+        </div>
+      </div>
+      <div class="s-dot-item">
+        <div class="s-dot-arrow da-ss">→</div>
+        <div class="s-dot-text">
+          <span class="label">Privacy Enforcement</span>
+          <span class="status">Stable</span>
+        </div>
+      </div>
+    </div>
+ 
+  </div><!-- /sidebar -->
+ 
+</div><!-- /page-body -->
+ 
+ 
+<!-- ═══════════════════════════════════════════
+     CONCLUDING PANELS
+     Builder Summary + Operational Profile
+════════════════════════════════════════════ -->
+<div class="concluding-section">
+ 
+  <div class="section-header" style="margin-bottom:16px">
+    <span class="section-header-label">Intelligence Summary</span>
+    <div class="section-header-line"></div>
+    <span class="section-header-label">For builders &amp; operators</span>
+  </div>
+ 
+  <div class="concluding-grid">
+ 
+    <!-- Builder Summary -->
+    <div class="builder-card">
+      <div class="builder-card-title">Builder Summary</div>
+ 
+      <div class="builder-quote">
+        "Best US jurisdiction for Bitcoin-native operations and compute infrastructure. Low friction, cheap power, zero income tax — and a government that considers Bitcoin a strategic state asset."
+      </div>
+ 
+      <div class="builder-split">
+        <div>
+          <div class="builder-col-title bc-for">Best for</div>
+          <ul class="builder-list">
+            <li>Bitcoin mining operations and hash rate infrastructure</li>
+            <li>Digital asset exchanges, custodians, and payment services</li>
+            <li>AI data centers and GPU compute facilities</li>
+            <li>Founders and engineers seeking no state income tax</li>
+            <li>Early-stage AI product teams needing low compliance overhead</li>
+            <li>Bitcoin-native treasury and reserve strategies</li>
+          </ul>
+        </div>
+        <div>
+          <div class="builder-col-title bc-avoid">Watch out for</div>
+          <ul class="builder-list">
+            <li>Any product collecting biometric or facial recognition data (CUBI)</li>
+            <li>Grid reliability risk during extreme weather events (ERCOT)</li>
+            <li>Federal AML/BSA requirements still apply regardless of state posture</li>
+            <li>TDPSA compliance still required for consumer data products</li>
+          </ul>
+        </div>
+      </div>
+ 
+      <div class="builder-tags">
+        <span class="btag">Pro-Bitcoin</span>
+        <span class="btag">No Income Tax</span>
+        <span class="btag">Mining Capital</span>
+        <span class="btag">Low Friction</span>
+        <span class="btag">Cheap Power</span>
+        <span class="btag">BTC Reserve State</span>
+        <span class="btag">Dev Friendly</span>
+        <span class="btag">CUBI Watch</span>
+        <span class="btag">Compute Hub</span>
+      </div>
+    </div>
+ 
+    <!-- Operational Profile -->
+    <div class="op-card">
+      <div class="op-card-title">Operational Profile</div>
+ 
+      <div class="op-classification">Low-Friction · Pro-Bitcoin</div>
+ 
+      <div class="op-desc">
+        Texas is the strategic default for Bitcoin-native and compute-intensive operations. The state combines the nation's cheapest industrial power, an explicitly pro-Bitcoin government, no income tax, and a deeply business-oriented regulatory culture. The single material risk area is CUBI biometric liability — otherwise compliance overhead is the lowest of any major US tech jurisdiction.
+      </div>
+ 
+      <div class="op-divider"></div>
+ 
+      <div class="op-stats">
+        <div class="op-stat">
+          <span class="op-stat-label">AI Posture</span>
+          <span class="op-stat-value">Permissive · No Mandates</span>
+        </div>
+        <div class="op-stat">
+          <span class="op-stat-label">Bitcoin</span>
+          <span class="op-stat-value">Pro-Bitcoin · Reserve State</span>
+        </div>
+        <div class="op-stat">
+          <span class="op-stat-label">Biometrics</span>
+          <span class="op-stat-value">CUBI · Notable Risk</span>
+        </div>
+        <div class="op-stat">
+          <span class="op-stat-label">Energy / Mining</span>
+          <span class="op-stat-value">National Leader</span>
+        </div>
+        <div class="op-stat">
+          <span class="op-stat-label">Signal Direction</span>
+          <span class="op-stat-value">Expanding ↓↓</span>
+        </div>
+      </div>
+    </div>
+ 
+  </div><!-- /concluding-grid -->
+</div><!-- /concluding-section -->
+ 
+ 
+<!-- ═══════════════════════════════════════════
+     PAGE FOOTER
+════════════════════════════════════════════ -->
+<footer class="page-footer">
+  <div>
+    <div class="footer-brand">SATOSHI<em>UM</em> · Atlas</div>
+    <div style="margin-top:3px">Jurisdiction Intelligence Engine · v2.0 · Apr 2026</div>
+  </div>
+  <div class="footer-disclaimer">
+    Operational profiles are advisory intelligence only. Laws change. Always verify with qualified legal counsel before making jurisdictional or operational decisions.
+  </div>
+</footer>
+ 
+ 
+<script>
+  function toggleLayer(headerEl) {
+    headerEl.parentElement.classList.toggle('open');
+  }
+</script>
+ 
+</body>
+</html>
+ 
