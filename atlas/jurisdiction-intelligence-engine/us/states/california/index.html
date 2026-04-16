@@ -1413,22 +1413,25 @@ a:hover{color:var(--gold)}
 </div><!-- /main-content -->
  
 <!-- ════════════════ FOOTER ════════════════ -->
-<footer class="page-footer">
-  <div class="footer-left">
-    <div class="footer-brand">SATOSHI<span>UM</span> · Atlas</div>
-    <div>Jurisdiction Intelligence Engine · v1.0</div>
-  </div>
-  <div class="footer-disclaimer">
-    Operational profiles are advisory intelligence only. Laws change. Always verify with qualified legal counsel before making jurisdictional or operational decisions.
-  </div>
-</footer>
  
+<div class="wrap reflection">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+ 
+<div id="footer-container"></div>
+ 
+<script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
-  function toggleLayer(headerEl) {
-    const card = headerEl.parentElement;
-    card.classList.toggle('open');
-  }
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
 </script>
- 
+</div>
+ <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
-</html>
+ </html>
