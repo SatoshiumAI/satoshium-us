@@ -1,1758 +1,418 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>California — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-  <style>
-    /* ══════════════════════════════════════════
-       DESIGN SYSTEM TOKENS
-    ══════════════════════════════════════════ */
-    :root {
-      --bg-primary:      #0a0c10;
-      --bg-secondary:    #0f1218;
-      --bg-card:         #13171f;
-      --border:          #1e2535;
-      --border-accent:   #2a3348;
-      --text-primary:    #e8ecf4;
-      --text-secondary:  #8b95a8;
-      --text-muted:      #4e5a70;
-      --accent-gold:     #f5a623;
-      --accent-blue:     #4a9eff;
-      --signal-red:      #ef4444;
-      --signal-orange:   #f97316;
-      --signal-yellow:   #eab308;
-      --signal-green:    #22c55e;
-      --signal-teal:     #14b8a6;
-      --grad-gold:       linear-gradient(135deg, #f5a623, #e8841a);
-      --font-main:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --font-mono:       'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-      --radius-sm:       6px;
-      --radius-md:       10px;
-      --radius-lg:       14px;
-    }
- 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
- 
-    body {
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      font-family: var(--font-main);
-      font-size: 15px;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
- 
-    /* ══════════════════════════════════════════
-       BREADCRUMB BAR
-       Sub-navigation that sits below the
-       Satoshium site header
-    ══════════════════════════════════════════ */
-    .breadcrumb-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      height: 44px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(10,12,16,0.97);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(14px);
-    }
- 
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      text-decoration: none;
-    }
- 
-    .nav-logo {
-      width: 26px;
-      height: 26px;
-      background: var(--grad-gold);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 900;
-      color: #0a0c10;
-    }
- 
-    .nav-wordmark {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
- 
-    .nav-wordmark em { color: var(--accent-gold); font-style: normal; }
- 
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
- 
-    .breadcrumb a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .breadcrumb a:hover { color: var(--accent-gold); }
-    .breadcrumb .sep { color: var(--border-accent); }
-    .breadcrumb .current { color: var(--text-primary); font-weight: 600; }
- 
-    .bar-right {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 10px;
-      color: var(--text-muted);
-    }
- 
-    .live-dot {
-      width: 5px;
-      height: 5px;
-      background: var(--signal-green);
-      border-radius: 50%;
-      animation: pulse 2.2s ease-in-out infinite;
-    }
- 
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
- 
- 
-    /* ══════════════════════════════════════════
-       HERO
-       "California at a glance first"
-    ══════════════════════════════════════════ */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 52px 40px 40px;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg-secondary);
-    }
- 
-    .hero-grid-bg {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(74,158,255,0.033) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(74,158,255,0.033) 1px, transparent 1px);
-      background-size: 44px 44px;
-    }
- 
-    .hero-glow {
-      position: absolute;
-      top: -80px;
-      right: -100px;
-      width: 580px;
-      height: 580px;
-      background: radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 58%);
-      pointer-events: none;
-    }
- 
-    .hero-inner {
-      position: relative;
-      max-width: 1140px;
-      margin: 0 auto;
-    }
- 
-    /* Identity row */
-    .hero-identity {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 28px;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
- 
-    .hero-id-left {}
- 
-    .jurisdiction-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 9px;
-      background: rgba(74,158,255,0.07);
-      border: 1px solid rgba(74,158,255,0.16);
-      border-radius: var(--radius-sm);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-blue);
-      margin-bottom: 14px;
-    }
- 
-    .hero-title {
-      font-size: 58px;
-      font-weight: 800;
-      letter-spacing: -0.028em;
-      color: var(--text-primary);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
- 
-    .hero-subtitle {
-      font-size: 11px;
-      color: var(--text-muted);
-      font-family: var(--font-mono);
-      letter-spacing: 0.06em;
-    }
- 
-    /* Overall signal — top-right of hero identity row */
-    .hero-overall {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: rgba(249,115,22,0.06);
-      border: 1px solid rgba(249,115,22,0.17);
-      border-radius: var(--radius-lg);
-      padding: 16px 20px;
-      flex-shrink: 0;
-      min-width: 280px;
-      max-width: 340px;
-    }
- 
-    .overall-ring {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: conic-gradient(var(--signal-orange) 72%, rgba(42,51,72,0.7) 0);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      flex-shrink: 0;
-    }
- 
-    .overall-ring::before {
-      content: '';
-      position: absolute;
-      width: 37px;
-      height: 37px;
-      border-radius: 50%;
-      background: var(--bg-secondary);
-    }
- 
-    .overall-ring-inner {
-      position: relative;
-      z-index: 1;
-      font-size: 13px;
-      font-weight: 900;
-      color: var(--signal-orange);
-    }
- 
-    .overall-text { flex: 1; }
- 
-    .overall-eyebrow {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 2px;
-    }
- 
-    .overall-name {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--signal-orange);
-      margin-bottom: 4px;
-      line-height: 1.3;
-    }
- 
-    .overall-desc {
-      font-size: 11px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
- 
-    /* 8-Dimension Signal Grid */
-    .signal-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 9px;
-    }
- 
-    .signal-tile {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 13px 14px;
-    }
- 
-    .st-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 7px;
-    }
- 
-    .st-icon { font-size: 15px; line-height: 1; }
- 
-    .st-trend {
-      font-size: 10px;
-      font-weight: 800;
-      font-family: var(--font-mono);
-    }
- 
-    .tr-hi  { color: var(--signal-red); }
-    .tr-mod { color: var(--signal-orange); }
-    .tr-ss  { color: var(--signal-yellow); }
-    .tr-dn  { color: var(--signal-green); }
- 
-    .st-label {
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
- 
-    .st-value {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
- 
-    .st-bar {
-      height: 2px;
-      background: var(--border);
-      border-radius: 2px;
-      overflow: hidden;
-    }
- 
-    .st-bar-fill { height: 100%; border-radius: 2px; }
- 
- 
-    /* ══════════════════════════════════════════
-       PAGE BODY — 2-column grid
-    ══════════════════════════════════════════ */
-    .page-body {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 36px 40px 0;
-      display: grid;
-      grid-template-columns: 1fr 268px;
-      gap: 26px;
-      align-items: start;
-    }
- 
-    /* ── Section headers ── */
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
- 
-    .section-header-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
- 
-    .section-header-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
- 
-    /* ══════════════════════════════════════════
-       POLICY LAYER CARDS
-    ══════════════════════════════════════════ */
-    .policy-layers { display: flex; flex-direction: column; gap: 10px; }
- 
-    .layer-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: border-color 0.2s;
-    }
- 
-    .layer-card:hover   { border-color: var(--border-accent); }
-    .layer-card.open    { border-color: var(--border-accent); }
- 
-    .layer-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 15px 18px;
-      cursor: pointer;
-      user-select: none;
-    }
- 
-    .layer-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 7px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      flex-shrink: 0;
-    }
- 
-    .layer-meta { flex: 1; min-width: 0; }
- 
-    .layer-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 1px;
-    }
- 
-    .layer-tagline {
-      font-size: 10px;
-      color: var(--text-muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
- 
-    .layer-right {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      flex-shrink: 0;
-    }
- 
-    /* Status pills */
-    .pill {
-      padding: 3px 8px;
-      border-radius: 20px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
- 
-    .p-red    { background: rgba(239,68,68,0.12);  color: #ef4444; border: 1px solid rgba(239,68,68,0.2);  }
-    .p-orange { background: rgba(249,115,22,0.12); color: #f97316; border: 1px solid rgba(249,115,22,0.2); }
-    .p-yellow { background: rgba(234,179,8,0.12);  color: #eab308; border: 1px solid rgba(234,179,8,0.2);  }
-    .p-blue   { background: rgba(74,158,255,0.12); color: #4a9eff; border: 1px solid rgba(74,158,255,0.2); }
-    .p-teal   { background: rgba(20,184,166,0.12); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.2); }
-    .p-gold   { background: rgba(245,166,35,0.12); color: #f5a623; border: 1px solid rgba(245,166,35,0.2); }
- 
-    .layer-trend {
-      font-size: 10px;
-      font-weight: 800;
-      font-family: var(--font-mono);
-      width: 22px;
-      text-align: center;
-    }
- 
-    .layer-chevron {
-      color: var(--text-muted);
-      font-size: 9px;
-      transition: transform 0.2s;
-    }
- 
-    .layer-card.open .layer-chevron { transform: rotate(180deg); }
- 
-    /* Layer body */
-    .layer-body {
-      display: none;
-      border-top: 1px solid var(--border);
-    }
- 
-    .layer-card.open .layer-body { display: block; }
- 
-    .layer-body-inner { padding: 18px 20px; }
- 
-    .layer-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      margin-bottom: 16px;
-      max-width: 660px;
-    }
- 
-    /* Law chips */
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-bottom: 14px;
-    }
- 
-    .chip {
-      padding: 2px 7px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      font-size: 9px;
-      font-family: var(--font-mono);
-      color: var(--text-muted);
-    }
- 
-    .chip.key {
-      background: rgba(74,158,255,0.06);
-      border-color: rgba(74,158,255,0.17);
-      color: #6aadff;
-    }
- 
-    /* Metrics row */
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 14px;
-    }
- 
-    .metric {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      padding: 10px 11px;
-    }
- 
-    .metric-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
- 
-    .metric-value {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
- 
-    /* Callout note */
-    .callout {
-      display: flex;
-      align-items: flex-start;
-      gap: 9px;
-      background: rgba(245,166,35,0.05);
-      border: 1px solid rgba(245,166,35,0.12);
-      border-radius: 7px;
-      padding: 10px 13px;
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
- 
-    .callout-icon { font-size: 12px; margin-top: 2px; flex-shrink: 0; }
- 
-    /* Risk meter */
-    .risk-meter { margin: 12px 0 0; }
- 
-    .risk-row {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 6px;
-    }
- 
-    .risk-label {
-      font-size: 10px;
-      color: var(--text-muted);
-      width: 110px;
-      flex-shrink: 0;
-    }
- 
-    .risk-track {
-      flex: 1;
-      height: 3px;
-      background: var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-    }
- 
-    .risk-fill { height: 100%; border-radius: 3px; }
- 
-    .risk-score {
-      font-size: 10px;
-      font-family: var(--font-mono);
-      color: var(--text-secondary);
-      width: 24px;
-      text-align: right;
-    }
- 
-    /* Direction of travel — dot items */
-    .dot-list { display: flex; flex-direction: column; gap: 10px; }
- 
-    .dot-item { display: flex; align-items: flex-start; gap: 8px; }
- 
-    .dot-arrow {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      font-weight: 800;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
- 
-    .da-hi  { background: rgba(239,68,68,0.13);  color: #ef4444; }
-    .da-mod { background: rgba(249,115,22,0.13); color: #f97316; }
-    .da-ss  { background: rgba(234,179,8,0.13);  color: #eab308; }
-    .da-dn  { background: rgba(34,197,94,0.13);  color: #22c55e; }
- 
-    .dot-text {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.55;
-    }
- 
-    .dot-text strong { color: var(--text-primary); font-weight: 600; }
- 
- 
-    /* ══════════════════════════════════════════
-       SIDEBAR
-    ══════════════════════════════════════════ */
-    .sidebar { display: flex; flex-direction: column; gap: 12px; }
- 
-    .s-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 16px 18px;
-    }
- 
-    .s-card-title {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 13px;
-    }
- 
-    /* Quick Signal Index */
-    .qsi-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 0;
-      border-bottom: 1px solid var(--border);
-    }
- 
-    .qsi-row:last-child { border-bottom: none; }
- 
-    .qsi-left {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      color: var(--text-secondary);
-    }
- 
-    .qsi-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
- 
-    /* Compliance Dates */
-    .date-item {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 9px;
-    }
- 
-    .date-item:last-child { margin-bottom: 0; }
- 
-    .date-badge {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2px 6px;
-      font-size: 9px;
-      font-family: var(--font-mono);
-      color: var(--accent-gold);
-      font-weight: 700;
-      white-space: nowrap;
-      align-self: flex-start;
-      margin-top: 2px;
-    }
- 
-    .date-text {
-      font-size: 11px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
- 
-    /* Compact dot list in sidebar */
-    .s-dot-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding: 5px 0;
-      border-bottom: 1px solid var(--border);
-    }
- 
-    .s-dot-item:last-child { border-bottom: none; }
- 
-    .s-dot-arrow {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 8px;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
- 
-    .s-dot-text {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 11px;
-    }
- 
-    .s-dot-text .label { color: var(--text-primary); font-weight: 600; }
-    .s-dot-text .status { color: var(--text-muted); font-size: 10px; }
- 
- 
-    /* ══════════════════════════════════════════
-       CONCLUDING PANELS
-       Builder Summary + Operational Profile
-    ══════════════════════════════════════════ */
-    .concluding-section {
-      max-width: 1140px;
-      margin: 24px auto 0;
-      padding: 0 40px 56px;
-    }
- 
-    .concluding-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 14px;
-    }
- 
-    /* Builder Summary */
-    .builder-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 26px 28px;
-    }
- 
-    .builder-card-title {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
- 
-    .builder-quote {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.6;
-      border-left: 3px solid var(--accent-gold);
-      padding-left: 15px;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
- 
-    .builder-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
- 
-    .builder-col-title {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
- 
-    .bc-for   { color: var(--signal-teal); }
-    .bc-avoid { color: var(--signal-orange); }
- 
-    .builder-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
- 
-    .builder-list li {
-      font-size: 12px;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      line-height: 1.4;
-    }
- 
-    .builder-list li::before {
-      content: '—';
-      color: var(--text-muted);
-      flex-shrink: 0;
-    }
- 
-    .builder-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-    }
- 
-    .btag {
-      padding: 3px 7px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
- 
-    /* Operational Profile */
-    .op-card {
-      background: rgba(245,166,35,0.04);
-      border: 1px solid rgba(245,166,35,0.18);
-      border-radius: var(--radius-lg);
-      padding: 26px 24px;
-    }
- 
-    .op-card-title {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      margin-bottom: 12px;
-    }
- 
-    .op-classification {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 11px;
-      background: rgba(245,166,35,0.09);
-      border: 1px solid rgba(245,166,35,0.22);
-      border-radius: 20px;
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--accent-gold);
-      letter-spacing: 0.04em;
-      margin-bottom: 14px;
-    }
- 
-    .op-desc {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
- 
-    .op-divider {
-      height: 1px;
-      background: rgba(245,166,35,0.1);
-      margin-bottom: 14px;
-    }
- 
-    .op-stats {}
- 
-    .op-stat {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 0;
-      border-bottom: 1px solid rgba(245,166,35,0.07);
-    }
- 
-    .op-stat:last-child { border-bottom: none; }
- 
-    .op-stat-label {
-      font-size: 10px;
-      color: var(--text-muted);
-    }
- 
-    .op-stat-value {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
- 
- 
-    /* ══════════════════════════════════════════
-       PAGE FOOTER
-    ══════════════════════════════════════════ */
-    .page-footer {
-      border-top: 1px solid var(--border);
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 10px;
-      color: var(--text-muted);
-    }
- 
-    .footer-brand {
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
- 
-    .footer-brand em { color: var(--accent-gold); font-style: normal; }
- 
-    .footer-disclaimer {
-      max-width: 440px;
-      line-height: 1.5;
-      text-align: right;
-    }
- 
- 
-    /* ══════════════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════════════ */
-    @media (max-width: 960px) {
-      .page-body          { grid-template-columns: 1fr; padding: 28px 20px 0; }
-      .concluding-section { padding: 0 20px 40px; }
-      .concluding-grid    { grid-template-columns: 1fr; }
-      .hero               { padding: 40px 20px 32px; }
-      .hero-title         { font-size: 44px; }
-      .breadcrumb-bar     { padding: 0 20px; }
-      .breadcrumb         { display: none; }
-      .hero-identity      { flex-direction: column; gap: 20px; }
-      .hero-overall       { max-width: 100%; }
-      .signal-grid        { grid-template-columns: repeat(4, 1fr); }
-    }
- 
-    @media (max-width: 640px) {
-      .hero-title    { font-size: 34px; }
-      .signal-grid   { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-      .metrics       { grid-template-columns: 1fr 1fr; }
-      .builder-split { grid-template-columns: 1fr; }
-      .page-footer   { flex-direction: column; gap: 8px; }
-      .footer-disclaimer { text-align: center; max-width: 100%; }
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>California — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="California operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/california/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --card-wm:url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --panel-2:#101624;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --line-strong:rgba(214,163,74,.28);
+ --red:#ef4444;
+ --orange:#f97316;
+ --yellow:#eab308;
+ --green:#22c55e;
+ --teal:#14b8a6;
+ --blue:#4a9eff;
+ --purple:#8b5cf6;
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+h1{font-size:38px;color:var(--gold2);line-height:1.1;margin:0 0 10px}
+h2{font-size:22px;color:var(--gold2);margin:0 0 10px}
+h3{font-size:16px;color:var(--text);margin:0 0 6px}
+p{margin:0 0 12px}
+ul{margin:8px 0 0 18px}
+.muted{color:var(--muted)}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ padding:7px 12px;border-radius:999px;
+ border:1px solid var(--line);background:rgba(214,163,74,.06);
+ color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:30px 24px;margin-bottom:18px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+.hero::after{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+ background-image:linear-gradient(rgba(214,163,74,.12) 1px, transparent 1px),linear-gradient(90deg, rgba(214,163,74,.12) 1px, transparent 1px);
+ background-size:40px 40px;
+ mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.hero-chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:18px;margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35);border-color:var(--line-strong)}
+.card.anchor-target{scroll-margin-top:110px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-sidebar{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.span-2{grid-column:1 / -1}
+.note{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted);font-size:14px}
+.band{
+ display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px;
+}
+.metric{
+ border:1px solid rgba(214,163,74,.12);border-radius:14px;padding:14px;background:rgba(255,255,255,.02);
+}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.metric .value{font-size:14px;font-weight:700}
+.kicker{font-size:13px;color:var(--muted);max-width:920px}
+.mini{font-size:13px}
+.subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mini-box{padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.mini-box .label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.mini-box .value{font-size:13px;font-weight:700}
+.status-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.status-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.status-left{display:flex;align-items:center;gap:10px;min-width:0}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.03em;border:1px solid transparent;white-space:nowrap}
+.pill.red{background:rgba(239,68,68,.14);color:#ff8e8e;border-color:rgba(239,68,68,.22)}
+.pill.orange{background:rgba(249,115,22,.14);color:#ffb27c;border-color:rgba(249,115,22,.22)}
+.pill.yellow{background:rgba(234,179,8,.14);color:#f5db77;border-color:rgba(234,179,8,.22)}
+.pill.green{background:rgba(34,197,94,.14);color:#98ecb1;border-color:rgba(34,197,94,.22)}
+.pill.teal{background:rgba(20,184,166,.14);color:#8ce3d9;border-color:rgba(20,184,166,.22)}
+.pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
+.pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
+.pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
+.detail-list{display:grid;gap:10px}
+.detail-item{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.detail-item strong{color:var(--text)}
+.atlas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.atlas-list li{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.atlas-list code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--gold2);font-size:12px}
+.callout{
+ padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+ background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
+}
+.radar{display:grid;gap:10px;margin-top:12px}
+.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
+.radar-label{font-size:12px;color:var(--muted)}
+.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+.fill{height:100%;border-radius:999px}
+.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.footer-block{padding-bottom:34px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+.smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+@media (max-width:980px){
+ .grid-sidebar{grid-template-columns:1fr}
+ .band{grid-template-columns:repeat(2,1fr)}
+ .subgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+ .grid-2,.grid-3,.status-grid,.subgrid{grid-template-columns:1fr}
+ .band{grid-template-columns:1fr}
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .radar-row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .wrap.content{animation:none;opacity:1;transform:none}
+ .card{transition:none}
+ .card:hover{transform:none}
+}
+</style>
 </head>
 <body>
- 
-<!-- ═══════════════════════════════════════════
-     BREADCRUMB BAR
-     Sits below the Satoshium site header
-════════════════════════════════════════════ -->
-<nav class="breadcrumb-bar">
-  <a href="https://satoshium.us" class="nav-brand">
-    <div class="nav-logo">S</div>
-    <div class="nav-wordmark">SATOSHI<em>UM</em></div>
-  </a>
- 
-  <div class="breadcrumb">
-    <a href="https://satoshium.us/atlas/">Atlas</a>
-    <span class="sep">›</span>
-    <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/">Jurisdiction Engine</a>
-    <span class="sep">›</span>
-    <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/">United States</a>
-    <span class="sep">›</span>
-    <span class="current">California</span>
-  </div>
- 
-  <div class="bar-right">
-    <div class="live-dot"></div>
-    <span>Updated Apr 2026</span>
-  </div>
-</nav>
- 
- 
-<!-- ═══════════════════════════════════════════
-     HERO — California at a glance
-════════════════════════════════════════════ -->
-<section class="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-glow"></div>
- 
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main id="main-content" class="wrap content">
+
+<section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
- 
-    <!-- Title + Overall Signal -->
-    <div class="hero-identity">
- 
-      <div class="hero-id-left">
-        <div class="jurisdiction-badge">⬡ US State · Pacific Coast · 5th Largest Economy Globally</div>
-        <h1 class="hero-title">California</h1>
-        <div class="hero-subtitle">CA · US-CAL · Sacramento HQ · CPPA Enforcement Zone</div>
-      </div>
- 
-      <div class="hero-overall">
-        <div class="overall-ring">
-          <div class="overall-ring-inner">H</div>
-        </div>
-        <div class="overall-text">
-          <div class="overall-eyebrow">Overall Signal</div>
-          <div class="overall-name">High-Governance · High-Compliance</div>
-          <div class="overall-desc">Nation's most active regulatory environment. Build here for compliance fluency — not frictionless experimentation.</div>
-        </div>
-      </div>
- 
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <h1 id="heading-hero">California</h1>
+    <p class="kicker">California functions as a high-governance operational environment for builders working across AI, privacy, digital assets, biometrics, public-sector AI, open-source deployment, and compute-heavy infrastructure.</p>
+
+    <div class="hero-meta">
+      <div class="hero-chip">CA · US-CAL</div>
+      <div class="hero-chip">Sacramento</div>
+      <div class="hero-chip">Pacific Coast corridor lens</div>
+      <div class="hero-chip">Atlas operational profile</div>
+      <div class="hero-chip">Updated Apr 2026</div>
     </div>
- 
-    <!-- 8-Dimension Signal Grid -->
-    <div class="signal-grid">
- 
-      <div class="signal-tile">
-        <div class="st-header">
-          <span class="st-icon">🤖</span>
-          <span class="st-trend tr-hi">↑↑</span>
-        </div>
-        <div class="st-label">AI Policy</div>
-        <div class="st-value">Highly Regulatory</div>
-        <div class="st-bar"><div class="st-bar-fill" style="width:85%;background:var(--signal-orange)"></div></div>
-      </div>
- 
-      <div class="signal-tile">
-        <div class="st-header">
-          <span class="st-icon">₿</span>
-          <span class="st-trend tr-mod">↑</span>
-        </div>
-        <div class="st-label">Bitcoin / Digital Assets</div>
-        <div class="st-value">Compliance-Heavy</div>
-        <div class="st-bar"><div class="st-bar-fill" style="width:62%;background:var(--signal-yellow)"></div></div>
-      </div>
- 
-      <div class="signal-tile">
-        <div class="st-header">
-          <span class="st-icon">🔐</span>
-          <span class="st-trend tr-hi">↑↑</span>
-        </div>
-        <div class="st-label">Privacy / Data</div>
-        <div class="st-value">Max Enforcement</div>
-        <div class="st-bar"><div class="st-bar-fill" style="width:93%;background:var(--signal-red)"></div></div>
-      </div>
- 
-      <div class="signal-tile">
-        <div class="st-header">
-          <span class="st-icon">👁</span>
-          <span class="st-trend tr-hi">↑↑</span>
-        </div>
-        <div class="st-label">Biometrics / Identity</div>
-        <div class="st-value">Strong Concern Zone</div>
-        <div class="st-bar"><div class="st-bar-fill" style="width:79%;background:var(--signal-red)"></div></div>
-      </div>
- 
-      <div class="signal-tile">
-        <div class="st-header">
-          <span class="st-icon">🏛</span>
-          <span class="st-trend tr-mod">↑</span>
-        </div>
-        <div class="st-label">Education / Public Sector AI</div>
-        <div class="st-value">Growing · Safety-First</div>
-        <div class="st-bar"><div class="st-bar-fill" style="width:56%;background:var(--signal-teal)"></div></div>
-      </div>
- 
-      <div class="signal-tile">
-        <div class="st-header">
-          <span class="st-icon">⟨/⟩</span>
-          <span class="st-trend tr-ss">→</span>
-        </div>
-        <div class="st-label">Open Source / Developer</div>
-        <div class="st-value">Strong · Tensioned</div>
-        <div class="st-bar"><div class="st-bar-fill" style="width:50%;background:var(--accent-blue)"></div></div>
-      </div>
- 
-      <div class="signal-tile">
-        <div class="st-header">
-          <span class="st-icon">⚡</span>
-          <span class="st-trend tr-mod">↑</span>
-        </div>
-        <div class="st-label">Energy / Mining / Compute</div>
-        <div class="st-value">Legal · High Risk</div>
-        <div class="st-bar"><div class="st-bar-fill" style="width:72%;background:var(--signal-orange)"></div></div>
-      </div>
- 
-      <div class="signal-tile">
-        <div class="st-header">
-          <span class="st-icon">📡</span>
-          <span class="st-trend tr-hi">↑↑</span>
-        </div>
-        <div class="st-label">Signal Rating</div>
-        <div class="st-value">Tightening</div>
-        <div class="st-bar"><div class="st-bar-fill" style="width:88%;background:var(--accent-gold)"></div></div>
-      </div>
- 
-    </div><!-- /signal-grid -->
- 
+
+    <div class="band" aria-label="California quick signals">
+      <div class="metric"><div class="label">AI Policy</div><div class="value">Highly Regulatory</div></div>
+      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Mixed / Cautious</div></div>
+      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Maximum Enforcement</div></div>
+      <div class="metric"><div class="label">Biometrics</div><div class="value">Strong Concern Zone</div></div>
+      <div class="metric"><div class="label">Operational Signal</div><div class="value">High-Governance / High-Compliance</div></div>
+    </div>
+
+    <nav class="section-nav" aria-label="Jump to sections">
+      <a href="#operational-profile">Operational Profile</a>
+      <a href="#atlas-alignment">Atlas Alignment</a>
+      <a href="#ai-policy">AI Policy</a>
+      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
+      <a href="#privacy-data">Privacy / Data</a>
+      <a href="#biometrics-identity">Biometrics / Identity</a>
+      <a href="#public-sector-ai">Public Sector AI</a>
+      <a href="#developer-climate">Developer Climate</a>
+      <a href="#energy-mining">Energy / Mining</a>
+      <a href="#direction-of-travel">Direction of Travel</a>
+    </nav>
   </div>
 </section>
- 
- 
-<!-- ═══════════════════════════════════════════
-     MAIN CONTENT — Policy Layers + Sidebar
-════════════════════════════════════════════ -->
-<div class="page-body">
- 
-  <!-- ── LEFT: Policy Layers ────────────────── -->
-  <div class="main-col">
- 
-    <div class="section-header">
-      <span class="section-header-label">Policy Layers</span>
-      <div class="section-header-line"></div>
-      <span class="section-header-label">8 Dimensions — expand for full analysis</span>
-    </div>
- 
-    <div class="policy-layers">
- 
-      <!-- ── LAYER 1: AI POLICY ── -->
-      <div class="layer-card open">
-        <div class="layer-header" onclick="toggleLayer(this)">
-          <div class="layer-icon" style="background:rgba(74,158,255,0.11)">🤖</div>
-          <div class="layer-meta">
-            <div class="layer-title">AI Policy</div>
-            <div class="layer-tagline">Legislation · Enforcement · Executive Action</div>
-          </div>
-          <div class="layer-right">
-            <span class="pill p-orange">Active · Highly Regulatory</span>
-            <span class="layer-trend tr-hi">↑↑</span>
-            <span class="layer-chevron">▼</span>
-          </div>
-        </div>
-        <div class="layer-body">
-          <div class="layer-body-inner">
-            <p class="layer-desc">
-              California is the de facto US regulatory laboratory for AI governance. After the veto of SB 1047 in 2024, Sacramento recalibrated with more targeted legislation. The 2025 signing of SB 53 (Transparency in Frontier AI Act) marked a major shift: frontier AI developers now face mandatory safety frameworks, incident reporting, and $1M/violation penalties effective January 1, 2026. Governor Newsom's March 2026 Executive Order N-5-26 extended AI governance into procurement, requiring vendors to attest to safeguards against bias and exploitation.
-            </p>
-            <div class="chips">
-              <span class="chip key">SB 53 (TFAIA)</span>
-              <span class="chip key">AB 2013</span>
-              <span class="chip">SB 1047 (vetoed)</span>
-              <span class="chip">EO N-5-26</span>
-              <span class="chip">CalCompute Initiative</span>
-              <span class="chip">CPPA ADMT Rules</span>
-            </div>
-            <div class="metrics">
-              <div class="metric">
-                <div class="metric-label">Penalty Ceiling</div>
-                <div class="metric-value">$1M / violation</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Enforcer</div>
-                <div class="metric-value">CPPA + AG</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">In Effect</div>
-                <div class="metric-value">Jan 1, 2026</div>
-              </div>
-            </div>
-            <div class="callout">
-              <span class="callout-icon">⚡</span>
-              <span>SB 53 requires public transparency reports, critical incident reporting to the AG, and whistleblower protections for safety-concerned employees. Dataset disclosure under AB 2013 became mandatory Jan 1, 2026 for generative AI products sold in California.</span>
-            </div>
-          </div>
-        </div>
-      </div>
- 
-      <!-- ── LAYER 2: BITCOIN / DIGITAL ASSETS ── -->
-      <div class="layer-card">
-        <div class="layer-header" onclick="toggleLayer(this)">
-          <div class="layer-icon" style="background:rgba(245,166,35,0.11)">₿</div>
-          <div class="layer-meta">
-            <div class="layer-title">Bitcoin / Digital Asset Policy</div>
-            <div class="layer-tagline">DFAL · Licensing · Payments · Taxation</div>
-          </div>
-          <div class="layer-right">
-            <span class="pill p-yellow">Mixed · Compliance-Heavy</span>
-            <span class="layer-trend tr-mod">↑</span>
-            <span class="layer-chevron">▼</span>
-          </div>
-        </div>
-        <div class="layer-body">
-          <div class="layer-body-inner">
-            <p class="layer-desc">
-              California's Digital Financial Assets Law (DFAL) creates one of the most comprehensive state-level crypto licensing regimes in the US. The Department of Financial Protection and Innovation (DFPI) began accepting license applications on March 9, 2026, with compliance required by July 1, 2026. Covered activities include exchange, transfer, storage, and issuance of digital financial assets — including Bitcoin, Ether, and stablecoins. The framework is calibrated for regulatory clarity rather than prohibition, but compliance costs are substantial. On the positive side, AB 1052 (effective mid-2026) allows public entities to accept Bitcoin as payment for government services.
-            </p>
-            <div class="chips">
-              <span class="chip key">DFAL</span>
-              <span class="chip key">AB 1052</span>
-              <span class="chip">DFPI License Framework</span>
-              <span class="chip">AML / BSA Compliance</span>
-              <span class="chip">Surety Bond Requirements</span>
-            </div>
-            <div class="metrics">
-              <div class="metric">
-                <div class="metric-label">License Deadline</div>
-                <div class="metric-value">Jul 1, 2026</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Regulator</div>
-                <div class="metric-value">DFPI</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">BTC as Payment</div>
-                <div class="metric-value">Enabled (AB 1052)</div>
-              </div>
-            </div>
-            <div class="callout">
-              <span class="callout-icon">₿</span>
-              <span>Bitcoin custodians, exchanges, and wallet providers operating in California must obtain DFAL licenses. Capital requirements, consumer disclosures, and AML programs are mandatory. Bitcoin ETF access via regulated brokers is permitted under federal framework.</span>
-            </div>
-          </div>
-        </div>
-      </div>
- 
-      <!-- ── LAYER 3: PRIVACY / DATA ── -->
-      <div class="layer-card">
-        <div class="layer-header" onclick="toggleLayer(this)">
-          <div class="layer-icon" style="background:rgba(239,68,68,0.11)">🔐</div>
-          <div class="layer-meta">
-            <div class="layer-title">Privacy / Data Handling</div>
-            <div class="layer-tagline">CCPA · CPRA · CPPA Enforcement · ADMT</div>
-          </div>
-          <div class="layer-right">
-            <span class="pill p-red">Maximum Enforcement</span>
-            <span class="layer-trend tr-hi">↑↑</span>
-            <span class="layer-chevron">▼</span>
-          </div>
-        </div>
-        <div class="layer-body">
-          <div class="layer-body-inner">
-            <p class="layer-desc">
-              California has the strongest data privacy regime of any US state. The California Privacy Protection Agency (CPPA) — the first dedicated data privacy enforcement agency in the US — became fully operational with significant enforcement activity in 2026. New mandatory cybersecurity audit requirements, automated decision-making technology (ADMT) risk assessments, and expanded consumer rights went live January 1, 2026. Settlement activity has accelerated: Disney/ABC paid $2.75M in February 2026, the largest CCPA settlement to date. Ford and PlayOn Sports faced ~$1.5M in combined penalties in March 2026.
-            </p>
-            <div class="chips">
-              <span class="chip key">CCPA</span>
-              <span class="chip key">CPRA</span>
-              <span class="chip">CPPA Cybersecurity Audit Rules</span>
-              <span class="chip">ADMT Risk Assessment Reqs</span>
-              <span class="chip">Digital Agency Regs (2026)</span>
-            </div>
-            <div class="metrics">
-              <div class="metric">
-                <div class="metric-label">Largest Settlement</div>
-                <div class="metric-value">$2.75M (Disney)</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Enforcer</div>
-                <div class="metric-value">CPPA + AG</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Penalty (Intentional)</div>
-                <div class="metric-value">$7,988 / record</div>
-              </div>
-            </div>
-            <div class="callout">
-              <span class="callout-icon">🔐</span>
-              <span>Any product or service collecting data from California residents — regardless of where the company is based — falls under CCPA/CPRA. ADMT risk assessments (required 2026) affect AI-driven decision tools including hiring algorithms, content moderation, and financial underwriting systems.</span>
-            </div>
-          </div>
-        </div>
-      </div>
- 
-      <!-- ── LAYER 4: BIOMETRICS / IDENTITY ── -->
-      <div class="layer-card">
-        <div class="layer-header" onclick="toggleLayer(this)">
-          <div class="layer-icon" style="background:rgba(139,92,246,0.11)">👁</div>
-          <div class="layer-meta">
-            <div class="layer-title">Biometrics / Identity</div>
-            <div class="layer-tagline">Facial Recognition · Biometric SPI · Local Bans</div>
-          </div>
-          <div class="layer-right">
-            <span class="pill p-red">Strong Concern Zone</span>
-            <span class="layer-trend tr-hi">↑↑</span>
-            <span class="layer-chevron">▼</span>
-          </div>
-        </div>
-        <div class="layer-body">
-          <div class="layer-body-inner">
-            <p class="layer-desc">
-              Biometric data is classified as "Sensitive Personal Information" (SPI) under CPRA, triggering heightened consent, disclosure, and security requirements. Facial recognition is restricted in employment settings statewide. San Francisco, Oakland, and Berkeley have enacted outright bans on government use of facial recognition technology. Private right of action exists for consumers when data breaches expose biometric data due to inadequate security controls. California sits among the nation's most protective states on biometric surveillance — a trend expected to intensify.
-            </p>
-            <div class="chips">
-              <span class="chip key">CPRA Biometric SPI</span>
-              <span class="chip">SF Facial Rec Ban</span>
-              <span class="chip">Oakland Facial Rec Ban</span>
-              <span class="chip">Berkeley Facial Rec Ban</span>
-              <span class="chip">AB 1215 (Workforce)</span>
-            </div>
-            <div class="metrics">
-              <div class="metric">
-                <div class="metric-label">Classification</div>
-                <div class="metric-value">SPI (Elevated)</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Gov Facial Rec</div>
-                <div class="metric-value">Banned (3 cities)</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Private Action</div>
-                <div class="metric-value">Yes (breach)</div>
-              </div>
-            </div>
-            <div class="callout">
-              <span class="callout-icon">⚠️</span>
-              <span>Biometric-dependent identity systems, emotion recognition, and behavioral surveillance tools face the highest compliance friction in California. Expect statewide facial recognition legislation in the 2026–2027 legislative cycle based on current momentum.</span>
-            </div>
-          </div>
-        </div>
-      </div>
- 
-      <!-- ── LAYER 5: EDUCATION / PUBLIC SECTOR AI ── -->
-      <div class="layer-card">
-        <div class="layer-header" onclick="toggleLayer(this)">
-          <div class="layer-icon" style="background:rgba(34,197,94,0.11)">🏛</div>
-          <div class="layer-meta">
-            <div class="layer-title">Education / Public Sector AI</div>
-            <div class="layer-tagline">Government Adoption · Procurement · Workforce AI</div>
-          </div>
-          <div class="layer-right">
-            <span class="pill p-teal">Growing · Safety-First</span>
-            <span class="layer-trend tr-mod">↑</span>
-            <span class="layer-chevron">▼</span>
-          </div>
-        </div>
-        <div class="layer-body">
-          <div class="layer-body-inner">
-            <p class="layer-desc">
-              California is actively integrating AI into state operations under a safety-first doctrine. Executive Order N-5-26 (March 2026) mandates AI sandboxes for piloting technology, cybersecurity assessments, ethical use guidelines, and new procurement mechanisms that require AI vendors to attest to safeguards. The California Council on Science and Technology (CCST) runs Science &amp; Technology Policy Fellows program to build AI literacy in government. CalCompute — a publicly accessible AI compute infrastructure initiative enabled under SB 53 — positions California as a model for democratic AI access.
-            </p>
-            <div class="chips">
-              <span class="chip key">EO N-5-26</span>
-              <span class="chip key">CalCompute (SB 53)</span>
-              <span class="chip">CDT AI Sandbox Program</span>
-              <span class="chip">CCST Fellows 2026</span>
-              <span class="chip">AI Procurement Attestation</span>
-            </div>
-            <div class="metrics">
-              <div class="metric">
-                <div class="metric-label">Posture</div>
-                <div class="metric-value">Proactive</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Model</div>
-                <div class="metric-value">Sandbox-first</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Compute Access</div>
-                <div class="metric-value">CalCompute (public)</div>
-              </div>
-            </div>
-            <div class="callout">
-              <span class="callout-icon">🏛</span>
-              <span>State vendors must now contractually attest to AI safety standards. This creates a growing B2G (business-to-government) compliance category in California. CalCompute may become a significant policy model for federally-defunded research institutions.</span>
-            </div>
-          </div>
-        </div>
-      </div>
- 
-      <!-- ── LAYER 6: OPEN SOURCE / DEVELOPER CLIMATE ── -->
-      <div class="layer-card">
-        <div class="layer-header" onclick="toggleLayer(this)">
-          <div class="layer-icon" style="background:rgba(22,211,238,0.11)">⟨/⟩</div>
-          <div class="layer-meta">
-            <div class="layer-title">Open Source / Developer Climate</div>
-            <div class="layer-tagline">Gov Open Source · Age-Assurance · Dev Friction</div>
-          </div>
-          <div class="layer-right">
-            <span class="pill p-blue">Strong · Tensioned</span>
-            <span class="layer-trend tr-ss">→</span>
-            <span class="layer-chevron">▼</span>
-          </div>
-        </div>
-        <div class="layer-body">
-          <div class="layer-body-inner">
-            <p class="layer-desc">
-              California relaunched its Open Source Portal at code.ca.gov in February 2026, providing free centralized code-sharing infrastructure for government agencies. Policy TL 18-02 directs state agencies to treat open source as the default option. However, a meaningful tension is emerging: the Digital Age Assurance Act (effective January 1, 2027) requires OS-level age collection during device setup, creating compliance conflicts with privacy-respecting open-source operating systems. Developers in California's AI/ML ecosystem benefit from proximity to major tech headquarters but face increasing compliance overhead.
-            </p>
-            <div class="chips">
-              <span class="chip key">code.ca.gov</span>
-              <span class="chip key">Policy TL 18-02</span>
-              <span class="chip">Digital Age Assurance Act</span>
-              <span class="chip">SB 53 Developer Provisions</span>
-              <span class="chip">CPPA Dev Compliance Guidance</span>
-            </div>
-            <div class="metrics">
-              <div class="metric">
-                <div class="metric-label">Gov OSS Mandate</div>
-                <div class="metric-value">Default (TL 18-02)</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Age Assurance</div>
-                <div class="metric-value">Eff. Jan 2027</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Compliance Load</div>
-                <div class="metric-value">High / Rising</div>
-              </div>
-            </div>
-            <div class="callout">
-              <span class="callout-icon">⟨/⟩</span>
-              <span>California remains the largest hub of AI/ML developer activity globally, but increasing regulatory compliance requirements (ADMT, AB 2013 dataset disclosure, SB 53 safety frameworks) are creating measurable friction for early-stage development teams and OSS maintainers.</span>
-            </div>
-          </div>
-        </div>
-      </div>
- 
-      <!-- ── LAYER 7: ENERGY / MINING / COMPUTE ── -->
-      <div class="layer-card">
-        <div class="layer-header" onclick="toggleLayer(this)">
-          <div class="layer-icon" style="background:rgba(249,115,22,0.11)">⚡</div>
-          <div class="layer-meta">
-            <div class="layer-title">Energy / Mining / Compute Posture</div>
-            <div class="layer-tagline">PoW Mining · Energy Rates · Data Center Regulation</div>
-          </div>
-          <div class="layer-right">
-            <span class="pill p-orange">Legal · High Risk</span>
-            <span class="layer-trend tr-mod">↑</span>
-            <span class="layer-chevron">▼</span>
-          </div>
-        </div>
-        <div class="layer-body">
-          <div class="layer-body-inner">
-            <p class="layer-desc">
-              Bitcoin mining is legal in California with no specific prohibition as of 2026, but the structural environment is deeply unfavorable. Residential electricity rates are the highest in the continental US, and tiered pricing penalizes high consumption operations. The environmental regulatory culture is skeptical of proof-of-work. California is considered the US state with highest risk of enacting mining-specific restrictions — absent any federal preemption. AI compute infrastructure faces similar pressures: data centers require environmental impact review and water usage disclosures in drought-prone regions.
-            </p>
-            <div class="chips">
-              <span class="chip">DFAL (Mining Entities)</span>
-              <span class="chip">CPUC Tiered Pricing</span>
-              <span class="chip">CEQA (Data Centers)</span>
-              <span class="chip">CEC Data Center Rules</span>
-              <span class="chip">DOE Reporting (Federal)</span>
-            </div>
-            <div class="metrics">
-              <div class="metric">
-                <div class="metric-label">Mining Status</div>
-                <div class="metric-value">Legal (for now)</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Electricity Cost</div>
-                <div class="metric-value">Highest in US</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Regulatory Risk</div>
-                <div class="metric-value">Highest in US</div>
-              </div>
-            </div>
-            <div class="risk-meter">
-              <div class="risk-row">
-                <span class="risk-label">Mining Reg Risk</span>
-                <div class="risk-track"><div class="risk-fill" style="width:85%;background:var(--signal-red)"></div></div>
-                <span class="risk-score">85</span>
-              </div>
-              <div class="risk-row">
-                <span class="risk-label">Energy Cost Risk</span>
-                <div class="risk-track"><div class="risk-fill" style="width:90%;background:var(--signal-red)"></div></div>
-                <span class="risk-score">90</span>
-              </div>
-              <div class="risk-row">
-                <span class="risk-label">Compute Viability</span>
-                <div class="risk-track"><div class="risk-fill" style="width:45%;background:var(--signal-yellow)"></div></div>
-                <span class="risk-score">45</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
- 
-      <!-- ── LAYER 8: SIGNAL RATING / DIRECTION OF TRAVEL ── -->
-      <div class="layer-card">
-        <div class="layer-header" onclick="toggleLayer(this)">
-          <div class="layer-icon" style="background:rgba(245,166,35,0.11)">📡</div>
-          <div class="layer-meta">
-            <div class="layer-title">Signal Rating / Direction of Travel</div>
-            <div class="layer-tagline">Trend Vector · 12-Month Outlook · Risk Trajectory</div>
-          </div>
-          <div class="layer-right">
-            <span class="pill p-gold">Tightening ↑↑</span>
-            <span class="layer-trend tr-hi">↑↑</span>
-            <span class="layer-chevron">▼</span>
-          </div>
-        </div>
-        <div class="layer-body">
-          <div class="layer-body-inner">
-            <p class="layer-desc">
-              California's regulatory vector is unmistakably directional: governance intensity is increasing across all eight layers. The state is filling the vacuum left by federal deregulation with state-level action, positioning itself as the primary policy architect for AI, privacy, and digital assets in the absence of federal standards. Builders operating in California should model for continued escalation through 2027.
-            </p>
- 
-            <div class="dot-list" style="margin-bottom:16px">
-              <div class="dot-item">
-                <div class="dot-arrow da-hi">↑↑</div>
-                <div class="dot-text"><strong>AI Governance</strong> — Escalating. SB 53 enforced from Jan 2026; EO N-5-26 active; more frontier AI legislation anticipated in 2026–2027 session.</div>
-              </div>
-              <div class="dot-item">
-                <div class="dot-arrow da-mod">↑</div>
-                <div class="dot-text"><strong>Crypto Regulation</strong> — Rising. DFAL licensing deadline July 2026 will create first major compliance test; enforcement posture still forming.</div>
-              </div>
-              <div class="dot-item">
-                <div class="dot-arrow da-hi">↑↑</div>
-                <div class="dot-text"><strong>Privacy Enforcement</strong> — Intensifying. CPPA is active, aggressive, and building precedent with multi-million dollar settlements. No slowdown visible.</div>
-              </div>
-              <div class="dot-item">
-                <div class="dot-arrow da-hi">↑↑</div>
-                <div class="dot-text"><strong>Biometric Restrictions</strong> — Expanding. Municipal bans expected to influence statewide legislation; trajectory points toward state ban in 2026–2027.</div>
-              </div>
-              <div class="dot-item">
-                <div class="dot-arrow da-mod">↑</div>
-                <div class="dot-text"><strong>Mining Risk</strong> — Rising. No new restrictions yet, but political environment represents highest risk of any US state for future PoW legislation.</div>
-              </div>
-              <div class="dot-item">
-                <div class="dot-arrow da-ss">→</div>
-                <div class="dot-text"><strong>Developer Climate</strong> — Stable but tensioned. Strong talent base and government OSS support offset by increasing compliance overhead. Net effect: manageable but increasing drag.</div>
-              </div>
-            </div>
- 
-            <div class="callout">
-              <span class="callout-icon">📡</span>
-              <span>12-month outlook: California will likely pass 3–5 additional AI-related bills in the 2026 session. Expect ADMT enforcement actions targeting AI hiring tools and content recommendation systems. DFAL compliance will be the primary crypto stress test through Q3 2026.</span>
-            </div>
-          </div>
-        </div>
-      </div>
- 
-    </div><!-- /policy-layers -->
-  </div><!-- /main-col -->
- 
- 
-  <!-- ── RIGHT: Sidebar ──────────────────────── -->
-  <div class="sidebar">
- 
-    <!-- Quick Signal Index -->
-    <div class="s-card">
-      <div class="s-card-title">Quick Signal Index</div>
- 
-      <div class="qsi-row">
-        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-orange)"></div>AI Policy</div>
-        <span class="pill p-orange" style="font-size:9px;padding:2px 7px">Highly Regulatory</span>
-      </div>
-      <div class="qsi-row">
-        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-yellow)"></div>Bitcoin / Digital Assets</div>
-        <span class="pill p-yellow" style="font-size:9px;padding:2px 7px">Mixed / Cautious</span>
-      </div>
-      <div class="qsi-row">
-        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-red)"></div>Privacy / Data</div>
-        <span class="pill p-red" style="font-size:9px;padding:2px 7px">Max Enforcement</span>
-      </div>
-      <div class="qsi-row">
-        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-red)"></div>Biometrics</div>
-        <span class="pill p-red" style="font-size:9px;padding:2px 7px">Concern Zone</span>
-      </div>
-      <div class="qsi-row">
-        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-teal)"></div>Public Sector AI</div>
-        <span class="pill p-teal" style="font-size:9px;padding:2px 7px">Growing</span>
-      </div>
-      <div class="qsi-row">
-        <div class="qsi-left"><div class="qsi-dot" style="background:var(--accent-blue)"></div>Open Source / Dev</div>
-        <span class="pill p-blue" style="font-size:9px;padding:2px 7px">Strong / Tensioned</span>
-      </div>
-      <div class="qsi-row">
-        <div class="qsi-left"><div class="qsi-dot" style="background:var(--signal-orange)"></div>Energy / Mining</div>
-        <span class="pill p-orange" style="font-size:9px;padding:2px 7px">Legal · High Risk</span>
-      </div>
-    </div>
- 
-    <!-- Key Compliance Dates -->
-    <div class="s-card">
-      <div class="s-card-title">Key Compliance Dates</div>
- 
-      <div class="date-item">
-        <div class="date-badge">Jan 2026</div>
-        <div class="date-text">SB 53 (TFAIA) enforcement live. AB 2013 dataset disclosure required. CPPA cybersecurity audit &amp; ADMT rules effective.</div>
-      </div>
-      <div class="date-item">
-        <div class="date-badge">Mar 2026</div>
-        <div class="date-text">DFPI begins accepting DFAL license applications. EO N-5-26 issued (AI procurement standards).</div>
-      </div>
-      <div class="date-item">
-        <div class="date-badge">Jul 2026</div>
-        <div class="date-text">DFAL licensing compliance deadline. AB 1052 (BTC as payment to public entities) takes effect.</div>
-      </div>
-      <div class="date-item">
-        <div class="date-badge">Jan 2027</div>
-        <div class="date-text">Digital Age Assurance Act effective. OS-level age collection requirements activate.</div>
-      </div>
-    </div>
- 
-    <!-- Direction of Travel (compact) -->
-    <div class="s-card">
-      <div class="s-card-title">Direction of Travel</div>
- 
-      <div class="s-dot-item">
-        <div class="s-dot-arrow da-hi">↑↑</div>
-        <div class="s-dot-text">
-          <span class="label">AI &amp; Privacy</span>
-          <span class="status">Accelerating</span>
-        </div>
-      </div>
-      <div class="s-dot-item">
-        <div class="s-dot-arrow da-mod">↑</div>
-        <div class="s-dot-text">
-          <span class="label">Crypto Compliance</span>
-          <span class="status">Rising</span>
-        </div>
-      </div>
-      <div class="s-dot-item">
-        <div class="s-dot-arrow da-hi">↑↑</div>
-        <div class="s-dot-text">
-          <span class="label">Mining Risk</span>
-          <span class="status">Escalating</span>
-        </div>
-      </div>
-      <div class="s-dot-item">
-        <div class="s-dot-arrow da-ss">→</div>
-        <div class="s-dot-text">
-          <span class="label">Dev Climate</span>
-          <span class="status">Stable tension</span>
-        </div>
-      </div>
-      <div class="s-dot-item">
-        <div class="s-dot-arrow da-dn">↓</div>
-        <div class="s-dot-text">
-          <span class="label">Uncertainty</span>
-          <span class="status">Decreasing</span>
-        </div>
-      </div>
-    </div>
- 
-  </div><!-- /sidebar -->
- 
-</div><!-- /page-body -->
- 
- 
-<!-- ═══════════════════════════════════════════
-     CONCLUDING PANELS
-     Builder Summary + Operational Profile
-════════════════════════════════════════════ -->
-<div class="concluding-section">
- 
-  <div class="section-header" style="margin-bottom:16px">
-    <span class="section-header-label">Intelligence Summary</span>
-    <div class="section-header-line"></div>
-    <span class="section-header-label">For builders &amp; operators</span>
-  </div>
- 
-  <div class="concluding-grid">
- 
-    <!-- Builder Summary -->
-    <div class="builder-card">
-      <div class="builder-card-title">Builder Summary</div>
- 
-      <div class="builder-quote">
-        "Best jurisdiction for policy awareness and compliance architecture. Not ideal for low-friction early-stage experimentation."
-      </div>
- 
-      <div class="builder-split">
-        <div>
-          <div class="builder-col-title bc-for">Best for</div>
-          <ul class="builder-list">
-            <li>Compliance-forward AI product teams</li>
-            <li>Enterprise privacy &amp; data infrastructure</li>
-            <li>Policy engagement and regulatory strategy</li>
-            <li>B2G (business-to-government) AI services</li>
-            <li>Accessing VC capital and talent density</li>
-          </ul>
-        </div>
-        <div>
-          <div class="builder-col-title bc-avoid">Avoid if</div>
-          <ul class="builder-list">
-            <li>Seeking low-overhead early-stage build environment</li>
-            <li>Operating Bitcoin mining or high-power compute</li>
-            <li>Building biometric or facial recognition products</li>
-            <li>Need rapid iteration without compliance scaffolding</li>
-          </ul>
-        </div>
-      </div>
- 
-      <div class="builder-tags">
-        <span class="btag">Compliance-First</span>
-        <span class="btag">Policy Lab</span>
-        <span class="btag">Talent Dense</span>
-        <span class="btag">High Overhead</span>
-        <span class="btag">VC Capital Flows</span>
-        <span class="btag">Mining Hostile</span>
-        <span class="btag">AI Governance Leader</span>
-        <span class="btag">Privacy Frontier</span>
-      </div>
-    </div>
- 
-    <!-- Operational Profile -->
-    <div class="op-card">
-      <div class="op-card-title">Operational Profile</div>
- 
-      <div class="op-classification">High-Governance · High-Compliance</div>
- 
-      <div class="op-desc">
-        California functions as the US regulatory frontier. Operating here means adopting compliance practices that will likely become national standards. Teams building here gain policy fluency and precedent-setting exposure. Teams avoiding overhead should consider friendlier jurisdictions for early-stage development.
-      </div>
- 
-      <div class="op-divider"></div>
- 
-      <div class="op-stats">
-        <div class="op-stat">
-          <span class="op-stat-label">AI Posture</span>
-          <span class="op-stat-value">Active · Highly Regulatory</span>
-        </div>
-        <div class="op-stat">
-          <span class="op-stat-label">Bitcoin</span>
-          <span class="op-stat-value">Mixed / Cautious</span>
-        </div>
-        <div class="op-stat">
-          <span class="op-stat-label">Biometrics</span>
-          <span class="op-stat-value">Strong Concern Zone</span>
-        </div>
-        <div class="op-stat">
-          <span class="op-stat-label">Public Sector AI</span>
-          <span class="op-stat-value">Growing</span>
-        </div>
-        <div class="op-stat">
-          <span class="op-stat-label">Signal Direction</span>
-          <span class="op-stat-value">Tightening ↑↑</span>
-        </div>
-      </div>
-    </div>
- 
-  </div><!-- /concluding-grid -->
-</div><!-- /concluding-section -->
- 
- 
-<!-- ═══════════════════════════════════════════
-     PAGE FOOTER
-════════════════════════════════════════════ -->
-<footer class="page-footer">
+
+<div class="grid-sidebar">
   <div>
-    <div class="footer-brand">SATOSHI<em>UM</em> · Atlas</div>
-    <div style="margin-top:3px">Jurisdiction Intelligence Engine · v2.0 · Apr 2026</div>
+    <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
+      <h2 id="heading-operational">Operational Profile</h2>
+      <p class="muted">This page is designed to function as a living operational profile rather than a bill list. The goal is to show how California feels to a builder, operator, or policy-aware team across the major layers that shape deployment reality.</p>
+      <div class="status-grid">
+        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--orange)"></span><strong>AI</strong></div><span class="pill orange">active · highly regulatory</span></div>
+        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Bitcoin</strong></div><span class="pill yellow">mixed / cautious</span></div>
+        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--red)"></span><strong>Privacy</strong></div><span class="pill red">maximum enforcement</span></div>
+        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--red)"></span><strong>Biometrics</strong></div><span class="pill red">strong concern zone</span></div>
+        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">growing</span></div>
+        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">high-governance / high-compliance</span></div>
+      </div>
+      <div class="note"><strong>Builder summary:</strong> Best for policy awareness and compliance architecture. Not ideal for low-friction experimentation or cost-sensitive mining and compute operations.</div>
+    </section>
+
+    <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
+      <h2 id="heading-atlas">Atlas Alignment</h2>
+      <p class="muted">To make this page reusable across all 50 states, the presentation layer should stay visibly connected to the Atlas package behind it.</p>
+      <ul class="atlas-list">
+        <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/california/</code></li>
+        <li><strong>Jurisdiction lens</strong><br>Pacific Coast corridor lens with evidence-first normalization and no statewide inventory sprawl.</li>
+        <li><strong>Evidence basis</strong><br>This page should summarize the state package rather than replace it. The package remains the canonical source for structure, signals, and change tracking.</li>
+        <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+      </ul>
+      <div class="callout mini">For the other 49 states, keep this same section but swap in the state-specific path, corridor/lens language, and update metadata. That makes the HTML pages visibly Atlas-connected from day one.</div>
+    </section>
+
+    <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
+      <h2 id="heading-ai">AI Policy</h2>
+      <p class="muted">California is the de facto U.S. policy laboratory for AI governance. After the veto of SB 1047, the state shifted toward narrower but still forceful action. SB 53 and related executive/procurement measures create a posture where frontier-model safety, reporting, and vendor attestations matter operationally.</p>
+      <div class="subgrid">
+        <div class="mini-box"><div class="label">Status</div><div class="value">Highly Regulatory</div></div>
+        <div class="mini-box"><div class="label">Primary posture</div><div class="value">Safety + disclosure + procurement controls</div></div>
+        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Build for scrutiny, not stealth</div></div>
+      </div>
+      <div class="detail-list">
+        <div class="detail-item"><strong>Key anchors:</strong> SB 53, AB 2013, EO N-5-26, CalCompute, CPPA ADMT rules.</div>
+        <div class="detail-item"><strong>Enforcement profile:</strong> incident reporting, public transparency expectations, procurement attestations, and heightened vendor diligence.</div>
+        <div class="detail-item"><strong>Builder implication:</strong> product teams should expect documentation burden, model-governance expectations, and public-facing accountability to rise rather than soften.</div>
+      </div>
+      <div class="note">Operational signal: California is not the easiest state for rapid frontier experimentation, but it is one of the best for learning where future compliance expectations may be headed nationally.</div>
+    </section>
+
+    <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
+      <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
+      <p class="muted">California’s digital asset posture is not anti-Bitcoin, but it is compliance-heavy. DFAL creates a serious licensing environment for custodial and exchange-style activity, while public-sector openness to Bitcoin payments adds a more constructive layer.</p>
+      <div class="subgrid">
+        <div class="mini-box"><div class="label">Status</div><div class="value">Mixed / Cautious</div></div>
+        <div class="mini-box"><div class="label">Regulator</div><div class="value">DFPI</div></div>
+        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Clarity exists, but overhead is real</div></div>
+      </div>
+      <div class="detail-list">
+        <div class="detail-item"><strong>Key anchors:</strong> DFAL, DFPI licensing framework, AB 1052, AML/BSA expectations, capital and surety requirements.</div>
+        <div class="detail-item"><strong>Positive signal:</strong> California is not closing the door on Bitcoin usage; it is building a regulatory gate around professionalized activity.</div>
+        <div class="detail-item"><strong>Builder implication:</strong> custodians, exchanges, wallet providers, and institutional-facing services should assume licensing, disclosure, and programmatic compliance are table stakes.</div>
+      </div>
+    </section>
+
+    <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
+      <h2 id="heading-privacy">Privacy / Data Handling</h2>
+      <p class="muted">California remains the strongest state privacy environment in the U.S. CPPA enforcement, ADMT risk assessments, cybersecurity audits, and settlement precedent create a maximum-enforcement climate for teams handling resident data.</p>
+      <div class="subgrid">
+        <div class="mini-box"><div class="label">Status</div><div class="value">Maximum Enforcement</div></div>
+        <div class="mini-box"><div class="label">Core regime</div><div class="value">CCPA / CPRA</div></div>
+        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Treat California as a default high-water mark</div></div>
+      </div>
+      <div class="detail-list">
+        <div class="detail-item"><strong>Key anchors:</strong> CCPA, CPRA, CPPA audit rules, ADMT requirements, recent settlement activity.</div>
+        <div class="detail-item"><strong>Enforcement profile:</strong> active agency posture, meaningful penalty risk, and stronger expectations around auditability and consumer rights workflows.</div>
+        <div class="detail-item"><strong>Builder implication:</strong> even non-California companies become California operators the moment they collect qualifying resident data at scale.</div>
+      </div>
+    </section>
+
+    <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
+      <h2 id="heading-biometrics">Biometrics / Identity</h2>
+      <p class="muted">California treats biometric and identity-sensitive systems as an area of elevated caution. Between SPI treatment under CPRA and local facial-recognition bans, the environment is structurally skeptical of surveillance-like deployment models.</p>
+      <div class="subgrid">
+        <div class="mini-box"><div class="label">Status</div><div class="value">Strong Concern Zone</div></div>
+        <div class="mini-box"><div class="label">Identity climate</div><div class="value">Consent and purpose-sensitive</div></div>
+        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Assume scrutiny before rollout</div></div>
+      </div>
+      <div class="detail-list">
+        <div class="detail-item"><strong>Key anchors:</strong> CPRA biometric SPI treatment, facial-recognition restrictions, San Francisco/Oakland/Berkeley bans, workforce constraints.</div>
+        <div class="detail-item"><strong>Risk profile:</strong> breach exposure, reputational heat, and likely continued tightening in public-sector and employment-adjacent uses.</div>
+        <div class="detail-item"><strong>Builder implication:</strong> biometric-heavy products should be positioned as a special-risk category in California, especially where identity, inference, or behavioral monitoring is involved.</div>
+      </div>
+    </section>
+
+    <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
+      <h2 id="heading-public-sector">Education / Public Sector AI</h2>
+      <p class="muted">California is actively bringing AI into state operations, but under a sandbox-first and safeguard-heavy model. This makes the state a useful case study for how public-sector AI may mature when experimentation and procurement are tightly coupled to policy control.</p>
+      <div class="subgrid">
+        <div class="mini-box"><div class="label">Status</div><div class="value">Growing</div></div>
+        <div class="mini-box"><div class="label">Model</div><div class="value">Sandbox-first</div></div>
+        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Strong fit for B2G compliance-aware builders</div></div>
+      </div>
+      <div class="detail-list">
+        <div class="detail-item"><strong>Key anchors:</strong> EO N-5-26, CalCompute, CDT sandbox activity, CCST literacy and fellowship support.</div>
+        <div class="detail-item"><strong>Growth signal:</strong> public-sector AI is advancing, but with layered review and vendor attestation expectations.</div>
+        <div class="detail-item"><strong>Builder implication:</strong> teams serving education or government can find opportunity here, but only if they are prepared for policy-facing integration work.</div>
+      </div>
+    </section>
+
+    <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
+      <h2 id="heading-developer">Open Source / Developer Climate</h2>
+      <p class="muted">California remains talent-dense and innovation-heavy, but the operating climate is increasingly tensioned. Government open-source support exists, yet age-assurance rules, AI disclosures, and privacy requirements raise the floor for compliant development.</p>
+      <div class="subgrid">
+        <div class="mini-box"><div class="label">Status</div><div class="value">Strong but Tensioned</div></div>
+        <div class="mini-box"><div class="label">Strength</div><div class="value">Talent + institutional proximity</div></div>
+        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Great builders, higher drag</div></div>
+      </div>
+      <div class="detail-list">
+        <div class="detail-item"><strong>Key anchors:</strong> code.ca.gov, TL 18-02, Digital Age Assurance Act, SB 53 developer effects, CPPA compliance guidance.</div>
+        <div class="detail-item"><strong>Climate reading:</strong> California is still a magnet for builders, but policy friction increasingly shapes product architecture and onboarding design.</div>
+        <div class="detail-item"><strong>Builder implication:</strong> excellent for mature teams that want policy fluency; less ideal for extremely lean teams trying to avoid upfront compliance complexity.</div>
+      </div>
+    </section>
+
+    <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
+      <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
+      <p class="muted">California is one of the most difficult U.S. states for mining-intensive or power-sensitive operations. Mining is currently legal, but energy cost, environmental posture, and regulatory culture make the state structurally unfavorable for large-scale proof-of-work or heavy compute deployment.</p>
+      <div class="subgrid">
+        <div class="mini-box"><div class="label">Status</div><div class="value">Legal · High Risk</div></div>
+        <div class="mini-box"><div class="label">Energy cost</div><div class="value">Very high</div></div>
+        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low appeal for mining-first strategies</div></div>
+      </div>
+      <div class="radar" aria-label="California energy and mining risk profile">
+        <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:85%;background:var(--red)"></div></div><div class="score">85</div></div>
+        <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:90%;background:var(--red)"></div></div><div class="score">90</div></div>
+        <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:45%;background:var(--yellow)"></div></div><div class="score">45</div></div>
+      </div>
+      <div class="note">Builder implication: California may still be useful as a governance, policy, or enterprise-control hub, but it is rarely the obvious answer for mining, energy-arbitrage, or low-cost compute expansion.</div>
+    </section>
+
+    <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
+      <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
+      <p class="muted">California’s regulatory vector is tightening across nearly every layer. In practical terms, that means builders should model this jurisdiction as an early warning surface for future U.S. compliance and governance patterns.</p>
+      <div class="detail-list">
+        <div class="detail-item"><strong>AI Governance</strong> — escalating through active enforcement, procurement controls, and likely continuing legislative refinement.</div>
+        <div class="detail-item"><strong>Crypto Regulation</strong> — rising as DFAL implementation becomes the next major compliance proving ground.</div>
+        <div class="detail-item"><strong>Privacy Enforcement</strong> — intensifying as CPPA precedent expands and ADMT-related scrutiny matures.</div>
+        <div class="detail-item"><strong>Biometric Restrictions</strong> — expanding, with local policy patterns likely to influence broader state posture.</div>
+        <div class="detail-item"><strong>Mining Risk</strong> — rising, even without an outright ban, because cost and politics already create a hostile structural profile.</div>
+        <div class="detail-item"><strong>Developer Climate</strong> — still strong, but increasingly shaped by compliance drag rather than pure experimentation freedom.</div>
+      </div>
+      <div class="callout">12-month outlook: California is likely to continue adding AI-related oversight, push ADMT enforcement, and use DFAL implementation as a stress test for digital asset compliance.</div>
+    </section>
   </div>
-  <div class="footer-disclaimer">
-    Operational profiles are advisory intelligence only. Laws change. Always verify with qualified legal counsel before making jurisdictional or operational decisions.
-  </div>
-</footer>
- 
- 
+
+  <aside>
+    <div class="card" aria-labelledby="heading-sidebar-summary">
+      <div class="smallcaps">Snapshot</div>
+      <h3 id="heading-sidebar-summary">California at a glance</h3>
+      <p class="muted mini">Best used as a compliance-awareness and policy-architecture benchmark state. Less attractive for low-friction experimentation, biometric-heavy identity systems, or mining-led infrastructure.</p>
+    </div>
+
+    <div class="card" aria-labelledby="heading-builder-summary">
+      <div class="smallcaps">Builder Summary</div>
+      <h3 id="heading-builder-summary">Recommended read</h3>
+      <p class="muted mini"><strong>Best for:</strong> policy awareness, governance-aware AI, public-sector experimentation, enterprise trust design.</p>
+      <p class="muted mini"><strong>Less ideal for:</strong> cheap compute, mining-first deployment, stealthy data practices, frictionless early-stage experimentation.</p>
+    </div>
+
+    <div class="card" aria-labelledby="heading-compliance-dates">
+      <div class="smallcaps">Key Dates</div>
+      <h3 id="heading-compliance-dates">Timeline markers</h3>
+      <ul class="mini">
+        <li><strong>Jan 2026</strong> — SB 53 enforcement live; AB 2013 dataset disclosure required; CPPA audit and ADMT rules effective.</li>
+        <li><strong>Mar 2026</strong> — DFPI begins taking DFAL license applications; EO N-5-26 issued.</li>
+        <li><strong>Jul 2026</strong> — DFAL compliance deadline; AB 1052 public-entity payment enablement takes effect.</li>
+        <li><strong>Jan 2027</strong> — Digital Age Assurance Act takes effect.</li>
+      </ul>
+    </div>
+
+    <div class="card" aria-labelledby="heading-maintenance">
+      <div class="smallcaps">Page Maintenance</div>
+      <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+      <ul class="mini">
+        <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
+        <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
+        <li>Update this page only after the underlying package files are updated.</li>
+        <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      </ul>
+    </div>
+
+    <div class="card" aria-labelledby="heading-standardization">
+      <div class="smallcaps">Canonical Pattern</div>
+      <h3 id="heading-standardization">For all 50 states</h3>
+      <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+    </div>
+  </aside>
+</div>
+
+</main>
+
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+<div id="footer-container"></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
-  function toggleLayer(headerEl) {
-    headerEl.parentElement.classList.toggle('open');
-  }
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
 </script>
- 
+</div>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
