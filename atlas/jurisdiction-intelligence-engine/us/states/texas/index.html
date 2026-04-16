@@ -1,9 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Texas — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Texas — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Texas operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/texas/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
   <style>
     /* ══════════════════════════════════════════
        DESIGN SYSTEM TOKENS
@@ -41,6 +50,8 @@
       font-size: 15px;
       line-height: 1.6;
       min-height: 100vh;
+      scroll-behavior: smooth;
+      padding-top: 80px;
     }
  
     /* ══════════════════════════════════════════
@@ -916,12 +927,78 @@
     }
  
  
+
+
+    .atlas-strip {
+      max-width: 1140px;
+      margin: 18px auto 0;
+      padding: 0 40px;
+    }
+
+    .atlas-strip-card {
+      background: linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+      border: 1px solid rgba(214,163,74,.15);
+      border-radius: 16px;
+      padding: 18px 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+    }
+
+    .atlas-strip-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+    }
+
+    .atlas-strip-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+      max-width: 900px;
+    }
+
+    .atlas-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .atlas-mini {
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    .atlas-mini-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .atlas-mini-value {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .footer-block{padding-bottom:40px}
+
     /* ══════════════════════════════════════════
        RESPONSIVE
     ══════════════════════════════════════════ */
     @media (max-width: 960px) {
       .page-body          { grid-template-columns: 1fr; padding: 28px 20px 0; }
       .concluding-section { padding: 0 20px 40px; }
+      .atlas-strip { padding: 0 20px; }
+      .atlas-strip-grid { grid-template-columns: 1fr 1fr; }
       .concluding-grid    { grid-template-columns: 1fr; }
       .hero               { padding: 40px 20px 32px; }
       .hero-title         { font-size: 44px; }
@@ -937,6 +1014,7 @@
       .signal-grid   { grid-template-columns: repeat(2, 1fr); gap: 8px; }
       .metrics       { grid-template-columns: 1fr 1fr; }
       .builder-split { grid-template-columns: 1fr; }
+      .atlas-strip-grid { grid-template-columns: 1fr; }
       .page-footer   { flex-direction: column; gap: 8px; }
       .footer-disclaimer { text-align: center; max-width: 100%; }
     }
@@ -944,32 +1022,11 @@
 </head>
 <body>
  
-<!-- ═══════════════════════════════════════════
-     BREADCRUMB BAR
-════════════════════════════════════════════ -->
-<nav class="breadcrumb-bar">
-  <a href="https://satoshium.us" class="nav-brand">
-    <div class="nav-logo">S</div>
-    <div class="nav-wordmark">SATOSHI<em>UM</em></div>
-  </a>
- 
-  <div class="breadcrumb">
-    <a href="https://satoshium.us/atlas/">Atlas</a>
-    <span class="sep">›</span>
-    <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/">Jurisdiction Engine</a>
-    <span class="sep">›</span>
-    <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/">United States</a>
-    <span class="sep">›</span>
-    <span class="current">Texas</span>
-  </div>
- 
-  <div class="bar-right">
-    <div class="live-dot"></div>
-    <span>Updated Apr 2026</span>
-  </div>
-</nav>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
  
  
+<main id="main-content">
 <!-- ═══════════════════════════════════════════
      HERO — Texas at a glance
 ════════════════════════════════════════════ -->
@@ -1088,8 +1145,22 @@
  
   </div>
 </section>
- 
- 
+
+<div class="atlas-strip">
+  <div class="atlas-strip-card">
+    <div class="atlas-strip-title">Atlas Alignment</div>
+    <p class="atlas-strip-text">
+      This page is the public-facing operational profile for Texas inside the Satoshium Atlas Jurisdiction Intelligence Engine. It should remain downstream of the canonical Atlas package and reflect the same evidence-first normalization logic used across state packages.
+    </p>
+    <div class="atlas-strip-grid">
+      <div class="atlas-mini"><div class="atlas-mini-label">Role</div><div class="atlas-mini-value">Public operational surface</div></div>
+      <div class="atlas-mini"><div class="atlas-mini-label">Canonical source</div><div class="atlas-mini-value">Atlas state package</div></div>
+      <div class="atlas-mini"><div class="atlas-mini-label">Package path</div><div class="atlas-mini-value">atlas-export/jurisdictions/us/states/texas/</div></div>
+      <div class="atlas-mini"><div class="atlas-mini-label">Sync model</div><div class="atlas-mini-value">Atlas-derived / keep aligned</div></div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════════
      MAIN CONTENT — Policy Layers + Sidebar
 ════════════════════════════════════════════ -->
@@ -1721,28 +1792,31 @@
  
   </div><!-- /concluding-grid -->
 </div><!-- /concluding-section -->
- 
- 
-<!-- ═══════════════════════════════════════════
-     PAGE FOOTER
-════════════════════════════════════════════ -->
-<footer class="page-footer">
-  <div>
-    <div class="footer-brand">SATOSHI<em>UM</em> · Atlas</div>
-    <div style="margin-top:3px">Jurisdiction Intelligence Engine · v2.0 · Apr 2026</div>
-  </div>
-  <div class="footer-disclaimer">
-    Operational profiles are advisory intelligence only. Laws change. Always verify with qualified legal counsel before making jurisdictional or operational decisions.
-  </div>
-</footer>
- 
- 
+
+</main>
+
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+<div id="footer-container"></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+
 <script>
   function toggleLayer(headerEl) {
     headerEl.parentElement.classList.toggle('open');
   }
 </script>
  
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
- 
