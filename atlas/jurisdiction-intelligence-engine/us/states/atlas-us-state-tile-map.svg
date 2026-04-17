@@ -86,6 +86,22 @@ svg {
 }
 </style>
 
+<script><![CDATA[
+function goTop(evt, href){
+  if(evt) evt.preventDefault();
+  try {
+    if (window.top && window.top !== window) {
+      window.top.location.href = href;
+    } else {
+      window.location.href = href;
+    }
+  } catch (e) {
+    window.location.href = href;
+  }
+  return false;
+}
+]]></script>
+
 <rect class="frame" x="1" y="1" width="1310" height="580" rx="22" />
 <text x="30" y="20" class="legend-title">Atlas U.S. State Tile Map</text>
 <text x="30" y="558" class="small">Tile map for navigation now; replace later with a geographic SVG without changing the state links.</text>
@@ -108,19 +124,19 @@ svg {
   <text class="name" x="404.0" y="78">North Dakota</text>
 </g>
 
-<a class="state-link" href="minnesota/" target="_top" aria-label="Minnesota">
+<a class="state-link" href="minnesota/" target="_top" aria-label="Minnesota" onclick="return goTop(event, 'minnesota/');">
   <rect class="tile" x="534" y="36" width="76" height="56" rx="12"/>
   <text class="abbr" x="572.0" y="60">MN</text>
   <text class="name" x="572.0" y="78">Minnesota</text>
 </a>
 
-<a class="state-link" href="wisconsin/" target="_top" aria-label="Wisconsin">
+<a class="state-link" href="wisconsin/" target="_top" aria-label="Wisconsin" onclick="return goTop(event, 'wisconsin/');">
   <rect class="tile" x="702" y="36" width="76" height="56" rx="12"/>
   <text class="abbr" x="740.0" y="60">WI</text>
   <text class="name" x="740.0" y="78">Wisconsin</text>
 </a>
 
-<a class="state-link" href="michigan/" target="_top" aria-label="Michigan">
+<a class="state-link" href="michigan/" target="_top" aria-label="Michigan" onclick="return goTop(event, 'michigan/');">
   <rect class="tile" x="786" y="36" width="76" height="56" rx="12"/>
   <text class="abbr" x="824.0" y="60">MI</text>
   <text class="name" x="824.0" y="78">Michigan</text>
@@ -150,7 +166,7 @@ svg {
   <text class="name" x="152.0" y="142">Idaho</text>
 </g>
 
-<a class="state-link" href="wyoming/" target="_top" aria-label="Wyoming">
+<a class="state-link" href="wyoming/" target="_top" aria-label="Wyoming" onclick="return goTop(event, 'wyoming/');">
   <rect class="tile" x="282" y="100" width="76" height="56" rx="12"/>
   <text class="abbr" x="320.0" y="124">WY</text>
   <text class="name" x="320.0" y="142">Wyoming</text>
@@ -168,31 +184,31 @@ svg {
   <text class="name" x="572.0" y="142">Iowa</text>
 </g>
 
-<a class="state-link" href="illinois/" target="_top" aria-label="Illinois">
+<a class="state-link" href="illinois/" target="_top" aria-label="Illinois" onclick="return goTop(event, 'illinois/');">
   <rect class="tile" x="618" y="100" width="76" height="56" rx="12"/>
   <text class="abbr" x="656.0" y="124">IL</text>
   <text class="name" x="656.0" y="142">Illinois</text>
 </a>
 
-<a class="state-link" href="indiana/" target="_top" aria-label="Indiana">
+<a class="state-link" href="indiana/" target="_top" aria-label="Indiana" onclick="return goTop(event, 'indiana/');">
   <rect class="tile" x="702" y="100" width="76" height="56" rx="12"/>
   <text class="abbr" x="740.0" y="124">IN</text>
   <text class="name" x="740.0" y="142">Indiana</text>
 </a>
 
-<a class="state-link" href="ohio/" target="_top" aria-label="Ohio">
+<a class="state-link" href="ohio/" target="_top" aria-label="Ohio" onclick="return goTop(event, 'ohio/');">
   <rect class="tile" x="786" y="100" width="76" height="56" rx="12"/>
   <text class="abbr" x="824.0" y="124">OH</text>
   <text class="name" x="824.0" y="142">Ohio</text>
 </a>
 
-<a class="state-link" href="pennsylvania/" target="_top" aria-label="Pennsylvania">
+<a class="state-link" href="pennsylvania/" target="_top" aria-label="Pennsylvania" onclick="return goTop(event, 'pennsylvania/');">
   <rect class="tile" x="870" y="100" width="76" height="56" rx="12"/>
   <text class="abbr" x="908.0" y="124">PA</text>
   <text class="name" x="908.0" y="142">Pennsylvania</text>
 </a>
 
-<a class="state-link" href="new-york/" target="_top" aria-label="New York">
+<a class="state-link" href="new-york/" target="_top" aria-label="New York" onclick="return goTop(event, 'new-york/');">
   <rect class="tile" x="954" y="100" width="76" height="56" rx="12"/>
   <text class="abbr" x="992.0" y="124">NY</text>
   <text class="name" x="992.0" y="142">New York</text>
@@ -204,31 +220,31 @@ svg {
   <text class="name" x="1076.0" y="142">New Hampshire</text>
 </g>
 
-<a class="state-link" href="massachusetts/" target="_top" aria-label="Massachusetts">
+<a class="state-link" href="massachusetts/" target="_top" aria-label="Massachusetts" onclick="return goTop(event, 'massachusetts/');">
   <rect class="tile" x="1122" y="100" width="76" height="56" rx="12"/>
   <text class="abbr" x="1160.0" y="124">MA</text>
   <text class="name" x="1160.0" y="142">Massachusetts</text>
 </a>
 
-<a class="state-link" href="california/" target="_top" aria-label="California">
+<a class="state-link" href="california/" target="_top" aria-label="California" onclick="return goTop(event, 'california/');">
   <rect class="tile" x="30" y="164" width="76" height="56" rx="12"/>
   <text class="abbr" x="68.0" y="188">CA</text>
   <text class="name" x="68.0" y="206">California</text>
 </a>
 
-<a class="state-link" href="nevada/" target="_top" aria-label="Nevada">
+<a class="state-link" href="nevada/" target="_top" aria-label="Nevada" onclick="return goTop(event, 'nevada/');">
   <rect class="tile" x="114" y="164" width="76" height="56" rx="12"/>
   <text class="abbr" x="152.0" y="188">NV</text>
   <text class="name" x="152.0" y="206">Nevada</text>
 </a>
 
-<a class="state-link" href="utah/" target="_top" aria-label="Utah">
+<a class="state-link" href="utah/" target="_top" aria-label="Utah" onclick="return goTop(event, 'utah/');">
   <rect class="tile" x="198" y="164" width="76" height="56" rx="12"/>
   <text class="abbr" x="236.0" y="188">UT</text>
   <text class="name" x="236.0" y="206">Utah</text>
 </a>
 
-<a class="state-link" href="colorado.html" target="_top" aria-label="Colorado">
+<a class="state-link" href="colorado.html" target="_top" aria-label="Colorado" onclick="return goTop(event, 'colorado.html');">
   <rect class="tile" x="282" y="164" width="76" height="56" rx="12"/>
   <text class="abbr" x="320.0" y="188">CO</text>
   <text class="name" x="320.0" y="206">Colorado</text>
@@ -240,7 +256,7 @@ svg {
   <text class="name" x="404.0" y="206">Nebraska</text>
 </g>
 
-<a class="state-link" href="missouri/" target="_top" aria-label="Missouri">
+<a class="state-link" href="missouri/" target="_top" aria-label="Missouri" onclick="return goTop(event, 'missouri/');">
   <rect class="tile" x="534" y="164" width="76" height="56" rx="12"/>
   <text class="abbr" x="572.0" y="188">MO</text>
   <text class="name" x="572.0" y="206">Missouri</text>
@@ -258,7 +274,7 @@ svg {
   <text class="name" x="824.0" y="206">West Virginia</text>
 </g>
 
-<a class="state-link" href="virginia/" target="_top" aria-label="Virginia">
+<a class="state-link" href="virginia/" target="_top" aria-label="Virginia" onclick="return goTop(event, 'virginia/');">
   <rect class="tile" x="870" y="164" width="76" height="56" rx="12"/>
   <text class="abbr" x="908.0" y="188">VA</text>
   <text class="name" x="908.0" y="206">Virginia</text>
@@ -270,13 +286,13 @@ svg {
   <text class="name" x="992.0" y="206">Maryland</text>
 </g>
 
-<a class="state-link" href="new-jersey/" target="_top" aria-label="New Jersey">
+<a class="state-link" href="new-jersey/" target="_top" aria-label="New Jersey" onclick="return goTop(event, 'new-jersey/');">
   <rect class="tile" x="1038" y="164" width="76" height="56" rx="12"/>
   <text class="abbr" x="1076.0" y="188">NJ</text>
   <text class="name" x="1076.0" y="206">New Jersey</text>
 </a>
 
-<a class="state-link" href="connecticut/" target="_top" aria-label="Connecticut">
+<a class="state-link" href="connecticut/" target="_top" aria-label="Connecticut" onclick="return goTop(event, 'connecticut/');">
   <rect class="tile" x="1122" y="164" width="76" height="56" rx="12"/>
   <text class="abbr" x="1160.0" y="188">CT</text>
   <text class="name" x="1160.0" y="206">Connecticut</text>
@@ -288,31 +304,31 @@ svg {
   <text class="name" x="1244.0" y="206">Rhode Island</text>
 </g>
 
-<a class="state-link" href="arizona/" target="_top" aria-label="Arizona">
+<a class="state-link" href="arizona/" target="_top" aria-label="Arizona" onclick="return goTop(event, 'arizona/');">
   <rect class="tile" x="114" y="228" width="76" height="56" rx="12"/>
   <text class="abbr" x="152.0" y="252">AZ</text>
   <text class="name" x="152.0" y="270">Arizona</text>
 </a>
 
-<a class="state-link" href="new-mexico/" target="_top" aria-label="New Mexico">
+<a class="state-link" href="new-mexico/" target="_top" aria-label="New Mexico" onclick="return goTop(event, 'new-mexico/');">
   <rect class="tile" x="198" y="228" width="76" height="56" rx="12"/>
   <text class="abbr" x="236.0" y="252">NM</text>
   <text class="name" x="236.0" y="270">New Mexico</text>
 </a>
 
-<a class="state-link" href="kansas/" target="_top" aria-label="Kansas">
+<a class="state-link" href="kansas/" target="_top" aria-label="Kansas" onclick="return goTop(event, 'kansas/');">
   <rect class="tile" x="366" y="228" width="76" height="56" rx="12"/>
   <text class="abbr" x="404.0" y="252">KS</text>
   <text class="name" x="404.0" y="270">Kansas</text>
 </a>
 
-<a class="state-link" href="arkansas/" target="_top" aria-label="Arkansas">
+<a class="state-link" href="arkansas/" target="_top" aria-label="Arkansas" onclick="return goTop(event, 'arkansas/');">
   <rect class="tile" x="534" y="228" width="76" height="56" rx="12"/>
   <text class="abbr" x="572.0" y="252">AR</text>
   <text class="name" x="572.0" y="270">Arkansas</text>
 </a>
 
-<a class="state-link" href="tennessee/" target="_top" aria-label="Tennessee">
+<a class="state-link" href="tennessee/" target="_top" aria-label="Tennessee" onclick="return goTop(event, 'tennessee/');">
   <rect class="tile" x="702" y="228" width="76" height="56" rx="12"/>
   <text class="abbr" x="740.0" y="252">TN</text>
   <text class="name" x="740.0" y="270">Tennessee</text>
@@ -324,19 +340,19 @@ svg {
   <text class="name" x="908.0" y="270">North Carolina</text>
 </g>
 
-<a class="state-link" href="delaware/" target="_top" aria-label="Delaware">
+<a class="state-link" href="delaware/" target="_top" aria-label="Delaware" onclick="return goTop(event, 'delaware/');">
   <rect class="tile" x="1038" y="228" width="76" height="56" rx="12"/>
   <text class="abbr" x="1076.0" y="252">DE</text>
   <text class="name" x="1076.0" y="270">Delaware</text>
 </a>
 
-<a class="state-link" href="oklahoma/" target="_top" aria-label="Oklahoma">
+<a class="state-link" href="oklahoma/" target="_top" aria-label="Oklahoma" onclick="return goTop(event, 'oklahoma/');">
   <rect class="tile" x="366" y="292" width="76" height="56" rx="12"/>
   <text class="abbr" x="404.0" y="316">OK</text>
   <text class="name" x="404.0" y="334">Oklahoma</text>
 </a>
 
-<a class="state-link" href="louisiana/" target="_top" aria-label="Louisiana">
+<a class="state-link" href="louisiana/" target="_top" aria-label="Louisiana" onclick="return goTop(event, 'louisiana/');">
   <rect class="tile" x="534" y="292" width="76" height="56" rx="12"/>
   <text class="abbr" x="572.0" y="316">LA</text>
   <text class="name" x="572.0" y="334">Louisiana</text>
@@ -360,7 +376,7 @@ svg {
   <text class="name" x="908.0" y="334">South Carolina</text>
 </g>
 
-<a class="state-link" href="texas/" target="_top" aria-label="Texas">
+<a class="state-link" href="texas/" target="_top" aria-label="Texas" onclick="return goTop(event, 'texas/');">
   <rect class="tile" x="282" y="356" width="76" height="56" rx="12"/>
   <text class="abbr" x="320.0" y="380">TX</text>
   <text class="name" x="320.0" y="398">Texas</text>
@@ -372,7 +388,7 @@ svg {
   <text class="name" x="824.0" y="398">Georgia</text>
 </g>
 
-<a class="state-link" href="florida/" target="_top" aria-label="Florida">
+<a class="state-link" href="florida/" target="_top" aria-label="Florida" onclick="return goTop(event, 'florida/');">
   <rect class="tile" x="954" y="356" width="76" height="56" rx="12"/>
   <text class="abbr" x="992.0" y="380">FL</text>
   <text class="name" x="992.0" y="398">Florida</text>
