@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Wisconsin — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Wisconsin operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/wisconsin/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --card-wm:url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --panel-2:#101624;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --line-strong:rgba(214,163,74,.28);
+ --red:#ef4444;
+ --orange:#f97316;
+ --yellow:#eab308;
+ --green:#22c55e;
+ --teal:#14b8a6;
+ --blue:#4a9eff;
+ --purple:#8b5cf6;
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+h1{font-size:38px;color:var(--gold2);line-height:1.1;margin:0 0 10px}
+h2{font-size:22px;color:var(--gold2);margin:0 0 10px}
+h3{font-size:16px;color:var(--text);margin:0 0 6px}
+p{margin:0 0 12px}
+ul{margin:8px 0 0 18px}
+.muted{color:var(--muted)}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ padding:7px 12px;border-radius:999px;
+ border:1px solid var(--line);background:rgba(214,163,74,.06);
+ color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:30px 24px;margin-bottom:18px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+.hero::after{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+ background-image:linear-gradient(rgba(214,163,74,.12) 1px, transparent 1px),linear-gradient(90deg, rgba(214,163,74,.12) 1px, transparent 1px);
+ background-size:40px 40px;
+ mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.hero-chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:18px;margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35);border-color:var(--line-strong)}
+.card.anchor-target{scroll-margin-top:110px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-sidebar{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.span-2{grid-column:1 / -1}
+.note{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted);font-size:14px}
+.band{
+ display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px;
+}
+.metric{
+ border:1px solid rgba(214,163,74,.12);border-radius:14px;padding:14px;background:rgba(255,255,255,.02);
+}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.metric .value{font-size:14px;font-weight:700}
+.kicker{font-size:13px;color:var(--muted);max-width:920px}
+.mini{font-size:13px}
+.subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mini-box{padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.mini-box .label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.mini-box .value{font-size:13px;font-weight:700}
+.status-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.status-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.status-left{display:flex;align-items:center;gap:10px;min-width:0}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.03em;border:1px solid transparent;white-space:nowrap}
+.pill.red{background:rgba(239,68,68,.14);color:#ff8e8e;border-color:rgba(239,68,68,.22)}
+.pill.orange{background:rgba(249,115,22,.14);color:#ffb27c;border-color:rgba(249,115,22,.22)}
+.pill.yellow{background:rgba(234,179,8,.14);color:#f5db77;border-color:rgba(234,179,8,.22)}
+.pill.green{background:rgba(34,197,94,.14);color:#98ecb1;border-color:rgba(34,197,94,.22)}
+.pill.teal{background:rgba(20,184,166,.14);color:#8ce3d9;border-color:rgba(20,184,166,.22)}
+.pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
+.pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
+.pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
+.detail-list{display:grid;gap:10px}
+.detail-item{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.detail-item strong{color:var(--text)}
+.atlas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.atlas-list li{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.atlas-list code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--gold2);font-size:12px}
+.callout{
+ padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+ background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
+}
+.radar{display:grid;gap:10px;margin-top:12px}
+.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
+.radar-label{font-size:12px;color:var(--muted)}
+.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+.fill{height:100%;border-radius:999px}
+.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.footer-block{padding-bottom:34px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+.smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+@media (max-width:980px){
+ .grid-sidebar{grid-template-columns:1fr}
+ .band{grid-template-columns:repeat(2,1fr)}
+ .subgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+ .grid-2,.grid-3,.status-grid,.subgrid{grid-template-columns:1fr}
+ .band{grid-template-columns:1fr}
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .radar-row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .wrap.content{animation:none;opacity:1;transform:none}
+ .card{transition:none}
+ .card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+ 
+<main id="main-content" class="wrap content">
+ 
+<!-- ── HERO ─────────────────────────────────── -->
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <h1 id="heading-hero">Wisconsin</h1>
+    <p class="kicker">Wisconsin operates as a Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor supporting freshwater shipping interfaces across Lakes Michigan and Superior, Mississippi-aligned inland routing continuity, and upper-midwest freight coordination surfaces linking Great Lakes and interior deployment corridors of the United States.</p>
+ 
+    <div class="hero-meta">
+      <div class="hero-chip">WI · US-WI</div>
+      <div class="hero-chip">Madison</div>
+      <div class="hero-chip">Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor</div>
+      <div class="hero-chip">Atlas operational profile</div>
+      <div class="hero-chip">Updated Apr 2026</div>
+    </div>
+ 
+    <div class="band" aria-label="Wisconsin quick signals">
+      <div class="metric"><div class="label">AI Policy</div><div class="value">Limited / Passive</div></div>
+      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Permissive / Enabling</div></div>
+      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Federal Baseline</div></div>
+      <div class="metric"><div class="label">Biometrics</div><div class="value">Limited Restrictions</div></div>
+      <div class="metric"><div class="label">Operational Signal</div><div class="value">Moderate / Corridor-Active</div></div>
+    </div>
+ 
+    <nav class="section-nav" aria-label="Jump to sections">
+      <a href="#operational-profile">Operational Profile</a>
+      <a href="#atlas-alignment">Atlas Alignment</a>
+      <a href="#ai-policy">AI Policy</a>
+      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
+      <a href="#privacy-data">Privacy / Data</a>
+      <a href="#biometrics-identity">Biometrics / Identity</a>
+      <a href="#public-sector-ai">Public Sector AI</a>
+      <a href="#developer-climate">Developer Climate</a>
+      <a href="#energy-mining">Energy / Mining</a>
+      <a href="#direction-of-travel">Direction of Travel</a>
+    </nav>
+  </div>
+</section>
+ 
+<!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
+<div class="grid-sidebar">
+<div>
+ 
+  <!-- ── OPERATIONAL PROFILE ── -->
+  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
+    <h2 id="heading-operational">Operational Profile</h2>
+    <p class="muted">Wisconsin operates as a Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor within the upper-midwest infrastructure surface. Teams interacting across this corridor engage with freshwater shipping continuity along Lake Michigan and Lake Superior, Mississippi River alignment along the western state edge, multimodal freight routing between lake and inland systems, and manufacturing-adjacent logistics coordination layers linking Illinois, Michigan, Minnesota, and Iowa deployment surfaces.</p>
+    <div class="status-grid">
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>AI Policy</strong></div><span class="pill green">Limited · Passive</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill teal">Permissive / Enabling</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Privacy / Data</strong></div><span class="pill blue">Federal Baseline</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Biometrics</strong></div><span class="pill green">Limited Restrictions</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Public Sector AI</strong></div><span class="pill blue">Developing</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Moderate / Corridor-Active</span></div>
+    </div>
+    <div class="note"><strong>Builder summary:</strong> Wisconsin operates as a moderate-compliance corridor well suited to infrastructure-adjacent deployment, freshwater logistics coordination, institutional digital asset interaction, and manufacturing-adjacent developer surfaces. Teams requiring high-governance AI precedent formation or maximum-enforcement privacy infrastructure will find this corridor operates at a lighter regulatory register than California-equivalent surfaces.</div>
+  </section>
+ 
+  <!-- ── ATLAS ALIGNMENT ── -->
+  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
+    <h2 id="heading-atlas">Atlas Alignment</h2>
+    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
+    <ul class="atlas-list">
+      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/wisconsin/</code></li>
+      <li><strong>Jurisdiction lens</strong><br>Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
+      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
+      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+    </ul>
+    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/wisconsin/</div>
+  </section>
+ 
+  <!-- ── AI POLICY ── -->
+  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
+    <h2 id="heading-ai">AI Policy</h2>
+    <p class="muted">Wisconsin operates as a passive AI policy surface within the upper-midwest governance layer. No comprehensive state-level AI legislation has advanced through the Wisconsin Legislature as of Q2 2026. The corridor functions as a federal-default AI surface — operators deploying AI inside Wisconsin align primarily with federal AI frameworks and NIST guidance rather than state-specific compliance instruments. Limited executive-level exploration of AI tools for state agency operations represents the current boundary of Wisconsin's institutional AI engagement.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Limited · Passive</div></div>
+      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Federal-dependent / Observational</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Federal compliance is the primary obligation layer</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Federal AI executive frameworks, NIST AI Risk Management Framework, state executive exploration of AI efficiency tools for agency operations. No enacted Wisconsin-specific AI statute as of Q2 2026.</div>
+      <div class="detail-item"><strong>Enforcement profile:</strong> No active state-level AI enforcement surface exists within this corridor as of 2026. Operators interact with federal AI safety, disclosure, and accountability frameworks as the primary obligation layer. Neighboring corridor pressure from Illinois may condition future legislative activity.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Teams deploying AI inside Wisconsin do not face Wisconsin-specific AI compliance overhead in 2026. The corridor functions as a permissive AI deployment surface relative to California and Illinois equivalents. Governance conditions may shift if Illinois-adjacent regulatory norms migrate north across the Great Lakes–Mississippi convergence corridor.</div>
+    </div>
+    <div class="note">Operational signal: Wisconsin's passive posture makes it a lower-friction AI deployment surface in the upper midwest, but teams operating at scale across the national surface should model for corridor-neighbor pressure over a 12–24 month horizon.</div>
+  </section>
+ 
+  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
+  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
+    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
+    <p class="muted">Wisconsin operates as a constructive institutional digital asset surface within the upper-midwest corridor. The Wisconsin Investment Board's 2024 authorization to hold Bitcoin ETF positions established one of the first state pension system deployments into Bitcoin-denominated infrastructure in the United States — a signal that conditions institutional legitimacy surfaces across this corridor. Money transmitter obligations under Wisconsin Statutes Chapter 217 apply to custodial and exchange-style activity, but the compliance overhead is substantially lighter than California-equivalent licensing frameworks.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Permissive / Enabling</div></div>
+      <div class="mini-box"><div class="label">Regulator</div><div class="value">DFI / Chapter 217 framework</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Light regulatory burden; institutional signal positive</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Wisconsin Investment Board Bitcoin ETF authorization (2024), Wisconsin Statutes Chapter 217 (money transmitter framework), federal BSA/AML compliance layer. No Wisconsin-specific digital asset licensing regime equivalent to California's DFAL.</div>
+      <div class="detail-item"><strong>Positive signal:</strong> The WIB authorization to hold Bitcoin ETF positions establishes an institutional legitimacy anchor within this corridor — one of the first state pension systems in the U.S. to deploy inside Bitcoin ETF infrastructure. This signal conditions the corridor's posture toward institutional digital asset interaction as a recognized activity rather than a regulatory edge case.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Custodial, exchange, and institutional-facing operators deploying inside Wisconsin interact with a lighter compliance surface than California-equivalent frameworks. Federal BSA/AML obligations remain the primary compliance layer. Self-custody and non-custodial infrastructure deployments face minimal state-level friction within this corridor.</div>
+    </div>
+  </section>
+ 
+  <!-- ── PRIVACY / DATA ── -->
+  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
+    <h2 id="heading-privacy">Privacy / Data Handling</h2>
+    <p class="muted">Wisconsin operates at a federal-baseline privacy surface. No comprehensive Wisconsin state consumer data privacy law has been enacted as of Q2 2026. The corridor operates without an independent state privacy enforcement body equivalent to California's CPPA. Operators collecting data from Wisconsin residents interact primarily with federal sectoral frameworks — HIPAA for healthcare surfaces, COPPA for children-directed interfaces, GLBA for financial institution surfaces — and Wisconsin's data breach notification statute (Wis. Stat. § 895.507) as the primary state-level obligation.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Federal Baseline</div></div>
+      <div class="mini-box"><div class="label">Core regime</div><div class="value">Breach notification + federal sectoral law</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower compliance burden; no state enforcement body</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Wis. Stat. § 895.507 (data breach notification), HIPAA sectoral obligations, COPPA applicability, GLBA financial surface requirements. No CCPA/CPRA equivalent enacted as of Q2 2026. No ADMT-specific rule set.</div>
+      <div class="detail-item"><strong>Enforcement profile:</strong> No independent state privacy agency. Breach notification obligations run through the Wisconsin Department of Agriculture, Trade and Consumer Protection (DATCP) for consumer-facing surfaces. Federal agency enforcement (FTC, HHS OCR) represents the primary enforcement interaction layer.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Operators processing Wisconsin resident data interact with a substantially lighter compliance surface than California-adjacent corridors. Teams already aligned with CCPA/CPRA obligations will find Wisconsin's requirements encompassed within that framework. Legislative activity in neighboring corridor states may condition future alignment pressure, but no near-term Wisconsin comprehensive privacy bill is in active progression.</div>
+    </div>
+  </section>
+ 
+  <!-- ── BIOMETRICS / IDENTITY ── -->
+  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
+    <h2 id="heading-biometrics">Biometrics / Identity</h2>
+    <p class="muted">Wisconsin operates as a limited-restriction biometric surface within the upper-midwest corridor. No Wisconsin Biometric Information Privacy Act equivalent has been enacted — the corridor does not replicate the Illinois BIPA framework that conditions operator liability across the adjacent Great Lakes–Mississippi Logistics Convergence Corridor to the south. Standard employment law intersections remain relevant, and federal frameworks (FTC Act, HIPAA where applicable) continue to provide baseline coverage, but the Wisconsin-specific biometric obligation surface is structurally lighter than Illinois-adjacent environments.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Limited Restrictions</div></div>
+      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Federal-dependent / Employment-aware</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower friction than Illinois corridor; monitor BIPA spillover</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> No enacted Wisconsin biometric privacy statute. Federal FTC Act unfair or deceptive practices framework. Employment law intersections (Wis. Stat. § 111.32 WFEA applicability). No municipal facial-recognition bans in active force within this corridor.</div>
+      <div class="detail-item"><strong>Risk profile:</strong> The primary biometric risk surface for Wisconsin-based operators derives from Illinois BIPA litigation exposure where operations cross the state boundary into the Illinois corridor. Teams with physical or operational presence spanning both corridors should treat BIPA as an active liability surface even where Wisconsin operations are the primary deployment anchor.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Products deploying biometric identification, behavioral monitoring, or facial-recognition surfaces inside Wisconsin face lighter state-specific restriction than Illinois or California equivalents. Cross-corridor deployments that extend into Illinois should be evaluated against BIPA exposure as a primary structural risk condition.</div>
+    </div>
+  </section>
+ 
+  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
+  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
+    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
+    <p class="muted">Wisconsin's public-sector AI surface is in an early development posture. State agencies have explored AI tools for administrative efficiency and service delivery, but Wisconsin has not deployed a formal AI procurement governance framework, vendor attestation regime, or sandbox program comparable to California's CDT infrastructure. The corridor's institutional AI engagement is characterized by exploratory adoption rather than structured policy control — a posture that creates lower-friction entry points for operators deploying B2G AI surfaces but with reduced structural support for compliance-aware integration architecture.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Developing</div></div>
+      <div class="mini-box"><div class="label">Model</div><div class="value">Exploratory / Agency-led</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower entry friction; limited formal governance structure</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Wisconsin Department of Administration technology services coordination, agency-level AI tool exploration, federal grant and stimulus surfaces conditioning state technology adoption, University of Wisconsin system research alignment with state government technology surfaces.</div>
+      <div class="detail-item"><strong>Growth signal:</strong> Public-sector AI is advancing at the agency level within this corridor, but without centralized procurement governance or mandatory vendor attestation requirements. The absence of a formal framework creates flexibility for early-stage B2G deployments while leaving accountability and interoperability surfaces less structured than California-equivalent environments.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Teams deploying AI inside Wisconsin government surfaces can engage without the attestation and procurement overhead of California or Virginia-adjacent corridors. Operators with compliance-ready architectures may find Wisconsin functions as a lower-resistance entry surface for public-sector AI interfaces in the upper-midwest region.</div>
+    </div>
+  </section>
+ 
+  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
+  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
+    <h2 id="heading-developer">Open Source / Developer Climate</h2>
+    <p class="muted">Wisconsin's developer climate is shaped by manufacturing-adjacent technology development surfaces, agricultural technology coordination layers, and healthcare technology systems that interface with the corridor's institutional infrastructure. The state does not maintain a government open-source mandate equivalent to California's TL 18-02 directive. Developer activity surfaces intersect with logistics technology, precision agriculture systems, industrial automation, and healthcare information systems rather than frontier AI or consumer technology. Policy friction is structurally lower than California or Illinois corridor equivalents.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate · Manufacturing-Adjacent</div></div>
+      <div class="mini-box"><div class="label">Gov OSS</div><div class="value">No formal mandate</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low policy friction; corridor-specific deployment surfaces</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Wisconsin Department of Administration IT coordination, state agency technology procurement surfaces, federal technology grant infrastructure, manufacturing and agricultural technology development surfaces. No state-level AI disclosure statute applicable to developers as of Q2 2026.</div>
+      <div class="detail-item"><strong>Climate reading:</strong> Wisconsin operates as a stable, lower-friction developer surface relative to California and Illinois corridor equivalents. Policy architecture overhead is minimal for teams deploying inside this corridor. The manufacturing-adjacent orientation of Wisconsin's technology surfaces conditions developer interaction patterns toward industrial, logistics, and precision systems rather than consumer or frontier AI deployments.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Teams deploying inside Wisconsin's technology corridors interact with a permissive policy surface and lower compliance drag than neighboring Illinois or California-adjacent environments. Operators aligning with corridor-specific technology surfaces — logistics systems, agricultural technology, industrial automation, healthcare information systems — find the policy environment structurally supportive.</div>
+    </div>
+  </section>
+ 
+  <!-- ── ENERGY / MINING / COMPUTE ── -->
+  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
+    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
+    <p class="muted">Bitcoin mining operates within Wisconsin's legal framework with no specific prohibition as of Q2 2026. The state's electricity pricing operates in the mid-band of the continental U.S. — structurally more favorable than California and northeastern corridor equivalents, but less cost-advantaged than Wyoming, Kentucky, or Texas corridor environments. Wisconsin's energy infrastructure interfaces with the Midcontinent Independent System Operator (MISO) regional grid, nuclear baseload capacity along the Lake Michigan shoreline, and natural gas and renewable generation surfaces distributed across the corridor. No PoW-specific regulatory action is in active progression.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Moderate Viability</div></div>
+      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Mid-band (US)</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Viable; not cost-optimized for large-scale mining</div></div>
+    </div>
+    <div class="radar" aria-label="Wisconsin energy and mining risk profile">
+      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:28%;background:var(--green)"></div></div><div class="score">28</div></div>
+      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:48%;background:var(--yellow)"></div></div><div class="score">48</div></div>
+      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:55%;background:var(--yellow)"></div></div><div class="score">55</div></div>
+    </div>
+    <div class="note">Builder implication: Wisconsin functions as a legally permissive but not cost-optimized mining and compute surface. Teams evaluating proof-of-work deployment within the upper-midwest corridor should assess energy cost differentials against Wyoming, Kentucky, and Texas alternatives before anchoring infrastructure within this corridor. Regulatory risk is low; structural cost conditions are the primary operational constraint.</div>
+  </section>
+ 
+  <!-- ── DIRECTION OF TRAVEL ── -->
+  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
+    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
+    <p class="muted">Wisconsin's regulatory vector is stable across most policy layers, with the most notable directional signal originating from the digital asset institutional legitimacy surface established by the Wisconsin Investment Board's Bitcoin ETF authorization. The corridor is not absorbing significant governance escalation pressure from state legislative activity, but proximity to Illinois-adjacent regulatory surfaces and federal AI framework development conditions the medium-term trajectory. Teams operating across this corridor should model for continued stability through 2026, with Illinois corridor spillover as the primary variable to monitor.</p>
+    <div class="detail-list">
+      <div class="detail-item"><strong>AI Governance</strong> — stable / passive. No Wisconsin-specific AI legislation is in active progression. Federal AI framework development remains the primary governance variable. Illinois corridor pressure may condition alignment activity in the 2027–2028 legislative cycle.</div>
+      <div class="detail-item"><strong>Crypto Regulation</strong> — constructive. The WIB Bitcoin ETF authorization positions the corridor as an institutional legitimacy surface. No Wisconsin-specific licensing framework is anticipated near-term; federal crypto regulation remains the primary uncertainty layer.</div>
+      <div class="detail-item"><strong>Privacy Enforcement</strong> — stable at federal baseline. No comprehensive Wisconsin privacy legislation is in active progression as of Q2 2026. Corridor pressure from neighboring Illinois BIPA spillover and federal FTC rulemaking represent the primary monitoring surfaces.</div>
+      <div class="detail-item"><strong>Biometric Restrictions</strong> — limited / stable. No Wisconsin biometric privacy bill in active progression. Illinois BIPA cross-corridor exposure remains the primary operational risk for deployments spanning both corridors.</div>
+      <div class="detail-item"><strong>Mining Risk</strong> — low. No PoW-specific legislative action in Wisconsin. Structural energy cost conditions represent the primary constraint rather than regulatory risk. The corridor is expected to remain legally permissive through 2027.</div>
+      <div class="detail-item"><strong>Developer Climate</strong> — stable. Manufacturing-adjacent technology surfaces maintain low policy friction. No state AI disclosure or developer compliance obligations anticipated in the near-term legislative calendar.</div>
+    </div>
+    <div class="callout">12-month outlook: Wisconsin is expected to remain a stable, moderate-compliance corridor through Q2 2027. The WIB Bitcoin ETF position may attract additional institutional digital asset interest. Illinois BIPA and California CCPA-adjacent compliance norms represent the primary external pressure variables for teams operating across the upper-midwest multi-corridor deployment surface.</div>
+  </section>
+ 
+</div><!-- /main col -->
+ 
+<!-- ── SIDEBAR ── -->
+<aside>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-snapshot">
+    <div class="smallcaps">Snapshot</div>
+    <h3 id="heading-sidebar-snapshot">Wisconsin at a glance</h3>
+    <p class="muted mini">Wisconsin operates as a Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor — most productive for teams aligning with upper-midwest infrastructure, institutional digital asset surfaces, freshwater logistics coordination, and moderate-compliance deployment environments. Structurally lighter than California and Illinois equivalents across AI, privacy, and biometric obligation layers.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-builder-summary">
+    <div class="smallcaps">Builder-Mode Interaction Surface</div>
+    <h3 id="heading-builder-summary">Engagement posture</h3>
+    <p class="muted mini">Builders operating within the Wisconsin corridor interact with Great Lakes freshwater shipping interfaces, Mississippi-aligned inland routing surfaces, upper-midwest logistics continuity environments, and infrastructure coordination layers linking lake-based and interior deployment pathways. The corridor conditions interaction with manufacturing-adjacent logistics systems, institutional digital asset infrastructure, and public-sector technology surfaces operating under a lower-governance posture than California or Illinois equivalents.</p>
+    <p class="muted mini" style="margin-top:8px"><strong>Friction zones:</strong> teams requiring high-governance AI compliance precedent formation; operations dependent on maximum-enforcement privacy infrastructure; cross-corridor deployments extending into Illinois surfaces where BIPA exposure becomes material.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-compliance-dates">
+    <div class="smallcaps">Key Compliance Dates</div>
+    <h3 id="heading-compliance-dates">Timeline markers</h3>
+    <ul class="mini">
+      <li><strong>2024</strong> — Wisconsin Investment Board authorizes Bitcoin ETF holdings; institutional digital asset legitimacy signal established within corridor.</li>
+      <li><strong>Ongoing</strong> — Federal BSA/AML compliance layer remains the primary digital asset obligation surface. DFI Chapter 217 money transmitter obligations apply to custodial operations.</li>
+      <li><strong>Ongoing</strong> — Wis. Stat. § 895.507 breach notification obligations remain the primary state-level data event response requirement.</li>
+      <li><strong>Monitor</strong> — Illinois BIPA litigation surfaces and federal FTC/AI rulemaking as primary external compliance pressure variables for Wisconsin corridor operators.</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-maintenance">
+    <div class="smallcaps">Page Maintenance</div>
+    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+    <ul class="mini">
+      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
+      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
+      <li>Update this page only after the underlying package files are updated.</li>
+      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-canonical">
+    <div class="smallcaps">Canonical Pattern</div>
+    <h3 id="heading-canonical">For all 50 states</h3>
+    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine coherent and Atlas-connected across all state profiles.</p>
+    <p class="muted mini" style="margin-top:8px"><strong>Corridor identity</strong> (Wisconsin): Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor · Upper-Midwest Infrastructure Surface</p>
+  </div>
+ 
+</aside>
+</div><!-- /grid-sidebar -->
+ 
+</main>
+ 
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+<div id="footer-container"></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
