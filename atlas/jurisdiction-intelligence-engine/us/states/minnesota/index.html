@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Minnesota — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Minnesota operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/minnesota/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --card-wm:url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --panel-2:#101624;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --line-strong:rgba(214,163,74,.28);
+ --red:#ef4444;
+ --orange:#f97316;
+ --yellow:#eab308;
+ --green:#22c55e;
+ --teal:#14b8a6;
+ --blue:#4a9eff;
+ --purple:#8b5cf6;
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+h1{font-size:38px;color:var(--gold2);line-height:1.1;margin:0 0 10px}
+h2{font-size:22px;color:var(--gold2);margin:0 0 10px}
+h3{font-size:16px;color:var(--text);margin:0 0 6px}
+p{margin:0 0 12px}
+ul{margin:8px 0 0 18px}
+.muted{color:var(--muted)}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ padding:7px 12px;border-radius:999px;
+ border:1px solid var(--line);background:rgba(214,163,74,.06);
+ color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:30px 24px;margin-bottom:18px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+.hero::after{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+ background-image:linear-gradient(rgba(214,163,74,.12) 1px, transparent 1px),linear-gradient(90deg, rgba(214,163,74,.12) 1px, transparent 1px);
+ background-size:40px 40px;
+ mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.hero-chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:18px;margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35);border-color:var(--line-strong)}
+.card.anchor-target{scroll-margin-top:110px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-sidebar{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.span-2{grid-column:1 / -1}
+.note{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted);font-size:14px}
+.band{
+ display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px;
+}
+.metric{
+ border:1px solid rgba(214,163,74,.12);border-radius:14px;padding:14px;background:rgba(255,255,255,.02);
+}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.metric .value{font-size:14px;font-weight:700}
+.kicker{font-size:13px;color:var(--muted);max-width:920px}
+.mini{font-size:13px}
+.subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mini-box{padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.mini-box .label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.mini-box .value{font-size:13px;font-weight:700}
+.status-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.status-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.status-left{display:flex;align-items:center;gap:10px;min-width:0}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.03em;border:1px solid transparent;white-space:nowrap}
+.pill.red{background:rgba(239,68,68,.14);color:#ff8e8e;border-color:rgba(239,68,68,.22)}
+.pill.orange{background:rgba(249,115,22,.14);color:#ffb27c;border-color:rgba(249,115,22,.22)}
+.pill.yellow{background:rgba(234,179,8,.14);color:#f5db77;border-color:rgba(234,179,8,.22)}
+.pill.green{background:rgba(34,197,94,.14);color:#98ecb1;border-color:rgba(34,197,94,.22)}
+.pill.teal{background:rgba(20,184,166,.14);color:#8ce3d9;border-color:rgba(20,184,166,.22)}
+.pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
+.pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
+.pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
+.detail-list{display:grid;gap:10px}
+.detail-item{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.detail-item strong{color:var(--text)}
+.atlas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.atlas-list li{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.atlas-list code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--gold2);font-size:12px}
+.callout{
+ padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+ background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
+}
+.radar{display:grid;gap:10px;margin-top:12px}
+.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
+.radar-label{font-size:12px;color:var(--muted)}
+.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+.fill{height:100%;border-radius:999px}
+.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.footer-block{padding-bottom:34px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+.smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+@media (max-width:980px){
+ .grid-sidebar{grid-template-columns:1fr}
+ .band{grid-template-columns:repeat(2,1fr)}
+ .subgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+ .grid-2,.grid-3,.status-grid,.subgrid{grid-template-columns:1fr}
+ .band{grid-template-columns:1fr}
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .radar-row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .wrap.content{animation:none;opacity:1;transform:none}
+ .card{transition:none}
+ .card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+ 
+<main id="main-content" class="wrap content">
+ 
+<!-- ── HERO ─────────────────────────────────── -->
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <h1 id="heading-hero">Minnesota</h1>
+    <p class="kicker">Minnesota operates as an Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor supporting freshwater shipping continuity through the Duluth–Superior port system, Mississippi headwaters routing alignment, and upper-midwest freight coordination surfaces linking Great Lakes and interior continental deployment corridors of the United States.</p>
+ 
+    <div class="hero-meta">
+      <div class="hero-chip">MN · US-MN</div>
+      <div class="hero-chip">Saint Paul</div>
+      <div class="hero-chip">Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor</div>
+      <div class="hero-chip">Atlas operational profile</div>
+      <div class="hero-chip">Updated Apr 2026</div>
+    </div>
+ 
+    <div class="band" aria-label="Minnesota quick signals">
+      <div class="metric"><div class="label">AI Policy</div><div class="value">Moderate / Developing</div></div>
+      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Mixed / Emerging Framework</div></div>
+      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Active Enforcement</div></div>
+      <div class="metric"><div class="label">Biometrics</div><div class="value">Emerging Concern Zone</div></div>
+      <div class="metric"><div class="label">Operational Signal</div><div class="value">Freight-Corridor / Compliance-Stable</div></div>
+    </div>
+ 
+    <nav class="section-nav" aria-label="Jump to sections">
+      <a href="#operational-profile">Operational Profile</a>
+      <a href="#atlas-alignment">Atlas Alignment</a>
+      <a href="#ai-policy">AI Policy</a>
+      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
+      <a href="#privacy-data">Privacy / Data</a>
+      <a href="#biometrics-identity">Biometrics / Identity</a>
+      <a href="#public-sector-ai">Public Sector AI</a>
+      <a href="#developer-climate">Developer Climate</a>
+      <a href="#energy-mining">Energy / Mining</a>
+      <a href="#direction-of-travel">Direction of Travel</a>
+    </nav>
+  </div>
+</section>
+ 
+<!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
+<div class="grid-sidebar">
+<div>
+ 
+  <!-- ── OPERATIONAL PROFILE ── -->
+  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
+    <h2 id="heading-operational">Operational Profile</h2>
+    <p class="muted">Minnesota operates as the Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor within the U.S. continental freight and waterway system. Builders interacting across this corridor interface with Great Lakes freshwater shipping continuity, Mississippi headwaters routing infrastructure, Twin Cities intermodal rail convergence surfaces, and upper-midwest freight coordination layers that link Lake Superior port alignment with continental export corridors and cross-border northern routing continuity with Canadian interior infrastructure systems.</p>
+    <div class="status-grid">
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>AI Policy</strong></div><span class="pill yellow">Moderate · Developing</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill yellow">Mixed / Emerging Framework</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--orange)"></span><strong>Privacy / Data</strong></div><span class="pill orange">Active · AG-Enforced</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Biometrics</strong></div><span class="pill yellow">Emerging Concern Zone</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Public Sector AI</strong></div><span class="pill blue">Early Adoption</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Freight-Corridor / Compliance-Stable</span></div>
+    </div>
+    <div class="note"><strong>Builder summary:</strong> Builders operating within the Minnesota corridor interact with Great Lakes freshwater shipping interfaces, Mississippi headwaters routing infrastructure, Twin Cities intermodal convergence surfaces, and upper-midwest deployment pathways linking continental interior logistics systems with global export corridors. Regulatory friction is moderate and developing rather than maximum-enforcement.</div>
+  </section>
+ 
+  <!-- ── ATLAS ALIGNMENT ── -->
+  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
+    <h2 id="heading-atlas">Atlas Alignment</h2>
+    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
+    <ul class="atlas-list">
+      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/minnesota/</code></li>
+      <li><strong>Jurisdiction lens</strong><br>Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
+      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
+      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+    </ul>
+    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/minnesota/</div>
+  </section>
+ 
+  <!-- ── AI POLICY ── -->
+  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
+    <h2 id="heading-ai">AI Policy</h2>
+    <p class="muted">Minnesota is not a first-mover AI governance state. The 2024 legislative cycle produced targeted provisions addressing automated employment decision tools, establishing disclosure and appeal rights for job applicants and employees subject to algorithmic screening systems. Broader AI governance proposals circulated in the 2025 session without producing comprehensive enacted legislation. The current posture is best characterized as developing and monitoring rather than enforcement-active.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate · Developing</div></div>
+      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Targeted provisions + agency coordination</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Monitor trajectory; not yet enforcement-active</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> HF 3764 / SF 3709 (2024 automated employment decision tool provisions under MN Human Rights Act), MNIT AI governance coordination guidelines, 2025 legislative proposals under review.</div>
+      <div class="detail-item"><strong>Enforcement profile:</strong> current enforcement surfaces are narrow and confined to employment-adjacent deployment contexts. No statewide AI incident-reporting mandate or frontier-model safety framework is active as of 2026.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> teams deploying automated decision systems in hiring, performance management, or employment-adjacent contexts within Minnesota must align with disclosure and appeal right provisions. Broader AI governance surfaces remain in formation.</div>
+    </div>
+    <div class="note">Operational signal: Minnesota is positioned as a developing-posture state for AI governance. Builders should track 2026–2027 legislative sessions for escalation signals, particularly around automated decision tools and public-sector AI procurement.</div>
+  </section>
+ 
+  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
+  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
+    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
+    <p class="muted">Minnesota does not operate a dedicated digital asset licensing framework as of 2026. Bitcoin and digital asset activity is regulated through the state's existing money transmission framework administered by the Minnesota Department of Commerce. Comprehensive digital asset legislation has been introduced in multiple legislative sessions without enactment. The regulatory surface is characterized by emerging framework conditions rather than either a clear licensing pathway or active restriction.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Mixed / Emerging Framework</div></div>
+      <div class="mini-box"><div class="label">Regulator</div><div class="value">MN Dept of Commerce</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Money transmitter basis applies; dedicated framework pending</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Minnesota Money Transmission Act (MN Stat. § 53B), MN Dept of Commerce licensing authority, AML/BSA compliance expectations, federal FinCEN interface requirements for covered virtual currency businesses.</div>
+      <div class="detail-item"><strong>Framework status:</strong> Minnesota has not enacted a dedicated digital asset licensing law comparable to California's DFAL or New York's BitLicense framework. Operators conducting money transmission activity involving digital assets should assess licensing requirements under the existing money transmission framework.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> custodians, exchanges, and wallet providers conducting qualifying money transmission activity within Minnesota should treat existing money transmitter licensing, disclosure, and AML compliance as operative requirements. The absence of a dedicated digital asset law does not create a permissive environment — it creates an unsettled one.</div>
+    </div>
+  </section>
+ 
+  <!-- ── PRIVACY / DATA ── -->
+  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
+    <h2 id="heading-privacy">Privacy / Data Handling</h2>
+    <p class="muted">The Minnesota Consumer Data Privacy Act (MCDPA), signed May 24, 2024 and effective July 31, 2025, establishes the state's comprehensive consumer data privacy framework. Enforcement is administered exclusively by the Minnesota Attorney General. The MCDPA provides consumer rights around access, correction, deletion, portability, and opt-out from targeted advertising and profiling. No private right of action exists under the current framework.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Active · AG-Enforced</div></div>
+      <div class="mini-box"><div class="label">Core regime</div><div class="value">MCDPA (eff. Jul 31, 2025)</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Full consumer rights framework now active</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Minnesota Consumer Data Privacy Act (MCDPA), MN Stat. § 325O, AG enforcement authority, applicability thresholds of 100,000+ consumers annually or 25,000+ consumers where 25% or more of revenue derives from personal data sales.</div>
+      <div class="detail-item"><strong>Enforcement profile:</strong> AG-only enforcement with no private right of action. The MCDPA covers sensitive data categories including biometric data, precise geolocation, mental health data, and data concerning children, each requiring opt-in consent.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> products and services meeting MCDPA applicability thresholds must maintain consumer rights workflows, data protection assessments for high-risk processing activities, and opt-in mechanisms for sensitive data categories. Teams processing data of Minnesota residents should treat MCDPA compliance as active and operative from July 2025.</div>
+    </div>
+  </section>
+ 
+  <!-- ── BIOMETRICS / IDENTITY ── -->
+  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
+    <h2 id="heading-biometrics">Biometrics / Identity</h2>
+    <p class="muted">Minnesota does not operate a dedicated biometric privacy statute equivalent to Illinois BIPA as of 2026. Biometric data is addressed within the MCDPA framework as a sensitive data category requiring opt-in consent for collection and processing. The regulatory posture on biometrics is developing rather than restriction-active, with legislative consideration of more targeted frameworks ongoing in the 2025–2026 cycle.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Emerging Concern Zone</div></div>
+      <div class="mini-box"><div class="label">Identity climate</div><div class="value">MCDPA sensitive-data coverage</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Opt-in consent required; dedicated statute developing</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> MCDPA sensitive data classification for biometric identifiers, opt-in consent requirement, data protection assessment obligations for biometric processing, legislative proposals under consideration for dedicated biometric framework.</div>
+      <div class="detail-item"><strong>Risk profile:</strong> MCDPA opt-in consent obligations are operative for biometric data collection. No municipal-level facial-recognition bans equivalent to California's San Francisco or Oakland restrictions are in force, but the legislative trajectory points toward continued tightening of sensitive data surfaces.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> products deploying biometric identification, behavioral monitoring, or identity-inference systems within Minnesota must align with MCDPA opt-in consent requirements for sensitive data. Teams should monitor 2026–2027 legislative surfaces for dedicated biometric statute development.</div>
+    </div>
+  </section>
+ 
+  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
+  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
+    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
+    <p class="muted">Minnesota is in an early-adoption phase for public-sector AI integration. Minnesota IT Services (MNIT) has developed internal AI governance coordination guidelines for state agency use, and the 2025 legislative session considered broader AI-in-government frameworks without producing enacted comprehensive legislation. The public-sector AI surface is characterized by agency-level coordination rather than centralized mandate structures.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Early Adoption</div></div>
+      <div class="mini-box"><div class="label">Model</div><div class="value">Agency-led coordination</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Developing surface for compliance-aware B2G operators</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> MNIT AI governance coordination guidelines, 2025 legislative AI-in-government proposals, University of Minnesota AI research and policy engagement surfaces, state procurement framework interfaces.</div>
+      <div class="detail-item"><strong>Development signal:</strong> Minnesota's public-sector AI surface is expanding through agency coordination rather than centralized mandate deployment. Vendors serving state government operations should anticipate evolving procurement and diligence expectations through the 2026–2027 cycle.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> teams seeking to operate within Minnesota's public-sector AI surfaces should engage early-stage coordination frameworks and track legislative surfaces for emerging procurement mandate development. MCDPA compliance is a baseline requirement for any government-facing data-handling deployment.</div>
+    </div>
+  </section>
+ 
+  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
+  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
+    <h2 id="heading-developer">Open Source / Developer Climate</h2>
+    <p class="muted">Minnesota's developer climate is centered on the Twin Cities intermodal convergence zone, which functions as the corridor's primary institutional and technology coordination surface. State government open-source coordination exists but is less formally codified than comparable frameworks in California or New York. MCDPA compliance obligations are now active and apply to products handling qualifying Minnesota resident data, raising the floor for deployment teams operating within this surface.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Stable · MCDPA-Active</div></div>
+      <div class="mini-box"><div class="label">Compliance floor</div><div class="value">MCDPA (eff. Jul 31, 2025)</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Stable climate; rising privacy compliance drag</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> MCDPA compliance obligations for qualifying data processors, MNIT open-source coordination frameworks, HF 3764 automated employment decision tool disclosure requirements, state procurement data-handling standards.</div>
+      <div class="detail-item"><strong>Climate reading:</strong> Minnesota operates as a stable developer coordination surface within the upper-midwest freight corridor. The MCDPA compliance layer is now active for teams handling qualifying resident data, and automated decision tool disclosure requirements apply to employment-facing product surfaces.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> well-suited for teams operating within freight logistics, freshwater shipping, intermodal coordination, and upper-midwest deployment contexts that can absorb moderate compliance architecture requirements. Less suited for operations requiring near-zero regulatory engagement during early deployment phases.</div>
+    </div>
+  </section>
+ 
+  <!-- ── ENERGY / MINING / COMPUTE ── -->
+  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
+    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
+    <p class="muted">Bitcoin mining operates within Minnesota's legal framework with no specific prohibition as of 2026. Electricity rates are positioned in the mid-band of the continental U.S., creating more favorable cost conditions than Pacific or Northeast coastal corridor states. Minnesota's 2023 Next Generation Energy Act (HF 7) establishes a 100% carbon-free electricity mandate by 2040, introducing structural uncertainty for long-duration proof-of-work operations dependent on current rate and energy-mix conditions.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Moderate Risk</div></div>
+      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Mid-band (US)</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">More favorable than coastal corridors; transition risk emerging</div></div>
+    </div>
+    <div class="radar" aria-label="Minnesota energy and mining risk profile">
+      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:42%;background:var(--yellow)"></div></div><div class="score">42</div></div>
+      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:48%;background:var(--yellow)"></div></div><div class="score">48</div></div>
+      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:62%;background:var(--teal)"></div></div><div class="score">62</div></div>
+    </div>
+    <div class="note">Builder implication: Minnesota's energy cost position is more favorable than coastal high-cost corridors, but the 2040 carbon-free electricity mandate creates a trajectory-level consideration for long-duration compute and mining operations planning multi-year deployment surfaces within this corridor.</div>
+  </section>
+ 
+  <!-- ── DIRECTION OF TRAVEL ── -->
+  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
+    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
+    <p class="muted">Minnesota's regulatory vector is developing across policy layers rather than uniformly escalating. The Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor is absorbing active MCDPA enforcement alongside developing AI governance and digital asset framework activity. Operators interacting across this corridor should model for continued compliance layer development through 2027, with the corridor functioning as the northern inland anchor connecting Great Lakes maritime routing systems with Mississippi River continental deployment pathways linking Iowa, Illinois, and Wisconsin corridor interfaces.</p>
+    <div class="detail-list">
+      <div class="detail-item"><strong>AI Governance</strong> — developing through targeted employment-decision provisions and MNIT coordination activity; broader governance escalation contingent on 2026–2027 legislative outcomes.</div>
+      <div class="detail-item"><strong>Crypto Regulation</strong> — emerging through money transmitter framework application; dedicated digital asset legislation remains unresolved and represents the primary framework-formation surface to monitor.</div>
+      <div class="detail-item"><strong>Privacy Enforcement</strong> — active with MCDPA fully operative since July 31, 2025; AG enforcement posture and sensitive-data opt-in requirements are now the operative compliance surface for qualifying operators.</div>
+      <div class="detail-item"><strong>Biometric Restrictions</strong> — emerging through MCDPA sensitive data classification; dedicated biometric statute development is a 2026–2027 legislative monitoring priority for teams deploying identity-sensitive systems.</div>
+      <div class="detail-item"><strong>Mining Risk</strong> — moderate and currently stable; the 2040 carbon-free electricity mandate introduces trajectory-level consideration without creating near-term operational prohibition.</div>
+      <div class="detail-item"><strong>Developer Climate</strong> — stable within the Twin Cities convergence surface; MCDPA compliance layer and AEDT disclosure requirements are now active operational considerations for deployment teams.</div>
+    </div>
+    <div class="callout">12-month outlook: Minnesota is likely to advance digital asset framework legislation, continue MCDPA enforcement posture development, and produce further AI-in-government coordination guidance. The corridor's relationship to Wisconsin Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor, Iowa Mississippi River routing alignment surfaces, and future North Dakota and South Dakota interior plains infrastructure interfaces positions Minnesota as the northern inland anchor within the continental interior waterway and freight system.</div>
+  </section>
+ 
+</div>
+ 
+<!-- ── SIDEBAR ─────────────────────────────── -->
+<aside>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-summary">
+    <div class="smallcaps">Snapshot</div>
+    <h3 id="heading-sidebar-summary">Minnesota at a glance</h3>
+    <p class="muted mini">Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor. Best read as a freshwater shipping continuity environment and upper-midwest freight coordination surface with a developing compliance layer — not a maximum-enforcement or first-mover regulatory jurisdiction.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-builder-summary">
+    <div class="smallcaps">Builder Summary</div>
+    <h3 id="heading-builder-summary">Recommended read</h3>
+    <p class="muted mini"><strong>Best for:</strong> freight logistics alignment, freshwater shipping continuity, Twin Cities intermodal coordination, MCDPA-compliant data operations, upper-midwest deployment pathways, cross-border northern routing interfaces with Canadian interior infrastructure systems.</p>
+    <p class="muted mini"><strong>Less ideal for:</strong> high-power proof-of-work mining under long-duration planning horizons, maximum-enforcement compliance architecture benchmarking, or operations requiring a fully settled digital asset licensing framework.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-compliance-dates">
+    <div class="smallcaps">Key Dates</div>
+    <h3 id="heading-compliance-dates">Timeline markers</h3>
+    <ul class="mini">
+      <li><strong>Jul 31, 2025</strong> — Minnesota Consumer Data Privacy Act (MCDPA) effective date; consumer rights, opt-in consent for sensitive data, and data protection assessment obligations operative.</li>
+      <li><strong>2024</strong> — HF 3764 automated employment decision tool disclosure and appeal-right provisions enacted under MN Human Rights Act.</li>
+      <li><strong>2023</strong> — Next Generation Energy Act (HF 7) signed; 100% carbon-free electricity mandate by 2040 established.</li>
+      <li><strong>2026–2027</strong> — Digital asset framework legislation and dedicated biometric statute development remain active legislative monitoring surfaces.</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-maintenance">
+    <div class="smallcaps">Page Maintenance</div>
+    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+    <ul class="mini">
+      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
+      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
+      <li>Update this page only after the underlying package files are updated.</li>
+      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-standardization">
+    <div class="smallcaps">Canonical Pattern</div>
+    <h3 id="heading-standardization">For all 50 states</h3>
+    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  </div>
+ 
+</aside>
+</div>
+ 
+</main>
+ 
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+<div id="footer-container"></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
