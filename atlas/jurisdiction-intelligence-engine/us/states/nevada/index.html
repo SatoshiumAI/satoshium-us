@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Nevada — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Nevada operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/nevada/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --card-wm:url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --panel-2:#101624;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --line-strong:rgba(214,163,74,.28);
+ --red:#ef4444;
+ --orange:#f97316;
+ --yellow:#eab308;
+ --green:#22c55e;
+ --teal:#14b8a6;
+ --blue:#4a9eff;
+ --purple:#8b5cf6;
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+h1{font-size:38px;color:var(--gold2);line-height:1.1;margin:0 0 10px}
+h2{font-size:22px;color:var(--gold2);margin:0 0 10px}
+h3{font-size:16px;color:var(--text);margin:0 0 6px}
+p{margin:0 0 12px}
+ul{margin:8px 0 0 18px}
+.muted{color:var(--muted)}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ padding:7px 12px;border-radius:999px;
+ border:1px solid var(--line);background:rgba(214,163,74,.06);
+ color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:30px 24px;margin-bottom:18px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+.hero::after{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+ background-image:linear-gradient(rgba(214,163,74,.12) 1px, transparent 1px),linear-gradient(90deg, rgba(214,163,74,.12) 1px, transparent 1px);
+ background-size:40px 40px;
+ mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.hero-chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:18px;margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35);border-color:var(--line-strong)}
+.card.anchor-target{scroll-margin-top:110px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-sidebar{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.span-2{grid-column:1 / -1}
+.note{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted);font-size:14px}
+.band{
+ display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px;
+}
+.metric{
+ border:1px solid rgba(214,163,74,.12);border-radius:14px;padding:14px;background:rgba(255,255,255,.02);
+}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.metric .value{font-size:14px;font-weight:700}
+.kicker{font-size:13px;color:var(--muted);max-width:920px}
+.mini{font-size:13px}
+.subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mini-box{padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.mini-box .label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.mini-box .value{font-size:13px;font-weight:700}
+.status-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.status-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.status-left{display:flex;align-items:center;gap:10px;min-width:0}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.03em;border:1px solid transparent;white-space:nowrap}
+.pill.red{background:rgba(239,68,68,.14);color:#ff8e8e;border-color:rgba(239,68,68,.22)}
+.pill.orange{background:rgba(249,115,22,.14);color:#ffb27c;border-color:rgba(249,115,22,.22)}
+.pill.yellow{background:rgba(234,179,8,.14);color:#f5db77;border-color:rgba(234,179,8,.22)}
+.pill.green{background:rgba(34,197,94,.14);color:#98ecb1;border-color:rgba(34,197,94,.22)}
+.pill.teal{background:rgba(20,184,166,.14);color:#8ce3d9;border-color:rgba(20,184,166,.22)}
+.pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
+.pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
+.pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
+.detail-list{display:grid;gap:10px}
+.detail-item{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.detail-item strong{color:var(--text)}
+.atlas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.atlas-list li{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.atlas-list code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--gold2);font-size:12px}
+.callout{
+ padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+ background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
+}
+.radar{display:grid;gap:10px;margin-top:12px}
+.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
+.radar-label{font-size:12px;color:var(--muted)}
+.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+.fill{height:100%;border-radius:999px}
+.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.footer-block{padding-bottom:34px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+.smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+@media (max-width:980px){
+ .grid-sidebar{grid-template-columns:1fr}
+ .band{grid-template-columns:repeat(2,1fr)}
+ .subgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+ .grid-2,.grid-3,.status-grid,.subgrid{grid-template-columns:1fr}
+ .band{grid-template-columns:1fr}
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .radar-row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .wrap.content{animation:none;opacity:1;transform:none}
+ .card{transition:none}
+ .card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+ 
+<main id="main-content" class="wrap content">
+ 
+<!-- ── HERO ─────────────────────────────────── -->
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <h1 id="heading-hero">Nevada</h1>
+    <p class="kicker">Nevada operates as a Silver State Infrastructure &amp; Settlement Corridor supporting energy-adjacent compute deployment, low-friction entity formation environments, and western interior logistics coordination across the institutional trust surface of the United States.</p>
+ 
+    <div class="hero-meta">
+      <div class="hero-chip">NV · US-NV</div>
+      <div class="hero-chip">Carson City</div>
+      <div class="hero-chip">Silver State Infrastructure &amp; Settlement Corridor</div>
+      <div class="hero-chip">Atlas operational profile</div>
+      <div class="hero-chip">Updated Apr 2026</div>
+    </div>
+ 
+    <div class="band" aria-label="Nevada quick signals">
+      <div class="metric"><div class="label">AI Policy</div><div class="value">Light-Touch / Permissive</div></div>
+      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Favorable</div></div>
+      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Moderate / NRS 603A</div></div>
+      <div class="metric"><div class="label">Biometrics</div><div class="value">Minimal Restriction</div></div>
+      <div class="metric"><div class="label">Operational Signal</div><div class="value">Low-Friction / Infrastructure-Oriented</div></div>
+    </div>
+ 
+    <nav class="section-nav" aria-label="Jump to sections">
+      <a href="#operational-profile">Operational Profile</a>
+      <a href="#atlas-alignment">Atlas Alignment</a>
+      <a href="#ai-policy">AI Policy</a>
+      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
+      <a href="#privacy-data">Privacy / Data</a>
+      <a href="#biometrics-identity">Biometrics / Identity</a>
+      <a href="#public-sector-ai">Public Sector AI</a>
+      <a href="#developer-climate">Developer Climate</a>
+      <a href="#energy-mining">Energy / Mining</a>
+      <a href="#direction-of-travel">Direction of Travel</a>
+    </nav>
+  </div>
+</section>
+ 
+<!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
+<div class="grid-sidebar">
+<div>
+ 
+  <!-- ── OPERATIONAL PROFILE ── -->
+  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
+    <h2 id="heading-operational">Operational Profile</h2>
+    <p class="muted">Nevada operates as the Silver State Infrastructure &amp; Settlement Corridor within the western US deployment surface. Teams interacting across this corridor encounter a low-friction formation environment shaped by energy-adjacent compute conditions, accessible entity registration structures, and proximity to the California Pacific Coordination Corridor and Arizona Southwest Compute &amp; Semiconductor Corridor. The governance posture is structurally oriented toward infrastructure enablement rather than policy precedent formation.</p>
+    <div class="status-grid">
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>AI Policy</strong></div><span class="pill green">Light-Touch · Permissive</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill green">Favorable</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Privacy / Data</strong></div><span class="pill yellow">Moderate / NRS 603A</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Biometrics</strong></div><span class="pill green">Minimal Restriction</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">Emerging</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Low-Friction / Infrastructure-Oriented</span></div>
+    </div>
+    <div class="note"><strong>Builder summary:</strong> Nevada operates as a deployment-permissive corridor suited for compute infrastructure, entity formation, and western interior routing coordination. Teams requiring dense policy guidance surfaces or regulatory advocacy infrastructure will interact with a lighter institutional posture than neighboring Pacific corridor jurisdictions.</div>
+  </section>
+ 
+  <!-- ── ATLAS ALIGNMENT ── -->
+  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
+    <h2 id="heading-atlas">Atlas Alignment</h2>
+    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
+    <ul class="atlas-list">
+      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/nevada/</code></li>
+      <li><strong>Jurisdiction lens</strong><br>Silver State Infrastructure &amp; Settlement Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
+      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
+      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+    </ul>
+    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/nevada/</div>
+  </section>
+ 
+  <!-- ── AI POLICY ── -->
+  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
+    <h2 id="heading-ai">AI Policy</h2>
+    <p class="muted">Nevada operates under a light-touch AI governance posture as of 2026. The state legislature convenes biennially in odd-numbered years, which structurally slows regulatory formation relative to annually-convening states. No state-level AI safety mandate, frontier model disclosure requirement, or procurement attestation framework equivalent to California's SB 53 is active within this corridor. AI deployment surfaces within Nevada interface primarily with federal regulatory expectations rather than state-originated governance instruments.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Light-Touch · Permissive</div></div>
+      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Federal-deference / no state AI mandate</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low compliance drag for AI deployment</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> biennial legislature (next session 2027), absence of enacted AI safety or disclosure statute, federal regulatory surface as primary compliance reference, NIST AI RMF alignment as voluntary framework.</div>
+      <div class="detail-item"><strong>Regulatory trajectory:</strong> the 2027 legislative session represents the earliest structural window for AI-specific statutory formation. Regulatory velocity remains lower than Pacific corridor neighbors through at least the end of the current biennial cycle.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> teams deploying AI products within the Nevada corridor interact with a permissive surface for 2025–2026. Operations with California-resident user bases should still model CCPA/CPRA and SB 53 obligations regardless of where the deploying entity is registered.</div>
+    </div>
+    <div class="note">Operational signal: Nevada's biennial legislative structure creates a predictable low-formation window. Teams seeking low compliance drag for AI product development and deployment can treat this corridor as operationally permissive through 2026.</div>
+  </section>
+ 
+  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
+  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
+    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
+    <p class="muted">Nevada's digital asset posture is structurally favorable. The state has not enacted a dedicated digital asset licensing framework comparable to California's DFAL, and the money transmitter framework under NRS Chapter 671 functions as the primary regulatory surface for custodial and exchange-style activity. Legislative exploration of blockchain-enabling provisions reflects a coordination posture oriented toward digital asset deployment rather than restriction. The overall regulatory signal is stable and permissive relative to Pacific corridor counterparts.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Favorable</div></div>
+      <div class="mini-box"><div class="label">Regulator</div><div class="value">NFID (NRS 671 framework)</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower overhead than Pacific corridor</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> NRS Chapter 671 money transmitter licensing, blockchain-enabling legislative provisions, federal BSA/AML compliance expectations, absence of DFAL-equivalent state licensing layer.</div>
+      <div class="detail-item"><strong>Positive signal:</strong> Nevada's regulatory surface does not impose a state-level digital asset licensing gate beyond existing money transmitter law. Operators deploying custodial or exchange-adjacent services interact with a more accessible compliance surface than California.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> teams structuring treasury operations, entity-level Bitcoin exposure, or western-corridor digital asset deployment can interact with Nevada's formation and licensing surfaces at meaningfully lower overhead. Federal AML/BSA obligations remain the primary compliance anchor.</div>
+    </div>
+  </section>
+ 
+  <!-- ── PRIVACY / DATA ── -->
+  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
+    <h2 id="heading-privacy">Privacy / Data Handling</h2>
+    <p class="muted">Nevada operates under a moderate privacy posture anchored by the Nevada Privacy of Information Collected on the Internet from Consumers Act (NRS Chapter 603A). The framework provides consumers an opt-out right for the sale of covered personal data. Enforcement surfaces through the Nevada Attorney General rather than through a dedicated enforcement agency, which conditions a lighter enforcement posture than California's CPPA model. The regime represents a compliance obligation for operators handling Nevada consumer data, but does not replicate the full scope or enforcement intensity of CCPA/CPRA.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate · AG-Enforced</div></div>
+      <div class="mini-box"><div class="label">Core regime</div><div class="value">NRS Chapter 603A</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Real obligation; lighter than Pacific corridor</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> NRS Chapter 603A (Nevada Privacy of Information Collected on the Internet), consumer opt-out rights for personal data sale, Nevada Attorney General enforcement jurisdiction, SB 220 opt-out provisions.</div>
+      <div class="detail-item"><strong>Enforcement profile:</strong> AG-only enforcement with cure-period provisions moderates the active enforcement intensity relative to agency-led models. No dedicated privacy enforcement body comparable to the CPPA operates within this corridor.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> operators collecting qualifying data from Nevada consumers interact with a real but proportionate compliance surface. Teams already aligned to CCPA/CPRA will find NRS 603A obligations largely subsumed within their existing privacy architecture. Extraterritorial obligations from California remain the dominant compliance surface for operators with cross-corridor user bases.</div>
+    </div>
+  </section>
+ 
+  <!-- ── BIOMETRICS / IDENTITY ── -->
+  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
+    <h2 id="heading-biometrics">Biometrics / Identity</h2>
+    <p class="muted">Nevada does not operate a dedicated biometric privacy statute as of 2026. No BIPA-equivalent private right of action, no statewide facial-recognition restriction, and no biometric-specific sensitive personal information classification equivalent to CPRA's SPI framework applies within this corridor. Biometric data handling is governed primarily by general data security obligations under NRS 603A and federal frameworks. This produces a structurally permissive surface for biometric-adjacent deployment relative to Pacific corridor neighbors.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Minimal Restriction</div></div>
+      <div class="mini-box"><div class="label">Identity climate</div><div class="value">General data security obligations</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Permissive surface; watch 2027 session</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> NRS 603A general data security obligations, absence of enacted biometric statute, federal sector-specific biometric requirements as primary compliance anchor, biennial legislative calendar limiting near-term formation risk.</div>
+      <div class="detail-item"><strong>Risk profile:</strong> no current private right of action for biometric misuse, no municipal ban patterns operating within this corridor, and no statewide legislative proposal advancing toward enactment through 2026.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> biometric-adjacent products deploying within the Nevada corridor operate under a more permissive surface than California or Illinois. Teams should monitor the 2027 legislative session as the primary window for any formation shift, and should maintain awareness of cross-corridor obligations where California-resident users are involved.</div>
+    </div>
+  </section>
+ 
+  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
+  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
+    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
+    <p class="muted">Nevada's public sector AI posture is in an early formation phase. The biennial legislative structure means that procurement frameworks, attestation requirements, and AI use policies within state government are developing at a slower structural pace than annually-convening states. State government AI deployment is occurring at the agency level without a comprehensive statewide governance framework. This creates an accessible surface for B2G operators, but one without the structured procurement architecture that California's EO N-5-26 and CDT sandbox program have produced in the Pacific corridor.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Emerging</div></div>
+      <div class="mini-box"><div class="label">Model</div><div class="value">Agency-led / no statewide framework</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Accessible B2G surface; lighter structure</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> biennial legislative calendar (next session 2027), agency-level AI deployment without statewide procurement attestation requirement, Nevada System of Higher Education (NSHE) as the primary education coordination surface, absence of a CDT-equivalent state AI sandbox program.</div>
+      <div class="detail-item"><strong>Formation signal:</strong> public-sector AI governance frameworks are expected to enter the formation phase in the 2027 legislative session. Until then, the primary coordination surface operates at the agency and institution level.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> teams deploying within Nevada's public sector can engage with an accessible but structurally lighter procurement surface. The lower attestation overhead enables faster initial engagement, but also means the institutional AI governance architecture is less developed than in Pacific or Atlantic corridor states.</div>
+    </div>
+  </section>
+ 
+  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
+  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
+    <h2 id="heading-developer">Open Source / Developer Climate</h2>
+    <p class="muted">Builders operating within the Nevada corridor interact with low-friction entity-formation surfaces, energy-supported compute deployment environments, and western interior routing conditions linking California, Arizona, and Mountain West infrastructure layers. The operating climate is structurally permissive relative to Pacific corridor neighbors — no age-assurance mandate, no AI disclosure statute, and no CCPA-equivalent privacy regime conditions the development surface. This produces a lower-drag environment for product teams that are not targeting California or other high-governance-state user bases as their primary compliance anchor.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Accessible · Lower Drag</div></div>
+      <div class="mini-box"><div class="label">Formation climate</div><div class="value">Low-friction entity registration</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Suited for lean team formation and deployment</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Nevada entity formation framework (NRS Title 7), absence of enacted age-assurance, AI disclosure, or developer-facing AI safety statute, biennial legislative calendar limiting near-term compliance formation, NRS 603A as the primary data-handling obligation.</div>
+      <div class="detail-item"><strong>Climate reading:</strong> Nevada operates as a formation-accessible corridor. The regulatory surface supports lean team deployment without the upfront compliance architecture burden that teams encounter in California or New York. Cross-corridor obligations from those jurisdictions remain operative for operators with user bases in those states.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> well-suited for entity formation, compute infrastructure deployment, treasury structuring, and western interior coordination. Teams requiring proximity to governance-dense policy formation networks or regulatory advocacy surfaces will interact with a lower-density institutional environment than the Pacific corridor offers.</div>
+    </div>
+  </section>
+ 
+  <!-- ── ENERGY / MINING / COMPUTE ── -->
+  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
+    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
+    <p class="muted">Nevada operates as one of the more favorable western US surfaces for energy-adjacent compute deployment. The state's renewable energy profile — anchored by geothermal, solar, and wind resources — supports competitive electricity cost structures relative to Pacific corridor counterparts. Data center and large-scale compute operations have established a deployment presence within the northern Nevada corridor. Bitcoin mining is legal with no enacted state restriction, and the structural posture toward proof-of-work operations is permissive. No PoW-specific energy surcharge, moratorium, or environmental review trigger operates at the state level as of 2026.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Favorable Conditions</div></div>
+      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Competitive / Mid-western band</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Viable surface for compute and mining deployment</div></div>
+    </div>
+    <div class="radar" aria-label="Nevada energy and mining risk profile">
+      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:20%;background:var(--green)"></div></div><div class="score">20</div></div>
+      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:38%;background:var(--yellow)"></div></div><div class="score">38</div></div>
+      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:76%;background:var(--green)"></div></div><div class="score">76</div></div>
+    </div>
+    <div class="note">Builder implication: Nevada functions as a structurally viable surface for compute infrastructure deployment, mining operations, and energy-adjacent workloads. The renewable energy base and permissive regulatory posture support deployment strategies that are structurally unfeasible within the California corridor. Teams should evaluate transmission infrastructure and Power Purchase Agreement availability specific to the northern and southern Nevada sub-corridors.</div>
+  </section>
+ 
+  <!-- ── DIRECTION OF TRAVEL ── -->
+  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
+    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
+    <p class="muted">Nevada's regulatory vector is stable across most policy layers through the current biennial cycle. The Silver State Infrastructure &amp; Settlement Corridor is not absorbing significant governance formation pressure through 2026, positioning it as a structurally predictable low-friction deployment surface. The 2027 legislative session represents the primary window for any meaningful shift across AI, biometric, or digital asset surfaces. Operators deploying within this corridor should model for regulatory stability through 2026 with monitoring attention on the 2027 session.</p>
+    <div class="detail-list">
+      <div class="detail-item"><strong>AI Governance</strong> — stable through 2026. The 2027 legislative session is the earliest structural window for AI-specific formation. Federal regulatory surfaces remain the primary compliance reference through this cycle.</div>
+      <div class="detail-item"><strong>Crypto Regulation</strong> — stable and permissive. No DFAL-equivalent framework in formation. Money transmitter licensing under NRS 671 remains the operative surface. Favorable posture expected to hold through 2026.</div>
+      <div class="detail-item"><strong>Privacy Enforcement</strong> — gradual. NRS 603A obligations are real but AG-enforced with cure provisions, moderating enforcement intensity. No CPPA-equivalent agency in formation through 2026.</div>
+      <div class="detail-item"><strong>Biometric Restrictions</strong> — minimal current risk. No state statute or municipal ban pattern in active formation. The 2027 session represents the first realistic legislative window for biometric-specific provisions.</div>
+      <div class="detail-item"><strong>Mining Risk</strong> — low. No PoW restriction, environmental moratorium, or cost-surcharge mechanism in operation or active formation. The energy cost and regulatory posture support continued mining deployment through 2026 and likely beyond.</div>
+      <div class="detail-item"><strong>Developer Climate</strong> — accessible and stable. Entity formation conditions remain favorable. Lower compliance drag than adjacent Pacific corridor jurisdictions. Cross-corridor obligations from California continue to be the primary compliance formation pressure for operators with multi-state user bases.</div>
+    </div>
+    <div class="callout">12-month outlook: Nevada is positioned to maintain its low-friction infrastructure and settlement posture through 2026. Operators should track the 2027 biennial session as the primary regulatory formation window across AI, biometric, and digital asset surfaces. The Silver State Infrastructure &amp; Settlement Corridor is expected to continue functioning as a stable western interior deployment surface connecting the California Pacific Coordination Corridor and Arizona Southwest Compute &amp; Semiconductor Corridor through the near term.</div>
+  </section>
+ 
+</div>
+ 
+<aside>
+  <div class="card" aria-labelledby="heading-sidebar-summary">
+    <div class="smallcaps">Snapshot</div>
+    <h3 id="heading-sidebar-summary">Nevada at a glance</h3>
+    <p class="muted mini">A low-friction infrastructure and settlement corridor suited for compute deployment, entity formation, and western interior routing coordination. Less suited for teams requiring dense policy guidance networks or high-governance procurement surfaces.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-builder-summary">
+    <div class="smallcaps">Builder Summary</div>
+    <h3 id="heading-builder-summary">Corridor interaction profile</h3>
+    <p class="muted mini"><strong>Best for:</strong> entity formation and treasury structuring, compute and data center deployment, Bitcoin mining operations, western interior logistics coordination, low-drag product development environments.</p>
+    <p class="muted mini"><strong>Less ideal for:</strong> teams requiring policy-dense governance networks, high-structure public-sector procurement surfaces, or regulatory advocacy infrastructure comparable to Pacific corridor jurisdictions.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-compliance-dates">
+    <div class="smallcaps">Key Dates</div>
+    <h3 id="heading-compliance-dates">Timeline markers</h3>
+    <ul class="mini">
+      <li><strong>Ongoing 2026</strong> — NRS Chapter 603A consumer opt-out rights operative; AG enforcement posture applies to qualifying data operators.</li>
+      <li><strong>Ongoing 2026</strong> — NRS Chapter 671 money transmitter licensing framework applies to digital asset custodial and exchange-adjacent operations.</li>
+      <li><strong>2027 session</strong> — Nevada biennial legislature convenes; primary formation window for AI governance, biometric, and digital asset regulatory developments.</li>
+      <li><strong>Cross-corridor</strong> — California DFAL license deadline Jul 2026 and SB 53 enforcement surface operative for any Nevada-registered operator with California-resident user exposure.</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-maintenance">
+    <div class="smallcaps">Page Maintenance</div>
+    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+    <ul class="mini">
+      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
+      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
+      <li>Update this page only after the underlying package files are updated.</li>
+      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-standardization">
+    <div class="smallcaps">Canonical Pattern</div>
+    <h3 id="heading-standardization">For all 50 states</h3>
+    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  </div>
+</aside>
+</div>
+ 
+</main>
+ 
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+<div id="footer-container"></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
