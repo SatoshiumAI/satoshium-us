@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Utah — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Utah operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Utah Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/utah/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,21 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +155,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +171,31 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Utah</h1>
-    <p class="kicker">Utah operates as a Mountain West Institutional Coordination Corridor supporting digital identity governance alignment, public-sector modernization environments, and interior-west deployment coordination surfaces across the central institutional trust layer of the United States.</p>
+    <p class="kicker">This page renders the canonical Utah Atlas jurisdiction package. The canonical files remain the source of truth; this document is a structured rendering only.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">UT · US-UT</div>
-      <div class="hero-chip">Salt Lake City</div>
-      <div class="hero-chip">Mountain West Institutional Coordination Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Utah quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Pragmatic / Sandbox-First</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Permissive / Forward-Leaning</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Active · Moderate</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Developing / Limited Scope</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Low-Friction / Modernization-Aligned</div></div>
+      <div class="hero-chip">Jurisdiction: Utah (UT · US-UT)</div>
+      <div class="hero-chip">Jurisdiction lens</div>
+      <div class="hero-chip">Completeness: preliminary</div>
+      <div class="hero-chip">Surface assignment: none</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,216 +204,852 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Utah operates as the Mountain West Institutional Coordination Corridor within the US governance trust surface. The corridor anchors digital identity governance alignment surfaces, coordinates public-sector modernization environments, and interfaces with interior-west infrastructure deployment positioning across Nevada, Colorado, Wyoming, Arizona, and New Mexico. Teams interacting across this corridor engage with governance modernization instruments and identity-layer coordination frameworks oriented toward institutional trust formation rather than enforcement precedent.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>AI Policy</strong></div><span class="pill teal">Active · Pragmatic</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill green">Permissive / Forward-Leaning</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Privacy / Data</strong></div><span class="pill yellow">Active · Moderate</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Biometrics</strong></div><span class="pill yellow">Developing / Limited Scope</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">Growing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Signal</strong></div><span class="pill blue">Low-Friction / Modernization-Aligned</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Mountain Interior Continuity Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Utah operates as a modernization-aligned coordination corridor. Builders deploying inside identity governance, digital asset integration, and public-sector modernization surfaces interact with lower compliance friction and sandbox-oriented policy instruments. Teams requiring enforcement-precedent architecture or high-penalty privacy signals should model this corridor as complementary to, not a substitute for, heavier-governance surfaces.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Mountain Corridor Structural Continuity Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Western Interior Completion Layer</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from atlas.md and records Atlas corridor-topology placement only.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/utah/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Mountain West Institutional Coordination Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records the normalized evidence surfaces preserved for Utah in the current package, organized around Wasatch Front corridor concentration, Salt Lake City / Provo / Ogden institutional and infrastructure visibility, data center and colocation visibility, fiber / backbone / interconnection visibility, inland logistics and transport corridor structure, mountain-corridor geography and infrastructure concentration, research university continuity, defense / aerospace / simulation / cyber-adjacent institutional environment, energy and power-availability conditions, municipal asymmetry across the main corridor with sparse statewide distribution, and limited intermountain adjacency evidence.</p>
+    <p class="muted">This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, leadership positioning, or deployment prescription beyond the canonical files. Surface assignment remains unset. No routing role is assigned.</p>
+    <div class="src">Source: evidence.md — all sections</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer documents the following for Utah.</p>
+ 
+    <h3 class="subhead">Wasatch Front corridor concentration</h3>
+    <p class="muted">The evidence layer records that Utah has documented population, planning, and infrastructure concentration along the Wasatch Front corridor.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Utah History to Go materials stating that 85% of Utah's population in 2018 lived along the Wasatch Front in Salt Lake, Davis, Utah, and Weber counties</li>
+      <li>Wasatch Front Regional Council materials stating that WFRC serves 6 counties, 76 cities, and over 2 million people along Utah's Wasatch Front</li>
+      <li>Utah GIS materials stating that annual projections through 2050 were prepared for the Salt Lake, Provo, and Ogden urban corridor extending from Santaquin north to Brigham City</li>
+      <li>WFRC transportation-planning materials for the Salt Lake and Ogden-Layton urban areas</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/utah/</div>
+    <p class="muted">The evidence layer records that these materials document corridor concentration along the Wasatch Front without establishing uniform statewide distribution.</p>
+ 
+    <h3 class="subhead">Salt Lake City, Provo, and Ogden institutional and infrastructure visibility</h3>
+    <p class="muted">The evidence layer records that Utah has documented institutional and infrastructure visibility centered on the Salt Lake City, Provo, and Ogden corridor system.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Utah GIS materials explicitly framing the Salt Lake, Provo, and Ogden urban corridor as a forecast and planning geography</li>
+      <li>UTA FrontRunner materials documenting commuter-rail service with a fare structure that runs from Provo to Ogden and connects to buses, UVX, TRAX, and the S-Line</li>
+      <li>WFRC materials stating that the Regional Transportation Plan covers the Salt Lake and Ogden-Layton urban areas through roadway, transit, and active-transportation facilities</li>
+      <li>Salt Lake City International Airport materials stating that more than 330 flights depart daily to 100 nonstop destinations and that the airport is undergoing a multi-phase redevelopment program</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document corridor-node visibility across the main urban system rather than a claim of identical infrastructure depth at every location.</p>
+ 
+    <h3 class="subhead">Data center, cloud, and colocation visibility</h3>
+    <p class="muted">The evidence layer records that Utah has documented data-center and colocation visibility in the Salt Lake Valley environment.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Novva operator materials describing a Utah data-center campus in West Jordan near Salt Lake City with purpose-built data-center space, an on-site substation, and access to major long-haul fiber routes</li>
+      <li>EdgeConneX operator materials describing a Salt Lake City edge data center within a few miles of downtown Salt Lake City and Salt Lake City International Airport</li>
+      <li>EdgeConneX operator materials describing diverse building points of entry, physically diverse meet-me-room conduits, and visible carrier and interconnection participation including SLIX, XMission Utopia, Zayo, Lumen, Hurricane Electric, Cogent, Comcast, and Cloudflare</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document visible facility-level data-center and colocation infrastructure in the Salt Lake Valley without establishing a complete statewide inventory.</p>
+ 
+    <h3 class="subhead">Fiber, backbone, and interconnection visibility</h3>
+    <p class="muted">The evidence layer records that Utah has documented interconnection and right-of-way telecommunications visibility in Salt Lake City.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>XMission materials stating that XMission founded the Salt Lake Internet eXchange (SLIX) in 2011</li>
+      <li>XMission materials stating that SLIX's physical location in downtown Salt Lake City contains network switches through which participating providers exchange traffic and shorten network paths to one another</li>
+      <li>Salt Lake City telecommunications right-of-way materials stating that service providers install and maintain conduit, fiber optic cable, antennas, meters, utility boxes, poles, and related telecommunications facilities in the public right of way</li>
+      <li>Salt Lake City materials documenting franchise agreements, telecommunications right-of-way permits, and small-cell master license agreements for telecommunications facilities</li>
+      <li>EdgeConneX Salt Lake City materials documenting SLIX and multiple network operators in the facility network list</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document direct interconnection and fiber-facility visibility in Salt Lake City, but they do not provide a complete statewide backbone map.</p>
+ 
+    <h3 class="subhead">Inland logistics and transport corridor structure</h3>
+    <p class="muted">The evidence layer records that Utah has documented inland logistics and transport-corridor structure centered on the Wasatch Front and Salt Lake City airport environment.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Salt Lake City International Airport cargo materials stating that SLC is building air-cargo logistics infrastructure with 24/7 operations and direct access to major highways and rail networks</li>
+      <li>Salt Lake City International Airport cargo materials describing intermodal connectivity for cargo development</li>
+      <li>Salt Lake City International Airport materials stating that the airport is operated by the Salt Lake City Department of Airports and is being expanded through a multi-phase redevelopment program</li>
+      <li>WFRC Regional Transportation Plan materials stating that transportation-facility planning in the Salt Lake and Ogden-Layton urban areas includes roadway, transit, and active-transportation facilities</li>
+      <li>UTA FrontRunner materials documenting a commuter-rail corridor linking Provo and Ogden through the Wasatch Front system</li>
+      <li>UDOT Planning Division materials stating that the department plans across all transportation modes and for a comprehensive transportation network statewide</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document a visible inland transport and logistics structure in the Wasatch Front corridor without establishing a full statewide freight-node inventory.</p>
+ 
+    <h3 class="subhead">Mountain-corridor geography and infrastructure concentration</h3>
+    <p class="muted">The evidence layer records that Utah has documented mountain-linked transportation and planning concentration in the Wasatch corridor environment.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Utah History to Go materials placing most of the state population along the Wasatch Front</li>
+      <li>Utah GIS materials describing the Salt Lake, Provo, and Ogden urban corridor as a continuous planning geography from Santaquin to Brigham City</li>
+      <li>Central Wasatch Commission materials stating that transportation solutions for the Central Wasatch Mountains are a major mission pillar</li>
+      <li>Central Wasatch Commission materials stating that the Mountain Transportation System initiative includes the Salt Lake Valley, Big and Little Cottonwood Canyons, Parleys Canyon, and connections to the Wasatch Back</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document mountain-corridor planning and concentration pressures in the Wasatch environment without establishing statewide continuity from those conditions alone.</p>
+ 
+    <h3 class="subhead">Research university continuity</h3>
+    <p class="muted">The evidence layer records that Utah has documented public-university and research continuity in the current source set.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>University of Utah cybersecurity-program materials describing a university-wide cybersecurity initiative commissioned by the president and board-level leadership, backed by the CIO and CISO, and aligned to CIS controls, Utah System of Higher Education policy, and CMMC 2.0 standards</li>
+      <li>Utah GIS materials stating that Wasatch Front projections rely in part on county-level control totals from the University of Utah's Gardner Policy Institute</li>
+      <li>Utah State University materials stating that Space Dynamics Laboratory is headquartered on Utah State University's Innovation Campus in North Logan</li>
+      <li>Utah State University materials stating that SDL is a Department of Defense University Affiliated Research Center with long-duration defense and space research relationships</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document research continuity through visible university-linked planning, cybersecurity, and defense-research institutions.</p>
+ 
+    <h3 class="subhead">Defense, aerospace, simulation, and cyber-adjacent institutional environment</h3>
+    <p class="muted">The evidence layer records that Utah has documented defense, aerospace, sustainment, simulation, and cyber-adjacent institutions in northern Utah and the wider university environment.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Hill Air Force Base materials stating that Hill is an Air Force Materiel Command base in northern Utah and host to the 75th Air Base Wing</li>
+      <li>Hill Air Force Base materials stating that the 75th Air Base Wing provides installation support for the Ogden Air Logistics Complex, the Life Cycle Management Center, the Nuclear Weapons Center, fighter wings, and the Utah Test and Training Range</li>
+      <li>Ogden Air Logistics Complex materials stating that OO-ALC provides logistics, maintenance, distribution, engineering management, software, composites, and missile-related sustainment functions for multiple aircraft and weapon systems</li>
+      <li>Utah State University materials stating that SDL research areas include advanced sensing and systems, autonomous systems and intelligent control, space mission design and operations, integrated command, control, and data systems, modeling and simulation, and cyber and networked systems</li>
+      <li>University of Utah cybersecurity-program materials documenting a mandatory, university-wide cybersecurity program and network-control deployment work</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document a defense-, aerospace-, sustainment-, simulation-, and cyber-adjacent environment in specific Utah institutions rather than a statewide defense-industry claim.</p>
+ 
+    <h3 class="subhead">Energy and power-availability conditions</h3>
+    <p class="muted">The evidence layer records that Utah has documented state-level energy-planning continuity and selected facility-level power-availability conditions.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Utah Office of Energy Development materials stating that OED is Utah's primary office for energy and critical mineral development</li>
+      <li>Utah Office of Energy Development materials stating that OED implements the state's strategic energy plan and serves as the state's central energy hub with public and private partners</li>
+      <li>Utah Office of Energy Development materials describing Operation Gigawatt as a state energy-development initiative tied to growth, diversification, and expanded energy resources</li>
+      <li>Novva operator materials describing facility-level utility and substation capacity, on-site solar, and waterless cooling at the West Jordan data-center campus</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document energy-planning continuity and selected power-availability evidence without providing a normalized statewide utility-delivery map.</p>
+ 
+    <h3 class="subhead">Municipal asymmetry across the main corridor and sparse statewide distribution</h3>
+    <p class="muted">The evidence layer records that Utah has documented corridor concentration with thinner statewide visibility outside the main Wasatch system.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>the strongest infrastructure and institutional evidence in the current source set is concentrated around Salt Lake City, West Jordan, the Salt Lake airport environment, Ogden and Hill Air Force Base, Provo-corridor transit visibility, and North Logan research institutions</li>
+      <li>WFRC materials centering 6 counties and 76 cities along the Wasatch Front rather than the full state</li>
+      <li>Utah History to Go materials placing most of the state population in the Wasatch Front counties</li>
+      <li>the current package containing thinner direct documentary coverage for municipal and infrastructure variation outside the main Wasatch corridor and the best-documented northern research and defense nodes</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document a corridor-concentrated municipal pattern with sparse statewide visibility outside the main documented environments.</p>
+ 
+    <h3 class="subhead">Limited intermountain adjacency evidence</h3>
+    <p class="muted">The evidence layer records that Utah has limited but relevant documentary evidence of region-facing and intermountain adjacency in the current source set.</p>
+    <p class="muted mini"><em>The evidence layer records that the current Utah package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Salt Lake City International Airport cargo materials describing SLC as connecting supply chains to markets across the west and beyond through intermodal connectivity</li>
+      <li>Central Wasatch Commission materials documenting transportation planning links between the Wasatch Front, the Wasatch Back, and the I-80-connected mountain corridor environment</li>
+    </ul>
+    <p class="muted mini"><em>The evidence layer records that the current source set does not provide enough normalized documentary coverage to characterize:</em></p>
+    <ul class="evidence-bullets">
+      <li>Nevada adjacency effects as an infrastructure consequence</li>
+      <li>Colorado adjacency effects as a corridor consequence</li>
+      <li>Arizona adjacency effects as a corridor consequence</li>
+      <li>Idaho or Wyoming adjacency effects as an infrastructure consequence</li>
+      <li>interstate corridor significance as a classification</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Utah operates as a sandbox-first AI governance formation surface within the Mountain West corridor. The Utah Artificial Intelligence Policy Act established the Office of Artificial Intelligence Policy (OAIP) as the state's primary AI coordination instrument, deploying a limited-liability sandbox model that enables regulated experimentation before enforcement obligations fully attach. The posture prioritizes governance modernization over enforcement escalation, creating lower friction surfaces for operators deploying identity-adjacent and public-sector AI tools.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active · Pragmatic</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Sandbox + disclosure + limited-liability experimentation</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Engage OAIP sandbox before enforcement surface matures</div></div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md and that absence of signals reflects absence of normalized documentary coverage.</p>
+ 
+    <h3 class="subhead">Signal clusters detected</h3>
+    <p class="muted mini">The signals layer records that the following signal clusters are directly detectable from evidence.md.</p>
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>Wasatch Front corridor concentration.</strong> The signals layer reflects a Wasatch-Front-corridor-concentration signal through documented population concentration, WFRC regional-planning scope, and the Salt Lake, Provo, and Ogden urban-corridor projection materials.</div>
+      <div class="detail-item"><strong>Salt Lake City, Provo, and Ogden corridor visibility.</strong> The signals layer reflects a Salt-Lake-Provo-Ogden-corridor-visibility signal through documented urban-corridor planning, FrontRunner rail linkage between Provo and Ogden, Salt Lake airport infrastructure, and WFRC transportation planning for the Salt Lake and Ogden-Layton urban areas.</div>
+      <div class="detail-item"><strong>Data center and colocation visibility.</strong> The signals layer reflects a data-center-visibility signal through documented operator materials for West Jordan and Salt Lake City facilities, including visible substation, carrier, and interconnection features.</div>
+      <div class="detail-item"><strong>Direct interconnection and fiber-facility visibility.</strong> The signals layer reflects a direct-interconnection-and-fiber-visibility signal through documented SLIX presence in downtown Salt Lake City, Salt Lake City telecommunications right-of-way structures for conduit, fiber, and small-cell facilities, and visible facility-level interconnection participation.</div>
+      <div class="detail-item"><strong>Inland logistics and transport-corridor structure.</strong> The signals layer reflects a transport-and-logistics-corridor signal through documented Salt Lake City airport cargo and redevelopment materials, WFRC regional transportation planning, FrontRunner corridor linkage, and UDOT comprehensive multimodal planning materials.</div>
+      <div class="detail-item"><strong>Mountain-corridor transportation concentration.</strong> The signals layer reflects a mountain-corridor-concentration signal through documented Wasatch Front population concentration, Salt Lake to Brigham City corridor projections, and Central Wasatch mountain-transportation planning that links the Salt Lake Valley, canyon systems, and the Wasatch Back.</div>
+      <div class="detail-item"><strong>Research university continuity.</strong> The signals layer reflects a university-research-continuity signal through documented University of Utah cybersecurity-governance structures, Gardner Policy Institute planning inputs in the corridor datasets, and Utah State University and SDL continuity.</div>
+      <div class="detail-item"><strong>Defense, aerospace, simulation, and cyber-adjacent institutional environment.</strong> The signals layer reflects a defense-and-cyber-adjacent institutional signal through documented Hill Air Force Base and Ogden Air Logistics Complex sustainment roles, Utah Test and Training Range support, SDL defense and space research, and University of Utah cybersecurity-program activity.</div>
+      <div class="detail-item"><strong>Energy planning and selected power-availability visibility.</strong> The signals layer reflects an energy-planning-and-power-visibility signal through documented Utah Office of Energy Development planning functions and facility-level power and cooling conditions in the visible West Jordan data-center materials.</div>
+      <div class="detail-item"><strong>Municipal asymmetry and sparse statewide visibility.</strong> The signals layer reflects a corridor-asymmetry signal through documented concentration of the strongest current evidence around Salt Lake City and nearby Salt Lake Valley nodes, Ogden and Hill Air Force Base, Provo-linked corridor transit, and thinner statewide documentary coverage elsewhere.</div>
     </div>
+ 
+    <h3 class="subhead">Limited signal traces</h3>
+    <p class="muted mini">The signals layer records that the following categories have only limited direct signal visibility in the current evidence set.</p>
+    <ul class="evidence-bullets">
+      <li>intermountain adjacency beyond the documented west-facing airport cargo language and Wasatch Front to Wasatch Back mountain-transportation links</li>
+      <li>statewide freight-node structure beyond the airport, FrontRunner, WFRC, and UDOT materials preserved in the current package</li>
+      <li>statewide municipal variation beyond the best-documented Wasatch Front and northern defense and research nodes</li>
+    </ul>
+ 
+    <h3 class="subhead">No direct signal established yet</h3>
+    <p class="muted mini">The signals layer records that the current evidence set does not establish direct signal treatment for the following categories.</p>
+    <ul class="evidence-bullets">
+      <li>statewide hyperscale leadership</li>
+      <li>major IX concentration beyond the documented presence of SLIX</li>
+      <li>complete statewide backbone density or digital-corridor redundancy</li>
+      <li>federal research-laboratory concentration</li>
+      <li>custody or financial-infrastructure leadership</li>
+      <li>semiconductor fabrication leadership</li>
+      <li>uniform statewide data-center distribution</li>
+      <li>cross-state routing significance</li>
+      <li>documented spillover effects involving Nevada, Colorado, Arizona, Idaho, or Wyoming</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals requiring trust-layer confirmation later</h3>
+    <p class="muted mini">The signals layer records that the following signals require later trust-layer confirmation before any classification work.</p>
+    <ul class="evidence-bullets">
+      <li>continuity of Wasatch Front concentration as a long-duration coordination pattern</li>
+      <li>durability of the Salt Lake, Provo, and Ogden corridor structure</li>
+      <li>stability of visible facility-level data-center and interconnection conditions in the Salt Lake Valley</li>
+      <li>continuity of mountain-corridor transportation concentration in the Wasatch environment</li>
+      <li>continuity of public-university and university-affiliated research institutions</li>
+      <li>durability of Hill Air Force Base, Ogden sustainment, SDL, and university cybersecurity institutions as visible technical anchors</li>
+      <li>persistence of corridor concentration alongside thinner statewide visibility outside the best-documented nodes</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: signals.md</div>
+  </section>
+ 
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md and that absence of signals reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted"><strong>Scope.</strong> The trust-dimensions layer records that trust does not describe what the environment looks like. The trust-dimensions layer records that it evaluates what kinds of stability conditions Utah can sustain given the evidence layer and the visible signal environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted mini">The trust-dimensions layer records that Utah currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>durable concentration around the Wasatch Front corridor rather than uniform statewide visibility</li>
+      <li>stable transport and planning continuity across the Salt Lake, Provo, and Ogden corridor system</li>
+      <li>visible data-center, interconnection, and power conditions in the Salt Lake Valley with incomplete statewide infrastructure transparency</li>
+      <li>durable public-university, university-affiliated research, and cyber-governance institutions</li>
+      <li>stable northern Utah defense and sustainment institutions centered on Hill Air Force Base and Ogden-supporting systems</li>
+      <li>incomplete statewide visibility for full IX density, backbone continuity, freight-node coverage, and cross-state adjacency effects</li>
+    </ul>
+ 
     <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Utah Artificial Intelligence Policy Act (HB 228, eff. May 2024), Office of Artificial Intelligence Policy, limited-liability sandbox mechanism, AI disclosure requirements for consumer-facing interfaces, OAIP regulatory coordination framework.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> disclosure obligations for AI-generated consumer interactions, sandbox participation as a liability-limiting coordination surface, OAIP review before enforcement posture escalates through the 2026–2027 legislative cycle.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying AI inside consumer-facing, identity-adjacent, or public-sector surfaces should interface with OAIP coordination instruments from initial deployment. The sandbox mechanism supports alignment before enforcement precedent solidifies.</div>
+ 
+      <div class="detail-item">
+        <strong>Wasatch Front concentration vs sparse statewide distribution.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Corridor-centered continuity with thinner statewide visibility.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>Utah History to Go materials placing most of the state population along the Wasatch Front</li>
+          <li>WFRC materials serving 6 counties, 76 cities, and more than 2 million people along the Wasatch Front</li>
+          <li>the strongest current package evidence concentrated around Salt Lake City, West Jordan, Salt Lake airport infrastructure, Ogden and Hill Air Force Base, Provo-linked corridor transit, and North Logan research institutions</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package does not provide a uniform statewide institutional or digital-network inventory</li>
+          <li>statewide documentary visibility outside the main corridor is thinner in the current source set</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that Utah shows stable corridor concentration more clearly than evenly distributed statewide infrastructure coverage.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Corridor continuity vs mountain-geography constraints.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Stable corridor continuity with visible mountain-linked planning constraints.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>Utah GIS materials framing the Salt Lake, Provo, and Ogden urban corridor from Santaquin to Brigham City</li>
+          <li>Central Wasatch Commission materials covering transportation planning across the Salt Lake Valley, canyon systems, and connections to the Wasatch Back</li>
+          <li>WFRC and UTA materials documenting long-duration corridor transportation planning and rail linkage</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package is stronger on corridor and mountain-planning structure than on a complete statewide geography-to-infrastructure inventory</li>
+          <li>mountain-linked planning evidence does not establish statewide continuity on its own</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that Utah shows stable corridor planning continuity in a mountain-linked environment, while full statewide continuity remains incompletely documented.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Institutional concentration vs uniform statewide coverage.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Stable institutional anchors with incomplete statewide coverage.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>corridor concentration across Salt Lake City, West Jordan, Ogden, Provo-linked transit, and North Logan research institutions</li>
+          <li>Hill Air Force Base and Ogden Air Logistics Complex visibility in northern Utah</li>
+          <li>University of Utah, Utah State University, and SDL continuity in the current package</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current source set does not provide an equivalent statewide municipal or institutional comparison outside the best-documented nodes</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that Utah shows durable institutional anchors in selected corridor and northern nodes, while the current package does not support a uniform statewide coverage reading.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Data-center and network visibility vs statewide infrastructure opacity.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Visible node-level digital continuity with incomplete statewide transparency.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>Novva and EdgeConneX facility materials in the Salt Lake Valley</li>
+          <li>SLIX visibility in downtown Salt Lake City</li>
+          <li>Salt Lake City right-of-way materials for conduit, fiber, and small-cell infrastructure</li>
+          <li>facility-level carrier and interconnection participation in the Salt Lake City environment</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package does not include a complete statewide IX, backbone, or colocation inventory</li>
+          <li>visible facility evidence is stronger than statewide digital-network mapping in the source set</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that Utah shows stable digital-infrastructure visibility in the Salt Lake Valley, while statewide network transparency remains incomplete.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Public-university and research continuity.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Durable university and university-affiliated research continuity.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>University of Utah cybersecurity governance and standards alignment</li>
+          <li>Gardner Policy Institute control totals used in Wasatch Front projection materials</li>
+          <li>Utah State University and SDL continuity in defense and space research</li>
+          <li>SDL's continuing Department of Defense UARC role</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package is stronger on visible institutional continuity than on a full statewide research-output map</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that Utah shows durable public-university and university-affiliated research continuity in the visible source set.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Defense, aerospace, simulation, and cyber-adjacent institutional durability.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Stable northern defense and technical-institution continuity.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>Hill Air Force Base as an Air Force Materiel Command base in northern Utah</li>
+          <li>75th Air Base Wing support for the Ogden Air Logistics Complex, Life Cycle Management Center, Nuclear Weapons Center, and Utah Test and Training Range</li>
+          <li>Ogden Air Logistics Complex sustainment and engineering-management functions across aircraft, missile, software, and component systems</li>
+          <li>SDL research areas in sensing, autonomy, space operations, integrated command and data systems, modeling and simulation, and cyber and networked systems</li>
+          <li>University of Utah cybersecurity governance structures</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package does not support a statewide defense-sector distribution claim beyond the visible institutions</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that Utah shows durable defense-, aerospace-, sustainment-, simulation-, and cyber-adjacent institutions where the evidence is concentrated in northern Utah and selected university environments.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Transport and inland logistics continuity.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Stable corridor and airport-centered logistics continuity.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>Salt Lake City airport cargo materials documenting 24/7 operations, rail and highway access, and intermodal connectivity</li>
+          <li>airport redevelopment and traffic-volume materials</li>
+          <li>WFRC transportation-planning materials for the Salt Lake and Ogden-Layton urban areas</li>
+          <li>FrontRunner corridor linkage between Provo and Ogden</li>
+          <li>UDOT statewide multimodal planning language</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package does not provide a full statewide freight-node or logistics-network inventory</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that Utah shows stable corridor and airport-centered logistics continuity, without establishing a broader statewide freight-density reading.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Energy planning and facility-level power continuity.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Visible state-planning continuity with selected site-level power visibility.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>Utah Office of Energy Development as the state's primary energy office and central energy hub</li>
+          <li>OED implementation of the state strategic energy plan</li>
+          <li>OED growth-oriented energy-development framing through Operation Gigawatt</li>
+          <li>facility-level utility, substation, solar, and cooling visibility in the West Jordan data-center materials</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package does not provide a normalized statewide utility-delivery map or direct statewide power-resilience inventory</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that Utah shows stable energy-planning continuity at the state level and visible power conditions at selected facilities, while statewide energy-delivery transparency remains incomplete.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Municipal asymmetry within the main corridor.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Related corridor nodes with differentiated roles.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>Salt Lake City and nearby Salt Lake Valley nodes show airport, interconnection, right-of-way telecommunications, and visible data-center evidence</li>
+          <li>Ogden and Hill Air Force Base show defense and sustainment institutional evidence</li>
+          <li>Provo is visible primarily through corridor-planning and transit-linkage materials in the current package</li>
+          <li>North Logan is visible through Utah State University and SDL research materials</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package does not support a complete municipal ordering for the full corridor or the full state</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that Utah shows a stable but differentiated corridor-node pattern, while the current package does not support a fuller statewide municipal comparison.</p>
+      </div>
+ 
     </div>
-    <div class="note">Operational signal: Utah interfaces with the national AI governance surface as a pragmatic modernization corridor rather than an enforcement-formation zone. Teams deploying here operate within lower regulatory drag while sandbox maturation continues through 2026.</div>
+ 
+    <h3 class="subhead">Trust layer synthesis</h3>
+    <p class="muted mini">The trust-dimensions layer records that, taken together, Utah's trust profile supports the following interpretation:</p>
+    <ul class="evidence-bullets">
+      <li>Utah's visible stable conditions are concentrated along the Wasatch Front and selected northern institutions rather than evenly statewide</li>
+      <li>corridor planning, rail linkage, airport logistics, and mountain-transportation coordination are more visible than a complete statewide transport inventory</li>
+      <li>digital and power visibility is strongest in the Salt Lake Valley and selected facilities rather than through a full statewide network map</li>
+      <li>university, university-affiliated research, defense, sustainment, simulation, and cyber institutions are durable where directly documented</li>
+      <li>statewide IX density, backbone continuity, freight-node coverage, and cross-state adjacency remain incompletely normalized</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Utah operates as one of the most permissive state-level Bitcoin deployment surfaces in the continental US. The Strategic Bitcoin Reserve Act (HB 230) established a statutory coordination surface enabling the state to hold Bitcoin as a strategic treasury asset — a structurally significant signal for operators deploying inside institutional digital asset coordination layers. The Money Transmitter Act governs custodial and exchange-adjacent activity under the Utah Division of Financial Institutions.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Permissive / Forward-Leaning</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">UDFI (Money Transmitter Act)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Favorable deployment surface; standard licensing applies</div></div>
-    </div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md.</p>
+    <p class="muted"><strong>Scope.</strong> The profile layer records that this file records the normalized Utah jurisdiction profile inside the Atlas state package and that profile is the characterization layer of the package, downstream from evidence, signals, and trust interpretation.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted mini">The profile layer records that Utah currently presents within Atlas as:</p>
+    <ul class="evidence-bullets">
+      <li>a corridor-concentrated Wasatch Front environment</li>
+      <li>a Salt Lake City, Provo, and Ogden corridor environment with differentiated municipal roles</li>
+      <li>a data-center-visible but uneven statewide digital-infrastructure environment</li>
+      <li>an inland transport and airport-logistics corridor environment</li>
+      <li>a research-university and university-affiliated technical-institution environment</li>
+      <li>a defense-, aerospace-, sustainment-, simulation-, and cyber-adjacent environment in selected northern and university nodes</li>
+      <li>a mountain-corridor-planning environment with visible Wasatch and canyon transport coordination</li>
+      <li>a sparsely documented statewide environment outside the main corridor and the best-documented northern institutions</li>
+    </ul>
+    <p class="muted mini"><em>The profile layer records that Utah does not presently appear in the current source set as:</em></p>
+    <ul class="evidence-bullets">
+      <li>a federal research-laboratory concentration environment</li>
+      <li>a major interconnection exchange concentration beyond the documented presence of SLIX</li>
+      <li>a statewide hyperscale leadership environment</li>
+      <li>a custody or financial-infrastructure leadership environment</li>
+      <li>a semiconductor fabrication leadership environment</li>
+    </ul>
+ 
     <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Strategic Bitcoin Reserve Act (HB 230, 2025), Utah Money Transmitter Act, Utah Division of Financial Institutions licensing framework, AML/BSA baseline compliance expectations, property rights protections for digital asset holders.</div>
-      <div class="detail-item"><strong>Positive signal:</strong> Utah's strategic reserve legislation anchors a structurally favorable institutional posture toward Bitcoin. The corridor does not deploy prohibition instruments or prohibitive licensing overhead against self-custody, node operation, or institutional holding surfaces.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> custodial services, exchange-adjacent operators, Bitcoin payment infrastructure, and institutional coordination layers deploying within Utah interface with one of the more favorable state regulatory environments in the Mountain West. Standard money transmission licensing applies where required.</div>
+      <div class="detail-item"><strong>Corridor-concentrated Wasatch Front characterization.</strong> The profile layer records that Utah's infrastructure posture is characterized in the current package by concentration along the Wasatch Front corridor. The profile layer records that the current package shows state history materials placing most of the population along the Wasatch Front, WFRC planning coverage across 6 counties, 76 cities, and more than 2 million people along the Wasatch Front, Utah GIS projection materials centered on the Salt Lake, Provo, and Ogden urban corridor from Santaquin to Brigham City, and transportation and institutional evidence concentrated in the main Wasatch corridor and selected northern nodes. The profile layer records that these conditions support a structural characterization centered on Wasatch Front concentration rather than evenly distributed statewide infrastructure.</div>
+      <div class="detail-item"><strong>Salt Lake City, Provo, and Ogden corridor characterization.</strong> The profile layer records that Utah's main urban-corridor posture is characterized in the current package by visible linkage among Salt Lake City, Provo, and Ogden environments. The profile layer records that the current package shows Utah GIS corridor-projection materials explicitly naming the Salt Lake, Provo, and Ogden urban corridor, FrontRunner commuter-rail materials connecting Provo and Ogden through the Wasatch Front system, WFRC transportation-planning materials for the Salt Lake and Ogden-Layton urban areas, and Salt Lake airport infrastructure and redevelopment visibility in the Salt Lake City node. The profile layer records that these conditions support a structural characterization centered on a linked corridor system with differentiated municipal visibility.</div>
+      <div class="detail-item"><strong>Data-center-visible but uneven statewide digital-infrastructure characterization.</strong> The profile layer records that Utah's digital-infrastructure posture is characterized in the current package by visible facilities and interconnection structures in the Salt Lake Valley. The profile layer records that the current package shows operator-reported data-center facilities in West Jordan and Salt Lake City, visible carrier and interconnection participation in the Salt Lake City facility environment, SLIX presence in downtown Salt Lake City, and Salt Lake City telecommunications right-of-way structures for conduit, fiber, and small-cell infrastructure. The profile layer records that these conditions support a structural characterization centered on visible Salt Lake Valley digital infrastructure rather than a claim of uniform statewide digital density.</div>
+      <div class="detail-item"><strong>Inland transport and airport-logistics characterization.</strong> The profile layer records that Utah's transport posture is characterized in the current package by airport-centered cargo infrastructure and corridor transportation planning. The profile layer records that the current package shows Salt Lake airport cargo materials describing 24/7 operations, highway access, rail access, and intermodal connectivity, Salt Lake airport expansion and high traffic-volume visibility, WFRC transportation-planning materials across roadway, transit, and active transportation in the main urban corridor, FrontRunner commuter-rail linkage between Provo and Ogden, and UDOT statewide multimodal planning materials. The profile layer records that these conditions support a structural characterization centered on inland transport and airport-logistics continuity in the Wasatch corridor.</div>
+      <div class="detail-item"><strong>Research-university and technical-institution characterization.</strong> The profile layer records that Utah's research posture is characterized in the current package by university, policy, and university-affiliated research continuity. The profile layer records that the current package shows University of Utah cybersecurity governance and standards-alignment structures, University of Utah Gardner Policy Institute inputs into Wasatch Front population and jobs projection datasets, Utah State University and SDL continuity in North Logan, and SDL's continuing Department of Defense UARC role. The profile layer records that these conditions support a structural characterization centered on research-university and technical-institution continuity.</div>
+      <div class="detail-item"><strong>Defense, aerospace, sustainment, simulation, and cyber-adjacent characterization.</strong> The profile layer records that Utah's specialized technical posture is characterized in the current package by northern defense and sustainment institutions alongside university-linked cyber and research institutions. The profile layer records that the current package shows Hill Air Force Base and the 75th Air Base Wing in northern Utah, support for the Ogden Air Logistics Complex, the Life Cycle Management Center, the Nuclear Weapons Center, and the Utah Test and Training Range, Ogden Air Logistics Complex sustainment, software, engineering-management, and missile-support functions, SDL research areas in space, sensing, integrated data systems, modeling and simulation, and cyber and networked systems, and University of Utah cybersecurity-program activity. The profile layer records that these conditions support a structural characterization centered on selected defense-, aerospace-, sustainment-, simulation-, and cyber-adjacent institutions.</div>
+      <div class="detail-item"><strong>Mountain-corridor-planning characterization.</strong> The profile layer records that Utah's geography-linked infrastructure posture is characterized in the current package by visible mountain and canyon transportation coordination in the Wasatch environment. The profile layer records that the current package shows Wasatch Front population concentration in state history materials, Salt Lake to Brigham City corridor projections in Utah GIS materials, and Central Wasatch Commission transportation work covering the Salt Lake Valley, Cottonwood canyons, Parleys Canyon, and Wasatch Back connections. The profile layer records that these conditions support a structural characterization centered on mountain-corridor planning and concentration rather than a claim of statewide geographic uniformity.</div>
+      <div class="detail-item"><strong>Sparse statewide visibility outside the main corridor characterization.</strong> The profile layer records that Utah's statewide distribution posture is characterized in the current package by thinner documentary coverage outside the main corridor and the best-documented northern institutions. The profile layer records that the current package shows the strongest visible evidence concentrated around Salt Lake City and nearby Salt Lake Valley nodes, Ogden and Hill Air Force Base, Provo-linked transit, and North Logan research institutions, WFRC coverage limited to the Wasatch Front planning region rather than the full state, and evidence gaps around broader statewide network, municipal, freight, and energy-delivery inventories. The profile layer records that these conditions support a structural characterization centered on sparse statewide documentary visibility outside the main documented corridor system.</div>
     </div>
+ 
+    <h3 class="subhead">Structural rationale</h3>
+    <p class="muted mini">The profile layer records that Utah's profile characterization is supported by the combined package interpretation:</p>
+    <ul class="evidence-bullets">
+      <li>evidence shows Wasatch Front concentration, Salt Lake-Provo-Ogden corridor structure, Salt Lake Valley data-center and interconnection visibility, airport and transport logistics, mountain-corridor planning, university continuity, defense and sustainment institutions, selected energy-planning evidence, and sparse statewide documentary coverage outside the best-documented nodes</li>
+      <li>signals show Wasatch Front concentration, corridor visibility, data-center and fiber visibility, inland logistics structure, mountain-corridor transport concentration, university continuity, defense and cyber-adjacent institutions, energy-planning visibility, and municipal asymmetry</li>
+      <li>trust interpretation shows durable corridor concentration, stable transport and planning continuity, node-level digital visibility with incomplete statewide transparency, durable university and defense institutions, and incomplete statewide adjacency and interconnection coverage</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of Utah as a Wasatch Front-concentrated corridor environment with visible Salt Lake Valley digital infrastructure, airport and transport logistics, university and defense-linked technical institutions, mountain-corridor planning concentration, and thinner statewide documentary visibility outside the main documented systems.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Utah currently reads within Atlas as a Wasatch Front-concentrated corridor environment with visible Salt Lake Valley digital infrastructure, airport and transport logistics, university and defense-linked technical institutions, mountain-corridor planning concentration, and thinner statewide documentary visibility outside the main documented corridor system.</p>
+ 
+    <h3 class="subhead">Profile uncertainties requiring later builder-mode interpretation</h3>
+    <p class="muted mini">The profile layer records that the following uncertainties should be preserved for later builder-mode interpretation:</p>
+    <ul class="evidence-bullets">
+      <li>whether the current Wasatch Front corridor reading should later be subdivided into finer Salt Lake Valley, Ogden-Hill, Provo, and northern research sub-environments</li>
+      <li>whether current Salt Lake Valley digital visibility should expand once broader statewide interconnection and facility inventories are normalized</li>
+      <li>whether mountain-corridor planning evidence should remain a distinct geography constraint layer or be folded into a broader corridor reading later</li>
+      <li>whether statewide documentary sparsity should narrow once fuller municipal, logistics, and utility inventories are normalized</li>
+      <li>whether region-facing and intermountain adjacency should remain limited unless more direct cross-state evidence is normalized</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: profile.md</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Utah's Consumer Privacy Act (UCPA) establishes a state-level data privacy coordination framework administered through the Utah Attorney General's office. The UCPA is structurally less burdensome than California's CPRA regime: it does not create a private right of action, includes a 60-day cure period for violations, and applies narrower thresholds to the data controller and processor surfaces. Operators handling Utah resident data interface with meaningful but moderate compliance obligations relative to other active state privacy regimes.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active · Moderate</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">UCPA (eff. Dec 2023)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Compliance required; overhead lower than western peers</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Utah Consumer Privacy Act (SB 227, eff. Dec 31, 2023), Utah Attorney General enforcement authority, 60-day cure period for covered violations, controller and processor applicability thresholds, sensitive data category treatment.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> AG-initiated enforcement with cure period; no private right of action; narrower applicability thresholds reduce the surface area for smaller operators; penalty exposure exists but the enforcement posture is less aggressive than California's CPPA model.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> operators collecting data from Utah residents must align with UCPA controller obligations including consumer rights workflows, opt-out mechanisms for targeted advertising, and sensitive data handling protocols. The cure period creates structured remediation surfaces before enforcement escalates.</div>
-    </div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers.</p>
+    <p class="muted"><strong>Scope.</strong> The builder-mode layer records that this file translates the normalized Utah profile into builder-facing guidance, that Builder Mode is downstream from evidence, signals, trust interpretation, and profile characterization, and that it does not replace those layers. The builder-mode layer records that this file provides deployment interpretation only and does not rank Utah, compare Utah to other jurisdictions, or prescribe deployment decisions.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted mini">The builder-mode layer records that Utah is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a Wasatch Front-concentrated corridor environment</li>
+      <li>a Salt Lake Valley digital-infrastructure-visible environment</li>
+      <li>a corridor-linked Salt Lake City, Provo, and Ogden environment with differentiated nodes</li>
+      <li>an airport- and corridor-logistics-visible environment</li>
+      <li>a university, defense, sustainment, simulation, and cyber-adjacent environment with specific institutional anchors</li>
+      <li>a mountain-corridor planning environment with incomplete statewide visibility beyond the best-documented systems</li>
+    </ul>
+ 
+    <h3 class="subhead">Evidence concentration interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current Utah materials support deployment interpretation around concentrated evidence in a limited set of visible environments: Salt Lake City and nearby Salt Lake Valley nodes, including the airport, SLIX, right-of-way telecommunications structures, and visible data-center facilities; Ogden and Hill Air Force Base environments, including the Ogden Air Logistics Complex and related northern defense institutions; Provo-linked corridor transit and planning structures within the Wasatch Front system; North Logan through Utah State University and SDL research continuity. The builder-mode layer records that these interpretation areas arise from documented WFRC, UTA, Salt Lake City, Salt Lake airport, Hill Air Force Base, University of Utah, Utah State University, SDL, OED, and visible operator materials.</p>
+ 
+    <h3 class="subhead">Corridor concentration interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current Utah materials support deployment interpretation that treats Wasatch Front concentration as a primary structural condition in the visible package. The builder-mode layer records that the package shows corridor continuity most clearly where population, transportation planning, interconnection visibility, airport infrastructure, data-center facilities, and institutional anchors overlap in the Wasatch system.</p>
+ 
+    <h3 class="subhead">Statewide uniformity constraint interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current Utah materials support deployment constraint interpretation around assumptions of uniform statewide infrastructure density. The builder-mode layer records that these constraints arise from most of the population being documented in the Wasatch Front counties, the strongest infrastructure and institutional evidence being concentrated in a limited corridor and selected northern nodes, and incomplete statewide IX, backbone, freight, utility-delivery, and municipal inventories in the current package.</p>
+ 
+    <h3 class="subhead">Digital-infrastructure interpretation constraint</h3>
+    <p class="muted">The builder-mode layer records that the current Utah materials support deployment interpretation that recognizes visible Salt Lake Valley facilities and interconnection structures without overreading them into statewide digital ubiquity. The builder-mode layer records that the package documents SLIX, facility-level carrier participation, and Salt Lake City fiber and small-cell governance structures, but it does not establish a complete statewide backbone or interconnection map.</p>
+ 
+    <h3 class="subhead">Municipal-difference interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current Utah materials support deployment interpretation that treats Salt Lake City, Ogden and Hill, Provo-linked transit, and North Logan research institutions as related but differentiated environments. The builder-mode layer records that the package shows visible airport, interconnection, and data-center conditions in the Salt Lake Valley; defense and sustainment institutions around Ogden and Hill; transit-linked corridor visibility around Provo; and research continuity in North Logan.</p>
+ 
+    <h3 class="subhead">Mountain-geography interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current Utah materials support deployment interpretation that takes mountain-linked planning and canyon transportation coordination seriously. The builder-mode layer records that this is most visible in Central Wasatch transportation work across the Salt Lake Valley, Cottonwood canyons, Parleys Canyon, and Wasatch Back connections, Wasatch Front corridor projections from Santaquin to Brigham City, and corridor transportation planning through WFRC, UTA, and UDOT materials. The builder-mode layer records that the package does not extend this interpretation into a claim of uniform statewide geographic continuity.</p>
+ 
+    <h3 class="subhead">Institutional-anchor interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current Utah materials support deployment interpretation for work that depends on specific institutional anchors. The builder-mode layer records that this is most visible in University of Utah cybersecurity governance and policy-aligned security structures, Utah State University and SDL defense and space research continuity, Hill Air Force Base and Ogden Air Logistics Complex sustainment institutions, and Utah Office of Energy Development planning continuity. The builder-mode layer records that the package does not extend this interpretation into a claim of identical institutional depth across the full state.</p>
+ 
+    <h3 class="subhead">Logistics and transport interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current Utah materials support deployment interpretation that takes account of airport-centered logistics, corridor rail linkage, and multi-agency transportation planning. The builder-mode layer records that builders interpreting Utah should expect the current package to read more clearly through corridor and node selection than through statewide mesh assumptions.</p>
+ 
+    <h3 class="subhead">Design expectations for builders</h3>
+    <p class="muted mini">The builder-mode layer records that builders interpreting Utah should assume:</p>
+    <ul class="evidence-bullets">
+      <li>corridor concentration matters materially</li>
+      <li>Wasatch Front visibility should not be mistaken for uniform statewide density</li>
+      <li>Salt Lake Valley digital visibility is stronger than full statewide network transparency in the current package</li>
+      <li>mountain-linked transport planning is a real coordination factor in the visible Wasatch environment</li>
+      <li>municipal and institutional differences within the corridor matter</li>
+      <li>intermountain adjacency remains incomplete unless more direct cross-state documentary evidence is normalized</li>
+    </ul>
+ 
+    <h3 class="subhead">Deployment posture interpretation</h3>
+    <p class="muted mini"><em>The builder-mode layer records that Utah's current package most clearly supports builder interpretation around:</em></p>
+    <ul class="evidence-bullets">
+      <li>Wasatch Front corridor concentration</li>
+      <li>Salt Lake Valley data-center and interconnection visibility</li>
+      <li>airport and corridor logistics conditions</li>
+      <li>university and university-affiliated research continuity</li>
+      <li>northern defense, sustainment, simulation, and cyber-adjacent institutions</li>
+      <li>mountain-corridor transportation coordination in the Wasatch environment</li>
+    </ul>
+    <p class="muted mini"><em>The builder-mode layer records that Utah's current package also supports qualified interpretation around:</em></p>
+    <ul class="evidence-bullets">
+      <li>differentiated corridor-node conditions across Salt Lake City, Ogden and Hill, Provo-linked transit, and North Logan research institutions</li>
+      <li>thinner statewide visibility outside the best-documented corridor and northern technical nodes</li>
+      <li>state-level energy-planning continuity with selected site-level power visibility</li>
+    </ul>
+    <p class="muted mini"><em>The builder-mode layer records that Utah's current package does not support:</em></p>
+    <ul class="evidence-bullets">
+      <li>statewide hyperscale leadership interpretation</li>
+      <li>major IX concentration interpretation beyond the documented presence of SLIX</li>
+      <li>federal research-laboratory concentration interpretation</li>
+      <li>custody or financial-infrastructure leadership interpretation</li>
+      <li>cross-state routing significance interpretation</li>
+      <li>intermountain leadership interpretation</li>
+    </ul>
+ 
+    <h3 class="subhead">Areas requiring later interpretation</h3>
+    <p class="muted mini">The builder-mode layer records that the following areas should remain open for later interpretation:</p>
+    <ul class="evidence-bullets">
+      <li>whether Utah's current corridor reading should later be split into finer Salt Lake Valley, Ogden-Hill, Provo, and northern research sub-environments</li>
+      <li>whether statewide interconnection conditions should expand once direct statewide IX and backbone evidence is normalized</li>
+      <li>whether freight and logistics interpretation should expand once broader statewide freight-node evidence is normalized</li>
+      <li>whether cross-state adjacency should expand once direct Nevada, Colorado, Arizona, Idaho, or Wyoming corridor evidence is normalized</li>
+      <li>whether broader private facility inventories should expand the current Salt Lake Valley digital-infrastructure reading</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Utah's biometric governance surface is anchored through UCPA sensitive data classification rather than a standalone biometric statute. The corridor does not deploy an Illinois BIPA-equivalent instrument, creating a more permissive operating environment for identity-adjacent and verification-layer deployments. Digital identity modernization coordination surfaces through public-sector initiatives signal a constructive institutional posture toward identity technology deployment within governance-aligned use cases.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing / Limited Scope</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Modernization-oriented / consent-aware</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower constraint surface; UCPA sensitive data obligations apply</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> UCPA sensitive data classification (biometric identifiers), Utah Digital Identity initiative coordination surfaces, no standalone biometric privacy statute as of 2026, consent-based alignment expected within public-sector deployment environments.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> UCPA sensitive data obligations create baseline consent and processing requirements; no private right of action limits litigation exposure; legislative refinement toward a standalone biometric instrument is a monitoring surface through the 2026–2027 session.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> identity verification, digital credential, and biometric authentication surfaces deploying inside Utah interact with a relatively permissive governance environment. Teams should maintain UCPA sensitive data alignment and monitor legislative surfaces for standalone biometric instruments in the next session.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+ 
+    <p class="muted">The canonical package records the following structural exclusions for Utah.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that the current source set does not provide sufficient normalized documentary coverage to support statewide routing classification, cross-state spillover characterization, or surface assignment. The evidence layer records that absence of evidence is preserved as a valid structural outcome under Atlas normalization rules.</p>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted mini">The signals layer records that, based on the current signal set, this file does not support direct signal treatment for the following categories:</p>
+    <ul class="atlas-list" style="margin-top:8px">
+      <li>statewide hyperscale leadership</li>
+      <li>major IX concentration beyond the documented presence of SLIX</li>
+      <li>complete statewide backbone density or digital-corridor redundancy</li>
+      <li>federal research-laboratory concentration</li>
+      <li>custody or financial-infrastructure leadership</li>
+      <li>semiconductor fabrication leadership</li>
+      <li>uniform statewide data-center distribution</li>
+      <li>cross-state routing significance</li>
+      <li>documented spillover effects involving Nevada, Colorado, Arizona, Idaho, or Wyoming</li>
+    </ul>
+    <p class="muted">The signals layer records that this file also does not assign routing eligibility, registry readiness, certification posture, deployment suitability, corridor leadership ranking, or Atlas surfaces.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted mini">The trust-dimensions layer records that, based on the current signal and trust material, this file does not support the following dimension-level interpretations:</p>
+    <ul class="atlas-list" style="margin-top:8px">
+      <li>a normalized statewide interconnection continuity dimension beyond the Salt Lake Valley and other best-documented nodes</li>
+      <li>a normalized cross-state adjacency dimension involving Nevada, Colorado, Arizona, Idaho, or Wyoming</li>
+      <li>a uniform statewide infrastructure-density interpretation beyond the main Wasatch corridor and visible northern institutions</li>
+    </ul>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted mini">The profile layer records that Utah's profile should not be read as:</p>
+    <ul class="atlas-list" style="margin-top:8px">
+      <li>a general ranking claim</li>
+      <li>a declaration of routing leadership</li>
+      <li>a custody-leadership claim</li>
+      <li>a coordination-tier classification</li>
+      <li>a surface assignment</li>
+      <li>a statement of national significance</li>
+    </ul>
+    <p class="muted">The profile layer records that it should be read as a characterization of Utah's current structural posture within the evidence preserved in this Atlas package.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not assign routing authority, coordination tier, Atlas surface, national significance, or leadership positioning. It does not prescribe deployment decisions.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted mini">The change-log records that the following classifications were evaluated but not supported by evidence:</p>
+    <ul class="atlas-list" style="margin-top:8px">
+      <li>statewide hyperscale leadership</li>
+      <li>major IX concentration beyond the documented presence of SLIX</li>
+      <li>federal research-laboratory concentration</li>
+      <li>custody or financial-infrastructure leadership</li>
+      <li>semiconductor fabrication leadership</li>
+      <li>uniform statewide digital-corridor continuity</li>
+      <li>cross-state routing significance</li>
+      <li>intermountain leadership claims</li>
+    </ul>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Utah coordinates public-sector AI deployment through the Office of Artificial Intelligence Policy, which operates as both a governance coordination surface and a sandbox interface for state agency deployments. The jurisdiction functions as a modernization-first environment where public-sector AI procurement interfaces with governance frameworks oriented toward institutional trust formation rather than restrictive procurement gatekeeping. Digital identity modernization and education technology surfaces are active coordination layers within this corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Growing</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Modernization-first</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Constructive fit for identity-aligned B2G operators</div></div>
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records the following evidence gaps for Utah. The canonical package records that the current Utah source material does not provide additional normalized source detail for the following categories beyond the evidence already listed above.</p>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">a complete official statewide IX and backbone inventory beyond SLIX and the currently visible facility materials</div>
+      <div class="detail-item">direct statewide digital-corridor redundancy mapping across Utah</div>
+      <div class="detail-item">a complete statewide private colocation and large-facility inventory beyond the currently visible Salt Lake Valley operator materials</div>
+      <div class="detail-item">fuller municipal-comparison detail outside the Wasatch Front corridor and the best-documented northern research and defense nodes</div>
+      <div class="detail-item">direct statewide utility-delivery transparency beyond OED materials and facility-level operator pages</div>
+      <div class="detail-item">normalized cross-state adjacency evidence sufficient to characterize Nevada, Colorado, Arizona, Idaho, Wyoming, or other intermountain spillover effects</div>
+      <div class="detail-item">a fuller official statewide freight-node inventory beyond the airport, transit, and corridor-planning materials preserved here</div>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Office of Artificial Intelligence Policy (OAIP), Utah Artificial Intelligence Policy Act, state digital identity coordination frameworks, Governor's Office of Planning and Budget AI alignment surfaces, education technology deployment guidance.</div>
-      <div class="detail-item"><strong>Growth signal:</strong> public-sector AI is advancing under OAIP coordination, with modernization frameworks favoring structured experimentation over restrictive gatekeeping. Identity governance and digital credential verification surfaces are active alignment zones within this corridor.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams operating within education, digital identity, or state government surfaces find constructive coordination environments here. OAIP sandbox engagement supports deployment alignment before enforcement obligations solidify, making this corridor accessible for identity-aligned and modernization-oriented B2G operators.</div>
+ 
+    <h3 class="subhead">Trust-layer evidence-gap placeholders</h3>
+    <p class="muted mini">The trust-dimensions layer records two placeholder entries within the evidence-gap section:</p>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item"><strong>Statewide interconnection continuity placeholder.</strong> The trust-dimensions layer records that the current package supports Salt Lake Valley interconnection review, but not a normalized statewide interconnection-continuity section grounded in direct statewide IX and backbone evidence.</div>
+      <div class="detail-item"><strong>Cross-state adjacency placeholder.</strong> The trust-dimensions layer records that the current package preserves limited west-facing and Wasatch Back linkage evidence, but not a normalized trust treatment for Nevada, Colorado, Arizona, Idaho, or Wyoming spillover effects.</div>
     </div>
+ 
+    <p class="muted" style="margin-top:12px">The canonical package records gap inheritance: signals.md, trust-dimensions.md, profile.md, and builder-mode.md inherit these evidence gaps without expansion. change-log.md records that inheritance rule and does not create a new evidence-gap set.</p>
+    <div class="src">Source: evidence.md — Evidence gaps; trust-dimensions.md — placeholders; change-log.md — Gap inheritance</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Utah operates as a lower-friction developer deployment surface relative to western corridor peers. The jurisdiction does not deploy age-assurance mandates at the scale of California, AI disclosure obligations are limited to consumer-facing interaction surfaces, and the privacy compliance floor — while real — carries less structural drag than multi-agency enforcement environments. Builders operating within the Utah corridor interact with identity-aligned governance modernization surfaces, interior-west infrastructure routing environments, and public-sector digital coordination frameworks linking Mountain West deployment layers.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active · Low Friction</div></div>
-      <div class="mini-box"><div class="label">Gov OSS</div><div class="value">Modernization-aligned</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Accessible surfaces; identity-deployment friendly</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Utah Artificial Intelligence Policy Act developer provisions, UCPA developer compliance guidance, OAIP coordination surfaces, state digital services modernization frameworks, open government data coordination.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> Utah operates as a structurally accessible deployment surface for teams building across identity, digital credential, civic technology, and modernization-adjacent surfaces. Policy friction is present but proportionate — the corridor does not deploy the layered compliance architecture that conditions deployment in heavier-governance western states.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> well-suited for teams interacting across identity governance, public-sector modernization, and interior-west infrastructure coordination surfaces. The lower compliance drag creates accessible onboarding conditions for teams that need governance fluency without the friction overhead of maximum-enforcement corridors.</div>
-    </div>
+  <!-- ── 10. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Normalization sequence</h3>
+    <ul class="mini muted">
+      <li>The change-log records that evidence.md was created and aligned to the Utah instruction layer.</li>
+      <li>The change-log records that signals.md was derived strictly from evidence.md.</li>
+      <li>The change-log records that trust-dimensions.md was derived from evidence.md + signals.md.</li>
+      <li>The change-log records that profile.md was derived from evidence.md + signals.md + trust-dimensions.md.</li>
+      <li>The change-log records that builder-mode.md was derived from all prior layers.</li>
+      <li>The change-log records that a targeted normalization audit was performed against the Utah instruction layer and Atlas normalization contract.</li>
+    </ul>
+ 
+    <h3 class="subhead">Evidence inputs</h3>
+    <p class="muted mini">The change-log records that the Utah normalization pass preserved and aligned evidence around these major categories:</p>
+    <ul class="mini muted">
+      <li>Wasatch Front corridor concentration</li>
+      <li>Salt Lake City, Provo, and Ogden institutional and infrastructure visibility</li>
+      <li>data-center, cloud, and colocation visibility</li>
+      <li>fiber, backbone, and interconnection visibility where directly documented</li>
+      <li>inland logistics and transport corridor structure</li>
+      <li>mountain-corridor geography and infrastructure concentration</li>
+      <li>research university continuity</li>
+      <li>defense, aerospace, sustainment, simulation, and cyber-adjacent institutional environment</li>
+      <li>energy and power-availability conditions where directly documented</li>
+      <li>municipal asymmetry across the main corridor with sparse statewide distribution</li>
+      <li>limited intermountain adjacency evidence</li>
+    </ul>
+ 
+    <h3 class="subhead">Signal derivation method</h3>
+    <ul class="mini muted">
+      <li>The change-log records that signals were extracted directly from evidence.md.</li>
+      <li>The change-log records that signal clustering was limited to documented Wasatch Front concentration, corridor visibility, data-center and colocation visibility, direct interconnection visibility, inland logistics and transport structure, mountain-corridor concentration, research continuity, defense and cyber-adjacent institutions, energy-planning visibility, and municipal asymmetry.</li>
+      <li>The change-log records that no routing inference was performed.</li>
+      <li>The change-log records that no leadership inference was performed.</li>
+      <li>The change-log records that no coordination-tier interpretation was performed.</li>
+    </ul>
+ 
+    <h3 class="subhead">Trust synthesis method</h3>
+    <p class="muted mini">The change-log records that trust indicators were derived from:</p>
+    <ul class="mini muted">
+      <li>Wasatch Front concentration vs sparse statewide distribution</li>
+      <li>corridor continuity vs mountain-geography constraints</li>
+      <li>institutional concentration vs uniform statewide coverage</li>
+      <li>data-center and network visibility vs statewide infrastructure opacity</li>
+      <li>public-university and research continuity</li>
+      <li>defense, aerospace, simulation, and cyber-adjacent institutional durability</li>
+      <li>transport and inland logistics continuity</li>
+      <li>energy planning and facility-level power continuity</li>
+      <li>municipal asymmetry within the main corridor</li>
+    </ul>
+    <p class="muted mini">The change-log records that trust evaluation remained limited to stability characteristics. The change-log records that no surface assignment was performed.</p>
+ 
+    <h3 class="subhead">Profile synthesis inputs</h3>
+    <p class="muted mini">The change-log records that profile.md was produced from evidence.md, signals.md, and trust-dimensions.md. The change-log records that profile synthesis remained structural and descriptive. The change-log records that no routing roles were assigned and no coordination-tier classification was applied.</p>
+ 
+    <h3 class="subhead">Builder-mode interpretation inputs</h3>
+    <p class="muted mini">The change-log records that builder-mode.md was produced from evidence.md, signals.md, trust-dimensions.md, and profile.md. The change-log records that builder mode remained deployment interpretation only. The change-log records that no surface assignment was performed and no deployment prescription was preserved.</p>
+ 
+    <h3 class="subhead">Corrections recorded in this audit</h3>
+    <p class="muted mini">The change-log records that the targeted normalization audit enforced the following conditions:</p>
+    <ul class="mini muted">
+      <li>state instruction-layer alignment to Utah-specific infrastructure evidence</li>
+      <li>evidence-first reconstruction across all downstream layers</li>
+      <li>signals derivation verification against evidence.md only</li>
+      <li>interpretation-layer constraint enforcement to remove routing, leadership, coordination-tier, national-significance, and cross-state-spillover inference</li>
+      <li>profile structural-characterization validation</li>
+      <li>builder-mode interpretation-only enforcement</li>
+      <li>inclusion of structural exclusions and evidence gaps in contract-aligned form</li>
+    </ul>
+ 
+    <h3 class="subhead">Normalization status</h3>
+    <p class="muted">The change-log records that the Utah package was verified and aligned with instruction-layer lenses.</p>
+ 
+    <h3 class="subhead">Gap inheritance</h3>
+    <p class="muted">The change-log records that evidence gaps were inherited from evidence.md and applied downstream without expanding the underlying evidence scope.</p>
+ 
+    <h3 class="subhead">Lens alignment confirmation</h3>
+    <p class="muted">The change-log records that the Utah jurisdiction lens was preserved during this audit. The change-log records that structural normalization changes were limited to contract alignment and did not introduce new evidence.</p>
+ 
+    <h3 class="subhead">Normalization adjustments</h3>
+    <ul class="mini muted">
+      <li>The change-log records standardized layer titles and required constraint language where missing.</li>
+      <li>The change-log records normalized structural-exclusions and evidence-gap section labels where needed.</li>
+      <li>The change-log records aligned downstream files to inherit evidence gaps and preserve non-assignment boundaries.</li>
+      <li>The change-log records appended required status lines where missing.</li>
+    </ul>
+ 
+    <h3 class="subhead">Topology metadata attachment</h3>
+    <p class="muted">The change-log records that metadata.md was added using atlas.md corridor narrative fields: Corridor Group, Foundation Layer, Topology Completion Layer. The change-log records that this metadata is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Bitcoin mining operates within Utah's legal framework with no specific prohibition as of 2026, and the strategic reserve legislation conditions a structurally favorable institutional posture toward proof-of-work activity. Electricity costs operate in a moderate band relative to the continental US — below California and Nevada but above Wyoming and parts of the Mountain West. The energy mix supports viable mining and compute deployment surfaces, and the regulatory environment does not deploy environmental instruments specifically targeting proof-of-work operations.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Favorable</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Moderate band (Mountain West)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Viable deployment surface for mining and compute</div></div>
-    </div>
-    <div class="radar" aria-label="Utah energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:22%;background:var(--green)"></div></div><div class="score">22</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:38%;background:var(--yellow)"></div></div><div class="score">38</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:68%;background:var(--teal)"></div></div><div class="score">68</div></div>
-    </div>
-    <div class="note">Builder implication: Utah functions as a viable coordination surface for mining and compute deployment strategies within the Mountain West corridor. The strategic reserve posture conditions a durable institutional alignment toward proof-of-work activity. Energy cost is a monitoring variable relative to Wyoming and New Mexico alternatives within the same corridor network.</div>
-  </section>
- 
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Utah's governance vector is advancing across modernization, identity, and digital asset layers while maintaining lower compliance friction than its western corridor peers. The Mountain West Institutional Coordination Corridor is positioning this jurisdiction as an identity-governance alignment surface and interior-west deployment coordination node. Operators interacting across this corridor should model for continued institutional modernization rather than enforcement escalation through 2027.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — advancing through OAIP sandbox maturation and anticipated legislative refinement in the 2026–2027 session; enforcement precedent is developing but the posture remains pragmatic rather than restrictive.</div>
-      <div class="detail-item"><strong>Bitcoin / Digital Asset Policy</strong> — advancing as strategic reserve implementation surfaces develop and digital asset governance frameworks interface with national coordination layers. The corridor's institutional posture toward Bitcoin is stabilizing in a favorable direction.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — strengthening incrementally through AG enforcement activity and UCPA maturation; cure period dynamics moderate the escalation curve relative to single-agency enforcement models.</div>
-      <div class="detail-item"><strong>Biometric Governance</strong> — developing; UCPA sensitive data baseline applies, but standalone biometric legislation remains a monitoring surface through the 2026–2027 legislative cycle.</div>
-      <div class="detail-item"><strong>Mining and Compute</strong> — stable and corridor-favorable; strategic reserve legislation anchors institutional alignment, and no prohibition instruments are active within the current legislative surface.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — positive and accessible. OAIP coordination and lower compliance drag position Utah as a constructive entry surface for teams routing into Mountain West governance and identity deployment environments.</div>
-    </div>
-    <div class="callout">12-month outlook: Utah is likely to continue advancing identity governance coordination frameworks, refining OAIP sandbox instruments, and interfacing with Mountain West corridor states on digital asset and compute deployment alignment. Legislative session activity in 2026–2027 may introduce standalone biometric governance instruments and expand AI disclosure surfaces.</div>
-  </section>
- 
-</div>
+</div><!-- /main col -->
  
 <!-- ── SIDEBAR ── -->
 <aside>
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">Utah at a glance</h3>
-    <p class="muted mini">Best used as an identity governance coordination surface, digital asset deployment corridor, and public-sector modernization entry point for Mountain West routing. Lower compliance drag than California and Nevada peers within the same corridor network.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Utah jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/utah/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Corridor interaction surfaces</h3>
-    <p class="muted mini"><strong>Best for:</strong> digital identity governance, public-sector modernization, Bitcoin and digital asset deployment, OAIP sandbox engagement, interior-west coordination routing.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> enforcement-precedent-driven compliance architecture, maximum-enforcement privacy signal environments, biometric surveillance deployment requiring established regulatory precedent.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>Dec 2023</strong> — Utah Consumer Privacy Act (UCPA) effective; consumer rights, opt-out mechanisms, and sensitive data obligations activate.</li>
-      <li><strong>May 2024</strong> — Utah AI Policy Act effective; OAIP operational; limited-liability sandbox and AI disclosure requirements active.</li>
-      <li><strong>Mar 2025</strong> — Strategic Bitcoin Reserve Act (HB 230) enacted; state strategic treasury coordination surface for Bitcoin established.</li>
-      <li><strong>2026–2027</strong> — OAIP sandbox maturation surface; legislative session monitoring for standalone biometric governance and expanded AI disclosure instruments.</li>
+      <li><strong>Jurisdiction:</strong> Utah</li>
+      <li><strong>Code:</strong> UT · US-UT</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> preliminary</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-corridor-position">
-    <div class="smallcaps">Corridor Position</div>
-    <h3 id="heading-corridor-position">Mountain West network</h3>
-    <p class="muted mini">Utah coordinates as an identity-governance alignment node across adjacent Mountain West corridor states. The corridor interfaces with Nevada's settlement and infrastructure surfaces, Colorado's coordination and institutional layers, Wyoming's digital asset formation environment, Arizona's compute and semiconductor surfaces, and New Mexico's research and strategic systems corridor.</p>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
+    <ul class="mini">
+      <li><strong>Corridor Group:</strong> Mountain Interior Continuity Corridor</li>
+      <li><strong>Foundation Layer:</strong> Mountain Corridor Structural Continuity Layer</li>
+      <li><strong>Completion Layer:</strong> Western Interior Completion Layer</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li>Evidence layer: preliminary</li>
+      <li>Signal layer: preliminary</li>
+      <li>Trust dimensions: preliminary</li>
+      <li>Profile: preliminary</li>
+      <li>Builder-mode: preliminary</li>
+      <li>Surface assignment: none</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-standardization">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-standardization">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+    </ul>
   </div>
+ 
 </aside>
- 
-</div>
+</div><!-- /grid-sidebar -->
  
 </main>
  
