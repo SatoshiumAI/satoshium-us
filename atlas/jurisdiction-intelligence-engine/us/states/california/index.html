@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>California — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Structured public mirror of the canonical California Atlas jurisdiction package.">
+<meta name="description" content="Structured rendering of the canonical California Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/california/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -135,6 +135,10 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
 .src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -145,6 +149,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -160,31 +165,31 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── TITLE / METADATA ─────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
     <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">California</h1>
-    <p class="kicker">Structured public mirror of the canonical California Atlas jurisdiction package. This page renders the canonical files; it is not the canonical layer.</p>
+    <p class="kicker">This page renders the canonical California Atlas jurisdiction package. The canonical files remain the source of truth; this document is a structured rendering only.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">CA · US-CAL</div>
+      <div class="hero-chip">Jurisdiction: California (CA · US-CAL)</div>
       <div class="hero-chip">Jurisdiction lens</div>
-      <div class="hero-chip">Normalization: preliminary</div>
+      <div class="hero-chip">Completeness: preliminary</div>
       <div class="hero-chip">Surface assignment: none</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#scope">Scope</a>
-      <a href="#topology">Topology Metadata</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#signals">Signals</a>
-      <a href="#trust-dimensions">Trust Dimensions</a>
-      <a href="#profile">Profile</a>
-      <a href="#builder-mode">Builder-Mode</a>
-      <a href="#structural-exclusions">Structural Exclusions</a>
-      <a href="#evidence-gaps">Evidence Gaps</a>
-      <a href="#change-log">Change Log</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -193,31 +198,39 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── SCOPE / INTERPRETATION BOUNDARY ── -->
+  <!-- ── 2. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Pacific Coastal Hyperscale Corridor</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Coastal Hyperscale &amp; Global Infrastructure</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Pacific Edge Anchor Layer</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from atlas.md and records Atlas corridor-topology placement only.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
+  </section>
+ 
+  <!-- ── 3. SCOPE BOUNDARY STATEMENT ── -->
   <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
-    <h2 id="heading-scope">Scope &amp; Interpretation Boundary</h2>
-    <p class="muted">This file records only evidence-supported characteristics documented for California that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, or Atlas surfaces.</p>
-    <p class="muted">This page is a structured public mirror of the canonical California package. It does not add analysis, forecasts, rankings, readiness assessment, leadership positioning, national significance, or deployment prescriptions beyond what the canonical files state.</p>
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer states that this file records only evidence-supported characteristics documented for California that are relevant to Atlas normalization. The evidence layer states that it does not assign trust posture, routing role, coordination tier, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, leadership positioning, or deployment prescription beyond the canonical files. Surface assignment remains unset. No routing role is assigned.</p>
     <div class="src">Source: evidence.md — Scope</div>
   </section>
  
-  <!-- ── TOPOLOGY METADATA ── -->
-  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
-    <h2 id="heading-topology">Topology Metadata</h2>
-    <ul class="atlas-list">
-      <li><strong>Corridor group</strong><br>Pacific Coastal Hyperscale Corridor</li>
-      <li><strong>Foundation layer</strong><br>Coastal Hyperscale &amp; Global Infrastructure</li>
-      <li><strong>Topology completion layer</strong><br>Pacific Edge Anchor Layer</li>
-    </ul>
-    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> This metadata is derived from atlas.md and records Atlas corridor-topology placement only.</p>
-    <p class="muted"><strong>Interpretation boundary.</strong> This file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability.</p>
-    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
-    <div class="src">Source: metadata.md</div>
-  </section>
- 
-  <!-- ── EVIDENCE ── -->
+  <!-- ── 4. EVIDENCE SUMMARY ── -->
   <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
-    <h2 id="heading-evidence">Evidence</h2>
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer documents the following for California.</p>
  
     <h3 class="subhead">Privacy statutory and enforcement structure</h3>
     <div class="detail-list">
@@ -225,116 +238,114 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
       <div class="detail-item">California Privacy Rights Act (CPRA), Proposition 24 (2020), expanded the CCPA framework by introducing sensitive personal data classification, data minimization requirements, purpose limitation requirements, and enhanced enforcement authority.</div>
       <div class="detail-item">CPRA created the California Privacy Protection Agency (CPPA) as an independent enforcement authority responsible for privacy rulemaking, compliance oversight, consumer protection enforcement, and data governance supervision.</div>
     </div>
-    <p class="muted mini" style="margin-top:10px"><em>Sources:</em> California Consumer Privacy Act (CCPA) — Cal. Civ. Code §1798.100 et seq.; California Privacy Rights Act (CPRA) — Proposition 24 (2020); creation of the California Privacy Protection Agency under CPRA.</p>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> California Consumer Privacy Act (CCPA) — Cal. Civ. Code §1798.100 et seq.; California Privacy Rights Act (CPRA) — Proposition 24 (2020); creation of the California Privacy Protection Agency under CPRA.</p>
  
     <h3 class="subhead">AI research and platform ecosystem concentration</h3>
     <div class="detail-list">
-      <div class="detail-item">California hosts frontier-model developers, AI infrastructure providers, cloud platform operators, and open-source coordination ecosystems.</div>
-      <div class="detail-item">California maintains the world's largest venture capital ecosystem supporting AI-native infrastructure startups, developer tooling platforms, and coordination-layer experimentation companies.</div>
-      <div class="detail-item">California hosts major providers of cloud infrastructure, developer coordination platforms, and consumer-scale digital ecosystems.</div>
+      <div class="detail-item">The evidence layer records that California hosts frontier-model developers, AI infrastructure providers, cloud platform operators, and open-source coordination ecosystems.</div>
+      <div class="detail-item">The evidence layer records that California maintains the world's largest venture capital ecosystem supporting AI-native infrastructure startups, developer tooling platforms, and coordination-layer experimentation companies.</div>
+      <div class="detail-item">The evidence layer records that California hosts major providers of cloud infrastructure, developer coordination platforms, and consumer-scale digital ecosystems.</div>
     </div>
-    <p class="muted mini" style="margin-top:10px"><em>Sources:</em> Silicon Valley and Bay Area research ecosystem; Silicon Valley venture capital concentration; concentration of global technology platform providers.</p>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Silicon Valley and Bay Area research ecosystem; Silicon Valley venture capital concentration; concentration of global technology platform providers.</p>
  
     <h3 class="subhead">Responsible AI governance and municipal experimentation signals</h3>
     <div class="detail-list">
-      <div class="detail-item">California policymakers continue developing frameworks addressing algorithmic transparency, automated decision accountability, bias mitigation expectations, and public-sector responsible AI deployment.</div>
-      <div class="detail-item">Bay Area and Los Angeles municipal programs include responsible AI pilot programs, algorithmic transparency initiatives, and public-sector automation oversight frameworks.</div>
+      <div class="detail-item">The evidence layer records that California policymakers continue developing frameworks addressing algorithmic transparency, automated decision accountability, bias mitigation expectations, and public-sector responsible AI deployment.</div>
+      <div class="detail-item">The evidence layer records that Bay Area and Los Angeles municipal programs include responsible AI pilot programs, algorithmic transparency initiatives, and public-sector automation oversight frameworks.</div>
     </div>
-    <p class="muted mini" style="margin-top:10px"><em>Sources:</em> state-level automated decision system policy initiatives and oversight discussions; Bay Area and Los Angeles public-sector experimentation initiatives.</p>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> state-level automated decision system policy initiatives and oversight discussions; Bay Area and Los Angeles public-sector experimentation initiatives.</p>
  
     <h3 class="subhead">Digital asset ecosystem and legal-structure visibility</h3>
     <div class="detail-list">
-      <div class="detail-item">California hosts digital asset infrastructure startups, Bitcoin tooling companies, and custody-adjacent security firms.</div>
-      <div class="detail-item">California has not introduced statutory legal recognition for decentralized autonomous organizations.</div>
+      <div class="detail-item">The evidence layer records that California hosts digital asset infrastructure startups, Bitcoin tooling companies, and custody-adjacent security firms.</div>
+      <div class="detail-item">The evidence layer records that California has not introduced statutory legal recognition for decentralized autonomous organizations.</div>
     </div>
-    <p class="muted mini" style="margin-top:10px"><em>Sources:</em> presence of major wallet providers, custody platforms, and developer tooling companies headquartered in California; comparative review of U.S. DAO statutory regimes.</p>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> presence of major wallet providers, custody platforms, and developer tooling companies headquartered in California; comparative review of U.S. DAO statutory regimes.</p>
  
     <div class="callout mini" style="margin-top:14px">Evidence completeness status: preliminary · Surface assignment status: none</div>
     <div class="src">Source: evidence.md</div>
   </section>
  
-  <!-- ── SIGNALS ── -->
+  <!-- ── 5. SIGNALS SUMMARY ── -->
   <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
-    <h2 id="heading-signals">Signals</h2>
-    <p class="muted"><strong>Derivation constraint.</strong> Signals derive strictly from evidence.md. Absence of signals reflects absence of normalized documentary coverage.</p>
-    <p class="muted"><strong>Method.</strong> These signals are derived only from the evidence recorded in evidence.md.</p>
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md and that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted"><strong>Method.</strong> The signals layer records that these signals are derived only from the evidence recorded in evidence.md.</p>
  
     <div class="detail-list" style="margin-top:12px">
-      <div class="detail-item"><strong>Privacy governance density signal.</strong> California shows a documented privacy-governance structure through the CCPA, the CPRA, and the CPPA. The evidence supports a pattern of consumer-data rights, data-minimization expectations, and dedicated enforcement visibility rather than a single isolated privacy statute.</div>
-      <div class="detail-item"><strong>AI research and platform concentration signal.</strong> The evidence shows concentration of frontier-model developers, AI infrastructure providers, cloud platform operators, developer coordination platforms, and consumer-scale digital ecosystems in California. The same evidence also shows venture-capital density tied to AI-native infrastructure and developer-tooling growth.</div>
-      <div class="detail-item"><strong>Responsible AI governance momentum signal.</strong> The evidence shows active policy development around algorithmic transparency, automated decision accountability, bias mitigation expectations, and public-sector responsible AI deployment. Municipal references in the Bay Area and Los Angeles extend that pattern into local experimentation contexts.</div>
-      <div class="detail-item"><strong>Digital asset ecosystem density signal.</strong> The evidence shows California-based digital asset infrastructure startups, Bitcoin tooling companies, custody-adjacent security firms, and related developer-tooling presence. This is an ecosystem-density signal rather than a statutory-alignment signal.</div>
-      <div class="detail-item"><strong>DAO legal-structure absence signal.</strong> The evidence shows that California has not introduced statutory legal recognition for decentralized autonomous organizations. This supports a legal-structure absence signal rather than a conclusion about broader coordination outcomes.</div>
+      <div class="detail-item"><strong>Privacy governance density signal.</strong> The signals layer reflects that California shows a documented privacy-governance structure through the CCPA, the CPRA, and the CPPA. The signals layer records a pattern of consumer-data rights, data-minimization expectations, and dedicated enforcement visibility rather than a single isolated privacy statute.</div>
+      <div class="detail-item"><strong>AI research and platform concentration signal.</strong> The signals layer reflects concentration of frontier-model developers, AI infrastructure providers, cloud platform operators, developer coordination platforms, and consumer-scale digital ecosystems in California. The signals layer also reflects venture-capital density tied to AI-native infrastructure and developer-tooling growth.</div>
+      <div class="detail-item"><strong>Responsible AI governance momentum signal.</strong> The signals layer reflects active policy development around algorithmic transparency, automated decision accountability, bias mitigation expectations, and public-sector responsible AI deployment. The signals layer records that municipal references in the Bay Area and Los Angeles extend that pattern into local experimentation contexts.</div>
+      <div class="detail-item"><strong>Digital asset ecosystem density signal.</strong> The signals layer reflects California-based digital asset infrastructure startups, Bitcoin tooling companies, custody-adjacent security firms, and related developer-tooling presence. The signals layer records this as an ecosystem-density signal rather than a statutory-alignment signal.</div>
+      <div class="detail-item"><strong>DAO legal-structure absence signal.</strong> The signals layer reflects that California has not introduced statutory legal recognition for decentralized autonomous organizations. The signals layer records this as a legal-structure absence signal rather than a conclusion about broader coordination outcomes.</div>
     </div>
  
     <div class="callout mini" style="margin-top:14px">Signal completeness status: preliminary · Surface assignment status: none</div>
     <div class="src">Source: signals.md</div>
   </section>
  
-  <!-- ── TRUST DIMENSIONS ── -->
+  <!-- ── 6. TRUST DIMENSIONS SUMMARY ── -->
   <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
-    <h2 id="heading-trust">Trust Dimensions</h2>
-    <p class="muted"><strong>Derivation constraint.</strong> Dimensions derive strictly from signals.md. Absence of signals reflects absence of normalized signal-layer coverage.</p>
-    <p class="muted"><strong>Method.</strong> This file evaluates stability characteristics only, using only structures documented in evidence.md and signals.md. It does not assign routing role, coordination tier, Atlas surface, national significance, or leadership position.</p>
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md and that absence of signals reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted"><strong>Method.</strong> The trust-dimensions layer evaluates stability characteristics only, using only structures documented in evidence.md and signals.md. The trust-dimensions layer records that it does not assign routing role, coordination tier, Atlas surface, national significance, or leadership position.</p>
  
     <div class="detail-list" style="margin-top:12px">
-      <div class="detail-item"><strong>Privacy-governance stability characteristics.</strong> The evidence shows continuity through named privacy statutes and enforcement structures, especially the CCPA, CPRA, and CPPA. In this file, privacy-governance continuity is limited to those documented legal and institutional structures.</div>
-      <div class="detail-item"><strong>AI research and platform stability characteristics.</strong> The evidence shows continuity through concentration of frontier-model developers, AI infrastructure providers, cloud platform operators, developer coordination platforms, and venture-capital support structures. The evidence does not establish a statewide compute, data-center, or exchange-topology map.</div>
-      <div class="detail-item"><strong>Responsible AI policy stability characteristics.</strong> The evidence shows continuity through recurring policy development around algorithmic transparency, automated decision accountability, bias mitigation expectations, and public-sector responsible AI deployment. Municipal experimentation references provide additional local governance visibility, but not a full statewide municipal map.</div>
-      <div class="detail-item"><strong>Digital asset ecosystem stability characteristics.</strong> The evidence shows continuity through the presence of digital asset infrastructure startups, Bitcoin tooling companies, and custody-adjacent security firms. In this file, ecosystem continuity is limited to documented firm and tooling presence rather than statutory digital-asset alignment.</div>
-      <div class="detail-item"><strong>DAO legal-structure stability characteristics.</strong> The evidence shows continuity in the absence of DAO legal recognition, in that the current record identifies no statutory framework for decentralized autonomous organization recognition in California. In this file, that conclusion is limited to legal-structure visibility and does not extend beyond the documented statutory absence.</div>
+      <div class="detail-item"><strong>Privacy-governance stability characteristics.</strong> The trust-dimensions layer records continuity through named privacy statutes and enforcement structures, especially the CCPA, CPRA, and CPPA. In this layer, privacy-governance continuity is limited to those documented legal and institutional structures.</div>
+      <div class="detail-item"><strong>AI research and platform stability characteristics.</strong> The trust-dimensions layer records continuity through concentration of frontier-model developers, AI infrastructure providers, cloud platform operators, developer coordination platforms, and venture-capital support structures. The trust-dimensions layer records that the evidence does not establish a statewide compute, data-center, or exchange-topology map.</div>
+      <div class="detail-item"><strong>Responsible AI policy stability characteristics.</strong> The trust-dimensions layer records continuity through recurring policy development around algorithmic transparency, automated decision accountability, bias mitigation expectations, and public-sector responsible AI deployment. The trust-dimensions layer records that municipal experimentation references provide additional local governance visibility, but not a full statewide municipal map.</div>
+      <div class="detail-item"><strong>Digital asset ecosystem stability characteristics.</strong> The trust-dimensions layer records continuity through the presence of digital asset infrastructure startups, Bitcoin tooling companies, and custody-adjacent security firms. In this layer, ecosystem continuity is limited to documented firm and tooling presence rather than statutory digital-asset alignment.</div>
+      <div class="detail-item"><strong>DAO legal-structure stability characteristics.</strong> The trust-dimensions layer records continuity in the absence of DAO legal recognition. The current record identifies no statutory framework for decentralized autonomous organization recognition in California. In this layer, the conclusion is limited to legal-structure visibility and does not extend beyond the documented statutory absence.</div>
     </div>
  
     <div class="callout mini" style="margin-top:14px">Trust completeness status: preliminary · Surface assignment status: none</div>
     <div class="src">Source: trust-dimensions.md</div>
   </section>
  
-  <!-- ── PROFILE ── -->
+  <!-- ── 7. PROFILE SUMMARY ── -->
   <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
-    <h2 id="heading-profile">Profile</h2>
-    <p class="muted"><strong>Derivation constraint.</strong> Profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md.</p>
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md.</p>
  
     <div class="detail-list" style="margin-top:12px">
-      <div class="detail-item"><strong>privacy_governance_structure.</strong> California currently presents with a documented privacy-governance structure through the CCPA, CPRA, and CPPA.</div>
-      <div class="detail-item"><strong>ai_and_platform_ecosystem_structure.</strong> California currently presents with a concentrated AI and platform ecosystem through frontier-model developers, AI infrastructure providers, cloud platform operators, developer coordination platforms, consumer-scale digital ecosystems, and venture-capital support structures.</div>
-      <div class="detail-item"><strong>municipal_governance_experimentation_structure.</strong> California currently presents with documented municipal experimentation visibility through Bay Area and Los Angeles responsible-AI pilot programs, algorithmic transparency initiatives, and public-sector automation oversight frameworks.</div>
-      <div class="detail-item"><strong>digital_asset_ecosystem_structure.</strong> California currently presents with digital asset ecosystem visibility through digital asset infrastructure startups, Bitcoin tooling companies, custody-adjacent security firms, and related developer-tooling presence.</div>
-      <div class="detail-item"><strong>dao_legal_structure_visibility.</strong> California currently presents with documented absence of statutory DAO legal recognition in the current evidence set.</div>
-      <div class="detail-item"><strong>statewide_coverage_limits.</strong> California currently presents with stronger evidence for privacy governance, AI ecosystem concentration, and selected municipal experimentation than for statewide compute, exchange, data-center, or municipal-comparison coverage.</div>
+      <div class="detail-item"><strong>privacy_governance_structure.</strong> The profile layer records that California currently presents with a documented privacy-governance structure through the CCPA, CPRA, and CPPA.</div>
+      <div class="detail-item"><strong>ai_and_platform_ecosystem_structure.</strong> The profile layer records that California currently presents with a concentrated AI and platform ecosystem through frontier-model developers, AI infrastructure providers, cloud platform operators, developer coordination platforms, consumer-scale digital ecosystems, and venture-capital support structures.</div>
+      <div class="detail-item"><strong>municipal_governance_experimentation_structure.</strong> The profile layer records that California currently presents with documented municipal experimentation visibility through Bay Area and Los Angeles responsible-AI pilot programs, algorithmic transparency initiatives, and public-sector automation oversight frameworks.</div>
+      <div class="detail-item"><strong>digital_asset_ecosystem_structure.</strong> The profile layer records that California currently presents with digital asset ecosystem visibility through digital asset infrastructure startups, Bitcoin tooling companies, custody-adjacent security firms, and related developer-tooling presence.</div>
+      <div class="detail-item"><strong>dao_legal_structure_visibility.</strong> The profile layer records that California currently presents with documented absence of statutory DAO legal recognition in the current evidence set.</div>
+      <div class="detail-item"><strong>statewide_coverage_limits.</strong> The profile layer records that California currently presents with stronger evidence for privacy governance, AI ecosystem concentration, and selected municipal experimentation than for statewide compute, exchange, data-center, or municipal-comparison coverage.</div>
     </div>
  
     <div class="callout mini" style="margin-top:14px">Profile completeness status: preliminary · Surface assignment status: none</div>
     <div class="src">Source: profile.md</div>
   </section>
  
-  <!-- ── BUILDER-MODE ── -->
+  <!-- ── 8. BUILDER MODE SUMMARY ── -->
   <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
-    <h2 id="heading-builder">Builder-Mode</h2>
-    <p class="muted"><strong>Derivation constraint.</strong> Builder-mode content derives strictly from normalized jurisdiction layers.</p>
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers.</p>
+    <p class="muted"><strong>Scope.</strong> The builder-mode layer describes coverage limits, observed structural visibility, and known ecosystem signals. It does not describe deployment recommendations, operational guidance, or strategy.</p>
  
-    <h3 class="subhead">Interpretive read</h3>
-    <p class="muted">California reads as a privacy-governed and AI-concentrated jurisdiction where legal privacy structures, platform-scale technology ecosystems, and public-sector AI-governance discussions appear in the same package.</p>
+    <h3 class="subhead">Privacy pattern — observed structural visibility</h3>
+    <p class="muted">The builder-mode layer records that the strongest documented governance pattern is the combined presence of the CCPA, CPRA, and CPPA. The builder-mode layer records that the evidence shows privacy rights, data-minimization expectations, and independent enforcement visibility as part of the ordinary structure of the jurisdiction.</p>
  
-    <h3 class="subhead">Interpreting the privacy pattern</h3>
-    <p class="muted">The strongest documented governance pattern is the combined presence of the CCPA, CPRA, and CPPA. The evidence shows privacy rights, data-minimization expectations, and independent enforcement visibility as part of the ordinary structure of the jurisdiction.</p>
+    <h3 class="subhead">Ecosystem concentration pattern — observed structural visibility</h3>
+    <p class="muted">The builder-mode layer records concentration of frontier-model developers, AI infrastructure providers, cloud platform operators, developer coordination platforms, consumer-scale digital ecosystems, and venture-capital support structures. The builder-mode layer records that the current evidence does not convert that concentration into a statewide compute or data-center map.</p>
  
-    <h3 class="subhead">Interpreting the ecosystem concentration pattern</h3>
-    <p class="muted">The evidence shows concentration of frontier-model developers, AI infrastructure providers, cloud platform operators, developer coordination platforms, consumer-scale digital ecosystems, and venture-capital support structures. The current evidence does not convert that concentration into a statewide compute or data-center map.</p>
+    <h3 class="subhead">Responsible AI policy pattern — observed structural visibility</h3>
+    <p class="muted">The builder-mode layer records recurring state-level attention to algorithmic transparency, automated decision accountability, bias mitigation expectations, and public-sector responsible AI deployment, with additional municipal experimentation visibility in the Bay Area and Los Angeles.</p>
  
-    <h3 class="subhead">Interpreting the responsible AI policy pattern</h3>
-    <p class="muted">The package shows recurring state-level attention to algorithmic transparency, automated decision accountability, bias mitigation expectations, and public-sector responsible AI deployment, with additional municipal experimentation visibility in the Bay Area and Los Angeles.</p>
- 
-    <h3 class="subhead">Interpreting the digital asset pattern</h3>
-    <p class="muted">The package shows digital asset and Bitcoin-related ecosystem density through firms and tooling presence, while also showing no statutory DAO-recognition framework in the current evidence set.</p>
+    <h3 class="subhead">Digital asset pattern — observed structural visibility</h3>
+    <p class="muted">The builder-mode layer records digital asset and Bitcoin-related ecosystem density through firms and tooling presence, and records that no statutory DAO-recognition framework is present in the current evidence set.</p>
  
     <div class="callout mini" style="margin-top:14px">Builder completeness status: preliminary · Builder-mode completeness status: preliminary · Surface assignment status: none</div>
     <div class="src">Source: builder-mode.md</div>
   </section>
  
-  <!-- ── STRUCTURAL EXCLUSIONS ── -->
+  <!-- ── 9. STRUCTURAL EXCLUSIONS ── -->
   <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
-    <h2 id="heading-exclusions">Structural Exclusions</h2>
-    <p class="muted">Based on the canonical California package, this profile does not support characterizing California as any of the following:</p>
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records that the California package does not support characterizing California as any of the following:</p>
     <ul class="atlas-list" style="margin-top:10px">
       <li>a custody-regime jurisdiction</li>
       <li>a DAO-wrapper jurisdiction</li>
@@ -345,60 +356,61 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
       <li>a major Internet exchange concentration environment</li>
       <li>a comprehensively evidenced statewide data-center corridor</li>
     </ul>
-    <p class="muted" style="margin-top:12px">This profile also does not assign trust posture, routing role, coordination tier, Atlas surfaces, national significance, leadership positioning, readiness status, or ranking outcome. It does not prescribe deployment decisions.</p>
+    <p class="muted" style="margin-top:12px">The canonical package records that it does not assign trust posture, routing role, coordination tier, Atlas surfaces, national significance, leadership positioning, readiness status, or ranking outcome. It does not prescribe deployment decisions.</p>
     <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md — Structural exclusions</div>
   </section>
  
-  <!-- ── EVIDENCE GAPS ── -->
+  <!-- ── 10. EVIDENCE GAPS ── -->
   <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
-    <h2 id="heading-gaps">Evidence Gaps</h2>
-    <div class="detail-list">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records the following evidence gaps for California.</p>
+    <div class="detail-list" style="margin-top:6px">
       <div class="detail-item">No comprehensive statewide inventory was established here for data-center concentration, colocation concentration, or Internet exchange concentration.</div>
       <div class="detail-item">No statewide legal or operational inventory was established here for digital asset custody structures beyond ecosystem-presence references.</div>
       <div class="detail-item">No statewide municipal comparison was established here beyond Bay Area and Los Angeles public-sector experimentation references.</div>
       <div class="detail-item">No comprehensive statewide AI regulatory map was established here beyond the cited policy initiatives, oversight discussions, and municipal experimentation signals.</div>
     </div>
-    <p class="muted" style="margin-top:12px">Gap inheritance: signals.md, trust-dimensions.md, profile.md, and builder-mode.md inherit these evidence gaps without expansion. change-log.md records that inheritance rule and does not create a new evidence-gap set.</p>
+    <p class="muted" style="margin-top:12px">The canonical package records gap inheritance: signals.md, trust-dimensions.md, profile.md, and builder-mode.md inherit these evidence gaps without expansion. change-log.md records that inheritance rule and does not create a new evidence-gap set.</p>
     <div class="src">Source: evidence.md — Evidence gaps; change-log.md — Gap inheritance</div>
   </section>
  
-  <!-- ── CHANGE LOG / NORMALIZATION NOTES ── -->
+  <!-- ── 11. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
   <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
-    <h2 id="heading-changelog">Change Log &amp; Normalization Notes</h2>
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
  
     <h3 class="subhead">Normalization procedure</h3>
     <ul class="mini muted">
-      <li>evidence.md was prepared as the base evidence layer for the California package.</li>
-      <li>signals.md was derived strictly from evidence.md.</li>
-      <li>trust-dimensions.md was derived from evidence.md and signals.md, and was constrained to stability-characteristic evaluation only.</li>
-      <li>profile.md was derived from evidence.md, signals.md, and trust-dimensions.md, and was constrained to structural characterization only.</li>
-      <li>builder-mode.md was derived from all prior California layers, and was constrained to interpretive guidance only.</li>
-      <li>change-log.md records this normalization workflow only.</li>
+      <li>The change-log records that evidence.md was prepared as the base evidence layer for the California package.</li>
+      <li>The change-log records that signals.md was derived strictly from evidence.md.</li>
+      <li>The change-log records that trust-dimensions.md was derived from evidence.md and signals.md, and was constrained to stability-characteristic evaluation only.</li>
+      <li>The change-log records that profile.md was derived from evidence.md, signals.md, and trust-dimensions.md, and was constrained to structural characterization only.</li>
+      <li>The change-log records that builder-mode.md was derived from all prior California layers, and was constrained to interpretive guidance only.</li>
+      <li>The change-log records that change-log.md records this normalization workflow only.</li>
     </ul>
  
-    <h3 class="subhead">Structural exclusions</h3>
+    <h3 class="subhead">Structural exclusions (change-log attestation)</h3>
     <ul class="mini muted">
-      <li>Structural exclusions were added and preserved in evidence.md and carried forward into downstream California layers based strictly on absent evidence in the upstream materials.</li>
-      <li>No layer assigns routing role, coordination tier, Atlas surface, national significance, leadership positioning, readiness status, or ranking outcome.</li>
-      <li>Surface assignment status: none.</li>
+      <li>The change-log records that structural exclusions were added and preserved in evidence.md and carried forward into downstream California layers based strictly on absent evidence in the upstream materials.</li>
+      <li>The change-log records that no layer assigns routing role, coordination tier, Atlas surface, national significance, leadership positioning, readiness status, or ranking outcome.</li>
+      <li>The change-log records: Surface assignment status: none.</li>
     </ul>
  
     <h3 class="subhead">Lens alignment confirmation</h3>
     <ul class="mini muted">
-      <li>California's package remains centered on the jurisdiction lens supported by the existing evidence set.</li>
-      <li>Legacy classification, routing, readiness, ranking, and deployment-prescription language was removed or rewritten where needed to maintain evidence-bounded normalization.</li>
+      <li>The change-log records that the California package remains centered on the jurisdiction lens supported by the existing evidence set.</li>
+      <li>The change-log records that legacy classification, routing, readiness, ranking, and deployment-prescription language was removed or rewritten where needed to maintain evidence-bounded normalization.</li>
     </ul>
  
     <h3 class="subhead">Normalization adjustments</h3>
     <ul class="mini muted">
-      <li>The evidence title was normalized to "California — Evidence Layer".</li>
-      <li>Evidence content was reorganized into evidence-layer sections without adding new evidence.</li>
-      <li>Downstream files were rewritten into contract-compliant method, exclusions, and evidence-gap structures.</li>
-      <li>Trust, profile, and builder layers were aligned to inherit evidence gaps and to avoid surface or routing assignment.</li>
+      <li>The change-log records that the evidence title was normalized to "California — Evidence Layer".</li>
+      <li>The change-log records that evidence content was reorganized into evidence-layer sections without adding new evidence.</li>
+      <li>The change-log records that downstream files were rewritten into contract-compliant method, exclusions, and evidence-gap structures.</li>
+      <li>The change-log records that trust, profile, and builder layers were aligned to inherit evidence gaps and to avoid surface or routing assignment.</li>
     </ul>
  
     <h3 class="subhead">Completion confirmation</h3>
-    <p class="muted">California jurisdiction package normalization is complete for:</p>
+    <p class="muted">The change-log records that California jurisdiction package normalization is complete for:</p>
     <ul class="mini muted">
       <li><code>jurisdictions/us/states/california/evidence.md</code></li>
       <li><code>jurisdictions/us/states/california/signals.md</code></li>
@@ -409,7 +421,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
     </ul>
  
     <h3 class="subhead">Topology metadata attachment</h3>
-    <p class="muted">Added metadata.md using atlas.md corridor narrative fields: Corridor Group, Foundation Layer, Topology Completion Layer. This metadata is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+    <p class="muted">The change-log records that metadata.md was added using atlas.md corridor narrative fields: Corridor Group, Foundation Layer, Topology Completion Layer. The change-log records that this metadata is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
  
     <div class="callout mini" style="margin-top:14px">Normalization completion status: complete · Normalization status: preliminary · Surface assignment status: none</div>
     <div class="src">Source: change-log.md</div>
@@ -423,7 +435,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
   <div class="card" aria-labelledby="heading-sidebar-package">
     <div class="smallcaps">Canonical Package</div>
     <h3 id="heading-sidebar-package">Source of truth</h3>
-    <p class="muted mini">This page is a structured public mirror of the canonical California jurisdiction package. The canonical files remain the source of truth.</p>
+    <p class="muted mini">This page renders the canonical California jurisdiction package. The canonical files remain the source of truth.</p>
     <ul class="mini" style="margin-top:6px">
       <li><code>evidence.md</code></li>
       <li><code>signals.md</code></li>
@@ -432,8 +444,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
       <li><code>builder-mode.md</code></li>
       <li><code>metadata.md</code></li>
       <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
     </ul>
     <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/california/</code></p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
+    <ul class="mini">
+      <li><strong>Jurisdiction:</strong> California</li>
+      <li><strong>Code:</strong> CA · US-CAL</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> preliminary</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
+    <ul class="mini">
+      <li><strong>Corridor Group:</strong> Pacific Coastal Hyperscale Corridor</li>
+      <li><strong>Foundation Layer:</strong> Coastal Hyperscale &amp; Global Infrastructure</li>
+      <li><strong>Completion Layer:</strong> Pacific Edge Anchor Layer</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
   </div>
  
   <div class="card" aria-labelledby="heading-sidebar-status">
@@ -447,17 +483,6 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
       <li>Builder-mode: preliminary</li>
       <li>Surface assignment: none</li>
     </ul>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-sidebar-topology">
-    <div class="smallcaps">Topology Metadata</div>
-    <h3 id="heading-sidebar-topology">Corridor fields</h3>
-    <ul class="mini">
-      <li><strong>Corridor group:</strong> Pacific Coastal Hyperscale Corridor</li>
-      <li><strong>Foundation layer:</strong> Coastal Hyperscale &amp; Global Infrastructure</li>
-      <li><strong>Topology completion layer:</strong> Pacific Edge Anchor Layer</li>
-    </ul>
-    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. Does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
   </div>
  
   <div class="card" aria-labelledby="heading-sidebar-boundary">
