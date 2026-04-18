@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>New Mexico — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="New Mexico operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical New Mexico Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/new-mexico/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,21 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +155,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -161,259 +168,762 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <body>
 <div id="topbar-slot" data-topbar="universe"></div>
 <script src="/components/topbar-loader.js"></script>
-
+ 
 <main id="main-content" class="wrap content">
-
-<!-- ── HERO ─────────────────────────────────── -->
+ 
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">New Mexico</h1>
-    <p class="kicker">New Mexico operates as a High Desert Research &amp; Strategic Systems Corridor supporting federal laboratory alignment surfaces, energy-adjacent compute environments, and southwestern strategic systems coordination across the interior institutional trust layer of the United States.</p>
-
+    <p class="kicker">This page renders the canonical New Mexico Atlas jurisdiction package. The canonical files remain the source of truth; this document is a structured rendering only.</p>
+ 
     <div class="hero-meta">
-      <div class="hero-chip">NM · US-NM</div>
-      <div class="hero-chip">Santa Fe</div>
-      <div class="hero-chip">High Desert Research &amp; Strategic Systems Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
+      <div class="hero-chip">Jurisdiction: New Mexico (NM · US-NM)</div>
+      <div class="hero-chip">Jurisdiction lens</div>
+      <div class="hero-chip">Completeness: preliminary</div>
+      <div class="hero-chip">Surface assignment: none</div>
     </div>
-
-    <div class="band" aria-label="New Mexico quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Federal-Aligned / Developing</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Open / Limited Framework</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Developing / Lower Friction</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Moderate Concern Zone</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Research-Anchored / Federal-Coordinated</div></div>
-    </div>
-
+ 
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
-
+ 
 <!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
 <div class="grid-sidebar">
 <div>
-
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">New Mexico operates as the High Desert Research &amp; Strategic Systems Corridor within the US interior institutional trust surface. Teams interacting across this corridor interface with federal laboratory coordination surfaces, defense-linked research environments, and energy-adjacent infrastructure conditions that shape deployment reality at the southwestern interior of the national policy map. The governance posture is structurally oriented toward federal alignment over state-level regulatory formation.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>AI Policy</strong></div><span class="pill teal">Federal-Aligned · Developing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill green">Open · Limited Framework</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Privacy / Data</strong></div><span class="pill teal">Developing / Lower Friction</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Biometrics</strong></div><span class="pill yellow">Moderate Concern Zone</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Public Sector AI</strong></div><span class="pill blue">Research-Anchored</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Research-Anchored / Federal-Coordinated</span></div>
+ 
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Southwest Transition Infrastructure Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Builders operating within the New Mexico corridor interact with research-aligned infrastructure surfaces, strategic-systems coordination environments, and energy-supported deployment conditions spanning the southwestern interior trust layer. The corridor is suited for teams that can align with federal research governance interfaces and defense-adjacent institutional rhythms.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Southwest Transition Infrastructure Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Desert–Interior Transition Layer</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from atlas.md and records Atlas corridor-topology placement only.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
-
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/new-mexico/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>High Desert Research &amp; Strategic Systems Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+ 
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records the normalized evidence surfaces preserved for New Mexico in the current package, organized around federal research laboratory environment, nuclear engineering and secure compute, defense-adjacent engineering and aerospace testing, energy research and grid experimentation, university research continuity and federal-lab academic interface, sparse-population distribution and corridor-dependent institutional topology, and southwest regional positioning.</p>
+    <p class="muted">This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, leadership positioning, or deployment prescription beyond the canonical files. Surface assignment remains unset. No routing role is assigned.</p>
+    <div class="src">Source: evidence.md — all sections</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer documents the following for New Mexico.</p>
+ 
+    <h3 class="subhead">Federal research laboratory environment</h3>
+    <p class="muted">The evidence layer records that New Mexico has documented federal research laboratory concentration anchored by the Department of Energy and National Nuclear Security Administration environment.</p>
+    <p class="muted mini"><em>The evidence layer records that the current New Mexico package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>the John A. Gordon Albuquerque Complex at Kirtland Air Force Base in Albuquerque as one of NNSA's three headquarters sites</li>
+      <li>NNSA field-office oversight of national security assets in New Mexico</li>
+      <li>Los Alamos National Laboratory in Los Alamos as an NNSA design laboratory responsible for the safety and reliability of the nuclear explosives package in nuclear weapons</li>
+      <li>Los Alamos capabilities in neutron scattering, enhanced surveillance, radiography, and plutonium science and engineering</li>
+      <li>Sandia National Laboratories responsibility for specialized nonnuclear components, quality assurance, and systems engineering for U.S. nuclear weapons, with a location in Albuquerque, New Mexico</li>
+      <li>the Center for Integrated Nanotechnologies as a U.S. DOE Nanoscale Science Research Center and user facility with the Core Facility in Albuquerque and the Gateway Facility in Los Alamos</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/new-mexico/</div>
+    <p class="muted">The evidence layer records that these materials document a federal research laboratory environment with visible DOE and NNSA network presence across Albuquerque and Los Alamos.</p>
+ 
+    <h3 class="subhead">Nuclear engineering and secure compute environment</h3>
+    <p class="muted">The evidence layer records that New Mexico has documented nuclear-engineering, high-security compute, and secure-simulation infrastructure in the Los Alamos and Albuquerque research environment.</p>
+    <p class="muted mini"><em>The evidence layer records that the current New Mexico package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Los Alamos National Laboratory plutonium science and engineering capabilities in NNSA location materials</li>
+      <li>Los Alamos reporting that Crossroads is a specialist primarily for classified weapons work</li>
+      <li>Los Alamos reporting that Venado is intended for both classified and non-classified, weapons and non-weapons national security work</li>
+      <li>Los Alamos description of the Strategic Computing Complex as housing classified high-performance supercomputing resources</li>
+      <li>Los Alamos description of a large unobstructed computer room in the Strategic Computing Complex for secure computing operations</li>
+      <li>Air Force Research Laboratory Directed Energy Directorate activity at Kirtland Air Force Base in weapons modeling and simulation</li>
+      <li>the AFRL Wargaming and Advanced Research Simulation Laboratory at Kirtland for wargaming, simulation, and analysis supporting the Directed Energy and Space Vehicles Directorates</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document continuity of secure compute and simulation infrastructure rather than a generalized commercial compute claim.</p>
+ 
+    <h3 class="subhead">Defense-adjacent engineering, weapons testing, and aerospace corridor environment</h3>
+    <p class="muted">The evidence layer records that New Mexico has documented defense-adjacent engineering and testing infrastructure tied to Kirtland, White Sands, and southern New Mexico aerospace facilities.</p>
+    <p class="muted mini"><em>The evidence layer records that the current New Mexico package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>AFRL's Directed Energy Directorate at Kirtland Air Force Base as the Department of the Air Force's center of expertise for directed energy and optical technologies</li>
+      <li>AFRL Directed Energy Directorate technical focus in laser systems, high-power electromagnetics, weapons modeling and simulation, and directed-energy and electro-optics for space superiority</li>
+      <li>AFRL and UNM partnership to establish a congressionally funded Directed Energy Center based at UNM</li>
+      <li>AFRL and New Mexico State University partnership for directed-energy weapons cooling research through a five-year Strategic Education Partnership Agreement</li>
+      <li>White Sands Missile Range description as the Department of Defense's largest fully instrumented open-air range providing research, development, test, evaluation, experimentation, and training facilities</li>
+      <li>Spaceport America mission materials describing a state-established, FAA-licensed launch complex on 18,000 acres adjacent to White Sands Missile Range in southern New Mexico</li>
+      <li>Spaceport America materials describing aerospace operations, research, development, and testing in support of commercial, civil, and national security space sectors</li>
+      <li>Spaceport America description of a rocket-friendly desert environment with large restricted airspace</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document a defense-adjacent engineering and aerospace-testing environment concentrated in specific New Mexico corridors.</p>
+ 
+    <h3 class="subhead">Energy research and grid experimentation environment</h3>
+    <p class="muted">The evidence layer records that New Mexico has documented energy-research, storage, and grid-modernization activity centered on Sandia and DOE-linked infrastructure.</p>
+    <p class="muted mini"><em>The evidence layer records that the current New Mexico package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Sandia National Laboratories energy-storage research in power systems, generation and integration, energy storage, microgrids, cybersecurity, power electronics, and advanced materials</li>
+      <li>Sandia statement that grid-scale electrical energy storage is part of a broader energy-storage landscape spanning Sandia Albuquerque and Sandia California</li>
+      <li>Sandia management of the DOE Energy Storage Systems website and the Global Energy Storage Database</li>
+      <li>Sandia publication materials stating that Sandia leads the Security and Resilience area of DOE's Grid Modernization Laboratory Consortium</li>
+      <li>Sandia materials describing research programs ranging from basic research and development to large-scale demonstrations and deployments</li>
+      <li>DOE and NNSA announcement of the Foxtail Flats solar and energy-storage project to provide carbon-free electricity to Los Alamos National Laboratory, Sandia National Laboratories, and Kirtland Air Force Base</li>
+      <li>DOE description of the Foxtail Flats project as including 170 megawatts of solar energy and 320 megawatt-hours of battery storage</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document national-lab energy modeling, storage, and grid experimentation adjacency in New Mexico.</p>
+ 
+    <h3 class="subhead">University research continuity and federal-lab academic interface</h3>
+    <p class="muted">The evidence layer records that New Mexico has documented university research continuity centered on the University of New Mexico and visible academic interfaces with federal laboratories and AFRL.</p>
+    <p class="muted mini"><em>The evidence layer records that the current New Mexico package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>University of New Mexico School of Engineering research support for a broad engineering research enterprise</li>
+      <li>UNM School of Engineering statement that research involves nearby partners at Sandia National Laboratories, Los Alamos National Laboratory, and the Air Force Research Laboratory</li>
+      <li>UNM research areas including aerospace science and engineering, energy, scalable computing and cybersecurity, nuclear non-proliferation and safeguards, quantum computing, and high energy density science</li>
+      <li>the Advanced Materials Laboratory at UNM housing staff from the university, Sandia, and private companies in a single integrated research laboratory in the UNM Science and Technology Park</li>
+      <li>the Advanced Materials Laboratory role as a conduit for technology transfer from the labs and university to private companies</li>
+      <li>UNM Center for High Technology Materials objective to enhance collaborations between UNM, federal laboratories, and industry</li>
+      <li>UNM Center for Micro-Engineered Materials description of close collaboration with Sandia National Laboratories, Los Alamos National Laboratory, and the Sandia Center for Integrated Nanotechnologies</li>
+      <li>AFRL and UNM creation of a directed energy research center jointly managed by the School of Engineering and the Center for High Technology Materials</li>
+      <li>AFRL and New Mexico State University partnership providing access to state-of-the-art equipment and research experience for graduate and undergraduate students in directed-energy systems work</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document a university research continuity layer with direct federal-lab academic interfaces rather than a purely campus-isolated research environment.</p>
+ 
+    <h3 class="subhead">Sparse-population distribution and corridor-dependent institutional topology</h3>
+    <p class="muted">The evidence layer records that New Mexico has documented low-density statewide distribution and corridor-centered institutional visibility.</p>
+    <p class="muted mini"><em>The evidence layer records that the current New Mexico package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>U.S. Census profile materials indicating low population density in New Mexico relative to the national average, including official census profile references to 17.4 persons per square mile</li>
+      <li>New Mexico Department of Transportation description of a statewide transportation system that includes roads, aviation, railroad, ports, maps, and travel-condition services across New Mexico</li>
+      <li>visible institutional concentration in the current source set around Los Alamos, Albuquerque and Kirtland, and the White Sands, Spaceport America, and Las Cruces corridor</li>
+      <li>federal anchor institutions in the current source set including NNSA, Los Alamos, Sandia, AFRL, White Sands Missile Range, and the New Mexico Spaceport Authority</li>
+      <li>the Center for Integrated Nanotechnologies split between Albuquerque and Los Alamos as a two-node research facility structure</li>
+    </ul>
+    <p class="muted">The evidence layer records that these materials document sparse statewide distribution with corridor-dependent institutional coverage and visible reliance on major regional nodes.</p>
+ 
+    <h3 class="subhead">Southwest regional positioning</h3>
+    <p class="muted">The evidence layer records that New Mexico has limited but relevant documentary evidence of southwest regional positioning in the current source set.</p>
+    <p class="muted mini"><em>The evidence layer records that the current New Mexico package preserves evidence of:</em></p>
+    <ul class="evidence-bullets">
+      <li>Spaceport America mission language describing development of a southwest regional spaceport</li>
+      <li>statewide transportation materials showing New Mexico maintains statewide multimodal transport infrastructure and road-map access</li>
+      <li>southern New Mexico aerospace and test infrastructure adjacent to White Sands Missile Range</li>
+    </ul>
+    <p class="muted mini"><em>The evidence layer records that the current source set does not provide enough normalized documentary coverage to characterize:</em></p>
+    <ul class="evidence-bullets">
+      <li>adjacency effects from Arizona semiconductor expansion</li>
+      <li>adjacency effects from the Colorado research corridor</li>
+      <li>adjacency effects from Texas energy-compute infrastructure</li>
+      <li>intermountain routing continuity relevance as a routing classification</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md</div>
   </section>
-
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">New Mexico's AI policy surface is shaped primarily by federal laboratory governance frameworks rather than state-level legislative instruments. The corridor anchors two of the most consequential federal AI research environments in the United States, and AI deployment conditions within those environments are governed through Department of Energy and Department of Defense policy surfaces rather than state statute. State-level AI legislative activity remains early-stage and has not yet produced an enforcement-ready framework.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Federal-Aligned · Developing</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Federal lab governance + nascent state activity</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Align with federal surfaces, not state statute</div></div>
+ 
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md and that absence of signals reflects absence of normalized documentary coverage.</p>
+ 
+    <h3 class="subhead">Signal clusters detected</h3>
+    <p class="muted mini">The signals layer records that the following signal clusters are directly detectable from evidence.md.</p>
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>Federal research laboratory environment.</strong> The signals layer reflects a federal-research-laboratory signal through documented NNSA headquarters presence at Kirtland, Los Alamos National Laboratory in Los Alamos, Sandia National Laboratories in Albuquerque, and the DOE-linked Center for Integrated Nanotechnologies across Albuquerque and Los Alamos.</div>
+      <div class="detail-item"><strong>Nuclear engineering and secure compute environment.</strong> The signals layer reflects a nuclear-engineering-and-secure-compute signal through documented plutonium science and engineering at Los Alamos, classified weapons computing associated with Crossroads, mixed classified and non-classified national-security computing associated with Venado, and classified high-performance computing in the Strategic Computing Complex.</div>
+      <div class="detail-item"><strong>Defense-adjacent engineering and secure simulation environment.</strong> The signals layer reflects a defense-adjacent engineering signal through documented AFRL Directed Energy Directorate activity at Kirtland, weapons modeling and simulation functions, the Wargaming and Advanced Research Simulation Laboratory, and directed-energy research partnerships with UNM and New Mexico State University.</div>
+      <div class="detail-item"><strong>Weapons testing and aerospace corridor environment.</strong> The signals layer reflects a weapons-testing-and-aerospace-corridor signal through documented White Sands Missile Range testing infrastructure and Spaceport America's state-established launch, aerospace, research, development, and testing environment in southern New Mexico.</div>
+      <div class="detail-item"><strong>Energy research and grid experimentation environment.</strong> The signals layer reflects an energy-research-and-grid-experimentation signal through documented Sandia work in energy storage, power systems, microgrids, cybersecurity, DOE energy-storage data infrastructure, Grid Modernization Laboratory Consortium work, and the Foxtail Flats solar-and-storage project serving the New Mexico laboratories and Kirtland.</div>
+      <div class="detail-item"><strong>University research continuity and federal-lab interface.</strong> The signals layer reflects a university-research-continuity signal through documented UNM engineering research, direct UNM collaboration with Sandia, Los Alamos, and AFRL, the integrated Advanced Materials Laboratory, and federal-lab-linked research centers and equipment partnerships.</div>
+      <div class="detail-item"><strong>Sparse statewide distribution and corridor-dependent topology.</strong> The signals layer reflects a sparse-distribution signal through documented low population density, statewide transportation coverage, and visible institutional concentration around Los Alamos, Albuquerque and Kirtland, and the southern White Sands and Spaceport corridor.</div>
     </div>
+ 
+    <h3 class="subhead">Limited signal traces</h3>
+    <p class="muted mini">The signals layer records that the following categories have only limited direct signal visibility in the current evidence set.</p>
+    <ul class="evidence-bullets">
+      <li>southwest regional positioning beyond the documented Spaceport America mission language and southern New Mexico testing infrastructure</li>
+    </ul>
+ 
+    <h3 class="subhead">No direct signal established yet</h3>
+    <p class="muted mini">The signals layer records that the current evidence set does not establish direct signal treatment for the following categories.</p>
+    <ul class="evidence-bullets">
+      <li>cross-state infrastructure adjacency effects involving Arizona, Colorado, and Texas</li>
+      <li>formal statewide interconnection density or IX concentration</li>
+      <li>private hyperscale compute siting presence</li>
+      <li>statewide corridor redundancy for digital infrastructure</li>
+      <li>intermountain routing continuity relevance as a routing classification</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals requiring trust-layer confirmation later</h3>
+    <p class="muted mini">The signals layer records that the following signals require later trust-layer confirmation before any classification work.</p>
+    <ul class="evidence-bullets">
+      <li>continuity of federal research anchor institutions</li>
+      <li>durability of secure compute and simulation infrastructure</li>
+      <li>continuity of corridor-based testing and aerospace infrastructure</li>
+      <li>stability of energy research and grid experimentation activity</li>
+      <li>continuity of the UNM and federal-lab research interface</li>
+      <li>persistence of sparse statewide distribution as a coordination factor</li>
+      <li>dependence on concentrated regional nodes rather than uniform statewide institutional density</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: signals.md</div>
+  </section>
+ 
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md and that absence of signals reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted"><strong>Scope.</strong> The trust-dimensions layer records that trust does not describe what the environment looks like. The trust-dimensions layer records that it evaluates what kinds of stability conditions New Mexico can sustain given the evidence layer and the visible signal environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted mini">The trust-dimensions layer records that New Mexico currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>continuity anchored in federal laboratory and defense research institutions</li>
+      <li>stable but corridor-concentrated research and testing infrastructure</li>
+      <li>sparse statewide distribution outside the primary research and testing nodes visible in the current package</li>
+      <li>durable university-to-federal-lab interface structures around UNM and selected AFRL partnerships</li>
+      <li>incomplete statewide visibility for interconnection density, private hyperscale siting, and cross-state infrastructure continuity</li>
+    </ul>
+ 
     <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> DOE and DOD AI governance frameworks, Sandia and LANL institutional policy surfaces, nascent state legislative proposals in the 2025–2026 session, University of New Mexico and NMSU research governance structures.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> no active state-level AI enforcement mechanism as of 2026. Federal contractor and laboratory AI requirements operate independently and carry greater operational significance for teams deploying within research-adjacent surfaces.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams operating within or adjacent to federal research surfaces should align AI governance documentation to federal lab standards rather than California-style state disclosure frameworks. State-level requirements may emerge but are not yet enforcement-ready.</div>
+ 
+      <div class="detail-item">
+        <strong>Federal-lab anchor stability vs statewide distribution sparsity.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Anchor-institution continuity with sparse statewide distribution.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>NNSA headquarters presence at the John A. Gordon Albuquerque Complex</li>
+          <li>Los Alamos National Laboratory and Sandia National Laboratories as visible long-duration federal research anchors</li>
+          <li>DOE-linked research facilities split across Albuquerque and Los Alamos</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package is concentrated in a limited set of major research and defense nodes</li>
+          <li>the current source set does not provide a uniform statewide infrastructure inventory</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that New Mexico shows stable federal-lab anchoring, while statewide institutional visibility remains sparse outside the major documented nodes.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Corridor-based infrastructure continuity.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Corridor-concentrated continuity.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>Albuquerque and Kirtland concentration of NNSA, Sandia, AFRL, and UNM-linked facilities</li>
+          <li>Los Alamos concentration of national-lab and secure-compute infrastructure</li>
+          <li>southern New Mexico concentration of White Sands Missile Range and Spaceport America infrastructure</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package does not provide direct statewide digital-corridor redundancy mapping</li>
+          <li>continuity is clearer in identified corridors than across the full state</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that New Mexico shows continuity through specific federal and research corridors rather than through a uniform statewide distribution pattern.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Research-security institutional durability.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Durable research-security continuity.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>Los Alamos nuclear-design and secure-compute functions</li>
+          <li>Sandia nonnuclear weapons systems engineering and quality-assurance role</li>
+          <li>AFRL directed-energy, simulation, and space-related work at Kirtland</li>
+          <li>White Sands testing infrastructure and southern aerospace-test facilities</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>some secure-compute and test-environment evidence is more visible than broader adjacent commercial infrastructure</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that New Mexico shows durable research-security institutions in the current source set, especially where federal mission continuity is explicit.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Population-density effects on coordination coverage.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Sparse settlement acts as a coverage constraint.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>official census profile references to low statewide population density</li>
+          <li>statewide transportation materials indicating broad geographic service obligations across roads and multimodal infrastructure</li>
+          <li>evidence concentration in a small number of major institutional nodes</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package does not provide a complete statewide service-density inventory across communications and compute systems</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that New Mexico's low-density geography supports a trust reading in which coordination coverage is more node-dependent than evenly distributed.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Regional-node dependency structure.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Multi-node dependency with concentrated anchors.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>documented concentration around Albuquerque and Kirtland</li>
+          <li>documented concentration around Los Alamos</li>
+          <li>documented concentration around White Sands, Spaceport America, and the Las Cruces area</li>
+          <li>two-node DOE research facility structure across Albuquerque and Los Alamos through CINT</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package does not document whether comparable node depth exists outside these corridors</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that New Mexico shows a dependency structure shaped by a small set of major regional nodes rather than a broad mesh of equivalent statewide institutions.</p>
+      </div>
+ 
+      <div class="detail-item">
+        <strong>Academic-federal research interface continuity.</strong>
+        <div class="trust-field-label">Current interpretation</div>
+        <p class="trust-field-body">Durable interface continuity.</p>
+        <div class="trust-field-label">Supporting basis</div>
+        <ul class="trust-field-list">
+          <li>UNM engineering research partnerships with Sandia, Los Alamos, and AFRL</li>
+          <li>integrated UNM facilities housing university, Sandia, and private-company staff together</li>
+          <li>UNM centers explicitly structured to collaborate with federal laboratories</li>
+          <li>AFRL cooperative research structures with UNM and New Mexico State University</li>
+        </ul>
+        <div class="trust-field-label">Constraint basis</div>
+        <ul class="trust-field-list">
+          <li>the current package is stronger on UNM-centered interface evidence than on a complete statewide university comparison</li>
+        </ul>
+        <div class="trust-field-label">Atlas reading</div>
+        <p class="trust-field-body">The trust-dimensions layer records that New Mexico shows durable academic-federal interface continuity where the evidence is centered on UNM and selected AFRL-linked partnerships.</p>
+      </div>
+ 
     </div>
-    <div class="note">Operational signal: New Mexico's AI policy surface is a federal coordination surface, not a state enforcement surface. The corridor interfaces with the national AI governance trajectory through institutional research channels rather than through state regulatory formation.</div>
+ 
+    <h3 class="subhead">Trust layer synthesis</h3>
+    <p class="muted mini">The trust-dimensions layer records that, taken together, New Mexico's trust profile supports the following interpretation:</p>
+    <ul class="evidence-bullets">
+      <li>New Mexico's visible stable conditions are anchored by federal laboratories, defense research institutions, and affiliated university interfaces</li>
+      <li>continuity is corridor-based and node-concentrated rather than evenly statewide</li>
+      <li>sparse population distribution matters as a coordination constraint in the current package</li>
+      <li>statewide interconnection, private hyperscale siting, and cross-state corridor continuity remain incompletely normalized</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md</div>
   </section>
-
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">New Mexico's digital asset posture is relatively open. The state applies its Money Transmitter Act to qualifying digital asset operations but has not enacted a Bitcoin-specific licensing framework comparable to California's DFAL or New York's BitLicense structure. The corridor does not present the same compliance overhead as coastal regulatory environments, making it accessible for operators seeking a lower-friction western deployment surface.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Open · Limited Framework</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">NM Financial Institutions Division</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower overhead; monitor transmitter scope</div></div>
-    </div>
+ 
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md.</p>
+    <p class="muted"><strong>Scope.</strong> The profile layer records that this file records the normalized New Mexico jurisdiction profile inside the Atlas state package and that profile is the characterization layer of the package, downstream from evidence, signals, and trust interpretation.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted mini">The profile layer records that New Mexico currently presents within Atlas as:</p>
+    <ul class="evidence-bullets">
+      <li>a federal research concentration environment centered on NNSA, Los Alamos, Sandia, and DOE-linked facilities</li>
+      <li>a defense-adjacent simulation and testing environment centered on Kirtland, White Sands, and southern aerospace infrastructure</li>
+      <li>an energy experimentation environment with visible storage, microgrid, and grid-modernization adjacency</li>
+      <li>a corridor-based statewide topology with sparse statewide distribution outside major institutional nodes</li>
+      <li>an academic-federal research integration environment centered on UNM and selected AFRL-linked partnerships</li>
+    </ul>
+    <p class="muted mini"><em>The profile layer records that New Mexico does not presently appear in the current source set as:</em></p>
+    <ul class="evidence-bullets">
+      <li>a statewide hyperscale compute corridor</li>
+      <li>a financial custody infrastructure jurisdiction</li>
+      <li>a major interconnection exchange concentration</li>
+      <li>a semiconductor fabrication leadership environment</li>
+      <li>a venture-backed AI ecosystem concentration</li>
+    </ul>
+ 
     <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> New Mexico Money Transmitter Act, Financial Institutions Division licensing requirements, federal AML/BSA obligations applicable to qualifying digital asset operators.</div>
-      <div class="detail-item"><strong>Positive signal:</strong> no Bitcoin-specific prohibition or elevated licensing burden. The corridor supports digital asset operations within a standard money transmitter framework, with federal compliance obligations remaining the dominant structural constraint.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> operators deploying custodial or exchange-proximate services within this corridor should assess money transmitter licensing scope and maintain federal AML/BSA alignment. The absence of a DFAL-equivalent framework reduces state-level compliance overhead compared to California or New York surfaces.</div>
+      <div class="detail-item"><strong>Federal research concentration characterization.</strong> The profile layer records that New Mexico's research posture is characterized in the current package by visible federal laboratory concentration across Albuquerque, Kirtland, and Los Alamos. The profile layer records that the current package shows NNSA headquarters activity at the John A. Gordon Albuquerque Complex, Los Alamos National Laboratory nuclear-design and science-and-engineering functions, Sandia National Laboratories weapons-systems-engineering and nonnuclear component functions, and DOE-linked research facilities operating across Albuquerque and Los Alamos. The profile layer records that these conditions support a structural characterization centered on federal research concentration rather than on commercial-sector scale claims.</div>
+      <div class="detail-item"><strong>Defense-adjacent simulation infrastructure characterization.</strong> The profile layer records that New Mexico's technical-infrastructure posture is characterized in the current package by directed-energy, weapons-simulation, aerospace-test, and open-air range infrastructure. The profile layer records that the current package shows AFRL directed-energy and simulation functions at Kirtland Air Force Base, the Wargaming and Advanced Research Simulation Laboratory supporting AFRL directed-energy and space directorates, White Sands Missile Range testing and experimentation infrastructure, and Spaceport America aerospace research, development, and testing facilities in southern New Mexico. The profile layer records that these conditions support a structural characterization centered on defense-adjacent simulation and testing infrastructure.</div>
+      <div class="detail-item"><strong>Energy experimentation adjacency characterization.</strong> The profile layer records that New Mexico's energy posture is characterized in the current package by laboratory-centered storage, grid, microgrid, and resilience research with visible project infrastructure. The profile layer records that the current package shows Sandia energy-storage, microgrid, cybersecurity, and power-systems research, Sandia operation of DOE-linked energy data resources and modeling-adjacent tools, Sandia participation in grid-modernization security and resilience work, and DOE and NNSA solar-and-storage procurement serving the New Mexico laboratories and Kirtland. The profile layer records that these conditions support a structural characterization centered on energy experimentation adjacency rather than a generalized statewide energy-routing role.</div>
+      <div class="detail-item"><strong>Corridor-based statewide topology characterization.</strong> The profile layer records that New Mexico's infrastructure posture is characterized in the current package by concentration across a small number of research and testing corridors. The profile layer records that the current package shows Albuquerque and Kirtland concentration of NNSA, Sandia, AFRL, and UNM-linked infrastructure, Los Alamos concentration of national-lab and secure-compute infrastructure, southern New Mexico concentration of White Sands Missile Range and Spaceport America infrastructure, and a two-node DOE user-facility pattern across Albuquerque and Los Alamos through CINT. The profile layer records that these conditions support a structural characterization centered on corridor-based statewide topology rather than evenly distributed statewide institutional concentration.</div>
+      <div class="detail-item"><strong>Sparse institutional distribution characterization.</strong> The profile layer records that New Mexico's statewide distribution posture is characterized in the current package by low population density and sparse institutional visibility outside the major documented nodes. The profile layer records that the current package shows official census profile references to low population density, statewide transportation-system coverage across roads and multimodal infrastructure, and documented evidence concentrated in a limited set of major research and testing locations. The profile layer records that these conditions support a structural characterization centered on sparse institutional distribution structure.</div>
+      <div class="detail-item"><strong>Academic-federal research integration characterization.</strong> The profile layer records that New Mexico's research-integration posture is characterized in the current package by direct university-to-laboratory collaboration structures. The profile layer records that the current package shows UNM engineering research with nearby Sandia, Los Alamos, and AFRL partnerships, the Advanced Materials Laboratory integrating university, Sandia, and private-company staff in one facility, UNM centers explicitly designed to collaborate with federal laboratories and industry, and AFRL-directed research-center and equipment-partnership arrangements with UNM and New Mexico State University. The profile layer records that these conditions support a structural characterization centered on academic-federal research integration patterns.</div>
     </div>
+ 
+    <h3 class="subhead">Structural rationale</h3>
+    <p class="muted mini">The profile layer records that New Mexico's profile characterization is supported by the combined package interpretation:</p>
+    <ul class="evidence-bullets">
+      <li>evidence shows federal laboratory concentration, secure compute, defense-adjacent testing, energy experimentation, academic-federal interfaces, sparse statewide distribution, and limited southwest regional positioning evidence</li>
+      <li>signals show federal research concentration, secure compute, defense-adjacent simulation, aerospace testing, energy experimentation, university continuity, and corridor-based topology</li>
+      <li>trust interpretation shows continuity anchored in federal institutions, corridor-concentrated infrastructure, sparse statewide coverage constraints, and durable academic-federal interfaces with incomplete statewide interconnection visibility</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of New Mexico as a federally anchored, corridor-concentrated research and testing environment with sparse statewide distribution and direct university-laboratory integration.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that New Mexico currently reads within Atlas as a federally anchored, corridor-concentrated research and testing environment with sparse statewide distribution, energy experimentation adjacency, and direct academic-federal integration.</p>
+ 
+    <h3 class="subhead">Profile uncertainties requiring later builder-mode interpretation</h3>
+    <p class="muted mini">The profile layer records that the following uncertainties should be preserved for later builder-mode interpretation:</p>
+    <ul class="evidence-bullets">
+      <li>whether the visible corridors should later be subdivided into more specific Albuquerque, Los Alamos, and southern New Mexico patterns</li>
+      <li>whether energy experimentation evidence should remain laboratory-centered or expand if broader statewide infrastructure evidence is normalized</li>
+      <li>whether sparse statewide distribution should remain a node-concentration factor or become more detailed once broader statewide inventories are added</li>
+      <li>whether southwest regional positioning should remain limited unless direct cross-state infrastructure evidence is normalized</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: profile.md</div>
   </section>
-
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">New Mexico operates a foundational privacy surface anchored by its data breach notification law but lacks a comprehensive consumer data privacy framework comparable to CCPA/CPRA. Teams deploying data-intensive operations within this corridor face materially lower state-level compliance drag than California-surface deployments. Federal contractor data handling obligations remain significant for operations interfacing with laboratory and defense environments.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing / Lower Friction</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">Breach Notification Act</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower state drag; federal obligations apply</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> New Mexico Data Breach Notification Act (2017), federal contractor data handling requirements via NIST/CMMC frameworks applicable to laboratory-adjacent deployments, FTC Act baseline privacy obligations.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> no active state data privacy enforcement agency as of 2026. Breach notification obligations are the primary state-level data compliance surface. Legislative momentum toward a comprehensive framework exists but has not yet produced an enacted law.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> operations handling New Mexico resident data at scale face meaningfully lower state-level compliance overhead than California-surface equivalents. Teams interacting with federal research or defense contractor surfaces should align to federal data handling frameworks, which carry greater operational weight than state statute in this corridor.</div>
-    </div>
+ 
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers.</p>
+    <p class="muted"><strong>Scope.</strong> The builder-mode layer records that this file translates the normalized New Mexico profile into builder-facing guidance, that Builder Mode is downstream from evidence, signals, trust interpretation, and profile characterization, and that it does not replace those layers. The builder-mode layer records that this file provides deployment interpretation only and does not rank New Mexico, compare New Mexico to other jurisdictions, or prescribe deployment decisions.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted mini">The builder-mode layer records that New Mexico is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a federal-laboratory corridor environment</li>
+      <li>a secure-compute and simulation environment</li>
+      <li>a defense-adjacent testing environment</li>
+      <li>an energy experimentation environment</li>
+      <li>a sparse statewide, node-dependent environment</li>
+    </ul>
+ 
+    <h3 class="subhead">Evidence concentration interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current New Mexico materials support deployment interpretation around concentrated evidence in three visible institutional zones: Albuquerque and Kirtland; Los Alamos; the White Sands, Spaceport America, and Las Cruces corridor. The builder-mode layer records that these interpretation areas arise from documented NNSA, Sandia, AFRL, Los Alamos, White Sands, Spaceport America, and UNM-linked infrastructure.</p>
+ 
+    <h3 class="subhead">Anchor-institution topology interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current New Mexico materials support deployment interpretation that treats federal anchor institutions as central to the visible environment. The builder-mode layer records that the package shows research and testing continuity most clearly where NNSA, Los Alamos, Sandia, AFRL, White Sands Missile Range, and the New Mexico Spaceport Authority are present.</p>
+ 
+    <h3 class="subhead">Statewide uniformity constraint interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current New Mexico materials support deployment constraint interpretation around assumptions of uniform statewide infrastructure density. The builder-mode layer records that these constraints arise from low-density statewide population distribution, evidence concentration in a limited set of corridors and nodes, and incomplete statewide interconnection and backbone visibility in the current package.</p>
+ 
+    <h3 class="subhead">Corridor-dependent research continuity interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current New Mexico materials support deployment interpretation where research continuity depends on corridor selection and institutional adjacency. The builder-mode layer records that this is most visible in the Albuquerque and Kirtland research and simulation environment, the Los Alamos secure-compute and nuclear-engineering environment, and the southern New Mexico testing and aerospace environment.</p>
+ 
+    <h3 class="subhead">Regional-node reliance interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current New Mexico materials support deployment interpretation that takes account of reliance on a small number of major regional nodes. The builder-mode layer records that builders interpreting New Mexico should expect the currently documented environment to be more concentrated around major institutional nodes than broadly distributed across the full state.</p>
+ 
+    <h3 class="subhead">Sparse-population coordination interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current New Mexico materials support deployment interpretation that treats sparse population and geography as coordination factors. The builder-mode layer records that the current package indicates that statewide coverage assumptions should not be overread from the presence of visible federal and research anchors in a limited number of locations.</p>
+ 
+    <h3 class="subhead">Academic-federal interface interpretation</h3>
+    <p class="muted">The builder-mode layer records that the current New Mexico materials support deployment interpretation for work that depends on university-to-laboratory interfaces, especially around UNM and selected AFRL-linked partnerships. The builder-mode layer records that the package does not extend this interpretation into a claim of uniform statewide academic integration.</p>
+ 
+    <h3 class="subhead">Design expectations for builders</h3>
+    <p class="muted mini">The builder-mode layer records that builders interpreting New Mexico should assume:</p>
+    <ul class="evidence-bullets">
+      <li>federal laboratories and defense research institutions are more visible than broad statewide commercial infrastructure density</li>
+      <li>corridor and node selection matter materially</li>
+      <li>secure compute, simulation, testing, and energy experimentation conditions are documented in specific institutional environments</li>
+      <li>interconnection density, private hyperscale siting, and cross-state continuity remain incomplete in the current source set and should not be overread</li>
+    </ul>
+ 
+    <h3 class="subhead">Deployment posture interpretation</h3>
+    <p class="muted mini"><em>The builder-mode layer records that New Mexico's current package most clearly supports builder interpretation around:</em></p>
+    <ul class="evidence-bullets">
+      <li>federal-laboratory-adjacent technical systems</li>
+      <li>secure compute and simulation environments</li>
+      <li>weapons-testing and aerospace-test-adjacent environments</li>
+      <li>energy experimentation and storage-linked research environments</li>
+      <li>university-to-federal-lab research interfaces</li>
+    </ul>
+    <p class="muted mini"><em>The builder-mode layer records that New Mexico's current package also supports qualified interpretation around:</em></p>
+    <ul class="evidence-bullets">
+      <li>node-dependent statewide coordination conditions</li>
+      <li>sparse-population deployment constraints</li>
+      <li>southwest regional positioning only where specific state and federal facilities are directly documented</li>
+    </ul>
+    <p class="muted mini"><em>The builder-mode layer records that New Mexico's current package does not support:</em></p>
+    <ul class="evidence-bullets">
+      <li>statewide hyperscale compute corridor interpretation</li>
+      <li>major IX concentration interpretation</li>
+      <li>semiconductor fabrication leadership interpretation</li>
+      <li>custody or financial-infrastructure leadership interpretation</li>
+      <li>venture-backed AI ecosystem concentration interpretation</li>
+    </ul>
+ 
+    <h3 class="subhead">Areas requiring later interpretation</h3>
+    <p class="muted mini">The builder-mode layer records that the following areas should remain open for later interpretation:</p>
+    <ul class="evidence-bullets">
+      <li>whether New Mexico's visible corridors should later be split into more specific sub-environments</li>
+      <li>whether statewide interconnection conditions should expand once direct IX and backbone evidence is normalized</li>
+      <li>whether cross-state adjacency should expand once direct Arizona, Colorado, and Texas corridor evidence is normalized</li>
+      <li>whether private compute-siting conditions should expand once better documentary coverage is added</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md</div>
   </section>
-
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">New Mexico does not operate a dedicated biometric privacy statute as of 2026. The corridor's biometric risk surface is shaped primarily by federal identity security requirements in defense and laboratory environments rather than state consumer protection frameworks. The absence of an Illinois BIPA-equivalent or California SPI classification regime makes the state a lower-friction surface for biometric deployment, though federal security identity requirements condition that environment at the institutional level.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate Concern Zone</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Federal security-oriented</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower state friction; federal standards govern</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> federal identity and security clearance frameworks governing laboratory and defense environments, FTC Act general consumer protection obligations, absence of state biometric-specific statute as of 2026.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> lower state-level regulatory risk than Illinois or California. Primary biometric compliance surfaces are federal in origin, particularly for operations interfacing with defense, security clearance, or laboratory identity management environments.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> products deploying biometric identification or behavioral monitoring within non-federal consumer contexts operate under lighter state regulatory conditions than coastal corridors, but should monitor for a legislative shift should national biometric policy precedent intensify through 2026–2027.</div>
-    </div>
+ 
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+ 
+    <p class="muted">The canonical package records the following structural exclusions for New Mexico.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that the current source set does not provide sufficient normalized documentary coverage to support statewide routing classification, cross-state spillover characterization, or surface assignment. The evidence layer records that absence of evidence is preserved as a valid structural outcome under Atlas normalization rules.</p>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted mini">The signals layer records that, based on the current signal set, this file does not support direct signal treatment for the following categories:</p>
+    <ul class="atlas-list" style="margin-top:8px">
+      <li>cross-state infrastructure adjacency effects involving Arizona, Colorado, and Texas</li>
+      <li>formal statewide interconnection density or IX concentration</li>
+      <li>private hyperscale compute siting presence</li>
+      <li>statewide corridor redundancy for digital infrastructure</li>
+      <li>intermountain routing continuity relevance as a routing classification</li>
+    </ul>
+    <p class="muted">The signals layer records that this file also does not assign routing eligibility, registry readiness, certification posture, deployment suitability, corridor leadership ranking, or Atlas surfaces.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted mini">The trust-dimensions layer records that, based on the current signal and trust material, this file does not support the following dimension-level interpretations:</p>
+    <ul class="atlas-list" style="margin-top:8px">
+      <li>a normalized statewide interconnection continuity dimension</li>
+      <li>a normalized cross-state corridor continuity dimension involving Arizona, Colorado, or Texas</li>
+      <li>a uniform statewide infrastructure-density interpretation beyond the documented major research and testing nodes</li>
+    </ul>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted mini">The profile layer records that New Mexico's profile should not be read as:</p>
+    <ul class="atlas-list" style="margin-top:8px">
+      <li>a general ranking claim</li>
+      <li>a declaration of routing leadership</li>
+      <li>a custody-leadership claim</li>
+      <li>a coordination-tier classification</li>
+      <li>a surface assignment</li>
+      <li>a statement of national significance</li>
+    </ul>
+    <p class="muted">The profile layer records that it should be read as a characterization of New Mexico's current structural posture within the evidence preserved in this Atlas package.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not assign routing authority, coordination tier, Atlas surface, national significance, or leadership positioning. It does not prescribe deployment decisions.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted mini">The change-log records that the following classifications were evaluated but not supported by evidence:</p>
+    <ul class="atlas-list" style="margin-top:8px">
+      <li>statewide hyperscale compute presence</li>
+      <li>financial custody infrastructure leadership</li>
+      <li>major IX concentration</li>
+      <li>semiconductor fabrication leadership</li>
+      <li>venture-backed AI ecosystem concentration</li>
+      <li>intermountain routing continuity classification</li>
+    </ul>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
-
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">New Mexico's public sector AI surface is anchored by federal research institutions rather than state government deployment programs. The corridor supports substantial AI research activity through its national laboratory structures and associated university alignment surfaces. State agency AI adoption is developing incrementally, but the institutional weight of the corridor's research environments conditions a distinctive public sector AI engagement model compared to state-governed deployment frameworks.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Research-Anchored</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Federal lab-led</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Strong fit for research-aligned B2G operators</div></div>
+ 
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records the following evidence gaps for New Mexico. The canonical package records that the current New Mexico source material does not provide additional normalized source detail for the following categories beyond the evidence already listed above.</p>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">a complete official statewide interconnection or IX inventory</div>
+      <div class="detail-item">direct official backbone and corridor-redundancy mapping for digital infrastructure</div>
+      <div class="detail-item">direct documentary visibility into private hyperscale compute siting</div>
+      <div class="detail-item">a fuller official statewide inventory of municipal variation outside the major federal and research nodes</div>
+      <div class="detail-item">normalized cross-state infrastructure-corridor evidence sufficient to characterize Arizona, Colorado, or Texas adjacency effects</div>
+      <div class="detail-item">direct statewide energy-routing coordination visibility beyond the currently gathered laboratory, utility, and project materials</div>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> DOE and DOD research governance surfaces, university-laboratory alignment programs, state agency digital modernization initiatives, workforce development programs coordinated through higher education.</div>
-      <div class="detail-item"><strong>Growth signal:</strong> public sector AI activity is advancing within research-adjacent surfaces. State agency AI is developing more incrementally, with modernization programs beginning to interface with AI tooling through procurement surfaces that remain less structured than California's attestation-heavy model.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams operating within education or government surfaces oriented toward research coordination can find structured opportunity here. Entry points align more naturally with federal research procurement channels than with state-level procurement frameworks in comparable corridors.</div>
+ 
+    <h3 class="subhead">Trust-layer evidence-gap placeholders</h3>
+    <p class="muted mini">The trust-dimensions layer records two placeholder entries within the evidence-gap section:</p>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item"><strong>Statewide interconnection continuity placeholder.</strong> The trust-dimensions layer records that the current package supports corridor and node concentration review, but not a normalized statewide interconnection-continuity section grounded in direct IX and backbone evidence.</div>
+      <div class="detail-item"><strong>Cross-state corridor continuity placeholder.</strong> The trust-dimensions layer records that the current package preserves limited southwest-regional positioning evidence, but not a normalized trust treatment for Arizona, Colorado, or Texas adjacency effects.</div>
     </div>
+ 
+    <p class="muted" style="margin-top:12px">The canonical package records gap inheritance: signals.md, trust-dimensions.md, profile.md, and builder-mode.md inherit these evidence gaps without expansion. change-log.md records that inheritance rule and does not create a new evidence-gap set.</p>
+    <div class="src">Source: evidence.md — Evidence gaps; trust-dimensions.md — placeholders; change-log.md — Gap inheritance</div>
   </section>
-
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">New Mexico operates a smaller but institutionally dense developer environment shaped by federal research concentration rather than commercial technology ecosystems. The corridor supports technical talent aligned with physics, computational science, defense systems, and energy research disciplines. Open-source activity interfaces primarily with research-community norms and federal contractor licensing obligations rather than state software policy.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Institutional · Research-Dense</div></div>
-      <div class="mini-box"><div class="label">Strength</div><div class="value">Federal lab talent concentration</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Deep technical density; smaller surface</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> federal laboratory open-source contribution frameworks, DOE and DOD software release policies, University of New Mexico and New Mexico State University research computing programs, semiconductor manufacturing proximity supporting embedded and systems-level development.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> the corridor operates a technical talent surface with distinctive depth in computational science, systems engineering, and defense-adjacent disciplines. Commercial software ecosystem density is lower than coastal corridors, but research-aligned developer communities interface with national-scale institutional networks.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> well-suited for teams operating at the intersection of research systems, defense-adjacent software, and energy-infrastructure tooling. Less suited for consumer-scale product teams requiring large local commercial developer communities or venture-backed early-stage ecosystems.</div>
-    </div>
+ 
+  <!-- ── 10. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Normalization sequence</h3>
+    <ul class="mini muted">
+      <li>The change-log records that evidence.md was created and aligned to the New Mexico instruction layer.</li>
+      <li>The change-log records that signals.md was derived strictly from evidence.md.</li>
+      <li>The change-log records that trust-dimensions.md was derived from evidence.md + signals.md.</li>
+      <li>The change-log records that profile.md was derived from evidence.md + signals.md + trust-dimensions.md.</li>
+      <li>The change-log records that builder-mode.md was derived from all prior layers.</li>
+      <li>The change-log records that a targeted normalization audit was performed against the New Mexico instruction layer and Atlas normalization contract.</li>
+    </ul>
+ 
+    <h3 class="subhead">Evidence inputs</h3>
+    <p class="muted mini">The change-log records that the New Mexico normalization pass preserved and aligned evidence around these major categories:</p>
+    <ul class="mini muted">
+      <li>federal research laboratory environment</li>
+      <li>nuclear engineering and secure compute infrastructure</li>
+      <li>defense-adjacent engineering, weapons testing, and aerospace corridor infrastructure</li>
+      <li>energy research and grid experimentation environment</li>
+      <li>university research continuity and federal-lab academic interface</li>
+      <li>sparse statewide distribution and corridor-dependent institutional topology</li>
+      <li>limited southwest regional positioning evidence</li>
+    </ul>
+ 
+    <h3 class="subhead">Signal derivation method</h3>
+    <ul class="mini muted">
+      <li>The change-log records that signals were extracted directly from evidence.md.</li>
+      <li>The change-log records that signal clustering was limited to documented federal research concentration, secure compute, defense-adjacent simulation, aerospace testing, energy experimentation, university-laboratory interface, and sparse statewide topology conditions.</li>
+      <li>The change-log records that no routing inference was performed.</li>
+      <li>The change-log records that no leadership inference was performed.</li>
+      <li>The change-log records that no coordination-tier interpretation was performed.</li>
+    </ul>
+ 
+    <h3 class="subhead">Trust synthesis method</h3>
+    <p class="muted mini">The change-log records that trust indicators were derived from:</p>
+    <ul class="mini muted">
+      <li>federal-lab anchor continuity</li>
+      <li>corridor-based infrastructure continuity</li>
+      <li>research-security institutional durability</li>
+      <li>population-density effects on coordination coverage</li>
+      <li>regional-node dependency structure</li>
+      <li>academic-federal research interface continuity</li>
+    </ul>
+    <p class="muted mini">The change-log records that trust evaluation remained limited to stability characteristics. The change-log records that no surface assignment was performed.</p>
+ 
+    <h3 class="subhead">Profile synthesis inputs</h3>
+    <p class="muted mini">The change-log records that profile.md was produced from evidence.md, signals.md, and trust-dimensions.md. The change-log records that profile synthesis remained structural and descriptive. The change-log records that no routing roles were assigned and no coordination-tier classification was applied.</p>
+ 
+    <h3 class="subhead">Builder-mode interpretation inputs</h3>
+    <p class="muted mini">The change-log records that builder-mode.md was produced from evidence.md, signals.md, trust-dimensions.md, and profile.md. The change-log records that builder mode remained deployment interpretation only. The change-log records that no surface assignment was performed and no deployment prescription was preserved.</p>
+ 
+    <h3 class="subhead">Corrections recorded in this audit</h3>
+    <p class="muted mini">The change-log records that the targeted normalization audit enforced the following conditions:</p>
+    <ul class="mini muted">
+      <li>state instruction-layer alignment to New Mexico-specific infrastructure evidence</li>
+      <li>evidence-first reconstruction across all downstream layers</li>
+      <li>signals derivation verification against evidence.md only</li>
+      <li>interpretation-layer constraint enforcement to remove routing, leadership, coordination-tier, and national-significance inference</li>
+      <li>profile structural-characterization validation</li>
+      <li>builder-mode interpretation-only enforcement</li>
+      <li>inclusion of structural exclusions and evidence gaps in contract-aligned form</li>
+    </ul>
+ 
+    <h3 class="subhead">Normalization status</h3>
+    <p class="muted">The change-log records that the New Mexico package was verified and aligned with instruction-layer lenses.</p>
+ 
+    <h3 class="subhead">Gap inheritance</h3>
+    <p class="muted">The change-log records that evidence gaps were inherited from evidence.md and applied downstream without expanding the underlying evidence scope.</p>
+ 
+    <h3 class="subhead">Lens alignment confirmation</h3>
+    <p class="muted">The change-log records that the New Mexico jurisdiction lens was preserved during this audit. The change-log records that structural normalization changes were limited to contract alignment and did not introduce new evidence.</p>
+ 
+    <h3 class="subhead">Normalization adjustments</h3>
+    <ul class="mini muted">
+      <li>The change-log records standardized layer titles and required constraint language where missing.</li>
+      <li>The change-log records normalized structural-exclusions and evidence-gap section labels where needed.</li>
+      <li>The change-log records aligned downstream files to inherit evidence gaps and preserve non-assignment boundaries.</li>
+      <li>The change-log records appended required status lines where missing.</li>
+    </ul>
+ 
+    <h3 class="subhead">Topology metadata attachment</h3>
+    <p class="muted">The change-log records that metadata.md was added using atlas.md corridor narrative fields: Corridor Group, Foundation Layer, Topology Completion Layer. The change-log records that this metadata is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
-
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">New Mexico operates within a structurally favorable energy environment for compute-intensive and mining-adjacent deployments. The state produces substantial oil, natural gas, wind, and solar capacity. Electricity costs are moderate by US standards, and the regulatory posture toward energy-intensive operations is constructive compared to coastal corridors. Bitcoin mining is legal with no active prohibition. The corridor's energy resource base and physical geography support compute deployment at scale.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Favorable Conditions</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Moderate (US)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Viable for mining and compute deployment</div></div>
-    </div>
-    <div class="radar" aria-label="New Mexico energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:25%;background:var(--green)"></div></div><div class="score">25</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:35%;background:var(--yellow)"></div></div><div class="score">35</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:72%;background:var(--teal)"></div></div><div class="score">72</div></div>
-    </div>
-    <div class="note">Builder implication: New Mexico's energy posture and regulatory environment support mining and compute deployment conditions not available in coastal corridors. Teams assessing southwestern interior deployment should evaluate grid access, transmission infrastructure, and proximity to existing federal compute surfaces within the corridor.</div>
-  </section>
-
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">New Mexico's regulatory vector is developing incrementally across state-level policy layers while federal governance surfaces remain the primary operational shaping force within this corridor. Builders should model this jurisdiction as a southwestern interior research-and-systems connector that links fabrication environments in Arizona, coordination surfaces in Colorado, infrastructure corridors in Texas, and digital asset formation activity in Wyoming into a coherent interior deployment band.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — developing at the state level; federal laboratory and defense AI governance frameworks are the operative standards within the corridor. State legislative activity is early-stage and not yet enforcement-ready through 2026.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — stable and relatively open. No Bitcoin-specific licensing burden is active. Money transmitter scope and federal AML/BSA obligations remain the primary compliance surfaces. Monitoring for a broader state framework is warranted through 2027.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — low friction at the state level. Breach notification obligations are the primary active requirement. Comprehensive consumer data privacy legislation may emerge in the 2026–2027 cycle but has not yet produced an enacted framework.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — minimal active state restrictions as of 2026. Federal identity and security frameworks govern the dominant biometric deployment surfaces within the corridor. National legislative momentum may condition future state posture.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — low and stable. Energy cost and regulatory posture support mining-adjacent deployment. The corridor sits within a favorable structural band for compute and proof-of-work operations relative to coastal and high-governance corridors.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — stable and institutionally deep within research-aligned disciplines. Commercial ecosystem density is limited but technical talent concentration is high within systems, defense, and energy-adjacent domains.</div>
-    </div>
-    <div class="callout">12-month outlook: New Mexico is likely to develop incrementally across state AI and privacy surfaces while its corridor positioning as a southwestern interior systems connector strengthens, particularly as Arizona semiconductor fabrication and Texas infrastructure corridor activity intensify adjacent deployment surfaces.</div>
-  </section>
-
-</div>
-
-<!-- ── SIDEBAR ─────────────────────────────── -->
+ 
+</div><!-- /main col -->
+ 
+<!-- ── SIDEBAR ── -->
 <aside>
-
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">New Mexico at a glance</h3>
-    <p class="muted mini">Best used as a research-aligned and federal-coordinated deployment corridor. Favorable conditions for compute, energy-adjacent operations, and strategic systems alignment. Lower state compliance drag than coastal corridors across privacy, biometrics, and digital asset surfaces.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical New Mexico jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/new-mexico/</code></p>
   </div>
-
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> federal research alignment, defense-adjacent systems, energy-supported compute deployment, lower-friction data operations, and southwestern interior infrastructure positioning.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> consumer-scale product teams requiring large commercial developer ecosystems, operations requiring coastal policy-formation proximity, or teams that need deep state-level regulatory clarity as a governance anchor.</p>
-  </div>
-
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>2017 (active)</strong> — New Mexico Data Breach Notification Act in force; breach reporting obligations apply to operators handling resident personal information.</li>
-      <li><strong>2026 (active)</strong> — Money Transmitter Act licensing scope applies to qualifying digital asset operators; federal AML/BSA obligations govern broader digital asset surfaces.</li>
-      <li><strong>2026–2027</strong> — State legislative sessions may produce consumer data privacy or AI transparency proposals; no enacted framework as of Apr 2026.</li>
-      <li><strong>Ongoing</strong> — Federal laboratory and DOE/DOD AI and data governance frameworks update independently of state legislative cycles.</li>
+      <li><strong>Jurisdiction:</strong> New Mexico</li>
+      <li><strong>Code:</strong> NM · US-NM</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> preliminary</li>
     </ul>
   </div>
-
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li><strong>Corridor Group:</strong> Southwest Transition Infrastructure Corridor</li>
+      <li><strong>Foundation Layer:</strong> Southwest Transition Infrastructure Layer</li>
+      <li><strong>Completion Layer:</strong> Desert–Interior Transition Layer</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: preliminary</li>
+      <li>Signal layer: preliminary</li>
+      <li>Trust dimensions: preliminary</li>
+      <li>Profile: preliminary</li>
+      <li>Builder-mode: preliminary</li>
+      <li>Surface assignment: none</li>
     </ul>
   </div>
-
-  <div class="card" aria-labelledby="heading-standardization">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-standardization">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+    </ul>
   </div>
-
+ 
 </aside>
-</div>
-
+</div><!-- /grid-sidebar -->
+ 
 </main>
-
+ 
 <div class="wrap reflection footer-block">
 <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
