@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Iowa — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Iowa operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/iowa/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --card-wm:url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --panel-2:#101624;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --line-strong:rgba(214,163,74,.28);
+ --red:#ef4444;
+ --orange:#f97316;
+ --yellow:#eab308;
+ --green:#22c55e;
+ --teal:#14b8a6;
+ --blue:#4a9eff;
+ --purple:#8b5cf6;
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+h1{font-size:38px;color:var(--gold2);line-height:1.1;margin:0 0 10px}
+h2{font-size:22px;color:var(--gold2);margin:0 0 10px}
+h3{font-size:16px;color:var(--text);margin:0 0 6px}
+p{margin:0 0 12px}
+ul{margin:8px 0 0 18px}
+.muted{color:var(--muted)}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ padding:7px 12px;border-radius:999px;
+ border:1px solid var(--line);background:rgba(214,163,74,.06);
+ color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:30px 24px;margin-bottom:18px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+.hero::after{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+ background-image:linear-gradient(rgba(214,163,74,.12) 1px, transparent 1px),linear-gradient(90deg, rgba(214,163,74,.12) 1px, transparent 1px);
+ background-size:40px 40px;
+ mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.hero-chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:18px;margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35);border-color:var(--line-strong)}
+.card.anchor-target{scroll-margin-top:110px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-sidebar{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.span-2{grid-column:1 / -1}
+.note{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted);font-size:14px}
+.band{
+ display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px;
+}
+.metric{
+ border:1px solid rgba(214,163,74,.12);border-radius:14px;padding:14px;background:rgba(255,255,255,.02);
+}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.metric .value{font-size:14px;font-weight:700}
+.kicker{font-size:13px;color:var(--muted);max-width:920px}
+.mini{font-size:13px}
+.subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mini-box{padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.mini-box .label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.mini-box .value{font-size:13px;font-weight:700}
+.status-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.status-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.status-left{display:flex;align-items:center;gap:10px;min-width:0}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.03em;border:1px solid transparent;white-space:nowrap}
+.pill.red{background:rgba(239,68,68,.14);color:#ff8e8e;border-color:rgba(239,68,68,.22)}
+.pill.orange{background:rgba(249,115,22,.14);color:#ffb27c;border-color:rgba(249,115,22,.22)}
+.pill.yellow{background:rgba(234,179,8,.14);color:#f5db77;border-color:rgba(234,179,8,.22)}
+.pill.green{background:rgba(34,197,94,.14);color:#98ecb1;border-color:rgba(34,197,94,.22)}
+.pill.teal{background:rgba(20,184,166,.14);color:#8ce3d9;border-color:rgba(20,184,166,.22)}
+.pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
+.pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
+.pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
+.detail-list{display:grid;gap:10px}
+.detail-item{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.detail-item strong{color:var(--text)}
+.atlas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.atlas-list li{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.atlas-list code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--gold2);font-size:12px}
+.callout{
+ padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+ background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
+}
+.radar{display:grid;gap:10px;margin-top:12px}
+.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
+.radar-label{font-size:12px;color:var(--muted)}
+.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+.fill{height:100%;border-radius:999px}
+.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.footer-block{padding-bottom:34px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+.smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+@media (max-width:980px){
+ .grid-sidebar{grid-template-columns:1fr}
+ .band{grid-template-columns:repeat(2,1fr)}
+ .subgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+ .grid-2,.grid-3,.status-grid,.subgrid{grid-template-columns:1fr}
+ .band{grid-template-columns:1fr}
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .radar-row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .wrap.content{animation:none;opacity:1;transform:none}
+ .card{transition:none}
+ .card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+ 
+<main id="main-content" class="wrap content">
+ 
+<!-- ── HERO ─────────────────────────────────── -->
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <h1 id="heading-hero">Iowa</h1>
+    <p class="kicker">Iowa operates as an Upper Mississippi River &amp; Transcontinental Freight Continuity Corridor supporting coast-to-coast routing alignment across the I-80 spine, north–south interior deployment continuity along the I-35 corridor, and barge-linked logistics interfaces along the Mississippi River within the central continental infrastructure layer of the United States.</p>
+ 
+    <div class="hero-meta">
+      <div class="hero-chip">IA · US-IA</div>
+      <div class="hero-chip">Des Moines</div>
+      <div class="hero-chip">Upper Mississippi River &amp; Transcontinental Freight Continuity Corridor</div>
+      <div class="hero-chip">Atlas operational profile</div>
+      <div class="hero-chip">Updated Apr 2026</div>
+    </div>
+ 
+    <div class="band" aria-label="Iowa quick signals">
+      <div class="metric"><div class="label">AI Policy</div><div class="value">Permissive / No State Mandate</div></div>
+      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Emerging / Accommodating</div></div>
+      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Baseline Framework</div></div>
+      <div class="metric"><div class="label">Biometrics</div><div class="value">Low Regulation</div></div>
+      <div class="metric"><div class="label">Operational Signal</div><div class="value">Freight-Corridor / Low-Friction Deployment</div></div>
+    </div>
+ 
+    <nav class="section-nav" aria-label="Jump to sections">
+      <a href="#operational-profile">Operational Profile</a>
+      <a href="#atlas-alignment">Atlas Alignment</a>
+      <a href="#ai-policy">AI Policy</a>
+      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
+      <a href="#privacy-data">Privacy / Data</a>
+      <a href="#biometrics-identity">Biometrics / Identity</a>
+      <a href="#public-sector-ai">Public Sector AI</a>
+      <a href="#developer-climate">Developer Climate</a>
+      <a href="#energy-mining">Energy / Mining</a>
+      <a href="#direction-of-travel">Direction of Travel</a>
+    </nav>
+  </div>
+</section>
+ 
+<!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
+<div class="grid-sidebar">
+<div>
+ 
+  <!-- ── OPERATIONAL PROFILE ── -->
+  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
+    <h2 id="heading-operational">Operational Profile</h2>
+    <p class="muted">Iowa operates as the Upper Mississippi River &amp; Transcontinental Freight Continuity Corridor within the central continental infrastructure layer. Builders operating within this corridor interact with transcontinental routing continuity surfaces along the I-80 spine, interior deployment pathways aligned with I-35, Missouri River freight alignment interfaces along I-29, Mississippi River barge logistics continuity surfaces, and central Midwest rail freight systems linking agricultural throughput environments with national inland infrastructure corridors. The governance posture is structurally permissive, with low policy friction across AI, digital assets, compute, and biometric surfaces.</p>
+    <div class="status-grid">
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>AI Policy</strong></div><span class="pill green">Permissive · No State Mandate</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill teal">Emerging · Accommodating</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Privacy / Data</strong></div><span class="pill blue">Baseline Framework</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Biometrics</strong></div><span class="pill green">Low Regulation</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Public Sector AI</strong></div><span class="pill yellow">Early Stage</span></div>
+      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Freight-Corridor / Low-Friction</span></div>
+    </div>
+    <div class="note"><strong>Builder summary:</strong> Iowa's multimodal infrastructure integrates highway, rail, pipeline, and navigable waterway routing surfaces supporting regional and national freight movement across the central United States. Teams seeking low-friction deployment within a continental routing corridor will find Iowa's governance posture structurally accommodating across most active policy layers.</div>
+  </section>
+ 
+  <!-- ── ATLAS ALIGNMENT ── -->
+  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
+    <h2 id="heading-atlas">Atlas Alignment</h2>
+    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
+    <ul class="atlas-list">
+      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/iowa/</code></li>
+      <li><strong>Jurisdiction lens</strong><br>Upper Mississippi River &amp; Transcontinental Freight Continuity Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
+      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
+      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+    </ul>
+    <div class="callout mini">Iowa's position within the national Atlas map connects the Upper Mississippi River barge logistics surface with the transcontinental I-80 routing spine, interfacing with the Minnesota Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor to the north, the Wisconsin Great Lakes Manufacturing &amp; Inland Logistics Corridor to the northeast, the Illinois Midwestern Industrial &amp; Mississippi River Continuity Corridor to the southeast, the Missouri Mississippi River Industrial Logistics Corridor to the south, and the Nebraska Central Plains Rail, Agricultural &amp; Interstate Continuity Corridor to the west. Iowa functions as the central Midwest continuity node linking these corridor systems across the continental infrastructure layer.</div>
+  </section>
+ 
+  <!-- ── AI POLICY ── -->
+  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
+    <h2 id="heading-ai">AI Policy</h2>
+    <p class="muted">Iowa operates without state-specific AI legislation as of April 2026. No dedicated AI regulatory body, no mandated incident reporting, and no vendor attestation requirements exist at the state level. Teams deploying within the Iowa corridor align with federal AI governance frameworks and operate within a permissive state-level environment where AI policy friction is structurally low relative to high-governance corridors.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Permissive / No State Mandate</div></div>
+      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Federal framework alignment</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low compliance drag for AI deployment</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Federal NIST AI RMF alignment surfaces, Iowa Legislature (no enacted AI-specific legislation as of Apr 2026), Iowa Economic Development Authority general posture, standard administrative guidance frameworks.</div>
+      <div class="detail-item"><strong>Enforcement profile:</strong> No state AI enforcement body. Teams operating within Iowa's corridor are not subject to state-level AI incident reporting, procurement attestation, or vendor certification requirements as of April 2026.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Iowa functions as a low-friction AI deployment surface for teams that do not require state-level policy engagement and can operate under federal baseline frameworks without layered state governance overhead.</div>
+    </div>
+    <div class="note">Operational signal: Iowa operates as a permissive corridor for AI deployment. Teams accustomed to high-governance state environments will find structural friction significantly reduced within this corridor. Monitor the 2027 legislative session for potential alignment with multi-state AI governance frameworks.</div>
+  </section>
+ 
+  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
+  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
+    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
+    <p class="muted">Iowa applies its Uniform Money Services Act (Iowa Code Ch. 533C) to digital asset businesses requiring money transmitter licensing for qualifying custodial and exchange-style operations. No dedicated digital asset licensing regime exists beyond federal MSB registration and state money transmitter requirements. The posture is structurally accommodating with limited state-level overhead beyond baseline compliance surfaces.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Emerging / Accommodating</div></div>
+      <div class="mini-box"><div class="label">Regulator</div><div class="value">Iowa Division of Banking</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low overhead; federal baseline dominates</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Iowa Code Ch. 533C (Uniform Money Services Act), FinCEN MSB registration requirements, Iowa Division of Banking money transmitter framework, standard AML/BSA compliance surfaces. No Iowa-specific digital asset licensing track beyond these baseline requirements.</div>
+      <div class="detail-item"><strong>Positive signal:</strong> Iowa's digital asset environment operates without dedicated cryptocurrency legislation, allowing teams to align with federal baseline frameworks without navigating layered state-specific compliance overhead. The regulatory surface is not actively expanding.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Custodians and exchange operators require standard money transmitter licensing through the Iowa Division of Banking and federal MSB registration. No Iowa-specific digital asset licensing track exists beyond this baseline, making compliance architecture structurally simpler than high-governance corridors.</div>
+    </div>
+  </section>
+ 
+  <!-- ── PRIVACY / DATA ── -->
+  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
+    <h2 id="heading-privacy">Privacy / Data Handling</h2>
+    <p class="muted">Iowa enacted SF 262 (Iowa Consumer Data Protection Act, ICDPA), effective January 1, 2025. The ICDPA is modeled on the Virginia VCDPA framework and establishes consumer rights covering access, deletion, correction, portability, and opt-out of targeted advertising and profiling. The enforcement surface is administered exclusively through the Iowa Attorney General with no private right of action. Applicability thresholds engage at 100,000 consumer records or 25,000 consumer records where data sales constitute the primary revenue source.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Baseline Framework</div></div>
+      <div class="mini-box"><div class="label">Core regime</div><div class="value">ICDPA (SF 262)</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Moderate compliance floor; AG enforcement only</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Iowa Consumer Data Protection Act (SF 262, eff. Jan 1 2025), Iowa Attorney General enforcement authority, opt-out consumer rights surfaces (targeted advertising, profiling, sale of personal data), sensitive data consent requirements including biometric data.</div>
+      <div class="detail-item"><strong>Enforcement profile:</strong> Iowa Attorney General holds exclusive enforcement authority. No private right of action exists, and the enforcement posture has not demonstrated the aggressive precedent-building activity observed in California's CPPA surface. Penalty exposure is present but structurally lower than maximum-enforcement corridors.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Teams collecting qualifying data from Iowa consumers must maintain consumer rights infrastructure and opt-out mechanisms under ICDPA. The compliance floor is meaningful but structurally lighter than CCPA/CPRA-aligned corridors, and no dedicated enforcement agency operates outside the AG's office.</div>
+    </div>
+  </section>
+ 
+  <!-- ── BIOMETRICS / IDENTITY ── -->
+  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
+    <h2 id="heading-biometrics">Biometrics / Identity</h2>
+    <p class="muted">Iowa operates without dedicated biometric-specific legislation as of April 2026. Biometric data receives elevated treatment as sensitive data under the ICDPA, requiring affirmative consent before collection, but no BIPA-style private right of action or dedicated biometric enforcement surface exists at the state level. The posture is structurally permissive relative to high-concern corridors, with the primary compliance interface running through the AG-enforced ICDPA sensitive data framework.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Low Regulation</div></div>
+      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Consent required under ICDPA</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low friction; monitor ICDPA application</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> ICDPA sensitive data classification (biometric data requires affirmative consent), Iowa AG enforcement authority, no dedicated biometric statute, no private right of action for biometric violations, no municipal-level biometric restriction surfaces identified as of April 2026.</div>
+      <div class="detail-item"><strong>Risk profile:</strong> Standard ICDPA enforcement exposure applies to biometric data collection under the Iowa AG's authority. The absence of a private right of action and dedicated biometric statute reduces litigation surface relative to BIPA-adjacent corridors.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Products deploying biometric identification surfaces within Iowa operate under Iowa AG enforcement authority via ICDPA sensitive data requirements. Compliance overhead is structurally low; affirmative consent architecture is the primary operational requirement for biometric-adjacent deployments.</div>
+    </div>
+  </section>
+ 
+  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
+  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
+    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
+    <p class="muted">Iowa's public-sector AI deployment posture is early-stage and not yet anchored to a formal policy framework. State agency AI adoption follows general administrative guidance without dedicated sandbox programs, vendor attestation requirements, or enforcement mechanisms specific to AI procurement. The education surface is integrating AI tools under general academic policy frameworks, with no state-level AI procurement mandate active as of April 2026.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Early Stage</div></div>
+      <div class="mini-box"><div class="label">Model</div><div class="value">General administrative guidance</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low friction; limited structured procurement pathway</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Iowa Economic Development Authority (IEDA) general posture, Iowa Department of Education administrative frameworks, Iowa Legislature (no enacted public-sector AI mandate as of Apr 2026), standard state procurement surfaces and contracting frameworks.</div>
+      <div class="detail-item"><strong>Growth signal:</strong> Public-sector AI adoption is occurring within Iowa state agencies and educational institutions without dedicated policy scaffolding, meaning teams deploying into B2G surfaces interact with conventional procurement frameworks rather than AI-specific attestation environments.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Teams operating within Iowa government or education deployment surfaces navigate standard state procurement channels. The low-friction environment reduces structured pathway complexity but also means limited formal accelerator mechanisms or attestation frameworks exist to channel B2G engagement.</div>
+    </div>
+  </section>
+ 
+  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
+  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
+    <h2 id="heading-developer">Open Source / Developer Climate</h2>
+    <p class="muted">Iowa operates within a functional developer activity surface anchored by corridor-adjacent compute deployment environments and agricultural-logistics software interfaces along the I-80 and Mississippi River routing corridors. The operating climate is low-friction: no AI disclosure mandates, no age-assurance obligations active as of April 2026, and privacy compliance requirements are structurally lighter than maximum-enforcement corridors.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Functional · Low Friction</div></div>
+      <div class="mini-box"><div class="label">Gov OSS</div><div class="value">No state mandate active</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Standard compliance floor; corridor-favorable</div></div>
+    </div>
+    <div class="detail-list" style="margin-top:14px">
+      <div class="detail-item"><strong>Key anchors:</strong> Iowa ICDPA compliance surface for consumer-facing applications, standard data handling requirements, federal baseline frameworks, agricultural commodity throughput and freight-adjacent software deployment patterns along I-80, I-35, and Mississippi River interface corridors.</div>
+      <div class="detail-item"><strong>Climate reading:</strong> Iowa operates as a low-friction developer deployment environment. No state-specific open-source mandates, no AI disclosure obligations, and no age-assurance requirements are active within this corridor as of April 2026. Policy friction does not currently shape product architecture decisions at the state level.</div>
+      <div class="detail-item"><strong>Builder implication:</strong> Teams deploying applications within Iowa's corridor interact with a standard compliance floor. The absence of aggressive state-level policy friction makes Iowa a suitable surface for teams seeking central Midwest routing proximity without high-governance overhead. ICDPA consumer rights infrastructure remains the primary compliance requirement for consumer-facing deployments.</div>
+    </div>
+  </section>
+ 
+  <!-- ── ENERGY / MINING / COMPUTE ── -->
+  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
+    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
+    <p class="muted">Iowa operates as a structurally favorable energy surface for compute-intensive and mining-aligned deployment. Wind energy resources support a significant share of state electricity generation, contributing to electricity cost structures that operate below national midpoints. No Bitcoin mining regulation or prohibition exists in Iowa as of April 2026. The environmental regulatory posture does not present the structural friction observed in maximum-oversight corridors.</p>
+    <div class="subgrid">
+      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Low Risk</div></div>
+      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Below national average</div></div>
+      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Favorable for compute and mining-aligned deployment</div></div>
+    </div>
+    <div class="radar" aria-label="Iowa energy and mining risk profile">
+      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:18%;background:var(--green)"></div></div><div class="score">18</div></div>
+      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:22%;background:var(--green)"></div></div><div class="score">22</div></div>
+      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:78%;background:var(--teal)"></div></div><div class="score">78</div></div>
+    </div>
+    <div class="note">Builder implication: Iowa's energy cost environment and low regulatory risk profile make this corridor a structurally favorable surface for compute-intensive operations, mining-aligned deployment, and data center siting strategies seeking central Midwest routing proximity along the I-80 transcontinental spine and Mississippi River logistics interface.</div>
+  </section>
+ 
+  <!-- ── DIRECTION OF TRAVEL ── -->
+  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
+    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
+    <p class="muted">Iowa's regulatory vector is stable across all policy layers. The Upper Mississippi River &amp; Transcontinental Freight Continuity Corridor is not experiencing significant policy escalation in AI governance, digital assets, biometrics, or compute restrictions. The ICDPA represents the primary compliance surface, and no significant legislative acceleration is anticipated in the 2026–2027 session. Operators interacting across this corridor should model for continued low-friction conditions through 2027.</p>
+    <div class="detail-list">
+      <div class="detail-item"><strong>AI Governance</strong> — stable. No state AI legislation enacted or advanced through the 2026 session. Federal frameworks remain the operative compliance surface for teams deploying within this corridor. Monitor 2027 session for potential multi-state alignment activity.</div>
+      <div class="detail-item"><strong>Crypto Regulation</strong> — stable to accommodating. Iowa's digital asset environment operates within federal baseline and standard money transmitter frameworks with no pending state-level licensing escalation as of April 2026.</div>
+      <div class="detail-item"><strong>Privacy Enforcement</strong> — stable. ICDPA provides baseline consumer rights infrastructure with AG-only enforcement. The enforcement posture is active but not operating at precedent-building scale. No significant expansion of the ICDPA framework is currently advancing.</div>
+      <div class="detail-item"><strong>Biometric Restrictions</strong> — low and stable. ICDPA sensitive data classification provides the operative compliance surface; no dedicated biometric legislation is advancing within Iowa's legislative surface as of April 2026.</div>
+      <div class="detail-item"><strong>Mining / Compute Risk</strong> — low. Iowa's energy cost structure and permissive regulatory posture support continued favorable conditions for compute-intensive and mining-aligned deployment. No restrictive legislative signals are present in the current session.</div>
+      <div class="detail-item"><strong>Developer Climate</strong> — stable. Low policy friction is expected to persist through 2027 absent federal preemption changes or unexpected state-level legislative activity. ICDPA compliance remains the primary floor for consumer-facing deployments.</div>
+    </div>
+    <div class="callout">12-month outlook: Iowa is expected to remain a low-friction operating environment through 2027. The ICDPA privacy surface is the primary compliance anchor, energy conditions support compute-favorable deployment, and no significant AI, biometric, or digital asset legislative escalation appears imminent within the Iowa corridor.</div>
+  </section>
+ 
+</div>
+ 
+<!-- ── SIDEBAR ───────────────────────────────── -->
+<aside>
+  <div class="card" aria-labelledby="heading-sidebar-summary">
+    <div class="smallcaps">Snapshot</div>
+    <h3 id="heading-sidebar-summary">Iowa at a glance</h3>
+    <p class="muted mini">Iowa operates as a central Midwest freight continuity corridor. Best used as a low-friction deployment surface for compute-intensive operations, mining-aligned infrastructure, and teams seeking corridor-adjacent positioning along the I-80 transcontinental routing spine and Mississippi River logistics interface.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-builder-summary">
+    <div class="smallcaps">Builder Summary</div>
+    <h3 id="heading-builder-summary">Recommended read</h3>
+    <p class="muted mini"><strong>Best for:</strong> low-friction compute deployment, mining-aligned infrastructure, corridor-adjacent logistics technology, central Midwest routing proximity, agricultural throughput software surfaces.</p>
+    <p class="muted mini"><strong>Less ideal for:</strong> teams requiring structured public-sector AI procurement pathways, or operations that benefit from high-governance policy fluency environments and compliance-architecture signal exposure.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-compliance-dates">
+    <div class="smallcaps">Key Dates</div>
+    <h3 id="heading-compliance-dates">Timeline markers</h3>
+    <ul class="mini">
+      <li><strong>Jan 2025</strong> — Iowa Consumer Data Protection Act (SF 262) takes effect; consumer rights, opt-out obligations, and sensitive data consent requirements become active.</li>
+      <li><strong>Apr 2026</strong> — No state AI or digital asset legislation enacted through 2026 session; federal frameworks remain operative.</li>
+      <li><strong>Ongoing</strong> — Iowa money transmitter licensing requirements (Iowa Code Ch. 533C) apply to qualifying digital asset businesses through the Iowa Division of Banking.</li>
+      <li><strong>2027 session</strong> — Monitor for potential alignment with emerging multi-state AI governance frameworks or ICDPA amendment activity.</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-maintenance">
+    <div class="smallcaps">Page Maintenance</div>
+    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+    <ul class="mini">
+      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
+      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
+      <li>Update this page only after the underlying package files are updated.</li>
+      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-standardization">
+    <div class="smallcaps">Canonical Pattern</div>
+    <h3 id="heading-standardization">For all 50 states</h3>
+    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  </div>
+</aside>
+ 
+</div>
+ 
+</main>
+ 
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+<div id="footer-container"></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
