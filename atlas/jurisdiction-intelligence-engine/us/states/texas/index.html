@@ -6,9 +6,9 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#15803d">
+<meta name="theme-color" content="#b91c1c">
 <title>Texas — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Texas operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Texas Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/texas/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,15 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +149,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -161,256 +162,334 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <body>
 <div id="topbar-slot" data-topbar="universe"></div>
 <script src="/components/topbar-loader.js"></script>
-
+ 
 <main id="main-content" class="wrap content">
-
-<!-- ── HERO ─────────────────────────────────── -->
+ 
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Texas</h1>
-    <p class="kicker">Texas operates as a Southern Infrastructure Corridor supporting energy-aligned compute deployment, Bitcoin mining expansion, and large-scale operational experimentation across the south-central institutional trust surface of the United States.</p>
-
+    <p class="kicker">This page renders the canonical Texas Atlas jurisdiction package. The canonical files remain the source of truth; this document is a structured rendering only.</p>
+ 
     <div class="hero-meta">
-      <div class="hero-chip">TX · US-TEX</div>
-      <div class="hero-chip">Austin</div>
-      <div class="hero-chip">Southern Infrastructure Corridor</div>
-      <div class="hero-chip">ERCOT Energy Zone</div>
-      <div class="hero-chip">Updated Apr 2026</div>
+      <div class="hero-chip">Jurisdiction: Texas (TX · US-TEX)</div>
+      <div class="hero-chip">Jurisdiction lens</div>
+      <div class="hero-chip">Completeness: preliminary</div>
+      <div class="hero-chip">Surface assignment: none</div>
     </div>
-
-    <div class="band" aria-label="Texas quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Permissive · Watching</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Pro-Bitcoin · Reserve State</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Moderate · Emerging</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">CUBI · Notable Risk</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Low-Friction · Pro-Bitcoin</div></div>
-    </div>
-
+ 
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
-
+ 
 <!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
 <div class="grid-sidebar">
 <div>
-
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Texas operates as the Southern Infrastructure Corridor within the US regulatory trust surface. Teams interacting across this corridor deploy inside a low-friction regulatory environment anchored by ERCOT's deregulated energy grid, a statutory Bitcoin reserve, and no state income tax. The governance posture is structurally oriented toward operational deployment rather than policy formation or compliance precedent.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>AI Policy</strong></div><span class="pill teal">Permissive · Advisory-Only</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill green">Pro-Bitcoin · Reserve State</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Privacy / Data</strong></div><span class="pill yellow">Moderate · TDPSA</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--orange)"></span><strong>Biometrics</strong></div><span class="pill orange">CUBI · Notable Risk</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">Open · Cautious Adoption</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Signal</strong></div><span class="pill green">Low-Friction · Pro-Bitcoin</span></div>
+ 
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">National Energy &amp; Logistics Spine Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Texas is the primary US deployment surface for Bitcoin mining, energy-aligned compute, and digital asset operations requiring low compliance overhead. No state income tax, no AI mandates, no dedicated privacy agency. The one material exception: CUBI biometric liability is active and enforced — any product collecting facial geometry or biometric identifiers requires dedicated compliance review before deployment.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">National Logistics Spine &amp; Energy Coordination Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Southern Interior Completion Layer</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from atlas.md and records Atlas corridor-topology placement only.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
-
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The Southern Infrastructure Corridor lens frames Texas through its energy capacity, digital asset posture, and operational deployment conditions rather than governance formation or compliance precedent.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/texas/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Southern Infrastructure Corridor lens with evidence-first normalization and no evaluative framing. Texas is assessed through deployment conditions: energy economics, regulatory friction, digital asset policy, and compute infrastructure capacity.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
-    </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/texas/</div>
+ 
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer states that this file records only evidence-supported characteristics documented for Texas that are relevant to Atlas normalization. The evidence layer states that it does not assign trust posture, routing role, coordination tier, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, leadership positioning, or deployment prescription beyond the canonical files. Surface assignment remains unset. No routing role is assigned.</p>
+    <div class="src">Source: evidence.md — Scope</div>
   </section>
-
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Texas operates without enacted AI-specific statutes as of 2026. Governor Abbott's 2023 Executive Order GA-44 established a state AI advisory council under the Department of Information Resources (DIR), producing voluntary risk-management frameworks rather than statutory mandates. The 2025 legislative session produced no binding AI legislation, maintaining a permissive deployment surface across all AI product categories.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Permissive · Advisory-Only</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Voluntary frameworks · no mandates</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">No statutory obligations for AI products</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> EO GA-44 (2023), TX AI Advisory Council (DIR), HB 1709 (2023, failed to pass). No AI-specific penalty regime, no frontier model restrictions, no mandatory dataset disclosure, no ADMT risk assessments.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> No AI-specific enforcement body. Existing consumer protection and agency risk-management frameworks apply. Advisory council output is non-binding. State procurement carries no AI vendor attestation requirements.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Texas carries no AI-specific statutory obligations as of 2026. Product teams operating across the Southern Infrastructure Corridor face no mandatory transparency reports, no incident reporting requirements, and no safety attestation obligations through at least 2027.</div>
-    </div>
-    <div class="note">Operational signal: Texas's advisory-only posture produces a low-overhead AI deployment surface. The absence of AI mandates is structural and stable — no legislative momentum toward California-comparable regulation is visible in the current session.</div>
-  </section>
-
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Texas has enacted the most Bitcoin-positive statutory framework of any US state. Senate Bill 21, signed into law in June 2025, established a Texas Strategic Bitcoin Reserve — authorizing the state comptroller to accept Bitcoin donations and hold them as a state asset for a minimum of five years. The Texas Virtual Currency Bill (HB 1576, 2023) established foundational legal definitions for custody, exchange, and payment activities. No state capital gains tax applies to Bitcoin dispositions.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Pro-Bitcoin · Reserve State</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">TDOB (TX Dept of Banking)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Structurally favorable · lighter compliance path</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> SB 21 (Strategic Bitcoin Reserve, eff. Jun 2025), HB 1576 (Virtual Currency definitions, 2023), Texas Money Services Act (TDOB licensing), Texas Blockchain Council, no state capital gains tax, federal AML/BSA overlay remains applicable.</div>
-      <div class="detail-item"><strong>Licensing profile:</strong> Bitcoin custody, exchange, and payment businesses operate under the Texas Money Services Act via TDOB. Licensing is administered through TDOB rather than a dedicated digital asset agency, resulting in a structurally lighter compliance pathway compared to dedicated state licensing regimes.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Texas is one of only a handful of states with a statutory Bitcoin reserve — a legislative signal that digital assets are treated as deployable state instruments rather than speculative liabilities. Operators can access a clear legal framework, no capital gains disadvantage at the state level, and no additional Bitcoin-specific overlay beyond federal AML/BSA requirements.</div>
-    </div>
-  </section>
-
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">The Texas Data Privacy and Security Act (TDPSA), effective July 1, 2024, places Texas within the cohort of states with enacted comprehensive privacy law. Enforcement rests with the Texas Attorney General — not a dedicated privacy agency. Businesses have a 30-day cure period before the AG may bring action. No private right of action exists under the TDPSA, and no ADMT risk assessment obligations apply.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate · Emerging</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">TDPSA (eff. Jul 1, 2024)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Measured enforcement profile · cure period intact</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> TDPSA (eff. Jul 1, 2024), TX Attorney General enforcement, 30-day cure period, no private right of action, consumer rights to access/correct/delete/opt-out. Penalty ceiling: $7,500 per violation.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> AG-only enforcement model with a measured posture as of 2026. No dedicated privacy agency. No cybersecurity audit mandates. No ADMT risk assessment requirements. The cure period before enforcement action can attach provides operators meaningful compliance runway.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> TDPSA compliance obligations are meaningful but structurally lighter than maximum-enforcement state privacy regimes. Teams already operating with consumer data rights workflows will find TDPSA requirements satisfied within existing compliance infrastructure. Expect gradual strengthening as the national privacy landscape matures.</div>
-    </div>
-  </section>
-
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Texas's Capture or Use of Biometric Identifier Act (CUBI) is the notable exception to the state's low-friction regulatory profile. Enacted in 2009, CUBI prohibits commercial entities from capturing biometric identifiers — including fingerprints, retina scans, hand geometry, and facial geometry — without informed consent. Penalties reach $25,000 per intentional violation with no cure period. The 2022 Meta settlement at $650 million established the scale of exposure for CUBI non-compliance.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">CUBI · Notable Risk</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Consent and purpose-sensitive</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Dedicated compliance review before biometric deployment</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> CUBI (Bus. &amp; Comm. Code §503), Meta $650M settlement (2022), AG enforcement plus private right of action pathway, no cure period, facial geometry explicitly covered. Intentional violation: $25,000. Negligent violation: $1,000.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> CUBI is enforced and litigated. The absence of a cure period distinguishes it from TDPSA. Any commercial product collecting facial geometry, fingerprints, retina scans, or hand geometry must obtain explicit written consent and adhere to retention and destruction schedules before deployment.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Products deploying inside biometric identification, facial recognition, or behavioral surveillance surfaces must treat CUBI as a primary compliance obligation rather than a secondary consideration. Government facial recognition carries no statewide ban but private commercial use without consent is fully actionable.</div>
-    </div>
-  </section>
-
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Texas's public sector AI posture operates under advisory frameworks without enacted mandates. The Texas Education Agency (TEA) issued AI guidance for K-12 schools in 2024 addressing academic integrity, responsible use, and staff training — structured as guidance rather than statutory obligation. State agency procurement carries no AI-specific vendor attestation requirements. UT Austin and Texas A&amp;M function as institutional depth anchors for applied AI research and talent pipelines.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Open · Cautious Adoption</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Advisory · no attestation mandates</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Open B2G surface · low vendor friction</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> TEA AI Guidance (2024), EO GA-44 (DIR Advisory Council), UT Austin Machine Learning Lab, Texas A&amp;M AI research programs, no AI vendor attestation requirements in state procurement, no mandatory AI risk assessments for government contractors.</div>
-      <div class="detail-item"><strong>Growth signal:</strong> Public sector AI deployment in Texas advances through voluntary adoption rather than mandated governance. Procurement surfaces are open to AI vendors without the attestation requirements present in maximum-governance jurisdictions. University research pipelines — particularly UT Austin and Texas A&amp;M — provide applied depth across the Austin-Dallas-Houston technology corridor.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Texas represents a structurally open B2G opportunity for AI vendors. No mandatory attestation requirements, no dedicated privacy agency review in the procurement chain, and a government culture oriented toward operational efficiency over compliance architecture. Teams that require low-friction government sales cycles should treat Texas as a primary target market.</div>
-    </div>
-  </section>
-
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Austin functions as a high-density technology deployment corridor anchored by corporate infrastructure relocated from higher-friction jurisdictions since 2020. Tesla, Oracle, Apple, Dell, and SpaceX have established or expanded primary Texas operations, generating concentrated developer talent and applied engineering capacity. Texas imposes no state income tax, a structural condition that affects compensation modeling and capital retention for operators and individual contributors.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Strong · Favorable</div></div>
-      <div class="mini-box"><div class="label">Structural advantage</div><div class="value">No income tax · low compliance drag</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low-overhead surface for early-stage teams</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> No state income tax, Tesla HQ (Austin), Oracle HQ (Austin), Apple Austin Campus, Dell Technologies (Round Rock), SpaceX (Starbase / Bastrop), no AI-specific developer mandates, no ADMT risk assessment obligations, no dataset disclosure requirements.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> The state's regulatory philosophy produces minimal compliance overhead for software companies: no AI disclosure mandates, no ADMT risk assessments, no dataset reporting requirements. The Texas open source community operates without a government-sponsored code-sharing infrastructure, though Austin-area developer activity across major platforms reflects sustained corridor depth.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Texas provides a low-overhead regulatory deployment surface for early-stage teams, solo developers, and open-source maintainers: no ADMT rules, no dataset disclosure, no AI safety attestations. The talent market has grown competitive following the corporate infrastructure migration wave; compensation expectations have shifted upward accordingly.</div>
-    </div>
-  </section>
-
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Texas functions as the primary US Bitcoin mining deployment zone, hosting an estimated 25–30% of US hash rate. The ERCOT deregulated electricity market generates competitive wholesale pricing, abundant renewable energy capacity, and demand response programs that allow miners to earn incentive payments by curtailing during grid stress events. AI data center expansion is accelerating: Oracle, Microsoft, and Google have announced multi-billion dollar Texas compute investments.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Mining Favorable · Best Conditions</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">~$0.03–0.05/kWh industrial avg</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Deploy mining and compute here first</div></div>
-    </div>
-    <div class="radar" aria-label="Texas energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:12%;background:var(--green)"></div></div><div class="score">12</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:15%;background:var(--green)"></div></div><div class="score">15</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:92%;background:var(--green)"></div></div><div class="score">92</div></div>
-    </div>
-    <div class="note">Builder implication: Texas functions as the primary energy and compute deployment surface within the Southern Infrastructure Corridor. ERCOT's deregulated grid structure, demand response incentive programs, and absence of mining-specific restrictions create structural conditions favorable for both proof-of-work operations and large-scale AI compute infrastructure. Key operational risk: ERCOT grid reliability during extreme weather events.</div>
-  </section>
-
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Texas's regulatory and infrastructure trajectory is expanding across all policy layers. The Strategic Bitcoin Reserve enacted in 2025 reflects a governance posture that classifies digital assets as deployable state instruments rather than speculative liabilities. The overall signal is stable at a low-friction baseline — not increasing compliance burden, but absorbing operational capacity across energy, compute, and digital asset deployment surfaces.</p>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer documents the following for Texas.</p>
+ 
+    <h3 class="subhead">Grid architecture and energy-market structure</h3>
     <div class="detail-list">
-      <div class="detail-item"><strong>Regulatory Burden</strong> — Decreasing. Texas continues operating under voluntary advisory frameworks with no enacted AI mandates. Compliance friction for technology operators expected to remain low through 2027.</div>
-      <div class="detail-item"><strong>Bitcoin Posture</strong> — Strengthening. Strategic Bitcoin Reserve enacted 2025 via SB 21. Additional pro-Bitcoin legislation expected in the 2027 biennial session, potentially including self-custody rights protections building on SB 21 precedent.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — Stable. TDPSA active with AG enforcement posture remaining measured. No dedicated privacy agency formation anticipated. Cure period and AG-only enforcement model expected to persist through 2027.</div>
-      <div class="detail-item"><strong>Biometric Scrutiny</strong> — Rising. CUBI enforcement activity increasing post-Meta settlement. Biometric product teams must treat CUBI as a meaningful litigation risk regardless of the corridor's overall low-friction profile.</div>
-      <div class="detail-item"><strong>Mining &amp; Compute</strong> — Expanding. Grid capacity additions and data center buildout accelerating. Texas is absorbing compute demand across energy-cost-sensitive deployments, with major hyperscaler investments confirming the state's position as a primary US compute deployment zone.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — Improving. Corporate infrastructure migration wave continues. Talent pool deepening. No income tax differential widens as technology compensation levels increase nationally.</div>
+      <div class="detail-item">The evidence layer records that Electric Reliability Council of Texas (ERCOT) market architecture shows that Texas operates a largely self-contained electricity grid with real-time wholesale pricing, interruptible load participation, merchant generation deployment, and relatively rapid interconnection timelines.</div>
+      <div class="detail-item">The evidence layer records that ERCOT ancillary-services participation by industrial Bitcoin mining facilities shows participation in peak-load curtailment, grid-stabilization programs, demand-response markets, and reserve-margin balancing.</div>
+      <div class="detail-item">The evidence layer records that ERCOT transmission-corridor expansion initiatives show continuing expansion of long-distance transmission capacity connecting renewable production zones, industrial compute corridors, and urban demand centers.</div>
+      <div class="detail-item">The evidence layer records that Texas natural-gas production leadership provides a large gas-generation base supporting baseline compute reliability, peak-load balancing, and industrial infrastructure continuity.</div>
     </div>
-    <div class="callout">12-month outlook: Texas is expected to expand its Bitcoin Reserve program and potentially add a self-custody rights bill in the 2027 legislative session. No AI-specific legislation anticipated. CUBI is the one area where compliance risk is rising. Overall trajectory: structurally favorable deployment conditions for Bitcoin-native operations and compute-intensive infrastructure through 2027. The Southern Infrastructure Corridor is absorbing operational activity across all major deployment categories.</div>
+ 
+    <h3 class="subhead">Compute and verification infrastructure visibility</h3>
+    <div class="detail-list">
+      <div class="detail-item">The evidence layer records that observed relocation of industrial mining infrastructure after regulatory tightening in multiple jurisdictions shows Texas became a major destination due to energy availability, land access, grid participation compatibility, and policy openness toward infrastructure deployment.</div>
+      <div class="detail-item">The evidence layer records that ongoing hyperscale infrastructure investment across Texas metro and rural corridors shows deployment of cloud compute campuses, AI training clusters, and enterprise-scale storage infrastructure.</div>
+      <div class="detail-item">The evidence layer records that observed compute deployment near wind farms, solar installations, and natural-gas production zones shows increasing energy-compute co-location strategies.</div>
+    </div>
+ 
+    <h3 class="subhead">Renewable energy visibility</h3>
+    <div class="detail-list">
+      <div class="detail-item">The evidence layer records that Texas leads the United States in wind generation capacity.</div>
+      <div class="detail-item">The evidence layer records that utility-scale solar deployment growth across ERCOT territory shows continued expansion of solar capacity across multiple regions.</div>
+    </div>
+ 
+    <h3 class="subhead">Policy visibility</h3>
+    <div class="detail-list">
+      <div class="detail-item">The evidence layer records that Texas legislative and policy positioning materials show measures recognizing Bitcoin mining as grid-responsive infrastructure, energy-market participation by mining operators, and long-term infrastructure investment compatibility.</div>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md</div>
   </section>
-
-</div>
-
+ 
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md and that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted"><strong>Method.</strong> The signals layer records that these signals are derived only from the evidence recorded in evidence.md.</p>
+ 
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>ERCOT grid-architecture signal.</strong> The signals layer reflects a documented self-contained grid structure through ERCOT, including real-time wholesale pricing, interruptible-load participation, merchant-generation flexibility, and transmission expansion.</div>
+      <div class="detail-item"><strong>Grid-responsive mining signal.</strong> The signals layer reflects a documented pattern of industrial Bitcoin mining participation in curtailment, demand-response, ancillary-services, and reserve-balancing activities.</div>
+      <div class="detail-item"><strong>Verification infrastructure concentration signal.</strong> The signals layer reflects a documented concentration of proof-of-work infrastructure after global mining relocation toward energy-available, land-available, and grid-compatible environments.</div>
+      <div class="detail-item"><strong>Renewable-aligned compute signal.</strong> The signals layer reflects documented wind leadership, expanding utility-scale solar deployment, and compute placement near generation corridors.</div>
+      <div class="detail-item"><strong>Hyperscale and AI infrastructure signal.</strong> The signals layer reflects documented expansion of cloud campuses, AI training clusters, storage infrastructure, and other large compute environments across metro and rural corridors.</div>
+      <div class="detail-item"><strong>Energy-compute co-location signal.</strong> The signals layer reflects a documented pattern of locating infrastructure near wind, solar, and natural-gas generation environments in order to reduce transmission dependency and improve operating efficiency.</div>
+      <div class="detail-item"><strong>Infrastructure-policy support signal.</strong> The signals layer reflects documented policy visibility treating mining and related compute infrastructure as compatible with grid participation and long-term infrastructure investment.</div>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: signals.md</div>
+  </section>
+ 
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md and that absence of signals reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted"><strong>Method.</strong> The trust-dimensions layer evaluates stability characteristics only, using only structures documented in evidence.md and signals.md. The trust-dimensions layer records that it does not assign routing role, coordination tier, Atlas surface, national significance, or leadership position.</p>
+ 
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>Energy-market stability characteristics.</strong> The trust-dimensions layer records continuity through ERCOT market structure, interruptible-load participation, merchant-generation flexibility, transmission expansion, and a large natural-gas production base.</div>
+      <div class="detail-item"><strong>Verification infrastructure stability characteristics.</strong> The trust-dimensions layer records continuity through industrial Bitcoin mining concentration, curtailment participation, demand-response compatibility, and other grid-responsive verification structures.</div>
+      <div class="detail-item"><strong>Compute capacity stability characteristics.</strong> The trust-dimensions layer records continuity through hyperscale data-center growth, AI training-cluster deployment, enterprise storage expansion, and large land-and-power availability for industrial compute environments.</div>
+      <div class="detail-item"><strong>Renewable and co-location stability characteristics.</strong> The trust-dimensions layer records continuity through wind-generation leadership, solar expansion, and compute placement near generation corridors.</div>
+      <div class="detail-item"><strong>Policy visibility characteristics.</strong> The trust-dimensions layer records continuity through legislative and policy signals recognizing mining and related infrastructure as grid-responsive and investment-compatible.</div>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md</div>
+  </section>
+ 
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md.</p>
+ 
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>grid_and_energy_market_structure.</strong> The profile layer records that Texas currently presents as a grid-centered infrastructure environment organized around ERCOT market architecture, interruptible-load participation, merchant-generation flexibility, transmission expansion, and large natural-gas availability.</div>
+      <div class="detail-item"><strong>verification_infrastructure_environment.</strong> The profile layer records that Texas currently presents with strong verification-infrastructure visibility through industrial Bitcoin mining concentration, curtailment participation, demand-response activity, and reserve-balancing compatibility.</div>
+      <div class="detail-item"><strong>renewable_and_generation_environment.</strong> The profile layer records that Texas currently presents with strong renewable and generation visibility through national wind leadership, expanding utility-scale solar deployment, and documented compute placement near generation corridors.</div>
+      <div class="detail-item"><strong>compute_and_data_center_environment.</strong> The profile layer records that Texas currently presents with large-scale compute visibility through hyperscale data-center expansion, AI training clusters, enterprise storage infrastructure, and metro-to-rural deployment corridors.</div>
+      <div class="detail-item"><strong>infrastructure_policy_visibility.</strong> The profile layer records that Texas currently presents with policy visibility recognizing mining and related digital infrastructure as grid-responsive and investment-compatible.</div>
+      <div class="detail-item"><strong>governance_form_environment.</strong> The profile layer records that Texas currently presents without documented DAO-recognition, custody-framework, or monetary-law innovation structures in the current evidence set.</div>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: profile.md</div>
+  </section>
+ 
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers.</p>
+    <p class="muted"><strong>Scope.</strong> The builder-mode layer describes coverage limits, observed structural visibility, and known ecosystem signals. It does not describe deployment recommendations, operational guidance, or strategy.</p>
+ 
+    <h3 class="subhead">Grid pattern — observed structural visibility</h3>
+    <p class="muted">The builder-mode layer records that the strongest documented pattern is ERCOT-centered market structure, including interruptible-load participation, merchant-generation flexibility, transmission expansion, and energy-responsive operating conditions.</p>
+ 
+    <h3 class="subhead">Verification pattern — observed structural visibility</h3>
+    <p class="muted">The builder-mode layer records that the evidence shows that industrial Bitcoin mining in Texas functions within curtailment, demand-response, ancillary-services, and reserve-balancing contexts rather than as a static load alone.</p>
+ 
+    <h3 class="subhead">Compute pattern — observed structural visibility</h3>
+    <p class="muted">The builder-mode layer records large-scale hyperscale, AI-training, storage, and co-location growth tied to land availability, power availability, and generation-adjacent siting conditions.</p>
+ 
+    <h3 class="subhead">Policy pattern — observed structural visibility</h3>
+    <p class="muted">The builder-mode layer records that Texas's documented policy visibility is centered on infrastructure participation and investment compatibility. The builder-mode layer records that the current evidence does not support reading Texas as a monetary-law, custody, or DAO-governance jurisdiction.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md</div>
+  </section>
+ 
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records that the Texas package does not support characterizing Texas as any of the following:</p>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>a custody-regime jurisdiction</li>
+      <li>a DAO-wrapper jurisdiction</li>
+      <li>a monetary-law innovation jurisdiction</li>
+      <li>a generalized governance-definition jurisdiction</li>
+    </ul>
+    <p class="muted" style="margin-top:12px">The canonical package records that it does not assign trust posture, routing role, coordination tier, Atlas surfaces, national significance, leadership positioning, readiness status, or ranking outcome. It does not prescribe deployment decisions.</p>
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md — Structural exclusions</div>
+  </section>
+ 
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records the following evidence gaps for Texas.</p>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">No comprehensive statewide inventory was completed here for municipal or regional variation outside the best-documented ERCOT, mining, renewable, and compute-growth environments.</div>
+      <div class="detail-item">No comprehensive statewide inventory was completed here for non-energy digital-asset regulation beyond the documented mining and infrastructure-policy signals.</div>
+      <div class="detail-item">No comprehensive statewide inventory was completed here for identity, privacy, or AI-governance structures beyond infrastructure-capacity evidence.</div>
+      <div class="detail-item">No evidence was established here for DAO-recognition legislation, digital-asset custody frameworks, or comparable monetary-law innovation structures.</div>
+    </div>
+    <p class="muted" style="margin-top:12px">The canonical package records gap inheritance: signals.md, trust-dimensions.md, profile.md, and builder-mode.md inherit these evidence gaps without expansion. change-log.md records that inheritance rule and does not create a new evidence-gap set.</p>
+    <div class="src">Source: evidence.md — Evidence gaps; change-log.md — Gap inheritance</div>
+  </section>
+ 
+  <!-- ── 10. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Normalization sequence</h3>
+    <ul class="mini muted">
+      <li>The change-log records that evidence.md was aligned to the Texas instruction layer and current Atlas normalization contract.</li>
+      <li>The change-log records that signals.md was derived strictly from evidence.md.</li>
+      <li>The change-log records that trust-dimensions.md was derived from evidence.md and signals.md.</li>
+      <li>The change-log records that profile.md was derived from evidence.md, signals.md, and trust-dimensions.md.</li>
+      <li>The change-log records that builder-mode.md was derived from all prior layers.</li>
+      <li>The change-log records that a targeted normalization audit was performed against the Texas package.</li>
+    </ul>
+ 
+    <h3 class="subhead">Structural exclusions (change-log attestation)</h3>
+    <ul class="mini muted">
+      <li>The change-log records that structural exclusions were preserved in evidence.md and carried forward into downstream Texas layers based strictly on absent evidence in the upstream materials.</li>
+      <li>The change-log records that no layer assigns routing role, coordination tier, Atlas surface, national significance, leadership positioning, ranking, readiness, or deployment prescription.</li>
+      <li>The change-log records: Surface assignment status: none.</li>
+    </ul>
+ 
+    <h3 class="subhead">Lens alignment confirmation</h3>
+    <ul class="mini muted">
+      <li>The change-log records that the Texas package remains aligned to a Texas-specific grid, energy, mining, renewable, and compute-infrastructure lens.</li>
+      <li>The change-log records that no routing, ranking, readiness, or surface inference was preserved.</li>
+      <li>The change-log records that no new evidence was introduced during normalization.</li>
+    </ul>
+ 
+    <h3 class="subhead">Normalization adjustments</h3>
+    <ul class="mini muted">
+      <li>The change-log records that evidence.md was renamed to the contract title format.</li>
+      <li>The change-log records that contract-aligned structural exclusions and evidence-gap sections were added where missing.</li>
+      <li>The change-log records that downstream files were rewritten to remove classification-forward, routing, ranking, readiness, and surface language that exceeded the current contract.</li>
+      <li>The change-log records that trust, profile, and builder layers were restored to stability, structural, and interpretive scopes only.</li>
+    </ul>
+ 
+    <h3 class="subhead">Normalization status</h3>
+    <p class="muted">The change-log records that the Texas package is verified and aligned with the current Atlas normalization contract.</p>
+ 
+    <h3 class="subhead">Topology metadata attachment</h3>
+    <p class="muted">The change-log records that metadata.md was added using atlas.md corridor narrative fields: Corridor Group, Foundation Layer, Topology Completion Layer. The change-log records that this metadata is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
+  </section>
+ 
+</div><!-- /main col -->
+ 
+<!-- ── SIDEBAR ── -->
 <aside>
-  <div class="card" aria-labelledby="heading-sidebar-snapshot">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-snapshot">Texas at a glance</h3>
-    <p class="muted mini">Southern Infrastructure Corridor. Low-friction regulatory environment, pro-Bitcoin government, ERCOT deregulated energy grid, no state income tax. Primary US deployment surface for Bitcoin mining, digital asset operations, and energy-aligned compute infrastructure. CUBI biometric law is the one meaningful compliance exception.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Texas jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/texas/</code></p>
   </div>
-
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> Bitcoin mining operations and hash rate infrastructure, digital asset exchanges and custodians, AI data centers and GPU compute facilities, founders and engineers seeking no state income tax, early-stage AI product teams requiring low compliance overhead, Bitcoin-native treasury and reserve operations.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> products collecting biometric or facial recognition data without dedicated CUBI compliance counsel, operations dependent on maximum grid stability (ERCOT extreme weather risk), teams that require federal AML/BSA exemptions (federal requirements apply regardless of state posture).</p>
-  </div>
-
-  <div class="card" aria-labelledby="heading-key-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-key-dates">Timeline markers</h3>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>Jul 2024</strong> — Texas Data Privacy and Security Act (TDPSA) takes effect. AG enforcement authority activated. 30-day cure period and AG-only model apply.</li>
-      <li><strong>Jun 2025</strong> — SB 21 signed. Texas Strategic Bitcoin Reserve established. State comptroller authorized to hold BTC as a state asset for minimum five years.</li>
-      <li><strong>Ongoing</strong> — CUBI enforcement active. Biometric data collectors must maintain written consent records and adhere to biometric data destruction schedules.</li>
-      <li><strong>Jan 2027</strong> — Texas Legislature convenes (biennial session). Watch for self-custody rights legislation, Bitcoin Reserve program expansion, and potential privacy law updates.</li>
+      <li><strong>Jurisdiction:</strong> Texas</li>
+      <li><strong>Code:</strong> TX · US-TEX</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> preliminary</li>
     </ul>
   </div>
-
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> (Southern Infrastructure Corridor) explicit on every update.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li><strong>Corridor Group:</strong> National Energy &amp; Logistics Spine Corridor</li>
+      <li><strong>Foundation Layer:</strong> National Logistics Spine &amp; Energy Coordination Layer</li>
+      <li><strong>Completion Layer:</strong> Southern Interior Completion Layer</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: preliminary</li>
+      <li>Signal layer: preliminary</li>
+      <li>Trust dimensions: preliminary</li>
+      <li>Profile: preliminary</li>
+      <li>Builder-mode: preliminary</li>
+      <li>Surface assignment: none</li>
     </ul>
   </div>
-
-  <div class="card" aria-labelledby="heading-canonical">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-canonical">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+    </ul>
   </div>
+ 
 </aside>
-</div>
-
+</div><!-- /grid-sidebar -->
+ 
 </main>
-
+ 
 <div class="wrap reflection footer-block">
 <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
