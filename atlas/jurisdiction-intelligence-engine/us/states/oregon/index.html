@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Oregon — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Oregon operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Oregon Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/oregon/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,41 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
+.sources-block code{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;color:var(--gold2)}
+.scope-block{margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.04)}
+.scope-block .scope-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.scope-block ul{margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block li{margin-bottom:2px;line-height:1.5}
+.scope-block ol{margin:4px 0 0 22px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block ol li{margin-bottom:2px;line-height:1.5}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +175,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +191,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Oregon</h1>
-    <p class="kicker">Oregon operates as a Pacific Northwest Columbia Gateway &amp; West Coast Continuity Corridor supporting Columbia River freight continuity, maritime and rail alignment through the Port of Portland interface, and north–south deployment coordination along the I-5 spine across the western infrastructure continuity layer of the United States.</p>
+    <p class="kicker">This page renders the canonical Oregon Atlas jurisdiction package. The canonical package positions Oregon within the Pacific Northwest Coordination Corridor under the canonical jurisdiction lens "Pacific northwest coordination continuity within pacific northwest completion" — a topology-constrained reading derived exclusively from the three atlas-controlled topology fields. Oregon is a canonical member of the Pacific Northwest Coordination Corridor cluster alongside Washington, and its canonical Foundation Layer and Topology Completion Layer are distinct. Oregon is an adjacency-bounded corridor-layer sufficient state — its evidence layer is retained from corridor continuity between adjacent Atlas states rather than from independent state-sourced research. All completeness statuses are recorded as corridor-layer sufficient.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">OR · US-OR</div>
-      <div class="hero-chip">Salem</div>
-      <div class="hero-chip">Pacific Northwest Columbia Gateway &amp; West Coast Continuity Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Oregon quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Developing / Emerging</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Moderate / Open</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Active Enforcement</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Monitored / Emerging</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Moderate-Governance / Infrastructure-Aligned</div></div>
+      <div class="hero-chip">Jurisdiction: Oregon (OR · US-OR)</div>
+      <div class="hero-chip">Jurisdiction lens: Pacific northwest coordination continuity within pacific northwest completion</div>
+      <div class="hero-chip">Completeness: corridor-layer sufficient</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Adjacency-bounded package</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,210 +225,583 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Oregon operates as the Pacific Northwest Columbia Gateway &amp; West Coast Continuity Corridor within the US infrastructure trust surface. Teams interacting across this corridor interface with Columbia River freight continuity surfaces, Port of Portland marine and rail environments, and I-5 and I-84 routing layers that link western coastal systems to interior continental corridors. The governance posture is structurally oriented toward infrastructure coordination rather than deep regulatory formation, producing a moderate-governance operating environment across most active policy layers.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>AI Policy</strong></div><span class="pill blue">Developing · Emerging</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill green">Moderate / Open</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Privacy / Data</strong></div><span class="pill yellow">Active Enforcement</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Biometrics</strong></div><span class="pill yellow">Monitored · Emerging</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">Early Coordination</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Moderate-Governance / Infrastructure-Aligned</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Pacific Northwest Coordination Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Oregon operates as an infrastructure coordination corridor with a moderate governance posture. Teams deploying inside freight-adjacent, energy-favorable, or Pacific Northwest routing surfaces encounter lower structural friction than comparable West Coast environments. Operations requiring deep policy formation network access may need to supplement with federal or adjacent-corridor coordination surfaces.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Pacific Northwest Coordination Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Pacific Northwest Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Lens</div>
+      <div class="field-value">Pacific northwest coordination continuity within pacific northwest completion</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that the Corridor Group, Foundation Layer, and Topology Completion Layer are derived from atlas-export/docs/atlas.md. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived from those atlas-controlled fields only and does not override atlas-controlled topology.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, coordination tiers, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence sufficiency boundaries, infer deployment suitability, or locally reclassify atlas-controlled corridor metadata.</p>
+    <p class="muted"><strong>Canonical Pacific Northwest coordination topology.</strong> The canonical atlas.md places Oregon in the Pacific Northwest Coordination Corridor, with a Pacific Northwest Coordination Layer foundation and a Pacific Northwest Completion Layer completion. Oregon's canonical Foundation Layer and Completion Layer are distinct — both are shared canonically only with Washington in the two-state Pacific Northwest Coordination Corridor cluster. The canonical Jurisdiction Lens uses "within" to reflect that Oregon's Pacific Northwest coordination Foundation resolves into the broader Pacific Northwest Completion Layer.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/oregon/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Pacific Northwest Columbia Gateway &amp; West Coast Continuity Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only corridor-relevant structural anchors retained for Oregon from adjacent-state continuity already visible inside Atlas. The evidence layer records that it does not perform an open-ended statewide infrastructure survey and does not assign trust posture, routing role, coordination tier, readiness, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. The canonical Oregon package is an <em>adjacency-bounded</em> corridor-layer sufficient package: its evidence is retained from corridor continuity between adjacent Atlas states (Washington, California, Idaho) and atlas.md topology references, rather than from independent state-sourced research. All completeness statuses across evidence, signals, trust, profile, and builder-mode are canonically recorded as "corridor-layer sufficient".</p>
+    <div class="callout mini" style="margin-top:12px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — Scope; change-log.md — Scope constraints applied during population</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 5 evidence subsections documenting Oregon's corridor-relevant structural anchors retained from adjacent-state continuity. Canonical sources are atlas-export internal topology references and adjacent-state metadata-layer files rather than state-sourced primary documents.</p>
+ 
+    <h3 class="subhead">Pacific Northwest coordination continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that <code>atlas-export/docs/atlas.md</code> places Oregon in the <code>Pacific Northwest Coordination Corridor</code>, with a <code>Pacific Northwest Coordination Layer</code> foundation and a <code>Pacific Northwest Completion Layer</code> completion.</li>
+      <li>The evidence layer records that Washington is retained in Atlas in the same <code>Pacific Northwest Coordination Corridor</code>, with the same <code>Pacific Northwest Coordination Layer</code> foundation and <code>Pacific Northwest Completion Layer</code> completion.</li>
+      <li>The evidence layer records that the retained Atlas topology therefore supports reading Oregon as a Pacific Northwest coordination continuity environment within a shared Washington–Oregon corridor frame.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/oregon/</div>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/washington/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">North-south coastal corridor continuity across the Washington–Oregon–California frame</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Washington's retained Atlas placement preserves a north-facing <code>Pacific Northwest Coordination Corridor</code> frame with <code>Pacific Northwest Completion Layer</code> continuity above Oregon.</li>
+      <li>The evidence layer records that California's retained Atlas placement preserves a south-facing <code>Pacific Coastal Hyperscale Corridor</code> frame with <code>Pacific Edge Anchor Layer</code> completion below Oregon.</li>
+      <li>The evidence layer records that Oregon's retained placement between those adjacent structures supports a north-south coastal corridor continuity reading across the Washington–Oregon–California frame without locally reclassifying atlas-controlled topology.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/washington/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/california/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Idaho-facing inland transition continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Idaho is retained in Atlas in the <code>Northern Mountain Transition Corridor</code>, with a <code>Mountain Transition Layer</code> foundation and a <code>Northern Interior Completion Layer</code> completion east of Oregon.</li>
+      <li>The evidence layer records that Oregon is retained in Atlas in the <code>Pacific Northwest Coordination Corridor</code>, with a <code>Pacific Northwest Coordination Layer</code> foundation and a <code>Pacific Northwest Completion Layer</code> completion west of Idaho's interior transition frame.</li>
+      <li>The evidence layer records that the retained Atlas topology therefore supports reading Oregon as an inland transition continuity environment at the Idaho-facing interior frame between Pacific Northwest coordination structure and northern-mountain transition structure.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/idaho/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">West-coast coordination adjacency continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Washington preserves a Pacific Northwest coordination frame north of Oregon.</li>
+      <li>The evidence layer records that California preserves a Pacific coastal edge-anchor frame south of Oregon.</li>
+      <li>The evidence layer records that Oregon's retained position between those adjacent west-coast structures supports a west-coast coordination adjacency continuity reading at the corridor layer.</li>
+      <li>The evidence layer records that under the current corridor-scope restriction, this anchor is retained only as structural west-coast adjacency continuity and is not expanded into port inventories, terminal inventories, tonnage datasets, or statewide logistics survey treatment.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/washington/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/california/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Institutional adjacency continuity across the WA–OR–CA–ID frame</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Washington preserves a Pacific Northwest coordination frame north of Oregon.</li>
+      <li>The evidence layer records that California preserves a Pacific coastal edge-anchor frame south of Oregon.</li>
+      <li>The evidence layer records that Idaho preserves a northern-mountain transition frame east of Oregon.</li>
+      <li>The evidence layer records that Oregon's retained position inside this adjacent-state frame supports an institutional adjacency continuity reading at the corridor layer.</li>
+      <li>The evidence layer records that under the current corridor-scope restriction, this anchor is retained only as structural adjacency continuity and is not expanded into university-system mapping, research-network inventory treatment, or statewide institutional survey treatment.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/washington/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/california/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/idaho/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 5 evidence subsections with canonical atlas-export path citations (metadata-only adjacency references; Washington and Idaho are cited as forward-chained adjacencies to unrendered states, while California is already rendered)</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Oregon's AI governance posture is in early formation. The state has enacted election-adjacent deepfake restrictions and established advisory coordination infrastructure, but has not deployed a frontier AI safety framework comparable to adjacent West Coast governance surfaces. The operative policy surface is shaped by OCPA-adjacent AI transparency concerns, standard procurement oversight, and the state's broader digital policy trajectory rather than a dedicated AI enforcement regime.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing · Emerging</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Advisory + disclosure trajectory</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low structural friction; monitoring trajectory</div></div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code>.</p>
+    <p class="muted">The signals layer records 5 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">Pacific Northwest coordination continuity signal</h3>
+    <p class="muted">The signals layer records that Oregon shows a Pacific-Northwest-coordination-continuity signal through retained placement in the shared Washington–Oregon <code>Pacific Northwest Coordination Corridor</code> frame.</p>
+ 
+    <h3 class="subhead">Coastal north-south corridor continuity signal</h3>
+    <p class="muted">The signals layer records that Oregon shows a coastal-north-south-corridor-continuity signal through retained placement across the Washington–Oregon–California coastal frame.</p>
+ 
+    <h3 class="subhead">Idaho-facing inland transition continuity signal</h3>
+    <p class="muted">The signals layer records that Oregon shows an Idaho-facing-inland-transition-continuity signal through retained placement between Pacific Northwest coordination structure and Idaho's northern-mountain transition structure.</p>
+ 
+    <h3 class="subhead">West-coast coordination adjacency signal</h3>
+    <p class="muted">The signals layer records that Oregon shows a west-coast-coordination-adjacency signal through retained placement between Washington's Pacific Northwest coordination frame and California's Pacific coastal edge-anchor frame.</p>
+ 
+    <h3 class="subhead">Institutional adjacency signal</h3>
+    <p class="muted">The signals layer records that Oregon shows an institutional-adjacency signal through retained placement across the WA–OR–CA–ID corridor frame.</p>
+ 
+    <div class="absence-callout" style="margin-top:16px">
+      <div class="absence-label">Canonical signal-layer non-establishment</div>
+      <p>The signals layer records that the current signal set also does not independently establish Cascadia-scale coordination framing as a named atlas-visible anchor, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or research participation beyond institutional adjacency.</p>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> SB 1571 (2024, election deepfake restrictions), HB 4107 (AI advisory council), OCPA-adjacent AI transparency surfaces, federal AI governance pass-through, standard technology procurement oversight.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> No state-level frontier AI enforcement framework is active as of 2026. Oversight operates through existing consumer protection, procurement, and AG enforcement surfaces. No mandatory incident reporting or vendor attestation requirements analogous to California's SB 53 framework.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Teams deploying AI systems inside the Oregon corridor interact with significantly lower AI-specific compliance overhead than adjacent West Coast environments. The 2027 legislative session represents a monitored surface for potential trajectory escalation, but no activated enforcement mechanisms condition near-term deployment.</div>
-    </div>
-    <div class="note">Operational signal: Oregon's AI governance surface is in early coordination phase. Teams operating inside this corridor gain deployment access with lower immediate compliance overhead while monitoring adjacent state policy formation trajectories for future alignment signals.</div>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 5 signal clusters</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Oregon does not maintain a state-specific digital asset licensing framework as of 2026. The Oregon Money Transmitter Act applies to crypto exchange and transmission activity through the Division of Financial Regulation, but the enforcement posture operates through existing financial services infrastructure rather than a dedicated digital asset licensing surface. No statewide prohibition on digital asset payment or Bitcoin usage has been enacted, and the posture remains permissive relative to state-level digital asset frameworks in adjacent jurisdictions.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate / Open</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">Oregon DFR</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Federal framework primary; lower state overhead</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Oregon Money Transmitter Act (DFR enforcement), Oregon Revised Statutes Chapter 717, federal AML/BSA pass-through compliance requirements. No state-specific digital asset licensing equivalent to California's DFAL framework has been enacted.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> DFR enforces money transmission licensing through existing financial services frameworks. No dedicated digital asset legislation requires additional state-level compliance surfaces beyond the federal baseline for operators deploying inside this corridor.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Operators deploying inside Bitcoin payment, exchange, or custody surfaces interact primarily with federal compliance frameworks. Oregon DFR money transmission licensing applies to qualifying transmission activity. The compliance surface is more permissive than adjacent California corridor environments, without a dedicated state-level digital asset licensing gate.</div>
-    </div>
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from <code>signals.md</code>.</p>
+    <p class="muted">The trust-dimensions layer records that trust evaluates what kinds of stability conditions Oregon can sustain given the signal layer and the visible corridor-continuity environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted">The trust-dimensions layer records that Oregon currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>durable corridor coordination density across Pacific Northwest coordination continuity, coastal north-south corridor continuity, Idaho-facing inland transition continuity, west-coast coordination adjacency continuity, and institutional adjacency continuity</li>
+      <li>durable Pacific Northwest and coastal-to-interior infrastructure continuity at the corridor layer</li>
+      <li>visible institutional adjacency across the WA–OR–CA–ID frame</li>
+      <li>industrial persistence not independently established beyond corridor continuity and west-coast / inland-transition adjacency</li>
+      <li>research participation not independently established beyond institutional adjacency</li>
+    </ul>
+ 
+    <h3 class="subhead">Coordination density</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable corridor coordination density.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>coastal north-south corridor continuity signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+      <li>west-coast coordination adjacency signal</li>
+      <li>institutional adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a routing-authority model</li>
+      <li>the current package does not support coordination-tier assignment</li>
+      <li>the current package does not independently establish Cascadia-scale coordination framing as a named atlas-visible anchor</li>
+      <li>the current package does not independently establish energy-grid participation visibility or BEAD coordination visibility</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Oregon shows corridor-relevant coordination density as a Pacific Northwest environment linking Washington-facing coordination continuity, California-facing coastal adjacency, Idaho-facing inland transition, and a broader west-coast adjacency frame.</p>
+ 
+    <h3 class="subhead">Infrastructure continuity</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable Pacific Northwest and coastal-to-interior infrastructure continuity at the corridor layer.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>coastal north-south corridor continuity signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+      <li>west-coast coordination adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not independently establish energy-grid participation visibility or BEAD coordination visibility</li>
+      <li>the current package does not expand into statewide infrastructure surveys, port inventories, terminal inventories, tonnage datasets, or statewide logistics survey treatment</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Oregon shows durable corridor continuity where Pacific Northwest coordination structure carries between Washington-facing northern continuity, California-facing coastal adjacency, and Idaho-facing inland transition, but the package keeps that continuity at the corridor layer.</p>
+ 
+    <h3 class="subhead">Institutional adjacency</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible WA–OR–CA–ID institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>institutional adjacency signal</li>
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>west-coast coordination adjacency signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally avoids university-system mapping, research-network inventory treatment, and broader institutional ranking treatment</li>
+      <li>the current trust reading does not compare Oregon institutions by depth, scale, or hierarchy</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Oregon shows institutional adjacency through its retained corridor position between Washington-facing Pacific Northwest coordination, California-facing Pacific coastal adjacency, and Idaho-facing northern-mountain transition.</p>
+ 
+    <h3 class="subhead">Industrial persistence</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond corridor continuity and west-coast / inland-transition adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>coastal north-south corridor continuity signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+      <li>west-coast coordination adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not independently establish port inventories, terminal inventories, tonnage datasets, statewide logistics surveys, or broader industrial survey treatment</li>
+      <li>the current trust reading does not support industrial ranking or sector-depth claims for Oregon from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Oregon sits inside a corridor where Pacific Northwest continuity, coastal adjacency, and inland transition continuity are visible, but this package does not independently establish Oregon industrial persistence beyond that adjacency-bounded structure.</p>
+ 
+    <h3 class="subhead">Research participation</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>institutional adjacency signal</li>
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not retain a corridor-visible research anchor for Oregon beyond its adjacency-bounded corridor placement</li>
+      <li>the current package intentionally avoids university-system mapping and research-network inventory treatment</li>
+      <li>the current trust reading does not support a research-hierarchy claim for Oregon from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Oregon sits inside a visible Pacific Northwest and inland-transition institutional frame, but the current retained evidence does not independently establish research participation beyond that adjacency position.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust-dimension completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — Trust interpretation summary + 5 dimension fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Oregon Consumer Privacy Act (OCPA, SB 619) took effect July 1, 2024, establishing consumer data rights, sensitive data protections, and opt-out mechanisms for targeted advertising and data sales across qualifying data controllers. The Oregon Attorney General holds exclusive enforcement authority through existing AG infrastructure rather than a dedicated privacy agency. The enforcement posture is developing relative to California's CPPA framework, but the operative compliance surface is active and maturing.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active Enforcement</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">OCPA (SB 619)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Active but less aggressive than California surface</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Oregon Consumer Privacy Act (OCPA / SB 619, eff. Jul 1, 2024), AG enforcement authority, sensitive data categories including biometrics and precise geolocation, universal opt-out mechanism requirements, data minimization obligations.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> Attorney General enforcement with civil penalty exposure. OCPA applies to controllers processing data of 100,000 or more Oregon consumers, or 25,000 or more consumers where more than 25% of gross revenue derives from data sales. No dedicated privacy agency; enforcement operates through existing AG infrastructure.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Products and services collecting Oregon consumer data at qualifying thresholds interface with OCPA obligations from July 2024 forward. Biometric and sensitive data categories carry elevated handling, consent, and purpose limitation requirements consistent with the broader state privacy regime trajectory.</div>
-    </div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. The profile layer records that profile is the characterization layer of the package.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Oregon currently reads within Atlas as a Pacific Northwest coordination environment organized around Pacific Northwest coordination continuity, coastal north-south corridor continuity across the Washington–Oregon–California frame, Idaho-facing inland transition continuity, west-coast coordination adjacency continuity, and institutional adjacency continuity.</p>
+ 
+    <h3 class="subhead">Profile synthesis</h3>
+    <p class="muted">The profile layer records that the current package shows:</p>
+    <ul class="evidence-bullets">
+      <li>Pacific Northwest coordination continuity anchored in retained placement within the shared Washington–Oregon <code>Pacific Northwest Coordination Corridor</code> frame</li>
+      <li>coastal north-south corridor continuity anchored in retained placement across the Washington–Oregon–California coastal frame</li>
+      <li>Idaho-facing inland transition continuity anchored in retained placement between Pacific Northwest coordination structure and Idaho's northern-mountain transition structure</li>
+      <li>west-coast coordination adjacency continuity anchored in retained placement between Washington's Pacific Northwest coordination frame and California's Pacific coastal edge-anchor frame</li>
+      <li>institutional adjacency continuity anchored in retained placement across the WA–OR–CA–ID corridor frame</li>
+      <li>no independent retained basis for Cascadia-scale coordination framing as a named atlas-visible anchor, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or research participation beyond institutional adjacency under the current corridor-bounded scope</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of Oregon as a Pacific Northwest coordination corridor carrying Washington-facing continuity, California-facing coastal adjacency, and Idaho-facing inland transition inside a shared west-coast frame.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Oregon currently reads within Atlas as a Pacific Northwest coordination corridor linking the Washington-facing northern frame, the California-facing coastal frame, the Idaho-facing inland transition frame, and a broader west-coast adjacency structure.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + Profile synthesis + Profile synthesis statement</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Oregon's biometric governance surface operates through OCPA's sensitive data classification framework. Biometric data qualifies as sensitive personal data under OCPA, triggering consent-based processing requirements and consumer opt-out rights. Oregon has not enacted a standalone biometric-specific law as of 2026, but the OCPA framework conditions the deployment environment for identity-sensitive systems, and the legislative trajectory may introduce additional biometric-specific surfaces in the 2026–2027 session cycle.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Monitored · Emerging</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Consent-structured through OCPA</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Covered under OCPA sensitive data framework</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> OCPA biometric data classification (sensitive personal data), consent requirement provisions, data minimization and purpose limitation obligations under SB 619, AG enforcement surface.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> No standalone biometric statute as of 2026. OCPA enforcement through the AG creates a practical compliance surface for biometric-heavy products. The absence of a private right of action under OCPA reduces litigation exposure relative to standalone biometric regimes in other states.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Products deploying biometric identification, facial recognition, or behavioral inference systems inside the Oregon corridor should treat OCPA sensitive data provisions as the primary compliance surface. Standalone biometric legislation remains a monitored trajectory for the 2027 legislative session.</div>
-    </div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that this file provides structural interpretation only, and does not rank Oregon, compare Oregon to other jurisdictions, or prescribe deployment eligibility.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted">The builder-mode layer records that Oregon is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a Pacific Northwest coordination environment</li>
+      <li>a coastal north-south continuity environment across the Washington–Oregon–California frame</li>
+      <li>an Idaho-facing inland transition continuity environment</li>
+      <li>a west-coast coordination adjacency environment</li>
+      <li>an institutional adjacency environment across the WA–OR–CA–ID frame</li>
+      <li>a narrow corridor environment rather than a standalone topology override or readiness case</li>
+    </ul>
+ 
+    <h3 class="subhead">Pacific Northwest interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Oregon reads as a Pacific Northwest coordination environment where retained placement shares <code>Pacific Northwest Coordination Corridor</code>, <code>Pacific Northwest Coordination Layer</code>, and <code>Pacific Northwest Completion Layer</code> continuity with Washington without overriding atlas-controlled topology.</p>
+ 
+    <h3 class="subhead">Coastal interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Oregon reads as a coastal north-south continuity environment where retained structure preserves corridor continuity across the Washington–Oregon–California frame.</p>
+ 
+    <h3 class="subhead">Inland transition interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Oregon reads as an Idaho-facing inland transition continuity environment where retained structure preserves corridor continuity between Pacific Northwest coordination structure and Idaho's northern-mountain transition structure.</p>
+ 
+    <h3 class="subhead">West-coast adjacency interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Oregon reads as a west-coast coordination adjacency environment where retained structure preserves corridor continuity between Washington's Pacific Northwest coordination frame and California's Pacific coastal edge-anchor frame.</p>
+ 
+    <h3 class="subhead">Institutional adjacency interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Oregon reads as an institutional adjacency environment where retained structure preserves corridor continuity across the WA–OR–CA–ID frame without expanding into university-system mapping or research-network inventory treatment.</p>
+ 
+    <h3 class="subhead">Constraint interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Oregon should be read narrowly. The current package does not independently establish Cascadia-scale coordination framing as a named atlas-visible anchor, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or any deployment or routing posture.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — Role summary + 5 interpretation subsections (including canonical Constraint interpretation)</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Oregon's public sector AI deployment is in early coordination phase, operating through existing procurement and technology oversight infrastructure rather than dedicated AI governance frameworks. The state's posture reflects a cautious adoption trajectory, with AI systems integrated through standard technology procurement channels. No dedicated AI sandbox program or vendor attestation framework comparable to California's CDT infrastructure has been activated as of 2026.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Early Coordination</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Procurement-adjacent</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower friction; limited dedicated AI procurement infrastructure</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Oregon Department of Administrative Services technology oversight surfaces, state procurement policy frameworks, HB 4107 AI advisory coordination, OCPA implications for public-sector data handling, federal AI guidance pass-through.</div>
-      <div class="detail-item"><strong>Coordination signal:</strong> Oregon's public sector AI deployment is developing through standard technology procurement surfaces. State agencies interact with AI systems without dedicated AI-specific attestation requirements, producing a lower-friction entry surface for teams seeking public-sector deployment access.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Teams operating within education or government surfaces in Oregon interact with standard procurement workflows and lower compliance overhead compared to California's attestation-heavy environment. Fewer structured AI-specific government contracting pathways exist, but the absence of mandatory attestation frameworks reduces initial deployment friction.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, builder-mode, and change-log layers. The canonical Oregon structural exclusions set uses the canonical "compute-corridor designation" phrasing and includes a canonical "tourism, agriculture, or lifestyle characterization case" exclusion preserved verbatim from the evidence layer.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the retained corridor-visible evidence collected there, this file does not support characterizing Oregon as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a routing-authority jurisdiction</li>
+      <li>a coordination-tier jurisdiction</li>
+      <li>a deployment-readiness jurisdiction</li>
+      <li>a surface-assigned jurisdiction</li>
+      <li>a statewide infrastructure-survey case</li>
+      <li>a municipal-inventory case</li>
+      <li>a port-inventory or terminal-inventory case</li>
+      <li>a tonnage-dataset case</li>
+      <li>a university-system mapping case</li>
+      <li>a research-network inventory case</li>
+      <li>a workforce-summary case</li>
+      <li>a tourism, agriculture, or lifestyle characterization case</li>
+      <li>a compute-corridor designation</li>
+      <li>a hyperscale designation</li>
+      <li>a jurisdiction-ranking case</li>
+      <li>a digital-asset statutory jurisdiction</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based on the currently derived signals, this file does not support characterizing Oregon as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, a surface-eligibility determination, a jurisdiction-ranking claim, a compute-corridor designation, a hyperscale designation, a statewide infrastructure-survey case, a port-inventory or terminal-inventory case, a tonnage-dataset case, or a digital-asset statutory jurisdiction. The signals layer records that the current signal set also does not independently establish Cascadia-scale coordination framing as a named atlas-visible anchor, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or research participation beyond institutional adjacency.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that this file does not support interpreting Oregon as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, a compute-corridor designation, a hyperscale designation, or a digital-asset statutory jurisdiction. The trust-dimensions layer records that it should be read as trust interpretation of Oregon's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Oregon's profile should not be read as: a routing-authority assignment, a coordination-tier assignment, a deployment-readiness classification, an Atlas surface-eligibility determination, a jurisdiction ranking claim, a compute-corridor claim, a hyperscale designation, a digital-asset statutory jurisdiction claim, or a topology reassignment of atlas-controlled metadata.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not support interpreting Oregon as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, a compute-corridor designation, a hyperscale designation, or a digital-asset statutory jurisdiction. The builder-mode layer records that it should be read as builder-facing interpretation of Oregon's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, compute-corridor designation, hyperscale designation, digital-asset statutory designation, or local reassignment of atlas-controlled Oregon topology metadata.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Oregon's developer coordination surface is oriented toward Pacific Northwest infrastructure and open-source project participation. The operating climate is characterized by lower compliance drag relative to adjacent West Coast corridors, active open-source development networks, and proximity to Columbia River infrastructure systems. OCPA obligations condition the data handling architecture for teams deploying consumer-facing products at qualifying scale inside this corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active · Moderate Friction</div></div>
-      <div class="mini-box"><div class="label">Gov OSS</div><div class="value">Emerging coordination</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower compliance drag; West Coast network access</div></div>
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical Oregon evidence layer contains a native "Evidence gaps" subsection.</p>
+ 
+    <h3 class="subhead">Evidence gaps from the evidence layer</h3>
+    <div class="absence-callout">
+      <div class="absence-label">The evidence layer records</div>
+      <p>The current adjacency-bounded Atlas structure does not independently establish the following Oregon anchors for retention in this package:</p>
+      <ul class="mini" style="color:var(--muted);margin-top:6px">
+        <li>Cascadia-scale coordination framing as a named atlas-visible anchor</li>
+        <li>energy-grid participation visibility</li>
+        <li>BEAD coordination visibility</li>
+        <li>digital-asset statutory posture</li>
+        <li>independent research participation anchors beyond institutional adjacency</li>
+      </ul>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> OCPA developer compliance surfaces (SB 619), Oregon DAS technology oversight, federal OSS participation frameworks, Pacific Northwest open-source development network adjacency, standard state technology procurement coordination.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> Oregon operates within an active Pacific Northwest developer network surface with lower policy-driven friction than California-corridor deployment environments. OCPA-aligned data handling represents the primary regulatory architecture consideration shaping product design decisions for teams deploying consumer-facing systems inside this corridor.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Well-suited for teams seeking West Coast deployment access with lower compliance overhead than adjacent corridors. OCPA-aligned data handling represents the primary compliance architecture consideration. Teams requiring deep AI policy formation network access or government attestation infrastructure may need to supplement with adjacent-corridor surfaces.</div>
+ 
+    <h3 class="subhead">Scope constraints applied during population</h3>
+    <div class="scope-block">
+      <div class="scope-label">The change-log records the following scope constraints applied during evidence-first package population:</div>
+      <ul>
+        <li>adjacent-state corridor continuity only</li>
+        <li>no open infrastructure research</li>
+        <li>corridor-layer anchors only</li>
+        <li>no statewide infrastructure surveys, municipal inventories, or workforce summaries</li>
+        <li>no port inventories, terminal inventories, tonnage datasets, or statewide logistics surveys</li>
+        <li>no university-system mapping or research-network inventory treatment</li>
+        <li>no compute-corridor, hyperscale, routing-authority, coordination-tier, readiness, ranking, or surface assignment inference</li>
+        <li>no local override of atlas-controlled topology metadata</li>
+      </ul>
     </div>
+ 
+    <p class="muted" style="margin-top:12px">The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, corridor-scope constraints applied throughout package construction, downstream layers derived strictly from corridor-limited evidence, surface assignment remains none.</p>
+    <div class="src">Source: evidence.md — Evidence gaps; change-log.md — 2026-04-19 evidence-first package population (Scope constraints applied)</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Oregon's energy infrastructure is shaped by Columbia River hydroelectric generation capacity, producing a below-West-Coast-average industrial electricity cost profile. Bitcoin mining operates legally within Oregon with no state-specific prohibition as of 2026. The structural conditions — lower energy costs relative to the California corridor, favorable infrastructure access along the Columbia River system, and a less restrictive regulatory posture toward proof-of-work — create a more viable deployment surface for compute-intensive and mining-adjacent operations than most West Coast environments.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Moderate Risk</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Below West Coast average</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Favorable compute conditions along Columbia corridor</div></div>
-    </div>
-    <div class="radar" aria-label="Oregon energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:30%;background:var(--green)"></div></div><div class="score">30</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:28%;background:var(--green)"></div></div><div class="score">28</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:72%;background:var(--teal)"></div></div><div class="score">72</div></div>
-    </div>
-    <div class="note">Builder implication: Oregon's Columbia River hydroelectric infrastructure conditions a structurally favorable energy cost environment for compute-intensive deployments. Teams operating inside mining, data center, or high-density compute surfaces find more favorable structural conditions here than in the adjacent California corridor, with lower energy cost exposure and a more permissive regulatory posture.</div>
+  <!-- ── 10. CHANGE-LOG NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, Topology Completion Layer, and Jurisdiction lens. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">2026-04-19 evidence-first package population</h3>
+    <p class="muted">The change-log records that the Oregon state package was populated in topology-normalized order as a numbered canonical sequence: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md, change-log.md. The change-log records that scope constraints were applied during population (rendered in Section 9 above). The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, corridor-scope constraints applied throughout package construction, downstream layers derived strictly from corridor-limited evidence, and surface assignment remains none.</p>
+ 
+    <h3 class="subhead">Structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, compute-corridor designation, hyperscale designation, digital-asset statutory designation, or local reassignment of atlas-controlled Oregon topology metadata.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Oregon's regulatory vector is developing gradually across most policy layers. The Pacific Northwest Columbia Gateway &amp; West Coast Continuity Corridor is absorbing West Coast policy formation signals from adjacent California surfaces while maintaining a more moderate governance posture. OCPA enforcement maturation represents the primary near-term compliance escalation surface, while AI governance remains in early coordination phase with a monitored 2027 legislative trajectory.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — developing. Advisory infrastructure is in place; frontier AI legislation has not activated as of 2026. The 2027 legislative session is a monitored escalation surface as adjacent corridor policy formation patterns may condition Oregon's legislative trajectory.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — stable. DFR enforcement applies existing money transmitter frameworks. No state-specific digital asset licensing surface has activated, and no legislative trajectory toward a DFAL-equivalent framework is signaled for the near term.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — developing. OCPA enforcement by the AG is in early formation; penalty precedent is accumulating but has not reached the density of California-level enforcement infrastructure. Enforcement posture is expected to mature through 2026–2027.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — emerging. OCPA sensitive data provisions condition the biometric deployment surface. Standalone biometric legislation remains a monitored trajectory for the 2027 legislative session but has not activated.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — low to moderate. Legal status is stable; Columbia River energy cost conditions are structurally favorable. No legislative signals indicating proof-of-work-specific restrictions are present in the current cycle.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — stable. Lower compliance drag than adjacent corridors; Pacific Northwest open-source and developer network surfaces remain active. OCPA-aligned data handling represents the primary architecture consideration for teams deploying at scale.</div>
-    </div>
-    <div class="callout">12-month outlook: Oregon is likely to continue OCPA enforcement development, monitor AI governance trajectories from adjacent state surfaces, and maintain favorable energy cost conditions for compute-intensive deployment through 2027. The 2027 legislative session is the primary monitoring surface for potential AI governance escalation.</div>
-  </section>
+</div><!-- /main col -->
  
-</div>
- 
-<!-- ── SIDEBAR ────────────────────────────────── -->
+<!-- ── SIDEBAR ── -->
 <aside>
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">Oregon at a glance</h3>
-    <p class="muted mini">Best used as a Pacific Northwest infrastructure corridor deployment environment with favorable energy conditions, moderate privacy compliance overhead, and lower AI governance friction than adjacent West Coast corridors. Most useful for teams prioritizing Columbia River infrastructure interfaces, western freight routing, and lower-friction West Coast deployment access.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Oregon jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/oregon/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> Columbia River freight and infrastructure interfaces, favorable compute and mining deployment, Pacific Northwest corridor access, moderate-governance deployment environments, West Coast routing with lower compliance overhead.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> teams requiring deep AI policy formation networks, high-touch government AI procurement attestation interfaces, or maximum compliance architecture depth comparable to California-corridor environments.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>Jul 1, 2024</strong> — OCPA effective; Oregon consumer data rights and sensitive data protections activated.</li>
-      <li><strong>2024</strong> — SB 1571 (election deepfake restrictions) signed; HB 4107 AI advisory council established.</li>
-      <li><strong>2026</strong> — OCPA enforcement continuing to mature; AG enforcement posture developing through precedent accumulation.</li>
-      <li><strong>2027</strong> — Legislative session: monitored surface for potential AI governance escalation and possible biometric-specific legislation.</li>
+      <li><strong>Jurisdiction:</strong> Oregon</li>
+      <li><strong>Code:</strong> OR · US-OR</li>
+      <li><strong>Lens:</strong> Pacific northwest coordination continuity within pacific northwest completion</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> corridor-layer sufficient</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li><strong>Corridor Group:</strong> Pacific Northwest Coordination Corridor</li>
+      <li><strong>Foundation Layer:</strong> Pacific Northwest Coordination Layer</li>
+      <li><strong>Completion Layer:</strong> Pacific Northwest Completion Layer</li>
+      <li><strong>Jurisdiction Lens:</strong> Pacific northwest coordination continuity within pacific northwest completion</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived exclusively from the three atlas-controlled fields.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-cluster">
+    <div class="smallcaps">Canonical Pacific Northwest Cluster</div>
+    <h3 id="heading-sidebar-cluster">Two-state Corridor cluster</h3>
+    <p class="muted mini">Oregon and Washington are canonical siblings in the Pacific Northwest Coordination Corridor, sharing both the Pacific Northwest Coordination Layer foundation and the Pacific Northwest Completion Layer completion. All three canonical topology fields are identical across the two-state cluster.</p>
+    <p class="muted mini" style="margin-top:8px">The Pacific Northwest Coordination Corridor is a canonical two-state corridor group, distinct from the three-state Northern Plains Sparse-Node Corridor cluster. Oregon and Washington share all three atlas-controlled topology fields and the canonical Jurisdiction Lens.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-non-collapse">
+    <div class="smallcaps">Canonical Non-Collapse Topology</div>
+    <h3 id="heading-sidebar-non-collapse">Foundation ≠ Completion</h3>
+    <p class="muted mini">Oregon's canonical Foundation Layer and Completion Layer are distinct. The Foundation Layer is the Pacific Northwest Coordination Layer; the Completion Layer is the Pacific Northwest Completion Layer.</p>
+    <p class="muted mini" style="margin-top:8px">The canonical Jurisdiction Lens uses "within" — reflecting that Oregon's Pacific Northwest coordination Foundation resolves into the broader Pacific Northwest Completion Layer. Both layers sit within the same Pacific Northwest regional family, and Oregon's canonical position remains inside the Pacific Northwest frame across foundation and completion.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-cascadia">
+    <div class="smallcaps">Canonical Non-Establishment of Cascadia Framing</div>
+    <h3 id="heading-sidebar-cascadia">Atlas topology scope</h3>
+    <p class="muted mini">The canonical Oregon package explicitly records that the current adjacency-bounded Atlas structure does not independently establish <em>Cascadia-scale coordination framing as a named atlas-visible anchor</em>. This is a canonical acknowledgement that an external regional-conceptual framing commonly associated with the Pacific Northwest is not imported into atlas topology as a named anchor.</p>
+    <p class="muted mini" style="margin-top:8px">The canonical Pacific Northwest frame inside Atlas is the <em>Pacific Northwest Coordination Corridor</em> shared by Washington and Oregon only — a strictly topology-controlled designation, not a broader regional-conceptual framing.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-archetype">
+    <div class="smallcaps">Canonical Archetype</div>
+    <h3 id="heading-sidebar-archetype">Adjacency-bounded package</h3>
+    <p class="muted mini">Oregon is a corridor-layer sufficient state whose evidence is explicitly retained from <em>adjacent-state continuity</em> rather than independently state-sourced research. The change-log records the canonical scope constraints "adjacent-state corridor continuity only" and "no open infrastructure research".</p>
+    <p class="muted mini" style="margin-top:8px">Canonical sources are atlas-export internal topology references and adjacent-state metadata-layer files (Washington, California, Idaho), not state-agency URLs. Oregon's canonical adjacency citations are exclusively metadata-level.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Evidence anchors</div>
+    <h3 id="heading-sidebar-coverage">Retained from adjacency</h3>
+    <ul class="mini muted">
+      <li>Pacific Northwest coordination continuity</li>
+      <li>North-south coastal corridor continuity across the Washington–Oregon–California frame</li>
+      <li>Idaho-facing inland transition continuity</li>
+      <li>West-coast coordination adjacency continuity</li>
+      <li>Institutional adjacency continuity across the WA–OR–CA–ID frame</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical adjacency references:</p>
+    <ul class="mini muted">
+      <li>Washington (Pacific Northwest Coordination Corridor sibling, north-facing)</li>
+      <li>California (Pacific Coastal Hyperscale Corridor, south-facing, already rendered)</li>
+      <li>Idaho (Northern Mountain Transition Corridor, east-facing, forward-chained)</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-standardization">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-standardization">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That makes the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  <div class="card" aria-labelledby="heading-sidebar-trust-durability">
+    <div class="smallcaps">Canonical Coordination-Density Reading</div>
+    <h3 id="heading-sidebar-trust-durability">Durable (not "narrow but durable")</h3>
+    <p class="muted mini">Oregon's canonical trust interpretation records "durable corridor coordination density" — without the "narrow but" qualifier used in most adjacency-bounded canonical packages. This is a canonical distinction reflecting Oregon's position inside a shared two-state Pacific Northwest corridor with a canonically established foundation-plus-completion continuity and visible adjacency to both California's Pacific coastal edge-anchor frame and Idaho's northern-mountain transition frame.</p>
   </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-non-establishment">
+    <div class="smallcaps">Canonical Non-Establishment</div>
+    <h3 id="heading-sidebar-non-establishment">What the package does not establish</h3>
+    <p class="muted mini">The evidence layer explicitly records that the current package does not independently establish:</p>
+    <ul class="mini muted" style="margin-top:6px">
+      <li>Cascadia-scale coordination framing as a named atlas-visible anchor</li>
+      <li>energy-grid participation visibility</li>
+      <li>BEAD coordination visibility</li>
+      <li>digital-asset statutory posture</li>
+      <li>independent research participation anchors beyond institutional adjacency</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-scope">
+    <div class="smallcaps">Canonical scope</div>
+    <h3 id="heading-sidebar-scope">Corridor-layer sufficient</h3>
+    <p class="muted mini">The change-log records that the Oregon package is explicitly scope-narrowed to adjacent-state corridor continuity only. All downstream layer completeness statuses are canonically recorded as "corridor-layer sufficient" rather than "preliminary".</p>
+    <p class="muted mini">This is a distinct canonical neutrality category: the package is not incomplete — it is canonically declared complete at corridor scope, with broader scope deliberately excluded.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: corridor-layer sufficient</li>
+      <li>Signal layer: corridor-layer sufficient</li>
+      <li>Trust dimensions: corridor-layer sufficient</li>
+      <li>Profile: corridor-layer sufficient</li>
+      <li>Builder-mode: corridor-layer sufficient</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale or compute-corridor designation.</li>
+      <li>Not a local reassignment of atlas-controlled topology metadata.</li>
+      <li>Not a digital-asset statutory jurisdiction designation.</li>
+    </ul>
+  </div>
+ 
 </aside>
+</div><!-- /grid-sidebar -->
  
-</div>
 </main>
  
 <div class="wrap reflection footer-block">
