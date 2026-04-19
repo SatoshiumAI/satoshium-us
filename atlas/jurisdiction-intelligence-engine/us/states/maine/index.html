@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Maine — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Maine operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Maine Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/maine/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,41 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
+.sources-block code{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;color:var(--gold2)}
+.scope-block{margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.04)}
+.scope-block .scope-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.scope-block ul{margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block li{margin-bottom:2px;line-height:1.5}
+.scope-block ol{margin:4px 0 0 22px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block ol li{margin-bottom:2px;line-height:1.5}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +175,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +191,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Maine</h1>
-    <p class="kicker">Maine operates as a Northern New England Maritime Boundary &amp; Cross-Border Infrastructure Corridor supporting Atlantic-facing infrastructure continuity, Canada-adjacent coordination surfaces, and distributed resilience alignment across the northeastern boundary deployment layer of the United States.</p>
+    <p class="kicker">This page renders the canonical Maine Atlas jurisdiction package. The canonical package positions Maine within the Northeast Terminal Edge Corridor under the canonical jurisdiction lens "Northeast terminal-edge transition into terminal completion" — a topology-constrained reading derived exclusively from the three atlas-controlled topology fields. Maine is the sole canonical member of both the Northeast Terminal Edge Corridor and the Northeast Terminal Completion Layer, and is the terminal state of the Northeast Completion Layer cluster. Maine is an adjacency-bounded corridor-layer sufficient state — its evidence layer is retained from corridor continuity between adjacent Atlas states rather than from independent state-sourced research. All completeness statuses are recorded as corridor-layer sufficient.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">ME · US-ME</div>
-      <div class="hero-chip">Augusta</div>
-      <div class="hero-chip">Northern New England Maritime Boundary &amp; Cross-Border Infrastructure Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Maine quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Minimal / Developing</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Permissive / Low Overhead</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Active / Developing</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Moderate / Developing</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Low-Friction / Boundary Infrastructure</div></div>
+      <div class="hero-chip">Jurisdiction: Maine (ME · US-ME)</div>
+      <div class="hero-chip">Jurisdiction lens: Northeast terminal-edge transition into terminal completion</div>
+      <div class="hero-chip">Completeness: corridor-layer sufficient</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Adjacency-bounded package</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,216 +225,557 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Maine operates as the Northern New England Maritime Boundary &amp; Cross-Border Infrastructure Corridor within the US northeastern deployment surface. Builders interacting across this corridor encounter Atlantic maritime boundary continuity surfaces, Canada-adjacent coordination interfaces with New Brunswick and Quebec, northern New England transmission and routing alignment layers, and distributed rural resilience infrastructure environments. The corridor's deployment character is shaped by coastal logistics proximity conditions, subsea connectivity proximity surfaces extending into Atlantic routing infrastructure, and regional boundary-layer continuity supporting northeastern US deployment operations.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>AI Policy</strong></div><span class="pill blue">Minimal · Developing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill green">Permissive · Low Overhead</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Privacy / Data</strong></div><span class="pill yellow">Active · Developing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Biometrics</strong></div><span class="pill yellow">Moderate · Developing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">Early Stage</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Low-Friction / Boundary Infrastructure</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Northeast Terminal Edge Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Maine functions as a low-friction boundary infrastructure corridor for teams that need Atlantic-facing deployment continuity, Canada-adjacent coordination pathways, and distributed resilience-oriented environments without the compliance architecture overhead of neighboring Massachusetts or the governance friction of larger eastern seaboard corridors.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Northeast Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Northeast Terminal Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Lens</div>
+      <div class="field-value">Northeast terminal-edge transition into terminal completion</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that the Corridor Group, Foundation Layer, and Topology Completion Layer are derived from atlas-export/docs/atlas.md. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived from those atlas-controlled fields only and does not override atlas-controlled topology.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, coordination tiers, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence sufficiency boundaries, infer deployment suitability, or locally reclassify atlas-controlled corridor metadata.</p>
+    <p class="muted"><strong>Canonical terminal-edge topology.</strong> The canonical atlas.md places Maine in the Northeast Terminal Edge Corridor, the Northeast Completion Layer, and the Northeast Terminal Completion Layer. Unlike Rhode Island, Vermont, and New Hampshire — whose canonical Foundation Layer and Completion Layer are the same layer (Northeast Completion Layer) — Maine's canonical Foundation Layer and Completion Layer are distinct. Maine's Foundation Layer is the Northeast Completion Layer (shared with its Northeast Institutional Support Corridor siblings), while Maine's Completion Layer is the Northeast Terminal Completion Layer — a distinct layer whose only canonical member is Maine. Maine therefore reads within Atlas as the terminal-edge state where one canonical Completion Layer resolves into another, and the Jurisdiction Lens uses "transition into" rather than "within" to reflect the layer transition rather than the topology-collapse pattern.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/maine/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Northern New England Maritime Boundary &amp; Cross-Border Infrastructure Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only corridor-relevant structural anchors retained for Maine from adjacent-state continuity already visible inside Atlas. The evidence layer records that it does not perform an open-ended statewide infrastructure survey and does not assign trust posture, routing role, coordination tier, readiness, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. The canonical Maine package is an <em>adjacency-bounded</em> corridor-layer sufficient package: its evidence is retained from corridor continuity between adjacent Atlas states (New Hampshire, Vermont, Massachusetts, New York) and atlas.md topology references, rather than from independent state-sourced research. All completeness statuses across evidence, signals, trust, profile, and builder-mode are canonically recorded as "corridor-layer sufficient".</p>
+    <div class="callout mini" style="margin-top:12px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — Scope; change-log.md — Scope constraints applied during population</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 4 evidence subsections documenting Maine's corridor-relevant structural anchors retained from adjacent-state continuity. Canonical sources are atlas-export internal topology references and adjacent-state package files (including New Hampshire at metadata, evidence, and signals levels) rather than state-sourced primary documents.</p>
+ 
+    <h3 class="subhead">Northeast terminal-edge continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that <code>atlas-export/docs/atlas.md</code> places Maine in the <code>Northeast Terminal Edge Corridor</code>, the <code>Northeast Completion Layer</code>, and the <code>Northeast Terminal Completion Layer</code>.</li>
+      <li>The evidence layer records that New Hampshire is retained in Atlas in the <code>Northeast Institutional Support Corridor</code> and the <code>Northeast Completion Layer</code> immediately upstream of Maine's terminal completion placement.</li>
+      <li>The evidence layer records that Vermont is retained in Atlas in the same <code>Northeast Institutional Support Corridor</code> and <code>Northeast Completion Layer</code> as part of the northern Northeast support frame.</li>
+      <li>The evidence layer records that New York is retained in Atlas as the adjacent northeastern anchor environment.</li>
+      <li>The evidence layer records that the retained Atlas topology therefore supports reading Maine as the terminal-edge continuation of the northern Northeast frame, without overriding atlas-controlled topology.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/maine/</div>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/new_hampshire/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/vermont/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/new-york/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Terminal completion continuity beyond the northern Northeast support frame</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that New Hampshire's retained Atlas package already records continuation into Maine's northern completion structure from the northern Northeast support frame.</li>
+      <li>The evidence layer records that <code>atlas-export/docs/atlas.md</code> places Maine in the <code>Northeast Terminal Completion Layer</code>, beyond the <code>Northeast Completion Layer</code> carried by New Hampshire and Vermont.</li>
+      <li>The evidence layer records that Maine's retained terminal placement therefore supports terminal completion continuity beyond the northern Northeast support frame at the corridor layer without overriding atlas-controlled topology.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/jurisdictions/us/states/new_hampshire/evidence.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/new_hampshire/signals.md</code></li>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Continuation from New Hampshire's northern support continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that New Hampshire's retained Atlas package already records northern Northeast institutional support continuity and inland northward continuity inside the northern Northeast frame.</li>
+      <li>The evidence layer records that Maine's retained position beyond New Hampshire at the terminal edge supports continuation from New Hampshire's northern support continuity at the corridor layer.</li>
+      <li>The evidence layer records that under the current corridor-scope restriction, this anchor is retained only as structural continuation and is not expanded into statewide infrastructure or freight inventory treatment.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/jurisdictions/us/states/new_hampshire/evidence.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/new_hampshire/signals.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/new_hampshire/metadata.md</code></li>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Terminal-position institutional adjacency</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that New Hampshire's retained Atlas package already records a northern institutional-support frame linked to Massachusetts' research-bearing continuity and the broader New York-facing Northeast structure.</li>
+      <li>The evidence layer records that Maine's retained terminal-edge position beyond New Hampshire therefore supports terminal-position institutional adjacency at the corridor layer within the same northern Northeast frame.</li>
+      <li>The evidence layer records that under the current corridor-scope restriction, this anchor is retained only as structural institutional adjacency and is not expanded into university-system mapping or research-network inventory treatment.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/jurisdictions/us/states/new_hampshire/evidence.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/new_hampshire/signals.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/massachusetts/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/new-york/metadata.md</code></li>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 4 evidence subsections with canonical atlas-export path citations (including New Hampshire at metadata, evidence, and signals levels)</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Maine had not enacted dedicated state-level AI legislation as of April 2026. The corridor operates under a minimal-intervention posture with no dedicated AI enforcement body and no mandatory disclosure or safety attestation requirements for AI systems applicable to private operators. State agency technology modernization guidance conditions procurement surfaces but does not extend substantive AI compliance obligations to private deployment within this corridor. The Maine Consumer Data Privacy Act (MCDPA) contains automated decision-making provisions that represent the primary operative AI-adjacent regulatory surface.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Minimal · Developing</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">No dedicated AI enforcement surface</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Federal surfaces are the operative layer</div></div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code>. The signals layer records that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted">The signals layer records 4 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">Northeast terminal-edge continuity signal</h3>
+    <p class="muted">The signals layer records that Maine shows a Northeast-terminal-edge-continuity signal through atlas-retained terminal placement beyond the New Hampshire and Vermont support frame inside the broader New York-facing Northeast structure.</p>
+ 
+    <h3 class="subhead">Terminal completion continuity signal</h3>
+    <p class="muted">The signals layer records that Maine shows a terminal-completion-continuity signal through retained continuity between the northern Northeast support frame and Maine's terminal completion structure.</p>
+ 
+    <h3 class="subhead">Continuation from New Hampshire support continuity signal</h3>
+    <p class="muted">The signals layer records that Maine shows a continuation-from-New-Hampshire-support-continuity signal through retained continuation from New Hampshire's northern support-position continuity into the Maine corridor position.</p>
+ 
+    <h3 class="subhead">Terminal-position institutional adjacency signal</h3>
+    <p class="muted">The signals layer records that Maine shows a terminal-position-institutional-adjacency signal through retained institutional adjacency beyond the New Hampshire support frame within the northern Northeast structure.</p>
+ 
+    <div class="absence-callout" style="margin-top:16px">
+      <div class="absence-label">Canonical signal-layer non-establishment</div>
+      <p>The signals layer records that the current signal set also does not independently establish coastal adjacency continuity within the Gulf of Maine frame, Class I rail visibility, National Highway Freight Network visibility, ISO-NE participation, or BEAD coordination for Maine.</p>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> MCDPA automated decision-making provisions, state agency technology modernization guidance, federal AI governance surfaces applicable to corridor operators.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> no state-level AI enforcement mechanism as of 2026; private sector AI deployment within this corridor is not subject to state-initiated AI-specific compliance review. MCDPA ADM opt-out rights represent the primary operative interface.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying AI products within this corridor do not encounter state-level AI compliance surfaces comparable to Massachusetts or California. The corridor's AI policy posture is stable and non-restrictive through the foreseeable 2026 window, with MCDPA ADM provisions representing the primary compliance surface to monitor.</div>
-    </div>
-    <div class="note">Operational signal: Maine's AI policy surface does not function as a policy formation surface. It functions as a deployment-accessible surface for teams prepared to govern at the federal or product level, with MCDPA ADM provisions representing the primary state-level interface.</div>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 4 signal clusters</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Maine's digital asset posture is structurally permissive. Money transmission licensing administered through the Maine Bureau of Financial Institutions applies to qualifying digital asset businesses, but the regulatory overhead is lower than neighboring corridor states. Maine has not enacted restrictive digital asset legislation, and the corridor does not impose additional compliance surfaces beyond federal BSA/AML requirements and state money transmitter licensing for qualifying operators.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Permissive · Low Overhead</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">Bureau of Financial Institutions</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low friction; standard money transmitter licensing</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Maine money transmitter licensing framework (Maine Revised Statutes Title 32), Bureau of Financial Institutions oversight, federal BSA/AML compliance requirements applicable to qualifying operators.</div>
-      <div class="detail-item"><strong>Positive signal:</strong> Maine has not moved to restrict or impose additional licensing layers on digital asset activity beyond the existing money transmitter framework. The corridor's posture conditions a structurally accessible operating environment for digital asset deployment.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> operators running qualifying custodial or exchange-style activity within this corridor should treat standard money transmitter licensing and federal AML compliance as the operative baseline. No additional Maine-specific digital asset licensing surfaces are active as of 2026.</div>
-    </div>
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from <code>signals.md</code>. The trust-dimensions layer records that absence of dimensions reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted">The trust-dimensions layer records that trust evaluates what kinds of stability conditions Maine can sustain given the signal layer and the visible corridor-continuity environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted">The trust-dimensions layer records that Maine currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>narrow but durable corridor coordination density across terminal-edge continuity, terminal completion continuity, continuation from New Hampshire support continuity, and terminal-position institutional adjacency</li>
+      <li>durable but narrow infrastructure continuity through terminal-edge and terminal completion continuity</li>
+      <li>visible institutional adjacency between New Hampshire's support continuity, Massachusetts' research-bearing continuity, and the broader New York-facing frame at the northern edge of the Northeast structure</li>
+      <li>industrial persistence not independently established beyond terminal-edge and completion continuity</li>
+      <li>research participation not independently established beyond adjacency to the northern Northeast support and research-bearing frame</li>
+    </ul>
+ 
+    <h3 class="subhead">Coordination density</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Narrow but durable corridor coordination density.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Northeast terminal-edge continuity signal</li>
+      <li>terminal completion continuity signal</li>
+      <li>continuation from New Hampshire support continuity signal</li>
+      <li>terminal-position institutional adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a routing-authority model</li>
+      <li>the current package does not support coordination-tier assignment</li>
+      <li>the current package does not independently establish coastal adjacency continuity within the Gulf of Maine frame, Class I rail visibility, National Highway Freight Network visibility, ISO-NE participation, or BEAD coordination beyond the retained corridor anchors</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Maine shows corridor-relevant coordination density as a terminal-edge environment where the northern Northeast support frame resolves into terminal completion continuity.</p>
+ 
+    <h3 class="subhead">Infrastructure continuity</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable but narrow terminal-edge-and-completion continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Northeast terminal-edge continuity signal</li>
+      <li>terminal completion continuity signal</li>
+      <li>continuation from New Hampshire support continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not independently establish coastal adjacency continuity within the Gulf of Maine frame</li>
+      <li>the current package does not independently establish Class I rail corridor visibility</li>
+      <li>the current package does not independently establish National Highway Freight Network visibility</li>
+      <li>the current package does not independently establish ISO-NE participation or BEAD coordination</li>
+      <li>the current package does not expand into statewide freight or asset inventory treatment</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Maine shows durable corridor continuity where retained northern support continuity transitions into terminal completion structure at the edge of the Northeast frame.</p>
+ 
+    <h3 class="subhead">Institutional adjacency</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible terminal-position institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>continuation from New Hampshire support continuity signal</li>
+      <li>terminal-position institutional adjacency signal</li>
+      <li>terminal completion continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally avoids university-system inventory or broader institutional ranking treatment</li>
+      <li>the current trust reading does not compare Maine institutions by depth, scale, or hierarchy</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Maine shows institutional adjacency through its retained terminal-edge position beyond New Hampshire's support continuity inside the broader northern Northeast frame.</p>
+ 
+    <h3 class="subhead">Industrial persistence</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond terminal-edge and completion continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Northeast terminal-edge continuity signal</li>
+      <li>terminal completion continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally excludes statewide freight surveys, terminal inventories, tonnage datasets, and statewide industrial survey treatment</li>
+      <li>the current trust reading does not support industrial ranking or manufacturing-depth claims for Maine from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Maine may sit inside a corridor with visible terminal-edge continuity, but this package does not independently establish Maine industrial persistence beyond the retained terminal and completion anchors.</p>
+ 
+    <h3 class="subhead">Research participation</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond northern-frame adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>terminal-position institutional adjacency signal</li>
+      <li>continuation from New Hampshire support continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally avoids university-system mapping and research-network inventory treatment</li>
+      <li>the current trust reading does not support a research-hierarchy claim for Maine from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Maine sits adjacent to the northern Northeast support and research-bearing frame, but the current retained evidence does not independently establish Maine research participation beyond that corridor position.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust-dimension completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — Trust interpretation summary + 5 dimension fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Maine enacted the Maine Consumer Data Privacy Act (MCDPA), which took effect July 1, 2024. The MCDPA establishes consumer rights including access, correction, deletion, and opt-out of targeted advertising and automated decision-making profiling. Enforcement is administered through the Maine Attorney General. Maine also maintains an ISP-specific privacy statute (LD 946 / Title 35-A §9301) prohibiting internet service providers from using, selling, or distributing subscriber personal information without consent — a surface that conditions broadband-adjacent infrastructure deployment within the corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active · Developing</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">MCDPA (eff. Jul 2024)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Developing enforcement surface; ISP layer active</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Maine Consumer Data Privacy Act (MCDPA), ISP privacy statute (Title 35-A §9301), Maine Attorney General enforcement authority, MCDPA opt-out rights for targeted advertising and automated decision-making profiling.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> Attorney General enforcement posture is developing; MCDPA is newer than comparable state regimes and enforcement precedent is still forming. ISP privacy statute represents a distinctive corridor-specific compliance surface for broadband-adjacent deployments.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams collecting qualifying data from Maine residents interface with MCDPA obligations including consumer rights workflows and opt-out mechanisms. The ISP privacy statute represents a distinctive surface for infrastructure operators handling broadband-adjacent data flows within this corridor.</div>
-    </div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. The profile layer records that profile is the characterization layer of the package.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Maine currently reads within Atlas as a Northeast terminal-edge jurisdiction organized around Northeast terminal-edge continuity, terminal completion continuity beyond the northern Northeast support frame, continuation from New Hampshire's northern support continuity, and terminal-position institutional adjacency inside the broader northern Northeast structure.</p>
+ 
+    <h3 class="subhead">Profile synthesis</h3>
+    <p class="muted">The profile layer records that the current package shows:</p>
+    <ul class="evidence-bullets">
+      <li>Northeast terminal-edge continuity anchored in atlas-retained terminal placement beyond the New Hampshire and Vermont support frame inside the broader New York-facing Northeast structure</li>
+      <li>terminal completion continuity beyond the northern Northeast support frame anchored in retained continuity between New Hampshire's support-position continuity and Maine's terminal completion structure</li>
+      <li>continuation from New Hampshire's northern support continuity anchored in retained continuation from the New Hampshire northern support frame into the Maine corridor position</li>
+      <li>terminal-position institutional adjacency anchored in retained institutional adjacency beyond the New Hampshire support frame within the broader northern Northeast structure</li>
+      <li>no independent retained basis for coastal adjacency continuity within the Gulf of Maine frame, Class I rail corridor visibility, National Highway Freight Network visibility, ISO-NE participation, BEAD coordination, or digital-asset statutory posture under the current adjacency-bounded scope</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of Maine as a Northeast terminal-edge continuity corridor.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Maine currently reads within Atlas as a Northeast terminal-edge continuity corridor where retained northern support continuity resolves into terminal completion structure at the edge of the broader northern Northeast frame.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + Profile synthesis + Profile synthesis statement</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Maine treats biometric data as a regulated category under the MCDPA's sensitive data provisions. Biometric information — including fingerprints, retinal scans, facial geometry, and voice print data — requires opt-in consent prior to processing. Maine does not maintain a standalone biometric-specific statute comparable to Illinois' BIPA, but the MCDPA sensitive data framework conditions a structurally cautious posture for biometric-proximate deployments within this corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate · Developing</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Consent-required for sensitive data</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Opt-in required; no standalone biometric statute</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> MCDPA sensitive data classification for biometric information, opt-in consent requirement for biometric processing, Maine Attorney General enforcement authority.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> the absence of a standalone biometric statute reduces litigation surface compared to Illinois BIPA-adjacent corridors, but MCDPA consent requirements condition operational obligations for teams deploying biometric identification or behavioral monitoring surfaces within this corridor.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> products deploying inside biometric identification surfaces within this corridor should treat MCDPA opt-in consent as a baseline operational requirement. The regulatory trajectory points toward continued privacy law maturation rather than a dedicated biometric statute in the near term.</div>
-    </div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that this file provides structural interpretation only, and does not rank Maine, compare Maine to other jurisdictions, or prescribe deployment eligibility.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted">The builder-mode layer records that Maine is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a Northeast terminal-edge continuity environment</li>
+      <li>a terminal completion continuity environment beyond the northern Northeast support frame</li>
+      <li>a continuation environment from New Hampshire's northern support continuity</li>
+      <li>a terminal-position institutional adjacency environment inside the broader northern Northeast structure</li>
+      <li>a narrow terminal-edge environment rather than a standalone topology override or readiness case</li>
+    </ul>
+ 
+    <h3 class="subhead">Terminal-edge interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Maine reads as a terminal-edge environment where retained corridor placement carries the northern Northeast frame to its terminal boundary without overriding atlas-controlled topology.</p>
+ 
+    <h3 class="subhead">Completion interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Maine reads as a terminal completion environment where retained structure continues beyond the New Hampshire support frame into the <code>Northeast Terminal Completion Layer</code> without expanding into statewide freight or terminal inventory treatment.</p>
+ 
+    <h3 class="subhead">New Hampshire continuation interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Maine reads as a continuation environment where New Hampshire's retained northern support continuity extends into the Maine corridor frame without expanding into statewide infrastructure survey treatment.</p>
+ 
+    <h3 class="subhead">Institutional adjacency interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Maine reads as a terminal-position institutional adjacency environment where retained structure preserves adjacency to the broader northern Northeast support and research-bearing frame without expanding into university-system mapping or research-network inventory treatment.</p>
+ 
+    <h3 class="subhead">Constraint interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Maine should be read narrowly. The current package does not independently establish coastal adjacency continuity within the Gulf of Maine frame, Class I rail corridor visibility, National Highway Freight Network visibility, ISO-NE participation, BEAD coordination, digital-asset statutory posture, or any deployment or routing posture.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — Role summary + 5 interpretation subsections (including canonical Constraint interpretation)</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Maine's public sector AI integration is at an early stage. State agency technology modernization surfaces are developing, and the corridor does not operate a formal AI sandbox, dedicated AI procurement attestation framework, or structured public-sector AI deployment program comparable to larger corridor states. The Maine Department of Education has explored AI guidance for educational contexts, conditioning a cautious and developing posture across public-sector deployment surfaces within the corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Early Stage</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Developing / Guidance-oriented</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Limited formal public-sector AI procurement surfaces</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Maine Department of Education AI guidance surfaces, state agency technology modernization procurement guidance, federal digital equity and broadband coordination surfaces applicable to the corridor's rural resilience environment.</div>
-      <div class="detail-item"><strong>Growth signal:</strong> public-sector AI adoption is developing incrementally within this corridor, conditioned by the distributed rural infrastructure environment and limited state-level AI procurement infrastructure. No formal vendor attestation or AI safety certification requirements are operative as of 2026.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams targeting education or government deployment surfaces within this corridor encounter a low-formalization procurement environment. The absence of structured attestation requirements reduces friction but also reduces the signaling clarity available to compliance-oriented B2G operators.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, builder-mode, and change-log layers. Multiple layers record a distinct canonical exclusion: local reassignment of atlas-controlled Maine topology metadata.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the evidence collected there, this file does not support characterizing Maine as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a routing-authority jurisdiction</li>
+      <li>a coordination-tier jurisdiction</li>
+      <li>a deployment-readiness jurisdiction</li>
+      <li>a surface-assigned jurisdiction</li>
+      <li>a jurisdiction-ranking case</li>
+      <li>an AI compute corridor</li>
+      <li>a hyperscale anchor corridor</li>
+      <li>a federal governance corridor</li>
+      <li>a federal hosting corridor</li>
+      <li>a national routing spine designation</li>
+      <li>a primary Internet-exchange concentration environment</li>
+      <li>a custody-regime jurisdiction</li>
+      <li>a DAO-wrapper jurisdiction</li>
+      <li>a digital-asset statutory jurisdiction</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based on the currently derived signals, this file does not support characterizing Maine as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, a surface-eligibility determination, a jurisdiction-ranking claim, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The signals layer records that the current signal set also does not independently establish coastal adjacency continuity within the Gulf of Maine frame, Class I rail visibility, National Highway Freight Network visibility, ISO-NE participation, or BEAD coordination for Maine.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that this file does not support interpreting Maine as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The trust-dimensions layer records that it should be read as trust interpretation of Maine's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Maine's profile should not be read as: a routing-authority assignment, a coordination-tier assignment, a deployment-readiness classification, an Atlas surface-eligibility determination, a jurisdiction ranking claim, an AI compute corridor claim, a hyperscale anchor corridor claim, a federal governance corridor claim, a federal hosting corridor claim, a national routing spine claim, a primary Internet-exchange concentration claim, a custody-regime jurisdiction claim, a DAO-wrapper jurisdiction claim, a digital-asset statutory jurisdiction claim, or a topology reassignment of atlas-controlled metadata.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that the current Maine record does not support builder-mode interpretation as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The builder-mode layer records that it should be read as builder-facing interpretation of Maine's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal governance-corridor designation, federal hosting-corridor designation, national routing-spine designation, primary Internet-exchange concentration designation, or local reassignment of atlas-controlled Maine topology metadata.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Builders operating within the Maine corridor interact with Atlantic-facing boundary infrastructure surfaces, cross-border coordination pathways with eastern Canada, and distributed resilience-oriented deployment environments across the northern New England continuity layer. The corridor conditions a lower-friction operating environment for teams that do not require proximity to dense institutional policy networks, with distributed rural infrastructure surfaces supporting resilience-oriented deployment architectures across the coastal and interior boundary layers.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Distributed · Low-Friction</div></div>
-      <div class="mini-box"><div class="label">Gov OSS</div><div class="value">Developing / No formal mandate</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower overhead; distributed interaction surfaces</div></div>
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical Maine evidence layer contains a native "Evidence gaps" subsection. The change-log also records: "Evidence gaps retained where adjacency-bounded Atlas structure did not independently confirm broader anchors."</p>
+ 
+    <h3 class="subhead">Evidence gaps from the evidence layer</h3>
+    <div class="absence-callout">
+      <div class="absence-label">The evidence layer records</div>
+      <p>The current adjacency-bounded Atlas structure does not independently establish the following Maine anchors for retention in this package:</p>
+      <ul class="mini" style="color:var(--muted);margin-top:6px">
+        <li>coastal adjacency continuity within the Gulf of Maine frame</li>
+        <li>Class I rail corridor visibility</li>
+        <li>National Highway Freight Network corridor visibility</li>
+        <li>ISO-NE participation visibility</li>
+        <li>BEAD coordination visibility</li>
+        <li>digital-asset statutory posture</li>
+      </ul>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> MCDPA compliance obligations for data-handling applications, state technology modernization procurement guidance, Maine broadband-adjacent ISP privacy statute, Canada-adjacent cross-border data routing coordination surfaces.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> the corridor operates as a distributed deployment surface rather than a concentrated policy formation network. Teams interacting within this environment encounter lower compliance drag, broader deployment latitude, and Canada-adjacent coordination surfaces that are not accessible from southern New England corridors.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> well-suited for teams interacting across distributed infrastructure surfaces, boundary-layer deployment environments, and Canada-facing coordination pathways. Less suited for teams that require proximity to dense policy formation networks, established B2G procurement pipelines, or concentrated institutional trust infrastructure.</div>
+ 
+    <h3 class="subhead">Scope constraints applied during population</h3>
+    <div class="scope-block">
+      <div class="scope-label">The change-log records the following scope constraints applied during evidence-first package population:</div>
+      <ul>
+        <li>adjacent-state corridor continuity only</li>
+        <li>no open infrastructure research</li>
+        <li>corridor-layer anchors only</li>
+        <li>no statewide infrastructure survey or statewide freight survey</li>
+        <li>no municipal inventories, university-system inventory, research-network inventory, or engineering-sector survey</li>
+        <li>no tonnage datasets, terminal inventories, or port inventories</li>
+        <li>no workforce, tourism, agriculture, lifestyle, or economic-ranking treatment</li>
+        <li>no compute-corridor or hyperscale inference</li>
+        <li>no routing-authority, coordination-tier, readiness, ranking, or surface assignment inference</li>
+        <li>no local override of atlas-controlled topology metadata</li>
+      </ul>
     </div>
+ 
+    <p class="muted" style="margin-top:12px">The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, evidence gaps retained where adjacency-bounded Atlas structure did not independently confirm broader anchors, downstream layers derived strictly from corridor-limited evidence, surface assignment remains none.</p>
+    <div class="src">Source: evidence.md — Evidence gaps; change-log.md — 2026-04-17 evidence-first package population (Scope constraints applied)</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Bitcoin mining operates within Maine's legal framework with no specific prohibition as of 2026. The corridor's energy environment is conditioned by New England ISO (ISO-NE) grid membership, cross-border hydro transmission interfaces with Quebec's Hydro-Québec system, and significant renewable energy capacity across the northern interior. Electricity costs within Maine are moderate relative to the continental US upper band, and the regulatory posture does not reflect the environmental skepticism toward proof-of-work that conditions California or northeastern urban corridor environments.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Moderate Risk</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Mid-band (NE region)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Structurally accessible for resilience-oriented compute</div></div>
-    </div>
-    <div class="radar" aria-label="Maine energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:28%;background:var(--green)"></div></div><div class="score">28</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:48%;background:var(--yellow)"></div></div><div class="score">48</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:62%;background:var(--teal)"></div></div><div class="score">62</div></div>
-    </div>
-    <div class="note">Builder implication: Maine's energy and regulatory posture is more accessible for compute and resilience-oriented infrastructure deployment than larger northeastern corridors. The Hydro-Québec cross-border transmission interface and distributed northern interior geography condition viable surfaces for mining and distributed compute operations that align with the corridor's resilience-oriented infrastructure character.</div>
+  <!-- ── 10. CHANGE-LOG NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, Topology Completion Layer, and Jurisdiction lens. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">2026-04-17 evidence-first package population</h3>
+    <p class="muted">The change-log records that the Maine state package was populated in topology-normalized order as a numbered canonical sequence: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md, change-log.md. The change-log records that scope constraints were applied during population (rendered in Section 9 above). The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, evidence gaps retained where adjacency-bounded Atlas structure did not independently confirm broader anchors, downstream layers derived strictly from corridor-limited evidence, and surface assignment remains none.</p>
+ 
+    <h3 class="subhead">Structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal governance-corridor designation, federal hosting-corridor designation, national routing-spine designation, primary Internet-exchange concentration designation, or local reassignment of atlas-controlled Maine topology metadata.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Maine's regulatory vector is characterized by gradual development across privacy and consumer data surfaces, with AI and digital asset postures remaining structurally stable and non-restrictive through 2026. The Northern New England Maritime Boundary &amp; Cross-Border Infrastructure Corridor is unlikely to absorb significant governance escalation in the near term, with MCDPA enforcement maturation and Atlantic maritime infrastructure coordination representing the primary directional surfaces for operators within this corridor.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — stable and minimal through the foreseeable 2026 window; MCDPA ADM provisions represent the primary AI-adjacent compliance surface. No dedicated AI legislation is anticipated in the near-term session cycle.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — stable; permissive posture is not under active legislative challenge. Standard money transmitter licensing framework remains the operative compliance surface for qualifying digital asset operators.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — developing incrementally as MCDPA enforcement precedent matures through the Attorney General surface; ISP privacy statute enforcement continues alongside MCDPA. The enforcement trajectory is gradual rather than escalatory.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — stable; MCDPA sensitive data opt-in consent requirement is operative but no standalone biometric statute is anticipated in the near term. The trajectory does not indicate the adoption of an Illinois BIPA-equivalent structure within the current legislative cycle.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — low and stable; no active legislative challenge to proof-of-work operations. ISO-NE grid membership and Hydro-Québec cross-border transmission interfaces condition a structurally accessible energy environment for the foreseeable period.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — stable and low-friction. Atlantic maritime boundary continuity surfaces and Canada-adjacent cross-border coordination pathways support distributed deployment environments. The corridor's trajectory does not indicate a shift toward governance-escalation postures.</div>
-    </div>
-    <div class="callout">12-month outlook: Maine's corridor trajectory is oriented toward gradual MCDPA enforcement maturation, continued Atlantic maritime infrastructure development, and sustained cross-border coordination alignment with Canadian energy and routing surfaces. The corridor is unlikely to add meaningful AI or digital asset compliance surfaces through the 2026 legislative session.</div>
-  </section>
- 
-</div>
+</div><!-- /main col -->
  
 <!-- ── SIDEBAR ── -->
 <aside>
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">Maine at a glance</h3>
-    <p class="muted mini">Low-friction boundary infrastructure corridor. Best used as a distributed deployment surface, Canada-adjacent cross-border coordination environment, Atlantic-facing resilience infrastructure anchor, and accessible compute deployment zone. Lower compliance overhead than neighboring Massachusetts or New York corridors.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Maine jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/maine/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> Atlantic-facing boundary infrastructure, Canada-adjacent coordination surfaces, distributed resilience compute deployment, ISP-adjacent broadband infrastructure, low-overhead digital asset operations.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> dense policy formation network access, sophisticated B2G procurement pipeline integration, high-governance AI compliance architecture, proximity to concentrated institutional trust infrastructure.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>Jul 2024</strong> — Maine Consumer Data Privacy Act (MCDPA) takes effect; consumer rights, opt-out mechanisms, and sensitive data opt-in consent requirements operative.</li>
-      <li><strong>Ongoing 2025–2026</strong> — MCDPA enforcement precedent developing through Maine Attorney General; ISP privacy statute (Title 35-A §9301) enforcement continues in parallel.</li>
-      <li><strong>2026</strong> — Atlantic maritime boundary infrastructure coordination and Hydro-Québec cross-border transmission interfaces remain operative within corridor energy environment.</li>
-      <li><strong>2026–2027</strong> — No dedicated AI legislation anticipated; MCDPA ADM provisions represent primary AI-adjacent compliance surface through the near-term legislative cycle.</li>
+      <li><strong>Jurisdiction:</strong> Maine</li>
+      <li><strong>Code:</strong> ME · US-ME</li>
+      <li><strong>Lens:</strong> Northeast terminal-edge transition into terminal completion</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> corridor-layer sufficient</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-corridor-position">
-    <div class="smallcaps">Corridor Relationships</div>
-    <h3 id="heading-corridor-position">National Atlas positioning</h3>
-    <p class="muted mini">Maine's corridor interfaces to the southwest with the New Hampshire Northern New England Gateway &amp; Seacoast Interface Corridor; to the west with the Vermont New England Civic Resilience &amp; Rural Governance Corridor; and aligns with broader Atlantic maritime boundary continuity layers extending through the Massachusetts New England Research, Biotech &amp; Institutional Governance Corridor to the south.</p>
-    <p class="muted mini">Northern and eastern boundary surfaces extend into Canada-adjacent cross-border coordination environments, conditioning unique infrastructure interfaces not accessible from southern New England deployment corridors.</p>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
+    <ul class="mini">
+      <li><strong>Corridor Group:</strong> Northeast Terminal Edge Corridor</li>
+      <li><strong>Foundation Layer:</strong> Northeast Completion Layer</li>
+      <li><strong>Completion Layer:</strong> Northeast Terminal Completion Layer</li>
+      <li><strong>Jurisdiction Lens:</strong> Northeast terminal-edge transition into terminal completion</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived exclusively from the three atlas-controlled fields.</p>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
-    <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+  <div class="card" aria-labelledby="heading-sidebar-terminal-edge">
+    <div class="smallcaps">Canonical Terminal-Edge Topology</div>
+    <h3 id="heading-sidebar-terminal-edge">Foundation ≠ Completion</h3>
+    <p class="muted mini">Unlike Rhode Island, Vermont, and New Hampshire — whose Foundation Layer and Completion Layer are the same canonical layer (Northeast Completion Layer) — Maine's Foundation Layer and Completion Layer are distinct.</p>
+    <p class="muted mini" style="margin-top:8px">Maine's Foundation Layer is the Northeast Completion Layer (shared with its Northeast Institutional Support Corridor siblings and the broader Northeast Completion Layer cluster), while Maine's Completion Layer is the Northeast Terminal Completion Layer — a distinct canonical layer whose only member is Maine.</p>
+    <p class="muted mini" style="margin-top:8px">This canonical terminal-edge topology pattern reflects Maine's canonical position as the northern terminal boundary of the Northeast frame, where one Completion Layer resolves into another. The canonical Jurisdiction Lens uses "transition into" (not "within") to reflect the layer transition.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-cluster-completion">
+    <div class="smallcaps">Cluster Completion</div>
+    <h3 id="heading-sidebar-cluster-completion">Northern closure arc</h3>
+    <p class="muted mini">Maine completes the Northeast Completion Layer's 6-state Foundation-Layer cluster per atlas_converted.md:</p>
+    <ul class="mini muted" style="margin-top:6px">
+      <li>Connecticut</li>
+      <li>Massachusetts</li>
+      <li>Rhode Island</li>
+      <li>Vermont</li>
+      <li>New Hampshire</li>
+      <li>Maine (terminal-edge, completes cluster)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Maine is the sole canonical member of both the Northeast Terminal Edge Corridor and the Northeast Terminal Completion Layer. Maine's rendering resolves New Hampshire's forward-chained adjacency reference to Maine's metadata.md and closes the northern closure arc of the Northeast Completion Layer.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-archetype">
+    <div class="smallcaps">Canonical Archetype</div>
+    <h3 id="heading-sidebar-archetype">Adjacency-bounded package</h3>
+    <p class="muted mini">Maine is a corridor-layer sufficient state whose evidence is explicitly retained from <em>adjacent-state continuity</em> rather than independently state-sourced research. The change-log records the canonical scope constraints "adjacent-state corridor continuity only" and "no open infrastructure research".</p>
+    <p class="muted mini" style="margin-top:8px">Canonical sources are atlas-export internal topology references and adjacent-state package files (New Hampshire at metadata, evidence, and signals levels; Vermont, Massachusetts, and New York at metadata level), not state-agency URLs.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Evidence anchors</div>
+    <h3 id="heading-sidebar-coverage">Retained from adjacency</h3>
+    <ul class="mini muted">
+      <li>Northeast terminal-edge continuity</li>
+      <li>Terminal completion continuity beyond the northern Northeast support frame</li>
+      <li>Continuation from New Hampshire's northern support continuity</li>
+      <li>Terminal-position institutional adjacency</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical adjacency references:</p>
+    <ul class="mini muted">
+      <li>New Hampshire (upstream Northeast Institutional Support Corridor sibling)</li>
+      <li>Vermont (Northeast Institutional Support Corridor sibling)</li>
+      <li>Massachusetts (northern Northeast research-bearing reference)</li>
+      <li>New York (adjacent northeastern anchor)</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-standardization">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-standardization">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  <div class="card" aria-labelledby="heading-sidebar-non-establishment">
+    <div class="smallcaps">Canonical Non-Establishment</div>
+    <h3 id="heading-sidebar-non-establishment">What the package does not establish</h3>
+    <p class="muted mini">The evidence layer and signals layer both explicitly record that the current package does not independently establish:</p>
+    <ul class="mini muted" style="margin-top:6px">
+      <li>coastal adjacency continuity within the Gulf of Maine frame</li>
+      <li>Class I rail corridor visibility</li>
+      <li>National Highway Freight Network visibility</li>
+      <li>ISO-NE participation visibility</li>
+      <li>BEAD coordination visibility</li>
+      <li>digital-asset statutory posture</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Note: "coastal adjacency continuity within the Gulf of Maine frame" is canonically non-established for Maine itself — a canonical consequence of the adjacency-bounded methodology, where canonical anchors are retained only from adjacent-state continuity rather than from state-sourced coastal research.</p>
   </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-scope">
+    <div class="smallcaps">Canonical scope</div>
+    <h3 id="heading-sidebar-scope">Corridor-layer sufficient</h3>
+    <p class="muted mini">The change-log records that the Maine package is explicitly scope-narrowed to adjacent-state corridor continuity only. All downstream layer completeness statuses are canonically recorded as "corridor-layer sufficient" rather than "preliminary".</p>
+    <p class="muted mini">This is a distinct canonical neutrality category: the package is not incomplete — it is canonically declared complete at corridor scope, with broader scope deliberately excluded.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: corridor-layer sufficient</li>
+      <li>Signal layer: corridor-layer sufficient</li>
+      <li>Trust dimensions: corridor-layer sufficient</li>
+      <li>Profile: corridor-layer sufficient</li>
+      <li>Builder-mode: corridor-layer sufficient</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale or AI compute corridor designation.</li>
+      <li>Not a local reassignment of atlas-controlled topology metadata.</li>
+      <li>Not a digital-asset statutory jurisdiction designation.</li>
+    </ul>
+  </div>
+ 
 </aside>
-</div>
+</div><!-- /grid-sidebar -->
  
 </main>
  
