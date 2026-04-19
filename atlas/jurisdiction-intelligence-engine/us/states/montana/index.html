@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Montana — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Montana operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Montana Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/montana/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,41 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
+.sources-block code{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;color:var(--gold2)}
+.scope-block{margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.04)}
+.scope-block .scope-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.scope-block ul{margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block li{margin-bottom:2px;line-height:1.5}
+.scope-block ol{margin:4px 0 0 22px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block ol li{margin-bottom:2px;line-height:1.5}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +175,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -161,241 +188,602 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <body>
 <div id="topbar-slot" data-topbar="universe"></div>
 <script src="/components/topbar-loader.js"></script>
-
+ 
 <main id="main-content" class="wrap content">
-
+ 
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Montana</h1>
-    <p class="kicker">Montana operates as a Northern Rockies Energy, Cross-Border &amp; Continental Routing Corridor supporting CANAMEX continuity across the I-15 spine, cross-border coordination interfaces with Canada, and inland energy and routing alignment surfaces across the northern continental deployment layer of the United States.</p>
-
+    <p class="kicker">This page renders the canonical Montana Atlas jurisdiction package. The canonical package positions Montana within the Northern Plains Sparse-Node Corridor under the canonical jurisdiction lens "Northern plains sparse-node continuity within northern interior completion" — a topology-constrained reading derived exclusively from the three atlas-controlled topology fields. Montana is a canonical member of the three-state Northern Plains Sparse-Node Corridor cluster (with North Dakota and South Dakota), and its canonical Foundation Layer and Topology Completion Layer are distinct. Montana is an adjacency-bounded corridor-layer sufficient state — its evidence layer is retained from corridor continuity between adjacent Atlas states rather than from independent state-sourced research. All completeness statuses are recorded as corridor-layer sufficient.</p>
+ 
     <div class="hero-meta">
-      <div class="hero-chip">MT · US-MT</div>
-      <div class="hero-chip">Helena</div>
-      <div class="hero-chip">Northern Rockies Energy, Cross-Border &amp; Continental Routing Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
+      <div class="hero-chip">Jurisdiction: Montana (MT · US-MT)</div>
+      <div class="hero-chip">Jurisdiction lens: Northern plains sparse-node continuity within northern interior completion</div>
+      <div class="hero-chip">Completeness: corridor-layer sufficient</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Adjacency-bounded package</div>
     </div>
-
-    <div class="band" aria-label="Montana quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Low Activity / Permissive</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Favorable / Mining Active</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Moderate / Maturing</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Low Restriction Zone</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Infrastructure Corridor / Routing-Aligned</div></div>
-    </div>
-
+ 
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
-
+ 
+<!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
 <div class="grid-sidebar">
-  <div>
-    <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-      <h2 id="heading-operational">Operational Profile</h2>
-      <p class="muted">This page is designed to function as a living operational profile rather than a bill list. The goal is to show how Montana feels to a builder, operator, or policy-aware team across the major layers that shape deployment reality within the Northern Rockies Energy, Cross-Border &amp; Continental Routing Corridor.</p>
-      <div class="status-grid">
-        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>AI</strong></div><span class="pill green">low activity · permissive</span></div>
-        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Bitcoin</strong></div><span class="pill teal">favorable · mining active</span></div>
-        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Privacy</strong></div><span class="pill yellow">moderate · maturing</span></div>
-        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Biometrics</strong></div><span class="pill green">low restriction zone</span></div>
-        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Public Sector AI</strong></div><span class="pill blue">minimal · emerging</span></div>
-        <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">infrastructure corridor · routing-aligned</span></div>
-      </div>
-      <div class="note"><strong>Builder summary:</strong> Montana's corridor profile is shaped by CANAMEX continuity along I-15, cross-border coordination interfaces with Alberta and Saskatchewan, energy transmission and pipeline continuity environments, and continental rail and highway freight alignment layers. The state's operating environment offers low compliance drag relative to coastal jurisdictions, with structural advantages for energy-intensive and routing-adjacent deployments.</div>
-    </section>
-
-    <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-      <h2 id="heading-atlas">Atlas Alignment</h2>
-      <p class="muted">To make this page reusable across all 50 states, the presentation layer should stay visibly connected to the Atlas package behind it.</p>
-      <ul class="atlas-list">
-        <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/montana/</code></li>
-        <li><strong>Jurisdiction lens</strong><br>Northern Rockies Energy, Cross-Border &amp; Continental Routing Corridor lens with evidence-first normalization and no statewide inventory sprawl.</li>
-        <li><strong>Evidence basis</strong><br>This page should summarize the state package rather than replace it. The package remains the canonical source for structure, signals, and change tracking.</li>
-        <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+<div>
+ 
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Northern Plains Sparse-Node Corridor</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Northern Plains Sparse-Node Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Northern Interior Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Lens</div>
+      <div class="field-value">Northern plains sparse-node continuity within northern interior completion</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that the Corridor Group, Foundation Layer, and Topology Completion Layer are derived from atlas-export/docs/atlas.md. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived from those atlas-controlled fields only and does not override atlas-controlled topology.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, coordination tiers, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence sufficiency boundaries, infer deployment suitability, or locally reclassify atlas-controlled corridor metadata.</p>
+    <p class="muted"><strong>Canonical Northern Plains sparse-node topology.</strong> The canonical atlas.md places Montana in the Northern Plains Sparse-Node Corridor, with a Northern Plains Sparse-Node Layer foundation and a Northern Interior Completion Layer completion. Montana's canonical Foundation Layer and Completion Layer are distinct — the Foundation Layer is the Northern Plains Sparse-Node Layer, shared with North Dakota and South Dakota in the three-state Northern Plains Sparse-Node Corridor cluster, while the Completion Layer is the Northern Interior Completion Layer, shared with Idaho's Northern Mountain Transition Corridor completion. The canonical Jurisdiction Lens uses "within" to reflect that Montana's sparse-node Foundation resolves into the broader Northern Interior Completion Layer.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
+  </section>
+ 
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only corridor-relevant structural anchors retained for Montana from adjacent-state continuity already visible inside Atlas. The evidence layer records that it does not perform an open-ended statewide infrastructure survey and does not assign trust posture, routing role, coordination tier, readiness, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. The canonical Montana package is an <em>adjacency-bounded</em> corridor-layer sufficient package: its evidence is retained from corridor continuity between adjacent Atlas states (North Dakota, South Dakota, Wyoming, Idaho) and atlas.md topology references, rather than from independent state-sourced research. All completeness statuses across evidence, signals, trust, profile, and builder-mode are canonically recorded as "corridor-layer sufficient".</p>
+    <div class="callout mini" style="margin-top:12px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — Scope; change-log.md — Scope constraints applied during population</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 4 evidence subsections documenting Montana's corridor-relevant structural anchors retained from adjacent-state continuity. Canonical sources are atlas-export internal topology references and adjacent-state metadata-layer files rather than state-sourced primary documents.</p>
+ 
+    <h3 class="subhead">Northern interior continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that <code>atlas-export/docs/atlas.md</code> places Montana in the <code>Northern Plains Sparse-Node Corridor</code>, with a <code>Northern Plains Sparse-Node Layer</code> foundation and a <code>Northern Interior Completion Layer</code> completion.</li>
+      <li>The evidence layer records that North Dakota is retained in Atlas in the same <code>Northern Plains Sparse-Node Corridor</code>, with the same <code>Northern Plains Sparse-Node Layer</code> foundation and <code>Northern Interior Completion Layer</code> completion.</li>
+      <li>The evidence layer records that South Dakota is retained in Atlas in the same <code>Northern Plains Sparse-Node Corridor</code>, with the same <code>Northern Plains Sparse-Node Layer</code> foundation and <code>Northern Interior Completion Layer</code> completion.</li>
+      <li>The evidence layer records that Idaho is retained in Atlas in the <code>Northern Mountain Transition Corridor</code>, with the same <code>Northern Interior Completion Layer</code> completion.</li>
+      <li>The evidence layer records that the retained Atlas topology therefore supports reading Montana as a northern interior continuity jurisdiction across the Dakota-facing and Idaho-facing northern frame, without overriding atlas-controlled topology.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/north_dakota/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/south_dakota/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/idaho/metadata.md</code></li>
       </ul>
-      <div class="callout mini">For the other 49 states, keep this same section but swap in the state-specific path, corridor/lens language, and update metadata. That makes the HTML pages visibly Atlas-connected from day one.</div>
-    </section>
-
-    <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-      <h2 id="heading-ai">AI Policy</h2>
-      <p class="muted">Montana has produced no significant state-level AI governance legislation. The operating environment for AI development and deployment is shaped primarily by federal frameworks — FTC authority, sector-specific regulations, and applicable federal procurement standards — rather than state-originated mandates. Montana's legislature has not enacted AI safety requirements, model disclosure obligations, or procurement attestation controls.</p>
-      <div class="subgrid">
-        <div class="mini-box"><div class="label">Status</div><div class="value">Low Activity / Permissive</div></div>
-        <div class="mini-box"><div class="label">Primary posture</div><div class="value">Federal baseline / no statewide AI framework</div></div>
-        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Minimal state compliance overhead for AI deployments</div></div>
-      </div>
-      <div class="detail-list">
-        <div class="detail-item"><strong>Key anchors:</strong> No enacted state AI legislation. Federal frameworks — FTC, sector-specific agency authority, and applicable federal procurement standards — define the primary governance surface for AI deployments touching Montana operations.</div>
-        <div class="detail-item"><strong>Enforcement profile:</strong> No dedicated state AI enforcement infrastructure. State AG consumer protection authority could reach AI-adjacent deception or data-handling violations, but no AI-specific enforcement posture has been established.</div>
-        <div class="detail-item"><strong>Builder implication:</strong> Teams deploying AI products into or through the Montana corridor face primarily federal compliance obligations. Montana's permissive posture does not eliminate federal requirements — teams should model compliance at the federal layer rather than treating the state as a fully unregulated environment.</div>
-      </div>
-      <div class="note">Operational signal: Montana's low AI governance footprint makes it a structurally low-friction environment for AI infrastructure deployments, but builders operating at scale should not treat state-level permissiveness as a substitute for federal compliance architecture.</div>
-    </section>
-
-    <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-      <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-      <p class="muted">Montana has established a legislative posture explicitly supportive of digital asset activity. The state has enacted virtual currency exemptions from money transmission licensing for qualifying activities, established property rights protections for digital asset holders, and acted to prevent discriminatory local ordinances targeting mining operations. Montana's regulatory environment is among the more favorable in the Mountain West for corridor-infrastructure digital asset deployments.</p>
-      <div class="subgrid">
-        <div class="mini-box"><div class="label">Status</div><div class="value">Favorable / Mining Active</div></div>
-        <div class="mini-box"><div class="label">Regulator</div><div class="value">Montana DOL / MBCA</div></div>
-        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Supportive posture; federal obligations remain</div></div>
-      </div>
-      <div class="detail-list">
-        <div class="detail-item"><strong>Key anchors:</strong> SB 178 (2023) virtual currency exemption from money transmission licensing for qualifying activities. HB 429 digital asset property rights protections. Legislative preemption of discriminatory local mining ordinances. Federal FinCEN MSB registration and AML/BSA obligations apply regardless of state posture.</div>
-        <div class="detail-item"><strong>Positive signal:</strong> Montana has acted affirmatively to reduce licensing friction for certain digital asset activities and protect mining operations from local regulatory interference. The state's corridor-infrastructure positioning aligns with energy-adjacent mining and node-operation deployments.</div>
-        <div class="detail-item"><strong>Builder implication:</strong> Montana is structurally favorable for mining infrastructure, node operations, and certain digital asset business activities. Custodial services, exchange-grade operations, and consumer-facing financial products still carry federal FinCEN and state-level licensing obligations that require careful scoping.</div>
-      </div>
-    </section>
-
-    <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-      <h2 id="heading-privacy">Privacy / Data Handling</h2>
-      <p class="muted">Montana enacted the Consumer Data Privacy Act (SB 384, MTCDPA) in 2023, with enforcement effective October 2024. The statute creates a consumer rights framework that applies to controllers meeting defined processing thresholds. Montana's enforcement environment is meaningfully less intensive than California's CPPA posture, but the statutory obligations are real and expanding in scope as AG enforcement practice develops.</p>
-      <div class="subgrid">
-        <div class="mini-box"><div class="label">Status</div><div class="value">Moderate / Maturing</div></div>
-        <div class="mini-box"><div class="label">Core regime</div><div class="value">MTCDPA (SB 384)</div></div>
-        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Opt-out model with maturing AG enforcement</div></div>
-      </div>
-      <div class="detail-list">
-        <div class="detail-item"><strong>Key anchors:</strong> MTCDPA (SB 384, effective October 2024). Consumer rights include access, correction, deletion, portability, and opt-out of targeted advertising, sale, and certain profiling. Sensitive data — including biometric data — requires affirmative consent. Applies to controllers processing data of 50,000+ Montana consumers or deriving over 25% of gross revenue from the sale of data of 25,000+ Montana consumers.</div>
-        <div class="detail-item"><strong>Enforcement profile:</strong> Montana Attorney General holds exclusive enforcement authority. No private right of action. Cure period available before formal enforcement action. Enforcement apparatus is smaller than California's CPPA, but the statutory framework creates real compliance obligations for teams meeting applicable thresholds.</div>
-        <div class="detail-item"><strong>Builder implication:</strong> Teams handling Montana resident data at qualifying thresholds must implement MTCDPA-compliant consumer rights workflows. The MTCDPA's sensitive data provisions — covering biometric identifiers, precise geolocation, and health data — raise the compliance floor for corridor-infrastructure products that interact with resident data at scale.</div>
-      </div>
-    </section>
-
-    <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-      <h2 id="heading-biometrics">Biometrics / Identity</h2>
-      <p class="muted">Montana has no dedicated biometric privacy statute. Biometric identifiers are treated as sensitive personal data under the MTCDPA, requiring affirmative consent for processing within the statute's scope. There are no municipal-level facial recognition bans on record in Montana, and no pending legislation establishing a standalone biometric consent framework comparable to Illinois BIPA.</p>
-      <div class="subgrid">
-        <div class="mini-box"><div class="label">Status</div><div class="value">Low Restriction Zone</div></div>
-        <div class="mini-box"><div class="label">Identity climate</div><div class="value">MTCDPA sensitive data provisions apply</div></div>
-        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">No standalone biometric statute; MTCDPA scope applies</div></div>
-      </div>
-      <div class="detail-list">
-        <div class="detail-item"><strong>Key anchors:</strong> MTCDPA sensitive data category includes biometric data for the purpose of uniquely identifying an individual. Affirmative consent required for processing sensitive data within MTCDPA scope. No dedicated biometric consent statute. No municipal facial recognition restrictions on record.</div>
-        <div class="detail-item"><strong>Risk profile:</strong> Lower regulatory exposure than Illinois (BIPA) or California (CPRA biometric SPI) for standalone biometric deployments. MTCDPA sensitive data protections apply to biometric identifiers within the statute's threshold-driven scope. Products that fall outside MTCDPA thresholds face federal-only baseline obligations.</div>
-        <div class="detail-item"><strong>Builder implication:</strong> Biometric-adjacent deployments in the Montana corridor should be scoped against MTCDPA sensitive data provisions where applicable, but face structurally lower exposure than in high-restriction states. Teams deploying identity infrastructure along the CANAMEX corridor should confirm whether cross-border operations trigger additional Canadian or Alberta provincial requirements.</div>
-      </div>
-    </section>
-
-    <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-      <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-      <p class="muted">Montana's public sector AI deployment environment is nascent. The state has not produced significant executive AI orders, AI-specific procurement frameworks, or sandbox programs comparable to California's CDT environment. Where AI-adjacent activity intersects with state operations, it tends to occur through federal program interfaces — infrastructure corridor funding, rural technology deployment, and energy grid programs — rather than state-originated governance structures.</p>
-      <div class="subgrid">
-        <div class="mini-box"><div class="label">Status</div><div class="value">Minimal / Emerging</div></div>
-        <div class="mini-box"><div class="label">Model</div><div class="value">Federal program interaction</div></div>
-        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Federal orientation; limited state procurement controls</div></div>
-      </div>
-      <div class="detail-list">
-        <div class="detail-item"><strong>Key anchors:</strong> No significant state executive AI orders. Federal infrastructure programs — USDA rural technology, FHWA CANAMEX corridor funding, DOE grid and energy transmission programs — represent the primary institutional interaction surfaces for corridor-adjacent public sector deployments. No dedicated state AI sandbox or CDT equivalent on record.</div>
-        <div class="detail-item"><strong>Growth signal:</strong> Public sector AI deployment in Montana, where it occurs, aligns with federal program requirements and corridor-infrastructure contexts rather than state-originated AI governance frameworks. The corridor's interaction with cross-border logistics and energy infrastructure creates a federal-facing deployment surface rather than a state-procurement-facing one.</div>
-        <div class="detail-item"><strong>Builder implication:</strong> Teams pursuing B2G opportunities within the Montana corridor should orient toward federal program requirements, CANAMEX infrastructure compliance surfaces, and cross-border coordination contexts rather than state-originated AI procurement controls. Compliance architecture should be modeled at the federal layer.</div>
-      </div>
-    </section>
-
-    <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-      <h2 id="heading-developer">Open Source / Developer Climate</h2>
-      <p class="muted">Montana's developer operating environment is shaped more by corridor-infrastructure conditions than by policy-density factors. The state offers low compliance drag relative to coastal jurisdictions, energy-cost conditions favorable for compute-intensive operations, and a regulatory posture that does not impose AI-specific developer mandates or age-assurance compliance layers. Builders operating within the Northern Rockies corridor interact with MTCDPA obligations where applicable, but face substantially lower policy friction than teams operating in high-governance environments.</p>
-      <div class="subgrid">
-        <div class="mini-box"><div class="label">Status</div><div class="value">Low Compliance Drag</div></div>
-        <div class="mini-box"><div class="label">Strength</div><div class="value">Energy access + corridor infrastructure proximity</div></div>
-        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Favorable for infrastructure-first deployment teams</div></div>
-      </div>
-      <div class="detail-list">
-        <div class="detail-item"><strong>Key anchors:</strong> MTCDPA compliance thresholds and sensitive data provisions. Digital asset legislative exemptions. No AI-specific developer mandates. No age-assurance compliance layer comparable to California's Digital Age Assurance Act. Energy cost environment favorable for compute-intensive operations.</div>
-        <div class="detail-item"><strong>Climate reading:</strong> Builders operating within the Montana corridor interact with CANAMEX-aligned north–south routing surfaces, cross-border coordination pathways with Canada, inland freight and rail continuity systems, and energy-transmission environments linking northern Rockies infrastructure layers with continental deployment corridors. The operating environment rewards infrastructure-layer deployment over policy-dense enterprise architecture.</div>
-        <div class="detail-item"><strong>Builder implication:</strong> Montana is well-suited for teams prioritizing energy-adjacent compute, routing-layer infrastructure, and digital asset operations over policy-dense enterprise markets. Teams seeking low-friction deployment environments for infrastructure-first strategies will find the corridor's compliance surface more manageable than most coastal state environments.</div>
-      </div>
-    </section>
-
-    <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-      <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-      <p class="muted">Montana is among the more structurally favorable U.S. states for energy-intensive operations. The CANAMEX corridor's I-15 spine runs through a state with below-average electricity costs, hydroelectric generation capacity, active mining operations, and a legislative posture that has explicitly protected mining activity from discriminatory local ordinances. Energy transmission and pipeline continuity environments across the northern Rockies represent a structural asset for infrastructure-layer builders.</p>
-      <div class="subgrid">
-        <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Favorable</div></div>
-        <div class="mini-box"><div class="label">Energy cost</div><div class="value">Below national average</div></div>
-        <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Strong structural appeal for mining and compute operations</div></div>
-      </div>
-      <div class="radar" aria-label="Montana energy and mining risk profile">
-        <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:15%;background:var(--green)"></div></div><div class="score">15</div></div>
-        <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:20%;background:var(--green)"></div></div><div class="score">20</div></div>
-        <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:82%;background:var(--teal)"></div></div><div class="score">82</div></div>
-      </div>
-      <div class="note">Builder implication: Montana's combination of a supportive legislative posture, below-average energy costs, active mining presence, and CANAMEX-aligned infrastructure positioning makes it a structurally attractive environment for mining, energy-intensive compute, and northern continental routing infrastructure. The corridor's cross-border energy transmission surfaces extend the deployment footprint into Canadian grid-adjacent environments.</div>
-    </section>
-
-    <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-      <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-      <p class="muted">Montana's regulatory vector is stable across most deployment-relevant layers. The MTCDPA introduces a maturing privacy enforcement surface, but the state's AI governance posture, digital asset framework, and energy infrastructure conditions are not trending toward tighter restriction. In practical terms, builders should model Montana as a structurally stable, low-friction corridor environment with a slowly maturing privacy compliance layer.</p>
-      <div class="detail-list">
-        <div class="detail-item"><strong>AI Governance</strong> — stable at low activity; no legislative momentum toward mandatory AI safety frameworks, disclosure requirements, or procurement attestation controls in the near term.</div>
-        <div class="detail-item"><strong>Crypto Regulation</strong> — stable and supportive; digital asset exemption framework is established, with no visible legislative signals toward tightening the money transmission or mining posture.</div>
-        <div class="detail-item"><strong>Privacy Enforcement</strong> — slowly maturing as MTCDPA AG enforcement practice develops and compliance precedent is established through early enforcement actions. Consumer rights obligations are real and will grow more defined over the 12-month horizon.</div>
-        <div class="detail-item"><strong>Biometric Restrictions</strong> — stable; no legislative signals toward a standalone biometric statute. MTCDPA sensitive data provisions remain the operative framework. No expansion signals from municipal-level policy environments.</div>
-        <div class="detail-item"><strong>Mining Risk</strong> — stable to improving; legislative preemption of discriminatory local ordinances reinforces the structural favorability of the Montana environment for mining-infrastructure deployments.</div>
-        <div class="detail-item"><strong>Developer Climate</strong> — stable; low compliance drag is likely to persist as the state's regulatory posture does not trend toward AI mandates, age-assurance frameworks, or significantly expanded enforcement infrastructure.</div>
-      </div>
-      <div class="callout">12-month outlook: Montana is likely to maintain its low AI governance posture, continue MTCDPA enforcement maturation under AG authority, and remain a structurally favorable environment for energy-intensive, mining-infrastructure, and CANAMEX-corridor routing deployments. Cross-border interface conditions with Canadian provinces may be shaped by federal trade and infrastructure policy developments operating above the state level.</div>
-    </section>
+    </div>
+ 
+    <h3 class="subhead">Northern plains-to-mountain transition continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Montana's retained Atlas placement preserves a <code>Northern Plains Sparse-Node Corridor</code> environment resolving into the <code>Northern Interior Completion Layer</code>.</li>
+      <li>The evidence layer records that Idaho's retained Atlas placement preserves a <code>Northern Mountain Transition Corridor</code> environment with <code>Mountain Transition Layer</code> foundation and the same <code>Northern Interior Completion Layer</code> completion.</li>
+      <li>The evidence layer records that North Dakota and South Dakota preserve the Dakota-facing northern-plains frame to the east of Montana.</li>
+      <li>The evidence layer records that the retained Atlas structure therefore supports a northern-plains-to-mountain transition reading across Montana between Dakota-facing sparse-node structure and Idaho-facing mountain-transition structure.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/north_dakota/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/south_dakota/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/idaho/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Institutional adjacency continuity across the Dakota–Wyoming–Idaho frame</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that North Dakota's retained Atlas placement preserves a northern-plains sparse-node frame adjacent to Montana.</li>
+      <li>The evidence layer records that South Dakota's retained Atlas placement preserves the same northern-plains sparse-node frame adjacent to Montana.</li>
+      <li>The evidence layer records that Wyoming's retained Atlas placement preserves a south-facing interior-western frame adjacent to Montana.</li>
+      <li>The evidence layer records that Idaho's retained Atlas placement preserves a west-facing northern-mountain transition frame adjacent to Montana.</li>
+      <li>The evidence layer records that Montana's retained position inside this adjacent-state frame supports an institutional adjacency continuity reading at the corridor layer.</li>
+      <li>The evidence layer records that under the current corridor-scope restriction, this anchor is retained only as structural adjacency continuity and is not expanded into university-system mapping, research-network inventory treatment, or statewide institutional survey treatment.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/north_dakota/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/south_dakota/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/wyoming/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/idaho/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">East-west interior continuity between Dakota-facing and Idaho-facing structure</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that North Dakota and South Dakota preserve the Dakota-facing <code>Northern Plains Sparse-Node Corridor</code> frame east of Montana.</li>
+      <li>The evidence layer records that Idaho preserves the Idaho-facing <code>Northern Mountain Transition Corridor</code> frame west of Montana.</li>
+      <li>The evidence layer records that Montana's retained Atlas placement sits between those adjacent structures as a <code>Northern Plains Sparse-Node Corridor</code> environment with <code>Northern Interior Completion Layer</code> completion.</li>
+      <li>The evidence layer records that the retained topology therefore supports an east-west interior continuity reading across Montana between Dakota-facing and Idaho-facing structure.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/north_dakota/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/south_dakota/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/idaho/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 4 evidence subsections with canonical atlas-export path citations (metadata-only adjacency references for all four adjacent states, including forward-chained adjacency references to North Dakota, South Dakota, and Idaho)</div>
+  </section>
+ 
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code>.</p>
+    <p class="muted">The signals layer records 4 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">Northern interior continuity signal</h3>
+    <p class="muted">The signals layer records that Montana shows a northern-interior-continuity signal through retained placement on the <code>Northern Interior Completion Layer</code> and visible adjacency to North Dakota, South Dakota, and Idaho.</p>
+ 
+    <h3 class="subhead">Northern plains-to-mountain transition signal</h3>
+    <p class="muted">The signals layer records that Montana shows a northern-plains-to-mountain-transition signal through retained placement between Dakota-facing sparse-node structure and Idaho-facing mountain-transition structure.</p>
+ 
+    <h3 class="subhead">Institutional adjacency signal</h3>
+    <p class="muted">The signals layer records that Montana shows an institutional-adjacency signal through retained placement across the Dakota, Wyoming, and Idaho-facing corridor frame.</p>
+ 
+    <h3 class="subhead">East-west interior continuity signal</h3>
+    <p class="muted">The signals layer records that Montana shows an east-west-interior-continuity signal through retained placement between Dakota-facing and Idaho-facing structure.</p>
+ 
+    <div class="absence-callout" style="margin-top:16px">
+      <div class="absence-label">Canonical signal-layer non-establishment</div>
+      <p>The signals layer records that the current signal set also does not independently establish north-south interior continuity between a Canada-facing northern frame and Wyoming-facing interior structure, freight or logistics continuity, rail visibility, energy-grid participation visibility, BEAD coordination visibility, inland-waterway continuity, or research participation beyond institutional adjacency.</p>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 4 signal clusters</div>
+  </section>
+ 
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from <code>signals.md</code>.</p>
+    <p class="muted">The trust-dimensions layer records that trust evaluates what kinds of stability conditions Montana can sustain given the signal layer and the visible corridor-continuity environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted">The trust-dimensions layer records that Montana currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>narrow but durable corridor coordination density across northern interior continuity, northern plains-to-mountain transition continuity, institutional adjacency continuity, and east-west interior continuity</li>
+      <li>durable northern interior continuity with visible plains-to-mountain transition structure at the corridor layer</li>
+      <li>visible institutional adjacency across the Dakota–Wyoming–Idaho frame</li>
+      <li>industrial persistence not independently established beyond corridor continuity and adjacency</li>
+      <li>research participation not independently established beyond institutional adjacency</li>
+    </ul>
+ 
+    <h3 class="subhead">Coordination density</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Narrow but durable corridor coordination density.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>northern interior continuity signal</li>
+      <li>northern plains-to-mountain transition signal</li>
+      <li>institutional adjacency signal</li>
+      <li>east-west interior continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a routing-authority model</li>
+      <li>the current package does not support coordination-tier assignment</li>
+      <li>the current package does not independently establish north-south interior continuity between a Canada-facing northern frame and Wyoming-facing interior structure, freight or logistics continuity, rail visibility, energy-grid participation visibility, or BEAD coordination visibility</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Montana shows corridor-relevant coordination density as a northern interior sparse-node environment linking Dakota-facing northern-plains structure, Idaho-facing mountain-transition structure, and Wyoming-facing interior-western structure.</p>
+ 
+    <h3 class="subhead">Infrastructure continuity</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable northern interior continuity with visible plains-to-mountain transition structure.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>northern interior continuity signal</li>
+      <li>northern plains-to-mountain transition signal</li>
+      <li>east-west interior continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not independently establish north-south interior continuity between a Canada-facing northern frame and Wyoming-facing interior structure</li>
+      <li>the current package does not independently establish freight or logistics continuity</li>
+      <li>the current package does not independently establish rail visibility</li>
+      <li>the current package does not independently establish energy-grid participation visibility or BEAD coordination visibility</li>
+      <li>the current package does not independently establish inland-waterway continuity</li>
+      <li>the current package does not expand into statewide infrastructure surveys, port inventories, terminal inventories, or tonnage datasets</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Montana shows durable corridor continuity where northern-plains structure carries toward a northern-mountain transition frame inside a shared northern interior completion environment, but the package retains that continuity only at the corridor layer.</p>
+ 
+    <h3 class="subhead">Institutional adjacency</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible Dakota–Wyoming–Idaho institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>institutional adjacency signal</li>
+      <li>northern interior continuity signal</li>
+      <li>northern plains-to-mountain transition signal</li>
+      <li>east-west interior continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally avoids university-system mapping, research-network inventory treatment, and broader institutional ranking treatment</li>
+      <li>the current trust reading does not compare Montana institutions by depth, scale, or hierarchy</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Montana shows institutional adjacency through its retained corridor position inside the Dakota-facing northern-plains frame, the Idaho-facing northern-mountain transition frame, and the Wyoming-facing interior-western frame.</p>
+ 
+    <h3 class="subhead">Industrial persistence</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond corridor continuity and adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>northern interior continuity signal</li>
+      <li>northern plains-to-mountain transition signal</li>
+      <li>east-west interior continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not independently establish freight or logistics continuity, rail visibility, port inventories, terminal inventories, tonnage datasets, or broader industrial survey treatment</li>
+      <li>the current trust reading does not support industrial ranking or manufacturing-depth claims for Montana from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Montana sits inside a corridor whose retained topology preserves northern interior continuity and plains-to-mountain transition continuity, but this package does not independently establish Montana industrial persistence beyond that adjacency-bounded corridor structure.</p>
+ 
+    <h3 class="subhead">Research participation</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>institutional adjacency signal</li>
+      <li>northern interior continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not retain a corridor-visible research anchor for Montana beyond its adjacency-bounded corridor placement</li>
+      <li>the current package intentionally avoids university-system mapping and research-network inventory treatment</li>
+      <li>the current trust reading does not support a research-hierarchy claim for Montana from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Montana sits inside a visible northern interior institutional frame, but the current retained evidence does not independently establish research participation beyond that adjacency position.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust-dimension completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — Trust interpretation summary + 5 dimension fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
+  </section>
+ 
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. The profile layer records that profile is the characterization layer of the package.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Montana currently reads within Atlas as a northern interior transition environment organized around northern interior continuity, northern plains-to-mountain transition continuity, institutional adjacency continuity, and east-west interior continuity.</p>
+ 
+    <h3 class="subhead">Profile synthesis</h3>
+    <p class="muted">The profile layer records that the current package shows:</p>
+    <ul class="evidence-bullets">
+      <li>northern interior continuity anchored in retained placement on the <code>Northern Interior Completion Layer</code> and visible adjacency to North Dakota, South Dakota, and Idaho</li>
+      <li>northern plains-to-mountain transition continuity anchored in retained placement between Dakota-facing sparse-node structure and Idaho-facing mountain-transition structure</li>
+      <li>institutional adjacency continuity anchored in retained placement across the Dakota, Wyoming, and Idaho-facing corridor frame</li>
+      <li>east-west interior continuity anchored in retained placement between Dakota-facing and Idaho-facing structure</li>
+      <li>no independent retained basis for north-south interior continuity between a Canada-facing northern frame and Wyoming-facing interior structure, freight or logistics continuity, rail visibility, energy-grid participation visibility, BEAD coordination visibility, inland-waterway continuity, digital-asset statutory posture, or research participation beyond institutional adjacency under the current corridor-bounded scope</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of Montana as a northern interior transition continuity corridor between northern-plains sparse-node structure and northern-mountain transition structure.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Montana currently reads within Atlas as a northern interior transition continuity corridor linking Dakota-facing sparse-node continuity to Idaho-facing mountain-transition continuity inside a broader northern interior frame.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + Profile synthesis + Profile synthesis statement</div>
+  </section>
+ 
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that this file provides structural interpretation only, and does not rank Montana, compare Montana to other jurisdictions, or prescribe deployment eligibility.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted">The builder-mode layer records that Montana is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a northern interior continuity environment</li>
+      <li>a northern plains-to-mountain transition environment</li>
+      <li>an institutional adjacency environment across the Dakota–Wyoming–Idaho frame</li>
+      <li>an east-west interior continuity environment between Dakota-facing and Idaho-facing structure</li>
+      <li>a narrow corridor environment rather than a standalone topology override or readiness case</li>
+    </ul>
+ 
+    <h3 class="subhead">Northern interior interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Montana reads as a northern interior continuity environment where retained placement shares <code>Northern Interior Completion Layer</code> continuity with adjacent northern-plains and northern-mountain structure without overriding atlas-controlled topology.</p>
+ 
+    <h3 class="subhead">Transition interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Montana reads as a northern plains-to-mountain transition environment where retained structure carries Dakota-facing sparse-node continuity toward Idaho-facing mountain-transition continuity.</p>
+ 
+    <h3 class="subhead">Institutional adjacency interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Montana reads as an institutional adjacency environment where retained structure preserves corridor continuity across the Dakota–Wyoming–Idaho frame without expanding into university-system mapping or research-network inventory treatment.</p>
+ 
+    <h3 class="subhead">East-west continuity interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Montana reads as an east-west interior continuity environment where retained structure preserves corridor continuity between Dakota-facing and Idaho-facing structure.</p>
+ 
+    <h3 class="subhead">Constraint interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Montana should be read narrowly. The current package does not independently establish north-south interior continuity between a Canada-facing northern frame and Wyoming-facing interior structure, freight or logistics continuity, rail visibility, energy-grid participation visibility, BEAD coordination visibility, inland-waterway continuity, digital-asset statutory posture, or any deployment or routing posture.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — Role summary + 5 interpretation subsections (including canonical Constraint interpretation)</div>
+  </section>
+ 
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, builder-mode, and change-log layers. The canonical Montana structural exclusions set uses the shortened canonical formulation — focused on survey/inventory/mapping-type exclusions — and is preserved verbatim from each canonical layer.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the retained corridor-visible evidence collected there, this file does not support characterizing Montana as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a routing-authority jurisdiction</li>
+      <li>a coordination-tier jurisdiction</li>
+      <li>a deployment-readiness jurisdiction</li>
+      <li>a surface-assigned jurisdiction</li>
+      <li>a statewide infrastructure-survey case</li>
+      <li>a statewide freight-survey case</li>
+      <li>a port-inventory or terminal-inventory case</li>
+      <li>a municipal-inventory case</li>
+      <li>a university-system mapping case</li>
+      <li>a research-network inventory case</li>
+      <li>an engineering-sector survey case</li>
+      <li>an AI compute corridor</li>
+      <li>a hyperscale designation</li>
+      <li>a jurisdiction-ranking case</li>
+      <li>a digital-asset statutory jurisdiction</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based on the currently derived signals, this file does not support characterizing Montana as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, a surface-eligibility determination, a jurisdiction-ranking claim, an AI compute corridor, a hyperscale designation, a statewide infrastructure-survey case, a statewide freight-survey case, a port-inventory or terminal-inventory case, or a digital-asset statutory jurisdiction. The signals layer records that the current signal set also does not independently establish north-south interior continuity between a Canada-facing northern frame and Wyoming-facing interior structure, freight or logistics continuity, rail visibility, energy-grid participation visibility, BEAD coordination visibility, inland-waterway continuity, or research participation beyond institutional adjacency.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that this file does not support interpreting Montana as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale designation, or a digital-asset statutory jurisdiction. The trust-dimensions layer records that it should be read as trust interpretation of Montana's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Montana's profile should not be read as: a routing-authority assignment, a coordination-tier assignment, a deployment-readiness classification, an Atlas surface-eligibility determination, a jurisdiction ranking claim, an AI compute corridor claim, a hyperscale designation, a digital-asset statutory jurisdiction claim, or a topology reassignment of atlas-controlled metadata.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not support interpreting Montana as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale designation, or a digital-asset statutory jurisdiction. The builder-mode layer records that it should be read as builder-facing interpretation of Montana's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale designation, digital-asset statutory designation, or local reassignment of atlas-controlled Montana topology metadata.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions (canonical shortened exclusions set)</div>
+  </section>
+ 
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical Montana evidence layer contains a native "Evidence gaps" subsection.</p>
+ 
+    <h3 class="subhead">Evidence gaps from the evidence layer</h3>
+    <div class="absence-callout">
+      <div class="absence-label">The evidence layer records</div>
+      <p>The current adjacency-bounded Atlas structure does not independently establish the following Montana anchors for retention in this package:</p>
+      <ul class="mini" style="color:var(--muted);margin-top:6px">
+        <li>north-south interior continuity between a Canada-facing northern frame and Wyoming-facing interior structure</li>
+        <li>freight or logistics continuity</li>
+        <li>rail visibility</li>
+        <li>energy-grid participation visibility</li>
+        <li>BEAD coordination visibility</li>
+        <li>inland-waterway continuity</li>
+        <li>digital-asset statutory posture</li>
+        <li>independent research participation anchors beyond institutional adjacency</li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Scope constraints applied during population</h3>
+    <div class="scope-block">
+      <div class="scope-label">The change-log records the following scope constraints applied during evidence-first package population:</div>
+      <ul>
+        <li>adjacent-state corridor continuity only</li>
+        <li>no open infrastructure research</li>
+        <li>corridor-layer anchors only</li>
+        <li>no statewide infrastructure survey or statewide freight survey</li>
+        <li>no municipal inventories, university-system mapping, research-network inventory, or engineering-sector survey</li>
+        <li>no port inventories, terminal inventories, tonnage datasets, or statewide logistics rankings</li>
+        <li>no energy-grid, BEAD, inland-waterway, or digital-asset statutory inference without retained corridor visibility</li>
+        <li>no routing-authority, coordination-tier, readiness, ranking, or surface assignment inference</li>
+        <li>no local override of atlas-controlled topology metadata</li>
+      </ul>
+    </div>
+ 
+    <p class="muted" style="margin-top:12px">The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, corridor-scope constraints applied throughout package construction, downstream layers derived strictly from corridor-limited evidence, surface assignment remains none.</p>
+    <div class="src">Source: evidence.md — Evidence gaps; change-log.md — 2026-04-18 evidence-first package population (Scope constraints applied)</div>
+  </section>
+ 
+  <!-- ── 10. CHANGE-LOG NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, Topology Completion Layer, and Jurisdiction lens. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">2026-04-18 evidence-first package population</h3>
+    <p class="muted">The change-log records that the Montana state package was populated in topology-normalized order as a numbered canonical sequence: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md, change-log.md. The change-log records that scope constraints were applied during population (rendered in Section 9 above). The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, corridor-scope constraints applied throughout package construction, downstream layers derived strictly from corridor-limited evidence, and surface assignment remains none.</p>
+ 
+    <h3 class="subhead">Structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale designation, digital-asset statutory designation, or local reassignment of atlas-controlled Montana topology metadata.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
+  </section>
+ 
+</div><!-- /main col -->
+ 
+<!-- ── SIDEBAR ── -->
+<aside>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Montana jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/montana/</code></p>
   </div>
-
-  <aside>
-    <div class="card" aria-labelledby="heading-sidebar-summary">
-      <div class="smallcaps">Snapshot</div>
-      <h3 id="heading-sidebar-summary">Montana at a glance</h3>
-      <p class="muted mini">Best used as an energy-adjacent, corridor-infrastructure, and digital asset deployment environment. Montana's Northern Rockies Energy, Cross-Border &amp; Continental Routing Corridor identity positions it as a low-friction operating surface for mining, CANAMEX-aligned routing operations, and cross-border continuity systems linking Mountain West environments with Canada-facing infrastructure layers.</p>
-    </div>
-
-    <div class="card" aria-labelledby="heading-builder-summary">
-      <div class="smallcaps">Builder Summary</div>
-      <h3 id="heading-builder-summary">Recommended read</h3>
-      <p class="muted mini"><strong>Best for:</strong> mining and energy-intensive compute infrastructure, CANAMEX routing-aligned deployments, digital asset node and infrastructure operations, low-compliance-drag deployment environments, cross-border continuity systems interfacing with Canadian provinces.</p>
-      <p class="muted mini"><strong>Less ideal for:</strong> policy-dense B2G markets requiring state-originated procurement compliance, frontier AI safety governance alignment work, high-governance consumer product architectures requiring CPPA-style enforcement readiness.</p>
-    </div>
-
-    <div class="card" aria-labelledby="heading-compliance-dates">
-      <div class="smallcaps">Key Dates</div>
-      <h3 id="heading-compliance-dates">Timeline markers</h3>
-      <ul class="mini">
-        <li><strong>2023</strong> — SB 178 virtual currency money transmission exemption enacted; HB 429 digital asset property rights protections enacted; MTCDPA (SB 384) signed into law.</li>
-        <li><strong>Oct 2024</strong> — MTCDPA effective; consumer data privacy rights enforceable; sensitive data consent requirements operative.</li>
-        <li><strong>Ongoing</strong> — CANAMEX corridor federal funding cycles and I-15 infrastructure alignment investments; cross-border coordination interface conditions subject to federal trade and infrastructure policy developments.</li>
-      </ul>
-    </div>
-
-    <div class="card" aria-labelledby="heading-maintenance">
-      <div class="smallcaps">Page Maintenance</div>
-      <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
-      <ul class="mini">
-        <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-        <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-        <li>Update this page only after the underlying package files are updated.</li>
-        <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
-      </ul>
-    </div>
-
-    <div class="card" aria-labelledby="heading-standardization">
-      <div class="smallcaps">Canonical Pattern</div>
-      <h3 id="heading-standardization">For all 50 states</h3>
-      <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
-    </div>
-  </aside>
-</div>
-
+ 
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
+    <ul class="mini">
+      <li><strong>Jurisdiction:</strong> Montana</li>
+      <li><strong>Code:</strong> MT · US-MT</li>
+      <li><strong>Lens:</strong> Northern plains sparse-node continuity within northern interior completion</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> corridor-layer sufficient</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
+    <ul class="mini">
+      <li><strong>Corridor Group:</strong> Northern Plains Sparse-Node Corridor</li>
+      <li><strong>Foundation Layer:</strong> Northern Plains Sparse-Node Layer</li>
+      <li><strong>Completion Layer:</strong> Northern Interior Completion Layer</li>
+      <li><strong>Jurisdiction Lens:</strong> Northern plains sparse-node continuity within northern interior completion</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived exclusively from the three atlas-controlled fields.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-cluster">
+    <div class="smallcaps">Canonical Sparse-Node Cluster</div>
+    <h3 id="heading-sidebar-cluster">Three-state Corridor cluster</h3>
+    <p class="muted mini">Montana, North Dakota, and South Dakota are canonical siblings in the Northern Plains Sparse-Node Corridor, sharing both the Northern Plains Sparse-Node Layer foundation and the Northern Interior Completion Layer completion. This is a canonical three-state Corridor Group cluster.</p>
+    <p class="muted mini" style="margin-top:8px">Idaho is a Completion Layer sibling via its Northern Mountain Transition Corridor (which uses the Mountain Transition Layer as foundation but resolves into the same Northern Interior Completion Layer). The canonical package retains this shared-completion adjacency anchor.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-non-collapse">
+    <div class="smallcaps">Canonical Non-Collapse Topology</div>
+    <h3 id="heading-sidebar-non-collapse">Foundation ≠ Completion</h3>
+    <p class="muted mini">Montana's canonical Foundation Layer and Completion Layer are distinct. The Foundation Layer is the Northern Plains Sparse-Node Layer — shared with the three-state Corridor cluster. The Completion Layer is the Northern Interior Completion Layer — shared with Idaho in the broader northern interior frame.</p>
+    <p class="muted mini" style="margin-top:8px">The canonical Jurisdiction Lens uses "within" — reflecting that Montana's sparse-node Foundation resolves into the broader Northern Interior Completion Layer. Both layers sit within the same Northern regional family, and Montana's canonical position remains inside the northern interior frame across foundation and completion.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-archetype">
+    <div class="smallcaps">Canonical Archetype</div>
+    <h3 id="heading-sidebar-archetype">Adjacency-bounded package</h3>
+    <p class="muted mini">Montana is a corridor-layer sufficient state whose evidence is explicitly retained from <em>adjacent-state continuity</em> rather than independently state-sourced research. The change-log records the canonical scope constraints "adjacent-state corridor continuity only" and "no open infrastructure research".</p>
+    <p class="muted mini" style="margin-top:8px">Canonical sources are atlas-export internal topology references and adjacent-state metadata-layer files (North Dakota, South Dakota, Wyoming, Idaho), not state-agency URLs. Montana's canonical adjacency citations are exclusively metadata-level.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Evidence anchors</div>
+    <h3 id="heading-sidebar-coverage">Retained from adjacency</h3>
+    <ul class="mini muted">
+      <li>Northern interior continuity</li>
+      <li>Northern plains-to-mountain transition continuity</li>
+      <li>Institutional adjacency continuity across the Dakota–Wyoming–Idaho frame</li>
+      <li>East-west interior continuity between Dakota-facing and Idaho-facing structure</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical adjacency references:</p>
+    <ul class="mini muted">
+      <li>North Dakota (Northern Plains Sparse-Node Corridor sibling, east-facing)</li>
+      <li>South Dakota (Northern Plains Sparse-Node Corridor sibling, east-facing)</li>
+      <li>Wyoming (Interior Western Statutory Flex Corridor, south-facing)</li>
+      <li>Idaho (Northern Mountain Transition Corridor, west-facing, Completion Layer sibling)</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-non-establishment">
+    <div class="smallcaps">Canonical Non-Establishment</div>
+    <h3 id="heading-sidebar-non-establishment">What the package does not establish</h3>
+    <p class="muted mini">The evidence layer explicitly records that the current package does not independently establish:</p>
+    <ul class="mini muted" style="margin-top:6px">
+      <li>north-south interior continuity between a Canada-facing northern frame and Wyoming-facing interior structure</li>
+      <li>freight or logistics continuity</li>
+      <li>rail visibility</li>
+      <li>energy-grid participation visibility</li>
+      <li>BEAD coordination visibility</li>
+      <li>inland-waterway continuity</li>
+      <li>digital-asset statutory posture</li>
+      <li>independent research participation anchors beyond institutional adjacency</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">The first non-established anchor references a Canada-facing northern frame. This is a canonical acknowledgement that Montana's northern boundary is not independently established as a corridor-continuity anchor within the current package — the canonical framing remains east-west (Dakota-to-Idaho) rather than north-south.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-scope">
+    <div class="smallcaps">Canonical scope</div>
+    <h3 id="heading-sidebar-scope">Corridor-layer sufficient</h3>
+    <p class="muted mini">The change-log records that the Montana package is explicitly scope-narrowed to adjacent-state corridor continuity only. All downstream layer completeness statuses are canonically recorded as "corridor-layer sufficient" rather than "preliminary".</p>
+    <p class="muted mini">This is a distinct canonical neutrality category: the package is not incomplete — it is canonically declared complete at corridor scope, with broader scope deliberately excluded.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: corridor-layer sufficient</li>
+      <li>Signal layer: corridor-layer sufficient</li>
+      <li>Trust dimensions: corridor-layer sufficient</li>
+      <li>Profile: corridor-layer sufficient</li>
+      <li>Builder-mode: corridor-layer sufficient</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale or AI compute corridor designation.</li>
+      <li>Not a local reassignment of atlas-controlled topology metadata.</li>
+      <li>Not a digital-asset statutory jurisdiction designation.</li>
+    </ul>
+  </div>
+ 
+</aside>
+</div><!-- /grid-sidebar -->
+ 
 </main>
-
+ 
 <div class="wrap reflection footer-block">
 <hr />
 <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
