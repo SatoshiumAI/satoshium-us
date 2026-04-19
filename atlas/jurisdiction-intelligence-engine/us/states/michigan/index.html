@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Michigan — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Michigan operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Michigan Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/michigan/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,34 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +168,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +184,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Michigan</h1>
-    <p class="kicker">Michigan operates as a Great Lakes Industrial &amp; Cross-Border Infrastructure Corridor supporting freshwater shipping continuity, automotive-aligned manufacturing coordination layers, and U.S.–Canada logistics interfaces across the northern Great Lakes institutional trust surface of the United States.</p>
+    <p class="kicker">This page renders the canonical Michigan Atlas jurisdiction package. The canonical package positions Michigan within the Great Lakes Industrial Core Corridor, with structural coverage across multimodal infrastructure continuity, cross-border logistics interface, automotive-industrial continuity, grid- and transmission-participation, and Great Lakes regional-corridor integration.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">MI · US-MI</div>
-      <div class="hero-chip">Lansing</div>
-      <div class="hero-chip">Great Lakes Industrial &amp; Cross-Border Infrastructure Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Michigan quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Developing / Moderate</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Moderate / Emerging</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Limited / Federal Reliance</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Moderate Concern</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Industrial Corridor / Cross-Border Ready</div></div>
+      <div class="hero-chip">Jurisdiction: Michigan (MI · US-MI)</div>
+      <div class="hero-chip">Jurisdiction lens</div>
+      <div class="hero-chip">Completeness: preliminary</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Great Lakes Industrial Core sibling</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,212 +218,525 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Michigan operates as the Great Lakes Industrial &amp; Cross-Border Infrastructure Corridor within the US institutional trust surface. Teams interacting across this corridor interface with freshwater shipping continuity systems, automotive-aligned manufacturing coordination layers, and cross-border logistics interfaces with Canadian institutional surfaces. The governance posture is structurally oriented toward industrial infrastructure coordination, with AI, privacy, and digital asset policy layers in an earlier formation phase than coastal governance corridors.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>AI Policy</strong></div><span class="pill yellow">Developing · Moderate</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill teal">Moderate / Emerging</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Privacy / Data</strong></div><span class="pill yellow">Limited · Federal Reliance</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Biometrics</strong></div><span class="pill yellow">Moderate Concern</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Public Sector AI</strong></div><span class="pill blue">Emerging</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Industrial Corridor / Cross-Border Ready</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Great Lakes Industrial Core Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Michigan operates as a cross-border industrial infrastructure and freshwater logistics corridor. Teams deploying within Great Lakes shipping surfaces, automotive-aligned manufacturing coordination, or northern-tier compute deployment pathways interact with a materially lower state-level regulatory friction environment than Pacific or Atlantic coastal formation zones. Operations requiring low-compliance-overhead entry surfaces benefit from Michigan's still-forming AI and privacy policy layers.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Great Lakes Industrial Core Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Great Lakes Completion Layer</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from atlas.md and records Atlas corridor-topology placement only.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/michigan/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Great Lakes Industrial &amp; Cross-Border Infrastructure Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this document is descriptive only. The evidence layer records that it does not assign rankings, comparisons, predictions, optimization logic, registry inference, or lifecycle interpretation.</p>
+    <p class="muted">This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, leadership positioning, or deployment prescription beyond what the canonical files explicitly record. Surface assignment remains unset. No routing role is assigned.</p>
+    <div class="src">Source: evidence.md — Structural Exclusions</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 5 evidence subsections documenting Michigan's structural characteristics across corridor position, infrastructure, energy routing, institutional coordination, and governance posture.</p>
+ 
+    <h3 class="subhead">Corridor Position</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Michigan is normalized within the Atlas <strong>Great Lakes Industrial Core Corridor</strong>, with placement inside the <strong>Great Lakes Industrial Core Layer</strong> and attachment to the <strong>Great Lakes Completion Layer</strong>.</li>
+      <li>The evidence layer records that its corridor position is structurally expressed through the Great Lakes maritime logistics system, the Upper Midwest manufacturing belt, the Detroit–Windsor cross-border interface corridor, and the Chicago–Toronto industrial linkage spine.</li>
+      <li>The evidence layer records that this placement reflects corridor classification and multimodal continuity only. It does not rank Michigan economically or assign routing status.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/michigan/</div>
+ 
+    <h3 class="subhead">Infrastructure Signals</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Michigan presents clear interstate freight-corridor continuity linking Great Lakes shoreline nodes, cross-border interface points, and inland manufacturing geography.</li>
+      <li>The evidence layer records that rail freight integration is structurally present through statewide connections tying automotive-industrial districts, cross-border freight interfaces, and Great Lakes port access into the broader Upper Midwest network.</li>
+      <li>The evidence layer records that inland port and Great Lakes shipping access are structurally present through Michigan's direct frontage on the Great Lakes system and its integration with lakeborne freight continuity.</li>
+      <li>The evidence layer records that bridge and tunnel cross-border logistics nodes are structurally present through the Detroit–Windsor interface and other Ontario-facing freight-crossing adjacencies.</li>
+      <li>The evidence layer records that automotive manufacturing transport networks are structurally present through the southeast Michigan industrial belt and its integration with interstate, rail, and cross-border freight systems.</li>
+      <li>The evidence layer records that regional airport freight structure is present through cargo-capable airport infrastructure serving industrial, manufacturing, and time-sensitive logistics flows.</li>
+      <li>The evidence layer records that this section records topology role only and does not provide a facility-by-facility inventory.</li>
+    </ul>
+ 
+    <h3 class="subhead">Energy Routing Signals</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that petroleum product transport-corridor presence is structurally visible through Michigan's role in Great Lakes industrial distribution geography and its connection to Midwest fuel-handling continuity.</li>
+      <li>The evidence layer records that Michigan occupies a structural electricity-interconnection role within the Midwest grid environment, with shoreline and industrial-load positioning relevant to regional transmission continuity.</li>
+      <li>The evidence layer records that Great Lakes energy-interface positioning is structurally present through shoreline access, industrial demand concentration, and multimodal fuel and power adjacency.</li>
+      <li>The evidence layer records that cross-border transmission adjacency is structurally present at the Ontario-facing interface.</li>
+      <li>The evidence layer records that this section identifies corridor-level energy routing signals only and does not map pipelines, facilities, or transmission paths in detail.</li>
+    </ul>
+ 
+    <h3 class="subhead">Institutional Coordination Signals</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that binational logistics coordination relevance is structurally present because Michigan contains a major U.S.–Canada freight interface within the Great Lakes industrial system.</li>
+      <li>The evidence layer records that regional manufacturing governance participation is structurally present through Michigan's place in the Upper Midwest automotive and industrial supply-chain corridor.</li>
+      <li>The evidence layer records that Great Lakes infrastructure planning alignment is structurally present through maritime, port, border, and inland-freight coordination relevance.</li>
+      <li>The evidence layer records that interstate freight cooperation structure is visible through adjacency alignment with Illinois, Wisconsin, and Ohio inside the Great Lakes industrial corridor.</li>
+      <li>The evidence layer records that these signals indicate coordination relevance only and do not interpret authority relationships.</li>
+    </ul>
+ 
+    <h3 class="subhead">Governance Posture Signals</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Michigan's governance posture is structurally shaped by the need to steward industrial-corridor continuity across highway, rail, maritime, and cross-border infrastructure layers.</li>
+      <li>The evidence layer records that transportation-network stewardship is a visible structural feature because statewide corridor continuity depends on multimodal maintenance across lake-facing, border-facing, and inland manufacturing systems.</li>
+      <li>The evidence layer records that cross-border infrastructure interface posture is structurally relevant because Michigan contains persistent binational freight and mobility interfaces within the Great Lakes corridor.</li>
+      <li>The evidence layer records that regional logistics stability relevance is structurally present through Michigan's role in connecting manufacturing, freight, and maritime systems across the Upper Midwest and Ontario-facing interface zone.</li>
+      <li>The evidence layer records that these signals are descriptive only and do not evaluate policy quality, institutional effectiveness, or readiness posture.</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 5 evidence subsections (Corridor Position, Infrastructure Signals, Energy Routing Signals, Institutional Coordination Signals, Governance Posture Signals)</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Michigan's AI governance surface is in a formation phase. No comprehensive AI legislation has been enacted as of 2026. Executive guidance instruments are shaping responsible AI use across state operations, and an advisory council is developing structural recommendations. The corridor's AI posture currently defers substantially to federal frameworks, producing a lower state-level compliance overhead than Pacific or Atlantic coastal formation zones.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing · Moderate</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Executive guidance + advisory formation</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower regulatory friction; surface developing</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Michigan Artificial Intelligence Advisory Council (executive formation), State CIO responsible AI guidance, emerging procurement alignment signals. No TFAIA-equivalent statute enacted as of 2026.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> No standalone state AI enforcement mechanism as of 2026. Federal AI policy instruments apply across this corridor. State procurement guidance operates in an advisory capacity.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Teams deploying AI within Michigan's corridor currently interact with a lower state-level regulatory friction surface than coastal governance corridors. Advisory council outputs are expected to condition the legislative surface through the 2026–2028 cycle, and teams should monitor for transition from advisory posture to statutory action.</div>
-    </div>
-    <div class="note">Operational signal: Michigan's AI governance surface is in active formation. The corridor offers lower immediate compliance overhead than coastal formation zones, but the advisory formation trajectory signals continued governance development ahead of the 2027–2028 legislative cycle.</div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md. The signals layer records that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted">The signals layer records 6 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">Great Lakes maritime continuity signal</h3>
+    <p class="muted">The signals layer records that Michigan shows a Great-Lakes-maritime-continuity signal through evidence-layer visibility of direct Great Lakes frontage, inland port and shipping access, and lakeborne freight continuity within the Great Lakes system.</p>
+ 
+    <h3 class="subhead">Cross-border logistics interface signal</h3>
+    <p class="muted">The signals layer records that Michigan shows a cross-border-logistics-interface signal through evidence-layer visibility of the Detroit–Windsor interface, bridge and tunnel freight-crossing structure, Ontario-facing logistics adjacency, and binational coordination relevance.</p>
+ 
+    <h3 class="subhead">Interstate freight corridor visibility signal</h3>
+    <p class="muted">The signals layer records that Michigan shows an interstate-freight-corridor-visibility signal through evidence-layer visibility of highway freight continuity linking shoreline nodes, cross-border interface points, and inland manufacturing geography.</p>
+ 
+    <h3 class="subhead">Rail-network integration signal</h3>
+    <p class="muted">The signals layer records that Michigan shows a rail-network-integration signal through evidence-layer visibility of statewide rail freight connections linking automotive-industrial districts, cross-border freight interfaces, and Great Lakes port access into the broader Upper Midwest network.</p>
+ 
+    <h3 class="subhead">Automotive manufacturing continuity signal</h3>
+    <p class="muted">The signals layer records that Michigan shows an automotive-manufacturing-continuity signal through evidence-layer visibility of the southeast Michigan industrial belt, automotive transport-network integration, and regional manufacturing-governance participation inside the Upper Midwest industrial supply-chain corridor.</p>
+ 
+    <h3 class="subhead">Energy grid and transmission participation signal</h3>
+    <p class="muted">The signals layer records that Michigan shows an energy-grid-and-transmission-participation signal through evidence-layer visibility of petroleum transport-corridor presence, Midwest electricity-interconnection role, Great Lakes energy-interface positioning, and Ontario-facing transmission adjacency.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 6 signal clusters</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Michigan's digital asset regulatory surface is administered through the Department of Insurance and Financial Services (DIFS) under the existing Money Transmission Act framework. No California-equivalent specialized digital asset licensing law has been enacted, producing a moderate-friction environment relative to DFAL-constrained corridors. Legislative interest in Bitcoin as a reserve asset has surfaced within the state senate, indicating an institutional-grade positioning trajectory rather than a restriction orientation.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate / Emerging</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">DIFS (Money Transmission Act)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Moderate compliance surface; no specialized crypto overlay</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Michigan Money Transmission Act, DIFS licensing framework, Bitcoin reserve legislative interest (state senate), federal AML/BSA pass-through obligations. No DFAL-equivalent enacted as of 2026.</div>
-      <div class="detail-item"><strong>Positive signal:</strong> Michigan has not deployed California-equivalent digital asset licensing overhead. The Bitcoin reserve legislative interest indicates a directional institutional-grade positioning orientation rather than a restriction trajectory.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Custodians, exchanges, and digital asset operators deploying within Michigan currently navigate a standard money transmission licensing framework with federal AML/BSA overlay. The absence of a state-specific crypto licensing layer produces a more accessible entry surface than California or New York equivalents.</div>
-    </div>
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md. The trust-dimensions layer records that absence of signals reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted">The trust-dimensions layer records that this file interprets structural trust posture only. It does not assign routing eligibility, registry readiness, certification posture, deployment suitability, or Atlas surfaces.</p>
+ 
+    <h3 class="subhead">Infrastructure continuity dimension</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Michigan shows stable multimodal infrastructure continuity at the corridor level.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Great Lakes maritime continuity signal</li>
+      <li>interstate freight corridor visibility signal</li>
+      <li>rail-network integration signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide facility-by-facility port or inland-waterway coverage</li>
+      <li>the current signal layer does not provide route-by-route interstate treatment</li>
+      <li>the current signal layer does not provide carrier-by-carrier or terminal-by-terminal rail treatment</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Michigan supports a stable infrastructure-continuity reading across highway, rail, and maritime layers, with stronger visibility at the corridor level than at full statewide inventory depth.</p>
+ 
+    <h3 class="subhead">Cross-border coordination dimension</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Michigan shows stable cross-border coordination continuity centered on a persistent binational freight interface.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>cross-border logistics interface signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide crossing-by-crossing operational treatment beyond Detroit–Windsor and Ontario-facing interface visibility</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Michigan supports a stable binational-interface reading within the Great Lakes corridor, while operational depth across all cross-border nodes remains incomplete.</p>
+ 
+    <h3 class="subhead">Industrial base continuity dimension</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Michigan shows stable automotive-industrial continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>automotive manufacturing continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a fuller statewide manufacturing-subsector inventory beyond automotive-industrial continuity and general manufacturing-governance relevance</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Michigan supports a durable industrial-base-continuity reading where automotive manufacturing remains visibly integrated with freight and cross-border logistics structure.</p>
+ 
+    <h3 class="subhead">Energy coordination dimension</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Michigan shows stable energy-coordination continuity at the grid and transmission level.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>energy grid and transmission participation signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide plant-by-plant generation inventory</li>
+      <li>the current signal layer does not provide grid-operator mapping beyond the broader interconnection and transmission reading</li>
+      <li>the current signal layer does not support a distinct nuclear-generation continuity interpretation</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Michigan supports a stable energy-coordination reading through visible grid participation, transmission adjacency, and corridor-level fuel-routing relevance, while deeper generation detail remains incomplete.</p>
+ 
+    <h3 class="subhead">Regional corridor integration dimension</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Michigan shows stable Great Lakes regional-corridor integration.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Great Lakes maritime continuity signal</li>
+      <li>cross-border logistics interface signal</li>
+      <li>interstate freight corridor visibility signal</li>
+      <li>rail-network integration signal</li>
+      <li>automotive manufacturing continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer is stronger on Great Lakes industrial-corridor continuity than on a complete statewide node-by-node comparison</li>
+      <li>the current signal layer does not support corridor-leadership or hierarchy interpretation</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Michigan supports a stable Great Lakes industrial-corridor integration reading through the combined visibility of maritime participation, cross-border freight interface, rail and interstate continuity, and automotive-industrial linkage.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust dimension completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — 5 dimension fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Michigan has not enacted a comprehensive state consumer privacy law as of 2026. Data protection obligations for operators within this corridor derive principally from federal frameworks and Michigan's data breach notification statute. The absence of a CPRA-equivalent positions Michigan as a significantly lower state-level privacy compliance surface. Comprehensive privacy legislation has been introduced in prior legislative sessions, and the 2026–2027 cycle represents a watch surface for potential advancement.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Limited · Federal Reliance</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">Breach notification + federal pass-throughs</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower state-level overhead; federal frameworks apply</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Michigan Identity Theft Protection Act (MCL 445.63 et seq.), data breach notification requirements, federal GLBA, HIPAA, and COPPA pass-through obligations. No CPPA-equivalent enforcement agency established as of 2026.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> No dedicated state privacy enforcement agency. State Attorney General enforcement addresses breach notification; federal regulators hold primary authority across sector-specific privacy regimes. Penalty exposure derives from federal frameworks and AG breach actions.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Teams operating within Michigan's privacy surface interact with a materially lower state-level compliance overhead than CCPA/CPRA corridors. Operators should structure for federal compliance pass-throughs and monitor the state legislative pipeline for comprehensive privacy bill advancement in the 2026–2027 session.</div>
-    </div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md. The profile layer records that this file records the normalized Michigan jurisdiction profile inside the Atlas state package, and that it does not assign routing eligibility, registry readiness, certification posture, deployment suitability, corridor leadership, or Atlas surfaces.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Michigan currently presents within Atlas as:</p>
+    <ul class="evidence-bullets">
+      <li>a Great Lakes industrial-maritime corridor jurisdiction positioned within the Great Lakes Industrial Core Corridor, the Great Lakes Industrial Core Layer, and the Great Lakes Completion Layer</li>
+      <li>a multimodal infrastructure environment with visible maritime participation, interstate freight continuity, and rail-network integration</li>
+      <li>a binational logistics-interface environment centered on persistent Ontario-facing freight continuity</li>
+      <li>an automotive-industrial continuity environment integrated with Upper Midwest manufacturing structure</li>
+      <li>a grid- and transmission-participation environment with Great Lakes energy-interface relevance</li>
+      <li>a Great Lakes regional-corridor environment with stable cross-border, maritime, and industrial linkage visibility</li>
+    </ul>
+ 
+    <h3 class="subhead">Infrastructure role</h3>
+    <p class="muted">The profile layer records that Michigan's infrastructure role is characterized in the current package by corridor-level continuity across maritime, interstate, and rail systems. The current package shows Great Lakes maritime continuity signal through direct Great Lakes frontage, inland port and shipping access, and lakeborne freight continuity; interstate freight corridor visibility signal through highway continuity linking shoreline nodes, cross-border interface points, and inland manufacturing geography; rail-network integration signal through statewide freight connections linking automotive-industrial districts, cross-border freight interfaces, and Great Lakes port access; and trust interpretation describing stable multimodal infrastructure continuity at the corridor level. These conditions support a structural characterization centered on multimodal corridor continuity rather than a full statewide facility inventory.</p>
+ 
+    <h3 class="subhead">Cross-border coordination role</h3>
+    <p class="muted">The profile layer records that Michigan's cross-border coordination role is characterized in the current package by a persistent binational freight interface. The current package shows cross-border logistics interface signal through the Detroit–Windsor interface, bridge and tunnel freight-crossing structure, Ontario-facing logistics adjacency, and binational coordination relevance; and trust interpretation describing stable cross-border coordination continuity within the Great Lakes corridor. These conditions support a structural characterization centered on binational logistics-interface continuity rather than on crossing-by-crossing operational treatment.</p>
+ 
+    <h3 class="subhead">Industrial base role</h3>
+    <p class="muted">The profile layer records that Michigan's industrial-base role is characterized in the current package by automotive-manufacturing continuity. The current package shows automotive manufacturing continuity signal through the southeast Michigan industrial belt, automotive transport-network integration, and regional manufacturing-governance participation inside the Upper Midwest industrial supply-chain corridor; and trust interpretation describing stable automotive-industrial continuity. These conditions support a structural characterization centered on automotive-industrial continuity rather than on a complete statewide manufacturing-subsector inventory.</p>
+ 
+    <h3 class="subhead">Energy coordination role</h3>
+    <p class="muted">The profile layer records that Michigan's energy-coordination role is characterized in the current package by grid and transmission participation. The current package shows energy grid and transmission participation signal through petroleum transport-corridor presence, Midwest electricity-interconnection role, Great Lakes energy-interface positioning, and Ontario-facing transmission adjacency; and trust interpretation describing stable energy-coordination continuity at the grid and transmission level. These conditions support a structural characterization centered on grid and transmission participation rather than on a plant-by-plant generation map.</p>
+ 
+    <h3 class="subhead">Regional corridor positioning</h3>
+    <p class="muted">The profile layer records that Michigan's regional corridor positioning is characterized in the current package by stable Great Lakes industrial-corridor integration. The current package shows trust interpretation describing stable Great Lakes regional-corridor integration; supporting visibility across maritime participation, cross-border freight interface, interstate continuity, rail-network integration, and automotive-industrial linkage; and evidence-layer corridor placement expressed through the Great Lakes maritime logistics system, the Upper Midwest manufacturing belt, the Detroit–Windsor interface corridor, and the Chicago–Toronto industrial linkage spine. These conditions support a structural characterization centered on Great Lakes corridor integration rather than on corridor hierarchy or leadership claims.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + 5 role subsections</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Michigan's biometric regulatory surface reflects incomplete statutory coverage relative to Illinois BIPA and Texas CUBI equivalents. No standalone statewide biometrics protection statute has been enacted as of 2026. Detroit's documented use of facial recognition technology in law enforcement contexts has generated a significant public policy debate, creating a politically sensitized surface that may condition legislative action in the 2026–2027 cycle.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate Concern · Developing</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Surveillance-sensitive / Politically active</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Statutory gap exists; political surface is sensitive</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> No statewide biometrics statute as of 2026; Detroit law enforcement facial recognition controversy; state Attorney General data protection guidance; federal biometric considerations under extraterritorial CCPA surfaces for qualifying operators.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> The statutory gap creates compliance ambiguity without immediate penalty exposure comparable to BIPA. The politically sensitized law enforcement facial recognition debate suggests the legislative surface may activate sooner than the general privacy framework trajectory.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Products deploying biometric identification or facial recognition within Michigan's corridor operate without specific statewide statutory exposure as of 2026, but should monitor closely given the law enforcement FRT debate's capacity to condition near-term legislative action, particularly in identity verification, behavioral monitoring, and public-sector adjacent deployment surfaces.</div>
-    </div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that this file provides builder-facing structural interpretation only, and that it does not assign routing eligibility, registry readiness, certification posture, deployment suitability, corridor leadership, or Atlas surfaces.</p>
+ 
+    <h3 class="subhead">Infrastructure builder posture</h3>
+    <p class="muted">The builder-mode layer records that builders should read Michigan as a corridor-level multimodal environment where Great Lakes maritime continuity, interstate freight visibility, and rail integration are the clearest infrastructure participation conditions. This interpretation is supported by the Great Lakes maritime continuity signal, the interstate freight corridor visibility signal, the rail-network integration signal, the profile characterization of Michigan as a multimodal infrastructure environment with maritime, interstate, and rail continuity, and the trust interpretation that multimodal infrastructure continuity is stable at the corridor level. The builder-mode layer records that builder interpretation should remain anchored in corridor continuity rather than a full statewide facility inventory.</p>
+ 
+    <h3 class="subhead">Cross-border coordination builder posture</h3>
+    <p class="muted">The builder-mode layer records that builders should read Michigan as a binational-interface environment where Detroit–Windsor and Ontario-facing freight continuity provide the clearest cross-border coordination posture. This interpretation is supported by the cross-border logistics interface signal, the profile characterization of Michigan as a binational logistics-interface environment, and the trust interpretation that cross-border coordination continuity is stable within the Great Lakes corridor. The builder-mode layer records that builder interpretation should remain centered on interface continuity rather than on crossing-by-crossing operational treatment.</p>
+ 
+    <h3 class="subhead">Industrial base builder posture</h3>
+    <p class="muted">The builder-mode layer records that builders should read Michigan as an automotive-industrial continuity environment within the Upper Midwest manufacturing corridor. This interpretation is supported by the automotive manufacturing continuity signal, the profile characterization of Michigan as an automotive-industrial continuity environment, and the trust interpretation that automotive-industrial continuity is stable and freight-linked. The builder-mode layer records that builder interpretation should remain centered on automotive-industrial continuity rather than on a complete statewide manufacturing-subsector inventory.</p>
+ 
+    <h3 class="subhead">Energy coordination builder posture</h3>
+    <p class="muted">The builder-mode layer records that builders should read Michigan as a grid- and transmission-participation environment with Great Lakes energy-interface relevance. This interpretation is supported by the energy grid and transmission participation signal, the profile characterization of Michigan as a grid- and transmission-participation environment, and the trust interpretation that energy coordination continuity is stable at the grid and transmission level. The builder-mode layer records that builder interpretation should remain centered on grid participation, transmission adjacency, and corridor-level fuel-routing relevance rather than on plant-by-plant generation mapping.</p>
+ 
+    <h3 class="subhead">Regional corridor builder posture</h3>
+    <p class="muted">The builder-mode layer records that builders should read Michigan as a Great Lakes industrial-corridor environment where maritime participation, cross-border logistics continuity, interstate and rail linkage, and automotive-industrial structure combine into a stable regional posture. This interpretation is supported by the profile characterization of Michigan as a Great Lakes regional-corridor environment, the trust interpretation that Great Lakes regional-corridor integration is stable, and evidence-layer corridor placement through the Great Lakes maritime logistics system, Upper Midwest manufacturing belt, Detroit–Windsor interface corridor, and Chicago–Toronto industrial linkage spine. The builder-mode layer records that builder interpretation should remain centered on corridor integration rather than on corridor hierarchy or leadership claims.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — 5 builder posture subsections</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Michigan is developing AI integration pathways for state operations under responsible AI guidance coordinated through the State CIO's office and the Michigan Artificial Intelligence Advisory Council. The corridor's public sector AI environment is also shaped by autonomous vehicle testing infrastructure that interfaces with mobility-adjacent AI governance surfaces, establishing a practical AI deployment coordination layer that operates in parallel with the advisory governance formation process.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Emerging</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Advisory-led formation</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Accessible for early-stage B2G operators</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> State CIO responsible AI guidance, Michigan Artificial Intelligence Advisory Council formation, autonomous vehicle testing infrastructure coordination surfaces, state procurement AI alignment signals in formation.</div>
-      <div class="detail-item"><strong>Growth signal:</strong> Public sector AI adoption is advancing incrementally, with AV testing and mobility-aligned surfaces serving as the primary interface between state government operations and practical AI deployment. The advisory council is expected to surface procurement and governance guidance through 2027.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Teams operating within education or government surfaces encounter a more accessible entry environment than California's attestation-heavy procurement framework. Early-stage B2G operators can establish footholds with lighter integration overhead, particularly within mobility-adjacent and industrial coordination surfaces.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, and builder-mode layers. Each layer records non-assignment constraints rooted in the evidence coverage preserved in the current package.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that the Michigan evidence layer does not determine:</p>
+    <ul class="evidence-bullets">
+      <li>registry routing eligibility</li>
+      <li>certification posture</li>
+      <li>authority surface classification</li>
+      <li>trust-layer scoring outputs</li>
+    </ul>
+    <p class="muted">The evidence layer records that this document is descriptive only. It does not assign rankings, comparisons, predictions, optimization logic, registry inference, or lifecycle interpretation.</p>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based strictly on the current evidence.md, this file does not support deriving the following signal categories:</p>
+    <ul class="evidence-bullets">
+      <li>defense-industrial participation signal</li>
+      <li>battery / EV transition signal</li>
+      <li>university research continuity signal</li>
+      <li>advanced mobility R&amp;D signal</li>
+      <li>broadband and digital infrastructure continuity signal</li>
+      <li>digital-asset statutory posture signal</li>
+      <li>nuclear-generation presence signal distinct from the broader grid and transmission participation signal</li>
+    </ul>
+    <p class="muted">The signals layer records that this file also does not assign routing authority, readiness tiers, Atlas surfaces, jurisdiction rankings, corridor leadership, or deployment suitability.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that based strictly on signals.md, this file does not support the following trust-dimension interpretations:</p>
+    <ul class="evidence-bullets">
+      <li>defense-industrial continuity dimension</li>
+      <li>battery / EV transition continuity dimension</li>
+      <li>university research continuity dimension</li>
+      <li>advanced mobility R&amp;D continuity dimension</li>
+      <li>broadband and digital infrastructure continuity dimension</li>
+      <li>digital-asset statutory continuity dimension</li>
+      <li>distinct nuclear-generation continuity dimension</li>
+    </ul>
+    <p class="muted">The trust-dimensions layer records that this file also does not support routing eligibility, registry readiness, certification posture, deployment suitability, jurisdiction ranking, corridor leadership, or Atlas surface assignment.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Michigan's profile does not currently support characterization as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a defense-industrial continuity environment</li>
+      <li>a battery / EV transition environment</li>
+      <li>a university research continuity environment</li>
+      <li>an advanced mobility R&amp;D environment</li>
+      <li>a broadband and digital infrastructure continuity environment</li>
+      <li>a digital-asset statutory environment</li>
+      <li>a distinct nuclear-generation continuity environment</li>
+      <li>a routing-eligibility designation</li>
+      <li>a registry-readiness designation</li>
+      <li>a certification-posture designation</li>
+      <li>a deployment-suitability designation</li>
+      <li>a jurisdiction ranking</li>
+      <li>a corridor-leadership designation</li>
+      <li>an Atlas surface assignment</li>
+    </ul>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that the normalized Michigan layers do not support builder-mode interpretation of the following areas:</p>
+    <ul class="evidence-bullets">
+      <li>defense-industrial participation</li>
+      <li>battery / EV transition continuity</li>
+      <li>university research continuity</li>
+      <li>advanced mobility R&amp;D continuity</li>
+      <li>broadband and digital infrastructure continuity</li>
+      <li>digital-asset statutory posture</li>
+      <li>distinct nuclear-generation continuity</li>
+      <li>routing eligibility</li>
+      <li>registry readiness</li>
+      <li>certification posture</li>
+      <li>deployment suitability</li>
+      <li>jurisdiction ranking</li>
+      <li>corridor leadership</li>
+      <li>Atlas surface assignment</li>
+    </ul>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted">The change-log records that no routing eligibility, registry readiness, certification posture, or deployment suitability was assigned during package creation.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Michigan's developer environment is shaped by automotive-technology convergence, autonomous vehicle testing surfaces, and the Great Lakes Industrial Corridor's engineering coordination networks. Builders operating within this corridor interact with mobility-aligned engineering surfaces, cross-border technology integration pathways linking to Ontario's industrial corridor, and an upper-midwest deployment environment that operates with materially lower policy friction than coastal formation zones.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing · Industrial Convergence</div></div>
-      <div class="mini-box"><div class="label">Strength</div><div class="value">Automotive-tech convergence surfaces</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Accessible entry; industrial-alignment advantage</div></div>
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records gaps across the signals, trust-dimensions, profile, and builder-mode layers. The Michigan evidence layer does not include an explicit "Evidence gaps" section; gap structure is carried into downstream layers.</p>
+ 
+    <h3 class="subhead">Signal-layer gaps</h3>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">No facility-by-facility Great Lakes port or inland-waterway inventory is present beyond the evidence-layer's system-level maritime continuity treatment.</div>
+      <div class="detail-item">No route-by-route interstate-corridor treatment is present beyond generalized freight-corridor continuity across shoreline, border, and inland manufacturing geography.</div>
+      <div class="detail-item">No carrier-by-carrier or terminal-by-terminal rail treatment is present beyond corridor-level rail-freight integration.</div>
+      <div class="detail-item">No crossing-by-crossing operational treatment is present beyond Detroit–Windsor and Ontario-facing interface visibility.</div>
+      <div class="detail-item">No plant-by-plant generation inventory or grid-operator mapping is present beyond structural evidence of electricity interconnection, petroleum corridor presence, and transmission adjacency.</div>
+      <div class="detail-item">No airport-by-airport cargo inventory is present beyond the evidence-layer's regional airport freight-structure visibility.</div>
+      <div class="detail-item">No fuller statewide manufacturing-subsector treatment is present beyond automotive-industrial continuity and general regional manufacturing-governance relevance.</div>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Autonomous vehicle testing infrastructure coordination surfaces, automotive-technology convergence layers, cross-border technology integration interfaces with Ontario industrial surfaces, state open-source alignment signals in formation.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> Michigan's developer network concentrates around automotive and mobility technology convergence, with a growing cross-disciplinary engineering surface linking manufacturing infrastructure to software and AI deployment coordination. Policy friction is materially lower than Pacific or Atlantic Coordination Corridor equivalents.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Well-suited for teams deploying within automotive-aligned technology surfaces, mobility infrastructure coordination, or cross-border industrial technology interfaces. Less suited for consumer-facing applications requiring high-density population surfaces for early validation.</div>
+ 
+    <h3 class="subhead">Trust-dimension gaps</h3>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">No dimension-level treatment is supported yet for facility-by-facility maritime continuity beyond the current Great Lakes system reading.</div>
+      <div class="detail-item">No dimension-level treatment is supported yet for route-specific interstate durability beyond generalized freight-corridor visibility.</div>
+      <div class="detail-item">No dimension-level treatment is supported yet for carrier-specific or terminal-specific rail continuity.</div>
+      <div class="detail-item">No dimension-level treatment is supported yet for crossing-specific operational continuity beyond the core binational-interface reading.</div>
+      <div class="detail-item">No dimension-level treatment is supported yet for plant-by-plant generation continuity or deeper grid-operator structure.</div>
+      <div class="detail-item">No dimension-level treatment is supported yet for non-automotive manufacturing continuity beyond the current automotive-industrial reading.</div>
     </div>
+ 
+    <h3 class="subhead">Profile gaps</h3>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">No facility-by-facility maritime profile treatment is present beyond the current Great Lakes system reading.</div>
+      <div class="detail-item">No route-specific interstate profile treatment is present beyond generalized freight-corridor continuity.</div>
+      <div class="detail-item">No carrier-specific or terminal-specific rail profile treatment is present beyond corridor-level integration.</div>
+      <div class="detail-item">No crossing-specific operational profile treatment is present beyond the core binational-interface reading.</div>
+      <div class="detail-item">No plant-by-plant generation profile treatment or deeper grid-operator structure is present beyond the current grid and transmission reading.</div>
+      <div class="detail-item">No fuller statewide manufacturing-subsector profile treatment is present beyond the current automotive-industrial continuity reading.</div>
+    </div>
+ 
+    <h3 class="subhead">Builder-mode gaps</h3>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">No builder-mode treatment is supported yet for facility-by-facility maritime continuity beyond the current Great Lakes system reading.</div>
+      <div class="detail-item">No builder-mode treatment is supported yet for route-specific interstate participation beyond generalized freight-corridor continuity.</div>
+      <div class="detail-item">No builder-mode treatment is supported yet for carrier-specific or terminal-specific rail participation.</div>
+      <div class="detail-item">No builder-mode treatment is supported yet for crossing-specific operational interpretation beyond the core binational-interface reading.</div>
+      <div class="detail-item">No builder-mode treatment is supported yet for plant-by-plant generation participation or deeper grid-operator structure.</div>
+      <div class="detail-item">No builder-mode treatment is supported yet for fuller statewide manufacturing-subsector interpretation beyond the current automotive-industrial continuity reading.</div>
+    </div>
+ 
+    <div class="src">Source: signals.md (Signal gaps), trust-dimensions.md (Dimension gaps), profile.md (Profile gaps), builder-mode.md (Builder-mode gaps)</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Bitcoin mining operates legally within Michigan's framework with no specific prohibition as of 2026. Electricity cost conditions are moderate relative to the continental US, and the Upper Peninsula's climate profile supports infrastructure cooling economics for compute-intensive deployment. Palisades nuclear generation — restarted in 2025 — adds baseload capacity to the regional grid. The corridor's cross-border energy integration with Ontario and regional grid connectivity conditions a structurally more favorable deployment profile than coastal corridor equivalents.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Moderate</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Moderate (US context)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Accessible for mining and compute deployment</div></div>
-    </div>
-    <div class="radar" aria-label="Michigan energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:30%;background:var(--green)"></div></div><div class="score">30</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:40%;background:var(--yellow)"></div></div><div class="score">40</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:65%;background:var(--teal)"></div></div><div class="score">65</div></div>
-    </div>
-    <div class="note">Builder implication: Michigan's energy cost profile, regulatory neutrality, and Upper Peninsula climate conditions create a more accessible deployment surface for mining and compute operations than California or New York equivalents. The Palisades baseload restart and cross-border Ontario grid integration provide infrastructure-facing advantages for operators assessing northern-tier compute deployment pathways within the Great Lakes Industrial Corridor.</div>
+  <!-- ── 10. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md with updated fields for Corridor Group, Foundation Layer, and Topology Completion Layer. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder mode, routing authority, readiness posture, or surface assignment.</p>
+ 
+    <h3 class="subhead">Initial normalization pass</h3>
+    <p class="muted">The change-log records that evidence.md was created as corridor-layer structural evidence aligned to Great Lakes Industrial Core topology and adjacency with Illinois, Wisconsin, and Ohio. The change-log records that this pass established Michigan's evidence layer as descriptive-only normalization content and did not assign routing, readiness, certification, deployment suitability, or surface status.</p>
+ 
+    <h3 class="subhead">Signal derivation pass</h3>
+    <p class="muted">The change-log records that signals.md was created derived strictly from evidence.md under Atlas signal-layer constraints. The change-log records that this pass recorded only evidence-supported structural signals and preserved absence of unsupported signals as valid normalized output.</p>
+ 
+    <h3 class="subhead">Trust-dimension interpretation pass</h3>
+    <p class="muted">The change-log records that trust-dimensions.md was created derived strictly from signals.md under trust-layer interpretation constraints. The change-log records that this pass recorded structural trust interpretation only and did not assign routing eligibility, registry readiness, certification posture, or Atlas surfaces.</p>
+ 
+    <h3 class="subhead">Profile construction pass</h3>
+    <p class="muted">The change-log records that profile.md was created derived strictly from normalized jurisdiction layers. The change-log records that this pass recorded normalized jurisdiction characterization only and did not assign routing eligibility, registry readiness, certification posture, deployment suitability, ranking, or corridor leadership.</p>
+ 
+    <h3 class="subhead">Builder-mode interpretation pass</h3>
+    <p class="muted">The change-log records that builder-mode.md was created derived strictly from normalized jurisdiction layers. The change-log records that this pass recorded builder-facing structural interpretation only and did not assign routing eligibility, registry readiness, certification posture, deployment suitability, ranking, or corridor leadership.</p>
+ 
+    <h3 class="subhead">Structural exclusions</h3>
+    <p class="muted">The change-log records structural exclusions: no routing eligibility assigned, no registry readiness assigned, no certification posture assigned, no deployment suitability assigned.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Michigan's regulatory vector is in a formation phase across AI, privacy, and biometrics policy layers. The corridor's primary operational signature is its industrial infrastructure positioning — freshwater logistics continuity, cross-border integration with Canada, and automotive manufacturing coordination. Governance escalation is expected to be measured rather than rapid, with federal frameworks remaining the primary compliance surface across most policy layers through the 2026–2028 cycle. Operators should model this corridor as a lower-friction industrial entry surface with a developing governance overlay.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — developing, with advisory council formation expected to precede legislative action. Statutory surface likely to remain formation-phase through 2027, with potential legislative proposals emerging in the 2027–2028 session.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — stable at moderate, with federal frameworks dominant and no state-level licensing escalation signaled. Bitcoin reserve legislative interest indicates an institutional-grade positioning trajectory rather than a restriction orientation.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — watch surface; comprehensive privacy legislation has been introduced in prior sessions and the 2026–2027 cycle may advance action. Operators should model for state-level privacy overlay emergence within a 12–24 month horizon.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — sensitized surface around law enforcement facial recognition; legislative action is plausible but not yet structurally certain. Detroit-originating policy debate may condition statewide legislative surfaces in the 2026–2027 cycle.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — stable at low-to-moderate. No restriction signaled; Palisades baseload restart and moderate energy cost profile support continued viability for operations deploying within this corridor.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — advancing steadily, with automotive-technology convergence driving continued network deepening and cross-border Ontario interface surfaces expanding the corridor's deployment reach.</div>
-    </div>
-    <div class="callout">12-month outlook: Michigan's primary corridor dynamic is industrial and cross-border infrastructure maturation rather than regulatory escalation. The most significant governance watch surfaces are: comprehensive privacy legislation introduction in the 2026–2027 session, advisory council AI outputs conditioning procurement guidance, and the law enforcement facial recognition debate's potential to activate biometrics legislative action ahead of broader privacy framework development.</div>
-  </section>
+</div><!-- /main col -->
  
-</div>
- 
-<!-- ── SIDEBAR ─────────────────────────────── -->
+<!-- ── SIDEBAR ── -->
 <aside>
  
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">Michigan at a glance</h3>
-    <p class="muted mini">Best used as a cross-border industrial infrastructure and freshwater logistics deployment surface. Lower state-level regulatory friction across AI, privacy, and biometrics creates accessible conditions for teams that find coastal governance overhead prohibitive. Primary corridor anchors are Great Lakes shipping continuity, automotive-aligned manufacturing coordination, and U.S.–Canada logistics interfaces.</p>
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Michigan jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/michigan/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> freshwater logistics coordination, automotive-aligned technology deployment, cross-border Canada logistics interface operations, compute and mining infrastructure operating within moderate energy economics, early-stage B2G operators seeking lower compliance overhead entry surfaces.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> AI governance formation fluency benchmarking, privacy-first compliance architecture modeling, high-population consumer surface validation, or operations requiring the governance precedent signal that coastal formation corridors provide.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>2025</strong> — Palisades nuclear plant restart; baseload capacity addition to Michigan regional grid effective.</li>
-      <li><strong>Jan 2026</strong> — Federal AI policy instruments active across corridor; Michigan Artificial Intelligence Advisory Council in formation phase; State CIO responsible AI guidance in effect.</li>
-      <li><strong>2026</strong> — DIFS Money Transmission Act compliance continues as primary digital asset licensing surface; Bitcoin reserve legislative interest (state senate) active watch surface.</li>
-      <li><strong>2026–2027</strong> — State privacy legislation watch cycle; comprehensive privacy bill introduction expected. Law enforcement FRT debate potential legislative activation surface.</li>
-      <li><strong>2027</strong> — Michigan Artificial Intelligence Advisory Council recommendations expected to surface preliminary legislative and procurement proposals.</li>
+      <li><strong>Jurisdiction:</strong> Michigan</li>
+      <li><strong>Code:</strong> MI · US-MI</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> preliminary</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li><strong>Corridor Group:</strong> Great Lakes Industrial Core Corridor</li>
+      <li><strong>Foundation Layer:</strong> Great Lakes Industrial Core Layer</li>
+      <li><strong>Completion Layer:</strong> Great Lakes Completion Layer</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Coverage Inventory</div>
+    <h3 id="heading-sidebar-coverage">Evidence-layer anchors</h3>
+    <ul class="mini muted">
+      <li>Great Lakes maritime logistics system</li>
+      <li>Upper Midwest manufacturing belt</li>
+      <li>Detroit–Windsor cross-border interface corridor</li>
+      <li>Chicago–Toronto industrial linkage spine</li>
+      <li>Southeast Michigan industrial belt</li>
+      <li>Ontario-facing transmission adjacency</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-standardization">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-standardization">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That makes the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  <div class="card" aria-labelledby="heading-sidebar-adjacency">
+    <div class="smallcaps">Canonical Adjacency</div>
+    <h3 id="heading-sidebar-adjacency">Great Lakes siblings</h3>
+    <p class="muted mini">The change-log records that the Michigan evidence layer was aligned to Great Lakes Industrial Core topology and adjacency with Illinois, Wisconsin, and Ohio.</p>
+    <p class="muted mini">This canonical adjacency is structural only and does not assign routing, ranking, or coordination hierarchy.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: preliminary</li>
+      <li>Signal layer: preliminary</li>
+      <li>Trust dimensions: preliminary</li>
+      <li>Profile: preliminary</li>
+      <li>Builder-mode: preliminary</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a corridor-leadership designation.</li>
+      <li>Not a certification or registry-readiness designation.</li>
+    </ul>
   </div>
  
 </aside>
-</div>
+</div><!-- /grid-sidebar -->
  
 </main>
  
