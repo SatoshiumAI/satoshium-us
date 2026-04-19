@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Illinois — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Illinois operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Illinois Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/illinois/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,34 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +168,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +184,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Illinois</h1>
-    <p class="kicker">Illinois operates as a Great Lakes–Mississippi Logistics Convergence Corridor supporting inland freight routing coordination across Chicago rail-alignment infrastructure, Great Lakes shipping interfaces, and Mississippi River continuity layers linking northern and central deployment corridors of the United States.</p>
+    <p class="kicker">This page renders the canonical Illinois Atlas jurisdiction package. The canonical package positions Illinois within the Great Lakes Industrial Core Corridor, with structural coverage across multimodal logistics, inland-waterway linkage, federal-laboratory research, major-university research, quantum-information participation, financial-market infrastructure, energy and transmission, digital-infrastructure expansion, and digital-asset statutory posture.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">IL · US-IL</div>
-      <div class="hero-chip">Springfield</div>
-      <div class="hero-chip">Great Lakes–Mississippi Logistics Convergence Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Illinois quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Emerging Regulatory</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Compliance-Standard</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Active / BIPA-Defined</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Maximum Risk Zone</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Logistics Corridor / BIPA-Sensitive</div></div>
+      <div class="hero-chip">Jurisdiction: Illinois (IL · US-IL)</div>
+      <div class="hero-chip">Jurisdiction lens</div>
+      <div class="hero-chip">Completeness: preliminary</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Package status: COMPLETE (canonical)</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,216 +218,787 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Illinois operates as the Great Lakes–Mississippi Logistics Convergence Corridor within the US inland routing surface. Teams interacting across this corridor interface with Chicago rail-alignment infrastructure, Great Lakes shipping coordination surfaces, Mississippi River continuity layers, and national east–west and north–south freight crossing environments. The governance posture is shaped by BIPA enforcement conditions and an emerging AI regulatory layer building on those biometric precedent structures.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>AI Policy</strong></div><span class="pill yellow">Emerging Regulatory</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill teal">Compliance-Standard</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--orange)"></span><strong>Privacy / Data</strong></div><span class="pill orange">Active / BIPA-Defined</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--red)"></span><strong>Biometrics</strong></div><span class="pill red">Maximum Risk Zone</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">Active Formation</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Logistics Corridor / BIPA-Sensitive</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Great Lakes Industrial Core Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Illinois operates as a corridor environment with strong logistics routing surfaces and a defining biometric risk layer. Teams deploying inside identity, face recognition, or biometric-adjacent surfaces must treat BIPA compliance as a baseline condition. Compute and mining operations interact with a structurally favorable energy cost environment relative to coastal surfaces.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Great Lakes Industrial Core Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Great Lakes Completion Layer</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from atlas.md and records Atlas corridor-topology placement only.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/illinois/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Great Lakes–Mississippi Logistics Convergence Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only evidence-supported characteristics documented for Illinois that are relevant to Atlas normalization. The evidence layer records that it does not assign trust posture, routing role, coordination tier, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, leadership positioning, or deployment prescription beyond what the canonical files explicitly record. Surface assignment remains unset. No routing role is assigned.</p>
+    <div class="src">Source: evidence.md — Scope</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 11 evidence subsections documenting Illinois structural characteristics across logistics, waterways, air cargo, highways, manufacturing, research, quantum, financial infrastructure, energy, digital infrastructure, and digital-asset statutory material. All claims are paired with canonical source URLs preserved verbatim.</p>
+ 
+    <h3 class="subhead">Freight rail and multimodal logistics infrastructure</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that CMAP describes northeastern Illinois as a major freight hub and states that about a quarter of all U.S. rail freight originates, terminates, or passes through the region.</li>
+      <li>The evidence layer records that CMAP states the northeastern Illinois freight network includes highway, rail, air, water, and pipeline assets, and references CREATE rail coordination work, truck-routing studies, and O'Hare-area freight planning.</li>
+      <li>The evidence layer records that IDOT states Illinois is at the center of the nation's rail network, with approximately 9,982 miles of railroad track and 41 operating railroads.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/illinois/</div>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>CMAP, "Freight and Rail" — <a href="https://cmap.illinois.gov/focus-areas/transportation/freight-and-rail/" target="_blank" rel="noopener">https://cmap.illinois.gov/focus-areas/transportation/freight-and-rail/</a></li>
+        <li>IDOT, "Public Transportation" — <a href="https://idot.illinois.gov/travel-and-maps/public-transportation.html" target="_blank" rel="noopener">https://idot.illinois.gov/travel-and-maps/public-transportation.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Waterways, Port of Chicago, and river-basin / Great Lakes continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that IDOT states Illinois has 1,095 miles of navigable waterways that border or pass through the state.</li>
+      <li>The evidence layer records that IDOT states those waterways connect Illinois to the Atlantic Ocean through the St. Lawrence Seaway and the Great Lakes, and to the Gulf of Mexico via the Mississippi River.</li>
+      <li>The evidence layer records that IDOT states the Port of Chicago handles ocean vessels, lake vessels, and barges, and that the Lake Michigan port is served by 12 railroads with direct access to Interstates 90 and 94.</li>
+      <li>The evidence layer records that IDOT's Illinois Port Facilities Capital Investment Grant program states that the Illinois Marine Transportation System includes ports on the Mississippi River, Illinois River, Chicago Area Waterway System, Kaskaskia River, Ohio River, and Lake Michigan.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>IDOT, "Waterways" — <a href="https://idot.illinois.gov/travel-and-maps/waterways.html" target="_blank" rel="noopener">https://idot.illinois.gov/travel-and-maps/waterways.html</a></li>
+        <li>IDOT, "Illinois Port Facilities Capital Investment Grant Program" — <a href="https://idot.illinois.gov/programs-and-projects/grants/illinois-port-facilities-capital-investment-grant-program.html" target="_blank" rel="noopener">https://idot.illinois.gov/programs-and-projects/grants/illinois-port-facilities-capital-investment-grant-program.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Air cargo infrastructure</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that FlyChicago states Chicago O'Hare International Airport processes over two million metric tonnes of cargo worth more than $200 billion per year.</li>
+      <li>The evidence layer records that FlyChicago states O'Hare ranks in the top 20 globally for cargo and is number one in the Americas by freight value.</li>
+      <li>The evidence layer records that FlyChicago states O'Hare's northeast cargo campus can handle 50 percent more cargo traffic and freighter aircraft than before, and that the airport has approximately two million square feet of airside cargo facilities plus another two million square feet landside.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>FlyChicago, "Cargo" — <a href="https://www.flychicago.com/business/cargo/pages/default.aspx" target="_blank" rel="noopener">https://www.flychicago.com/business/cargo/pages/default.aspx</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Highway corridor visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that an official IDOT highway-system listing states Illinois is at the heart of the country's interstate highway system and specifically highlights I-80, I-90, and I-70.</li>
+      <li>The evidence layer records that CMAP states the northeastern Illinois freight network includes 10 interstate highways.</li>
+      <li>The evidence layer records that IDOT directly documents I-90 and I-94 access at the Lake Michigan port serving the Port of Chicago complex.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>IDOT, "Highway System" — <a href="https://idot.illinois.gov/transportation-system/network-overview/highway-system.html" target="_blank" rel="noopener">https://idot.illinois.gov/transportation-system/network-overview/highway-system.html</a> (official search-result snippet used because direct page fetch redirected to highway-map content)</li>
+        <li>CMAP, "Freight and Rail" — <a href="https://cmap.illinois.gov/focus-areas/transportation/freight-and-rail/" target="_blank" rel="noopener">https://cmap.illinois.gov/focus-areas/transportation/freight-and-rail/</a></li>
+        <li>IDOT, "Waterways" — <a href="https://idot.illinois.gov/travel-and-maps/waterways.html" target="_blank" rel="noopener">https://idot.illinois.gov/travel-and-maps/waterways.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Manufacturing and industrial base signals</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that DCEO states Illinois has the most diverse economy in America and identifies Advanced Manufacturing, Transportation Distribution and Logistics, Quantum Computing / AI / Microelectronics, and Clean Energy Production and Manufacturing as targeted growth industries.</li>
+      <li>The evidence layer records that DCEO's Illinois INVENT materials list Manufacturing / Advanced Manufacturing / Industry 4.0, Transportation / Distribution / Logistics / Mobility, and Quantum Information Sciences &amp; Technology / Quantum Computing / AI / Microelectronics among key sectors.</li>
+      <li>The evidence layer records that the City of Chicago states its Industrial Corridor Modernization Initiative is intended to support advanced manufacturing and technology-oriented jobs while maintaining and improving the freight and public transportation systems that serve industrial users.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>DCEO, "Key Industries" — <a href="https://dceo.illinois.gov/whyillinois/keyindustries.html" target="_blank" rel="noopener">https://dceo.illinois.gov/whyillinois/keyindustries.html</a></li>
+        <li>DCEO, "Key Sectors" — <a href="https://dceo.illinois.gov/illinoisinvent/key-sectors.html" target="_blank" rel="noopener">https://dceo.illinois.gov/illinoisinvent/key-sectors.html</a></li>
+        <li>City of Chicago, "Industrial Corridor Modernization Initiative" — <a href="https://www.chicago.gov/city/en/depts/dcd/supp_info/repositioning-chicago-s-industrial-corridors-for-today-s-economy.html" target="_blank" rel="noopener">https://www.chicago.gov/city/en/depts/dcd/supp_info/repositioning-chicago-s-industrial-corridors-for-today-s-economy.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Higher-education, federal-lab, and research infrastructure</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the University of Chicago states that one of the resources enabling its scientific innovation is affiliation with two U.S. Department of Energy laboratories: Argonne National Laboratory and Fermilab.</li>
+      <li>The evidence layer records that the University of Illinois Urbana-Champaign describes itself as one of the nation's leading research institutions.</li>
+      <li>The evidence layer records that Northwestern University's official site describes Northwestern as one of the country's leading private research and teaching universities in Evanston, Illinois.</li>
+      <li>The evidence layer records that Argonne's official site description identifies Argonne as a Department of Energy science and engineering research laboratory.</li>
+      <li>The evidence layer records that Fermilab official materials identify its 6,800-acre site in Batavia, Illinois and state that it is managed for the U.S. Department of Energy Office of Science.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>University of Chicago, "Education and Research" — <a href="https://www.uchicago.edu/education-and-research" target="_blank" rel="noopener">https://www.uchicago.edu/education-and-research</a></li>
+        <li>University of Illinois Urbana-Champaign, Office of the Vice Chancellor for Research and Innovation — <a href="https://research.illinois.edu/" target="_blank" rel="noopener">https://research.illinois.edu/</a></li>
+        <li>Northwestern University homepage — <a href="https://www.northwestern.edu/" target="_blank" rel="noopener">https://www.northwestern.edu/</a> (official search-result snippet used)</li>
+        <li>Argonne National Laboratory homepage — <a href="https://www.anl.gov/" target="_blank" rel="noopener">https://www.anl.gov/</a> (official search-result snippet used because direct fetch was blocked)</li>
+        <li>Fermilab, "About Fermilab" — <a href="https://www.fnal.gov/pub/about/index.html" target="_blank" rel="noopener">https://www.fnal.gov/pub/about/index.html</a> (official search-result snippet used because direct fetch was blocked)</li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Quantum ecosystem visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Illinois Quantum Information Science and Technology Center (IQUIST) states that it brings together physicists, engineers, computer scientists, and mathematicians to advance quantum information science and train a quantum-ready workforce through partnerships spanning academia, government, and industry.</li>
+      <li>The evidence layer records that UChicago's quantum program states that it has strong research partnerships with academia, industry, and national labs, and that two of the ten national quantum research centers are located at the University of Chicago.</li>
+      <li>The evidence layer records that official Chicago Quantum community materials visible through the UChicago quantum site identify a regional quantum community that includes the University of Chicago, Argonne National Laboratory, Fermilab, the University of Illinois Urbana-Champaign, and Northwestern University.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>IQUIST — <a href="https://iquist.illinois.edu/" target="_blank" rel="noopener">https://iquist.illinois.edu/</a></li>
+        <li>UChicago quantum program — <a href="https://quantum.uchicago.edu/" target="_blank" rel="noopener">https://quantum.uchicago.edu/</a></li>
+        <li>Chicago Quantum community materials on the UChicago quantum site — <a href="https://quantum.uchicago.edu/" target="_blank" rel="noopener">https://quantum.uchicago.edu/</a> (official search-result snippet used for institution list)</li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Financial-market infrastructure</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that CME Group states it is the world's leading derivatives marketplace.</li>
+      <li>The evidence layer records that CME Group states CME was established in 1848 as the world's first futures exchange based in Chicago.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>CME Group, "CME" — <a href="https://www.cmegroup.com/company/cme.html" target="_blank" rel="noopener">https://www.cmegroup.com/company/cme.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Energy transmission and nuclear-generation visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that an Illinois executive-order page states that PJM and the Midcontinent Independent System Operator (MISO) are the regional transmission organizations in Illinois.</li>
+      <li>The evidence layer records that Illinois Commerce Commission materials state that the Illinois bulk-power system is managed by two different system operators, PJM and MISO.</li>
+      <li>The evidence layer records that Ready Illinois states that the Illinois Emergency Management Agency's Division of Nuclear Safety monitors 11 nuclear power reactors at six nuclear power stations licensed to generate electricity in Illinois.</li>
+      <li>The evidence layer records that the Illinois Clean Energy Dashboard states that, as of 2024, Illinois generates 53.62% of its electricity from nuclear power and describes Illinois as the nation's top nuclear power generator.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Illinois Executive Order 2026-01 — <a href="https://www.illinois.gov/government/executive-orders/executive-order.executive-order-2026-01.2026.html" target="_blank" rel="noopener">https://www.illinois.gov/government/executive-orders/executive-order.executive-order-2026-01.2026.html</a></li>
+        <li>Illinois Commerce Commission materials regarding PJM / MISO — <a href="https://www.icc.illinois.gov/downloads/public/NOI/23%20NOI%20PJM%20Initial%20Comments.pdf" target="_blank" rel="noopener">https://www.icc.illinois.gov/downloads/public/NOI/23%20NOI%20PJM%20Initial%20Comments.pdf</a> (official search-result snippet used)</li>
+        <li>Ready Illinois, "Nuclear" — <a href="https://ready.illinois.gov/plan/nuclear.html" target="_blank" rel="noopener">https://ready.illinois.gov/plan/nuclear.html</a></li>
+        <li>Illinois Clean Energy Dashboard, "Electricity Generation Mix" — <a href="https://cleanenergy.illinois.gov/tracking-illinois-progress/electricity-generation-mix.html" target="_blank" rel="noopener">https://cleanenergy.illinois.gov/tracking-illinois-progress/electricity-generation-mix.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Broadband and digital infrastructure visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that DCEO states that since 2019 the Illinois Office of Broadband has served as a single source for broadband matters in Illinois.</li>
+      <li>The evidence layer records that DCEO states the Illinois Office of Broadband partners with the Illinois Broadband Lab, which is overseen by the University of Illinois System.</li>
+      <li>The evidence layer records that DCEO states Connect Illinois began in 2019 as the state's inaugural broadband investment program, with $400 million originally appropriated for competitive broadband grants.</li>
+      <li>The evidence layer records that DCEO states Connect Illinois also included $20 million for upgrades to the 100 GB Illinois Century Network, a 2,000-mile open-access institutional fiber network serving more than 3,400 K-12, higher-education, and library locations.</li>
+      <li>The evidence layer records that DCEO states ARPA and IIJA included over $1.3 billion in federal support for the Connect Illinois Broadband Grant Program and related digital-equity initiatives.</li>
+      <li>The evidence layer records that DCEO states the Governor-appointed Illinois Broadband Advisory Council convened in August 2019 as a 25-member council with ISP, state-agency, legislative, and stakeholder representation.</li>
+      <li>The evidence layer records that DCEO maintains a data-center investment program that provides tax exemptions and credits for qualifying Illinois data centers.</li>
+      <li>The evidence layer records that an official DCEO annual-report listing states Illinois has been positioned as one of the top five data-center markets in the United States and that the Chicago region is among the most active and fastest-growing; the underlying report PDF was not machine-readable during this collection pass, so this evidence is kept narrow.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>DCEO, "About the Office of Broadband" — <a href="https://dceo.illinois.gov/broadband/about-us-broadband.html" target="_blank" rel="noopener">https://dceo.illinois.gov/broadband/about-us-broadband.html</a></li>
+        <li>DCEO, "Connect Illinois and BEAD" — <a href="https://dceo.illinois.gov/broadband/connect-il-bead.html" target="_blank" rel="noopener">https://dceo.illinois.gov/broadband/connect-il-bead.html</a></li>
+        <li>DCEO, "Broadband Equity, Access and Deployment (BEAD) Program" — <a href="https://dceo.illinois.gov/broadband/bead.html" target="_blank" rel="noopener">https://dceo.illinois.gov/broadband/bead.html</a></li>
+        <li>DCEO, "Illinois Broadband Advisory Council" — <a href="https://dceo.illinois.gov/broadband/bac.html" target="_blank" rel="noopener">https://dceo.illinois.gov/broadband/bac.html</a></li>
+        <li>DCEO, "Data Center Investment Tax Exemptions and Credits" — <a href="https://dceo.illinois.gov/expandrelocate/incentives/datacenters.html" target="_blank" rel="noopener">https://dceo.illinois.gov/expandrelocate/incentives/datacenters.html</a></li>
+        <li>DCEO, "Data Center Investment Program 2024 Annual Report" — <a href="https://dceo.illinois.gov/content/dam/soi/en/web/dceo/aboutdceo/reportsrequiredbystatute/2024-data-centers-annual-report-submission.pdf" target="_blank" rel="noopener">https://dceo.illinois.gov/content/dam/soi/en/web/dceo/aboutdceo/reportsrequiredbystatute/2024-data-centers-annual-report-submission.pdf</a> (official search-result snippet used because PDF text extraction was not usable)</li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Digital-asset and blockchain statutory signals</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Illinois General Assembly maintains 205 ILCS 725, the Blockchain Business Development Act.</li>
+      <li>The evidence layer records that the Illinois General Assembly maintains 205 ILCS 730, the Blockchain Technology Act.</li>
+      <li>The evidence layer records that a cited section of 205 ILCS 730 states that local governments may not impose taxes or fees on the use of a blockchain or smart contract, require a local certificate, license, or permit to use a blockchain or smart contract, or impose other local requirements relating to such use.</li>
+      <li>The evidence layer records that the Illinois General Assembly maintains 205 ILCS 731, the Digital Assets and Consumer Protection Act.</li>
+      <li>The evidence layer records that IDFPR states that on August 18, 2025, Governor Pritzker signed the Digital Assets and Consumer Protection Act (205 ILCS 731) and the Digital Assets Kiosk Act (205 ILCS 732), and that IDFPR is working on administrative rules to implement them.</li>
+      <li>The evidence layer records that IDFPR business-resources materials state that the Division of Banking issued notice to digital-asset businesses and digital-asset kiosk operators in Illinois regarding DACPA and DAKA and the provisions that took immediate effect.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Illinois General Assembly, 205 ILCS 725 — <a href="https://www.ilga.gov/legislation/ILCS/details?MajorTopic=REGULATION&amp;Chapter=FINANCIAL+REGULATION&amp;ActName=Blockchain+Business+Development+Act.&amp;ActID=4014&amp;ChapterID=20&amp;ChapAct=205+ILCS+725/&amp;SeqStart=100000&amp;SeqEnd=400000" target="_blank" rel="noopener">ilga.gov — 205 ILCS 725</a></li>
+        <li>Illinois General Assembly, 205 ILCS 730 — <a href="https://www.ilga.gov/legislation/ILCS/details?MajorTopic=REGULATION&amp;Chapter=FINANCIAL+REGULATION&amp;ActName=Blockchain+Technology+Act.&amp;ActID=4015&amp;ChapterID=20&amp;ChapAct=205+ILCS+730/&amp;SeqStart=100000&amp;SeqEnd=400000" target="_blank" rel="noopener">ilga.gov — 205 ILCS 730</a></li>
+        <li>Illinois General Assembly, 205 ILCS 730/20 — <a href="https://www.ilga.gov/legislation/ilcs/documents/020507300K20.htm" target="_blank" rel="noopener">https://www.ilga.gov/legislation/ilcs/documents/020507300K20.htm</a></li>
+        <li>Illinois General Assembly, 205 ILCS 731 — <a href="https://www.ilga.gov/legislation/ILCS/details?MajorTopic=REGULATION&amp;Chapter=FINANCIAL+REGULATION&amp;ActName=Digital+Assets+and+Consumer+Protection+Act.&amp;ActID=4632&amp;ChapterID=20&amp;ChapAct=205+ILCS+731/&amp;SeqStart=100000&amp;SeqEnd=700000" target="_blank" rel="noopener">ilga.gov — 205 ILCS 731</a></li>
+        <li>IDFPR, "Digital Assets" — <a href="https://idfpr.illinois.gov/banks/digital-assets.html" target="_blank" rel="noopener">https://idfpr.illinois.gov/banks/digital-assets.html</a></li>
+        <li>IDFPR, "Digital Assets Resources for Businesses" — <a href="https://idfpr.illinois.gov/banks/digital-assets/resources-for-businesses.html" target="_blank" rel="noopener">https://idfpr.illinois.gov/banks/digital-assets/resources-for-businesses.html</a></li>
+        <li>IDFPR news release, August 18, 2025 — <a href="https://idfpr.illinois.gov/news/2025/gov-pritzker-signs-historic-legislation-to-protect-consumers-from-cryptocurrency-scams.html" target="_blank" rel="noopener">https://idfpr.illinois.gov/news/2025/gov-pritzker-signs-historic-legislation-to-protect-consumers-from-cryptocurrency-scams.html</a></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 11 evidence subsections with canonical source citations</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Illinois operates as an emerging AI regulatory formation surface, building AI governance instruments on a foundation of existing biometric and employment-protection precedent. The Artificial Intelligence Video Interview Act (AIVIA) established an early behavioral AI accountability anchor in employment surfaces, and subsequent legislative activity indicates continued expansion toward automated decision-making, consumer-facing AI disclosure, and public procurement alignment.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Emerging Regulatory</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Employment AI + disclosure + procurement formation</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">BIPA precedent shapes AI accountability surface</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Artificial Intelligence Video Interview Act (AIVIA), Illinois Human Rights Act AI provisions, emerging automated decision-making disclosure frameworks, state AI procurement guidance.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> employment-surface AI accountability is active; broader consumer-facing AI governance is in legislative formation, with BIPA enforcement patterns conditioning how AI-adjacent biometric use cases are treated.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying AI in hiring, screening, or identity-adjacent surfaces should treat AIVIA compliance as a floor condition. Product teams anticipating public procurement engagement should align with state AI governance guidance as it matures through 2026–2027.</div>
-    </div>
-    <div class="note">Operational signal: Illinois is not yet a high-regulatory AI surface at the level of California, but its BIPA precedent structure means that AI systems touching biometric or employment surfaces operate in an already-active enforcement environment.</div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code>. The signals layer records that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted">The signals layer records 14 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">National rail-network convergence signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a national-rail-network-convergence signal through documented northeastern Illinois freight-hub status, documented concentration of U.S. rail-freight origination, termination, and pass-through activity in the region, and IDOT documentation that Illinois sits at the center of the nation's rail network.</p>
+ 
+    <h3 class="subhead">Inland-waterway corridor continuity signal</h3>
+    <p class="muted">The signals layer records that Illinois shows an inland-waterway-corridor-continuity signal through documented Port of Chicago participation, documented Illinois waterway connectivity to the Great Lakes and Mississippi system, and documented Illinois Marine Transportation System visibility across the Mississippi River, Illinois River, Chicago Area Waterway System, Kaskaskia River, Ohio River, and Lake Michigan.</p>
+ 
+    <h3 class="subhead">Great Lakes maritime participation signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a Great-Lakes-maritime-participation signal through documented Lake Michigan port activity at the Port of Chicago and documented Great Lakes / St. Lawrence access from Illinois waterways.</p>
+ 
+    <h3 class="subhead">Air cargo logistics signal</h3>
+    <p class="muted">The signals layer records that Illinois shows an air-cargo-logistics signal through documented O'Hare cargo scale, documented global cargo ranking, documented freight-value ranking in the Americas, and documented cargo-campus expansion.</p>
+ 
+    <h3 class="subhead">Interstate logistics convergence signal</h3>
+    <p class="muted">The signals layer records that Illinois shows an interstate-logistics-convergence signal through documented interstate visibility in northeastern Illinois freight planning, documented direct I-90 / I-94 port access, and official state highway-system positioning around I-80, I-90, and I-70.</p>
+ 
+    <h3 class="subhead">Industrial manufacturing continuity signal</h3>
+    <p class="muted">The signals layer records that Illinois shows an industrial-manufacturing-continuity signal through documented state prioritization of advanced manufacturing, logistics, and related industrial sectors, together with Chicago industrial-corridor modernization activity explicitly tied to advanced manufacturing and freight-served industrial land.</p>
+ 
+    <h3 class="subhead">Nuclear-generation grid participation signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a nuclear-generation-grid-participation signal through documented statewide nuclear-reactor presence, documented multi-station nuclear infrastructure, and documented majority-nuclear electricity generation within the state power mix.</p>
+ 
+    <h3 class="subhead">Regional transmission coordination signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a regional-transmission-coordination signal through documented PJM and MISO participation visibility within the state's bulk-power environment.</p>
+ 
+    <h3 class="subhead">Federal laboratory research infrastructure signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a federal-laboratory-research-infrastructure signal through documented Argonne National Laboratory and Fermilab presence, documented Department of Energy affiliation, and documented University of Chicago linkage to both laboratories.</p>
+ 
+    <h3 class="subhead">Quantum-information research ecosystem signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a quantum-information-research-ecosystem signal through documented IQUIST activity, documented UChicago quantum-center presence, and documented regional quantum-community participation spanning the University of Chicago, Argonne, Fermilab, the University of Illinois Urbana-Champaign, and Northwestern University.</p>
+ 
+    <h3 class="subhead">Major university research corridor signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a major-university-research-corridor signal through documented research-institution presence at the University of Illinois Urbana-Champaign, Northwestern University, and the University of Chicago, together with documented university and federal-laboratory interface.</p>
+ 
+    <h3 class="subhead">Financial-market infrastructure signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a financial-market-infrastructure signal through documented CME Group derivatives-market scale and documented Chicago futures-exchange continuity.</p>
+ 
+    <h3 class="subhead">Digital infrastructure expansion signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a digital-infrastructure-expansion signal through documented Illinois Office of Broadband coordination, Connect Illinois grant activity, Illinois Century Network upgrades, federal broadband-program support, advisory-council structure, and limited data-center investment-program visibility.</p>
+ 
+    <h3 class="subhead">Digital-asset statutory posture signal</h3>
+    <p class="muted">The signals layer records that Illinois shows a digital-asset-statutory-posture signal through documented blockchain and digital-asset statutory frameworks, documented local-government restrictions on blockchain and smart-contract use under 205 ILCS 730/20, and documented IDFPR implementation activity for Illinois digital-asset legislation.</p>
+ 
+    <h3 class="subhead">Limited signal traces</h3>
+    <p class="muted">The signals layer records that the following categories have only limited direct signal visibility in the current evidence set:</p>
+    <ul class="evidence-bullets">
+      <li>route-specific statewide interstate overlap beyond the directly documented I-80, I-90, I-70, and I-90 / I-94 modal references</li>
+      <li>northern Illinois data-center concentration beyond state incentive-program visibility and annual-report listing language</li>
+      <li>Ohio River freight continuity beyond Illinois Marine Transportation System inclusion</li>
+      <li>rail-carrier-specific convergence detail beyond hub-scale freight documentation</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 14 signal clusters + Limited signal traces</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Illinois administers digital asset activity through the Illinois Transmitters of Money Act and the licensing framework maintained by the Illinois Department of Financial and Professional Regulation (IDFPR). The posture is compliance-standard rather than aggressive, with money transmission licensing requirements applying to exchanges and custodial operators. No Bitcoin-specific restrictions are active, and the state has not pursued restrictive digital asset legislation at the level of adjacent coastal surfaces.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Compliance-Standard</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">IDFPR</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Standard licensing surface; no elevated restriction</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Illinois Transmitters of Money Act, IDFPR money transmission licensing, federal AML/BSA compliance expectations, Illinois financial services regulatory alignment.</div>
-      <div class="detail-item"><strong>Positive signal:</strong> Illinois has not moved to restrict or prohibit Bitcoin-related activity. The state functions as a standard compliance surface for custodial and exchange-type operators, with licensing requirements calibrated to money transmission rather than asset-specific prohibition frameworks.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> custodial operators, exchanges, and payment-adjacent services deploying within Illinois should confirm money transmission licensing status under IDFPR. The compliance overhead is lower than coastal regulatory environments, but AML/BSA alignment remains a baseline requirement.</div>
-    </div>
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md. The trust-dimensions layer records that absence of signals reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted">The trust-dimensions layer records that trust does not describe what the environment looks like; trust evaluates what kinds of stability conditions Illinois can sustain given the signal layer and the visible continuity environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted">The trust-dimensions layer records that Illinois currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>durable multimodal logistics continuity anchored in Chicago-area rail, port, interstate, and air-cargo visibility</li>
+      <li>stable inland-maritime linkage between Great Lakes participation and Mississippi-system connectivity at the system level</li>
+      <li>durable federally anchored and university-linked research continuity through Argonne, Fermilab, the University of Chicago, Northwestern, and the University of Illinois research environment</li>
+      <li>visible high-capacity grid continuity through nuclear-generation presence and documented PJM / MISO participation</li>
+      <li>durable financial-market continuity through CME's nationally visible derivatives-market presence</li>
+      <li>expanding but still incompletely inventoried digital-infrastructure and digital-asset continuity at the statewide framework level</li>
+      <li>incomplete statewide facility-depth visibility for route-specific interstate overlap, rail-terminal concentration, river-facility distribution, transmission topology, and data-center concentration</li>
+    </ul>
+ 
+    <h3 class="subhead">Multimodal logistics continuity stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable multimodal logistics continuity with northeastern Illinois concentration.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>national rail-network convergence signal</li>
+      <li>inland-waterway corridor continuity signal</li>
+      <li>Great Lakes maritime participation signal</li>
+      <li>interstate logistics convergence signal</li>
+      <li>industrial-manufacturing-continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer retains limited route-specific interstate visibility beyond the directly documented corridor references</li>
+      <li>the current package does not provide carrier-by-carrier or terminal-by-terminal rail convergence mapping</li>
+      <li>inland-waterway continuity is clearer at the system level than at the full facility-inventory level</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows durable multimodal logistics continuity, but the current trust reading is stronger on major Chicago-centered nodes and documented system linkages than on a fully normalized statewide facility map.</p>
+ 
+    <h3 class="subhead">Inland maritime integration stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable inland-maritime transfer continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>inland-waterway corridor continuity signal</li>
+      <li>Great-Lakes-maritime-participation signal</li>
+      <li>documented Port of Chicago linkage to Illinois waterways and Mississippi-system continuity as preserved in the signal layer</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a terminal-by-terminal Illinois-side inventory across the Mississippi River, Illinois River, Chicago Area Waterway System, and Ohio River</li>
+      <li>Ohio River continuity remains visible primarily through system inclusion rather than fuller facility depth</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows stable inland-maritime integration at the corridor and system level, with incomplete visibility into the full distribution of river-facing facilities.</p>
+ 
+    <h3 class="subhead">Air cargo infrastructure stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable air-cargo continuity anchored by O'Hare.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>air-cargo-logistics signal</li>
+      <li>documented cargo scale, freight-value visibility, and cargo-campus expansion preserved in the signal layer</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current trust reading is centered on O'Hare rather than on a broader statewide aviation-logistics inventory</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows long-horizon air-cargo continuity through O'Hare, while broader statewide airport-logistics distribution is not the focus of the current package.</p>
+ 
+    <h3 class="subhead">Energy grid participation stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">High-capacity grid continuity with partial topology visibility.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>nuclear-generation-grid-participation signal</li>
+      <li>regional-transmission-coordination signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide full transmission-topology mapping or service-boundary detail beyond documented PJM and MISO visibility</li>
+      <li>plant-by-plant nuclear distribution remains less visible than statewide counts and generation share</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows stable energy-grid participation through documented nuclear-generation depth and documented multi-state transmission coordination, while detailed statewide topology remains incomplete.</p>
+ 
+    <h3 class="subhead">Federal laboratory research continuity stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable federally anchored research continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>federal-laboratory-research-infrastructure signal</li>
+      <li>documented Department of Energy affiliation and documented University of Chicago linkage to Argonne and Fermilab preserved in the signal layer</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package is stronger on anchor-institution visibility than on a broader statewide comparison of federal research interfaces</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows durable federal-laboratory continuity where national-lab anchoring is explicit in the signal layer.</p>
+ 
+    <h3 class="subhead">Advanced research ecosystem stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable multi-institution research continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>major-university-research-corridor signal</li>
+      <li>federal-laboratory-research-infrastructure signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer emphasizes a defined set of major institutions rather than a complete statewide research-institution inventory</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows stable advanced-research continuity through visible university and federal-lab anchors, with stronger confidence around the documented major institutions than around full statewide research distribution.</p>
+ 
+    <h3 class="subhead">Quantum research environment stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Emerging but institutionally anchored continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>quantum-information-research-ecosystem signal</li>
+      <li>documented multi-institution participation spanning universities and federal laboratories preserved in the signal layer</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package is stronger on ecosystem presence and participation than on long-run output, statewide distribution, or deeper infrastructure comparison across all Illinois institutions</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows an emerging advanced-research continuity environment in quantum, with meaningful institutional anchoring already visible in the current signal set.</p>
+ 
+    <h3 class="subhead">Financial-market infrastructure stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable financial coordination continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>financial-market-infrastructure signal</li>
+      <li>documented CME derivatives-market scale and Chicago futures-exchange continuity preserved in the signal layer</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package is specific to CME visibility and does not attempt a broader statewide financial-infrastructure inventory</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows durable financial-market continuity where Chicago's derivatives-market infrastructure is explicitly documented.</p>
+ 
+    <h3 class="subhead">Digital infrastructure continuity stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Expanding statewide digital-connectivity continuity with uneven infrastructure-depth visibility.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>digital-infrastructure-expansion signal</li>
+      <li>documented broadband-office coordination, grant programs, Illinois Century Network upgrades, federal broadband support, and limited data-center-program visibility preserved in the signal layer</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a comprehensive statewide data-center, carrier-hotel, or colocation inventory</li>
+      <li>data-center concentration remains less fully evidenced than broadband-program continuity</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows visible digital-connectivity continuity at the statewide program and network-upgrade level, while deeper compute-site concentration and facility-density stability remain only partially visible.</p>
+ 
+    <h3 class="subhead">Digital-asset statutory experimentation stability</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Framework-level statutory continuity with limited operational-depth visibility.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>digital-asset-statutory-posture signal</li>
+      <li>documented blockchain and digital-asset act set, documented 205 ILCS 730/20 restrictions, and documented IDFPR implementation activity preserved in the signal layer</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a complete section-by-section statutory analysis</li>
+      <li>the current package does not provide broader operational market-depth or deployment evidence beyond the documented statutory and administrative materials</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Illinois shows continuity of formal statutory and administrative treatment for blockchain and digital-asset activity, while broader experimentation depth remains less fully visible in the current package.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — 10 stability fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Illinois's privacy enforcement surface is defined primarily through BIPA's biometric data protections and the Personal Information Protection Act (PIPA) governing breach notification and data security obligations. Illinois does not yet operate a comprehensive consumer data privacy regime at the level of California's CPRA, but the BIPA private right of action creates an enforcement surface with significant litigation density and well-established precedent structures that condition how privacy-adjacent product decisions are made in this corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active / BIPA-Defined</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">BIPA + PIPA</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Biometric data is highest-risk category</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Biometric Information Privacy Act (BIPA), Personal Information Protection Act (PIPA), Illinois Consumer Fraud and Deceptive Business Practices Act, breach notification requirements.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> BIPA class action litigation is the defining enforcement surface. Private right of action enables direct litigation without agency intermediation. PIPA imposes breach notification obligations across operators handling personally identifiable information of Illinois residents.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams not handling biometric data interact with a moderate privacy compliance surface. Teams collecting, processing, or storing biometric identifiers from Illinois residents — regardless of where the operator is based — operate inside the highest-risk enforcement band in the US privacy landscape.</div>
-    </div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md. The profile layer records that profile is the characterization layer of the package, downstream from signals.md and trust-dimensions.md.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Illinois currently presents within Atlas as:</p>
+    <ul class="evidence-bullets">
+      <li>a Chicago-centered multimodal logistics convergence environment with visible rail, interstate, port, and air-cargo continuity</li>
+      <li>an inland-waterway integration environment linking Great Lakes participation with Mississippi-system continuity at the corridor level</li>
+      <li>a federally anchored and university-linked research environment spanning Argonne, Fermilab, the University of Chicago, Northwestern, and the University of Illinois research ecosystem</li>
+      <li>an emerging quantum research participation environment with visible multi-institution coordination across universities and federal laboratories</li>
+      <li>a financial coordination environment with nationally visible derivatives-market infrastructure centered on CME</li>
+      <li>a high-capacity energy-generation and regional-transmission participation environment with documented nuclear depth and documented PJM / MISO visibility</li>
+      <li>an expanding statewide digital-connectivity environment with broadband-program continuity and limited data-center visibility</li>
+      <li>a formal digital-asset statutory environment with administrative implementation visibility and limited operational-depth coverage</li>
+    </ul>
+    <p class="muted">The profile layer records that Illinois does not presently appear in the current source set as:</p>
+    <ul class="evidence-bullets">
+      <li>a custody-regime jurisdiction</li>
+      <li>a DAO-wrapper jurisdiction</li>
+      <li>a national routing spine designation</li>
+      <li>a federal hosting corridor</li>
+      <li>a hyperscale compute corridor</li>
+      <li>a primary Internet-exchange concentration environment</li>
+    </ul>
+ 
+    <h3 class="subhead">Multimodal logistics convergence environment</h3>
+    <p class="muted">The profile layer records that Illinois' logistics posture is characterized in the current package by Chicago-centered convergence across rail, interstate, inland-waterway, Great Lakes, and air-cargo systems. The current package shows national rail-network convergence signal centered on northeastern Illinois freight-hub visibility, interstate-logistics-convergence signal with direct corridor visibility around I-80, I-90, I-70, and I-90 / I-94 modal linkage, inland-waterway and Great Lakes participation signals tied to the Port of Chicago and Illinois waterway connectivity, air-cargo continuity anchored by O'Hare, and trust interpretation describing durable multimodal logistics continuity with northeastern Illinois concentration. These conditions support a structural characterization centered on multimodal convergence rather than on a fully normalized statewide logistics-facility inventory.</p>
+ 
+    <h3 class="subhead">Inland-waterway continuity role</h3>
+    <p class="muted">The profile layer records that Illinois' inland-maritime posture is characterized in the current package by system-level linkage between Great Lakes transport participation and Mississippi-corridor continuity. The current package shows inland-waterway-corridor-continuity signal linking Illinois waterways to the Great Lakes and Mississippi system, Great-Lakes-maritime-participation signal through documented Port of Chicago and Lake Michigan participation, and trust interpretation describing stable inland-maritime integration at the corridor and system level. These conditions support a structural characterization centered on inland-waterway linkage and transfer continuity rather than on a complete river-facility inventory.</p>
+ 
+    <h3 class="subhead">Air cargo coordination environment</h3>
+    <p class="muted">The profile layer records that Illinois' air-logistics posture is characterized in the current package by O'Hare-centered cargo continuity. The current package shows air-cargo-logistics signal through documented O'Hare cargo scale, ranking visibility, and cargo-campus expansion, and trust interpretation describing durable air-cargo continuity anchored by O'Hare. These conditions support a structural characterization centered on national and international logistics-transfer visibility through O'Hare.</p>
+ 
+    <h3 class="subhead">Federal laboratory coordination presence</h3>
+    <p class="muted">The profile layer records that Illinois' federal research posture is characterized in the current package by visible national-laboratory anchoring. The current package shows federal-laboratory-research-infrastructure signal through Argonne National Laboratory and Fermilab presence, documented Department of Energy affiliation preserved in the signal layer, and trust interpretation describing durable federally anchored research continuity. These conditions support a structural characterization centered on long-horizon federal-laboratory continuity.</p>
+ 
+    <h3 class="subhead">Advanced university research ecosystem presence</h3>
+    <p class="muted">The profile layer records that Illinois' university research posture is characterized in the current package by visible multi-institution research continuity. The current package shows major-university-research-corridor signal spanning the University of Illinois Urbana-Champaign, Northwestern University, and the University of Chicago, federal-laboratory linkage preserved through the University of Chicago connection to Argonne and Fermilab, and trust interpretation describing durable multi-institution research continuity. These conditions support a structural characterization centered on a major-university research ecosystem rather than on a complete statewide inventory of all research institutions.</p>
+ 
+    <h3 class="subhead">Quantum research ecosystem participation</h3>
+    <p class="muted">The profile layer records that Illinois' advanced-research posture is characterized in the current package by visible quantum-ecosystem participation across universities and laboratories. The current package shows quantum-information-research-ecosystem signal through IQUIST, UChicago quantum-center visibility, and regional quantum-community participation, and trust interpretation describing an emerging but institutionally anchored quantum continuity environment. These conditions support a structural characterization centered on emerging quantum coordination participation with visible institutional depth.</p>
+ 
+    <h3 class="subhead">Financial derivatives coordination presence</h3>
+    <p class="muted">The profile layer records that Illinois' financial-infrastructure posture is characterized in the current package by Chicago-centered derivatives-market continuity. The current package shows financial-market-infrastructure signal through CME derivatives-market scale and Chicago futures-exchange continuity, and trust interpretation describing durable financial coordination continuity. These conditions support a structural characterization centered on national derivatives-market coordination visibility.</p>
+ 
+    <h3 class="subhead">Energy-generation coordination participation</h3>
+    <p class="muted">The profile layer records that Illinois' energy posture is characterized in the current package by visible nuclear-generation depth and regional transmission participation. The current package shows nuclear-generation-grid-participation signal through statewide reactor and generation-mix visibility, regional-transmission-coordination signal through documented PJM and MISO presence, and trust interpretation describing high-capacity grid continuity with partial topology visibility. These conditions support a structural characterization centered on high-capacity grid participation rather than on a fully mapped statewide transmission topology.</p>
+ 
+    <h3 class="subhead">Digital infrastructure continuity participation</h3>
+    <p class="muted">The profile layer records that Illinois' digital-connectivity posture is characterized in the current package by statewide broadband-program continuity and limited compute-site visibility. The current package shows digital-infrastructure-expansion signal through Illinois broadband-office coordination, grant programs, Illinois Century Network upgrades, and federal broadband-program support, limited data-center-program visibility preserved in the signal layer, and trust interpretation describing expanding statewide digital-connectivity continuity with uneven infrastructure-depth visibility. These conditions support a structural characterization centered on statewide connectivity-program continuity rather than on a fully normalized data-center or carrier-facility map.</p>
+ 
+    <h3 class="subhead">Digital-asset statutory experimentation posture</h3>
+    <p class="muted">The profile layer records that Illinois' digital-asset posture is characterized in the current package by formal statutory and administrative continuity. The current package shows digital-asset-statutory-posture signal through documented blockchain and digital-asset statutory frameworks and 205 ILCS 730/20 restrictions, administrative implementation visibility through the preserved IDFPR treatment in the signal layer, and trust interpretation describing framework-level statutory continuity with limited operational-depth visibility. These conditions support a structural characterization centered on statutory experimentation posture at the framework level rather than on broader operational adoption claims.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Illinois currently reads within Atlas as a Chicago-centered multimodal logistics and inland-waterway integration environment with durable federal-laboratory and university research continuity, nationally visible derivatives-market infrastructure, high-capacity grid participation, and expanding but incomplete digital-connectivity and digital-asset framework visibility.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + 10 characterization subsections + synthesis statement</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Illinois operates the most consequential biometric enforcement surface in the United States. BIPA establishes consent requirements, retention limitations, and a private right of action generating statutory damages of $1,000 per negligent violation and $5,000 per intentional violation per person per collection event. Class action litigation exposure under this framework has produced settlement structures in the hundreds of millions of dollars, making Illinois the defining jurisdiction for biometric product risk architecture nationally.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Maximum Risk Zone</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Consent-mandatory / litigation-dense</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">BIPA compliance is a non-negotiable baseline</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Biometric Information Privacy Act (BIPA, 740 ILCS 14), written consent and retention policy requirements, $1,000–$5,000 per-violation statutory damages, private right of action with class certification history.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> BIPA litigation is active, well-funded, and has produced precedent-setting class actions across face recognition, fingerprint scanning, voiceprint, and retinal scan surfaces. The Illinois Supreme Court has repeatedly expanded BIPA's enforcement reach.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> any product or deployment model collecting, storing, or processing biometric identifiers — including face geometry, fingerprints, retinal scans, or voiceprints — from Illinois residents must treat BIPA compliance as a pre-deployment requirement. Retroactive remediation after litigation initiation is structurally costly.</div>
-    </div>
-    <div class="note">Operational signal: BIPA is the defining legal instrument shaping AI identity product decisions in this corridor. Teams building biometric-adjacent AI systems should treat Illinois as the national benchmark for what biometric governance at maximum enforcement looks like.</div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that Builder Mode is downstream from signals.md, trust-dimensions.md, and profile.md, and does not replace those layers. The builder-mode layer records that this file provides structural interpretation only, and does not rank Illinois, compare Illinois to other jurisdictions, or prescribe deployment eligibility.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted">The builder-mode layer records that Illinois is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a Chicago-centered multimodal logistics convergence environment</li>
+      <li>an inland-waterway linkage environment connecting Great Lakes and Mississippi-system continuity</li>
+      <li>a federally anchored and university-linked research continuity environment</li>
+      <li>an emerging quantum research participation environment</li>
+      <li>a nationally visible derivatives-market coordination environment</li>
+      <li>a high-capacity grid participation environment with nuclear depth and PJM / MISO visibility</li>
+      <li>a statewide digital-connectivity expansion environment with limited compute-site detail</li>
+      <li>a formal digital-asset statutory environment with limited operational-depth visibility</li>
+    </ul>
+ 
+    <h3 class="subhead">Multimodal logistics convergence environment for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as a logistics environment where multimodal continuity is most visible through Chicago-centered rail, interstate, port, and air-cargo concentration. This interpretation is supported by the national-rail-network-convergence signal, the interstate-logistics-convergence signal, the inland-waterway and Great Lakes participation signals, the profile characterization of Illinois as a Chicago-centered multimodal logistics convergence environment, and the trust interpretation that multimodal continuity is durable but concentrated in northeastern Illinois and major documented nodes. The builder-mode layer records that builders should not overread this as a complete statewide logistics-facility map.</p>
+ 
+    <h3 class="subhead">Inland-waterway corridor linkage environment for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as a corridor-linkage environment where inland-waterway continuity connects Great Lakes participation with Mississippi-system transfer continuity. This interpretation is supported by the inland-waterway-corridor-continuity signal, the Great-Lakes-maritime-participation signal, the profile characterization of Illinois as an inland-waterway integration environment, and the trust interpretation that inland-maritime continuity is stable at the corridor and system level. The builder-mode layer records that builders should keep in view that river-facility depth remains less complete than the system-level linkage signal.</p>
+ 
+    <h3 class="subhead">Air cargo coordination visibility for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as an air-logistics environment with sustained national and international transfer visibility through O'Hare. This interpretation is supported by the air-cargo-logistics signal, the profile characterization of Illinois as an O'Hare-centered cargo continuity environment, and the trust interpretation that air-cargo continuity is durable but centered on the O'Hare node rather than a broader statewide aviation inventory.</p>
+ 
+    <h3 class="subhead">Federal laboratory research continuity environment for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as a federally anchored research-continuity environment where national-laboratory presence provides long-horizon institutional depth. This interpretation is supported by the federal-laboratory-research-infrastructure signal, the profile characterization of Illinois as a federal-laboratory coordination environment, and the trust interpretation that federal-laboratory continuity is durable where Argonne and Fermilab anchoring is explicit.</p>
+ 
+    <h3 class="subhead">Advanced university research ecosystem continuity for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as a stable institutional research environment centered on the University of Illinois research ecosystem, Northwestern University, and the University of Chicago. This interpretation is supported by the major-university-research-corridor signal, the profile characterization of Illinois as a major-university research ecosystem environment, and the trust interpretation that multi-institution research continuity is durable but not a complete statewide inventory of all research institutions.</p>
+ 
+    <h3 class="subhead">Quantum research ecosystem participation for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as an emerging advanced-research coordination environment in quantum where institutional participation is already visible across universities and laboratories. This interpretation is supported by the quantum-information-research-ecosystem signal, the profile characterization of Illinois as an emerging quantum participation environment, and the trust interpretation that quantum continuity is institutionally anchored but still emerging rather than fully statewide in depth.</p>
+ 
+    <h3 class="subhead">Financial derivatives coordination visibility for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as a nationally visible derivatives-market coordination environment through Chicago's CME-centered infrastructure. This interpretation is supported by the financial-market-infrastructure signal, the profile characterization of Illinois as a financial coordination environment centered on CME, and the trust interpretation that financial coordination continuity is durable where CME infrastructure is explicit.</p>
+ 
+    <h3 class="subhead">Energy-generation coordination participation for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as a high-capacity grid participation environment with visible nuclear depth and multi-state transmission coordination. This interpretation is supported by the nuclear-generation-grid-participation signal, the regional-transmission-coordination signal, the profile characterization of Illinois as an energy-generation and regional-transmission participation environment, and the trust interpretation that grid continuity is visible but only partially mapped in full statewide topology terms.</p>
+ 
+    <h3 class="subhead">Digital infrastructure continuity participation for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as a statewide digital-connectivity continuity environment where broadband-program depth is more visible than compute-site concentration. This interpretation is supported by the digital-infrastructure-expansion signal, the profile characterization of Illinois as an expanding statewide digital-connectivity environment with limited data-center visibility, and the trust interpretation that digital continuity is expanding but uneven in facility-depth visibility. The builder-mode layer records that builders should not overread the current package into a comprehensive statewide data-center or carrier-facility map.</p>
+ 
+    <h3 class="subhead">Digital-asset experimentation posture for builders</h3>
+    <p class="muted">The builder-mode layer records that builders should read Illinois as a formal statutory and administrative environment for digital-asset and blockchain activity, with framework-level continuity more visible than operational-depth continuity. This interpretation is supported by the digital-asset-statutory-posture signal, the profile characterization of Illinois as a formal digital-asset statutory environment, and the trust interpretation that digital-asset continuity is visible at the framework level but limited in broader operational-depth coverage.</p>
+ 
+    <h3 class="subhead">Design expectations for builders</h3>
+    <p class="muted">The builder-mode layer records that builders interpreting Illinois should assume:</p>
+    <ul class="evidence-bullets">
+      <li>multimodal continuity is strongest where Chicago-centered logistics, O'Hare, and inland-waterway linkages are already explicit in the package</li>
+      <li>research continuity is strongly anchored by federal laboratories and major universities</li>
+      <li>quantum participation is meaningful and institutionally anchored, but still better read as an emerging continuity environment than as a fully distributed statewide layer</li>
+      <li>CME provides explicit financial coordination visibility, but the current package does not expand into a broader statewide financial-system inventory</li>
+      <li>nuclear-generation and PJM / MISO participation provide clear grid-continuity signals, while detailed statewide topology remains incomplete</li>
+      <li>broadband-program continuity is more visible than comprehensive compute-site concentration</li>
+      <li>statutory and administrative digital-asset continuity is visible, while broader operational-depth interpretation should remain constrained</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — Role summary + 10 builder subsections + Design expectations</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Illinois is developing AI governance frameworks for public-sector deployment, including procurement guidance coordinated through state agency alignment surfaces and educational institution AI use policies. The Illinois State Board of Education and higher education coordination surfaces have begun integrating AI use guidance. The corridor's posture is formation-stage rather than enforcement-active, with procurement alignment and transparency requirements taking shape through 2026.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active Formation</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Procurement alignment + transparency guidance</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Opportunity surface for compliance-aware B2G operators</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Illinois Artificial Intelligence Technology Act provisions, AIVIA employment-surface requirements, state agency AI use guidance, Illinois State Board of Education AI integration frameworks, procurement alignment surfaces.</div>
-      <div class="detail-item"><strong>Growth signal:</strong> public-sector AI deployment is advancing through agency-level guidance rather than comprehensive legislative mandates, creating an accessible entry surface for B2G operators who can align with transparency and accountability expectations without navigating a fully codified procurement attestation regime.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams serving education or government deployment surfaces in Illinois interact with a less restrictive procurement environment than California but should anticipate governance expectations to formalize through 2027. AIVIA compliance remains a requirement for employment-facing AI surfaces regardless of public or private sector context.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, and builder-mode layers. Each layer records non-assignment constraints rooted in the evidence coverage preserved in the current package.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the evidence collected there, this file does not support characterizing Illinois as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a custody-regime jurisdiction</li>
+      <li>a DAO-wrapper jurisdiction</li>
+      <li>a national routing spine designation</li>
+      <li>a federal hosting corridor</li>
+      <li>a frontier-model AI ecosystem anchor</li>
+      <li>a hyperscale compute corridor</li>
+      <li>a primary Internet-exchange concentration environment</li>
+      <li>a federal AI-command-layer designation</li>
+      <li>a sovereign compute corridor</li>
+      <li>a comprehensively evidenced statewide or northern-Illinois data-center corridor</li>
+    </ul>
+    <p class="muted">The evidence layer records that this file also does not support assigning trust posture, routing role, coordination tier, or Atlas surfaces.</p>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based on the currently derived signals, this file does not support characterizing Illinois as any of the following: a custody-regime jurisdiction, a DAO-wrapper jurisdiction, a federal hosting corridor, a national routing spine designation, a frontier-model AI ecosystem anchor, a hyperscale compute corridor, a primary Internet-exchange concentration environment, a federal AI-command-layer designation, a sovereign compute corridor, a deployment-tier classification, or a surface-eligibility determination. The signals layer records that this file also does not assign routing authority, readiness tier, or Atlas surfaces.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that based on the currently derived stability signals, this file does not support characterizing Illinois as any of the following: a custody-regime jurisdiction, a DAO-wrapper jurisdiction, a national routing spine designation, a federal hosting corridor, a frontier-model AI ecosystem anchor, a hyperscale compute corridor, a primary Internet-exchange concentration environment, a deployment readiness classification, an Atlas surface-eligibility determination, a corridor-leadership-status classification, or a coordination-hierarchy inference. The trust-dimensions layer records that this file also does not assign routing authority, deployment tier, or Atlas surfaces.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Illinois' profile should not be read as: a routing-authority assignment, a deployment-tier classification, an Atlas surface-eligibility determination, a jurisdiction ranking claim, a coordination-hierarchy inference, a corridor-leadership-status designation, a national spine designation, a custody-regime jurisdiction claim, a DAO-wrapper jurisdiction claim, a federal hosting corridor claim, a hyperscale compute corridor claim, or a primary Internet-exchange concentration claim. The profile layer records that it should be read as a characterization of Illinois' current structural posture within the signal and trust material preserved in this Atlas package.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not support interpreting Illinois as any of the following: a custody-regime jurisdiction, a DAO-wrapper jurisdiction, a national routing spine designation, a federal hosting corridor, a hyperscale compute corridor, a primary Internet-exchange concentration environment, a deployment readiness classification, an Atlas surface-eligibility determination, a routing-authority assignment, a coordination-hierarchy inference, or a corridor-leadership-status designation. The builder-mode layer records that it should be read as builder-facing interpretation of Illinois' current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Change-log exclusions preserved</h3>
+    <p class="muted">The change-log records that the Illinois package preserves the following exclusions across downstream layers: no hyperscale compute corridor designation, no primary Internet-exchange concentration designation, no custody-regime jurisdiction designation, no DAO-wrapper jurisdiction designation, no federal hosting corridor designation, no frontier-model AI ecosystem designation, no national routing spine designation, no Atlas surface assignment, no jurisdiction ranking, and no coordination-hierarchy inference.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Illinois operates within a substantial developer network concentration anchored in the Chicago corridor, with fintech, logistics technology, and enterprise software deployment surfaces shaping the active build environment. The operating climate is defined less by open-source policy mandates than by BIPA compliance drag, which conditions product architecture decisions for any team deploying identity, biometric, or AI-adjacent functionality within this corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active · BIPA-Conditioned</div></div>
-      <div class="mini-box"><div class="label">Strength</div><div class="value">Fintech + logistics + enterprise surfaces</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">BIPA shapes product architecture before deployment</div></div>
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records evidence gaps across the evidence, signals, trust-dimensions, profile, and builder-mode layers.</p>
+ 
+    <h3 class="subhead">Evidence-layer gaps</h3>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">No comprehensive statewide inventory was established for Class I interchange concentration, intermodal-terminal concentration, or freight-facility distribution beyond the cited CMAP and IDOT hub descriptions.</div>
+      <div class="detail-item">No route-by-route evidence inventory was established for I-55, I-57, I-88, or full statewide interstate-corridor continuity beyond the directly documented references to I-80, I-90, I-70, and I-94 modal linkages.</div>
+      <div class="detail-item">No comprehensive statewide port-terminal inventory or commodity-flow map was established beyond the cited Port of Chicago and Illinois Marine Transportation System materials.</div>
+      <div class="detail-item">Ohio River continuity is evidenced only through Illinois Marine Transportation System inclusion, not through a fuller Illinois-side facility or tonnage inventory.</div>
+      <div class="detail-item">No full transmission-topology or service-boundary map was established beyond official evidence that Illinois includes PJM and MISO visibility.</div>
+      <div class="detail-item">No plant-by-plant nuclear facility inventory was established beyond the official statewide reactor count, station count, and electricity-generation-share references.</div>
+      <div class="detail-item">No comprehensive statewide data-center, colocation, or carrier-hotel inventory was established beyond DCEO incentive materials and the annual-report listing language.</div>
+      <div class="detail-item">No complete section-by-section statutory review was established for Illinois digital-asset law beyond the cited act titles, the cited 205 ILCS 730/20 local-government restrictions, and IDFPR implementation materials.</div>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> BIPA compliance architecture requirements, AIVIA employment-surface developer obligations, Illinois Consumer Fraud and Deceptive Business Practices Act coverage of AI-adjacent products, state procurement alignment guidance.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> builders operating within the Illinois corridor interact with an active development environment shaped by financial services, logistics coordination, and enterprise software deployment surfaces. BIPA compliance is the defining policy drag for teams touching identity or biometric functionality, and this condition is not expected to soften.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> well-suited for teams deploying across fintech, logistics technology, and enterprise governance surfaces. Teams working with biometric or identity-adjacent functionality must integrate BIPA compliance architecture before deployment, not after. Open-source projects handling biometric data from Illinois residents interact with the same BIPA obligations as commercial operators.</div>
-    </div>
+ 
+    <h3 class="subhead">Signal-layer gaps</h3>
+    <p class="muted">The signals layer records additional gaps at the signal level, including no carrier-by-carrier or terminal-by-terminal rail convergence inventory, no route-by-route evidence for I-55 / I-57 / I-88, no comprehensive Illinois-side Mississippi / Illinois / CAWS / Ohio River facility inventory, no full transmission-topology mapping beyond PJM and MISO visibility, no plant-by-plant nuclear-generation distribution signal, no comprehensive statewide data-center inventory beyond incentive-program visibility, and no complete section-by-section digital-asset statutory analysis beyond the cited act set and IDFPR implementation materials.</p>
+ 
+    <h3 class="subhead">Trust, profile, and builder-mode gap inheritance</h3>
+    <p class="muted">The trust-dimensions, profile, and builder-mode layers each record that their respective gap structures mirror the evidence and signal gaps rather than expanding them. The change-log records identified continuity gaps for statewide Internet-exchange concentration confirmation, hyperscale compute corridor confirmation, custody-regime statutory environment confirmation, DAO-wrapper statutory environment confirmation, digital-asset regulatory continuity at full jurisdiction scale, route-by-route interstate overlap beyond the directly documented Illinois corridor set, statewide rail-terminal and intermodal concentration inventory, full transmission-topology and service-boundary mapping, and comprehensive statewide data-center, carrier-hotel, and colocation inventory.</p>
+ 
+    <div class="src">Source: evidence.md (Evidence gaps), signals.md (Signal gaps), trust-dimensions.md (Stability gaps), profile.md (Profile gaps), builder-mode.md (Builder interpretation gaps), change-log.md (Identified continuity gaps)</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Bitcoin mining and proof-of-work compute operations interact with a structurally more favorable environment in Illinois than coastal regulatory surfaces. Electricity rates operate at a mid-band level within the continental US, nuclear generation infrastructure provides grid stability, and no active legislative effort to restrict proof-of-work mining is on record as of 2026. The environmental regulatory posture is less adversarial than California, though Illinois does maintain carbon reduction targets that may interface with energy-intensive compute expansion over a longer horizon.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Moderate Risk</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Mid-band (US)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">More favorable than coastal surfaces; monitor carbon policy</div></div>
-    </div>
-    <div class="radar" aria-label="Illinois energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:35%;background:var(--yellow)"></div></div><div class="score">35</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:42%;background:var(--yellow)"></div></div><div class="score">42</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:68%;background:var(--green)"></div></div><div class="score">68</div></div>
-    </div>
-    <div class="note">Builder implication: Illinois operates as a mid-tier compute deployment surface — not a low-cost optimization corridor like Wyoming or Oklahoma, but structurally more viable than California or New York for energy-sensitive operations. Carbon reduction commitments should be tracked as a forward-horizon regulatory variable.</div>
+  <!-- ── 10. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Package creation summary</h3>
+    <p class="muted">The change-log records that the Illinois jurisdiction package was created as part of Atlas Phase normalization using evidence.md as the sole signal-origin layer. The change-log records that derived documents include signals.md, trust-dimensions.md, profile.md, and builder-mode.md, and that all downstream layers were generated strictly from upstream layers without introducing external infrastructure claims.</p>
+ 
+    <h3 class="subhead">Signal-layer derivation policy</h3>
+    <p class="muted">The change-log records that signals.md was constructed exclusively from evidence.md, and that no infrastructure elements were introduced beyond the evidence-backed Illinois package coverage for: multimodal logistics convergence centered on Chicago rail, interstate, port, and air-cargo visibility; Illinois Waterway inland-maritime linkage continuity; Great Lakes transport participation; O'Hare air cargo infrastructure visibility; Argonne National Laboratory presence; Fermilab presence; major university research ecosystems; quantum-information science participation; CME derivatives-market infrastructure; nuclear-generation participation; regional grid continuity participation through documented PJM / MISO visibility; documented broadband expansion signals; and documented digital-asset statutory posture where evidenced.</p>
+ 
+    <h3 class="subhead">Stability interpretation policy</h3>
+    <p class="muted">The change-log records that trust-dimensions.md was derived strictly from signals.md. The change-log records that no routing-authority inference was introduced, no deployment-tier inference was introduced, and no Atlas-surface-eligibility inference was introduced.</p>
+ 
+    <h3 class="subhead">Structural profile synthesis policy</h3>
+    <p class="muted">The change-log records that profile.md was derived strictly from signals.md and trust-dimensions.md. The change-log records that no coordination-hierarchy inference was introduced, no corridor-leadership inference was introduced, and no national-spine designation was introduced.</p>
+ 
+    <h3 class="subhead">Builder interpretation policy</h3>
+    <p class="muted">The change-log records that builder-mode.md was derived strictly from signals.md, trust-dimensions.md, and profile.md. The change-log records that no routing-eligibility inference was introduced, no readiness classification was introduced, and no deployment-suitability inference was introduced.</p>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was previously reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, and Topology Completion Layer. The change-log records that this sync was structural only and did not alter evidence, signals, trust interpretation, profile, builder mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">Normalization contract confirmation</h3>
+    <p class="muted">The change-log records that the Illinois jurisdiction package remains aligned with Atlas normalization requirements: signals derived strictly from evidence.md; no routing-authority assignment; no deployment-tier assignment; no Atlas-surface assignment; no jurisdiction ranking; no coordination-hierarchy inference; no corridor-leadership designation; and no national-spine designation inference.</p>
+ 
+    <p class="muted"><strong>Illinois package status:</strong> COMPLETE</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: preliminary · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Illinois's regulatory vector is directional on biometrics, moderately active on AI formation, and stable on digital assets. The corridor functions as a national benchmark for biometric enforcement and is developing AI governance instruments that will likely draw on that enforcement infrastructure. Operators interacting across this corridor should model BIPA compliance as a permanent condition and AI accountability surface expansion as a medium-term trajectory.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — ascending through employment-surface enforcement, procurement guidance formation, and likely expansion toward broader automated decision-making disclosure requirements through 2027.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — stable. Illinois maintains a compliance-standard money transmission framework without active movement toward restrictive digital asset legislation.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — active and BIPA-anchored. Comprehensive consumer privacy legislation remains in formation, with BIPA litigation continuing to generate precedent that conditions the broader privacy surface.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — entrenched and expanding. Illinois Supreme Court decisions have consistently broadened BIPA's reach, and no legislative rollback trajectory is in evidence.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — moderate and stable. No active legislative threat, but carbon reduction commitments and long-term energy policy trajectory should be tracked as variables for energy-intensive deployment planning.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — active but BIPA-conditioned. Fintech and logistics technology deployment surfaces remain viable, and compliance drag is concentrated in biometric and identity-adjacent product categories.</div>
-    </div>
-    <div class="callout">12-month outlook: Illinois is likely to continue BIPA enforcement at elevated intensity, advance AI employment-surface governance, and maintain a stable digital asset compliance environment. The corridor's strategic position within national inland routing infrastructure makes it a durable Atlas alignment surface regardless of regulatory trajectory.</div>
-  </section>
- 
-</div>
+</div><!-- /main col -->
  
 <!-- ── SIDEBAR ── -->
 <aside>
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">Illinois at a glance</h3>
-    <p class="muted mini">Primary corridor for Great Lakes–Mississippi inland freight routing alignment. Defining BIPA enforcement surface nationally. Moderate AI regulatory formation stage. Structurally viable compute environment relative to coastal surfaces.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Illinois jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/illinois/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> logistics technology, fintech, enterprise governance surfaces, public-sector AI formation, compute deployment requiring lower energy cost than coastal corridors.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> biometric product deployment without BIPA compliance architecture in place, surveillance-proximate identity systems, teams without capacity for biometric consent and retention policy infrastructure.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>2008 (active)</strong> — BIPA in force; private right of action generating ongoing class litigation. No sunset mechanism active.</li>
-      <li><strong>2020 (active)</strong> — Artificial Intelligence Video Interview Act (AIVIA) in force; applies to all employers using AI in video screening of Illinois residents.</li>
-      <li><strong>2026</strong> — AI governance formation through procurement guidance and agency alignment surfaces expected to consolidate.</li>
-      <li><strong>2026–2027</strong> — Comprehensive consumer privacy legislation possible; watch for movement following neighboring state action.</li>
+      <li><strong>Jurisdiction:</strong> Illinois</li>
+      <li><strong>Code:</strong> IL · US-IL</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> preliminary</li>
+      <li><strong>Package status:</strong> COMPLETE (canonical)</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-national-position">
-    <div class="smallcaps">National Atlas Position</div>
-    <h3 id="heading-national-position">Corridor relationships</h3>
-    <p class="muted mini">Illinois interfaces with the Missouri Midcontinent Logistics &amp; River Convergence Corridor to the south, Indiana Midwest manufacturing corridor surfaces to the east, Iowa upper-Mississippi routing continuity surfaces to the west, and Wisconsin Great Lakes industrial alignment surfaces to the north. Chicago's rail convergence infrastructure anchors national east–west and north–south freight crossing layers, positioning Illinois as a primary node within the inland logistics routing surface of the Atlas national map.</p>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
+    <ul class="mini">
+      <li><strong>Corridor Group:</strong> Great Lakes Industrial Core Corridor</li>
+      <li><strong>Foundation Layer:</strong> Great Lakes Industrial Core Layer</li>
+      <li><strong>Completion Layer:</strong> Great Lakes Completion Layer</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
-    <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Coverage Inventory</div>
+    <h3 id="heading-sidebar-coverage">Evidence anchors</h3>
+    <ul class="mini muted">
+      <li>Freight rail &amp; multimodal logistics (CMAP, IDOT)</li>
+      <li>Waterways, Port of Chicago, Great Lakes</li>
+      <li>Air cargo (O'Hare)</li>
+      <li>Highway corridor visibility</li>
+      <li>Manufacturing &amp; industrial base (DCEO)</li>
+      <li>Federal labs (Argonne, Fermilab)</li>
+      <li>University research (UChicago, UIUC, Northwestern)</li>
+      <li>Quantum ecosystem (IQUIST, UChicago)</li>
+      <li>Financial infrastructure (CME)</li>
+      <li>Energy &amp; nuclear (PJM, MISO, 11 reactors)</li>
+      <li>Broadband (Connect Illinois, ICN)</li>
+      <li>Digital-asset statutes (205 ILCS 725/730/731/732)</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-standardization">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-standardization">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: preliminary</li>
+      <li>Signal layer: preliminary</li>
+      <li>Trust dimensions: preliminary</li>
+      <li>Profile: preliminary</li>
+      <li>Builder-mode: preliminary</li>
+      <li>Package status: COMPLETE</li>
+      <li>Surface assignment: none</li>
+    </ul>
   </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale compute corridor designation.</li>
+      <li>Not a DAO-wrapper or custody-regime designation.</li>
+    </ul>
+  </div>
+ 
 </aside>
-</div>
+</div><!-- /grid-sidebar -->
  
 </main>
  
