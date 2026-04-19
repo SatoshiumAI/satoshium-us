@@ -1,0 +1,19 @@
+# Kentucky — Trust Dimensions
+
+Trust-dimension derivation constraint: dimensions derive strictly from signals.md. Absence of signals reflects absence of normalized signal-layer coverage.
+
+No Kentucky-specific trust-dimension interpretation is established in the current package because the evidence layer does not yet preserve Kentucky-specific normalized documentary evidence entries.
+
+## Structural exclusions
+
+The current evidence and signal set does not support trust-dimension treatment for routing authority, ranking logic, surface assignment, or deployment readiness.
+
+## Evidence gaps
+
+- No Kentucky-specific normalized documentary evidence has been preserved in the current canonical package.
+- No statewide legal, institutional, logistics, research, energy, digital, or governance characterization can be established until source-backed Kentucky evidence entries are added.
+- The current package does not support Kentucky-specific infrastructure, coordination, or statutory interpretation beyond evidence absence.
+
+Trust completeness status: preliminary
+
+Surface assignment status: none
