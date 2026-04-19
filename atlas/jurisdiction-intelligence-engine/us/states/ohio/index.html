@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Ohio — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Ohio operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Ohio Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/ohio/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,38 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
+.scope-block{margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.04)}
+.scope-block .scope-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.scope-block ul{margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block li{margin-bottom:2px;line-height:1.5}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +172,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +188,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Ohio</h1>
-    <p class="kicker">Ohio operates as an Ohio River &amp; Great Lakes Multimodal Infrastructure Corridor supporting inland freight continuity across river-aligned logistics systems, Lake Erie maritime routing interfaces, and cross-regional rail and pipeline coordination linking Midwest, Appalachian, and northeastern deployment corridors.</p>
+    <p class="kicker">This page renders the canonical Ohio Atlas jurisdiction package. The canonical package positions Ohio within the Great Lakes Industrial Core Corridor under the canonical jurisdiction lens "Great Lakes industrial + inland freight convergence corridor", with canonical scope limited to corridor-layer anchors. All completeness statuses are recorded as corridor-layer sufficient.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">OH · US-OH</div>
-      <div class="hero-chip">Columbus</div>
-      <div class="hero-chip">Ohio River &amp; Great Lakes Multimodal Infrastructure Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Ohio quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Moderate / Emerging</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Open / Money-Tx Framework</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Limited Framework</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Permissive Zone</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Moderate-Governance / Infrastructure-First</div></div>
+      <div class="hero-chip">Jurisdiction: Ohio (OH · US-OH)</div>
+      <div class="hero-chip">Jurisdiction lens: Great Lakes industrial + inland freight convergence corridor</div>
+      <div class="hero-chip">Completeness: corridor-layer sufficient</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Great Lakes Industrial Core sibling</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Scope Boundaries</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,209 +222,600 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Ohio operates as the Ohio River &amp; Great Lakes Multimodal Infrastructure Corridor within the central-eastern U.S. deployment surface. Teams interacting across this corridor interface with Lake Erie maritime routing continuity, Ohio River inland freight infrastructure, national rail convergence layers, and pipeline transport alignment across Appalachian Basin surfaces. The governance posture is structurally moderate, with limited state-level AI and privacy friction and a historically open posture toward digital asset technical operations.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>AI Policy</strong></div><span class="pill yellow">Moderate · Emerging</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill green">Open · Money-Tx Framework</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Privacy / Data</strong></div><span class="pill green">Limited Framework</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Biometrics</strong></div><span class="pill green">Permissive Zone</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">Developing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Moderate-Governance / Infrastructure-First</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Great Lakes Industrial Core Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Ohio operates as a lower-friction corridor for infrastructure-adjacent deployment, digital asset technical operations, and compute-intensive workloads. Teams deploying inside AI governance formation or dense privacy enforcement surfaces should monitor OPPA trajectory and working group output as the governance posture develops.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Great Lakes Industrial Core Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Great Lakes Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Lens</div>
+      <div class="field-value">Great Lakes industrial + inland freight convergence corridor</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from atlas.md and records Atlas corridor-topology placement only.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, coordination tiers, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/ohio/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Ohio River &amp; Great Lakes Multimodal Infrastructure Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only corridor-relevant structural anchors documented for Ohio that are sufficient to support Atlas signal derivation. The evidence layer records that it does not perform an open-ended statewide infrastructure survey and does not assign trust posture, routing role, coordination tier, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. The canonical Ohio package is explicitly scope-narrowed to corridor-layer anchors — all completeness statuses across evidence, signals, trust, profile, and builder-mode are canonically recorded as "corridor-layer sufficient" rather than "preliminary". This is a distinct canonical neutrality category.</p>
+    <div class="callout mini" style="margin-top:12px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — Scope; change-log.md — Scope constraints applied during population</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 11 evidence subsections documenting Ohio's corridor-relevant structural anchors across Great Lakes manufacturing, Ohio River logistics, inland freight convergence, interstate convergence, rail intermodal, air cargo, steel-belt manufacturing, research, transmission, broadband, and digital-asset statutory posture.</p>
+ 
+    <h3 class="subhead">Great Lakes manufacturing continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Port of Cleveland states it is the first major U.S. port of call on the Great Lakes and a gateway to major Midwest markets including Cincinnati, Columbus, Detroit, Pittsburgh, Indianapolis, and Chicago.</li>
+      <li>The evidence layer records that the Port of Toledo states it is home to 13 terminals linked to global markets through the Great Lakes / St. Lawrence Seaway System.</li>
+      <li>The evidence layer records that the Port of Toledo states its general cargo dock has on-dock Class I rail access and sits at the crossroads of I-75 and I-80/90.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/ohio/</div>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Port of Cleveland, "General Cargo Terminal" — <a href="https://www.portofcleveland.com/general-cargo-terminal/" target="_blank" rel="noopener">https://www.portofcleveland.com/general-cargo-terminal/</a></li>
+        <li>Toledo-Lucas County Port Authority, "Port of Toledo" — <a href="https://www.toledoport.org/port-of-toledo" target="_blank" rel="noopener">https://www.toledoport.org/port-of-toledo</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Ohio River logistics continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Ports of Cincinnati &amp; Northern Kentucky states its inland-port jurisdiction includes 226.5 miles of commercially navigable waterways on the Ohio River and Licking River.</li>
+      <li>The evidence layer records that the Ports of Cincinnati &amp; Northern Kentucky states the expanded port boundary supports more than 70 active terminals moving an estimated 48 million tons of cargo annually.</li>
+      <li>The evidence layer records that the port re-designation profile states inland-waterway freight can link with surface and air transportation facilities.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>The Port of Greater Cincinnati Development Authority, "Ports of Cincinnati and Northern Kentucky Re-Designation" — <a href="https://www.cincinnatiport.org/projects/ports-of-cincinnati-and-northern-kentucky-re-designation/" target="_blank" rel="noopener">https://www.cincinnatiport.org/projects/ports-of-cincinnati-and-northern-kentucky-re-designation/</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Midwest inland freight convergence structure</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that ODOT states Ohio's statewide transportation system includes more than 43,000 miles of highway and more than $115 billion in infrastructure assets supporting movement of people and goods.</li>
+      <li>The evidence layer records that ODOT documents approved Ohio intermodal facilities for international sealed containers.</li>
+      <li>The evidence layer records that the Port of Cleveland documents reach to major Midwest markets from a Great Lakes gateway position, while the Cincinnati inland-port jurisdiction and Rickenbacker logistics complex document river, rail, highway, and air-linked freight continuity inside the state.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Ohio Department of Transportation, "Divisions" — <a href="https://www.transportation.ohio.gov/about-us/divisions/" target="_blank" rel="noopener">https://www.transportation.ohio.gov/about-us/divisions/</a></li>
+        <li>Ohio Department of Transportation, "Approved Intermodal Facilities" — <a href="https://www.transportation.ohio.gov/working/permits/special-hauling-permits/apply/intermodal" target="_blank" rel="noopener">https://www.transportation.ohio.gov/working/permits/special-hauling-permits/apply/intermodal</a></li>
+        <li>Port of Cleveland, "General Cargo Terminal" — <a href="https://www.portofcleveland.com/general-cargo-terminal/" target="_blank" rel="noopener">https://www.portofcleveland.com/general-cargo-terminal/</a></li>
+        <li>The Port of Greater Cincinnati Development Authority, "Ports of Cincinnati and Northern Kentucky Re-Designation" — <a href="https://www.cincinnatiport.org/projects/ports-of-cincinnati-and-northern-kentucky-re-designation/" target="_blank" rel="noopener">https://www.cincinnatiport.org/projects/ports-of-cincinnati-and-northern-kentucky-re-designation/</a></li>
+        <li>Columbus Regional Airport Authority, "Cargo" — <a href="https://flycolumbus.com/cargo/" target="_blank" rel="noopener">https://flycolumbus.com/cargo/</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Interstate freight convergence</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Port of Cleveland documents immediate truck access to State Route 2 and I-90, quick access to I-77 and I-71, and Ohio Turnpike access via I-80.</li>
+      <li>The evidence layer records that the Port of Toledo documents location at the crossroads of I-75 and I-80/90.</li>
+      <li>The evidence layer records that Rickenbacker development materials document a 12-minute drive to Route 23 and Interstates 70, 71, and 270.</li>
+      <li>The evidence layer records that ODOT's Downtown Ramp Up project documents active reconstruction on I-70 in downtown Columbus.</li>
+      <li>The evidence layer records that the retained source set did not independently confirm I-76, so I-76 is not used as a structural anchor in this package.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Port of Cleveland, "General Cargo Terminal" — <a href="https://www.portofcleveland.com/general-cargo-terminal/" target="_blank" rel="noopener">https://www.portofcleveland.com/general-cargo-terminal/</a></li>
+        <li>Toledo-Lucas County Port Authority, "Port of Toledo" — <a href="https://www.toledoport.org/port-of-toledo" target="_blank" rel="noopener">https://www.toledoport.org/port-of-toledo</a></li>
+        <li>Columbus Regional Airport Authority, "LCK development opportunities" — <a href="https://flycolumbus.com/business/lck-development-opportunities/" target="_blank" rel="noopener">https://flycolumbus.com/business/lck-development-opportunities/</a></li>
+        <li>Ohio Department of Transportation, "I-70/71 Downtown Ramp Up: Phase 4A" — <a href="https://www.transportation.ohio.gov/projects/projects/77372" target="_blank" rel="noopener">https://www.transportation.ohio.gov/projects/projects/77372</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Rail intermodal corridor visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that ODOT documents approved Ohio intermodal facilities for international sealed containers.</li>
+      <li>The evidence layer records that Rickenbacker states coast-to-coast intermodal shipping is available through two of the nation's largest rail providers in the region and identifies CSX service directly.</li>
+      <li>The evidence layer records that the Port of Cleveland documents service by two Class I railroads, CSX and Norfolk Southern.</li>
+      <li>The evidence layer records that Toledo's Dr. Martin Luther King, Jr. Plaza documents four major freight railroads in the region and states Toledo ranks as one of the top five rail hubs in the U.S.</li>
+      <li>The evidence layer records that Port of Cleveland rail operations documentation states steel is the primary cargo handled by the Cleveland Port Railway and that rail carloads materially increased after OmniTRAX acquired the line.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Ohio Department of Transportation, "Approved Intermodal Facilities" — <a href="https://www.transportation.ohio.gov/working/permits/special-hauling-permits/apply/intermodal" target="_blank" rel="noopener">https://www.transportation.ohio.gov/working/permits/special-hauling-permits/apply/intermodal</a></li>
+        <li>Columbus Regional Airport Authority, "Rail intermodal" — <a href="https://flycolumbus.com/cargo/rail-intermodal/" target="_blank" rel="noopener">https://flycolumbus.com/cargo/rail-intermodal/</a></li>
+        <li>Port of Cleveland, "General Cargo Terminal" — <a href="https://www.portofcleveland.com/general-cargo-terminal/" target="_blank" rel="noopener">https://www.portofcleveland.com/general-cargo-terminal/</a></li>
+        <li>Port of Cleveland, "Partner Highlight – OmniTRAX" — <a href="https://www.portofcleveland.com/15863-2/" target="_blank" rel="noopener">https://www.portofcleveland.com/15863-2/</a></li>
+        <li>Toledo-Lucas County Port Authority, "Dr. Martin Luther King, Jr. Plaza" — <a href="https://www.toledoport.org/dr-martin-luther-king-jr-plaza" target="_blank" rel="noopener">https://www.toledoport.org/dr-martin-luther-king-jr-plaza</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Air cargo logistics visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Rickenbacker states it is one of the world's only cargo-focused airports.</li>
+      <li>The evidence layer records that Rickenbacker states international carriers fly there regularly from Asia, Europe, and the Middle East.</li>
+      <li>The evidence layer records that Rickenbacker documents more than 75 million square feet of warehouse and distribution space in the surrounding area and direct adjacency to the Rickenbacker Intermodal Terminal.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Columbus Regional Airport Authority, "Cargo" — <a href="https://flycolumbus.com/cargo/" target="_blank" rel="noopener">https://flycolumbus.com/cargo/</a></li>
+        <li>Columbus Regional Airport Authority, "Warehouse &amp; distribution" — <a href="https://flycolumbus.com/cargo/warehouse-distribution/" target="_blank" rel="noopener">https://flycolumbus.com/cargo/warehouse-distribution/</a></li>
+        <li>Columbus Regional Airport Authority, "LCK development opportunities" — <a href="https://flycolumbus.com/business/lck-development-opportunities/" target="_blank" rel="noopener">https://flycolumbus.com/business/lck-development-opportunities/</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Steel-belt manufacturing continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Port of Cleveland's rail-operations partner states steel is the primary cargo handled through Cleveland port rail operations.</li>
+      <li>The evidence layer records that the Port of Toledo states Cleveland-Cliffs' direct reduction plant at Ironville Terminal began commercial production in 2020, receives more than two million tons of product by vessel, and ships finished product via truck and rail.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Port of Cleveland, "Partner Highlight – OmniTRAX" — <a href="https://www.portofcleveland.com/15863-2/" target="_blank" rel="noopener">https://www.portofcleveland.com/15863-2/</a></li>
+        <li>Toledo-Lucas County Port Authority, "Port of Toledo" — <a href="https://www.toledoport.org/port-of-toledo" target="_blank" rel="noopener">https://www.toledoport.org/port-of-toledo</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Research-institution engineering visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Ohio State Engineering states its research focus areas include mobility and manufacturing.</li>
+      <li>The evidence layer records that Ohio State Engineering states fiscal year 2025 research was supported by $219.2 million in externally sponsored expenditures and more than $67.1 million in industry R&amp;D expenditures.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Ohio State University College of Engineering, "Research Overview" — <a href="https://engineering.osu.edu/research-overview" target="_blank" rel="noopener">https://engineering.osu.edu/research-overview</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Regional transmission participation</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that PUCO states Ohio's six PUCO-regulated electric utilities are members of PJM Interconnection.</li>
+      <li>The evidence layer records that PUCO states PJM is the regional transmission organization serving over 65 million electricity customers in 13 states and the District of Columbia.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Public Utilities Commission of Ohio, "News Bureau: Preparing for hot weather" — <a href="https://puco.ohio.gov/news/news-bureau-hot-temps" target="_blank" rel="noopener">https://puco.ohio.gov/news/news-bureau-hot-temps</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Documented broadband expansion initiatives</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that BroadbandOhio states Ohio is receiving $793 million through the federal BEAD program to build broadband networks, implement subsidies for low-income households, and develop digital opportunity programs.</li>
+      <li>The evidence layer records that BroadbandOhio states its Community Accelerator sessions are meant to prepare local leaders for current and future broadband funding opportunities.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Ohio Department of Development, "Governor DeWine Announces New Chapter of BroadbandOhio Community Accelerator" — <a href="https://development.ohio.gov/home/news-and-events/all-news/2025-0421-governor-dewine-announces-new-chapter-of-broadbandohio-community-accelerator" target="_blank" rel="noopener">https://development.ohio.gov/home/news-and-events/all-news/2025-0421-governor-dewine-announces-new-chapter-of-broadbandohio-community-accelerator</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Digital-asset statutory posture</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Ohio Revised Code section 1306.01 states that a record secured through blockchain technology is considered to be in electronic form and that a signature secured through blockchain technology is considered to be an electronic signature.</li>
+      <li>The evidence layer records that Ohio Revised Code section 2137.01 defines digital assets, custodians, and related fiduciary-access terms in state law.</li>
+      <li>The evidence layer records that these statutes document narrow legal recognition and fiduciary-access treatment, but the retained evidence does not establish a broader operational digital-asset regime for Ohio.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Ohio Revised Code, section 1306.01 — <a href="https://codes.ohio.gov/ohio-revised-code/section-1306.01" target="_blank" rel="noopener">https://codes.ohio.gov/ohio-revised-code/section-1306.01</a></li>
+        <li>Ohio Revised Code, section 2137.01 — <a href="https://codes.ohio.gov/ohio-revised-code/section-2137.01" target="_blank" rel="noopener">https://codes.ohio.gov/ohio-revised-code/section-2137.01</a></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 11 evidence subsections with canonical source citations</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Ohio's AI governance surface is forming through executive-order and working-group mechanisms rather than legislative mandates as of 2026. EO 2023-04D established a state AI task force and directed agency-level guidance coordination through the Department of Administrative Services. The jurisdiction does not operate a dedicated AI enforcement framework equivalent to California's procurement attestation surface; teams deploying inside this corridor interact with a developing rather than prescribed compliance environment.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate · Emerging</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Working group + procurement guidance formation</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Monitor trajectory; limited immediate friction</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> EO 2023-04D (AI task force activation), Ohio Department of Administrative Services (DAS) AI guidance for state agencies, federal baseline alignment, state IT policy framework.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> no dedicated AI enforcement body as of 2026; AG office handles unfair and deceptive practices claims under general consumer protection authority; working group output is expected to condition state procurement surfaces through 2027.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying frontier-model or AI-integrated products inside Ohio face substantially lower state-level compliance overhead than California-corridor counterparts; procurement requirements are forming and should be tracked as they may activate vendor documentation obligations for government-facing deployments.</div>
-    </div>
-    <div class="note">Operational signal: Ohio's AI governance trajectory is measured. The working group formation pattern suggests that procurement-facing requirements may materialize through 2027, but the jurisdiction does not currently operate as a compliance-friction surface for private-sector AI deployment.</div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code>. The signals layer records that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted">The signals layer records 10 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">Great Lakes manufacturing continuity signal</h3>
+    <p class="muted">The signals layer records that Ohio shows a Great-Lakes-manufacturing-continuity signal through documented Cleveland and Toledo port structure, documented Great Lakes / Seaway linkage, and documented Class I rail and interstate access around those nodes.</p>
+ 
+    <h3 class="subhead">Ohio River logistics continuity signal</h3>
+    <p class="muted">The signals layer records that Ohio shows an Ohio-River-logistics-continuity signal through documented Cincinnati / Northern Kentucky inland-port jurisdiction, documented navigable-waterway span, and documented active terminal density.</p>
+ 
+    <h3 class="subhead">Midwest inland freight convergence signal</h3>
+    <p class="muted">The signals layer records that Ohio shows a Midwest-inland-freight-convergence signal through documented statewide transportation-system scale, documented approved intermodal-facility visibility, and documented Great Lakes, river, rail, air, and highway-linked freight anchors.</p>
+ 
+    <h3 class="subhead">Interstate freight convergence signal</h3>
+    <p class="muted">The signals layer records that Ohio shows an interstate-freight-convergence signal through directly documented visibility of I-70, I-71, I-75, I-77, I-80, and I-90 around Cleveland, Toledo, Columbus, and Rickenbacker-linked freight structure.</p>
+ 
+    <h3 class="subhead">Rail intermodal corridor visibility signal</h3>
+    <p class="muted">The signals layer records that Ohio shows a rail-intermodal-corridor-visibility signal through documented state-approved intermodal facilities, documented Rickenbacker coast-to-coast intermodal access, documented Cleveland Class I rail service, and documented Toledo freight-rail concentration.</p>
+ 
+    <h3 class="subhead">Air cargo logistics visibility signal</h3>
+    <p class="muted">The signals layer records that Ohio shows an air-cargo-logistics-visibility signal through documented Rickenbacker cargo specialization, international carrier access, warehouse and distribution concentration, and adjacency to an intermodal terminal.</p>
+ 
+    <h3 class="subhead">Steel-belt manufacturing continuity signal</h3>
+    <p class="muted">The signals layer records that Ohio shows a steel-belt-manufacturing-continuity signal through documented steel-primary cargo at the Port of Cleveland and documented Toledo direct-reduction steel production linked to vessel, truck, and rail movement.</p>
+ 
+    <h3 class="subhead">Research-institution engineering visibility signal</h3>
+    <p class="muted">The signals layer records that Ohio shows a research-institution-engineering-visibility signal through directly documented Ohio State engineering research activity in mobility and manufacturing together with documented sponsored and industry R&amp;D scale.</p>
+ 
+    <h3 class="subhead">Regional transmission participation signal</h3>
+    <p class="muted">The signals layer records that Ohio shows a regional-transmission-participation signal through directly documented PJM membership across Ohio's six PUCO-regulated electric utilities.</p>
+ 
+    <h3 class="subhead">Broadband expansion initiative signal</h3>
+    <p class="muted">The signals layer records that Ohio shows a broadband-expansion-initiative signal through directly documented BEAD funding allocation and documented BroadbandOhio coordination activity preparing local communities for broadband buildout.</p>
+ 
+    <p class="muted" style="margin-top:14px"><em>The signals layer records that the narrow digital-asset legal references recorded in evidence.md do not rise to a corridor-layer signal in this package.</em></p>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 10 signal clusters</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Ohio interfaces with digital asset operations through the Ohio Money Transmission Act (ORC § 1315), administered by the Division of Financial Institutions. The jurisdiction has historically maintained a constructive posture toward Bitcoin across public payment and legislative surfaces. HB 166 removed state-level taxation on bullion and coin transactions; SB 269 introduced Bitcoin reserve consideration into the legislative surface. The regulatory framework is organized around money transmission licensure rather than a comprehensive digital asset statute.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Open · Money-Tx Framework</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">Ohio Division of Financial Institutions</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low friction for non-custodial operations</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Ohio Money Transmission Act (ORC § 1315), Division of Financial Institutions licensure requirements, HB 166 (bullion and coin tax exemption), SB 269 (Bitcoin reserve consideration, pending), federal BSA/AML framework alignment.</div>
-      <div class="detail-item"><strong>Positive signal:</strong> Ohio's legislative posture toward Bitcoin has remained constructively open across multiple sessions; the jurisdiction has not deployed restrictive statutory frameworks targeting digital asset infrastructure or technical operations.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> money transmission licensure conditions custodial and exchange-style activity within this corridor; non-custodial operators, infrastructure-layer services, and technical deployment surfaces face limited direct state-level regulatory exposure under current framework conditions.</div>
-    </div>
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from <code>signals.md</code>. The trust-dimensions layer records that absence of dimensions reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted">The trust-dimensions layer records that trust evaluates what kinds of stability conditions Ohio can sustain given the signal layer and the visible continuity environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted">The trust-dimensions layer records that Ohio currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>durable cross-basin coordination density across Great Lakes, inland-port, air-cargo, rail, and interstate freight structure</li>
+      <li>durable infrastructure continuity through Cleveland and Toledo port assets, Cincinnati river logistics continuity, and Rickenbacker inland logistics visibility</li>
+      <li>visible institutional adjacency through Ohio State engineering research plus PJM and BroadbandOhio coordination structures</li>
+      <li>durable industrial persistence through steel-belt-linked cargo and production continuity</li>
+      <li>partial but sufficient support-layer visibility through documented transmission participation and broadband-expansion coordination</li>
+    </ul>
+ 
+    <h3 class="subhead">Coordination density</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable multi-node freight coordination density.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Great Lakes manufacturing continuity signal</li>
+      <li>Ohio River logistics continuity signal</li>
+      <li>Midwest inland freight convergence signal</li>
+      <li>interstate freight convergence signal</li>
+      <li>rail intermodal corridor visibility signal</li>
+      <li>air cargo logistics visibility signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a routing-authority model</li>
+      <li>the current package does not support corridor hierarchy or coordination-tier assignment</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Ohio shows corridor-relevant coordination density where Great Lakes ports, inland-waterway terminals, intermodal rail, interstate convergence, and cargo-air logistics are all directly documented.</p>
+ 
+    <h3 class="subhead">Infrastructure continuity</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable inland freight continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Great Lakes manufacturing continuity signal</li>
+      <li>Ohio River logistics continuity signal</li>
+      <li>interstate freight convergence signal</li>
+      <li>rail intermodal corridor visibility signal</li>
+      <li>air cargo logistics visibility signal</li>
+      <li>regional transmission participation signal</li>
+      <li>broadband expansion initiative signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not establish a full statewide infrastructure inventory beyond the corridor-layer anchors</li>
+      <li>the current evidence does not support compute-corridor, hyperscale, or deployment-readiness interpretation</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Ohio shows durable continuity across Great Lakes industrial access, Ohio River inland logistics, intermodal rail visibility, interstate freight structure, cargo-air operations, PJM participation, and broadband-expansion coordination.</p>
+ 
+    <h3 class="subhead">Institutional adjacency</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible but narrow institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>research-institution engineering visibility signal</li>
+      <li>regional transmission participation signal</li>
+      <li>broadband expansion initiative signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally avoids a complete university inventory</li>
+      <li>the current trust reading does not compare institutions by rank or statewide breadth</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Ohio shows corridor-relevant institutional adjacency through Ohio State engineering research visibility and through state-level coordination structures for transmission and broadband expansion.</p>
+ 
+    <h3 class="subhead">Industrial persistence</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable industrial continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Great Lakes manufacturing continuity signal</li>
+      <li>steel-belt manufacturing continuity signal</li>
+      <li>rail intermodal corridor visibility signal</li>
+      <li>interstate freight convergence signal</li>
+      <li>Ohio River logistics continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not provide a plant-by-plant statewide industrial map</li>
+      <li>the current trust reading does not support historic or economic-ranking narratives</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Ohio shows industrial persistence where steel-belt activity remains coupled to Great Lakes port assets, rail service, interstate access, and river-linked freight continuity.</p>
+ 
+    <h3 class="subhead">Research participation</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible research participation.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>research-institution engineering visibility signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally limits research treatment to Ohio State engineering visibility only</li>
+      <li>the current trust reading does not support frontier-AI, statewide research-network, or federal-lab classification</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Ohio shows research participation sufficient for corridor interpretation through Ohio State engineering visibility, without expanding into a broader statewide research-hierarchy claim.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust-dimension completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — Trust interpretation summary + 5 dimension fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Ohio does not operate a comprehensive state consumer privacy statute as of 2026. The Ohio Personal Privacy Act (OPPA) passed the House but has not been enacted into law, leaving the jurisdiction operating under federal baseline frameworks — COPPA, HIPAA, GLBA — and the Ohio Data Protection Act, a voluntary safe harbor rather than an affirmative obligation. Data breach notification obligations are enforced by the AG office under ORC § 1347.12.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Limited Framework</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">Federal baseline + AG breach authority</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower compliance drag vs. coastal corridors</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Ohio Personal Privacy Act (OPPA) — passed House, not yet enacted; Ohio Data Protection Act (ORC § 1306) — voluntary safe harbor; ORC § 1347.12 breach notification obligations; federal sector frameworks (COPPA, HIPAA, GLBA) condition the compliance floor.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> AG office enforces breach notification requirements; no dedicated state privacy agency; FTC authority applies to unfair and deceptive data practices across the national surface.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying inside Ohio face materially lower state-level privacy compliance overhead than California or New York corridor counterparts; OPPA trajectory remains the primary legislative variable and should be monitored as it could activate consumer rights obligations if enacted into law.</div>
-    </div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. The profile layer records that profile is the characterization layer of the package.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Ohio currently reads within Atlas as a Great Lakes industrial-core jurisdiction organized around Cleveland and Toledo manufacturing continuity, Cincinnati river-system adjacency, Columbus-area inland freight convergence, steel-belt industrial persistence, Ohio State engineering visibility, and PJM-plus-broadband support layers.</p>
+ 
+    <h3 class="subhead">Profile synthesis</h3>
+    <p class="muted">The profile layer records that the current package shows:</p>
+    <ul class="evidence-bullets">
+      <li>Great Lakes manufacturing continuity anchored in Cleveland and Toledo port structure</li>
+      <li>Ohio River logistics continuity anchored in the Ports of Cincinnati &amp; Northern Kentucky</li>
+      <li>Midwest inland freight convergence anchored in statewide intermodal visibility and Rickenbacker-linked logistics structure</li>
+      <li>interstate convergence anchored in documented I-70, I-71, I-75, I-77, I-80, and I-90 visibility</li>
+      <li>rail intermodal corridor visibility anchored in Rickenbacker, Cleveland port rail service, Toledo freight-rail concentration, and ODOT intermodal recognition</li>
+      <li>air cargo logistics visibility anchored in Rickenbacker's cargo-focused operating profile</li>
+      <li>steel-belt manufacturing continuity anchored in Cleveland steel cargo and Toledo direct-reduction steel production</li>
+      <li>Ohio State engineering visibility as the package's research anchor</li>
+      <li>PJM participation and BroadbandOhio coordination as support-layer anchors</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of Ohio as a Great Lakes industrial + inland freight convergence corridor.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Ohio currently reads within Atlas as a Great Lakes industrial + inland freight convergence corridor linking Great Lakes manufacturing continuity, Cincinnati river logistics adjacency, rail and interstate freight structure, Rickenbacker cargo operations, and steel-belt industrial persistence.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + Profile synthesis + Profile synthesis statement</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Ohio does not operate a state-level biometric privacy statute as of 2026 and has not enacted a framework equivalent to Illinois BIPA. No major jurisdiction within the corridor has enacted facial recognition restrictions through municipal ordinance. The operating environment for biometric and identity-sensitive systems is structurally permissive at the state level, with federal FTC authority over unfair and deceptive practices constituting the primary non-sector-specific constraint surface.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Permissive Zone</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">No state biometric statute</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Deploy with standard consent architecture</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> no state biometric privacy statute (no BIPA equivalent as of 2026); no active facial recognition restrictions in major corridor jurisdictions; federal FTC unfair and deceptive practices authority applies across the national surface.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> limited state-level exposure compared to Illinois corridor; OPPA trajectory is the nearest legislative variable that could condition biometric data handling obligations if enacted; sector-specific federal frameworks (HIPAA, FERPA) apply within their respective surfaces.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying biometric identification, behavioral monitoring, or identity-inference systems inside Ohio operate within a structurally permissive state framework as of 2026; consent architecture aligned with FTC guidance and sector-specific obligations is the operative baseline.</div>
-    </div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that this file provides structural interpretation only, and does not rank Ohio, compare Ohio to other jurisdictions, or prescribe deployment eligibility.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted">The builder-mode layer records that Ohio is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a Great Lakes industrial continuity environment</li>
+      <li>a Cincinnati river-logistics continuity environment</li>
+      <li>a Columbus and Rickenbacker inland freight-convergence environment</li>
+      <li>a rail and interstate freight-structure environment across I-70, I-71, I-75, I-77, I-80, and I-90</li>
+      <li>a steel-belt continuity environment with visible Ohio State engineering, PJM, and broadband support layers</li>
+    </ul>
+ 
+    <h3 class="subhead">Great Lakes and river interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Ohio reads as a continuity environment where Great Lakes manufacturing access and Ohio River inland-port structure coexist inside the same corridor package.</p>
+ 
+    <h3 class="subhead">Inland freight interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Ohio reads as a convergence environment where interstate structure, approved intermodal facilities, rail concentration, and Rickenbacker cargo operations reinforce inland freight movement.</p>
+ 
+    <h3 class="subhead">Industrial interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Ohio reads as an industrial environment where steel-belt continuity remains coupled to port, rail, truck, and river-linked logistics infrastructure.</p>
+ 
+    <h3 class="subhead">Research and support-layer interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Ohio reads as a corridor environment with visible Ohio State engineering participation and narrow but explicit support-layer continuity through PJM participation and BroadbandOhio expansion coordination.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — Role summary + 4 interpretation subsections</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Ohio is coordinating public-sector AI deployment through EO 2023-04D and DAS agency guidance rather than through a prescriptive procurement attestation framework. The jurisdiction functions as a developing rather than mature public-sector AI surface; procurement requirements are forming and vendor documentation obligations have not yet been activated at the level observed in California-corridor deployments.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Working group / DAS guidance</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Forming procurement surface; lower attestation burden</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> EO 2023-04D (AI task force, agency guidance directive), Ohio Department of Administrative Services AI policy coordination, InnovateOhio state technology coordination surface, state IT policy framework.</div>
-      <div class="detail-item"><strong>Development signal:</strong> Ohio public-sector AI coordination is advancing through DAS guidance and working group activity; procurement requirements are forming but have not yet reached the contractual attestation and vendor certification level observed in more mature state surfaces.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams operating within Ohio education or government deployment surfaces interact with a developing procurement environment that carries lower attestation overhead than California-corridor equivalents; working group output through 2027 may condition future procurement obligations for AI-integrated government deployments.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, and builder-mode layers. Each layer records non-assignment constraints rooted in the corridor-layer scope preserved in the current package.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the evidence collected there, this file does not support characterizing Ohio as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a routing-authority jurisdiction</li>
+      <li>a coordination-tier jurisdiction</li>
+      <li>a deployment-readiness jurisdiction</li>
+      <li>a surface-assigned jurisdiction</li>
+      <li>a jurisdiction-ranking case</li>
+      <li>an AI compute corridor</li>
+      <li>a hyperscale anchor corridor</li>
+      <li>a federal governance corridor</li>
+      <li>a federal hosting corridor</li>
+      <li>a national routing spine designation</li>
+      <li>a primary Internet-exchange concentration environment</li>
+      <li>a custody-regime jurisdiction</li>
+      <li>a DAO-wrapper jurisdiction</li>
+      <li>a digital-asset statutory jurisdiction beyond the narrow legal-recognition references noted above</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based on the currently derived signals, this file does not support characterizing Ohio as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, a surface-eligibility determination, a jurisdiction-ranking claim, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The signals layer records that the narrow digital-asset legal references recorded in evidence.md do not rise to a corridor-layer signal in this package.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that this file does not support interpreting Ohio as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The trust-dimensions layer records that it should be read as trust interpretation of Ohio's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Ohio's profile should not be read as: a routing-authority assignment, a coordination-tier assignment, a deployment-readiness classification, an Atlas surface-eligibility determination, a jurisdiction ranking claim, an AI compute corridor claim, a hyperscale anchor corridor claim, a federal governance corridor claim, a federal hosting corridor claim, a national routing spine claim, a primary Internet-exchange concentration claim, a custody-regime jurisdiction claim, a DAO-wrapper jurisdiction claim, or a digital-asset statutory jurisdiction claim.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not support interpreting Ohio as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The builder-mode layer records that it should be read as builder-facing interpretation of Ohio's current structural posture within the normalized Atlas package only.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md — Structural exclusions</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Ohio's developer climate is shaped by infrastructure-adjacent and manufacturing-technology deployment surfaces rather than frontier AI governance network density. The operating environment carries lower state-level compliance overhead than coastal corridor counterparts, with limited friction from AI disclosure obligations, comprehensive privacy statutes, or biometric restrictions. Builders operating within the Ohio corridor interact with Lake Erie maritime routing interfaces, Ohio River logistics continuity layers, national rail convergence infrastructure, and pipeline-aligned deployment pathways linking Midwest, Appalachian Basin, and northeastern infrastructure systems.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate · Permissive</div></div>
-      <div class="mini-box"><div class="label">Compliance drag</div><div class="value">Low vs. coastal corridors</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Infrastructure-first orientation; lower friction floor</div></div>
+  <!-- ── 9. SCOPE BOUNDARIES ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Scope Boundaries &amp; Canonical Narrowing</h2>
+    <p class="muted">The canonical Ohio package does not record an "Evidence gaps" section. Instead, the change-log records the canonical scope-constraints applied during evidence-first package population, explicitly enumerating what was excluded from the package.</p>
+ 
+    <h3 class="subhead">Scope constraints applied during population</h3>
+    <div class="scope-block">
+      <div class="scope-label">The change-log records the following scope constraints applied during evidence-first package population:</div>
+      <ul>
+        <li>corridor-layer anchors only</li>
+        <li>no open-ended statewide infrastructure survey</li>
+        <li>no county-by-county infrastructure expansion</li>
+        <li>no complete university inventory expansion</li>
+        <li>no tourism, workforce, agricultural, or municipal infrastructure survey behavior</li>
+        <li>no routing-authority, coordination-tier, readiness, ranking, or surface assignment inference</li>
+      </ul>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Ohio Data Protection Act (voluntary safe harbor, ORC § 1306), ORC § 1347.12 breach notification framework, federal baseline compliance surfaces, absence of comprehensive state AI or privacy statutes as of 2026.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> Ohio operates as a deployment surface oriented toward infrastructure continuity and logistics-adjacent technology rather than policy formation network proximity; teams interacting across this corridor encounter lower state-level compliance drag from AI, privacy, and biometric regulatory frameworks than coastal corridor equivalents.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> well-suited for teams deploying inside infrastructure-adjacent, logistics-technology, and compute-intensive surfaces; teams requiring proximity to frontier-regulation formation networks or dense AI governance activity surfaces should consider whether this corridor aligns with their policy engagement objectives.</div>
-    </div>
+ 
+    <p class="muted" style="margin-top:12px">The change-log records the current status: evidence layer populated to corridor sufficiency, downstream layers derived from the corridor-limited evidence set, jurisdiction lens attached in metadata.md, surface assignment remains none.</p>
+    <div class="src">Source: change-log.md — 2026-04-15 evidence-first package population (Scope constraints applied)</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Bitcoin mining operates within Ohio's legal framework with no state-level prohibition as of 2026. Ohio interfaces with deregulated electricity markets through PUCO (Public Utilities Commission of Ohio), with commercial electricity rates operating in the mid-band of the continental U.S. The Ohio River corridor provides industrial power infrastructure proximity, and the absence of proof-of-work restrictions positions the jurisdiction favorably within the Midwest compute deployment surface.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Favorable</div></div>
-      <div class="mini-box"><div class="label">Energy market</div><div class="value">Deregulated (PUCO)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Viable for mining and compute-intensive deployment</div></div>
-    </div>
-    <div class="radar" aria-label="Ohio energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:22%;background:var(--green)"></div></div><div class="score">22</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:38%;background:var(--yellow)"></div></div><div class="score">38</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:72%;background:var(--teal)"></div></div><div class="score">72</div></div>
-    </div>
-    <div class="note">Builder implication: Ohio's deregulated energy market, Ohio River corridor industrial power infrastructure, Appalachian Basin pipeline proximity, and absence of proof-of-work restrictions position it as a structurally viable compute and mining deployment surface within the central-eastern U.S. corridor.</div>
+  <!-- ── 10. CHANGE-LOG NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, and Topology Completion Layer. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">2026-04-15 evidence-first package population</h3>
+    <p class="muted">The change-log records that the Ohio state package was populated in topology-normalized order: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md. The change-log records that scope constraints were applied during population (rendered in Section 9 above). The change-log records the current status: evidence layer populated to corridor sufficiency, downstream layers derived from the corridor-limited evidence set, jurisdiction lens attached in metadata.md, and surface assignment remains none.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Ohio's regulatory vector is measured across all eight policy layers. The Ohio River &amp; Great Lakes Multimodal Infrastructure Corridor is absorbing national governance trends at a lower velocity than coastal formation surfaces, with the principal legislative variables — OPPA enactment, working group procurement output, and Bitcoin reserve consideration — each tracking through multi-year formation cycles. Operators interacting across this corridor should model for gradual rather than abrupt compliance trajectory shifts through 2027.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — forming through working group and DAS guidance mechanisms; procurement-facing requirements are the most likely near-term activation surface, conditioned by 2026–2027 working group output rather than imminent legislative action.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — stable; Ohio Money Transmission Act is the operative framework; SB 269 Bitcoin reserve trajectory and federal preemption surfaces are the primary variables conditioning the 2026–2027 outlook.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — limited; OPPA is the primary legislative variable; if enacted, it would activate consumer rights obligations and AG enforcement authority, materially shifting the compliance profile for data-handling operations within this corridor.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — permissive; no statutory change signals as of 2026; OPPA trajectory is the nearest adjacent surface that could condition biometric data handling obligations if enacted.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — low; structural conditions remain favorable within the corridor; deregulated energy markets and absence of proof-of-work restrictions sustain a constructive operating profile through the observable outlook window.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — stable; lower compliance drag than coastal corridors sustains a permissive infrastructure-first deployment environment; trajectory is not expected to shift materially absent OPPA enactment or significant AI governance legislative action.</div>
-    </div>
-    <div class="callout">12-month outlook: Ohio is likely to advance AI procurement guidance through DAS working group output, maintain a stable Money Transmission Act framework for digital asset operations, and continue monitoring OPPA through the legislative surface — with enactment remaining the primary variable that would shift the privacy compliance profile for teams deploying inside this corridor.</div>
-  </section>
+</div><!-- /main col -->
  
-</div>
- 
+<!-- ── SIDEBAR ── -->
 <aside>
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">Ohio at a glance</h3>
-    <p class="muted mini">Ohio operates as the Ohio River &amp; Great Lakes Multimodal Infrastructure Corridor — a lower-friction deployment surface for infrastructure-adjacent operations, digital asset technical services, and compute-intensive workloads. The governance posture is moderate and forming rather than prescriptive, with OPPA enactment and AI working group output as the primary variables shaping the compliance trajectory through 2027.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Ohio jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/ohio/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> infrastructure-adjacent deployment, digital asset technical operations, compute and mining-intensive deployment surfaces, logistics-corridor integration, moderate-governance operating environments, cross-corridor pass-through continuity work linking Midwest, Appalachian Basin, and northeastern corridors.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> teams requiring proximity to frontier AI governance formation networks, dense privacy enforcement surfaces, or policy-facing institutional coordination depth equivalent to California or New York corridor environments.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>2023</strong> — EO 2023-04D issued; AI task force activated; HB 166 bullion and coin tax exemption effective.</li>
-      <li><strong>2024–2025</strong> — DAS AI guidance for state agencies issued; SB 269 Bitcoin reserve bill introduced into Ohio Senate.</li>
-      <li><strong>2026</strong> — Ohio Personal Privacy Act (OPPA) pending; Money Transmission Act remains operative crypto framework; federal baseline conditions the privacy compliance floor.</li>
-      <li><strong>2027</strong> — AI working group output expected to condition state procurement surfaces; OPPA legislative trajectory remains the primary privacy variable.</li>
+      <li><strong>Jurisdiction:</strong> Ohio</li>
+      <li><strong>Code:</strong> OH · US-OH</li>
+      <li><strong>Lens:</strong> Great Lakes industrial + inland freight convergence corridor</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> corridor-layer sufficient</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li><strong>Corridor Group:</strong> Great Lakes Industrial Core Corridor</li>
+      <li><strong>Foundation Layer:</strong> Great Lakes Industrial Core Layer</li>
+      <li><strong>Completion Layer:</strong> Great Lakes Completion Layer</li>
+      <li><strong>Jurisdiction Lens:</strong> Great Lakes industrial + inland freight convergence corridor</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that it does not assign routing authority, coordination tiers, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Evidence anchors</div>
+    <h3 id="heading-sidebar-coverage">Documented in corridor-layer scope</h3>
+    <ul class="mini muted">
+      <li>Port of Cleveland (Great Lakes gateway)</li>
+      <li>Port of Toledo (13 terminals, Seaway)</li>
+      <li>Ports of Cincinnati &amp; Northern Kentucky (226.5 mi, 70+ terminals, 48M tons)</li>
+      <li>Rickenbacker / LCK (cargo-focused airport)</li>
+      <li>ODOT (43,000 mi highway, $115B assets)</li>
+      <li>I-70, I-71, I-75, I-77, I-80, I-90</li>
+      <li>CSX + Norfolk Southern</li>
+      <li>Cleveland-Cliffs Ironville (steel)</li>
+      <li>Ohio State Engineering ($219.2M+$67.1M)</li>
+      <li>PUCO + PJM (6 utilities)</li>
+      <li>BroadbandOhio ($793M BEAD)</li>
+      <li>Ohio Revised Code 1306.01 + 2137.01</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-standardization">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-standardization">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  <div class="card" aria-labelledby="heading-sidebar-scope">
+    <div class="smallcaps">Canonical scope</div>
+    <h3 id="heading-sidebar-scope">Corridor-layer sufficient</h3>
+    <p class="muted mini">The change-log records that the Ohio package is explicitly scope-narrowed to corridor-layer anchors. All downstream layer completeness statuses are canonically recorded as "corridor-layer sufficient" rather than "preliminary".</p>
+    <p class="muted mini">This is a distinct canonical neutrality category: the package is not incomplete — it is canonically declared complete at corridor scope, with broader scope deliberately excluded.</p>
   </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: corridor-layer sufficient</li>
+      <li>Signal layer: corridor-layer sufficient</li>
+      <li>Trust dimensions: corridor-layer sufficient</li>
+      <li>Profile: corridor-layer sufficient</li>
+      <li>Builder-mode: corridor-layer sufficient</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale or AI compute corridor designation.</li>
+      <li>Not a digital-asset statutory jurisdiction designation beyond the narrow ORC references.</li>
+    </ul>
+  </div>
+ 
 </aside>
- 
-</div>
+</div><!-- /grid-sidebar -->
  
 </main>
  
