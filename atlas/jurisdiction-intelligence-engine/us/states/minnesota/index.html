@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Minnesota — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Minnesota operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Minnesota Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/minnesota/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,38 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
+.scope-block{margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.04)}
+.scope-block .scope-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.scope-block ul{margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block li{margin-bottom:2px;line-height:1.5}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +172,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +188,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Minnesota</h1>
-    <p class="kicker">Minnesota operates as an Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor supporting freshwater shipping continuity through the Duluth–Superior port system, Mississippi headwaters routing alignment, and upper-midwest freight coordination surfaces linking Great Lakes and interior continental deployment corridors of the United States.</p>
+    <p class="kicker">This page renders the canonical Minnesota Atlas jurisdiction package. The canonical package positions Minnesota within the Upper Midwest Continuity Corridor, under the Great Lakes Industrial Core Foundation Layer, attached to the Northern Interior Completion Layer — the atlas's first three-way cross-cluster placement. The jurisdiction lens is "Upper Mississippi + western Great Lakes logistics continuity corridor", with canonical scope limited to corridor-layer anchors. All completeness statuses are recorded as corridor-layer sufficient.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">MN · US-MN</div>
-      <div class="hero-chip">Saint Paul</div>
-      <div class="hero-chip">Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Minnesota quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Moderate / Developing</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Mixed / Emerging Framework</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Active Enforcement</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Emerging Concern Zone</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Freight-Corridor / Compliance-Stable</div></div>
+      <div class="hero-chip">Jurisdiction: Minnesota (MN · US-MN)</div>
+      <div class="hero-chip">Jurisdiction lens: Upper Mississippi + western Great Lakes logistics continuity corridor</div>
+      <div class="hero-chip">Completeness: corridor-layer sufficient</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Cross-foundation placement</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Scope Boundaries</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,211 +222,586 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Minnesota operates as the Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor within the U.S. continental freight and waterway system. Builders interacting across this corridor interface with Great Lakes freshwater shipping continuity, Mississippi headwaters routing infrastructure, Twin Cities intermodal rail convergence surfaces, and upper-midwest freight coordination layers that link Lake Superior port alignment with continental export corridors and cross-border northern routing continuity with Canadian interior infrastructure systems.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>AI Policy</strong></div><span class="pill yellow">Moderate · Developing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill yellow">Mixed / Emerging Framework</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--orange)"></span><strong>Privacy / Data</strong></div><span class="pill orange">Active · AG-Enforced</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Biometrics</strong></div><span class="pill yellow">Emerging Concern Zone</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Public Sector AI</strong></div><span class="pill blue">Early Adoption</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Freight-Corridor / Compliance-Stable</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Upper Midwest Continuity Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Builders operating within the Minnesota corridor interact with Great Lakes freshwater shipping interfaces, Mississippi headwaters routing infrastructure, Twin Cities intermodal convergence surfaces, and upper-midwest deployment pathways linking continental interior logistics systems with global export corridors. Regulatory friction is moderate and developing rather than maximum-enforcement.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Great Lakes Industrial Core Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Northern Interior Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Lens</div>
+      <div class="field-value">Upper Mississippi + western Great Lakes logistics continuity corridor</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from atlas.md and records Atlas corridor-topology placement only.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, infer deployment suitability, or override atlas-controlled topology.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/minnesota/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only corridor-relevant structural anchors documented for Minnesota that are sufficient to support Atlas signal derivation. The evidence layer records that it does not perform an open-ended statewide infrastructure survey and does not assign trust posture, routing role, coordination tier, readiness, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. The canonical Minnesota package is explicitly scope-narrowed to corridor-layer anchors — all completeness statuses across evidence, signals, trust, profile, and builder-mode are canonically recorded as "corridor-layer sufficient" rather than "preliminary". This is a distinct canonical neutrality category.</p>
+    <p class="muted">The change-log explicitly records that "No evidence gaps section was required" — indicating that absence of an evidence-gaps subsection is itself a canonical decision rather than an omission.</p>
+    <div class="callout mini" style="margin-top:12px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — Scope; change-log.md — Scope constraints applied during population</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 9 evidence subsections documenting Minnesota's corridor-relevant structural anchors across Duluth/Superior and Lake Superior continuity, Upper Mississippi freight continuity, inland waterway and bulk cargo structure, Class I rail, interstate freight corridors, intermodal freight structure, University of Minnesota engineering research, MISO transmission, and BEAD broadband coordination.</p>
+ 
+    <h3 class="subhead">Duluth-Superior and Lake Superior continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that MnDOT states Minnesota's marine freight system plays a vital role in the state's multimodal freight transportation system and that the Great Lakes-St. Lawrence Seaway provides access to other Great Lakes ports and the Atlantic Ocean.</li>
+      <li>The evidence layer records that MnDOT states Minnesota has three ports on Lake Superior and identifies Duluth/Superior as one of the state's active Lake Superior ports.</li>
+      <li>The evidence layer records that MnDOT states Minnesota's Lake Superior ports handled 56.1 million tons in 2019, with Duluth/Superior alone accounting for 33.5 million tons.</li>
+      <li>The evidence layer records that MnDOT states commodities handled by Duluth/Superior include taconite, western coal, grain, cement, salt, steel, limestone, and wind generator components.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/minnesota/</div>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Minnesota Department of Transportation, "Ports and Waterways in Minnesota" — <a href="https://www.dot.state.mn.us/ofrw/waterways/index.html" target="_blank" rel="noopener">https://www.dot.state.mn.us/ofrw/waterways/index.html</a></li>
+        <li>Minnesota Department of Transportation, "Commercial Waterways in Minnesota" — <a href="https://www.dot.state.mn.us/ofrw/waterways/commercial.html" target="_blank" rel="noopener">https://www.dot.state.mn.us/ofrw/waterways/commercial.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Upper Mississippi freight continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that MnDOT states Minnesota shipped over 14 million tons of commodities down the Mississippi River in 2020.</li>
+      <li>The evidence layer records that MnDOT states the Mississippi River system stretches over 195 miles in Minnesota and supports four port areas whose combined 2019 tonnage was 11 million net tons.</li>
+      <li>The evidence layer records that MnDOT states the Mississippi River provides access to river ports to the south and the Gulf of Mexico via New Orleans.</li>
+      <li>The evidence layer records that MnDOT states the river accounts for over 50 percent of Minnesota's agricultural exports.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Minnesota Department of Transportation, "Ports and Waterways in Minnesota" — <a href="https://www.dot.state.mn.us/ofrw/waterways/index.html" target="_blank" rel="noopener">https://www.dot.state.mn.us/ofrw/waterways/index.html</a></li>
+        <li>Minnesota Department of Transportation, "Commercial Waterways in Minnesota" — <a href="https://www.dot.state.mn.us/ofrw/waterways/commercial.html" target="_blank" rel="noopener">https://www.dot.state.mn.us/ofrw/waterways/commercial.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Inland waterway and bulk cargo structure</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that MnDOT states Minnesota's river ports handle grain, fertilizer, cement, sand and gravel, salt, coal, steel, scrap metals, petroleum, caustic soda, vegetable oils, molasses, and anhydrous ammonia.</li>
+      <li>The evidence layer records that MnDOT states the U.S. Army Corps of Engineers dredges the Mississippi River channel for 9-foot-deep barges and operates the Upper Mississippi locks and dams.</li>
+      <li>The evidence layer records that MnDOT states Great Lakes taconite shipped from Minnesota amounted to 42.2 million tons in 2019 and represented 75 percent of Minnesota's Great Lakes tonnage that year.</li>
+      <li>The evidence layer records that MnDOT states Duluth/Superior also handles grain, cement, salt, steel, limestone, and wind generator components, confirming bulk-cargo rather than passenger-only waterborne structure.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Minnesota Department of Transportation, "Commercial Waterways in Minnesota" — <a href="https://www.dot.state.mn.us/ofrw/waterways/commercial.html" target="_blank" rel="noopener">https://www.dot.state.mn.us/ofrw/waterways/commercial.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Class I rail visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that MnDOT states Minnesota has 4,278 route miles of railroads serviced by 21 railroad companies.</li>
+      <li>The evidence layer records that MnDOT lists four Class I railroads serving Minnesota: BNSF Railway, Canadian National, Canadian Pacific Kansas City Southern, and Union Pacific.</li>
+      <li>The evidence layer records that MnDOT states the Minnesota freight rail system is a critical part of the state's multimodal transportation system and provides efficient connections to markets beyond state borders and to the Great Lakes.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Minnesota Department of Transportation, "Railroad Companies Serving Minnesota" — <a href="https://www.dot.state.mn.us/ofrw/railroad/systems.html" target="_blank" rel="noopener">https://www.dot.state.mn.us/ofrw/railroad/systems.html</a></li>
+        <li>Minnesota Department of Transportation, "About Railroads in Minnesota" — <a href="https://www.dot.state.mn.us/aboutrail/" target="_blank" rel="noopener">https://www.dot.state.mn.us/aboutrail/</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Interstate freight corridor continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that MnDOT states the I-35 and I-90 interchange near Albert Lea is the meeting point of two interstates that are part of the National Highway Freight Network.</li>
+      <li>The evidence layer records that MnDOT states the Minnesota Highway Freight Program funds projects that improve freight transportation safety, mobility, efficiency, and access to freight facilities, including first-and-last-mile connections, and maintains a National Highway Freight Network in Minnesota project map.</li>
+      <li>The evidence layer records that MnDOT's freight project-selection page lists freight-program activity on I-94, including truck-parking expansion at the Enfield and Big Spunk Lake rest areas and I-94 and Highway 24 improvements.</li>
+      <li>The evidence layer records that the retained corridor evidence therefore confirms direct freight-program visibility for I-35, I-90, and I-94 without expanding into a full statewide highway inventory.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Minnesota Department of Transportation, "I-35/I-90 Interchange Corridor Study" — <a href="https://talk.dot.state.mn.us/i-35-i-90-interchange-corridor-study" target="_blank" rel="noopener">https://talk.dot.state.mn.us/i-35-i-90-interchange-corridor-study</a></li>
+        <li>Minnesota Department of Transportation, "Minnesota Highway Freight Program" — <a href="https://www.dot.state.mn.us/ofrw/mhfp/" target="_blank" rel="noopener">https://www.dot.state.mn.us/ofrw/mhfp/</a></li>
+        <li>Minnesota Department of Transportation, "Freight - Project Selection" — <a href="https://www.dot.state.mn.us/projectselection/lists/freight.html" target="_blank" rel="noopener">https://www.dot.state.mn.us/projectselection/lists/freight.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Intermodal freight structure</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that MnDOT states the Minnesota freight system is multimodal in nature and includes highway, rail, waterway, intermodal, and air-cargo transportation.</li>
+      <li>The evidence layer records that MnDOT's freight data page provides a statewide intermodal terminals map and states its Freight Network Optimization Tool allows users to analyze and visualize the Minnesota intermodal freight network.</li>
+      <li>The evidence layer records that MnDOT's freight data page also points to a freight facilities database intended to support integrated multimodal transportation planning.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Minnesota Department of Transportation, "Freight and Rail Planning" — <a href="https://www.dot.state.mn.us/ofrw/freight/index.html" target="_blank" rel="noopener">https://www.dot.state.mn.us/ofrw/freight/index.html</a></li>
+        <li>Minnesota Department of Transportation, "Freight Maps, Data and Tools" — <a href="https://www.dot.state.mn.us/ofrw/freight/data.html" target="_blank" rel="noopener">https://www.dot.state.mn.us/ofrw/freight/data.html</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">University of Minnesota engineering and applied research visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the University of Minnesota Twin Cities states it is a top 10 U.S. public research university with more than 2.1 million square feet of research space and $1.35 billion in research expenditures.</li>
+      <li>The evidence layer records that the University of Minnesota College of Science and Engineering states research across its 12 departments and multiple research centers addresses major scientific and engineering problems.</li>
+      <li>The evidence layer records that the same college states it maintains industry research partnerships, including sponsored and non-sponsored support for faculty research, industry use of research facilities, and technology-transfer activity.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>University of Minnesota Twin Cities, "Research" — <a href="https://twin-cities.umn.edu/research" target="_blank" rel="noopener">https://twin-cities.umn.edu/research</a></li>
+        <li>University of Minnesota College of Science and Engineering, "Research" — <a href="https://cse.umn.edu/college/research" target="_blank" rel="noopener">https://cse.umn.edu/college/research</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">MISO transmission participation</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that MISO states its long-range transmission plan focuses on regional system solutions to enhance grid reliability and efficiency, and that approved Tranche 1 and Tranche 2.1 portfolios address the MISO Midwest subregion.</li>
+      <li>The evidence layer records that the Minnesota Public Utilities Commission states MISO approved a $10.3 billion investment package of 18 transmission projects, three of which are entirely or partially located in Minnesota.</li>
+      <li>The evidence layer records that the same Minnesota PUC page lists Minnesota Tranche One projects including Big Stone South-Alexandria-Big Oaks, Mankato to Mississippi, and Northland Reliability.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Midcontinent Independent System Operator, "Long Range Transmission Planning" — <a href="https://www.misoenergy.org/planning/long-range-transmission-planning/" target="_blank" rel="noopener">https://www.misoenergy.org/planning/long-range-transmission-planning/</a></li>
+        <li>Minnesota Public Utilities Commission, "Tranche One Transmission Projects" — <a href="https://puc.eip.mn.gov/node/21986" target="_blank" rel="noopener">https://puc.eip.mn.gov/node/21986</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Minnesota BEAD and broadband coordination</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Minnesota Governor's Task Force on Broadband states the Office of Broadband Development works directly with NTIA to ensure effective design and implementation of the Broadband Equity, Access and Deployment (BEAD) and Digital Equity Act programs.</li>
+      <li>The evidence layer records that the same report states new federal BEAD mandates will require greater statewide coordination and collaboration to ensure funds are invested in unserved and underserved communities.</li>
+      <li>The evidence layer records that the same report states OBD issued a request for proposal for a broadband cost-gap analysis to determine funding needed under BEAD for Minnesota service targets.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Minnesota Governor's Task Force on Broadband, "2024 Annual Report" — <a href="https://mn.gov/deed/assets/2024-broadband-task-force-report_tcm1045-664936.pdf" target="_blank" rel="noopener">https://mn.gov/deed/assets/2024-broadband-task-force-report_tcm1045-664936.pdf</a></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 9 evidence subsections with canonical source citations</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Minnesota is not a first-mover AI governance state. The 2024 legislative cycle produced targeted provisions addressing automated employment decision tools, establishing disclosure and appeal rights for job applicants and employees subject to algorithmic screening systems. Broader AI governance proposals circulated in the 2025 session without producing comprehensive enacted legislation. The current posture is best characterized as developing and monitoring rather than enforcement-active.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate · Developing</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Targeted provisions + agency coordination</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Monitor trajectory; not yet enforcement-active</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> HF 3764 / SF 3709 (2024 automated employment decision tool provisions under MN Human Rights Act), MNIT AI governance coordination guidelines, 2025 legislative proposals under review.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> current enforcement surfaces are narrow and confined to employment-adjacent deployment contexts. No statewide AI incident-reporting mandate or frontier-model safety framework is active as of 2026.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying automated decision systems in hiring, performance management, or employment-adjacent contexts within Minnesota must align with disclosure and appeal right provisions. Broader AI governance surfaces remain in formation.</div>
-    </div>
-    <div class="note">Operational signal: Minnesota is positioned as a developing-posture state for AI governance. Builders should track 2026–2027 legislative sessions for escalation signals, particularly around automated decision tools and public-sector AI procurement.</div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code>. The signals layer records that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted">The signals layer records 9 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">Lake Superior continuity signal</h3>
+    <p class="muted">The signals layer records that Minnesota shows a Lake-Superior-continuity signal through documented Duluth/Superior port activity, documented Lake Superior tonnage, and documented Great Lakes-Seaway access.</p>
+ 
+    <h3 class="subhead">Upper Mississippi freight continuity signal</h3>
+    <p class="muted">The signals layer records that Minnesota shows an Upper-Mississippi-freight-continuity signal through documented river tonnage, documented 195-mile Mississippi-system visibility, and documented southbound river access toward the Gulf of Mexico.</p>
+ 
+    <h3 class="subhead">Inland bulk-cargo structure signal</h3>
+    <p class="muted">The signals layer records that Minnesota shows an inland-bulk-cargo-structure signal through directly documented bulk and liquid commodity handling on both the Mississippi River system and the Lake Superior port system.</p>
+ 
+    <h3 class="subhead">Class I rail visibility signal</h3>
+    <p class="muted">The signals layer records that Minnesota shows a Class-I-rail-visibility signal through directly documented presence of BNSF, Canadian National, CPKC, and Union Pacific in the retained source set.</p>
+ 
+    <h3 class="subhead">Interstate freight corridor continuity signal</h3>
+    <p class="muted">The signals layer records that Minnesota shows an interstate-freight-corridor-continuity signal through directly documented National Highway Freight Network visibility at I-35 and I-90 plus documented freight-program activity along I-94.</p>
+ 
+    <h3 class="subhead">Intermodal freight structure signal</h3>
+    <p class="muted">The signals layer records that Minnesota shows an intermodal-freight-structure signal through directly documented statewide intermodal terminals mapping, a documented intermodal freight-network optimization tool, and documented multimodal freight-system framing.</p>
+ 
+    <h3 class="subhead">Research-institution engineering visibility signal</h3>
+    <p class="muted">The signals layer records that Minnesota shows a research-institution-engineering-visibility signal through directly documented University of Minnesota Twin Cities research scale, CSE research activity, and industry research partnership channels.</p>
+ 
+    <h3 class="subhead">MISO transmission participation signal</h3>
+    <p class="muted">The signals layer records that Minnesota shows a MISO-transmission-participation signal through directly documented MISO Midwest long-range transmission planning and directly documented Minnesota Tranche One transmission projects under state review.</p>
+ 
+    <h3 class="subhead">Broadband coordination signal</h3>
+    <p class="muted">The signals layer records that Minnesota shows a broadband-coordination signal through directly documented Office of Broadband Development work with NTIA on BEAD and Digital Equity programs plus directly documented statewide coordination requirements tied to BEAD deployment.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 9 signal clusters</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Minnesota does not operate a dedicated digital asset licensing framework as of 2026. Bitcoin and digital asset activity is regulated through the state's existing money transmission framework administered by the Minnesota Department of Commerce. Comprehensive digital asset legislation has been introduced in multiple legislative sessions without enactment. The regulatory surface is characterized by emerging framework conditions rather than either a clear licensing pathway or active restriction.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Mixed / Emerging Framework</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">MN Dept of Commerce</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Money transmitter basis applies; dedicated framework pending</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Minnesota Money Transmission Act (MN Stat. § 53B), MN Dept of Commerce licensing authority, AML/BSA compliance expectations, federal FinCEN interface requirements for covered virtual currency businesses.</div>
-      <div class="detail-item"><strong>Framework status:</strong> Minnesota has not enacted a dedicated digital asset licensing law comparable to California's DFAL or New York's BitLicense framework. Operators conducting money transmission activity involving digital assets should assess licensing requirements under the existing money transmission framework.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> custodians, exchanges, and wallet providers conducting qualifying money transmission activity within Minnesota should treat existing money transmitter licensing, disclosure, and AML compliance as operative requirements. The absence of a dedicated digital asset law does not create a permissive environment — it creates an unsettled one.</div>
-    </div>
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from <code>signals.md</code>. The trust-dimensions layer records that absence of dimensions reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted">The trust-dimensions layer records that trust evaluates what kinds of stability conditions Minnesota can sustain given the signal layer and the visible continuity environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted">The trust-dimensions layer records that Minnesota currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>durable western Great Lakes and Upper Mississippi continuity through Duluth/Superior, Lake Superior, and Mississippi-system freight structure</li>
+      <li>durable infrastructure continuity through waterways, Class I rail, interstate freight corridors, intermodal structure, and transmission-planning visibility</li>
+      <li>visible institutional adjacency through University of Minnesota engineering research and Office of Broadband Development / PUC-linked support layers</li>
+      <li>visible industrial persistence through bulk-cargo and multimodal freight continuity</li>
+      <li>sufficient support-layer visibility through MISO participation and BEAD coordination</li>
+    </ul>
+ 
+    <h3 class="subhead">Coordination density</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable corridor coordination density.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Lake Superior continuity signal</li>
+      <li>Upper Mississippi freight continuity signal</li>
+      <li>Class I rail visibility signal</li>
+      <li>interstate freight corridor continuity signal</li>
+      <li>intermodal freight structure signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a routing-authority model</li>
+      <li>the current package does not support corridor hierarchy or coordination-tier assignment</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Minnesota shows corridor-relevant coordination density where Lake Superior ports, Upper Mississippi freight continuity, Class I rail visibility, interstate freight corridors, and intermodal structure are all directly documented.</p>
+ 
+    <h3 class="subhead">Infrastructure continuity</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable multimodal continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Lake Superior continuity signal</li>
+      <li>Upper Mississippi freight continuity signal</li>
+      <li>inland bulk-cargo structure signal</li>
+      <li>Class I rail visibility signal</li>
+      <li>interstate freight corridor continuity signal</li>
+      <li>intermodal freight structure signal</li>
+      <li>MISO transmission participation signal</li>
+      <li>broadband coordination signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not establish a full statewide infrastructure inventory beyond the corridor-layer anchors</li>
+      <li>the current evidence does not support compute-corridor, hyperscale, or deployment-readiness interpretation</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Minnesota shows durable continuity across Lake Superior and Upper Mississippi freight structure, Class I rail, interstate freight corridors, intermodal freight structure, MISO-linked transmission planning, and BEAD coordination.</p>
+ 
+    <h3 class="subhead">Institutional adjacency</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible but narrow institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>research-institution engineering visibility signal</li>
+      <li>MISO transmission participation signal</li>
+      <li>broadband coordination signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally avoids a complete university inventory</li>
+      <li>the current trust reading does not compare institutions by rank or statewide breadth</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Minnesota shows corridor-relevant institutional adjacency through University of Minnesota engineering visibility and through state-linked transmission and broadband coordination structures.</p>
+ 
+    <h3 class="subhead">Industrial persistence</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible logistics-linked industrial persistence.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>inland bulk-cargo structure signal</li>
+      <li>Lake Superior continuity signal</li>
+      <li>Upper Mississippi freight continuity signal</li>
+      <li>Class I rail visibility signal</li>
+      <li>intermodal freight structure signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not provide a statewide plant-by-plant industrial map</li>
+      <li>the current trust reading does not support economic-ranking or sector-leadership narratives</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Minnesota shows industrial persistence where recurring bulk-cargo, waterway, rail, and intermodal structure remain coupled to documented commodity movement across Lake Superior and Upper Mississippi systems.</p>
+ 
+    <h3 class="subhead">Research participation</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible research participation.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>research-institution engineering visibility signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally limits research treatment to University of Minnesota engineering and applied research visibility only</li>
+      <li>the current trust reading does not support frontier-AI, statewide research-network, or federal-lab classification</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Minnesota shows research participation sufficient for corridor interpretation through University of Minnesota research and engineering visibility, without expanding into a broader statewide research-hierarchy claim.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust-dimension completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — Trust interpretation summary + 5 dimension fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">The Minnesota Consumer Data Privacy Act (MCDPA), signed May 24, 2024 and effective July 31, 2025, establishes the state's comprehensive consumer data privacy framework. Enforcement is administered exclusively by the Minnesota Attorney General. The MCDPA provides consumer rights around access, correction, deletion, portability, and opt-out from targeted advertising and profiling. No private right of action exists under the current framework.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active · AG-Enforced</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">MCDPA (eff. Jul 31, 2025)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Full consumer rights framework now active</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Minnesota Consumer Data Privacy Act (MCDPA), MN Stat. § 325O, AG enforcement authority, applicability thresholds of 100,000+ consumers annually or 25,000+ consumers where 25% or more of revenue derives from personal data sales.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> AG-only enforcement with no private right of action. The MCDPA covers sensitive data categories including biometric data, precise geolocation, mental health data, and data concerning children, each requiring opt-in consent.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> products and services meeting MCDPA applicability thresholds must maintain consumer rights workflows, data protection assessments for high-risk processing activities, and opt-in mechanisms for sensitive data categories. Teams processing data of Minnesota residents should treat MCDPA compliance as active and operative from July 2025.</div>
-    </div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. The profile layer records that profile is the characterization layer of the package.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Minnesota currently reads within Atlas as an Upper Midwest continuity jurisdiction organized around Duluth/Superior and Lake Superior freight continuity, Upper Mississippi freight continuity, Class I rail and interstate corridor visibility, intermodal freight structure, University of Minnesota engineering visibility, MISO transmission participation, and BEAD coordination.</p>
+ 
+    <h3 class="subhead">Profile synthesis</h3>
+    <p class="muted">The profile layer records that the current package shows:</p>
+    <ul class="evidence-bullets">
+      <li>Duluth/Superior and Lake Superior continuity anchored in documented Great Lakes-Seaway access, documented Lake Superior port tonnage, and documented bulk-cargo handling</li>
+      <li>Upper Mississippi continuity anchored in documented river tonnage, documented port-area continuity, and documented southbound waterway access toward the Gulf</li>
+      <li>inland bulk-cargo structure anchored in documented commodity movement across river and lake systems</li>
+      <li>Class I rail visibility anchored in directly documented BNSF, Canadian National, CPKC, and Union Pacific presence</li>
+      <li>interstate freight corridor continuity anchored in directly documented I-35 and I-90 National Highway Freight Network visibility plus freight-program activity along I-94</li>
+      <li>intermodal freight structure anchored in MnDOT's documented intermodal terminals mapping and intermodal network-optimization tooling</li>
+      <li>University of Minnesota engineering and applied research visibility as the package's research anchor</li>
+      <li>MISO participation and BEAD coordination as the package's support-layer anchors</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of Minnesota as an Upper Mississippi + western Great Lakes logistics continuity corridor.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Minnesota currently reads within Atlas as an Upper Mississippi + western Great Lakes logistics continuity corridor linking Duluth/Superior and Lake Superior freight structure, Upper Mississippi continuity, Class I rail visibility, I-35/I-90/I-94 freight-corridor visibility, intermodal structure, University of Minnesota engineering research, MISO-linked transmission planning, and BEAD coordination.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + Profile synthesis + Profile synthesis statement</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Minnesota does not operate a dedicated biometric privacy statute equivalent to Illinois BIPA as of 2026. Biometric data is addressed within the MCDPA framework as a sensitive data category requiring opt-in consent for collection and processing. The regulatory posture on biometrics is developing rather than restriction-active, with legislative consideration of more targeted frameworks ongoing in the 2025–2026 cycle.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Emerging Concern Zone</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">MCDPA sensitive-data coverage</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Opt-in consent required; dedicated statute developing</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> MCDPA sensitive data classification for biometric identifiers, opt-in consent requirement, data protection assessment obligations for biometric processing, legislative proposals under consideration for dedicated biometric framework.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> MCDPA opt-in consent obligations are operative for biometric data collection. No municipal-level facial-recognition bans equivalent to California's San Francisco or Oakland restrictions are in force, but the legislative trajectory points toward continued tightening of sensitive data surfaces.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> products deploying biometric identification, behavioral monitoring, or identity-inference systems within Minnesota must align with MCDPA opt-in consent requirements for sensitive data. Teams should monitor 2026–2027 legislative surfaces for dedicated biometric statute development.</div>
-    </div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that this file provides structural interpretation only, and does not rank Minnesota, compare Minnesota to other jurisdictions, or prescribe deployment eligibility.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted">The builder-mode layer records that Minnesota is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a Duluth/Superior and Lake Superior logistics continuity environment</li>
+      <li>an Upper Mississippi freight continuity environment</li>
+      <li>a multimodal inland corridor environment across Class I rail, intermodal structure, and I-35/I-90/I-94 freight visibility</li>
+      <li>a corridor environment with visible University of Minnesota engineering participation</li>
+      <li>a corridor environment with narrow but explicit MISO and BEAD support-layer continuity</li>
+    </ul>
+ 
+    <h3 class="subhead">Great Lakes interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Minnesota reads as a western Great Lakes continuity environment where Duluth/Superior and the Lake Superior port system keep bulk-freight structure visible without requiring a statewide port inventory.</p>
+ 
+    <h3 class="subhead">River interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Minnesota reads as an Upper Mississippi continuity environment where documented river tonnage, port-area structure, and southbound waterway access remain structurally relevant.</p>
+ 
+    <h3 class="subhead">Inland transport interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Minnesota reads as an inland transport environment where Class I rail visibility, intermodal structure, and freight-program visibility across I-35, I-90, and I-94 reinforce corridor continuity.</p>
+ 
+    <h3 class="subhead">Research and support-layer interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Minnesota reads as a corridor environment with visible University of Minnesota engineering participation and narrow but explicit support-layer continuity through MISO transmission planning and BEAD coordination.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — Role summary + 4 interpretation subsections</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Minnesota is in an early-adoption phase for public-sector AI integration. Minnesota IT Services (MNIT) has developed internal AI governance coordination guidelines for state agency use, and the 2025 legislative session considered broader AI-in-government frameworks without producing enacted comprehensive legislation. The public-sector AI surface is characterized by agency-level coordination rather than centralized mandate structures.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Early Adoption</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Agency-led coordination</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Developing surface for compliance-aware B2G operators</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> MNIT AI governance coordination guidelines, 2025 legislative AI-in-government proposals, University of Minnesota AI research and policy engagement surfaces, state procurement framework interfaces.</div>
-      <div class="detail-item"><strong>Development signal:</strong> Minnesota's public-sector AI surface is expanding through agency coordination rather than centralized mandate deployment. Vendors serving state government operations should anticipate evolving procurement and diligence expectations through the 2026–2027 cycle.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams seeking to operate within Minnesota's public-sector AI surfaces should engage early-stage coordination frameworks and track legislative surfaces for emerging procurement mandate development. MCDPA compliance is a baseline requirement for any government-facing data-handling deployment.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, builder-mode, and change-log layers. Multiple layers record a distinct canonical exclusion: local reassignment of atlas-controlled Minnesota topology metadata.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the evidence collected there, this file does not support characterizing Minnesota as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a routing-authority jurisdiction</li>
+      <li>a coordination-tier jurisdiction</li>
+      <li>a deployment-readiness jurisdiction</li>
+      <li>a surface-assigned jurisdiction</li>
+      <li>a jurisdiction-ranking case</li>
+      <li>an AI compute corridor</li>
+      <li>a hyperscale anchor corridor</li>
+      <li>a federal governance corridor</li>
+      <li>a federal hosting corridor</li>
+      <li>a national routing spine designation</li>
+      <li>a primary Internet-exchange concentration environment</li>
+      <li>a custody-regime jurisdiction</li>
+      <li>a DAO-wrapper jurisdiction</li>
+      <li>a digital-asset statutory jurisdiction</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based on the currently derived signals, this file does not support characterizing Minnesota as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, a surface-eligibility determination, a jurisdiction-ranking claim, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that this file does not support interpreting Minnesota as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The trust-dimensions layer records that it should be read as trust interpretation of Minnesota's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Minnesota's profile should not be read as: a routing-authority assignment, a coordination-tier assignment, a deployment-readiness classification, an Atlas surface-eligibility determination, a jurisdiction ranking claim, an AI compute corridor claim, a hyperscale anchor corridor claim, a federal governance corridor claim, a federal hosting corridor claim, a national routing spine claim, a primary Internet-exchange concentration claim, a custody-regime jurisdiction claim, a DAO-wrapper jurisdiction claim, or a digital-asset statutory jurisdiction claim.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not support interpreting Minnesota as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The builder-mode layer records that it should be read as builder-facing interpretation of Minnesota's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal governance or hosting-corridor designation, national routing-spine designation, primary IX concentration designation, or local reassignment of atlas-controlled Minnesota topology metadata.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Minnesota's developer climate is centered on the Twin Cities intermodal convergence zone, which functions as the corridor's primary institutional and technology coordination surface. State government open-source coordination exists but is less formally codified than comparable frameworks in California or New York. MCDPA compliance obligations are now active and apply to products handling qualifying Minnesota resident data, raising the floor for deployment teams operating within this surface.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Stable · MCDPA-Active</div></div>
-      <div class="mini-box"><div class="label">Compliance floor</div><div class="value">MCDPA (eff. Jul 31, 2025)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Stable climate; rising privacy compliance drag</div></div>
+  <!-- ── 9. SCOPE BOUNDARIES ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Scope Boundaries &amp; Canonical Narrowing</h2>
+    <p class="muted">The canonical Minnesota package does not record an "Evidence gaps" section. The change-log explicitly records "No evidence gaps section was required" — making this an intentional canonical decision rather than an omission. Instead, the change-log records the canonical scope-constraints applied during evidence-first package population.</p>
+ 
+    <h3 class="subhead">Scope constraints applied during population</h3>
+    <div class="scope-block">
+      <div class="scope-label">The change-log records the following scope constraints applied during evidence-first package population:</div>
+      <ul>
+        <li>corridor-layer anchors only</li>
+        <li>no open-ended statewide infrastructure survey</li>
+        <li>no county-by-county infrastructure mapping</li>
+        <li>no complete university inventory</li>
+        <li>no economic ranking, workforce, tourism, agriculture, or municipal overview expansion</li>
+        <li>no hyperscale or compute-corridor inference</li>
+        <li>no routing-authority, coordination-tier, readiness, ranking, or surface assignment inference</li>
+        <li>no federal governance corridor designation</li>
+        <li>no local override of atlas-controlled topology metadata</li>
+      </ul>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> MCDPA compliance obligations for qualifying data processors, MNIT open-source coordination frameworks, HF 3764 automated employment decision tool disclosure requirements, state procurement data-handling standards.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> Minnesota operates as a stable developer coordination surface within the upper-midwest freight corridor. The MCDPA compliance layer is now active for teams handling qualifying resident data, and automated decision tool disclosure requirements apply to employment-facing product surfaces.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> well-suited for teams operating within freight logistics, freshwater shipping, intermodal coordination, and upper-midwest deployment contexts that can absorb moderate compliance architecture requirements. Less suited for operations requiring near-zero regulatory engagement during early deployment phases.</div>
-    </div>
+ 
+    <p class="muted" style="margin-top:12px">The change-log records the current status: evidence layer populated to corridor sufficiency, no evidence gaps section was required, downstream layers derived strictly from the corridor-limited evidence set, jurisdiction lens attached in metadata.md, surface assignment remains none.</p>
+    <div class="src">Source: change-log.md — 2026-04-15 evidence-first package population (Scope constraints applied)</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Bitcoin mining operates within Minnesota's legal framework with no specific prohibition as of 2026. Electricity rates are positioned in the mid-band of the continental U.S., creating more favorable cost conditions than Pacific or Northeast coastal corridor states. Minnesota's 2023 Next Generation Energy Act (HF 7) establishes a 100% carbon-free electricity mandate by 2040, introducing structural uncertainty for long-duration proof-of-work operations dependent on current rate and energy-mix conditions.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Moderate Risk</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Mid-band (US)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">More favorable than coastal corridors; transition risk emerging</div></div>
-    </div>
-    <div class="radar" aria-label="Minnesota energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:42%;background:var(--yellow)"></div></div><div class="score">42</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:48%;background:var(--yellow)"></div></div><div class="score">48</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:62%;background:var(--teal)"></div></div><div class="score">62</div></div>
-    </div>
-    <div class="note">Builder implication: Minnesota's energy cost position is more favorable than coastal high-cost corridors, but the 2040 carbon-free electricity mandate creates a trajectory-level consideration for long-duration compute and mining operations planning multi-year deployment surfaces within this corridor.</div>
+  <!-- ── 10. CHANGE-LOG NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, Topology Completion Layer, and Jurisdiction lens. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">2026-04-15 evidence-first package population</h3>
+    <p class="muted">The change-log records that the Minnesota state package was populated in topology-normalized order: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md. The change-log records that scope constraints were applied during population (rendered in Section 9 above). The change-log records the current status: evidence layer populated to corridor sufficiency, no evidence gaps section was required, downstream layers derived strictly from the corridor-limited evidence set, jurisdiction lens attached in metadata.md, and surface assignment remains none.</p>
+ 
+    <h3 class="subhead">Structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal governance or hosting-corridor designation, national routing-spine designation, primary IX concentration designation, or local reassignment of atlas-controlled Minnesota topology metadata.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Minnesota's regulatory vector is developing across policy layers rather than uniformly escalating. The Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor is absorbing active MCDPA enforcement alongside developing AI governance and digital asset framework activity. Operators interacting across this corridor should model for continued compliance layer development through 2027, with the corridor functioning as the northern inland anchor connecting Great Lakes maritime routing systems with Mississippi River continental deployment pathways linking Iowa, Illinois, and Wisconsin corridor interfaces.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — developing through targeted employment-decision provisions and MNIT coordination activity; broader governance escalation contingent on 2026–2027 legislative outcomes.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — emerging through money transmitter framework application; dedicated digital asset legislation remains unresolved and represents the primary framework-formation surface to monitor.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — active with MCDPA fully operative since July 31, 2025; AG enforcement posture and sensitive-data opt-in requirements are now the operative compliance surface for qualifying operators.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — emerging through MCDPA sensitive data classification; dedicated biometric statute development is a 2026–2027 legislative monitoring priority for teams deploying identity-sensitive systems.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — moderate and currently stable; the 2040 carbon-free electricity mandate introduces trajectory-level consideration without creating near-term operational prohibition.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — stable within the Twin Cities convergence surface; MCDPA compliance layer and AEDT disclosure requirements are now active operational considerations for deployment teams.</div>
-    </div>
-    <div class="callout">12-month outlook: Minnesota is likely to advance digital asset framework legislation, continue MCDPA enforcement posture development, and produce further AI-in-government coordination guidance. The corridor's relationship to Wisconsin Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor, Iowa Mississippi River routing alignment surfaces, and future North Dakota and South Dakota interior plains infrastructure interfaces positions Minnesota as the northern inland anchor within the continental interior waterway and freight system.</div>
-  </section>
+</div><!-- /main col -->
  
-</div>
- 
-<!-- ── SIDEBAR ─────────────────────────────── -->
+<!-- ── SIDEBAR ── -->
 <aside>
  
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">Minnesota at a glance</h3>
-    <p class="muted mini">Upper Mississippi Headwaters &amp; Great Lakes Inland Corridor. Best read as a freshwater shipping continuity environment and upper-midwest freight coordination surface with a developing compliance layer — not a maximum-enforcement or first-mover regulatory jurisdiction.</p>
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Minnesota jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/minnesota/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> freight logistics alignment, freshwater shipping continuity, Twin Cities intermodal coordination, MCDPA-compliant data operations, upper-midwest deployment pathways, cross-border northern routing interfaces with Canadian interior infrastructure systems.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> high-power proof-of-work mining under long-duration planning horizons, maximum-enforcement compliance architecture benchmarking, or operations requiring a fully settled digital asset licensing framework.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>Jul 31, 2025</strong> — Minnesota Consumer Data Privacy Act (MCDPA) effective date; consumer rights, opt-in consent for sensitive data, and data protection assessment obligations operative.</li>
-      <li><strong>2024</strong> — HF 3764 automated employment decision tool disclosure and appeal-right provisions enacted under MN Human Rights Act.</li>
-      <li><strong>2023</strong> — Next Generation Energy Act (HF 7) signed; 100% carbon-free electricity mandate by 2040 established.</li>
-      <li><strong>2026–2027</strong> — Digital asset framework legislation and dedicated biometric statute development remain active legislative monitoring surfaces.</li>
+      <li><strong>Jurisdiction:</strong> Minnesota</li>
+      <li><strong>Code:</strong> MN · US-MN</li>
+      <li><strong>Lens:</strong> Upper Mississippi + western Great Lakes logistics continuity corridor</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> corridor-layer sufficient</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Cross-cluster placement</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li><strong>Corridor Group:</strong> Upper Midwest Continuity Corridor</li>
+      <li><strong>Foundation Layer:</strong> Great Lakes Industrial Core Layer</li>
+      <li><strong>Completion Layer:</strong> Northern Interior Completion Layer</li>
+      <li><strong>Jurisdiction Lens:</strong> Upper Mississippi + western Great Lakes logistics continuity corridor</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. Minnesota is the first rendered state whose Corridor Group, Foundation Layer, and Completion Layer each belong to a different cluster family.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-crossfoundation">
+    <div class="smallcaps">Cross-Cluster Placement</div>
+    <h3 id="heading-sidebar-crossfoundation">Three-way topology split</h3>
+    <p class="muted mini">Minnesota's three atlas-controlled topology fields each resolve to a different cluster family — Corridor Group (Upper Midwest Continuity), Foundation Layer (Great Lakes Industrial Core), and Completion Layer (Northern Interior). This is canonically recorded in the metadata layer as its classification source.</p>
+    <p class="muted mini" style="margin-top:8px">The canonical jurisdiction lens names both halves explicitly: <em>Upper Mississippi</em> (aligning with the Upper Midwest Continuity Corridor framing) + <em>western Great Lakes</em> (aligning with the Great Lakes Industrial Core foundation).</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Evidence anchors</div>
+    <h3 id="heading-sidebar-coverage">Documented in corridor-layer scope</h3>
+    <ul class="mini muted">
+      <li>Duluth/Superior (33.5M tons 2019)</li>
+      <li>Lake Superior (3 MN ports, 56.1M tons 2019)</li>
+      <li>Upper Mississippi (195 mi, 14M+ tons 2020)</li>
+      <li>Taconite (42.2M tons, 75% of GL tonnage)</li>
+      <li>U.S. Army Corps of Engineers (9-ft barges)</li>
+      <li>MnDOT (4,278 mi rail, 21 companies)</li>
+      <li>BNSF, CN, CPKC, UP</li>
+      <li>I-35/I-90 interchange (Albert Lea, NHFN)</li>
+      <li>I-94 freight-program (Enfield, Big Spunk Lake)</li>
+      <li>UMN Twin Cities ($1.35B research, 2.1M sq ft)</li>
+      <li>UMN CSE (12 departments)</li>
+      <li>MISO Tranche 1 &amp; 2.1 ($10.3B, 18 projects)</li>
+      <li>Big Stone South-Alexandria-Big Oaks</li>
+      <li>Mankato to Mississippi</li>
+      <li>Northland Reliability</li>
+      <li>Office of Broadband Development (BEAD)</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-standardization">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-standardization">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  <div class="card" aria-labelledby="heading-sidebar-scope">
+    <div class="smallcaps">Canonical scope</div>
+    <h3 id="heading-sidebar-scope">Corridor-layer sufficient</h3>
+    <p class="muted mini">The change-log records that the Minnesota package is explicitly scope-narrowed to corridor-layer anchors. All downstream layer completeness statuses are canonically recorded as "corridor-layer sufficient" rather than "preliminary".</p>
+    <p class="muted mini">The change-log also records "No evidence gaps section was required" — an explicit canonical declaration that absence of the gaps section is intentional.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: corridor-layer sufficient</li>
+      <li>Signal layer: corridor-layer sufficient</li>
+      <li>Trust dimensions: corridor-layer sufficient</li>
+      <li>Profile: corridor-layer sufficient</li>
+      <li>Builder-mode: corridor-layer sufficient</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale or AI compute corridor designation.</li>
+      <li>Not a local reassignment of atlas-controlled topology metadata.</li>
+      <li>Not a digital-asset statutory jurisdiction designation.</li>
+    </ul>
   </div>
  
 </aside>
-</div>
+</div><!-- /grid-sidebar -->
  
 </main>
  
