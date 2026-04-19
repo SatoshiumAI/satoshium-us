@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Alaska — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Alaska operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Alaska Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/alaska/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,41 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
+.sources-block code{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;color:var(--gold2)}
+.scope-block{margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.04)}
+.scope-block .scope-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.scope-block ul{margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block li{margin-bottom:2px;line-height:1.5}
+.scope-block ol{margin:4px 0 0 22px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block ol li{margin-bottom:2px;line-height:1.5}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +175,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +191,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Alaska</h1>
-    <p class="kicker">Alaska operates as an Arctic Maritime, Energy &amp; Strategic Continuity Corridor supporting coastal continuity across the Alaska Marine Highway system, intermodal freight alignment through the Port of Alaska and Alaska Railroad, and energy-routing infrastructure linked to Arctic-facing and Valdez-connected deployment surfaces across the northern strategic infrastructure layer of the United States.</p>
+    <p class="kicker">This page renders the canonical Alaska Atlas jurisdiction package. The canonical package positions Alaska within the Arctic Strategic Access Corridor under the canonical jurisdiction lens "Arctic strategic access continuity within non-contiguous completion" — a topology-constrained reading derived exclusively from the three atlas-controlled topology fields. Alaska is the sole canonical holder of the Arctic Strategic Access Corridor, and its canonical Foundation Layer and Completion Layer are held exclusively with Hawaii in the two-state Non-Contiguous Strategic Layer cluster. Alaska is an adjacency-bounded corridor-layer sufficient state — its evidence layer is retained from non-contiguous Foundation-and-Completion continuity with Hawaii and Pacific-edge continuity with Washington and Oregon, rather than from land-border adjacency. All completeness statuses are recorded as corridor-layer sufficient.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">AK · US-AK</div>
-      <div class="hero-chip">Juneau</div>
-      <div class="hero-chip">Arctic Maritime, Energy &amp; Strategic Continuity Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Alaska quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">No Active Regime</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Permissive / Open</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Baseline / Breach Framework</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">No Active Restrictions</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Strategic Infrastructure / Low-Friction</div></div>
+      <div class="hero-chip">Jurisdiction: Alaska (AK · US-AK)</div>
+      <div class="hero-chip">Jurisdiction lens: Arctic strategic access continuity within non-contiguous completion</div>
+      <div class="hero-chip">Completeness: corridor-layer sufficient</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Adjacency-bounded package</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,207 +225,575 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Alaska operates as the Arctic Maritime, Energy &amp; Strategic Continuity Corridor within the U.S. northern infrastructure layer. Builders interacting across this corridor engage coastal continuity surfaces through the Alaska Marine Highway system, intermodal freight environments centered on the Port of Alaska and Alaska Railroad, energy-routing infrastructure anchored to the Trans-Alaska Pipeline and Valdez terminal, Arctic and sub-Arctic maritime boundary logistics, and strategic air-cargo interfaces centered on Anchorage. The governance posture is structurally low-friction across AI, privacy, digital assets, and biometrics — with no active state-level regulatory regimes deployed in these layers as of 2026.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>AI Policy</strong></div><span class="pill green">No Active Regime</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill green">Permissive / Open</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Privacy / Data</strong></div><span class="pill teal">Baseline / Breach Framework</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Biometrics</strong></div><span class="pill green">No Active Restrictions</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Public Sector AI</strong></div><span class="pill yellow">Early-Stage / Ad Hoc</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Signal</strong></div><span class="pill blue">Strategic Infrastructure / Low-Friction</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Arctic Strategic Access Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Alaska functions most effectively as a strategic continuity corridor for freight alignment, energy-routing infrastructure, air-cargo logistics, and Arctic-facing deployment surfaces. The low-friction regulatory posture across AI, digital assets, and privacy creates minimal compliance overhead for teams operating in these layers at the state level.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Non-Contiguous Strategic Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Non-Contiguous Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Lens</div>
+      <div class="field-value">Arctic strategic access continuity within non-contiguous completion</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that the Corridor Group, Foundation Layer, and Topology Completion Layer are derived from atlas-export/docs/atlas.md. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived from those atlas-controlled fields only and does not override atlas-controlled topology.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, coordination tiers, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence sufficiency boundaries, infer deployment suitability, or locally reclassify atlas-controlled corridor metadata.</p>
+    <p class="muted"><strong>Canonical Arctic Strategic Access topology.</strong> The canonical atlas.md places Alaska in the Arctic Strategic Access Corridor, with a Non-Contiguous Strategic Layer foundation and a Non-Contiguous Completion Layer completion. Alaska is the sole canonical holder of the Arctic Strategic Access Corridor. Both Foundation and Completion canonical fields are shared only with Hawaii's Pacific Strategic Projection Corridor, forming the canonical two-state Non-Contiguous Strategic Layer cluster. The canonical Jurisdiction Lens uses "within" to reflect that Alaska's Arctic strategic access Foundation resolves into the broader Non-Contiguous Completion Layer.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/alaska/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Arctic Maritime, Energy &amp; Strategic Continuity Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only corridor-relevant structural anchors retained for Alaska from adjacent-state continuity already visible inside Atlas. The evidence layer records that it does not perform an open-ended statewide infrastructure survey and does not assign trust posture, routing role, coordination tier, readiness, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. The canonical Alaska package is an <em>adjacency-bounded</em> corridor-layer sufficient package: its evidence is retained from non-contiguous Foundation-and-Completion continuity with Hawaii and Pacific-edge adjacency with Washington and Oregon, plus atlas.md topology references, rather than from land-border adjacency or independent state-sourced research. All completeness statuses across evidence, signals, trust, profile, and builder-mode are canonically recorded as "corridor-layer sufficient".</p>
+    <div class="callout mini" style="margin-top:12px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — Scope; change-log.md — Scope constraints applied during population</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 4 evidence subsections documenting Alaska's corridor-relevant structural anchors retained from non-contiguous Foundation-and-Completion continuity and Pacific-edge adjacency. Canonical sources are atlas-export internal topology references and adjacent-state metadata-layer files (Hawaii, Washington, Oregon).</p>
+ 
+    <h3 class="subhead">Arctic strategic access continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that <code>atlas-export/docs/atlas.md</code> places Alaska in the <code>Arctic Strategic Access Corridor</code>, with a <code>Non-Contiguous Strategic Layer</code> foundation and a <code>Non-Contiguous Completion Layer</code> completion.</li>
+      <li>The evidence layer records that Hawaii is retained in Atlas in the <code>Pacific Strategic Projection Corridor</code>, with the same <code>Non-Contiguous Strategic Layer</code> foundation and <code>Non-Contiguous Completion Layer</code> completion.</li>
+      <li>The evidence layer records that the retained Atlas topology therefore supports reading Alaska as an arctic strategic access continuity environment inside a non-contiguous strategic frame without overriding atlas-controlled topology.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/alaska/</div>
-  </section>
- 
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Alaska has not enacted state-level AI legislation as of 2026. No dedicated AI governance framework, procurement attestation requirement, or AI-specific enforcement authority is operational at the state level. Teams deploying AI products within Alaska's corridor surface interact primarily with federal frameworks — NIST AI RMF, FTC guidelines, and sector-specific federal AI requirements — rather than state-level mandates. State IT procurement follows standard vendor-management practices without AI-specific overlay.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">No Active Regime</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Federal frameworks only</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low-friction state surface; federal compliance applies</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> No enacted state AI statute. Federal frameworks — FTC Act, NIST AI RMF, sector-specific federal requirements — remain the operative compliance surface for AI deployments within this corridor.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> No state AI enforcement authority. Federal enforcement channels apply. State IT vendor management does not currently include AI-specific attestation requirements or procurement controls.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying AI products or services within Alaska's corridor surface face no state-level AI compliance burden as of 2026. Federal obligations remain operative and should be assessed independently of state posture.</div>
-    </div>
-    <div class="note">Operational signal: Alaska's low-friction AI surface reflects an absence of state-level governance infrastructure, not an established permissive framework. Federal compliance obligations remain the primary constraint surface for AI deployments in this corridor.</div>
-  </section>
- 
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Alaska has not enacted a state-level digital asset licensing framework. Money-services business (MSB) operations within the corridor are governed through the Division of Banking and Securities under the Alaska Money Transmission Act, with digital asset activity addressed through existing MSB-equivalent licensing requirements where applicable. No DFAL-equivalent, no specialized digital asset custody framework, and no DAO-specific formation statute have been enacted as of 2026. Federal BSA and FinCEN MSB registration requirements remain the primary compliance surface for custodial and exchange-facing operations.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Permissive / Open</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">Division of Banking &amp; Securities</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Federal MSB framework is the operative surface</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Alaska Money Transmission Act (MSB licensing), federal BSA/AML requirements, FinCEN MSB registration. No state-specific digital asset statute, custody framework, or SPDI-equivalent charter as of 2026.</div>
-      <div class="detail-item"><strong>Operational surface:</strong> Alaska does not impose a dedicated state-level digital asset licensing layer beyond MSB requirements where applicable. Bitcoin custody, node operation, and non-custodial deployments face no Alaska-specific licensing obligation under the current framework.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams operating Bitcoin infrastructure, custody services, or exchange-adjacent deployments within this corridor should assess federal MSB registration and AML requirements as the primary compliance surface. State-level overhead is currently minimal.</div>
-    </div>
-  </section>
- 
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Alaska's data protection framework is anchored to the Alaska Personal Information Protection Act (PIPA), which establishes breach notification obligations for organizations handling resident data. Alaska has not enacted a comprehensive consumer privacy law equivalent to CCPA or CPRA. No independent privacy enforcement agency, no ADMT risk assessment requirement, no automated decision-making framework, and no private right of action for general data handling violations are currently operative at the state level. The enforcement surface is breach-notification-oriented rather than rights-framework-oriented.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Baseline / Breach Framework</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">Alaska PIPA (breach notification)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">No comprehensive data rights layer active</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Alaska Personal Information Protection Act (AS 45.48), breach notification requirements for personal information exposure. No equivalent to CCPA, CPRA, or state ADMT frameworks. Federal sector-specific privacy requirements (HIPAA, GLBA, FERPA) remain operative where applicable.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> Breach notification obligations are enforced through the Alaska Attorney General's office. No independent data protection authority. Consumer data rights, purpose-limitation requirements, and opt-out mechanisms are not operative at the state level.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams handling Alaska resident data face breach-notification obligations under PIPA but no comprehensive consumer rights workflow requirements at the state level. Federal privacy frameworks and contractual obligations remain the primary compliance surface beyond breach notification.</div>
-    </div>
-  </section>
- 
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Alaska has not enacted a state biometric privacy statute. No Illinois BIPA-equivalent, no facial recognition use restriction, no municipal-level biometric ban, and no employer biometric consent requirement operate within the corridor as of 2026. Biometric data handling within Alaska is governed by general breach-notification obligations under PIPA where biometric data constitutes personal information, and by applicable federal frameworks. The absence of a dedicated biometric framework creates a structurally open deployment surface for identity-sensitive systems within the corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">No Active Restrictions</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Open / No consent mandate</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">No state-level biometric compliance surface</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> No state biometric statute. Alaska PIPA breach-notification obligations apply where biometric data constitutes personal information. Federal facial recognition and biometric frameworks apply in sector-specific contexts (federal law enforcement, airport security, immigration surfaces).</div>
-      <div class="detail-item"><strong>Risk profile:</strong> Absence of a state biometric framework means teams deploying biometric-proximate products within this corridor face limited Alaska-specific compliance overhead. Federal and contractual obligations remain operative. The corridor's significant federal presence — military installations, airport security surfaces — creates federal biometric governance interfaces that are distinct from state-level requirements.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying identity, facial recognition, or behavioral monitoring systems within Alaska's corridor do not face a state biometric compliance layer. Federal context — particularly in areas proximate to federal installations and air-cargo infrastructure — should be assessed independently.</div>
-    </div>
-  </section>
- 
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Alaska's public-sector AI posture is early-stage and ad hoc. No executive order on AI, no state AI procurement framework, and no dedicated public-sector AI governance program have been deployed as of 2026. State IT procurement operates through the Division of General Services under standard vendor-management frameworks without AI-specific attestation or safety requirements. The significant federal institutional presence within the corridor — including major military installations — creates distinct federal AI governance surfaces that are operative independently of state-level frameworks.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Early-Stage / Ad Hoc</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Standard IT procurement; no AI overlay</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">No structured B2G AI procurement surface</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> No state AI executive order or procurement policy. Division of General Services standard procurement framework. Federal institutional presence operating under separate federal AI governance requirements. University of Alaska system research interfaces at the federal-state boundary.</div>
-      <div class="detail-item"><strong>Federal surface note:</strong> the corridor's federal footprint — military logistics, Arctic research, air-cargo infrastructure with federal security interfaces — creates AI-relevant governance surfaces that are federal in origin and distinct from Alaska state-level posture. Teams engaging these surfaces should assess federal procurement AI requirements independently.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Alaska's state-level B2G AI surface is structurally thin. Teams operating within public-sector AI contexts in this corridor are more likely to interface with federal procurement and federal AI governance frameworks than with state-level AI requirements.</div>
-    </div>
-  </section>
- 
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Alaska's developer activity surface is geographically constrained and concentrated around Anchorage. No government open-source mandate, no code-sharing policy equivalent to California's TL 18-02, and no state-level developer infrastructure program are operative as of 2026. The operational environment reflects the corridor's primary character as a freight, energy, and logistics infrastructure surface rather than a software development concentration zone. Builders interacting with Alaska's corridor do so primarily through infrastructure and logistics interfaces rather than through developer network or policy-formation surfaces.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Limited / Remote Environment</div></div>
-      <div class="mini-box"><div class="label">Gov OSS</div><div class="value">No active mandate</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Infrastructure corridor, not developer concentration</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> No state government OSS policy. Standard state IT vendor procurement. Federal contractor developer surfaces operate under separate federal frameworks. Anchorage concentrates most technical-sector activity within the corridor.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> Alaska's geographic and infrastructure character shapes the developer surface. The corridor's strategic value is concentrated in freight alignment, energy routing, and logistics continuity rather than software development density or policy-formation proximity. Compliance drag is minimal, but network density and policy-proximity advantages are also limited.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> well-suited for teams whose operational surface is logistics, freight, energy infrastructure, or Arctic-facing deployment rather than developer-ecosystem proximity. Not a natural fit for teams seeking policy-formation networks, deep technical hiring pools, or government OSS collaboration surfaces.</div>
-    </div>
-  </section>
- 
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Bitcoin mining is legal in Alaska with no state prohibition or specific regulatory overlay as of 2026. Energy costs vary significantly across the corridor: residential and commercial rates are among the higher-cost surfaces in the U.S. due to remote supply infrastructure, while industrial and hydroelectric-proximate zones offer structurally different cost profiles. The corridor's primary energy-routing significance is anchored to the Trans-Alaska Pipeline system and Valdez terminal operations rather than to power generation for compute deployment.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · No Restrictions</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Variable; high in most zones</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">No regulatory friction; energy costs limit scale</div></div>
-    </div>
-    <div class="radar" aria-label="Alaska energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:10%;background:var(--green)"></div></div><div class="score">10</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:65%;background:var(--yellow)"></div></div><div class="score">65</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:30%;background:var(--orange)"></div></div><div class="score">30</div></div>
-    </div>
-    <div class="note">Builder implication: Alaska's mining regulatory surface is effectively friction-free at the state level, but energy cost variability and remote infrastructure logistics limit large-scale compute or mining deployment viability across most of the corridor. The corridor's energy significance is concentrated in routing and transit infrastructure rather than compute-facing power generation.</div>
-  </section>
- 
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Alaska's regulatory vector across all policy layers is stable and low-friction as of 2026. The Arctic Maritime, Energy &amp; Strategic Continuity Corridor is not engaged in active AI, privacy, digital asset, or biometric legislative development in the near term. The corridor's direction-of-travel significance is anchored to federal policy — Arctic strategy, military logistics, energy routing policy, and maritime boundary governance — rather than state-level governance escalation. Teams monitoring this corridor should track federal Arctic and energy policy surfaces rather than state legislative calendars.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — stable / no state-level movement. Federal AI governance frameworks remain the operative compliance surface. No state AI legislative activity is anticipated in the near-term session cycle.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — stable / open. No state-level digital asset licensing framework under active development. Federal MSB and BSA requirements remain the primary surface. No Alaska-specific legislative movement anticipated near term.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — stable baseline. Alaska PIPA breach-notification framework is operative. No comprehensive consumer privacy law under active development. The enforcement surface is unlikely to escalate significantly absent a major breach-driven legislative trigger.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — no activity. No state biometric statute and no municipal-level ban activity. Federal biometric governance surfaces — primarily in military, air-cargo, and border-facing contexts — are the operative concern for teams interacting with this corridor.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — stable / very low. No state-level regulatory movement toward proof-of-work restriction. Energy cost variability remains the structural constraint rather than legislative risk.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — stable / constrained by geography. No state-level policy changes anticipated that would alter the developer surface. The corridor's infrastructure character is expected to persist as its primary operational identity.</div>
-    </div>
-    <div class="callout">12-month outlook: Alaska's policy surface is expected to remain stable across all monitored layers. The corridor's strategic significance is most likely to evolve through federal Arctic policy, energy-routing infrastructure decisions, and military logistics developments rather than through state legislative action.</div>
-  </section>
- 
-</div>
- 
-  <aside>
-    <div class="card" aria-labelledby="heading-sidebar-summary">
-      <div class="smallcaps">Snapshot</div>
-      <h3 id="heading-sidebar-summary">Alaska at a glance</h3>
-      <p class="muted mini">Best engaged as an Arctic maritime, energy-routing, and strategic continuity corridor. Minimal compliance overhead across AI, digital assets, privacy, and biometrics. Primary operational surfaces are freight alignment, energy infrastructure, and air-cargo logistics rather than governance or developer-ecosystem proximity.</p>
-    </div>
- 
-    <div class="card" aria-labelledby="heading-builder-summary">
-      <div class="smallcaps">Builder Summary</div>
-      <h3 id="heading-builder-summary">Recommended read</h3>
-      <p class="muted mini"><strong>Best for:</strong> freight and logistics infrastructure alignment, energy-routing operational surfaces, Arctic-facing strategic deployment, Bitcoin operations without state-level licensing overhead, and air-cargo interface environments.</p>
-      <p class="muted mini"><strong>Less ideal for:</strong> compliance-architecture benchmarking, B2G AI procurement surfaces, talent-dense technical hiring, policy-formation proximity, or large-scale compute deployment requiring cost-competitive power.</p>
-    </div>
- 
-    <div class="card" aria-labelledby="heading-compliance-dates">
-      <div class="smallcaps">Key Dates</div>
-      <h3 id="heading-compliance-dates">Timeline markers</h3>
-      <ul class="mini">
-        <li><strong>2009</strong> — Alaska Personal Information Protection Act (PIPA) enacted; breach-notification framework operative for personal information exposures.</li>
-        <li><strong>2026</strong> — No major Alaska AI, digital asset, or comprehensive privacy legislation enacted. Federal frameworks remain the primary compliance surface across all monitored layers.</li>
-        <li><strong>Monitor</strong> — Federal Arctic strategy developments, Trans-Alaska Pipeline operational policy, military logistics infrastructure changes, and any state legislative session movement toward comprehensive privacy or digital asset frameworks.</li>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/hawaii/metadata.md</code></li>
       </ul>
     </div>
  
-    <div class="card" aria-labelledby="heading-maintenance">
-      <div class="smallcaps">Page Maintenance</div>
-      <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
-      <ul class="mini">
-        <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-        <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-        <li>Update this page only after the underlying package files are updated.</li>
-        <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+    <h3 class="subhead">Pacific-to-Arctic transition continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Hawaii's retained Atlas placement preserves a <code>Pacific Strategic Projection Corridor</code> environment on the same <code>Non-Contiguous Strategic Layer</code> foundation and <code>Non-Contiguous Completion Layer</code> completion as Alaska.</li>
+      <li>The evidence layer records that Alaska's retained Atlas placement preserves an <code>Arctic Strategic Access Corridor</code> environment on that same non-contiguous strategic frame.</li>
+      <li>The evidence layer records that the retained Atlas topology therefore supports a Pacific-to-Arctic transition continuity reading between Hawaii's Pacific strategic projection frame and Alaska's Arctic strategic access frame.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/hawaii/metadata.md</code></li>
       </ul>
     </div>
  
-    <div class="card" aria-labelledby="heading-standardization">
-      <div class="smallcaps">Canonical Pattern</div>
-      <h3 id="heading-standardization">For all 50 states</h3>
-      <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+    <h3 class="subhead">Pacific strategic adjacency continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Hawaii preserves a Pacific strategic projection frame on the same non-contiguous strategic foundation and completion as Alaska.</li>
+      <li>The evidence layer records that Washington and Oregon preserve Pacific Northwest coordination frames at the continental Pacific edge.</li>
+      <li>The evidence layer records that Alaska's retained position across this atlas-controlled Pacific-facing structure supports a Pacific strategic adjacency continuity reading at the corridor layer.</li>
+      <li>The evidence layer records that under the current corridor-scope restriction, this anchor is retained only as structural Pacific strategic adjacency continuity and is not expanded into air-cargo inventories, seaport inventories, terminal inventories, tonnage datasets, or defense-network inference.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/hawaii/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/washington/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/oregon/metadata.md</code></li>
+      </ul>
     </div>
-  </aside>
-</div>
+ 
+    <h3 class="subhead">Institutional adjacency continuity across the Pacific / Arctic frame</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Washington and Oregon preserve Pacific Northwest coordination frames at the Pacific edge.</li>
+      <li>The evidence layer records that Hawaii preserves a Pacific strategic projection frame on the same non-contiguous strategic foundation and completion as Alaska.</li>
+      <li>The evidence layer records that Alaska's retained position inside this atlas-controlled Pacific / Arctic frame supports an institutional adjacency continuity reading at the corridor layer.</li>
+      <li>The evidence layer records that under the current corridor-scope restriction, this anchor is retained only as structural adjacency continuity and is not expanded into military base inventories, university-system mapping, research-network inventory treatment, or municipal or regional node inventory treatment.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/washington/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/oregon/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/hawaii/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 4 evidence subsections. All canonical adjacency citations reach metadata-layer depth (Hawaii cited as forward-chained adjacency; Washington and Oregon cited as backward-resolved Pacific-edge adjacencies)</div>
+  </section>
+ 
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code>.</p>
+    <p class="muted">The signals layer records 4 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">Arctic strategic access continuity signal</h3>
+    <p class="muted">The signals layer records that Alaska shows an arctic-strategic-access-continuity signal through retained placement in the <code>Arctic Strategic Access Corridor</code> on a non-contiguous strategic frame.</p>
+ 
+    <h3 class="subhead">Pacific-to-Arctic transition continuity signal</h3>
+    <p class="muted">The signals layer records that Alaska shows a Pacific-to-Arctic-transition-continuity signal through retained placement between Hawaii's Pacific strategic projection frame and Alaska's Arctic strategic access frame.</p>
+ 
+    <h3 class="subhead">Pacific strategic adjacency signal</h3>
+    <p class="muted">The signals layer records that Alaska shows a Pacific-strategic-adjacency signal through retained placement across the Hawaii-facing non-contiguous strategic frame and the broader Pacific-facing atlas structure.</p>
+ 
+    <h3 class="subhead">Institutional adjacency signal</h3>
+    <p class="muted">The signals layer records that Alaska shows an institutional-adjacency signal through retained placement across the Pacific / Arctic corridor frame.</p>
+ 
+    <div class="absence-callout" style="margin-top:16px">
+      <div class="absence-label">Canonical signal-layer non-establishment</div>
+      <p>The signals layer records that the current signal set also does not independently establish northern projection continuity as a standalone Alaska anchor, west-coast-to-Arctic continuity as a topology-visible anchor through the Washington/Oregon frame, strategic perimeter continuity as a standalone Alaska anchor beyond the retained Pacific / Arctic adjacency readings, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or research participation beyond institutional adjacency.</p>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 4 signal clusters</div>
+  </section>
+ 
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from <code>signals.md</code>.</p>
+    <p class="muted">The trust-dimensions layer records that trust evaluates what kinds of stability conditions Alaska can sustain given the signal layer and the visible corridor-continuity environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted">The trust-dimensions layer records that Alaska currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>narrow but durable corridor coordination density across arctic strategic access continuity, Pacific-to-Arctic transition continuity, Pacific strategic adjacency continuity, and institutional adjacency continuity</li>
+      <li>durable non-contiguous strategic infrastructure continuity at the corridor layer</li>
+      <li>visible institutional adjacency across the Pacific / Arctic frame</li>
+      <li>industrial persistence not independently established beyond strategic continuity and adjacency</li>
+      <li>research participation not independently established beyond institutional adjacency</li>
+    </ul>
+ 
+    <h3 class="subhead">Coordination density</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Narrow but durable corridor coordination density.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>arctic strategic access continuity signal</li>
+      <li>Pacific-to-Arctic transition continuity signal</li>
+      <li>Pacific strategic adjacency signal</li>
+      <li>institutional adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a routing-authority model</li>
+      <li>the current package does not support coordination-tier assignment</li>
+      <li>the current package does not independently establish northern projection continuity as a standalone Alaska anchor</li>
+      <li>the current package does not independently establish west-coast-to-Arctic continuity as a topology-visible anchor through the Washington/Oregon frame</li>
+      <li>the current package does not independently establish energy-grid participation visibility or BEAD coordination visibility</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Alaska shows corridor-relevant coordination density as an Arctic strategic environment held inside a non-contiguous strategic frame that remains adjacent to Hawaii's Pacific strategic projection frame and the broader Pacific-facing atlas structure.</p>
+ 
+    <h3 class="subhead">Infrastructure continuity</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable non-contiguous strategic infrastructure continuity at the corridor layer.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>arctic strategic access continuity signal</li>
+      <li>Pacific-to-Arctic transition continuity signal</li>
+      <li>Pacific strategic adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not independently establish energy-grid participation visibility or BEAD coordination visibility</li>
+      <li>the current package does not expand into statewide infrastructure surveys, air-cargo or seaport inventories, terminal inventories, tonnage datasets, pipeline inventories, or Arctic shipping-route datasets</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Alaska shows durable corridor continuity where Arctic strategic access remains structurally linked to a non-contiguous strategic frame shared with Hawaii, but the package keeps that continuity at the corridor layer.</p>
+ 
+    <h3 class="subhead">Institutional adjacency</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible Pacific / Arctic institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>institutional adjacency signal</li>
+      <li>Pacific strategic adjacency signal</li>
+      <li>Pacific-to-Arctic transition continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally avoids military base inventories, university-system mapping, research-network inventory treatment, and broader institutional ranking treatment</li>
+      <li>the current trust reading does not compare Alaska institutions by depth, scale, or hierarchy</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Alaska shows institutional adjacency through its retained corridor position inside a Pacific / Arctic frame that includes Hawaii's Pacific strategic projection structure and Washington and Oregon's Pacific edge frames.</p>
+ 
+    <h3 class="subhead">Industrial persistence</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond strategic continuity and adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>arctic strategic access continuity signal</li>
+      <li>Pacific-to-Arctic transition continuity signal</li>
+      <li>Pacific strategic adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not independently establish air-cargo or seaport inventories, terminal inventories, tonnage datasets, military base inventories, pipeline inventories, municipal or regional node inventories, or broader industrial survey treatment</li>
+      <li>the current trust reading does not support industrial ranking or sector-depth claims for Alaska from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Alaska sits inside a corridor where Arctic strategic access and Pacific strategic adjacency are visible, but this package does not independently establish Alaska industrial persistence beyond that adjacency-bounded structure.</p>
+ 
+    <h3 class="subhead">Research participation</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>institutional adjacency signal</li>
+      <li>arctic strategic access continuity signal</li>
+      <li>Pacific strategic adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not retain a corridor-visible research anchor for Alaska beyond its adjacency-bounded corridor placement</li>
+      <li>the current package intentionally avoids university-system mapping and research-network inventory treatment</li>
+      <li>the current trust reading does not support a research-hierarchy claim for Alaska from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Alaska sits inside a visible Pacific / Arctic institutional frame, but the current retained evidence does not independently establish research participation beyond that adjacency position.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust-dimension completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — Trust interpretation summary + 5 dimension fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
+  </section>
+ 
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. The profile layer records that profile is the characterization layer of the package.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Alaska currently reads within Atlas as an Arctic strategic access environment organized around arctic strategic access continuity, Pacific-to-Arctic transition continuity, Pacific strategic adjacency continuity, and institutional adjacency continuity across the Pacific / Arctic frame.</p>
+ 
+    <h3 class="subhead">Profile synthesis</h3>
+    <p class="muted">The profile layer records that the current package shows:</p>
+    <ul class="evidence-bullets">
+      <li>arctic strategic access continuity anchored in retained placement in the <code>Arctic Strategic Access Corridor</code> on a non-contiguous strategic frame</li>
+      <li>Pacific-to-Arctic transition continuity anchored in retained placement between Hawaii's Pacific strategic projection frame and Alaska's Arctic strategic access frame</li>
+      <li>Pacific strategic adjacency continuity anchored in retained placement across the Hawaii-facing non-contiguous strategic frame and the broader Pacific-facing atlas structure</li>
+      <li>institutional adjacency continuity anchored in retained placement across the Pacific / Arctic corridor frame</li>
+      <li>no independent retained basis for northern projection continuity as a standalone Alaska anchor, west-coast-to-Arctic continuity as a topology-visible anchor through the Washington/Oregon frame, strategic perimeter continuity as a standalone Alaska anchor beyond the retained Pacific / Arctic adjacency readings, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or research participation beyond institutional adjacency under the current corridor-bounded scope</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of Alaska as an Arctic strategic access corridor carried inside a non-contiguous strategic frame that remains adjacent to Pacific-facing strategic structure.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Alaska currently reads within Atlas as an Arctic strategic access corridor linking a Hawaii-facing Pacific strategic frame and a broader Pacific / Arctic adjacency structure while remaining bounded to non-contiguous strategic topology.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + Profile synthesis + Profile synthesis statement</div>
+  </section>
+ 
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that this file provides structural interpretation only, and does not rank Alaska, compare Alaska to other jurisdictions, or prescribe deployment eligibility.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted">The builder-mode layer records that Alaska is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>an arctic strategic access environment</li>
+      <li>a Pacific-to-Arctic transition environment</li>
+      <li>a Pacific strategic adjacency environment</li>
+      <li>an institutional adjacency environment across the Pacific / Arctic frame</li>
+      <li>a narrow corridor environment rather than a standalone topology override or readiness case</li>
+    </ul>
+ 
+    <h3 class="subhead">Arctic strategic interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Alaska reads as an arctic strategic access environment where retained placement preserves <code>Arctic Strategic Access Corridor</code>, <code>Non-Contiguous Strategic Layer</code>, and <code>Non-Contiguous Completion Layer</code> continuity without overriding atlas-controlled topology.</p>
+ 
+    <h3 class="subhead">Pacific-to-Arctic interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Alaska reads as a Pacific-to-Arctic transition environment where retained structure preserves corridor continuity between Hawaii's Pacific strategic projection frame and Alaska's Arctic strategic access frame.</p>
+ 
+    <h3 class="subhead">Pacific adjacency interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Alaska reads as a Pacific strategic adjacency environment where retained structure preserves corridor continuity across the Hawaii-facing non-contiguous strategic frame and the broader Pacific-facing atlas structure.</p>
+ 
+    <h3 class="subhead">Institutional adjacency interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Alaska reads as an institutional adjacency environment where retained structure preserves corridor continuity across the Pacific / Arctic frame without expanding into military base inventories, university-system mapping, research-network inventory treatment, or municipal or regional node inventory treatment.</p>
+ 
+    <h3 class="subhead">Constraint interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Alaska should be read narrowly. The current package does not independently establish northern projection continuity as a standalone Alaska anchor, west-coast-to-Arctic continuity as a topology-visible anchor through the Washington/Oregon frame, strategic perimeter continuity as a standalone Alaska anchor beyond the retained Pacific / Arctic adjacency readings, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or any deployment or routing posture.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — Role summary + 5 interpretation subsections (including canonical Constraint interpretation)</div>
+  </section>
+ 
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, builder-mode, and change-log layers. The canonical Alaska evidence-layer structural exclusions set contains 20 items and canonically includes air-cargo/seaport-inventory, military-base inventory, pipeline-inventory, and Arctic shipping-route dataset case exclusions preserved verbatim from the evidence layer.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the retained corridor-visible evidence collected there, this file does not support characterizing Alaska as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a routing-authority jurisdiction</li>
+      <li>a coordination-tier jurisdiction</li>
+      <li>a deployment-readiness jurisdiction</li>
+      <li>a surface-assigned jurisdiction</li>
+      <li>a statewide infrastructure-survey case</li>
+      <li>a municipal-inventory case</li>
+      <li>a port-inventory or terminal-inventory case</li>
+      <li>a tonnage-dataset case</li>
+      <li>an air-cargo or seaport-inventory case</li>
+      <li>a military-base inventory case</li>
+      <li>a pipeline-inventory case</li>
+      <li>an Arctic shipping-route dataset case</li>
+      <li>a university-system mapping case</li>
+      <li>a research-network inventory case</li>
+      <li>a workforce-summary case</li>
+      <li>a tourism, agriculture, or lifestyle characterization case</li>
+      <li>a compute-corridor designation</li>
+      <li>a hyperscale designation</li>
+      <li>a jurisdiction-ranking case</li>
+      <li>a digital-asset statutory jurisdiction</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based on the currently derived signals, this file does not support characterizing Alaska as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, a surface-eligibility determination, a jurisdiction-ranking claim, a compute-corridor designation, a hyperscale designation, a statewide infrastructure-survey case, a port-inventory or terminal-inventory case, an air-cargo or seaport-inventory case, or a digital-asset statutory jurisdiction. The signals layer records that the current signal set also does not independently establish northern projection continuity as a standalone Alaska anchor, west-coast-to-Arctic continuity as a topology-visible anchor through the Washington/Oregon frame, strategic perimeter continuity as a standalone Alaska anchor beyond the retained Pacific / Arctic adjacency readings, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or research participation beyond institutional adjacency.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that this file does not support interpreting Alaska as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, a compute-corridor designation, a hyperscale designation, or a digital-asset statutory jurisdiction. The trust-dimensions layer records that it should be read as trust interpretation of Alaska's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Alaska's profile should not be read as: a routing-authority assignment, a coordination-tier assignment, a deployment-readiness classification, an Atlas surface-eligibility determination, a jurisdiction ranking claim, a compute-corridor claim, a hyperscale designation, a digital-asset statutory jurisdiction claim, or a topology reassignment of atlas-controlled metadata.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not support interpreting Alaska as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, a compute-corridor designation, a hyperscale designation, or a digital-asset statutory jurisdiction. The builder-mode layer records that it should be read as builder-facing interpretation of Alaska's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, compute-corridor designation, hyperscale designation, digital-asset statutory designation, or local reassignment of atlas-controlled Alaska topology metadata.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
+  </section>
+ 
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical Alaska evidence layer contains a native "Evidence gaps" subsection.</p>
+ 
+    <h3 class="subhead">Evidence gaps from the evidence layer</h3>
+    <div class="absence-callout">
+      <div class="absence-label">The evidence layer records</div>
+      <p>The current adjacency-bounded Atlas structure does not independently establish the following Alaska anchors for retention in this package:</p>
+      <ul class="mini" style="color:var(--muted);margin-top:6px">
+        <li>northern projection continuity as a standalone Alaska anchor</li>
+        <li>west-coast-to-Arctic continuity as a topology-visible anchor through the Washington/Oregon frame</li>
+        <li>strategic perimeter continuity as a standalone Alaska anchor beyond the retained Pacific / Arctic adjacency readings</li>
+        <li>energy-grid participation visibility</li>
+        <li>BEAD coordination visibility</li>
+        <li>digital-asset statutory posture</li>
+        <li>independent research participation anchors beyond institutional adjacency</li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Scope constraints applied during population</h3>
+    <div class="scope-block">
+      <div class="scope-label">The change-log records the following scope constraints applied during evidence-first package population:</div>
+      <ul>
+        <li>adjacent-state corridor continuity only</li>
+        <li>no open infrastructure research</li>
+        <li>corridor-layer anchors only</li>
+        <li>no statewide infrastructure surveys, municipal inventories, or workforce summaries</li>
+        <li>no air-cargo inventories, seaport inventories, port inventories, terminal inventories, tonnage datasets, military base inventories, pipeline inventories, or Arctic shipping-route datasets</li>
+        <li>no university-system mapping, research-network inventory treatment, or municipal or regional node inventory treatment</li>
+        <li>no compute-corridor, hyperscale, routing-authority, coordination-tier, readiness, ranking, or surface assignment inference</li>
+        <li>no local override of atlas-controlled topology metadata</li>
+      </ul>
+    </div>
+ 
+    <p class="muted" style="margin-top:12px">The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, corridor-scope constraints applied throughout package construction, downstream layers derived strictly from corridor-limited evidence, surface assignment remains none.</p>
+    <div class="src">Source: evidence.md — Evidence gaps; change-log.md — 2026-04-19 evidence-first package population (Scope constraints applied)</div>
+  </section>
+ 
+  <!-- ── 10. CHANGE-LOG NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, Topology Completion Layer, and Jurisdiction lens. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">2026-04-19 evidence-first package population</h3>
+    <p class="muted">The change-log records that the Alaska state package was populated in topology-normalized order as a numbered canonical sequence: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md, change-log.md. The change-log records that scope constraints were applied during population (rendered in Section 9 above). The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, corridor-scope constraints applied throughout package construction, downstream layers derived strictly from corridor-limited evidence, and surface assignment remains none.</p>
+ 
+    <h3 class="subhead">Structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, compute-corridor designation, hyperscale designation, digital-asset statutory designation, or local reassignment of atlas-controlled Alaska topology metadata.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
+  </section>
+ 
+</div><!-- /main col -->
+ 
+<!-- ── SIDEBAR ── -->
+<aside>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Alaska jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/alaska/</code></p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
+    <ul class="mini">
+      <li><strong>Jurisdiction:</strong> Alaska</li>
+      <li><strong>Code:</strong> AK · US-AK</li>
+      <li><strong>Lens:</strong> Arctic strategic access continuity within non-contiguous completion</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> corridor-layer sufficient</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
+    <ul class="mini">
+      <li><strong>Corridor Group:</strong> Arctic Strategic Access Corridor</li>
+      <li><strong>Foundation Layer:</strong> Non-Contiguous Strategic Layer</li>
+      <li><strong>Completion Layer:</strong> Non-Contiguous Completion Layer</li>
+      <li><strong>Jurisdiction Lens:</strong> Arctic strategic access continuity within non-contiguous completion</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived exclusively from the three atlas-controlled fields.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-noncontiguous">
+    <div class="smallcaps">Canonical Non-Contiguous Cluster</div>
+    <h3 id="heading-sidebar-noncontiguous">Two-state strategic Foundation-and-Completion</h3>
+    <p class="muted mini">Alaska and Hawaii are canonical Foundation-and-Completion siblings in the two-state Non-Contiguous Strategic Layer cluster. Both states hold the same canonical Foundation Layer (Non-Contiguous Strategic Layer) and Completion Layer (Non-Contiguous Completion Layer), while belonging to canonically distinct Corridor Groups — Alaska in the Arctic Strategic Access Corridor and Hawaii in the Pacific Strategic Projection Corridor.</p>
+    <p class="muted mini" style="margin-top:8px">The Non-Contiguous Strategic Layer and Non-Contiguous Completion Layer are both held exclusively by Alaska and Hawaii across the 50-state grid — canonical exclusivity of the non-contiguous strategic frame.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-non-collapse">
+    <div class="smallcaps">Canonical Non-Collapse Topology</div>
+    <h3 id="heading-sidebar-non-collapse">Foundation ≠ Completion</h3>
+    <p class="muted mini">Alaska's canonical Foundation Layer and Completion Layer are distinct. The Foundation Layer is the Non-Contiguous Strategic Layer; the Completion Layer is the Non-Contiguous Completion Layer.</p>
+    <p class="muted mini" style="margin-top:8px">The canonical Jurisdiction Lens uses "within" — reflecting that Alaska's Arctic strategic access Foundation resolves into the broader Non-Contiguous Completion Layer. Both layers sit within the canonical non-contiguous strategic frame, and Alaska's canonical position remains inside the non-contiguous frame across foundation and completion.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-pacific-edge">
+    <div class="smallcaps">Canonical Pacific-Edge Adjacency</div>
+    <h3 id="heading-sidebar-pacific-edge">Non-land-border corridor adjacency</h3>
+    <p class="muted mini">Alaska has no land-border adjacencies with any Atlas-retained state. The canonical adjacency structure is exclusively topological — Non-Contiguous Foundation-and-Completion continuity with Hawaii and Pacific-edge continuity with Washington and Oregon (both of which canonically preserve Pacific Northwest coordination frames at the continental Pacific edge).</p>
+    <p class="muted mini" style="margin-top:8px">This canonical Pacific-edge adjacency is a distinct pattern from the land-border adjacency structure of contiguous-state packages. Canonical continuity reaches across the Pacific via shared non-contiguous strategic topology and Pacific-facing atlas structure.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-external-framings">
+    <div class="smallcaps">Canonical Non-Establishment of External Framings</div>
+    <h3 id="heading-sidebar-external-framings">Atlas topology scope</h3>
+    <p class="muted mini">The canonical Alaska package explicitly records three external framings that are not imported into atlas topology as named anchors:</p>
+    <ul class="mini muted" style="margin-top:6px">
+      <li><em>Northern projection continuity as a standalone Alaska anchor</em> — a geographic-orientation framing not retained as atlas anchor</li>
+      <li><em>West-coast-to-Arctic continuity as a topology-visible anchor through the Washington/Oregon frame</em> — a continental-to-Arctic framing not retained as atlas anchor</li>
+      <li><em>Strategic perimeter continuity as a standalone Alaska anchor beyond the retained Pacific / Arctic adjacency readings</em> — a perimeter-strategic framing qualified to retention-level treatment only</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">These canonical non-establishments preserve the distinction between atlas-controlled topology and broader geographic, strategic, or perimeter framings commonly associated with Alaska.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-archetype">
+    <div class="smallcaps">Canonical Archetype</div>
+    <h3 id="heading-sidebar-archetype">Adjacency-bounded package</h3>
+    <p class="muted mini">Alaska is a corridor-layer sufficient state whose evidence is explicitly retained from <em>non-contiguous Foundation-and-Completion continuity</em> with Hawaii and Pacific-edge adjacency with Washington and Oregon — rather than from land-border adjacency or independent state-sourced research. The change-log records the canonical scope constraints "adjacent-state corridor continuity only" and "no open infrastructure research".</p>
+    <p class="muted mini" style="margin-top:8px">Canonical sources are atlas-export internal topology references and adjacent-state metadata-layer files (Hawaii, Washington, Oregon). All canonical adjacency citations reach metadata-layer depth.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Evidence anchors</div>
+    <h3 id="heading-sidebar-coverage">Retained from adjacency</h3>
+    <ul class="mini muted">
+      <li>Arctic strategic access continuity</li>
+      <li>Pacific-to-Arctic transition continuity</li>
+      <li>Pacific strategic adjacency continuity</li>
+      <li>Institutional adjacency continuity across the Pacific / Arctic frame</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical adjacency references:</p>
+    <ul class="mini muted">
+      <li>Hawaii (Pacific Strategic Projection Corridor — Non-Contiguous Foundation-and-Completion sibling, forward-chained)</li>
+      <li>Washington (Pacific Northwest Coordination Corridor, Pacific edge, backward-resolved)</li>
+      <li>Oregon (Pacific Northwest Coordination Corridor, Pacific edge, backward-resolved)</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-trust-durability">
+    <div class="smallcaps">Canonical Coordination-Density Reading</div>
+    <h3 id="heading-sidebar-trust-durability">Narrow but durable</h3>
+    <p class="muted mini">Alaska's canonical trust interpretation records "narrow but durable corridor coordination density" — reflecting Alaska's canonical adjacency structure bounded to three adjacent states plus atlas.md topology references, with no land-border adjacency inside the Atlas-retained state grid.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-non-establishment">
+    <div class="smallcaps">Canonical Non-Establishment</div>
+    <h3 id="heading-sidebar-non-establishment">What the package does not establish</h3>
+    <p class="muted mini">The evidence layer explicitly records that the current package does not independently establish:</p>
+    <ul class="mini muted" style="margin-top:6px">
+      <li>northern projection continuity as a standalone Alaska anchor</li>
+      <li>west-coast-to-Arctic continuity as a topology-visible anchor through the Washington/Oregon frame</li>
+      <li>strategic perimeter continuity as a standalone Alaska anchor beyond the retained Pacific / Arctic adjacency readings</li>
+      <li>energy-grid participation visibility</li>
+      <li>BEAD coordination visibility</li>
+      <li>digital-asset statutory posture</li>
+      <li>independent research participation anchors beyond institutional adjacency</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-scope">
+    <div class="smallcaps">Canonical scope</div>
+    <h3 id="heading-sidebar-scope">Corridor-layer sufficient</h3>
+    <p class="muted mini">The change-log records that the Alaska package is explicitly scope-narrowed to adjacent-state corridor continuity only. All downstream layer completeness statuses are canonically recorded as "corridor-layer sufficient" rather than "preliminary".</p>
+    <p class="muted mini">This is a distinct canonical neutrality category: the package is not incomplete — it is canonically declared complete at corridor scope, with broader scope deliberately excluded.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: corridor-layer sufficient</li>
+      <li>Signal layer: corridor-layer sufficient</li>
+      <li>Trust dimensions: corridor-layer sufficient</li>
+      <li>Profile: corridor-layer sufficient</li>
+      <li>Builder-mode: corridor-layer sufficient</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale or compute-corridor designation.</li>
+      <li>Not a local reassignment of atlas-controlled topology metadata.</li>
+      <li>Not a digital-asset statutory jurisdiction designation.</li>
+    </ul>
+  </div>
+ 
+</aside>
+</div><!-- /grid-sidebar -->
  
 </main>
  
