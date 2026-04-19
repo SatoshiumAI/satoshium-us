@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Satoshium Atlas — Corridor Assignment Matrix</title>
+
+<meta name="description" content="Satoshium Atlas Corridor Assignment Matrix — the canonical structural mapping of U.S. states across corridor groups, foundation layers, and topology completion layers.">
+
+<meta property="og:title" content="Satoshium Atlas — Corridor Assignment Matrix">
+<meta property="og:description" content="Explore the canonical corridor assignment matrix for Satoshium Atlas across U.S. jurisdictions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://satoshium.us/atlas/corridors/corridor-assignment-matrix.html">
+<meta property="og:image" content="https://satoshium.ai/assets/og-us.png">
+<meta property="og:site_name" content="Satoshium">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Satoshium Atlas — Corridor Assignment Matrix">
+<meta name="twitter:description" content="The canonical structural corridor mapping layer for Satoshium Atlas across U.S. states.">
+<meta name="twitter:image" content="https://satoshium.ai/assets/og-us.png">
+<meta name="twitter:site" content="@SatoshiumAI">
+
+<link rel="canonical" href="https://satoshium.us/atlas/corridors/corridor-assignment-matrix.html">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --card-wm: url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+:focus-visible{
+ outline:2px solid var(--gold2);
+ outline-offset:3px;
+}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+
+.wrap.content{
+ opacity:0;
+ transform:translateY(6px);
+ animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes pageEnter{
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+
+h1{font-size:34px;color:var(--gold2);line-height:1.15}
+h2{font-size:22px;color:var(--gold2)}
+h3{font-size:15px;color:var(--text)}
+
+.muted{color:var(--muted)}
+
+.hero{
+ position:relative;
+ overflow:hidden;
+ border:1px solid var(--line);
+ border-radius:20px;
+ padding:28px 22px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),
+ linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:16px;
+ padding:16px;
+ margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);
+ transition:transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.grid-2{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:16px
+}
+
+.note{
+ margin-top:10px;
+ padding:12px 14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+ font-size:14px;
+}
+
+.mini{font-size:13px}
+
+ul{
+ margin:8px 0 0 18px;
+}
+
+.table-wrap{
+ overflow:auto;
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:14px;
+ background:rgba(8,12,18,.68);
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ min-width:980px;
+}
+
+th,td{
+ text-align:left;
+ vertical-align:top;
+ padding:12px 14px;
+ border-bottom:1px solid rgba(214,163,74,.10);
+}
+
+th{
+ position:sticky;
+ top:0;
+ background:rgba(12,16,24,.98);
+ color:var(--gold2);
+ font-size:14px;
+ z-index:1;
+}
+
+td{
+ color:var(--text);
+ font-size:14px;
+}
+
+tr:hover td{
+ background:rgba(214,163,74,.04);
+}
+
+code{
+ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+ color:#f7d58a;
+}
+
+@media (max-width:760px){
+ .grid-2{grid-template-columns:1fr}
+ h1{font-size:30px}
+}
+
+@media (prefers-reduced-motion:reduce){
+ html,body{
+  scroll-behavior:auto;
+ }
+
+ .wrap.content{
+  animation:none;
+  opacity:1;
+  transform:none;
+ }
+
+ .card{
+  transition:none;
+ }
+
+ .card:hover{
+  transform:none;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main id="main-content" class="wrap content">
+
+<section class="hero" aria-labelledby="heading-hero">
+  <h1 id="heading-hero">🧭 Satoshium Atlas — Corridor Assignment Matrix</h1>
+
+  <p class="muted" style="max-width:940px;">
+    The Corridor Assignment Matrix is the canonical structural mapping layer for the Atlas corridor system.
+    It organizes U.S. jurisdictions across three aligned dimensions:
+    <strong>Corridor Group</strong>, <strong>Foundation Layer</strong>, and
+    <strong>Topology Completion Layer</strong>.
+  </p>
+
+  <p class="muted">
+    These assignments are structural classification metadata only. They do not represent rankings,
+    deployment guidance, optimization advice, or national positioning claims.
+  </p>
+
+  <p style="margin-top:14px;">
+    <a href="/atlas/corridors/">Return to Corridor Index →</a>
+  </p>
+
+  <p style="margin-top:6px;">
+    <a href="/atlas/jurisdiction-intelligence-engine/us/states/">
+      Explore U.S. State Packages →
+    </a>
+  </p>
+</section>
+
+<div class="card" aria-labelledby="heading-purpose">
+  <h2 id="heading-purpose">Why This Matrix Exists</h2>
+
+  <p class="muted">
+    State packages describe jurisdictions individually. The corridor matrix gives Atlas a deterministic
+    way to describe how those jurisdictions relate structurally across regional continuity surfaces.
+  </p>
+
+  <div class="note">
+    This matrix supports corridor registry generation, metadata tag alignment, completion-layer mapping,
+    and future machine-readable Atlas exports.
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-columns">
+    <h2 id="heading-columns">Matrix Dimensions</h2>
+    <ul>
+      <li><strong>Corridor Group</strong> — primary regional continuity classification</li>
+      <li><strong>Foundation Layer</strong> — base infrastructure or governance substrate</li>
+      <li><strong>Topology Completion Layer</strong> — adjacency integration surface</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-rules">
+    <h2 id="heading-rules">Interpretation Rules</h2>
+    <ul>
+      <li>Structural classification only</li>
+      <li>Must remain consistent with evidence-derived signals</li>
+      <li>Must preserve state-specific lens alignment</li>
+      <li>Does not override exclusions recorded in change-log files</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-matrix-table">
+  <h2 id="heading-matrix-table">Canonical Corridor Assignment Matrix</h2>
+
+  <div class="table-wrap" role="region" aria-label="Corridor assignment matrix" tabindex="0">
+    <table>
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Corridor Group</th>
+          <th>Foundation Layer</th>
+          <th>Topology Completion Layer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>California</td><td>Pacific Coastal Hyperscale Corridor</td><td>Coastal Hyperscale &amp; Global Infrastructure</td><td>Pacific Edge Anchor Layer</td></tr>
+        <tr><td>Texas</td><td>National Energy &amp; Logistics Spine Corridor</td><td>National Logistics Spine &amp; Energy Coordination Layer</td><td>Southern Interior Completion Layer</td></tr>
+        <tr><td>New York</td><td>Atlantic Financial &amp; Global Gateway Corridor</td><td>Coastal Hyperscale &amp; Global Infrastructure</td><td>Northeast Anchor Completion Layer</td></tr>
+        <tr><td>Virginia</td><td>Federal Interface Governance Corridor</td><td>Federal Interface Governance Layer</td><td>Mid-Atlantic Completion Layer</td></tr>
+        <tr><td>Florida</td><td>Southeast Coastal Access &amp; Maritime Corridor</td><td>Coastal Hyperscale &amp; Global Infrastructure</td><td>Southeast Coastal Completion Layer</td></tr>
+        <tr><td>Wyoming</td><td>Interior Western Statutory Flex Corridor</td><td>Statutory Wrapper / Experimental Governance Layer</td><td>Western Interior Completion Layer</td></tr>
+        <tr><td>Arizona</td><td>Southwest Transition Infrastructure Corridor</td><td>Southwest Transition Infrastructure Layer</td><td>Desert–Interior Transition Layer</td></tr>
+        <tr><td>Colorado</td><td>Mountain West Research Corridor</td><td>Mountain West Research &amp; Federal Lab Transition Layer</td><td>Western Interior Completion Layer</td></tr>
+        <tr><td>New Mexico</td><td>Southwest Transition Infrastructure Corridor</td><td>Southwest Transition Infrastructure Layer</td><td>Desert–Interior Transition Layer</td></tr>
+        <tr><td>Nevada</td><td>Basin &amp; Range Interior Transition Corridor</td><td>Mountain Corridor Structural Continuity Layer</td><td>Desert–Interior Transition Layer</td></tr>
+        <tr><td>Utah</td><td>Mountain Interior Continuity Corridor</td><td>Mountain Corridor Structural Continuity Layer</td><td>Western Interior Completion Layer</td></tr>
+        <tr><td>Oklahoma</td><td>Central Interior Logistics Spine Corridor</td><td>Interior Corridor Logistics Spine</td><td>Central Plains Completion Layer</td></tr>
+        <tr><td>Kansas</td><td>Central Interior Logistics Spine Corridor</td><td>Interior Corridor Logistics Spine</td><td>Central Plains Completion Layer</td></tr>
+        <tr><td>Louisiana</td><td>Gulf Port &amp; Energy Export Corridor</td><td>Gulf Corridor Layer</td><td>Gulf Coast Completion Layer</td></tr>
+        <tr><td>Arkansas</td><td>Mississippi Valley Transit &amp; Distribution Corridor</td><td>Gulf Corridor Layer</td><td>Central Interior Completion Layer</td></tr>
+        <tr><td>Missouri</td><td>Central Interior Structural Continuity Corridor</td><td>Central Interior Continuity Layer</td><td>Central Plains Completion Layer</td></tr>
+        <tr><td>Tennessee</td><td>Southeast Interior Structural Corridor</td><td>Southeast Interior Completion Layer</td><td>Central Interior Completion Layer</td></tr>
+        <tr><td>Kentucky</td><td>Ohio Valley Transition Corridor</td><td>Southeast Interior Completion Layer</td><td>Central Interior Completion Layer</td></tr>
+        <tr><td>Illinois</td><td>Great Lakes Industrial Core Corridor</td><td>Great Lakes Industrial Core Layer</td><td>Great Lakes Completion Layer</td></tr>
+        <tr><td>Michigan</td><td>Great Lakes Industrial Core Corridor</td><td>Great Lakes Industrial Core Layer</td><td>Great Lakes Completion Layer</td></tr>
+        <tr><td>Indiana</td><td>Great Lakes Industrial Core Corridor</td><td>Great Lakes Industrial Core Layer</td><td>Great Lakes Completion Layer</td></tr>
+        <tr><td>Ohio</td><td>Great Lakes Industrial Core Corridor</td><td>Great Lakes Industrial Core Layer</td><td>Great Lakes Completion Layer</td></tr>
+        <tr><td>Pennsylvania</td><td>Northeast Institutional Mesh Corridor</td><td>Northeast Institutional Mesh Layer</td><td>Mid-Atlantic Completion Layer</td></tr>
+        <tr><td>Wisconsin</td><td>Great Lakes Industrial Core Corridor</td><td>Great Lakes Industrial Core Layer</td><td>Great Lakes Completion Layer</td></tr>
+        <tr><td>Minnesota</td><td>Upper Midwest Continuity Corridor</td><td>Great Lakes Industrial Core Layer</td><td>Northern Interior Completion Layer</td></tr>
+        <tr><td>Connecticut</td><td>Northeast Institutional Mesh Corridor</td><td>Northeast Institutional Mesh Layer</td><td>Northeast Completion Layer</td></tr>
+        <tr><td>Delaware</td><td>Mid-Atlantic Institutional Bridge Corridor</td><td>Northeast Institutional Mesh Layer</td><td>Mid-Atlantic Completion Layer</td></tr>
+        <tr><td>Massachusetts</td><td>Northeast Research Mesh Corridor</td><td>Northeast Institutional Mesh Layer</td><td>Northeast Completion Layer</td></tr>
+        <tr><td>New Jersey</td><td>Northeast Institutional Mesh Corridor</td><td>Northeast Institutional Mesh Layer</td><td>Mid-Atlantic Completion Layer</td></tr>
+        <tr><td>Maryland</td><td>Chesapeake Federal Interface Corridor</td><td>Federal Interface Governance Layer</td><td>Mid-Atlantic Completion Layer</td></tr>
+        <tr><td>Rhode Island</td><td>Northeast Institutional Support Corridor</td><td>Northeast Completion Layer</td><td>Northeast Completion Layer</td></tr>
+        <tr><td>Vermont</td><td>Northeast Institutional Support Corridor</td><td>Northeast Completion Layer</td><td>Northeast Completion Layer</td></tr>
+        <tr><td>New Hampshire</td><td>Northeast Institutional Support Corridor</td><td>Northeast Completion Layer</td><td>Northeast Completion Layer</td></tr>
+        <tr><td>Maine</td><td>Northeast Terminal Edge Corridor</td><td>Northeast Completion Layer</td><td>Northeast Terminal Completion Layer</td></tr>
+        <tr><td>Alabama</td><td>Southeast Interior Support Corridor</td><td>Southeast Interior Completion Layer</td><td>Southeast Interior Completion Layer</td></tr>
+        <tr><td>Georgia</td><td>Atlantic Industrial Growth Corridor</td><td>Southeast Interior Completion Layer</td><td>Southeast Interior Completion Layer</td></tr>
+        <tr><td>Mississippi</td><td>Lower Mississippi River Corridor</td><td>Southeast Interior Completion Layer</td><td>Gulf Interior Completion Layer</td></tr>
+        <tr><td>North Carolina</td><td>Southeast Research &amp; Defense Corridor</td><td>Southeast Research Corridor Layer</td><td>Southeast Interior Completion Layer</td></tr>
+        <tr><td>South Carolina</td><td>Atlantic Industrial &amp; Port Support Corridor</td><td>Southeast Interior Completion Layer</td><td>Southeast Coastal Completion Layer</td></tr>
+        <tr><td>Montana</td><td>Northern Plains Sparse-Node Corridor</td><td>Northern Plains Sparse-Node Layer</td><td>Northern Interior Completion Layer</td></tr>
+        <tr><td>North Dakota</td><td>Northern Plains Sparse-Node Corridor</td><td>Northern Plains Sparse-Node Layer</td><td>Northern Interior Completion Layer</td></tr>
+        <tr><td>South Dakota</td><td>Northern Plains Sparse-Node Corridor</td><td>Northern Plains Sparse-Node Layer</td><td>Northern Interior Completion Layer</td></tr>
+        <tr><td>Nebraska</td><td>Central Interior Structural Continuity Corridor</td><td>Central Interior Continuity Layer</td><td>Central Plains Completion Layer</td></tr>
+        <tr><td>Iowa</td><td>Central Interior Agricultural Continuity Corridor</td><td>Central Interior Continuity Layer</td><td>Central Plains Completion Layer</td></tr>
+        <tr><td>Oregon</td><td>Pacific Northwest Coordination Corridor</td><td>Pacific Northwest Coordination Layer</td><td>Pacific Northwest Completion Layer</td></tr>
+        <tr><td>Washington</td><td>Pacific Northwest Coordination Corridor</td><td>Pacific Northwest Coordination Layer</td><td>Pacific Northwest Completion Layer</td></tr>
+        <tr><td>Idaho</td><td>Northern Mountain Transition Corridor</td><td>Mountain Transition Layer</td><td>Northern Interior Completion Layer</td></tr>
+        <tr><td>Alaska</td><td>Arctic Strategic Access Corridor</td><td>Non-Contiguous Strategic Layer</td><td>Non-Contiguous Completion Layer</td></tr>
+        <tr><td>Hawaii</td><td>Pacific Strategic Projection Corridor</td><td>Non-Contiguous Strategic Layer</td><td>Non-Contiguous Completion Layer</td></tr>
+        <tr><td>West Virginia</td><td>Appalachian Energy Transition Corridor</td><td>Mid-Atlantic Governance Layer</td><td>Appalachian Completion Layer</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note mini">
+    This matrix reflects the current canonical structural assignment set provided for Atlas Phase 2 corridor activation.
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-usage">
+  <h2 id="heading-usage">How Atlas Uses This Matrix</h2>
+
+  <ul>
+    <li>Supports corridor registry generation</li>
+    <li>Aligns corridor membership tags inside <code>metadata.md</code></li>
+    <li>Provides topology completion references for state packages</li>
+    <li>Informs future <code>corridors.json</code> and <code>atlas-index.json</code> exports</li>
+    <li>Strengthens cross-state comparability without introducing rankings</li>
+  </ul>
+
+  <div class="note">
+    Signals remain upstream authority. Matrix assignments should remain synchronized with evidence-derived state packages and corridor registry structures.
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-integrity">
+  <h2 id="heading-integrity">Integrity Rules</h2>
+
+  <p class="muted">
+    Corridor assignments must be treated as structural metadata, not as optimization or deployment logic.
+  </p>
+
+  <ul>
+    <li>No rankings</li>
+    <li>No deployment prescriptions</li>
+    <li>No corridor leadership claims</li>
+    <li>No national positioning language</li>
+    <li>Structural exclusions must remain preserved</li>
+  </ul>
+</div>
+
+</main>
+
+<div class="wrap reflection">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+
+<div id="footer-container"></div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+  document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
