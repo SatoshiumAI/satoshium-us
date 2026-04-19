@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Wisconsin — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Wisconsin operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Wisconsin Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/wisconsin/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,38 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
+.scope-block{margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.04)}
+.scope-block .scope-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.scope-block ul{margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block li{margin-bottom:2px;line-height:1.5}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +172,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +188,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Wisconsin</h1>
-    <p class="kicker">Wisconsin operates as a Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor supporting freshwater shipping interfaces across Lakes Michigan and Superior, Mississippi-aligned inland routing continuity, and upper-midwest freight coordination surfaces linking Great Lakes and interior deployment corridors of the United States.</p>
+    <p class="kicker">This page renders the canonical Wisconsin Atlas jurisdiction package. The canonical package positions Wisconsin within the Great Lakes Industrial Core Corridor under the canonical jurisdiction lens "Great Lakes industrial + Upper Midwest manufacturing continuity corridor", with canonical scope limited to corridor-layer anchors. All completeness statuses are recorded as corridor-layer sufficient.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">WI · US-WI</div>
-      <div class="hero-chip">Madison</div>
-      <div class="hero-chip">Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Wisconsin quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Limited / Passive</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Permissive / Enabling</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Federal Baseline</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Limited Restrictions</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Moderate / Corridor-Active</div></div>
+      <div class="hero-chip">Jurisdiction: Wisconsin (WI · US-WI)</div>
+      <div class="hero-chip">Jurisdiction lens: Great Lakes industrial + Upper Midwest manufacturing continuity corridor</div>
+      <div class="hero-chip">Completeness: corridor-layer sufficient</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Great Lakes Industrial Core sibling</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Scope Boundaries</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,161 +222,463 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Wisconsin operates as a Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor within the upper-midwest infrastructure surface. Teams interacting across this corridor engage with freshwater shipping continuity along Lake Michigan and Lake Superior, Mississippi River alignment along the western state edge, multimodal freight routing between lake and inland systems, and manufacturing-adjacent logistics coordination layers linking Illinois, Michigan, Minnesota, and Iowa deployment surfaces.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>AI Policy</strong></div><span class="pill green">Limited · Passive</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill teal">Permissive / Enabling</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Privacy / Data</strong></div><span class="pill blue">Federal Baseline</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Biometrics</strong></div><span class="pill green">Limited Restrictions</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Public Sector AI</strong></div><span class="pill blue">Developing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Moderate / Corridor-Active</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Great Lakes Industrial Core Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Wisconsin operates as a moderate-compliance corridor well suited to infrastructure-adjacent deployment, freshwater logistics coordination, institutional digital asset interaction, and manufacturing-adjacent developer surfaces. Teams requiring high-governance AI precedent formation or maximum-enforcement privacy infrastructure will find this corridor operates at a lighter regulatory register than California-equivalent surfaces.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Great Lakes Industrial Core Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Great Lakes Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Lens</div>
+      <div class="field-value">Great Lakes industrial + Upper Midwest manufacturing continuity corridor</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that the Corridor Group, Foundation Layer, and Topology Completion Layer are derived from atlas-export/docs/atlas.md. The metadata layer records that the Jurisdiction Lens is derived from Wisconsin's corridor-layer evidence, signal, and trust review and does not override atlas-controlled topology placement.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, coordination tiers, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence sufficiency boundaries, infer deployment suitability, or locally reclassify atlas-controlled corridor metadata.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/wisconsin/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only corridor-relevant structural anchors documented for Wisconsin that are sufficient to support Atlas signal derivation. The evidence layer records that it does not perform an open-ended statewide infrastructure survey and does not assign trust posture, routing role, coordination tier, readiness, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. The canonical Wisconsin package is explicitly scope-narrowed to corridor-layer anchors — all completeness statuses across evidence, signals, trust, profile, and builder-mode are canonically recorded as "corridor-layer sufficient" rather than "preliminary". This is a distinct canonical neutrality category.</p>
+    <div class="callout mini" style="margin-top:12px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — Scope; change-log.md — Scope constraints applied during population</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 9 evidence subsections documenting Wisconsin's corridor-relevant structural anchors across Port Milwaukee, Port of Green Bay, Mississippi freight-boundary continuity, Class I rail, interstate corridor continuity, UW-Madison engineering, MISO transmission, BEAD broadband coordination, and corridor-linked industrial persistence.</p>
+ 
+    <h3 class="subhead">Port of Milwaukee Great Lakes continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that WisDOT's 2024 commercial-ports report states Port Milwaukee is landlord to more than 20 tenants and functions as an economic and logistical transportation hub for southeastern Wisconsin.</li>
+      <li>The evidence layer records that the same report states Port Milwaukee is the only Lake Michigan port approved by the U.S. Coast Guard to serve the Mississippi River inland waterway system with direct river-barge access via the Illinois River and the Chicago Ship and Sanitary Canal System.</li>
+      <li>The evidence layer records that the same report states I-94/I-794 leads directly into Port Milwaukee, that major terminals reach the interstate in less than five minutes, and that the port is served by Union Pacific and Canadian Pacific Kansas City with direct pier delivery plus 14 miles of port-owned rail track.</li>
+      <li>The evidence layer records that WEDC's 2025 advanced-manufacturing profile states Port Milwaukee is the fifth-largest port in the Midwest and is equipped to handle heavy-machinery exports and bulk goods.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/wisconsin/</div>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Wisconsin Department of Transportation, "Economic Impact of Wisconsin's Commercial Ports" — <a href="https://wisconsindot.gov/Documents/travel/water/ports-report.pdf" target="_blank" rel="noopener">https://wisconsindot.gov/Documents/travel/water/ports-report.pdf</a></li>
+        <li>Wisconsin Economic Development Corporation, "Advanced Manufacturing Industry Profile" — <a href="https://wedc.org/wp-content/uploads/2025/05/Advanced-Manufacturing-Industry-Profile-2025-05.pdf" target="_blank" rel="noopener">https://wedc.org/wp-content/uploads/2025/05/Advanced-Manufacturing-Industry-Profile-2025-05.pdf</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Port of Green Bay Great Lakes logistics visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Port of Green Bay states it is the westernmost port of Lake Michigan and offers a direct route for shipping raw goods and materials, with highway and rail connections into regional markets and America's Heartland.</li>
+      <li>The evidence layer records that the Port of Green Bay states 14 port businesses along three miles of the Fox River move more than two million tons of cargo on more than 200 ships each year.</li>
+      <li>The evidence layer records that WisDOT's 2024 commercial-ports report states the Port of Green Bay has primary road access through I-43 and US 41-141 and rail access through Canadian National and the Fox Valley &amp; Lake Superior Rail System.</li>
+      <li>The evidence layer records that the same report states Green Bay handles commodities including limestone, cement, salt, pig iron, forest products, petroleum products, and liquid asphalt.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Port of Green Bay — <a href="https://www.portofgreenbay.com/" target="_blank" rel="noopener">https://www.portofgreenbay.com/</a></li>
+        <li>Wisconsin Department of Transportation, "Economic Impact of Wisconsin's Commercial Ports" — <a href="https://wisconsindot.gov/Documents/travel/water/ports-report.pdf" target="_blank" rel="noopener">https://wisconsindot.gov/Documents/travel/water/ports-report.pdf</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Mississippi River freight boundary continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that WisDOT's Harbor Assistance Program states Wisconsin created the program to assist harbor communities along the Great Lakes and Mississippi River in maintaining and improving waterborne commerce.</li>
+      <li>The evidence layer records that WisDOT's Harbor Assistance Program guidelines state the program's objective is to maintain or improve commodity and passenger movement capabilities of Wisconsin's commercial harbors on the Great Lakes and Mississippi River system.</li>
+      <li>The evidence layer records that WisDOT's 2024 commercial-ports report states access to the Upper Mississippi River System, Lake Superior, and Lake Michigan enables Wisconsin's economy to benefit from these water-transport systems, and the report includes dedicated Mississippi River port profiles.</li>
+      <li>The evidence layer records that WisDOT's intermodal-freight report states Wisconsin sits between federally designated waterborne corridors M-35 along the Mississippi River and M-90 through the Great Lakes, including Superior, Milwaukee, and Green Bay.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Wisconsin Department of Transportation, "Harbor Assistance Program" — <a href="https://wisconsindot.gov/Pages/doing-bus/local-gov/astnce-pgms/aid/harbor.aspx" target="_blank" rel="noopener">https://wisconsindot.gov/Pages/doing-bus/local-gov/astnce-pgms/aid/harbor.aspx</a></li>
+        <li>Wisconsin Department of Transportation, "Harbor Assistance Program Guidelines" — <a href="https://wisconsindot.gov/Documents/doing-bus/local-gov/astnce-pgms/aid/hap-guidel.pdf" target="_blank" rel="noopener">https://wisconsindot.gov/Documents/doing-bus/local-gov/astnce-pgms/aid/hap-guidel.pdf</a></li>
+        <li>Wisconsin Department of Transportation, "Economic Impact of Wisconsin's Commercial Ports" — <a href="https://wisconsindot.gov/Documents/travel/water/ports-report.pdf" target="_blank" rel="noopener">https://wisconsindot.gov/Documents/travel/water/ports-report.pdf</a></li>
+        <li>Wisconsin Department of Transportation, "Overview of Intermodal Freight in Wisconsin" — <a href="https://wisconsindot.gov/Documents/doing-bus/freight/fac/report2019.pdf" target="_blank" rel="noopener">https://wisconsindot.gov/Documents/doing-bus/freight/fac/report2019.pdf</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Class I rail visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that WisDOT states Wisconsin has more than 3,300 miles of rail lines and lists Burlington Northern Santa Fe, Canadian National, CPKC, and Union Pacific among the freight rail organizations operating in the state.</li>
+      <li>The evidence layer records that WEDC's 2025 advanced-manufacturing profile states Wisconsin is served by four Class I railroads.</li>
+      <li>The evidence layer records that the retained source set therefore documents Class I rail visibility without requiring a full statewide rail-node inventory.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Wisconsin Department of Transportation, "Freight railroads" — <a href="https://wisconsindot.gov/Pages/doing-bus/freight/rail.aspx" target="_blank" rel="noopener">https://wisconsindot.gov/Pages/doing-bus/freight/rail.aspx</a></li>
+        <li>Wisconsin Economic Development Corporation, "Advanced Manufacturing Industry Profile" — <a href="https://wedc.org/wp-content/uploads/2025/05/Advanced-Manufacturing-Industry-Profile-2025-05.pdf" target="_blank" rel="noopener">https://wedc.org/wp-content/uploads/2025/05/Advanced-Manufacturing-Industry-Profile-2025-05.pdf</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Interstate corridor continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that WisDOT Freight Advisory Committee minutes from April 2025 document freight-relevant project activity along I-41 in the Fox Valley, the I-94 East/West project in Milwaukee, I-94 reconstruction near Eau Claire, planning for I-39/90/94 from Madison to Wisconsin Dells, truck parking along I-90 near Sparta, and truck parking along I-43 in Manitowoc County.</li>
+      <li>The evidence layer records that WisDOT's 2024 commercial-ports report states I-94/I-794 leads directly into Port Milwaukee.</li>
+      <li>The evidence layer records that the same report states the Port of Green Bay has primary road access through I-43 and US 41-141.</li>
+      <li>The evidence layer records that the retained evidence therefore confirms direct structural visibility for I-90, I-94, I-43, and I-41 without expanding into a full statewide corridor inventory.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Wisconsin Department of Transportation, "Wisconsin Freight Advisory Committee Meeting 19 Minutes" — <a href="https://wisconsindot.gov/Documents/doing-bus/freight/fac/minutes-0425.pdf" target="_blank" rel="noopener">https://wisconsindot.gov/Documents/doing-bus/freight/fac/minutes-0425.pdf</a></li>
+        <li>Wisconsin Department of Transportation, "Economic Impact of Wisconsin's Commercial Ports" — <a href="https://wisconsindot.gov/Documents/travel/water/ports-report.pdf" target="_blank" rel="noopener">https://wisconsindot.gov/Documents/travel/water/ports-report.pdf</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">University of Wisconsin engineering research visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the UW-Madison College of Engineering states its research addresses energy, sustainability and the environment, intelligent systems and communication, advanced materials design and manufacturing, and healthcare.</li>
+      <li>The evidence layer records that the UW-Madison College of Engineering states it collaborates with industry and government partners and maintains active industry-partnership channels for research challenges, testing, and consortium work.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>University of Wisconsin-Madison College of Engineering, "Research" — <a href="https://engineering.wisc.edu/research/" target="_blank" rel="noopener">https://engineering.wisc.edu/research/</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">MISO transmission participation</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that MISO states its long-range transmission planning process focuses on regional system solutions to enhance grid reliability and efficiency, with Tranche 1 approved in 2022 and Tranche 2.1 approved in 2024 for the MISO Midwest subregion.</li>
+      <li>The evidence layer records that the Public Service Commission of Wisconsin states the Grid Forward Central Wisconsin transmission project is part of the MISO Long-Range Transmission Planning Tranche 1 portfolio recommended to meet transmission-system reliability, economic, and policy needs.</li>
+      <li>The evidence layer records that the Public Service Commission of Wisconsin states that project would improve reliability, reduce congestion, and allow energy from renewable sources in Minnesota, Iowa, and elsewhere to reach Wisconsin customers.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Midcontinent Independent System Operator, "Long Range Transmission Planning" — <a href="https://www.misoenergy.org/planning/long-range-transmission-planning/" target="_blank" rel="noopener">https://www.misoenergy.org/planning/long-range-transmission-planning/</a></li>
+        <li>Public Service Commission of Wisconsin, "Grid Forward - Central Wisconsin Transmission Line Project" — <a href="https://psc.wi.gov/Pages/CommissionActions/CasePages/GridForwardCentralWisconsin.aspx" target="_blank" rel="noopener">https://psc.wi.gov/Pages/CommissionActions/CasePages/GridForwardCentralWisconsin.aspx</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Wisconsin BEAD broadband coordination</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Public Service Commission of Wisconsin states the BEAD program's goal is to provide high-speed internet for all Wisconsinites.</li>
+      <li>The evidence layer records that the Public Service Commission of Wisconsin states BEAD will support deployment of qualifying 100/20 Mbps service to households and businesses in Wisconsin that lack access to 100/20 Mbps service.</li>
+      <li>The evidence layer records that the Public Service Commission of Wisconsin states it administered the BEAD prequalification and awarding process throughout 2024 and 2025.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Public Service Commission of Wisconsin, "Broadband Equity, Access, and Deployment Grant" — <a href="https://psc.wi.gov/Pages/ServiceType/Broadband/GrantBEAD.aspx" target="_blank" rel="noopener">https://psc.wi.gov/Pages/ServiceType/Broadband/GrantBEAD.aspx</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Corridor-linked industrial persistence</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that WEDC's 2025 advanced-manufacturing profile states Wisconsin ranks number one in U.S. employment concentration for fabricated metal products manufacturing and paper manufacturing, and the profile includes machinery manufacturing among Wisconsin's concentrated advanced-manufacturing segments.</li>
+      <li>The evidence layer records that the same profile states Wisconsin employers report high satisfaction with technical-college graduates and frames the state as a durable advanced-manufacturing environment rather than a single-site industrial case.</li>
+      <li>The evidence layer records that WEDC's 2025 forest-products snapshot states Wisconsin is the number one U.S. state for paper production, with employment concentration nearly four times the national average.</li>
+      <li>The evidence layer records that the same forest-products snapshot states Wisconsin has more than 7,200 paper-mill jobs and more than 200 companies in pulp and paper converting.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Wisconsin Economic Development Corporation, "Advanced Manufacturing Industry Profile" — <a href="https://wedc.org/wp-content/uploads/2025/05/Advanced-Manufacturing-Industry-Profile-2025-05.pdf" target="_blank" rel="noopener">https://wedc.org/wp-content/uploads/2025/05/Advanced-Manufacturing-Industry-Profile-2025-05.pdf</a></li>
+        <li>Wisconsin Economic Development Corporation, "Forest Products Snapshot" — <a href="https://wedc.org/wp-content/uploads/2025/04/Forest-Products-Snapshot-2025.pdf" target="_blank" rel="noopener">https://wedc.org/wp-content/uploads/2025/04/Forest-Products-Snapshot-2025.pdf</a></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 9 evidence subsections with canonical source citations</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Wisconsin operates as a passive AI policy surface within the upper-midwest governance layer. No comprehensive state-level AI legislation has advanced through the Wisconsin Legislature as of Q2 2026. The corridor functions as a federal-default AI surface — operators deploying AI inside Wisconsin align primarily with federal AI frameworks and NIST guidance rather than state-specific compliance instruments. Limited executive-level exploration of AI tools for state agency operations represents the current boundary of Wisconsin's institutional AI engagement.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Limited · Passive</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Federal-dependent / Observational</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Federal compliance is the primary obligation layer</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Federal AI executive frameworks, NIST AI Risk Management Framework, state executive exploration of AI efficiency tools for agency operations. No enacted Wisconsin-specific AI statute as of Q2 2026.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> No active state-level AI enforcement surface exists within this corridor as of 2026. Operators interact with federal AI safety, disclosure, and accountability frameworks as the primary obligation layer. Neighboring corridor pressure from Illinois may condition future legislative activity.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Teams deploying AI inside Wisconsin do not face Wisconsin-specific AI compliance overhead in 2026. The corridor functions as a permissive AI deployment surface relative to California and Illinois equivalents. Governance conditions may shift if Illinois-adjacent regulatory norms migrate north across the Great Lakes–Mississippi convergence corridor.</div>
-    </div>
-    <div class="note">Operational signal: Wisconsin's passive posture makes it a lower-friction AI deployment surface in the upper midwest, but teams operating at scale across the national surface should model for corridor-neighbor pressure over a 12–24 month horizon.</div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code>. The signals layer records that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted">The signals layer records 8 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">Port-linked Great Lakes continuity signal</h3>
+    <p class="muted">The signals layer records that Wisconsin shows a port-linked-Great-Lakes-continuity signal through documented Milwaukee and Green Bay port structure, documented Lake Michigan access, and documented rail-and-highway connectivity around those port nodes.</p>
+ 
+    <h3 class="subhead">Mississippi freight-boundary continuity signal</h3>
+    <p class="muted">The signals layer records that Wisconsin shows a Mississippi-freight-boundary-continuity signal through documented Harbor Assistance coverage, documented Upper Mississippi River system visibility, and documented federal waterborne-corridor continuity between Mississippi and Great Lakes structures.</p>
+ 
+    <h3 class="subhead">Class I rail visibility signal</h3>
+    <p class="muted">The signals layer records that Wisconsin shows a Class-I-rail-visibility signal through directly documented presence of BNSF, Canadian National, CPKC, and Union Pacific in the retained source set.</p>
+ 
+    <h3 class="subhead">Interstate corridor continuity signal</h3>
+    <p class="muted">The signals layer records that Wisconsin shows an interstate-corridor-continuity signal through directly documented freight-relevant visibility of I-90, I-94, I-43, and I-41 together with port-access references and corridor-improvement activity.</p>
+ 
+    <h3 class="subhead">Research-institution engineering visibility signal</h3>
+    <p class="muted">The signals layer records that Wisconsin shows a research-institution-engineering-visibility signal through directly documented UW-Madison engineering research activity in energy, intelligent systems, advanced materials and manufacturing, plus industry-and-government partnership channels.</p>
+ 
+    <h3 class="subhead">MISO transmission participation signal</h3>
+    <p class="muted">The signals layer records that Wisconsin shows a MISO-transmission-participation signal through directly documented MISO Midwest long-range transmission planning and directly documented Wisconsin transmission-project participation inside that planning structure.</p>
+ 
+    <h3 class="subhead">Broadband coordination signal</h3>
+    <p class="muted">The signals layer records that Wisconsin shows a broadband-coordination signal through directly documented PSC administration of BEAD prequalification and award processes tied to statewide 100/20 broadband deployment goals.</p>
+ 
+    <h3 class="subhead">Upper Midwest manufacturing continuity signal</h3>
+    <p class="muted">The signals layer records that Wisconsin shows an Upper-Midwest-manufacturing-continuity signal through directly documented machinery, fabricated-metal, and paper-manufacturing concentration, together with directly documented paper-production scale.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 8 signal clusters</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Wisconsin operates as a constructive institutional digital asset surface within the upper-midwest corridor. The Wisconsin Investment Board's 2024 authorization to hold Bitcoin ETF positions established one of the first state pension system deployments into Bitcoin-denominated infrastructure in the United States — a signal that conditions institutional legitimacy surfaces across this corridor. Money transmitter obligations under Wisconsin Statutes Chapter 217 apply to custodial and exchange-style activity, but the compliance overhead is substantially lighter than California-equivalent licensing frameworks.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Permissive / Enabling</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">DFI / Chapter 217 framework</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Light regulatory burden; institutional signal positive</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Wisconsin Investment Board Bitcoin ETF authorization (2024), Wisconsin Statutes Chapter 217 (money transmitter framework), federal BSA/AML compliance layer. No Wisconsin-specific digital asset licensing regime equivalent to California's DFAL.</div>
-      <div class="detail-item"><strong>Positive signal:</strong> The WIB authorization to hold Bitcoin ETF positions establishes an institutional legitimacy anchor within this corridor — one of the first state pension systems in the U.S. to deploy inside Bitcoin ETF infrastructure. This signal conditions the corridor's posture toward institutional digital asset interaction as a recognized activity rather than a regulatory edge case.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Custodial, exchange, and institutional-facing operators deploying inside Wisconsin interact with a lighter compliance surface than California-equivalent frameworks. Federal BSA/AML obligations remain the primary compliance layer. Self-custody and non-custodial infrastructure deployments face minimal state-level friction within this corridor.</div>
-    </div>
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from <code>signals.md</code>. The trust-dimensions layer records that absence of dimensions reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted">The trust-dimensions layer records that trust evaluates what kinds of stability conditions Wisconsin can sustain given the signal layer and the visible continuity environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted">The trust-dimensions layer records that Wisconsin currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>durable Great Lakes and Upper Mississippi boundary continuity across Milwaukee, Green Bay, and Mississippi-system waterborne structure</li>
+      <li>durable infrastructure continuity through port, Class I rail, interstate, and transmission-planning visibility</li>
+      <li>visible institutional adjacency through UW engineering research and PSC-linked broadband and transmission coordination</li>
+      <li>durable industrial persistence through machinery, fabricated-metal, and paper-manufacturing continuity</li>
+      <li>sufficient support-layer visibility through MISO participation and BEAD coordination</li>
+    </ul>
+ 
+    <h3 class="subhead">Coordination density</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable corridor coordination density.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>port-linked Great Lakes continuity signal</li>
+      <li>Mississippi freight-boundary continuity signal</li>
+      <li>Class I rail visibility signal</li>
+      <li>interstate corridor continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a routing-authority model</li>
+      <li>the current package does not support corridor hierarchy or coordination-tier assignment</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Wisconsin shows corridor-relevant coordination density where Great Lakes ports, Mississippi-system continuity, Class I rail visibility, and interstate structure are all directly documented.</p>
+ 
+    <h3 class="subhead">Infrastructure continuity</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable multimodal continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>port-linked Great Lakes continuity signal</li>
+      <li>Mississippi freight-boundary continuity signal</li>
+      <li>Class I rail visibility signal</li>
+      <li>interstate corridor continuity signal</li>
+      <li>MISO transmission participation signal</li>
+      <li>broadband coordination signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not establish a full statewide infrastructure inventory beyond the corridor-layer anchors</li>
+      <li>the current evidence does not support compute-corridor, hyperscale, or deployment-readiness interpretation</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Wisconsin shows durable continuity across Great Lakes ports, Mississippi boundary freight structure, Class I rail visibility, interstate corridors, MISO-linked transmission planning, and PSC broadband coordination.</p>
+ 
+    <h3 class="subhead">Institutional adjacency</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible but narrow institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>research-institution engineering visibility signal</li>
+      <li>MISO transmission participation signal</li>
+      <li>broadband coordination signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally avoids a complete university inventory</li>
+      <li>the current trust reading does not compare institutions by rank or statewide breadth</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Wisconsin shows corridor-relevant institutional adjacency through UW-Madison engineering visibility and through state-level coordination structures for transmission and broadband expansion.</p>
+ 
+    <h3 class="subhead">Industrial persistence</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable industrial continuity.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Upper Midwest manufacturing continuity signal</li>
+      <li>port-linked Great Lakes continuity signal</li>
+      <li>Class I rail visibility signal</li>
+      <li>interstate corridor continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not provide a plant-by-plant statewide industrial map</li>
+      <li>the current trust reading does not support historic or economic-ranking narratives</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Wisconsin shows industrial persistence where machinery, fabricated-metal, and paper-manufacturing continuity remain coupled to port, rail, and interstate access.</p>
+ 
+    <h3 class="subhead">Research participation</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible research participation.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>research-institution engineering visibility signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally limits research treatment to UW-Madison engineering visibility only</li>
+      <li>the current trust reading does not support frontier-AI, statewide research-network, or federal-lab classification</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Wisconsin shows research participation sufficient for corridor interpretation through UW-Madison engineering visibility, without expanding into a broader statewide research-hierarchy claim.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust-dimension completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — Trust interpretation summary + 5 dimension fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Wisconsin operates at a federal-baseline privacy surface. No comprehensive Wisconsin state consumer data privacy law has been enacted as of Q2 2026. The corridor operates without an independent state privacy enforcement body equivalent to California's CPPA. Operators collecting data from Wisconsin residents interact primarily with federal sectoral frameworks — HIPAA for healthcare surfaces, COPPA for children-directed interfaces, GLBA for financial institution surfaces — and Wisconsin's data breach notification statute (Wis. Stat. § 895.507) as the primary state-level obligation.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Federal Baseline</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">Breach notification + federal sectoral law</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower compliance burden; no state enforcement body</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Wis. Stat. § 895.507 (data breach notification), HIPAA sectoral obligations, COPPA applicability, GLBA financial surface requirements. No CCPA/CPRA equivalent enacted as of Q2 2026. No ADMT-specific rule set.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> No independent state privacy agency. Breach notification obligations run through the Wisconsin Department of Agriculture, Trade and Consumer Protection (DATCP) for consumer-facing surfaces. Federal agency enforcement (FTC, HHS OCR) represents the primary enforcement interaction layer.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Operators processing Wisconsin resident data interact with a substantially lighter compliance surface than California-adjacent corridors. Teams already aligned with CCPA/CPRA obligations will find Wisconsin's requirements encompassed within that framework. Legislative activity in neighboring corridor states may condition future alignment pressure, but no near-term Wisconsin comprehensive privacy bill is in active progression.</div>
-    </div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. The profile layer records that profile is the characterization layer of the package.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Wisconsin currently reads within Atlas as a Great Lakes industrial-core jurisdiction organized around Milwaukee and Green Bay port continuity, Upper Mississippi freight-boundary continuity, Class I rail and interstate structure, UW-Madison engineering visibility, MISO transmission participation, PSC BEAD coordination, and machinery / fabricated-metal / paper-manufacturing persistence.</p>
+ 
+    <h3 class="subhead">Profile synthesis</h3>
+    <p class="muted">The profile layer records that the current package shows:</p>
+    <ul class="evidence-bullets">
+      <li>Port Milwaukee continuity anchored in Lake Michigan access, Mississippi-system linkage, I-94/I-794 access, and UP / CPKC rail service</li>
+      <li>Port of Green Bay logistics visibility anchored in Lake Michigan access, Fox River cargo activity, I-43 access, and CN / Fox Valley &amp; Lake Superior rail service</li>
+      <li>Mississippi freight-boundary continuity anchored in Great Lakes / Mississippi harbor-program coverage, Upper Mississippi system visibility, and federally recognized waterborne-corridor continuity</li>
+      <li>Class I rail visibility anchored in directly documented BNSF, CN, CPKC, and UP presence</li>
+      <li>interstate corridor continuity anchored in documented I-90, I-94, I-43, and I-41 visibility</li>
+      <li>UW-Madison engineering visibility as the package's research anchor</li>
+      <li>MISO participation and PSC broadband coordination as support-layer anchors</li>
+      <li>machinery, fabricated-metal, and paper continuity as the package's industrial anchors</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of Wisconsin as a Great Lakes industrial + Upper Midwest manufacturing continuity corridor.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Wisconsin currently reads within Atlas as a Great Lakes industrial + Upper Midwest manufacturing continuity corridor linking Milwaukee and Green Bay port structure, Upper Mississippi freight-boundary continuity, Class I rail and interstate visibility, UW engineering research, MISO-linked transmission planning, BEAD coordination, and machinery / metals / paper industrial persistence.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + Profile synthesis + Profile synthesis statement</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Wisconsin operates as a limited-restriction biometric surface within the upper-midwest corridor. No Wisconsin Biometric Information Privacy Act equivalent has been enacted — the corridor does not replicate the Illinois BIPA framework that conditions operator liability across the adjacent Great Lakes–Mississippi Logistics Convergence Corridor to the south. Standard employment law intersections remain relevant, and federal frameworks (FTC Act, HIPAA where applicable) continue to provide baseline coverage, but the Wisconsin-specific biometric obligation surface is structurally lighter than Illinois-adjacent environments.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Limited Restrictions</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Federal-dependent / Employment-aware</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower friction than Illinois corridor; monitor BIPA spillover</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> No enacted Wisconsin biometric privacy statute. Federal FTC Act unfair or deceptive practices framework. Employment law intersections (Wis. Stat. § 111.32 WFEA applicability). No municipal facial-recognition bans in active force within this corridor.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> The primary biometric risk surface for Wisconsin-based operators derives from Illinois BIPA litigation exposure where operations cross the state boundary into the Illinois corridor. Teams with physical or operational presence spanning both corridors should treat BIPA as an active liability surface even where Wisconsin operations are the primary deployment anchor.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Products deploying biometric identification, behavioral monitoring, or facial-recognition surfaces inside Wisconsin face lighter state-specific restriction than Illinois or California equivalents. Cross-corridor deployments that extend into Illinois should be evaluated against BIPA exposure as a primary structural risk condition.</div>
-    </div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that this file provides structural interpretation only, and does not rank Wisconsin, compare Wisconsin to other jurisdictions, or prescribe deployment eligibility.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted">The builder-mode layer records that Wisconsin is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a Milwaukee and Green Bay Great Lakes continuity environment</li>
+      <li>an Upper Mississippi freight-boundary continuity environment</li>
+      <li>a rail and interstate corridor environment across I-90, I-94, I-43, and I-41</li>
+      <li>an Upper Midwest manufacturing continuity environment tied to machinery, fabricated metals, and paper</li>
+      <li>a corridor environment with visible UW engineering, MISO, and PSC broadband support layers</li>
+    </ul>
+ 
+    <h3 class="subhead">Great Lakes interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Wisconsin reads as a continuity environment where Milwaukee and Green Bay keep Great Lakes freight visibility active without requiring a statewide port inventory.</p>
+ 
+    <h3 class="subhead">Mississippi-boundary interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Wisconsin reads as a boundary-continuity environment where documented Great Lakes and Mississippi-system relationships matter structurally, especially through Harbor Assistance coverage and Port Milwaukee's Mississippi-approved linkage.</p>
+ 
+    <h3 class="subhead">Inland transport interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Wisconsin reads as an inland transport environment where Class I rail visibility and freight-relevant interstate continuity across I-90, I-94, I-43, and I-41 reinforce corridor structure.</p>
+ 
+    <h3 class="subhead">Industrial interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Wisconsin reads as an industrial environment where machinery, fabricated-metal, and paper-manufacturing persistence remains coupled to port, rail, and highway access.</p>
+ 
+    <h3 class="subhead">Research and support-layer interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Wisconsin reads as a corridor environment with visible UW-Madison engineering participation and narrow but explicit support-layer continuity through MISO transmission planning and PSC BEAD coordination.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — Role summary + 5 interpretation subsections</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Wisconsin's public-sector AI surface is in an early development posture. State agencies have explored AI tools for administrative efficiency and service delivery, but Wisconsin has not deployed a formal AI procurement governance framework, vendor attestation regime, or sandbox program comparable to California's CDT infrastructure. The corridor's institutional AI engagement is characterized by exploratory adoption rather than structured policy control — a posture that creates lower-friction entry points for operators deploying B2G AI surfaces but with reduced structural support for compliance-aware integration architecture.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Exploratory / Agency-led</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower entry friction; limited formal governance structure</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Wisconsin Department of Administration technology services coordination, agency-level AI tool exploration, federal grant and stimulus surfaces conditioning state technology adoption, University of Wisconsin system research alignment with state government technology surfaces.</div>
-      <div class="detail-item"><strong>Growth signal:</strong> Public-sector AI is advancing at the agency level within this corridor, but without centralized procurement governance or mandatory vendor attestation requirements. The absence of a formal framework creates flexibility for early-stage B2G deployments while leaving accountability and interoperability surfaces less structured than California-equivalent environments.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Teams deploying AI inside Wisconsin government surfaces can engage without the attestation and procurement overhead of California or Virginia-adjacent corridors. Operators with compliance-ready architectures may find Wisconsin functions as a lower-resistance entry surface for public-sector AI interfaces in the upper-midwest region.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, builder-mode, and change-log layers. Multiple layers record a distinct canonical exclusion: local reassignment of atlas-controlled Wisconsin topology metadata.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the evidence collected there, this file does not support characterizing Wisconsin as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a routing-authority jurisdiction</li>
+      <li>a coordination-tier jurisdiction</li>
+      <li>a deployment-readiness jurisdiction</li>
+      <li>a surface-assigned jurisdiction</li>
+      <li>a jurisdiction-ranking case</li>
+      <li>an AI compute corridor</li>
+      <li>a hyperscale anchor corridor</li>
+      <li>a federal governance corridor</li>
+      <li>a federal hosting corridor</li>
+      <li>a national routing spine designation</li>
+      <li>a primary Internet-exchange concentration environment</li>
+      <li>a custody-regime jurisdiction</li>
+      <li>a DAO-wrapper jurisdiction</li>
+      <li>a digital-asset statutory jurisdiction</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based on the currently derived signals, this file does not support characterizing Wisconsin as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, a surface-eligibility determination, a jurisdiction-ranking claim, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that this file does not support interpreting Wisconsin as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The trust-dimensions layer records that it should be read as trust interpretation of Wisconsin's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Wisconsin's profile should not be read as: a routing-authority assignment, a coordination-tier assignment, a deployment-readiness classification, an Atlas surface-eligibility determination, a jurisdiction ranking claim, an AI compute corridor claim, a hyperscale anchor corridor claim, a federal governance corridor claim, a federal hosting corridor claim, a national routing spine claim, a primary Internet-exchange concentration claim, a custody-regime jurisdiction claim, a DAO-wrapper jurisdiction claim, or a digital-asset statutory jurisdiction claim.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not support interpreting Wisconsin as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine designation, a primary Internet-exchange concentration environment, a custody-regime jurisdiction, a DAO-wrapper jurisdiction, or a digital-asset statutory jurisdiction. The builder-mode layer records that it should be read as builder-facing interpretation of Wisconsin's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal governance or hosting-corridor designation, national routing-spine designation, primary IX concentration designation, or local reassignment of atlas-controlled Wisconsin topology metadata.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Wisconsin's developer climate is shaped by manufacturing-adjacent technology development surfaces, agricultural technology coordination layers, and healthcare technology systems that interface with the corridor's institutional infrastructure. The state does not maintain a government open-source mandate equivalent to California's TL 18-02 directive. Developer activity surfaces intersect with logistics technology, precision agriculture systems, industrial automation, and healthcare information systems rather than frontier AI or consumer technology. Policy friction is structurally lower than California or Illinois corridor equivalents.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Moderate · Manufacturing-Adjacent</div></div>
-      <div class="mini-box"><div class="label">Gov OSS</div><div class="value">No formal mandate</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low policy friction; corridor-specific deployment surfaces</div></div>
+  <!-- ── 9. SCOPE BOUNDARIES ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Scope Boundaries &amp; Canonical Narrowing</h2>
+    <p class="muted">The canonical Wisconsin package does not record an "Evidence gaps" section. Instead, the change-log records the canonical scope-constraints applied during evidence-first package population, explicitly enumerating what was excluded from the package.</p>
+ 
+    <h3 class="subhead">Scope constraints applied during population</h3>
+    <div class="scope-block">
+      <div class="scope-label">The change-log records the following scope constraints applied during evidence-first package population:</div>
+      <ul>
+        <li>corridor-layer anchors only</li>
+        <li>no open-ended statewide infrastructure survey</li>
+        <li>no hyperscale or compute-corridor inference</li>
+        <li>no routing-authority, coordination-tier, readiness, ranking, or surface assignment inference</li>
+        <li>no federal governance corridor designation</li>
+        <li>no local override of atlas-controlled topology metadata</li>
+      </ul>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Wisconsin Department of Administration IT coordination, state agency technology procurement surfaces, federal technology grant infrastructure, manufacturing and agricultural technology development surfaces. No state-level AI disclosure statute applicable to developers as of Q2 2026.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> Wisconsin operates as a stable, lower-friction developer surface relative to California and Illinois corridor equivalents. Policy architecture overhead is minimal for teams deploying inside this corridor. The manufacturing-adjacent orientation of Wisconsin's technology surfaces conditions developer interaction patterns toward industrial, logistics, and precision systems rather than consumer or frontier AI deployments.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> Teams deploying inside Wisconsin's technology corridors interact with a permissive policy surface and lower compliance drag than neighboring Illinois or California-adjacent environments. Operators aligning with corridor-specific technology surfaces — logistics systems, agricultural technology, industrial automation, healthcare information systems — find the policy environment structurally supportive.</div>
-    </div>
+ 
+    <p class="muted" style="margin-top:12px">The change-log records the current status: evidence layer populated to corridor sufficiency, downstream layers derived strictly from the corridor-limited evidence set, jurisdiction lens attached in metadata.md, surface assignment remains none.</p>
+    <div class="src">Source: change-log.md — 2026-04-15 evidence-first package population (Scope constraints applied)</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Bitcoin mining operates within Wisconsin's legal framework with no specific prohibition as of Q2 2026. The state's electricity pricing operates in the mid-band of the continental U.S. — structurally more favorable than California and northeastern corridor equivalents, but less cost-advantaged than Wyoming, Kentucky, or Texas corridor environments. Wisconsin's energy infrastructure interfaces with the Midcontinent Independent System Operator (MISO) regional grid, nuclear baseload capacity along the Lake Michigan shoreline, and natural gas and renewable generation surfaces distributed across the corridor. No PoW-specific regulatory action is in active progression.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Moderate Viability</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Mid-band (US)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Viable; not cost-optimized for large-scale mining</div></div>
-    </div>
-    <div class="radar" aria-label="Wisconsin energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:28%;background:var(--green)"></div></div><div class="score">28</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:48%;background:var(--yellow)"></div></div><div class="score">48</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:55%;background:var(--yellow)"></div></div><div class="score">55</div></div>
-    </div>
-    <div class="note">Builder implication: Wisconsin functions as a legally permissive but not cost-optimized mining and compute surface. Teams evaluating proof-of-work deployment within the upper-midwest corridor should assess energy cost differentials against Wyoming, Kentucky, and Texas alternatives before anchoring infrastructure within this corridor. Regulatory risk is low; structural cost conditions are the primary operational constraint.</div>
-  </section>
+  <!-- ── 10. CHANGE-LOG NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
  
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Wisconsin's regulatory vector is stable across most policy layers, with the most notable directional signal originating from the digital asset institutional legitimacy surface established by the Wisconsin Investment Board's Bitcoin ETF authorization. The corridor is not absorbing significant governance escalation pressure from state legislative activity, but proximity to Illinois-adjacent regulatory surfaces and federal AI framework development conditions the medium-term trajectory. Teams operating across this corridor should model for continued stability through 2026, with Illinois corridor spillover as the primary variable to monitor.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — stable / passive. No Wisconsin-specific AI legislation is in active progression. Federal AI framework development remains the primary governance variable. Illinois corridor pressure may condition alignment activity in the 2027–2028 legislative cycle.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — constructive. The WIB Bitcoin ETF authorization positions the corridor as an institutional legitimacy surface. No Wisconsin-specific licensing framework is anticipated near-term; federal crypto regulation remains the primary uncertainty layer.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — stable at federal baseline. No comprehensive Wisconsin privacy legislation is in active progression as of Q2 2026. Corridor pressure from neighboring Illinois BIPA spillover and federal FTC rulemaking represent the primary monitoring surfaces.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — limited / stable. No Wisconsin biometric privacy bill in active progression. Illinois BIPA cross-corridor exposure remains the primary operational risk for deployments spanning both corridors.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — low. No PoW-specific legislative action in Wisconsin. Structural energy cost conditions represent the primary constraint rather than regulatory risk. The corridor is expected to remain legally permissive through 2027.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — stable. Manufacturing-adjacent technology surfaces maintain low policy friction. No state AI disclosure or developer compliance obligations anticipated in the near-term legislative calendar.</div>
-    </div>
-    <div class="callout">12-month outlook: Wisconsin is expected to remain a stable, moderate-compliance corridor through Q2 2027. The WIB Bitcoin ETF position may attract additional institutional digital asset interest. Illinois BIPA and California CCPA-adjacent compliance norms represent the primary external pressure variables for teams operating across the upper-midwest multi-corridor deployment surface.</div>
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, and Topology Completion Layer. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">2026-04-15 evidence-first package population</h3>
+    <p class="muted">The change-log records that the Wisconsin state package was populated in topology-normalized order: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md. The change-log records that scope constraints were applied during population (rendered in Section 9 above). The change-log records the current status: evidence layer populated to corridor sufficiency, downstream layers derived strictly from the corridor-limited evidence set, jurisdiction lens attached in metadata.md, and surface assignment remains none.</p>
+ 
+    <h3 class="subhead">Structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal governance or hosting-corridor designation, national routing-spine designation, primary IX concentration designation, or local reassignment of atlas-controlled Wisconsin topology metadata.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
 </div><!-- /main col -->
@@ -368,46 +686,100 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <!-- ── SIDEBAR ── -->
 <aside>
  
-  <div class="card" aria-labelledby="heading-sidebar-snapshot">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-snapshot">Wisconsin at a glance</h3>
-    <p class="muted mini">Wisconsin operates as a Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor — most productive for teams aligning with upper-midwest infrastructure, institutional digital asset surfaces, freshwater logistics coordination, and moderate-compliance deployment environments. Structurally lighter than California and Illinois equivalents across AI, privacy, and biometric obligation layers.</p>
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Wisconsin jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/wisconsin/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder-Mode Interaction Surface</div>
-    <h3 id="heading-builder-summary">Engagement posture</h3>
-    <p class="muted mini">Builders operating within the Wisconsin corridor interact with Great Lakes freshwater shipping interfaces, Mississippi-aligned inland routing surfaces, upper-midwest logistics continuity environments, and infrastructure coordination layers linking lake-based and interior deployment pathways. The corridor conditions interaction with manufacturing-adjacent logistics systems, institutional digital asset infrastructure, and public-sector technology surfaces operating under a lower-governance posture than California or Illinois equivalents.</p>
-    <p class="muted mini" style="margin-top:8px"><strong>Friction zones:</strong> teams requiring high-governance AI compliance precedent formation; operations dependent on maximum-enforcement privacy infrastructure; cross-corridor deployments extending into Illinois surfaces where BIPA exposure becomes material.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Compliance Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>2024</strong> — Wisconsin Investment Board authorizes Bitcoin ETF holdings; institutional digital asset legitimacy signal established within corridor.</li>
-      <li><strong>Ongoing</strong> — Federal BSA/AML compliance layer remains the primary digital asset obligation surface. DFI Chapter 217 money transmitter obligations apply to custodial operations.</li>
-      <li><strong>Ongoing</strong> — Wis. Stat. § 895.507 breach notification obligations remain the primary state-level data event response requirement.</li>
-      <li><strong>Monitor</strong> — Illinois BIPA litigation surfaces and federal FTC/AI rulemaking as primary external compliance pressure variables for Wisconsin corridor operators.</li>
+      <li><strong>Jurisdiction:</strong> Wisconsin</li>
+      <li><strong>Code:</strong> WI · US-WI</li>
+      <li><strong>Lens:</strong> Great Lakes industrial + Upper Midwest manufacturing continuity corridor</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> corridor-layer sufficient</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li><strong>Corridor Group:</strong> Great Lakes Industrial Core Corridor</li>
+      <li><strong>Foundation Layer:</strong> Great Lakes Industrial Core Layer</li>
+      <li><strong>Completion Layer:</strong> Great Lakes Completion Layer</li>
+      <li><strong>Jurisdiction Lens:</strong> Great Lakes industrial + Upper Midwest manufacturing continuity corridor</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that the Jurisdiction Lens does not override atlas-controlled topology placement.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Evidence anchors</div>
+    <h3 id="heading-sidebar-coverage">Documented in corridor-layer scope</h3>
+    <ul class="mini muted">
+      <li>Port Milwaukee (Mississippi-approved, 20+ tenants, 14 mi rail)</li>
+      <li>Port of Green Bay (Fox River, 14 businesses, 2M tons)</li>
+      <li>WisDOT Harbor Assistance Program</li>
+      <li>Upper Mississippi River System + M-35 / M-90</li>
+      <li>3,300+ mi rail (BNSF, CN, CPKC, UP)</li>
+      <li>I-90, I-94, I-43, I-41</li>
+      <li>UW-Madison College of Engineering</li>
+      <li>MISO Tranche 1 + Tranche 2.1</li>
+      <li>Grid Forward Central Wisconsin</li>
+      <li>PSC (100/20 Mbps BEAD)</li>
+      <li>#1 fabricated metals + paper manufacturing</li>
+      <li>7,200+ paper-mill jobs, 200+ companies</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-canonical">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-canonical">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine coherent and Atlas-connected across all state profiles.</p>
-    <p class="muted mini" style="margin-top:8px"><strong>Corridor identity</strong> (Wisconsin): Great Lakes Freshwater &amp; Inland Waterways Continuity Corridor · Upper-Midwest Infrastructure Surface</p>
+  <div class="card" aria-labelledby="heading-sidebar-scope">
+    <div class="smallcaps">Canonical scope</div>
+    <h3 id="heading-sidebar-scope">Corridor-layer sufficient</h3>
+    <p class="muted mini">The change-log records that the Wisconsin package is explicitly scope-narrowed to corridor-layer anchors. All downstream layer completeness statuses are canonically recorded as "corridor-layer sufficient" rather than "preliminary".</p>
+    <p class="muted mini">This is a distinct canonical neutrality category: the package is not incomplete — it is canonically declared complete at corridor scope, with broader scope deliberately excluded.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: corridor-layer sufficient</li>
+      <li>Signal layer: corridor-layer sufficient</li>
+      <li>Trust dimensions: corridor-layer sufficient</li>
+      <li>Profile: corridor-layer sufficient</li>
+      <li>Builder-mode: corridor-layer sufficient</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale or AI compute corridor designation.</li>
+      <li>Not a local reassignment of atlas-controlled topology metadata.</li>
+      <li>Not a digital-asset statutory jurisdiction designation.</li>
+    </ul>
   </div>
  
 </aside>
