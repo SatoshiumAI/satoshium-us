@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Pennsylvania — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Pennsylvania operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Pennsylvania Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/pennsylvania/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +116,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +130,38 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
+.scope-block{margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.04)}
+.scope-block .scope-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.scope-block ul{margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block li{margin-bottom:2px;line-height:1.5}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +172,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +188,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Pennsylvania</h1>
-    <p class="kicker">Pennsylvania operates as an Appalachian Infrastructure &amp; Eastern Freight Continuity Corridor supporting east–west logistics alignment through mountain-crossing transport systems, dense freight rail coordination surfaces, and Appalachian energy-linked infrastructure connecting Midwestern, Mid-Atlantic, and northeastern deployment corridors.</p>
+    <p class="kicker">This page renders the canonical Pennsylvania Atlas jurisdiction package. The canonical package positions Pennsylvania within the Northeast Institutional Mesh Corridor under the canonical jurisdiction lens "Great Lakes industrial + inland river logistics + Mid-Atlantic transition corridor", with canonical scope limited to corridor-layer anchors. All completeness statuses are recorded as corridor-layer sufficient.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">PA · US-PA</div>
-      <div class="hero-chip">Harrisburg</div>
-      <div class="hero-chip">Appalachian Infrastructure &amp; Eastern Freight Continuity Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Pennsylvania quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Developing · Nascent</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Constructive / Moderate</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Limited / Federal Floor</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Low Regulatory Friction</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Corridor-Stable / Infrastructure-Aligned</div></div>
+      <div class="hero-chip">Jurisdiction: Pennsylvania (PA · US-PA)</div>
+      <div class="hero-chip">Jurisdiction lens: Great Lakes industrial + inland river logistics + Mid-Atlantic transition corridor</div>
+      <div class="hero-chip">Completeness: corridor-layer sufficient</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Northeast Institutional Mesh sibling</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Scope Boundaries</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,213 +222,522 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Pennsylvania operates as the Appalachian Infrastructure &amp; Eastern Freight Continuity Corridor within the eastern US deployment surface. Teams interacting across this corridor encounter logistics-anchored infrastructure alignment surfaces, Appalachian Basin energy routing interfaces, and mountain-crossing transport systems that mediate freight continuity between Midwestern, Mid-Atlantic, and northeastern corridor pathways. The governance posture is institutionally moderate, with low-friction conditions across most policy layers relative to coastal regulatory formation zones.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>AI Policy</strong></div><span class="pill teal">Developing · Nascent</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill green">Constructive / Moderate</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--blue)"></span><strong>Privacy / Data</strong></div><span class="pill blue">Limited / Federal Floor</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--green)"></span><strong>Biometrics</strong></div><span class="pill green">Low Regulatory Friction</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">Developing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Corridor-Stable / Infrastructure-Aligned</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Northeast Institutional Mesh Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Pennsylvania operates as a freight-infrastructure and energy-routing corridor. Teams deploying across logistics coordination surfaces, Appalachian Basin energy environments, and moderate-compliance digital asset frameworks interact with structurally stable operating conditions. Operations requiring low-friction regulatory surfaces and energy-cost advantages over coastal corridor deployments align effectively within this corridor.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Northeast Institutional Mesh Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Mid-Atlantic Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Lens</div>
+      <div class="field-value">Great Lakes industrial + inland river logistics + Mid-Atlantic transition corridor</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that the Corridor Group, Foundation Layer, and Topology Completion Layer are derived from atlas-export/docs/atlas.md. The metadata layer records that the Jurisdiction Lens is derived from Pennsylvania's corridor-layer evidence, signal, and trust review and does not override atlas-controlled topology placement.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, coordination tiers, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence sufficiency boundaries, infer deployment suitability, or locally reclassify atlas-controlled corridor metadata.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/pennsylvania/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Appalachian Infrastructure &amp; Eastern Freight Continuity Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only corridor-relevant structural anchors documented for Pennsylvania that are sufficient to support Atlas signal derivation. The evidence layer records that it does not perform an open-ended statewide infrastructure survey and does not assign trust posture, routing role, coordination tier, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. The canonical Pennsylvania package is explicitly scope-narrowed to corridor-layer anchors — all completeness statuses across evidence, signals, trust, profile, and builder-mode are canonically recorded as "corridor-layer sufficient" rather than "preliminary". This is a distinct canonical neutrality category.</p>
+    <p class="muted">The canonical package repeatedly emphasizes that Pennsylvania's jurisdiction lens is interpretive only and does not override atlas-controlled topology metadata. The Great Lakes and inland-river references in the lens inform evidence interpretation, but Pennsylvania's canonical topology placement remains Northeast Institutional Mesh Corridor under atlas-controlled metadata.</p>
+    <div class="callout mini" style="margin-top:12px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — Scope; metadata.md — Classification source; change-log.md — Scope constraints applied during population</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 9 evidence subsections documenting Pennsylvania's corridor-relevant structural anchors across Great Lakes port continuity, inland river logistics, Class I rail, interstate convergence, Pittsburgh air cargo, research institutions, PJM transmission, BEAD broadband coordination, and corridor-linked industrial persistence.</p>
+ 
+    <h3 class="subhead">Great Lakes port continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Erie-Western Pennsylvania Port Authority states Erie is Pennsylvania's only commercial lake port and the region's import and export link to the world through the St. Lawrence Seaway.</li>
+      <li>The evidence layer records that the Port of Erie commercial materials state the port has efficient links to rail and Interstates 79 and 90.</li>
+      <li>The evidence layer records that the same materials document drydocking, ship repair, dockage, warehousing, rail connection, and bulk-material handling at corridor-relevant Erie terminals.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/pennsylvania/</div>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Erie-Western Pennsylvania Port Authority, "Commercial" — <a href="https://www.porterie.org/commercial/" target="_blank" rel="noopener">https://www.porterie.org/commercial/</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Inland river logistics system</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Port of Pittsburgh Commission states it promotes the commercial use and development of inland waterways for the residents and industries of southwestern Pennsylvania.</li>
+      <li>The evidence layer records that Port of Pittsburgh materials identify the Allegheny, Monongahela, and Ohio rivers as the core inland-waterway structure, noting eight locks and dams on the Allegheny, Monongahela gateway continuity from West Virginia into Pennsylvania, and the Ohio River confluence in downtown Pittsburgh.</li>
+      <li>The evidence layer records that the Pittsburgh Intermodal Terminals page documents an Ohio River site in Ambridge Industrial Park handling dry bulk, heavy lifts, lumber, steel, and palletized goods with substantial open and covered storage.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Port of Pittsburgh Commission — <a href="https://www.portofpittsburgh.com/" target="_blank" rel="noopener">https://www.portofpittsburgh.com/</a></li>
+        <li>Port of Pittsburgh Commission, "Pittsburgh Intermodal Terminals" — <a href="https://www.portofpittsburgh.com/terminals/pittsburgh-intermodal-terminals" target="_blank" rel="noopener">https://www.portofpittsburgh.com/terminals/pittsburgh-intermodal-terminals</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Class I rail and intermodal visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Pennsylvania Public Utility Commission states it regulates approximately 65 railroad companies operating in the state and that Pennsylvania has nearly 5,600 miles of track.</li>
+      <li>The evidence layer records that the Pennsylvania PUC railroad-company list includes both CSX Transportation Inc. and Norfolk Southern Railway Company as operating railroad companies in Pennsylvania.</li>
+      <li>The evidence layer records that the Pittsburgh Intermodal Terminals page documents Class I Norfolk Southern rail access at an Ohio River terminal.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Pennsylvania Public Utility Commission, "Rail" — <a href="https://www.puc.pa.gov/rail/" target="_blank" rel="noopener">https://www.puc.pa.gov/rail/</a></li>
+        <li>Pennsylvania Public Utility Commission, "Railroad Companies" — <a href="https://www.puc.pa.gov/rail/railroad-companies/" target="_blank" rel="noopener">https://www.puc.pa.gov/rail/railroad-companies/</a></li>
+        <li>Port of Pittsburgh Commission, "Pittsburgh Intermodal Terminals" — <a href="https://www.portofpittsburgh.com/terminals/pittsburgh-intermodal-terminals" target="_blank" rel="noopener">https://www.portofpittsburgh.com/terminals/pittsburgh-intermodal-terminals</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Interstate corridor convergence</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that PennDOT's 2045 Freight Movement Plan materials describe the Port of Pittsburgh district as served by CSX and Norfolk Southern and by interstate corridors including I-79, I-76 / PA Turnpike, and I-80.</li>
+      <li>The evidence layer records that PennDOT's public statewide rail-map, National Highway System, and highway-statistics materials provide direct corridor visibility for I-76, I-79, I-80, I-81, and I-95 in Pennsylvania's freight environment.</li>
+      <li>The evidence layer records that the Port of Erie commercial materials add direct corridor linkage to I-79 and I-90 at the Great Lakes edge of the state.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Pennsylvania Department of Transportation, "2045 Freight Movement Plan" — <a href="https://www.penndot.pa.gov/ProjectAndPrograms/Planning/FMP2045/Pages/index.html" target="_blank" rel="noopener">https://www.penndot.pa.gov/ProjectAndPrograms/Planning/FMP2045/Pages/index.html</a></li>
+        <li>Pennsylvania Department of Transportation, "Pennsylvania Rail Map" — <a href="https://gis.penndot.pa.gov/BPR_PDF_FILES/MAPS/Statewide/parail.pdf" target="_blank" rel="noopener">https://gis.penndot.pa.gov/BPR_PDF_FILES/MAPS/Statewide/parail.pdf</a></li>
+        <li>Pennsylvania Department of Transportation, "National Highway System Maps" — <a href="https://www.pa.gov/agencies/penndot/about-penndot/results-data/traffic-information/national-highway-system-maps" target="_blank" rel="noopener">https://www.pa.gov/agencies/penndot/about-penndot/results-data/traffic-information/national-highway-system-maps</a></li>
+        <li>Pennsylvania Department of Transportation, "Pennsylvania Highway Statistics 2020" — <a href="https://gis.penndot.pa.gov/BPR_PDF_FILES/Documents/Traffic/Highway_Statistics/Annual_Report/2021/2020_Pub_600.pdf" target="_blank" rel="noopener">https://gis.penndot.pa.gov/BPR_PDF_FILES/Documents/Traffic/Highway_Statistics/Annual_Report/2021/2020_Pub_600.pdf</a></li>
+        <li>Erie-Western Pennsylvania Port Authority, "Commercial" — <a href="https://www.porterie.org/commercial/" target="_blank" rel="noopener">https://www.porterie.org/commercial/</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Pittsburgh air cargo logistics visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that PIT Cargo states Pittsburgh International Airport provides a faster, smarter, more efficient cargo gateway with domestic and international access.</li>
+      <li>The evidence layer records that PIT Cargo states the airport has a strategic location between New York and Chicago for east-west distribution.</li>
+      <li>The evidence layer records that PIT Cargo states the airport is within 500 miles of 50% of the U.S. population and 54% of U.S. buying power, with no congestion and easy ground access.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Pittsburgh International Airport, "PIT Cargo" — <a href="https://flypittsburgh.com/acaa-corporate/partner-with-us/pit-cargo/" target="_blank" rel="noopener">https://flypittsburgh.com/acaa-corporate/partner-with-us/pit-cargo/</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Research-institution engineering and research visibility</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Carnegie Mellon engineering materials document cross-disciplinary robotics research spanning soft and wearable robotics, legged and aerial robots, medical robotics, micro and nano robotics, underwater robots, and IoT robots.</li>
+      <li>The evidence layer records that Carnegie Mellon materials also document the opening of the Robotics Innovation Center for research and partners.</li>
+      <li>The evidence layer records that University of Pittsburgh research materials state Pitt spends more than $1 billion in research expenditures each year and generated $2.4 billion in Pennsylvania economic impact in fiscal year 2023.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Carnegie Mellon University College of Engineering, "Robotics" — <a href="https://engineering.cmu.edu/research/thrusts/robotics.html" target="_blank" rel="noopener">https://engineering.cmu.edu/research/thrusts/robotics.html</a></li>
+        <li>University of Pittsburgh, "Research" — <a href="https://www.pitt.edu/research" target="_blank" rel="noopener">https://www.pitt.edu/research</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">PJM transmission participation</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that PJM states it coordinates the movement of electricity through all or parts of Pennsylvania and other Mid-Atlantic and Midwest jurisdictions.</li>
+      <li>The evidence layer records that PJM states its public transmission maps include infrastructure from 69 kV up to 765 kV.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>PJM, "Territory Served" — <a href="https://www.pjm.com/about-pjm/who-we-are/territory-served.aspx" target="_blank" rel="noopener">https://www.pjm.com/about-pjm/who-we-are/territory-served.aspx</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Pennsylvania BEAD broadband coordination</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that the Pennsylvania Broadband Development Authority states Pennsylvania will receive more than $1.16 billion in federal BEAD funding.</li>
+      <li>The evidence layer records that PBDA states Pennsylvania completed a BEAD 5-Year Action Plan approved in October 2023.</li>
+      <li>The evidence layer records that PBDA states approved BEAD proposal materials cover community anchor institutions, local coordination efforts, implementation activities, and related broadband deployment planning.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Pennsylvania Broadband Development Authority, "Broadband Equity, Access, and Deployment (BEAD) Program" — <a href="https://broadband.pa.gov/funding/broadband-equity-access-and-deployment-bead-program/" target="_blank" rel="noopener">https://broadband.pa.gov/funding/broadband-equity-access-and-deployment-bead-program/</a></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Corridor-linked industrial persistence</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Port of Erie commercial materials document shipbuilding, dry-docking, cargo management, material handling, and rail-connected bulk-terminal operations on Lake Erie.</li>
+      <li>The evidence layer records that Port of Pittsburgh materials describe the Monongahela as a river once home to many of Pittsburgh's steel mills, and the Pittsburgh Intermodal Terminals page documents steel among the commodities handled on the Ohio River.</li>
+      <li>The evidence layer records that Pennsylvania manufacturing materials state manufacturing employs 1 in 10 residents, contributes more than $111 billion annually to the state economy, and includes metallurgy and metal manufacturing that strengthen robotics, technology, and energy.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li>Erie-Western Pennsylvania Port Authority, "Commercial" — <a href="https://www.porterie.org/commercial/" target="_blank" rel="noopener">https://www.porterie.org/commercial/</a></li>
+        <li>Port of Pittsburgh Commission — <a href="https://www.portofpittsburgh.com/" target="_blank" rel="noopener">https://www.portofpittsburgh.com/</a></li>
+        <li>Port of Pittsburgh Commission, "Pittsburgh Intermodal Terminals" — <a href="https://www.portofpittsburgh.com/terminals/pittsburgh-intermodal-terminals" target="_blank" rel="noopener">https://www.portofpittsburgh.com/terminals/pittsburgh-intermodal-terminals</a></li>
+        <li>Pennsylvania Department of Community and Economic Development, "Manufacturing" — <a href="https://dced.pa.gov/pennsylvanias-top-industries/advanced-manufacturing/" target="_blank" rel="noopener">https://dced.pa.gov/pennsylvanias-top-industries/advanced-manufacturing/</a></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 9 evidence subsections with canonical source citations</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Pennsylvania operates in a nascent AI governance posture with no major enacted state AI legislation as of early 2026. The jurisdiction has not deployed enforcement infrastructure equivalent to California's CPPA–AI interface or New York's automated decision system requirements. State government AI use guidance has been issued through the Office of Administration, but the operative compliance framework for private-sector operators deploying inside this corridor remains primarily federal in character.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing · Nascent</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Federal baseline operative</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low friction; monitor legislative cycle</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Pennsylvania Office of Administration AI use guidance, federal AI governance baseline (NIST AI RMF alignment surface), state procurement guidance under development.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> no state-level AI enforcement agency; compliance obligations for private-sector operators are conditioned primarily by federal frameworks and sector-specific requirements.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying AI systems within Pennsylvania interact with a lower regulatory drag surface than Pacific Corridor or Northeast Financial-Regulatory Corridor environments. Legislative activity monitoring is warranted through the 2026–2027 session cycle.</div>
-    </div>
-    <div class="note">Operational signal: Pennsylvania does not currently function as a policy formation surface for AI governance. Teams operating here align to federal standards and should monitor the state legislative cycle for emerging procurement or disclosure requirements.</div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md. The signals layer records that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted">The signals layer records 9 structural coordination signals directly detectable from the evidence layer. Signal clusters use snake_case canonical keys.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">great_lakes_port_continuity</span>Great Lakes port-continuity signal</h3>
+    <p class="muted">The signals layer records that Pennsylvania shows a Great Lakes port-continuity signal through Erie's documented St. Lawrence Seaway linkage, rail connectivity, Interstate 79 and 90 linkage, and commercial port operations.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">inland_river_logistics_system</span>Inland-river logistics-system signal</h3>
+    <p class="muted">The signals layer records that Pennsylvania shows an inland-river logistics-system signal through the documented Allegheny, Monongahela, and Ohio river structure and the Ohio River intermodal terminal activity documented by the Port of Pittsburgh Commission.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">class_i_rail_and_intermodal_visibility</span>Class I rail and intermodal-visibility signal</h3>
+    <p class="muted">The signals layer records that Pennsylvania shows a Class I rail and intermodal-visibility signal through documented CSX and Norfolk Southern operating presence, substantial statewide rail mileage, and Norfolk Southern visibility at an Ohio River intermodal terminal.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">interstate_transition_corridor_visibility</span>Interstate transition-corridor visibility signal</h3>
+    <p class="muted">The signals layer records that Pennsylvania shows an interstate transition-corridor visibility signal through documented corridor presence for I-76, I-79, I-80, I-81, and I-95, with Erie and Pittsburgh-linked freight materials reinforcing west and central corridor continuity.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">pittsburgh_air_cargo_visibility</span>Pittsburgh air-cargo visibility signal</h3>
+    <p class="muted">The signals layer records that Pennsylvania shows a Pittsburgh air-cargo visibility signal through PIT's documented east-west distribution position, population reach, buying-power reach, and cargo-gateway framing.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">research_institution_adjacency</span>Research-institution adjacency signal</h3>
+    <p class="muted">The signals layer records that Pennsylvania shows a research-institution adjacency signal through documented Carnegie Mellon robotics and engineering activity and University of Pittsburgh research scale and continuity.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">pjm_transmission_participation</span>PJM transmission-participation signal</h3>
+    <p class="muted">The signals layer records that Pennsylvania shows a PJM transmission-participation signal through documented inclusion in PJM territory and visibility into regional transmission infrastructure maps.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">broadband_coordination_visibility</span>Broadband-coordination visibility signal</h3>
+    <p class="muted">The signals layer records that Pennsylvania shows a broadband-coordination visibility signal through documented BEAD funding, a completed 5-Year Action Plan, and approved proposal materials covering local coordination and community-anchor planning.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">corridor_linked_industrial_persistence</span>Corridor-linked industrial-persistence signal</h3>
+    <p class="muted">The signals layer records that Pennsylvania shows a corridor-linked industrial-persistence signal through documented Great Lakes port industry, Ohio River steel-handling continuity, and statewide manufacturing materials tied to metallurgy, robotics, technology, and energy.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 9 signal clusters (snake_case canonical keys preserved)</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Pennsylvania's digital asset regulatory posture is constructive without being permissive-first. The Department of Banking and Securities (DoBS) administers digital asset–related activity under Pennsylvania's money transmitter licensing framework, with virtual currency included within the operative licensing scope. The state does not maintain a specialized digital asset licensing regime comparable to California's DFAL, and compliance overhead for operators is structurally lower than Pacific or Northeast corridor environments.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Constructive / Moderate</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">DoBS (money transmitter framework)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Moderate overhead; no specialized regime</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Pennsylvania Money Transmitter Act (MTA), DoBS virtual currency licensing guidance, federal AML/BSA compliance baseline, personal-use exemption provisions within MTA scope.</div>
-      <div class="detail-item"><strong>Constructive signal:</strong> Pennsylvania's legislative surfaces have registered Bitcoin treasury consideration activity, and the state's energy infrastructure — anchored in Appalachian Basin natural gas — creates favorable structural conditions for mining operations relative to coastal corridors.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> custodians, exchange operators, and wallet providers deploying within Pennsylvania interact with money transmitter licensing requirements under DoBS oversight. The compliance surface is lower-friction than California's DFAL or New York's BitLicense framework.</div>
-    </div>
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md. The trust-dimensions layer records that absence of signals reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted">The trust-dimensions layer records 6 trust dimensions with a canonical 2-field pattern (current interpretation + "most visible in" basis list). Dimensions use snake_case canonical keys.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">corridor_interface_continuity</span>Corridor-interface continuity</h3>
+    <p class="trust-field-body">The trust-dimensions layer records that Pennsylvania shows corridor-interface continuity through the combination of Erie Great Lakes access, Pittsburgh inland-river logistics, and documented interstate corridor presence across western, central, and eastern freight structure.</p>
+    <div class="trust-field-label">Continuity is most visible in</div>
+    <ul class="trust-field-list">
+      <li>Erie Great Lakes and St. Lawrence Seaway linkage</li>
+      <li>Allegheny, Monongahela, and Ohio river logistics structure</li>
+      <li>interstate visibility across I-76, I-79, I-80, I-81, and I-95</li>
+    </ul>
+ 
+    <h3 class="subhead"><span class="canonical-key">multimodal_logistics_density</span>Multimodal logistics density</h3>
+    <p class="trust-field-body">The trust-dimensions layer records that Pennsylvania shows multimodal logistics density where documented through port, river, rail, highway, and air-cargo anchors.</p>
+    <div class="trust-field-label">Density is most visible in</div>
+    <ul class="trust-field-list">
+      <li>Port of Erie commercial port and terminal structure</li>
+      <li>Port of Pittsburgh inland-waterway and intermodal terminal structure</li>
+      <li>PIT cargo-gateway positioning</li>
+      <li>Class I rail visibility across CSX and Norfolk Southern documentation</li>
+    </ul>
+ 
+    <h3 class="subhead"><span class="canonical-key">research_adjacency_continuity</span>Research-adjacency continuity</h3>
+    <p class="trust-field-body">The trust-dimensions layer records that Pennsylvania shows research-adjacency continuity through documented Carnegie Mellon engineering and robotics activity and University of Pittsburgh research scale.</p>
+    <div class="trust-field-label">Continuity is most visible in</div>
+    <ul class="trust-field-list">
+      <li>Carnegie Mellon robotics and engineering research activity</li>
+      <li>University of Pittsburgh research expenditure and institutional scale</li>
+    </ul>
+ 
+    <h3 class="subhead"><span class="canonical-key">industrial_persistence</span>Industrial persistence</h3>
+    <p class="trust-field-body">The trust-dimensions layer records that Pennsylvania shows industrial persistence where documented through Great Lakes port operations, Ohio River steel-handling continuity, and manufacturing-sector visibility tied to metallurgy and advanced industry.</p>
+    <div class="trust-field-label">Persistence is most visible in</div>
+    <ul class="trust-field-list">
+      <li>Erie shipbuilding, dry-docking, and bulk-terminal activity</li>
+      <li>Monongahela and Ohio River industrial-freight continuity</li>
+      <li>statewide manufacturing materials linked to metal, robotics, technology, and energy sectors</li>
+    </ul>
+ 
+    <h3 class="subhead"><span class="canonical-key">transmission_coordination_visibility</span>Transmission-coordination visibility</h3>
+    <p class="trust-field-body">The trust-dimensions layer records that Pennsylvania shows transmission-coordination visibility through documented participation in PJM's regional electricity-coordination footprint and public transmission-map visibility.</p>
+    <div class="trust-field-label">Visibility is most apparent in</div>
+    <ul class="trust-field-list">
+      <li>Pennsylvania inclusion in PJM territory</li>
+      <li>public transmission-map coverage from 69 kV to 765 kV</li>
+    </ul>
+ 
+    <h3 class="subhead"><span class="canonical-key">broadband_program_coordination</span>Broadband-program coordination</h3>
+    <p class="trust-field-body">The trust-dimensions layer records that Pennsylvania shows broadband-program coordination visibility through approved BEAD planning materials, local-coordination references, and community-anchor planning structure.</p>
+    <div class="trust-field-label">Visibility is most apparent in</div>
+    <ul class="trust-field-list">
+      <li>PBDA's 5-Year Action Plan</li>
+      <li>approved BEAD proposal volumes</li>
+      <li>documented local coordination and community-anchor planning treatment</li>
+    </ul>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — 6 dimensions (2-field canonical pattern: current + "most visible in" basis)</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Pennsylvania operates without a comprehensive consumer privacy statute as of early 2026. The jurisdiction's operative privacy framework is composed of federal compliance baselines, the Pennsylvania Breach of Personal Information Notification Act, and sector-specific obligations. No independent state enforcement agency equivalent to California's CPPA has been established, and no CCPA-style data subject rights framework has been enacted through the current legislative cycle.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Limited / Federal Floor</div></div>
-      <div class="mini-box"><div class="label">Core regime</div><div class="value">Federal baseline + breach notification</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Low enforcement drag; monitor legislation</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Pennsylvania Breach of Personal Information Notification Act (73 P.S. § 2301 et seq.), federal sector frameworks (HIPAA, GLBA, FERPA where applicable), FTCA unfair practices baseline.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> Pennsylvania Attorney General has enforcement authority for breach notification violations; no dedicated privacy agency; consumer complaint-driven posture rather than proactive audit-driven enforcement.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> operators handling Pennsylvania resident data face substantially lower compliance architecture requirements than California-resident data handlers. Comprehensive privacy legislation has been considered in the General Assembly but has not progressed to enactment as of the current cycle.</div>
-    </div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md.</p>
+    <p class="muted">The profile layer records 5 profile subsections with snake_case canonical keys.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">corridor_interface_structure</span>Corridor-interface structure</h3>
+    <p class="muted">The profile layer records that Pennsylvania currently presents as a corridor-interface jurisdiction where Great Lakes continuity, inland-river logistics, and Mid-Atlantic transition structure intersect inside the documented record.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">multimodal_logistics_structure</span>Multimodal logistics structure</h3>
+    <p class="muted">The profile layer records that Pennsylvania currently presents with documented multimodal logistics structure across Erie port continuity, Pittsburgh inland-waterway and intermodal activity, Class I rail visibility, interstate corridor presence, and PIT cargo positioning.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">research_adjacency_structure</span>Research-adjacency structure</h3>
+    <p class="muted">The profile layer records that Pennsylvania currently presents with strong research adjacency in the documented record through Carnegie Mellon engineering and robotics activity and University of Pittsburgh research scale.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">transmission_and_broadband_coordination</span>Transmission and broadband coordination</h3>
+    <p class="muted">The profile layer records that Pennsylvania currently presents with visible regional transmission and broadband-program coordination through PJM participation and PBDA BEAD planning activity.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">corridor_linked_industrial_structure</span>Corridor-linked industrial structure</h3>
+    <p class="muted">The profile layer records that Pennsylvania currently presents with corridor-linked industrial structure through Erie commercial port industry, Monongahela and Ohio River freight-industrial continuity, and manufacturing materials tied to metallurgy and advanced industry.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — 5 profile subsections (snake_case canonical keys preserved)</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Pennsylvania does not maintain a statewide biometric privacy statute as of early 2026. No equivalent to Illinois' Biometric Information Privacy Act (BIPA) has been enacted at the state level, and the biometric regulatory surface within this corridor is conditioned primarily by federal frameworks and sector-specific requirements. The structural posture toward biometric deployment is lower-friction than Pacific Corridor or Illinois corridor environments.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Low Regulatory Friction</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Federal baseline operative</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">No statewide consent mandate; monitor cycle</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> federal biometric guidance (FTC, sector-specific); Pennsylvania breach notification law (biometric data included in SPI definition); no BIPA-equivalent state statute enacted.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> federal enforcement surfaces (FTC unfair practices authority) apply; breach exposure under existing notification law; legislative interest in biometric privacy frameworks has been registered at the General Assembly level but has not advanced to enactment.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> biometric-enabled systems deploying within Pennsylvania encounter a lower statutory compliance surface than Illinois or Pacific Corridor environments. Monitoring of General Assembly activity through the 2026–2027 session is warranted for teams with material biometric deployment exposure.</div>
-    </div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers.</p>
+    <p class="muted">The builder-mode layer records 6 builder interpretation subsections with snake_case canonical keys, including an explicit topology_interpretation_boundary subsection.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">corridor_interpretation</span>Corridor interpretation</h3>
+    <p class="muted">The builder-mode layer records that Pennsylvania should be interpreted as a transition environment where Great Lakes continuity, inland-river freight structure, and Mid-Atlantic corridor passage meet in the documented record.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">logistics_interpretation</span>Logistics interpretation</h3>
+    <p class="muted">The builder-mode layer records that Pennsylvania should be interpreted as a multimodal freight environment with visible port, river, rail, highway, and air-cargo anchors, without expanding into a full statewide infrastructure inventory.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">research_interpretation</span>Research interpretation</h3>
+    <p class="muted">The builder-mode layer records that Pennsylvania should be interpreted as having strong research adjacency through Carnegie Mellon engineering and robotics visibility and University of Pittsburgh research scale.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">transmission_and_broadband_interpretation</span>Transmission and broadband interpretation</h3>
+    <p class="muted">The builder-mode layer records that Pennsylvania should be interpreted as having visible regional transmission and broadband-program coordination through PJM participation and PBDA BEAD planning activity.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">industrial_interpretation</span>Industrial interpretation</h3>
+    <p class="muted">The builder-mode layer records that Pennsylvania should be interpreted as retaining corridor-linked industrial persistence through Erie commercial-port activity, Pittsburgh river-industrial continuity, and manufacturing-sector visibility tied to metallurgy and advanced industry.</p>
+ 
+    <h3 class="subhead"><span class="canonical-key">topology_interpretation_boundary</span>Topology interpretation boundary</h3>
+    <p class="muted">The builder-mode layer records that Pennsylvania's jurisdiction lens should inform evidence interpretation, but atlas-controlled corridor group, foundation layer, and topology completion layer remain those recorded in atlas-export/docs/atlas.md unless that canonical source changes first.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — 6 builder interpretation subsections (snake_case canonical keys preserved)</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Pennsylvania is integrating AI governance guidance into state agency operations through the Office of Administration without deploying a centralized sandbox program or dedicated AI procurement attestation framework comparable to California's CDT model. The public-sector AI surface is developing under a cautious-guidance posture, with state agencies expected to align with federal AI standards rather than state-specific mandates as the primary operative compliance pathway.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Guidance-first</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Lower B2G friction; federal-alignment posture</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Pennsylvania Office of Administration IT policy guidance, federal NIST AI RMF alignment framework, state agency procurement coordination surfaces, General Assembly AI oversight consideration activity.</div>
-      <div class="detail-item"><strong>Growth signal:</strong> public-sector AI deployment is advancing across state operations, but without the attestation-layer requirements or centralized sandbox infrastructure that characterize California's CDT model or Virginia's federal-adjacent procurement surfaces.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams operating within education or government deployment surfaces in Pennsylvania encounter lower mandatory attestation requirements than Pacific or Mid-Atlantic Federal corridors. Federal alignment frameworks remain the primary compliance anchor for B2G operators within this corridor.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, builder-mode, and change-log layers. Multiple layers record a distinct canonical exclusion: local reassignment of atlas-controlled Pennsylvania topology metadata.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the evidence collected there, this file does not support characterizing Pennsylvania as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a Great Lakes Industrial Core topology reassignment case inside atlas-controlled metadata</li>
+      <li>a routing-authority jurisdiction</li>
+      <li>a coordination-tier jurisdiction</li>
+      <li>a deployment-readiness jurisdiction</li>
+      <li>a surface-assigned jurisdiction</li>
+      <li>a jurisdiction-ranking case</li>
+      <li>an AI compute corridor</li>
+      <li>a hyperscale anchor corridor</li>
+      <li>a federal governance corridor</li>
+      <li>a federal hosting corridor</li>
+      <li>a national routing spine designation</li>
+      <li>a primary Internet-exchange concentration environment</li>
+      <li>a digital-asset statutory jurisdiction</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that the current evidence set does not support signal treatment for: Atlas surface assignment, routing-role assignment, coordination-tier classification, deployment-readiness classification, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal-governance-corridor designation, federal-hosting-corridor designation, national routing-spine designation, primary IX concentration classification, atlas-controlled topology reassignment, or digital-asset statutory-jurisdiction designation.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that the current evidence and signal set does not support trust-dimension treatment for: Atlas surface assignment, routing-role assignment, coordination-tier classification, deployment-readiness classification, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal-governance-corridor designation, federal-hosting-corridor designation, national routing-spine designation, primary IX concentration classification, atlas-controlled topology reassignment, or digital-asset statutory-jurisdiction designation.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that the current evidence and signal set does not support profile characterization as: an Atlas surface assignment, a routing-role classification, a coordination-tier classification, a deployment-readiness classification, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine, a primary IX concentration environment, an atlas-controlled topology reassignment case, or a digital-asset statutory jurisdiction.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that the current Pennsylvania record does not support builder-mode interpretation as: an Atlas surface assignment, a routing-role assignment, a coordination-tier assignment, a deployment-readiness assignment, a jurisdiction-ranking case, an AI compute corridor, a hyperscale anchor corridor, a federal governance corridor, a federal hosting corridor, a national routing spine, a primary IX concentration environment, a local override of atlas-controlled topology metadata, or a digital-asset statutory jurisdiction.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted">The change-log records that this package population does not authorize: Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal governance or hosting-corridor designation, national routing-spine designation, primary IX concentration designation, or local reassignment of atlas-controlled Pennsylvania topology metadata.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Pennsylvania operates within a corridor-stable developer environment shaped more by freight infrastructure and energy-linked industrial surfaces than by policy formation activity. Builders operating within the Pennsylvania corridor interact with Appalachian infrastructure alignment surfaces, east–west freight continuity layers, rail-dense logistics coordination environments, and energy-linked routing pathways connecting Midwestern, Mid-Atlantic, and northeastern deployment systems. The corridor does not impose the same compliance architecture requirements as Pacific or Northeast Financial-Regulatory environments.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Corridor-Stable</div></div>
-      <div class="mini-box"><div class="label">Compliance drag</div><div class="value">Lower than coastal corridors</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Infrastructure-first; moderate friction</div></div>
+  <!-- ── 9. SCOPE BOUNDARIES ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Scope Boundaries &amp; Canonical Narrowing</h2>
+    <p class="muted">The canonical Pennsylvania package does not record an "Evidence gaps" section. Instead, the change-log records the canonical scope-constraints applied during evidence-first package population, explicitly enumerating what was excluded from the package.</p>
+ 
+    <h3 class="subhead">Scope constraints applied during population</h3>
+    <div class="scope-block">
+      <div class="scope-label">The change-log records the following scope constraints applied during evidence-first package population:</div>
+      <ul>
+        <li>corridor-layer anchors only</li>
+        <li>no open-ended statewide infrastructure survey</li>
+        <li>no hyperscale or compute-corridor inference</li>
+        <li>no routing-authority, coordination-tier, readiness, ranking, or surface assignment inference</li>
+        <li>no federal governance corridor designation</li>
+        <li>no local override of atlas-controlled topology metadata</li>
+      </ul>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Pennsylvania open data infrastructure surfaces, state IT policy coordination through Office of Administration, federal procurement adjacency through defense-linked corridor interfaces in the southeastern corridor segment.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> the Pennsylvania corridor does not function as a policy formation surface for developer compliance obligations. Teams deploying here operate under a moderate-governance posture with fewer state-specific compliance architecture requirements than coastal or federal-adjacent corridors.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> well-suited for teams deploying across logistics-adjacent, energy-aligned, and infrastructure-linked surfaces. Teams requiring proximity to federal procurement coordination surfaces should evaluate the corridor's southeastern segment interfaces with Virginia's Mid-Atlantic Federal Coordination Corridor.</div>
-    </div>
+ 
+    <p class="muted" style="margin-top:12px">The change-log records the current status: evidence layer populated to corridor sufficiency, downstream layers derived strictly from the corridor-limited evidence set, jurisdiction lens attached in metadata.md, surface assignment remains none.</p>
+    <div class="src">Source: change-log.md — 2026-04-15 evidence-first package population (Scope constraints applied)</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Pennsylvania is structurally favorable for energy-intensive operations relative to coastal corridor states. Bitcoin mining is legal with no state-level prohibition or targeted restriction. The Appalachian Basin natural gas production infrastructure — centered on the Marcellus Shale formation — conditions an energy cost environment that is substantially lower than Pacific or Northeast Financial-Regulatory Corridor electricity rates. The PJM Interconnection grid coordination surface provides reliable transmission infrastructure across the corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Structurally Favorable</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Moderate (Marcellus Shale-influenced)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Viable for mining and compute deployment</div></div>
-    </div>
-    <div class="radar" aria-label="Pennsylvania energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:22%;background:var(--green)"></div></div><div class="score">22</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:35%;background:var(--yellow)"></div></div><div class="score">35</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:68%;background:var(--teal)"></div></div><div class="score">68</div></div>
-    </div>
-    <div class="note">Builder implication: Pennsylvania functions as a viable corridor for mining and compute deployment operations. Appalachian Basin energy infrastructure, PJM grid coordination, and the absence of targeted mining restrictions position this corridor as a structurally stable surface for energy-linked operations relative to coastal and Pacific corridor alternatives.</div>
+  <!-- ── 10. CHANGE-LOG NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, and Topology Completion Layer. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">2026-04-15 evidence-first package population</h3>
+    <p class="muted">The change-log records that the Pennsylvania state package was populated in topology-normalized order: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md. The change-log records that scope constraints were applied during population (rendered in Section 9 above). The change-log records the current status: evidence layer populated to corridor sufficiency, downstream layers derived strictly from the corridor-limited evidence set, jurisdiction lens attached in metadata.md, and surface assignment remains none.</p>
+ 
+    <h3 class="subhead">Structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, AI compute-corridor designation, hyperscale-corridor designation, federal governance or hosting-corridor designation, national routing-spine designation, primary IX concentration designation, or local reassignment of atlas-controlled Pennsylvania topology metadata.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Pennsylvania's regulatory vector across most policy layers is stable to incrementally developing. The corridor is not absorbing the same pace of governance escalation as Pacific or Northeast Financial-Regulatory environments. Operators interacting across the Pennsylvania corridor should model for stable operating conditions with targeted legislative monitoring rather than near-term compliance escalation through 2027. Pennsylvania's position as an eastern freight and infrastructure continuity corridor links Appalachian energy surfaces with Midwestern inland logistics and northeastern regulatory deployment pathways.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — stable at the federal-floor posture; state legislative activity is nascent and has not produced enforcement-grade obligations. The 2026–2027 General Assembly session may introduce consideration-stage AI legislation.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — stable under DoBS money transmitter framework; no movement toward a California-style DFAL or New York BitLicense regime. Federal standards alignment surface remains dominant.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — monitoring phase; comprehensive privacy legislation has been registered in the General Assembly but has not advanced. The breach notification framework remains the operative enforcement surface.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — low current trajectory; no statewide BIPA-equivalent is active. Legislative interest at the consideration level may condition the 2027 session, but near-term enforcement risk is low.</div>
-      <div class="detail-item"><strong>Mining Risk</strong> — stable and structurally favorable. No targeted mining restrictions are operative or advancing. Appalachian Basin energy and PJM grid access maintain favorable structural conditions.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — corridor-stable. Pennsylvania does not function as a policy formation surface, and compliance drag is structurally lower than Pacific or Northeast corridor environments through the current cycle.</div>
-    </div>
-    <div class="callout">
-      <strong>Strategic corridor positioning:</strong> Pennsylvania anchors the Appalachian infrastructure layer between the New York Northeast Financial-Regulatory Corridor (northeastern interface), the Virginia Mid-Atlantic Federal Coordination Corridor (southeastern interface), the Ohio River &amp; Great Lakes Multimodal Infrastructure Corridor (western interface), and the Great Lakes–Mississippi Logistics Convergence Corridor (northwest interface through Erie). The Pennsylvania Turnpike east–west spine and dense freight rail network mediate inland logistics continuity between Midwestern and Mid-Atlantic/northeastern deployment environments. Appalachian Basin energy routing interfaces connect upstream energy production surfaces with downstream northeastern grid infrastructure.<br><br>
-      <strong>12-month outlook:</strong> Pennsylvania is positioned to maintain corridor-stable operating conditions through 2027. State-level privacy and AI legislation may reach active consideration phases but is unlikely to produce enforcement-grade obligations within the current cycle. Digital asset licensing alignment with federal frameworks and energy infrastructure stability through PJM and Marcellus Shale production surfaces are expected to remain intact.
-    </div>
-  </section>
+</div><!-- /main col -->
  
-</div>
- 
-<!-- ── SIDEBAR ─────────────────────────────── -->
+<!-- ── SIDEBAR ── -->
 <aside>
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">Pennsylvania at a glance</h3>
-    <p class="muted mini">An Appalachian Infrastructure &amp; Eastern Freight Continuity Corridor anchoring east–west logistics alignment, Appalachian Basin energy routing, and mountain-crossing transport continuity between Midwestern, Mid-Atlantic, and northeastern deployment environments. Operates at lower governance friction than coastal corridor states across most active policy layers.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Pennsylvania jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/pennsylvania/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> freight-adjacent infrastructure deployment, Appalachian Basin energy-linked compute operations, Bitcoin mining within a moderate-compliance environment, logistics coordination surfaces, and B2G operators not requiring federal procurement adjacency.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> teams requiring proximity to AI policy formation surfaces, high-enforcement privacy compliance benchmarking, or federal-adjacent procurement coordination environments requiring deep defense and intelligence sector integration.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>Operative 2024–2025</strong> — DoBS virtual currency licensing guidance operative under Pennsylvania Money Transmitter Act; federal AML/BSA baseline remains primary compliance anchor for digital asset operators.</li>
-      <li><strong>2026</strong> — No new state-level AI enforcement obligations effective; Office of Administration AI use guidance operative for state agencies; federal NIST AI RMF alignment surface dominant for private-sector operators.</li>
-      <li><strong>2026–2027 session</strong> — Pennsylvania General Assembly AI governance and privacy legislation monitoring cycle; no enactment-grade activity anticipated within the current cycle but consideration-stage activity is emerging.</li>
-      <li><strong>Ongoing</strong> — PJM Interconnection grid coordination and Marcellus Shale energy infrastructure remain structurally stable; no targeted mining restriction activity advancing at the state level.</li>
+      <li><strong>Jurisdiction:</strong> Pennsylvania</li>
+      <li><strong>Code:</strong> PA · US-PA</li>
+      <li><strong>Lens:</strong> Great Lakes industrial + inland river logistics + Mid-Atlantic transition corridor</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> corridor-layer sufficient</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li><strong>Corridor Group:</strong> Northeast Institutional Mesh Corridor</li>
+      <li><strong>Foundation Layer:</strong> Northeast Institutional Mesh Layer</li>
+      <li><strong>Completion Layer:</strong> Mid-Atlantic Completion Layer</li>
+      <li><strong>Jurisdiction Lens:</strong> Great Lakes industrial + inland river logistics + Mid-Atlantic transition corridor</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that the Jurisdiction Lens does not override atlas-controlled topology placement.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-topology-boundary">
+    <div class="smallcaps">Topology Interpretation Boundary</div>
+    <h3 id="heading-sidebar-topology-boundary">Lens is interpretive only</h3>
+    <p class="muted mini">The canonical package repeatedly records that Pennsylvania's jurisdiction lens is interpretive and does not reassign atlas-controlled topology. The Great Lakes and inland-river references inform evidence interpretation, but Pennsylvania's canonical topology placement remains Northeast Institutional Mesh Corridor.</p>
+    <p class="muted mini">Local override of atlas-controlled topology metadata is recorded as excluded across evidence, builder-mode, and change-log layers.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Evidence anchors</div>
+    <h3 id="heading-sidebar-coverage">Documented in corridor-layer scope</h3>
+    <ul class="mini muted">
+      <li>Port of Erie (only PA commercial lake port)</li>
+      <li>St. Lawrence Seaway linkage</li>
+      <li>Port of Pittsburgh (Allegheny + Monongahela + Ohio)</li>
+      <li>Pittsburgh Intermodal Terminals (Ambridge)</li>
+      <li>PA PUC (65 railroads, 5,600 mi track)</li>
+      <li>CSX + Norfolk Southern</li>
+      <li>PennDOT 2045 Freight Movement Plan</li>
+      <li>I-76, I-79, I-80, I-81, I-90, I-95</li>
+      <li>PIT Cargo (500 mi / 50% US pop / 54% buying power)</li>
+      <li>Carnegie Mellon Robotics</li>
+      <li>University of Pittsburgh ($1B research / $2.4B economic impact)</li>
+      <li>PJM (69 kV – 765 kV)</li>
+      <li>PBDA ($1.16B BEAD, October 2023)</li>
+      <li>Manufacturing (1 in 10 residents, $111B)</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-standardization">
-    <div class="smallcaps">Canonical Pattern</div>
-    <h3 id="heading-standardization">For all 50 states</h3>
-    <p class="muted mini">Reuse this exact order for every state page: hero → operational profile → Atlas alignment → 8 layered sections → sidebar snapshot. That will make the Jurisdiction Intelligence Engine feel coherent and truly Atlas-connected.</p>
+  <div class="card" aria-labelledby="heading-sidebar-scope">
+    <div class="smallcaps">Canonical scope</div>
+    <h3 id="heading-sidebar-scope">Corridor-layer sufficient</h3>
+    <p class="muted mini">The change-log records that the Pennsylvania package is explicitly scope-narrowed to corridor-layer anchors. All downstream layer completeness statuses are canonically recorded as "corridor-layer sufficient" rather than "preliminary".</p>
+    <p class="muted mini">This is a distinct canonical neutrality category: the package is not incomplete — it is canonically declared complete at corridor scope, with broader scope deliberately excluded.</p>
   </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: corridor-layer sufficient</li>
+      <li>Signal layer: corridor-layer sufficient</li>
+      <li>Trust dimensions: corridor-layer sufficient</li>
+      <li>Profile: corridor-layer sufficient</li>
+      <li>Builder-mode: corridor-layer sufficient</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale or AI compute corridor designation.</li>
+      <li>Not a local reassignment of atlas-controlled topology metadata.</li>
+      <li>Not a digital-asset statutory jurisdiction designation.</li>
+    </ul>
+  </div>
+ 
 </aside>
- 
-</div>
+</div><!-- /grid-sidebar -->
  
 </main>
  
