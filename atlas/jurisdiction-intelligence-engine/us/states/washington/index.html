@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -8,7 +7,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
 <title>Washington — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
-<meta name="description" content="Washington operational profile for the Atlas Jurisdiction Intelligence Engine within the Satoshium U.S. Layer.">
+<meta name="description" content="Structured rendering of the canonical Washington Atlas jurisdiction package.">
 <link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/washington/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -116,6 +115,7 @@ ul{margin:8px 0 0 18px}
 .pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
 .pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
 .pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
 .section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
@@ -129,15 +129,41 @@ ul{margin:8px 0 0 18px}
  padding:14px 16px;border-radius:14px;border:1px solid var(--line);
  background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
 }
-.radar{display:grid;gap:10px;margin-top:12px}
-.radar-row{display:grid;grid-template-columns:140px 1fr 42px;gap:10px;align-items:center}
-.radar-label{font-size:12px;color:var(--muted)}
-.track{height:8px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
-.fill{height:100%;border-radius:999px}
-.score{font-size:12px;text-align:right;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.absence-callout{
+ padding:16px 18px;border-radius:14px;border:1px dashed rgba(214,163,74,.28);
+ background:rgba(154,167,189,.04);margin-top:8px;
+}
+.absence-callout .absence-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.absence-callout p{margin:0 0 6px;color:var(--muted);font-size:13px}
+.absence-callout p:last-child{margin-bottom:0}
 .footer-block{padding-bottom:34px}
 hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 .smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.constraint-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:10px 0 4px}
+.constraint-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.evidence-bullets{margin:6px 0 8px 18px;padding:0;font-size:13px;color:var(--muted)}
+.trust-field-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold2);font-weight:700;margin:10px 0 3px}
+.trust-field-body{font-size:13px;color:var(--muted);margin:0}
+.trust-field-list{margin:0 0 0 18px;padding:0;font-size:13px;color:var(--muted)}
+.canonical-key{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:var(--gold2);letter-spacing:.04em;text-transform:none;font-weight:500;margin-bottom:2px;opacity:.85}
+.sources-block{margin-top:10px;padding:10px 12px;border:1px dashed rgba(214,163,74,.22);border-radius:10px;background:rgba(255,255,255,.015)}
+.sources-block .sources-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.sources-block ul{margin:0 0 0 16px;padding:0;font-size:12px}
+.sources-block li{margin-bottom:3px;color:var(--muted);line-height:1.5}
+.sources-block a{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px}
+.sources-block code{word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;color:var(--gold2)}
+.scope-block{margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.04)}
+.scope-block .scope-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.scope-block ul{margin:4px 0 0 18px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block li{margin-bottom:2px;line-height:1.5}
+.scope-block ol{margin:4px 0 0 22px;padding:0;font-size:12px;color:var(--muted)}
+.scope-block ol li{margin-bottom:2px;line-height:1.5}
 @media (max-width:980px){
  .grid-sidebar{grid-template-columns:1fr}
  .band{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +174,7 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  .band{grid-template-columns:1fr}
  h1{font-size:32px}
  body{padding-top:74px}
- .radar-row{grid-template-columns:1fr}
+ .field-row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:reduce){
  html,body{scroll-behavior:auto}
@@ -164,40 +190,32 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
  
 <main id="main-content" class="wrap content">
  
-<!-- ── HERO ─────────────────────────────────── -->
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
 <section class="hero" aria-labelledby="heading-hero">
   <div class="hero-inner">
-    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Profile</div>
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · U.S. State Record</div>
     <h1 id="heading-hero">Washington</h1>
-    <p class="kicker">Washington operates as a Pacific Northwest Maritime, Aerospace &amp; Cascadia Continuity Corridor supporting Puget Sound freight continuity, maritime and rail alignment through the Seattle–Tacoma gateway system, and north–south deployment coordination along the I-5 spine across the Pacific Northwest infrastructure continuity layer of the United States.</p>
+    <p class="kicker">This page renders the canonical Washington Atlas jurisdiction package. The canonical package positions Washington within the Pacific Northwest Coordination Corridor under the canonical jurisdiction lens "Pacific northwest coordination continuity within pacific northwest completion" — a topology-constrained reading derived exclusively from the three atlas-controlled topology fields. Washington is a canonical member of the Pacific Northwest Coordination Corridor cluster alongside Oregon, and its canonical Foundation Layer and Topology Completion Layer are distinct. Washington is an adjacency-bounded corridor-layer sufficient state — its evidence layer is retained from corridor continuity between adjacent Atlas states and from Oregon's already-retained canonical evidence, rather than from independent state-sourced research. All completeness statuses are recorded as corridor-layer sufficient.</p>
  
     <div class="hero-meta">
-      <div class="hero-chip">WA · US-WA</div>
-      <div class="hero-chip">Olympia</div>
-      <div class="hero-chip">Pacific Northwest Maritime, Aerospace &amp; Cascadia Continuity Corridor</div>
-      <div class="hero-chip">Atlas operational profile</div>
-      <div class="hero-chip">Updated Apr 2026</div>
-    </div>
- 
-    <div class="band" aria-label="Washington quick signals">
-      <div class="metric"><div class="label">AI Policy</div><div class="value">Emerging Regulatory</div></div>
-      <div class="metric"><div class="label">Bitcoin / Digital Assets</div><div class="value">Compliance-Required</div></div>
-      <div class="metric"><div class="label">Privacy / Data</div><div class="value">Health-Focused / Selective</div></div>
-      <div class="metric"><div class="label">Biometrics</div><div class="value">Active Concern Zone</div></div>
-      <div class="metric"><div class="label">Operational Signal</div><div class="value">Moderate-Governance / Corridor-Active</div></div>
+      <div class="hero-chip">Jurisdiction: Washington (WA · US-WA)</div>
+      <div class="hero-chip">Jurisdiction lens: Pacific northwest coordination continuity within pacific northwest completion</div>
+      <div class="hero-chip">Completeness: corridor-layer sufficient</div>
+      <div class="hero-chip">Surface assignment: none</div>
+      <div class="hero-chip">Adjacency-bounded package</div>
     </div>
  
     <nav class="section-nav" aria-label="Jump to sections">
-      <a href="#operational-profile">Operational Profile</a>
-      <a href="#atlas-alignment">Atlas Alignment</a>
-      <a href="#ai-policy">AI Policy</a>
-      <a href="#bitcoin-policy">Bitcoin / Digital Assets</a>
-      <a href="#privacy-data">Privacy / Data</a>
-      <a href="#biometrics-identity">Biometrics / Identity</a>
-      <a href="#public-sector-ai">Public Sector AI</a>
-      <a href="#developer-climate">Developer Climate</a>
-      <a href="#energy-mining">Energy / Mining</a>
-      <a href="#direction-of-travel">Direction of Travel</a>
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
     </nav>
   </div>
 </section>
@@ -206,210 +224,592 @@ hr{border:none;border-top:1px solid var(--line);margin:20px 0}
 <div class="grid-sidebar">
 <div>
  
-  <!-- ── OPERATIONAL PROFILE ── -->
-  <section class="card anchor-target" id="operational-profile" aria-labelledby="heading-operational">
-    <h2 id="heading-operational">Operational Profile</h2>
-    <p class="muted">Washington operates as the Pacific Northwest Maritime, Aerospace &amp; Cascadia Continuity Corridor within the US deployment trust surface. The corridor is shaped by Puget Sound maritime logistics continuity surfaces, Seattle–Tacoma gateway rail and port alignment environments, the I-5 north–south West Coast deployment spine, and Cascadia cross-border continuity interfaces with British Columbia. Washington's freight system integrates maritime ports, Class I railroads, interstate corridors, and cross-border gateways that connect Pacific trade flows to inland North American deployment systems. Teams interacting across this corridor engage a moderate-governance policy posture structured around targeted statutory instruments rather than comprehensive regulatory architecture, with elevated compliance surfaces concentrated in health data and consumer AI disclosure contexts.</p>
-    <div class="status-grid">
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--orange)"></span><strong>AI Policy</strong></div><span class="pill orange">Emerging · Regulatory</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Bitcoin / Digital Assets</strong></div><span class="pill yellow">Compliance-Required</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--yellow)"></span><strong>Privacy / Data</strong></div><span class="pill yellow">Health-Focused / Selective</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--orange)"></span><strong>Biometrics</strong></div><span class="pill orange">Active Concern Zone</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--teal)"></span><strong>Public Sector AI</strong></div><span class="pill teal">Developing</span></div>
-      <div class="status-item"><div class="status-left"><span class="dot" style="background:var(--gold)"></span><strong>Signal</strong></div><span class="pill gold">Moderate-Governance / Corridor-Active</span></div>
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">Pacific Northwest Coordination Corridor</div>
     </div>
-    <div class="note"><strong>Builder summary:</strong> Washington operates as a corridor environment shaped by Pacific gateway continuity surfaces, targeted statutory compliance layers, and cross-border deployment interfaces. Teams deploying inside health data, consumer AI disclosure, and digital asset surfaces should model for targeted compliance requirements. Operations requiring low-cost compute and energy access interact with a structurally favorable hydroelectric power base.</div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Pacific Northwest Coordination Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Completion Layer</div>
+      <div class="field-value">Pacific Northwest Completion Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Lens</div>
+      <div class="field-value">Pacific northwest coordination continuity within pacific northwest completion</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that the Corridor Group, Foundation Layer, and Topology Completion Layer are derived from atlas-export/docs/atlas.md. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived from those atlas-controlled fields only and does not override atlas-controlled topology.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, coordination tiers, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence sufficiency boundaries, infer deployment suitability, or locally reclassify atlas-controlled corridor metadata.</p>
+    <p class="muted"><strong>Canonical Pacific Northwest coordination topology.</strong> The canonical atlas.md places Washington in the Pacific Northwest Coordination Corridor, with a Pacific Northwest Coordination Layer foundation and a Pacific Northwest Completion Layer completion. Washington's canonical Foundation Layer and Completion Layer are distinct — both are shared canonically only with Oregon in the two-state Pacific Northwest Coordination Corridor cluster. The canonical Jurisdiction Lens uses "within" to reflect that Washington's Pacific Northwest coordination Foundation resolves into the broader Pacific Northwest Completion Layer.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · atlas_converted.md (Corridor Group, Foundation Layer, Topology Completion Layer)</div>
   </section>
  
-  <!-- ── ATLAS ALIGNMENT ── -->
-  <section class="card anchor-target" id="atlas-alignment" aria-labelledby="heading-atlas">
-    <h2 id="heading-atlas">Atlas Alignment</h2>
-    <p class="muted">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package. The presentation layer is designed to stay visibly connected to the Atlas package behind it, maintaining structural symmetry across all 50 state pages.</p>
-    <ul class="atlas-list">
-      <li><strong>Canonical package path</strong><br><code>atlas-export/jurisdictions/us/states/washington/</code></li>
-      <li><strong>Jurisdiction lens</strong><br>Pacific Northwest Maritime, Aerospace &amp; Cascadia Continuity Corridor lens with evidence-first normalization and no statewide inventory framing.</li>
-      <li><strong>Evidence basis</strong><br>This page summarizes the state package rather than replacing it. The package remains the canonical source for structure, signals, and change tracking.</li>
-      <li><strong>Recommended backing files</strong><br><code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code></li>
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only corridor-relevant structural anchors retained for Washington from adjacent-state continuity already visible inside Atlas. The evidence layer records that it does not perform an open-ended statewide infrastructure survey and does not assign trust posture, routing role, coordination tier, readiness, or Atlas surfaces.</p>
+    <p class="muted">This rendering mirrors the canonical package. The canonical Washington package is an <em>adjacency-bounded</em> corridor-layer sufficient package: its evidence is retained from corridor continuity with Oregon's already-retained canonical evidence, plus adjacent-state metadata references (California, Idaho) and atlas.md topology references, rather than from independent state-sourced research. All completeness statuses across evidence, signals, trust, profile, and builder-mode are canonically recorded as "corridor-layer sufficient".</p>
+    <div class="callout mini" style="margin-top:12px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — Scope; change-log.md — Scope constraints applied during population</div>
+  </section>
+ 
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer records 5 evidence subsections documenting Washington's corridor-relevant structural anchors retained from adjacent-state continuity. Canonical sources are atlas-export internal topology references, Oregon's evidence.md (which already canonically establishes Pacific Northwest continuity, coastal continuity, inland transition continuity, and west-coast adjacency readings at the corridor layer), and adjacent-state metadata files.</p>
+ 
+    <h3 class="subhead">Pacific Northwest coordination continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that <code>atlas-export/docs/atlas.md</code> places Washington in the <code>Pacific Northwest Coordination Corridor</code>, with a <code>Pacific Northwest Coordination Layer</code> foundation and a <code>Pacific Northwest Completion Layer</code> completion.</li>
+      <li>The evidence layer records that Oregon is retained in Atlas in the same <code>Pacific Northwest Coordination Corridor</code>, with the same <code>Pacific Northwest Coordination Layer</code> foundation and <code>Pacific Northwest Completion Layer</code> completion.</li>
+      <li>The evidence layer records that Oregon's retained evidence already preserves Pacific Northwest coordination continuity within the shared Washington–Oregon corridor frame.</li>
+      <li>The evidence layer records that the retained Atlas topology therefore supports reading Washington as a Pacific Northwest coordination continuity environment within that shared corridor frame.</li>
     </ul>
-    <div class="callout mini">This profile reflects evidence-first normalization aligned with the canonical Atlas jurisdiction package located at: atlas-export/jurisdictions/us/states/washington/</div>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/oregon/evidence.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/oregon/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Oregon-facing north-south coastal corridor continuity across the Washington–Oregon–California frame</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Oregon's retained evidence preserves north-south coastal corridor continuity across the Washington–Oregon–California frame.</li>
+      <li>The evidence layer records that California's retained Atlas placement preserves a south-facing <code>Pacific Coastal Hyperscale Corridor</code> frame with <code>Pacific Edge Anchor Layer</code> completion.</li>
+      <li>The evidence layer records that Washington shares the north end of the <code>Pacific Northwest Coordination Corridor</code> structure with Oregon.</li>
+      <li>The evidence layer records that the retained adjacent-state structure therefore supports reading Washington as the northern coastal end of a Washington–Oregon–California continuity frame without locally reclassifying atlas-controlled topology.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/oregon/evidence.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/california/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Idaho-facing inland transition continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Oregon's retained evidence preserves Idaho-facing inland transition continuity between Pacific Northwest coordination structure and Idaho's northern-mountain transition structure.</li>
+      <li>The evidence layer records that Idaho is retained in Atlas in the <code>Northern Mountain Transition Corridor</code>, with a <code>Mountain Transition Layer</code> foundation and a <code>Northern Interior Completion Layer</code> completion.</li>
+      <li>The evidence layer records that Washington shares the <code>Pacific Northwest Coordination Corridor</code> structure with Oregon.</li>
+      <li>The evidence layer records that the retained Atlas structure therefore supports reading Washington as an Idaho-facing inland transition continuity environment across the shared Pacific Northwest frame toward Idaho's interior transition structure.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/oregon/evidence.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/idaho/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">West-coast coordination adjacency continuity</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Oregon's retained evidence preserves west-coast coordination adjacency continuity between Washington's Pacific Northwest coordination frame and California's Pacific coastal edge-anchor frame.</li>
+      <li>The evidence layer records that Washington is retained in the <code>Pacific Northwest Coordination Corridor</code> at the northern side of that adjacent west-coast structure.</li>
+      <li>The evidence layer records that the retained Atlas topology therefore supports a west-coast coordination adjacency continuity reading for Washington at the corridor layer.</li>
+      <li>The evidence layer records that under the current corridor-scope restriction, this anchor is retained only as structural west-coast adjacency continuity and is not expanded into port inventories, terminal inventories, tonnage datasets, or statewide logistics survey treatment.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/oregon/evidence.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/california/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <h3 class="subhead">Institutional adjacency continuity across the WA–OR–ID frame</h3>
+    <ul class="evidence-bullets">
+      <li>The evidence layer records that Oregon preserves a Pacific Northwest coordination frame south of Washington.</li>
+      <li>The evidence layer records that Idaho preserves a northern-mountain transition frame east of Washington.</li>
+      <li>The evidence layer records that Washington's retained position inside this adjacent-state frame supports an institutional adjacency continuity reading at the corridor layer.</li>
+      <li>The evidence layer records that under the current corridor-scope restriction, this anchor is retained only as structural adjacency continuity and is not expanded into university-system mapping, research-network inventory treatment, or statewide institutional survey treatment.</li>
+    </ul>
+    <div class="sources-block">
+      <div class="sources-label">Canonical sources</div>
+      <ul>
+        <li><code>atlas-export/docs/atlas.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/oregon/metadata.md</code></li>
+        <li><code>atlas-export/jurisdictions/us/states/idaho/metadata.md</code></li>
+      </ul>
+    </div>
+ 
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md — 5 evidence subsections. Four of the five anchors cite Oregon's canonical evidence.md directly, chaining Washington's corridor reading to Oregon's already-retained canonical derivations; California and Idaho are cited at metadata depth</div>
   </section>
  
-  <!-- ── AI POLICY ── -->
-  <section class="card anchor-target" id="ai-policy" aria-labelledby="heading-ai">
-    <h2 id="heading-ai">AI Policy</h2>
-    <p class="muted">Washington has deployed targeted AI governance instruments addressing employment-context disclosure, synthetic media transparency, and state government AI coordination without advancing a comprehensive frontier-model liability framework comparable to California's trajectory. The state functions as an emerging regulatory surface — actively building statutory instruments across specific deployment contexts while operating below the maximum-enforcement governance profile present in Pacific Coordination Corridor states to the south. The AI posture is expected to intensify through the 2026–2027 legislative cycle.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Emerging · Regulatory</div></div>
-      <div class="mini-box"><div class="label">Primary posture</div><div class="value">Employment disclosure + gov AI coordination</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Align for targeted disclosure requirements</div></div>
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code>.</p>
+    <p class="muted">The signals layer records 5 structural coordination signals directly detectable from the evidence layer.</p>
+ 
+    <h3 class="subhead">Pacific Northwest coordination continuity signal</h3>
+    <p class="muted">The signals layer records that Washington shows a Pacific-Northwest-coordination-continuity signal through retained placement in the shared Washington–Oregon <code>Pacific Northwest Coordination Corridor</code> frame.</p>
+ 
+    <h3 class="subhead">Oregon-facing coastal north-south corridor continuity signal</h3>
+    <p class="muted">The signals layer records that Washington shows an Oregon-facing-coastal-north-south-corridor-continuity signal through retained placement across the Washington–Oregon–California coastal frame.</p>
+ 
+    <h3 class="subhead">Idaho-facing inland transition continuity signal</h3>
+    <p class="muted">The signals layer records that Washington shows an Idaho-facing-inland-transition-continuity signal through retained placement across the shared Pacific Northwest frame toward Idaho's northern-mountain transition structure.</p>
+ 
+    <h3 class="subhead">West-coast coordination adjacency signal</h3>
+    <p class="muted">The signals layer records that Washington shows a west-coast-coordination-adjacency signal through retained placement at the northern side of the Washington–Oregon–California west-coast structure.</p>
+ 
+    <h3 class="subhead">Institutional adjacency signal</h3>
+    <p class="muted">The signals layer records that Washington shows an institutional-adjacency signal through retained placement across the WA–OR–ID corridor frame.</p>
+ 
+    <div class="absence-callout" style="margin-top:16px">
+      <div class="absence-label">Canonical signal-layer non-establishment</div>
+      <p>The signals layer records that the current signal set also does not independently establish Pacific strategic continuity toward an Alaska-facing projection frame as a topology-visible Washington anchor, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or research participation beyond institutional adjacency.</p>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> HB 1850 (AI in employment — disclosure and impact assessment requirements), SB 5838 (synthetic media transparency), SB 5116 (algorithmic accountability in government contexts), EO 24-02 (state agency AI governance framework).</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> employment-context AI disclosure requirements carry enforcement exposure; state procurement surfaces operate under EO 24-02 coordination with growing vendor expectation layers through WaTech guidance.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams deploying AI inside employment decision surfaces, synthetic content generation, or state government procurement interfaces should expect documentation and disclosure obligations to be active compliance surfaces rather than aspirational standards.</div>
-    </div>
-    <div class="note">Operational signal: Washington's AI governance posture is advancing incrementally through targeted statutory instruments. Teams operating here gain early exposure to employment and government AI compliance surfaces that are likely to expand in scope through the next legislative cycle.</div>
+ 
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: signals.md — 5 signal clusters</div>
   </section>
  
-  <!-- ── BITCOIN / DIGITAL ASSETS ── -->
-  <section class="card anchor-target" id="bitcoin-policy" aria-labelledby="heading-bitcoin">
-    <h2 id="heading-bitcoin">Bitcoin / Digital Asset Policy</h2>
-    <p class="muted">Washington's digital asset compliance surface is administered through the Department of Financial Institutions (DFI) under the Money Transmitter Act (RCW 19.230), which extends money transmission licensing requirements to virtual currency businesses operating within the state. The framework is oriented toward regulatory compliance rather than prohibition. Washington does not operate a dedicated digital asset licensing statute equivalent to California's DFAL, but the Money Transmitter Act creates a structured compliance gate for custodial and exchange-style operations deploying inside this corridor.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Compliance-Required</div></div>
-      <div class="mini-box"><div class="label">Regulator</div><div class="value">DFI (RCW 19.230)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Licensing gate is active; framework is functional</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> Money Transmitter Act (RCW 19.230), DFI virtual currency licensing framework, federal AML/BSA alignment expectations, surety bond and net worth requirements for licensed operators.</div>
-      <div class="detail-item"><strong>Compliance profile:</strong> Washington requires money transmitter licenses for virtual currency businesses engaging in transmission, exchange, or custodial activity. The compliance framework functions as a standard gate — not a prohibition surface — but overhead is real for operators not already licensed in adjacent jurisdictions.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> custodians, exchanges, and wallet providers interacting with Washington residents should treat DFI licensing and AML compliance as baseline deployment requirements. The framework is established and functional; operators who have completed licensing in other states should assess Washington license portability.</div>
-    </div>
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from <code>signals.md</code>.</p>
+    <p class="muted">The trust-dimensions layer records that trust evaluates what kinds of stability conditions Washington can sustain given the signal layer and the visible corridor-continuity environment.</p>
+ 
+    <h3 class="subhead">Trust interpretation summary</h3>
+    <p class="muted">The trust-dimensions layer records that Washington currently presents a trust profile characterized by:</p>
+    <ul class="evidence-bullets">
+      <li>durable corridor coordination density across Pacific Northwest coordination continuity, Oregon-facing coastal north-south corridor continuity, Idaho-facing inland transition continuity, west-coast coordination adjacency continuity, and institutional adjacency continuity</li>
+      <li>durable Pacific Northwest and coastal-to-interior infrastructure continuity at the corridor layer</li>
+      <li>visible institutional adjacency across the WA–OR–ID frame</li>
+      <li>industrial persistence not independently established beyond corridor continuity and west-coast / inland-transition adjacency</li>
+      <li>research participation not independently established beyond institutional adjacency</li>
+    </ul>
+ 
+    <h3 class="subhead">Coordination density</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable corridor coordination density.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>Oregon-facing coastal north-south corridor continuity signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+      <li>west-coast coordination adjacency signal</li>
+      <li>institutional adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current signal layer does not provide a routing-authority model</li>
+      <li>the current package does not support coordination-tier assignment</li>
+      <li>the current package does not independently establish Pacific strategic continuity toward an Alaska-facing projection frame as a topology-visible Washington anchor</li>
+      <li>the current package does not independently establish energy-grid participation visibility or BEAD coordination visibility</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Washington shows corridor-relevant coordination density as a Pacific Northwest environment linking Oregon-facing coordination continuity, California-facing coastal adjacency through the retained west-coast frame, and Idaho-facing inland transition continuity.</p>
+ 
+    <h3 class="subhead">Infrastructure continuity</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Durable Pacific Northwest and coastal-to-interior infrastructure continuity at the corridor layer.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>Oregon-facing coastal north-south corridor continuity signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+      <li>west-coast coordination adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not independently establish energy-grid participation visibility or BEAD coordination visibility</li>
+      <li>the current package does not expand into statewide infrastructure surveys, port inventories, terminal inventories, tonnage datasets, or statewide logistics survey treatment</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Washington shows durable corridor continuity where Pacific Northwest coordination structure carries between Oregon-facing coastal continuity, California-facing west-coast adjacency, and Idaho-facing inland transition, but the package keeps that continuity at the corridor layer.</p>
+ 
+    <h3 class="subhead">Institutional adjacency</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Visible WA–OR–ID institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>institutional adjacency signal</li>
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+      <li>west-coast coordination adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package intentionally avoids university-system mapping, research-network inventory treatment, and broader institutional ranking treatment</li>
+      <li>the current trust reading does not compare Washington institutions by depth, scale, or hierarchy</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Washington shows institutional adjacency through its retained corridor position between Oregon-facing Pacific Northwest coordination and Idaho-facing northern-mountain transition while remaining inside the broader west-coast adjacency frame.</p>
+ 
+    <h3 class="subhead">Industrial persistence</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond corridor continuity and west-coast / inland-transition adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>Oregon-facing coastal north-south corridor continuity signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+      <li>west-coast coordination adjacency signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not independently establish port inventories, terminal inventories, tonnage datasets, statewide logistics surveys, or broader industrial survey treatment</li>
+      <li>the current trust reading does not support industrial ranking or sector-depth claims for Washington from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Washington sits inside a corridor where Pacific Northwest continuity, west-coast adjacency, and inland transition continuity are visible, but this package does not independently establish Washington industrial persistence beyond that adjacency-bounded structure.</p>
+ 
+    <h3 class="subhead">Research participation</h3>
+    <div class="trust-field-label">Current interpretation</div>
+    <p class="trust-field-body">Not independently established beyond institutional adjacency.</p>
+    <div class="trust-field-label">Supporting basis</div>
+    <ul class="trust-field-list">
+      <li>institutional adjacency signal</li>
+      <li>Pacific Northwest coordination continuity signal</li>
+      <li>Idaho-facing inland transition continuity signal</li>
+    </ul>
+    <div class="trust-field-label">Constraint basis</div>
+    <ul class="trust-field-list">
+      <li>the current package does not retain a corridor-visible research anchor for Washington beyond its adjacency-bounded corridor placement</li>
+      <li>the current package intentionally avoids university-system mapping and research-network inventory treatment</li>
+      <li>the current trust reading does not support a research-hierarchy claim for Washington from the retained corridor evidence alone</li>
+    </ul>
+    <div class="trust-field-label">Atlas reading</div>
+    <p class="trust-field-body">Washington sits inside a visible Pacific Northwest and inland-transition institutional frame, but the current retained evidence does not independently establish research participation beyond that adjacency position.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Trust-dimension completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md — Trust interpretation summary + 5 dimension fields (4-field pattern: current / supporting / constraint / Atlas reading)</div>
   </section>
  
-  <!-- ── PRIVACY / DATA ── -->
-  <section class="card anchor-target" id="privacy-data" aria-labelledby="heading-privacy">
-    <h2 id="heading-privacy">Privacy / Data Handling</h2>
-    <p class="muted">Washington's privacy surface is architecturally distinct from California's comprehensive CCPA/CPRA framework. The state has not enacted a broad consumer data privacy statute as of 2026, but the My Health MY Data Act (MHCDA) — one of the strictest consumer health data statutes in the US — establishes an elevated compliance environment for teams handling health-adjacent data within this corridor. MHCDA extends health data protections significantly beyond HIPAA's federal floor and applies to consumer health data outside traditional healthcare entity contexts.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Health-Focused / Selective</div></div>
-      <div class="mini-box"><div class="label">Core instrument</div><div class="value">My Health MY Data Act (MHCDA)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Health data is a high-enforcement surface</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> My Health MY Data Act (SB 1155, eff. 2024), Washington Consumer Protection Act (RCW 19.86), existing HIPAA alignment surfaces, MHCDA private right of action enabling consumer enforcement without agency intermediation.</div>
-      <div class="detail-item"><strong>Enforcement profile:</strong> MHCDA activates a private right of action that removes the state agency intermediation requirement present in many other state privacy regimes. Any entity collecting consumer health data from Washington residents outside HIPAA-covered contexts operates inside an active enforcement surface.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> products and services processing consumer health data, fitness data, biometric wellness data, reproductive health data, or similar health-adjacent signals should treat MHCDA compliance as a non-negotiable baseline. The private right of action creates enforcement exposure independent of state agency posture.</div>
-    </div>
-    <div class="note">Operational signal: While Washington lacks a comprehensive privacy statute comparable to CCPA, teams deploying in health-adjacent data surfaces face some of the strictest enforcement conditions in the US under MHCDA. The absence of a general privacy law does not imply a low-friction operating environment for these deployment contexts.</div>
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. The profile layer records that profile is the characterization layer of the package.</p>
+ 
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The profile layer records that Washington currently reads within Atlas as a Pacific Northwest coordination environment organized around Pacific Northwest coordination continuity, Oregon-facing coastal north-south corridor continuity, Idaho-facing inland transition continuity, west-coast coordination adjacency continuity, and institutional adjacency continuity across the WA–OR–ID frame.</p>
+ 
+    <h3 class="subhead">Profile synthesis</h3>
+    <p class="muted">The profile layer records that the current package shows:</p>
+    <ul class="evidence-bullets">
+      <li>Pacific Northwest coordination continuity anchored in retained placement within the shared Washington–Oregon <code>Pacific Northwest Coordination Corridor</code> frame</li>
+      <li>Oregon-facing coastal north-south corridor continuity anchored in retained placement across the Washington–Oregon–California coastal frame</li>
+      <li>Idaho-facing inland transition continuity anchored in retained placement across the shared Pacific Northwest frame toward Idaho's northern-mountain transition structure</li>
+      <li>west-coast coordination adjacency continuity anchored in retained placement at the northern side of the Washington–Oregon–California west-coast structure</li>
+      <li>institutional adjacency continuity anchored in retained placement across the WA–OR–ID corridor frame</li>
+      <li>no independent retained basis for Pacific strategic continuity toward an Alaska-facing projection frame as a topology-visible Washington anchor, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or research participation beyond institutional adjacency under the current corridor-bounded scope</li>
+    </ul>
+    <p class="muted">The profile layer records that, taken together, these conditions support a structural characterization of Washington as a Pacific Northwest coordination corridor carrying Oregon-facing continuity, California-facing west-coast adjacency, and Idaho-facing inland transition inside a shared coastal-to-interior frame.</p>
+ 
+    <h3 class="subhead">Profile synthesis statement</h3>
+    <p class="muted">The profile layer records that Washington currently reads within Atlas as a Pacific Northwest coordination corridor linking the Oregon-facing southern frame, the California-facing west-coast continuity frame, the Idaho-facing inland transition frame, and a narrow institutional adjacency structure.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: profile.md — Jurisdiction summary + Profile synthesis + Profile synthesis statement</div>
   </section>
  
-  <!-- ── BIOMETRICS / IDENTITY ── -->
-  <section class="card anchor-target" id="biometrics-identity" aria-labelledby="heading-biometrics">
-    <h2 id="heading-biometrics">Biometrics / Identity</h2>
-    <p class="muted">Washington does not operate a standalone biometric privacy statute equivalent to Illinois BIPA as of 2026, but the corridor carries meaningful biometric risk surfaces. MHCDA's consumer health data scope captures biometric data processed in health-adjacent contexts. Legislative pressure toward a broader biometric protection framework has been building through multiple sessions, and the corridor's AI employment disclosure requirements create adjacent friction for products deploying behavioral or biometric inference surfaces in employment contexts.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Active Concern Zone</div></div>
-      <div class="mini-box"><div class="label">Identity climate</div><div class="value">Health-biometric overlap is active</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Assess health and employment context carefully</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> MHCDA biometric and health data scope, HB 1850 AI-in-employment disclosure requirements, ongoing legislative pressure toward a standalone biometric statute, federal AI employment equity guidance alignment.</div>
-      <div class="detail-item"><strong>Risk profile:</strong> biometric systems operating inside health data, fitness, or wellness surfaces interact directly with MHCDA's private right of action. Employment-context biometric or behavioral inference surfaces interact with HB 1850 disclosure requirements. Legislative trajectory suggests expanded statutory coverage is a plausible near-term development.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> products deploying biometric identification, health-signal inference, or behavioral monitoring in employment, wellness, or consumer health contexts should be architected with Washington's overlapping statutory surfaces in mind rather than relying on the absence of a standalone biometric statute.</div>
-    </div>
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. The builder-mode layer records that this file provides structural interpretation only, and does not rank Washington, compare Washington to other jurisdictions, or prescribe deployment eligibility.</p>
+ 
+    <h3 class="subhead">Builder mode role summary</h3>
+    <p class="muted">The builder-mode layer records that Washington is best understood for builder purposes as:</p>
+    <ul class="evidence-bullets">
+      <li>a Pacific Northwest coordination environment</li>
+      <li>an Oregon-facing coastal north-south continuity environment</li>
+      <li>an Idaho-facing inland transition environment</li>
+      <li>a west-coast coordination adjacency environment</li>
+      <li>an institutional adjacency environment across the WA–OR–ID frame</li>
+      <li>a narrow corridor environment rather than a standalone topology override or readiness case</li>
+    </ul>
+ 
+    <h3 class="subhead">Pacific Northwest interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Washington reads as a Pacific Northwest coordination environment where retained placement shares <code>Pacific Northwest Coordination Corridor</code>, <code>Pacific Northwest Coordination Layer</code>, and <code>Pacific Northwest Completion Layer</code> continuity with Oregon without overriding atlas-controlled topology.</p>
+ 
+    <h3 class="subhead">Coastal interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Washington reads as an Oregon-facing coastal north-south continuity environment where retained structure preserves corridor continuity across the Washington–Oregon–California frame.</p>
+ 
+    <h3 class="subhead">Inland transition interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Washington reads as an Idaho-facing inland transition environment where retained structure preserves corridor continuity across the shared Pacific Northwest frame toward Idaho's northern-mountain transition structure.</p>
+ 
+    <h3 class="subhead">West-coast adjacency interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Washington reads as a west-coast coordination adjacency environment where retained structure preserves corridor continuity at the northern side of the Washington–Oregon–California west-coast frame.</p>
+ 
+    <h3 class="subhead">Institutional adjacency interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Washington reads as an institutional adjacency environment where retained structure preserves corridor continuity across the WA–OR–ID frame without expanding into university-system mapping or research-network inventory treatment.</p>
+ 
+    <h3 class="subhead">Constraint interpretation</h3>
+    <p class="muted">The builder-mode layer records that for builder interpretation, Washington should be read narrowly. The current package does not independently establish Pacific strategic continuity toward an Alaska-facing projection frame as a topology-visible Washington anchor, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or any deployment or routing posture.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Builder-mode completeness status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md — Role summary + 6 interpretation subsections (including canonical Constraint interpretation)</div>
   </section>
  
-  <!-- ── EDUCATION / PUBLIC SECTOR AI ── -->
-  <section class="card anchor-target" id="public-sector-ai" aria-labelledby="heading-public-sector">
-    <h2 id="heading-public-sector">Education / Public Sector AI</h2>
-    <p class="muted">Washington is advancing AI integration into state operations under a coordination framework anchored by Executive Order 24-02 and WaTech guidance surfaces. The state functions as an active public-sector AI deployment corridor — developing vendor evaluation frameworks, procurement guidance layers, and agency AI use documentation requirements — while maintaining a posture that is less prescriptive than California's safety-first, sandbox-centered architecture. Public-sector deployment activity is expanding, with AI equity and accountability frameworks developing in parallel.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Developing</div></div>
-      <div class="mini-box"><div class="label">Model</div><div class="value">Coordination-first</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Viable for compliance-aware B2G operators</div></div>
-    </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> EO 24-02 (state agency AI governance), WaTech AI guidance and standards development, SB 5116 algorithmic accountability requirements in government decision contexts, Office of Equity AI integration frameworks.</div>
-      <div class="detail-item"><strong>Growth signal:</strong> public-sector AI is advancing through agency-level coordination rather than a single centralized procurement gate. Vendor engagement surfaces are developing, but without the formal attestation architecture present in California's procurement model.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams operating within state government or education deployment surfaces can engage a developing B2G market with fewer formal attestation barriers than Pacific Coordination Corridor states, while still aligning with EO 24-02 agency expectations and SB 5116 algorithmic accountability requirements in decision-facing contexts.</div>
-    </div>
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package records structural exclusions across the evidence, signals, trust-dimensions, profile, builder-mode, and change-log layers. The canonical Washington structural exclusions set uses the canonical "compute-corridor designation" phrasing and includes a canonical "tourism, agriculture, or lifestyle characterization case" exclusion preserved verbatim from the evidence layer.</p>
+ 
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <p class="muted">The evidence layer records that based on the retained corridor-visible evidence collected there, this file does not support characterizing Washington as any of the following:</p>
+    <ul class="evidence-bullets">
+      <li>a routing-authority jurisdiction</li>
+      <li>a coordination-tier jurisdiction</li>
+      <li>a deployment-readiness jurisdiction</li>
+      <li>a surface-assigned jurisdiction</li>
+      <li>a statewide infrastructure-survey case</li>
+      <li>a municipal-inventory case</li>
+      <li>a port-inventory or terminal-inventory case</li>
+      <li>a tonnage-dataset case</li>
+      <li>a university-system mapping case</li>
+      <li>a research-network inventory case</li>
+      <li>a workforce-summary case</li>
+      <li>a tourism, agriculture, or lifestyle characterization case</li>
+      <li>a compute-corridor designation</li>
+      <li>a hyperscale designation</li>
+      <li>a jurisdiction-ranking case</li>
+      <li>a digital-asset statutory jurisdiction</li>
+    </ul>
+ 
+    <h3 class="subhead">Signals-layer structural exclusions</h3>
+    <p class="muted">The signals layer records that based on the currently derived signals, this file does not support characterizing Washington as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, a surface-eligibility determination, a jurisdiction-ranking claim, a compute-corridor designation, a hyperscale designation, a statewide infrastructure-survey case, a port-inventory or terminal-inventory case, a tonnage-dataset case, or a digital-asset statutory jurisdiction. The signals layer records that the current signal set also does not independently establish Pacific strategic continuity toward an Alaska-facing projection frame as a topology-visible Washington anchor, energy-grid participation visibility, BEAD coordination visibility, digital-asset statutory posture, or research participation beyond institutional adjacency.</p>
+ 
+    <h3 class="subhead">Trust-dimensions structural exclusions</h3>
+    <p class="muted">The trust-dimensions layer records that this file does not support interpreting Washington as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, a compute-corridor designation, a hyperscale designation, or a digital-asset statutory jurisdiction. The trust-dimensions layer records that it should be read as trust interpretation of Washington's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Profile-layer structural exclusions</h3>
+    <p class="muted">The profile layer records that Washington's profile should not be read as: a routing-authority assignment, a coordination-tier assignment, a deployment-readiness classification, an Atlas surface-eligibility determination, a jurisdiction ranking claim, a compute-corridor claim, a hyperscale designation, a digital-asset statutory jurisdiction claim, or a topology reassignment of atlas-controlled metadata.</p>
+ 
+    <h3 class="subhead">Builder-mode structural exclusions</h3>
+    <p class="muted">The builder-mode layer records that this file does not support interpreting Washington as any of the following: a routing-authority jurisdiction, a coordination-tier jurisdiction, a deployment-readiness jurisdiction, an Atlas surface-eligibility determination, a jurisdiction-ranking case, a compute-corridor designation, a hyperscale designation, or a digital-asset statutory jurisdiction. The builder-mode layer records that it should be read as builder-facing interpretation of Washington's current structural posture within the normalized Atlas package only.</p>
+ 
+    <h3 class="subhead">Change-log structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, compute-corridor designation, hyperscale designation, digital-asset statutory designation, or local reassignment of atlas-controlled Washington topology metadata.</p>
+ 
+    <div class="src">Source: evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md, change-log.md — Structural exclusions</div>
   </section>
  
-  <!-- ── OPEN SOURCE / DEVELOPER CLIMATE ── -->
-  <section class="card anchor-target" id="developer-climate" aria-labelledby="heading-developer">
-    <h2 id="heading-developer">Open Source / Developer Climate</h2>
-    <p class="muted">Builders operating within the Washington corridor interact with Puget Sound maritime continuity surfaces, Seattle–Tacoma gateway freight interfaces, I-5 north–south deployment environments, and Cascadia cross-border routing systems linking Pacific trade infrastructure with inland continental deployment pathways. The corridor hosts dense concentration of cloud, aerospace, and software infrastructure operations, with compliance floors rising incrementally through MHCDA, HB 1850 employment AI disclosure, and synthetic media transparency requirements. Washington does not operate a formal open-source mandate for state government equivalent to California's TL 18-02.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Dense · Compliance-Growing</div></div>
-      <div class="mini-box"><div class="label">Gov OSS posture</div><div class="value">No formal mandate</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Strong infrastructure density; targeted drag</div></div>
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical Washington evidence layer contains a native "Evidence gaps" subsection.</p>
+ 
+    <h3 class="subhead">Evidence gaps from the evidence layer</h3>
+    <div class="absence-callout">
+      <div class="absence-label">The evidence layer records</div>
+      <p>The current adjacency-bounded Atlas structure does not independently establish the following Washington anchors for retention in this package:</p>
+      <ul class="mini" style="color:var(--muted);margin-top:6px">
+        <li>Pacific strategic continuity toward an Alaska-facing projection frame as a topology-visible Washington anchor</li>
+        <li>energy-grid participation visibility</li>
+        <li>BEAD coordination visibility</li>
+        <li>digital-asset statutory posture</li>
+        <li>independent research participation anchors beyond institutional adjacency</li>
+      </ul>
     </div>
-    <div class="detail-list" style="margin-top:14px">
-      <div class="detail-item"><strong>Key anchors:</strong> HB 1850 AI employment disclosure requirements, SB 5838 synthetic media transparency obligations, MHCDA developer compliance surfaces, DFI digital asset licensing requirements for applicable product categories.</div>
-      <div class="detail-item"><strong>Climate reading:</strong> Washington operates as a high-density developer corridor with aerospace, cloud, and maritime infrastructure coordination surfaces. Policy friction is targeted rather than comprehensive — concentrated in health data, employment AI, and synthetic media contexts rather than across all deployment surfaces.</div>
-      <div class="detail-item"><strong>Builder implication:</strong> teams interacting across cloud infrastructure, maritime logistics coordination, or aerospace-adjacent deployment surfaces operate in a lower-drag environment than California's compliance architecture. Teams deploying inside health data, employment AI, or identity inference surfaces face targeted but active compliance requirements.</div>
+ 
+    <h3 class="subhead">Scope constraints applied during population</h3>
+    <div class="scope-block">
+      <div class="scope-label">The change-log records the following scope constraints applied during evidence-first package population:</div>
+      <ul>
+        <li>adjacent-state corridor continuity only</li>
+        <li>no open infrastructure research</li>
+        <li>corridor-layer anchors only</li>
+        <li>no statewide infrastructure surveys, municipal inventories, or workforce summaries</li>
+        <li>no port inventories, terminal inventories, tonnage datasets, Columbia River navigation datasets, or statewide logistics surveys</li>
+        <li>no university-system mapping or research-network inventory treatment</li>
+        <li>no compute-corridor, hyperscale, routing-authority, coordination-tier, readiness, ranking, or surface assignment inference</li>
+        <li>no local override of atlas-controlled topology metadata</li>
+      </ul>
     </div>
+ 
+    <p class="muted" style="margin-top:12px">The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, corridor-scope constraints applied throughout package construction, downstream layers derived strictly from corridor-limited evidence, surface assignment remains none.</p>
+    <div class="src">Source: evidence.md — Evidence gaps; change-log.md — 2026-04-19 evidence-first package population (Scope constraints applied)</div>
   </section>
  
-  <!-- ── ENERGY / MINING / COMPUTE ── -->
-  <section class="card anchor-target" id="energy-mining" aria-labelledby="heading-energy">
-    <h2 id="heading-energy">Energy / Mining / Compute Posture</h2>
-    <p class="muted">Washington operates as one of the most structurally favorable states for energy-intensive compute operations in the continental US. The corridor's hydroelectric power base — administered through Bonneville Power Administration (BPA) and public utility districts in eastern Washington counties — delivers electricity rates operating at the lower band of the national range. Bitcoin mining is legal with no state prohibition, and the structural energy cost advantage creates a fundamentally different deployment calculus than Pacific Coordination Corridor states to the south. Some public utility districts have implemented load management measures in response to concentrated mining demand, creating localized capacity constraints.</p>
-    <div class="subgrid">
-      <div class="mini-box"><div class="label">Status</div><div class="value">Legal · Structurally Favorable</div></div>
-      <div class="mini-box"><div class="label">Energy cost</div><div class="value">Lower band (US)</div></div>
-      <div class="mini-box"><div class="label">Operational takeaway</div><div class="value">Viable for mining and compute deployment</div></div>
-    </div>
-    <div class="radar" aria-label="Washington energy and mining risk profile">
-      <div class="radar-row"><div class="radar-label">Mining regulatory risk</div><div class="track"><div class="fill" style="width:30%;background:var(--green)"></div></div><div class="score">30</div></div>
-      <div class="radar-row"><div class="radar-label">Energy cost risk</div><div class="track"><div class="fill" style="width:20%;background:var(--green)"></div></div><div class="score">20</div></div>
-      <div class="radar-row"><div class="radar-label">Compute viability</div><div class="track"><div class="fill" style="width:80%;background:var(--teal)"></div></div><div class="score">80</div></div>
-    </div>
-    <div class="note">Builder implication: Washington's hydroelectric power base creates a structurally distinct energy posture compared to most US corridors. Teams deploying inside mining or high-density compute operations should engage utility district capacity coordination surfaces before selecting specific deployment locations, as localized load constraints vary across the eastern Washington PUD network.</div>
+  <!-- ── 10. CHANGE-LOG NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+ 
+    <h3 class="subhead">Topology metadata sync</h3>
+    <p class="muted">The change-log records that metadata.md was reviewed against atlas-export/docs/atlas.md, with updated fields for Corridor Group, Foundation Layer, Topology Completion Layer, and Jurisdiction lens. The change-log records that this sync is structural only and does not alter evidence, signals, trust interpretation, profile, builder-mode, or surface neutrality.</p>
+ 
+    <h3 class="subhead">2026-04-19 evidence-first package population</h3>
+    <p class="muted">The change-log records that the Washington state package was populated in topology-normalized order as a numbered canonical sequence: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md, change-log.md. The change-log records that scope constraints were applied during population (rendered in Section 9 above). The change-log records the current status: topology metadata synced to atlas-export/docs/atlas.md, evidence layer populated to corridor sufficiency, corridor-scope constraints applied throughout package construction, downstream layers derived strictly from corridor-limited evidence, and surface assignment remains none.</p>
+ 
+    <h3 class="subhead">Structural exclusions</h3>
+    <p class="muted">The change-log records explicit structural exclusions: this package population does not authorize Atlas surface assignment, routing-role assignment, coordination-tier assignment, deployment-readiness assignment, jurisdiction ranking, compute-corridor designation, hyperscale designation, digital-asset statutory designation, or local reassignment of atlas-controlled Washington topology metadata.</p>
+ 
+    <div class="callout mini" style="margin-top:14px">Normalization status: corridor-layer sufficient · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
   </section>
  
-  <!-- ── DIRECTION OF TRAVEL ── -->
-  <section class="card anchor-target" id="direction-of-travel" aria-labelledby="heading-direction">
-    <h2 id="heading-direction">Signal Rating / Direction of Travel</h2>
-    <p class="muted">Washington's regulatory vector is incrementally advancing across AI employment disclosure, consumer health data enforcement, and digital asset compliance surfaces, while maintaining a more moderate-governance posture than the Pacific Coordination Corridor to the south. Operators interacting across this corridor should model for selective compliance escalation in health data, AI employment, and biometric surfaces through 2027, while the energy and mining environment remains structurally stable.</p>
-    <div class="detail-list">
-      <div class="detail-item"><strong>AI Governance</strong> — advancing through employment disclosure, synthetic media transparency, and state procurement coordination; anticipated continued legislative refinement toward broader AI accountability frameworks in the 2026–2027 session.</div>
-      <div class="detail-item"><strong>Crypto Regulation</strong> — stable through DFI money transmission framework; no indication of a California-style dedicated digital asset licensing statute in the near-term legislative cycle.</div>
-      <div class="detail-item"><strong>Privacy Enforcement</strong> — MHCDA enforcement surfaces are active and expanding through private right of action precedent; comprehensive consumer privacy statute remains a persistent legislative proposal with uncertain near-term trajectory.</div>
-      <div class="detail-item"><strong>Biometric Restrictions</strong> — building pressure through MHCDA overlap and employment AI disclosure surfaces; standalone biometric statute remains a plausible legislative development in the 2026–2027 cycle.</div>
-      <div class="detail-item"><strong>Mining &amp; Compute</strong> — stable to structurally positive; hydroelectric advantage persists without major legislative threats to proof-of-work operations, though utility district capacity management surfaces require localized engagement.</div>
-      <div class="detail-item"><strong>Developer Climate</strong> — dense and active across corridor infrastructure surfaces; compliance floor rising in targeted contexts without crossing into the comprehensive governance drag profile present in California.</div>
-    </div>
-    <div class="callout">12-month outlook: Washington is likely to advance AI employment governance and potentially biometric protections through the 2026–2027 legislative cycle while MHCDA enforcement precedent continues to build. The energy and compute environment remains one of the most structurally favorable in the western corridor absent significant utility or legislative intervention.</div>
-  </section>
- 
-</div>
+</div><!-- /main col -->
  
 <!-- ── SIDEBAR ── -->
 <aside>
-  <div class="card" aria-labelledby="heading-sidebar-summary">
-    <div class="smallcaps">Snapshot</div>
-    <h3 id="heading-sidebar-summary">Washington at a glance</h3>
-    <p class="muted mini">Pacific Northwest Maritime, Aerospace &amp; Cascadia Continuity Corridor. Moderate-governance posture with elevated health data compliance surfaces, viable compute and mining environment, and targeted AI employment disclosure requirements. Structurally distinct from California's comprehensive-enforcement profile.</p>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Washington jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>atlas_converted.md</code> (metadata fields only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/us/states/washington/</code></p>
   </div>
  
-  <div class="card" aria-labelledby="heading-builder-summary">
-    <div class="smallcaps">Builder Summary</div>
-    <h3 id="heading-builder-summary">Recommended read</h3>
-    <p class="muted mini"><strong>Best for:</strong> health data compliance architecture, low-cost compute and mining deployment, Cascadia cross-border routing operations, B2G AI pilots under a coordination-first framework, maritime and freight logistics infrastructure interfaces.</p>
-    <p class="muted mini"><strong>Less ideal for:</strong> operations unable to absorb MHCDA compliance obligations for health-adjacent data surfaces, employment AI deployments requiring minimal disclosure architecture, biometric-heavy identity systems where standalone statutory clarity is needed.</p>
-  </div>
- 
-  <div class="card" aria-labelledby="heading-compliance-dates">
-    <div class="smallcaps">Key Dates</div>
-    <h3 id="heading-compliance-dates">Timeline markers</h3>
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
     <ul class="mini">
-      <li><strong>Mar 2024</strong> — My Health MY Data Act (MHCDA) effective for large covered entities; private right of action active.</li>
-      <li><strong>Jun 2024</strong> — MHCDA effective for smaller covered entities; full enforcement surface active across covered entity categories.</li>
-      <li><strong>2025 session</strong> — HB 1850 AI employment disclosure requirements and SB 5838 synthetic media transparency obligations active; WaTech AI procurement guidance surfaces in development.</li>
-      <li><strong>2026 session</strong> — Legislative cycle under observation for potential biometric statute advancement and AI governance expansion; MHCDA enforcement precedent accumulating through private right of action activity.</li>
+      <li><strong>Jurisdiction:</strong> Washington</li>
+      <li><strong>Code:</strong> WA · US-WA</li>
+      <li><strong>Lens:</strong> Pacific northwest coordination continuity within pacific northwest completion</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> corridor-layer sufficient</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-maintenance">
-    <div class="smallcaps">Page Maintenance</div>
-    <h3 id="heading-maintenance">Recommended Atlas hooks</h3>
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
     <ul class="mini">
-      <li>Add a state-specific <strong>last updated</strong> date from <code>metadata.md</code>.</li>
-      <li>Keep the <strong>jurisdiction lens</strong> explicit on every state page.</li>
-      <li>Update this page only after the underlying package files are updated.</li>
-      <li>Treat HTML as a summary layer, not the canonical evidence layer.</li>
+      <li><strong>Corridor Group:</strong> Pacific Northwest Coordination Corridor</li>
+      <li><strong>Foundation Layer:</strong> Pacific Northwest Coordination Layer</li>
+      <li><strong>Completion Layer:</strong> Pacific Northwest Completion Layer</li>
+      <li><strong>Jurisdiction Lens:</strong> Pacific northwest coordination continuity within pacific northwest completion</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that the Jurisdiction Lens is a topology-constrained reading derived exclusively from the three atlas-controlled fields.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-cluster">
+    <div class="smallcaps">Canonical Pacific Northwest Cluster</div>
+    <h3 id="heading-sidebar-cluster">Two-state Corridor cluster</h3>
+    <p class="muted mini">Washington and Oregon are canonical siblings in the Pacific Northwest Coordination Corridor, sharing both the Pacific Northwest Coordination Layer foundation and the Pacific Northwest Completion Layer completion. All three canonical topology fields are identical across the two-state cluster, and both states share the canonical Jurisdiction Lens.</p>
+    <p class="muted mini" style="margin-top:8px">The Pacific Northwest Coordination Corridor is a canonical two-state corridor group. Washington and Oregon both hold canonical "within" Jurisdiction Lens grammar, reflecting that the Pacific Northwest coordination Foundation resolves into the broader Pacific Northwest Completion Layer.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-non-collapse">
+    <div class="smallcaps">Canonical Non-Collapse Topology</div>
+    <h3 id="heading-sidebar-non-collapse">Foundation ≠ Completion</h3>
+    <p class="muted mini">Washington's canonical Foundation Layer and Completion Layer are distinct. The Foundation Layer is the Pacific Northwest Coordination Layer; the Completion Layer is the Pacific Northwest Completion Layer.</p>
+    <p class="muted mini" style="margin-top:8px">The canonical Jurisdiction Lens uses "within" — reflecting that Washington's Pacific Northwest coordination Foundation resolves into the broader Pacific Northwest Completion Layer. Both layers sit within the same Pacific Northwest regional family, and Washington's canonical position remains inside the Pacific Northwest frame across foundation and completion.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-oregon-chain">
+    <div class="smallcaps">Canonical Oregon Evidence Chaining</div>
+    <h3 id="heading-sidebar-oregon-chain">Four canonical oregon/evidence.md citations</h3>
+    <p class="muted mini">Four of Washington's five evidence subsections canonically cite Oregon's <code>evidence.md</code> directly — Pacific Northwest coordination continuity, coastal north-south continuity, Idaho-facing inland transition continuity, and west-coast coordination adjacency continuity all chain to Oregon's already-retained canonical derivations. The fifth subsection (institutional adjacency across WA–OR–ID) cites Oregon at metadata depth.</p>
+    <p class="muted mini" style="margin-top:8px">This canonical chaining reflects the canonical symmetry of the two-state Pacific Northwest Coordination Corridor cluster: Washington's corridor reading is canonically retained from Oregon's already-retained canonical evidence layer, plus atlas.md topology references and adjacent California and Idaho metadata.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-alaska">
+    <div class="smallcaps">Canonical Non-Establishment of Alaska-Facing Framing</div>
+    <h3 id="heading-sidebar-alaska">Atlas topology scope</h3>
+    <p class="muted mini">The canonical Washington package explicitly records that the current adjacency-bounded Atlas structure does not independently establish <em>Pacific strategic continuity toward an Alaska-facing projection frame as a topology-visible Washington anchor</em>. This is a canonical acknowledgement that an external regional-strategic framing commonly associated with the Pacific Northwest's northern connection is not imported into atlas topology as a named anchor.</p>
+    <p class="muted mini" style="margin-top:8px">Alaska is canonically placed in its own Arctic Strategic Access Corridor inside Atlas. The canonical Washington non-establishment preserves the distinction between atlas-controlled topology and broader regional-strategic framings.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-archetype">
+    <div class="smallcaps">Canonical Archetype</div>
+    <h3 id="heading-sidebar-archetype">Adjacency-bounded package</h3>
+    <p class="muted mini">Washington is a corridor-layer sufficient state whose evidence is explicitly retained from <em>adjacent-state continuity</em> — with canonical evidence-layer chaining to Oregon's already-retained canonical evidence — rather than independently state-sourced research. The change-log records the canonical scope constraints "adjacent-state corridor continuity only" and "no open infrastructure research".</p>
+    <p class="muted mini" style="margin-top:8px">Canonical sources include atlas-export internal topology references, Oregon's canonical evidence and metadata files, and California and Idaho metadata files. Washington's canonical adjacency citations reach evidence-layer depth for Oregon and metadata-layer depth for California and Idaho.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-coverage">
+    <div class="smallcaps">Evidence anchors</div>
+    <h3 id="heading-sidebar-coverage">Retained from adjacency</h3>
+    <ul class="mini muted">
+      <li>Pacific Northwest coordination continuity</li>
+      <li>Oregon-facing north-south coastal corridor continuity across the Washington–Oregon–California frame</li>
+      <li>Idaho-facing inland transition continuity</li>
+      <li>West-coast coordination adjacency continuity</li>
+      <li>Institutional adjacency continuity across the WA–OR–ID frame</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical adjacency references:</p>
+    <ul class="mini muted">
+      <li>Oregon (Pacific Northwest Coordination Corridor sibling, south-facing, cited at evidence-layer depth)</li>
+      <li>California (Pacific Coastal Hyperscale Corridor, south-facing via Oregon chain, already rendered)</li>
+      <li>Idaho (Northern Mountain Transition Corridor, east-facing, forward-chained)</li>
     </ul>
   </div>
  
-  <div class="card" aria-labelledby="heading-national-position">
-    <div class="smallcaps">National Atlas Position</div>
-    <h3 id="heading-national-position">Corridor relationships</h3>
-    <p class="muted mini">Washington functions as the northern anchor of the Pacific west coast deployment surface, linking trans-Pacific gateway interfaces through the Northwest Seaport Alliance (Seattle–Tacoma gateway system) northward into Cascadia cross-border continuity interfaces with British Columbia. South, the I-5 spine extends into Oregon's Pacific Northwest Columbia Gateway &amp; West Coast Continuity Corridor and onward into California's Pacific Coordination Corridor. East, inland routing interfaces connect to Idaho's Mountain West surfaces and Montana's Northern Rockies Continental Routing Corridor. Washington's position reinforces the Pacific maritime gateway function across the broader western deployment layer — integrating north–south coastal continuity with cross-border and inland routing systems.</p>
+  <div class="card" aria-labelledby="heading-sidebar-trust-durability">
+    <div class="smallcaps">Canonical Coordination-Density Reading</div>
+    <h3 id="heading-sidebar-trust-durability">Durable (not "narrow but durable")</h3>
+    <p class="muted mini">Washington's canonical trust interpretation records "durable corridor coordination density" — without the "narrow but" qualifier used in most adjacency-bounded canonical packages. This matches Oregon's canonical phrasing and reflects the shared Pacific Northwest Coordination Corridor's canonically established foundation-plus-completion continuity.</p>
   </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-non-establishment">
+    <div class="smallcaps">Canonical Non-Establishment</div>
+    <h3 id="heading-sidebar-non-establishment">What the package does not establish</h3>
+    <p class="muted mini">The evidence layer explicitly records that the current package does not independently establish:</p>
+    <ul class="mini muted" style="margin-top:6px">
+      <li>Pacific strategic continuity toward an Alaska-facing projection frame as a topology-visible Washington anchor</li>
+      <li>energy-grid participation visibility</li>
+      <li>BEAD coordination visibility</li>
+      <li>digital-asset statutory posture</li>
+      <li>independent research participation anchors beyond institutional adjacency</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-scope">
+    <div class="smallcaps">Canonical scope</div>
+    <h3 id="heading-sidebar-scope">Corridor-layer sufficient</h3>
+    <p class="muted mini">The change-log records that the Washington package is explicitly scope-narrowed to adjacent-state corridor continuity only. All downstream layer completeness statuses are canonically recorded as "corridor-layer sufficient" rather than "preliminary".</p>
+    <p class="muted mini">This is a distinct canonical neutrality category: the package is not incomplete — it is canonically declared complete at corridor scope, with broader scope deliberately excluded.</p>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: corridor-layer sufficient</li>
+      <li>Signal layer: corridor-layer sufficient</li>
+      <li>Trust dimensions: corridor-layer sufficient</li>
+      <li>Profile: corridor-layer sufficient</li>
+      <li>Builder-mode: corridor-layer sufficient</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+ 
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+      <li>Not a hyperscale or compute-corridor designation.</li>
+      <li>Not a local reassignment of atlas-controlled topology metadata.</li>
+      <li>Not a digital-asset statutory jurisdiction designation.</li>
+    </ul>
+  </div>
+ 
 </aside>
-</div>
+</div><!-- /grid-sidebar -->
  
 </main>
  
