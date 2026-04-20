@@ -1,104 +1,382 @@
-# Atlas Corridor Layer
-## Satoshium Atlas — Multi-Jurisdiction Topology Framework
+# 🧭 Atlas Corridor Index
+## Multi-Jurisdiction Infrastructure Topology Layer
 
-Defines how corridors are identified, classified, and maintained across jurisdictions within the Atlas signal-layer activation phase.
+The **Atlas Corridor Layer** maps infrastructure continuity across jurisdictions where research ecosystems, compute environments, interconnection density, governance posture, and energy topology form persistent regional structures.
 
-This document incorporates the Corridor Assignment Matrix as a structural metadata source while preserving full compliance with the Atlas normalization contract.
+Corridors are not rankings.
+
+Corridors are not routing directives.
+
+Corridors describe **structural alignment across multiple jurisdictions**.
 
 ---
 
 ## 🎯 Purpose
 
-Corridors describe persistent multi-jurisdiction structural continuity affecting:
+The corridor layer exists to:
 
-- compute infrastructure
-- energy topology
-- research ecosystems
-- regulatory compatibility
-- interconnection routing density
-- institutional alignment
+- identify infrastructure continuity across state boundaries
+- preserve cross-jurisdiction signal comparability
+- support future agent routing awareness surfaces
+- detect emerging regional compute-energy structures
+- map research ecosystem clustering patterns
+- provide topology context upstream of Aegis
 
-Corridors are descriptive topology structures only.
-
-They do NOT represent:
-
-- rankings
-- optimization guidance
-- deployment recommendations
-- corridor leadership claims
-- national positioning signals
+Corridors transform jurisdiction packages into **regional structural environments**.
 
 ---
 
-## 🧭 Corridor Assignment Matrix Integration
+## 🧱 Corridor Definition
 
-Corridor recognition may be supported by the canonical:
+A corridor exists when multiple jurisdictions demonstrate:
 
-/atlas/corridors/corridor-assignment-matrix.md
 
-The matrix provides three structural classification axes:
+infrastructure continuity
+research ecosystem alignment
+energy topology compatibility
+governance posture interaction
+interconnection presence
+institutional persistence
 
-- Corridor Group
-- Foundation Layer
-- Topology Completion Layer
 
-These axes operate as metadata alignment references and must remain evidence-consistent with jurisdiction signal packages.
+Corridors must be evidence-derived.
 
----
-
-## 🧱 Corridor Recognition Conditions
-
-A corridor exists when three or more adjacent jurisdictions demonstrate:
-
-- infrastructure continuity
-- governance compatibility
-- research alignment
-- energy-compute adjacency
-- interconnection topology linkage
-
-Matrix membership alone does not establish corridor recognition without signal continuity support.
+Corridors must never originate from branding narratives or policy speculation.
 
 ---
 
-## 🧩 Corridor Structural Axes
+## 📊 Corridor Evidence Requirements
 
-Each corridor may be described across three layers:
+A corridor may be recorded only when evidence confirms:
 
-### Corridor Group
+### Infrastructure Continuity
 
-Primary structural corridor classification shared by participating jurisdictions.
+Examples:
 
-### Foundation Layer
-
-Base infrastructure or governance topology supporting corridor continuity.
-
-### Topology Completion Layer
-
-Adjacency layer describing how jurisdictions connect into larger regional topology.
-
-These layers remain descriptive and non-hierarchical.
+- backbone routing presence across jurisdictions
+- interconnection exchange clustering
+- hyperscale compute adjacency signals
+- semiconductor fabrication alignment
 
 ---
 
-## 🔗 Cross-State Comparability Safeguards
+### Research Ecosystem Alignment
 
-Corridor classification must remain:
+Examples:
 
-- terminology-consistent
-- scope-consistent
-- signal-consistent
-- matrix-aligned
-
-across all jurisdictions.
+- shared federal laboratory influence zones
+- multi-state university collaboration structures
+- aerospace infrastructure clusters
+- semiconductor R&D corridors
 
 ---
 
-## 🤖 Machine-Readable Compatibility
+### Energy Topology Compatibility
 
-Corridors support future export formats:
+Examples:
+
+- shared grid environments
+- compute-energy co-location feasibility
+- renewable corridor clustering
+- transmission continuity zones
+
+---
+
+### Governance Interaction Surfaces
+
+Examples:
+
+- aligned custody frameworks
+- DAO statutory adjacency
+- experimentation policy compatibility
+- municipal innovation clustering
+
+---
+
+### Institutional Persistence
+
+Temporary initiatives do not create corridors.
+
+Corridors require:
+
+
+multi-year infrastructure presence
+statutory continuity
+research ecosystem durability
+grid stability alignment
+
+
+---
+
+## 🗺 Corridor vs Jurisdiction Packages
+
+Jurisdiction packages describe:
+
+
+state-level structure
+
+
+Corridors describe:
+
+
+multi-state continuity structure
+
+
+Example:
+
+
+Virginia → jurisdiction package
+
+Ashburn Interconnection Corridor → corridor surface
+
+
+Corridors never replace jurisdiction packages.
+
+They extend them.
+
+---
+
+## 📂 Corridor Repository Structure
+
+
+atlas/corridors/
+│
+├── README.md
+│
+├── ashburn-interconnection-corridor.md
+├── ercot-compute-energy-corridor.md
+├── silicon-valley-innovation-corridor.md
+├── mountain-research-corridor.md
+├── miami-latam-connectivity-corridor.md
+└── northeast-financial-compute-corridor.md
+
+
+Each corridor file documents structural continuity across participating jurisdictions.
+
+---
+
+## 📊 Corridor Document Model
+
+Each corridor file should include:
+
+
+overview
+participating jurisdictions
+infrastructure continuity signals
+research ecosystem alignment
+energy topology compatibility
+governance interaction surfaces
+structural exclusions
+evidence gaps
+
+
+Corridor files must remain descriptive.
+
+No rankings permitted.
+
+No deployment recommendations permitted.
+
+---
+
+## 🔍 Corridor Emergence Criteria
+
+A corridor may be introduced when at least three of the following conditions exist across jurisdictions:
+
+- shared interconnection density
+- shared compute-energy topology
+- shared research ecosystem structure
+- shared statutory experimentation posture
+- shared semiconductor infrastructure presence
+- shared federal infrastructure adjacency
+
+Corridors must be removed or revised if evidence continuity disappears.
+
+---
+
+## 🧭 Corridor Classification Types
+
+Atlas corridors typically fall into the following structural categories:
+
+### Interconnection Corridors
+
+Example:
+
+
+Ashburn Interconnection Corridor
+
+
+Defined by:
+
+exchange density  
+fiber backbone concentration  
+carrier-neutral facility clustering  
+
+---
+
+### Compute-Energy Corridors
+
+Example:
+
+
+ERCOT Compute-Energy Corridor
+
+
+Defined by:
+
+grid independence  
+energy availability  
+compute siting compatibility  
+
+---
+
+### Research Corridors
+
+Example:
+
+
+Mountain Research Corridor
+
+
+Defined by:
+
+federal laboratory adjacency  
+university alignment  
+aerospace infrastructure clustering  
+
+---
+
+### Innovation Corridors
+
+Example:
+
+
+Silicon Valley Innovation Corridor
+
+
+Defined by:
+
+venture ecosystem persistence  
+semiconductor infrastructure  
+AI research concentration  
+
+---
+
+### Financial Infrastructure Corridors
+
+Example:
+
+
+Northeast Financial Compute Corridor
+
+
+Defined by:
+
+custody-regime environments  
+financial exchange clustering  
+institutional infrastructure density  
+
+---
+
+### Connectivity Gateways
+
+Example:
+
+
+Miami LATAM Connectivity Corridor
+
+
+Defined by:
+
+international bandwidth exchange  
+regional digital asset experimentation  
+municipal infrastructure signaling  
+
+---
+
+## 🧱 Structural Exclusions
+
+Corridors must not be inferred from:
+
+marketing initiatives  
+regional branding efforts  
+conference ecosystems  
+temporary research grants  
+startup clustering narratives  
+
+Corridors must remain evidence-derived infrastructure surfaces.
+
+---
+
+## 🔄 Corridor Update Model
+
+Corridors evolve only when structural signals change across participating jurisdictions.
+
+Updates may be triggered by:
+
+new interconnection infrastructure  
+grid expansion events  
+federal designation changes  
+semiconductor fabrication siting  
+custody-regime statutory alignment  
+
+All updates must be recorded in corridor change logs.
+
+---
+
+## 📊 Relationship to Jurisdiction Signals
+
+Corridors are derived from:
+
+
+jurisdiction signals.md
+
+
+Corridors must never introduce signals independently.
+
+They aggregate signal continuity across jurisdictions.
+
+---
+
+## 🤖 Future Machine-Readable Corridor Surfaces
+
+Planned structured outputs:
+
 
 corridors.json
-metadata.json
-atlas-index.json
+corridor-membership.json
+corridor-signal-matrix.json
 
-Corridor classification must remain deterministic and parseable.
+
+These support:
+
+agent routing awareness  
+registry interoperability  
+trust-layer topology mapping  
+
+---
+
+## 🧠 Relationship to Aegis
+
+Corridors provide regional infrastructure context for:
+
+🛡 Aegis lifecycle interpretation surfaces
+
+Future integrations include:
+
+multi-jurisdiction compatibility awareness  
+regional deployment topology interpretation  
+cross-state trust continuity mapping  
+
+Atlas supplies topology.
+
+Aegis evaluates lifecycle readiness within that topology.
+
+---
+
+## 🚀 Corridor Layer Status
+
+
+Phase 2 — Signal-Layer Activation (In Progress)
+
+
+The corridor layer transforms Atlas from a jurisdiction catalog into a regional infrastructure intelligence system.
