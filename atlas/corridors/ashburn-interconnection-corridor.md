@@ -169,7 +169,7 @@ This corridor should be updated if evidence confirms:
 
 Updates must follow:
 
-/atlas/signals-update-protocol.md
+/atlas/docs/framework/signals-update-protocol.md
 
 ---
 
