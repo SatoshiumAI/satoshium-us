@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Global Adjacency Model | Satoshium Atlas</title>
+<meta name="description" content="Global Adjacency Model — Atlas framework specification defining how non-domestic infrastructure continuity interacts with domestic Atlas corridor interpretation without altering the canonical topology contract.">
+<link rel="canonical" href="https://satoshium.us/atlas/docs/framework/global-adjacency-model.html">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.card ul{
+ margin:10px 0 14px 20px;
+ padding:0;
+}
+
+.card li{
+ margin:6px 0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.note strong{color:var(--gold2)}
+
+.warning{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid rgba(185,28,28,.28);
+ border-radius:14px;
+ background:rgba(185,28,28,.10);
+ color:var(--muted);
+}
+
+.warning strong{color:#ffb4b4}
+
+.warning ul{margin:8px 0 0 20px;padding:0}
+.warning li{color:var(--muted);margin:6px 0}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+.section-num{
+ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+ font-size:11px;
+ color:var(--gold);
+ letter-spacing:.1em;
+ font-weight:700;
+ display:block;
+ margin-bottom:6px;
+ opacity:.75;
+}
+
+.version-pill{
+ display:inline-block;
+ margin-top:8px;
+ padding:8px 14px;
+ border-radius:999px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.04em;
+}
+
+hr{
+ border:none;
+ border-top:1px solid var(--line);
+ margin:26px 0;
+}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Atlas Framework Specification</div>
+  <h1>Global Adjacency Model</h1>
+
+  <p class="lead">
+    The Global Adjacency Model defines how non-domestic infrastructure continuity interacts with domestic Atlas corridor interpretation surfaces. Global adjacency is an interpretation-support layer — it clarifies how domestic Atlas jurisdictions relate to external infrastructure environments without converting non-domestic continuity into domestic topology authority.
+  </p>
+
+  <p class="lead">
+    This specification governs cross-border, maritime, Arctic, and transoceanic continuity surfaces as Atlas extends beyond its U.S. normalization baseline toward international jurisdiction mapping in future phases.
+  </p>
+
+  <div class="note">
+    <strong>Core Rule:</strong> Global adjacency strengthens interpretation clarity without modifying domestic placement authority. The domestic topology trio remains the canonical placement contract.
+  </div>
+
+  <a class="btn" href="/atlas/">Back to Atlas →</a>
+  <a class="btn" href="/atlas/docs/framework/">Framework Library →</a>
+</section>
+
+
+<!-- §1 Purpose / §2 Definition -->
+<section class="grid">
+
+<article class="card">
+  <span class="section-num">§ 01</span>
+  <h2>Purpose</h2>
+
+  <p>
+    Global adjacency modeling defines how non-domestic infrastructure continuity interacts with Atlas corridor interpretation surfaces.
+  </p>
+
+  <p>Global adjacency supports:</p>
+  <ul>
+    <li>continental continuity visibility</li>
+    <li>cross-border infrastructure relevance</li>
+    <li>maritime interface participation</li>
+    <li>transnational logistics continuity</li>
+  </ul>
+
+  <div class="note">
+    <strong>Scope:</strong> Global adjacency must not independently assign topology trio placement authority within domestic Atlas structures. It exists to clarify how domestic Atlas jurisdictions relate to external infrastructure environments without converting non-domestic continuity into domestic topology authority.
+  </div>
+</article>
+
+
+<article class="card">
+  <span class="section-num">§ 02</span>
+  <h2>Global Adjacency Definition</h2>
+
+  <p>
+    Global adjacency describes infrastructure continuity relationships between Atlas jurisdictions and non-domestic infrastructure systems including:
+  </p>
+  <ul>
+    <li>Canadian provincial infrastructure continuity</li>
+    <li>Mexican national infrastructure continuity</li>
+    <li>maritime corridor interfaces</li>
+    <li>Arctic infrastructure continuity</li>
+    <li>transoceanic logistics participation surfaces</li>
+  </ul>
+
+  <p>
+    Global adjacency strengthens interpretation clarity without modifying domestic placement authority. It may help explain continuity beyond domestic borders — it may not redefine the domestic topology contract carried by the topology trio.
+  </p>
+</article>
+
+</section>
+
+
+<!-- §3 Authority Boundary (full width — critical rule) -->
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="section-num">§ 03</span>
+  <h2>Authority Boundary Rule</h2>
+
+  <div class="warning">
+    <strong>Non-domestic jurisdictions must not:</strong>
+    <ul>
+      <li>receive topology trio placement</li>
+      <li>receive corridor-role assignment</li>
+      <li>receive completion-layer participation</li>
+      <li>override foundation classification</li>
+    </ul>
+  </div>
+
+  <p style="margin-top:16px">
+    Non-domestic participation remains adjacency-supported interpretation only unless future Atlas international packages are created. Global adjacency may inform domestic interpretation — it may not function as a substitute for future international package governance.
+  </p>
+
+  <div class="note">
+    <strong>Future International Packages:</strong> Non-domestic jurisdictions may receive topology trio placement authority only after creation of canonical international Atlas jurisdiction packages governed by the Atlas package schema. Until such packages exist, global adjacency remains interpretation-support only.
+  </div>
+</article>
+</section>
+
+
+<!-- §4 Cross-Border Continuity (full width — evidence-grounding rule) -->
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="section-num">§ 04</span>
+  <h2>Cross-Border Continuity Surfaces</h2>
+
+  <p>Cross-border adjacency may include:</p>
+  <ul>
+    <li>energy transmission interties</li>
+    <li>rail corridor continuity</li>
+    <li>freight logistics crossings</li>
+    <li>pipeline continuity</li>
+    <li>research collaboration infrastructure</li>
+  </ul>
+
+  <div class="note">
+    <strong>Evidence-Grounding Rule:</strong> Cross-border continuity must remain infrastructure-evidence grounded. Designation surfaces alone are insufficient. Cross-border adjacency is valid only when the infrastructure relationship itself is materially documented, not merely politically or geographically implied.
+  </div>
+</article>
+</section>
+
+
+<!-- §5 Canadian / §6 Mexican -->
+<section class="grid">
+
+<article class="card">
+  <span class="section-num">§ 05</span>
+  <h2>Canadian Continuity Interfaces</h2>
+
+  <p>Canadian adjacency participation may include:</p>
+  <ul>
+    <li>hydropower transmission interties</li>
+    <li>Arctic logistics continuity</li>
+    <li>rail freight corridors</li>
+    <li>Great Lakes infrastructure systems</li>
+    <li>cross-border compute infrastructure participation</li>
+  </ul>
+
+  <div class="note">
+    Canadian adjacency must remain explicitly labeled as external continuity support. Canadian infrastructure may strengthen domestic continuity interpretation — it may not be collapsed into domestic topology authority.
+  </div>
+</article>
+
+
+<article class="card">
+  <span class="section-num">§ 06</span>
+  <h2>Mexican Continuity Interfaces</h2>
+
+  <p>Mexican adjacency participation may include:</p>
+  <ul>
+    <li>cross-border freight corridors</li>
+    <li>pipeline infrastructure continuity</li>
+    <li>manufacturing logistics interfaces</li>
+    <li>border-port infrastructure continuity</li>
+    <li>rail corridor extensions</li>
+  </ul>
+
+  <div class="note">
+    Mexican adjacency must remain explicitly labeled as external continuity support. Mexican continuity may matter structurally for southern domestic jurisdictions without converting external infrastructure into domestic role authority.
+  </div>
+</article>
+
+</section>
+
+
+<!-- §7 Maritime / §8 Arctic -->
+<section class="grid">
+
+<article class="card">
+  <span class="section-num">§ 07</span>
+  <h2>Maritime Interface Adjacency</h2>
+
+  <p>Maritime adjacency includes:</p>
+  <ul>
+    <li>Atlantic logistics corridors</li>
+    <li>Pacific logistics corridors</li>
+    <li>Gulf infrastructure continuity</li>
+    <li>Great Lakes maritime systems</li>
+    <li>Arctic shipping interfaces</li>
+  </ul>
+
+  <div class="note">
+    Maritime adjacency strengthens corridor interpretation without assigning inland topology authority. Maritime interfaces may connect domestic corridors to external systems — they do not automatically upgrade inland role authority or create domestic placement claims beyond the canonical package record.
+  </div>
+</article>
+
+
+<article class="card">
+  <span class="section-num">§ 08</span>
+  <h2>Arctic Continuity Surfaces</h2>
+
+  <p>Arctic adjacency includes:</p>
+  <ul>
+    <li>Alaska continuity surfaces</li>
+    <li>polar logistics systems</li>
+    <li>northern defense infrastructure continuity</li>
+    <li>Arctic compute infrastructure participation</li>
+    <li>climate-observation infrastructure systems</li>
+  </ul>
+
+  <div class="note">
+    Arctic adjacency strengthens frontier continuity interpretation without modifying corridor placement authority. Arctic continuity may be structurally important while still remaining non-authoritative outside the domestic topology contract.
+  </div>
+</article>
+
+</section>
+
+
+<!-- §9 Transoceanic (full width) -->
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="section-num">§ 09</span>
+  <h2>Transoceanic Continuity Interfaces</h2>
+
+  <p>Transoceanic adjacency may include:</p>
+  <ul>
+    <li>subsea cable infrastructure</li>
+    <li>global logistics port interfaces</li>
+    <li>international compute backbone participation</li>
+    <li>trans-Pacific infrastructure continuity</li>
+    <li>trans-Atlantic infrastructure continuity</li>
+  </ul>
+
+  <p>
+    Transoceanic adjacency must remain interpretation-support only. Transoceanic relevance may clarify external reach, interface depth, or infrastructure connection significance.
+  </p>
+
+  <div class="note">
+    <strong>Authority Boundary:</strong> Transoceanic adjacency may not assign domestic topology authority to external systems.
+  </div>
+</article>
+</section>
+
+
+<!-- §10 Topology Trio / §11 Corridor Roles -->
+<section class="grid">
+
+<article class="card">
+  <span class="section-num">§ 10</span>
+  <h2>Interaction with Topology Trio</h2>
+
+  <p>Global adjacency must defer to:</p>
+  <ul>
+    <li>corridor-group placement</li>
+    <li>foundation-layer classification</li>
+    <li>completion-layer participation</li>
+  </ul>
+
+  <p>
+    Global adjacency must not modify domestic topology authority. The domestic topology trio remains the canonical placement contract.
+  </p>
+
+  <div class="note">
+    Global adjacency may clarify the external context around that contract. It may not rewrite the contract.
+  </div>
+</article>
+
+
+<article class="card">
+  <span class="section-num">§ 11</span>
+  <h2>Interaction with Corridor Roles</h2>
+
+  <p><strong style="color:var(--gold2)">Global adjacency may:</strong></p>
+  <ul>
+    <li>clarify corridor continuation beyond domestic boundaries</li>
+    <li>reinforce terminus interpretation</li>
+    <li>strengthen expansion-edge directionality</li>
+  </ul>
+
+  <div class="warning">
+    <strong>Global adjacency must not:</strong>
+    <ul>
+      <li>assign anchor roles</li>
+      <li>assign transit roles</li>
+      <li>assign support-node roles</li>
+      <li>assign terminus roles</li>
+    </ul>
+  </div>
+
+  <p style="margin-top:14px">
+    Corridor-role authority remains domestic unless international packages are defined. External systems may explain why a domestic role matters — they may not independently assign the role. Global adjacency may clarify whether a domestic jurisdiction functions as a continental terminus interface; such clarification must not assign terminus authority to external infrastructure systems.
+  </p>
+</article>
+
+</section>
+
+
+<!-- §12 Foundations / §13 Signals -->
+<section class="grid">
+
+<article class="card">
+  <span class="section-num">§ 12</span>
+  <h2>Interaction with Foundations</h2>
+
+  <p>Global adjacency may reinforce:</p>
+  <ul>
+    <li>energy foundation continuity</li>
+    <li>compute backbone participation</li>
+    <li>transport infrastructure alignment</li>
+    <li>research infrastructure collaboration</li>
+  </ul>
+
+  <div class="note">
+    <strong>Explicit External Reinforcement:</strong> Foundation reinforcement must remain explicitly external. Implicit foundation inheritance is not permitted. A domestic jurisdiction may be strengthened by external continuity, but the package must keep visible which foundation relevance is external, domestic, or both.
+  </div>
+</article>
+
+
+<article class="card">
+  <span class="section-num">§ 13</span>
+  <h2>Interaction with Signals</h2>
+
+  <p>Signals may indicate:</p>
+  <ul>
+    <li>cross-border reinforcement direction</li>
+    <li>international infrastructure alignment</li>
+    <li>transnational logistics participation</li>
+  </ul>
+
+  <p>
+    Signals must remain non-authoritative. Signals must not establish corridor placement.
+  </p>
+
+  <div class="note">
+    Global adjacency-related signals may show structural direction or strengthening relevance. They may not independently create domestic or international topology assignment.
+  </div>
+</article>
+
+</section>
+
+
+<!-- §14 Trust / §15 Builder Mode -->
+<section class="grid">
+
+<article class="card">
+  <span class="section-num">§ 14</span>
+  <h2>Interaction with Trust Dimensions</h2>
+
+  <p><strong style="color:var(--gold2)">Global adjacency may strengthen:</strong></p>
+  <ul>
+    <li>continuity confidence</li>
+    <li>adjacency reliability interpretation</li>
+    <li>infrastructure plausibility interpretation</li>
+  </ul>
+
+  <div class="warning">
+    <strong>Global adjacency must not create:</strong>
+    <ul>
+      <li>deployment readiness inference</li>
+      <li>certification posture inference</li>
+      <li>corridor sufficiency inference</li>
+    </ul>
+  </div>
+
+  <p style="margin-top:14px">
+    Trust posture remains interpretive only. Global adjacency may improve interpretive confidence while remaining non-authoritative.
+  </p>
+</article>
+
+
+<article class="card">
+  <span class="section-num">§ 15</span>
+  <h2>Interaction with Builder Mode</h2>
+
+  <p>Builder Mode may reference global adjacency to:</p>
+  <ul>
+    <li>clarify infrastructure reach</li>
+    <li>describe export-aligned corridor continuity</li>
+    <li>identify cross-border infrastructure environments</li>
+  </ul>
+
+  <p>
+    Builder Mode must not treat global adjacency as deployment authority. Deployment posture remains domestic-evidence-bound.
+  </p>
+
+  <div class="note">
+    Global adjacency may explain external interface relevance. It may not become a proxy for siting approval.
+  </div>
+</article>
+
+</section>
+
+
+<!-- §16 Rendering (full width) -->
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="section-num">§ 16</span>
+  <h2>Rendering Visibility Rules</h2>
+
+  <div class="grid" style="margin-top:0">
+    <div>
+      <p><strong style="color:var(--gold2)">The renderer may:</strong></p>
+      <ul>
+        <li>display cross-border continuity overlays</li>
+        <li>visualize maritime adjacency</li>
+        <li>highlight transnational infrastructure surfaces</li>
+        <li>indicate expansion-edge directionality beyond domestic boundaries</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="warning" style="margin-top:0">
+        <strong>The renderer must not:</strong>
+        <ul>
+          <li>collapse domestic and international placement authority</li>
+          <li>assign topology roles externally</li>
+          <li>remove boundary visibility between domestic and global participation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Boundary Preservation:</strong> Rendering systems must preserve the difference between domestic canonical placement and external continuity support.
+  </div>
+</article>
+</section>
+
+
+<!-- §17 Compliance (full width — closes the spec) -->
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="section-num">§ 17</span>
+  <h2>Global Adjacency Compliance Definition</h2>
+
+  <div class="grid" style="margin-top:0">
+    <div>
+      <p><strong style="color:var(--gold2)">A jurisdiction package is global-adjacency compliant when:</strong></p>
+      <ul>
+        <li>external continuity remains explicitly labeled</li>
+        <li>adjacency support remains non-authoritative</li>
+        <li>foundation reinforcement remains visible</li>
+        <li>boundary separation remains preserved</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="warning" style="margin-top:0">
+        <strong>Non-compliance occurs when:</strong>
+        <ul>
+          <li>external infrastructure implies anchor placement</li>
+          <li>international adjacency replaces domestic topology authority</li>
+          <li>signals imply cross-border corridor assignment</li>
+          <li>foundation inheritance becomes implicit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:18px">
+    <span class="version-pill">Version · v1 — Initial global adjacency continuity specification</span>
+  </div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Satoshium Atlas is being built as a navigable intelligence surface — one jurisdiction package at a time.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+ 
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
