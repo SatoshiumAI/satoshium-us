@@ -3,724 +3,571 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Federal Overlay Model — Atlas Framework Specification | Satoshium</title>
-<meta name="description" content="The Atlas Federal Overlay Model defines how national-scale federal infrastructure overlays reinforce continuity interpretation without altering the canonical topology contract. Federal overlays are continuity amplifiers, not topology origin sources.">
-<meta name="theme-color" content="#0a1420">
-<link rel="canonical" href="https://satoshium.us/atlas/docs/framework/federal-overlay-model">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Federal Overlay Model | Satoshium Atlas</title>
+<meta name="description" content="Federal Overlay Model — Atlas framework specification defining how federal continuity overlays reinforce interpretation without altering canonical topology authority.">
+<link rel="canonical" href="https://satoshium.us/atlas/docs/framework/federal-overlay-model.html">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
 <style>
 :root{
- --bg:#060a10;
- --panel:#0a121c;
- --panel-2:#0d1624;
- --text:#dfe8f3;
- --text-strong:#f0f5fb;
- --muted:#8a99b0;
- --muted-2:#6e7d94;
- --accent:#4fb3d9;
- --accent-2:#7fd0ef;
- --accent-dim:#2a7a98;
- --line:rgba(79,179,217,.14);
- --line-strong:rgba(79,179,217,.24);
- --warn:#e07b7b;
- --warn-dim:rgba(224,123,123,.12);
- --warn-line:rgba(224,123,123,.28);
- --rule:#b9c5d8;
- --rule-line:rgba(185,197,216,.22);
+  --bg:#07090d;
+  --panel:#0c1018;
+  --panel2:#101726;
+  --text:#e8edf7;
+  --muted:#9aa7bd;
+  --gold:#d6a34a;
+  --gold2:#f4c36a;
+  --line:rgba(214,163,74,.18);
+  --cyan:#6fd3ff;
+  --cyan-soft:rgba(111,211,255,.10);
+  --danger:rgba(185,28,28,.16);
 }
+
 *{box-sizing:border-box}
+
 html,body{
- margin:0;
- padding:0;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
- line-height:1.62;
- scroll-behavior:smooth;
- -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.65;
+  scroll-behavior:smooth;
 }
-body{padding-top:44px;padding-bottom:80px}
-a{color:var(--accent-2);text-decoration:none}
-a:hover{color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-h1{font-size:38px;color:var(--text-strong);line-height:1.15;margin:0 0 14px;letter-spacing:-.01em;font-weight:600}
-h2{font-size:20px;color:var(--accent-2);margin:0 0 10px;font-weight:600;letter-spacing:.005em}
-h3{font-size:14px;color:var(--text-strong);margin:0 0 6px;font-weight:600}
-p{margin:0 0 12px;color:var(--text)}
-ul{margin:6px 0 12px 20px;padding:0}
-li{margin-bottom:4px;color:var(--text)}
-.eyebrow{
- display:inline-flex;align-items:center;gap:10px;
- padding:6px 12px;border-radius:999px;
- border:1px solid var(--line);background:rgba(79,179,217,.06);
- color:var(--accent-2);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-}
-.eyebrow::before{
- content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);
- box-shadow:0 0 8px rgba(79,179,217,.55);
-}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
 .hero{
- position:relative;overflow:hidden;
- border:1px solid var(--line);border-radius:18px;
- padding:34px 28px 30px;margin:24px 0 22px;
- background:
-  radial-gradient(ellipse at top right, rgba(79,179,217,.09), transparent 45%),
-  linear-gradient(to bottom right, rgba(10,20,32,.92), rgba(10,20,32,.82));
- box-shadow:0 0 0 1px rgba(79,179,217,.06), 0 24px 60px rgba(0,0,0,.5);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:30px 24px;
+  margin-bottom:18px;
+  background:
+    radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),
+    radial-gradient(circle at top left, rgba(111,211,255,.08), transparent 22%),
+    linear-gradient(to bottom right, rgba(12,16,24,.98), rgba(12,16,24,.92));
 }
-.hero::after{
- content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;
- background-image:
-  linear-gradient(rgba(79,179,217,.25) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(79,179,217,.25) 1px, transparent 1px);
- background-size:48px 48px;
- mask-image:linear-gradient(to bottom, rgba(0,0,0,.6), transparent 80%);
+
+.eyebrow{
+  display:inline-flex;
+  padding:8px 14px;
+  border:1px solid rgba(214,163,74,.24);
+  border-radius:999px;
+  color:var(--gold2);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
-.hero-inner{position:relative;z-index:1}
-.hero-sub{
- color:var(--muted);font-size:15px;margin:12px 0 0;max-width:760px;line-height:1.6;
+
+h1{
+  margin:12px 0 10px;
+  font-size:42px;
+  line-height:1.15;
+  color:var(--gold2);
 }
-.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.chip{
- padding:5px 10px;border-radius:999px;
- border:1px solid var(--line);background:rgba(255,255,255,.02);
- font-size:11px;color:var(--muted);letter-spacing:.02em;
+
+.lead{
+  max-width:940px;
+  color:var(--muted);
+  font-size:19px;
+  margin:0 0 14px;
 }
-.intro-card{
- border:1px solid var(--line);border-radius:14px;
- padding:18px 22px;margin:0 0 28px;
- background:linear-gradient(to bottom right, rgba(79,179,217,.05), rgba(79,179,217,.02));
+
+.hero-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
 }
-.intro-card p{margin:0;color:var(--text);font-size:14.5px;line-height:1.65}
-.intro-card .lead{color:var(--text-strong);font-weight:500}
- 
+
+.btn{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:12px;
+  border:1px solid rgba(214,163,74,.24);
+  background:rgba(214,163,74,.06);
+  color:var(--gold2);
+  font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
 .section{
- border:1px solid var(--line);border-radius:14px;
- padding:22px 24px;margin:0 0 18px;
- background:linear-gradient(to bottom right, rgba(13,22,36,.94), rgba(13,22,36,.82));
- box-shadow:0 12px 30px rgba(0,0,0,.35);
- transition:border-color .18s ease;
+  margin-top:18px;
 }
-.section:hover{border-color:var(--line-strong)}
-.section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:10px;flex-wrap:wrap}
-.section-num{
- font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
- font-size:11px;color:var(--accent-dim);letter-spacing:.12em;font-weight:700;
- padding-top:4px;
+
+.card{
+  background:linear-gradient(to bottom right,rgba(12,16,24,.96),rgba(12,16,24,.88));
+  border:1px solid rgba(214,163,74,.15);
+  border-radius:18px;
+  padding:22px;
 }
-.section p{font-size:14.5px;line-height:1.62}
-.section ul{font-size:14.5px}
- 
-.rule{
- margin-top:14px;padding:12px 16px;border-radius:10px;
- border-left:2px solid var(--accent);
- background:rgba(79,179,217,.04);
- color:var(--text);font-size:14px;line-height:1.55;
+
+.card h2{
+  margin:0 0 12px;
+  font-size:24px;
+  color:var(--gold2);
 }
-.rule .rule-label{
- display:block;font-size:10px;color:var(--accent-2);font-weight:700;
- letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;
+
+.card p{
+  margin:0 0 14px;
+  color:var(--muted);
 }
- 
-.must-not{
- margin-top:14px;padding:14px 16px;border-radius:10px;
- border:1px dashed var(--warn-line);
- background:var(--warn-dim);
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
 }
-.must-not .mn-label{
- display:block;font-size:10px;color:var(--warn);font-weight:700;
- letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;
+
+ul{
+  margin:10px 0 0 0;
+  padding-left:20px;
 }
-.must-not ul{margin:0 0 0 20px;padding:0;font-size:14px}
-.must-not li{color:var(--text)}
-.must-not p{margin:0;color:var(--text);font-size:14px}
- 
-.category-grid{
- display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px;
+
+li{
+  margin:6px 0;
+  color:var(--muted);
 }
-.category{
- padding:12px 14px;border-radius:10px;
- border:1px solid var(--line);
- background:rgba(255,255,255,.015);
- font-size:13.5px;
+
+.callout{
+  margin-top:16px;
+  padding:16px 18px;
+  border:1px solid rgba(111,211,255,.22);
+  border-radius:14px;
+  background:var(--cyan-soft);
+  color:var(--text);
 }
-.category strong{color:var(--text-strong);display:block;margin-bottom:2px;font-weight:600}
-.category span{color:var(--muted);font-size:12px}
- 
-.divider{
- border:none;height:1px;
- background:linear-gradient(to right, transparent, rgba(79,179,217,.18), transparent);
- margin:28px 0;
+
+.callout strong{
+  color:var(--cyan);
 }
- 
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
-.pair .rule,.pair .must-not{margin-top:0}
- 
-.status{
- border:1px solid var(--line);border-radius:12px;
- padding:18px 20px;margin:32px 0 0;
- background:rgba(10,20,32,.6);
- display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;
+
+.warning{
+  margin-top:16px;
+  padding:16px 18px;
+  border:1px solid rgba(185,28,28,.28);
+  border-radius:14px;
+  background:var(--danger);
 }
-.status-item{display:flex;flex-direction:column;gap:2px}
-.status-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-2);font-weight:700}
-.status-value{font-size:13px;color:var(--text-strong);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
- 
-.toc{
- border:1px solid var(--line);border-radius:12px;
- padding:16px 20px;margin:0 0 28px;
- background:rgba(10,20,32,.5);
+
+.warning strong{
+  color:#ffb4b4;
 }
-.toc .toc-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-2);font-weight:700;margin-bottom:8px}
-.toc ol{margin:0;padding:0 0 0 22px;columns:2;column-gap:28px;font-size:13px}
-.toc li{margin-bottom:3px;break-inside:avoid;color:var(--muted)}
-.toc a{color:var(--muted)}
-.toc a:hover{color:var(--accent-2)}
- 
-.prime-rule{
- border:1px solid var(--line-strong);border-radius:14px;
- padding:20px 24px;margin:0 0 24px;
- background:
-  radial-gradient(ellipse at top left, rgba(79,179,217,.08), transparent 60%),
-  rgba(13,22,36,.8);
- position:relative;
+
+.kicker{
+  color:var(--cyan);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:8px;
 }
-.prime-rule .pr-label{
- display:block;font-size:10px;color:var(--accent-2);font-weight:700;
- letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;
+
+.muted{color:var(--muted)}
+
+hr{
+  border:none;
+  border-top:1px solid var(--line);
+  margin:26px 0;
 }
-.prime-rule p{font-size:15px;line-height:1.55;margin:0;color:var(--text-strong)}
-.prime-rule strong{color:var(--accent-2);font-weight:600}
- 
-.distinction{
- display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;
+
+.footer-shell{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 18px 36px;
 }
-.distinction-cell{
- padding:14px 16px;border-radius:10px;
- border:1px solid var(--line);background:rgba(255,255,255,.015);
+
+.version{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  margin-top:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(214,163,74,.18);
+  background:rgba(214,163,74,.05);
+  color:var(--gold2);
+  font-size:13px;
+  font-weight:700;
 }
-.distinction-cell .dc-label{
- font-size:10px;text-transform:uppercase;letter-spacing:.1em;
- color:var(--accent-dim);font-weight:700;margin-bottom:5px;
-}
-.distinction-cell p{font-size:13px;margin:0;color:var(--text);line-height:1.5}
- 
-@media (max-width:760px){
- body{padding-top:32px}
- h1{font-size:28px}
- .hero{padding:26px 20px 22px}
- .section{padding:18px 18px}
- .category-grid{grid-template-columns:1fr}
- .pair{grid-template-columns:1fr}
- .distinction{grid-template-columns:1fr}
- .toc ol{columns:1}
-}
-@media (prefers-reduced-motion:reduce){
- html,body{scroll-behavior:auto}
- .section{transition:none}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr}
+  h1{font-size:34px}
+  .lead{font-size:18px}
 }
 </style>
 </head>
+
 <body>
- 
-<main class="wrap" id="main-content">
- 
-<!-- ── HERO ── -->
-<header class="hero" aria-labelledby="heading-hero">
-  <div class="hero-inner">
-    <span class="eyebrow">Atlas Framework Specification</span>
-    <h1 id="heading-hero" style="margin-top:18px">Federal Overlay Model</h1>
-    <p class="hero-sub">This document defines how national-scale federal infrastructure overlays reinforce continuity interpretation across jurisdictions without altering the canonical topology contract. Federal overlays are <em>interpretive continuity surfaces</em> — they help Atlas describe nationally coordinated infrastructure influence without converting federal presence into canonical corridor authority.</p>
-    <div class="hero-chips">
-      <span class="chip">Framework Library</span>
-      <span class="chip">Overlay Participation Model</span>
-      <span class="chip">Topology-Subordinate Layer</span>
-      <span class="chip">v1 — Initial Specification</span>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+  <section class="hero">
+    <div class="eyebrow">Atlas Framework Specification</div>
+    <h1>Federal Overlay Model</h1>
+
+    <p class="lead">
+      Federal overlays are interpretive continuity surfaces that help Atlas describe nationally coordinated infrastructure influence without converting federal presence into canonical corridor authority.
+    </p>
+
+    <p class="lead">
+      This framework defines how federal overlays reinforce continuity interpretation across jurisdictions while remaining subordinate to the Atlas topology contract, corridor-group placement, foundation-layer classification, and completion-layer participation.
+    </p>
+
+    <div class="callout">
+      <strong>Core Rule:</strong> Federal overlays are continuity amplifiers rather than topology origin sources.
     </div>
-  </div>
-</header>
- 
-<!-- ── PRIMARY RULE ── -->
-<div class="prime-rule">
-  <span class="pr-label">Core Rule</span>
-  <p><strong>Federal overlays are continuity amplifiers, not topology origin sources.</strong> Overlays may strengthen interpretation, but may not independently assign anchor status, transit status, terminus status, completion-layer placement, or corridor-role authority. The canonical topology trio remains authoritative across every interaction in this specification.</p>
-</div>
- 
-<!-- ── THREE-PART DISTINCTION ── -->
-<div class="distinction" role="list" aria-label="Atlas layer distinction">
-  <div class="distinction-cell" role="listitem">
-    <div class="dc-label">Topology Authority</div>
-    <p>Corridor-group placement, foundation-layer classification, and completion-layer participation. Canonical and binding.</p>
-  </div>
-  <div class="distinction-cell" role="listitem">
-    <div class="dc-label">Interpretive Reinforcement</div>
-    <p>Federal overlays that strengthen plausibility, adjacency confidence, and continuity visibility without transferring authority.</p>
-  </div>
-  <div class="distinction-cell" role="listitem">
-    <div class="dc-label">Evidence-Grounded Participation</div>
-    <p>Overlay visibility must remain tied to documented federal infrastructure relevance — never inherited, never assumed.</p>
-  </div>
-</div>
- 
-<!-- ── TABLE OF CONTENTS ── -->
-<nav class="toc" aria-label="Specification contents">
-  <div class="toc-label">Specification Contents</div>
-  <ol>
-    <li><a href="#s1">Purpose</a></li>
-    <li><a href="#s2">Federal Overlay Definition</a></li>
-    <li><a href="#s3">Federal Overlay Authority Limits</a></li>
-    <li><a href="#s4">Overlay Participation Categories</a></li>
-    <li><a href="#s5">National Laboratory Overlay Participation</a></li>
-    <li><a href="#s6">DOE Corridor Infrastructure Overlay</a></li>
-    <li><a href="#s7">Defense Infrastructure Overlay</a></li>
-    <li><a href="#s8">Interstate Transmission Designation Overlay</a></li>
-    <li><a href="#s9">Federal Compute Infrastructure Overlay</a></li>
-    <li><a href="#s10">Federal Logistics Continuity Overlay</a></li>
-    <li><a href="#s11">Overlay Interaction with Topology Trio</a></li>
-    <li><a href="#s12">Overlay Interaction with Corridor Roles</a></li>
-    <li><a href="#s13">Overlay Interaction with Foundation Types</a></li>
-    <li><a href="#s14">Overlay Interaction with Signals</a></li>
-    <li><a href="#s15">Overlay Interaction with Trust Dimensions</a></li>
-    <li><a href="#s16">Overlay Interaction with Builder Mode</a></li>
-    <li><a href="#s17">Rendering Visibility Rules</a></li>
-    <li><a href="#s18">Overlay Compliance Definition</a></li>
-  </ol>
-</nav>
- 
-<!-- ── SECTION 1 — PURPOSE ── -->
-<section class="section" id="s1" aria-labelledby="h-s1">
-  <div class="section-head">
-    <span class="section-num">§ 01</span>
-    <h2 id="h-s1">Purpose</h2>
-  </div>
-  <p>Federal overlays describe national-scale infrastructure systems that reinforce corridor continuity across jurisdictions.</p>
-  <p>Federal overlays:</p>
-  <ul>
-    <li>support interpretation</li>
-    <li>strengthen adjacency confidence</li>
-    <li>clarify infrastructure dependence</li>
-    <li>extend continuity visibility</li>
-  </ul>
-  <div class="rule">
-    <span class="rule-label">Governing Principle</span>
-    Federal overlays must not independently establish anchor placement authority. They are continuity amplifiers rather than topology origin sources. They help Atlas describe nationally coordinated infrastructure influence without altering the canonical topology contract.
-  </div>
-</section>
- 
-<!-- ── SECTION 2 — DEFINITION ── -->
-<section class="section" id="s2" aria-labelledby="h-s2">
-  <div class="section-head">
-    <span class="section-num">§ 02</span>
-    <h2 id="h-s2">Federal Overlay Definition</h2>
-  </div>
-  <p>A federal overlay is infrastructure continuity derived from nationally coordinated systems including:</p>
-  <ul>
-    <li>national laboratories</li>
-    <li>defense infrastructure</li>
-    <li>DOE transmission corridors</li>
-    <li>interstate transmission designation</li>
-    <li>federal compute systems</li>
-    <li>federal logistics networks</li>
-  </ul>
-  <p>Federal overlays operate as continuity amplifiers rather than topology origin sources. They may strengthen continuity interpretation across multiple jurisdictions, but they do not independently create corridor placement authority.</p>
-</section>
- 
-<!-- ── SECTION 3 — AUTHORITY LIMITS ── -->
-<section class="section" id="s3" aria-labelledby="h-s3">
-  <div class="section-head">
-    <span class="section-num">§ 03</span>
-    <h2 id="h-s3">Federal Overlay Authority Limits</h2>
-  </div>
-  <div class="must-not">
-    <span class="mn-label">Federal overlays must not</span>
-    <ul>
-      <li>assign anchor status</li>
-      <li>assign transit status</li>
-      <li>assign terminus status</li>
-      <li>override completion-layer placement</li>
-      <li>replace corridor-role classification</li>
-    </ul>
-  </div>
-  <div class="rule" style="margin-top:16px">
-    <span class="rule-label">Retained Authority</span>
-    The topology trio remains authoritative. Federal overlays may strengthen the plausibility, continuity, or bounded stability of a reading — but they may not convert support into canonical placement authority.
-  </div>
-</section>
- 
-<!-- ── SECTION 4 — PARTICIPATION CATEGORIES ── -->
-<section class="section" id="s4" aria-labelledby="h-s4">
-  <div class="section-head">
-    <span class="section-num">§ 04</span>
-    <h2 id="h-s4">Overlay Participation Categories</h2>
-  </div>
-  <p>Atlas recognizes the following federal overlay categories. Each category must remain independently visible.</p>
-  <div class="category-grid">
-    <div class="category"><strong>National-laboratory continuity</strong><span>DOE labs and federally administered research infrastructure</span></div>
-    <div class="category"><strong>DOE corridor infrastructure</strong><span>Federal transmission and grid-modernization corridors</span></div>
-    <div class="category"><strong>Defense infrastructure networks</strong><span>Military logistics, compute, and research infrastructure</span></div>
-    <div class="category"><strong>Interstate transmission designation</strong><span>Federally designated transmission priority zones</span></div>
-    <div class="category"><strong>Federal compute backbone</strong><span>National HPC and DOE compute infrastructure</span></div>
-    <div class="category"><strong>Federal logistics continuity</strong><span>Strategic freight and mobilization corridors</span></div>
-  </div>
-  <div class="rule">
-    <span class="rule-label">Blending Prohibition</span>
-    Overlay blending is not permitted. If multiple overlays are relevant, they must remain distinguishable rather than collapsing into a generic federal-strength claim.
-  </div>
-  <div class="rule" style="margin-top:10px">
-    <span class="rule-label">Equivalence Prohibition</span>
-    Federal overlay participation must not be interpreted as equivalence between jurisdictions that share the same overlay surface. Shared overlay visibility does not imply identical corridor-role strength, foundation participation depth, or completion-layer placement.
-  </div>
-</section>
- 
-<hr class="divider" />
- 
-<!-- ── SECTION 5 — NATIONAL LAB ── -->
-<section class="section" id="s5" aria-labelledby="h-s5">
-  <div class="section-head">
-    <span class="section-num">§ 05</span>
-    <h2 id="h-s5">National Laboratory Overlay Participation</h2>
-  </div>
-  <p>National laboratory overlays include:</p>
-  <ul>
-    <li>DOE national labs</li>
-    <li>federally administered research campuses</li>
-    <li>federal experimental infrastructure complexes</li>
-  </ul>
-  <p>National laboratory overlays strengthen research corridor continuity, innovation adjacency interpretation, and federal infrastructure visibility.</p>
-  <div class="must-not">
-    <span class="mn-label">Authority Boundary</span>
-    <p>They do not independently establish anchor placement. They may strengthen the interpretive reading of research participation, but they do not replace canonical topology or evidence requirements.</p>
-  </div>
-</section>
- 
-<!-- ── SECTION 6 — DOE CORRIDOR ── -->
-<section class="section" id="s6" aria-labelledby="h-s6">
-  <div class="section-head">
-    <span class="section-num">§ 06</span>
-    <h2 id="h-s6">DOE Corridor Infrastructure Overlay</h2>
-  </div>
-  <p>DOE overlays include:</p>
-  <ul>
-    <li>national transmission initiatives</li>
-    <li>federal energy corridor designations</li>
-    <li>grid modernization backbone participation</li>
-    <li>regional transmission reinforcement planning corridors</li>
-  </ul>
-  <p>DOE overlays strengthen energy-foundation interpretation continuity.</p>
-  <div class="must-not">
-    <span class="mn-label">Authority Boundary</span>
-    <p>DOE overlays do not independently assign corridor origin authority. They may indicate strong energy-domain continuity or reinforcement relevance, but they remain overlay support rather than primary placement authority.</p>
-  </div>
-</section>
- 
-<!-- ── SECTION 7 — DEFENSE ── -->
-<section class="section" id="s7" aria-labelledby="h-s7">
-  <div class="section-head">
-    <span class="section-num">§ 07</span>
-    <h2 id="h-s7">Defense Infrastructure Overlay</h2>
-  </div>
-  <p>Defense overlays include:</p>
-  <ul>
-    <li>military logistics corridors</li>
-    <li>defense compute infrastructure</li>
-    <li>defense research facilities</li>
-    <li>strategic mobility systems</li>
-  </ul>
-  <p>Defense overlays strengthen transport continuity interpretation, federal logistics visibility, and research infrastructure participation.</p>
-  <div class="must-not">
-    <span class="mn-label">Authority Boundary</span>
-    <p>Defense overlays must remain interpretation-support structures only. They may strengthen continuity reasoning without independently assigning corridor roles.</p>
-  </div>
-</section>
- 
-<!-- ── SECTION 8 — INTERSTATE TRANSMISSION ── -->
-<section class="section" id="s8" aria-labelledby="h-s8">
-  <div class="section-head">
-    <span class="section-num">§ 08</span>
-    <h2 id="h-s8">Interstate Transmission Designation Overlay</h2>
-  </div>
-  <p>Interstate designation overlays include:</p>
-  <ul>
-    <li>federally designated transmission corridors</li>
-    <li>regional transmission priority zones</li>
-    <li>multi-state infrastructure reinforcement surfaces</li>
-  </ul>
-  <p>Designation overlays strengthen energy-foundation stacking interpretation, corridor continuity plausibility, and adjacency-supported transmission reasoning.</p>
-  <div class="must-not">
-    <span class="mn-label">Authority Boundary</span>
-    <p>They must not independently assign anchor placement authority. A designation may matter structurally without becoming topology origin authority by itself.</p>
-  </div>
-</section>
- 
-<!-- ── SECTION 9 — FEDERAL COMPUTE ── -->
-<section class="section" id="s9" aria-labelledby="h-s9">
-  <div class="section-head">
-    <span class="section-num">§ 09</span>
-    <h2 id="h-s9">Federal Compute Infrastructure Overlay</h2>
-  </div>
-  <p>Federal compute overlays include:</p>
-  <ul>
-    <li>national computing facilities</li>
-    <li>federal HPC systems</li>
-    <li>DOE compute backbone infrastructure</li>
-    <li>defense compute clusters</li>
-  </ul>
-  <p>Federal compute overlays strengthen compute-foundation continuity interpretation.</p>
-  <div class="rule">
-    <span class="rule-label">Separation Rule</span>
-    Federal compute overlays must remain distinct from hyperscale private-sector compute placement signals. Federal compute presence may strengthen infrastructure continuity reading, but it must not be conflated with non-federal compute anchor logic unless canonical evidence explicitly supports that conclusion.
-  </div>
-</section>
- 
-<!-- ── SECTION 10 — FEDERAL LOGISTICS ── -->
-<section class="section" id="s10" aria-labelledby="h-s10">
-  <div class="section-head">
-    <span class="section-num">§ 10</span>
-    <h2 id="h-s10">Federal Logistics Continuity Overlay</h2>
-  </div>
-  <p>Federal logistics overlays include:</p>
-  <ul>
-    <li>strategic freight coordination corridors</li>
-    <li>military logistics alignment systems</li>
-    <li>federal emergency transport continuity infrastructure</li>
-    <li>interstate mobilization corridors</li>
-  </ul>
-  <p>These overlays strengthen transport-foundation continuity reasoning.</p>
-  <div class="must-not">
-    <span class="mn-label">Authority Boundary</span>
-    <p>They must not independently establish corridor-role authority. They may explain why a jurisdiction matters for continuity without creating corridor placement authority on their own.</p>
-  </div>
-</section>
- 
-<hr class="divider" />
- 
-<!-- ── SECTION 11 — TOPOLOGY TRIO ── -->
-<section class="section" id="s11" aria-labelledby="h-s11">
-  <div class="section-head">
-    <span class="section-num">§ 11</span>
-    <h2 id="h-s11">Overlay Interaction with Topology Trio</h2>
-  </div>
-  <p>Federal overlays must defer to:</p>
-  <ul>
-    <li>corridor-group placement</li>
-    <li>foundation-layer classification</li>
-    <li>completion-layer participation</li>
-  </ul>
-  <div class="rule">
-    <span class="rule-label">Interaction Rule</span>
-    Overlay visibility strengthens interpretation clarity but does not modify placement authority. Overlay relevance may influence how a jurisdiction is interpreted — it may not alter the trio fields or their authority.
-  </div>
-</section>
- 
-<!-- ── SECTION 12 — CORRIDOR ROLES ── -->
-<section class="section" id="s12" aria-labelledby="h-s12">
-  <div class="section-head">
-    <span class="section-num">§ 12</span>
-    <h2 id="h-s12">Overlay Interaction with Corridor Roles</h2>
-  </div>
-  <div class="pair">
-    <div class="rule">
-      <span class="rule-label">Federal overlays may</span>
-      <ul style="margin-top:4px;font-size:13.5px">
+
+    <div class="hero-links">
+      <a class="btn" href="/atlas/">Back to Atlas →</a>
+      <a class="btn" href="/atlas/docs/framework/">Framework Library →</a>
+    </div>
+  </section>
+
+  <section class="section grid">
+    <article class="card">
+      <div class="kicker">Purpose</div>
+      <h2>Interpretive Reinforcement, Not Placement Authority</h2>
+      <p>
+        Federal overlays describe national-scale infrastructure systems that reinforce corridor continuity across jurisdictions. They support interpretation, strengthen adjacency confidence, clarify infrastructure dependence, and extend continuity visibility.
+      </p>
+      <p>
+        They help Atlas describe nationally coordinated infrastructure influence without altering the canonical topology contract.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="kicker">Definition</div>
+      <h2>What Counts as a Federal Overlay</h2>
+      <p>
+        A federal overlay is infrastructure continuity derived from nationally coordinated systems including national laboratories, defense infrastructure, DOE transmission corridors, interstate transmission designation, federal compute systems, and federal logistics networks.
+      </p>
+      <p>
+        Federal overlays may strengthen interpretation across multiple jurisdictions, but they do not independently create corridor placement authority.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="kicker">Authority Limits</div>
+      <h2>What Federal Overlays Must Not Do</h2>
+      <div class="warning">
+        <strong>Federal overlays must not:</strong>
+        <ul>
+          <li>assign anchor status</li>
+          <li>assign transit status</li>
+          <li>assign terminus status</li>
+          <li>override completion-layer placement</li>
+          <li>replace corridor-role classification</li>
+        </ul>
+      </div>
+      <p>
+        The topology trio remains authoritative. Federal overlays may strengthen the plausibility, continuity, or bounded stability of a reading, but they may not convert support into canonical placement authority.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="kicker">Participation Categories</div>
+      <h2>Recognized Overlay Types</h2>
+      <div class="grid">
+        <div>
+          <ul>
+            <li>national-laboratory continuity</li>
+            <li>DOE corridor infrastructure</li>
+            <li>defense infrastructure networks</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>interstate transmission designation</li>
+            <li>federal compute backbone</li>
+            <li>federal logistics continuity</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Boundary Rule:</strong> Overlay blending is not permitted. If multiple overlays are relevant, they must remain distinguishable rather than collapsing into a generic federal-strength claim.
+      </div>
+
+      <p>
+        Shared overlay visibility does not imply identical corridor-role strength, foundation participation depth, or completion-layer placement.
+      </p>
+    </article>
+  </section>
+
+  <section class="section grid">
+    <article class="card">
+      <div class="kicker">Overlay Category</div>
+      <h2>National Laboratory Overlay Participation</h2>
+      <p>National laboratory overlays include DOE national labs, federally administered research campuses, and federal experimental infrastructure complexes.</p>
+      <ul>
+        <li>strengthen research corridor continuity</li>
+        <li>strengthen innovation adjacency interpretation</li>
+        <li>strengthen federal infrastructure visibility</li>
+      </ul>
+      <p>They do not independently establish anchor placement and do not replace canonical topology or evidence requirements.</p>
+    </article>
+
+    <article class="card">
+      <div class="kicker">Overlay Category</div>
+      <h2>DOE Corridor Infrastructure Overlay</h2>
+      <p>DOE overlays include national transmission initiatives, federal energy corridor designations, grid modernization backbone participation, and regional transmission reinforcement planning corridors.</p>
+      <ul>
+        <li>strengthen energy-foundation interpretation continuity</li>
+        <li>indicate reinforcement relevance</li>
+        <li>remain overlay support rather than primary placement authority</li>
+      </ul>
+      <p>DOE overlays do not independently assign corridor origin authority.</p>
+    </article>
+  </section>
+
+  <section class="section grid">
+    <article class="card">
+      <div class="kicker">Overlay Category</div>
+      <h2>Defense Infrastructure Overlay</h2>
+      <p>Defense overlays include military logistics corridors, defense compute infrastructure, defense research facilities, and strategic mobility systems.</p>
+      <ul>
+        <li>strengthen transport continuity interpretation</li>
+        <li>strengthen federal logistics visibility</li>
+        <li>strengthen research infrastructure participation</li>
+      </ul>
+      <p>They must remain interpretation-support structures only and may not independently assign corridor roles.</p>
+    </article>
+
+    <article class="card">
+      <div class="kicker">Overlay Category</div>
+      <h2>Interstate Transmission Designation Overlay</h2>
+      <p>Designation overlays include federally designated transmission corridors, regional transmission priority zones, and multi-state infrastructure reinforcement surfaces.</p>
+      <ul>
+        <li>strengthen energy-foundation stacking interpretation</li>
+        <li>strengthen corridor continuity plausibility</li>
+        <li>strengthen adjacency-supported transmission reasoning</li>
+      </ul>
+      <p>A designation may matter structurally without becoming topology origin authority by itself.</p>
+    </article>
+  </section>
+
+  <section class="section grid">
+    <article class="card">
+      <div class="kicker">Overlay Category</div>
+      <h2>Federal Compute Infrastructure Overlay</h2>
+      <p>Federal compute overlays include national computing facilities, federal HPC systems, DOE compute backbone infrastructure, and defense compute clusters.</p>
+      <ul>
+        <li>strengthen compute-foundation continuity interpretation</li>
+        <li>remain distinct from hyperscale private-sector compute placement signals</li>
+        <li>must not be conflated with non-federal compute anchor logic unless canonical evidence explicitly supports that conclusion</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="kicker">Overlay Category</div>
+      <h2>Federal Logistics Continuity Overlay</h2>
+      <p>Federal logistics overlays include strategic freight coordination corridors, military logistics alignment systems, federal emergency transport continuity infrastructure, and interstate mobilization corridors.</p>
+      <ul>
+        <li>strengthen transport-foundation continuity reasoning</li>
+        <li>clarify why a jurisdiction matters for continuity</li>
+        <li>do not independently establish corridor-role authority</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="section grid">
+    <article class="card">
+      <div class="kicker">Interaction Rule</div>
+      <h2>Interaction with the Topology Trio</h2>
+      <p>Federal overlays must defer to:</p>
+      <ul>
+        <li>corridor-group placement</li>
+        <li>foundation-layer classification</li>
+        <li>completion-layer participation</li>
+      </ul>
+      <p>
+        Overlay visibility strengthens interpretation clarity but does not modify placement authority. Overlay relevance may influence interpretation, but it may not alter the trio fields or their authority.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="kicker">Interaction Rule</div>
+      <h2>Interaction with Corridor Roles</h2>
+      <p>Federal overlays may:</p>
+      <ul>
         <li>reinforce anchor stability interpretation</li>
         <li>clarify transit continuity plausibility</li>
         <li>strengthen support-node interpretation</li>
         <li>improve expansion-edge trajectory confidence</li>
       </ul>
-    </div>
-    <div class="must-not">
-      <span class="mn-label">Federal overlays must not</span>
+      <div class="warning">
+        <strong>Federal overlays must not:</strong>
+        <ul>
+          <li>create anchor roles</li>
+          <li>create transit roles</li>
+          <li>create terminus roles</li>
+          <li>override role classification</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="section grid">
+    <article class="card">
+      <div class="kicker">Interaction Rule</div>
+      <h2>Interaction with Foundation Types</h2>
+      <p>Federal overlays commonly stack with:</p>
       <ul>
-        <li>create anchor roles</li>
-        <li>create transit roles</li>
-        <li>create terminus roles</li>
-        <li>override role classification</li>
+        <li>energy foundation</li>
+        <li>compute foundation</li>
+        <li>research foundation</li>
+        <li>transport foundation</li>
       </ul>
-    </div>
-  </div>
-  <p style="margin-top:14px">Overlay presence may support a role reading. It may not generate the role independently.</p>
-</section>
- 
-<!-- ── SECTION 13 — FOUNDATION TYPES ── -->
-<section class="section" id="s13" aria-labelledby="h-s13">
-  <div class="section-head">
-    <span class="section-num">§ 13</span>
-    <h2 id="h-s13">Overlay Interaction with Foundation Types</h2>
-  </div>
-  <p>Federal overlays commonly stack with:</p>
-  <ul>
-    <li>energy foundation</li>
-    <li>compute foundation</li>
-    <li>research foundation</li>
-    <li>transport foundation</li>
-  </ul>
-  <div class="rule">
-    <span class="rule-label">Explicit Stacking Rule</span>
-    Overlay stacking must remain explicit. Implicit cross-foundation inheritance is not permitted. A federal overlay may support multiple foundations at once, but the package must preserve visibility of which foundation domains are actually implicated.
-  </div>
-  <div class="rule" style="margin-top:10px">
-    <span class="rule-label">Dominance Visibility Rule</span>
-    When multiple federal overlays affect the same jurisdiction simultaneously, dominant overlay dependence must remain explicitly identifiable. Secondary overlay participation must not obscure the primary infrastructure continuity surface being reinforced.
-  </div>
-</section>
- 
-<!-- ── SECTION 14 — SIGNALS ── -->
-<section class="section" id="s14" aria-labelledby="h-s14">
-  <div class="section-head">
-    <span class="section-num">§ 14</span>
-    <h2 id="h-s14">Overlay Interaction with Signals</h2>
-  </div>
-  <p>Federal overlays may appear as:</p>
-  <ul>
-    <li>continuity-support signals</li>
-    <li>infrastructure reinforcement indicators</li>
-    <li>federal participation visibility markers</li>
-  </ul>
-  <div class="must-not">
-    <span class="mn-label">Federal overlays must not</span>
-    <ul>
-      <li>convert signals into evidence</li>
-      <li>replace corridor-role classification</li>
-      <li>override topology placement</li>
-    </ul>
-  </div>
-  <div class="rule" style="margin-top:14px">
-    <span class="rule-label">Signal Taxonomy Authority</span>
-    Signal taxonomy remains authoritative. Overlay-related signals may indicate emerging or strengthening federal continuity relevance, but they must remain within signal authority boundaries.
-  </div>
-</section>
- 
-<!-- ── SECTION 15 — TRUST DIMENSIONS ── -->
-<section class="section" id="s15" aria-labelledby="h-s15">
-  <div class="section-head">
-    <span class="section-num">§ 15</span>
-    <h2 id="h-s15">Overlay Interaction with Trust Dimensions</h2>
-  </div>
-  <div class="pair">
-    <div class="rule">
-      <span class="rule-label">Federal overlays may strengthen</span>
-      <ul style="margin-top:4px;font-size:13.5px">
+      <p>
+        Overlay stacking must remain explicit. Implicit cross-foundation inheritance is not permitted. When multiple overlays affect the same jurisdiction, dominant overlay dependence must remain explicitly identifiable.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="kicker">Interaction Rule</div>
+      <h2>Interaction with Signals</h2>
+      <p>Federal overlays may appear as:</p>
+      <ul>
+        <li>continuity-support signals</li>
+        <li>infrastructure reinforcement indicators</li>
+        <li>federal participation visibility markers</li>
+      </ul>
+      <p>
+        They must not convert signals into evidence, replace corridor-role classification, or override topology placement. Signal taxonomy remains authoritative.
+      </p>
+    </article>
+  </section>
+
+  <section class="section grid">
+    <article class="card">
+      <div class="kicker">Interaction Rule</div>
+      <h2>Interaction with Trust Dimensions</h2>
+      <p>Federal overlays may strengthen:</p>
+      <ul>
         <li>continuity confidence</li>
         <li>infrastructure stability interpretation</li>
         <li>adjacency reliability interpretation</li>
       </ul>
-    </div>
-    <div class="must-not">
-      <span class="mn-label">Overlay presence must not create</span>
+      <p>
+        Overlay presence must not create deployment readiness inference, certification posture inference, or corridor sufficiency inference. Trust dimensions remain non-scoring interpretive structures.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="kicker">Interaction Rule</div>
+      <h2>Interaction with Builder Mode</h2>
+      <p>Builder-mode interpretation may reference overlays to:</p>
       <ul>
-        <li>deployment readiness inference</li>
-        <li>certification posture inference</li>
-        <li>corridor sufficiency inference</li>
+        <li>clarify infrastructure dependence</li>
+        <li>highlight federal continuity participation</li>
+        <li>describe reinforcement environments</li>
       </ul>
-    </div>
-  </div>
-  <div class="rule" style="margin-top:14px">
-    <span class="rule-label">Non-Scoring Retention</span>
-    Trust dimensions remain non-scoring interpretive structures. Federal overlays may contribute to trust posture without upgrading trust into topology or lifecycle authority.
-  </div>
-</section>
- 
-<!-- ── SECTION 16 — BUILDER MODE ── -->
-<section class="section" id="s16" aria-labelledby="h-s16">
-  <div class="section-head">
-    <span class="section-num">§ 16</span>
-    <h2 id="h-s16">Overlay Interaction with Builder Mode</h2>
-  </div>
-  <p>Builder-mode interpretation may reference overlays to:</p>
-  <ul>
-    <li>clarify infrastructure dependence</li>
-    <li>highlight federal continuity participation</li>
-    <li>describe reinforcement environments</li>
-  </ul>
-  <div class="must-not">
-    <span class="mn-label">Builder Mode must not</span>
-    <p>treat overlays as siting authority signals. Deployment posture remains evidence-bound. An overlay may explain why an environment is structurally connected — it may not function as a deployment authorization shortcut.</p>
-  </div>
-</section>
- 
-<!-- ── SECTION 17 — RENDERING ── -->
-<section class="section" id="s17" aria-labelledby="h-s17">
-  <div class="section-head">
-    <span class="section-num">§ 17</span>
-    <h2 id="h-s17">Rendering Visibility Rules</h2>
-  </div>
-  <div class="pair">
-    <div class="rule">
-      <span class="rule-label">The renderer may</span>
-      <ul style="margin-top:4px;font-size:13.5px">
+      <p>
+        Builder Mode must not treat overlays as siting authority signals. Deployment posture remains evidence-bound.
+      </p>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="kicker">Rendering Rule</div>
+      <h2>Rendering Visibility Rules</h2>
+      <p>The renderer may:</p>
+      <ul>
         <li>display overlay participation layers</li>
         <li>visualize federal continuity surfaces</li>
         <li>highlight overlay stacking with foundations</li>
       </ul>
-    </div>
-    <div class="must-not">
-      <span class="mn-label">The renderer must not</span>
+
+      <p style="margin-top:16px;">The renderer must not:</p>
       <ul>
         <li>upgrade overlays to topology authority</li>
         <li>collapse overlays into corridor roles</li>
         <li>remove overlay dependence visibility</li>
       </ul>
-    </div>
-  </div>
-  <div class="rule" style="margin-top:14px">
-    <span class="rule-label">Subordination Rule</span>
-    Rendering layers must preserve overlay classification boundaries. Overlay presence may be surfaced visually, narratively, or through helper summaries, but it must remain visibly subordinate to the canonical topology contract.
-  </div>
-</section>
- 
-<!-- ── SECTION 18 — COMPLIANCE ── -->
-<section class="section" id="s18" aria-labelledby="h-s18">
-  <div class="section-head">
-    <span class="section-num">§ 18</span>
-    <h2 id="h-s18">Overlay Compliance Definition</h2>
-  </div>
-  <div class="pair">
-    <div class="rule">
-      <span class="rule-label">Compliant when</span>
-      <ul style="margin-top:4px;font-size:13.5px">
-        <li>overlay participation remains evidence-grounded</li>
-        <li>overlay stacking remains explicit</li>
-        <li>overlay roles remain interpretation-bound</li>
-        <li>topology authority remains unchanged</li>
-      </ul>
-    </div>
-    <div class="must-not">
-      <span class="mn-label">Non-compliance occurs when</span>
-      <ul>
-        <li>overlays imply anchor authority</li>
-        <li>overlays replace corridor roles</li>
-        <li>overlays override foundation classification</li>
-        <li>overlays produce deployment inference</li>
-      </ul>
-    </div>
-  </div>
-</section>
- 
-<!-- ── STATUS BLOCK ── -->
-<div class="status" role="contentinfo" aria-label="Specification status">
-  <div class="status-item">
-    <span class="status-label">Specification</span>
-    <span class="status-value">Federal Overlay Model</span>
-  </div>
-  <div class="status-item">
-    <span class="status-label">Version</span>
-    <span class="status-value">v1 — Initial</span>
-  </div>
-  <div class="status-item">
-    <span class="status-label">Layer</span>
-    <span class="status-value">Framework / Topology-Subordinate</span>
-  </div>
-  <div class="status-item">
-    <span class="status-label">Authority</span>
-    <span class="status-value">Canonical Topology Trio Retained</span>
-  </div>
-  <div class="status-item">
-    <span class="status-label">Library</span>
-    <span class="status-value">Atlas Framework Docs</span>
-  </div>
-</div>
- 
+
+      <div class="callout">
+        <strong>Rendering Principle:</strong> Overlay presence may be surfaced visually, narratively, or through helper summaries, but it must remain visibly subordinate to the canonical topology contract.
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="kicker">Compliance</div>
+      <h2>Federal Overlay Compliance Definition</h2>
+
+      <div class="grid">
+        <div>
+          <p><strong style="color:var(--gold2)">A jurisdiction package is federal-overlay compliant when:</strong></p>
+          <ul>
+            <li>overlay participation remains evidence-grounded</li>
+            <li>overlay stacking remains explicit</li>
+            <li>overlay roles remain interpretation-bound</li>
+            <li>topology authority remains unchanged</li>
+          </ul>
+        </div>
+
+        <div>
+          <p><strong style="color:#ffb4b4">Non-compliance occurs when:</strong></p>
+          <ul>
+            <li>overlays imply anchor authority</li>
+            <li>overlays replace corridor roles</li>
+            <li>overlays override foundation classification</li>
+            <li>overlays produce deployment inference</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="version">Version · v1 — Initial Atlas federal overlay participation specification</div>
+    </article>
+  </section>
+
 </main>
- 
+
+<div class="footer-shell">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Atlas framework pages define interpretation boundaries before they become navigation surfaces.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
 </body>
 </html>
