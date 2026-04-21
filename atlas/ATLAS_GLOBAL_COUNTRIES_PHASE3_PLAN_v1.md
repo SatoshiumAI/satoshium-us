@@ -154,3 +154,18 @@ Global routing gateways and advanced fabrication anchors.
 # Phase 3 Execution Model
 
 Each jurisdiction package should be constructed using the canonical Atlas schema:
+
+evidence.md
+signals.md
+trust-dimensions.md
+metadata.md
+profile.md
+builder-mode.md
+change-log.md
+
+Corridor placement remains provisional until:
+
+- adjacency alignment confirmed
+- foundation layer verified
+- signal derivation complete
+- topology interpretation stabilized
