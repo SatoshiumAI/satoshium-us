@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Signals Update Protocol | Satoshium Atlas</title>
+<meta name="description" content="Signals Update Protocol — Atlas framework specification defining how jurisdiction signals evolve while preserving evidence → signals derivation integrity, with downstream corridor-assignment-matrix synchronization guidance.">
+<link rel="canonical" href="https://satoshium.us/atlas/docs/framework/signals-update-protocol.html">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+  --bg:#07090d;
+  --panel:#0c1018;
+  --panel2:#101726;
+  --text:#e8edf7;
+  --muted:#9aa7bd;
+  --gold:#d6a34a;
+  --gold2:#f4c36a;
+  --line:rgba(214,163,74,.18);
+  --cyan:#6fd3ff;
+  --cyan-soft:rgba(111,211,255,.10);
+  --danger:rgba(185,28,28,.16);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.65;
+  scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:30px 24px;
+  margin-bottom:18px;
+  background:
+    radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),
+    radial-gradient(circle at top left, rgba(111,211,255,.08), transparent 22%),
+    linear-gradient(to bottom right, rgba(12,16,24,.98), rgba(12,16,24,.92));
+}
+
+.eyebrow{
+  display:inline-flex;
+  padding:8px 14px;
+  border:1px solid rgba(214,163,74,.24);
+  border-radius:999px;
+  color:var(--gold2);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+h1{
+  margin:12px 0 10px;
+  font-size:42px;
+  line-height:1.15;
+  color:var(--gold2);
+}
+
+.lead{
+  max-width:940px;
+  color:var(--muted);
+  font-size:19px;
+  margin:0 0 14px;
+}
+
+.hero-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:12px;
+  border:1px solid rgba(214,163,74,.24);
+  background:rgba(214,163,74,.06);
+  color:var(--gold2);
+  font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.section{
+  margin-top:18px;
+}
+
+.card{
+  background:linear-gradient(to bottom right,rgba(12,16,24,.96),rgba(12,16,24,.88));
+  border:1px solid rgba(214,163,74,.15);
+  border-radius:18px;
+  padding:22px;
+}
+
+.card h2{
+  margin:0 0 12px;
+  font-size:24px;
+  color:var(--gold2);
+}
+
+.card p{
+  margin:0 0 14px;
+  color:var(--muted);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+ul{
+  margin:10px 0 0 0;
+  padding-left:20px;
+}
+
+li{
+  margin:6px 0;
+  color:var(--muted);
+}
+
+.callout{
+  margin-top:16px;
+  padding:16px 18px;
+  border:1px solid rgba(111,211,255,.22);
+  border-radius:14px;
+  background:var(--cyan-soft);
+  color:var(--text);
+}
+
+.callout strong{
+  color:var(--cyan);
+}
+
+.warning{
+  margin-top:16px;
+  padding:16px 18px;
+  border:1px solid rgba(185,28,28,.28);
+  border-radius:14px;
+  background:var(--danger);
+}
+
+.warning strong{
+  color:#ffb4b4;
+}
+
+.kicker{
+  color:var(--cyan);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.muted{color:var(--muted)}
+
+code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:13px;
+  color:var(--gold2);
+  background:rgba(214,163,74,.08);
+  padding:2px 6px;
+  border-radius:4px;
+  border:1px solid rgba(214,163,74,.14);
+}
+
+hr{
+  border:none;
+  border-top:1px solid var(--line);
+  margin:26px 0;
+}
+
+.footer-shell{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 18px 36px;
+}
+
+.version{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  margin-top:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(214,163,74,.18);
+  background:rgba(214,163,74,.05);
+  color:var(--gold2);
+  font-size:13px;
+  font-weight:700;
+}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr}
+  h1{font-size:34px}
+  .lead{font-size:18px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+  <section class="hero">
+    <div class="eyebrow">Atlas Framework Specification</div>
+    <h1>Signals Update Protocol</h1>
+
+    <p class="lead">
+      The Signals Update Protocol defines how jurisdiction signals evolve while preserving evidence → signals derivation integrity across the Atlas jurisdiction intelligence engine.
+    </p>
+
+    <p class="lead">
+      This protocol governs when signals may structurally change, what downstream layers must be reviewed, and how corridor-assignment-matrix synchronization is recorded without letting matrix alignment drift ahead of its evidence basis.
+    </p>
+
+    <div class="callout">
+      <strong>Core Rule:</strong> Signals update only when structural evidence changes. Matrix alignment changes alone do not trigger signal updates.
+    </div>
+
+    <div class="hero-links">
+      <a class="btn" href="/atlas/">Back to Atlas →</a>
+      <a class="btn" href="/atlas/docs/framework/">Framework Library →</a>
+    </div>
+  </section>
+
+  <section class="section grid">
+    <article class="card">
+      <div class="kicker">Purpose</div>
+      <h2>What Atlas Signals Represent</h2>
+      <p>
+        Atlas signals represent evidence-derived structural observations describing jurisdiction environments. They are the derivation layer sitting between raw canonical evidence and downstream trust interpretation, profile characterization, and builder-mode reading.
+      </p>
+      <p>
+        Signals describe jurisdiction environments affecting:
+      </p>
+      <ul>
+        <li>AI infrastructure posture</li>
+        <li>Bitcoin regulatory compatibility</li>
+        <li>compute-energy geography</li>
+        <li>institutional research presence</li>
+        <li>municipal experimentation structure</li>
+        <li>corridor adjacency potential</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="kicker">Integrity Requirements</div>
+      <h2>What Signals Must Remain</h2>
+      <p>
+        Signals carry downstream weight across every Atlas layer. To preserve that weight, signals must remain internally consistent and externally portable.
+      </p>
+      <ul>
+        <li><strong style="color:var(--text)">evidence-derived</strong> — never inherited, never inferred without canonical backing</li>
+        <li><strong style="color:var(--text)">jurisdiction-lens aligned</strong> — consistent with the canonical topology lens</li>
+        <li><strong style="color:var(--text)">cross-state comparable</strong> — same taxonomy, same granularity across jurisdictions</li>
+        <li><strong style="color:var(--text)">export-compatible</strong> — structured for downstream machine-readable formats</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="kicker">Update Triggers</div>
+      <h2>When Signals May Change</h2>
+      <p>
+        Signals update only when structural evidence changes. The evidence layer is the upstream authority; signals follow it, not the reverse.
+      </p>
+
+      <div class="warning">
+        <strong>Signals must not update based on matrix drift:</strong>
+        <ul>
+          <li>matrix alignment changes alone do not trigger signal updates</li>
+          <li>corridor reassignment alone does not trigger signal updates</li>
+          <li>signal updates require supporting evidence changes</li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <strong>Governing Principle:</strong> Evidence changes authorize signal changes. Without an underlying evidence change, signal stability must be preserved even when downstream structures shift.
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="kicker">Change Classification</div>
+      <h2>Structural vs Observational Changes</h2>
+      <p>
+        Atlas distinguishes two change categories. Each category touches a different, well-bounded set of canonical files — the distinction keeps the package audit trail legible and prevents trust or profile drift from observational noise.
+      </p>
+
+      <div class="grid">
+        <div>
+          <p><strong style="color:var(--gold2)">Structural changes modify:</strong></p>
+          <ul>
+            <li><code>signals.md</code></li>
+            <li><code>trust-dimensions.md</code> (review only)</li>
+            <li><code>profile.md</code> (if topology shifts)</li>
+          </ul>
+        </div>
+
+        <div>
+          <p><strong style="color:var(--cyan)">Observational changes modify only:</strong></p>
+          <ul>
+            <li><code>change-log.md</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Scope Rule:</strong> Observational changes never reach the signal, trust, or profile layers. Only structural changes — changes rooted in canonical evidence — propagate through the derivation chain.
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="kicker">Matrix Synchronization</div>
+      <h2>Corridor Assignment Matrix Synchronization</h2>
+      <p>
+        When signals change structurally, downstream consistency must be checked against the corridor assignment matrix at <code>/atlas/corridors/corridor-assignment-matrix.md</code>. The matrix does not author signals; it records where signal-consistent placement sits in the corridor registry.
+      </p>
+
+      <p><strong style="color:var(--gold2)">If matrix alignment changes:</strong></p>
+      <ul>
+        <li>update <code>metadata.md</code></li>
+        <li>update corridor registry participation (if applicable)</li>
+        <li>record adjustment in <code>change-log.md</code></li>
+      </ul>
+
+      <div class="callout">
+        <strong>Directionality:</strong> Signals remain upstream authority relative to corridor classification. Matrix updates follow signal changes, not the other way around.
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="kicker">Machine-Readable Compatibility</div>
+      <h2>Export Format Support</h2>
+      <p>
+        Signals are authored as canonical Markdown, but the derivation structure is designed to support machine-readable export without loss of meaning. Each downstream surface has a paired export target.
+      </p>
+
+      <ul>
+        <li><code>signals.json</code></li>
+        <li><code>trust-dimensions.json</code></li>
+        <li><code>metadata.json</code></li>
+        <li><code>corridors.json</code></li>
+      </ul>
+
+      <div class="callout">
+        <strong>Export Stability:</strong> Signal taxonomy and cross-state comparability are maintained precisely so these export formats remain structurally valid across the 50-state canonical package without normalization loss.
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="kicker">Protocol Summary</div>
+      <h2>Signals Update Protocol — Flow</h2>
+
+      <div class="grid">
+        <div>
+          <p><strong style="color:var(--gold2)">Authorized update chain:</strong></p>
+          <ul>
+            <li>canonical evidence change occurs</li>
+            <li><code>signals.md</code> updates derive from evidence</li>
+            <li><code>trust-dimensions.md</code> reviewed for downstream consistency</li>
+            <li><code>profile.md</code> updated only if topology shifts</li>
+            <li>matrix alignment checked against updated signals</li>
+            <li><code>metadata.md</code> and corridor registry updated if needed</li>
+            <li><code>change-log.md</code> records the adjustment</li>
+          </ul>
+        </div>
+
+        <div>
+          <p><strong style="color:#ffb4b4">Protocol violations:</strong></p>
+          <ul>
+            <li>signals updated without evidence support</li>
+            <li>matrix drift used as justification for signal change</li>
+            <li>observational change reaches trust, profile, or signal layers</li>
+            <li>corridor reassignment promoted ahead of signal update</li>
+            <li>export taxonomy broken by non-canonical signal edits</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="version">Version · Signals Update Protocol — Satoshium Atlas Jurisdiction Intelligence Engine</div>
+    </article>
+  </section>
+
+</main>
+
+<div class="footer-shell">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Atlas framework pages define interpretation boundaries before they become navigation surfaces.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
