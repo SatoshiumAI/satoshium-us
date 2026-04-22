@@ -7,85 +7,610 @@
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
-<title>Germany | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<title>Germany — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Structured rendering of the canonical Germany Atlas jurisdiction package.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/germany/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
 <style>
 :root{
+ --card-wm:url('https://satoshium.link/assets/seal.png');
  --bg:#07090d;
  --panel:#0c1018;
+ --panel-2:#101624;
  --text:#e8edf7;
  --muted:#9aa7bd;
  --gold:#d6a34a;
  --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --line-strong:rgba(214,163,74,.28);
+ --red:#ef4444;
+ --orange:#f97316;
+ --yellow:#eab308;
+ --green:#22c55e;
+ --teal:#14b8a6;
+ --blue:#4a9eff;
+ --purple:#8b5cf6;
 }
-body{
+*{box-sizing:border-box}
+html,body{
  margin:0;
- padding-top:80px;
+ padding:0;
  background:var(--bg);
  color:var(--text);
  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
-}
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
-}
-h1{color:var(--gold2)}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+h1{font-size:38px;color:var(--gold2);line-height:1.1;margin:0 0 10px}
+h2{font-size:22px;color:var(--gold2);margin:0 0 10px}
+h3{font-size:16px;color:var(--text);margin:0 0 6px}
+p{margin:0 0 12px}
+ul{margin:8px 0 0 18px}
 .muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ padding:7px 12px;border-radius:999px;
+ border:1px solid var(--line);background:rgba(214,163,74,.06);
+ color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:30px 24px;margin-bottom:18px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+.hero::after{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+ background-image:linear-gradient(rgba(214,163,74,.12) 1px, transparent 1px),linear-gradient(90deg, rgba(214,163,74,.12) 1px, transparent 1px);
+ background-size:40px 40px;
+ mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.hero-chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:18px;margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35);border-color:var(--line-strong)}
+.card.anchor-target{scroll-margin-top:110px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-sidebar{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.span-2{grid-column:1 / -1}
+.note{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted);font-size:14px}
+.band{
+ display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px;
+}
+.metric{
+ border:1px solid rgba(214,163,74,.12);border-radius:14px;padding:14px;background:rgba(255,255,255,.02);
+}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.metric .value{font-size:14px;font-weight:700}
+.kicker{font-size:13px;color:var(--muted);max-width:920px}
+.mini{font-size:13px}
+.subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mini-box{padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.mini-box .label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.mini-box .value{font-size:13px;font-weight:700}
+.status-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.status-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.status-left{display:flex;align-items:center;gap:10px;min-width:0}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.03em;border:1px solid transparent;white-space:nowrap}
+.pill.red{background:rgba(239,68,68,.14);color:#ff8e8e;border-color:rgba(239,68,68,.22)}
+.pill.orange{background:rgba(249,115,22,.14);color:#ffb27c;border-color:rgba(249,115,22,.22)}
+.pill.yellow{background:rgba(234,179,8,.14);color:#f5db77;border-color:rgba(234,179,8,.22)}
+.pill.green{background:rgba(34,197,94,.14);color:#98ecb1;border-color:rgba(34,197,94,.22)}
+.pill.teal{background:rgba(20,184,166,.14);color:#8ce3d9;border-color:rgba(20,184,166,.22)}
+.pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
+.pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
+.pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
+.detail-list{display:grid;gap:10px}
+.detail-item{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.detail-item strong{color:var(--text)}
+.atlas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.atlas-list li{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.atlas-list code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--gold2);font-size:12px}
+.callout{
+ padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+ background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
+}
+.footer-block{padding-bottom:34px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+.smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+@media (max-width:980px){
+ .grid-sidebar{grid-template-columns:1fr}
+ .band{grid-template-columns:repeat(2,1fr)}
+ .subgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+ .grid-2,.grid-3,.status-grid,.subgrid{grid-template-columns:1fr}
+ .band{grid-template-columns:1fr}
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .field-row{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .wrap.content{animation:none;opacity:1;transform:none}
+ .card{transition:none}
+ .card:hover{transform:none}
 }
 </style>
 </head>
 <body>
-
 <div id="topbar-slot" data-topbar="universe"></div>
 <script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Germany</h1>
+<main id="main-content" class="wrap content">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
+    <h1 id="heading-hero">Germany</h1>
+    <p class="kicker">This page renders the canonical Germany Atlas jurisdiction package. The canonical files remain the source of truth; this document is a structured rendering only.</p>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+    <div class="hero-meta">
+      <div class="hero-chip">Jurisdiction: Germany (DE)</div>
+      <div class="hero-chip">Jurisdiction lens</div>
+      <div class="hero-chip">Completeness: Fully Normalized</div>
+      <div class="hero-chip">Surface assignment: none</div>
+    </div>
 
-</article>
+    <nav class="section-nav" aria-label="Jump to sections">
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
+<div class="grid-sidebar">
+<div>
+
+  <!-- ── 2. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <div class="field-row">
+      <div class="field-label">Corridor Group</div>
+      <div class="field-value">European Sovereign Compute Corridor</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Foundation Layer</div>
+      <div class="field-value">Industrial Compute + Research Federation Layer</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Topology Completion Layer</div>
+      <div class="field-value">EU Cloud Federation + Continental Exchange Routing Layer</div>
+    </div>
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from metadata.md and records Atlas corridor-topology placement only.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability.</p>
+    <p class="muted"><strong>Phase 3 scaffolding.</strong> The Atlas Phase 3 Global Countries plan records Germany at Tier 1, with provisional scaffolding values of <em>European Regulatory Compute Corridor</em>, foundation layer <em>Regulatory</em>, and topology completion role <em>EU policy anchor</em>. Per the Phase 3 plan, these values are interpretation scaffolding and not topology authority placement. Canonical metadata.md supersedes these scaffolding values.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: topology metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · ATLAS_GLOBAL_COUNTRIES_PHASE3_PLAN_v1.md (scaffolding only)</div>
+  </section>
+
+  <!-- ── 3. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records structural anchors only across research federation institutions, HPC infrastructure, industrial compute coordination systems, semiconductor manufacturing participation, exchange-layer infrastructure, cloud-federation governance participation, energy interconnection structures, and EU regulatory participation. The evidence layer remains descriptive and anchor-based without downstream signal interpretation.</p>
+    <p class="muted">This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, or deployment prescription beyond the canonical files. Surface assignment remains unset. No routing role is assigned.</p>
+    <div class="src">Source: evidence.md — Research Infrastructure Anchors; change-log.md — Evidence Layer Notes</div>
+  </section>
+
+  <!-- ── 4. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer documents the following for Germany.</p>
+
+    <h3 class="subhead">Research infrastructure anchors</h3>
+    <div class="detail-list">
+      <div class="detail-item">Germany maintains multiple nationally coordinated research networks that combine basic research, applied research, large-scale scientific infrastructure, and technical university coordination. The Max Planck Artificial Intelligence Network states that the Max Planck Society spans 84 institutes across fields including computer science and robotics. Fraunhofer states that it operates 74 institutes and independent research units in Germany with more than 30,000 employees and active work in microelectronics, artificial intelligence, and critical infrastructure security.</div>
+      <div class="detail-item">Helmholtz states that its 18 research centers use large-scale scientific infrastructure and that artificial intelligence is used across all six Helmholtz research fields, supported by supercomputing capacity at Forschungszentrum Jülich including the JUPITER exascale system and the JUWELS modular supercomputer, whose Booster module was deployed in 2020 for GPU-accelerated high-performance computing and AI workloads.</div>
+      <div class="detail-item">The Leibniz Association states that it unites 96 legally and scientifically independent institutions throughout Germany, including research institutes and facilities that provide infrastructure for research and society. Within that surface, the Leibniz Supercomputing Centre (LRZ) states that it has provided reliable IT infrastructures and services for the digitalisation of science, research, and teaching for more than 60 years, and that it operates high-performance computing, cloud, and research-network services as one of the Gauss Centre for Supercomputing sites.</div>
+      <div class="detail-item">TU9 states that Germany's technical university alliance comprises nine universities, including RWTH Aachen, TU Berlin, TU Dresden, KIT, and TUM, creating a formal engineering-university coordination surface across the Munich, Aachen, Karlsruhe, Berlin, and related clusters.</div>
+      <div class="detail-item">DFN states that the X-WiN research and education network provides 10,250 kilometers of optical fiber, a multi-terabit core across 65 locations, and 200 Gbit/s connections nationally and with select European and global science networks. GÉANT states that it interconnects Europe's national research and education networking organizations through a high-bandwidth, resilient pan-European backbone, linking Europe's research community to over half the countries in the world.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Max Planck Artificial Intelligence Network (MP-AIX); Fraunhofer profile and structure materials; Helmholtz Centers materials; Helmholtz artificial intelligence materials; Leibniz Association institute materials; Leibniz Supercomputing Centre (LRZ) materials; JUWELS and Jülich Supercomputing Centre materials; TU9 alliance materials; DFN X-WiN network materials; GÉANT pan-European network and topology materials.</p>
+
+    <h3 class="subhead">Semiconductor ecosystem anchors</h3>
+    <div class="detail-list">
+      <div class="detail-item">Infineon states that its Dresden manufacturing site was founded in 1994 and now operates across two sites with more than 4,000 employees, combining fabrication, technology development, and product development.</div>
+      <div class="detail-item">Bosch states that its Dresden semiconductor factory opened in 2021 and manufactures 300-millimeter wafers for automotive integrated circuits, power semiconductors, and future MEMS sensors, with vertically integrated development and manufacturing for automotive and industrial applications.</div>
+      <div class="detail-item">Bosch further states that the Dresden plant uses fully connected production systems within a centralized data architecture, applies AI-based process control and monitoring, and maintains a plant digital twin with approximately half a million 3D objects for planning, simulation, and maintenance.</div>
+      <div class="detail-item">Official GlobalFoundries materials surfaced through official site results identify Fab 1 in Dresden as a 300-millimeter fabrication site and describe Dresden capacity for 22FDX-related semiconductor manufacturing linked to automotive electronics, IoT, and connected-device applications.</div>
+      <div class="detail-item">Intel materials surfaced through official site results identify Magdeburg as the planned location for two leading-edge semiconductor fabs intended to contribute to a European end-to-end semiconductor manufacturing value chain. The European Commission states that the European Chips Act entered into force in 2023 as part of a package to strengthen the EU semiconductor ecosystem.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Infineon Dresden site materials; Bosch semiconductor Dresden materials; GlobalFoundries official Dresden and Fab 1 materials; Intel official Magdeburg materials and Intel newsroom materials; European Commission European Chips Act materials.</p>
+
+    <h3 class="subhead">Sovereign cloud and data infrastructure anchors</h3>
+    <div class="detail-list">
+      <div class="detail-item">Gaia-X states that its mission is to create the de facto standard for federated and trusted data and infrastructure ecosystems through specifications, rules, policies, and a verification framework, and describes the project as a secure and federated data infrastructure for Europe.</div>
+      <div class="detail-item">BMWK states that Germany funded eleven Gaia-X lighthouse projects with €117.4 million to bring Gaia-X-based applications and data spaces into operation and described Gaia-X as part of building a trustworthy, sovereign data infrastructure.</div>
+      <div class="detail-item">Gaia-X states that the Gaia-X European Association for Data and Cloud AISBL is the core of the organizational structure, operates as an international non-profit association under Belgian law, and is governed through a General Assembly, Board of Directors, and Management Board. Gaia-X association materials also identify executive leadership with prior German Industrie 4.0 and International Data Spaces association roles.</div>
+      <div class="detail-item">ITZBund states that the Bundescloud was developed on behalf of the federal government in close cooperation with BSI as an exclusive, secure private cloud infrastructure for the federal administration.</div>
+      <div class="detail-item">The Bundescloud materials describe centralized standards-based cloud delivery for federal digital administration, while Gaia-X materials describe cross-European federation and interoperability structures for trusted data exchange.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Gaia-X mission and infrastructure materials; Gaia-X association and organizational structure materials; BMWK Gaia-X lighthouse project press materials; ITZBund Bundescloud materials.</p>
+
+    <h3 class="subhead">Exchange and connectivity infrastructure</h3>
+    <div class="detail-list">
+      <div class="detail-item">DE-CIX states that Frankfurt carries more than 18 terabits per second of peak traffic and provides access to more than 1,000 local, regional, and global networks, with route-server access for hundreds of connected networks.</div>
+      <div class="detail-item">DE-CIX states that the Frankfurt site also provides direct cloud and interconnection services, including access to major cloud providers, placing exchange, cloud on-ramp, and interconnection capacity in the same metropolitan surface.</div>
+      <div class="detail-item">DE-CIX states that its platforms in Frankfurt, Hamburg, Munich, Dusseldorf, Leipzig, Marseille, Madrid, Lisbon, Oslo, Kristiansand, Copenhagen, Esbjerg, Helsinki, and other metros are interconnected, so access in one location can reach the others remotely.</div>
+      <div class="detail-item">DFN and GÉANT materials document additional cross-border research-network continuity from Germany into the wider European backbone, complementing the commercial exchange layer with a research-network layer.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> DE-CIX Frankfurt materials; DE-CIX locations and interconnection materials; DFN X-WiN network materials; GÉANT pan-European network and topology materials.</p>
+
+    <h3 class="subhead">Industrial compute and manufacturing anchors</h3>
+    <div class="detail-list">
+      <div class="detail-item">Plattform Industrie 4.0 states that Manufacturing-X is a joint initiative of business, politics, and academia to digitalize industrial supply chains and enable autonomous cross-company data use across production and supply chains.</div>
+      <div class="detail-item">The Manufacturing-X materials describe DataSpace Industrie 4.0 and digitally networked industry structures intended to support resilience, sustainability, and interoperability across industrial value chains.</div>
+      <div class="detail-item">Plattform Industrie 4.0 and SCI 4.0 state that German experts worked jointly with Japan's Robot Revolution and Industrial IoT Initiative on digital twin reference models and standardization for smart manufacturing.</div>
+      <div class="detail-item">Bosch states that its Dresden semiconductor plant operates Smart Fab methods, fully connected production systems, AI-supported manufacturing control, chip-level traceability, and a large-scale digital twin for simulation, planning, and remote maintenance.</div>
+      <div class="detail-item">Bosch's product scope and manufacturing descriptions place automotive and industrial electronics within the same embedded-compute manufacturing infrastructure surface.</div>
+      <div class="detail-item">SAP states that it is headquartered in Walldorf, Germany, that its enterprise software and cloud portfolio connects business functions through a digital platform, and that SAP S/4HANA supports large-scale data processing together with AI and machine learning. This places a Germany-based enterprise software coordination layer alongside the country's industrial and manufacturing compute surface.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Plattform Industrie 4.0 Manufacturing-X materials; Plattform Industrie 4.0 digital twin reference model materials; Bosch semiconductor Dresden materials; SAP corporate and platform materials.</p>
+
+    <h3 class="subhead">Energy stability anchors</h3>
+    <div class="detail-list">
+      <div class="detail-item">ENTSO-E states that its transmission system map is a comprehensive illustration of the transmission system network operated by members of the European Network of Transmission System Operators and shows existing and under-construction substations, converters, power plants, and high-voltage lines and cables.</div>
+      <div class="detail-item">50Hertz states that interconnectors link national transmission systems across the EU, that these cross-border lines support international power trade and security of supply, and that the 50Hertz system is electrically connected to Poland via two lines, to the Czech Republic via one line, and to Denmark via two interconnectors including Kriegers Flak.</div>
+      <div class="detail-item">Official 50Hertz project materials surfaced through official site search results identify a planned third interconnector with Polish operator PSE as an additional 380 kV overhead line between Germany and Poland.</div>
+      <div class="detail-item">Official Amprion materials surfaced through official site search results state that Amprion's grid is connected to the transmission systems of the Netherlands, Belgium, Luxembourg, France, Switzerland, and Austria through cross-border interconnection.</div>
+      <div class="detail-item">BMWK states that hydrogen is a key element of the energy transition and that hydrogen can contribute to the security of energy supply, with a federal one-stop-shop structure established to support the hydrogen sector.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> ENTSO-E grid map materials; 50Hertz interconnector materials; 50Hertz official project materials; Amprion official Europe and connecting-grids materials; BMWK hydrogen dossier materials.</p>
+
+    <h3 class="subhead">Public AI strategy anchors</h3>
+    <div class="detail-list">
+      <div class="detail-item">The German Federal Government states that the Artificial Intelligence Strategy was adopted on 15 November 2018, sets out twelve fields of action, and was backed by a plan to provide around €3 billion through 2025, with research and networked AI centers as core implementation elements.</div>
+      <div class="detail-item">BMWK states that the federal government's AI strategy was developed jointly by the Economic Affairs Ministry, the Research Ministry, and the Labour Ministry, and that additional federal funding was directed toward research, transfer, public dialogue, impact assessment, skills, and data availability.</div>
+      <div class="detail-item">BMWK states that France and Germany jointly funded five AI projects with €17.9 million in 2022 to develop close-to-application AI solutions related to sustainability, epidemic response, and supply-chain resilience.</div>
+      <div class="detail-item">The European Commission maintains Germany-specific summary and detailed reporting within Horizon Europe country profiles, documenting Germany's formal participation within the EU research funding architecture.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> German Federal Government AI strategy materials; BMWK artificial intelligence materials; BMWK France-Germany joint AI funding press materials; European Commission Horizon Europe country profile materials.</p>
+
+    <h3 class="subhead">Regulatory alignment anchors (EU layer)</h3>
+    <div class="detail-list">
+      <div class="detail-item">BfDI states that, for cross-border data processing under the GDPR, the lead supervisory authority in the Member State of the main establishment serves as the one-stop-shop contact point and cooperates with other European supervisory authorities to ensure uniform application of the law.</div>
+      <div class="detail-item">BfDI further states that Germany's federal and Länder data protection authorities participate in these GDPR cooperation procedures, providing a structured federal-EU compliance interface.</div>
+      <div class="detail-item">BfDI states that the Federal Commissioner is an independent supreme federal authority and identifies Articles 51 to 59 GDPR and the Federal Data Protection Act as core legal bases for supervisory tasks.</div>
+      <div class="detail-item">The European Commission states that the AI Act establishes an EU-wide regulatory framework for AI systems and general-purpose AI models, while related Commission materials describe governance through the European AI Office and national competent authorities.</div>
+      <div class="detail-item">Federal digital-strategy materials describe Germany's digital policy structure through fields of action covering infrastructure, innovation and digital transformation, society in digital change, and the modern state, providing national coordination structures aligned with wider European digital-governance frameworks.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> BfDI single contact point materials; BfDI tasks and powers materials; European Commission AI Act materials; German Federal Government digital strategy materials.</p>
+
+    <h3 class="subhead">Cross-border infrastructure continuity anchors</h3>
+    <div class="detail-list">
+      <div class="detail-item">GÉANT and DFN materials document Germany's participation in pan-European research-network continuity, linking domestic research infrastructure to broader European backbone routes.</div>
+      <div class="detail-item">DE-CIX states that Frankfurt is interconnected with multiple European exchange metros, including Marseille, Madrid, Lisbon, Oslo, Kristiansand, Copenhagen, Esbjerg, and Helsinki, documenting westward, southward, and Nordic continuity within the exchange layer.</div>
+      <div class="detail-item">Official Amprion materials surfaced through official site search results document western and southern grid continuity from Germany into the Netherlands, Belgium, Luxembourg, France, Switzerland, and Austria.</div>
+      <div class="detail-item">50Hertz materials document eastern and northern electricity interconnection through existing Poland and Denmark links, while official 50Hertz project materials surfaced through official site search results document an additional planned Germany-Poland interconnector.</div>
+      <div class="detail-item">ENTSO-E states that the European transmission map represents the interconnected transmission surface of member operators, supporting a structural account of Germany's participation in cross-border grid continuity.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> GÉANT pan-European network and topology materials; DFN X-WiN network materials; DE-CIX locations and interconnection materials; Amprion official Europe and connecting-grids materials; 50Hertz interconnector materials; 50Hertz official project materials; ENTSO-E grid map materials.</p>
+
+    <h3 class="subhead">Evidence boundary statement</h3>
+    <div class="detail-list">
+      <div class="detail-item">Germany functions as a continental research–industrial compute anchor within the Central European infrastructure corridor. Its evidence layer reflects institutional research density, semiconductor participation, sovereign cloud federation leadership, and exchange-level connectivity centrality across the European Union infrastructure surface. Signals are derived downstream from these structural anchors.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: complete · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md</div>
+  </section>
+
+  <!-- ── 5. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md and that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted"><strong>Method.</strong> The signals layer preserves documented absences, avoids readiness classification, avoids routing inference, and maintains corridor-lens interpretation consistency. The signals layer records that an explicit EuroHPC governance participation layer is not documented by name in the normalized source layer.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>Compute infrastructure signal.</strong> The signals layer reflects that JUPITER and JUWELS at Forschungszentrum Jülich indicate a sustained high-performance computing surface that spans exascale and modular GPU-accelerated research compute infrastructure. The documented presence of the JUWELS Booster module alongside JUPITER indicates continuity between simulation-oriented and AI-oriented compute layers within the Jülich supercomputing environment. LRZ's role as a Gauss Centre for Supercomputing site, together with its high-performance computing, cloud, and research-network services, indicates distributed sovereign HPC continuity across more than one national institution. DFN X-WiN and GÉANT interconnection indicates that Germany's research-compute layer is attached to broader continental networked science infrastructure rather than operating as an isolated national system. The evidence records dense research-compute infrastructure, but it does not document a separate EuroHPC governance or program-participation layer explicitly by name.</div>
+      <div class="detail-item"><strong>Research federation signal.</strong> The signals layer reflects that the combined presence of Max Planck, Fraunhofer, Helmholtz, Leibniz, and TU9 indicates a distributed scientific coordination environment that links basic research, applied research, technical universities, and large-scale infrastructure. The Max Planck AI network and Helmholtz AI activity across all six research fields indicate a research federation with explicit AI participation embedded inside existing institutional science structures. Fraunhofer's applied research role in microelectronics, artificial intelligence, and critical infrastructure security indicates continuity between public research infrastructure and application-oriented translation surfaces. Leibniz and LRZ together indicate that research federation in Germany includes shared infrastructure provision, not only institution-level research activity. DFN and GÉANT connectivity indicates that the research federation is structured for cross-border scientific interoperability within European networked research systems.</div>
+      <div class="detail-item"><strong>Semiconductor and industrial compute signal.</strong> The signals layer reflects that Infineon, Bosch, GlobalFoundries Dresden, and the planned Intel Magdeburg fabs together indicate a semiconductor surface that combines existing fabrication presence with continued EU-aligned manufacturing expansion pathways. Bosch's Dresden facility indicates embedded compute production tied to automotive and industrial semiconductor lines rather than a single-purpose fabrication profile. Bosch Smart Fab operations, AI-supported process control, chip-level traceability, and plant digital twin infrastructure indicate industrial automation compute integration inside semiconductor manufacturing. Manufacturing-X and DataSpace Industrie 4.0 indicate cross-company industrial compute coordination structures for data sharing and supply-chain digitalization. SAP's enterprise software and cloud platform role indicates a Germany-based enterprise-compute orchestration layer that links industrial and business-process coordination through shared digital platforms. The evidence records semiconductor fabrication and industrial compute coordination, but it does not document a complete national semiconductor-capacity map or a single unified fabrication system.</div>
+      <div class="detail-item"><strong>Exchange and connectivity signal.</strong> The signals layer reflects that DE-CIX Frankfurt's documented traffic scale, network count, and route-server services indicate dense continental exchange-layer interconnection within Germany's connectivity surface. Direct cloud access and interconnection services at Frankfurt indicate a neutral interconnection environment where cloud, peering, and traffic-exchange functions are coordinated in the same metropolitan compute surface. DE-CIX interconnection across multiple German and wider European metros indicates exchange-layer continuity that extends beyond a single-site national exchange function. DFN and GÉANT connectivity adds a parallel research-network layer to the commercial exchange layer, indicating multiple forms of backbone transit participation across the same jurisdiction. The evidence documents exchange routing density and interconnection continuity, but it does not provide routing-priority or deployment-path classifications.</div>
+      <div class="detail-item"><strong>Cloud federation signal.</strong> The signals layer reflects that Gaia-X mission materials indicate Germany participates in a federated cloud and data coordination model structured through specifications, rules, policies, and verification mechanisms rather than through a single sovereign cloud stack. The Gaia-X AISBL governance structure indicates a formal European association layer for cloud and data coordination, with Germany-linked leadership roots present inside the wider Belgian-law association structure. BMWK funding for eleven Gaia-X lighthouse projects indicates active German participation in operationalizing Gaia-X-based data spaces and federation structures. Bundescloud indicates that Germany also maintains a domestic government cloud layer aligned with federal governance requirements, creating a parallel administrative cloud-coordination surface alongside European federation structures. The evidence documents sovereign interoperability frameworks and governance participation, but it does not document a standalone German cloud-federation regime separate from the wider European Gaia-X structure.</div>
+      <div class="detail-item"><strong>Energy coordination signal.</strong> The signals layer reflects that ENTSO-E, 50Hertz, and Amprion materials indicate Germany's compute-relevant energy environment is coordinated through interconnected transmission infrastructure embedded in broader European grid systems. Existing and planned cross-border interconnectors with Poland, the Czech Republic, Denmark, the Netherlands, Belgium, Luxembourg, France, Switzerland, and Austria indicate ongoing grid-continuity coordination rather than a closed national power surface. Hydrogen-sector coordination through BMWK's federal hydrogen structures indicates an industrial energy-transition layer linked to energy-supply continuity and modernization planning. The evidence supports grid modernization and cross-border energy coordination signals, while regional variation within Germany's energy transition is not resolved in detail by the current evidence layer.</div>
+      <div class="detail-item"><strong>Regulatory coordination signal.</strong> The signals layer reflects that GDPR one-stop-shop and supervisory-cooperation procedures indicate Germany's data-governance environment is structurally embedded in cross-border European regulatory interoperability. The participation of federal and Länder data protection authorities indicates multi-layer domestic attachment to EU-wide compliance coordination procedures. AI Act governance through EU-wide rules, the European AI Office, and national competent authorities indicates that Germany's AI governance environment is aligned to continental regulatory coordination structures. Germany's federal digital-strategy fields of action indicate domestic governance organization that aligns infrastructure, innovation, and state-modernization work with wider European digital-governance frameworks. The evidence records regulatory harmonization participation, but it does not document a Germany-only supra-sector digital governance layer outside these national and EU coordination structures.</div>
+      <div class="detail-item"><strong>Cross-border alignment signal.</strong> The signals layer reflects that DFN and GÉANT indicate institutional continuity between Germany's domestic research networks and broader European research interoperability systems. DE-CIX interconnection with western, southern, eastern-adjacent, and Nordic metros indicates exchange-layer continuity across multiple continental directions. Amprion, 50Hertz, and ENTSO-E materials indicate that Germany's infrastructure alignment extends across western, southern, eastern, and northern grid interfaces through formal interconnection structures. The evidence therefore supports a cross-border alignment signal rooted in research, exchange, and energy interconnection layers operating within European institutional frameworks. The current evidence layer does not document a separate Schengen mobility infrastructure surface explicitly, so cross-border alignment is recorded here through network, exchange, cloud-governance, and transmission-system structures only.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: complete · Surface assignment status: none</div>
+    <div class="src">Source: signals.md</div>
+  </section>
+
+  <!-- ── 6. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md and that absence of signals reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted"><strong>Method.</strong> Trust surfaces remain distributed across multiple institutional layers rather than centralized in a single national coordination point. The trust-dimensions layer records that it does not assign routing role, coordination tier, Atlas surface, or national significance.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>Institutional research continuity.</strong> The combined presence of Max Planck, Fraunhofer, Helmholtz, Leibniz, TU9, LRZ, JUPITER, JUWELS, DFN, and GÉANT indicates a research trust surface anchored in multiple long-duration public and semi-public institutions. JUPITER, JUWELS, and LRZ create multi-site compute continuity across more than one research-compute institution, which distributes research-compute reliability beyond a single supercomputing center. Max Planck, Helmholtz, Leibniz, Fraunhofer, and TU9 indicate that research coordination reliability is layered across basic research, applied research, large-scale science infrastructure, and technical universities. DFN and GÉANT attachment indicates that institutional research continuity is reinforced by stable network interoperability with wider European research systems. The signals document persistent publicly anchored research infrastructure, but they do not collapse this continuity into a single centralized scientific governance structure.</div>
+      <div class="detail-item"><strong>Industrial compute coordination reliability.</strong> SAP, Manufacturing-X, DataSpace Industrie 4.0, and Bosch Smart Fab together indicate an industrial trust surface built on coordinated software, plant-level automation, and cross-company data-interoperability structures. Manufacturing-X and DataSpace Industrie 4.0 indicate that industrial coordination reliability is expressed through shared data environments rather than isolated firm-specific systems alone. Bosch's connected production systems, AI-supported process control, traceability, and digital-twin infrastructure indicate that industrial-compute reliability is embedded directly into manufacturing operations. SAP's enterprise orchestration layer extends this coordination surface from plant and supply-chain environments into enterprise-process continuity across business functions. The trust surface documented here reflects industrial coordination continuity and interoperability structure, not industrial competitiveness or output ranking.</div>
+      <div class="detail-item"><strong>Semiconductor infrastructure continuity.</strong> Infineon, Bosch Dresden, GlobalFoundries Dresden, and the planned Intel Magdeburg expansion indicate a semiconductor trust surface distributed across existing fabrication assets and continued EU-aligned expansion structures. Bosch and Infineon indicate embedded-compute manufacturing continuity tied to automotive and industrial semiconductor integration layers. GlobalFoundries Dresden and Intel Magdeburg signals indicate that fabrication continuity includes both established manufacturing infrastructure and planned capacity-extension pathways. The coexistence of operating fabs, automotive-linked semiconductor production, and EU Chips Act-aligned expansion structures indicates continuity between current manufacturing layers and future fabrication-extension layers. The signals record semiconductor infrastructure continuity, but they do not establish a complete national autonomy surface or unified national fabrication map.</div>
+      <div class="detail-item"><strong>Exchange-layer neutrality and interconnection density.</strong> DE-CIX Frankfurt indicates an exchange-layer trust surface organized around large-scale interconnection, route-server participation, and direct cloud access within a neutrality-preserving interconnection environment. The wider DE-CIX metro distribution indicates that interconnection continuity is not confined to one facility, even though Frankfurt remains the primary documented exchange-density surface in the package. DFN and GÉANT attachment adds a research-backbone layer to the commercial exchange layer, creating a multi-layer interconnection environment across commercial and scientific traffic surfaces. This combination supports a trust dimension based on layered interconnection density and continuity rather than on a single traffic or routing classification. The signals document neutrality-preserving exchange participation and continental routing continuity, but they do not classify Germany as a gateway or hub.</div>
+      <div class="detail-item"><strong>Cloud federation governance participation.</strong> Gaia-X indicates that cloud trust in this package is organized through federated rules, specifications, verification structures, and association governance rather than through a single nationally bounded sovereign stack. Gaia-X AISBL governance participation indicates that Germany's cloud-federation trust surface is attached to a formal European association layer with documented organizational roles and governance bodies. BMWK lighthouse-project funding indicates that Germany participates not only in Gaia-X governance discourse but also in project-layer operationalization of data-space and federation structures. Bundescloud indicates that a national administrative cloud layer coexists with the wider European federation layer, creating parallel national and EU coordination surfaces rather than a single merged governance stack. The documented trust surface is one of federated interoperability governance participation, not sovereignty readiness or self-contained cloud independence.</div>
+      <div class="detail-item"><strong>Energy coordination stability.</strong> ENTSO-E, 50Hertz, and Amprion indicate that energy trust in this package is distributed through coordinated transmission-system attachment and cross-border grid interdependence. Existing and planned interconnectors indicate continuity across multiple neighboring systems, which supports grid reliability as a shared European coordination surface rather than a purely domestic one. Hydrogen transition structures add an industrial modernization layer that connects compute-relevant energy planning to longer-horizon infrastructure coordination. The signals support an energy trust dimension based on modernization continuity and interconnection stability across transmission operators and adjacent national systems. The current signal set records energy coordination stability structurally, while regional variation in transition conditions remains outside the documented detail level.</div>
+      <div class="detail-item"><strong>Regulatory harmonization structures.</strong> GDPR one-stop-shop procedures and supervisory cooperation indicate that Germany's regulatory trust surface is attached to standing European interoperability mechanisms rather than only domestic regulatory action. Federal and Länder authority participation indicates multi-level domestic attachment to EU-wide compliance coordination. AI Act governance alignment indicates that Germany's AI-related trust structures are connected to continental rulemaking and competent-authority arrangements. Germany's digital-strategy fields indicate a domestic governance layer that aligns national infrastructure, innovation, and modernization programs with wider European governance frames. Together, these signals describe a regulatory trust dimension rooted in harmonization continuity, procedural attachment, and multi-level governance participation rather than in claims of regulatory exceptionalism.</div>
+      <div class="detail-item"><strong>Cross-border infrastructure alignment.</strong> DFN and GÉANT indicate persistent research-network interoperability between Germany and wider European scientific infrastructure systems. DE-CIX metro interconnection indicates exchange-layer continuity across multiple European directions, including western, southern, and Nordic interconnection surfaces documented in the signals layer. Gaia-X federation participation indicates that cloud-governance alignment extends across national boundaries through shared European coordination structures. ENTSO-E, 50Hertz, and Amprion indicate transmission-system continuity across multiple adjacent energy systems. The trust surface therefore reflects cross-border alignment through research, exchange, cloud-governance, and transmission layers. No separate Schengen mobility infrastructure dimension is documented in the current evidence and signals layers.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">Trust completeness status: complete · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md</div>
+  </section>
+
+  <!-- ── 7. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md. The profile layer remains structural and non-comparative.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>Overview.</strong> Germany appears in the Atlas normalization layers as a distributed industrial-compute and research-federation coordination environment embedded within European sovereign interoperability systems. Its profile is carried by publicly anchored research institutions, multi-site compute infrastructure, semiconductor manufacturing layers, industrial data-coordination programs, exchange-layer interconnection density, cloud-federation governance participation, cross-border energy attachment, and EU-aligned regulatory structures.</div>
+      <div class="detail-item"><strong>Corridor role.</strong> Within the European Sovereign Compute Corridor, Germany functions as a research-federation and industrial-compute participation surface shaped by coordinated research institutions, enterprise and plant-level orchestration layers, semiconductor manufacturing continuity, dense exchange-layer interconnection, and formal attachment to EU cloud, regulatory, and infrastructure governance structures. Its corridor role is therefore expressed through layered institutional participation rather than through singular routing or gateway classification.</div>
+      <div class="detail-item"><strong>Research federation structure.</strong> Germany's research federation structure is distributed across Max Planck, Fraunhofer, Helmholtz, Leibniz, TU9, LRZ, JUPITER, JUWELS, DFN, and GÉANT. Together these layers indicate a multi-site coordination environment that combines basic research, applied research, technical universities, large-scale science infrastructure, high-performance computing, and national-to-continental research networking. The resulting profile is one of persistent institutional research continuity attached to both domestic and wider European science infrastructure systems.</div>
+      <div class="detail-item"><strong>Industrial compute coordination layer.</strong> Germany's industrial compute coordination layer is expressed through SAP, Manufacturing-X, DataSpace Industrie 4.0, and Bosch Smart Fab operations. These layers indicate enterprise-scale orchestration platforms, cross-company industrial interoperability environments, and plant-level automation systems operating within the same jurisdictional profile. The profile therefore reflects industrial coordination continuity through software, data-sharing, and automated production structures rather than through competitiveness framing.</div>
+      <div class="detail-item"><strong>Semiconductor infrastructure position.</strong> Germany's semiconductor infrastructure position is defined by Infineon, Bosch Dresden, GlobalFoundries Dresden, and Intel Magdeburg expansion structures. These anchors indicate embedded-compute manufacturing continuity, automotive-linked semiconductor production, and EU-aligned fabrication expansion pathways distributed across current operating sites and planned capacity extensions. The profile records semiconductor integration presence and continuity without inferring full semiconductor sovereignty.</div>
+      <div class="detail-item"><strong>Exchange and connectivity environment.</strong> Germany's exchange and connectivity environment is structured through DE-CIX Frankfurt, the wider DE-CIX metro network, DFN backbone infrastructure, and GÉANT connectivity. These layers together indicate neutrality-preserving exchange participation, coexistence of research and commercial backbone continuity, and continental routing participation through multiple interconnected surfaces. The profile records layered interconnection density and continuity without classifying Germany as a routing hub or gateway.</div>
+      <div class="detail-item"><strong>Cloud federation participation.</strong> Germany's cloud federation participation is documented through Gaia-X AISBL governance participation, BMWK lighthouse-project funding, and the Bundescloud administrative environment. These layers indicate participation in federated interoperability governance, data-space federation structures, and the coexistence of national administrative cloud coordination with wider European federation mechanisms. The profile therefore describes parallel national and EU cloud-coordination layers rather than a single self-contained cloud sovereignty surface.</div>
+      <div class="detail-item"><strong>Energy coordination context.</strong> Germany's energy coordination context is structured through ENTSO-E participation, 50Hertz, Amprion, cross-border transmission interconnectors, and hydrogen transition infrastructure. These anchors indicate interconnected transmission-layer participation, grid modernization continuity, and compute-relevant energy coordination across adjacent national systems. The profile records energy attachment and interdependence through continental coordination structures without evaluating sustainability outcomes.</div>
+      <div class="detail-item"><strong>Regulatory alignment environment.</strong> Germany's regulatory alignment environment is defined by GDPR cooperation structures, AI Act governance participation, federal and Länder supervisory coordination, and national digital-strategy alignment fields. Together these layers indicate multi-level regulatory interoperability, continental compliance attachment, and continuity between domestic governance structures and wider European rulemaking environments. The profile therefore records regulatory alignment as a harmonized coordination environment rather than as a comparative strength claim.</div>
+      <div class="detail-item"><strong>Cross-border infrastructure integration.</strong> Germany's cross-border infrastructure integration is carried through DFN and GÉANT research interoperability, ENTSO-E transmission continuity, DE-CIX metro interconnection, and Gaia-X federation participation. These layers indicate continental infrastructure attachment across research, exchange, cloud, and energy systems. The current profile records cross-border integration through documented institutional and infrastructure layers only; no separate Schengen mobility inference is introduced because it is not present in the normalized source layers.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: complete · Surface assignment status: none</div>
+    <div class="src">Source: profile.md</div>
+  </section>
+
+  <!-- ── 8. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers.</p>
+    <p class="muted"><strong>Scope.</strong> Builder-mode describes coordination affordances only and does not assign deployment suitability.</p>
+
+    <h3 class="subhead">Overview</h3>
+    <p class="muted">Germany appears in the normalized Atlas layers as a distributed research-federation and industrial-compute coordination environment embedded within European interoperability frameworks. For builders, the documented environment is shaped by multi-site scientific compute systems, enterprise and plant-level orchestration layers, semiconductor manufacturing participation, exchange-layer interconnection, cloud-federation governance structures, cross-border energy coordination, and EU-aligned regulatory attachment.</p>
+
+    <h3 class="subhead">Research infrastructure environment</h3>
+    <p class="muted">Germany's research infrastructure environment is structured through Max Planck, Fraunhofer, Helmholtz, Leibniz, TU9, JUPITER, JUWELS, LRZ, DFN, and GÉANT. Together these layers expose multi-site scientific compute environments, long-duration institutional continuity for research coordination, and attachment to continental research-network interoperability systems. The builder-facing environment is therefore defined by distributed institutional continuity across research institutions, supercomputing resources, and networked science infrastructure rather than by a single central research interface.</p>
+
+    <h3 class="subhead">Industrial compute integration surfaces</h3>
+    <p class="muted">Germany's industrial compute integration surfaces are carried through SAP, Manufacturing-X, DataSpace Industrie 4.0, and Bosch Smart Fab operations. These structures indicate enterprise orchestration environments, cross-company interoperability layers, and plant-level automation coordination surfaces that can be understood as builder-visible industrial integration contexts. The normalized layers show these surfaces as coordination structures for software, industrial data exchange, and automated production environments, without framing them as comparative advantage.</p>
+
+    <h3 class="subhead">Semiconductor collaboration environment</h3>
+    <p class="muted">Germany's semiconductor collaboration environment is defined by Infineon, Bosch Dresden, GlobalFoundries Dresden, and Intel Magdeburg expansion structures. These anchors indicate embedded-compute manufacturing participation, automotive-linked semiconductor integration, and EU-aligned fabrication expansion continuity across current and planned manufacturing layers. For builder-mode purposes, the environment is recorded as a collaboration and manufacturing-participation surface rather than as a self-contained semiconductor autonomy model.</p>
+
+    <h3 class="subhead">Exchange and network interconnection environment</h3>
+    <p class="muted">Germany's exchange and network interconnection environment is documented through DE-CIX Frankfurt, distributed DE-CIX metros, DFN backbone infrastructure, and GÉANT connectivity. These layers indicate neutral interconnection participation, coexistence of research and commercial backbone environments, and continental routing-layer attachment through multiple interconnected surfaces. The builder-visible environment is therefore one of layered exchange and backbone continuity without classifying Germany as a routing hub.</p>
+
+    <h3 class="subhead">Cloud federation participation environment</h3>
+    <p class="muted">Germany's cloud federation participation environment is expressed through Gaia-X AISBL governance participation, BMWK lighthouse projects, and the Bundescloud administrative environment. These structures indicate data-space federation participation, identity-layer interoperability governance, and parallel national and EU coordination layers operating within the same builder-facing environment. The normalized layers therefore describe a federated governance environment for cloud and data participation rather than a sovereignty-readiness model.</p>
+
+    <h3 class="subhead">Energy coordination environment</h3>
+    <p class="muted">Germany's energy coordination environment is structured through ENTSO-E participation, 50Hertz, Amprion, cross-border grid interconnectors, and hydrogen transition infrastructure. These layers indicate transmission-layer interdependence, grid modernization continuity, and compute-relevant energy coordination participation across adjacent national systems. For builders, the documented environment is one of cross-border energy attachment and modernization continuity rather than isolated domestic energy positioning.</p>
+
+    <h3 class="subhead">Regulatory coordination environment</h3>
+    <p class="muted">Germany's regulatory coordination environment is carried through GDPR cooperation structures, AI Act governance participation, federal and Länder supervisory coordination, and national digital-strategy alignment fields. These layers indicate multi-level regulatory interoperability, continental compliance attachment, and continuity between domestic and European governance environments. The builder-facing environment is therefore recorded as a coordinated regulatory attachment structure rather than as a comparative regulatory-strength claim.</p>
+
+    <h3 class="subhead">Cross-border infrastructure participation environment</h3>
+    <p class="muted">Germany's cross-border infrastructure participation environment is documented through DFN and GÉANT research interoperability, ENTSO-E transmission continuity, DE-CIX metro interconnection, and Gaia-X federation participation. These layers indicate continental infrastructure attachment across research, exchange, cloud, and energy systems. The normalized layers support a builder-facing view of Germany as participating in multiple European coordination environments without introducing undocumented mobility-layer inference.</p>
+
+    <h3 class="subhead">Structural constraints for builders</h3>
+    <p class="muted">The normalized layers also record several coordination boundaries. Major builder-visible environments depend on EU-layer governance and infrastructure systems. A unified national semiconductor-capacity map is not documented in the package. An explicit EuroHPC participation layer is not documented by name. Energy-transition conditions are not resolved uniformly across all regions. Mobility-layer documentation is absent from the current normalized layers. These boundaries define the documented builder-mode perimeter without being treated as weaknesses.</p>
+
+    <div class="callout mini" style="margin-top:14px">Builder completeness status: complete · Builder-mode completeness status: complete · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md</div>
+  </section>
+
+  <!-- ── 9. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package explicitly preserves the following neutral exclusions for Germany:</p>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>no unified semiconductor-capacity inventory</li>
+      <li>no explicit EuroHPC participation layer documented by name</li>
+      <li>no Schengen mobility infrastructure surface documented</li>
+      <li>no national-only cloud sovereignty stack documented separate from Gaia-X</li>
+    </ul>
+    <p class="muted" style="margin-top:12px">The normalized layers record the following topology boundaries: major coordination layers attach to EU-level governance structures; energy-transition variation remains regionally unresolved; cloud federation operates through European association frameworks; exchange routing classification is not assigned. These boundaries are recorded as structural limits of the current package.</p>
+    <p class="muted">The canonical package records that these exclusions are carried forward across signals.md, trust-dimensions.md, profile.md, and builder-mode.md as structural constraints and trust boundaries. The canonical package records that no layer assigns readiness classification, routing inference, routing role, coordination tier, Atlas surface, national significance, or deployment suitability.</p>
+    <div class="src">Source: change-log.md — Structural Exclusions and Constraint Boundaries; signals.md — Constraints and Structural Gaps; trust-dimensions.md — Structural Constraints and Trust Boundaries</div>
+  </section>
+
+  <!-- ── 10. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records the following evidence gaps for Germany.</p>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">Several major coordination signals in this package depend on EU-level organizational layers, including Gaia-X, GDPR cooperation procedures, the AI Act governance framework, GÉANT, and ENTSO-E.</div>
+      <div class="detail-item">The semiconductor evidence documents multiple fabrication and expansion anchors, but it does not provide a full nationwide capacity inventory or comprehensive production-volume coverage.</div>
+      <div class="detail-item">The compute evidence documents JUPITER, JUWELS, LRZ, and Gauss Centre participation, but it does not explicitly document a separate EuroHPC participation layer by name.</div>
+      <div class="detail-item">The energy evidence documents interconnection and hydrogen-transition structures, but it does not resolve energy-transition conditions uniformly across all German regions.</div>
+      <div class="detail-item">Cross-border alignment is strongly documented through exchange, research-network, and grid structures, while mobility-layer evidence is not explicitly present in evidence.md.</div>
+    </div>
+    <p class="muted" style="margin-top:12px">The canonical package records gap inheritance: signals.md, trust-dimensions.md, profile.md, and builder-mode.md inherit these evidence gaps without expansion as structural constraints and trust boundaries. change-log.md records that inheritance pattern and does not create a new evidence-gap set.</p>
+    <div class="src">Source: signals.md — Constraints and Structural Gaps; trust-dimensions.md — Structural Constraints and Trust Boundaries; change-log.md — Structural Exclusions</div>
+  </section>
+
+  <!-- ── 11. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+
+    <h3 class="subhead">Normalization sequence</h3>
+    <p class="muted">The change-log records the canonical Atlas normalization progression for the Germany jurisdiction package as evidence.md, signals.md, trust-dimensions.md, profile.md, builder-mode.md. This sequence was preserved as the package construction order for the normalized Germany layers.</p>
+
+    <h3 class="subhead">Layer construction notes</h3>
+    <ul class="mini muted">
+      <li>The change-log records that evidence.md records structural anchors only across research federation institutions, HPC infrastructure anchors, industrial compute coordination systems, semiconductor manufacturing participation, exchange-layer infrastructure, cloud-federation governance participation, energy interconnection structures, and EU regulatory participation. The evidence layer remains descriptive and anchor-based without downstream signal interpretation.</li>
+      <li>The change-log records that signals.md derives coordination signals from evidence.md and records Germany's documented compute, research, semiconductor, exchange, cloud-federation, energy, regulatory, and cross-border coordination surfaces. The signals layer preserves documented absences, avoids readiness classification, avoids routing inference, maintains corridor-lens interpretation consistency, and records that an explicit EuroHPC governance participation layer is not documented by name in the normalized source layer.</li>
+      <li>The change-log records that trust-dimensions.md interprets the signal layer as distributed trust-surface structure across institutional research continuity, industrial orchestration reliability, semiconductor participation continuity, exchange-layer neutrality, Gaia-X federation governance attachment, ENTSO-E transmission interdependence, and EU regulatory harmonization participation. Trust surfaces remain distributed across multiple institutional layers rather than centralized in a single national coordination point.</li>
+      <li>The change-log records that profile.md synthesizes Germany's role within the European Sovereign Compute Corridor and records distributed research-federation structure, industrial orchestration environment, semiconductor integration presence, exchange-layer continuity, and EU governance attachment. The profile layer remains structural and non-comparative.</li>
+      <li>The change-log records that builder-mode.md records builder-facing coordination environments across research coordination environments, enterprise orchestration platforms, semiconductor collaboration surfaces, exchange participation environment, Gaia-X federation participation, ENTSO-E grid attachment, and GDPR and AI Act regulatory interoperability. Builder-mode describes coordination affordances only and does not assign deployment suitability.</li>
+    </ul>
+
+    <h3 class="subhead">Structural exclusions (change-log attestation)</h3>
+    <ul class="mini muted">
+      <li>The change-log records that the normalized Germany package explicitly preserves neutral exclusions covering the absence of a unified semiconductor-capacity inventory, the absence of an explicit EuroHPC participation layer documented by name, the absence of a documented Schengen mobility infrastructure surface, and the absence of a national-only cloud sovereignty stack documented separate from Gaia-X.</li>
+      <li>The change-log records constraint boundaries: major coordination layers attach to EU-level governance structures; energy-transition variation remains regionally unresolved; cloud federation operates through European association frameworks; exchange routing classification is not assigned.</li>
+      <li>The change-log records: Surface assignment status: none.</li>
+    </ul>
+
+    <h3 class="subhead">Corridor alignment record</h3>
+    <ul class="mini muted">
+      <li>The change-log records Corridor Group: European Sovereign Compute Corridor.</li>
+      <li>The change-log records Foundation Layer: Industrial Compute + Research Federation Layer.</li>
+      <li>The change-log records Topology Completion Layer: EU Cloud Federation + Continental Exchange Routing Layer.</li>
+      <li>All normalized Germany layers remain consistent with this corridor lens.</li>
+    </ul>
+
+    <h3 class="subhead">Completion confirmation</h3>
+    <p class="muted">The change-log records that Germany jurisdiction package normalization is complete for:</p>
+    <ul class="mini muted">
+      <li><code>jurisdictions/global/countries/germany/evidence.md</code></li>
+      <li><code>jurisdictions/global/countries/germany/signals.md</code></li>
+      <li><code>jurisdictions/global/countries/germany/trust-dimensions.md</code></li>
+      <li><code>jurisdictions/global/countries/germany/profile.md</code></li>
+      <li><code>jurisdictions/global/countries/germany/builder-mode.md</code></li>
+      <li><code>jurisdictions/global/countries/germany/metadata.md</code></li>
+      <li><code>jurisdictions/global/countries/germany/change-log.md</code></li>
+    </ul>
+
+    <h3 class="subhead">Change-log summary</h3>
+    <p class="muted">Germany jurisdiction package completed through canonical Atlas normalization sequence with distributed research, industrial-compute, semiconductor, exchange, cloud-federation, energy, and regulatory coordination layers preserved without readiness classification or routing inference.</p>
+
+    <div class="callout mini" style="margin-top:14px">Normalization completion status: complete · Normalization status: Fully Normalized · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
+  </section>
+
+</div><!-- /main col -->
+
+<!-- ── SIDEBAR ── -->
+<aside>
+
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Germany jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>ATLAS_GLOBAL_COUNTRIES_PHASE3_PLAN_v1.md</code> (scaffolding only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/global/countries/germany/</code></p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
+    <ul class="mini">
+      <li><strong>Jurisdiction:</strong> Germany</li>
+      <li><strong>Code:</strong> DE</li>
+      <li><strong>Region:</strong> Europe</li>
+      <li><strong>Jurisdiction Type:</strong> Nation-State</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> Fully Normalized</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Topology Metadata</div>
+    <h3 id="heading-sidebar-topology">Corridor fields</h3>
+    <ul class="mini">
+      <li><strong>Corridor Group:</strong> European Sovereign Compute Corridor</li>
+      <li><strong>Foundation Layer:</strong> Industrial Compute + Research Federation Layer</li>
+      <li><strong>Topology Completion Layer:</strong> EU Cloud Federation + Continental Exchange Routing Layer</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural topology metadata only. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: complete</li>
+      <li>Signal layer: complete</li>
+      <li>Trust dimensions: complete</li>
+      <li>Profile: complete</li>
+      <li>Builder-mode: complete</li>
+      <li>Metadata: complete</li>
+      <li>Change-log: complete</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a substitute for the canonical package.</li>
+    </ul>
+  </div>
+
+</aside>
+</div><!-- /grid-sidebar -->
+
 </main>
 
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
 <div id="footer-container"></div>
-
+<script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
 </script>
-
+</div>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
