@@ -7,85 +7,886 @@
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
-<title>France | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<title>France — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Structured rendering of the canonical France Atlas jurisdiction package.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/france/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
 <style>
 :root{
+ --card-wm:url('https://satoshium.link/assets/seal.png');
  --bg:#07090d;
  --panel:#0c1018;
+ --panel-2:#101624;
  --text:#e8edf7;
  --muted:#9aa7bd;
  --gold:#d6a34a;
  --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --line-strong:rgba(214,163,74,.28);
+ --red:#ef4444;
+ --orange:#f97316;
+ --yellow:#eab308;
+ --green:#22c55e;
+ --teal:#14b8a6;
+ --blue:#4a9eff;
+ --purple:#8b5cf6;
 }
-body{
+*{box-sizing:border-box}
+html,body{
  margin:0;
- padding-top:80px;
+ padding:0;
  background:var(--bg);
  color:var(--text);
  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
-}
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
-}
-h1{color:var(--gold2)}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+h1{font-size:38px;color:var(--gold2);line-height:1.1;margin:0 0 10px}
+h2{font-size:22px;color:var(--gold2);margin:0 0 10px}
+h3{font-size:16px;color:var(--text);margin:0 0 6px}
+p{margin:0 0 12px}
+ul{margin:8px 0 0 18px}
 .muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ padding:7px 12px;border-radius:999px;
+ border:1px solid var(--line);background:rgba(214,163,74,.06);
+ color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:30px 24px;margin-bottom:18px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+.hero::after{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+ background-image:linear-gradient(rgba(214,163,74,.12) 1px, transparent 1px),linear-gradient(90deg, rgba(214,163,74,.12) 1px, transparent 1px);
+ background-size:40px 40px;
+ mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.hero-chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:18px;margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35);border-color:var(--line-strong)}
+.card.anchor-target{scroll-margin-top:110px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-sidebar{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.span-2{grid-column:1 / -1}
+.note{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted);font-size:14px}
+.band{
+ display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px;
+}
+.metric{
+ border:1px solid rgba(214,163,74,.12);border-radius:14px;padding:14px;background:rgba(255,255,255,.02);
+}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.metric .value{font-size:14px;font-weight:700}
+.kicker{font-size:13px;color:var(--muted);max-width:920px}
+.mini{font-size:13px}
+.subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mini-box{padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.mini-box .label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}
+.mini-box .value{font-size:13px;font-weight:700}
+.status-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.status-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(214,163,74,.12)}
+.status-left{display:flex;align-items:center;gap:10px;min-width:0}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.03em;border:1px solid transparent;white-space:nowrap}
+.pill.red{background:rgba(239,68,68,.14);color:#ff8e8e;border-color:rgba(239,68,68,.22)}
+.pill.orange{background:rgba(249,115,22,.14);color:#ffb27c;border-color:rgba(249,115,22,.22)}
+.pill.yellow{background:rgba(234,179,8,.14);color:#f5db77;border-color:rgba(234,179,8,.22)}
+.pill.green{background:rgba(34,197,94,.14);color:#98ecb1;border-color:rgba(34,197,94,.22)}
+.pill.teal{background:rgba(20,184,166,.14);color:#8ce3d9;border-color:rgba(20,184,166,.22)}
+.pill.blue{background:rgba(74,158,255,.14);color:#9ac8ff;border-color:rgba(74,158,255,.22)}
+.pill.purple{background:rgba(139,92,246,.14);color:#c6a9ff;border-color:rgba(139,92,246,.22)}
+.pill.gold{background:rgba(214,163,74,.14);color:#f4c36a;border-color:rgba(214,163,74,.22)}
+.pill.grey{background:rgba(154,167,189,.10);color:#c4cee0;border-color:rgba(154,167,189,.22)}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
+.detail-list{display:grid;gap:10px}
+.detail-item{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.detail-item strong{color:var(--text)}
+.atlas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.atlas-list li{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.atlas-list code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--gold2);font-size:12px}
+.callout{
+ padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+ background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
+}
+.footer-block{padding-bottom:34px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+.smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+@media (max-width:980px){
+ .grid-sidebar{grid-template-columns:1fr}
+ .band{grid-template-columns:repeat(2,1fr)}
+ .subgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+ .grid-2,.grid-3,.status-grid,.subgrid{grid-template-columns:1fr}
+ .band{grid-template-columns:1fr}
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .field-row{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .wrap.content{animation:none;opacity:1;transform:none}
+ .card{transition:none}
+ .card:hover{transform:none}
 }
 </style>
 </head>
 <body>
-
 <div id="topbar-slot" data-topbar="universe"></div>
 <script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>France</h1>
+<main id="main-content" class="wrap content">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
+    <h1 id="heading-hero">France</h1>
+    <p class="kicker">This page renders the canonical France Atlas jurisdiction package. The canonical files remain the source of truth; this document is a structured rendering only.</p>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+    <div class="hero-meta">
+      <div class="hero-chip">Jurisdiction: France (FR)</div>
+      <div class="hero-chip">Jurisdiction lens</div>
+      <div class="hero-chip">Completeness: Initial canonical normalization complete</div>
+      <div class="hero-chip">Surface assignment: none</div>
+    </div>
 
-</article>
+    <nav class="section-nav" aria-label="Jump to sections">
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
+<div class="grid-sidebar">
+<div>
+
+  <!-- ── 2. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <p class="muted"><strong>Jurisdiction identity.</strong> The metadata layer records France as a national-governance-level jurisdiction modeled through a hybrid national–European institutional coordination structure and a multi-agency coordinated infrastructure organization pattern with distributed institutional operators.</p>
+
+    <h3 class="subhead">Jurisdiction identity fields</h3>
+    <div class="field-row">
+      <div class="field-label">Country</div>
+      <div class="field-value">France</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Type</div>
+      <div class="field-value">Country</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Governance Level</div>
+      <div class="field-value">National</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Coordination Model</div>
+      <div class="field-value">Hybrid national–European institutional coordination structure</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Infrastructure Organization Pattern</div>
+      <div class="field-value">Multi-agency coordinated with distributed institutional operators</div>
+    </div>
+
+    <h3 class="subhead">Structural classification summary</h3>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Type</div>
+      <div class="field-value">National European compute-participating country</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Compute Structure</div>
+      <div class="field-value">Multi-site nationally coordinated HPC environment</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Research Structure</div>
+      <div class="field-value">Institute-led laboratory federation with university layering</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Semiconductor Structure</div>
+      <div class="field-value">Cluster-centered fabrication ecosystem</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Exchange Structure</div>
+      <div class="field-value">Metro exchange concentration with national research backbone continuity</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Cloud Structure</div>
+      <div class="field-value">Certification-mediated sovereign cloud qualification framework</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Energy Structure</div>
+      <div class="field-value">ENTSO-E synchronized transmission interoperability environment</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Defense Interface</div>
+      <div class="field-value">Civil-defense simulation-layer adjacency present</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Space Structure</div>
+      <div class="field-value">ESA-linked distributed launcher coordination environment</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Identity Structure</div>
+      <div class="field-value">Federated administrative authentication infrastructure</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Regulatory Structure</div>
+      <div class="field-value">EU-embedded digital governance alignment</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Cross-Border Integration</div>
+      <div class="field-value">Continental mobility, transport, digital, and research-network participation continuity</div>
+    </div>
+
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from metadata.md and records Atlas jurisdiction-structure placement only. The metadata layer uses France's own per-domain field structure; it is not harmonized to other jurisdictions' corridor-triad field labels.</p>
+    <p class="muted"><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural classification metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability. No autonomy claims are introduced.</p>
+    <p class="muted"><strong>Phase 3 scaffolding.</strong> The Atlas Phase 3 Global Countries plan records France at Tier 1, with provisional scaffolding values of <em>European Regulatory Compute Corridor</em>, foundation layer <em>Regulatory</em>, and topology completion role <em>Sovereign AI precedent node</em>. Per the Phase 3 plan, these values are interpretation scaffolding and not topology authority placement. Canonical metadata.md supersedes these scaffolding values.</p>
+    <div class="callout mini" style="margin-top:12px">Metadata status: jurisdiction classification metadata attached · Surface assignment status: none</div>
+    <div class="src">Source: metadata.md · ATLAS_GLOBAL_COUNTRIES_PHASE3_PLAN_v1.md (scaffolding only)</div>
+  </section>
+
+  <!-- ── 3. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The change-log records that France is modeled as a hybrid national–European institutional coordination environment, a distributed multi-agency infrastructure surface, a programme-linked research federation, a certification-mediated sovereign cloud qualification environment, an ENTSO-E synchronized transmission participant, an ESA-linked launcher coordination jurisdiction, and a FranceConnect-centered administrative identity federation. No readiness interpretation is introduced in this package.</p>
+    <p class="muted">This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, leadership positioning, autonomy claims, or deployment prescription beyond the canonical files. Surface assignment remains unset. No routing role is assigned.</p>
+    <div class="src">Source: change-log.md — Jurisdiction Summary; metadata.md — Jurisdiction Identity</div>
+  </section>
+
+  <!-- ── 4. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer documents the following for France.</p>
+
+    <h3 class="subhead">National research and HPC infrastructure</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's national high-performance computing layer is coordinated through GENCI, the national agency tasked with providing high-performance computing and massive data processing resources for academic and industrial research communities at national and European level.</div>
+      <div class="detail-item">The GENCI-operated national HPC surface is distributed across major hosting environments that include IDRIS, TGCC, and CINES.</div>
+      <div class="detail-item">IDRIS, the CNRS intensive scientific computing center, hosts and operates the Jean Zay supercomputer, which GENCI identifies as a flagship French AI and HPC system.</div>
+      <div class="detail-item">TGCC, the Très Grand Centre de Calcul operated by CEA at Bruyères-le-Châtel, hosts CEA supercomputing infrastructure and the Joliot-Curie system acquired through GENCI-CEA coordination.</div>
+      <div class="detail-item">CINES in Montpellier hosts and operates the Adastra supercomputer acquired through GENCI, extending the national research-compute layer beyond the Paris region.</div>
+      <div class="detail-item">CEA computing infrastructure is institutionally visible both through TGCC and through its operating role for large-scale national and European systems located at the CEA supercomputing site.</div>
+      <div class="detail-item">France also has visible EuroHPC JU participation through the Jules Verne consortium, selected to host and operate the EuroHPC exascale system in France, with GENCI acting as hosting entity and CEA's TGCC acting as hosting site.</div>
+      <div class="detail-item">PRACE continuity is institutionally visible through France's legacy membership structure, where GENCI is identified as the French member and France is listed among PRACE hosting members.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> GENCI national coordination materials; IDRIS/Jean Zay materials; TGCC/Joliot-Curie and CEA supercomputing materials; CINES/Adastra materials; EuroHPC Jules Verne consortium materials; PRACE membership materials.</p>
+
+    <h3 class="subhead">Research federation structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's research federation structure combines national research organizations, sectoral institutes, and multi-institution university groupings.</div>
+      <div class="detail-item">CNRS operates as a major national research coordination institution and describes itself as a major actor in the European Research Area, with formal participation in Horizon Europe.</div>
+      <div class="detail-item">CEA is a French government-funded technological research organization spanning energy, defense and security, information technologies, and health technologies, and describes itself as a prominent participant in the European Research Area through collaborative European projects.</div>
+      <div class="detail-item">Inria participates in European research programming through Horizon Europe and related EU research and innovation instruments focused on digital science, software, AI, and computing.</div>
+      <div class="detail-item">Inserm maintains European-programme coordination around Horizon Europe as part of the European Research Area framework for biomedical and health research.</div>
+      <div class="detail-item">ONERA structures aerospace research through dedicated scientific directorates and large technical facilities, while also participating in ANR and DGA-funded research programmes that connect civil and defense-linked research surfaces.</div>
+      <div class="detail-item">Université PSL functions as a federation of member schools, institutes, and laboratories in Paris, providing a coordinated research-university surface that links higher education and research institutes.</div>
+      <div class="detail-item">Sorbonne University operates as a multidisciplinary public research university with partner-linked research, innovation, and technology-transfer functions.</div>
+      <div class="detail-item">Université Paris-Saclay provides a large research federation surface linking universities, grandes écoles, and national research organizations in a shared scientific cluster.</div>
+      <div class="detail-item">Across these institutions, France's research organization layer remains visibly connected to ERA and Horizon Europe participation channels rather than a single centralized university system.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> CNRS institutional materials and ERA participation materials; CEA institutional and ERA materials; Inria Horizon Europe participation materials; Inserm ERA and Horizon Europe materials; ONERA scientific directorate and ANR/DGA programme materials; Université PSL, Sorbonne, and Université Paris-Saclay institutional materials.</p>
+
+    <h3 class="subhead">Semiconductor and advanced manufacturing participation</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's semiconductor participation is anchored by the Crolles-Grenoble microelectronics ecosystem, where STMicroelectronics maintains design, R&amp;D, and production activities on 200 mm and 300 mm silicon wafers.</div>
+      <div class="detail-item">STMicroelectronics and GlobalFoundries have jointly coordinated the expansion of a new 300 mm semiconductor manufacturing facility in Crolles, extending the industrial fabrication surface in France.</div>
+      <div class="detail-item">Official ST materials place this expansion within a wider ecosystem that also includes CEA-Leti and Soitec, linking research, process development, and manufacturing.</div>
+      <div class="detail-item">CEA-Leti provides national research infrastructure for microelectronics and semiconductor R&amp;D within the Grenoble cluster.</div>
+      <div class="detail-item">The Grenoble microelectronics cluster therefore combines fabrication, applied research, design, process development, and supplier participation in one visible regional manufacturing environment.</div>
+      <div class="detail-item">France 2030 and the Electronique 2030 program provide the public investment coordination layer for the semiconductor and electronics sector, including activity publicly presented at Crolles with participation from STMicroelectronics, GlobalFoundries, and CEA-Leti.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> STMicroelectronics Crolles and Grenoble ecosystem materials; STMicroelectronics and GlobalFoundries Crolles expansion materials; CEA-Leti Grenoble materials; France 2030 and Electronique 2030 programme materials.</p>
+
+    <h3 class="subhead">Exchange and connectivity infrastructure</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's exchange-layer connectivity includes France-IX, SFINX, and the RENATER research and education network.</div>
+      <div class="detail-item">France-IX provides a national internet exchange surface through French peering and interconnection infrastructure, with Paris forming a major metro interconnection environment within that layer.</div>
+      <div class="detail-item">SFINX, managed by RENATER, is a French internet exchange point created in 1995 and deployed across two Paris-area PoPs, identified by RENATER as TELEHOUSE II and Aubervilliers.</div>
+      <div class="detail-item">RENATER provides the national research and education backbone for France and operates in both national and international contexts.</div>
+      <div class="detail-item">RENATER's network layer extends across continental France and overseas territories and connects France's research infrastructure into wider European research-network systems.</div>
+      <div class="detail-item">GÉANT connectivity participation is institutionally visible through RENATER's role as a member of the pan-European GÉANT network.</div>
+      <div class="detail-item">Paris metro interconnection density is structurally visible through the concentration of exchange and peering surfaces in the capital region, including SFINX and France-IX operations.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> France-IX peering materials; SFINX and RENATER materials; RENATER national backbone and overseas territory materials; GÉANT pan-European network and membership materials.</p>
+
+    <h3 class="subhead">Cloud federation and sovereign cloud participation</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's sovereign and federated cloud coordination surface is organized through the national cloud strategy, France 2030 cloud support measures, and the broader cloud de confiance framework.</div>
+      <div class="detail-item">The cloud de confiance framework is tied to ANSSI's SecNumCloud security qualification, which the French government uses as a reference point for trusted cloud services.</div>
+      <div class="detail-item">Bleu is a French cloud initiative owned by Capgemini and Orange, with headquarters, datacenters, and operational centers located in France and services intended to target SecNumCloud qualification.</div>
+      <div class="detail-item">OVHcloud participates in this environment through French cloud infrastructure and public positioning around cloud de confiance and European data-infrastructure initiatives.</div>
+      <div class="detail-item">France's numérique and cloud programme is also visible through France 2030 calls and support mechanisms intended to strengthen French and European cloud service offerings.</div>
+      <div class="detail-item">Gaia-X governance participation is visible through the existence of Gaia-X Hub France and the wider Gaia-X hub structure, where national hubs act as country contact points for federated European data-space and infrastructure coordination.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> national cloud strategy and France 2030 cloud programme materials; ANSSI SecNumCloud qualification materials; Bleu corporate materials; OVHcloud corporate materials; Gaia-X Hub France and Gaia-X hub structure materials.</p>
+
+    <h3 class="subhead">Energy infrastructure coordination</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's national transmission coordination structure is centered on RTE, the electricity transmission system operator.</div>
+      <div class="detail-item">RTE's grid layer coordinates domestic transmission together with cross-border commercial exchanges and interconnection management.</div>
+      <div class="detail-item">France participates in ENTSO-E through the interconnected European transmission system environment in which RTE operates.</div>
+      <div class="detail-item">The national electricity coordination surface includes a major nuclear generation environment, with transmission planning and balancing occurring within a grid shaped by large-scale nuclear output as well as hydro, renewable, and thermal sources.</div>
+      <div class="detail-item">RTE identifies France as interconnected with Germany, Spain, Italy, Belgium, Switzerland, and the United Kingdom through cross-border transmission interfaces.</div>
+      <div class="detail-item">These interconnectors support both operational grid continuity and market exchange across neighboring systems.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> RTE transmission operator materials; ENTSO-E membership and transmission-system materials; RTE cross-border interconnection materials.</p>
+
+    <h3 class="subhead">Cross-border infrastructure interfaces</h3>
+    <div class="detail-list">
+      <div class="detail-item">France participates in the Schengen mobility surface as part of the European free-movement area.</div>
+      <div class="detail-item">France also participates in TEN-T and related European transport-corridor structures that connect French ports, logistics routes, and inland transport networks to continental infrastructure systems.</div>
+      <div class="detail-item">European Commission transport materials identify France within multiple rail corridor surfaces, including Atlantic, Mediterranean, North Sea-Mediterranean, and Rhine-Danube coordination environments.</div>
+      <div class="detail-item">European rail freight corridor participation therefore forms a visible interface between French domestic infrastructure and wider continental freight-routing systems.</div>
+      <div class="detail-item">As an EU member state, France also participates in the digital single market regulatory and service environment.</div>
+      <div class="detail-item">Continental research-network interoperability is visible through RENATER's integration with GÉANT and the wider European research-network backbone.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Schengen participation materials; TEN-T and European rail corridor materials; European Commission transport corridor materials; Digital Single Market materials; RENATER and GÉANT interoperability materials.</p>
+
+    <h3 class="subhead">Regulatory and governance coordination structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">France operates within the EU GDPR implementation framework, with national administration and supervisory functions linked to the broader European data-protection regime.</div>
+      <div class="detail-item">As an EU member state, France also participates in the AI Act coordination environment through the emerging national competent-authority and administrative alignment structure attached to the EU-wide AI framework.</div>
+      <div class="detail-item">ANSSI provides the national cybersecurity authority layer and is directly visible in cyber qualification, trusted-cloud reference frameworks, and digital security coordination.</div>
+      <div class="detail-item">DINUM serves as the interministerial digital directorate of the French state, with responsibility for elaborating the state digital strategy and steering its implementation across ministries.</div>
+      <div class="detail-item">DINUM also operates as the state-level coordination surface for technical, data, and digital-administration functions.</div>
+      <div class="detail-item">France 2030 provides an additional governance coordination framework for strategic investment across sectors that include semiconductors, cloud, digital infrastructure, and research-linked industrial programs.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> GDPR implementation framework materials; AI Act coordination materials; ANSSI cybersecurity authority materials; DINUM interministerial digital directorate materials; France 2030 strategic investment materials.</p>
+
+    <h3 class="subhead">Defense and strategic compute participation surfaces</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's defense-linked compute environment is institutionally visible through the Direction Générale de l'Armement (DGA), which funds and structures research programmes connected to defense technology and information systems.</div>
+      <div class="detail-item">CEA's institutional perimeter includes defense and security alongside energy, information technologies, and health technologies, placing part of the national compute infrastructure within a dual civil-state research environment.</div>
+      <div class="detail-item">CEA-operated computing sites, especially TGCC, provide visible large-scale compute infrastructure that interfaces with national research and state technical programs.</div>
+      <div class="detail-item">ONERA's documented participation in DGA-funded ASTRID and ASTRID Maturation projects provides an institutionally visible dual-use research surface linking aerospace research, defense innovation, and advanced numerical simulation.</div>
+      <div class="detail-item">These surfaces document organizational participation in strategic compute environments without assigning posture or readiness interpretation.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> DGA institutional materials; CEA dual civil-state perimeter materials; TGCC operating materials; ONERA ASTRID and ASTRID Maturation programme materials.</p>
+
+    <h3 class="subhead">Space and aerospace compute infrastructure</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's national aerospace compute environment includes CNES, ONERA, ArianeGroup, and the Toulouse aerospace cluster.</div>
+      <div class="detail-item">CNES describes itself as a programmatic agency, field centre, and space operator encompassing the functions required to shape and execute the French government's space strategy.</div>
+      <div class="detail-item">CNES maintains four centres of excellence in Paris, Toulouse, and Kourou, including the Toulouse Space Centre for orbital systems and Paris Daumesnil for launch systems.</div>
+      <div class="detail-item">ArianeGroup includes ArianeGroup SAS in France and participates in European launcher and defense-system programmes, including equipment and launcher activity connected to ESA programmes such as Ariane 6 and Vega.</div>
+      <div class="detail-item">Toulouse provides a concentrated aerospace engineering and orbital-systems environment through CNES, ONERA activities, industrial firms, and university-linked research capacity.</div>
+      <div class="detail-item">ESA coordination participation is visible through CNES programme activity and ArianeGroup's role in launcher systems associated with European space programmes.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> CNES programmatic agency and centres of excellence materials; CNES Toulouse Space Centre and Paris Daumesnil materials; ArianeGroup SAS and ESA programme materials; ONERA aerospace research materials.</p>
+
+    <h3 class="subhead">Digital identity and public administration platforms</h3>
+    <div class="detail-list">
+      <div class="detail-item">FranceConnect is the French state identity-federation system used to identify and authenticate users across online services.</div>
+      <div class="detail-item">FranceConnect and FranceConnect+ are implemented and operated by DINUM, which is explicitly identified on FranceConnect's legal and operating documentation as the state operator of the tele-service.</div>
+      <div class="detail-item">The FranceConnect structure links service providers and identity providers through a shared state authentication framework for public digital services.</div>
+      <div class="detail-item">FranceConnect+ adds a higher-assurance identity layer, with ANSSI qualification referenced in FranceConnect documentation for high-assurance electronic identity use.</div>
+      <div class="detail-item">DINUM's broader mission as interministerial digital coordinator provides the public-administration modernization layer around identity, digital services, and interoperability.</div>
+      <div class="detail-item">Public-sector interoperability is therefore expressed through shared state digital platforms, common identity rails, and interministerial digital coordination rather than isolated ministry systems.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> FranceConnect legal and operating materials; DINUM FranceConnect operator materials; FranceConnect+ and ANSSI qualification materials; DINUM interministerial digital coordination materials.</p>
+
+    <h3 class="subhead">Summary evidence statement</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's Atlas evidence layer shows a nationally coordinated research-compute environment centered on GENCI, IDRIS, TGCC, CINES, Jean Zay, Adastra, and CEA-operated facilities; a research federation spanning CNRS, CEA, Inria, Inserm, ONERA, PSL, Sorbonne, and Paris-Saclay within ERA and Horizon Europe channels; a semiconductor participation surface anchored in the Crolles-Grenoble ecosystem through STMicroelectronics, GlobalFoundries, CEA-Leti, and France 2030 electronics investment; an exchange and connectivity layer built around France-IX, SFINX, RENATER, and GÉANT interoperability; a sovereign-cloud coordination environment shaped by cloud de confiance, SecNumCloud, Bleu, OVHcloud, and Gaia-X participation; an energy system coordinated by RTE within ENTSO-E and cross-border interconnections with Germany, Spain, Italy, Belgium, Switzerland, and the United Kingdom across a nuclear-backed grid environment; visible defense, aerospace, and space-compute participation through DGA, CEA, ONERA, CNES, ArianeGroup, and Toulouse; and a regulatory and public-administration layer organized through GDPR and AI Act alignment, ANSSI, DINUM, and FranceConnect.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">Evidence completeness status: Initial canonical normalization complete · Surface assignment status: none</div>
+    <div class="src">Source: evidence.md</div>
+  </section>
+
+  <!-- ── 5. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md and that absence of signals reflects absence of normalized documentary coverage.</p>
+    <p class="muted"><strong>Method.</strong> The signals layer records that these signals are derived only from the evidence recorded in evidence.md.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>National HPC coordination signals.</strong> GENCI's documented coordinating role, together with the presence of IDRIS, TGCC, and CINES, signals a nationally coordinated HPC environment distributed across more than one institutional hosting site. Jean Zay at IDRIS, Joliot-Curie at TGCC, and Adastra at CINES signal a multi-site supercomputing structure rather than a single-center national compute model. CEA participation through TGCC and related operating roles signals continuity between national research compute infrastructure and a broader civil-state technical compute surface. EuroHPC JU participation through the Jules Verne consortium signals visible attachment of France's HPC layer to European hosting and operating structures. PRACE continuity through GENCI signals sustained European HPC programme participation alongside the domestic national-compute layer.</div>
+      <div class="detail-item"><strong>Research federation continuity signals.</strong> The combined presence of CNRS, CEA, Inria, Inserm, ONERA, Université PSL, Sorbonne University, and Université Paris-Saclay signals a multi-institution research federation structure rather than a single institutional research hierarchy. Documented ERA and Horizon Europe participation across multiple institutions signals continuity between French national research structures and European research-programme integration channels. The coexistence of national research organizations and federated university groupings signals a layered research coordination environment linking institutes, laboratories, and higher-education structures. ONERA's documented participation in ANR and DGA-funded programmes signals a visible civil-defense-linked research interface within the broader research federation.</div>
+      <div class="detail-item"><strong>Semiconductor participation signals.</strong> The Crolles-Grenoble evidence surface signals an integrated semiconductor ecosystem combining fabrication, design, process development, and research infrastructure. STMicroelectronics, GlobalFoundries, CEA-Leti, and Soitec participation signals a cluster-based microelectronics coordination environment rather than an isolated fabrication site. The documented Crolles expansion signals continuing semiconductor manufacturing build-out linked to existing research and supplier structures. France 2030 and Electronique 2030 participation signals state-supported semiconductor investment continuity around the national electronics and microelectronics sector.</div>
+      <div class="detail-item"><strong>Exchange and connectivity signals.</strong> The combined presence of France-IX, SFINX, and RENATER signals national exchange-layer participation continuity across both commercial interconnection and research-network environments. RENATER's documented connection to GÉANT signals that the French research-network backbone is integrated with wider European research infrastructure rather than operating as a standalone national science network. Paris concentration of SFINX and France-IX surfaces signals a metro-scale interconnection environment with visible exchange-layer density in the capital region. RENATER's national and international scope signals continuity between domestic backbone operations and cross-border research-network interoperability.</div>
+      <div class="detail-item"><strong>Sovereign cloud coordination signals.</strong> The cloud de confiance framework together with SecNumCloud reference structures signals a trusted-cloud certification environment organized around national qualification and compliance surfaces. Bleu, OVHcloud, and France 2030 cloud support measures signal state-aligned sovereign cloud programme participation across both industrial and administrative coordination layers. Gaia-X Hub France participation signals continuity between French cloud coordination structures and European federated cloud governance mechanisms. The evidence signals a coordinated trusted-cloud environment, but not a standalone cloud structure detached from European federation and qualification frameworks.</div>
+      <div class="detail-item"><strong>Energy transmission continuity signals.</strong> RTE and ENTSO-E participation together signal that France's transmission coordination environment is embedded in continental electricity-system interoperability structures. Documented interconnections with Germany, Spain, Italy, Belgium, Switzerland, and the United Kingdom signal a multi-border grid continuity surface rather than a closed national transmission perimeter. The nuclear-backed national generation environment described in the evidence signals a large-scale baseload-supported transmission coordination surface without resolving generation dominance or comparative weighting. Cross-border exchange management by RTE signals continuity between domestic grid operations and neighboring transmission systems.</div>
+      <div class="detail-item"><strong>Cross-border infrastructure signals.</strong> Schengen participation signals continuity with the European mobility system rather than a nationally isolated movement regime. TEN-T and European rail corridor participation signal attachment of French transport infrastructure to continental freight and corridor coordination structures. Digital single market participation signals regulatory and service interoperability through EU-level digital frameworks. RENATER-GÉANT interoperability signals research-network cross-border integration continuity within European scientific infrastructure.</div>
+      <div class="detail-item"><strong>Regulatory coordination signals.</strong> GDPR participation and AI Act alignment together signal continuity of France's regulatory environment within EU-wide digital governance structures. ANSSI's visible role in cyber qualification and trusted-cloud reference systems signals a national cybersecurity qualification authority surface. DINUM's interministerial coordination role signals state digital-administration infrastructure organized through a central public-sector digital directorate. France 2030 strategic investment coordination signals a cross-sector governance layer linking digital, semiconductor, cloud, and research-linked programmes.</div>
+      <div class="detail-item"><strong>Defense and strategic compute signals.</strong> DGA programme coordination, CEA's dual civil-state research perimeter, and ONERA participation in ASTRID programmes together signal a dual-use research compute participation surface. The documented link between CEA-operated compute environments and state technical programmes signals continuity between large-scale compute infrastructure and defense-adjacent technical coordination. ONERA's ASTRID and ASTRID Maturation participation signals a defense-linked innovation coordination environment connected to advanced simulation and aerospace research.</div>
+      <div class="detail-item"><strong>Space and aerospace compute signals.</strong> CNES programme coordination, ArianeGroup launcher participation, and ONERA aerospace research infrastructure together signal continuity in a national space-programme compute participation layer. CNES field centres in Paris, Toulouse, and Kourou signal a distributed organizational surface linking policy, launch systems, orbital systems, and launch operations. ArianeGroup and ESA-linked launcher participation signal a launcher-system development coordination environment attached to European programme structures. The Toulouse aerospace cluster signals a concentrated aerospace engineering and orbital-systems compute surface rather than a dispersed national-only aerospace footprint.</div>
+      <div class="detail-item"><strong>Digital identity and administration signals.</strong> FranceConnect and FranceConnect+ signal continuity of a state identity-federation infrastructure used across public digital services. DINUM's operating and coordination role signals interministerial digital-service interoperability organized through a shared state platform environment. ANSSI qualification references associated with FranceConnect+ signal participation in a high-assurance identity-layer qualification structure. The documented service-provider and identity-provider model signals federated public-administration authentication rather than isolated agency-specific identity systems.</div>
+    </div>
+
+    <h3 class="subhead">Signals summary statement</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's signals layer shows a nationally coordinated but institutionally distributed HPC environment organized through GENCI, IDRIS, TGCC, CINES, CEA, EuroHPC visibility, and PRACE continuity; a research-federation structure spanning national institutes and university groupings with ERA and Horizon Europe continuity; a clustered semiconductor ecosystem around Crolles and Grenoble supported by France 2030 coordination; an exchange and connectivity environment built on France-IX, SFINX, RENATER, and GÉANT interoperability; a trusted-cloud coordination structure shaped by cloud de confiance, SecNumCloud references, Bleu, OVHcloud, France 2030 cloud measures, and Gaia-X Hub France; a continental transmission interoperability surface coordinated through RTE and ENTSO-E with multiple neighboring interconnectors and a nuclear-backed baseload environment; a defense and aerospace layer linking DGA, CEA, ONERA, CNES, ArianeGroup, ESA participation, and Toulouse; and a regulatory and public-administration coordination surface organized through GDPR participation, AI Act alignment, ANSSI, DINUM, and FranceConnect.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">Signal completeness status: Initial canonical normalization complete · Surface assignment status: none</div>
+    <div class="src">Source: signals.md</div>
+  </section>
+
+  <!-- ── 6. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md and that absence of signals reflects absence of normalized signal-layer coverage.</p>
+    <p class="muted"><strong>Method.</strong> The trust-dimensions layer records that it does not assign routing role, coordination tier, Atlas surface, national significance, or leadership position. The source layers indicate a hybrid coordination structure rather than a single centralized national operator.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>Institutional coordination structure.</strong> The source layers indicate a hybrid coordination structure rather than a single centralized national operator. GENCI, DINUM, ANSSI, CNES, and RENATER function as agency-mediated coordination surfaces for compute, digital administration, cybersecurity qualification, space-programme organization, and research-network infrastructure. CNRS, CEA, and Inria indicate that institutional continuity is also carried by long-duration research organizations rather than only by ministries or one central technical authority. France 2030 adds a ministry-linked orchestration layer across semiconductor, cloud, digital, and research-linked programmes. ONERA and DGA introduce a sector-specific state-programme interface inside this wider structure, while CEA connects civilian and state technical infrastructures inside the same national coordination environment.</div>
+      <div class="detail-item"><strong>Research-system federation characteristics.</strong> The signals indicate a laboratory and institute federation structure built across CNRS, CEA, Inria, Inserm, ONERA, Université PSL, Sorbonne, and Université Paris-Saclay rather than a single vertically unified research system. CNRS, CEA, Inria, and Inserm indicate continuity through national research institutes, while Université PSL, Sorbonne, and Université Paris-Saclay indicate institute-university coordination layering. ERA and Horizon Europe participation indicate that this federation is connected to standing European research continuity channels rather than being organized only domestically. ONERA participation alongside ANR and DGA-linked programmes indicates a defense-adjacent research interface embedded inside the broader research federation rather than a separate isolated defense research system.</div>
+      <div class="detail-item"><strong>Compute infrastructure coordination model.</strong> The compute model appears nationally coordinated through GENCI while remaining institutionally distributed across IDRIS, TGCC, and CINES. IDRIS, TGCC, and CINES indicate a multi-site compute structure in which hosting continuity is distributed across multiple sites rather than concentrated in a single facility. CEA participation indicates that this compute layer includes a civil-state technical interface inside the broader national HPC environment. EuroHPC and PRACE participation indicate that the national compute layer is attached to European programme structures in parallel with domestic coordination. The overall coordination model is therefore agency-mediated, multi-site, and nationally organized with visible European integration.</div>
+      <div class="detail-item"><strong>Semiconductor ecosystem structure.</strong> The semiconductor structure appears as a clustered fabrication ecosystem centered on Crolles and Grenoble rather than as a dispersed standalone industrial surface. STMicroelectronics, GlobalFoundries, CEA-Leti, and Soitec indicate research-fabrication co-location and supplier-network participation inside the same microelectronics environment. CEA-Leti within the Crolles-Grenoble cluster indicates that research and fabrication are structurally linked rather than separated into unrelated sites. GlobalFoundries participation alongside STMicroelectronics indicates EU-linked manufacturing coordination within the documented fabrication surface. France 2030 and Electronique 2030 indicate continuity of state investment around this clustered semiconductor environment.</div>
+      <div class="detail-item"><strong>Exchange and research network interconnection structure.</strong> The exchange-layer structure indicates metro concentration together with national backbone continuity. France-IX and SFINX indicate a concentrated Paris-area exchange surface at metro scale. RENATER indicates national backbone continuity across the research and education network layer. GÉANT attachment indicates that the research-network layer is integrated with European interoperability structures rather than remaining nationally bounded. Together, France-IX, SFINX, RENATER, and GÉANT indicate a layered interconnection model combining metro exchange density, national academic backbone continuity, and continental research-network federation.</div>
+      <div class="detail-item"><strong>Sovereign cloud qualification structure.</strong> The cloud trust model appears certification-mediated rather than derived from a single infrastructure owner. Cloud de confiance together with SecNumCloud indicates that qualification and compliance form the primary trust surface in the documented cloud layer. Bleu and OVHcloud indicate sovereign cloud participation within this qualification environment rather than outside it. France 2030 cloud measures add an administrative and investment coordination layer around the cloud participation surface. Gaia-X Hub France indicates that this cloud structure combines national qualification frameworks with European federated governance participation. The source layers therefore indicate a hybrid national-European sovereign cloud coordination structure without documenting hyperscale independence as a trust claim.</div>
+      <div class="detail-item"><strong>Energy system interoperability structure.</strong> The energy structure indicates continental synchronization participation through RTE's attachment to ENTSO-E. Documented interconnections indicate that transmission continuity is organized through cross-border exchange integration rather than a closed national perimeter. The nuclear-backed generation environment described in the source layers indicates baseload-supported transmission continuity within the national grid coordination surface. RTE and ENTSO-E together indicate that energy-system coordination is carried through interoperable transmission governance and neighboring interconnection surfaces.</div>
+      <div class="detail-item"><strong>Regulatory alignment structure.</strong> GDPR and AI Act signals indicate that the regulatory structure is embedded in EU-level governance rather than limited to domestic rulemaking alone. ANSSI indicates a dedicated cybersecurity qualification authority surface inside this broader regulatory environment. DINUM indicates an interministerial digital coordination layer that organizes state digital administration across ministries. France 2030 indicates strategic investment coordination continuity alongside the regulatory and administrative structures. The combined structure therefore reflects EU-level governance embedding together with national cybersecurity qualification and interministerial state coordination.</div>
+      <div class="detail-item"><strong>Defense and dual-use research interface structure.</strong> DGA, CEA, and ONERA indicate a civil-defense compute adjacency rather than a fully separate research and compute surface. ONERA participation in ASTRID and ASTRID Maturation indicates defense innovation programme continuity connected to aerospace and simulation-oriented research activity. CEA indicates that state technical and civilian research infrastructures remain structurally adjacent inside the same documented compute environment. The source layers therefore indicate simulation-layer coordination participation and defense innovation continuity through programme interfaces rather than through an isolated military-only stack.</div>
+      <div class="detail-item"><strong>Space-system coordination structure.</strong> CNES indicates a multi-site national space-programme organization distributed across Paris, Toulouse, and Kourou. Paris, Toulouse, and Kourou together indicate that policy, launch-system, orbital-system, and launch-operation functions are geographically distributed rather than concentrated in one site. ArianeGroup and ESA participation indicate continuity of launcher-system development within European programme-linked structures. The Toulouse cluster indicates a concentrated aerospace compute and engineering surface within this wider distributed space-system organization. The space-system structure therefore appears distributed, ESA-linked, and nationally organized across multiple sites.</div>
+      <div class="detail-item"><strong>Identity and administrative federation structure.</strong> FranceConnect and FranceConnect+ indicate a federated authentication infrastructure rather than separate ministry-specific identity stacks. DINUM indicates that this identity layer sits inside an interministerial service interoperability structure rather than a single-service administration model. ANSSI qualification references indicate participation in a qualified assurance layer for higher-assurance identity usage. The combined structure indicates a shared state platform identity model with federated authentication and centrally coordinated administrative interoperability.</div>
+      <div class="detail-item"><strong>Cross-border infrastructure integration structure.</strong> Schengen indicates continuity with a European mobility layer rather than a nationally isolated mobility regime. TEN-T indicates participation in continental transport-corridor structures. The Digital Single Market indicates a regulatory interoperability surface carried through EU digital frameworks. RENATER-GÉANT continuity indicates continental embedding of the research-network layer. Together these signals indicate cross-border infrastructure integration through mobility, transport, digital regulation, and research-network interoperability.</div>
+    </div>
+
+    <h3 class="subhead">Structural trust profile summary</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's structural trust profile appears as a hybrid national-European coordination model in which institutional continuity is distributed across GENCI, CNRS, CEA, Inria, DINUM, ANSSI, CNES, RENATER, and France 2030 rather than concentrated in a single operator; a research federation layered across national institutes and university groupings with ERA, Horizon Europe, ANR, and DGA-linked continuity channels; a nationally coordinated but multi-site compute structure distributed through IDRIS, TGCC, CINES, CEA, EuroHPC, and PRACE participation; a clustered semiconductor ecosystem centered on Crolles and Grenoble through STMicroelectronics, GlobalFoundries, CEA-Leti, Soitec, and Electronique 2030 investment continuity; an exchange and research-network structure combining France-IX and SFINX metro concentration with RENATER and GÉANT interoperability; a sovereign cloud qualification posture organized through cloud de confiance, SecNumCloud, Bleu, OVHcloud, France 2030 cloud measures, and Gaia-X Hub France; an energy interoperability structure carried by RTE, ENTSO-E, documented interconnections, and a nuclear-backed baseload environment; a defense-adjacent research interface linking DGA, CEA, ONERA, ASTRID, and ASTRID Maturation; a distributed space-system organization across CNES, ArianeGroup, ESA participation, Toulouse, Paris, and Kourou; a federated identity and administrative structure through FranceConnect, FranceConnect+, DINUM, and ANSSI qualification references; and an EU-embedded cross-border and regulatory structure expressed through Schengen, TEN-T, the Digital Single Market, GDPR, the AI Act, and RENATER-GÉANT continuity.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">Trust completeness status: Initial canonical normalization complete · Surface assignment status: none</div>
+    <div class="src">Source: trust-dimensions.md</div>
+  </section>
+
+  <!-- ── 7. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md. The profile layer remains structural and non-comparative.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>National compute coordination profile.</strong> France's compute environment appears nationally coordinated through GENCI while remaining multi-site distributed across IDRIS, TGCC, and CINES. The compute layer is agency-mediated through GENCI and institutionally anchored through IDRIS, TGCC, CINES, and CEA rather than concentrated in a single site or operator. EuroHPC and PRACE participation indicate that the national compute profile is attached to European programme structures in parallel with domestic coordination. The resulting compute profile is nationally organized, multi-site distributed, agency-mediated, and European programme integrated.</div>
+      <div class="detail-item"><strong>Research federation profile.</strong> The research system appears institute-led through CNRS, CEA, Inria, and Inserm while also remaining laboratory-federated across multiple institutional layers. Université PSL, Sorbonne, and Université Paris-Saclay indicate a university-layered research profile linked to the institute layer rather than replacing it. ERA and Horizon Europe indicate that the research profile is connected to European programme channels rather than bounded only by domestic structures. ONERA participation together with ANR and DGA-linked participation indicates a defense-adjacent simulation interface embedded inside the broader research federation.</div>
+      <div class="detail-item"><strong>Semiconductor ecosystem profile.</strong> Semiconductor participation appears cluster-centered around Crolles and Grenoble. STMicroelectronics, GlobalFoundries, CEA-Leti, and Soitec indicate a research-fabrication co-located environment with supplier-network integration inside the same documented cluster surface. GlobalFoundries participation alongside STMicroelectronics indicates EU-linked manufacturing coordination within the cluster rather than a single-firm fabrication profile. France 2030 and Electronique 2030 indicate that the cluster profile is supported by a continuing state-investment layer. The profile records cluster participation and coordination continuity without inferring fabrication independence.</div>
+      <div class="detail-item"><strong>Exchange and connectivity profile.</strong> The exchange-layer structure appears metro concentrated through France-IX and SFINX in the Paris environment. RENATER indicates nationally continuous backbone coordination across the research and education network layer. RENATER together with GÉANT indicates a research-network federated profile attached to European interoperability structures. The resulting connectivity profile combines metro concentration, national backbone continuity, research-network federation, and European interoperability attachment.</div>
+      <div class="detail-item"><strong>Sovereign cloud coordination profile.</strong> The sovereign cloud profile indicates a certification-mediated trust structure organized through cloud de confiance and SecNumCloud. Bleu and OVHcloud indicate qualification-based participation within this documented trust environment. France 2030 cloud measures indicate administrative compliance-layer integration and programme coordination around the cloud surface. Gaia-X Hub France indicates hybrid national-European governance attachment rather than a purely domestic cloud coordination model. The profile records qualification-based sovereign cloud participation without inferring hyperscale autonomy.</div>
+      <div class="detail-item"><strong>Energy transmission profile.</strong> The energy-system profile appears ENTSO-E synchronized through RTE's documented transmission coordination attachment. Documented neighboring interconnections indicate a cross-border exchange integrated profile rather than a closed national transmission perimeter. The source layers indicate a baseload-supported transmission environment through the documented nuclear-backed generation context. RTE together with ENTSO-E and neighboring interconnections indicates a transmission-governance interoperable profile.</div>
+      <div class="detail-item"><strong>Regulatory coordination profile.</strong> Regulatory alignment appears EU-governance embedded through GDPR and AI Act participation. ANSSI indicates a cybersecurity-qualified profile within the digital and cloud coordination environment. DINUM indicates an interministerial digitally coordinated public-administration layer. France 2030 indicates that this regulatory and administrative profile is also strategy-programme linked across cloud, semiconductor, digital, and research-linked surfaces.</div>
+      <div class="detail-item"><strong>Defense and simulation interface profile.</strong> Defense adjacency appears civil-defense compute adjacent through the combined presence of DGA, CEA, and ONERA. ONERA participation in ASTRID and ASTRID Maturation indicates a simulation-layer integrated and programme-mediated interface. The same programme surfaces indicate an aerospace-linked defense research adjacency without extending into military capability description. The profile therefore appears civil-defense adjacent, simulation-linked, aerospace-connected, and programme-mediated.</div>
+      <div class="detail-item"><strong>Space-system coordination profile.</strong> Space participation appears distributed organizationally across Paris, Toulouse, and Kourou through CNES. ArianeGroup and ESA participation indicate an ESA-linked and launcher-system coordinated participation profile. Toulouse indicates an aerospace-cluster concentrated surface within this wider distributed organizational structure. The resulting space-system profile is distributed, ESA-linked, launcher-coordinated, and cluster-concentrated.</div>
+      <div class="detail-item"><strong>Identity and administrative infrastructure profile.</strong> The identity layer appears federated authentication structured through FranceConnect and FranceConnect+. DINUM indicates interministerial service interoperability across the administrative layer. ANSSI qualification references indicate an assurance-qualified dimension for higher-assurance identity participation. The combined profile is therefore federated, interoperable, assurance-qualified, and coordinated through a shared platform model.</div>
+      <div class="detail-item"><strong>Cross-border infrastructure participation profile.</strong> Continental participation appears through Schengen mobility continuity. TEN-T indicates corridor participation in continental transport structures. The Digital Single Market indicates regulatory and service interoperability across the EU digital environment. RENATER-GÉANT continuity indicates research-network federation continuity across the continental scientific infrastructure layer. The profile therefore records cross-border participation through mobility, transport, digital interoperability, and research-network continuity.</div>
+    </div>
+
+    <h3 class="subhead">Structural positioning summary</h3>
+    <div class="detail-list">
+      <div class="detail-item">France's structural positioning appears as a nationally coordinated but multi-site compute environment organized through GENCI, IDRIS, TGCC, CINES, CEA, EuroHPC, and PRACE; a research federation layered across CNRS, CEA, Inria, Inserm, ONERA, Université PSL, Sorbonne, Université Paris-Saclay, ERA, Horizon Europe, ANR, and DGA-linked participation; a cluster-centered semiconductor environment around Crolles and Grenoble through STMicroelectronics, GlobalFoundries, CEA-Leti, Soitec, France 2030, and Electronique 2030; an exchange-layer profile combining France-IX and SFINX metro concentration with RENATER and GÉANT continuity; a sovereign cloud qualification posture carried by cloud de confiance, SecNumCloud, Bleu, OVHcloud, France 2030 cloud measures, and Gaia-X Hub France; an energy-system attachment structured through RTE, ENTSO-E, documented neighboring interconnections, and a baseload-supported transmission context; a defense-adjacent simulation interface expressed through DGA, CEA, ONERA, ASTRID, and ASTRID Maturation; an ESA-linked launcher coordination surface distributed across CNES, ArianeGroup, Paris, Toulouse, and Kourou; an identity-federation infrastructure organized through FranceConnect, FranceConnect+, DINUM, and ANSSI qualification references; and an EU-embedded regulatory and continental participation structure expressed through GDPR, the AI Act, Schengen, TEN-T, the Digital Single Market, and RENATER-GÉANT continuity.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">Profile completeness status: Initial canonical normalization complete · Surface assignment status: none</div>
+    <div class="src">Source: profile.md</div>
+  </section>
+
+  <!-- ── 8. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers. Builders should interpret the jurisdiction through institutional coordination continuity rather than centralized operator control.</p>
+    <p class="muted"><strong>Scope.</strong> The builder-mode layer provides interpretation guidance only and does not assign deployment suitability.</p>
+
+    <h3 class="subhead">Jurisdiction modeling approach</h3>
+    <ul class="mini muted">
+      <li>Model France as a hybrid national–European institutional coordination environment.</li>
+      <li>Model the jurisdiction as a multi-agency distributed infrastructure surface rather than a single centralized operator domain.</li>
+      <li>Treat the research layer as a programme-linked research federation carried by institutional continuity across research, administration, cybersecurity, network, energy, and space coordination surfaces.</li>
+      <li>Treat the cloud layer as a qualification-mediated sovereign cloud structure rather than an autonomy claim.</li>
+      <li>Treat the energy layer as a continental transmission interoperability participation surface.</li>
+      <li>Treat the space layer as an ESA-linked launcher-system coordination environment.</li>
+      <li>Builders should interpret the jurisdiction through institutional coordination continuity rather than centralized operator control.</li>
+    </ul>
+
+    <h3 class="subhead">Compute coordination interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Treat GENCI, IDRIS, TGCC, CINES, CEA, EuroHPC, and PRACE as a nationally coordinated but institutionally distributed compute surface.</li>
+      <li>Treat the multi-site structure across IDRIS, TGCC, and CINES as stable unless the evidence layer documents a structural change.</li>
+      <li>Treat agency-mediated coordination through GENCI as the primary organizing pattern for the compute layer.</li>
+      <li>Treat EuroHPC and PRACE participation as structural components of the compute package rather than optional contextual additions.</li>
+      <li>Preserve the absence of a standalone hyperscale sovereign stack unless the evidence layer is updated.</li>
+    </ul>
+
+    <h3 class="subhead">Research federation interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Interpret CNRS, CEA, Inria, Inserm, ONERA, Université PSL, Sorbonne, Université Paris-Saclay, ERA, Horizon Europe, ANR, and DGA-linked programmes as a layered institute–laboratory–university federation connected to European programme continuity.</li>
+      <li>Treat the national research institutes and university federation layer as complementary rather than competing organizational surfaces.</li>
+      <li>Treat ERA and Horizon Europe attachment as persistent continuity channels for the research package.</li>
+      <li>Treat ONERA, ANR, and DGA-linked participation as evidence of defense-adjacent simulation interfaces inside the broader research system.</li>
+      <li>Defense-adjacent simulation interfaces should not be modeled as a separate research stack.</li>
+    </ul>
+
+    <h3 class="subhead">Semiconductor ecosystem interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Model Crolles, Grenoble, STMicroelectronics, GlobalFoundries, CEA-Leti, Soitec, France 2030, and Electronique 2030 as a cluster-centered semiconductor ecosystem.</li>
+      <li>Treat research–fabrication co-location as structural inside the documented Crolles-Grenoble package.</li>
+      <li>Treat supplier-network participation as embedded within the cluster environment.</li>
+      <li>Treat EU-linked manufacturing coordination as present through the documented participating institutions.</li>
+      <li>Preserve the absence of standalone fabrication sovereignty unless the evidence layer changes.</li>
+    </ul>
+
+    <h3 class="subhead">Exchange and network infrastructure interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Interpret France-IX, SFINX, RENATER, and GÉANT as a combined exchange and research-network structure.</li>
+      <li>Treat France-IX and SFINX as the metro exchange concentration layer.</li>
+      <li>Treat RENATER as the national academic backbone continuity layer.</li>
+      <li>Treat GÉANT attachment as the continental research-network federation layer.</li>
+      <li>These layers should be modeled as complementary rather than hierarchical.</li>
+    </ul>
+
+    <h3 class="subhead">Sovereign cloud qualification interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Treat cloud de confiance, SecNumCloud, Bleu, OVHcloud, France 2030 cloud measures, and Gaia-X Hub France as a certification-mediated sovereign cloud participation structure.</li>
+      <li>Treat qualification frameworks as the primary trust-defining surface for the cloud package.</li>
+      <li>Treat European governance participation through Gaia-X Hub France as structural rather than optional.</li>
+      <li>Preserve the absence of documented hyperscale independence unless the evidence layer changes.</li>
+    </ul>
+
+    <h3 class="subhead">Energy transmission interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Interpret RTE, ENTSO-E, and neighboring interconnections as a continental synchronization transmission environment supported by a baseload-backed grid structure.</li>
+      <li>Treat transmission interoperability as the primary energy interpretation surface.</li>
+      <li>Treat neighboring interconnections as structural components of the package rather than contextual extras.</li>
+      <li>Do not infer generation dominance from the baseload-supported transmission context.</li>
+    </ul>
+
+    <h3 class="subhead">Regulatory coordination interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Interpret GDPR, AI Act, ANSSI, DINUM, and France 2030 as an EU-embedded regulatory coordination structure supported by national cybersecurity qualification and interministerial administration layers.</li>
+      <li>Treat ANSSI as the cybersecurity qualification authority surface.</li>
+      <li>Treat DINUM as the interministerial digital coordination surface.</li>
+      <li>Treat France 2030 as a cross-sector programme coordination surface rather than a standalone regulatory authority.</li>
+    </ul>
+
+    <h3 class="subhead">Defense and simulation interface interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Interpret DGA, CEA, ONERA, ASTRID, and ASTRID Maturation as a civil-defense simulation-layer adjacency environment.</li>
+      <li>Treat programme-mediated coordination as the primary interpretive frame for this layer.</li>
+      <li>Treat the interface as civil-defense adjacent rather than as a separate military-only infrastructure stack.</li>
+      <li>Preserve the absence of a standalone military compute stack unless the evidence layer changes.</li>
+    </ul>
+
+    <h3 class="subhead">Space-system coordination interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Interpret CNES, ArianeGroup, ESA participation, Paris, Toulouse, and Kourou as a distributed launcher-system coordination environment attached to European programme structures.</li>
+      <li>Treat organizational distribution across Paris, Toulouse, and Kourou as a structural feature of the package.</li>
+      <li>Treat ESA-linked launcher coordination as persistent unless the evidence layer records a structural change.</li>
+    </ul>
+
+    <h3 class="subhead">Identity federation interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Interpret FranceConnect, FranceConnect+, DINUM, and ANSSI qualification references as a federated administrative authentication environment with interministerial interoperability.</li>
+      <li>Treat shared platform identity coordination as the primary organizing pattern for the identity layer.</li>
+      <li>Preserve the absence of standalone agency identity stacks unless the evidence layer changes.</li>
+    </ul>
+
+    <h3 class="subhead">Cross-border infrastructure interpretation guidance</h3>
+    <ul class="mini muted">
+      <li>Interpret Schengen, TEN-T, Digital Single Market, and RENATER–GÉANT continuity as continental infrastructure participation surfaces spanning mobility, transport, regulation, and research-network interoperability.</li>
+      <li>Treat European embedding as structural across multiple coordination layers rather than as a single cross-border mechanism.</li>
+    </ul>
+
+    <h3 class="subhead">Builder update triggers</h3>
+    <ul class="mini muted">
+      <li>Update this jurisdiction package if new evidence documents new EuroHPC hosting roles.</li>
+      <li>Update this jurisdiction package if new evidence documents changes to the SecNumCloud qualification structure.</li>
+      <li>Update this jurisdiction package if new evidence documents semiconductor fabrication expansions beyond the Crolles cluster.</li>
+      <li>Update this jurisdiction package if new evidence documents changes to the FranceConnect federation architecture.</li>
+      <li>Update this jurisdiction package if new evidence documents new ENTSO-E transmission topology participation.</li>
+      <li>Update this jurisdiction package if new evidence documents new ESA launcher-system coordination roles.</li>
+      <li>Only evidence-layer changes should trigger structural updates.</li>
+    </ul>
+
+    <div class="callout mini" style="margin-top:14px">Builder completeness status: Initial canonical normalization complete · Builder-mode completeness status: Initial canonical normalization complete · Surface assignment status: none</div>
+    <div class="src">Source: builder-mode.md</div>
+  </section>
+
+  <!-- ── 9. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">The canonical package explicitly preserves the following neutral exclusions for France. These absences are part of the jurisdiction's current structural profile and must remain preserved until evidence-layer updates occur.</p>
+
+    <h3 class="subhead">Structural absences preserved (change-log.md)</h3>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>standalone hyperscale sovereign cloud infrastructure stack</li>
+      <li>standalone national semiconductor fabrication sovereignty</li>
+      <li>standalone military compute infrastructure stack</li>
+      <li>standalone agency identity architecture outside FranceConnect federation</li>
+    </ul>
+
+    <h3 class="subhead">Structural absence preservation guidance (builder-mode.md)</h3>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>Preserve the absence of a standalone hyperscale sovereign cloud stack unless future evidence explicitly documents it.</li>
+      <li>Preserve the absence of standalone national semiconductor fabrication sovereignty unless future evidence explicitly documents it.</li>
+      <li>Preserve the absence of a standalone military compute infrastructure stack unless future evidence explicitly documents it.</li>
+      <li>Preserve the absence of a standalone agency identity architecture outside the FranceConnect federation unless future evidence explicitly documents it.</li>
+    </ul>
+
+    <h3 class="subhead">Structural signal absences (signals.md)</h3>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>The evidence does not document a nationally concentrated hyperscale cloud-provider infrastructure stack as the primary cloud signal surface.</li>
+      <li>The evidence does not document a national-only sovereign semiconductor fabrication stack operating independently of the wider EU-linked ecosystem described around Crolles, CEA-Leti, Soitec, and European coordination structures.</li>
+      <li>The evidence does not document a standalone national research-network backbone operating outside the RENATER-GÉANT structure.</li>
+      <li>The evidence does not document a non-European transmission coordination environment operating independently of RTE's ENTSO-E-linked interconnection surface.</li>
+    </ul>
+
+    <h3 class="subhead">Metadata structural classifications (metadata.md)</h3>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>Hyperscale sovereign stack: not documented in source layers.</li>
+      <li>Standalone national fabrication stack: not documented in source layers.</li>
+      <li>Independent hyperscale sovereign layer: not documented in source layers.</li>
+      <li>Standalone military compute stack: not documented in source layers.</li>
+      <li>Standalone agency identity systems: not documented in source layers.</li>
+    </ul>
+
+    <p class="muted" style="margin-top:12px">The canonical package records that these exclusions are carried forward across signals.md, trust-dimensions.md, profile.md, and builder-mode.md as structural absences, non-signals, and preservation guidance. The canonical package records that no layer assigns readiness classification, routing inference, routing role, coordination tier, Atlas surface, national significance, leadership positioning, or deployment suitability.</p>
+    <div class="src">Source: change-log.md — Structural Absences Preserved; builder-mode.md — Structural Absence Preservation Guidance; signals.md — Structural Signal Absences; metadata.md — per-domain "Not documented in source layers" fields</div>
+  </section>
+
+  <!-- ── 10. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records the following evidence gaps for France. These are carried as structural signal absences and preservation guidance rather than as a separately labelled "Evidence Gaps" section within the canonical files.</p>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">The signals layer records that the evidence does not document a nationally concentrated hyperscale cloud-provider infrastructure stack as the primary cloud signal surface.</div>
+      <div class="detail-item">The signals layer records that the evidence does not document a national-only sovereign semiconductor fabrication stack operating independently of the wider EU-linked ecosystem described around Crolles, CEA-Leti, Soitec, and European coordination structures.</div>
+      <div class="detail-item">The signals layer records that the evidence does not document a standalone national research-network backbone operating outside the RENATER-GÉANT structure.</div>
+      <div class="detail-item">The signals layer records that the evidence does not document a non-European transmission coordination environment operating independently of RTE's ENTSO-E-linked interconnection surface.</div>
+      <div class="detail-item">The change-log records that these structural absences must remain preserved until evidence-layer updates occur, and that update triggers are limited to documented changes in EuroHPC hosting roles, SecNumCloud structural framework, semiconductor fabrication expansion beyond the Crolles cluster, FranceConnect federation architecture, ENTSO-E topology participation, ESA launcher coordination role, national hyperscale sovereign cloud deployment, standalone military compute infrastructure emergence, or standalone agency identity stack deployment.</div>
+    </div>
+    <p class="muted" style="margin-top:12px">The canonical package records gap inheritance: signals.md, trust-dimensions.md, profile.md, and builder-mode.md inherit these structural absences without expansion, and change-log.md records the update-trigger discipline governing future modification. Only evidence-layer updates justify structural modification.</p>
+    <div class="src">Source: signals.md — Structural Signal Absences; change-log.md — Future Evidence Update Triggers</div>
+  </section>
+
+  <!-- ── 11. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+
+    <h3 class="subhead">Jurisdiction summary</h3>
+    <p class="muted">The change-log records that France is modeled as a hybrid national–European institutional coordination environment, a distributed multi-agency infrastructure surface, a programme-linked research federation, a certification-mediated sovereign cloud qualification environment, an ENTSO-E synchronized transmission participant, an ESA-linked launcher coordination jurisdiction, and a FranceConnect-centered administrative identity federation. No readiness interpretation is introduced in this package.</p>
+
+    <h3 class="subhead">Structural modeling notes</h3>
+    <p class="muted">The change-log records that the France jurisdiction package reflects:</p>
+    <ul class="mini muted">
+      <li>GENCI-mediated compute coordination</li>
+      <li>IDRIS, TGCC, and CINES multi-site national HPC structure</li>
+      <li>CNRS–CEA–Inria–Inserm–ONERA research federation continuity</li>
+      <li>Crolles–Grenoble semiconductor cluster structure</li>
+      <li>France-IX + SFINX exchange-layer concentration</li>
+      <li>RENATER–GÉANT research network federation continuity</li>
+      <li>SecNumCloud / cloud de confiance qualification structure</li>
+      <li>Gaia-X Hub France participation</li>
+      <li>RTE participation in ENTSO-E transmission synchronization</li>
+      <li>ESA-linked launcher coordination across Paris, Toulouse, and Kourou</li>
+      <li>FranceConnect and FranceConnect+ administrative identity federation</li>
+      <li>GDPR / AI Act / ANSSI / DINUM regulatory coordination embedding</li>
+    </ul>
+
+    <h3 class="subhead">Evidence-layer anchors</h3>
+    <p class="muted">The change-log records that all modeled structures derive from evidence.md, signals.md, trust-dimensions.md, profile.md, metadata.md, and builder-mode.md. No additional inference layers are permitted for this package.</p>
+
+    <h3 class="subhead">Structural absences preserved</h3>
+    <p class="muted">The change-log records that the France jurisdiction normalization preserves the absence of a standalone hyperscale sovereign cloud infrastructure stack, standalone national semiconductor fabrication sovereignty, standalone military compute infrastructure stack, and standalone agency identity architecture outside the FranceConnect federation. These absences must remain preserved until evidence-layer updates occur.</p>
+
+    <h3 class="subhead">Normalization decisions</h3>
+    <ul class="mini muted">
+      <li>The change-log records that compute is modeled as a distributed GENCI-coordinated environment.</li>
+      <li>The change-log records that semiconductor capability is modeled as a cluster-centered ecosystem.</li>
+      <li>The change-log records that cloud sovereignty is modeled through qualification frameworks.</li>
+      <li>The change-log records that research is modeled as an institute–laboratory–university federation.</li>
+      <li>The change-log records that defense adjacency is modeled as a civil-defense simulation interface.</li>
+      <li>The change-log records that identity is modeled as a federated administrative authentication surface.</li>
+      <li>The change-log records that energy is modeled as continental synchronization participation.</li>
+      <li>The change-log records that space is modeled as an ESA-linked launcher coordination environment.</li>
+      <li>The change-log records that no autonomy claims are introduced in these modeling decisions.</li>
+    </ul>
+
+    <h3 class="subhead">Builder interpretation alignment</h3>
+    <p class="muted">The change-log records that builder-mode.md governs compute interpretation stability, semiconductor cluster interpretation boundaries, cloud qualification interpretation discipline, ENTSO-E transmission interpretation scope, ESA coordination interpretation continuity, and FranceConnect federation identity interpretation scope. The change-log records that builder-mode.md remains authoritative unless evidence-layer change occurs.</p>
+
+    <h3 class="subhead">Future evidence update triggers</h3>
+    <p class="muted">The change-log records that this jurisdiction package should be updated if future evidence documents:</p>
+    <ul class="mini muted">
+      <li>new EuroHPC hosting roles</li>
+      <li>SecNumCloud structural framework changes</li>
+      <li>semiconductor fabrication expansion beyond the Crolles cluster</li>
+      <li>FranceConnect federation architecture changes</li>
+      <li>ENTSO-E topology participation changes</li>
+      <li>ESA launcher coordination role changes</li>
+      <li>national hyperscale sovereign cloud deployment</li>
+      <li>standalone military compute infrastructure emergence</li>
+      <li>standalone agency identity stack deployment</li>
+    </ul>
+    <p class="muted">The change-log records that only evidence-layer updates justify structural modification.</p>
+
+    <h3 class="subhead">Initial normalization entry</h3>
+    <ul class="mini muted">
+      <li>France jurisdiction package normalized into Atlas canonical structure.</li>
+      <li>Package aligned with global country normalization framework.</li>
+      <li>Structural absences preserved.</li>
+      <li>Builder-mode guidance established.</li>
+      <li>Evidence-triggered update discipline enforced.</li>
+    </ul>
+
+    <h3 class="subhead">Completion confirmation</h3>
+    <p class="muted">The change-log records Status: Initial canonical normalization complete. The change-log records that France jurisdiction package normalization is attached to the following canonical files:</p>
+    <ul class="mini muted">
+      <li><code>jurisdictions/global/countries/france/evidence.md</code></li>
+      <li><code>jurisdictions/global/countries/france/signals.md</code></li>
+      <li><code>jurisdictions/global/countries/france/trust-dimensions.md</code></li>
+      <li><code>jurisdictions/global/countries/france/profile.md</code></li>
+      <li><code>jurisdictions/global/countries/france/builder-mode.md</code></li>
+      <li><code>jurisdictions/global/countries/france/metadata.md</code></li>
+      <li><code>jurisdictions/global/countries/france/change-log.md</code></li>
+    </ul>
+
+    <div class="callout mini" style="margin-top:14px">Normalization completion status: Initial canonical normalization complete · Surface assignment status: none</div>
+    <div class="src">Source: change-log.md</div>
+  </section>
+
+</div><!-- /main col -->
+
+<!-- ── SIDEBAR ── -->
+<aside>
+
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical France jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>ATLAS_GLOBAL_COUNTRIES_PHASE3_PLAN_v1.md</code> (scaffolding only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/global/countries/france/</code></p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
+    <ul class="mini">
+      <li><strong>Jurisdiction:</strong> France</li>
+      <li><strong>Code:</strong> FR</li>
+      <li><strong>Jurisdiction Type:</strong> Country</li>
+      <li><strong>Governance Level:</strong> National</li>
+      <li><strong>Coordination Model:</strong> Hybrid national–European institutional coordination structure</li>
+      <li><strong>Infrastructure Pattern:</strong> Multi-agency coordinated with distributed institutional operators</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> Initial canonical normalization complete</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Structural Classification</div>
+    <h3 id="heading-sidebar-topology">Metadata summary</h3>
+    <ul class="mini">
+      <li><strong>Jurisdiction Type:</strong> National European compute-participating country</li>
+      <li><strong>Compute Structure:</strong> Multi-site nationally coordinated HPC environment</li>
+      <li><strong>Research Structure:</strong> Institute-led laboratory federation with university layering</li>
+      <li><strong>Semiconductor Structure:</strong> Cluster-centered fabrication ecosystem</li>
+      <li><strong>Exchange Structure:</strong> Metro exchange concentration with national research backbone continuity</li>
+      <li><strong>Cloud Structure:</strong> Certification-mediated sovereign cloud qualification framework</li>
+      <li><strong>Energy Structure:</strong> ENTSO-E synchronized transmission interoperability environment</li>
+      <li><strong>Space Structure:</strong> ESA-linked distributed launcher coordination environment</li>
+      <li><strong>Identity Structure:</strong> Federated administrative authentication infrastructure</li>
+      <li><strong>Regulatory Structure:</strong> EU-embedded digital governance alignment</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Structural classification metadata only. France's metadata.md uses its own per-domain field structure rather than a Corridor Group / Foundation Layer / Topology Completion triad; this rendering preserves France's field structure verbatim without harmonizing to other jurisdictions. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: complete</li>
+      <li>Signal layer: complete</li>
+      <li>Trust dimensions: complete</li>
+      <li>Profile: complete</li>
+      <li>Builder-mode: complete</li>
+      <li>Metadata: complete</li>
+      <li>Change-log: complete</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not an autonomy claim.</li>
+      <li>Not a substitute for the canonical package.</li>
+    </ul>
+  </div>
+
+</aside>
+</div><!-- /grid-sidebar -->
+
 </main>
 
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
 <div id="footer-container"></div>
-
+<script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
 </script>
-
+</div>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
