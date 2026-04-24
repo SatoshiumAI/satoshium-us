@@ -7,85 +7,789 @@
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
-<title>Japan | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<title>Japan — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Structured rendering of the canonical Japan Atlas jurisdiction package.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/japan/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
 <style>
 :root{
+ --card-wm:url('https://satoshium.link/assets/seal.png');
  --bg:#07090d;
  --panel:#0c1018;
+ --panel-2:#101624;
  --text:#e8edf7;
  --muted:#9aa7bd;
  --gold:#d6a34a;
  --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --line-strong:rgba(214,163,74,.28);
+ --red:#ef4444;
+ --orange:#f97316;
+ --yellow:#eab308;
+ --green:#22c55e;
+ --teal:#14b8a6;
+ --blue:#4a9eff;
+ --purple:#8b5cf6;
 }
-body{
+*{box-sizing:border-box}
+html,body{
  margin:0;
- padding-top:80px;
+ padding:0;
  background:var(--bg);
  color:var(--text);
  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
-}
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
-}
-h1{color:var(--gold2)}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+h1{font-size:38px;color:var(--gold2);line-height:1.1;margin:0 0 10px}
+h2{font-size:22px;color:var(--gold2);margin:0 0 10px}
+h3{font-size:16px;color:var(--text);margin:0 0 6px}
+p{margin:0 0 12px}
+ul{margin:8px 0 0 18px}
 .muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ padding:7px 12px;border-radius:999px;
+ border:1px solid var(--line);background:rgba(214,163,74,.06);
+ color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:30px 24px;margin-bottom:18px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+.hero::after{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+ background-image:linear-gradient(rgba(214,163,74,.12) 1px, transparent 1px),linear-gradient(90deg, rgba(214,163,74,.12) 1px, transparent 1px);
+ background-size:40px 40px;
+ mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.hero-chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:18px;margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35);border-color:var(--line-strong)}
+.card.anchor-target{scroll-margin-top:110px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-sidebar{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.span-2{grid-column:1 / -1}
+.note{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted);font-size:14px}
+.kicker{font-size:13px;color:var(--muted);max-width:920px}
+.mini{font-size:13px}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
+.detail-list{display:grid;gap:10px}
+.detail-item{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.detail-item strong{color:var(--text)}
+.atlas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.atlas-list li{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.atlas-list code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--gold2);font-size:12px}
+.callout{
+ padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+ background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
+}
+.callout .status-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.callout .status-value{display:block;font-size:13px;font-weight:700;color:var(--text)}
+.callout .status-value + .status-label{margin-top:8px}
+.footer-block{padding-bottom:34px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+hr.section-divider{border:none;border-top:1px dashed rgba(214,163,74,.22);margin:22px 0 18px;width:70%}
+.smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.adjacent-anchors{margin-top:18px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}
+.adjacent-anchors .label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px;font-weight:700}
+.adjacent-anchors .anchors{display:flex;flex-wrap:wrap;gap:8px}
+.adjacent-anchors .anchors a{display:inline-flex;padding:5px 10px;border-radius:999px;background:rgba(214,163,74,.06);border:1px solid var(--line);font-size:12px;color:var(--gold2)}
+.adjacent-anchors .anchors a:hover{background:rgba(214,163,74,.10);border-color:var(--line-strong)}
+.adjacent-anchors .note{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
+@media (max-width:980px){
+ .grid-sidebar{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+ .grid-2,.grid-3{grid-template-columns:1fr}
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .field-row{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .wrap.content{animation:none;opacity:1;transform:none}
+ .card{transition:none}
+ .card:hover{transform:none}
 }
 </style>
 </head>
 <body>
-
 <div id="topbar-slot" data-topbar="universe"></div>
 <script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Japan</h1>
+<main id="main-content" class="wrap content">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+<!-- ── 1. TITLE / JURISDICTION IDENTITY ─────── -->
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
+    <h1 id="heading-hero">Japan</h1>
+    <p class="kicker">This page renders the canonical Japan Atlas jurisdiction package. The canonical files remain the source of truth; this document is a structured rendering only.</p>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+    <div class="hero-meta">
+      <div class="hero-chip">Jurisdiction: Japan (JP)</div>
+      <div class="hero-chip">Jurisdiction lens</div>
+      <div class="hero-chip">Completeness: Fully normalized global country package</div>
+      <div class="hero-chip">Surface assignment: none</div>
+    </div>
 
-</article>
+    <nav class="section-nav" aria-label="Jump to sections">
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
+<div class="grid-sidebar">
+<div>
+
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <p class="muted"><strong>Jurisdiction identity.</strong> The metadata layer records Japan as a sovereign nation-state within the Indo-Pacific region, governed through constitutional monarchy with parliamentary government.</p>
+
+    <h3 class="subhead">Jurisdiction identity fields</h3>
+    <div class="field-row">
+      <div class="field-label">Country</div>
+      <div class="field-value">Japan</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">ISO Code</div>
+      <div class="field-value">JP</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Jurisdiction Type</div>
+      <div class="field-value">Sovereign nation-state</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Geographic Region</div>
+      <div class="field-value">Indo-Pacific</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Political Structure</div>
+      <div class="field-value">Constitutional monarchy with parliamentary government</div>
+    </div>
+
+    <h3 class="subhead">Per-domain anchor classifications</h3>
+    <div class="field-row">
+      <div class="field-label">National Compute</div>
+      <div class="field-value">National research compute federation with coordinated institutional HPC participation</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Research Coordination</div>
+      <div class="field-value">Distributed national research coordination ecosystem supported by academic backbone networking</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Semiconductor Ecosystem</div>
+      <div class="field-value">Public-private advanced semiconductor coordination environment with international fabrication partnerships</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Exchange & Backbone</div>
+      <div class="field-value">Distributed commercial exchange infrastructure integrated with national academic backbone connectivity</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Government Digital Infrastructure</div>
+      <div class="field-value">Centralized procurement-layer interoperability governance supporting public-sector digital platforms</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Energy Coordination</div>
+      <div class="field-value">Dual-frequency nationally coordinated grid with converter-station interconnection infrastructure</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Regulatory & Cybersecurity</div>
+      <div class="field-value">Multi-agency national digital governance and cybersecurity coordination environment</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Defense & Simulation</div>
+      <div class="field-value">Defense-adjacent simulation and aerospace modeling ecosystem with institutional coordination interfaces</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Space Infrastructure</div>
+      <div class="field-value">National launch-capable space infrastructure with integrated mission coordination environment</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Identity Federation</div>
+      <div class="field-value">National administrative identity federation supporting authentication and public-sector data exchange</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Cross-Border Participation</div>
+      <div class="field-value">Documented multilateral participation across economic, semiconductor, and technology coordination frameworks</div>
+    </div>
+
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from metadata.md and uses Japan's own per-domain anchor-classification structure. Japan's metadata does not use a Corridor Group / Foundation Layer / Topology Completion Layer triad; this rendering preserves Japan's field structure verbatim without harmonizing to other jurisdictions.</p>
+
+    <p class="muted"><strong>Canonical topology-placement refusal.</strong> Every Japan canonical layer (evidence.md, signals.md, trust-dimensions.md, profile.md, metadata.md, builder-mode.md) records a Structural Boundary Statement that the source layers do not support evidence of corridor routing role assignment or topology completion-layer placement. The metadata layer records this as a persistent structural position, not as pending work.</p>
+
+    <p class="muted"><strong>Phase 3 scaffolding.</strong> The Atlas Phase 3 Global Countries plan records Japan at Tier 1, with provisional scaffolding values of <em>Indo-Pacific Advanced Compute Corridor</em>, foundation layer <em>Compute</em>, and topology completion role <em>Hardware supply stabilizer</em>. Per the Phase 3 plan, these values are interpretation scaffolding and not topology authority placement. Japan's canonical package supersedes these scaffolding values by explicitly recording that topology placement is not supported by the evidence layer.</p>
+
+    <div class="callout mini" style="margin-top:12px">
+      <span class="status-label">Metadata status</span>
+      <span class="status-value">per-domain anchor-classification metadata attached</span>
+      <span class="status-label">Topology placement</span>
+      <span class="status-value">explicitly not supported by canonical source layers</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: metadata.md · ATLAS_GLOBAL_COUNTRIES_PHASE3_PLAN_v1.md (scaffolding only)</div>
+  </section>
+
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only evidence-supported national structures documented for Japan that are relevant to Atlas normalization. The evidence layer records that it does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces. It does not generate signals.</p>
+    <p class="muted">The evidence boundary statement records that all statements in the evidence layer are limited to institution-published ministry, agency, university, operator, or company materials, plus conservative official-site discovery only where direct retrieval remained incomplete. The evidence layer records that no routing inference, readiness classification, topology placement, corridor assignment, capability ranking, sovereignty conclusion, or leadership framing has been added. Where official retrieval was incomplete or blocked, statements were kept narrow and limited to the visible institutional coordination surface only.</p>
+    <p class="muted">This rendering mirrors the canonical package. Surface assignment remains unset. No routing role is assigned. No autonomy claims are introduced.</p>
+    <div class="src">Source: evidence.md — Scope; Evidence Boundary Statement</div>
+  </section>
+
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer documents the following for Japan.</p>
+
+    <h3 class="subhead">National compute coordination structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">RIKEN's national compute surface is institutionally visible through the RIKEN Center for Computational Science (R-CCS), which publishes the system configuration and performance characteristics of the Fugaku supercomputer.</div>
+      <div class="detail-item">The Fugaku system page documents a large-scale national supercomputing installation with 158,976 nodes and published double-precision, single-precision, and AI-oriented performance modes.</div>
+      <div class="detail-item">HPCI is publicly structured as a national high-performance computing coordination layer with overview, project categories, selection and screening committees, awarded projects, user support, and shared hardware and software access.</div>
+      <div class="detail-item">The University of Tokyo Information Technology Center operates the Wisteria/BDEC-01 supercomputer system and publicly offers HPCI-related services in its role as an HPCI resource provider.</div>
+      <div class="detail-item">JAXA's supercomputing surface is institutionally visible through JSS3, which JAXA describes as supporting aerospace simulation, earth-observation data processing, and AI-related workloads.</div>
+      <div class="detail-item">AIST is compute-adjacent in the official source set through its stated Next Generation Computing Infrastructure Strategy work and related research and development activity.</div>
+      <div class="detail-item">No explicit official evidence was confirmed in this source set for a PRACE-equivalent participation layer or for a broader research-compute federation role beyond the documented domestic HPCI structure and separately documented international SINET links.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> RIKEN R-CCS Fugaku materials; HPCI coordination materials; University of Tokyo Wisteria/BDEC-01 materials; JAXA JSS3 materials; AIST Next Generation Computing Infrastructure Strategy materials.</p>
+
+    <h3 class="subhead">Research federation structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">RIKEN describes itself as a major research institute at the heart of scientific research in Japan, with state-of-the-art research infrastructure and a diverse disciplinary span.</div>
+      <div class="detail-item">AIST is institutionally visible in this source set through Semiconductor Frontier Research Center materials describing AIST-led research, shared pilot-line construction, and collaboration with companies, universities, and national institutes.</div>
+      <div class="detail-item">NII describes a research-center structure designed to remove barriers between research divisions and to respond quickly to critical social issues through cross-disciplinary collaboration.</div>
+      <div class="detail-item">NII's Research and Development Center for Academic Networks states that SINET is Japan's critical digital backbone linking over 1,000 universities and research institutes.</div>
+      <div class="detail-item">JAXA's Research and Development Directorate states that it conducts research and development jointly with industries and related institutions, including open-innovation work on dual-utilization technologies.</div>
+      <div class="detail-item">QST describes itself as a national quantum-science institution using large-scale research facilities and explicitly identifies JT-60SA as a joint international fusion experiment being built and operated by Japan and Europe.</div>
+      <div class="detail-item">The University of Tokyo, Kyoto University, and Osaka University remain institutionally visible as major university research surfaces through their official research and collaboration pages, including public research, technical consultation, and university-industry collaboration interfaces.</div>
+      <div class="detail-item">JST is institutionally visible as a national science-and-technology agency with overseas offices that capture global science and technology trends, support JST-funded researchers, and coordinate international scientific relationships.</div>
+      <div class="detail-item">JSPS publicly structures national research promotion through funding opportunities, joint research and exchange programs, international meetings support, fellowships, and Japan's main system for funding research.</div>
+      <div class="detail-item">The official source set therefore supports a federated national research landscape spanning public institutes, universities, funding agencies, and explicit international collaboration channels rather than a single centralized research stack.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> RIKEN research materials; AIST Semiconductor Frontier Research Center materials; NII research-center and SINET materials; JAXA Research and Development Directorate materials; QST and JT-60SA materials; University of Tokyo, Kyoto University, and Osaka University research materials; JST and JSPS institutional materials.</p>
+
+    <h3 class="subhead">Semiconductor ecosystem structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">The JASM coordination surface is explicitly documented through Sony Semiconductor Solutions Group's February 2024 release stating that TSMC, Sony Semiconductor Solutions, DENSO, and Toyota committed further investment to build a second fab in Kumamoto, with overall investment exceeding US$20 billion and strong support from the Japanese government.</div>
+      <div class="detail-item">The same JASM release documents a Kumamoto manufacturing surface tied to 40, 22/28, 12/16, and 6/7 nanometer process technologies for automotive, industrial, consumer, and HPC-related applications.</div>
+      <div class="detail-item">Sony Semiconductor Solutions publicly documents a nationwide Japan operations network spanning design, development, sales, and multiple manufacturing bases including Kumamoto, Nagasaki, Yamagata, Oita, Kagoshima, Miyagi, and Aichi sites.</div>
+      <div class="detail-item">Renesas Semiconductor Manufacturing states that it is responsible for five front-end production factories in Japan: Naka, Kawashiri, Saijo, Takasaki, and Kofu.</div>
+      <div class="detail-item">Kioxia states that its Yokkaichi Plant is one of the world's largest flash-memory production facilities and documents AI-supported manufacturing, smart-factory operations, and a role in cutting-edge research, technology development, and memory manufacturing.</div>
+      <div class="detail-item">Rapidus publicly describes its IIM site in Chitose, Hokkaido as an advanced research, development, and manufacturing base for next-generation logic semiconductors and publicly ties that base to 2 nm development.</div>
+      <div class="detail-item">AIST's Semiconductor Frontier Research Center states that it aims to promote open innovation in advanced semiconductors through consistent research and development, shared pilot lines, social implementation, and human resource development, in collaboration with companies, universities, and national institutes.</div>
+      <div class="detail-item">METI's information-policy surface publicly lists semiconductor revitalization strategy materials, semiconductor cooperation arrangements with the European Commission, the Netherlands, and the United Kingdom, a semiconductor alert mechanism, and semiconductor factory OT-security guidelines.</div>
+      <div class="detail-item">These official materials document international semiconductor partnerships and policy coordination where explicitly stated, without supporting any claim of standalone fabrication sovereignty beyond the documented ecosystem.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Sony Semiconductor Solutions JASM materials; Sony Semiconductor Solutions operations network materials; Renesas Semiconductor Manufacturing materials; Kioxia Yokkaichi materials; Rapidus IIM materials; AIST Semiconductor Frontier Research Center materials; METI information-policy and semiconductor cooperation materials.</p>
+
+    <h3 class="subhead">Exchange and network infrastructure</h3>
+    <div class="detail-list">
+      <div class="detail-item">JPNAP documents a Japanese IX surface characterized by redundancy, low latency, high operational rate, optical-switch redundancy, 400Gb Ethernet commercialization, and more than 280 connected domestic and international networks.</div>
+      <div class="detail-item">JPNAP also documents interconnection points across Tokyo, Osaka, Fukuoka, Sendai, and Sapporo.</div>
+      <div class="detail-item">JPIX states that it was established in July 1997 as Japan's first commercial IX and continues to provide neutral IX services, including 400 Gigabit Ethernet expansion.</div>
+      <div class="detail-item">BBIX states that its IX service enables direct exchange of Internet traffic at IX connection points, lower latency through nearest-point interconnection, and participation by major domestic and overseas ISP, OTT, and CATV operators.</div>
+      <div class="detail-item">NII states that SINET is Japan's critical digital backbone linking over 1,000 universities and research institutes.</div>
+      <div class="detail-item">NII's 2024 SINET6 release states that SINET6 connects Japan's prefectures with a 400 Gbps ultra-high-speed network, has enhanced international connections, and began full-scale operations in April 2022.</div>
+      <div class="detail-item">The official source set therefore documents both commercial exchange infrastructure and a national research-network coordination surface, including explicitly documented international research-network continuity through SINET6's enhanced international connections.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> JPNAP IX basic and interconnection materials; JPIX materials; BBIX materials; NII SINET research-center materials; NII SINET6 2024 release materials.</p>
+
+    <h3 class="subhead">Sovereign cloud and digital infrastructure coordination</h3>
+    <div class="detail-list">
+      <div class="detail-item">The Digital Agency describes itself as a control tower for shaping a digital society and for promoting DX initiatives to build public and private infrastructure for the digital age.</div>
+      <div class="detail-item">The Digital Agency's organizational materials document dedicated groups for digital interoperability and information systems for government uses, making the agency an explicit coordination surface for digital administration.</div>
+      <div class="detail-item">The Government Cloud page describes a common cloud-service usage environment for government intended to support systems that are fast, flexible, secure, and cost-effective, with governance functions, templates, and consideration for local-government use.</div>
+      <div class="detail-item">The same Government Cloud page also documents service-selection activity and progress on Sakura's cloud development plan, providing explicit evidence of domestic provider participation where stated.</div>
+      <div class="detail-item">METI's information-policy surface documents ministry coordination around digital infrastructures, including data centers, digital-governance code work, AI guidelines, and cross-border privacy rules.</div>
+      <div class="detail-item">MIC's Telecommunications Bureau states that it is responsible for developing digital infrastructure, promoting fair telecommunications competition, implementing a safe and secure ICT environment, and developing the effective use of radio waves.</div>
+      <div class="detail-item">MIC further documents regional consultative meetings with local governments and telecommunication business operators, data-center support, distributed undersea-cable landing stations, branch-line development, and non-terrestrial-network deployment.</div>
+      <div class="detail-item">The official source set therefore documents a coordinated government cloud and digital-infrastructure environment, but does not establish a standalone hyperscale sovereign cloud stack.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Digital Agency institutional materials; Digital Agency Government Cloud materials; METI information-policy materials; MIC Telecommunications Bureau materials.</p>
+
+    <h3 class="subhead">Energy transmission coordination structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">Japan's national transmission coordination surface is institutionally visible through OCCTO, which documents its establishment in 2015, Tokyo headquarters, governance structure, and general-meeting system.</div>
+      <div class="detail-item">OCCTO explicitly states that all electric power companies have an obligation to be members, and lists member responsibilities including observance of OCCTO rules and instructions, payment of membership fees, submission of electricity supply plans, and emergency-disaster preparedness.</div>
+      <div class="detail-item">TEPCO publicly documents substations as voltage- and frequency-control infrastructure and explicitly states that eastern Japan operates at 50 Hz and western Japan at 60 Hz.</div>
+      <div class="detail-item">TEPCO also documents three frequency-conversion sites used for east-west interchange: Shin-Shinano Substation, Sakuma Frequency Converter Station, and Higashi-Shimizu Substation.</div>
+      <div class="detail-item">KEPCO remains institutionally visible in the official source set as a major utility group whose core business includes electric power.</div>
+      <div class="detail-item">Chubu Electric Power Grid remains institutionally visible in the official source set through its dedicated grid-company corporate surface.</div>
+      <div class="detail-item">Because OCCTO states that all electric power companies are required members, the official source set supports a national cross-regional coordination structure spanning TEPCO, KEPCO, Chubu, and other regional power companies without requiring additional inference.</div>
+      <div class="detail-item">No official evidence in this source set supports any claim of continental synchronization participation.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> OCCTO organization materials; TEPCO substations materials; KEPCO corporate materials; Chubu Electric Power Grid corporate materials.</p>
+
+    <h3 class="subhead">Regulatory coordination framework</h3>
+    <div class="detail-list">
+      <div class="detail-item">METI is institutionally visible as a regulatory and industrial-coordination surface through its information-policy page, which groups semiconductor policy, digital infrastructure, AI guidance, cross-border privacy rules, and G7 and G20-related digital and technology materials.</div>
+      <div class="detail-item">MIC's Telecommunications Bureau explicitly documents regulatory responsibilities for digital infrastructure, telecom-market competition, safe and secure ICT services, and radio-wave governance.</div>
+      <div class="detail-item">The Digital Agency is institutionally visible as a control-tower body for public and private digital infrastructure, digital interoperability, and government information systems.</div>
+      <div class="detail-item">Cybersecurity coordination is institutionally visible through the Cabinet Secretariat cybersecurity office surface at cyber.go.jp and the security-portal surface associated with NISC.</div>
+      <div class="detail-item">The official cyber security portal identifies NISC as the coordinating body for Cybersecurity Month awareness and human-resource activities carried out with government institutions and related organizations.</div>
+      <div class="detail-item">Official cyber.go.jp English materials preserve continuity between NISC and the newer National Cybersecurity Office branding and explicitly reference comprehensive government cybersecurity coordination, cross-sectoral exercises, and joint international policy meetings involving NISC, MIC, and METI.</div>
+      <div class="detail-item">International digital-governance participation is documented only where explicitly surfaced in official materials, including METI's G7, G20, and Global CBPR references and the separate cross-border frameworks listed below.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> METI information-policy materials; MIC Telecommunications Bureau materials; Digital Agency materials; Cabinet Secretariat and NISC cybersecurity materials; cyber.go.jp English materials.</p>
+
+    <h3 class="subhead">Defense and simulation interface structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">ATLA is institutionally visible through its official English site surface, which publicly identifies ATLA as the Acquisition, Technology and Logistics Agency and exposes mission, organization, research and development, and specialized research-center pages.</div>
+      <div class="detail-item">ATLA's English materials document mission language covering dual-use technologies, research and development projects, reflection of JSDF operational needs in acquisition processes, cyber-related information and communications research, and modeling-and-simulation work at the Advanced Defense Technology Center.</div>
+      <div class="detail-item">Direct page retrieval for ATLA remained incomplete during this collection pass, so ATLA statements are intentionally limited to the visible official institutional surface and are not expanded into unsupported defense-compute claims.</div>
+      <div class="detail-item">JAXA's Research and Development Directorate explicitly includes work on dual-utilization technologies that are useful for both space development and ground business or social solutions, pursued jointly with industry in an open-innovation approach.</div>
+      <div class="detail-item">JAXA's documented JSS3 surface adds an official aerospace-simulation and data-processing layer, but does not by itself establish a standalone military compute stack.</div>
+      <div class="detail-item">No direct official evidence was confirmed in this source set for a separate RIKEN military-compute role; RIKEN's documented surface remains national research and supercomputing infrastructure.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> ATLA English institutional materials; JAXA Research and Development Directorate materials; JAXA JSS3 materials; RIKEN R-CCS materials.</p>
+
+    <h3 class="subhead">Space-system coordination structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">JAXA provides the national space coordination surface in this source set through its research, mission-support, and launch-site infrastructure materials.</div>
+      <div class="detail-item">Tanegashima Space Center is documented by JAXA as Japan's largest rocket-launch complex, with the Yoshinobu Launch Complex, spacecraft test and assembly buildings, a fairing assembly building, a vehicle assembly building, and the Takesaki Range Control Center.</div>
+      <div class="detail-item">JAXA states that Tanegashima supports operations ranging from launch-vehicle assembly and inspection through satellite loading, launch, and post-liftoff tracking.</div>
+      <div class="detail-item">Uchinoura Space Center is documented by ISAS and JAXA as a launch and satellite-tracking facility where sounding rockets and scientific satellites are launched and tracked and their data received.</div>
+      <div class="detail-item">ISAS further documents control-center, telemeter-center, and launch-plateau infrastructure at Uchinoura, including mission teams composed of researchers, engineers, and private-enterprise participants.</div>
+      <div class="detail-item">No additional international space-program claim is added here unless explicitly stated in the collected source set.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> JAXA Tanegashima Space Center materials; ISAS and JAXA Uchinoura Space Center materials; JAXA Research and Development Directorate materials.</p>
+
+    <h3 class="subhead">Identity and administrative federation structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">The Digital Agency states that the My Number System is part of the foundation of Japan's digital society and is intended to improve convenience for citizens and the efficiency of administration.</div>
+      <div class="detail-item">The My Number page documents a 12-digit identifier assigned to residents and an information-coordination system that enables omission of attached documents in administrative procedures through information exchange among administrative agencies.</div>
+      <div class="detail-item">The My Number page further documents a dedicated information-provision network system for information coordination among administrative agencies.</div>
+      <div class="detail-item">The Digital Agency's JPKI materials document a national digital-authentication layer with certification mechanisms, introduction methods for local governments and private-sector service providers, platform-operator participation, and competent-minister approval processes.</div>
+      <div class="detail-item">The Digital Agency's organizational material also documents a Digital Interoperability Framework Group, linking identity and authentication work to broader administrative interoperability and government-system coordination.</div>
+      <div class="detail-item">The official source set therefore supports a My Number and JPKI-centered administrative federation surface and does not establish a fragmented multi-agency identity architecture outside that documented federation.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Digital Agency My Number materials; Digital Agency JPKI materials; Digital Agency institutional materials.</p>
+
+    <h3 class="subhead">Cross-border infrastructure participation</h3>
+    <div class="detail-list">
+      <div class="detail-item">OECD participation is institutionally visible through the official OECD country page for Japan, which identifies Japan as having joined the OECD in 1964 and as an OECD member state.</div>
+      <div class="detail-item">G7 digital cooperation participation is institutionally visible through Japan's G7 Hiroshima Summit materials, including the official documents surface and ministerial materials for the G7 Digital and Tech Ministers' Meeting and Hiroshima AI Process.</div>
+      <div class="detail-item">Quad technology cooperation participation is institutionally visible through the official MOFA Quad Joint Leaders' Statement and associated official materials referencing 5G supplier diversification, Open RAN, and semiconductor-supply-chain cooperation.</div>
+      <div class="detail-item">APEC participation is institutionally visible through MOFA's APEC materials, which state that APEC leaders, ministers, and administrative officials meet regularly and that almost all Japanese ministries and agencies participate in related activities.</div>
+      <div class="detail-item">Additional cross-border semiconductor coordination is institutionally visible through METI's documented semiconductor arrangements with the European Commission, the Netherlands, and the United Kingdom.</div>
+      <div class="detail-item">These materials document participation in named international coordination frameworks only. They do not support any corridor-alignment inference.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> OECD country page materials; MOFA G7 Hiroshima Summit materials; MOFA Quad Joint Leaders' Statement materials; MOFA APEC materials; METI semiconductor cooperation materials.</p>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Evidence completeness status</span>
+      <span class="status-value">Fully normalized global country package</span>
+      <span class="status-label">Topology placement</span>
+      <span class="status-value">explicitly not supported by evidence layer</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: evidence.md</div>
+  </section>
+
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md and that absence of signals reflects absence of normalized documentary coverage. The signals layer records that it does not assign routing role, corridor membership, readiness tier, interoperability posture, trust ranking, topology placement, or comparative status.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>National compute coordination signals.</strong> RIKEN R-CCS and Fugaku together signal visible national high-performance compute coordination through a named national-scale supercomputing surface. HPCI signals a federated compute orchestration surface with documented project categories, screening structures, awarded-project pathways, user support, and shared hardware and software access. The presence of Wisteria/BDEC-01 as an HPCI resource-provider system signals continuity between national coordination structures and university-hosted compute infrastructure. JAXA JSS3 signals an additional institutionally visible aerospace-linked compute surface connected to simulation, earth-observation data processing, and AI-related workloads. AIST's Next Generation Computing Infrastructure Strategy work signals a public research-program surface adjacent to national compute infrastructure development. The evidence supports national HPC coordination presence, federated compute orchestration signals, and research-linked compute continuity signals, but does not support a PRACE-equivalent participation signal or a sovereign compute autonomy classification.</div>
+      <div class="detail-item"><strong>Research federation signals.</strong> The combined presence of RIKEN, AIST, NII, QST, JST, and JSPS signals a distributed national research coordination environment spanning public institutes, funding agencies, and large-scale research infrastructure. NII and SINET6 together signal academic backbone integration through a research network that links universities and research institutes across Japan. JST and JSPS signal institutional continuity between research funding, international scientific coordination, and national research-program support structures. QST's large-scale research-facility role and JT-60SA participation signal research federation continuity that includes internationally coordinated scientific infrastructure within the national research landscape. The University of Tokyo, Kyoto University, and Osaka University signal visible university-level integration into the broader research and compute environment. The evidence supports national research-compute federation continuity, distributed institutional coordination capability, and academic backbone integration surfaces rather than a single centralized research hierarchy.</div>
+      <div class="detail-item"><strong>Semiconductor infrastructure signals.</strong> Rapidus IIM signals visible advanced-node participation through a nationally recognized research, development, and manufacturing project tied in the evidence to 2 nm logic development. JASM Kumamoto signals advanced manufacturing participation through a multi-party fab buildout supported by TSMC, Sony Semiconductor Solutions, DENSO, Toyota, and stated Japanese government support. Sony Semiconductor facilities signal a distributed domestic semiconductor footprint spanning multiple design, development, sales, and manufacturing locations. Renesas's documented five front-end production factories signal an established multi-site fabrication network within Japan. Kioxia's Yokkaichi complex signals large-scale memory-production continuity through one of the world's largest flash-memory production facilities and associated technology-development activity. AIST Semiconductor Frontier Research Center participation signals a public pilot-line and open-innovation surface connecting companies, universities, and national institutes. METI semiconductor strategy materials signal public-private coordination structures spanning revitalization policy, alert mechanisms, international cooperation arrangements, and factory OT-security guidance. The evidence supports advanced-node participation signals, memory-production continuity signals, and public-private semiconductor coordination structures, but does not support a fabrication sovereignty posture classification.</div>
+      <div class="detail-item"><strong>Exchange and academic backbone signals.</strong> The combined presence of JPNAP, JPIX, and BBIX signals a dense national exchange layer with more than one major interconnection surface documented in the evidence. JPNAP's multi-city footprint across Tokyo, Osaka, Fukuoka, Sendai, and Sapporo signals geographically distributed exchange-layer availability rather than a single-metro interconnection surface. JPIX and BBIX together signal continued multi-exchange routing surface availability across commercial interconnection environments. SINET6 signals an academic backbone with nationwide coverage and explicit international connectivity. The evidence supports national exchange-layer density signals, academic backbone international connectivity signals, and multi-exchange routing surface availability without assigning routing meaning.</div>
+      <div class="detail-item"><strong>Government cloud coordination signals.</strong> The Digital Agency Government Cloud program signals centralized procurement-layer and usage-environment coordination for government cloud adoption. The Digital Agency's organizational structure signals platform integration governance through dedicated interoperability and government information-system coordination groups. Government Cloud governance functions, templates, and provider-selection activity signal a structured administrative cloud coordination surface rather than ad hoc ministry-by-ministry adoption. METI's digital infrastructure frameworks signal policy continuity around data centers, digital-governance code work, AI guidance, and cross-border privacy rules. MIC's telecommunications governance role signals linkage between cloud-related digital infrastructure policy and national communications-sector oversight. The evidence supports centralized procurement-layer coordination signals and platform integration governance signals, but does not support sovereign cloud status classification.</div>
+      <div class="detail-item"><strong>Energy coordination signals.</strong> OCCTO signals visible national balancing and coordination authority through a formal organization with required electric-power-company membership and documented planning and emergency responsibilities. TEPCO's documentation of 50 Hz and 60 Hz operation signals a dual-frequency national grid structure. The Shin-Shinano, Sakuma, and Higashi-Shimizu converter stations signal continuity infrastructure for east-west frequency conversion across the dual-frequency grid environment. KEPCO and Chubu Electric Power Grid signal participation by major regional utilities within the nationally coordinated transmission structure described by OCCTO. The evidence supports dual-frequency grid coordination signals, frequency-conversion infrastructure continuity signals, and national balancing-authority visibility, but does not support a continental synchronization posture signal.</div>
+      <div class="detail-item"><strong>Regulatory and cybersecurity signals.</strong> METI, MIC, and the Digital Agency together signal a multi-institution digital governance surface linking industrial policy, telecommunications oversight, and government digital-administration coordination. METI signals regulatory continuity across semiconductor policy, digital infrastructure, AI guidance, and cross-border privacy frameworks. MIC signals telecommunications regulatory continuity through documented responsibilities for competition, ICT security, infrastructure development, and radio-wave governance. The Digital Agency signals governance alignment through control-tower functions for digital society infrastructure, interoperability, and government information systems. NISC and Cabinet Secretariat cybersecurity coordination surfaces signal visible national cyber coordination authority presence. The evidence supports national cyber coordination authority presence, telecommunications regulatory continuity, and digital governance alignment surfaces.</div>
+      <div class="detail-item"><strong>Defense and simulation coordination signals.</strong> ATLA signals a defense-adjacent institutional coordination surface through its documented mission, research and development, and specialized research-center functions. ATLA's documented modeling-and-simulation work at the Advanced Defense Technology Center signals visible defense-adjacent simulation infrastructure. JAXA's dual-use research language signals an institutional coordination surface linking aerospace research with broader industrial and social-use technology development. JSS3 signals a national aerospace compute continuity indicator through its simulation and data-processing role. The evidence supports defense-adjacent simulation infrastructure signals and national aerospace compute continuity indicators, but does not support a military compute autonomy classification.</div>
+      <div class="detail-item"><strong>Space infrastructure signals.</strong> Tanegashima Space Center signals independent launch-site availability through documented launch, assembly, test, integration, and range-control infrastructure. Uchinoura Space Center signals an additional national launch and tracking site through documented launch, control-center, telemeter-center, and data-reception functions. JAXA's documented launch-site functions signal national mission-integration continuity across assembly, inspection, satellite loading, launch, tracking, and post-liftoff operations. ISAS mission-team and facility structures at Uchinoura signal sustained mission coordination capability across researchers, engineers, and private-enterprise participants. The evidence supports independent launch-site availability signals and national mission-integration continuity signals.</div>
+      <div class="detail-item"><strong>Identity federation signals.</strong> The My Number system signals a nationally coordinated identity-layer foundation for public administration. The documented information-coordination and information-provision network systems signal continuity in administrative data exchange across agencies. JPKI signals public authentication infrastructure continuity through a nationally documented digital-authentication layer with certification mechanisms and provider participation pathways. The Digital Agency's interoperability framework functions signal institutional coordination between identity infrastructure and broader administrative interoperability. The evidence supports national identity-layer coordination signals and public authentication infrastructure continuity.</div>
+      <div class="detail-item"><strong>Cross-border coordination signals.</strong> OECD participation signals documented attachment to a formal multilateral economic coordination structure. G7 participation signals documented involvement in named digital and technology ministerial coordination structures, including Hiroshima AI Process-related materials. Quad materials signal documented coordination participation on technology issues including 5G supplier diversification, Open RAN, and semiconductor-supply-chain cooperation. APEC participation signals documented involvement in a recurring multilateral economic coordination framework spanning leaders, ministers, and administrative officials. METI's semiconductor arrangements with the European Commission, the Netherlands, and the United Kingdom signal documented bilateral and multilateral semiconductor policy-coordination participation. The evidence supports documented multilateral coordination participation signals only and does not support corridor-alignment inference.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Signal completeness status</span>
+      <span class="status-value">Fully normalized global country package</span>
+      <span class="status-label">Topology placement</span>
+      <span class="status-value">explicitly not supported by signals layer</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: signals.md</div>
+  </section>
+
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from signals.md and that absence of signals reflects absence of normalized signal-layer coverage.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>Compute coordination trust structure.</strong> RIKEN R-CCS and Fugaku indicate national compute coordination continuity through a named public supercomputing surface with institutionally visible operating continuity. HPCI indicates a federated access structure organized through project categories, selection and screening processes, awarded-project pathways, user support, and shared hardware and software access. Wisteria/BDEC-01 indicates multi-institution compute participation by linking a university-hosted supercomputing resource provider into the documented national HPCI structure. JAXA JSS3 indicates an aerospace-linked simulation and data-processing surface that sits alongside the broader national compute environment. AIST's compute strategy surface indicates an additional public research-program continuity layer adjacent to national compute infrastructure development. The documented trust structure supports national compute coordination continuity, federated HPCI access, multi-institution participation, and an aerospace-linked simulation surface. The source layers do not support a PRACE-equivalent participation signal or a sovereign compute autonomy classification.</div>
+      <div class="detail-item"><strong>Research federation trust structure.</strong> RIKEN, AIST, NII, QST, JST, and JSPS indicate distributed research-institution continuity across public institutes, research agencies, and funding bodies rather than a single centralized research operator. SINET6 indicates academic backbone integration through a national research network linking universities and research institutes across Japan. JST and JSPS indicate funding-agency support surfaces that reinforce continuity between research support, international scientific coordination, and national research-program participation. The University of Tokyo, Kyoto University, and Osaka University indicate university-level attachment to the broader research and compute environment. QST's documented large-scale research-facility role and JT-60SA participation indicate international scientific infrastructure participation where explicitly documented in the evidence layer. The trust structure therefore reflects distributed research-institution continuity, academic backbone integration, and funding-agency support surfaces without implying centralized research governance.</div>
+      <div class="detail-item"><strong>Semiconductor coordination trust structure.</strong> Rapidus IIM and JASM Kumamoto indicate public-private semiconductor coordination continuity through nationally visible manufacturing and development programs tied to state-supported industrial strategy. Rapidus IIM indicates an advanced-node participation surface through the documented 2 nm development linkage. JASM Kumamoto indicates advanced manufacturing participation through a multi-party fab buildout involving TSMC, Sony Semiconductor Solutions, DENSO, Toyota, and documented Japanese government support. Sony Semiconductor facilities and Renesas front-end factories indicate distributed domestic fabrication and manufacturing continuity across multiple sites. Kioxia Yokkaichi indicates memory-production continuity through a large-scale flash-memory production and technology-development surface. AIST Semiconductor Frontier Research Center indicates pilot-line and open-innovation structure through documented collaboration among companies, universities, and national institutes. METI semiconductor strategy frameworks indicate international semiconductor coordination where documented through revitalization policy, alert mechanisms, OT-security guidance, and semiconductor arrangements with the European Commission, the Netherlands, and the United Kingdom. The trust structure supports public-private semiconductor coordination continuity, advanced-node participation surfaces, memory-production continuity, pilot-line and open-innovation structures, and documented international coordination. The source layers do not support a fabrication sovereignty posture classification.</div>
+      <div class="detail-item"><strong>Exchange and academic backbone trust structure.</strong> JPNAP, JPIX, and BBIX indicate a multi-exchange commercial interconnection structure rather than a single exchange-layer dependence surface. JPNAP's documented presence across Tokyo, Osaka, Fukuoka, Sendai, and Sapporo indicates a geographically distributed IX footprint. SINET6 indicates academic backbone continuity across a nationwide research-network surface. SINET6's documented enhanced international connections indicate international research-network connectivity within the academic backbone layer. The trust structure therefore reflects multi-exchange commercial interconnection, distributed IX presence, academic backbone continuity, and international research-network connectivity. The source layers do not support routing hierarchy assignment or gateway-status interpretation.</div>
+      <div class="detail-item"><strong>Government cloud trust structure.</strong> The Digital Agency Government Cloud program indicates centralized procurement-layer coordination for government cloud adoption and use. The Digital Agency's interoperability and government information-system functions indicate public-sector platform integration governance attached to the same cloud coordination surface. Government Cloud governance functions, templates, and provider-selection activity indicate a structured administrative cloud environment rather than fragmented ministry-specific adoption. METI's digital infrastructure frameworks indicate digital infrastructure policy continuity across data centers, AI guidance, digital-governance code work, and cross-border privacy frameworks. MIC's telecommunications governance role indicates telecommunications governance attachment to the broader digital infrastructure and cloud-policy surface. The trust structure therefore reflects centralized procurement-layer coordination, public-sector platform integration governance, digital infrastructure policy continuity, and telecommunications governance attachment. The source layers do not support a sovereign hyperscale cloud classification.</div>
+      <div class="detail-item"><strong>Energy coordination trust structure.</strong> OCCTO indicates national balancing and cross-regional coordination through a formal coordination authority with required utility membership and documented planning and emergency responsibilities. TEPCO's 50 Hz and 60 Hz documentation indicates dual-frequency grid continuity as a persistent national coordination condition. The Shin-Shinano, Sakuma, and Higashi-Shimizu converter stations indicate a converter-station infrastructure trust surface for east-west frequency conversion across the dual-frequency grid. KEPCO and Chubu Electric Power Grid indicate regional utility participation within the national coordination structure documented through OCCTO. The trust structure therefore reflects national balancing authority visibility, dual-frequency grid continuity, converter-station continuity infrastructure, and regional utility participation in national coordination. The source layers do not support continental synchronization membership.</div>
+      <div class="detail-item"><strong>Regulatory and cybersecurity trust structure.</strong> METI, MIC, the Digital Agency, NISC, and Cabinet Secretariat cybersecurity coordination materials indicate a multi-institution digital governance coordination structure rather than a single regulatory authority model. MIC indicates telecommunications regulatory continuity through documented responsibilities for competition, ICT security, infrastructure development, and radio-wave governance. NISC and Cabinet Secretariat cybersecurity surfaces indicate a national cybersecurity coordination surface spanning awareness activity, policy continuity, and cross-sector coordination. METI and the Digital Agency indicate digital-governance alignment across industrial policy, infrastructure policy, administrative interoperability, and government information systems. METI's documented cross-border privacy and digital-policy references indicate cross-border privacy and digital-policy coordination where explicitly documented. The trust structure therefore reflects multi-institution digital governance coordination, telecommunications regulatory continuity, and national cybersecurity coordination without implying superiority or readiness.</div>
+      <div class="detail-item"><strong>Defense and simulation trust structure.</strong> ATLA indicates a defense-adjacent coordination surface through its documented mission, research and development functions, and specialized research-center structure. The Advanced Defense Technology Center modeling-and-simulation surface indicates defense-adjacent simulation coordination within the documented institutional perimeter. JAXA's dual-use research language indicates a documented dual-use institutional interface connecting aerospace research with industrial and social-use technology development. JAXA JSS3 indicates aerospace compute continuity through simulation and data-processing functions attached to the national aerospace research environment. The trust structure therefore reflects defense-adjacent simulation coordination, aerospace compute continuity, and a documented dual-use institutional interface. The source layers do not support a standalone military compute stack classification.</div>
+      <div class="detail-item"><strong>Space infrastructure trust structure.</strong> Tanegashima Space Center indicates national launch-site continuity through documented launch, assembly, test, and range-control infrastructure. Uchinoura Space Center indicates additional national continuity across launch, tracking, control-center, telemeter-center, and data-reception functions. JAXA's documented launch integration functions indicate mission integration continuity spanning assembly, inspection, satellite loading, launch, tracking, and post-liftoff operations. ISAS mission coordination structures at Uchinoura indicate sustained mission coordination capability involving researchers, engineers, and private-enterprise participants. The trust structure therefore reflects national launch-site continuity and mission integration and tracking structure across launch, assembly, test, range-control, and data-reception surfaces. The source layers do not support a global launch-network classification.</div>
+      <div class="detail-item"><strong>Identity federation trust structure.</strong> The My Number system indicates national identity-layer coordination through a shared administrative identity foundation. The documented information-coordination and information-provision network systems indicate administrative data-exchange continuity across public agencies. JPKI indicates public authentication infrastructure through a documented national digital-authentication layer with certification and service-provider participation pathways. The Digital Agency's interoperability framework functions indicate governance attachment between identity infrastructure and wider administrative interoperability work. The trust structure therefore reflects national identity-layer coordination, administrative data-exchange continuity, public authentication infrastructure, and interoperability governance attachment. The source layers do not support an agency-fragmented identity architecture outside the documented My Number and JPKI federation.</div>
+      <div class="detail-item"><strong>Cross-border coordination trust structure.</strong> OECD, G7, Quad, and APEC participation indicate named multilateral coordination participation through documented institutional and ministerial structures. G7 and Quad materials indicate digital and technology cooperation surfaces where those policy and ministerial structures are explicitly documented. METI's semiconductor arrangements with the European Commission, the Netherlands, and the United Kingdom indicate semiconductor policy coordination surfaces beyond domestic policy structures alone. The trust structure therefore reflects named multilateral coordination participation, digital and technology cooperation surfaces, and semiconductor policy coordination surfaces where documented. The source layers do not support corridor-alignment inference.</div>
+    </div>
+
+    <hr class="section-divider">
+    <h3 class="subhead">Trust dimensions summary</h3>
+    <div class="detail-list">
+      <div class="detail-item">Japan's trust-dimension profile appears as a nationally coordinated but institutionally distributed structure spanning RIKEN R-CCS, Fugaku, HPCI, Wisteria/BDEC-01, JAXA JSS3, and AIST compute strategy work; a research federation carried by RIKEN, AIST, NII, QST, JST, JSPS, major universities, and SINET6; a public-private semiconductor coordination surface through Rapidus, JASM, Sony Semiconductor, Renesas, Kioxia, AIST pilot-line participation, and METI strategy frameworks; a layered exchange and academic-backbone environment across JPNAP, JPIX, BBIX, and SINET6; a government cloud coordination structure organized through the Digital Agency, METI, and MIC; a dual-frequency energy coordination surface structured through OCCTO, TEPCO documentation, converter-station infrastructure, KEPCO, and Chubu Electric Power Grid; a multi-institution regulatory and cybersecurity structure across METI, MIC, the Digital Agency, NISC, and Cabinet Secretariat coordination; a defense-adjacent simulation and aerospace compute interface through ATLA and JAXA; a national space infrastructure surface through Tanegashima, Uchinoura, JAXA, and ISAS; an identity federation through My Number, JPKI, and Digital Agency interoperability functions; and a cross-border institutional participation surface through OECD, G7, Quad, APEC, and METI's documented semiconductor coordination arrangements, without assigning readiness, ranking, routing, corridor meaning, or topology placement.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Trust completeness status</span>
+      <span class="status-value">Fully normalized global country package</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: trust-dimensions.md</div>
+  </section>
+
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from evidence.md, signals.md, and trust-dimensions.md. The profile layer introduces no topology placement inference.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>National compute profile.</strong> Japan's compute profile appears nationally coordinated through RIKEN R-CCS, Fugaku, and the HPCI framework rather than through a single isolated compute site. HPCI indicates a federated national access structure with documented project pathways, screening mechanisms, user support, and shared hardware and software access. Wisteria/BDEC-01 indicates university-hosted compute participation inside the wider national compute environment through its HPCI resource-provider role. JAXA JSS3 indicates an aerospace-linked simulation and data-processing surface operating alongside the broader national compute coordination layer. AIST's compute strategy surface indicates an additional public research-program layer adjacent to national compute infrastructure development. The profile therefore reflects national coordination, federated HPCI access, university-hosted compute participation, and aerospace-linked simulation continuity. The normalized source layers do not support a sovereign compute autonomy classification.</div>
+      <div class="detail-item"><strong>Research federation profile.</strong> Japan's research profile is distributed across RIKEN, AIST, NII, QST, JST, JSPS, the University of Tokyo, Kyoto University, Osaka University, and SINET6 rather than being expressed as a single centralized research authority. JST and JSPS indicate continuity through nationally visible funding-agency and research-support structures. The University of Tokyo, Kyoto University, and Osaka University indicate integration of major university research surfaces into the broader national research environment. SINET6 indicates academic backbone connectivity across universities and research institutes at national scale, with documented international research-network continuity. QST's documented large-scale research-facility role and JT-60SA participation indicate international scientific infrastructure participation where explicitly recorded in the source layers. The resulting profile is one of distributed research institutions, funding-agency continuity, university integration, academic backbone connectivity, and documented international scientific participation without implying centralized research governance.</div>
+      <div class="detail-item"><strong>Semiconductor ecosystem profile.</strong> Japan's semiconductor ecosystem profile is carried by Rapidus IIM, JASM Kumamoto, Sony Semiconductor facilities, Renesas front-end factories, Kioxia Yokkaichi, AIST Semiconductor Frontier Research Center, and METI semiconductor strategy frameworks. Rapidus IIM indicates advanced-node participation through the documented 2 nm development linkage. JASM Kumamoto indicates public-private semiconductor coordination through a multi-party fab buildout involving TSMC, Sony Semiconductor Solutions, DENSO, Toyota, and documented government support. Sony Semiconductor facilities and Renesas front-end factories indicate multi-site fabrication and manufacturing continuity across Japan. Kioxia Yokkaichi indicates memory-production continuity through a large-scale flash-memory manufacturing and technology-development surface. AIST Semiconductor Frontier Research Center indicates pilot-line and open-innovation structures linking companies, universities, and national institutes. METI semiconductor strategy frameworks indicate documented international semiconductor coordination through revitalization policy, cooperation arrangements, alert mechanisms, and OT-security guidance. The profile therefore reflects public-private semiconductor coordination, advanced-node participation, memory-production continuity, multi-site fabrication networks, pilot-line structures, and documented international semiconductor coordination. The normalized source layers do not support a fabrication sovereignty posture classification.</div>
+      <div class="detail-item"><strong>Exchange and academic backbone profile.</strong> Japan's exchange and backbone profile is structured through JPNAP, JPIX, BBIX, and SINET6. JPNAP, JPIX, and BBIX indicate multi-exchange commercial interconnection rather than dependence on a single exchange layer. JPNAP's documented presence across Tokyo, Osaka, Fukuoka, Sendai, and Sapporo indicates geographically distributed IX continuity. SINET6 indicates academic backbone continuity across a national research-network surface. SINET6's documented international connectivity indicates international research-network attachment within the academic backbone environment. The resulting profile combines multi-exchange commercial interconnection, geographically distributed IX presence, academic backbone continuity, and international research-network connectivity. The normalized source layers do not support routing hierarchy assignment or gateway-status interpretation.</div>
+      <div class="detail-item"><strong>Government cloud and digital infrastructure profile.</strong> Japan's government cloud and digital infrastructure profile is organized through the Digital Agency Government Cloud program, Digital Agency interoperability functions, METI digital infrastructure frameworks, and MIC telecommunications governance. The Government Cloud program indicates centralized procurement-layer coordination and a common administrative usage environment for government cloud adoption. The Digital Agency's interoperability and government information-system functions indicate public-sector platform integration governance within the same coordination surface. METI indicates digital infrastructure policy continuity across data centers, AI guidance, digital-governance work, and cross-border privacy references. MIC indicates telecommunications governance attachment through documented responsibilities for competition, ICT security, infrastructure development, and radio-wave governance. The profile therefore reflects centralized procurement-layer coordination, public-sector platform integration governance, digital infrastructure policy continuity, and telecommunications governance attachment. The normalized source layers do not support a sovereign hyperscale cloud classification.</div>
+      <div class="detail-item"><strong>Energy coordination profile.</strong> Japan's energy profile is carried by OCCTO, TEPCO's 50 Hz and 60 Hz documentation, the Shin-Shinano, Sakuma, and Higashi-Shimizu converter stations, KEPCO, and Chubu Electric Power Grid. OCCTO indicates national balancing authority visibility and cross-regional coordination through a formal structure with required utility participation. TEPCO's documented 50 Hz and 60 Hz split indicates dual-frequency grid continuity as a core national coordination characteristic. The Shin-Shinano, Sakuma, and Higashi-Shimizu sites indicate converter-station infrastructure supporting east-west frequency conversion continuity. KEPCO and Chubu Electric Power Grid indicate regional utility participation inside the nationally coordinated grid structure. The profile therefore reflects national balancing authority, dual-frequency grid continuity, converter-station infrastructure, and regional utility participation. The normalized source layers do not support continental synchronization membership.</div>
+      <div class="detail-item"><strong>Regulatory and cybersecurity profile.</strong> Japan's regulatory and cybersecurity profile is distributed across METI, MIC, the Digital Agency, NISC, and Cabinet Secretariat cybersecurity coordination surfaces. METI, MIC, and the Digital Agency indicate multi-institution digital governance coordination rather than a single administrative authority model. MIC indicates telecommunications regulatory continuity through documented responsibilities covering competition, ICT security, digital infrastructure, and radio-wave governance. NISC and Cabinet Secretariat cybersecurity materials indicate a visible national cybersecurity coordination surface. METI's documented policy materials indicate cross-border privacy and digital-policy coordination where explicitly recorded in the source layers. The profile therefore reflects multi-institution digital governance coordination, telecommunications regulatory continuity, national cybersecurity coordination, and documented cross-border privacy and digital-policy coordination without implying superiority or readiness.</div>
+      <div class="detail-item"><strong>Defense and simulation profile.</strong> Japan's defense-adjacent profile is carried by ATLA, the Advanced Defense Technology Center modeling-and-simulation surface, JAXA's dual-use research language, and JAXA JSS3. ATLA indicates a defense-adjacent institutional coordination surface through documented mission, research and development, and specialized research-center functions. The Advanced Defense Technology Center indicates modeling-and-simulation continuity within the documented defense-adjacent institutional perimeter. JAXA's dual-use research language indicates a documented institutional interface linking aerospace research with broader industrial and social-use technology development. JAXA JSS3 indicates aerospace compute continuity through simulation and data-processing functions. The profile therefore reflects defense-adjacent simulation coordination, aerospace compute continuity, and a documented dual-use institutional interface. The normalized source layers do not support a standalone military compute stack classification.</div>
+      <div class="detail-item"><strong>Space infrastructure profile.</strong> Japan's space infrastructure profile is expressed through Tanegashima Space Center, Uchinoura Space Center, JAXA launch integration functions, and ISAS mission coordination structures. Tanegashima indicates national launch-site continuity through documented launch, assembly, test, and range-control infrastructure. Uchinoura indicates additional national continuity across launch, tracking, control-center, telemeter-center, and data-reception functions. JAXA's launch integration functions indicate mission continuity across assembly, inspection, satellite loading, launch, tracking, and post-liftoff operations. ISAS mission coordination structures indicate sustained coordination involving researchers, engineers, and private-enterprise participants. The profile therefore reflects national launch-site continuity and mission integration across launch, tracking, assembly, test, range-control, and data-reception surfaces. The normalized source layers do not support a global launch-network classification.</div>
+      <div class="detail-item"><strong>Identity federation profile.</strong> Japan's identity profile is carried by the My Number system, JPKI, and Digital Agency interoperability framework functions. The My Number system indicates national identity-layer coordination through a shared administrative identity foundation. The documented information-coordination and information-provision network systems indicate administrative data-exchange continuity across agencies. JPKI indicates public authentication infrastructure through a documented national digital-authentication layer. The Digital Agency's interoperability functions indicate governance attachment between identity systems and wider administrative interoperability work. The profile therefore reflects national identity-layer coordination, administrative data-exchange continuity, public authentication infrastructure, and interoperability governance attachment. The normalized source layers do not support an agency-fragmented identity architecture outside the documented My Number and JPKI federation.</div>
+      <div class="detail-item"><strong>Cross-border coordination profile.</strong> Japan's cross-border profile is carried by OECD, G7, Quad, and APEC participation together with METI semiconductor arrangements involving the European Commission, the Netherlands, and the United Kingdom. OECD, G7, Quad, and APEC indicate named multilateral coordination participation through documented institutional and ministerial structures. G7 and Quad materials indicate digital and technology cooperation surfaces where explicitly documented. METI's semiconductor arrangements indicate documented semiconductor policy coordination beyond domestic policy structures alone. The profile therefore reflects named multilateral coordination participation, digital and technology cooperation surfaces, and documented semiconductor policy coordination. The normalized source layers do not support corridor-alignment inference.</div>
+    </div>
+
+    <hr class="section-divider">
+    <h3 class="subhead">Jurisdiction profile summary</h3>
+    <div class="detail-list">
+      <div class="detail-item">Japan's jurisdiction profile appears as a nationally coordinated but institutionally distributed environment spanning RIKEN R-CCS, Fugaku, HPCI, Wisteria/BDEC-01, JAXA JSS3, and AIST compute strategy work; a research federation carried by RIKEN, AIST, NII, QST, JST, JSPS, major universities, and SINET6; a semiconductor ecosystem organized through Rapidus, JASM, Sony Semiconductor, Renesas, Kioxia, AIST pilot-line participation, and METI strategy frameworks; a layered exchange and academic-backbone environment across JPNAP, JPIX, BBIX, and SINET6; a government cloud and digital infrastructure surface coordinated through the Digital Agency, METI, and MIC; a dual-frequency energy coordination structure organized through OCCTO, TEPCO documentation, converter-station infrastructure, KEPCO, and Chubu Electric Power Grid; a multi-institution regulatory and cybersecurity surface across METI, MIC, the Digital Agency, NISC, and Cabinet Secretariat coordination; a defense-adjacent simulation and aerospace compute interface through ATLA and JAXA; a national space infrastructure surface through Tanegashima, Uchinoura, JAXA, and ISAS; an identity federation through My Number, JPKI, and Digital Agency interoperability functions; and a cross-border institutional participation surface through OECD, G7, Quad, APEC, and METI's documented semiconductor coordination arrangements, without assigning readiness, ranking, routing, corridor meaning, or topology placement.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Profile completeness status</span>
+      <span class="status-value">Fully normalized global country package</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: profile.md</div>
+  </section>
+
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers.</p>
+    <p class="muted"><strong>Builder interaction model.</strong> Japan's jurisdiction package supports builder interaction across national research HPC federation surfaces, semiconductor pilot-line and fabrication coordination environments, multi-exchange commercial interconnection ecosystems, academic backbone infrastructure, government cloud interoperability frameworks, dual-frequency national energy coordination infrastructure, cybersecurity and telecommunications governance coordination structures, aerospace and simulation research institutions, national launch infrastructure, administrative identity federation, and multilateral technology coordination participation. These documented surfaces are coordination environments for infrastructure builders, researchers, institutions, and coordination actors. They do not constitute routing assignments, corridor roles, or topology placement.</p>
+
+    <h3 class="subhead">National compute participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that RIKEN R-CCS and Fugaku provide a visible national supercomputing surface within the documented compute environment. HPCI provides a federated national access structure with project pathways, screening mechanisms, user support, and shared hardware and software access. Wisteria/BDEC-01 provides university-hosted participation within the broader HPCI-linked compute federation. JAXA JSS3 provides an aerospace-linked simulation and data-processing participation surface. AIST compute research infrastructure provides an additional public research-program participation surface adjacent to national compute infrastructure development. Builder participation is therefore visible through research federation access structures, institutional collaboration pathways, and documented compute coordination surfaces rather than through a standalone sovereign compute autonomy model.</p>
+
+    <h3 class="subhead">Research federation participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that RIKEN, AIST, NII, QST, JST, and JSPS provide distributed public-institution and funding-agency participation surfaces across the research environment. The University of Tokyo, Kyoto University, and Osaka University provide major university participation surfaces inside the broader national research landscape. SINET6 provides academic backbone continuity linking universities and research institutes at national scale, with documented international research-network connectivity. These institutions together provide national research-network continuity that supports distributed collaboration across institutes, universities, and funding structures. The documented environment supports distributed participation surfaces rather than a centralized research command structure.</p>
+
+    <h3 class="subhead">Semiconductor coordination participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that Rapidus IIM provides a builder-visible advanced-node research, development, and pilot-line participation environment. JASM Kumamoto provides a fabrication ecosystem participation surface organized through documented multi-party industrial coordination. Sony Semiconductor infrastructure provides distributed manufacturing and design participation surfaces across multiple domestic sites. Renesas fabrication participation provides multi-site front-end production continuity within the documented domestic semiconductor environment. Kioxia Yokkaichi provides a large-scale memory-production participation environment tied to manufacturing and technology-development activity. AIST Semiconductor Frontier Research Center provides a pilot-line and open-innovation coordination surface linking companies, universities, and national institutes. METI semiconductor coordination frameworks provide public-policy and international semiconductor coordination surfaces connected to revitalization policy, alert mechanisms, and cooperation arrangements. These documented surfaces represent a public-private semiconductor ecosystem coordination environment and do not support a fabrication sovereignty posture classification.</p>
+
+    <h3 class="subhead">Exchange and backbone participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that JPNAP, JPIX, and BBIX provide builder-visible commercial interconnection environments across multiple exchange surfaces. JPNAP's documented Tokyo, Osaka, Fukuoka, Sendai, and Sapporo presence indicates metropolitan distribution within the exchange layer. SINET6 provides academic backbone participation continuity across the national research-network environment. Together these surfaces provide commercial and academic interconnection continuity across metropolitan regions and research-network contexts. The documented exchange and backbone layers do not support gateway assignment or routing hierarchy classification.</p>
+
+    <h3 class="subhead">Government cloud coordination surfaces</h3>
+    <p class="muted">The builder-mode layer records that Digital Agency Government Cloud provides a centralized procurement-layer and common usage-environment participation surface for government cloud coordination. Digital Agency interoperability frameworks provide public-sector platform integration and government information-system coordination surfaces. METI digital infrastructure coordination provides policy continuity across data centers, AI guidance, digital-governance work, and related infrastructure frameworks. MIC telecommunications governance provides communications-sector oversight and infrastructure-governance continuity linked to the broader digital infrastructure environment. These surfaces support procurement-layer and platform-layer interoperability participation rather than a sovereign hyperscale autonomy model.</p>
+
+    <h3 class="subhead">Energy coordination participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that OCCTO balancing authority structures provide national balancing and cross-regional coordination visibility across the transmission environment. TEPCO 50 Hz regional coordination documentation provides explicit evidence of the eastern 50 Hz grid structure. Western Japan 60 Hz grid operators provide documented continuity for the western 60 Hz side of the dual-frequency national grid environment. Shin-Shinano converter station, Sakuma converter station, and Higashi-Shimizu converter station provide builder-visible east-west frequency-conversion infrastructure surfaces. KEPCO and Chubu Electric Power Grid provide regional utility participation within the nationally coordinated grid structure. These surfaces represent dual-frequency grid coordination continuity supported by converter-station infrastructure and do not support continental synchronization classification.</p>
+
+    <h3 class="subhead">Regulatory and cybersecurity participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that METI provides builder-visible industrial, digital infrastructure, semiconductor, and cross-border digital-policy coordination surfaces. MIC provides telecommunications governance continuity across competition, ICT security, infrastructure development, and radio-wave governance. The Digital Agency provides public-sector digital interoperability and government information-system coordination surfaces. NISC and Cabinet Secretariat cybersecurity coordination structures provide national cybersecurity coordination visibility across awareness, policy continuity, and cross-sector coordination activity. Together these institutions support telecommunications governance, cybersecurity coordination, and infrastructure policy continuity across the documented national environment. The documented source layers do not support regulatory authority hierarchy ranking.</p>
+
+    <h3 class="subhead">Defense and simulation participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that ATLA provides a defense-adjacent institutional coordination surface through its mission, research and development, and specialized research-center functions. Advanced Defense Technology Center modeling environments provide a documented defense-adjacent modeling-and-simulation participation surface. JAXA dual-use research coordination surfaces provide institutional interfaces linking aerospace research with broader industrial and social-use technology development. JAXA JSS3 simulation infrastructure provides aerospace-linked simulation and data-processing continuity within the national research environment. These surfaces represent defense-adjacent modeling and simulation participation environments and do not support classification as a standalone military compute stack.</p>
+
+    <h3 class="subhead">Space infrastructure participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that Tanegashima Space Center provides builder-visible launch, assembly, test, and range-control participation infrastructure. Uchinoura Space Center provides launch, tracking, control-center, telemeter-center, and data-reception participation continuity. JAXA launch integration infrastructure provides mission-integration continuity across assembly, inspection, satellite loading, launch, tracking, and post-liftoff operations. ISAS mission coordination structures provide documented participation continuity involving researchers, engineers, and private-enterprise participants. These surfaces represent national launch continuity and aerospace coordination participation and do not support assignment of a global launch-network role.</p>
+
+    <h3 class="subhead">Identity federation participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that the My Number system provides a national administrative identity foundation for public-sector coordination. JPKI authentication infrastructure provides a national digital-authentication participation surface with documented certification mechanisms and provider participation pathways. Digital Agency interoperability frameworks provide governance attachment between identity systems and wider administrative interoperability work. Together these surfaces support administrative authentication continuity and public-sector identity coordination. The documented source layers do not support inference of identity fragmentation outside this federation.</p>
+
+    <h3 class="subhead">Multilateral coordination participation surfaces</h3>
+    <p class="muted">The builder-mode layer records that OECD participation provides a documented multilateral economic coordination surface. G7 participation provides documented digital and technology ministerial coordination visibility. Quad participation provides documented technology coordination visibility, including semiconductor and communications-related cooperation surfaces where explicitly recorded. APEC participation provides recurring multilateral coordination continuity across leaders, ministers, and administrative officials. METI semiconductor coordination with the European Commission, the Netherlands, and the United Kingdom provides documented semiconductor policy-coordination surfaces beyond domestic structures alone. These documented surfaces represent multilateral technology and semiconductor coordination environments and do not support corridor-alignment inference.</p>
+
+    <hr class="section-divider">
+    <h3 class="subhead">Builder-mode summary statement</h3>
+    <p class="muted">Japan's builder-mode surface appears as a nationally coordinated but institutionally distributed interaction environment spanning HPCI-linked national HPC federation surfaces, major research institutions and SINET6-backed academic connectivity, a public-private semiconductor ecosystem across Rapidus, JASM, Sony Semiconductor, Renesas, Kioxia, AIST, and METI frameworks, multi-exchange IX infrastructure through JPNAP, JPIX, and BBIX, government cloud interoperability frameworks through the Digital Agency, METI, and MIC, dual-frequency energy coordination through OCCTO, TEPCO documentation, converter stations, KEPCO, and Chubu Electric Power Grid, cybersecurity governance institutions across METI, MIC, the Digital Agency, NISC, and Cabinet Secretariat coordination, aerospace simulation infrastructure through ATLA and JAXA, national launch capability through Tanegashima, Uchinoura, JAXA, and ISAS, identity federation infrastructure through My Number and JPKI, and multilateral semiconductor and technology coordination participation through OECD, G7, Quad, APEC, and METI's documented international semiconductor arrangements, without assigning readiness tier, routing role, or topology placement.</p>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Builder completeness status</span>
+      <span class="status-value">Fully normalized global country package</span>
+      <span class="status-label">Builder-mode completeness status</span>
+      <span class="status-value">Fully normalized global country package</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: builder-mode.md</div>
+  </section>
+
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">Japan's canonical package records a Structural Boundary Statement across every normalization layer (evidence.md, signals.md, trust-dimensions.md, profile.md, metadata.md, builder-mode.md, change-log.md). These boundaries remained consistent across all jurisdiction layers.</p>
+
+    <h3 class="subhead">Structural boundary statement (six boundaries)</h3>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>The source layers do not support evidence of continental synchronization membership.</li>
+      <li>The source layers do not support evidence of sovereign hyperscale cloud classification.</li>
+      <li>The source layers do not support evidence of standalone military compute stack classification.</li>
+      <li>The source layers do not support evidence of corridor routing role assignment.</li>
+      <li>The source layers do not support evidence of topology completion-layer placement.</li>
+      <li>The source layers do not support evidence of fabrication sovereignty posture classification.</li>
+    </ul>
+
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>A standalone hyperscale sovereign cloud infrastructure stack is not evidenced here. The official source set supports a Digital Agency-coordinated Government Cloud environment with explicit provider-selection and domestic-provider participation where stated.</li>
+      <li>A standalone military compute infrastructure stack is not evidenced here. The official source set supports ATLA institutional surfaces, JAXA dual-use research language, and JAXA simulation systems, but not a separately documented military compute stack.</li>
+      <li>Continental synchronization participation is not evidenced here. The official source set supports domestic 50 Hz and 60 Hz grid division, national cross-regional coordination through OCCTO, and converter-station interfaces for east-west interchange.</li>
+      <li>An agency-fragmented identity architecture outside the documented My Number and JPKI federation surfaces is not evidenced here.</li>
+    </ul>
+
+    <p class="muted" style="margin-top:12px">The canonical package records that these exclusions are carried forward across signals.md, trust-dimensions.md, profile.md, metadata.md, builder-mode.md, and change-log.md as structural boundary statements. The canonical package records that no layer assigns trust posture, routing role, coordination tier, Atlas surfaces, national significance, leadership framing, readiness status, ranking outcome, or deployment suitability.</p>
+    <div class="src">Source: evidence.md — Structural Exclusions; change-log.md — Structural Boundary Preservation; signals.md, trust-dimensions.md, profile.md, metadata.md, builder-mode.md — Structural Boundary Statements</div>
+  </section>
+
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records the following evidence gaps for Japan, structured as documented absences within the evidence and signals layers.</p>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">The evidence layer records that no explicit official evidence was confirmed in this source set for a PRACE-equivalent participation layer or for a broader research-compute federation role beyond the documented domestic HPCI structure and separately documented international SINET links.</div>
+      <div class="detail-item">The evidence layer records that no direct official evidence was confirmed in this source set for a separate RIKEN military-compute role; RIKEN's documented surface remains national research and supercomputing infrastructure.</div>
+      <div class="detail-item">The evidence layer records that direct page retrieval for ATLA remained incomplete during this collection pass, so ATLA statements are intentionally limited to the visible official institutional surface and are not expanded into unsupported defense-compute claims.</div>
+      <div class="detail-item">The evidence layer records that no additional international space-program claim is added unless explicitly stated in the collected source set.</div>
+      <div class="detail-item">The evidence boundary statement records that where official retrieval was incomplete or blocked, statements were kept narrow and limited to the visible institutional coordination surface only.</div>
+    </div>
+    <p class="muted" style="margin-top:12px">The canonical package records gap inheritance: signals.md, trust-dimensions.md, profile.md, builder-mode.md, metadata.md, and change-log.md inherit these documented absences and structural boundaries without expansion.</p>
+    <div class="src">Source: evidence.md — National Compute Coordination Structure; Defense and Simulation Interface Structure; Space-System Coordination Structure; Evidence Boundary Statement</div>
+  </section>
+
+  <!-- ── 10. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+
+    <h3 class="subhead">Jurisdiction package initialization</h3>
+    <p class="muted">The change-log records that the Japan jurisdiction package was initialized as part of the Atlas global country normalization sequence. The package structure follows the standard country-layer file set: evidence.md, signals.md, trust-dimensions.md, profile.md, metadata.md, builder-mode.md, change-log.md. The change-log records that all files in the package were constructed using the Atlas jurisdiction normalization contract.</p>
+
+    <h3 class="subhead">Layer construction notes</h3>
+    <ul class="mini muted">
+      <li>The change-log records that evidence.md established Japan's documented infrastructure anchors across national HPC federation, research institutions, semiconductor ecosystem, IX infrastructure, academic backbone connectivity, government cloud coordination, dual-frequency grid coordination, regulatory and cybersecurity institutions, defense-adjacent simulation infrastructure, space launch infrastructure, identity federation architecture, and multilateral coordination participation. evidence.md introduced no topology inference.</li>
+      <li>The change-log records that signals.md translated documented infrastructure anchors into normalized coordination signals describing compute federation continuity, research-network participation structure, semiconductor ecosystem coordination, IX-layer metropolitan distribution, government interoperability frameworks, dual-frequency grid coordination structure, cybersecurity governance continuity, aerospace modeling participation, launch infrastructure continuity, identity federation integration, and multilateral technology coordination participation. signals.md preserved routing neutrality.</li>
+      <li>The change-log records that trust-dimensions.md evaluated institutional continuity across compute governance structures, research funding ecosystems, semiconductor policy coordination, IX-layer distribution, digital-platform interoperability governance, grid coordination architecture, cybersecurity coordination institutions, aerospace simulation infrastructure, launch-site continuity, identity federation integration, and multilateral institutional participation. No trust ranking or readiness scoring was assigned.</li>
+      <li>The change-log records that profile.md synthesized national coordination structure across HPC federation, distributed research institutions, semiconductor ecosystem coordination, IX and academic backbone infrastructure, government cloud interoperability governance, dual-frequency energy coordination, cybersecurity institutional coordination, defense-adjacent modeling infrastructure, launch infrastructure, identity federation systems, and multilateral coordination participation. profile.md introduced no topology placement inference.</li>
+      <li>The change-log records that metadata.md documented institutional anchors across compute infrastructure, research institutions, semiconductor facilities, IX environments, government cloud authorities, energy coordination authorities, cybersecurity governance bodies, defense-adjacent simulation institutions, launch infrastructure, identity federation systems, and multilateral coordination frameworks. metadata.md preserved classification neutrality.</li>
+      <li>The change-log records that builder-mode.md defined participation visibility across research HPC federation surfaces, semiconductor pilot-line environments, IX-layer interconnection structures, academic backbone infrastructure, government interoperability frameworks, dual-frequency grid coordination infrastructure, cybersecurity governance coordination structures, aerospace simulation institutions, launch infrastructure, identity federation systems, and multilateral semiconductor coordination participation. builder-mode.md described interaction environments only.</li>
+    </ul>
+
+    <h3 class="subhead">Structural boundary preservation</h3>
+    <ul class="mini muted">
+      <li>The change-log records that all jurisdiction layers preserved absence of evidence supporting continental synchronization membership, sovereign hyperscale cloud classification, standalone military compute stack classification, corridor routing role assignment, topology completion-layer placement, and fabrication sovereignty posture classification.</li>
+      <li>The change-log records that these boundaries remained consistent across all jurisdiction layers.</li>
+      <li>The change-log records: Surface assignment status: none.</li>
+    </ul>
+
+    <h3 class="subhead">Jurisdiction package completion status</h3>
+    <p class="muted">The change-log records that Japan is now a fully normalized Atlas global country package. Completed files:</p>
+    <ul class="mini muted">
+      <li><code>jurisdictions/global/countries/japan/evidence.md</code></li>
+      <li><code>jurisdictions/global/countries/japan/signals.md</code></li>
+      <li><code>jurisdictions/global/countries/japan/trust-dimensions.md</code></li>
+      <li><code>jurisdictions/global/countries/japan/profile.md</code></li>
+      <li><code>jurisdictions/global/countries/japan/metadata.md</code></li>
+      <li><code>jurisdictions/global/countries/japan/builder-mode.md</code></li>
+      <li><code>jurisdictions/global/countries/japan/change-log.md</code></li>
+    </ul>
+    <p class="muted">The change-log records that the package is available for corridor-layer interpretation in future Atlas topology modeling phases.</p>
+
+    <h3 class="subhead">Change-log summary statement</h3>
+    <p class="muted">Japan's jurisdiction package was constructed through sequential normalization of evidence, signals, institutional trust dimensions, structural profile synthesis, metadata anchoring, builder interaction surface definition, and boundary-preserving documentation consistent with the Atlas global country-layer specification.</p>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Normalization completion status</span>
+      <span class="status-value">Fully normalized global country package</span>
+      <span class="status-label">Topology placement</span>
+      <span class="status-value">explicitly not supported by canonical source layers</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: change-log.md</div>
+  </section>
+
+</div><!-- /main col -->
+
+<!-- ── SIDEBAR ── -->
+<aside>
+
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical Japan jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>ATLAS_GLOBAL_COUNTRIES_PHASE3_PLAN_v1.md</code> (scaffolding only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/global/countries/japan/</code></p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
+    <ul class="mini">
+      <li><strong>Jurisdiction:</strong> Japan</li>
+      <li><strong>ISO Code:</strong> JP</li>
+      <li><strong>Jurisdiction Type:</strong> Sovereign nation-state</li>
+      <li><strong>Geographic Region:</strong> Indo-Pacific</li>
+      <li><strong>Political Structure:</strong> Constitutional monarchy with parliamentary government</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> Fully normalized global country package</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Per-Domain Classification</div>
+    <h3 id="heading-sidebar-topology">Metadata summary</h3>
+    <ul class="mini">
+      <li><strong>National Compute:</strong> National research compute federation with coordinated institutional HPC participation</li>
+      <li><strong>Research Coordination:</strong> Distributed national research coordination ecosystem supported by academic backbone networking</li>
+      <li><strong>Semiconductor Ecosystem:</strong> Public-private advanced semiconductor coordination environment with international fabrication partnerships</li>
+      <li><strong>Exchange &amp; Backbone:</strong> Distributed commercial exchange infrastructure integrated with national academic backbone connectivity</li>
+      <li><strong>Government Digital Infrastructure:</strong> Centralized procurement-layer interoperability governance supporting public-sector digital platforms</li>
+      <li><strong>Energy Coordination:</strong> Dual-frequency nationally coordinated grid with converter-station interconnection infrastructure</li>
+      <li><strong>Defense &amp; Simulation:</strong> Defense-adjacent simulation and aerospace modeling ecosystem with institutional coordination interfaces</li>
+      <li><strong>Space Infrastructure:</strong> National launch-capable space infrastructure with integrated mission coordination environment</li>
+      <li><strong>Identity Federation:</strong> National administrative identity federation supporting authentication and public-sector data exchange</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Japan's metadata.md uses per-domain anchor classifications rather than a Corridor Group / Foundation Layer / Topology Completion triad. Every canonical layer records that the source layers do not support evidence of corridor routing role assignment or topology completion-layer placement. This is preserved verbatim; no harmonization has been applied.</p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: complete</li>
+      <li>Signal layer: complete</li>
+      <li>Trust dimensions: complete</li>
+      <li>Profile: complete</li>
+      <li>Metadata: complete</li>
+      <li>Builder-mode: complete</li>
+      <li>Change-log: complete</li>
+      <li>Topology placement: explicitly not supported</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a topology placement.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a sovereignty or autonomy claim.</li>
+      <li>Not a substitute for the canonical package.</li>
+    </ul>
+  </div>
+
+</aside>
+</div><!-- /grid-sidebar -->
+
 </main>
 
-<div id="footer-container"></div>
+<div class="wrap">
+  <div class="adjacent-anchors">
+    <div class="label">Adjacent corridor anchors</div>
+    <div class="anchors">
+      <a href="/atlas/jurisdiction-intelligence-engine/global/countries/united-kingdom/">United Kingdom</a>
+    </div>
+    <div class="note">Navigational only — no topology implication. Japan's canonical package documents multilateral coordination with OECD, G7, Quad, and APEC participation together with METI semiconductor arrangements involving the European Commission, the Netherlands, and the United Kingdom (evidence.md). Additional anchors will appear here as those neighbouring jurisdictions are normalized into Atlas.</div>
+  </div>
+</div>
 
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+<div id="footer-container"></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
 </script>
-
+</div>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
