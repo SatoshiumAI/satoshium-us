@@ -7,85 +7,804 @@
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#b91c1c">
-<title>South Korea | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<title>South Korea — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Structured rendering of the canonical South Korea Atlas jurisdiction package.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/south-korea/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
 <style>
 :root{
+ --card-wm:url('https://satoshium.link/assets/seal.png');
  --bg:#07090d;
  --panel:#0c1018;
+ --panel-2:#101624;
  --text:#e8edf7;
  --muted:#9aa7bd;
  --gold:#d6a34a;
  --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --line-strong:rgba(214,163,74,.28);
+ --red:#ef4444;
+ --orange:#f97316;
+ --yellow:#eab308;
+ --green:#22c55e;
+ --teal:#14b8a6;
+ --blue:#4a9eff;
+ --purple:#8b5cf6;
 }
-body{
+*{box-sizing:border-box}
+html,body{
  margin:0;
- padding-top:80px;
+ padding:0;
  background:var(--bg);
  color:var(--text);
  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
-}
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
-}
-h1{color:var(--gold2)}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+h1{font-size:38px;color:var(--gold2);line-height:1.1;margin:0 0 10px}
+h2{font-size:22px;color:var(--gold2);margin:0 0 10px}
+h3{font-size:16px;color:var(--text);margin:0 0 6px}
+p{margin:0 0 12px}
+ul{margin:8px 0 0 18px}
 .muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;
+ padding:7px 12px;border-radius:999px;
+ border:1px solid var(--line);background:rgba(214,163,74,.06);
+ color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:30px 24px;margin-bottom:18px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+.hero::after{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+ background-image:linear-gradient(rgba(214,163,74,.12) 1px, transparent 1px),linear-gradient(90deg, rgba(214,163,74,.12) 1px, transparent 1px);
+ background-size:40px 40px;
+ mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+.hero-chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);border-radius:16px;padding:18px;margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.35);border-color:var(--line-strong)}
+.card.anchor-target{scroll-margin-top:110px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-sidebar{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);gap:18px;align-items:start}
+.span-2{grid-column:1 / -1}
+.note{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted);font-size:14px}
+.kicker{font-size:13px;color:var(--muted);max-width:920px}
+.mini{font-size:13px}
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.section-nav a{display:inline-flex;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--gold2);border-color:var(--line-strong)}
+.detail-list{display:grid;gap:10px}
+.detail-item{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.detail-item strong{color:var(--text)}
+.atlas-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.atlas-list li{padding:12px 14px;border-radius:12px;border:1px solid rgba(214,163,74,.12);background:rgba(255,255,255,.02)}
+.atlas-list code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--gold2);font-size:12px}
+.callout{
+ padding:14px 16px;border-radius:14px;border:1px solid var(--line);
+ background:linear-gradient(to bottom right, rgba(214,163,74,.08), rgba(214,163,74,.03));
+}
+.callout .status-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.callout .status-value{display:block;font-size:13px;font-weight:700;color:var(--text)}
+.callout .status-value + .status-label{margin-top:8px}
+.footer-block{padding-bottom:34px}
+hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+hr.section-divider{border:none;border-top:1px dashed rgba(214,163,74,.22);margin:22px 0 18px;width:70%}
+.smallcaps{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subhead{font-size:13px;font-weight:700;color:var(--text);margin:14px 0 6px;letter-spacing:.02em}
+.src{font-size:11px;color:var(--muted);margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.field-row{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.field-row:first-of-type{border-top:none}
+.field-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.field-value{font-size:14px;color:var(--text);font-weight:600}
+.adjacent-anchors{margin-top:18px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}
+.adjacent-anchors .label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px;font-weight:700}
+.adjacent-anchors .anchors{display:flex;flex-wrap:wrap;gap:8px}
+.adjacent-anchors .anchors a{display:inline-flex;padding:5px 10px;border-radius:999px;background:rgba(214,163,74,.06);border:1px solid var(--line);font-size:12px;color:var(--gold2)}
+.adjacent-anchors .anchors a:hover{background:rgba(214,163,74,.10);border-color:var(--line-strong)}
+.adjacent-anchors .empty{font-size:12px;color:var(--muted);font-style:italic}
+.adjacent-anchors .note{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
+.retrieval-limits{margin-top:14px;padding:12px 14px;border-left:3px solid rgba(234,179,8,.35);border-radius:4px;background:rgba(234,179,8,.04)}
+.retrieval-limits .label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#e7c768;margin-bottom:6px;font-weight:700}
+.retrieval-limits ul{margin:4px 0 0 18px;color:var(--muted);font-size:13px}
+.retrieval-limits li{margin-bottom:2px}
+@media (max-width:980px){
+ .grid-sidebar{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+ .grid-2,.grid-3{grid-template-columns:1fr}
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .field-row{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .wrap.content{animation:none;opacity:1;transform:none}
+ .card{transition:none}
+ .card:hover{transform:none}
 }
 </style>
 </head>
 <body>
-
 <div id="topbar-slot" data-topbar="universe"></div>
 <script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>South Korea</h1>
+<main id="main-content" class="wrap content">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+<!-- ── HERO / JURISDICTION IDENTITY ─────── -->
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
+    <h1 id="heading-hero">South Korea</h1>
+    <p class="kicker">This page renders the canonical South Korea Atlas jurisdiction package. The canonical files remain the source of truth; this document is a structured rendering only.</p>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+    <div class="hero-meta">
+      <div class="hero-chip">Jurisdiction: South Korea (KR)</div>
+      <div class="hero-chip">Jurisdiction lens</div>
+      <div class="hero-chip">Completeness: Package complete through builder-mode.md</div>
+      <div class="hero-chip">Surface assignment: none</div>
+    </div>
 
-</article>
+    <nav class="section-nav" aria-label="Jump to sections">
+      <a href="#topology">1. Topology Metadata</a>
+      <a href="#scope">2. Scope Boundary</a>
+      <a href="#evidence">3. Evidence</a>
+      <a href="#signals">4. Signals</a>
+      <a href="#trust-dimensions">5. Trust Dimensions</a>
+      <a href="#profile">6. Profile</a>
+      <a href="#builder-mode">7. Builder Mode</a>
+      <a href="#structural-exclusions">8. Structural Exclusions</a>
+      <a href="#evidence-gaps">9. Evidence Gaps</a>
+      <a href="#change-log">10. Change-Log Notes</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ── GRID: MAIN + SIDEBAR ─────────────────── -->
+<div class="grid-sidebar">
+<div>
+
+  <!-- ── 1. TOPOLOGY METADATA ── -->
+  <section class="card anchor-target" id="topology" aria-labelledby="heading-topology">
+    <h2 id="heading-topology">1. Topology Metadata</h2>
+    <p class="muted"><strong>Jurisdiction identity.</strong> The metadata layer records South Korea as a national jurisdiction package in East Asia, with Atlas scope covering structural institutional compute, research, infrastructure, semiconductor, identity, regulatory, and coordination environment visibility.</p>
+
+    <h3 class="subhead">Jurisdiction identity fields</h3>
+    <div class="field-row">
+      <div class="field-label">Country</div>
+      <div class="field-value">South Korea</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Region</div>
+      <div class="field-value">East Asia</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Package Type</div>
+      <div class="field-value">National jurisdiction</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Atlas Scope</div>
+      <div class="field-value">Structural institutional compute, research, infrastructure, semiconductor, identity, regulatory, and coordination environment visibility</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Corridor alignment</div>
+      <div class="field-value">Not assigned in source layers</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Readiness tier</div>
+      <div class="field-value">Not assigned in source layers</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Topology completion layer</div>
+      <div class="field-value">Not assigned in source layers</div>
+    </div>
+
+    <p class="muted" style="margin-top:14px"><strong>Classification source.</strong> The metadata layer records that this metadata is derived from metadata.md and uses South Korea's own per-domain visibility-classification structure. South Korea's metadata does not use a Corridor Group / Foundation Layer / Topology Completion Layer triad; this rendering preserves South Korea's field structure verbatim without harmonizing to other jurisdictions.</p>
+
+    <p class="muted"><strong>Canonical topology-placement refusal.</strong> The metadata layer records corridor alignment, readiness tier, and topology completion layer as "Not assigned in source layers." Every South Korea canonical layer (evidence.md, signals.md, trust-dimensions.md, profile.md, metadata.md, builder-mode.md, change-log.md) carries a Structural Boundary Statement recording that the source layers do not support evidence of corridor routing role assignment or topology completion-layer placement. The metadata layer records this as a persistent structural position, not as pending work.</p>
+
+    <p class="muted"><strong>Phase 3 scaffolding.</strong> The Atlas Phase 3 Global Countries plan records South Korea at Tier 1, with provisional scaffolding values of <em>Indo-Pacific Semiconductor Corridor</em>, foundation layer <em>Research</em>, and topology completion role <em>Semiconductor node</em>. Per the Phase 3 plan, these values are interpretation scaffolding and not topology authority placement. South Korea's canonical package supersedes these scaffolding values by explicitly recording that topology placement is not supported by the source layers.</p>
+
+    <div class="callout mini" style="margin-top:12px">
+      <span class="status-label">Metadata status</span>
+      <span class="status-value">per-domain visibility metadata attached</span>
+      <span class="status-label">Topology placement</span>
+      <span class="status-value">explicitly not assigned in canonical source layers</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: metadata.md — Jurisdiction Identity; Structural Boundary Conditions · ATLAS_GLOBAL_COUNTRIES_PHASE3_PLAN_v1.md (scaffolding only)</div>
+  </section>
+
+  <!-- ── 2. SCOPE BOUNDARY STATEMENT ── -->
+  <section class="card anchor-target" id="scope" aria-labelledby="heading-scope">
+    <h2 id="heading-scope">2. Scope Boundary Statement</h2>
+    <p class="muted">The evidence layer records that this file records only evidence-supported national structures documented for South Korea that are relevant to Atlas normalization. The evidence layer records that it does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces. It does not generate signals.</p>
+    <p class="muted">The evidence boundary statement records that all statements in the evidence layer are limited to institution-published ministry, agency, university, operator, or company materials, plus conservative official-site discovery only where direct retrieval remained incomplete. The evidence layer records that no routing inference, readiness classification, topology placement, corridor assignment, capability ranking, sovereignty conclusion, or leadership framing has been added. Where official retrieval was incomplete or blocked, statements were kept narrow and limited to the visible institutional coordination surface only.</p>
+    <p class="muted">This rendering mirrors the canonical package. Surface assignment remains unset. No routing role is assigned. No autonomy claims are introduced.</p>
+    <div class="src">Source: evidence.md — Scope; Evidence Boundary Statement</div>
+  </section>
+
+  <!-- ── 3. EVIDENCE SUMMARY ── -->
+  <section class="card anchor-target" id="evidence" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">3. Evidence Summary</h2>
+    <p class="muted">The evidence layer documents the following for South Korea.</p>
+
+    <h3 class="subhead">National compute coordination structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">KISTI provides the clearest institutionally visible national compute coordination surface in this source set through its Division of National Supercomputing and related national-supercomputing program materials.</div>
+      <div class="detail-item">KISTI English materials and news items make the National Supercomputing Center and the Nurion supercomputer publicly visible as national research-compute infrastructure.</div>
+      <div class="detail-item">KISTI's English news materials also document a KISTI-KAIST cooperation surface for supercomputing, AI, and related advanced-computing research.</div>
+      <div class="detail-item">ETRI's English research materials document compute-adjacent national research through its Future Computing Research Division and AI Computing Research Laboratory, including AI supercomputing, intelligent-semiconductor, quantum-computing, and system-software work.</div>
+      <div class="detail-item">KAIST's official English research surfaces document compute-relevant activity through interdisciplinary research institutes and engineering research groups including AI and machine learning and integrated circuits and semiconductor systems.</div>
+      <div class="detail-item">Seoul National University's official English materials document AI research surfaces through the Artificial Intelligence Institute of Seoul National University (AIIS) and related graduate AI program materials.</div>
+      <div class="detail-item">No separate officially confirmed national "Neuron" infrastructure was identified in this collected English source set; only the institutionally visible AI-oriented compute surfaces above were confirmed.</div>
+      <div class="detail-item">No explicit official evidence was confirmed in this source set for a PRACE-equivalent or EuroHPC-equivalent federation layer beyond the documented domestic KISTI and National Supercomputing Center structure and separately documented research-network links.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> KISTI national-supercomputing materials; KISTI English news materials; ETRI Future Computing Research Division and AI Computing Research Laboratory materials; KAIST research and engineering group materials; Seoul National University AIIS and graduate AI programme materials.</p>
+
+    <h3 class="subhead">Research federation structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">NRF provides the clearest directly retrievable national research-funding and coordination surface in this source set through its official English organization materials.</div>
+      <div class="detail-item">KISTI is institutionally visible as a national research-support body through science-information, supercomputing, and research-network services.</div>
+      <div class="detail-item">ETRI is institutionally visible through official English research-division and laboratory pages covering ICT, computing, AI, and semiconductor-adjacent research.</div>
+      <div class="detail-item">KIST is institutionally visible through its official English site and official research-division surfaces discovered during this collection pass, although detailed direct retrieval was only partial.</div>
+      <div class="detail-item">KRISS is institutionally visible through its official English institutional surface as a national public research institute.</div>
+      <div class="detail-item">KIER is institutionally visible through its official English institutional surface as a public energy-research body, although detailed program retrieval remained limited in this pass.</div>
+      <div class="detail-item">KIMM's official English materials document multiple research institutes and platforms, including AI and robotics, autonomous manufacturing systems, carbon-neutral energy machinery, and virtual engineering surfaces.</div>
+      <div class="detail-item">KAIST's official English materials document research-center and institute structure alongside engineering research groups relevant to AI and semiconductors.</div>
+      <div class="detail-item">Seoul National University is institutionally visible in this source set through official AI research-center and graduate-program materials.</div>
+      <div class="detail-item">POSTECH's official English research materials document a large research-center and institute landscape, including AI, future IT, and additional specialized research surfaces.</div>
+      <div class="detail-item">No Korea University or Yonsei University research surface is materially relied on in this file because direct official English retrieval remained limited during this bounded collection pass.</div>
+      <div class="detail-item">MSIT remains institutionally visible through its official English ministry surface and co-branded program references discovered during collection, but detailed English ministry retrieval was incomplete, so NRF and institute-level materials provide the main directly retrievable coordination evidence here.</div>
+      <div class="detail-item">The official source set therefore supports a federated national research landscape spanning public institutes, universities, and funding bodies, rather than a single directly documented centralized research-command surface.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> NRF organization materials; KISTI research-support materials; ETRI research-division and laboratory materials; KIST, KRISS, KIER, KIMM, KAIST, SNU, POSTECH institutional and research-centre materials; MSIT ministry surface.</p>
+
+    <h3 class="subhead">Semiconductor ecosystem structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">Samsung Foundry's official English materials document Samsung semiconductor manufacturing and foundry surfaces in South Korea, including institutionally visible manufacturing sites at Giheung, Hwaseong, and Pyeongtaek.</div>
+      <div class="detail-item">Samsung Foundry's company-information materials publicly describe foundry application and process surfaces, including HPC-related workloads, without supporting comparative or sovereignty claims.</div>
+      <div class="detail-item">SK hynix's official corporate materials document campus and manufacturing surfaces at Icheon, Bundang, and Cheongju.</div>
+      <div class="detail-item">SK hynix's official English news materials further document M15X in Cheongju as a DRAM-production surface and tie additional investment to the Yongin semiconductor cluster.</div>
+      <div class="detail-item">KAIST's official English engineering research pages document semiconductor research surfaces through integrated circuits and semiconductor systems.</div>
+      <div class="detail-item">ETRI's official English research materials document intelligent-semiconductor and ICT-related research surfaces relevant to semiconductor R&amp;D.</div>
+      <div class="detail-item">Korea Semiconductor Industry Association (KSIA) is institutionally visible as a national semiconductor industry coordination body through its official organizational presence, but detailed English-language policy or coordination materials sufficient for expansion were not confirmed in this bounded collection pass.</div>
+      <div class="detail-item">Official English MSIT and MOTIE semiconductor-policy surfaces were discoverable during collection, but detailed retrieval remained incomplete, so this file records only the institutionally visible public-private semiconductor coordination surfaces and named manufacturing and research sites that were directly supportable.</div>
+      <div class="detail-item">Hwaseong, Pyeongtaek, Cheongju, and Yongin were supportable in the collected source set. Pangyo was not substantively confirmed through the official materials relied on here.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> Samsung Foundry manufacturing and company-information materials; SK hynix corporate and M15X materials; KAIST semiconductor engineering materials; ETRI intelligent-semiconductor materials; KSIA organizational presence; MSIT and MOTIE ministry surfaces.</p>
+
+    <h3 class="subhead">Exchange and network infrastructure</h3>
+    <div class="detail-list">
+      <div class="detail-item">KINX's official English site documents a Korean commercial interconnection surface through IX, network, cloud, CDN, and colocation services, including KINX's own self-description as a neutral IX operator.</div>
+      <div class="detail-item">KT's official English data-services materials document telecom and backbone-related services through its own global network and partner NNI expansion to more than 2,000 nodes, including IPLC, MPLS-VPN, Ethernet, Global IDC, and IP-Transit services.</div>
+      <div class="detail-item">SK Telecom's official English press materials document operator-managed data-center and AI-infrastructure surfaces, including a cloud data center at SK Broadband's IDC in Ilsan and GPU-as-a-Service at an AI data center in Gasan, Seoul.</div>
+      <div class="detail-item">KREONET provides the clearest directly retrievable academic-backbone and research-network surface in this source set through KISTI-operated English materials and international-collaboration pages.</div>
+      <div class="detail-item">KREONET's official materials document international research-network collaboration through its GNA-G surface. APAN-linked international research-network participation is institutionally visible through KREONET materials collected in this pass.</div>
+      <div class="detail-item">No official English KIX surface was substantively confirmed in the collected source set, so KIX is not expanded here.</div>
+      <div class="detail-item">KISA's official English institutional surface was visible during discovery, but detailed network-security retrieval remained incomplete or blocked, so this file records KISA only as an institutionally visible internet-and-security coordination body and does not add unsupported exchange-layer detail.</div>
+      <div class="detail-item">No useful official English LG U+ infrastructure material was confirmed in the collected source set, so LG U+ is preserved as an absence rather than expanded.</div>
+      <div class="detail-item">TEIN participation was not separately confirmed through the directly relied-on official materials in this pass.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> KINX IX materials; KT data-services materials; SK Telecom press materials; KREONET and KISTI international-collaboration materials; KISA institutional surface.</p>
+
+    <h3 class="subhead">Government cloud and digital infrastructure coordination</h3>
+    <div class="detail-list">
+      <div class="detail-item">NIRS provides the clearest directly retrievable public-sector digital-infrastructure coordination surface in this source set through official English organizational materials that make visible cloud-policy, cloud-service, cyber-incident, resource-management, and regional-center functions.</div>
+      <div class="detail-item">MOIS's official English materials document a nationwide mobile Resident Registration Card with the same legal validity as the physical card and explicit acceptance across government services, banks, and other institutions.</div>
+      <div class="detail-item">MOIS's mobile-ID notice further documents issuance through GOV.KR and local government offices, connecting ministry policy to a live public-service delivery surface.</div>
+      <div class="detail-item">GOV.KR's official English materials document the Korean government's service portal as a consolidated public-service interface for government services, civil petitions, policy information, official-document issuance, and foreigner administrative proofs.</div>
+      <div class="detail-item">GOV.KR's foreigner-service materials make institutionally visible digital administrative proofs for alien registration, residence, and immigration status.</div>
+      <div class="detail-item">MSIT remains institutionally visible through its official English ministry surface, but detailed direct retrieval of cloud-policy pages was incomplete during this pass.</div>
+      <div class="detail-item">No directly retrievable official English text was confirmed in this pass for the Cloud Computing Act or for a detailed Digital Platform Government policy statement, so those surfaces are preserved narrowly rather than expanded.</div>
+      <div class="detail-item">No domestic cloud-provider participation is asserted here beyond the directly visible NIRS and public-service coordination surfaces documented in the official source set.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> NIRS organizational materials; MOIS mobile Resident Registration Card materials; GOV.KR portal and foreigner-service materials; MSIT ministry surface.</p>
+
+    <h3 class="subhead">Energy transmission coordination structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">KPX provides the clearest directly retrievable national grid-coordination surface in this source set through official materials describing its role in the electricity market and power-system operation.</div>
+      <div class="detail-item">KPX's official English materials make visible power-market operation, power-system management, supply-demand planning, and related smart-grid and energy-management coordination surfaces.</div>
+      <div class="detail-item">KEPCO's official English materials make visible national electricity-sector infrastructure through transmission, distribution, and related energy-business functions.</div>
+      <div class="detail-item">MOTIE remains institutionally visible through its official English ministry surface, but detailed direct retrieval of power-system or renewable-grid policy pages remained incomplete in this pass.</div>
+      <div class="detail-item">No Korea Energy Agency material was substantively relied on in this file because it was not needed to support the bounded national coordination surfaces directly visible through KPX and KEPCO.</div>
+      <div class="detail-item">No specific HVDC or island-grid interconnection project was expanded here because no directly relied-on official English source in this pass provided sufficiently stable support for a narrower claim.</div>
+      <div class="detail-item">No official evidence in this source set supports any claim of continental synchronization membership; the collected materials support domestic electricity coordination surfaces only.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> KPX market and power-system materials; KEPCO English materials; MOTIE ministry surface.</p>
+
+    <h3 class="subhead">Regulatory and cybersecurity coordination framework</h3>
+    <div class="detail-list">
+      <div class="detail-item">MOIS is institutionally visible in this source set through official digital-government and identity-service materials tied to mobile identity and GOV.KR service delivery.</div>
+      <div class="detail-item">KCC's official English institutional surface was discoverable during this pass and supports a narrow record of broadcasting-and-communications regulatory presence, but detailed direct retrieval remained incomplete.</div>
+      <div class="detail-item">KISA's official English institutional surface and related security-service surfaces were discoverable, but direct retrieval was incomplete or blocked, so this file records only the visible institutional cybersecurity and internet-security surface.</div>
+      <div class="detail-item">NCSC's official English site is institutionally visible in this source set, but direct retrieval remained too limited to expand the section beyond the existence of a national cybersecurity coordination surface.</div>
+      <div class="detail-item">PIPC's official English institutional and notice surfaces were discoverable during collection, supporting a narrow record of a national personal-information-protection authority, but detailed organizational retrieval remained incomplete.</div>
+      <div class="detail-item">MSIT and MOTIE remain institutionally visible through their official English ministry surfaces, but detailed policy-text retrieval was incomplete, so no broader AI-policy framework or regulatory hierarchy is inferred here.</div>
+      <div class="detail-item">GOV.KR and MOIS materials support the digital-governance portion of this section through live public-service and identity-linked administrative surfaces.</div>
+      <div class="detail-item">No separate Korea Data Agency or other public-data institution was substantively confirmed through directly relied-on official materials in this pass.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> MOIS mobile-ID materials; GOV.KR portal and foreigner-service materials; MSIT and MOTIE ministry surfaces; KISA, NCSC, PIPC, KCC institutional surfaces.</p>
+
+    <h3 class="subhead">Defense and simulation interface structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">No directly retrievable official English ADD material was confirmed in this bounded collection pass.</div>
+      <div class="detail-item">No directly retrievable official English DAPA material was confirmed in this bounded collection pass.</div>
+      <div class="detail-item">KARI materials relied on in this file document launch vehicles, tracking, lunar exploration, and related aerospace R&amp;D surfaces, but do not by themselves establish a defense-compute or simulation stack.</div>
+      <div class="detail-item">The ETRI and KAIST materials collected in this pass document compute, AI, ICT, and semiconductor research surfaces, but did not provide directly retrievable official English evidence sufficient to classify a defense-adjacent simulation interface.</div>
+      <div class="detail-item">Because official evidence was limited, this section is intentionally narrow and preserves the absence of a directly documented standalone military compute or simulation structure in the collected source set.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> KARI aerospace and launch materials; ETRI and KAIST research materials.</p>
+
+    <h3 class="subhead">Space-system coordination structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">KARI provides the clearest directly retrievable national space coordination surface in this source set through official English launch-vehicle, lunar-exploration, and mission-infrastructure materials.</div>
+      <div class="detail-item">KARI's official launch-vehicle materials document a national launch lineage from KSR through Naro and Nuri and make the KSLV and Nuri programme institutionally visible.</div>
+      <div class="detail-item">KARI's official Naro Space Center materials document launch-site infrastructure, test facilities, launch-vehicle integration, and launch support surfaces.</div>
+      <div class="detail-item">KARI's official lunar-exploration materials document Danuri, including mission development and associated mission-support surfaces.</div>
+      <div class="detail-item">KARI's official materials also document tracking infrastructure linked to launch operations, including the Palau Tracking Station.</div>
+      <div class="detail-item">KASA is institutionally visible through its official English surface and policy materials, providing an additional official state space-and-aeronautics administration surface in the collected source set.</div>
+      <div class="detail-item">No global launch-network role or wider placement claim is supported by the materials used here, so none is added.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> KARI launch-vehicle, Naro Space Center, lunar-exploration, and Palau Tracking Station materials; KASA official materials.</p>
+
+    <h3 class="subhead">Identity and administrative federation structure</h3>
+    <div class="detail-list">
+      <div class="detail-item">MOIS's official English materials make the resident-registration surface institutionally visible through its documentation of the mobile Resident Registration Card and its explicit legal validity.</div>
+      <div class="detail-item">The same MOIS materials document issuance and use through GOV.KR and local government offices, connecting resident-registration identity credentials to public-service access.</div>
+      <div class="detail-item">Official MOIS discovery in this pass also identified an English government article dedicated to the resident registration system of Korea, which supports preservation of the resident-registration surface even though detailed direct retrieval was incomplete.</div>
+      <div class="detail-item">GOV.KR's official English materials document a consolidated government-services portal covering government services, civil petitions, official documents, and public information.</div>
+      <div class="detail-item">GOV.KR's official English foreigner-service materials document administrative proof and issuance flows for alien registration, residence, and immigration status.</div>
+      <div class="detail-item">The collected source set therefore supports a resident-registration and GOV.KR-linked administrative federation surface, including mobile identity where explicitly stated.</div>
+      <div class="detail-item">A broader fragmented identity architecture beyond the documented resident-registration, mobile-ID, and GOV.KR surfaces was not established in this collected source set.</div>
+      <div class="detail-item">No directly retrievable official English policy statement for a fuller Digital Platform Government identity architecture was confirmed in this pass, so that surface is kept narrow.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> MOIS resident-registration materials; GOV.KR portal and foreigner-service materials.</p>
+
+    <h3 class="subhead">Cross-border infrastructure participation</h3>
+    <div class="detail-list">
+      <div class="detail-item">OECD participation is institutionally visible through official Republic of Korea foreign-ministry materials identifying Korea's OECD relationship and accession history.</div>
+      <div class="detail-item">G20 participation is institutionally visible through official Republic of Korea foreign-ministry materials documenting G20 overview and ongoing Korean participation in G20 meetings and working processes.</div>
+      <div class="detail-item">APEC participation is institutionally visible through official Republic of Korea foreign-ministry materials and official APEC materials identifying Korea within APEC's member-economy structure and related host activities.</div>
+      <div class="detail-item">IPEF participation is institutionally visible through official MOTIE English materials discovered during this pass documenting Korean ministerial participation in IPEF meetings and strategy events.</div>
+      <div class="detail-item">KREONET's official international-collaboration materials document cross-border research-network participation, including APAN-linked collaboration.</div>
+      <div class="detail-item">No Quad-adjacent technology-cooperation claim is added here because a sufficiently direct official Korean source was not relied on in this pass.</div>
+      <div class="detail-item">No semiconductor cooperation claim with the United States, Japan, the EU, or the Netherlands is added here because the necessary official English support was not directly retrieved strongly enough for bounded use in this file.</div>
+      <div class="detail-item">No separate AI-safety participation claim is added here because the directly retrievable official English support in this pass was insufficient.</div>
+      <div class="detail-item">No regional bloc or corridor alignment inference is supported by these materials, so none is added.</div>
+    </div>
+    <p class="muted mini" style="margin-top:10px"><em>Sources cited by evidence.md:</em> MOFA OECD, G20, and APEC materials; APEC organization materials; MOTIE IPEF materials; KREONET international-collaboration materials.</p>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Evidence completeness status</span>
+      <span class="status-value">Package complete through builder-mode.md</span>
+      <span class="status-label">Topology placement</span>
+      <span class="status-value">explicitly not assigned in source layers</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: evidence.md</div>
+  </section>
+
+  <!-- ── 4. SIGNALS SUMMARY ── -->
+  <section class="card anchor-target" id="signals" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">4. Signals Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from evidence.md and that absence of signals reflects absence of normalized documentary coverage.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>National compute coordination signals.</strong> KISTI, its Division of National Supercomputing, the National Supercomputing Center, and Nurion together signal visible national research-compute coordination continuity through a named supercomputing surface. KISTI-KAIST cooperation signals institute-university compute collaboration spanning supercomputing, AI, and related advanced-computing research. ETRI's Future Computing Research Division and AI Computing Research Laboratory signal institutionally visible AI-oriented compute research surfaces linked to supercomputing, intelligent semiconductors, quantum computing, and system software. KAIST's compute-relevant research surfaces signal university participation in AI, machine learning, and semiconductor-linked compute research. Seoul National University's AI research surfaces signal an additional university-linked AI compute participation layer within the broader national research-compute environment. The evidence supports national research-compute coordination signals, supercomputing infrastructure continuity signals, AI-oriented compute research signals, and institute-university compute collaboration signals, but does not support a PRACE-equivalent or EuroHPC-equivalent federation-layer signal or a standalone sovereign compute autonomy classification.</div>
+      <div class="detail-item"><strong>Research federation signals.</strong> The combined presence of NRF, KISTI, ETRI, KIST, KRISS, KIER, KIMM, KAIST, Seoul National University, POSTECH, and MSIT signals a federated public research environment spanning funding, institutes, universities, and ministry-linked coordination surfaces. NRF signals a visible national funding and research-coordination surface within the broader research federation. KISTI signals continuity between science-information services, supercomputing support, and research-network support inside the national research landscape. ETRI, KIST, KRISS, KIER, and KIMM together signal a distributed public research-institute layer rather than a single institutional research hierarchy. KAIST, Seoul National University, and POSTECH signal visible university participation in the broader research federation through AI, semiconductor, engineering, and interdisciplinary research surfaces. MSIT's institutional visibility signals ministry-adjacent coordination continuity around the broader research environment, even though detailed English retrieval remained limited.</div>
+      <div class="detail-item"><strong>Semiconductor ecosystem signals.</strong> Samsung Foundry's documented manufacturing sites at Giheung, Hwaseong, and Pyeongtaek signal multi-site foundry manufacturing continuity within South Korea. Samsung's foundry application materials signal visible HPC-related manufacturing participation without supporting comparative or ranking claims. SK hynix's documented surfaces at Icheon, Bundang, and Cheongju signal multi-site semiconductor production continuity across memory and related manufacturing functions. SK hynix's M15X material and Yongin cluster reference signal continued fabrication expansion visibility and cluster-linked semiconductor buildout. KAIST semiconductor research and ETRI intelligent-semiconductor research signal visible research and workforce-adjacent participation within the semiconductor ecosystem. KSIA's official organizational presence signals a national semiconductor industry coordination surface, while MSIT and MOTIE institutional materials signal narrowly documented public-sector policy participation around the semiconductor environment. The evidence supports memory and foundry manufacturing continuity signals, multi-site semiconductor production signals, public-private semiconductor coordination signals, semiconductor research and workforce ecosystem signals, and bounded cluster visibility signals where directly documented. The evidence does not support a semiconductor sovereignty posture classification or unsupported global dominance or ranking claims.</div>
+      <div class="detail-item"><strong>Exchange and research network signals.</strong> KINX signals a visible commercial interconnection surface spanning IX, network, cloud, CDN, and colocation services. KT's global network and data-services materials signal telecom backbone continuity through international network services, partner NNI expansion, and data-center-linked service surfaces. SK Telecom's cloud data center and AI infrastructure materials signal visible data-center and AI-infrastructure participation within the broader connectivity environment. KREONET and KISTI network services signal a national research-network backbone surface linked to academic and scientific connectivity. KREONET's international collaboration materials signal bounded international research-network participation, including APAN-linked collaboration where directly documented. KISA's institutional surface signals an internet-security and cybersecurity-adjacent coordination presence attached to the wider network environment. The evidence does not support KIX expansion, gateway-status or routing-hierarchy assignment, LG U+ expansion, or TEIN participation signals.</div>
+      <div class="detail-item"><strong>Government cloud and digital infrastructure signals.</strong> NIRS signals a public-sector digital infrastructure coordination surface spanning cloud-policy, cloud-service, cyber-incident, resource-management, and regional-center functions. MOIS's mobile Resident Registration Card materials signal mobile identity service delivery continuity across government services and other institutionally documented use environments. GOV.KR signals a consolidated government service-portal surface spanning public services, civil petitions, policy information, document issuance, and administrative access points. GOV.KR foreigner-service materials signal continuity in administrative proof and service-delivery surfaces for alien registration, residence, and immigration-status documentation. MSIT's institutional visibility signals ministry-level digital infrastructure coordination continuity, even though direct English policy retrieval remained limited. The evidence does not support a sovereign hyperscale cloud classification, unsupported Cloud Computing Act expansion, unsupported Digital Platform Government policy expansion, or unsupported domestic cloud-provider participation beyond the documented sources.</div>
+      <div class="detail-item"><strong>Energy coordination signals.</strong> KPX signals visible national electricity-market coordination and power-system operation through institutionally documented market and system-management functions. KPX's materials further signal supply-demand planning and domestic grid-management continuity within the national electricity environment. KEPCO signals visible transmission and distribution infrastructure presence within the national electricity-sector surface. MOTIE's institutional visibility signals a ministry-linked energy-policy surface adjacent to electricity coordination, even though detailed direct retrieval remained limited. The evidence does not support continental synchronization membership, unsupported HVDC or island-grid project details, or unsupported renewable-grid integration claims.</div>
+      <div class="detail-item"><strong>Regulatory and cybersecurity signals.</strong> MOIS and GOV.KR together signal a digital-government coordination surface tied to identity-linked public-service delivery and administrative access. KCC's institutional visibility signals telecom and communications regulatory presence, although direct English retrieval remained limited. KISA and NCSC together signal institutionally visible cybersecurity coordination surfaces, while detailed English retrieval limitations preserve the section as a bounded institutional signal layer. PIPC signals a personal-information protection authority surface within the broader regulatory environment. MSIT and MOTIE signal additional ministry-level regulatory and policy presence around digital and industrial governance, without supporting a broader inferred hierarchy. Retrieval for several official English regulatory and cybersecurity pages remained incomplete or blocked, so the signal layer preserves those limitations and does not infer regulatory hierarchy or capability ranking.</div>
+      <div class="detail-item"><strong>Defense and simulation signals.</strong> KARI's aerospace, launch, and lunar-programme materials signal visible aerospace research participation within the national technical environment. ETRI's compute and AI research surfaces signal advanced civil research participation in computing and AI without directly documenting defense classification. KAIST's research surfaces signal additional advanced research participation adjacent to compute and engineering activity without directly documenting defense or simulation classification. The evidence does not support directly confirmed ADD official English evidence, directly confirmed DAPA official English evidence, a standalone military compute or simulation stack classification, or a defense-adjacent simulation classification where not directly documented.</div>
+      <div class="detail-item"><strong>Space-system coordination signals.</strong> KARI's launch-vehicle materials signal national launch-programme continuity through the documented KSLV and Nuri lineage. Naro Space Center signals visible launch-site infrastructure continuity through documented launch, integration, test, and support facilities. Danuri materials signal lunar mission coordination and mission-development continuity within the national space programme. Palau Tracking Station signals visible mission-support and tracking infrastructure attached to launch and space operations. KASA's official state administration surface signals a national space-and-aeronautics governance presence alongside KARI's technical programme surfaces. The evidence does not support a global launch-network role assignment.</div>
+      <div class="detail-item"><strong>Identity and administrative federation signals.</strong> MOIS resident-registration documentation and the mobile Resident Registration Card together signal resident-registration identity coordination and mobile identity service continuity. The documented use of mobile resident-registration credentials through GOV.KR and local government offices signals a linked public-service and identity-delivery surface. GOV.KR signals a public-service portal federation surface spanning services, petitions, official documents, and public administrative access. GOV.KR foreigner-service materials signal continuity in administrative proof issuance for alien registration, residence, and immigration-status documentation. The evidence does not support a fragmented identity architecture outside the documented resident-registration, mobile-ID, and GOV.KR surfaces or an unsupported broader Digital Platform Government identity architecture.</div>
+      <div class="detail-item"><strong>Cross-border coordination signals.</strong> OECD, G20, APEC, and IPEF participation together signal visible multilateral economic and regional coordination participation through formally documented institutional channels. OECD and G20 participation signal continuity in higher-level multilateral economic coordination surfaces. APEC and IPEF participation signal regional economic participation surfaces linked to broader Asia-Pacific and Indo-Pacific coordination environments. KREONET's APAN-linked collaboration signals bounded international research-network participation within the cross-border coordination layer. The evidence does not support Quad-adjacent technology-cooperation signals where not officially supported, semiconductor cooperation signals with the United States, Japan, the EU, or the Netherlands where not strongly retrieved, AI-safety participation signals where not supported, or regional bloc or corridor alignment inference.</div>
+    </div>
+
+    <hr class="section-divider">
+    <h3 class="subhead">Signals summary statement</h3>
+    <div class="detail-list">
+      <div class="detail-item">South Korea's evidence-derived signal profile shows visible national compute coordination through KISTI, the National Supercomputing Center, Nurion, ETRI, KAIST, and Seoul National University; a federated research environment spanning NRF, public institutes, universities, and ministry-linked support surfaces; a semiconductor ecosystem combining Samsung foundry sites, SK hynix memory and expansion surfaces, KSIA visibility, and research participation from KAIST and ETRI; exchange and research-network continuity through KINX, KT, SK Telecom, KREONET, and APAN-linked collaboration; public-sector digital infrastructure and administrative-service continuity through NIRS, MOIS, GOV.KR, and MSIT; domestic energy coordination through KPX, KEPCO, and MOTIE visibility; bounded regulatory and cybersecurity institutional presence through MOIS, GOV.KR, KCC, KISA, NCSC, PIPC, MSIT, and MOTIE; defense-boundary preservation around civil aerospace and compute research surfaces; space-system coordination through KARI, Naro Space Center, Danuri, Palau Tracking Station, and KASA; identity and administrative federation continuity through resident-registration, mobile-ID, and GOV.KR; and cross-border institutional participation through OECD, G20, APEC, IPEF, and KREONET's documented international research-network collaboration.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Signal completeness status</span>
+      <span class="status-value">Package complete through builder-mode.md</span>
+      <span class="status-label">Topology placement</span>
+      <span class="status-value">explicitly not supported by signals layer</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: signals.md</div>
+  </section>
+
+  <!-- ── 5. TRUST DIMENSIONS SUMMARY ── -->
+  <section class="card anchor-target" id="trust-dimensions" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">5. Trust Dimensions Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from the evidence and signals layers and that it does not assign corridor membership, routing role, readiness tier, topology placement, sovereignty classification, or comparative jurisdiction ranking.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>National compute coordination dimension.</strong> KISTI, the National Supercomputing Center, and Nurion indicate visible national research-compute coordination continuity through a named public supercomputing surface. KISTI-KAIST cooperation indicates institute-university compute continuity across supercomputing, AI, and related advanced-computing research. ETRI compute research surfaces indicate AI-oriented compute participation through institutionally visible work in supercomputing, intelligent semiconductors, quantum computing, and system software. KAIST and Seoul National University indicate university-linked compute participation inside the broader national research-compute environment. The documented dimension supports visibility of national research-compute coordination, institute-university compute continuity, AI-oriented compute participation, and supercomputing infrastructure presence. The source layers do not support PRACE-equivalent federation participation, EuroHPC-equivalent integration, or a sovereign compute autonomy classification.</div>
+      <div class="detail-item"><strong>Research federation dimension.</strong> NRF indicates national research funding continuity through an institutionally visible funding and coordination surface. KISTI, ETRI, KIST, KRISS, KIER, and KIMM indicate distributed institute participation across science-information services, compute support, ICT research, standards, energy research, and engineering research surfaces. KAIST, Seoul National University, and POSTECH indicate university research integration within the broader national research federation. MSIT's institutional visibility indicates ministry-adjacent coordination presence around the research environment, even though detailed English retrieval remained limited. Together, these source layers indicate science-information support continuity and a federated research environment spanning funding bodies, public institutes, and universities. The source layers do not support a centralized research-command authority classification.</div>
+      <div class="detail-item"><strong>Semiconductor ecosystem dimension.</strong> Samsung Foundry's documented sites at Giheung, Hwaseong, and Pyeongtaek indicate multi-site fabrication continuity across a visible foundry manufacturing surface. SK hynix surfaces at Icheon, Bundang, and Cheongju, together with M15X and the Yongin cluster reference, indicate memory and fabrication continuity with visible expansion pathways. KAIST semiconductor research and ETRI intelligent-semiconductor research indicate research-industry linkage continuity across semiconductor-related technical work. KSIA indicates an institutionally visible semiconductor industry coordination surface, while MSIT and MOTIE indicate narrowly documented public-sector policy participation around the semiconductor environment. The dimension therefore supports multi-site fabrication continuity, memory and foundry ecosystem presence, research-industry linkage continuity, cluster expansion visibility, and public-private semiconductor coordination participation. The source layers do not support a semiconductor sovereignty posture classification or global ranking inference.</div>
+      <div class="detail-item"><strong>Exchange and research network dimension.</strong> KINX indicates commercial interconnection continuity through institutionally visible IX, network, cloud, CDN, and colocation services. KT indicates telecom backbone presence through documented international network and data-service continuity. SK Telecom indicates AI and data-center infrastructure visibility through documented cloud data center and AI infrastructure surfaces. KREONET and KISTI network services indicate academic research-network participation through a nationally visible research-network backbone surface. APAN-linked collaboration indicates bounded international research-network participation where directly documented. KISA indicates an institutionally visible internet-security coordination presence adjacent to the broader network environment. The source layers do not support gateway-role classification, KIX expansion confirmation, LG U+ expansion confirmation, or TEIN participation confirmation.</div>
+      <div class="detail-item"><strong>Government digital infrastructure dimension.</strong> NIRS indicates national public-sector digital infrastructure coordination through documented cloud-policy, cloud-service, cyber-incident, resource-management, and regional-center functions. MOIS's mobile Resident Registration Card materials indicate identity-linked service-delivery continuity across documented public-service environments. GOV.KR and its foreigner-service materials indicate administrative federation structure across public services, civil petitions, official documents, and administrative proof issuance. MSIT's institutional visibility indicates digital infrastructure coordination continuity at ministry level, even though detailed English policy retrieval remained limited. The source layers do not support a sovereign hyperscale cloud classification, an expanded Digital Platform Government architecture classification, or a Cloud Computing Act structural interpretation beyond the evidence layer.</div>
+      <div class="detail-item"><strong>Energy coordination dimension.</strong> KPX indicates national electricity-market coordination continuity through documented market and power-system management functions. KPX and KEPCO together indicate transmission and distribution infrastructure presence and domestic grid-management structure visibility. MOTIE's institutional visibility indicates ministry-linked energy-policy presence adjacent to the documented electricity coordination surface. The source layers do not support continental synchronization membership, HVDC classification, or renewable-grid integration classification beyond the evidence layer.</div>
+      <div class="detail-item"><strong>Regulatory and cybersecurity dimension.</strong> MOIS and GOV.KR indicate identity-linked governance infrastructure participation through digital-government and public-service delivery surfaces. KCC indicates telecom regulatory presence, while KISA and NCSC indicate cybersecurity institutional coordination continuity through bounded institutional visibility. PIPC indicates personal-information protection authority visibility within the broader regulatory environment. MSIT and MOTIE indicate ministry-level regulatory coordination continuity around digital and industrial governance without supporting a broader inferred hierarchy. Retrieval remained incomplete or blocked for several official English regulatory and cybersecurity surfaces, so this dimension preserves those limitations and does not infer regulatory hierarchy strength.</div>
+      <div class="detail-item"><strong>Defense-adjacent technical boundary dimension.</strong> KARI's aerospace programme surfaces indicate aerospace technical research participation within the national technical environment. ETRI and KAIST compute research surfaces indicate advanced compute research continuity outside any directly documented defense classification in the source layers. Together, these materials preserve a bounded defense-visibility surface in which advanced technical and aerospace research is visible without establishing a defense compute or simulation stack. The source layers do not support ADD confirmation, DAPA confirmation, standalone military compute stack classification, or simulation infrastructure classification.</div>
+      <div class="detail-item"><strong>Space-system coordination dimension.</strong> KARI indicates launch infrastructure continuity through documented launch-vehicle, mission, and support-programme surfaces. Naro Space Center indicates mission-development and launch-site coordination presence through integration, test, and support infrastructure. KSLV and Nuri programme materials indicate visible launch-programme continuity. Danuri and the Palau Tracking Station indicate lunar mission coordination and tracking infrastructure visibility. KASA indicates national space-administration structure continuity alongside KARI's technical programme surfaces. The source layers do not support a global launch-network role classification.</div>
+      <div class="detail-item"><strong>Identity and administrative federation dimension.</strong> Resident-registration documentation and the mobile Resident Registration Card indicate national identity credential continuity and mobile identity deployment presence. GOV.KR indicates an administrative service federation structure across public services, civil petitions, official documents, and linked access pathways. GOV.KR foreigner-service materials indicate immigration-status administrative proof infrastructure visibility. The source layers do not support a fragmented identity architecture classification or an expanded Digital Platform Government identity architecture classification.</div>
+      <div class="detail-item"><strong>Cross-border coordination dimension.</strong> OECD and G20 participation indicate multilateral economic coordination participation through documented institutional channels. APEC and IPEF participation indicate regional economic coordination continuity through documented Asia-Pacific and Indo-Pacific participation surfaces. APAN-linked research-network collaboration indicates international research-network linkage participation where directly documented. The source layers do not support Quad-adjacent coordination classification, semiconductor cooperation bloc classification, AI-safety coordination classification, or corridor-alignment inference.</div>
+    </div>
+
+    <hr class="section-divider">
+    <h3 class="subhead">Trust-dimension summary statement</h3>
+    <div class="detail-list">
+      <div class="detail-item">South Korea's structural trust-dimension profile appears as a nationally visible but institutionally distributed coordination environment spanning KISTI, the National Supercomputing Center, Nurion, ETRI, KAIST, and Seoul National University for compute continuity; NRF, public institutes, universities, and MSIT-linked coordination presence for research federation continuity; Samsung Foundry, SK hynix, KSIA, KAIST, ETRI, and ministry-linked policy participation for semiconductor ecosystem continuity; KINX, KT, SK Telecom, KREONET, KISTI network services, APAN-linked collaboration, and KISA for exchange and research-network infrastructure continuity; NIRS, MOIS, GOV.KR, and MSIT for government digital infrastructure continuity; KPX, KEPCO, and MOTIE visibility for energy coordination; MOIS, GOV.KR, KCC, KISA, NCSC, PIPC, MSIT, and MOTIE for regulatory and cybersecurity institutional continuity; a bounded defense-adjacent technical surface around KARI, ETRI, and KAIST; KARI, Naro Space Center, KSLV and Nuri, Danuri, Palau Tracking Station, and KASA for space-system coordination; resident-registration, mobile-ID, GOV.KR, and GOV.KR foreigner-service materials for identity federation continuity; and OECD, G20, APEC, IPEF, and APAN-linked research-network participation for cross-border institutional coordination, without assigning readiness tier, corridor placement, routing role, topology layer, or sovereignty classification.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Trust completeness status</span>
+      <span class="status-value">Package complete through builder-mode.md</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: trust-dimensions.md</div>
+  </section>
+
+  <!-- ── 6. PROFILE SUMMARY ── -->
+  <section class="card anchor-target" id="profile" aria-labelledby="heading-profile">
+    <h2 id="heading-profile">6. Profile Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The profile layer characterizes South Korea's structural coordination posture as derived from documented institutional compute, research, semiconductor, telecom, identity, regulatory, energy, and space-system participation surfaces. The profile layer does not assign corridor alignment, readiness tier, topology completion layer, sovereign compute classification, semiconductor sovereignty classification, or gateway role classification.</p>
+
+    <div class="detail-list" style="margin-top:12px">
+      <div class="detail-item"><strong>National compute coordination posture.</strong> South Korea appears as a nationally visible research-compute environment centered on KISTI, the National Supercomputing Center, Nurion, ETRI, KAIST, and Seoul National University participation surfaces. This posture is carried by supercomputing continuity, AI-oriented compute research participation, and documented institute-university compute coordination through KISTI-KAIST cooperation and university-linked research surfaces. The profile records visible compute coordination continuity without classifying compute autonomy.</div>
+      <div class="detail-item"><strong>Research federation posture.</strong> South Korea's research federation posture is distributed across NRF coordination surfaces, public research institutes, and major universities including KAIST, Seoul National University, and POSTECH. KISTI, ETRI, KIST, KRISS, KIER, and KIMM indicate institute-level continuity, while MSIT's institutional visibility adds a ministry-adjacent coordination surface around the broader research environment. The profile records a distributed national research federation without classifying centralized research-command authority.</div>
+      <div class="detail-item"><strong>Semiconductor ecosystem posture.</strong> South Korea's semiconductor ecosystem posture is a multi-site fabrication and memory-centered environment anchored by Samsung Foundry and SK hynix. Giheung, Hwaseong, Pyeongtaek, Icheon, Bundang, and Cheongju indicate visible manufacturing continuity, while M15X and the Yongin cluster reference indicate bounded expansion visibility. KAIST, ETRI, and KSIA add research-industry linkage continuity and institutional coordination participation surfaces. The profile records semiconductor continuity and coordination without assigning semiconductor sovereignty posture.</div>
+      <div class="detail-item"><strong>Network and exchange infrastructure posture.</strong> South Korea's network and exchange posture combines KT backbone participation, KINX interconnection infrastructure, SK Telecom AI and data-center participation, and KREONET academic research-network continuity. KISTI-linked network services and APAN-linked collaboration extend this posture into documented research-network participation, while KISA contributes an internet-security coordination surface adjacent to the wider connectivity environment. The profile records layered telecom, interconnection, AI-infrastructure, and research-network continuity without assigning gateway classification.</div>
+      <div class="detail-item"><strong>Government digital infrastructure posture.</strong> South Korea's government digital infrastructure posture is a nationally coordinated administrative digital-service federation environment spanning NIRS coordination surfaces, MOIS identity-linked service delivery, and GOV.KR administrative federation structure. This posture is expressed through public-sector digital infrastructure coordination, mobile identity-linked service continuity, administrative proof issuance, and documented cloud-policy administrative visibility where directly recorded. The profile does not classify Digital Platform Government architecture maturity.</div>
+      <div class="detail-item"><strong>Identity infrastructure posture.</strong> South Korea's identity infrastructure posture is a nationally deployed resident-registration credential environment with mobile identity deployment continuity and administrative proof federation across GOV.KR service pathways. MOIS resident-registration documentation, the mobile Resident Registration Card, GOV.KR, and GOV.KR foreigner-service materials together indicate credential continuity, linked public-service access, and immigration-status administrative proof visibility. The profile does not classify identity architecture maturity tier.</div>
+      <div class="detail-item"><strong>Energy coordination posture.</strong> South Korea's energy coordination posture is a centrally coordinated electricity-market and grid-management environment spanning KPX coordination functions, KEPCO infrastructure presence, and MOTIE policy-adjacent institutional visibility. KPX indicates documented electricity-market and power-system management continuity, while KEPCO indicates transmission and distribution infrastructure presence within the national electricity surface. The profile records domestic grid-management continuity without classifying synchronization-layer membership.</div>
+      <div class="detail-item"><strong>Regulatory and cybersecurity coordination posture.</strong> South Korea's regulatory and cybersecurity coordination posture is a ministry-linked telecommunications, cybersecurity, and personal-information regulatory environment spanning KCC, KISA, NCSC, PIPC, MOIS, MSIT, and MOTIE institutional surfaces. GOV.KR and MOIS also anchor identity-linked digital-governance participation within the same broader administrative environment. This posture remains bounded by documented retrieval limitations, because detailed English materials for several regulatory and cybersecurity surfaces were incomplete or blocked in the source layers.</div>
+      <div class="detail-item"><strong>Space-system coordination posture.</strong> South Korea's space-system coordination posture is a nationally coordinated launch and mission-support environment spanning KARI programme continuity, Naro Space Center infrastructure participation, Danuri mission coordination visibility, Palau Tracking Station participation, and KASA administrative continuity. KSLV and Nuri programme materials further indicate launch-programme continuity across the same package. The profile records national launch and mission-support continuity without assigning global launch-network role classification.</div>
+      <div class="detail-item"><strong>Cross-border coordination posture.</strong> South Korea's cross-border coordination posture is expressed through participation continuity across OECD, G20, APEC, IPEF, and APAN-linked research-network collaboration surfaces. These materials indicate visible multilateral economic participation, regional economic coordination continuity, and bounded international research-network linkage where directly documented. The profile does not assign alliance topology classification.</div>
+    </div>
+
+    <hr class="section-divider">
+    <h3 class="subhead">Structural profile summary statement</h3>
+    <div class="detail-list">
+      <div class="detail-item">South Korea appears as a nationally coordinated but institutionally distributed compute, semiconductor, telecom, identity, regulatory, research-federation, energy, and space-system environment with visible multilateral coordination participation and strong research-industry linkage continuity, without assigning topology placement or corridor alignment.</div>
+    </div>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Profile completeness status</span>
+      <span class="status-value">Package complete through builder-mode.md</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: profile.md</div>
+  </section>
+
+  <!-- ── 7. BUILDER MODE SUMMARY ── -->
+  <section class="card anchor-target" id="builder-mode" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">7. Builder Mode Summary</h2>
+    <p class="muted"><strong>Derivation constraint.</strong> The builder-mode layer describes how South Korea participates as a structural component inside Atlas corridor construction and jurisdiction comparison workflows. It does not assign corridor alignment, readiness tier, topology completion layer, routing role, or sovereignty classification.</p>
+
+    <h3 class="subhead">Compute participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a nationally visible research-compute coordination environment anchored by KISTI, the National Supercomputing Center, Nurion, ETRI, KAIST, and Seoul National University institutional compute surfaces. Atlas may treat this jurisdiction as: a research-compute continuity participant within distributed institutional compute environments. Do not classify sovereign compute autonomy.</p>
+
+    <h3 class="subhead">Research federation participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a distributed national research federation environment spanning NRF coordination surfaces, institute participation continuity, and university-linked compute research environments. Atlas may treat this jurisdiction as: a multi-institution research federation participant supporting institute–university coordination continuity. Do not classify centralized research-command structure.</p>
+
+    <h3 class="subhead">Semiconductor ecosystem participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a multi-site fabrication and memory-centered semiconductor production environment anchored by Samsung Foundry and SK hynix with research–industry linkage continuity through KAIST, ETRI, and KSIA participation surfaces. Atlas may treat this jurisdiction as: a fabrication-scale semiconductor ecosystem participant with visible expansion continuity. Do not assign semiconductor sovereignty classification.</p>
+
+    <h3 class="subhead">Network and exchange participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a layered telecom, IX, research-network, and AI-infrastructure environment spanning KT backbone participation, KINX interconnection infrastructure, SK Telecom AI infrastructure participation, and KREONET academic research-network continuity. Atlas may treat this jurisdiction as: a research-network and telecom interconnection participant within regional connectivity environments. Do not assign gateway classification.</p>
+
+    <h3 class="subhead">Government digital infrastructure participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a nationally coordinated administrative digital-service federation environment spanning NIRS coordination surfaces, MOIS identity-linked service delivery, and GOV.KR administrative federation structure. Atlas may treat this jurisdiction as: an administrative digital federation participant supporting identity-linked public-service continuity. Do not classify Digital Platform Government maturity.</p>
+
+    <h3 class="subhead">Identity infrastructure participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a nationally deployed resident-registration credential environment with mobile identity deployment continuity and administrative proof federation across GOV.KR service pathways. Atlas may treat this jurisdiction as: a nationally coordinated identity federation participant. Do not classify identity architecture tier.</p>
+
+    <h3 class="subhead">Energy coordination participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a centrally coordinated electricity-market and grid-management environment spanning KPX coordination functions, KEPCO infrastructure presence, and MOTIE policy-adjacent institutional visibility. Atlas may treat this jurisdiction as: a domestically coordinated electricity infrastructure participant. Do not classify synchronization-layer membership.</p>
+
+    <h3 class="subhead">Regulatory and cybersecurity participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a ministry-linked telecommunications, cybersecurity, and personal-information regulatory coordination environment spanning KCC, KISA, NCSC, PIPC, MOIS, MSIT, and MOTIE institutional surfaces. Atlas may treat this jurisdiction as: a nationally coordinated regulatory and cybersecurity participation environment with bounded institutional visibility. Preserve documented retrieval limitations.</p>
+
+    <h3 class="subhead">Space-system participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a nationally coordinated launch and mission-support environment spanning KARI programme continuity, Naro Space Center infrastructure participation, Danuri mission coordination visibility, Palau Tracking Station participation, and KASA administrative continuity. Atlas may treat this jurisdiction as: a national launch-programme continuity participant. Do not assign global launch-network role classification.</p>
+
+    <h3 class="subhead">Cross-border coordination participation mode</h3>
+    <p class="muted">The builder-mode layer records that South Korea participates as a multilateral coordination environment across OECD, G20, APEC, IPEF, and APAN-linked research-network collaboration surfaces. Atlas may treat this jurisdiction as: a multilateral institutional coordination participant within regional and global research-network environments. Do not assign alliance-topology classification.</p>
+
+    <hr class="section-divider">
+    <h3 class="subhead">Builder-mode summary statement</h3>
+    <p class="muted">South Korea participates in Atlas as a nationally coordinated but institutionally distributed compute, semiconductor, telecom, identity, regulatory, research-federation, energy, and space-system environment supporting multilateral coordination continuity without assigned corridor placement or topology completion-layer classification.</p>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Builder completeness status</span>
+      <span class="status-value">Package complete through builder-mode.md</span>
+      <span class="status-label">Builder-mode completeness status</span>
+      <span class="status-value">Package complete through builder-mode.md</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: builder-mode.md</div>
+  </section>
+
+  <!-- ── 8. STRUCTURAL EXCLUSIONS ── -->
+  <section class="card anchor-target" id="structural-exclusions" aria-labelledby="heading-exclusions">
+    <h2 id="heading-exclusions">8. Structural Exclusions</h2>
+    <p class="muted">South Korea's canonical package records a Structural Boundary Statement across every normalization layer. Across all layers, the package preserves non-assignment of corridor alignment, topology completion-layer placement, readiness tier classification, sovereign compute autonomy classification, sovereign hyperscale cloud classification, semiconductor sovereignty posture classification, gateway-role classification, defense compute-stack classification, and alliance-topology classification.</p>
+
+    <h3 class="subhead">Structural boundary statement (evidence and signals layers)</h3>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>The evidence does not support a continental synchronization membership signal.</li>
+      <li>The evidence does not support a sovereign hyperscale cloud classification signal.</li>
+      <li>The evidence does not support a standalone military compute stack classification signal.</li>
+      <li>The evidence does not support a corridor routing role assignment signal.</li>
+      <li>The evidence does not support a topology completion-layer placement signal.</li>
+      <li>The evidence does not support a semiconductor sovereignty posture classification signal.</li>
+      <li>The evidence does not support a fragmented identity architecture outside the documented resident-registration, mobile-ID, and GOV.KR surfaces.</li>
+    </ul>
+
+    <h3 class="subhead">Evidence-layer structural exclusions</h3>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>Continental synchronization membership is not evidenced here. The collected official materials support domestic electricity coordination surfaces through KPX and KEPCO, but not membership in a continental synchronized grid.</li>
+      <li>A sovereign hyperscale cloud classification is not evidenced here. The collected official materials support NIRS, MOIS, and GOV.KR digital-infrastructure and public-service surfaces only.</li>
+      <li>A standalone military compute stack classification is not evidenced here. The collected official materials support visible aerospace, launch, and research surfaces, but not a separately documented military compute stack.</li>
+      <li>A corridor routing role assignment is not evidenced here. The collected official materials support exchange, telecom, and research-network surfaces only.</li>
+      <li>A topology completion-layer placement is not evidenced here. The collected official materials support institutionally visible national structures only.</li>
+      <li>A semiconductor sovereignty posture classification is not evidenced here. The collected official materials support named manufacturing, foundry, memory, and research surfaces only.</li>
+      <li>A fragmented identity architecture outside the documented resident-registration, mobile-ID, and GOV.KR administrative surfaces is not evidenced here.</li>
+    </ul>
+
+    <h3 class="subhead">Metadata-layer structural boundary conditions</h3>
+    <ul class="atlas-list" style="margin-top:10px">
+      <li>Corridor assignment: Not supported by source layers.</li>
+      <li>Topology completion-layer placement: Not supported by source layers.</li>
+      <li>Readiness tier classification: Not supported by source layers.</li>
+      <li>Sovereign compute autonomy classification: Not supported by source layers.</li>
+      <li>Sovereign hyperscale cloud classification: Not supported by source layers.</li>
+      <li>Semiconductor sovereignty classification: Not supported by source layers.</li>
+      <li>Defense compute-stack classification: Not supported by source layers.</li>
+      <li>Gateway-role classification: Not supported by source layers.</li>
+      <li>Identity-fragmentation classification beyond documented surfaces: Not supported by source layers.</li>
+    </ul>
+
+    <h3 class="subhead">Change-log structural boundary preservation statement</h3>
+    <p class="muted">The change-log records that across all layers, the South Korea jurisdiction package preserves non-assignment of: corridor alignment; topology completion-layer placement; readiness tier classification; sovereign compute autonomy classification; sovereign hyperscale cloud classification; semiconductor sovereignty posture classification; gateway-role classification; defense compute-stack classification; and alliance-topology classification.</p>
+
+    <p class="muted" style="margin-top:12px">The canonical package records that these boundaries are carried forward across signals.md, trust-dimensions.md, profile.md, metadata.md, builder-mode.md, and change-log.md as Structural Boundary Statements. The canonical package records that no layer assigns trust posture, routing role, coordination tier, Atlas surfaces, national significance, leadership framing, readiness status, ranking outcome, or deployment suitability.</p>
+    <div class="src">Source: evidence.md — Structural Exclusions; signals.md — Structural Signal Boundary Statement; trust-dimensions.md — Structural Trust-Dimension Boundary Statement; metadata.md — Structural Boundary Conditions; change-log.md — Structural Boundary Preservation Statement</div>
+  </section>
+
+  <!-- ── 9. EVIDENCE GAPS ── -->
+  <section class="card anchor-target" id="evidence-gaps" aria-labelledby="heading-gaps">
+    <h2 id="heading-gaps">9. Evidence Gaps</h2>
+    <p class="muted">The canonical package records the following evidence gaps for South Korea. The package preserves these as documented retrieval limitations — canonically visible constraints on the source set, not inferred shortcomings — and the change-log enumerates them explicitly.</p>
+
+    <div class="retrieval-limits">
+      <div class="label">Retrieval limitations (change-log attestation)</div>
+      <ul>
+        <li>partial English-language regulatory documentation</li>
+        <li>limited MSIT policy-surface visibility</li>
+        <li>limited MOTIE policy-surface visibility</li>
+        <li>non-confirmation of ADD and DAPA participation</li>
+        <li>non-confirmation of TEIN participation</li>
+        <li>non-confirmation of KIX expansion</li>
+        <li>non-confirmation of LG U+ expansion</li>
+      </ul>
+    </div>
+
+    <h3 class="subhead">Documented absences within the evidence layer</h3>
+    <div class="detail-list" style="margin-top:6px">
+      <div class="detail-item">The evidence layer records that no separate officially confirmed national "Neuron" infrastructure was identified in this collected English source set; only the institutionally visible AI-oriented compute surfaces were confirmed.</div>
+      <div class="detail-item">The evidence layer records that no explicit official evidence was confirmed for a PRACE-equivalent or EuroHPC-equivalent federation layer beyond the documented domestic KISTI and National Supercomputing Center structure and separately documented research-network links.</div>
+      <div class="detail-item">The evidence layer records that no Korea University or Yonsei University research surface is materially relied on because direct official English retrieval remained limited during this bounded collection pass.</div>
+      <div class="detail-item">The evidence layer records that no official English KIX surface was substantively confirmed, so KIX is not expanded.</div>
+      <div class="detail-item">The evidence layer records that no useful official English LG U+ infrastructure material was confirmed, so LG U+ is preserved as an absence rather than expanded.</div>
+      <div class="detail-item">The evidence layer records that TEIN participation was not separately confirmed through the directly relied-on official materials in this pass.</div>
+      <div class="detail-item">The evidence layer records that no directly retrievable official English text was confirmed for the Cloud Computing Act or for a detailed Digital Platform Government policy statement, so those surfaces are preserved narrowly.</div>
+      <div class="detail-item">The evidence layer records that no directly retrievable official English ADD material was confirmed and no directly retrievable official English DAPA material was confirmed.</div>
+      <div class="detail-item">The evidence layer records that no Quad-adjacent technology-cooperation claim is added, no semiconductor cooperation claim with the United States, Japan, the EU, or the Netherlands is added, no separate AI-safety participation claim is added, and no regional bloc or corridor alignment inference is supported, because the necessary official English support was not directly retrieved strongly enough for bounded use.</div>
+    </div>
+    <p class="muted" style="margin-top:12px">The canonical package records gap inheritance: signals.md, trust-dimensions.md, profile.md, builder-mode.md, metadata.md, and change-log.md inherit these documented absences and retrieval limitations without expansion.</p>
+    <div class="src">Source: change-log.md — Evidence Layer Notes (retrieval limitations); evidence.md — section-level bounded notes across compute, research federation, semiconductor, exchange, cloud, energy, regulatory, defense, and cross-border sections</div>
+  </section>
+
+  <!-- ── 10. CHANGE-LOG NOTES / NORMALIZATION NOTES ── -->
+  <section class="card anchor-target" id="change-log" aria-labelledby="heading-changelog">
+    <h2 id="heading-changelog">10. Change-Log Notes &amp; Normalization Notes</h2>
+
+    <h3 class="subhead">Layer construction sequence</h3>
+    <p class="muted">The change-log records that the South Korea jurisdiction package was constructed in the following order: evidence.md, signals.md, trust-dimensions.md, metadata.md, profile.md, builder-mode.md. Each layer was derived strictly from the preceding layers without introducing external topology interpretation.</p>
+
+    <h3 class="subhead">Layer construction notes</h3>
+    <ul class="mini muted">
+      <li>The change-log records that the evidence layer documented institutionally visible infrastructure across national research-compute institutions, semiconductor ecosystem participation, telecom and exchange infrastructure, government digital-service infrastructure, identity credential infrastructure, regulatory and cybersecurity institutions, electricity coordination institutions, space-system infrastructure, and cross-border institutional participation, with retrieval limitations preserved as canonical features.</li>
+      <li>The change-log records that the signals layer confirmed continuity across research-compute participation, institute-university coordination, semiconductor ecosystem linkage, telecom and interconnection participation, administrative service federation, identity credential deployment, regulatory coordination visibility, electricity coordination continuity, space-programme continuity, and multilateral institutional participation. No routing interpretation or corridor inference was introduced.</li>
+      <li>The change-log records that the trust-dimensions layer confirmed structural visibility across national compute coordination, research federation continuity, semiconductor ecosystem continuity, telecom and research-network infrastructure, government digital-service coordination, identity federation continuity, electricity coordination continuity, regulatory and cybersecurity coordination, space-system coordination continuity, and cross-border institutional coordination participation. No sovereignty classifications were introduced.</li>
+      <li>The change-log records that the metadata layer recorded jurisdiction identity, institutional surface visibility, infrastructure participation coverage, identity-system visibility, semiconductor environment visibility, telecom and exchange participation visibility, energy coordination visibility, regulatory participation visibility, space-system participation visibility, and multilateral coordination participation visibility. Boundary conditions were preserved across all structural dimensions.</li>
+      <li>The change-log records that the structural profile layer characterized South Korea as a nationally coordinated but institutionally distributed compute, semiconductor, telecom, identity, regulatory, research-federation, energy, and space-system environment with visible multilateral coordination participation. No topology placement inference was introduced.</li>
+      <li>The change-log records that the builder-mode layer defined South Korea as participating in Atlas as a research-compute continuity participant, a distributed research federation participant, a fabrication-scale semiconductor ecosystem participant, a telecom and interconnection infrastructure participant, an administrative digital federation participant, a nationally coordinated identity federation participant, a domestically coordinated electricity infrastructure participant, a regulatory and cybersecurity coordination participant, a national launch-programme continuity participant, and a multilateral institutional coordination participant. No corridor assignment was introduced.</li>
+    </ul>
+
+    <h3 class="subhead">Structural boundary preservation</h3>
+    <ul class="mini muted">
+      <li>The change-log records that across all layers, the South Korea jurisdiction package preserves non-assignment of corridor alignment, topology completion-layer placement, readiness tier classification, sovereign compute autonomy classification, sovereign hyperscale cloud classification, semiconductor sovereignty posture classification, gateway-role classification, defense compute-stack classification, and alliance-topology classification.</li>
+      <li>The change-log records: Surface assignment status: none.</li>
+    </ul>
+
+    <h3 class="subhead">Package completion statement</h3>
+    <p class="muted">The change-log records that the South Korea jurisdiction package is complete through builder-mode.md and is normalization-ready for Atlas corridor-construction workflows and topology interpretation layers without assigned corridor placement or topology completion-layer classification. Completed files:</p>
+    <ul class="mini muted">
+      <li><code>jurisdictions/global/countries/south-korea/evidence.md</code></li>
+      <li><code>jurisdictions/global/countries/south-korea/signals.md</code></li>
+      <li><code>jurisdictions/global/countries/south-korea/trust-dimensions.md</code></li>
+      <li><code>jurisdictions/global/countries/south-korea/metadata.md</code></li>
+      <li><code>jurisdictions/global/countries/south-korea/profile.md</code></li>
+      <li><code>jurisdictions/global/countries/south-korea/builder-mode.md</code></li>
+      <li><code>jurisdictions/global/countries/south-korea/change-log.md</code></li>
+    </ul>
+
+    <div class="callout mini" style="margin-top:14px">
+      <span class="status-label">Normalization completion status</span>
+      <span class="status-value">Package complete through builder-mode.md</span>
+      <span class="status-label">Topology placement</span>
+      <span class="status-value">explicitly not assigned across all layers</span>
+      <span class="status-label">Surface assignment status</span>
+      <span class="status-value">none</span>
+    </div>
+    <div class="src">Source: change-log.md</div>
+  </section>
+
+</div><!-- /main col -->
+
+<!-- ── SIDEBAR ── -->
+<aside>
+
+  <div class="card" aria-labelledby="heading-sidebar-package">
+    <div class="smallcaps">Canonical Package</div>
+    <h3 id="heading-sidebar-package">Source of truth</h3>
+    <p class="muted mini">This page renders the canonical South Korea jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="mini" style="margin-top:6px">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>change-log.md</code></li>
+      <li><code>ATLAS_GLOBAL_COUNTRIES_PHASE3_PLAN_v1.md</code> (scaffolding only)</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">Canonical package path: <code>atlas-export/jurisdictions/global/countries/south-korea/</code></p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-identity">
+    <div class="smallcaps">Jurisdiction Identity</div>
+    <h3 id="heading-sidebar-identity">Record header</h3>
+    <ul class="mini">
+      <li><strong>Jurisdiction:</strong> South Korea</li>
+      <li><strong>Code:</strong> KR</li>
+      <li><strong>Region:</strong> East Asia</li>
+      <li><strong>Package Type:</strong> National jurisdiction</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Corridor alignment:</strong> Not assigned in source layers</li>
+      <li><strong>Readiness tier:</strong> Not assigned in source layers</li>
+      <li><strong>Topology completion layer:</strong> Not assigned in source layers</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> Package complete through builder-mode.md</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-topology">
+    <div class="smallcaps">Per-Domain Visibility</div>
+    <h3 id="heading-sidebar-topology">Metadata summary</h3>
+    <ul class="mini">
+      <li><strong>Compute:</strong> National research-compute coordination with KISTI, National Supercomputing Center, Nurion, ETRI, KAIST, Seoul National University</li>
+      <li><strong>Research:</strong> Distributed research federation across NRF, institutes, and universities</li>
+      <li><strong>Semiconductor:</strong> Multi-site fabrication and memory-centered environment anchored by Samsung Foundry and SK hynix</li>
+      <li><strong>Network &amp; Exchange:</strong> Layered telecom, IX, research-network, and AI-infrastructure participation</li>
+      <li><strong>Government Digital:</strong> Administrative digital-service federation via NIRS, MOIS, GOV.KR</li>
+      <li><strong>Energy:</strong> Centrally coordinated electricity-market and grid-management through KPX, KEPCO</li>
+      <li><strong>Regulatory &amp; Cyber:</strong> Ministry-linked telecom, cybersecurity, and personal-information coordination across KCC, KISA, NCSC, PIPC, MSIT, MOTIE</li>
+      <li><strong>Space:</strong> National launch and mission-support through KARI, Naro, Danuri, Palau, KASA</li>
+      <li><strong>Identity:</strong> Resident-registration credential environment with mobile-ID and GOV.KR federation</li>
+      <li><strong>Cross-Border:</strong> OECD, G20, APEC, IPEF, APAN-linked research collaboration</li>
+    </ul>
+    <p class="muted mini" style="margin-top:8px">South Korea's metadata.md uses per-domain visibility classifications rather than a Corridor Group / Foundation Layer / Topology Completion triad. Every canonical layer records that source layers do not support evidence of corridor routing role assignment or topology completion-layer placement. This is preserved verbatim; no harmonization has been applied.</p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-status">
+    <div class="smallcaps">Normalization Status</div>
+    <h3 id="heading-sidebar-status">Layer completeness</h3>
+    <ul class="mini">
+      <li>Evidence layer: complete</li>
+      <li>Signal layer: complete</li>
+      <li>Trust dimensions: complete</li>
+      <li>Metadata: complete</li>
+      <li>Profile: complete</li>
+      <li>Builder-mode: complete</li>
+      <li>Change-log: complete</li>
+      <li>Topology placement: explicitly not assigned</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-sidebar-boundary">
+    <div class="smallcaps">Interpretation Boundary</div>
+    <h3 id="heading-sidebar-boundary">What this page is not</h3>
+    <ul class="mini muted">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a topology placement.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a sovereignty or autonomy claim.</li>
+      <li>Not an alliance-topology classification.</li>
+      <li>Not a substitute for the canonical package.</li>
+    </ul>
+  </div>
+
+</aside>
+</div><!-- /grid-sidebar -->
+
 </main>
 
-<div id="footer-container"></div>
+<div class="wrap">
+  <div class="adjacent-anchors">
+    <div class="label">Adjacent corridor anchors</div>
+    <div class="empty">No neighbouring jurisdictions currently documented in Atlas for this package.</div>
+    <div class="note">Navigational only — no topology implication. South Korea's canonical package documents multilateral coordination across OECD, G20, APEC, IPEF, and APAN-linked research-network collaboration (evidence.md; signals.md). The evidence layer explicitly records that no semiconductor cooperation claim with the United States, Japan, the EU, or the Netherlands is added because the necessary official English support was not directly retrieved strongly enough for bounded use. Adjacent-anchor entries will appear here only as the relevant neighbouring jurisdictions are normalized into Atlas with canonically-documented bilateral or multilateral linkages to South Korea.</div>
+  </div>
+</div>
 
+<div class="wrap reflection footer-block">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+<div id="footer-container"></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+ .then(response => response.text())
+ .then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+ });
 </script>
-
+</div>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
