@@ -1,91 +1,603 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Singapore | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singapore — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Singapore Atlas jurisdiction package rendering. Indo-Pacific Digital Governance & Interconnection Corridor.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/singapore/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Singapore</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Singapore</h1>
 
-</article>
-</main>
+  <p class="lede">This page renders the canonical Singapore Atlas jurisdiction package. The canonical files remain the source of truth; this document is a structured rendering only.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Singapore (SG)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#topology">1. Topology Metadata</a></li>
+    <li><a href="#scope">2. Scope Boundary</a></li>
+    <li><a href="#evidence">3. Evidence</a></li>
+    <li><a href="#signals">4. Signals</a></li>
+    <li><a href="#trust-dimensions">5. Trust Dimensions</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#structural-exclusions">8. Structural Exclusions</a></li>
+    <li><a href="#evidence-gaps">9. Evidence Gaps</a></li>
+    <li><a href="#change-log">10. Change-Log Notes</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Topology -->
+      <section id="topology">
+        <h2><span class="num">1.</span>Topology Metadata</h2>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Corridor Group</span>
+            <span class="val">Indo-Pacific Digital Governance &amp; Interconnection Corridor</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Jurisdiction Type</span>
+            <span class="val">Sovereign city-state jurisdiction</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Classification</span>
+            <span class="val">Indo-Pacific digital governance coordination hub jurisdiction with dense exchange-layer interconnection infrastructure, structured tokenisation supervision continuity, national AI governance experimentation capability, and energy-constrained compute-hosting expansion conditions.</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Role Classification</span>
+            <span class="val">Regional governance coordination hub · Exchange-layer routing continuity node · Structured tokenisation-regulation experimentation jurisdiction · Controlled trusted-data-flow regulatory environment · Energy-constrained compute-hosting density environment</span>
+          </div>
+        </div>
+
+        <p><strong>Classification source.</strong> The metadata layer records that this metadata is derived from <code>metadata.md</code> and records Atlas corridor-topology placement only. Canonical <code>metadata.md</code> is the topology authority for the Singapore package.</p>
+
+        <p><strong>Interpretation boundary.</strong> The metadata layer records that this file is structural topology metadata only. It does not assign routing authority, Atlas surfaces, readiness, rank jurisdictions, modify evidence-layer interpretation, override evidence gaps, or infer deployment suitability. The metadata layer records that Singapore is not classified as a semiconductor fabrication anchor jurisdiction, Five Eyes corridor jurisdiction, continental-scale or hyperscale energy-export compute corridor jurisdiction, or supranational regulatory bloc jurisdiction.</p>
+
+        <div class="meta-line">Metadata status: topology metadata attached <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: metadata.md</div>
+      </section>
+
+      <!-- 2. Scope -->
+      <section id="scope">
+        <h2><span class="num">2.</span>Scope Boundary Statement</h2>
+
+        <p>The evidence layer records only evidence-supported national structures documented for Singapore that are relevant to Atlas normalization. The evidence layer does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces. It does not generate signals.</p>
+
+        <p>This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, leadership positioning, or deployment prescription beyond the canonical files. Surface assignment remains unset. No routing role is assigned.</p>
+
+        <div class="meta-line">Source: evidence.md — Scope</div>
+      </section>
+
+      <!-- 3. Evidence -->
+      <section id="evidence">
+        <h2><span class="num">3.</span>Evidence Summary</h2>
+
+        <p>The evidence layer documents the following for Singapore.</p>
+
+        <h3>AI governance signals</h3>
+        <p>The evidence layer records that Smart Nation publishes the original National AI Strategy from November 2019 and that National AI Strategy 2.0 launched in 2023, with broad-based AI adoption across government agencies oriented toward operational efficiency and service delivery. IMDA records that A.I. Verify was launched in 2022 as an AI governance testing framework and toolkit for objective and verifiable responsible-AI testing, that A.I. Verify follows Singapore's Model AI Governance Framework, and that the AI Verify Foundation was launched in 2023 to develop AI testing tools through a global open-source community. The draft Model AI Governance Framework for Generative AI was developed by AI Verify Foundation and IMDA. PDPC's 2024 advisory guidelines address transparency obligations when AI systems use personal data to make recommendations, predictions, or decisions.</p>
+
+        <h3>Privacy and data governance architecture</h3>
+        <p>The evidence layer records that PDPC was set up in 2013 to administer and enforce the Personal Data Protection Act and that the PDPA governs the collection, use, disclosure, and care of personal data in Singapore. PDPC sits within IMDA, promotes and regulates data protection, and provides AI-governance guidance to private-sector organisations. Singapore Statutes Online publishes the Personal Data Protection Act 2012 as the governing statute. Personal data may be transferred to another country only in accordance with regulatory requirements ensuring protection comparable to the PDPA, unless exempted. PDPC's AI recommendation and decision systems guidance ties AI deployment using personal data back to transparency and data-governance obligations.</p>
+
+        <h3>Digital asset and financial technology oversight</h3>
+        <p>The evidence layer records that the Payment Services Act 2019 provides licensing and regulation for payment service providers and oversight of payment systems in Singapore. Amendments effective from 4 April 2024 expanded regulated payment services to include digital payment token custodial services, facilitation of DPT transmission and exchange, and certain cross-border money-transfer activities, and empower MAS to impose AML/CFT, user-protection, and financial-stability requirements on DPT service providers. MAS Notice PS-N02 sets AML/CFT requirements for DPT service providers. The MAS stablecoin framework applies to qualifying single-currency stablecoins issued in Singapore and imposes requirements on reserve assets, capital, redemption at par, and disclosure. Phase 3 of the Financial Services and Markets Act 2022, commenced on 30 June 2025, implements a framework for Singapore-established or incorporated digital token service providers serving outside-Singapore activity. Project Guardian is a cross-border sandbox bringing policymakers, regulators, and industry together to test asset tokenisation and interoperable market infrastructure.</p>
+
+        <h3>Compute and digital infrastructure</h3>
+        <p>The evidence layer records that Smart Nation presents a whole-of-nation digital transformation programme oriented toward a shared digital future, and that GovTech is the lead government agency driving Singapore's Smart Nation initiative and the digitalisation of public services, with data and AI used inside government for evidence-based policymaking, operational efficiency, and secure adoption of large language models. The Digital Connectivity Blueprint sets strategic priorities for 10 Gbps domestic connectivity, infrastructure resilience, security, green data-centre growth, and wider digital-utility adoption. IMDA records data centres as foundational digital infrastructure within Singapore's digital economy. The Green DC Roadmap aims to provide at least 300 MW of additional data-centre capacity in the near term, with more through green energy deployments.</p>
+
+        <h3>Telecommunications, submarine cable, and interconnection</h3>
+        <p>The evidence layer records that IMDA develops and regulates the infocomm and media sectors and operates Singapore's telecom licensing framework. The FBO framework covers operators deploying telecommunications networks, systems, and facilities, while the SBO framework covers service-based telecommunications operators. The Digital Connectivity Blueprint targets capacity to enable submarine cable landings to double within the next 10 years. IMDA guides parties deploying submarine cable systems into Singapore and requires a permitting process for submarine cable works. SGIX describes itself as an open and neutral Internet exchange established in 2009 with IMDA support and operates peering points across Singapore's major data centres.</p>
+
+        <h3>Energy and sustainability constraints</h3>
+        <p>The evidence layer records that IMDA frames sustainable data-centre growth as a core governance issue and that the Green DC Roadmap pairs capacity growth with sustainability measures including GMDC:2024, energy-efficiency grants, and new technical standards. Singapore Standard SS 715:2025 supports higher-temperature and more energy-efficient IT equipment operation in data centres. EMA records that Singapore generates about 95% of its electricity from natural gas and imports that gas through pipelines and LNG, and that Singapore does not have the land for large solar or wind farms or fast-flowing rivers for hydro-electric power. MSE records that Singapore's energy transition is constrained by space limits, cloud cover, and humidity.</p>
+
+        <h3>International governance participation</h3>
+        <p>The evidence layer records that the Digital Economy Partnership Agreement is a first-of-its-kind agreement promoting digital trade, trusted data flows, and inclusive digital economies among members, and records Singapore's digital economy agreement activity with the Republic of Korea through the Korea–Singapore Digital Partnership Agreement signed in 2022. The ASEAN Working Group on AI Governance was established in 2024 and is chaired by Singapore's IMDA, coordinating ASEAN work on AI governance, policy development, safety, standards, regulation, and implementation support. Development of the ASEAN Guide on AI Governance and Ethics was led by IMDA. The Singapore–US IMDA and NIST crosswalk demonstrated mapping and interoperability between national AI governance frameworks.</p>
+
+        <h3>Institutional stability</h3>
+        <p>The evidence layer records that the Judiciary, Executive, and Legislature are three branches of the state under a separation-of-powers structure set by the Constitution. The Judiciary is impartial, interprets and enforces the law, and is responsible for ensuring equality before the law and access to justice. The Constitution is the most fundamental law in Singapore and all other laws must not conflict with it. The Attorney-General brings public prosecutions independently and without influence from any of the three branches of the state. IMDA, PDPC, and MAS operate through standing national regulatory institutions with published mandates across infocomm and media regulation, personal data protection, and financial supervision. Singapore Statutes Online publishes the Constitution of the Republic of Singapore through the Legislation Division of the Attorney-General's Chambers.</p>
+
+        <hr class="section-divider">
+
+        <h3>Summary evidence statement</h3>
+        <p>Singapore's evidence layer documents a city-state digital-governance environment carried by the National AI Strategy and National AI Strategy 2.0, the Model AI Governance Framework, A.I. Verify, the AI Verify Foundation, the generative AI governance consultation layer, the PDPA, PDPC enforcement and AI guidance, the Payment Services Act licensing perimeter, MAS AML/CFT supervision for digital payment token services, the stablecoin reserve and redemption framework, the Financial Services and Markets Act token-services regime, Project Guardian, Smart Nation, GovTech, the Digital Connectivity Blueprint, the Green DC Roadmap, IMDA telecom licensing, the FBO and SBO regulatory distinction, SGIX exchange-layer infrastructure, submarine cable landing expansion planning, SS 715:2025, natural-gas-based electricity dependence, land-constrained renewable deployment limits, DEPA participation, the Korea–Singapore Digital Partnership Agreement, the ASEAN Working Group on AI Governance chair role, ASEAN Guide on AI Governance leadership, the IMDA–NIST interoperability crosswalk, constitutional separation-of-powers, Judiciary independence, Attorney-General prosecutorial independence, and standing IMDA, PDPC, and MAS statutory authority.</p>
+
+        <div class="meta-line">Evidence completeness status: Phase 1 Global Country Package <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: evidence.md</div>
+      </section>
+
+      <!-- 4. Signals -->
+      <section id="signals">
+        <h2><span class="num">4.</span>Signals Summary</h2>
+
+        <p><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code> and that absence of signals reflects absence of normalized documentary coverage.</p>
+
+        <p><strong>Method.</strong> The signals layer records that these signals are derived only from the evidence recorded in <code>evidence.md</code>. The signals layer does not assign routing role, corridor membership, readiness tier, interoperability posture, trust ranking, topology placement, or comparative status.</p>
+
+        <h3>AI governance signals</h3>
+        <p>The signals layer reflects a nationally coordinated AI governance posture through the National AI Strategy and National AI Strategy 2.0, linking state adoption priorities with operational deployment across government agencies. The Model AI Governance Framework and A.I. Verify together reflect a formal governance-and-testing layer that translates AI governance principles into assessable implementation practice. The AI Verify Foundation reflects a global participation surface extending testing and assurance work through an open-source institutional community. The generative AI governance consultation layer reflects iterative expansion of the same IMDA-led framework environment rather than a separate regime. PDPC guidance on AI recommendation and decision systems reflects AI deployment transparency obligations anchored to existing personal-data governance structures. The IMDA–NIST interoperability mapping reflects an outward-facing AI governance posture oriented toward framework crosswalks and practical interoperability.</p>
+
+        <h3>Privacy governance signals</h3>
+        <p>The signals layer reflects a national privacy governance architecture through the PDPA and PDPC, with a standing statutory framework for collection, use, disclosure, and care of personal data. PDPC's institutional placement within IMDA reflects privacy governance continuity inside Singapore's wider digital-governance administration rather than as a detached standalone authority. Cross-border transfer requirements for comparable protection reflect a controlled trusted-data-flow posture rather than unrestricted offshore data movement. PDPC's AI-related guidance reflects institutional integration between privacy governance and AI deployment transparency where personal data is used in recommendation, prediction, and decision systems.</p>
+
+        <h3>Digital asset oversight signals</h3>
+        <p>The signals layer reflects a unified MAS supervisory surface for digital-asset and fintech oversight through the Payment Services Act licensing and payment-system oversight framework. The expanded regulated-payment-services perimeter reflects closer supervision of digital payment token custody, transmission, exchange facilitation, and related cross-border activities. MAS Notice PS-N02 and related AML/CFT guidance reflect a standing anti-money-laundering supervisory layer for digital payment token service providers. The stablecoin framework reflects a reserve, capital, disclosure, and redemption-at-par control structure for qualifying single-currency stablecoins issued in Singapore. The Financial Services and Markets Act 2022 token-services regime reflects extraterritorial supervisory reach over Singapore-established or incorporated digital token service providers serving outside-Singapore activity. Project Guardian reflects a regulated tokenisation experimentation layer tied to market-infrastructure testing rather than speculative digital-asset promotion.</p>
+
+        <h3>Compute infrastructure signals</h3>
+        <p>The signals layer reflects whole-of-government digital coordination at national scale through Smart Nation despite Singapore's city-state form. GovTech reflects a central implementation layer linking digital public-service delivery, government technology operations, and official data-and-AI adoption. The Digital Connectivity Blueprint reflects planned national coordination for high-capacity domestic connectivity, resilience, security, and digital-utility expansion. The Green DC Roadmap reflects data-centre growth managed as governed national infrastructure rather than left to unmanaged market concentration. The combined Smart Nation, GovTech, Blueprint, and Green DC evidence reflects a compute environment defined by coordination density, infrastructure planning, and state-visible digital operations continuity.</p>
+
+        <h3>Telecom and interconnection signals</h3>
+        <p>The signals layer reflects direct regulatory visibility over both telecommunications infrastructure and service-layer operations through IMDA's telecom licensing structure. The FBO and SBO distinction reflects a differentiated regulatory architecture between facilities deployment and services provision. The Digital Connectivity Blueprint target to double submarine cable landing capacity reflects continued international-connectivity expansion through planned landing concentration. IMDA's submarine cable permitting guidance reflects active state coordination over cable deployment and repair rather than purely passive landing activity. SGIX reflects open, neutral exchange-layer continuity across Singapore's major data-centre environment. The combined licensing, cable, and SGIX evidence reflects Singapore's role as a dense interconnection node within Indo-Pacific telecom and routing continuity.</p>
+
+        <h3>Energy and hosting constraint signals</h3>
+        <p>The signals layer reflects compute-hosting growth conditioned by sustainability governance through the Green DC Roadmap rather than unconstrained infrastructure expansion. SS 715:2025 reflects a tropical-climate efficiency framework tailored to higher-temperature and more energy-efficient data-centre operation. Electricity dependence on imported natural gas reflects an externally sensitive power basis for digital infrastructure and hosting growth. Land scarcity, cloud cover, humidity, and the lack of large domestic renewable options reflect structural limits on local energy expansion for compute hosting. The combined evidence reflects an energy-constrained hosting environment in which efficiency standards and managed growth are integral to infrastructure continuity.</p>
+
+        <h3>International governance participation signals</h3>
+        <p>The signals layer reflects formal commitment to interoperable digital-trade and trusted-data-flow arrangements through DEPA participation. The Korea–Singapore Digital Partnership Agreement reflects bilateral digital-governance continuity with another major Indo-Pacific technology jurisdiction. Singapore's chair role in the ASEAN Working Group on AI Governance reflects direct regional coordination authority within ASEAN's AI governance development. IMDA's leadership in developing the ASEAN Guide on AI Governance and Ethics reflects agenda-shaping participation in regional governance framing. The IMDA–NIST interoperability mapping reflects practical cross-framework coordination with external AI governance environments.</p>
+
+        <h3>Institutional stability signals</h3>
+        <p>The signals layer reflects formal state continuity across the Judiciary, Executive, and Legislature through Singapore's constitutional separation-of-powers structure. The Judiciary's stated impartial role and constitutional supremacy reflect a stable rule-of-law environment for digital and financial governance administration. The Attorney-General's prosecutorial independence reflects an additional institutional boundary against direct political interference in public prosecutions. IMDA, PDPC, and MAS together reflect durable regulatory continuity across infocomm and media governance, personal-data protection, and financial supervision.</p>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>Singapore's signals layer reflects a nationally coordinated AI governance and assurance-testing environment, controlled trusted-data-flow privacy administration through PDPA and PDPC, structured tokenisation supervision through MAS, centrally coordinated compute infrastructure through Smart Nation, GovTech, the Digital Connectivity Blueprint, and the Green DC Roadmap, dense exchange-layer routing continuity through IMDA telecom licensing, SGIX, and submarine cable landing expansion, energy-constrained hosting governed through SS 715:2025 and the Green DC Roadmap, regional and bilateral digital-governance participation through DEPA, the Korea–Singapore Digital Partnership Agreement, the ASEAN Working Group on AI Governance, the ASEAN Guide on AI Governance, and the IMDA–NIST interoperability crosswalk, and a stable administrative regulatory environment supported by constitutional separation-of-powers, Judiciary independence, and standing IMDA, PDPC, and MAS authority.</p>
+
+        <div class="meta-line">Signal completeness status: Phase 1 Global Country Package <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: signals.md</div>
+      </section>
+
+      <!-- 5. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">5.</span>Trust Dimensions Summary</h2>
+
+        <p><strong>Derivation constraint.</strong> The trust-dimensions layer records that dimensions derive strictly from <code>signals.md</code> and that absence of signals reflects absence of normalized signal-layer coverage.</p>
+
+        <p><strong>Method.</strong> The trust-dimensions layer evaluates stability characteristics only, using only structures documented in <code>evidence.md</code> and <code>signals.md</code>. The trust-dimensions layer records that it does not assign routing role, coordination tier, Atlas surface, national significance, or leadership position.</p>
+
+        <h3>AI governance reliability</h3>
+        <p>The trust-dimensions layer records continuity in nationally coordinated AI governance through the National AI Strategy and National AI Strategy 2.0 rather than isolated agency-level experimentation. The Model AI Governance Framework and A.I. Verify support a reliable governance-testing structure in which stated AI principles are paired with operational testing and assurance tooling. The AI Verify Foundation supports continuity between domestic governance infrastructure and external participation in AI assurance development. The generative AI governance consultation layer supports structured extension of the same governance architecture rather than abrupt policy discontinuity. PDPC guidance linking AI recommendation and decision systems to personal-data transparency obligations supports dependable overlap between AI governance and data governance. The IMDA–NIST interoperability mapping supports Singapore's role as a framework-testing and governance-export environment supporting interoperable AI assurance structures.</p>
+
+        <h3>Privacy and data governance reliability</h3>
+        <p>The trust-dimensions layer records that the PDPA provides a stable statutory basis for Singapore's privacy architecture and that PDPC's enforcement and administrative role supports continuity in privacy-governance execution. PDPC's placement within IMDA supports integration between privacy administration and Singapore's wider digital-governance environment. Cross-border transfer safeguards requiring comparable protection support a controlled trusted-data-flow posture. The linkage between PDPC AI guidance and transparency obligations supports integrated privacy and AI governance alignment. Taken together, the evidence supports Singapore as a controlled trusted-data-flow jurisdiction with integrated privacy and AI governance alignment.</p>
+
+        <h3>Digital asset supervision reliability</h3>
+        <p>The trust-dimensions layer records that the Payment Services Act establishes a clear licensing and supervisory perimeter for payment and digital-token activity. MAS AML/CFT controls for DPT service providers support reliable supervisory continuity rather than ad hoc enforcement. The stablecoin framework supports structured reserve, disclosure, capital, and redemption safeguards for qualifying Singapore-issued stablecoins. The Financial Services and Markets Act token-services regime supports continuity of supervision for Singapore-established or incorporated firms serving outside-Singapore activity. Project Guardian supports a regulated tokenisation experimentation environment linked to market infrastructure and policy-visible supervisory engagement. Taken together, the evidence supports Singapore as a structured tokenisation-regulation jurisdiction with supervisory continuity rather than permissive digital-asset positioning.</p>
+
+        <h3>Compute infrastructure coordination reliability</h3>
+        <p>The trust-dimensions layer records that Smart Nation supports nationally coordinated digital transformation across the public sector, GovTech supports a dependable implementation layer for digital public-service delivery and government data-and-AI operations, the Digital Connectivity Blueprint supports policy-visible coordination of connectivity, resilience, security, and infrastructure scaling, and the Green DC Roadmap supports managed expansion of data-centre capacity through explicit governance rather than unmanaged infrastructure growth. The combined evidence supports Singapore as a centrally coordinated digital infrastructure environment with policy-visible compute expansion governance.</p>
+
+        <h3>Telecom and interconnection reliability</h3>
+        <p>The trust-dimensions layer records that IMDA's telecom licensing structure supports direct regulatory continuity across telecommunications infrastructure and service operations, and that the FBO and SBO distinction supports a stable separation between facilities-layer regulation and service-layer regulation. The submarine cable landing expansion framework supports planned international-connectivity growth through state-visible coordination. IMDA's cable deployment and repair permitting framework supports continuity in infrastructure oversight. SGIX's open and neutral exchange structure supports dependable exchange-layer interconnection continuity. Taken together, the evidence supports Singapore as a dense routing-continuity interconnection node within Indo-Pacific infrastructure topology.</p>
+
+        <h3>Energy and hosting sustainability reliability</h3>
+        <p>The trust-dimensions layer records that the Green DC Roadmap supports a managed-growth approach to compute hosting under sustainability constraints and that SS 715:2025 supports a practical efficiency framework tailored to tropical-climate data-centre operation. Dependence on electricity generated largely from imported natural gas supports a realistic assessment of external energy sensitivity within the hosting environment. Land limits, cloud cover, humidity, and constrained renewable expansion support a structurally bounded hosting model rather than unconstrained scale-out. Taken together, the evidence supports Singapore as an energy-constrained compute-hosting jurisdiction governed through efficiency standards and managed infrastructure growth.</p>
+
+        <h3>International digital governance coordination reliability</h3>
+        <p>The trust-dimensions layer records that DEPA participation supports reliable attachment to formal digital-trade and trusted-data-flow coordination structures, that the Korea–Singapore Digital Partnership Agreement supports bilateral digital-governance continuity with another Indo-Pacific technology jurisdiction, that Singapore's chair role in the ASEAN Working Group on AI Governance supports direct regional coordination reliability in AI governance development, that IMDA's leadership in the ASEAN Guide on AI Governance and Ethics supports continued participation in regional governance framing, and that the IMDA–NIST interoperability mapping supports practical governance interoperability with external framework environments. Taken together, the evidence supports Singapore as a regional governance coordination and interoperability-export jurisdiction.</p>
+
+        <h3>Institutional stability reliability</h3>
+        <p>The trust-dimensions layer records that the constitutional separation-of-powers structure supports formal continuity across Singapore's core state institutions, that the Judiciary's stated impartial role and constitutional supremacy support stable legal administration, that the Attorney-General's prosecutorial independence supports institutional separation in enforcement practice, and that IMDA, PDPC, and MAS together support durable statutory authority continuity across digital governance, privacy governance, and financial supervision. Taken together, the evidence supports Singapore as a stable administrative regulatory environment supporting digital-governance execution continuity.</p>
+
+        <hr class="section-divider">
+
+        <h3>Trust profile summary</h3>
+        <p>Singapore's trust-dimension profile appears as a centrally coordinated and institutionally distributed structure spanning National AI Strategy and Model AI Governance Framework continuity, A.I. Verify and AI Verify Foundation assurance tooling, PDPA and PDPC privacy enforcement, Payment Services Act licensing, MAS AML/CFT and stablecoin supervision, Financial Services and Markets Act token-services continuity, Project Guardian tokenisation experimentation, Smart Nation and GovTech digital coordination, the Digital Connectivity Blueprint, the Green DC Roadmap, IMDA telecom licensing, FBO and SBO regulatory distinction, SGIX exchange-layer continuity, submarine cable landing expansion planning, SS 715:2025 efficiency framework, DEPA and Korea–Singapore Digital Partnership Agreement participation, ASEAN AI governance leadership, IMDA–NIST interoperability mapping, and constitutionally anchored institutional stability, without assigning readiness, ranking, routing, corridor meaning, or topology placement.</p>
+
+        <div class="meta-line">Trust completeness status: Phase 1 Global Country Package <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: trust-dimensions.md</div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile Summary</h2>
+
+        <p><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. The profile layer remains structural and non-comparative.</p>
+
+        <p><strong>Overview.</strong> Singapore appears in the Atlas normalization layers as a sovereign city-state jurisdiction supporting Indo-Pacific digital-governance interoperability through coordinated AI assurance frameworks, trusted cross-border data regulation, tokenisation supervision continuity, submarine cable landing density, and exchange-layer routing infrastructure. Within the Indo-Pacific Digital Governance &amp; Interconnection Corridor, the canonical package positions Singapore as a regional governance coordination hub, exchange-layer routing continuity node, structured tokenisation-regulation experimentation jurisdiction, controlled trusted-data-flow regulatory environment, and energy-constrained compute-hosting density environment. This profile is carried by the Smart Nation coordination environment, IMDA's digital-governance architecture, MAS financial supervision continuity, PDPC privacy enforcement structure, and Singapore's ASEAN AI governance leadership role.</p>
+
+        <h3>AI governance environment</h3>
+        <p>The profile layer records that Singapore's AI governance environment is organized through the National AI Strategy, National AI Strategy 2.0, the Model AI Governance Framework, A.I. Verify, the AI Verify Foundation, and the generative AI governance consultation layer. These layers combine nationally coordinated AI adoption with a formal governance-testing structure in which assurance tooling and framework development remain institutionally linked. The IMDA–NIST interoperability mapping and Singapore's ASEAN AI governance leadership role further position the jurisdiction as a framework-testing and governance-export environment supporting interoperable assurance-layer development.</p>
+
+        <h3>Privacy and data governance environment</h3>
+        <p>The profile layer records that Singapore's privacy and data governance environment is anchored in the PDPA and administered through PDPC within IMDA's wider digital-governance structure. The normalized layers record continuity in statutory privacy governance, enforcement authority, and integration between privacy administration and AI transparency obligations where personal data is used in recommendation, prediction, and decision systems. Cross-border transfer safeguards requiring comparable protection support Singapore's role as a controlled trusted-data-flow jurisdiction within Indo-Pacific digital governance environments.</p>
+
+        <h3>Digital asset and tokenisation supervision environment</h3>
+        <p>The profile layer records that Singapore's digital asset and tokenisation supervision environment is structured through the Payment Services Act licensing perimeter, MAS AML/CFT supervision for digital payment token services, the stablecoin reserve and redemption framework, the Financial Services and Markets Act token-services regime, and Project Guardian's market-infrastructure experimentation surface. The combined profile is one of supervisory continuity, explicit licensing and control structures, and policy-visible tokenisation testing rather than permissive digital-asset treatment. Singapore therefore appears as a structured tokenisation-regulation jurisdiction supporting policy-visible market infrastructure experimentation.</p>
+
+        <h3>Compute infrastructure environment</h3>
+        <p>The profile layer records that Singapore's compute infrastructure environment is coordinated through Smart Nation, GovTech's implementation layer, the Digital Connectivity Blueprint, and the Green DC Roadmap. These layers indicate centrally visible digital infrastructure planning across public-service delivery, government data-and-AI operations, connectivity resilience, and managed data-centre expansion. The resulting profile is a centrally coordinated digital infrastructure jurisdiction supporting managed compute-hosting expansion under sustainability governance frameworks.</p>
+
+        <h3>Telecommunications and interconnection environment</h3>
+        <p>The profile layer records that Singapore's telecommunications and interconnection environment is shaped by IMDA's telecom licensing structure, the FBO and SBO regulatory distinction, SGIX's open and neutral exchange-layer role, and a submarine cable landing expansion framework tied to the Digital Connectivity Blueprint. Together these layers support direct regulatory visibility across facilities, services, cable deployment, and interconnection continuity. The normalized profile records Singapore as a dense Indo-Pacific routing-continuity interconnection node.</p>
+
+        <h3>Energy and infrastructure constraints</h3>
+        <p>The profile layer records that Singapore's energy and infrastructure constraints are defined by electricity dependence linked largely to imported natural gas, land-constrained renewable deployment limits, SS 715:2025 as a tropical efficiency framework, and the Green DC Roadmap's sustainability-governed expansion model. These layers support a compute-hosting environment shaped by explicit efficiency standards, externally sensitive power conditions, and managed scaling rather than unconstrained infrastructure growth. Singapore therefore appears as an energy-constrained compute-hosting jurisdiction governed through efficiency standards and managed infrastructure scaling.</p>
+
+        <h3>International governance participation</h3>
+        <p>The profile layer records that Singapore's international governance participation is carried by DEPA participation, the Korea–Singapore Digital Partnership Agreement, the chair role in the ASEAN Working Group on AI Governance, leadership in the ASEAN Guide on AI Governance and Ethics, and IMDA–NIST interoperability mapping. These layers indicate direct participation in regional and cross-framework digital-governance coordination through agreements, governance-development roles, and interoperability work. The resulting profile is that of a regional governance coordination and interoperability-export jurisdiction within Southeast Asia and the wider Indo-Pacific corridor environment.</p>
+
+        <h3>Institutional stability</h3>
+        <p>The profile layer records that Singapore's institutional stability is anchored in a constitutional separation-of-powers structure, a Judiciary described as impartial and constitutionally bounded, Attorney-General prosecutorial independence, and continuing statutory authority across IMDA, PDPC, and MAS. These layers support continuity in legal administration, regulatory execution, and supervision across digital governance, privacy governance, and financial oversight. Singapore therefore appears as a stable administrative regulatory environment supporting digital-governance execution continuity.</p>
+
+        <div class="meta-line">Profile completeness status: Phase 1 Global Country Package <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: profile.md</div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode Summary</h2>
+
+        <p><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from normalized jurisdiction layers.</p>
+
+        <p><strong>Scope.</strong> Builder-mode describes coordination affordances only and does not assign deployment suitability, rankings, readiness scores, corridor alignment beyond the documented metadata layer, comparative interpretation, or deployment recommendations.</p>
+
+        <h3>Builder interaction model</h3>
+        <p>The builder-mode layer records that Singapore's jurisdiction package supports builder interpretation as an Indo-Pacific digital-governance coordination hub jurisdiction with dense submarine cable landing concentration, exchange-layer routing continuity infrastructure, structured tokenisation supervision architecture, and sustainability-governed compute-hosting expansion constrained by land and energy conditions. Builder-mode logic treats Singapore through coordination density, interoperability continuity, regulatory execution stability, and infrastructure constraint parameters rather than territorial scale.</p>
+
+        <h3>Corridor placement logic</h3>
+        <p>The builder-mode layer records that Singapore belongs to the Indo-Pacific Digital Governance &amp; Interconnection Corridor. Placement derives from the Model AI Governance Framework, A.I. Verify governance-testing infrastructure, ASEAN Working Group on AI Governance chair role, ASEAN Guide on AI Governance leadership, DEPA participation, Korea–Singapore Digital Partnership Agreement continuity, IMDA–NIST interoperability mapping, SGIX exchange-layer neutrality, Digital Connectivity Blueprint coordination, submarine cable landing expansion planning, and MAS tokenisation supervisory architecture. Builder-mode does not support alternate corridor placement.</p>
+
+        <h3>Corridor role interpretation</h3>
+        <p>The builder-mode layer records that Singapore functions as a regional governance coordination hub, an exchange-layer routing continuity node, a structured tokenisation-regulation experimentation jurisdiction, a controlled trusted-data-flow regulatory environment, and an energy-constrained compute-hosting density environment. Builder-mode does not support classification as a semiconductor fabrication anchor jurisdiction, hyperscale energy-export compute corridor jurisdiction, Five Eyes governance corridor jurisdiction, or supranational regulatory bloc jurisdiction.</p>
+
+        <h3>Governance export semantics</h3>
+        <p>The builder-mode layer records that Singapore supports ASEAN AI governance coordination through documented regional leadership roles, regional framework-development leadership through the ASEAN Guide on AI Governance and Ethics and the ASEAN Working Group on AI Governance chair role, trusted-data-flow regulatory interoperability through PDPA continuity, PDPC administration, and comparable-protection transfer safeguards, tokenisation supervisory experimentation through MAS licensing, AML/CFT controls, stablecoin safeguards, the Financial Services and Markets Act token-services regime, and Project Guardian, and cross-framework assurance-layer mapping through IMDA–NIST interoperability work. Builder-mode interprets Singapore as a framework-testing and governance-export jurisdiction and does not support interpretation of Singapore as a treaty-bloc authority center.</p>
+
+        <h3>Exchange-layer routing density logic</h3>
+        <p>The builder-mode layer records that SGIX exchange-layer neutrality provides a visible interconnection anchor inside Singapore's routing environment, that submarine cable landing expansion planning provides continuity for additional international connectivity concentration, that IMDA's telecom licensing structure provides direct regulatory visibility across telecommunications infrastructure and services, that the FBO and SBO distinction provides structural separation between facilities-layer and service-layer participation, and that the Digital Connectivity Blueprint provides policy-visible connectivity scaling targets. Builder-mode interprets Singapore as a dense Indo-Pacific routing continuity node supporting regional interconnection resilience and does not support interpreting routing density as continental infrastructure autonomy.</p>
+
+        <h3>Tokenisation supervision interpretation</h3>
+        <p>The builder-mode layer records that the Payment Services Act provides the licensing perimeter for payment and digital-token activity, that MAS AML/CFT controls provide supervisory continuity for digital payment token service providers, that stablecoin reserve, disclosure, capital, and redemption safeguards provide a structured supervisory treatment for qualifying Singapore-issued stablecoins, that the Financial Services and Markets Act token-services regime extends supervisory continuity to Singapore-established or incorporated firms serving outside-Singapore activity, and that Project Guardian provides policy-visible tokenisation experimentation infrastructure tied to market-infrastructure testing. Builder-mode interprets Singapore as supporting policy-visible tokenisation experimentation under structured supervisory continuity and does not support interpretation of Singapore as a permissive digital-asset jurisdiction.</p>
+
+        <h3>Compute infrastructure scaling logic</h3>
+        <p>The builder-mode layer records that Smart Nation provides the whole-of-government coordination frame for digital transformation, GovTech provides the implementation layer for digital public services and government data-and-AI operations, the Digital Connectivity Blueprint provides policy-visible infrastructure scaling, resilience, and security coordination, and the Green DC Roadmap provides a managed expansion model for data-centre growth. Builder-mode interprets Singapore as supporting centrally coordinated compute infrastructure expansion within sustainability-governed policy frameworks and does not support interpretation of Singapore as a hyperscale compute-export jurisdiction.</p>
+
+        <h3>Energy constraint interpretation</h3>
+        <p>The builder-mode layer records that electricity dependence linked largely to imported natural gas provides an externally sensitive power basis for compute hosting, that land-constrained renewable deployment limits provide a bounded domestic energy-expansion envelope, that SS 715:2025 provides a tropical-climate efficiency framework for higher-temperature and more energy-efficient data-centre operation, and that the Green DC Roadmap provides a managed expansion model under sustainability governance. Builder-mode interprets Singapore as an energy-constrained compute-hosting environment governed through efficiency standards and managed scaling policies, does not interpret these constraints as infrastructure weakness, and interprets these constraints as topology parameters.</p>
+
+        <h3>ASEAN governance coordination logic</h3>
+        <p>The builder-mode layer records that the ASEAN Working Group on AI Governance chair role provides a direct regional coordination anchor, that leadership in the ASEAN Guide on AI Governance and Ethics provides framework-development continuity, that DEPA participation and the Korea–Singapore Digital Partnership Agreement provide outward-facing digital-governance interoperability attachment beyond domestic regulation alone, and that IMDA–NIST interoperability mapping provides practical cross-framework coordination evidence. Builder-mode interprets Singapore as a Southeast Asian governance coordination node supporting regional interoperability continuity and does not support generalized ASEAN participation claims beyond the documented leadership roles.</p>
+
+        <h3>Adjacency surface logic</h3>
+        <p>The builder-mode layer records that Singapore maintains interoperability adjacency continuity with Japan, South Korea, Australia, India, ASEAN governance-layer environments, DEPA partner jurisdictions, and NIST-aligned AI governance environments. Adjacency reflects framework interoperability only. Builder-mode does not support inference of alliance structures or semiconductor supply-chain anchoring.</p>
+
+        <h3>Institutional stability logic</h3>
+        <p>The builder-mode layer records that the constitutional separation-of-powers structure provides formal state continuity, that Judiciary independence and constitutional supremacy provide legal-administration continuity, that Attorney-General prosecutorial independence provides institutional separation in enforcement practice, that IMDA statutory authority continuity provides digital-governance administrative continuity, that PDPC statutory authority continuity provides privacy-governance administrative continuity, and that MAS statutory authority continuity provides financial-supervision continuity. Builder-mode interprets Singapore as supporting stable execution continuity across digital governance, privacy governance, and financial supervision environments.</p>
+
+        <h3>Structural constraint semantics</h3>
+        <p>The builder-mode layer records that builder-mode preserves an energy-sensitive hosting environment as a standing infrastructure condition, a land-limited infrastructure expansion envelope as a topology parameter, and policy-visible data-centre growth controls through sustainability governance frameworks. These constraints define corridor-balancing behavior within Indo-Pacific infrastructure topology.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder-mode summary</h3>
+        <p>Singapore appears as an Indo-Pacific digital-governance coordination hub builder environment within the Indo-Pacific Digital Governance &amp; Interconnection Corridor. Its builder-mode surface is defined by coordination density, framework-testing and governance-export interoperability, controlled trusted-data-flow regulation, structured tokenisation supervisory continuity, dense exchange-layer routing infrastructure, centrally coordinated compute infrastructure expansion under sustainability governance, energy-constrained hosting parameters, and stable administrative regulatory continuity, without assigning readiness tier, routing role, or topology placement beyond the documented metadata layer.</p>
+
+        <div class="meta-line">Builder completeness status: Phase 1 Global Country Package <span class="sep">·</span> Builder-mode completeness status: Phase 1 Global Country Package <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: builder-mode.md</div>
+      </section>
+
+      <!-- 8. Structural Exclusions -->
+      <section id="structural-exclusions">
+        <h2><span class="num">8.</span>Structural Exclusions</h2>
+
+        <p>Singapore's canonical package explicitly preserves the following neutral exclusions, recorded across <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>profile.md</code>, <code>metadata.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>:</p>
+
+        <ul>
+          <li>rankings</li>
+          <li>startup ecosystem commentary</li>
+          <li>smart-city positioning and smart-city branding</li>
+          <li>investment attractiveness language and investment positioning language</li>
+          <li>geopolitical alignment interpretation</li>
+          <li>forward-looking projections and forward-looking speculation</li>
+          <li>private hyperscaler inventories</li>
+          <li>ASEAN generalizations beyond documented leadership roles</li>
+          <li>policy projections beyond published frameworks</li>
+          <li>political-party commentary</li>
+          <li>venture-capital positioning</li>
+          <li>exhaustive submarine cable inventory</li>
+          <li>private vendor marketing beyond limited infrastructure-location evidence for SGIX</li>
+        </ul>
+
+        <p>The canonical package records that Singapore is not classified as a semiconductor fabrication anchor jurisdiction, a Five Eyes corridor jurisdiction, a continental-scale or hyperscale energy-export compute corridor jurisdiction, or a supranational regulatory bloc jurisdiction. Builder-mode does not support alternate corridor placement, treaty-bloc authority interpretation, continental infrastructure autonomy interpretation, hyperscale compute-export classification, permissive digital-asset interpretation, alliance-structure inference, or semiconductor supply-chain anchoring inference.</p>
+
+        <div class="meta-line">Source: evidence.md · signals.md · trust-dimensions.md · profile.md · metadata.md · builder-mode.md · change-log.md — Structural Exclusions</div>
+      </section>
+
+      <!-- 9. Evidence Gaps -->
+      <section id="evidence-gaps">
+        <h2><span class="num">9.</span>Evidence Gaps</h2>
+
+        <p>The canonical package records the following structural absences for Singapore, carried forward across all normalization layers as documented exclusions rather than inferred gaps:</p>
+
+        <ul>
+          <li>Rankings and smart-city score treatment are not within the normalized scope of the Singapore package.</li>
+          <li>Startup or venture ecosystem commentary is not within the normalized scope of the Singapore package.</li>
+          <li>Speculative AI policy projection beyond published frameworks and implemented regulatory measures is not within the normalized scope of the Singapore package.</li>
+          <li>Private vendor marketing beyond limited infrastructure-location evidence for SGIX is not within the normalized scope of the Singapore package.</li>
+          <li>Exhaustive submarine cable inventory is not within the normalized scope of the Singapore package.</li>
+          <li>Broad ASEAN commentary beyond Singapore's documented participation is not within the normalized scope of the Singapore package.</li>
+          <li>Geopolitical alignment interpretation, investment positioning language, and forward-looking projections are not within the normalized scope of the Singapore package.</li>
+          <li>Private hyperscaler inventories are not within the normalized scope of the Singapore package.</li>
+        </ul>
+
+        <p>The canonical package records gap inheritance: <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>metadata.md</code>, and <code>change-log.md</code> inherit these documented absences without expansion as structural non-signals, non-dimensions, and non-surfaces.</p>
+
+        <div class="meta-line">Source: evidence.md · signals.md · trust-dimensions.md · profile.md · metadata.md · builder-mode.md · change-log.md — Structural Exclusions</div>
+      </section>
+
+      <!-- 10. Change-Log Notes -->
+      <section id="change-log">
+        <h2><span class="num">10.</span>Change-Log Notes &amp; Normalization Notes</h2>
+
+        <h3>Normalization scope</h3>
+        <p>The change-log records that Singapore was normalized as a sovereign city-state jurisdiction supporting Indo-Pacific digital-governance interoperability through coordinated AI assurance frameworks, trusted cross-border data regulation, tokenisation supervision continuity, submarine cable landing concentration, exchange-layer routing infrastructure, and sustainability-governed compute-hosting expansion constrained by land and energy conditions. Normalization treated Singapore through coordination density rather than territorial scale.</p>
+
+        <h3>Normalization sequence</h3>
+        <p>The change-log records the canonical Atlas normalization progression for the Singapore jurisdiction package as <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>change-log.md</code>. This sequence was preserved as the package construction order for the normalized Singapore layers.</p>
+
+        <h3>Corridor placement confirmation</h3>
+        <p>The change-log records that Singapore is confirmed within the Indo-Pacific Digital Governance &amp; Interconnection Corridor. Placement derives from Model AI Governance Framework deployment, A.I. Verify governance-testing infrastructure, the ASEAN Working Group on AI Governance chair role, ASEAN Guide on AI Governance leadership, Digital Economy Partnership Agreement participation, Korea–Singapore Digital Partnership Agreement continuity, IMDA–NIST interoperability mapping, SGIX exchange-layer neutrality, Digital Connectivity Blueprint infrastructure coordination, the submarine cable landing expansion framework, and MAS tokenisation supervisory architecture. Normalization does not support alternate corridor assignment.</p>
+
+        <h3>Corridor role classification confirmation</h3>
+        <p>The change-log records that Singapore is classified as a regional governance coordination hub, an exchange-layer routing continuity node, a structured tokenisation-regulation experimentation jurisdiction, a controlled trusted-data-flow regulatory environment, and an energy-constrained compute-hosting density environment. Normalization does not support classification as a semiconductor fabrication anchor jurisdiction, a hyperscale energy-export compute corridor jurisdiction, a Five Eyes governance corridor jurisdiction, or a supranational regulatory bloc jurisdiction.</p>
+
+        <h3>Governance export interpretation confirmation</h3>
+        <p>The change-log records that Singapore is recorded as a framework-testing and governance-export jurisdiction. This interpretation is supported by the ASEAN Working Group on AI Governance chair role, ASEAN Guide on AI Governance leadership, PDPA cross-border transfer safeguards, MAS tokenisation supervision architecture, and IMDA–NIST interoperability mapping. Normalization does not interpret Singapore as a treaty-bloc authority center.</p>
+
+        <h3>Exchange-layer routing density interpretation confirmation</h3>
+        <p>The change-log records that routing-density classification derives from SGIX exchange-layer neutrality, submarine cable landing expansion planning, IMDA telecom licensing structure, the FBO / SBO regulatory distinction, and Digital Connectivity Blueprint connectivity scaling targets. Normalization records Singapore as a dense Indo-Pacific routing continuity node. Routing-density classification does not imply continental infrastructure autonomy.</p>
+
+        <h3>Tokenisation supervision interpretation confirmation</h3>
+        <p>The change-log records that supervisory continuity derives from the Payment Services Act licensing perimeter, MAS AML/CFT DPT supervision, stablecoin reserve and redemption safeguards, the Financial Services and Markets Act token-services regime, and Project Guardian experimentation infrastructure. Normalization records Singapore as supporting policy-visible tokenisation experimentation under structured supervisory continuity. Normalization does not interpret Singapore as a permissive digital-asset jurisdiction.</p>
+
+        <h3>Compute infrastructure scaling interpretation confirmation</h3>
+        <p>The change-log records that infrastructure coordination derives from the Smart Nation programme, the GovTech implementation layer, the Digital Connectivity Blueprint, and the Green DC Roadmap. Normalization records Singapore as supporting centrally coordinated compute infrastructure expansion within sustainability-governed policy frameworks. Normalization does not interpret Singapore as a hyperscale compute-export jurisdiction.</p>
+
+        <h3>Energy constraint interpretation confirmation</h3>
+        <p>The change-log records that infrastructure scaling limits derive from natural-gas-based electricity dependence, land-constrained renewable deployment limits, the SS 715:2025 tropical efficiency framework, and the Green DC Roadmap managed expansion model. Normalization interprets these constraints as topology parameters rather than infrastructure weakness.</p>
+
+        <h3>ASEAN governance coordination interpretation confirmation</h3>
+        <p>The change-log records that the coordination role derives from the ASEAN Working Group on AI Governance chair role, ASEAN Guide on AI Governance leadership, Digital Economy Partnership Agreement participation, Korea–Singapore Digital Partnership Agreement continuity, and IMDA–NIST interoperability mapping. Normalization records Singapore as a Southeast Asian governance coordination node supporting regional interoperability continuity. Normalization does not generalize ASEAN participation beyond documented leadership roles.</p>
+
+        <h3>Adjacency surface confirmation</h3>
+        <p>The change-log records that Singapore maintains interoperability adjacency continuity with Japan, South Korea, Australia, India, ASEAN governance-layer environments, DEPA partner jurisdictions, and NIST-aligned AI governance environments. Adjacency reflects framework interoperability only. Normalization does not infer alliance structures or semiconductor supply-chain anchoring.</p>
+
+        <h3>Institutional stability confirmation</h3>
+        <p>The change-log records that administrative continuity derives from the constitutional separation-of-powers structure, Judiciary independence, Attorney-General prosecutorial independence, IMDA statutory authority continuity, PDPC statutory authority continuity, and MAS statutory authority continuity. Normalization records Singapore as a stable administrative regulatory environment supporting digital-governance execution continuity.</p>
+
+        <h3>Structural constraints confirmation</h3>
+        <p>The change-log records that normalization preserves an energy-sensitive hosting environment, a land-limited infrastructure expansion envelope, and policy-visible data-centre growth controls. These constraints define corridor-balancing behavior within Indo-Pacific infrastructure topology.</p>
+
+        <h3>Structural exclusions applied</h3>
+        <p>The change-log records that the Singapore package normalization excluded rankings, startup ecosystem commentary, smart-city positioning, investment attractiveness language, geopolitical alignment interpretation, forward-looking projections, private hyperscaler inventories, and ASEAN generalizations beyond documented leadership roles.</p>
+
+        <h3>Completion confirmation</h3>
+        <p>The change-log records that Singapore jurisdiction package normalization is complete for:</p>
+        <ul>
+          <li><code>jurisdictions/global/countries/singapore/evidence.md</code></li>
+          <li><code>jurisdictions/global/countries/singapore/signals.md</code></li>
+          <li><code>jurisdictions/global/countries/singapore/trust-dimensions.md</code></li>
+          <li><code>jurisdictions/global/countries/singapore/profile.md</code></li>
+          <li><code>jurisdictions/global/countries/singapore/builder-mode.md</code></li>
+          <li><code>jurisdictions/global/countries/singapore/metadata.md</code></li>
+          <li><code>jurisdictions/global/countries/singapore/change-log.md</code></li>
+        </ul>
+
+        <h3>Change-log summary</h3>
+        <p>The change-log records that Singapore's jurisdiction package was completed through canonical Atlas normalization as an Indo-Pacific digital-governance coordination hub jurisdiction with framework-testing and governance-export characteristics, controlled trusted-data-flow regulation, structured tokenisation supervision continuity, dense exchange-layer routing infrastructure, centrally coordinated compute expansion governance, energy-constrained hosting parameters, and stable administrative regulatory continuity, while preserving explicit exclusions against alternate corridor assignment, permissive digital-asset interpretation, continental infrastructure autonomy, hyperscale compute-export classification, treaty-bloc authority treatment, alliance inference, semiconductor anchoring inference, and non-documented ASEAN generalization.</p>
+
+        <div class="meta-line">Normalization completion status: complete <span class="sep">·</span> Normalization status: Phase 1 Global Country Package <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: change-log.md</div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Singapore jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/singapore/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Singapore</li>
+          <li><strong>Code:</strong> SG</li>
+          <li><strong>Region:</strong> Indo-Pacific / Southeast Asia</li>
+          <li><strong>Jurisdiction Type:</strong> Sovereign city-state jurisdiction</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor fields</h4>
+        <ul>
+          <li><strong>Corridor Group:</strong> Indo-Pacific Digital Governance &amp; Interconnection Corridor</li>
+          <li><strong>Classification:</strong> Indo-Pacific digital governance coordination hub jurisdiction with dense exchange-layer interconnection infrastructure, structured tokenisation supervision continuity, national AI governance experimentation capability, and energy-constrained compute-hosting expansion conditions.</li>
+          <li><strong>Corridor Role:</strong> Regional governance coordination hub · Exchange-layer routing continuity node · Structured tokenisation-regulation experimentation jurisdiction · Controlled trusted-data-flow regulatory environment · Energy-constrained compute-hosting density environment</li>
+        </ul>
+        <p class="small-note">Structural topology metadata only. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereignty or autonomy claim.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
