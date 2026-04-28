@@ -1,91 +1,635 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>United Arab Emirates | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>United Arab Emirates — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical United Arab Emirates Atlas jurisdiction package rendering. Gulf Digital Finance and Connectivity Corridor.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/united-arab-emirates/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>United Arab Emirates</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">United Arab Emirates</h1>
 
-</article>
-</main>
+  <p class="lede">Multi-Zone Regulatory and Infrastructure-Coordination Environment aligned with the Gulf Digital Finance and Connectivity Corridor. This page renders the canonical United Arab Emirates Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting regulatory layering continuity, CBDC experimentation continuity, sovereign compute coordination continuity, exchange-layer participation continuity, submarine landing continuity, logistics continuity infrastructure, and digital-governance modernization continuity.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>United Arab Emirates (AE)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#topology">1. Topology Metadata</a></li>
+    <li><a href="#scope">2. Scope Boundary</a></li>
+    <li><a href="#evidence">3. Evidence</a></li>
+    <li><a href="#signals">4. Signals</a></li>
+    <li><a href="#trust-dimensions">5. Trust Dimensions</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#corridor-alignment">8. Corridor Alignment</a></li>
+    <li><a href="#structural-exclusions">9. Structural Exclusions</a></li>
+    <li><a href="#evidence-gaps">10. Evidence Gaps</a></li>
+    <li><a href="#change-log">11. Change-Log Notes</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Topology -->
+      <section id="topology">
+        <h2><span class="num">1.</span>Topology Metadata</h2>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Jurisdiction Name</span>
+            <span class="val">United Arab Emirates</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Jurisdiction Type</span>
+            <span class="val">Country</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Gulf Digital Finance and Connectivity Corridor</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Regulatory Structure Type</span>
+            <span class="val">Multi-Zone Financial Regulatory Layering Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">CBDC Status</span>
+            <span class="val">Active Cross-Border and Domestic Settlement Experimentation</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Sovereign Compute Posture</span>
+            <span class="val">National Sovereign Compute Coordination Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Exchange-Layer Classification</span>
+            <span class="val">Regional Exchange-Layer Participation Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Telecommunications Backbone Status</span>
+            <span class="val">Domestic Backbone Continuity with Regional Interconnection Interfaces</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Submarine Cable Landing Status</span>
+            <span class="val">Multi-Route Gulf-Facing Submarine Connectivity Landing Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Logistics Infrastructure Classification</span>
+            <span class="val">Port-Centered Intermodal Logistics Continuity Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Digital Governance Infrastructure Status</span>
+            <span class="val">Federal Digital Identity and Service Modernization Coordination Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Financial Zone Structure</span>
+            <span class="val">Parallel Free-Zone Financial Governance Environment</span>
+          </div>
+        </div>
+
+        <p><strong>Classification source.</strong> The metadata layer records that this metadata is derived strictly from <code>metadata.md</code>. Canonical <code>metadata.md</code> is the classification authority for the United Arab Emirates package.</p>
+
+        <p><strong>Interpretation boundary.</strong> The metadata layer remains classification-only. It does not assign routing authority, Atlas surfaces, topology completion placement, readiness tiers, jurisdiction rankings, comparative jurisdiction positioning, or deployment suitability.</p>
+
+        <div class="meta-line">Metadata completeness status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: metadata.md</div>
+      </section>
+
+      <!-- 2. Scope -->
+      <section id="scope">
+        <h2><span class="num">2.</span>Scope Boundary Statement</h2>
+
+        <p>The evidence layer records only structural evidence for the United Arab Emirates that is relevant to Atlas normalization within the Gulf Digital Finance and Connectivity Corridor. It documents statutory, institutional, and infrastructure anchors only. It does not assign routing authority, topology class, readiness, deployment suitability, or geopolitical meaning, and it does not infer signals.</p>
+
+        <p>This rendering mirrors the canonical package. It does not introduce analysis, rankings, readiness assessment, national role, leadership positioning, or deployment prescription beyond the canonical files. Surface assignment remains unset. No routing role is assigned.</p>
+
+        <div class="meta-line">Source: evidence.md — Scope</div>
+      </section>
+
+      <!-- 3. Evidence -->
+      <section id="evidence">
+        <h2><span class="num">3.</span>Evidence Summary</h2>
+
+        <p>The evidence layer documents the following for the United Arab Emirates.</p>
+
+        <h3>Digital-asset regulatory structure</h3>
+        <p>The evidence layer records that the United Arab Emirates' digital-asset and payments-regulation surface is distributed across a federal layer and multiple financial-zone authorities. At the federal layer, the Central Bank of the UAE is described as a federal public institution with legal identity and administrative independence and as the supervisory and regulatory authority for the banking and insurance sector, with published licensing categories including stored value facilities, retail payment services, card schemes, large-value payment systems, retail payment systems, monetary intermediary activity, and open finance. Within Abu Dhabi Global Market, the Financial Services Regulatory Authority documents a financial-services licensing process, publishes authorisation forms, and maintains a public register as the official record of approved firms, individuals, securities, funds, and related bodies. ADGM's digital-asset materials further document a specific regulatory framework for virtual-asset activity, including accepted-virtual-asset assessment, capital requirements, and fees for authorised persons conducting regulated activities involving virtual assets. The Virtual Assets Regulatory Authority states that it regulates and oversees the provision, use, and exchange of virtual assets in and from the Emirate of Dubai; VARA's rulebook for Law No. 4 of 2022 records that VARA is the sole authority regulating virtual assets across Dubai's free zones and mainland except within the jurisdiction of the Dubai International Financial Centre. DIFC publishes its own legal database of DIFC laws, DIFC regulations, amendment laws, enactment notices, federal laws, and Dubai laws, and its digital-assets operating materials describe a DFSA-led approval and licensing pathway for financial entities carrying on crypto-token activity from within the centre. Together, these materials document a layered regulatory environment in which federal payments oversight, ADGM financial regulation, VARA's Dubai virtual-asset regime, and DIFC's separate legal-regulatory structure coexist without collapsing into a single national licensing channel.</p>
+
+        <h3>Central bank digital currency experimentation</h3>
+        <p>The evidence layer records that the UAE Government's Digital Dirham page documents central bank digital currency work as part of the Financial Infrastructure Transformation Programme launched by the Central Bank of the UAE. The page records that the CBDC strategy is intended to accelerate the digital transformation of the financial-services sector and describes the first phase as comprising three pillars: the soft launch of mBridge for real-value cross-border CBDC transactions for international trade settlement, proof-of-concept work for bilateral CBDC bridges with India, and proof-of-concept work for domestic CBDC issuance covering wholesale and retail usage. These materials document both cross-border and domestic CBDC experimentation continuity while leaving final issuance trajectory outside the scope of the evidence layer.</p>
+
+        <h3>Financial free-zone governance infrastructure</h3>
+        <p>The evidence layer records that the UAE's financial free-zone governance layer is structurally split between Abu Dhabi Global Market and the Dubai International Financial Centre, alongside federal supervision and Dubai's separate virtual-asset regime outside DIFC. ADGM's FSRA materials describe a legislative and regulatory framework for firms seeking financial-services permissions, supported by formal authorisation forms and a public register maintained as the official record of approved entities and related instruments. DIFC's legal database describes a separate body of centre laws and regulations used to administer the day-to-day operations of firms and individuals registered in DIFC. VARA's governing law expressly excludes DIFC from its Dubai-wide virtual-asset jurisdiction. These materials document financial free-zone coexistence as a multi-layer arrangement rather than a single-zone model, with federal, Abu Dhabi, Dubai, and DIFC governance surfaces operating in parallel within their stated jurisdictional boundaries.</p>
+
+        <h3>National AI and compute infrastructure</h3>
+        <p>The evidence layer records that the UAE's national AI and compute layer is institutionally visible through G42, Core42, Khazna, and MBZUAI. G42 records that Core42 was formed through the merger of G42 Cloud, Inception, and Injazat to deliver national-scale enterprise cloud and AI capabilities. G42 and Core42 materials describe cloud and HPC infrastructure for public-sector and regulated-enterprise workloads, together with sovereign-cloud and managed infrastructure services. Khazna publishes a UAE data-centre footprint with live facilities across the country, multiple ongoing projects, and portfolio-scale power capacity, describing these facilities as physical digital infrastructure with multiple redundancies and continuous availability. MBZUAI describes itself as a university dedicated entirely to the advancement of science through AI, established to educate top talent, support national strategic priorities, and operate as a research and institutional AI anchor in Abu Dhabi. Together, these materials document a national compute and AI institutional stack spanning sovereign-oriented cloud services, data-centre infrastructure, and dedicated AI research capacity.</p>
+
+        <h3>Exchange-layer infrastructure</h3>
+        <p>The evidence layer records that the UAE's exchange-layer infrastructure is documented through UAE-IX. UAE-IX describes itself as a neutral Internet traffic exchange platform that interconnects global networks, network operators, and content providers in the GCC region through a fully redundant switching platform located in Dubai. Its published background materials record that the platform was launched in 2012 by Emirates Integrated Telecommunications Company with support from the UAE telecommunications regulator and is managed in partnership with DE-CIX. These materials document a domestic carrier-neutral exchange surface in Dubai that supports regional interconnection and local traffic exchange without assigning routing-core authority.</p>
+
+        <h3>Telecommunications backbone infrastructure</h3>
+        <p>The evidence layer records that the UAE's telecommunications backbone layer is documented through e& and du infrastructure materials. e& records that it expanded SmartHub facilities in Fujairah and Dubai and describes those facilities as supporting route-independent carriers, direct access to multiple independent subsea cable systems, and connectivity across Europe, the United States, Asia, the Middle East, and Africa. The same SmartHub materials identify diversified power supply, redundant backup systems, and ongoing interconnection capacity for carriers, cloud providers, Internet exchanges, and other network participants. On the domestic fixed-network side, du describes fibre connectivity as an ongoing national expansion surface using fibre-optic infrastructure for stable, high-capacity business connectivity. Together, these materials document two national telecom operators participating in domestic fibre continuity and broader long-haul interconnection infrastructure.</p>
+
+        <h3>Submarine cable connectivity layer</h3>
+        <p>The evidence layer records that the UAE's submarine-cable connectivity layer is documented through official operator materials tied to Kalba and Fujairah landing infrastructure. e& records that it is the designated UAE landing partner for the 2Africa system, with Kalba selected as the gateway for that landing and with the project complementing e&'s existing Fujairah cable landing station. The same release describes 2Africa as an interconnection system across Europe, Asia, and Africa and records e&'s responsibility for landing-station infrastructure and long-term maintenance in the UAE. du's Fujairah materials separately document the landing of the Gulf Bridge International cable at Fujairah, connection into du's landing station, onward connectivity to Europe, Africa, and Asia, and ring-based Gulf configuration intended to add diversity and resilience. Together, these materials document multiple UAE landing points and corridor-facing cable continuity across Gulf, Eurasian, and Africa-linked routes without classifying the country as a global routing authority.</p>
+
+        <h3>Logistics continuity infrastructure</h3>
+        <p>The evidence layer records that the UAE's logistics continuity layer is documented through DP World UAE and Jebel Ali Port. DP World's UAE materials describe a national network of terminals, logistics parks, and supply-chain infrastructure designed to connect business activity to global markets through integrated freight, port, and logistics services. Jebel Ali Port is documented as a deep-water port with multimodal access by sea, air, and land, together with intermodal transport, storage, quayside operations, and value-added cargo handling across multiple cargo types. DP World's location materials also describe the UAE platform as integrated trade infrastructure rather than a single terminal asset. These materials document port, freight, and intermodal continuity infrastructure anchored by Jebel Ali without assigning logistics-hub authority.</p>
+
+        <h3>Digital governance modernization institutions</h3>
+        <p>The evidence layer records that the UAE's digital-governance modernization layer is documented through the federal government platform and TDRA digital-government surfaces. The UAE Government's digital-transformation portal groups national strategies for government services and digital transformation as coordinated federal initiatives. TDRA digital-government materials describe the authority as managing federal entities' digital transformation and publish strategy, service-policy, and maturity-model documents for digital government. The same DGOV surface also publishes UAE PASS as a named service and lists adjacent national digital-enabler services such as FedNet and UAE Verify. Together, these materials document a federal modernization layer that combines central strategy publication, cross-entity digital-governance standards, and a national digital-identity and document-verification surface.</p>
+
+        <hr class="section-divider">
+
+        <h3>Summary evidence statement</h3>
+        <p>The United Arab Emirates' evidence layer documents a multi-zone federal-and-free-zone environment carried by Central Bank of the UAE federal payments supervision, ADGM FSRA financial-services licensing and digital-asset framework administration, VARA's Dubai virtual-asset regime outside DIFC, DIFC's separate legal-regulatory environment, Digital Dirham activity within the Financial Infrastructure Transformation Programme, mBridge cross-border CBDC participation, bilateral CBDC bridge experimentation with India, domestic wholesale and retail CBDC proof-of-concept work, G42 and Core42 national-scale cloud and AI infrastructure, Khazna data-centre footprint, MBZUAI institutional AI research presence, UAE-IX carrier-neutral exchange infrastructure in Dubai, e& SmartHub interconnection in Fujairah and Dubai, du domestic fibre infrastructure, Kalba and Fujairah landing infrastructure, e& 2Africa landing participation, du Gulf Bridge International landing continuity, DP World UAE logistics infrastructure, Jebel Ali Port intermodal freight structure, federal digital-transformation strategy publications, TDRA digital-government coordination, and UAE PASS national identity infrastructure.</p>
+
+        <div class="meta-line">Evidence completeness status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: evidence.md</div>
+      </section>
+
+      <!-- 4. Signals -->
+      <section id="signals">
+        <h2><span class="num">4.</span>Signals Summary</h2>
+
+        <p><strong>Derivation constraint.</strong> The signals layer records that signals derive strictly from <code>evidence.md</code> and remain structural, infrastructure-oriented, and corridor-compatible within the Gulf Digital Finance and Connectivity Corridor.</p>
+
+        <p><strong>Method.</strong> The signals layer records that these signals do not introduce new evidence, assign routing authority, classify topology completion, recommend deployment, or infer geopolitical meaning.</p>
+
+        <h3>Digital-asset regulatory layering signal</h3>
+        <p>The signals layer reflects a digital-asset-regulatory-layering signal through the coexistence of federal payments supervision by the Central Bank of the UAE, ADGM FSRA licensing and digital-asset framework administration, VARA's Dubai virtual-asset regulatory surface outside DIFC, and DIFC's separate legal-regulatory environment. Taken together, these documented structures indicate multi-zone regulatory layering continuity rather than a single-channel national digital-asset regime.</p>
+
+        <h3>CBDC experimentation continuity signal</h3>
+        <p>The signals layer reflects a CBDC-experimentation-continuity signal through documented Digital Dirham activity within the Financial Infrastructure Transformation Programme, including mBridge cross-border experimentation, bilateral bridge experimentation with India, and proof-of-concept work for domestic wholesale and retail issuance and settlement flows. This indicates continued CBDC experimentation across multiple operational surfaces without implying a final issuance trajectory.</p>
+
+        <h3>Financial free-zone coexistence signal</h3>
+        <p>The signals layer reflects a financial-free-zone-coexistence signal through the parallel operation of ADGM, DIFC, the VARA Dubai regime outside DIFC, and federal central-bank oversight at the national level. The documented relationship among these authorities indicates a multi-surface financial regulatory environment in which distinct jurisdictional layers operate in parallel rather than through a unified national licensing authority.</p>
+
+        <h3>Sovereign compute coordination signal</h3>
+        <p>The signals layer reflects a sovereign-compute-coordination signal through G42 and Core42 national-scale cloud and AI infrastructure participation, Khazna's multi-site data-centre footprint and capacity expansion, and MBZUAI's role as a dedicated institutional AI research anchor. These documented structures indicate a national sovereign-oriented compute coordination surface spanning managed compute infrastructure, data-centre continuity, and AI research capacity without classifying the jurisdiction as a compute concentration authority.</p>
+
+        <h3>Exchange-layer participation signal</h3>
+        <p>The signals layer reflects an exchange-layer-participation signal through UAE-IX as a carrier-neutral exchange platform in Dubai operating on fully redundant switching infrastructure and supporting interconnection among networks, operators, and content providers in the region. This indicates a regional exchange-layer participation environment and local interconnection surface without assigning routing-core authority.</p>
+
+        <h3>Telecommunications backbone continuity signal</h3>
+        <p>The signals layer reflects a telecommunications-backbone-continuity signal through documented e& SmartHub interconnection infrastructure in Fujairah and Dubai, together with du fibre-network participation in domestic high-capacity connectivity. These documented operator surfaces indicate a national telecom backbone continuity layer linking domestic fibre infrastructure with broader interconnection capacity.</p>
+
+        <h3>Submarine cable landing participation signal</h3>
+        <p>The signals layer reflects a submarine-cable-landing-participation signal through documented Kalba and Fujairah landing infrastructure, e& participation in the 2Africa landing system, and du landing continuity for the Gulf Bridge International cable. These documented landing points and operator roles indicate a multi-route Gulf-facing cable landing participation surface across Eurasia-, Africa-, and Asia-linked connectivity paths without classifying the jurisdiction as a global routing authority.</p>
+
+        <h3>Logistics continuity infrastructure signal</h3>
+        <p>The signals layer reflects a logistics-continuity-infrastructure signal through DP World's integrated freight, terminal, and logistics network in the UAE and through Jebel Ali Port's documented sea-air-land intermodal freight structure. These documented assets indicate a port-centered intermodal freight continuity infrastructure layer without classifying the jurisdiction as a logistics hub authority.</p>
+
+        <h3>Digital governance modernization signal</h3>
+        <p>The signals layer reflects a digital-governance-modernization signal through TDRA digital-government coordination materials, the published UAE PASS identity-layer service, and federal strategy documents for service modernization and digital transformation. These documented structures indicate a federal digital-governance modernization coordination surface combining strategy publication, cross-entity modernization guidance, and identity-layer infrastructure.</p>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>The United Arab Emirates' signals layer reflects digital-asset regulatory layering continuity, CBDC experimentation continuity, financial free-zone coexistence, sovereign compute coordination, regional exchange-layer participation, telecommunications backbone continuity, submarine cable landing participation, logistics continuity infrastructure, and federal digital-governance modernization, while preserving documented absences of single-channel national licensing, hyperscale concentration authority, routing-core authority, telecom dominance, global routing authority, and logistics hub authority claims.</p>
+
+        <div class="meta-line">Signal completeness status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: signals.md</div>
+      </section>
+
+      <!-- 5. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">5.</span>Trust Dimensions Summary</h2>
+
+        <p><strong>Derivation constraint.</strong> The trust-dimensions layer records that trust dimensions derive strictly from <code>signals.md</code> and interpret structural trust posture only.</p>
+
+        <p><strong>Method.</strong> The trust-dimensions layer records that it does not introduce new evidence, assign routing authority, classify topology completion, recommend deployment, assign readiness tiers, or infer geopolitical meaning.</p>
+
+        <h3>Multi-zone regulatory layering trust dimension</h3>
+        <p>The trust-dimensions layer records multi-zone regulatory-layering continuity through the documented coexistence of Central Bank oversight, ADGM FSRA regulatory administration, VARA's Dubai virtual-asset regime outside DIFC, and DIFC's separate legal-regulatory structure. Taken together, these parallel supervisory surfaces indicate jurisdictional layering continuity across financial and digital-asset oversight rather than a single centralized national regime.</p>
+
+        <h3>CBDC infrastructure experimentation trust dimension</h3>
+        <p>The trust-dimensions layer records CBDC-infrastructure-experimentation continuity through documented Digital Dirham program activity, mBridge participation, bilateral experimentation with India, and domestic wholesale and retail proof-of-concept work. Together, these activities indicate continued settlement-layer experimentation capacity across cross-border and domestic financial infrastructure environments without implying a final issuance outcome.</p>
+
+        <h3>Financial free-zone structural parallelism trust dimension</h3>
+        <p>The trust-dimensions layer records financial-free-zone structural parallelism through the documented coexistence of ADGM, DIFC, VARA, and federal supervision. These parallel institutional surfaces indicate multi-layer financial governance continuity across distinct jurisdictional environments without reducing them to either fragmentation or unified integration.</p>
+
+        <h3>Sovereign compute coordination trust dimension</h3>
+        <p>The trust-dimensions layer records sovereign-compute-coordination continuity through documented G42 and Core42 compute participation, Khazna data-centre infrastructure presence, and MBZUAI institutional research activity. Together, these structures indicate national sovereign-aligned coordination across infrastructure, cloud, and research layers without classifying the jurisdiction as a hyperscale authority.</p>
+
+        <h3>Regional exchange-layer participation trust dimension</h3>
+        <p>The trust-dimensions layer records regional-exchange-layer participation continuity through documented UAE-IX infrastructure operating as a carrier-neutral interconnection surface on redundant switching infrastructure. This indicates exchange-layer continuity across Gulf and adjacent network environments without assigning routing-core status.</p>
+
+        <h3>Telecommunications backbone continuity trust dimension</h3>
+        <p>The trust-dimensions layer records telecommunications-backbone continuity through documented e& SmartHub interconnection infrastructure and du national fibre participation. Together, these operator surfaces indicate domestic backbone continuity linking interconnection infrastructure with broader regional connectivity environments without implying telecom dominance.</p>
+
+        <h3>Submarine cable landing continuity trust dimension</h3>
+        <p>The trust-dimensions layer records submarine-cable-landing continuity through documented Kalba landing infrastructure, Fujairah landing infrastructure, 2Africa participation, and Gulf Bridge International landing continuity. Together, these structures indicate multi-route Gulf-facing submarine-connectivity continuity across Eurasian, African, and Asian network paths without classifying the jurisdiction as a global routing authority.</p>
+
+        <h3>Port-centered logistics continuity trust dimension</h3>
+        <p>The trust-dimensions layer records port-centered logistics continuity through documented DP World logistics infrastructure and Jebel Ali Port's intermodal freight structure. Together, these assets indicate intermodal freight continuity across maritime, air, and land logistics layers without classifying the jurisdiction as a logistics hub authority.</p>
+
+        <h3>Federal digital governance modernization trust dimension</h3>
+        <p>The trust-dimensions layer records federal digital-governance-modernization continuity through documented TDRA coordination structures, UAE PASS identity infrastructure, and federal modernization strategy publications. Together, these structures indicate digital-governance continuity across identity, service-delivery, and administrative-coordination layers at the infrastructure and institutional level.</p>
+
+        <hr class="section-divider">
+
+        <h3>Trust profile summary</h3>
+        <p>The United Arab Emirates' trust-dimension profile appears as a structurally distributed and infrastructure-anchored structure spanning multi-zone regulatory layering continuity, CBDC infrastructure experimentation continuity, financial free-zone structural parallelism, sovereign compute coordination continuity, regional exchange-layer participation continuity, telecommunications backbone continuity, submarine cable landing continuity, port-centered logistics continuity, and federal digital-governance modernization continuity, without assigning routing authority, topology completion placement, readiness tiers, Atlas surfaces, jurisdiction rankings, or deployment suitability.</p>
+
+        <div class="meta-line">Trust-dimension completeness status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: trust-dimensions.md</div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile Summary</h2>
+
+        <p><strong>Derivation constraint.</strong> The profile layer records that profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+        <p><strong>Overview.</strong> The United Arab Emirates currently reads within Atlas as a multi-zone regulatory and infrastructure-coordination environment positioned inside the Gulf Digital Finance and Connectivity Corridor. The current package shows federal central-bank supervision operating alongside ADGM, DIFC, and VARA as parallel supervisory surfaces across financial and digital-asset governance environments. These conditions support a structural characterization centered on layered institutional continuity, CBDC experimentation continuity, sovereign compute coordination, exchange-layer participation, submarine landing continuity, logistics continuity, and federal digital-governance modernization without reducing the jurisdiction to a single unified national regulatory channel.</p>
+
+        <h3>Financial regulatory structure</h3>
+        <p>The profile layer records that the United Arab Emirates' financial regulatory structure is characterized by the coexistence of Central Bank of the UAE supervision, ADGM FSRA licensing and regulatory administration, VARA's Dubai virtual-asset regime outside DIFC, and DIFC's separate legal-regulatory environment. The current package shows these structures operating across distinct domestic and free-zone legal surfaces while remaining part of the same national financial environment. These conditions support a structural characterization centered on parallel financial governance continuity across federal and free-zone jurisdictions without assigning competitiveness, integration advantage, or a single-channel national licensing model.</p>
+
+        <h3>CBDC experimentation environment</h3>
+        <p>The profile layer records that the United Arab Emirates' CBDC experimentation environment is characterized by documented Digital Dirham activity, mBridge participation, bilateral experimentation with India, and domestic wholesale and retail proof-of-concept work. The current package shows these activities spanning cross-border and domestic settlement contexts within the Financial Infrastructure Transformation Programme. These conditions support a structural characterization centered on continued settlement-layer experimentation across multiple financial infrastructure environments without implying a final issuance trajectory.</p>
+
+        <h3>Sovereign compute coordination environment</h3>
+        <p>The profile layer records that the United Arab Emirates' sovereign compute coordination environment is characterized by G42 and Core42 compute participation, Khazna data-centre infrastructure presence, and MBZUAI's institutional AI research role. The current package shows national sovereign-aligned coordination across infrastructure, cloud, and research layers rather than a single isolated compute asset. These conditions support a structural characterization centered on coordinated compute continuity and institutional AI research presence without classifying the jurisdiction as a hyperscale concentration authority.</p>
+
+        <h3>Exchange-layer connectivity environment</h3>
+        <p>The profile layer records that the United Arab Emirates' exchange-layer connectivity environment is characterized by UAE-IX infrastructure operating as a carrier-neutral interconnection surface on redundant switching infrastructure in Dubai. The current package shows regional exchange-layer interconnection continuity across Gulf and adjacent network environments through a local exchange presence. These conditions support a structural characterization centered on regional exchange-layer participation and local interconnection continuity without assigning routing-core authority.</p>
+
+        <h3>Telecommunications backbone environment</h3>
+        <p>The profile layer records that the United Arab Emirates' telecommunications backbone environment is characterized by e& SmartHub interconnection infrastructure and du fibre infrastructure participation. The current package shows domestic backbone continuity linking interconnection facilities in Fujairah and Dubai with broader regional connectivity environments and domestic fibre-network continuity. These conditions support a structural characterization centered on telecommunications backbone continuity and interconnection persistence without using telecom leadership framing.</p>
+
+        <h3>Submarine cable landing environment</h3>
+        <p>The profile layer records that the United Arab Emirates' submarine cable landing environment is characterized by Kalba landing infrastructure, Fujairah landing infrastructure, 2Africa participation, and Gulf Bridge International landing continuity. The current package shows multi-route Gulf-facing submarine connectivity continuity across Eurasian, African, and Asian network paths through more than one landing surface and operator role. These conditions support a structural characterization centered on corridor-facing cable landing continuity without classifying the jurisdiction as a global routing authority.</p>
+
+        <h3>Logistics infrastructure environment</h3>
+        <p>The profile layer records that the United Arab Emirates' logistics infrastructure environment is characterized by DP World infrastructure and Jebel Ali Port's intermodal freight structure. The current package shows port-centered intermodal logistics continuity across maritime, air, and land transport layers together with integrated freight, terminal, and logistics infrastructure. These conditions support a structural characterization centered on continuity across multiple transport layers without using global-hub language.</p>
+
+        <h3>Digital governance modernization environment</h3>
+        <p>The profile layer records that the United Arab Emirates' digital governance modernization environment is characterized by TDRA coordination structures, UAE PASS identity infrastructure, and federal modernization strategy publications. The current package shows federal digital-governance continuity across identity, service-delivery, and administrative coordination layers through strategy publication, service modernization guidance, and identity-layer infrastructure. These conditions support a structural characterization centered on infrastructure-level modernization continuity rather than broader interpretive claims.</p>
+
+        <div class="meta-line">Profile completeness status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: profile.md</div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode Summary</h2>
+
+        <p><strong>Derivation constraint.</strong> The builder-mode layer records that builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>.</p>
+
+        <p><strong>Scope.</strong> The builder-mode layer translates the normalized United Arab Emirates profile into builder-facing interpretation guardrails. It provides structural interpretation only and does not assign routing authority, topology completion placement, readiness tiers, Atlas surfaces, jurisdiction rankings, deployment suitability, or geopolitical meaning.</p>
+
+        <h3>Interpretation scope</h3>
+        <p>The builder-mode layer records that the United Arab Emirates is interpreted within Atlas as a multi-zone regulatory and infrastructure-coordination environment aligned with the Gulf Digital Finance and Connectivity Corridor. Interpretation must remain anchored to regulatory layering continuity, sovereign compute coordination continuity, submarine landing continuity, exchange-layer participation continuity, logistics continuity infrastructure, CBDC experimentation continuity, and digital-governance modernization continuity. Future interpretation must remain structural and must not introduce topology-role inference.</p>
+
+        <h3>Regulatory layering interpretation boundary</h3>
+        <p>The builder-mode layer records that future updates must interpret the United Arab Emirates regulatory structure as parallel supervisory layering across federal and free-zone jurisdictions, including the Central Bank of the UAE, ADGM, DIFC, and VARA. These supervisory surfaces must not be collapsed into a single national licensing regime and must not be interpreted as evidence of fragmentation or integration advantage. Builder-facing interpretation remains structural only and should preserve layered supervisory coexistence across domestic and free-zone environments.</p>
+
+        <h3>CBDC experimentation interpretation boundary</h3>
+        <p>The builder-mode layer records that Digital Dirham activity, mBridge participation, bilateral experimentation with India, and domestic proof-of-concept settlement work must be interpreted strictly as settlement-layer experimentation continuity. Future updates must not infer an issuance timeline, adoption scale, or monetary-policy positioning from these materials. Builder-facing interpretation should remain limited to documented cross-border and domestic experimentation continuity.</p>
+
+        <h3>Sovereign compute coordination interpretation boundary</h3>
+        <p>The builder-mode layer records that G42, Core42, Khazna, and MBZUAI indicate sovereign-aligned compute coordination continuity across infrastructure, cloud, and research layers. Future updates must not classify the United Arab Emirates as a hyperscale concentration authority, a regional compute-routing core, or an AI infrastructure anchor jurisdiction on the basis of these materials. Builder-facing interpretation remains coordination-layer only.</p>
+
+        <h3>Exchange-layer interpretation boundary</h3>
+        <p>The builder-mode layer records that UAE-IX represents regional exchange-layer participation continuity through carrier-neutral interconnection infrastructure and local exchange presence. Future updates must not assign routing-core status, continental exchange authority, or global peering centrality to the United Arab Emirates on the basis of this exchange-layer material. Builder-facing interpretation should remain limited to exchange-layer continuity and interconnection participation.</p>
+
+        <h3>Telecommunications backbone interpretation boundary</h3>
+        <p>The builder-mode layer records that e& SmartHub and du infrastructure indicate domestic backbone continuity with regional interconnection interfaces. Future updates must not interpret these materials as telecom leadership or telecom dominance. Builder-facing interpretation remains limited to infrastructure continuity across domestic backbone and interconnection surfaces.</p>
+
+        <h3>Submarine cable landing interpretation boundary</h3>
+        <p>The builder-mode layer records that Kalba and Fujairah landing environments, including 2Africa and Gulf Bridge International participation, indicate multi-route Gulf-facing submarine connectivity continuity. Future updates must not classify the United Arab Emirates as a global routing authority, a continental cable anchor, or an interregional traffic-control node on the basis of these landing materials. Builder-facing interpretation should remain limited to submarine connectivity continuity across multiple documented landing surfaces and operator roles.</p>
+
+        <h3>Logistics infrastructure interpretation boundary</h3>
+        <p>The builder-mode layer records that DP World and Jebel Ali Port indicate port-centered intermodal logistics continuity across maritime, air, and land transport layers. Future updates must not apply global logistics hub authority language, trade dominance classification, or corridor control interpretation to these materials. Builder-facing interpretation remains infrastructure-layer continuity only.</p>
+
+        <h3>Digital governance modernization interpretation boundary</h3>
+        <p>The builder-mode layer records that TDRA coordination structures and UAE PASS identity infrastructure indicate federal digital-governance modernization continuity across identity, service-delivery, and administrative coordination layers. Future updates must not interpret these materials as a platform-state classification, a digital-sovereignty tier elevation, or an identity export authority role. Builder-facing interpretation remains coordination-layer only.</p>
+
+        <h3>Corridor alignment stabilization rule</h3>
+        <p>The builder-mode layer records that the United Arab Emirates remains aligned with the Gulf Digital Finance and Connectivity Corridor. Future updates must preserve this corridor alignment through regulatory layering continuity, sovereign compute coordination continuity, exchange-layer participation continuity, submarine landing continuity, logistics continuity infrastructure, CBDC experimentation surfaces, and digital-governance modernization continuity. Topology completion placement must not be assigned unless explicitly supported by future corridor-level framework updates.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder-mode summary</h3>
+        <p>The United Arab Emirates appears as a builder environment within the Gulf Digital Finance and Connectivity Corridor whose builder-mode surface is defined by parallel supervisory layering across the Central Bank of the UAE, ADGM, DIFC, and VARA, settlement-layer CBDC experimentation continuity through Digital Dirham, mBridge, India bilateral, and domestic proof-of-concept activity, sovereign compute coordination through G42, Core42, Khazna, and MBZUAI, regional exchange-layer participation through UAE-IX, domestic backbone continuity through e& SmartHub and du infrastructure, multi-route Gulf-facing submarine landing continuity through Kalba, Fujairah, 2Africa, and Gulf Bridge International, port-centered intermodal logistics continuity through DP World and Jebel Ali Port, and federal digital-governance modernization through TDRA and UAE PASS, without assigning readiness tier, routing role, Atlas surface, or topology placement beyond the documented metadata layer.</p>
+
+        <div class="meta-line">Builder-mode completeness status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: builder-mode.md</div>
+      </section>
+
+      <!-- 8. Corridor Alignment -->
+      <section id="corridor-alignment">
+        <h2><span class="num">8.</span>Corridor Alignment</h2>
+
+        <p>The metadata layer records the United Arab Emirates' corridor alignment as the <strong>Gulf Digital Finance and Connectivity Corridor</strong>. The profile layer records that the United Arab Emirates aligns structurally with this corridor through financial regulatory layering continuity across federal and free-zone supervisory surfaces, submarine landing participation across Kalba and Fujairah-linked cable infrastructure, sovereign compute coordination structures through G42, Core42, Khazna, and MBZUAI, exchange-layer infrastructure presence through UAE-IX, logistics continuity infrastructure through DP World and Jebel Ali Port, CBDC experimentation surfaces through the Digital Dirham programme and associated cross-border and domestic settlement experimentation, and federal digital-governance modernization continuity through TDRA coordination and UAE PASS. This corridor alignment remains structural only and does not assign topology completion placement.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Gulf Digital Finance and Connectivity Corridor</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Topology Status</span>
+            <span class="val">Unassigned</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Atlas Status</span>
+            <span class="val">Normalized Jurisdiction Package Complete</span>
+          </div>
+        </div>
+
+        <div class="meta-line">Source: metadata.md · profile.md · change-log.md — Corridor Alignment</div>
+      </section>
+
+      <!-- 9. Structural Exclusions -->
+      <section id="structural-exclusions">
+        <h2><span class="num">9.</span>Structural Exclusions</h2>
+
+        <p>The United Arab Emirates' canonical package preserves the following structural exclusions across <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>profile.md</code>, <code>metadata.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>:</p>
+
+        <ul>
+          <li>routing authority assignment</li>
+          <li>topology completion placement</li>
+          <li>readiness tier labels</li>
+          <li>Atlas surface assignment</li>
+          <li>deployment suitability statements</li>
+          <li>jurisdiction rankings</li>
+          <li>comparative jurisdiction positioning</li>
+          <li>geopolitical meaning</li>
+          <li>speculation beyond canonical materials</li>
+        </ul>
+
+        <h3>Interpretation constraints</h3>
+        <p>The canonical package preserves the following interpretation constraints. The regulatory structure must not be collapsed into a single national licensing regime and must not be interpreted as evidence of fragmentation or integration advantage. CBDC activity must not be interpreted as an issuance timeline, adoption scale, or monetary-policy positioning. Sovereign compute coordination must not be classified as hyperscale concentration authority, a regional compute-routing core, or an AI infrastructure anchor jurisdiction. Exchange-layer participation must not be assigned routing-core status, continental exchange authority, or global peering centrality. Telecommunications backbone continuity must not be interpreted as telecom leadership or telecom dominance. Submarine cable landing continuity must not be classified as global routing authority, continental cable anchor, or interregional traffic-control status. Logistics infrastructure must not be classified as global logistics hub authority, trade dominance, or corridor control. Digital governance modernization must not be interpreted as platform-state classification, digital-sovereignty tier elevation, or identity export authority.</p>
+
+        <div class="meta-line">Source: evidence.md · signals.md · trust-dimensions.md · profile.md · metadata.md · builder-mode.md · change-log.md — Structural Exclusions</div>
+      </section>
+
+      <!-- 10. Evidence Gaps -->
+      <section id="evidence-gaps">
+        <h2><span class="num">10.</span>Evidence Gaps</h2>
+
+        <p>The canonical package records the following structural absences for the United Arab Emirates, carried forward across all normalization layers as documented exclusions rather than inferred gaps:</p>
+
+        <ul>
+          <li>Routing authority classification is not within the normalized scope of the United Arab Emirates package.</li>
+          <li>Topology completion placement is not within the normalized scope of the United Arab Emirates package.</li>
+          <li>Readiness tier labels are not within the normalized scope of the United Arab Emirates package.</li>
+          <li>Atlas surface assignment is not within the normalized scope of the United Arab Emirates package.</li>
+          <li>Deployment suitability statements are not within the normalized scope of the United Arab Emirates package.</li>
+          <li>Jurisdiction rankings and comparative positioning are not within the normalized scope of the United Arab Emirates package.</li>
+          <li>Geopolitical meaning and inference are not within the normalized scope of the United Arab Emirates package.</li>
+          <li>Final CBDC issuance trajectory is outside the scope of the evidence layer.</li>
+        </ul>
+
+        <p>The canonical package records gap inheritance: <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, <code>metadata.md</code>, and <code>change-log.md</code> inherit these documented absences without expansion as structural non-signals, non-dimensions, and non-surfaces.</p>
+
+        <div class="meta-line">Source: evidence.md · signals.md · trust-dimensions.md · profile.md · metadata.md · builder-mode.md · change-log.md — Structural Exclusions</div>
+      </section>
+
+      <!-- 11. Change-Log Notes -->
+      <section id="change-log">
+        <h2><span class="num">11.</span>Change-Log Notes &amp; Normalization Notes</h2>
+
+        <h3>Package initialization</h3>
+        <p>The change-log records that the United Arab Emirates jurisdiction package was initialized as part of the Atlas global country normalization sequence within the Phase 3 international expansion layer. The package was created under <code>atlas-export/jurisdictions/global/countries/united-arab-emirates/</code>.</p>
+
+        <h3>Evidence layer creation</h3>
+        <p>The change-log records that <code>evidence.md</code> was created to establish the structural evidence layer for the United Arab Emirates package. The evidence layer recorded structural anchors across multi-zone financial regulatory layering, CBDC experimentation infrastructure, sovereign compute coordination institutions, exchange-layer participation infrastructure, telecommunications backbone continuity, submarine cable landing continuity, logistics infrastructure continuity, and federal digital-governance modernization structures. These anchors were documented descriptively and without interpretation.</p>
+
+        <h3>Signals layer creation</h3>
+        <p>The change-log records that <code>signals.md</code> was created as the signals layer derived strictly from evidence-layer materials. The signals layer normalized evidence into regulatory layering continuity signals, CBDC experimentation continuity signals, sovereign compute coordination signals, exchange-layer participation signals, telecommunications backbone continuity signals, submarine landing continuity signals, logistics continuity infrastructure signals, and digital-governance modernization continuity signals. No topology assignment occurred in the signals layer.</p>
+
+        <h3>Trust-dimensions layer creation</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> was created as the structural trust-interpretation layer derived from signals. The trust-dimensions layer translated signals into structural institutional continuity interpretations without introducing routing authority classification, topology completion placement, readiness tiers, or deployment suitability conclusions.</p>
+
+        <h3>Metadata layer creation</h3>
+        <p>The change-log records that <code>metadata.md</code> was created as the package classification layer. The metadata layer classified corridor alignment, regulatory structure type, CBDC experimentation status, sovereign compute posture, exchange-layer classification, telecommunications backbone continuity status, submarine landing classification, logistics infrastructure classification, digital-governance infrastructure status, and financial zone structure. Metadata remained classification-only.</p>
+
+        <h3>Profile layer creation</h3>
+        <p>The change-log records that <code>profile.md</code> was created as the renderer-facing structural narrative layer for the United Arab Emirates package. The profile layer established a structural jurisdiction characterization aligned with the Gulf Digital Finance and Connectivity Corridor. No topology completion placement was assigned in the profile layer.</p>
+
+        <h3>Builder-mode layer creation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> was created as the interpretation-boundary layer for future package maintenance. The builder-mode layer established interpretation guardrails preserving regulatory layering continuity interpretation, CBDC experimentation interpretation boundaries, sovereign compute coordination interpretation boundaries, exchange-layer participation interpretation boundaries, telecommunications backbone interpretation boundaries, submarine landing interpretation boundaries, logistics continuity interpretation boundaries, and digital-governance modernization interpretation boundaries.</p>
+
+        <h3>Package completion status</h3>
+        <p>The change-log records that the United Arab Emirates jurisdiction package is complete within the Atlas global normalization framework. All canonical jurisdiction package layers are present: <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>. The package is now Atlas normalization complete, renderer eligible, corridor aligned, and topology unassigned.</p>
+
+        <div class="meta-line">Change-log completeness status: complete <span class="sep">·</span> Atlas Status: Normalized Jurisdiction Package Complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: change-log.md</div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical United Arab Emirates jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/united-arab-emirates/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> United Arab Emirates</li>
+          <li><strong>Code:</strong> AE</li>
+          <li><strong>Region:</strong> Gulf / Middle East</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Classification fields</h4>
+        <ul>
+          <li><strong>Corridor Alignment:</strong> Gulf Digital Finance and Connectivity Corridor</li>
+          <li><strong>Regulatory Structure:</strong> Multi-Zone Financial Regulatory Layering Environment</li>
+          <li><strong>CBDC Status:</strong> Active Cross-Border and Domestic Settlement Experimentation</li>
+          <li><strong>Compute Posture:</strong> National Sovereign Compute Coordination Environment</li>
+          <li><strong>Exchange Layer:</strong> Regional Exchange-Layer Participation Environment</li>
+          <li><strong>Telecommunications Backbone:</strong> Domestic Backbone Continuity with Regional Interconnection Interfaces</li>
+          <li><strong>Cable Landing Status:</strong> Multi-Route Gulf-Facing Submarine Connectivity Landing Environment</li>
+          <li><strong>Logistics Infrastructure:</strong> Port-Centered Intermodal Logistics Continuity Environment</li>
+          <li><strong>Digital Governance:</strong> Federal Digital Identity and Service Modernization Coordination Environment</li>
+          <li><strong>Financial Zone Structure:</strong> Parallel Free-Zone Financial Governance Environment</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a comparative jurisdiction positioning.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
