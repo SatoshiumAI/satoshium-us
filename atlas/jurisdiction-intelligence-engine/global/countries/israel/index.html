@@ -1,91 +1,604 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Israel | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Israel — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Israel Atlas jurisdiction package rendering. Eastern Mediterranean Research and Compute Corridor.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/israel/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+main.content ul.sources{font-size:12px;color:var(--ink-mute);padding-left:18px}
+main.content ul.sources li{margin-bottom:3px;word-break:break-all}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Israel</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Israel</h1>
 
-</article>
-</main>
+  <p class="lede">Eastern Mediterranean Research and Compute Corridor. This page renders the canonical Israel Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting national academic research-network coordination, distributed university AI research, biometric identity-documentation and authentication federation, national registry and domestic exchange coordination, civilian cyber-defense coordination, central-bank settlement infrastructure, and central-bank exploratory CBDC research.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Israel (IL)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>Institution-published materials document Israel as a jurisdiction with national academic research-network coordination through IUCC and ILAN, distributed university AI research across the Weizmann AI Hub, Tel Aviv University Center for Artificial Intelligence and Data Science, and Technion Tech.AI, biometric identity-documentation and authentication federation through the National Biometric Database Authority and government identification systems, national registry and domestic exchange coordination through ISOC-IL and the IIX, civilian cyber-defense coordination through the Israel National Cyber Directorate and CERT-IL, central-bank settlement infrastructure through the ZAHAV RTGS system, and central-bank exploratory CBDC research through the digital shekel program.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Jurisdiction Name</span>
+            <span class="val">Israel</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Jurisdiction Type</span>
+            <span class="val">Country</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Eastern Mediterranean Research and Compute Corridor</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records only evidence-supported national structures documented for Israel that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.</p>
+
+        <div class="meta-line">Source: profile.md · metadata.md — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>This file records only evidence-supported national structures documented for Israel that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces. It does not generate signals.</p>
+
+        <h3>Research network and advanced compute coordination structure</h3>
+        <p>IUCC provides the clearest directly retrievable national research-network coordination surface in this source set. IUCC states that it maintains ILAN, Israel's National Research and Education Network (NREN). IUCC states that ILAN provides high-speed (100Gb/s) access between Israel's academic and research institutes and international research networks via GÉANT. IUCC states that ILAN also provides high-speed connectivity to all Israeli ISPs via the Israel Internet Exchange (IIX). IUCC's HPC resources page states that Israel is a country member in the EuroHPC Joint Undertaking. The same IUCC page states that IUCC works with the Israel Innovation Authority as Israel's official representative in the EuroHPC program to disseminate information and follow applications and grants awarded to Israeli researchers. These materials document a visible national research-network and international HPC-participation surface through IUCC, ILAN, and EuroHPC-linked coordination.</p>
+
+        <ul class="sources">
+          <li>https://www.iucc.ac.il/en/infrastructuretechnologies/networking/</li>
+          <li>https://www.iucc.ac.il/en/infrastructuretechnologies/hpc-resources/</li>
+        </ul>
+
+        <h3>University AI research structure</h3>
+        <p>The Weizmann Institute's AI Hub for Scientific Discovery is described as a collaborative space at the heart of the Knell Family Institute for Artificial Intelligence and as a cross-disciplinary research community supporting AI-driven scientific discovery and new AI-based methodologies for scientific research. Tel Aviv University states that it launched an interdisciplinary Center for Artificial Intelligence and Data Science in 2021. Tel Aviv University states that this center is intended to enhance basic science, encourage cross-disciplinary AI and data-science research, and promote collaborations with industry, the public sector, and defense-related institutions. Official Technion discovery materials make visible Tech.AI as Technion's Artificial Intelligence Hub. Official Technion discovery materials state that Tech.AI was established in 2020 to serve as the main Technion platform enabling faculty and students from across Technion units to access current AI research and application surfaces. The collected source set therefore supports a distributed national university AI research surface spanning Weizmann, Tel Aviv University, and Technion rather than a single consolidated national academic AI institution.</p>
+
+        <ul class="sources">
+          <li>https://centers.weizmann.ac.il/ai/about/ai-hub</li>
+          <li>https://english.tau.ac.il/news/AI-center-launch</li>
+          <li>https://tech-ai.technion.ac.il/about-us/tech-ai-center/</li>
+          <li>https://int.technion.ac.il/news/artificial-intelligence-at-technion/</li>
+        </ul>
+
+        <h3>Identity and administrative federation structure</h3>
+        <p>Official gov.il discovery materials identify the National Biometric Database Authority as an independent unit in the Ministry of Interior established as part of preparations for smart biometric national documentation. Those same official materials state that the Authority operates and secures the National Biometric Database in order to protect the identity of Israeli citizens and ensure that each person has one set of official documentation and one unique identity. Official Population and Immigration Authority service materials make visible an active biometric identity-document issuance surface for Israeli ID cards and other biometric documents. Official gov.il discovery materials for biometric ID activation state that users log in to the mygov personal area and are transferred for registration in the national identification system. Official gov.il support materials state that the Government Identification System grants registered users access to government services that require personal identification. The collected source set therefore supports a biometric identity-documentation and government-identification federation surface linked to online service access.</p>
+
+        <ul class="sources">
+          <li>https://www.gov.il/en/departments/about/1about</li>
+          <li>https://www.gov.il/en/service/biometric_smart_id_request</li>
+          <li>https://www.gov.il/en/service/activation_of_smart_indentification_card</li>
+          <li>https://www.gov.il/en/general/sso_help_desk</li>
+          <li>https://www.gov.il/en/pages/the_government_identification_system_info</li>
+        </ul>
+
+        <h3>Internet registry and exchange infrastructure structure</h3>
+        <p>Official ISOC-IL discovery materials state that the Israel Internet Association operates the registry for the country-code top-level domains .il and ישראל. Official ISOC-IL discovery materials state that the domain-name registry has been managed by ISOC-IL since 1997. Official ISOC-IL discovery materials further state that ISOC-IL manages Israel's ccTLD registry and operates the DNS infrastructure for the national domain extensions .il and ישראל. Official ISOC-IL discovery materials describe the Israel Internet Exchange as the central meeting point of the Internet Service Providers in Israel, with the purpose of routing intra-Israel Internet traffic among operators as efficiently as possible. Separate IUCC materials state that ILAN provides high-speed connectivity to all Israeli ISPs via the IIX and record that responsibility for the IIX was transferred to ISOC-IL in 1997. The collected source set therefore supports a registry, DNS, and domestic exchange-layer infrastructure surface centered on ISOC-IL and linked research-network interconnection through IUCC.</p>
+
+        <ul class="sources">
+          <li>https://en.isoc.org.il/il-cctld</li>
+          <li>https://en.isoc.org.il/il-cctld/how-to-register-a-domain</li>
+          <li>https://en.isoc.org.il/il-cctld/registry-updatesnews/2024-domain-registry-summary</li>
+          <li>https://en.isoc.org.il/iix/about-iix</li>
+          <li>https://en.isoc.org.il/iix/iix-tech-info</li>
+          <li>https://www.iucc.ac.il/en/infrastructuretechnologies/networking/</li>
+        </ul>
+
+        <h3>Cybersecurity coordination structure</h3>
+        <p>Official gov.il discovery materials state that the Israel National Cyber Directorate is the state body in charge of defending Israel's national cyber space from cyber threats and of promoting and establishing Israel's capabilities in the field. Additional official gov.il discovery materials describe the Directorate as responsible for all aspects of cyber defense in the civilian sphere, from formulating policy and building technological power to operational defense in cyberspace. Official gov.il discovery materials identify the Israeli Cyber Emergency Response Team (CERT) as part of the operational unit of the Israel National Cyber Directorate. Official CERT discovery materials also make visible an operational cyber-incident reporting and handling surface through the CERT hotline and contact channels. The collected source set therefore supports a national civilian cyber-defense and incident-response coordination surface through the Israel National Cyber Directorate and CERT.</p>
+
+        <ul class="sources">
+          <li>https://www.gov.il/en/departments/about/newabout</li>
+          <li>https://www.gov.il/en/pages/newabout</li>
+          <li>https://www.gov.il/en/departments/general/cve_cyber_israel</li>
+          <li>https://www.gov.il/en/departments/news/119en</li>
+          <li>https://www.gov.il/en/pages/119en</li>
+          <li>https://www.gov.il/en/departments/general/contact</li>
+        </ul>
+
+        <h3>Payment-system and CBDC exploration structure</h3>
+        <p>Official Bank of Israel discovery materials identify the Bank of Israel's Payment and Settlement Systems Department as the institutional surface responsible for payment and settlement systems. Official Bank of Israel discovery materials state that this department operates the ZAHAV real-time gross settlement (RTGS) system. Official Bank of Israel discovery materials also state that the ZAHAV system conducts final settlement of large amounts in real time. Official Bank of Israel discovery materials make visible an ongoing digital-shekel exploration surface. In those discovery materials, the Bank of Israel states that it is exploring the potential implications of introducing a digital currency alongside cash and that, if introduced, it would be known as the digital shekel. Separate official Bank of Israel discovery materials state that the Bank published a preliminary design for the digital shekel system and invited public feedback in 2025. Because direct retrieval of the cited Bank of Israel pages was blocked in this collection pass, this section remains intentionally narrow and records only the official discovery-level payment-system and CBDC-exploration surfaces.</p>
+
+        <ul class="sources">
+          <li>https://www.boi.org.il/en/economic-roles/payment-systems/</li>
+          <li>https://www.boi.org.il/en/economic-roles/payment-systems/payment-systems-in-israel/</li>
+          <li>https://www.boi.org.il/en/economic-roles/payment-systems/payment-systems-in-israel/zahav/</li>
+          <li>https://www.boi.org.il/en/questions-and-answers/digital-shekel/</li>
+          <li>https://www.boi.org.il/en/economic-roles/payment-systems/future-payment-methods/digital-shekel-cbdc/</li>
+          <li>https://boi.org.il/en/communication-and-publications/press-releases/3-3-25</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Structural exclusions</h3>
+        <p>Based on the materials documented in this file:</p>
+        <ul>
+          <li>A national submarine-cable landing topology is not evidenced here. The collected source set supports domestic exchange and research-network interconnection surfaces, but not a sufficiently documented landing-station map.</li>
+          <li>A fully expanded national AI-program or national-supercomputer deployment structure is not evidenced here. The collected source set supports IUCC EuroHPC participation and university AI research surfaces only.</li>
+          <li>A national digital-asset licensing architecture is not evidenced here. The collected source set supports payment-system and CBDC-exploration discovery only, not a complete cryptoasset supervisory framework.</li>
+          <li>A single centralized digital-government command layer is not evidenced here beyond the documented biometric-documentation and government-identification surfaces.</li>
+          <li>A routing-core authority, security-tech posture, topology-completion placement, or deployment-readiness classification is not evidenced here.</li>
+        </ul>
+
+        <h3>Evidence gaps</h3>
+        <ul>
+          <li>Israel Innovation Authority pages concerning the national AI program and supercomputer discovery were identified in official search results, but direct retrieval was blocked by Cloudflare during this collection pass, so they are not relied on here beyond the IUCC EuroHPC references above.</li>
+          <li>Direct retrieval of Bank of Israel payment-system and digital-shekel pages was blocked by Radware during this collection pass, so only narrow official discovery-level statements were preserved.</li>
+          <li>Direct retrieval of ISOC-IL IIX detail pages was blocked in this collection pass, so IIX statements were kept limited to official search-result discovery and the corroborating IUCC networking page.</li>
+          <li>No directly retrievable official English source was confirmed in this pass for a complete submarine-cable and landing-station inventory.</li>
+        </ul>
+
+        <h3>Evidence boundary statement</h3>
+        <p>All statements above are limited to directly retrievable institution-published materials plus conservative official-site discovery where direct retrieval remained incomplete or blocked. No routing inference, readiness classification, topology placement, corridor assignment, capability ranking, or geopolitical meaning has been added. Where official retrieval was incomplete or blocked, statements were kept narrow and limited to the visible institutional coordination surface only.</p>
+
+        <div class="meta-line">Evidence completeness status: preliminary <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: evidence.md</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>This file records evidence-derived structural signals for Israel based solely on <code>evidence.md</code>. It does not assign trust posture, rankings, routing meaning, corridor justification, topology interpretation, or comparative status.</p>
+
+        <h3>Research and education network coordination signal</h3>
+        <p>Institution-published materials document a national coordination surface through IUCC and ILAN supporting academic research-network interconnection across Israeli academic and research institutions. Additional materials indicate linkage with international research-network participation through GÉANT and with European high-performance computing participation through the EuroHPC surface. The collected source set therefore supports a visible research-network and international academic-compute coordination signal within Israel's national infrastructure environment.</p>
+
+        <h3>Academic AI research distribution signal</h3>
+        <p>Institution-published materials document a national coordination surface through the Weizmann AI Hub, Tel Aviv University Center for Artificial Intelligence and Data Science, and Technion Tech.AI supporting distributed academic AI research, cross-disciplinary collaboration, and institutional research participation across multiple universities. Additional materials indicate linkage with university-based training and research environments rather than a single centralized national academic AI authority. The collected source set therefore supports a visible academic AI research distribution signal within Israel's national infrastructure environment.</p>
+
+        <h3>National identity federation signal</h3>
+        <p>Institution-published materials document a national coordination surface through the National Biometric Database Authority, Population and Immigration Authority biometric ID issuance, the mygov authentication surface, and the Government Identification System SSO environment supporting biometric identity documentation and authenticated access to government services. Additional materials indicate linkage between biometric credential activation and authenticated administrative service access through the national identification environment. The collected source set therefore supports a visible national identity federation signal within Israel's national infrastructure environment.</p>
+
+        <h3>Internet registry and exchange coordination signal</h3>
+        <p>Institution-published materials document a national coordination surface through ISOC-IL supporting operation of the .il registry, the .ישראל registry, and related DNS infrastructure. Additional materials indicate linkage with domestic exchange coordination through the Israel Internet Exchange and with research-network interconnection through IUCC connectivity to the IIX. The collected source set therefore supports a visible internet registry and exchange coordination signal within Israel's national infrastructure environment.</p>
+
+        <h3>Civilian cybersecurity coordination signal</h3>
+        <p>Institution-published materials document a national coordination surface through the Israel National Cyber Directorate and CERT-IL supporting civilian cyber-defense coordination, operational incident handling, and national cyber incident reporting. Additional materials indicate linkage between the national civilian cyber-defense structure and a standing incident-response reporting surface through CERT-IL contact and reporting channels. The collected source set therefore supports a visible civilian cybersecurity coordination signal within Israel's national infrastructure environment.</p>
+
+        <h3>Real-time settlement infrastructure signal</h3>
+        <p>Institution-published materials document a national coordination surface through the Bank of Israel Payment and Settlement Systems Department supporting payment-system administration and high-value settlement operations. Additional materials indicate linkage with the ZAHAV RTGS system as the documented real-time settlement structure for large-value payment finalization. The collected source set therefore supports a visible real-time settlement infrastructure signal within Israel's national infrastructure environment.</p>
+
+        <h3>Central bank digital currency exploration signal</h3>
+        <p>Institution-published materials document a national coordination surface through the digital shekel exploration program supporting central-bank study of a digital currency framework alongside existing payment-system structures. Additional materials indicate linkage with documented design and public-feedback activity within the exploratory CBDC environment. The collected source set therefore supports a visible central bank digital currency exploration signal within Israel's national infrastructure environment.</p>
+
+        <hr class="section-divider">
+
+        <p>No routing inference, readiness classification, topology placement, corridor assignment, capability ranking, or geopolitical interpretation has been added. Signals derive strictly from institution-published coordination structures documented in evidence.md.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: signals.md</div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>This file records trust-dimension characteristics for Israel derived solely from <code>signals.md</code>. It does not assign routing authority, corridor role, readiness classification, topology placement, capability ranking, comparative status, or Atlas surfaces.</p>
+
+        <h3>Research-network coordination trust dimension</h3>
+        <p>The research and education network coordination signal supports a trust dimension of academic-network continuity by documenting IUCC, ILAN, GÉANT linkage, and EuroHPC participation as a standing institutional research-network and international academic-compute coordination structure. This dimension remains limited to national academic interconnection and international participation surfaces and does not imply corridor role, routing authority, or deployment readiness.</p>
+
+        <h3>Academic AI distribution trust dimension</h3>
+        <p>The academic AI research distribution signal supports a trust dimension of distributed academic research continuity by documenting Weizmann AI Hub, Tel Aviv University Center for Artificial Intelligence and Data Science, and Technion Tech.AI as a multi-institution university research structure. This dimension remains limited to distributed university AI research coordination and does not imply a centralized national AI authority, capability ranking, or comparative position.</p>
+
+        <h3>Identity federation trust dimension</h3>
+        <p>The national identity federation signal supports a trust dimension of identity-documentation and authenticated service-access continuity by documenting the National Biometric Database Authority, biometric ID issuance, the mygov authentication surface, and the Government Identification System SSO environment as a linked institutional identity and access structure. This dimension remains limited to documented identity-documentation and public-service authentication continuity and does not imply broader digital-government centralization, readiness classification, or topology meaning.</p>
+
+        <h3>Registry and exchange coordination trust dimension</h3>
+        <p>The internet registry and exchange coordination signal supports a trust dimension of domain-registry and domestic exchange continuity by documenting ISOC-IL, the .il registry, the .ישראל registry, the IIX, and IUCC linkage to the IIX as a coordinated national naming and domestic interconnection structure. This dimension remains limited to registry and exchange coordination continuity and does not imply routing-core authority, regional gateway status, or placement interpretation.</p>
+
+        <h3>Civilian cybersecurity coordination trust dimension</h3>
+        <p>The civilian cybersecurity coordination signal supports a trust dimension of civilian cyber-defense and incident-reporting continuity by documenting the Israel National Cyber Directorate and CERT-IL as a standing institutional coordination and reporting structure. This dimension remains limited to civilian cyber-defense coordination and incident-response reporting continuity and does not imply threat superiority, readiness classification, or comparative security posture.</p>
+
+        <h3>Settlement infrastructure trust dimension</h3>
+        <p>The real-time settlement infrastructure signal supports a trust dimension of central-bank settlement continuity by documenting the Bank of Israel Payment and Settlement Systems Department and the ZAHAV RTGS system as an institutional payment-system coordination and high-value settlement structure. This dimension remains limited to documented real-time settlement infrastructure continuity and does not imply routing authority, financial-hub status, or broader market-placement meaning.</p>
+
+        <h3>CBDC exploration trust dimension</h3>
+        <p>The central bank digital currency exploration signal supports a trust dimension of exploratory settlement-research continuity by documenting the digital shekel exploration program as a continuing central-bank study surface linked to existing payment-system structures. This dimension remains limited to exploratory CBDC research continuity and does not imply implementation, issuance readiness, or production deployment.</p>
+
+        <hr class="section-divider">
+
+        <h3>Boundary statement</h3>
+        <p>No routing inference, readiness classification, topology placement, corridor assignment, capability ranking, comparative status, or geopolitical interpretation has been added. Trust dimensions derive strictly from coordination signals documented in signals.md.</p>
+
+        <div class="meta-line">Trust-dimension completeness status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: trust-dimensions.md</div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Jurisdiction Name</span>
+            <span class="val">Israel</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Jurisdiction Type</span>
+            <span class="val">Country</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Eastern Mediterranean Research and Compute Corridor</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Research Network Classification</span>
+            <span class="val">National Academic Research-Network Coordination Surface</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Academic AI Classification</span>
+            <span class="val">Distributed University AI Research Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Identity Infrastructure Classification</span>
+            <span class="val">Biometric Identity Documentation and Government Authentication Federation Surface</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Registry and Exchange Classification</span>
+            <span class="val">National Domain Registry and Domestic Internet Exchange Coordination Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Cybersecurity Classification</span>
+            <span class="val">Civilian Cyber-Defense and Incident-Response Coordination Surface</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Settlement Infrastructure Classification</span>
+            <span class="val">Central-Bank Real-Time Gross Settlement Infrastructure</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">CBDC Classification</span>
+            <span class="val">Exploratory Central-Bank Digital Currency Research Surface</span>
+          </div>
+        </div>
+
+        <h3>Structural boundary notes</h3>
+        <ul>
+          <li>routing authority classification is not supported</li>
+          <li>readiness-tier assignment is not supported</li>
+          <li>topology placement is not supported</li>
+          <li>regional gateway classification is not supported</li>
+          <li>centralized national AI authority classification is not supported</li>
+          <li>full submarine-cable landing topology is not supported</li>
+          <li>full digital-asset licensing architecture is not supported</li>
+          <li>comparative capability ranking is not supported</li>
+        </ul>
+
+        <div class="meta-line">Metadata completeness status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: metadata.md</div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <h3>Overview</h3>
+        <p>Institution-published materials document Israel as a jurisdiction with national academic research-network coordination through IUCC and ILAN, distributed university AI research across the Weizmann AI Hub, Tel Aviv University Center for Artificial Intelligence and Data Science, and Technion Tech.AI, biometric identity-documentation and authentication federation through the National Biometric Database Authority and government identification systems, national registry and domestic exchange coordination through ISOC-IL and the IIX, civilian cyber-defense coordination through the Israel National Cyber Directorate and CERT-IL, central-bank settlement infrastructure through the ZAHAV RTGS system, and central-bank exploratory CBDC research through the digital shekel program.</p>
+
+        <h3>Research and education network structure</h3>
+        <p>Institution-published materials document a national coordination surface through IUCC and ILAN supporting academic interconnection across Israeli academic and research institutions. The collected source set supports an international research-network coordination environment through documented linkage with GÉANT and participation in the EuroHPC surface, forming a national academic interconnection and international research-network participation structure.</p>
+
+        <h3>Academic artificial intelligence research structure</h3>
+        <p>Institution-published materials document a distributed university AI research structure through the Weizmann AI Hub, the Tel Aviv University Center for Artificial Intelligence and Data Science, and Technion Tech.AI. The collected source set supports a multi-institution academic AI research coordination environment and does not document a centralized national AI authority.</p>
+
+        <h3>National identity federation structure</h3>
+        <p>Institution-published materials document a biometric identity-documentation and authenticated public-service access federation environment through the National Biometric Database Authority, biometric ID issuance surfaces, the mygov authentication environment, and the Government Identification System SSO surface. The collected source set supports a linked identity-documentation and service-access coordination structure across biometric documentation and government authentication workflows.</p>
+
+        <h3>Internet registry and exchange infrastructure structure</h3>
+        <p>Institution-published materials document a national naming and domestic interconnection coordination structure through ISOC-IL, the .il registry, the .ישראל registry, and the Israel Internet Exchange. Additional materials indicate linkage between IUCC and the IIX through the documented research-network connectivity environment, supporting a combined registry, DNS, and domestic interconnection structure.</p>
+
+        <h3>Civilian cybersecurity coordination structure</h3>
+        <p>Institution-published materials document a civilian cyber-defense coordination and incident-reporting structure through the Israel National Cyber Directorate and CERT-IL. The collected source set supports a standing institutional environment for civilian cyber coordination and incident-response reporting.</p>
+
+        <h3>Settlement infrastructure structure</h3>
+        <p>Institution-published materials document a national high-value settlement coordination structure through the Bank of Israel Payment and Settlement Systems Department and the ZAHAV RTGS system. The collected source set supports a central-bank-administered payment and settlement environment for real-time gross settlement activity.</p>
+
+        <h3>Central bank digital currency exploration structure</h3>
+        <p>Institution-published materials document the digital shekel program as a central-bank digital currency research surface linked to existing settlement infrastructure. The collected source set supports an exploratory CBDC environment connected to the Bank of Israel's payment-system coordination structure without extending beyond the documented research and design surface.</p>
+
+        <h3>Structural boundary statement</h3>
+        <p>This profile summarizes institution-published coordination structures documented in the Israel jurisdiction package. It does not assign routing authority, corridor role, readiness classification, topology placement, capability ranking, or comparative infrastructure status.</p>
+
+        <div class="meta-line">Source: profile.md</div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <h3>Overview</h3>
+        <p>Institution-published materials document Israel as a jurisdiction with builder-visible coordination environments through IUCC and ILAN academic research-network participation, distributed university AI research through the Weizmann AI Hub, Tel Aviv University Center for Artificial Intelligence and Data Science, and Technion Tech.AI, biometric identity-documentation and authentication federation through national biometric and government identification systems, national registry and domestic exchange coordination through ISOC-IL and the IIX, civilian cyber-defense coordination through the Israel National Cyber Directorate and CERT-IL, central-bank settlement infrastructure through the ZAHAV RTGS system, and central-bank digital currency exploration through the digital shekel program.</p>
+
+        <h3>Research and education network participation surface</h3>
+        <p>Institution-published materials document a coordination surface through IUCC and ILAN supporting participation in national academic interconnection across Israeli academic and research institutions. The collected source set supports participation in international research-network coordination environments through documented GÉANT linkage and EuroHPC participation.</p>
+
+        <h3>Academic artificial intelligence collaboration surface</h3>
+        <p>Institution-published materials document a coordination surface through the Weizmann AI Hub, the Tel Aviv University Center for Artificial Intelligence and Data Science, and Technion Tech.AI supporting distributed university-based AI collaboration environments. The collected source set supports multi-institution academic collaboration surfaces and does not document a centralized national AI authority.</p>
+
+        <h3>Identity federation compatibility surface</h3>
+        <p>Institution-published materials document a compatibility environment through the National Biometric Database Authority, biometric ID issuance surfaces, the mygov authentication environment, and the Government Identification System SSO surface. The collected source set supports biometric identity-documentation and authenticated public-service access compatibility across documented government authentication workflows.</p>
+
+        <h3>Internet registry and exchange coordination surface</h3>
+        <p>Institution-published materials document a coordination surface through ISOC-IL, the .il registry, the .ישראל registry, and the IIX supporting national naming-system coordination and domestic interconnection compatibility environments. Additional materials indicate linkage with IUCC through the documented research-network connection to the IIX.</p>
+
+        <h3>Civilian cybersecurity coordination interface</h3>
+        <p>Institution-published materials document an interaction environment through the Israel National Cyber Directorate and CERT-IL supporting civilian cyber-defense coordination and incident-reporting interfaces. The collected source set supports a standing institutional environment for civilian cyber coordination and reporting interaction.</p>
+
+        <h3>Settlement infrastructure interaction surface</h3>
+        <p>Institution-published materials document an interaction surface through the Bank of Israel Payment and Settlement Systems Department and the ZAHAV RTGS system supporting central-bank-administered real-time settlement environments. The collected source set supports payment-system interaction within a documented high-value settlement structure.</p>
+
+        <h3>Central bank digital currency observation surface</h3>
+        <p>Institution-published materials document an observation environment through the digital shekel program supporting central-bank digital-currency research linked to existing settlement infrastructure. The collected source set supports observation of an exploratory CBDC surface without extending beyond the documented research and design environment.</p>
+
+        <h3>Builder boundary statement</h3>
+        <p>This builder-mode profile summarizes institution-published coordination environments documented in the Israel jurisdiction package. It does not assign routing authority, corridor role, readiness classification, topology placement, capability ranking, or comparative infrastructure status.</p>
+
+        <div class="meta-line">Source: builder-mode.md</div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Scope</h3>
+        <p>This file records structural normalization steps performed during construction of the Israel jurisdiction package. It documents layer construction order, derivation boundaries, and interpretation constraints applied during Atlas package assembly. It does not assign routing authority, readiness classification, topology placement, capability ranking, or comparative infrastructure status.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The evidence layer was constructed by establishing institution-published coordination structures for IUCC and ILAN as the national research-network coordination surface, together with documented GÉANT linkage and EuroHPC participation. The evidence layer also recorded the Weizmann AI Hub, the Tel Aviv University Center for Artificial Intelligence and Data Science, and Technion Tech.AI as the visible university AI research structure; the National Biometric Database Authority, biometric ID issuance surfaces, the mygov authentication environment, and the Government Identification System SSO as the documented identity federation structure; ISOC-IL, the .il and .ישראל domain registries, and the Israel Internet Exchange (IIX) as the documented naming and domestic interconnection structure; the Israel National Cyber Directorate and CERT-IL as the documented civilian cyber coordination structure; and the Bank of Israel Payment and Settlement Systems Department, the ZAHAV RTGS system, and the digital shekel exploration program as the documented settlement and CBDC research structure. Evidence statements remained limited to institution-published coordination structures.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The signals layer was derived strictly from <code>evidence.md</code> by converting the evidence set into a research-network coordination signal, an academic AI distribution signal, a national identity federation signal, an internet registry and exchange coordination signal, a civilian cybersecurity coordination signal, a real-time settlement infrastructure signal, and a central bank digital currency exploration signal. Signals were derived strictly from <code>evidence.md</code> with no corridor inference.</p>
+
+        <h3>Trust-dimensions layer derivation</h3>
+        <p>The trust-dimensions layer was derived from <code>signals.md</code> by recording an academic-network continuity dimension, a distributed academic AI research continuity dimension, an identity-documentation continuity dimension, a registry and exchange coordination continuity dimension, a civilian cyber-defense continuity dimension, a central-bank settlement continuity dimension, and a CBDC exploratory research continuity dimension. Trust dimensions remained coordination-continuity descriptors only.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The metadata layer classified the package as aligned to the Eastern Mediterranean Research and Compute Corridor and recorded a research-network coordination surface classification, a distributed academic AI environment classification, an identity federation surface classification, a registry and exchange coordination environment classification, a civilian cyber-defense coordination surface classification, a central-bank real-time gross settlement infrastructure classification, and a CBDC exploratory research surface classification. No topology placement or readiness-tier assignment was performed.</p>
+
+        <h3>Profile layer synthesis</h3>
+        <p>The profile layer synthesized the documented institutional coordination structures into a jurisdiction-level infrastructure profile describing the research-network participation environment, distributed academic AI structure, identity federation environment, registry and exchange coordination environment, civilian cybersecurity coordination structure, settlement infrastructure structure, and CBDC exploration structure. Synthesis remained descriptive and non-comparative.</p>
+
+        <h3>Builder-mode layer interpretation surface</h3>
+        <p>The builder-mode layer translated the normalization layers into builder-visible coordination environments describing research-network participation surfaces, academic AI collaboration surfaces, identity federation compatibility surfaces, registry and exchange coordination surfaces, cybersecurity interaction interfaces, settlement interaction environments, and CBDC observation surfaces. Builder-mode interpretation did not evaluate deployment readiness.</p>
+
+        <h3>Structural boundary conditions</h3>
+        <p>The package does not assign routing authority classification, corridor leadership role, topology placement, deployment readiness tier, regional gateway status, centralized national AI authority classification, submarine-cable landing topology completeness, digital-asset regulatory architecture completeness, or comparative infrastructure ranking.</p>
+
+        <h3>Normalization status</h3>
+        <p>Israel jurisdiction package normalization completed across evidence, signals, trust-dimensions, metadata, profile, and builder-mode layers. All statements remain limited to institution-published coordination structures documented during the normalization process.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: change-log.md</div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Israel jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/israel/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Israel</li>
+          <li><strong>Code:</strong> IL</li>
+          <li><strong>Region:</strong> Eastern Mediterranean</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Classification fields</h4>
+        <ul>
+          <li><strong>Corridor Alignment:</strong> Eastern Mediterranean Research and Compute Corridor</li>
+          <li><strong>Research Network:</strong> National Academic Research-Network Coordination Surface</li>
+          <li><strong>Academic AI:</strong> Distributed University AI Research Environment</li>
+          <li><strong>Identity Infrastructure:</strong> Biometric Identity Documentation and Government Authentication Federation Surface</li>
+          <li><strong>Registry and Exchange:</strong> National Domain Registry and Domestic Internet Exchange Coordination Environment</li>
+          <li><strong>Cybersecurity:</strong> Civilian Cyber-Defense and Incident-Response Coordination Surface</li>
+          <li><strong>Settlement Infrastructure:</strong> Central-Bank Real-Time Gross Settlement Infrastructure</li>
+          <li><strong>CBDC:</strong> Exploratory Central-Bank Digital Currency Research Surface</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: preliminary</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a comparative jurisdiction positioning.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
