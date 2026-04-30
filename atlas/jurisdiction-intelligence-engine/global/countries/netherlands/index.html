@@ -1,91 +1,652 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Netherlands | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netherlands — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Netherlands Atlas jurisdiction package rendering. Rhine–Alpine, North Sea–Mediterranean, North Sea–Baltic, Benelux, and European Union institutional framework alignment.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/netherlands/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Netherlands</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Netherlands</h1>
 
-</article>
-</main>
+  <p class="lede">European logistics gateway, semiconductor-equipment anchor jurisdiction, exchange-layer interconnection environment, and international legal-institution hosting platform embedded within Benelux and EU corridor-layer infrastructure systems. This page renders the canonical Netherlands Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting Rotterdam maritime gateway continuity, AMS-IX exchange-layer interconnection, ASML and Brainport Eindhoven semiconductor-equipment anchoring, The Hague international legal hosting, DigiD / Logius / eIDAS digital identity interoperability, DNB / AFM / ECB supervisory participation, TenneT / COBRAcable / Hydrogen Network Netherlands energy-transition coordination, Benelux and EU corridor integration, and Delta Programme climate-adaptation governance continuity.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Netherlands (NL)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>The Netherlands currently reads within Atlas as a Rotterdam-centered maritime gateway, an Amsterdam-centered exchange and colocation environment, a Brainport Eindhoven semiconductor-equipment anchor region, and a Hague-centered international legal institutional host platform. The current package also places the Netherlands inside corridor-linked logistics structures attached to EU and Benelux transport and supervisory systems. These conditions support a structural characterization centered on maritime gateway continuity, neutral interconnection density, semiconductor-equipment concentration, legal-hosting persistence, and corridor-linked logistics integration without assigning routing authority or comparative status.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Netherlands</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Western Europe</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Rhine–Alpine Corridor · North Sea–Mediterranean Corridor · North Sea–Baltic Corridor · Benelux Coordination Framework · European Union Institutional Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Rotterdam · Amsterdam · The Hague · Veldhoven / Brainport Eindhoven</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records evidence-supported national structures documented for the Netherlands that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.</p>
+
+        <div class="meta-line">Source: profile.md · metadata.md — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Netherlands jurisdiction package across maritime gateway continuity, exchange-layer interconnection, semiconductor-equipment infrastructure, corridor alignment, regional coordination, digital identity infrastructure, cyber coordination, supervisory participation, energy-transition coordination, climate-adaptation governance, and international legal hosting.</p>
+
+        <h3>Maritime gateway continuity</h3>
+        <p>The evidence layer records Rotterdam maritime gateway continuity through the Port of Rotterdam Authority and Schiphol cargo activity as the documented logistics surface for the Netherlands jurisdiction package.</p>
+
+        <h3>Exchange-layer interconnection environment</h3>
+        <p>The evidence layer records AMS-IX exchange-layer interconnection environment, Amsterdam-area colocation distribution, Equinix AM-series interconnection participation, and Google Cloud regional presence in Eemshaven as the documented exchange and colocation surface.</p>
+
+        <h3>Semiconductor-equipment infrastructure concentration</h3>
+        <p>The evidence layer records ASML semiconductor-equipment infrastructure concentration and Brainport Eindhoven cluster participation as the documented semiconductor-equipment anchor structure, alongside national semiconductor policy continuity and European Chips Act alignment.</p>
+
+        <h3>Corridor and regional alignment</h3>
+        <p>The evidence layer records TEN-T corridor alignment across Rhine–Alpine, North Sea–Mediterranean, and North Sea–Baltic corridor structures, together with Benelux coordination framework participation as the documented regional coordination layer.</p>
+
+        <h3>Digital identity infrastructure and cyber coordination</h3>
+        <p>The evidence layer records DigiD digital identity infrastructure, Logius operational identity continuity, and the NCSC cyber-coordination environment as the documented public-service identity and national cyber-coordination surface.</p>
+
+        <h3>Supervisory participation</h3>
+        <p>The evidence layer records DNB and AFM supervisory participation together with ECB supervisory attachment as the documented financial-supervisory environment for the Netherlands jurisdiction package.</p>
+
+        <h3>Energy-transition coordination</h3>
+        <p>The evidence layer records TenneT cross-border grid coordination and Hydrogen Network Netherlands deployment as the documented energy-transition coordination surface.</p>
+
+        <h3>Climate-adaptation governance</h3>
+        <p>The evidence layer records Delta Programme climate-adaptation governance continuity as the documented adaptation governance surface for the Netherlands jurisdiction package.</p>
+
+        <h3>International legal-institution hosting</h3>
+        <p>The evidence layer records International Court of Justice hosting, International Criminal Court hosting, Permanent Court of Arbitration hosting, Europol headquarters presence, and Eurojust coordination presence as the documented international legal-institution and EU justice-coordination hosting surface.</p>
+
+        <div class="meta-line">Source: evidence.md · change-log.md — Evidence Layer Construction</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology completion placement, readiness tiers, Atlas surfaces, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Strategic position signals</h3>
+        <p>Rotterdam, AMS-IX, ASML, and the Hague-based legal institutions together signal a multi-node national coordination surface spanning logistics, interconnection, semiconductor infrastructure, and international legal hosting rather than a single centralized national stack. European Commission corridor materials and Benelux treaty materials signal that this national surface is structurally attached to regional and EU cross-border coordination frameworks. The evidence supports a gateway-and-coordination signal rooted in ports, exchanges, semiconductor infrastructure, and legal hosting, but it does not support a standalone Dutch-autonomy classification detached from the wider EU-linked systems documented in <code>evidence.md</code>.</p>
+
+        <h3>Economic and infrastructure coordination signals</h3>
+        <p>Rotterdam port operations, Schiphol cargo activity, AMS-IX colocation density, and Brainport Eindhoven activity together signal a multi-anchor economic and infrastructure coordination environment spanning maritime logistics, air cargo, exchange infrastructure, and advanced manufacturing. Gasunie's hydrogen-network buildout and the Rotterdam first-section materials signal port-industrial attachment to national hydrogen-network formation. European Commission corridor participation signals that Dutch gateway infrastructure is tied to inland and cross-border freight continuities toward Germany and Belgium. ASML's Veldhoven and Brainport materials signal concentrated high-technology manufacturing and innovation activity embedded inside the broader logistics and infrastructure surface.</p>
+
+        <h3>Digital governance and public infrastructure signals</h3>
+        <p>DigiD, Logius, and Government.nl eIDAS materials together signal a nationally visible public digital identity surface with documented cross-border interoperability inside the EEA framework. data.overheid.nl signals a government-linked open-data publication and registry surface rather than a fragmented collection of unrelated publication points. NCSC organizational materials signal a national cyber-coordination and incident-response surface attached to the broader public digital infrastructure environment. The evidence supports public-service identity continuity, open-data administration, and cyber-coordination signals, but it does not support a broader sovereign digital-stack classification beyond the documented service layers.</p>
+
+        <h3>Financial and regulatory coordination signals</h3>
+        <p>Government.nl, DNB, AFM, and ECB materials together signal a financial-regulatory environment organized through Dutch supervisory institutions embedded inside wider EU banking and market-governance frameworks. DNB's roles as central bank, prudential supervisor, and resolution authority, together with AFM's conduct supervision, signal a dual domestic supervisory structure rather than a single regulator hierarchy. The DNB-AFM-ACM InnovationHub signals a visible institutional interface for innovative financial products and services without signaling a regulatory waiver environment. ECB and AFM Brexit materials signal a bounded post-Brexit market-relocation and authorization-adjustment surface centered partly on Amsterdam, while the evidence does not support a broader claim of complete euro-clearing relocation into the Netherlands.</p>
+
+        <h3>Energy and climate coordination signals</h3>
+        <p>TenneT interconnector materials, TenneT's Dutch-German operating surface, and COBRAcable together signal an energy environment organized through cross-border grid coordination rather than a closed national power perimeter. TenneT offshore-wind materials and Gasunie hydrogen-network materials signal a coordinated energy-transition surface linking offshore generation, transmission infrastructure, hydrogen transport, and industrial clusters. The Rotterdam hydrogen-network starting segment signals direct attachment between port-industrial infrastructure and national energy-transition buildout. Government.nl climate and Delta Programme materials signal a climate-adaptation and water-management governance layer operating alongside the energy and infrastructure surface.</p>
+
+        <h3>Semiconductor and advanced technology signals</h3>
+        <p>ASML's Veldhoven headquarters, EUV development history, and Brainport Eindhoven materials together signal a concentrated advanced-lithography and semiconductor-equipment surface with strong R&D and manufacturing continuity. The coexistence of ASML's equipment role, Brainport cluster density, and the Dutch parliamentary semiconductor letter signals a nationally visible semiconductor-policy and ecosystem-support layer. European Chips Act attachment signals that the semiconductor environment is aligned with wider EU resilience and industrial-policy structures. The evidence supports a semiconductor-equipment and R&D concentration signal, but it does not support a full national semiconductor fabrication-stack classification.</p>
+
+        <h3>Connectivity and data infrastructure signals</h3>
+        <p>AMS-IX scale and Amsterdam-area colocation density together signal a strong exchange-layer interconnection environment centered on Amsterdam and adjacent facilities. Google Cloud's Eemshaven region and documented Dedicated Interconnect access through Amsterdam facilities signal bounded cloud-region presence linked to the exchange and colocation surface. The documented Havfrue reference signals limited but visible transatlantic infrastructure attachment within the current source set. The evidence supports commercial interconnection continuity, colocation density, and bounded cloud-region presence signals, but it does not support a nationwide sovereign hyperscale concentration signal.</p>
+
+        <h3>Multilateral and legal coordination participation signals</h3>
+        <p>Government.nl, ICJ, ICC, PCA, Europol, and Eurojust materials together signal durable multilateral legal and justice-coordination hosting centered on The Hague. Peace Palace continuity across ICJ and PCA materials signals long-duration institutional hosting for international adjudication and arbitration functions. The combined Hague presence of international courts and EU justice-security agencies signals a concentrated legal-institutional hosting surface rather than isolated standalone bodies.</p>
+
+        <h3>Cross-border corridor integration signals</h3>
+        <p>Benelux treaty materials signal a formal regional cross-border coordination framework linking the Netherlands with Belgium and Luxembourg. European Commission corridor materials signal Dutch attachment to Rhine-Alpine, North Sea-Mediterranean, and North Sea-Baltic freight structures beginning from Amsterdam and Rotterdam and extending toward Germany and Belgium. The evidence supports cross-border freight alignment and western continental infrastructure continuity signals rooted in ports, rail-corridor participation, and formal regional cooperation.</p>
+
+        <h3>Constraints and structural boundary signals</h3>
+        <ul>
+          <li>The evidence does not support an independent Dutch sovereign hyperscale compute stack signal.</li>
+          <li>Multiple major signals in this package depend on EU-linked or regional coordination structures, including eIDAS, ECB supervision, TEN-T corridor planning, the European Chips Act, and Benelux cooperation.</li>
+          <li>Port of Rotterdam and Schiphol evidence signals continuing structural dependence on external trade and transport flows rather than a closed domestic logistics environment.</li>
+          <li>Government.nl climate and Delta Programme materials signal persistent low-lying-delta exposure, flood risk, freshwater pressure, and climate-adaptation dependence as structural constraints.</li>
+          <li>TenneT and Gasunie materials signal that the Dutch energy-transition environment remains tied to surrounding countries and cross-border infrastructure coordination.</li>
+          <li>The evidence does not support routing hierarchy assignment, topology completion placement, sovereign autonomy ranking, or broader subsea-cable dominance claims beyond the documented exchange, colocation, and cloud-region surfaces.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>The Netherlands' evidence-derived signals show a multi-node coordination environment carried by Rotterdam logistics, Amsterdam exchange and colocation infrastructure, Veldhoven-Brainport semiconductor concentration, Hague-based legal hosting, Dutch-EU financial supervision, cross-border energy interconnection, national digital identity infrastructure, and Benelux and EU corridor attachment. The signal layer indicates strong institutional coordination surfaces across logistics, connectivity, semiconductor infrastructure, digital governance, legal hosting, and regional infrastructure alignment, while preserving the evidence-bound limits around sovereign compute autonomy, routing authority, and broader unsupported ranking or readiness claims.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: signals.md</div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology completion placement, readiness tiers, Atlas surfaces, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Institutional continuity dimension</h3>
+        <p>The source layers indicate an institutional-continuity trust surface distributed across port governance, digital identity operations, financial supervision, cybersecurity coordination, international legal hosting, and formal regional cooperation rather than a single centralized national authority. The Port of Rotterdam Authority signals long-duration infrastructure governance continuity at the primary maritime gateway. Logius and DigiD signal persistent public-service identity operations with documented continuity, availability, and security responsibilities. DNB and AFM together indicate dual supervisory continuity across prudential, resolution, and conduct-supervision functions, while ECB attachment places part of this continuity inside wider European supervisory structures. NCSC organizational materials indicate a standing national cyber-coordination and incident-response environment. ICJ, ICC, PCA, Europol, and Eurojust hosting in The Hague indicate legal-institutional continuity carried by long-duration international and European bodies. Benelux participation adds a formal regional continuity layer that reinforces the broader institutional surface.</p>
+
+        <h3>Infrastructure coordination reliability dimension</h3>
+        <p>The source layers indicate an infrastructure-reliability trust surface carried by combined port, airport, freight-corridor, grid, and hydrogen-network coordination rather than by a single logistics or energy system. Rhine-Alpine and North Sea-Mediterranean corridor attachment indicate documented corridor continuity linking Rotterdam and Amsterdam with Germany and Belgium. Schiphol cargo activity adds a separate air-logistics continuity layer alongside the maritime gateway structure. TenneT's interconnection role and Dutch-German operating surface indicate that grid reliability is organized through cross-border transmission coordination. COBRAcable adds documented cross-border electricity linkage between the Netherlands and Denmark inside the wider interconnection environment. Hydrogen Network Netherlands and the Rotterdam first-section anchor indicate staged hydrogen-network deployment tied to industrial clusters, storage, import locations, and surrounding countries. The trust surface documented here is one of multi-layer infrastructure coordination reliability, not national self-sufficiency detached from regional systems.</p>
+
+        <h3>Digital identity and exchange neutrality dimension</h3>
+        <p>DigiD and Logius indicate a nationally visible digital-identity trust surface organized through named public operators and documented operational continuity. eIDAS participation indicates that this identity layer is interoperable with broader EEA public-service access structures rather than limited to domestic-only recognition. AMS-IX's neutral member-based association structure indicates a neutrality-preserving exchange governance surface. The Amsterdam-area colocation distribution documented across multiple points of presence indicates that exchange continuity is spread across more than one facility rather than concentrated in a single site. Google Cloud's Eemshaven region adds a bounded commercial compute presence attached to Amsterdam interconnection and colocation surfaces. The documented trust surface combines public digital identity continuity with neutral commercial interconnection, while the source layers do not support a sovereign hyperscale compute claim.</p>
+
+        <h3>Semiconductor ecosystem stability dimension</h3>
+        <p>ASML's EUV role, Veldhoven headquarters, and large R&D and manufacturing presence indicate a stable semiconductor-equipment trust surface anchored in a long-duration institutional and industrial base. Brainport Eindhoven cluster density indicates that this trust surface is reinforced by a surrounding high-technology ecosystem rather than by ASML in isolation. The Dutch parliamentary semiconductor letter indicates visible national policy continuity around semiconductor ecosystem support. European Chips Act alignment indicates that this semiconductor trust surface is attached to wider EU resilience and industrial-policy structures. The documented trust characteristic is semiconductor-equipment and ecosystem stability, not a full national fabrication-stack continuity claim.</p>
+
+        <h3>Legal-institutional hosting dimension</h3>
+        <p>ICJ hosting continuity at the Peace Palace indicates long-duration international judicial hosting continuity in The Hague. ICC hosting continuity indicates continuing state-backed hosting of a major international criminal court in the Netherlands. PCA continuity at the Peace Palace indicates durable arbitration and adjudication hosting within the same legal-institutional environment. Europol headquarters presence adds an EU law-enforcement coordination institution to the Hague hosting surface. Eurojust presence adds EU criminal-justice coordination continuity to the same city-level institutional environment. The Peace Palace functions as a durable institutional anchor linking multiple adjudicative and arbitral trust surfaces within The Hague. The documented trust surface is one of legal-institutional hosting continuity and venue stability, not legal coordination authority assignment.</p>
+
+        <h3>Cross-border integration dependence dimension</h3>
+        <p>Benelux treaty participation indicates formal regional dependence on standing cross-border coordination structures with Belgium and Luxembourg. ECB supervisory participation indicates that part of Dutch financial trust continuity is embedded inside broader European supervisory systems. TEN-T corridor attachment indicates that transport continuity is linked to wider continental corridor structures rather than a nationally closed freight environment. European Chips Act alignment indicates that semiconductor-policy continuity is partly dependent on EU-level industrial coordination. eIDAS interoperability indicates that public digital identity continuity is connected to wider European recognition and access structures. Cross-border hydrogen-network coordination and electricity interconnection indicate that energy-transition continuity depends on surrounding-country infrastructure and interoperability. The source layers therefore indicate a trust dimension built on cross-border integration continuity, while also documenting clear dependence on supranational and regional systems.</p>
+
+        <h3>Climate adaptation governance dimension</h3>
+        <p>Delta Programme materials indicate a standing flood-management, freshwater, and spatial-adaptation governance structure rather than episodic climate-response activity. Government.nl climate materials indicate that sea-level exposure is addressed through ongoing governance continuity rather than treated as a transient risk surface. Freshwater-management planning forms part of the same adaptation trust surface documented in the Delta Programme materials. The low-elevation national setting indicates that adaptation planning is structurally attached to core infrastructure continuity. The source layers support a climate-adaptation-governance trust dimension rooted in continuity of planning and coordination, while preserving the documented reality of persistent environmental exposure.</p>
+
+        <h3>Constraint boundary dimension</h3>
+        <ul>
+          <li>The source layers do not document a sovereign Dutch hyperscale compute stack, which bounds cloud and compute trust claims.</li>
+          <li>EU supervisory reliance is a persistent feature of the documented financial, identity, transport, and semiconductor governance environment.</li>
+          <li>AMS-IX and Amsterdam interconnection strength are documented, but exchange-layer continuity remains attached to international traffic, colocation, and commercial interconnection systems.</li>
+          <li>Rotterdam and Schiphol continuity are strong, but the same source layers document dependence on external maritime and air trade flows.</li>
+          <li>TenneT and Gasunie materials indicate that energy-transition continuity depends on cross-border interconnection and surrounding-country coordination.</li>
+          <li>Delta-environment geography, sea-level exposure, flooding, drought, and freshwater pressure remain explicit trust-boundary conditions inside the national infrastructure environment.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Trust dimensions summary statement</h3>
+        <p>The Netherlands appears in the trust layer as a logistics gateway, semiconductor-equipment anchor, exchange-layer interconnection environment, and international legal-hosting jurisdiction whose continuity is carried by Rotterdam, Amsterdam, Veldhoven-Brainport, and The Hague across port governance, exchange neutrality, semiconductor infrastructure, legal hosting, and digital and supervisory institutions. The documented trust surface is strong where institutional continuity, infrastructure coordination, and legal-hosting persistence are visible, while remaining structurally embedded in Benelux, EU supervisory, TEN-T, eIDAS, Chips Act, and cross-border energy systems rather than standing apart from them.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: trust-dimensions.md</div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility.</p>
+
+        <h3>Jurisdiction identity</h3>
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Netherlands</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Western Europe</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Rhine–Alpine Corridor · North Sea–Mediterranean Corridor · North Sea–Baltic Corridor · Benelux Coordination Framework · European Union Institutional Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Rotterdam · Amsterdam · The Hague · Veldhoven / Brainport Eindhoven</span>
+          </div>
+        </div>
+
+        <h3>Infrastructure role classification</h3>
+        <ul>
+          <li>European maritime gateway jurisdiction</li>
+          <li>global exchange-layer interconnection environment</li>
+          <li>semiconductor-equipment infrastructure anchor</li>
+          <li>international legal-institution hosting jurisdiction</li>
+          <li>cross-border logistics corridor integrator</li>
+          <li>EU supervisory-system participant jurisdiction</li>
+        </ul>
+
+        <h3>Digital governance classification</h3>
+        <ul>
+          <li>national digital identity infrastructure (DigiD)</li>
+          <li>eIDAS interoperability participant</li>
+          <li>national open-data registry environment</li>
+          <li>national cyber-coordination surface (NCSC)</li>
+          <li>exchange-layer neutrality environment (AMS-IX)</li>
+          <li>commercial regional cloud presence (Eemshaven)</li>
+        </ul>
+
+        <h3>Financial and regulatory classification</h3>
+        <ul>
+          <li>ECB supervisory framework participant</li>
+          <li>DNB prudential supervision authority</li>
+          <li>AFM conduct supervision authority</li>
+          <li>InnovationHub regulatory coordination interface</li>
+          <li>post-Brexit Amsterdam equity-trading relocation surface</li>
+        </ul>
+
+        <h3>Energy and infrastructure classification</h3>
+        <ul>
+          <li>North Sea offshore wind coordination participant</li>
+          <li>Hydrogen Network Netherlands infrastructure participant</li>
+          <li>TenneT cross-border grid operator environment</li>
+          <li>COBRAcable interconnection participant</li>
+          <li>Rotterdam hydrogen-network anchoring surface</li>
+        </ul>
+
+        <h3>Semiconductor ecosystem classification</h3>
+        <ul>
+          <li>ASML lithography infrastructure anchor</li>
+          <li>Brainport Eindhoven semiconductor cluster participant</li>
+          <li>European Chips Act ecosystem participant</li>
+          <li>national semiconductor policy continuity environment</li>
+        </ul>
+
+        <h3>Legal and multilateral hosting classification</h3>
+        <ul>
+          <li>International Court of Justice host state</li>
+          <li>International Criminal Court host state</li>
+          <li>Permanent Court of Arbitration host state</li>
+          <li>Europol headquarters host state</li>
+          <li>Eurojust headquarters host state</li>
+        </ul>
+
+        <h3>Corridor integration classification</h3>
+        <ul>
+          <li>Rhine–Alpine freight corridor gateway</li>
+          <li>North Sea–Mediterranean corridor gateway</li>
+          <li>North Sea–Baltic corridor participant</li>
+          <li>Benelux regional coordination participant</li>
+          <li>Germany–Belgium freight continuity interface</li>
+        </ul>
+
+        <h3>Constraint classification</h3>
+        <ul>
+          <li>no sovereign hyperscale compute stack evidence</li>
+          <li>EU supervisory-system dependence</li>
+          <li>TEN-T corridor integration dependence</li>
+          <li>European Chips Act policy alignment dependence</li>
+          <li>cross-border hydrogen infrastructure dependence</li>
+          <li>cross-border electricity interconnection dependence</li>
+          <li>low-elevation delta climate exposure environment</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Metadata summary statement</h3>
+        <p>The Netherlands appears in the metadata layer as a European logistics gateway, semiconductor-equipment anchor jurisdiction, exchange-layer interconnection environment, and international legal-institution hosting platform embedded within Benelux and EU corridor-layer infrastructure systems.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: metadata.md</div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+        <h3>Jurisdiction overview</h3>
+        <p>The Netherlands currently reads within Atlas as a Rotterdam-centered maritime gateway, an Amsterdam-centered exchange and colocation environment, a Brainport Eindhoven semiconductor-equipment anchor region, and a Hague-centered international legal institutional host platform. The current package also places the Netherlands inside corridor-linked logistics structures attached to EU and Benelux transport and supervisory systems. These conditions support a structural characterization centered on maritime gateway continuity, neutral interconnection density, semiconductor-equipment concentration, legal-hosting persistence, and corridor-linked logistics integration without assigning routing authority or comparative status.</p>
+
+        <h3>Infrastructure coordination role</h3>
+        <p>The Netherlands' infrastructure coordination role is characterized in the current package by Rotterdam port continuity, Schiphol cargo activity, TEN-T corridor participation, and formal Benelux-linked freight alignment. The current layers show Rotterdam as Europe's largest port with continuing governance through the Port of Rotterdam Authority, Schiphol as a documented cargo surface, and the Netherlands attached to the Rhine–Alpine, North Sea–Mediterranean, and North Sea–Baltic corridor structures. These corridor surfaces link Rotterdam and Amsterdam with Germany and Belgium through documented freight-continuity pathways. The resulting profile is one of cross-border logistics integration and gateway continuity inside wider European transport systems rather than a nationally closed logistics environment.</p>
+
+        <h3>Digital governance environment</h3>
+        <p>The Netherlands' digital governance environment is characterized in the current package by DigiD national identity infrastructure, Logius operational continuity, eIDAS interoperability participation, a national open-data registry environment, NCSC cyber-coordination, AMS-IX neutrality, distributed Amsterdam-area colocation, and bounded commercial cloud presence in Eemshaven. The current layers show DigiD and Logius as the named public-service identity operators, Government.nl eIDAS participation as the cross-border interoperability frame, data.overheid.nl as the national open-data registry surface, and NCSC as a national cyber-coordination and incident-response environment. They also show AMS-IX as a neutral member-based exchange with multiple Amsterdam-area colocation sites and a Google Cloud regional presence in Eemshaven connected to Amsterdam interconnection facilities. These conditions support a structural characterization centered on national digital identity continuity and neutral commercial interconnection without inferring a sovereign hyperscale stack.</p>
+
+        <h3>Financial and supervisory environment</h3>
+        <p>The Netherlands' financial and supervisory environment is characterized in the current package by DNB prudential-supervision participation, AFM conduct-supervision continuity, ECB supervisory-system integration, InnovationHub coordination, and a bounded Amsterdam market-relocation surface after Brexit. The current layers show DNB as central bank, prudential supervisor, and resolution authority; AFM as the conduct supervisor for the financial market sector; and ECB-linked banking supervision as part of the broader supervisory setting. The DNB-AFM-ACM InnovationHub adds a standing interface for firms with regulatory questions about innovative financial products and services. ECB and AFM materials also preserve a documented post-Brexit equity-trading relocation surface centered partly on Amsterdam without extending that evidence into a broader market-dominance claim.</p>
+
+        <h3>Energy and climate infrastructure environment</h3>
+        <p>The Netherlands' energy and climate infrastructure environment is characterized in the current package by TenneT cross-border grid coordination, COBRAcable linkage, North Sea offshore wind scaling, Hydrogen Network Netherlands deployment, Rotterdam hydrogen-network anchoring, and Delta Programme adaptation governance. The current layers show TenneT operating the Dutch high-voltage grid in a cross-border setting with interconnectors to neighboring systems and a Dutch-German operating surface, while COBRAcable adds a specific Netherlands-Denmark electricity linkage. They also show offshore wind buildout, Hydrogen Network Netherlands deployment across industrial clusters and surrounding-country linkages, and the first hydrogen-network section anchored in Rotterdam. Government climate and Delta Programme materials preserve flood-management, freshwater, and spatial-adaptation continuity in a low-lying delta setting. These conditions support a structural characterization centered on cross-border energy-transition participation and climate-adaptation governance continuity rather than energy independence.</p>
+
+        <h3>Semiconductor ecosystem environment</h3>
+        <p>The Netherlands' semiconductor ecosystem environment is characterized in the current package by ASML lithography infrastructure leadership, Brainport Eindhoven cluster density, national semiconductor policy continuity, and European Chips Act alignment. The current layers show ASML's Veldhoven headquarters and major R&D and manufacturing presence, EUV development continuity, and Brainport Eindhoven as the surrounding high-technology cluster environment. The Dutch parliamentary semiconductor letter preserves a visible national policy-continuity surface, while European Chips Act alignment places the semiconductor environment within a wider EU industrial-policy setting. These conditions support a structural characterization centered on semiconductor-equipment concentration and cluster continuity without inferring a full national fabrication-stack profile.</p>
+
+        <h3>Legal and multilateral institutional environment</h3>
+        <p>The Netherlands' legal and multilateral institutional environment is characterized in the current package by long-duration hosting continuity in The Hague. The current layers show hosting continuity for the International Court of Justice, the International Criminal Court, and the Permanent Court of Arbitration, together with Europol headquarters presence and Eurojust coordination presence. Peace Palace materials preserve a durable institutional anchor for adjudication and arbitration functions inside this legal-hosting environment. These conditions support a structural characterization centered on venue stability, international legal hosting, and EU justice-coordination presence without assigning legal coordination authority.</p>
+
+        <h3>Cross-border integration environment</h3>
+        <p>The Netherlands' cross-border integration environment is characterized in the current package by Benelux framework participation, TEN-T corridor integration, ECB supervisory attachment, eIDAS interoperability, European Chips Act alignment, cross-border hydrogen-network linkage, and cross-border electricity interconnection. The current layers show the Netherlands attached to standing regional and EU systems across transport, finance, digital identity, semiconductor policy, and energy-transition infrastructure. Benelux participation provides a formal regional coordination layer, while TEN-T, ECB, eIDAS, and the European Chips Act connect the national profile to wider European institutional systems. TenneT and Gasunie materials preserve cross-border dependence in electricity and hydrogen infrastructure. These conditions support a structural characterization centered on integration continuity across multiple institutional systems rather than stand-alone national separation.</p>
+
+        <h3>Structural constraints</h3>
+        <p>The current Netherlands profile also carries clear structural constraints. The current package does not preserve evidence of a sovereign hyperscale compute stack. Major continuity layers depend on EU supervisory systems, TEN-T corridor structures, and European Chips Act alignment. Energy-transition continuity depends on cross-border grid and hydrogen infrastructure rather than exclusively domestic systems. Rotterdam and Schiphol continuity are tied to external maritime and air trade flows. The current package also preserves low-elevation delta exposure through sea-level rise, flooding, drought, and freshwater pressure. These constraints remain descriptive and do not alter the structural characterization recorded in <code>metadata.md</code>.</p>
+
+        <hr class="section-divider">
+
+        <h3>Profile summary statement</h3>
+        <p>The Netherlands appears in the profile layer as a European logistics gateway, semiconductor-equipment anchor jurisdiction, exchange-layer interconnection environment, and international legal-institution hosting platform embedded within Benelux and EU corridor-layer infrastructure systems.</p>
+
+        <div class="meta-line">Source: profile.md</div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Netherlands profile into builder-facing interpretation. This file provides structural interpretation only. It does not assign routing authority, readiness tiers, Atlas surfaces, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Maritime and logistics coordination environment</h3>
+        <p>For builder interpretation, the Netherlands reads as a maritime gateway coordination environment centered on Rotterdam and extended through Schiphol cargo participation and corridor-linked freight continuity. The current normalized layers show Port of Rotterdam gateway continuity, Schiphol cargo infrastructure participation, Rhine–Alpine alignment, North Sea–Mediterranean attachment, North Sea–Baltic linkage, and Benelux freight-continuity participation. These conditions support a builder-facing reading centered on multi-surface logistics coordination inside wider European freight systems rather than on a nationally closed logistics perimeter.</p>
+
+        <h3>Exchange and interconnection environment</h3>
+        <p>For builder interpretation, the Netherlands reads as a neutral exchange-layer interconnection platform centered on AMS-IX and the Amsterdam colocation environment. The current normalized layers show AMS-IX exchange neutrality, Amsterdam colocation distribution across multiple sites, Equinix AM-series interconnection participation inside that distribution, Google Cloud regional presence in Eemshaven, and exchange-layer transit continuity through documented commercial interconnection structures. These conditions support a builder-facing reading centered on neutral exchange governance, distributed colocation continuity, and bounded regional cloud attachment without inferring routing-core status or sovereign hyperscale concentration.</p>
+
+        <h3>Semiconductor ecosystem environment</h3>
+        <p>For builder interpretation, the Netherlands reads as a semiconductor-equipment ecosystem anchor centered on ASML and Brainport Eindhoven. The current normalized layers show ASML lithography infrastructure concentration, Brainport Eindhoven cluster density, national semiconductor ecosystem policy continuity, and European Chips Act alignment. These conditions support a builder-facing reading centered on lithography-system continuity, cluster-backed high-technology participation, and EU-linked semiconductor policy attachment without inferring a full domestic fabrication stack.</p>
+
+        <h3>Legal and institutional hosting environment</h3>
+        <p>For builder interpretation, the Netherlands reads as an international legal-hosting venue environment centered on The Hague. The current normalized layers show International Court of Justice hosting continuity, International Criminal Court hosting continuity, Permanent Court of Arbitration hosting continuity, Europol headquarters presence, Eurojust coordination presence, and Peace Palace institutional anchoring. These conditions support a builder-facing reading centered on long-duration venue stability, international legal hosting, and EU justice-coordination presence without assigning legal coordination authority.</p>
+
+        <h3>Digital identity and cyber coordination environment</h3>
+        <p>For builder interpretation, the Netherlands reads as a digital-identity interoperability jurisdiction with named public operators and a visible national cyber-coordination surface. The current normalized layers show DigiD national identity infrastructure, Logius operational continuity, eIDAS interoperability participation, data.overheid.nl registry infrastructure, and NCSC cyber coordination. These conditions support a builder-facing reading centered on public-service identity continuity, cross-border digital recognition, open-data registry administration, and cyber-coordination persistence. The same normalized layers place these functions alongside AMS-IX neutrality and the Amsterdam interconnection environment, but do not support a sovereign Dutch hyperscale compute classification.</p>
+
+        <h3>Financial and supervisory coordination environment</h3>
+        <p>For builder interpretation, the Netherlands reads as a financial-supervisory coordination environment structured through Dutch institutions operating inside wider European supervisory systems. The current normalized layers show DNB supervisory participation, AFM conduct-supervision continuity, ECB supervisory attachment, InnovationHub regulatory coordination, and a bounded Amsterdam equity-trading relocation surface after Brexit. These conditions support a builder-facing reading centered on prudential and conduct-supervision continuity, EU-linked supervisory embedding, and a documented post-Brexit market-adjustment surface without extending the package into broader market-dominance claims.</p>
+
+        <h3>Energy transition infrastructure environment</h3>
+        <p>For builder interpretation, the Netherlands reads as a cross-border energy-transition coordination participant. The current normalized layers show TenneT grid interconnection structures, COBRAcable linkage, North Sea offshore wind scaling, Hydrogen Network Netherlands deployment, and Rotterdam hydrogen-network anchoring. These conditions support a builder-facing reading centered on transmission interdependence, offshore-wind buildout, staged hydrogen-network formation, and port-linked energy-transition infrastructure continuity rather than on nationally isolated energy autonomy.</p>
+
+        <h3>Cross-border integration environment</h3>
+        <p>For builder interpretation, the Netherlands reads as a Benelux and EU corridor-integrated infrastructure surface. The current normalized layers show Benelux coordination framework participation, TEN-T corridor integration, ECB supervisory integration, eIDAS interoperability, European Chips Act alignment, cross-border hydrogen infrastructure linkage, and cross-border electricity interconnection continuity. These conditions support a builder-facing reading centered on continuity through regional and European institutional attachment across transport, finance, digital identity, semiconductor policy, and energy systems rather than through stand-alone national separation.</p>
+
+        <h3>Structural constraints for builders</h3>
+        <p>The current Netherlands builder-mode reading also carries clear structural limits. The normalized layers do not document a sovereign hyperscale compute stack. Multiple core coordination surfaces depend on EU supervisory systems, TEN-T corridor structures, and European Chips Act alignment. Energy-transition continuity depends on cross-border electricity and hydrogen infrastructure. Rotterdam and Schiphol continuity remain tied to maritime trade and external transport flows. The current normalized layers also preserve low-elevation delta exposure through sea-level, flooding, drought, and freshwater pressures. These conditions define the documented builder-mode perimeter without being treated as weaknesses or readiness judgments.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder mode summary statement</h3>
+        <p>The Netherlands appears in builder mode as a logistics gateway, semiconductor-equipment anchor jurisdiction, exchange-layer interconnection environment, and international legal-hosting platform embedded within Benelux and EU corridor-layer infrastructure systems.</p>
+
+        <div class="meta-line">Source: builder-mode.md</div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Initial package creation</h3>
+        <p>The Netherlands jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The change-log records that <code>evidence.md</code> established Rotterdam maritime gateway continuity, AMS-IX exchange-layer interconnection environment, ASML semiconductor-equipment infrastructure concentration, Brainport Eindhoven cluster participation, TEN-T corridor alignment, Benelux coordination framework participation, DigiD digital identity infrastructure, Logius operational identity continuity, NCSC cyber-coordination environment, DNB and AFM supervisory participation, ECB supervisory attachment, TenneT cross-border grid coordination, Hydrogen Network Netherlands deployment, Delta Programme climate-adaptation governance continuity, International Court of Justice hosting, International Criminal Court hosting, Permanent Court of Arbitration hosting, Europol headquarters presence, and Eurojust coordination presence.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The change-log records that <code>signals.md</code> derived a multi-node coordination structure across Rotterdam, Amsterdam, Veldhoven, and The Hague, maritime gateway logistics continuity signals, exchange-layer neutrality signals, semiconductor-equipment ecosystem signals, EU supervisory-system embedding signals, legal-institution hosting continuity signals, TEN-T corridor integration signals, cross-border energy-transition coordination signals, digital identity interoperability signals, Benelux regional coordination signals, and constraint-boundary signals preserving sovereign compute absence.</p>
+
+        <h3>Trust dimensions construction</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> established institutional continuity across port governance, identity infrastructure, supervision, cybersecurity coordination, and legal hosting; corridor-linked infrastructure reliability continuity; exchange neutrality and identity interoperability trust surfaces; semiconductor ecosystem stability continuity; legal-institution hosting persistence; cross-border institutional integration dependence; Delta Programme climate-adaptation governance continuity; and constraint boundaries preserving EU supervisory embedding and sovereign compute absence.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The change-log records that <code>metadata.md</code> classified the Netherlands as a European maritime gateway jurisdiction, a global exchange-layer interconnection environment, a semiconductor-equipment infrastructure anchor, an international legal-institution hosting jurisdiction, a Benelux coordination participant, a TEN-T corridor integrator, an EU supervisory-system participant jurisdiction, and a cross-border energy-transition coordination participant.</p>
+
+        <h3>Profile layer characterization</h3>
+        <p>The change-log records that <code>profile.md</code> characterized the Netherlands as a Rotterdam-centered logistics gateway, an Amsterdam-centered exchange and colocation environment, a Brainport Eindhoven semiconductor-equipment anchor region, a Hague-centered international legal-hosting platform, a Benelux and EU corridor-integrated infrastructure environment, a cross-border energy-transition coordination participant, and a digital identity interoperability jurisdiction.</p>
+
+        <h3>Builder mode translation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into maritime logistics coordination interpretation, exchange-layer interconnection interpretation, semiconductor-equipment ecosystem interpretation, legal-hosting venue interpretation, digital identity interoperability interpretation, financial supervisory coordination interpretation, cross-border infrastructure integration interpretation, energy-transition coordination interpretation, and constraint-boundary interpretation.</p>
+
+        <h3>Structural constraints recorded</h3>
+        <p>The change-log records that normalization preserved the absence of sovereign hyperscale compute stack evidence, EU supervisory-system dependence, TEN-T corridor integration dependence, European Chips Act alignment dependence, cross-border hydrogen infrastructure dependence, cross-border electricity interconnection dependence, maritime trade exposure continuity, and delta-region climate exposure continuity.</p>
+
+        <h3>Package completion status</h3>
+        <p>The Netherlands jurisdiction package is complete within the Atlas normalization framework and aligned with corridor-layer institutional interpretation standards.</p>
+
+        <div class="meta-line">Normalization status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: change-log.md</div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Netherlands jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/netherlands/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Netherlands</li>
+          <li><strong>Code:</strong> NL</li>
+          <li><strong>Region:</strong> Western Europe</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor alignment</h4>
+        <ul>
+          <li>Rhine–Alpine Corridor</li>
+          <li>North Sea–Mediterranean Corridor</li>
+          <li>North Sea–Baltic Corridor</li>
+          <li>Benelux Coordination Framework</li>
+          <li>European Union Institutional Framework</li>
+        </ul>
+        <h4>Primary coordination cities</h4>
+        <ul>
+          <li>Rotterdam</li>
+          <li>Amsterdam</li>
+          <li>The Hague</li>
+          <li>Veldhoven / Brainport Eindhoven</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Anchors</h3>
+        <h4>Documented surfaces</h4>
+        <ul>
+          <li>Port of Rotterdam · Schiphol cargo</li>
+          <li>AMS-IX · Amsterdam colocation</li>
+          <li>ASML · Brainport Eindhoven</li>
+          <li>The Hague: ICJ · ICC · PCA · Europol · Eurojust</li>
+          <li>DigiD · Logius · eIDAS · NCSC</li>
+          <li>DNB · AFM · ECB · InnovationHub</li>
+          <li>TenneT · COBRAcable · Hydrogen Network Netherlands</li>
+          <li>Delta Programme</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereign hyperscale compute classification.</li>
+          <li>Not a full national semiconductor fabrication-stack classification.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
