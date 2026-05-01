@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Satoshium Atlas — Global Orientation Media Library</title>
+<meta name="description" content="Satoshium Atlas Global Orientation Media Library — country-level orientation surfaces supporting jurisdiction familiarity, corridor interpretation, and global Atlas navigation.">
+<link rel="canonical" href="https://satoshium.us/atlas/media/orientation/global/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d; --panel:#0c1018; --text:#e8edf7; --muted:#9aa7bd;
+ --gold:#d6a34a; --gold2:#f4c36a; --line:rgba(214,163,74,.18); --cyan:#5fc8ff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth;}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.wrap.content{opacity:0;transform:translateY(6px);animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes pageEnter{to{opacity:1;transform:translateY(0)}}
+.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);background:rgba(214,163,74,.05);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+h1{margin:0 0 10px;font-size:42px;line-height:1.08;color:var(--gold2)}
+.lead{max-width:980px;color:var(--muted);font-size:20px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(214,163,74,.18);border-radius:999px;background:rgba(255,255,255,.02);color:var(--muted);font-size:14px;}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px;box-shadow:0 20px 50px rgba(0,0,0,.45);transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.35);border-color:rgba(214,163,74,.28)}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:0;padding-left:18px;color:var(--muted)}
+.card li{margin:7px 0}
+.country-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px;}
+.country-link{display:block;padding:10px 12px;border:1px solid rgba(214,163,74,.12);border-radius:12px;background:rgba(255,255,255,.02);color:var(--gold2);font-size:14px;}
+.country-link:hover{background:rgba(214,163,74,.07);border-color:rgba(214,163,74,.28);}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,163,74,.24);background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700;}
+.btn:hover{background:rgba(214,163,74,.11)}
+.note{margin-top:18px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted);}
+.mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.mini{border:1px solid rgba(214,163,74,.12);border-radius:14px;padding:16px;background:rgba(255,255,255,.02);}
+.mini h3{margin:0 0 8px;font-size:16px;color:var(--gold2)}
+.mini p{margin:0;color:var(--muted);font-size:14px}
+.reflection{padding:0 18px 36px}
+.muted{color:var(--muted)}
+.pending{color:var(--muted);font-size:13px}
+@media (max-width:900px){.grid,.mini-grid{grid-template-columns:1fr} .country-grid{grid-template-columns:repeat(2,minmax(0,1fr))} h1{font-size:34px} .lead{font-size:18px}}
+@media (max-width:560px){.country-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html,body{scroll-behavior:auto} .wrap.content{animation:none;opacity:1;transform:none} .card{transition:none} .card:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main id="main-content" class="wrap content">
+  <section class="hero" aria-labelledby="global-heading">
+    <div class="eyebrow">Atlas · Media Orientation · Global</div>
+    <h1 id="global-heading">Global Orientation Media</h1>
+    <p class="lead">
+      Enter the global orientation media layer for Satoshium Atlas. This surface links country-level orientation pages that support jurisdiction familiarity, cultural context, infrastructure awareness, and future corridor interpretation alongside the canonical Atlas country packages.
+    </p>
+    <div class="badges" aria-label="Key descriptors">
+      <span class="badge">🌍 Global media entry surface</span>
+      <span class="badge">🎞️ Country orientation routing</span>
+      <span class="badge">🧭 Jurisdiction familiarity layer</span>
+      <span class="badge">📂 Atlas package companion surface</span>
+    </div>
+  </section>
+
+  <section class="grid" aria-label="Primary navigation">
+    <article class="card">
+      <h2>Global Orientation Country Links</h2>
+      <p>
+        Open country-level orientation surfaces. Each country routes to its dedicated Atlas Orientation Media page.
+      </p>
+      <div class="country-grid" aria-label="Country orientation links">
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/argentina/">Argentina</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/armenia/">Armenia</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/australia/">Australia</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/austria/">Austria</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/brazil/">Brazil</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/canada/">Canada</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/chile/">Chile</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/china/">China</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/costa-rica/">Costa Rica</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/czech-republic/">Czech Republic</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/denmark/">Denmark</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/el-salvador/">El Salvador</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/estonia/">Estonia</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/finland/">Finland</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/france/">France</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/georgia/">Georgia</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/germany/">Germany</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/hong-kong/">Hong Kong</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/iceland/">Iceland</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/india/">India</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/indonesia/">Indonesia</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/ireland/">Ireland</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/israel/">Israel</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/italy/">Italy</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/japan/">Japan</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/kazakhstan/">Kazakhstan</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/kenya/">Kenya</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/malaysia/">Malaysia</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/netherlands/">Netherlands</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/new-zealand/">New Zealand</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/nigeria/">Nigeria</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/norway/">Norway</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/panama/">Panama</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/philippines/">Philippines</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/poland/">Poland</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/portugal/">Portugal</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/qatar/">Qatar</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/russia/">Russia</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/rwanda/">Rwanda</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/saudia-arabia/">Saudi Arabia</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/singapore/">Singapore</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/south-africa/">South Africa</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/south-korea/">South Korea</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/spain/">Spain</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/sweden/">Sweden</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/switzerland/">Switzerland</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/taiwan/">Taiwan</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/thailand/">Thailand</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/turkey/">Turkey</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/united-arab-emirates/">United Arab Emirates</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/united-kingdom/">United Kingdom</a>
+        <a class="country-link" href="https://satoshium.us/atlas/media/orientation/global/countries/vietnam/">Vietnam</a>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="/atlas/media/orientation/">Back to Orientation Media Library →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Global Media Scope</h2>
+      <p>
+        The global orientation media layer is structured to support country-by-country Atlas orientation without replacing canonical evidence, signals, trust dimensions, profile, builder-mode, metadata, or change-log files.
+      </p>
+      <ul>
+        <li>Media supports jurisdiction familiarity</li>
+        <li>Canonical country packages remain the source of truth</li>
+        <li>Country links preserve future expansion paths</li>
+      </ul>
+    </article>
+  </section>
+
+  <section style="margin-top:18px;">
+    <article class="card">
+      <h2 id="structure-heading">Global Orientation Structure</h2>
+      <p>
+        This global media entry page keeps the orientation layer cleanly separated from the Jurisdiction Intelligence Engine. Visitors can begin with media context, then move into the canonical country package for structured Atlas interpretation.
+      </p>
+      <div class="mini-grid">
+        <div class="mini">
+          <h3>Country Routing</h3>
+          <p>Direct navigation into country orientation surfaces aligned with completed and emerging Atlas country packages.</p>
+        </div>
+        <div class="mini">
+          <h3>Media Companion Layer</h3>
+          <p>Provides cultural, geographic, institutional, and infrastructure context without altering canonical jurisdiction records.</p>
+        </div>
+        <div class="mini">
+          <h3>Expansion Ready</h3>
+          <p>Supports future additions such as regional orientation pages, corridor playlists, and subnational media surfaces.</p>
+        </div>
+      </div>
+      <div class="note">
+        Global orientation country links now route through the country-level media path at <code>/atlas/media/orientation/global/countries/</code>. Replace or extend each country surface as videos and canonical media packages are published.
+      </div>
+    </article>
+  </section>
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Satoshium Atlas is expanding from canonical jurisdiction packages into orientation media surfaces — one country at a time.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
