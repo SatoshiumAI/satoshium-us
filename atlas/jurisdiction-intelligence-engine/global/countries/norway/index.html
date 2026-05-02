@@ -1,91 +1,686 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Norway | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norway — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Norway Atlas jurisdiction package rendering. Nordic Electricity Market Integration, North Sea Energy Infrastructure, EEA, Schengen, NORDUnet, and Nordic Council cooperation alignment.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/norway/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Norway</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Norway</h1>
 
-</article>
-</main>
+  <p class="lede">Nordic digital-governance coordination jurisdiction, settlement-modernization environment, electricity-interconnection and continental gas-delivery infrastructure coordinator, research-network federation participant, neutral exchange-layer infrastructure participant, and civil-preparedness coordination jurisdiction embedded within EEA and Nordic institutional systems. This page renders the canonical Norway Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting Digdir / ID-porten / Altinn digital-governance coordination, NOBID and EU Digital Identity Wallet pilot participation with eIDAS 2.0 preparation, Norges Bank NBO / NICS / SWIFT-linked settlement modernization with CBDC Phase 5 under evaluation, Nkom telecommunications governance and resilience responsibilities, Sikt / Uninett / NORDUnet research-network federation with Sigma2 HPC and Norwegian AI Cloud coordination, NIX exchange-layer neutrality, Norid .no registry governance, Statnett transmission coordination with 17 cross-border interconnections including North Sea Link, NordLink, and NorNed, Gassco continental gas pipeline infrastructure and European receiving-terminal integration, NSM / NCSC Norway / NorCERT protective-security coordination, DSB and Nødnett responder-network preparedness, and EEA / Schengen / Nordic Council institutional cooperation.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Norway (NO)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>Norway currently reads within Atlas as an Oslo-centered digital-governance coordination environment, a Statnett-linked Nordic electricity-interconnection jurisdiction, a Gassco-linked continental gas-delivery coordination environment, a Sikt-linked research-network federation surface, a NIX-centered exchange-layer neutrality environment, and an EEA and Nordic institutional coordination participant jurisdiction. The current package also places Norway inside central-bank settlement modernization continuity, distributed exchange-layer participation, responder-network preparedness, and wider Nordic and European institutional coordination structures. These conditions support a structural characterization centered on digital-governance coordination, settlement modernization, transmission interconnection, continental gas-delivery continuity, research-network federation, exchange neutrality, civil-preparedness coordination, and corridor-linked integration without assigning routing authority or comparative status.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Norway</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Nordic / Northern Europe</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Nordic Electricity Market Integration Framework · North Sea Energy Infrastructure Coordination Environment · EEA Institutional Cooperation Framework · Schengen Governance Coordination Framework · NORDUnet Research Network Cooperation Framework · Nordic Council Cooperation Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Oslo · Trondheim · Bergen · Stavanger · Tromsø</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records evidence-supported national structures documented for Norway that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.</p>
+
+        <div class="meta-line">Source: profile.md · metadata.md — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Norway jurisdiction package across digital-governance coordination, settlement modernization, telecommunications governance, research-network federation, exchange-layer infrastructure, energy and gas-delivery coordination, civil-preparedness coordination, and EEA / Nordic institutional cooperation.</p>
+
+        <h3>Digital governance coordination infrastructure</h3>
+        <p>The evidence layer records Digdir digitalisation coordination infrastructure, ID-porten authentication infrastructure, Altinn service-platform infrastructure, NOBID interoperability participation, EU Digital Identity Wallet pilot participation, and eIDAS 2.0 preparation as the documented digital-governance and identity-interoperability surface for the Norway jurisdiction package.</p>
+
+        <h3>Settlement infrastructure and CBDC evaluation</h3>
+        <p>The evidence layer records Norges Bank settlement governance authority, NBO settlement-system infrastructure, NICS interbank coordination infrastructure, SWIFT-linked settlement access structure, and CBDC Phase 5 evaluation as the documented central-bank settlement modernization and CBDC research surface.</p>
+
+        <h3>Telecommunications governance</h3>
+        <p>The evidence layer records the Nkom telecommunications-governance authority together with the 5G frequency auction programme, telecommunications resilience coordination responsibilities, and emergency-network preparedness coordination participation as the documented telecommunications-governance and resilience oversight surface.</p>
+
+        <h3>Research-network and compute infrastructure</h3>
+        <p>The evidence layer records Sikt shared research-network infrastructure coordination, Uninett backbone connectivity infrastructure, NORDUnet participation environment, Sigma2 national HPC coordination infrastructure, and Norwegian AI Cloud coordination infrastructure as the documented research-network federation and compute coordination surface.</p>
+
+        <h3>Exchange and naming infrastructure</h3>
+        <p>The evidence layer records NIX exchange-layer infrastructure and Norid registry governance continuity as the documented neutral exchange-layer and naming-layer surface for the Norway jurisdiction package.</p>
+
+        <h3>Energy and gas infrastructure</h3>
+        <p>The evidence layer records Statnett transmission-system coordination, 17 cross-border electricity interconnections, North Sea Link participation, NordLink participation, NorNed participation, Gassco continental gas pipeline infrastructure, and European receiving-terminal integration as the documented Nordic electricity-interconnection and continental gas-delivery surface.</p>
+
+        <h3>Cybersecurity and civil preparedness</h3>
+        <p>The evidence layer records NSM protective-security coordination authority, NCSC Norway infrastructure-protection coordination role, NorCERT national CSIRT role, DSB emergency communications infrastructure governance, and Nødnett responder-network infrastructure as the documented protective-security, cyber-coordination, and emergency-communications surface.</p>
+
+        <h3>EEA, Schengen, and Nordic institutional participation</h3>
+        <p>The evidence layer records EEA Agreement participation, Schengen governance participation, and Nordic Council cooperation participation as the documented Nordic and European institutional coordination surface.</p>
+
+        <div class="meta-line">Source: evidence.md · change-log.md — Evidence Layer Construction</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Strategic position signals</h3>
+        <p>Digdir's national digitalisation coordination mandate, Statnett's transmission-system role, Gassco's continental gas-delivery infrastructure, Sikt's research-infrastructure role, and NIX's neutral exchange function together signal Norway as a Nordic digital-governance, energy-interconnection, research-network, and resilience coordination jurisdiction rather than a single closed domestic stack. The documented coexistence of public-sector digital infrastructure coordination, cross-border electricity interconnection, continental gas transport, research-network federation, and neutral exchange infrastructure signals a multi-layer national coordination environment with durable institutional continuity. EEA participation, Schengen cooperation, and formal Nordic cooperation structures signal that Norway's infrastructure continuity is embedded within wider Nordic and European institutional frameworks rather than detached from them. The evidence supports a national coordination signal anchored in digital governance, energy interconnection, research-network organization, and civil resilience, but it does not support any standalone autonomy or topology classification beyond those documented frameworks.</p>
+
+        <h3>Digital governance and identity signals</h3>
+        <p>Digdir's role in coordinating cross-cutting digitalisation measures and shared public-sector infrastructure signals centralized continuity in Norwegian digital-governance coordination. ID-porten's authentication role for Norwegian public services signals a nationally visible identity-access layer for public digital-service continuity. Altinn's role as both a digital-service platform and message-and-forms environment signals continuity between identity, service delivery, and public-sector digital interaction. Norway's participation in the NOBID-linked EU Digital Identity Wallet pilot signals identity interoperability continuity that is being developed through Nordic and European cooperation rather than through a purely isolated domestic identity path. Digdir's explicit preparation for eIDAS 2.0 and the European Digital Identity Wallet signals national digital identity interoperability continuity within EEA- and EU-linked identity frameworks.</p>
+
+        <h3>Financial infrastructure and CBDC signals</h3>
+        <p>Norges Bank's NBO structure, with bank access through SWIFT and NBO Online, signals a central-bank settlement environment with formal domestic access and operational continuity. The documented RTM, loan-account, and LOM structure signals a layered central-bank settlement architecture rather than a single undifferentiated clearing mechanism. Norges Bank's oversight relationship to licensed interbank systems, including NICS, signals continuity between central-bank settlement infrastructure and the wider interbank coordination layer. SWIFT-linked access to NBO signals continued participation in internationally standardized financial-messaging pathways without implying external routing authority. CBDC Phase 5 signals continued evaluation and design exploration by Norges Bank, while the evidence indicates that CBDC remains under assessment rather than deployment. Taken together, the evidence signals central-bank settlement modernization continuity with CBDC under evaluation rather than as an active monetary-infrastructure rollout.</p>
+
+        <h3>Telecommunications and network governance signals</h3>
+        <p>Nkom's responsibilities across electronic communications services, resilience, supervision, numbering, and spectrum management signal a nationally coordinated telecommunications-governance environment. Nkom's role in managing frequencies for mobile networks, radio, and television, together with its 5G auction programme, signals continuing spectrum-governance continuity for next-generation network infrastructure. Nkom's explicit responsibility for resilience against data attacks and extreme weather signals telecommunications governance continuity tied directly to infrastructure robustness. Nkom's role in emergency-network development and mobile emergency preparedness signals telecom governance continuity across both civilian communications and preparedness-linked infrastructure. The evidence supports national telecommunications governance continuity, but it does not support any routing-authority classification or hierarchy assignment.</p>
+
+        <h3>Research network and compute signals</h3>
+        <p>Sikt's role as a nationally owned shared-services and infrastructure body signals continuity in the coordination of Norwegian research and education infrastructure. Uninett's role as a major part of the Norwegian internet, connected to all Norwegian NIX points, signals a nationally federated research-network backbone rather than isolated institutional links. Sikt's participation in NORDUnet and provision of GÉANT-related services signal research-network continuity across Nordic and broader European infrastructure systems. Sigma2's role as operator of the national e-infrastructure for computer science signals nationally organized HPC and research-data continuity. NAIC signals an emerging national AI-compute coordination layer intended to consolidate AI infrastructure and expertise across Norwegian universities and research institutions. Taken together, the evidence signals national research-network federation continuity across Nordic and European infrastructure systems rather than a standalone sovereign compute perimeter.</p>
+
+        <h3>Exchange and naming infrastructure signals</h3>
+        <p>NIX's neutral exchange design, including primary Oslo sites and regional exchange points, signals distributed exchange-layer continuity rather than a single concentrated interconnection node. The documented six-site NIX structure signals neutral domestic IP-exchange continuity across multiple geographies without implying topology priority or hierarchy. Norid's registry role, policy-development function, and technical-operation responsibility signal continuity in Norwegian naming-layer governance. Nkom supervision and ministry-level ownership continuity for Norid signal registry-governance stability within a public oversight framework. Taken together, the evidence signals neutral exchange-layer and naming-layer continuity without supporting a sovereign hyperscale classification.</p>
+
+        <h3>Energy and gas infrastructure signals</h3>
+        <p>Statnett's role as transmission-system operator and coordinator of real-time production-consumption balance signals nationally organized electricity-system continuity. The documented 17 lines or subsea connections to other countries signal durable cross-border electricity-interconnection continuity as part of the Norwegian central grid. The named North Sea Link, NordLink, and NorNed interconnections signal continuing western continental interconnection without supporting any separate routing-authority inference. The wider interconnector structure with Sweden, Finland, Denmark, the Netherlands, Germany, and the United Kingdom signals Nordic electricity-market integration continuity rather than a closed national power perimeter. Gassco's offshore-field intake, processing-facility operation, pipeline-system role, and receiving-terminal integration signal continental gas-delivery infrastructure coordination rather than a purely domestic gas network. Taken together, the evidence signals Nordic electricity-market integration continuity and continental gas-delivery infrastructure coordination across transmission and energy-export systems.</p>
+
+        <h3>Cybersecurity and civil preparedness signals</h3>
+        <p>NSM's national protective-security mandate signals centralized continuity in Norway's protective-security and critical-infrastructure coordination environment. NSM's warning-system role and national coordination function for serious cyberoperations signal a state-level infrastructure-protection continuity layer. NCSC's role inside NSM, together with NorCERT's national CSIRT function, signals operational cyber-incident continuity across national critical-infrastructure protection layers. DSB's governance of Nødnett infrastructure and Nødnett's role as a nationwide critical communication network signal continuity in responder communications and emergency-preparedness coordination. The combination of NSM, NCSC, NorCERT, DSB, and Nødnett signals national resilience and civil-contingency coordination continuity across critical infrastructure protection layers.</p>
+
+        <h3>Nordic, EEA, and cross-border coordination signals</h3>
+        <p>EEA Agreement participation signals durable continuity between Norwegian domestic infrastructure systems and wider European legal and institutional coordination structures. Schengen cooperation signals that Norway's cross-border governance environment includes institutional coordination beyond purely economic arrangements. Nordic Council and Nordic Council of Ministers participation signal formal Nordic institutional continuity across governmental coordination layers. Digdir's EU digital-identity wallet and NOBID participation signal that digital-governance coordination is developing through explicitly Nordic and European collaborative structures. Statnett's interconnectors, Gassco's receiving-terminal network, and Sikt's Nordic and European research-network engagement together signal multi-layer cross-border infrastructure continuity across electricity, gas, and research-network systems. Taken together, the evidence signals multi-layer Nordic and European institutional coordination continuity rather than a nationally isolated infrastructure posture.</p>
+
+        <h3>Constraint boundary signals</h3>
+        <ul>
+          <li>Digdir's eIDAS 2.0 and European Digital Identity Wallet alignment signals that parts of Norway's identity-interoperability path depend on wider EEA- and EU-linked digital-identity frameworks rather than a fully autonomous national regime.</li>
+          <li>CBDC Phase 5 signals continued evaluation only; the evidence does not support CBDC deployment or an already activated sovereign digital-currency layer.</li>
+          <li>Statnett's documented reliance on cross-border interconnectors signals that electricity-market continuity depends in part on shared Nordic and European exchange structures rather than on a fully isolated domestic system.</li>
+          <li>Gassco's pipeline and receiving-terminal structure signals dependence on continental delivery pathways and downstream European terminal integration.</li>
+          <li>The evidence documents Sikt, Uninett, Sigma2, NIX, Norid, and NAIC as significant national infrastructure elements, but it does not support a sovereign hyperscale compute-stack classification.</li>
+          <li>The evidence also does not support a semiconductor fabrication-stack classification.</li>
+          <li>More broadly, the evidence does not support routing authority, topology placement, or readiness-tier conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>Norway's evidence-derived signals describe a Nordic digital-governance, settlement-modernization, grid-interconnection, gas-transport, research-network, and resilience coordination jurisdiction embedded within EEA and Nordic institutional systems. The signals indicate continuity across public digital identity, central-bank settlement infrastructure, telecommunications governance, research-network federation, neutral exchange and naming infrastructure, cross-border electricity and gas coordination, and civil-preparedness protection layers, while preserving the evidence-bound limits around CBDC deployment, sovereign hyperscale compute, routing authority, and topology inference.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: signals.md</div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment eligibility, or infrastructure claims beyond documented anchors.</p>
+
+        <h3>Institutional continuity dimension</h3>
+        <p>The source layers indicate institutional continuity spanning digital governance, settlement infrastructure, transmission coordination, gas-delivery systems, research-network federation, protective-security coordination, emergency-communications governance, and standing Nordic and EEA attachment rather than a single centralized national authority. Digdir indicates continuity in public-sector digital-governance coordination through its mandate for cross-cutting digitalisation measures, shared infrastructure planning, and operation of common digital components. Norges Bank indicates continuity in settlement-system governance through NBO, licensed interbank oversight, and continued next-generation settlement-system work. Statnett indicates continuity in national transmission coordination through balancing responsibility and operation of the central grid within a cross-border interconnection environment. Gassco indicates continuity in gas-transport coordination through offshore intake, pipeline operation, and European receiving-terminal linkage. Sikt indicates continuity in research-network federation and shared academic infrastructure through nationally coordinated services and infrastructure for education and research. NSM and DSB indicate continuity in protective-security and emergency-communications governance through national cyber coordination, critical-infrastructure protection, and Nødnett stewardship. EEA, Schengen, and Nordic cooperation structures add a standing cross-border institutional layer reinforcing continuity through repeated European and Nordic governance attachment.</p>
+
+        <h3>Digital identity and interoperability dimension</h3>
+        <p>The source layers indicate national digital identity interoperability continuity within EEA- and EU-linked identity frameworks rather than a fully standalone domestic identity perimeter. Digdir indicates continuity in identity-infrastructure coordination through its responsibility for shared digital infrastructure and cross-cutting digitalisation measures. ID-porten indicates a named public authentication layer for Norwegian citizens accessing public-sector digital services. Altinn indicates continuity between identity, service delivery, and public-sector digital interaction through a persistent digital-service and messaging platform. NOBID participation indicates that Norway's identity-related development is being carried through structured Nordic and European collaboration rather than through a purely domestic-only pathway. EU Digital Identity Wallet participation and eIDAS 2.0 preparation indicate continuing interoperability alignment with wider European identity frameworks. The documented trust characteristic is continuity of coordinated digital identity and service interoperability, while remaining structurally linked to EEA- and EU-related identity systems.</p>
+
+        <h3>Settlement infrastructure modernization dimension</h3>
+        <p>The source layers indicate central-bank settlement modernization continuity with CBDC under evaluation rather than deployment. Norges Bank's NBO structure indicates a standing central-bank settlement environment with formal bank access through SWIFT and NBO Online. The RTM, loan-account, and LOM structure indicates layered internal settlement organization rather than a single undifferentiated payment mechanism. NICS oversight linkage indicates continuity between the core central-bank settlement environment and the wider interbank coordination layer. SWIFT-linked access indicates that modernization continuity includes internationally standardized messaging channels without implying external authority over the domestic settlement system. CBDC Phase 5 indicates continuing evaluation, design exploration, and recommendation-building activity rather than live CBDC issuance. The documented trust characteristic is settlement-system continuity and modernization under central-bank governance, bounded by the evidence that CBDC remains under assessment.</p>
+
+        <h3>Telecommunications governance dimension</h3>
+        <p>The source layers indicate telecommunications governance continuity across national communications infrastructure systems. Nkom indicates continuity in national governance across electronic communications services, numbering resources, supervision, and spectrum management. The 5G auction programme indicates continuing spectrum-allocation continuity for next-generation network infrastructure. Nkom's resilience responsibilities indicate that telecom governance continuity is explicitly linked to robustness against data attacks and extreme weather impacts. Nkom's role in emergency-network development and mobile emergency preparedness indicates that telecommunications governance extends into preparedness-linked infrastructure coordination. The documented trust characteristic is continuity in communications governance, spectrum management, and resilience oversight without any routing-authority classification.</p>
+
+        <h3>Research network and compute coordination dimension</h3>
+        <p>The source layers indicate national research-network federation continuity across Nordic and European infrastructure systems. Sikt indicates continuity in shared infrastructure coordination for education and research through nationally organized services, data-sharing support, and information-security responsibilities. Uninett indicates a federated backbone continuity layer through national research-network connectivity linked to all Norwegian NIX points. NORDUnet participation indicates that this research-network environment is attached to standing Nordic cooperation rather than operating solely within a domestic perimeter. Sigma2 indicates continuity in national HPC and research-data infrastructure through organized operation of the national e-infrastructure for computer science. NAIC indicates an additional coordination layer for AI-related compute and infrastructure development across universities and research institutions. The documented trust characteristic is a federated research-network and compute environment carried through named national operators and Nordic-European infrastructure engagement, not a sovereign hyperscale classification.</p>
+
+        <h3>Exchange and naming infrastructure dimension</h3>
+        <p>The source layers indicate neutral exchange-layer and naming-layer continuity without sovereign hyperscale classification. NIX indicates continuity through neutral IP-exchange infrastructure distributed across Oslo and regional sites rather than concentrated in a single exchange point. The documented six-site exchange arrangement indicates a stable distributed interconnection environment without implying hierarchy or topology placement. Norid indicates continuity in naming-layer governance through registry operation, domain-policy development, and technical stewardship for Norwegian domain infrastructure. Nkom supervision and ministry-level ownership continuity indicate that registry governance is anchored inside a stable public oversight framework. The documented trust characteristic is continuity of neutral interconnection and registry stewardship rather than sovereign compute concentration.</p>
+
+        <h3>Energy and gas infrastructure integration dimension</h3>
+        <p>The source layers indicate Nordic electricity-market integration continuity and continental gas-delivery infrastructure coordination. Statnett indicates continuity in transmission-system coordination through balancing responsibility and operation of the national central grid. The documented 17 cross-border lines and subsea connections indicate that electricity continuity is organized through a durable interconnection environment with neighboring and nearby European systems. The documented North Sea Link, NordLink, and NorNed interconnections indicate continuing western interconnection within the broader cross-border transmission structure. The wider linkage with Sweden, Finland, and Denmark indicates that Norway's electricity environment remains structurally tied to Nordic exchange and interconnection arrangements rather than a closed national perimeter. Gassco indicates continuity in continental gas-delivery infrastructure through offshore collection, processing coordination, long-distance pipeline operation, and receiving-terminal integration in multiple European countries. The documented trust characteristic is continuity through coordinated transmission interconnection and continental gas-delivery systems rather than isolated domestic energy operation.</p>
+
+        <h3>Cybersecurity and civil preparedness dimension</h3>
+        <p>The source layers indicate national resilience and civil-contingency coordination continuity across critical infrastructure protection layers. NSM indicates continuity in national protective-security coordination through its mandate covering espionage, sabotage, terrorism, hybrid threats, and infrastructure relevant to national security. NCSC's role within NSM indicates continuity in national infrastructure-protection coordination for serious cyberoperations. NorCERT indicates a standing national CSIRT function embedded inside the wider national cyber-coordination environment. DSB indicates continuity in emergency-communications governance through management of the state's ownership of Nødnett infrastructure. Nødnett indicates a nationwide responder-network continuity layer for police, fire, health, and preparedness users, with secure communication and cross-organisational coordination. The documented trust characteristic is continuity of civil-preparedness, responder communications, and cyber-protective coordination through named institutional structures rather than episodic crisis response alone.</p>
+
+        <h3>Nordic, EEA, and cross-border coordination dimension</h3>
+        <p>The source layers indicate multi-layer Nordic and European institutional coordination continuity. EEA participation indicates durable linkage between Norwegian domestic systems and wider European legal and institutional coordination structures. Schengen cooperation indicates continuity in cross-border governance attachment beyond purely economic coordination. Nordic Council and Nordic Council of Ministers participation indicate standing Nordic institutional coordination across governmental layers. Digdir's EU identity-wallet and NOBID participation indicate that digital-governance evolution is being coordinated through explicitly Nordic and European collaborative frameworks. Statnett's interconnectors and Gassco's continental terminal network indicate that key energy infrastructures are coordinated through repeated cross-border operating relationships. Sikt's NORDUnet and broader European research-network engagement indicate that research-network continuity is also attached to standing Nordic and European cooperation structures. The documented trust characteristic is continuity through repeated institutional, infrastructural, and cooperative attachment across Nordic and European systems.</p>
+
+        <h3>Constraint boundary dimension</h3>
+        <ul>
+          <li>The source layers indicate that parts of Norway's digital-identity continuity depend on EEA- and EU-linked interoperability structures rather than a fully autonomous domestic identity regime.</li>
+          <li>CBDC remains non-deployed in the current source layers, which bounds settlement-modernization trust claims to evaluation and preparedness rather than issuance.</li>
+          <li>Electricity continuity depends in part on cross-border interconnection and shared Nordic and European market structures rather than a fully isolated national system.</li>
+          <li>Gas-delivery continuity depends in part on continental pipelines, receiving terminals, and downstream European delivery pathways rather than a domestic-only gas perimeter.</li>
+          <li>The source layers do not document a sovereign hyperscale compute stack, which bounds compute and cloud trust claims beyond the documented Sikt, Uninett, Sigma2, NIX, Norid, and NAIC surfaces.</li>
+          <li>The source layers do not document a semiconductor fabrication stack, which bounds advanced-technology trust claims away from fabrication-based industrial continuity.</li>
+          <li>More broadly, the source layers do not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Trust dimensions summary statement</h3>
+        <p>Norway is documented as a Nordic digital-governance, settlement-modernization, grid-interconnection, gas-transport, research-network, and resilience coordination jurisdiction embedded within EEA and Nordic institutional systems. The documented trust dimensions indicate continuity across institutional coordination, digital identity interoperability, central-bank settlement modernization, telecommunications governance, research-network federation, neutral exchange and naming stewardship, energy and gas interconnection, civil-preparedness coordination, and Nordic-European attachment without assigning readiness tiers, routing authority, or deployment eligibility.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: trust-dimensions.md</div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility.</p>
+
+        <h3>Jurisdiction identity</h3>
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Norway</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Nordic / Northern Europe</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Nordic Electricity Market Integration Framework · North Sea Energy Infrastructure Coordination Environment · EEA Institutional Cooperation Framework · Schengen Governance Coordination Framework · NORDUnet Research Network Cooperation Framework · Nordic Council Cooperation Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Oslo · Trondheim · Bergen · Stavanger · Tromsø</span>
+          </div>
+        </div>
+
+        <h3>Infrastructure role classification</h3>
+        <ul>
+          <li>Nordic digital-governance coordination jurisdiction</li>
+          <li>central-bank settlement modernization environment</li>
+          <li>electricity transmission interconnection jurisdiction</li>
+          <li>continental gas-delivery infrastructure coordination jurisdiction</li>
+          <li>research-network federation participant jurisdiction</li>
+          <li>neutral exchange-layer infrastructure participant jurisdiction</li>
+          <li>civil-preparedness coordination jurisdiction</li>
+          <li>EEA and Nordic institutional coordination participant jurisdiction</li>
+        </ul>
+
+        <h3>Digital governance classification</h3>
+        <ul>
+          <li>Digdir digitalisation coordination infrastructure</li>
+          <li>ID-porten authentication infrastructure</li>
+          <li>Altinn service platform infrastructure</li>
+          <li>NOBID interoperability participation</li>
+          <li>EU Digital Identity Wallet pilot participation</li>
+          <li>eIDAS 2.0 alignment participation</li>
+        </ul>
+
+        <h3>Financial and settlement infrastructure classification</h3>
+        <ul>
+          <li>Norges Bank settlement governance authority</li>
+          <li>NBO settlement system infrastructure</li>
+          <li>NICS interbank coordination infrastructure</li>
+          <li>SWIFT-linked settlement access environment</li>
+          <li>CBDC Phase 5 evaluation programme surface</li>
+        </ul>
+
+        <h3>Telecommunications governance classification</h3>
+        <ul>
+          <li>Nkom spectrum governance authority</li>
+          <li>5G frequency auction programme</li>
+          <li>telecommunications resilience coordination responsibilities</li>
+          <li>emergency-network preparedness coordination participation</li>
+        </ul>
+
+        <h3>Research network and compute infrastructure classification</h3>
+        <ul>
+          <li>Sikt national research-network coordination infrastructure</li>
+          <li>Uninett backbone connectivity infrastructure</li>
+          <li>NORDUnet participation environment</li>
+          <li>Sigma2 national HPC coordination infrastructure</li>
+          <li>Norwegian AI Cloud coordination infrastructure</li>
+        </ul>
+
+        <h3>Exchange and naming infrastructure classification</h3>
+        <ul>
+          <li>NIX exchange-layer infrastructure</li>
+          <li>Norid .no registry governance environment</li>
+          <li>distributed neutral exchange topology participation</li>
+        </ul>
+
+        <h3>Energy and gas infrastructure classification</h3>
+        <ul>
+          <li>Statnett transmission system operator environment</li>
+          <li>17 cross-border electricity interconnections</li>
+          <li>North Sea Link interconnector participation</li>
+          <li>NordLink interconnector participation</li>
+          <li>NorNed interconnector participation</li>
+          <li>Gassco continental gas pipeline coordination infrastructure</li>
+          <li>European receiving-terminal integration environment</li>
+        </ul>
+
+        <h3>Cybersecurity and civil preparedness classification</h3>
+        <ul>
+          <li>NSM protective-security coordination authority</li>
+          <li>NCSC Norway infrastructure-protection coordination role</li>
+          <li>NorCERT national CSIRT role</li>
+          <li>DSB emergency communications infrastructure governance</li>
+          <li>Nødnett responder-network coordination infrastructure</li>
+        </ul>
+
+        <h3>Nordic, EEA, and cross-border coordination classification</h3>
+        <ul>
+          <li>EEA Agreement participation environment</li>
+          <li>Schengen governance participation environment</li>
+          <li>Nordic Council cooperation participation environment</li>
+          <li>EU digital identity interoperability participation</li>
+          <li>Nordic electricity-market coupling participation</li>
+          <li>continental pipeline delivery coordination participation</li>
+          <li>Nordic-European research-network federation participation</li>
+        </ul>
+
+        <h3>Constraint classification</h3>
+        <ul>
+          <li>EEA digital-identity interoperability dependence</li>
+          <li>CBDC non-deployment status</li>
+          <li>cross-border electricity-market integration dependence</li>
+          <li>continental gas-delivery infrastructure dependence</li>
+          <li>absence of sovereign hyperscale compute stack evidence</li>
+          <li>absence of semiconductor fabrication stack evidence</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Metadata summary statement</h3>
+        <p>Norway appears in the metadata layer as a Nordic digital-governance coordination jurisdiction, settlement-modernization environment, electricity-interconnection and continental gas-delivery infrastructure coordination jurisdiction, research-network federation participant, neutral exchange-layer infrastructure participant, and civil-preparedness coordination environment embedded within EEA and Nordic institutional systems.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: metadata.md</div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+        <h3>Jurisdiction overview</h3>
+        <p>Norway currently reads within Atlas as an Oslo-centered digital-governance coordination environment, a Statnett-linked Nordic electricity-interconnection jurisdiction, a Gassco-linked continental gas-delivery coordination environment, a Sikt-linked research-network federation surface, a NIX-centered exchange-layer neutrality environment, and an EEA and Nordic institutional coordination participant jurisdiction. The current package also places Norway inside central-bank settlement modernization continuity, distributed exchange-layer participation, responder-network preparedness, and wider Nordic and European institutional coordination structures. These conditions support a structural characterization centered on digital-governance coordination, settlement modernization, transmission interconnection, continental gas-delivery continuity, research-network federation, exchange neutrality, civil-preparedness coordination, and corridor-linked integration without assigning routing authority or comparative status.</p>
+
+        <h3>Digital governance environment</h3>
+        <p>Norway's digital governance environment is characterized in the current package by Digdir digitalisation coordination infrastructure, ID-porten authentication infrastructure, Altinn service-platform continuity, NOBID interoperability participation, EU Digital Identity Wallet pilot participation, and eIDAS 2.0 preparation. The current layers show Digdir coordinating cross-cutting digitalisation measures, shared public-sector digital infrastructure, and common digital components rather than isolated administrative services. They also preserve ID-porten as the named public authentication layer and Altinn as a combined digital-service, inbox, and forms environment for communication among people, businesses, and public agencies. NOBID participation, EU Digital Identity Wallet pilot activity, and eIDAS 2.0 preparation place this digital-governance environment inside wider Nordic and European interoperability structures rather than a fully standalone domestic identity perimeter. These conditions support a structural characterization centered on national digital identity coordination and EEA-linked interoperability continuity.</p>
+
+        <h3>Financial and settlement environment</h3>
+        <p>Norway's financial and settlement environment is characterized in the current package by Norges Bank settlement governance, NBO settlement infrastructure, NICS interbank coordination continuity, SWIFT-linked settlement access, and CBDC Phase 5 evaluation. The current layers show Norges Bank operating a structured settlement environment through NBO, with bank access through SWIFT and NBO Online and with RTM, loan-account, and LOM account structures preserved inside the domestic settlement architecture. They also preserve oversight linkage to licensed interbank systems including NICS, which keeps the profile centered on central-bank settlement modernization rather than a single undifferentiated payment mechanism. CBDC Phase 5 remains a research and recommendation-building programme surface rather than a deployed monetary infrastructure. These conditions support a structural characterization centered on central-bank settlement modernization continuity under active evaluation rather than CBDC deployment.</p>
+
+        <h3>Telecommunications governance environment</h3>
+        <p>Norway's telecommunications governance environment is characterized in the current package by Nkom spectrum-governance continuity, the 5G auction programme, telecommunications resilience responsibilities, and emergency-network preparedness participation. The current layers show Nkom governing electronic communications services, numbering resources, and frequency management across Norway while also carrying explicit security and resilience responsibilities for e-com networks. They preserve the 5G auction programme as a visible next-generation spectrum-allocation surface and emergency-network development as a preparedness-linked extension of telecommunications governance. These conditions support a structural characterization centered on communications-governance continuity, resilience oversight, and preparedness-linked telecom coordination without inferring routing hierarchy or control status.</p>
+
+        <h3>Research network and compute environment</h3>
+        <p>Norway's research network and compute environment is characterized in the current package by Sikt shared infrastructure coordination, Uninett backbone connectivity, NORDUnet participation, Sigma2 HPC continuity, and Norwegian AI Cloud coordination infrastructure. The current layers show Sikt organizing shared infrastructure and services for education and research, while Uninett preserves a national backbone connected to all Norwegian NIX points as part of the Norwegian research-network environment. They also preserve NORDUnet participation and GÉANT-related service continuity as the cross-border federation setting for Norwegian academic networking. Sigma2 adds nationally coordinated HPC and research-data infrastructure, while the Norwegian AI Cloud preserves a bounded AI-compute coordination layer across universities and research institutions. These conditions support a structural characterization centered on research-network federation and compute coordination continuity rather than a sovereign hyperscale compute stack.</p>
+
+        <h3>Exchange and naming infrastructure environment</h3>
+        <p>Norway's exchange and naming infrastructure environment is characterized in the current package by NIX exchange-layer infrastructure, Norid registry-governance continuity, and distributed exchange-topology participation. The current layers show NIX as a neutral exchange environment with primary Oslo sites and regional sites in Bergen, Trondheim, Tromsø, and Stavanger rather than a single concentrated interconnection point. They also preserve Norid's responsibility for registry operation, domain-policy development, and technical stewardship for Norwegian domain infrastructure inside a public oversight setting supervised by Nkom. These conditions support a structural characterization centered on neutral exchange continuity and naming-layer governance without extending into sovereign hyperscale classification or routing-authority inference.</p>
+
+        <h3>Energy and gas infrastructure environment</h3>
+        <p>Norway's energy and gas infrastructure environment is characterized in the current package by Statnett transmission-system coordination, 17 cross-border electricity interconnections, North Sea Link participation, NordLink participation, NorNed participation, Gassco continental gas pipeline infrastructure, and European receiving-terminal integration. The current layers show Statnett coordinating the national transmission system and balancing electricity production and consumption while preserving foreign exchange capacity as an integral part of the central grid. They also preserve the named North Sea Link, NordLink, and NorNed interconnections inside a wider cross-border structure linked to Sweden, Finland, Denmark, Germany, the Netherlands, and the United Kingdom. Gassco adds offshore intake, pipeline operation, and receiving-terminal integration across multiple European countries. These conditions support a structural characterization centered on Nordic electricity-interconnection continuity and continental gas-delivery coordination rather than a closed national energy perimeter.</p>
+
+        <h3>Cybersecurity and civil preparedness environment</h3>
+        <p>Norway's cybersecurity and civil preparedness environment is characterized in the current package by NSM protective-security coordination, NCSC Norway infrastructure-protection continuity, NorCERT national CSIRT activity, DSB emergency-communications governance, and Nødnett responder-network infrastructure. The current layers show NSM as the national protective-security authority with responsibilities spanning serious cyberoperations and critical-infrastructure protection, while NCSC and NorCERT preserve an operational cyber-incident layer within that wider institutional setting. They also preserve DSB's governance role around Nødnett together with Nødnett's nationwide responder-network continuity for police, fire, health services, and other preparedness users. These conditions support a structural characterization centered on resilience coordination, infrastructure protection, and emergency-communications continuity rather than episodic crisis response alone.</p>
+
+        <h3>Nordic, EEA, and cross-border integration environment</h3>
+        <p>Norway's Nordic, EEA, and cross-border integration environment is characterized in the current package by EEA Agreement participation, Schengen governance participation, Nordic Council cooperation participation, EU digital identity interoperability participation, Nordic electricity-market coupling, continental pipeline delivery coordination, and Nordic-European research-network federation. The current layers show Norway attached to standing European and Nordic institutional systems across digital identity, electricity exchange, gas delivery, and research-network cooperation rather than operating in isolation. They preserve EEA and Schengen attachment as governance structures, Digdir's identity-wallet and NOBID participation as interoperability-linked digital coordination, Statnett and Gassco as cross-border energy coordination surfaces, and Sikt's NORDUnet participation as research-network federation continuity. These conditions support a structural characterization centered on corridor-linked institutional integration across Nordic and European systems.</p>
+
+        <h3>Structural constraints</h3>
+        <p>The current Norway profile also carries clear structural constraints. The current package preserves EEA digital-identity interoperability dependence rather than a fully autonomous domestic identity regime. CBDC remains non-deployed, which bounds the settlement environment to evaluation and modernization rather than issuance. Electricity-system continuity depends in part on cross-border interconnection and Nordic market coupling, while gas-delivery continuity depends on continental pipeline and receiving-terminal integration. The current package does not preserve evidence of a sovereign hyperscale compute stack, and it does not preserve a semiconductor fabrication stack classification. These constraints remain descriptive and do not alter the structural characterization recorded in <code>metadata.md</code>.</p>
+
+        <hr class="section-divider">
+
+        <h3>Profile summary statement</h3>
+        <p>Norway appears in the profile layer as a Nordic digital-governance coordination jurisdiction, settlement-modernization environment, electricity-interconnection and continental gas-delivery infrastructure coordinator, research-network federation participant, neutral exchange-layer infrastructure participant, and civil-preparedness coordination jurisdiction embedded within EEA and Nordic institutional systems.</p>
+
+        <div class="meta-line">Source: profile.md</div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Norway profile into builder-facing interpretation. This file provides structural interpretation only. It does not assign routing authority, readiness tiers, Atlas surfaces, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Digital governance coordination environment</h3>
+        <p>For builder interpretation, Norway reads as a Nordic digital-governance coordination environment centered on Digdir digitalisation coordination infrastructure, ID-porten authentication infrastructure, Altinn service-platform continuity, NOBID interoperability participation, EU Digital Identity Wallet pilot participation, and eIDAS 2.0 preparation. The current normalized layers show Digdir coordinating cross-cutting digitalisation measures, shared public-sector digital infrastructure, and common digital components rather than isolated administrative services. They also preserve ID-porten as the named public authentication layer and Altinn as a combined digital-service, inbox, and forms environment for communication among people, businesses, and public agencies. NOBID participation, EU Digital Identity Wallet pilot activity, and eIDAS 2.0 preparation place this environment inside wider Nordic and European interoperability structures rather than a fully standalone domestic identity perimeter. These conditions support a builder-facing reading centered on national digital identity coordination and EEA-linked interoperability continuity.</p>
+
+        <h3>Settlement infrastructure environment</h3>
+        <p>For builder interpretation, Norway reads as a central-bank settlement modernization environment structured through Norges Bank settlement governance, NBO settlement-system infrastructure, NICS interbank coordination continuity, SWIFT-linked settlement access, and CBDC Phase 5 evaluation. The current normalized layers show Norges Bank operating a structured settlement environment through NBO, with bank access through SWIFT and NBO Online and with RTM, loan-account, and LOM account structures preserved inside the domestic settlement architecture. They also preserve oversight linkage to licensed interbank systems including NICS, which keeps the builder-facing reading centered on settlement modernization rather than a single undifferentiated payment mechanism. The same layers preserve CBDC Phase 5 as a research and recommendation-building programme surface rather than a deployed monetary infrastructure. These conditions support a builder-facing reading centered on central-bank settlement modernization continuity under evaluation rather than CBDC deployment.</p>
+
+        <h3>Telecommunications governance environment</h3>
+        <p>For builder interpretation, Norway reads as a telecommunications-governance environment anchored in Nkom spectrum-governance continuity, the 5G auction programme, telecommunications resilience responsibilities, and emergency-network preparedness participation. The current normalized layers show Nkom governing electronic communications services, numbering resources, and frequency management across Norway while also carrying explicit security and resilience responsibilities for e-com networks. They preserve the 5G auction programme as a visible next-generation spectrum-allocation surface and emergency-network development as a preparedness-linked extension of telecommunications governance. These conditions support a builder-facing reading centered on communications-governance continuity, resilience oversight, and preparedness-linked telecom coordination without inferring routing hierarchy or control status.</p>
+
+        <h3>Research network and compute environment</h3>
+        <p>For builder interpretation, Norway reads as a research-network federation platform structured through Sikt shared infrastructure coordination, Uninett backbone connectivity, NORDUnet participation, Sigma2 HPC continuity, and Norwegian AI Cloud coordination infrastructure. The current normalized layers show Sikt organizing shared infrastructure and services for education and research, while Uninett preserves a national backbone connected to all Norwegian NIX points as part of the Norwegian research-network environment. They also preserve NORDUnet participation and GÉANT-related service continuity as the cross-border federation setting for Norwegian academic networking. Sigma2 adds nationally coordinated HPC and research-data infrastructure, while the Norwegian AI Cloud preserves a bounded AI-compute coordination layer across universities and research institutions. These conditions support a builder-facing reading centered on research-network federation and compute coordination continuity rather than a sovereign hyperscale compute stack.</p>
+
+        <h3>Exchange and naming infrastructure environment</h3>
+        <p>For builder interpretation, Norway reads as a neutral exchange-layer infrastructure participant centered on NIX exchange-layer continuity, Norid registry-governance continuity, and distributed exchange-topology participation. The current normalized layers show NIX as a neutral exchange environment with primary Oslo sites and regional sites in Bergen, Trondheim, Tromsø, and Stavanger rather than a single concentrated interconnection point. They also preserve Norid's responsibility for registry operation, domain-policy development, and technical stewardship for Norwegian domain infrastructure inside a public oversight setting supervised by Nkom. These conditions support a builder-facing reading centered on neutral exchange continuity and naming-layer governance without extending into sovereign hyperscale classification or routing-authority inference.</p>
+
+        <h3>Energy and gas infrastructure environment</h3>
+        <p>For builder interpretation, Norway reads as an electricity-interconnection and continental gas-delivery coordination environment structured through Statnett transmission-system coordination, 17 cross-border electricity interconnections, North Sea Link participation, NordLink participation, NorNed participation, Gassco continental gas pipeline infrastructure, and European receiving-terminal integration. The current normalized layers show Statnett coordinating the national transmission system and balancing electricity production and consumption while preserving foreign exchange capacity as an integral part of the central grid. They also preserve the named North Sea Link, NordLink, and NorNed interconnections inside a wider cross-border structure linked to Sweden, Finland, Denmark, Germany, the Netherlands, and the United Kingdom. Gassco adds offshore intake, pipeline operation, and receiving-terminal integration across multiple European countries. These conditions support a builder-facing reading centered on Nordic electricity-interconnection continuity and continental gas-delivery coordination rather than a closed national energy perimeter.</p>
+
+        <h3>Cybersecurity and civil preparedness environment</h3>
+        <p>For builder interpretation, Norway reads as a national resilience and civil-preparedness coordination environment structured through NSM protective-security coordination, NCSC Norway infrastructure-protection continuity, NorCERT national CSIRT activity, DSB emergency-communications governance, and Nødnett responder-network infrastructure. The current normalized layers show NSM as the national protective-security authority with responsibilities spanning serious cyberoperations and critical-infrastructure protection, while NCSC and NorCERT preserve an operational cyber-incident layer within that wider institutional setting. They also preserve DSB's governance role around Nødnett together with Nødnett's nationwide responder-network continuity for police, fire, health services, and other preparedness users. These conditions support a builder-facing reading centered on resilience coordination, infrastructure protection, and emergency-communications continuity rather than episodic crisis response alone.</p>
+
+        <h3>Nordic, EEA, and cross-border integration environment</h3>
+        <p>For builder interpretation, Norway reads as an EEA and Nordic corridor-integrated infrastructure environment structured through EEA Agreement participation, Schengen governance participation, Nordic Council cooperation participation, EU digital identity interoperability participation, Nordic electricity-market coupling, continental pipeline delivery coordination, and Nordic-European research-network federation. The current normalized layers show Norway attached to standing European and Nordic institutional systems across digital identity, electricity exchange, gas delivery, and research-network cooperation rather than operating in isolation. They preserve EEA and Schengen attachment as governance structures, Digdir's identity-wallet and NOBID participation as interoperability-linked digital coordination, Statnett and Gassco as cross-border energy coordination surfaces, and Sikt's NORDUnet participation as research-network federation continuity. These conditions support a builder-facing reading centered on corridor-linked institutional integration across Nordic and European systems.</p>
+
+        <h3>Structural constraints for builders</h3>
+        <p>The current Norway builder-mode reading also carries clear structural limits. The normalized layers preserve EEA digital-identity interoperability dependence rather than a fully autonomous domestic identity regime. CBDC remains non-deployed, which bounds the settlement environment to evaluation and modernization rather than issuance. Electricity-system continuity depends in part on cross-border interconnection and Nordic market coupling, while gas-delivery continuity depends on continental pipeline and receiving-terminal integration. The current normalized layers do not document a sovereign hyperscale compute stack, and they do not document a semiconductor fabrication stack classification. These conditions define the documented builder-mode perimeter without being treated as weaknesses or readiness judgments.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder mode summary statement</h3>
+        <p>Norway appears in builder mode as a Nordic digital-governance coordination jurisdiction, settlement-modernization environment, electricity-interconnection and continental gas-delivery infrastructure coordinator, research-network federation participant, neutral exchange-layer infrastructure participant, and civil-preparedness coordination jurisdiction embedded within EEA and Nordic institutional systems.</p>
+
+        <div class="meta-line">Source: builder-mode.md</div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Initial package creation</h3>
+        <p>The Norway jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The change-log records that <code>evidence.md</code> established Digdir digitalisation coordination infrastructure, ID-porten authentication infrastructure, Altinn service-platform infrastructure, NOBID interoperability participation, EU Digital Identity Wallet pilot participation, eIDAS 2.0 preparation, Norges Bank settlement governance authority, NBO settlement-system infrastructure, NICS interbank coordination infrastructure, SWIFT-linked settlement access structure, the Nkom telecommunications-governance authority, Sikt shared research-network infrastructure coordination, Uninett backbone connectivity infrastructure, NORDUnet participation environment, Sigma2 national HPC coordination infrastructure, Norwegian AI Cloud coordination infrastructure, NIX exchange-layer infrastructure, Norid registry governance continuity, Statnett transmission-system coordination, 17 cross-border electricity interconnections, North Sea Link participation, NordLink participation, NorNed participation, Gassco continental gas pipeline infrastructure, European receiving-terminal integration, NSM protective-security coordination authority, the NCSC Norway infrastructure-protection coordination role, the NorCERT national CSIRT role, DSB emergency communications infrastructure governance, Nødnett responder-network infrastructure, EEA Agreement participation, Schengen governance participation, and Nordic Council cooperation participation.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The change-log records that <code>signals.md</code> derived digital identity interoperability continuity signals, settlement modernization continuity signals, telecommunications governance continuity signals, research-network federation continuity signals, exchange-layer neutrality continuity signals, Nordic electricity-interconnection continuity signals, continental gas-delivery coordination signals, civil-preparedness coordination signals, EEA and Nordic institutional attachment signals, and constraint-boundary signals preserving sovereign compute absence.</p>
+
+        <h3>Trust-dimensions layer construction</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> established institutional continuity across digital governance, settlement infrastructure, transmission coordination, gas-delivery systems, research-network federation, protective-security coordination, and emergency communications governance; digital identity interoperability continuity; central-bank settlement modernization continuity; telecommunications governance continuity; research-network federation continuity; neutral exchange-layer continuity; Nordic electricity-market integration continuity; continental gas-delivery infrastructure continuity; civil-preparedness coordination continuity; and constraint boundaries preserving EEA interoperability embedding and sovereign compute absence.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The change-log records that <code>metadata.md</code> classified Norway as a Nordic digital-governance coordination jurisdiction, a settlement-modernization environment, an electricity-interconnection jurisdiction, a continental gas-delivery infrastructure coordination jurisdiction, a research-network federation participant jurisdiction, a neutral exchange-layer infrastructure participant jurisdiction, a civil-preparedness coordination jurisdiction, and an EEA and Nordic institutional coordination participant jurisdiction.</p>
+
+        <h3>Profile layer characterization</h3>
+        <p>The change-log records that <code>profile.md</code> characterized Norway as an Oslo-centered digital-governance coordination environment, a Statnett-linked Nordic electricity-interconnection jurisdiction, a Gassco-linked continental gas-delivery coordination environment, a Sikt-linked research-network federation surface, a NIX-centered exchange-layer neutrality environment, and an EEA and Nordic institutional coordination participant jurisdiction.</p>
+
+        <h3>Builder mode translation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into digital-governance coordination interpretation, settlement modernization interpretation, telecommunications governance interpretation, research-network federation interpretation, exchange-layer neutrality interpretation, electricity-interconnection interpretation, continental gas-delivery coordination interpretation, civil-preparedness coordination interpretation, and constraint-boundary interpretation.</p>
+
+        <h3>Structural constraints recorded</h3>
+        <p>The change-log records that normalization preserved EEA digital-identity interoperability dependence, CBDC non-deployment status, cross-border electricity-market integration dependence, continental gas-delivery infrastructure dependence, the absence of sovereign hyperscale compute stack evidence, and the absence of semiconductor fabrication stack classification.</p>
+
+        <h3>Package completion status</h3>
+        <p>The Norway jurisdiction package is complete within the Atlas normalization framework and aligned with Nordic and EEA corridor-layer institutional interpretation standards.</p>
+
+        <div class="meta-line">Normalization status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: change-log.md</div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Norway jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/norway/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Norway</li>
+          <li><strong>Code:</strong> NO</li>
+          <li><strong>Region:</strong> Nordic / Northern Europe</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor alignment</h4>
+        <ul>
+          <li>Nordic Electricity Market Integration Framework</li>
+          <li>North Sea Energy Infrastructure Coordination Environment</li>
+          <li>EEA Institutional Cooperation Framework</li>
+          <li>Schengen Governance Coordination Framework</li>
+          <li>NORDUnet Research Network Cooperation Framework</li>
+          <li>Nordic Council Cooperation Framework</li>
+        </ul>
+        <h4>Primary coordination cities</h4>
+        <ul>
+          <li>Oslo</li>
+          <li>Trondheim</li>
+          <li>Bergen</li>
+          <li>Stavanger</li>
+          <li>Tromsø</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Anchors</h3>
+        <h4>Documented surfaces</h4>
+        <ul>
+          <li>Digdir · ID-porten · Altinn · NOBID · EU Digital Identity Wallet · eIDAS 2.0</li>
+          <li>Norges Bank · NBO · NICS · SWIFT · CBDC Phase 5 (under evaluation)</li>
+          <li>Nkom · 5G auction programme · emergency-network preparedness</li>
+          <li>Sikt · Uninett · NORDUnet · Sigma2 · Norwegian AI Cloud</li>
+          <li>NIX (Oslo · Bergen · Trondheim · Tromsø · Stavanger) · Norid (.no)</li>
+          <li>Statnett · 17 cross-border interconnections · North Sea Link · NordLink · NorNed</li>
+          <li>Gassco · continental pipeline infrastructure · European receiving terminals</li>
+          <li>NSM · NCSC Norway · NorCERT · DSB · Nødnett</li>
+          <li>EEA · Schengen · Nordic Council</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereign hyperscale compute classification.</li>
+          <li>Not a full national semiconductor fabrication-stack classification.</li>
+          <li>Not a closed national energy perimeter.</li>
+          <li>Not a deployed CBDC jurisdiction.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
