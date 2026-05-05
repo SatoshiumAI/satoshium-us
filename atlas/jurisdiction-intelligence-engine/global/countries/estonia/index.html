@@ -1,91 +1,708 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Estonia | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estonia — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Estonia Atlas jurisdiction package rendering. EU Digital Identity Interoperability, Euro-Area Settlement Integration, Baltic Electricity and Gas Integration, Nordic-Baltic Research Network Federation, EU/NATO Cybersecurity Coordination, and Cross-Border Data Continuity alignment.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/estonia/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Estonia</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Estonia</h1>
 
-</article>
-</main>
+  <p class="lede">Digital-governance and data-interoperability coordination jurisdiction, Eurosystem settlement participant, distributed data-governance environment, research-network federation participant, cybersecurity and digital-resilience coordination jurisdiction, energy and grid-integration coordination environment, and EU/Baltic/NATO institutional integration participant. This page renders the canonical Estonia Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting RIA / X-tee / eesti.ee digital-governance coordination, ID-card / Mobile-ID / Smart-ID / GovSSO / TARA authentication, eIDAS interoperability and e-Residency, Eesti Pank Eurosystem participation with TARGET Services (T2, TIPS, T2S) and digital euro experimentation, distributed data governance with Luxembourg data-embassy continuity, EENet / NORDUnet / GÉANT / ETAIS research-network federation with LUMI HPC access, .ee registry governance with DNSSEC, Elering transmission with EstLink, Balticconnector, ENTSO-E Continental Europe synchronisation, and Nord Pool participation, NCSC-EE / CERT-EE cyber coordination with international CERT cooperation and CCDCOE presence in Tallinn, and EU / Baltic / NATO institutional embedding.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Estonia (EE)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>Estonia currently reads within Atlas as a Tallinn-centered digital-governance and data-interoperability coordination environment, an Eesti Pank-linked Eurosystem settlement participant, an X-tee-based distributed data-governance environment, an EENet- and ETAIS-linked research-network federation surface, a .ee registry-based naming governance environment, an Elering-linked energy and grid-integration coordination environment, a NCSC-EE-linked cybersecurity coordination jurisdiction, and an EU, Baltic, and NATO institutional coordination participant. The current package also places Estonia inside RIA-coordinated identity and service interoperability, TARGET Services participation, distributed data continuity, NORDUnet- and GÉANT-linked research-network federation, Continental Europe synchronisation, and Luxembourg-linked data-continuity cooperation structures. These conditions support a structural characterization centered on digital-governance coordination, Eurosystem settlement participation, distributed data governance, research-network federation, naming stewardship, integrated digital-service infrastructure, energy interconnection, cybersecurity coordination, and corridor-linked institutional integration without assigning readiness tiers, routing authority, or comparative status.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Estonia</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Baltic / Northern Europe</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">EU Digital Identity Interoperability Framework · Euro-Area Settlement Integration Framework · Baltic Electricity and Gas Integration Framework · Nordic-Baltic Research Network Federation Framework · EU/NATO Cybersecurity Coordination Framework · Cross-Border Data Continuity and Interoperability Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Tallinn · Tartu</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records evidence-supported national structures documented for Estonia that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.</p>
+
+        <div class="meta-line">Source: profile.md · metadata.md — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Estonia jurisdiction package across digital-governance coordination, settlement integration, distributed data architecture, research-network federation, exchange and naming infrastructure, energy and grid integration, cybersecurity coordination, and EU / Baltic / NATO institutional participation.</p>
+
+        <h3>Digital governance coordination infrastructure</h3>
+        <p>The evidence layer records RIA coordination infrastructure, X-tee data-exchange infrastructure, ID-card identity infrastructure, Mobile-ID and Smart-ID authentication infrastructure, GovSSO and TARA authentication services, the eesti.ee state portal, eIDAS interoperability participation, and the e-Residency digital-identity environment as the documented digital-governance and identity-interoperability surface for the Estonia jurisdiction package.</p>
+
+        <h3>Settlement infrastructure and digital euro experimentation</h3>
+        <p>The evidence layer records Eesti Pank central-bank governance authority, Eurosystem participation, TARGET Services participation across T2, TIPS, and T2S, instant-payment participation through TIPS, securities-settlement participation through T2S and Baltic CSD structures, and digital euro experimentation participation as the documented central-bank settlement integration and CBDC research surface.</p>
+
+        <h3>Distributed data architecture and continuity</h3>
+        <p>The evidence layer records X-tee distributed data architecture, the data ownership and consent model, auditability and logging infrastructure, the registry-linked service delivery model, and data-embassy cross-border continuity infrastructure as the documented distributed data-governance surface.</p>
+
+        <h3>Research-network and compute infrastructure</h3>
+        <p>The evidence layer records EENet research-network infrastructure, NORDUnet federation participation, GÉANT connectivity, ETAIS scientific computing infrastructure, and LUMI access via European HPC federation as the documented research-network federation and compute-coordination surface.</p>
+
+        <h3>Exchange and naming infrastructure</h3>
+        <p>The evidence layer records .ee registry governance through the Estonian Internet Foundation, DNSSEC implementation, and the registry-registrar operational model as the documented naming-layer governance and DNS security surface.</p>
+
+        <h3>Energy and grid infrastructure</h3>
+        <p>The evidence layer records the Elering transmission-system operator environment, EstLink interconnection infrastructure, Balticconnector gas interconnection, ENTSO-E synchronization through the Continental Europe Synchronous Area, and Nord Pool electricity-market participation as the documented Baltic and European energy-integration surface.</p>
+
+        <h3>Cybersecurity and digital resilience coordination</h3>
+        <p>The evidence layer records the NCSC-EE national cyber authority, CERT-EE operational coordination, 24/7 cyber monitoring and response, international CERT cooperation, and CCDCOE presence in Tallinn as the documented cybersecurity coordination surface.</p>
+
+        <h3>EU, Baltic, and NATO institutional participation</h3>
+        <p>The evidence layer records EU, Baltic, and NATO institutional coordination participation together with data-embassy cooperation with Luxembourg as the documented EU, Baltic, and NATO institutional coordination surface.</p>
+
+        <div class="meta-line">Source: evidence.md · change-log.md — Evidence Layer Construction</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Strategic position signals</h3>
+        <p>RIA's X-tee, eesti.ee, TARA, and GovSSO infrastructure, Eesti Pank's Eurosystem and TARGET participation, NCSC-EE and CERT-EE coordination roles, Elering's cross-border transmission and synchronisation functions, and Estonia's documented EU, Baltic, and NATO-linked institutional participation together signal Estonia as a digital-governance and data-interoperability coordination jurisdiction, Eurosystem settlement participant, cybersecurity and digital-resilience coordination environment, and EU/Baltic institutional integration participant. The documented coexistence of distributed public digital-service coordination, pan-European settlement participation, research-network federation, naming-layer governance, cross-border energy interconnection, and national cyber-coordination structures signals a multi-layer national coordination environment rather than a closed domestic stack. The evidence places Estonia's identity, settlement, research-network, energy, and cyber continuity inside European and Baltic institutional systems rather than inside a detached standalone national perimeter. The evidence supports a coordination-and-interoperability signal rooted in digital governance, settlement integration, distributed data architecture, cyber coordination, and regional embedding, but it does not support topology inference, routing-authority classification, or readiness judgment.</p>
+
+        <h3>Digital governance and identity signals</h3>
+        <p>X-tee's role as a secure data-exchange environment, together with the eesti.ee portal, signals nationally coordinated continuity across Estonia's public digital-governance and service-access infrastructure. The documented coexistence of ID-card, Mobile-ID, multiple eID carriers, TARA, and GovSSO signals continuity across authentication, service access, and public-sector digital identity infrastructure rather than isolated credential systems. GovSSO and TARA support for ID-card, Mobile-ID, Smart-ID, and European Union notified eID signals an interoperability layer connecting domestic authentication pathways to cross-border e-service access frameworks. The eesti.ee portal's personalised access to registry-linked services and data views signals continuity between digital identity, service delivery, and registry-mediated state interaction. Taken together, the evidence signals national digital identity and service interoperability continuity across distributed data-exchange architecture and EU cross-border identity frameworks.</p>
+
+        <h3>Financial infrastructure and settlement signals</h3>
+        <p>Eesti Pank's role as central bank of Estonia and member of the ESCB and Eurosystem signals central-bank settlement continuity embedded inside euro-area monetary and settlement structures rather than a standalone national settlement perimeter. The documented combination of T2, TIPS, and T2S participation signals a layered settlement architecture spanning large-value payments, instant payments, and securities settlement rather than a single undifferentiated payment mechanism. Eesti Pank's management of the Estonian TARGET component and the documented participation of Estonian banks in TIPS signal real-time settlement capability inside a shared Eurosystem platform. Digital euro experimentation with the ECB and other euro-area central banks signals continued participation in shared monetary-technology exploration, while the evidence does not support independent issuance or sovereign monetary autonomy. Taken together, the evidence signals Eurosystem-integrated settlement continuity with real-time payment capability and experimentation participation without sovereign monetary independence.</p>
+
+        <h3>Data infrastructure and digital continuity signals</h3>
+        <p>X-tee's agreement-based interoperable ecosystem signals distributed data-governance continuity organized around exchange between systems rather than a single central database. X-tee's documented authentication, authorisation, logging, encryption, and signing model signals continuity in secure data exchange across participating public and private systems. The stated principle that data owners retain control during exchange, together with eesti.ee data-tracker and consent functions, signals controlled data ownership and visibility rather than centralized state data custody as the defining model. The Luxembourg data-embassy arrangement signals a documented cross-border redundancy layer attached to Estonia's digital continuity posture. Taken together, the evidence signals distributed data-governance continuity with cross-border redundancy and controlled data ownership rather than centralized storage systems.</p>
+
+        <h3>Research network and compute signals</h3>
+        <p>HARNO's EENet role, NORDUnet's Tallinn-Helsinki connection, and onward GÉANT capacity together signal nationally anchored but federated research-network continuity rather than isolated institutional connectivity. The documented EENet connection into NORDUnet and GÉANT signals continuity across Estonian, Nordic, and wider European academic-network layers. ETAIS's pan-Estonian scientific computing environment signals nationally coordinated compute and data-service continuity for research workloads. ETAIS access to LUMI in Finland signals that part of Estonia's advanced compute continuity is structured through European federation rather than through a wholly domestic sovereign supercomputing stack. Taken together, the evidence signals research-network federation continuity with European compute integration rather than sovereign compute infrastructure.</p>
+
+        <h3>Exchange and naming infrastructure signals</h3>
+        <p>The Estonian Internet Foundation's management of .ee and its sub-domains signals stable national naming-layer governance continuity within a dedicated registry structure. The documented re-delegation and administration continuity since 2010 signals institutional stability in Estonia's country-code naming governance. DNSSEC availability in the .ee zone and published DNSSEC statistics signal active DNS security continuity within the national registry environment. The evidence directly supports stable national naming-layer governance and DNS security continuity, while it does not support broader exchange-layer authority claims.</p>
+
+        <h3>Telecommunications and digital infrastructure signals</h3>
+        <p>The eesti.ee portal, TARA, GovSSO, and X-tee together signal continuity across Estonia's identity, access, and service-interoperability layers rather than fragmented digital-service administration. The documented use of ID-card, Mobile-ID, Smart-ID, and EU eID for service access signals an integrated access layer spanning domestic and cross-border authentication methods. GovSSO and TARA's open-source software model signals an institutional preference for reusable, coordinated digital-service infrastructure rather than isolated proprietary service silos. X-tee's platform independence, multilateralism, availability, and standardisation signal continuity in service interoperability architecture across state-related systems. Taken together, the evidence signals integrated digital-service infrastructure continuity across identity, access, and service layers without telecom routing-authority classification.</p>
+
+        <h3>Energy and grid integration signals</h3>
+        <p>Elering's electricity and gas transmission-system role signals nationally coordinated continuity across Estonia's core energy-transport infrastructure. EstLink interconnector development and co-ownership with Fingrid signal durable electricity-system continuity through cross-border Baltic-Finnish interconnection rather than a closed national grid perimeter. Balticconnector signals continued gas-system continuity through cross-border infrastructure attachment to Finland. Synchronisation with the Continental Europe Synchronous Area in February 2025 signals deeper electricity-system continuity inside Baltic and wider European grid coordination structures. Nord Pool bidding-area participation signals Estonia's electricity-market continuity inside a wider regional market framework. Taken together, the evidence signals Baltic and European energy-system integration continuity through cross-border interconnection and synchronisation infrastructure.</p>
+
+        <h3>Cybersecurity and digital resilience signals</h3>
+        <p>NCSC-EE's role as the national central cyber authority signals centralized continuity in Estonia's cyber-governance and critical-infrastructure protection environment. The documented 24/7 monitoring, incident response, crisis-management, standards, and R&D functions of the Cyber Security Centre signal an institutional cyber-coordination layer rather than fragmented response functions. CERT-EE's national CERT role, 24/7 duty structure, and single-point-of-contact function for foreign CERTs and CSIRTs signal operational continuity across domestic and international incident-coordination environments. CERT-EE's affiliations with FIRST, GÉANT, Trusted Introducer, and the NIS CSIRT Network signal formal cross-border cyber-cooperation continuity beyond the domestic response layer. CCDCOE's presence in Tallinn signals that Estonia's cyber-resilience environment is connected to NATO-linked cyber-defence cooperation and exercise structures. Taken together, the evidence signals national cybersecurity coordination continuity across government, critical infrastructure, and international cyber cooperation environments.</p>
+
+        <h3>EU and Baltic connectivity signals</h3>
+        <p>EU notified eID support through TARA and GovSSO, together with EU eID login for eesti.ee, signals identity-system continuity embedded in European cross-border identification frameworks. Eurosystem and euro-area participation, along with T2, TIPS, and T2S involvement, signal settlement-system continuity embedded in EU monetary and payment infrastructure. EENet's NORDUnet and GÉANT connectivity signals research-network continuity across Nordic and wider European institutional infrastructure layers. Baltic synchronisation with the Continental Europe Synchronous Area signals energy-system continuity embedded in Baltic and EU-supported grid coordination structures. The Luxembourg data-embassy arrangement signals documented cross-border continuity cooperation within a European state-to-state framework. CCDCOE's Tallinn presence signals Estonia's cybersecurity environment is also linked into NATO-associated institutional cooperation. Taken together, the evidence signals multi-layer EU, Baltic, and NATO institutional embedding across identity, settlement, research, energy, and cybersecurity systems.</p>
+
+        <h3>Constraint boundary signals</h3>
+        <ul>
+          <li>Eurosystem and TARGET participation signal that key Estonian settlement continuity depends on wider euro-area and Eurosystem infrastructure rather than a fully standalone national monetary stack.</li>
+          <li>EU notified eID and eIDAS-node support signal that part of Estonia's cross-border digital-identity continuity depends on European interoperability frameworks rather than a wholly self-contained identity perimeter.</li>
+          <li>The Luxembourg data-embassy arrangement signals that part of Estonia's digital continuity posture depends on cross-border hosting and cooperation structures.</li>
+          <li>EENet, NORDUnet, GÉANT, ETAIS, and LUMI access together signal that advanced research-network and compute continuity depends in part on federated European infrastructure rather than a wholly sovereign compute stack.</li>
+          <li>The evidence documents scientific computing and digital-service infrastructure, but it does not support sovereign hyperscale compute-stack classification.</li>
+          <li>The evidence does not support a domestic semiconductor fabrication-stack classification.</li>
+          <li>Elering's interconnection, synchronisation, and Nord Pool participation signal that part of Estonia's energy continuity depends on Baltic and wider European coordination structures rather than a fully isolated national energy system.</li>
+          <li>More broadly, the evidence does not support routing authority, topology placement, or readiness-tier conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>Estonia's evidence-derived signals describe a digital-governance and data-interoperability coordination jurisdiction, Eurosystem settlement participant, distributed data and cybersecurity coordination environment, and EU/Baltic institutional integration participant. The signals indicate continuity across public digital identity and service interoperability, Eurosystem-linked settlement and instant payment participation, distributed data governance with cross-border redundancy, research-network federation, naming-layer governance, cross-border energy integration, and national cyber coordination without assigning readiness tiers, routing authority, or topology placement.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: signals.md</div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment eligibility, or infrastructure claims beyond documented anchors.</p>
+
+        <h3>Institutional continuity dimension</h3>
+        <p>The source layers indicate institutional continuity spanning digital governance, settlement systems, research-network coordination, energy infrastructure, cybersecurity authority, naming governance, and cross-border institutional embedding rather than a single centralized national authority. RIA indicates continuity across the national public digital-infrastructure environment through X-tee, eesti.ee, TARA, GovSSO, and identity-carrier coordination. Eesti Pank indicates continuity in settlement-system governance through Eurosystem participation, TARGET Services involvement, and management of the Estonian TARGET component. HARNO and EENet indicate continuity in research-network coordination, while ETAIS adds national scientific-computing continuity. Elering indicates continuity in transmission-system coordination across electricity and gas infrastructure together with cross-border interconnection development. NCSC-EE and CERT-EE indicate continuity in national cyber authority and incident-response functions, while the Estonian Internet Foundation indicates continuity in naming-layer governance through .ee administration. Estonia's documented eIDAS, Eurosystem, NORDUnet, GÉANT, ENTSO-E, Luxembourg data-embassy, and CCDCOE attachments add a standing EU, Baltic, and NATO institutional-embedding layer that reinforces continuity through repeated cross-border attachment.</p>
+
+        <h3>Digital identity and interoperability dimension</h3>
+        <p>The source layers indicate national digital-identity and service-interoperability continuity carried through distributed authentication and access components, while remaining structurally linked to EU cross-border identity frameworks rather than a fully standalone identity perimeter. The ID-card indicates continuity through a state-issued primary identity-carrier layer. Mobile-ID and Smart-ID indicate continuity through documented mobile-authentication options inside the wider authentication environment. TARA and GovSSO indicate continuity through shared authentication services supporting ID-card, Mobile-ID, Smart-ID, and EU notified eID. The eesti.ee portal indicates continuity through a single personalised access surface to registry-linked public services. e-Residency indicates continuity through a documented digital-identity environment beyond domestic residency. The documented trust characteristic is continuity of distributed identity and authentication coordination carried through named national components while remaining attached to EU cross-border recognition structures.</p>
+
+        <h3>Settlement infrastructure integration dimension</h3>
+        <p>The source layers indicate Eurosystem-integrated settlement continuity with real-time payment capability and experimentation participation rather than sovereign settlement independence. Eesti Pank indicates continuity through its central-bank role and ESCB / Eurosystem participation. TARGET Services participation across T2, TIPS, and T2S indicates a layered settlement environment spanning large-value payments, instant payments, and securities settlement. TIPS-linked instant-payment participation indicates real-time payment capability inside the shared Eurosystem platform. T2S participation and Baltic CSD-linked structures indicate continuity in cross-border securities settlement coordination. Digital euro experimentation participation indicates continued involvement in shared euro-area monetary-technology exploration without supporting issuance or deployment inference. The documented trust characteristic is continuity of Eurosystem-linked settlement integration under Eesti Pank governance, bounded by clear dependence on wider European settlement systems.</p>
+
+        <h3>Distributed data governance dimension</h3>
+        <p>The source layers indicate distributed data-governance continuity organized around interoperable exchange, controlled data ownership, auditability, and cross-border redundancy rather than centralized custodial concentration. X-tee indicates continuity through an agreement-based interoperable exchange environment among participating systems rather than a central-database model. The documented authentication, authorisation, logging, encryption, and signing model indicates continuity in secure-exchange and audit operations across participating actors. The data ownership and consent model indicates continuity through controlled data ownership during exchange together with eesti.ee data-tracker and consent functions. The registry-linked service delivery model indicates continuity in registry-mediated state interaction without consolidating data into a single store. The Luxembourg data-embassy arrangement indicates continuity through bounded cross-border redundancy. The documented trust characteristic is continuity of distributed data architecture, auditability, and controlled data ownership extended by cross-border continuity cooperation.</p>
+
+        <h3>Research network and compute coordination dimension</h3>
+        <p>The source layers indicate research-network federation continuity with European HPC integration rather than a standalone sovereign compute stack. EENet indicates continuity through a nationally anchored research-network environment serving Estonian academic and research institutions. NORDUnet's Tallinn-Helsinki connection and onward GÉANT capacity indicate continuity through Nordic and wider European research-network federation rather than isolated institutional connectivity. ETAIS indicates continuity through pan-Estonian scientific-computing, storage, hosting, support, and data-service operations. LUMI access via the European HPC federation indicates continuity in advanced-compute participation through a multinational European structure. The documented trust characteristic is continuity of federated research-network and compute coordination carried through named national operators and European programme attachment.</p>
+
+        <h3>Naming and DNS governance dimension</h3>
+        <p>The source layers indicate stable national naming-layer governance and DNS security continuity without supporting broader exchange-layer authority claims. The Estonian Internet Foundation indicates continuity through administration of .ee and its sub-domains within a dedicated registry structure. Documented re-delegation and administration continuity since 2010 indicate institutional stability across the country-code naming environment. DNSSEC availability and adoption statistics indicate active DNS security continuity inside the national registry environment. The registry-registrar operational model indicates continuity through a structured registration and policy environment. The documented trust characteristic is continuity of naming governance and DNS security stewardship inside a stable institutional registry framework.</p>
+
+        <h3>Integrated digital infrastructure dimension</h3>
+        <p>The source layers indicate integrated digital-service infrastructure continuity across identity, access, and service layers without supporting telecom hierarchy or routing-authority classification. The eesti.ee portal, TARA, GovSSO, and X-tee indicate continuity through coordinated identity, access, and interoperable service-binding layers. ID-card, Mobile-ID, Smart-ID, and EU notified eID support indicate continuity through a multi-method access environment spanning domestic and cross-border authentication. The open-source availability of GovSSO and TARA indicates continuity through reusable digital-service building blocks rather than isolated proprietary silos. X-tee's platform independence, multilateralism, availability, and standardisation indicate continuity in interoperable service architecture across state-related systems. The documented trust characteristic is continuity of integrated digital-service infrastructure organized around interoperability, reuse, and shared authentication.</p>
+
+        <h3>Energy and grid integration dimension</h3>
+        <p>The source layers indicate Baltic and European energy-system integration continuity through cross-border interconnection and synchronisation infrastructure rather than a fully isolated national energy system. Elering indicates continuity in transmission-system coordination across electricity and gas infrastructure. EstLink indicates continuity through cross-border Baltic-Finnish electricity interconnection co-ownership with Fingrid. Balticconnector indicates continuity through cross-border gas infrastructure attachment to Finland. Continental Europe Synchronous Area synchronisation in February 2025 indicates continuity through deeper Baltic and European grid integration. Nord Pool bidding-area participation indicates continuity through electricity-market integration inside a wider regional trading framework. The documented trust characteristic is continuity of Baltic and European energy-system integration through named interconnection, synchronisation, and market-participation structures.</p>
+
+        <h3>Cybersecurity and digital resilience dimension</h3>
+        <p>The source layers indicate national cybersecurity-coordination continuity spanning government, critical-infrastructure, and international cyber cooperation environments rather than isolated incident-response activity. NCSC-EE indicates continuity through its role as the national central cyber authority across monitoring, incident response, critical-infrastructure protection, crisis management, standards work, and research coordination. CERT-EE indicates continuity through its national CERT role with 24/7 duty coverage and single-point-of-contact functions for foreign CERTs and CSIRTs. International affiliations through FIRST, GÉANT, Trusted Introducer, and the NIS CSIRT Network indicate continuity through repeated cross-border cyber cooperation. CCDCOE's presence in Tallinn indicates continuity through NATO-linked cyber-defence cooperation and exercise participation. The documented trust characteristic is continuity of national cybersecurity coordination across public authority, critical-infrastructure, and international cooperation surfaces.</p>
+
+        <h3>EU, Baltic, and NATO institutional integration dimension</h3>
+        <p>The source layers indicate multi-layer EU, Baltic, and NATO institutional-coordination continuity across identity, settlement, research-network, energy, data-continuity, and cyber systems. eIDAS-linked Estonian eID participation indicates continuity of institutional attachment to EU/EEA identity interoperability structures. Eurosystem participation indicates continuity of settlement integration through pan-European payment and securities-infrastructure coordination. NORDUnet and GÉANT federation indicate continuity of Nordic and wider European institutional attachment across research-network infrastructure. ENTSO-E synchronisation indicates continuity of electricity-system coordination through standing European operating structures. Luxembourg data-embassy cooperation indicates continuity of cross-border data-continuity attachment within a European state-to-state framework. CCDCOE participation indicates continuity of NATO-linked cyber cooperation. The documented trust characteristic is continuity through repeated institutional embedding across EU, Baltic, and NATO systems rather than nationally isolated infrastructure governance.</p>
+
+        <h3>Constraint boundary dimension</h3>
+        <ul>
+          <li>The source layers indicate that key Estonian settlement continuity depends on Eurosystem and TARGET infrastructure rather than a fully standalone national monetary stack.</li>
+          <li>The source layers indicate that part of Estonia's cross-border digital-identity continuity depends on EU notified eID and eIDAS-linked frameworks rather than a wholly self-contained identity perimeter.</li>
+          <li>The Luxembourg data-embassy arrangement indicates continuing dependence on cross-border hosting and cooperation structures as part of digital-continuity posture.</li>
+          <li>EENet, NORDUnet, GÉANT, ETAIS, and LUMI access together indicate that advanced research-network and compute continuity depends in part on federated European infrastructure rather than a wholly sovereign compute stack.</li>
+          <li>The source layers document scientific-computing and digital-service infrastructure but do not document a sovereign hyperscale compute stack.</li>
+          <li>The source layers do not document a semiconductor fabrication-stack classification.</li>
+          <li>EstLink, Balticconnector, Continental Europe synchronisation, and Nord Pool participation indicate that part of Estonia's energy continuity depends on Baltic and wider European coordination structures rather than a fully isolated national energy system.</li>
+          <li>More broadly, the source layers do not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Trust dimensions summary statement</h3>
+        <p>Estonia is documented as a digital-governance and data-interoperability coordination jurisdiction, Eurosystem settlement participant, distributed data-governance environment, research-network federation participant, cybersecurity and digital-resilience coordination jurisdiction, energy and grid-integration coordination environment, and EU/Baltic/NATO institutional integration participant. The documented trust dimensions indicate continuity across institutional coordination, distributed digital identity and interoperability, Eurosystem settlement integration, distributed data governance and auditability, research-network and compute federation, naming-layer and DNS security stewardship, integrated digital infrastructure, cross-border energy integration, cybersecurity coordination, and wider regional institutional embedding without assigning readiness tiers, routing authority, or deployment eligibility.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: trust-dimensions.md</div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility.</p>
+
+        <h3>Jurisdiction identity</h3>
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Estonia</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Baltic / Northern Europe</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">EU Digital Identity Interoperability Framework · Euro-Area Settlement Integration Framework · Baltic Electricity and Gas Integration Framework · Nordic-Baltic Research Network Federation Framework · EU/NATO Cybersecurity Coordination Framework · Cross-Border Data Continuity and Interoperability Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Tallinn · Tartu</span>
+          </div>
+        </div>
+
+        <h3>Infrastructure role classification</h3>
+        <ul>
+          <li>digital-governance and data-interoperability coordination jurisdiction</li>
+          <li>Eurosystem settlement participant jurisdiction</li>
+          <li>research-network federation participant jurisdiction</li>
+          <li>distributed data-governance coordination environment</li>
+          <li>cybersecurity and digital-resilience coordination jurisdiction</li>
+          <li>energy and grid-integration coordination jurisdiction</li>
+          <li>EU, Baltic, and NATO institutional coordination participant jurisdiction</li>
+        </ul>
+
+        <h3>Digital governance classification</h3>
+        <ul>
+          <li>RIA coordination infrastructure</li>
+          <li>X-tee data-exchange infrastructure</li>
+          <li>ID-card identity system</li>
+          <li>Mobile-ID and Smart-ID authentication infrastructure</li>
+          <li>GovSSO and TARA authentication services</li>
+          <li>eesti.ee state portal</li>
+          <li>eIDAS interoperability participation</li>
+          <li>e-Residency digital-identity environment</li>
+        </ul>
+
+        <h3>Financial and settlement infrastructure classification</h3>
+        <ul>
+          <li>Eesti Pank central-bank governance authority</li>
+          <li>Eurosystem participation</li>
+          <li>TARGET Services participation (T2, TIPS, T2S)</li>
+          <li>instant-payment infrastructure participation (TIPS)</li>
+          <li>securities-settlement participation (T2S, Baltic CSD structures)</li>
+          <li>digital euro experimentation participation</li>
+        </ul>
+
+        <h3>Data infrastructure and continuity classification</h3>
+        <ul>
+          <li>X-tee distributed data architecture</li>
+          <li>data ownership and consent model</li>
+          <li>auditability and logging infrastructure</li>
+          <li>registry-linked service delivery model</li>
+          <li>data-embassy cross-border continuity infrastructure</li>
+        </ul>
+
+        <h3>Research network and compute infrastructure classification</h3>
+        <ul>
+          <li>EENet research-network infrastructure</li>
+          <li>NORDUnet federation participation</li>
+          <li>GÉANT connectivity</li>
+          <li>ETAIS scientific computing infrastructure</li>
+          <li>LUMI access via European HPC federation</li>
+        </ul>
+
+        <h3>Exchange and naming infrastructure classification</h3>
+        <ul>
+          <li>.ee registry governance (Estonian Internet Foundation)</li>
+          <li>DNSSEC implementation and adoption</li>
+          <li>registry-registrar operational model</li>
+        </ul>
+
+        <h3>Telecommunications and digital infrastructure classification</h3>
+        <ul>
+          <li>integrated digital-service infrastructure coordination</li>
+          <li>identity, access, and service-layer interoperability</li>
+          <li>GovSSO and TARA shared authentication infrastructure</li>
+          <li>X-tee interoperability framework</li>
+          <li>open-source digital infrastructure components</li>
+        </ul>
+
+        <h3>Energy and grid infrastructure classification</h3>
+        <ul>
+          <li>Elering transmission-system operator environment</li>
+          <li>EstLink interconnection infrastructure</li>
+          <li>Balticconnector gas interconnection</li>
+          <li>ENTSO-E synchronization (Continental Europe Synchronous Area)</li>
+          <li>Nord Pool electricity-market participation</li>
+        </ul>
+
+        <h3>Cybersecurity and coordination classification</h3>
+        <ul>
+          <li>NCSC-EE national cyber authority</li>
+          <li>CERT-EE operational coordination</li>
+          <li>24/7 cyber monitoring and response</li>
+          <li>international CERT cooperation (FIRST, GÉANT, Trusted Introducer, NIS CSIRT Network)</li>
+          <li>CCDCOE presence in Tallinn</li>
+        </ul>
+
+        <h3>EU, Baltic, and NATO coordination classification</h3>
+        <ul>
+          <li>eIDAS interoperability participation</li>
+          <li>Eurosystem participation</li>
+          <li>NORDUnet and GÉANT federation</li>
+          <li>ENTSO-E synchronization</li>
+          <li>data-embassy cooperation (Luxembourg)</li>
+          <li>NATO cyber coordination (CCDCOE)</li>
+        </ul>
+
+        <h3>Constraint classification</h3>
+        <ul>
+          <li>Eurosystem settlement dependence</li>
+          <li>EU identity interoperability dependence</li>
+          <li>cross-border data-continuity dependence (data embassy)</li>
+          <li>research-network federation dependence</li>
+          <li>absence of sovereign hyperscale compute stack evidence</li>
+          <li>absence of semiconductor fabrication-stack evidence</li>
+          <li>energy and grid integration dependence</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Metadata summary statement</h3>
+        <p>Estonia appears in the metadata layer as a digital-governance and data-interoperability coordination jurisdiction, Eurosystem settlement participant, distributed data-governance environment, research-network federation participant, cybersecurity and digital-resilience coordination jurisdiction, energy and grid-integration coordination jurisdiction, and EU/Baltic/NATO institutional coordination participant.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: metadata.md</div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+        <h3>Jurisdiction overview</h3>
+        <p>Estonia currently reads within Atlas as a Tallinn-centered digital-governance and data-interoperability coordination environment, an Eesti Pank-linked Eurosystem settlement participant, an X-tee-based distributed data-governance environment, an EENet- and ETAIS-linked research-network federation surface, a .ee registry-based naming governance environment, an Elering-linked energy and grid-integration coordination environment, a NCSC-EE-linked cybersecurity coordination jurisdiction, and an EU, Baltic, and NATO institutional coordination participant. The current package also places Estonia inside RIA-coordinated identity and service interoperability, TARGET Services participation, distributed data continuity, NORDUnet- and GÉANT-linked research-network federation, Continental Europe synchronisation, and Luxembourg-linked data-continuity cooperation structures. These conditions support a structural characterization centered on digital-governance coordination, Eurosystem settlement participation, distributed data governance, research-network federation, naming stewardship, integrated digital-service infrastructure, energy interconnection, cybersecurity coordination, and corridor-linked institutional integration without assigning readiness tiers, routing authority, or comparative status.</p>
+
+        <h3>Digital governance environment</h3>
+        <p>Estonia's digital governance environment is characterized in the current package by RIA coordination infrastructure, X-tee data-exchange infrastructure, ID-card identity systems, Mobile-ID and Smart-ID authentication infrastructure, GovSSO and TARA authentication services, the eesti.ee state portal, eIDAS interoperability participation, and the e-Residency digital-identity environment. The current layers show RIA coordinating a national digital-governance environment across secure data exchange, common authentication, session management, identity carriers, and service access rather than preserving isolated administrative systems. They also preserve X-tee as the interoperable exchange layer, eesti.ee as the common service-access surface, and TARA and GovSSO as the shared authentication environment across public online services. ID-card, Mobile-ID, Smart-ID support, EU notified eID support, and e-Residency together place this digital-governance environment inside a broader domestic and cross-border identity-interoperability framework rather than a fully standalone identity perimeter. These conditions support a structural characterization centered on digital identity coordination and public-service interoperability continuity.</p>
+
+        <h3>Financial and settlement environment</h3>
+        <p>Estonia's financial and settlement environment is characterized in the current package by Eesti Pank central-bank governance authority, Eurosystem participation, TARGET Services participation across T2, TIPS, and T2S, instant-payment participation through TIPS, securities-settlement participation, and digital euro experimentation participation. The current layers show Eesti Pank operating inside the ESCB and Eurosystem while managing the Estonian TARGET component and supporting a layered settlement environment spanning large-value payments, instant payments, and securities settlement rather than a single undifferentiated payment mechanism. They also preserve TIPS-linked instant-payment participation and T2S-linked securities-settlement responsibilities as the main operational settlement anchors. Digital euro activity remains an experimentation surface inside shared euro-area structures rather than an issuance or sovereign monetary-control condition. These conditions support a structural characterization centered on Eurosystem-linked settlement continuity under central-bank participation rather than sovereign settlement independence.</p>
+
+        <h3>Data governance and continuity environment</h3>
+        <p>Estonia's data governance and continuity environment is characterized in the current package by X-tee distributed architecture, a data ownership and consent model, auditability and logging infrastructure, a registry-linked service model, and data-embassy cross-border redundancy. The current layers show X-tee coordinating agreement-based exchange among systems rather than consolidating public data into a single central database. They also preserve authentication, authorisation, logging, encryption, and signing as the main secure-exchange and auditability anchors inside the data-governance environment. The stated principle that data owners retain control during exchange, together with eesti.ee data-tracker and consent functions, keeps this environment centered on controlled ownership and transparency rather than centralized storage authority. Luxembourg data-embassy continuity adds a bounded cross-border redundancy layer to the wider data-governance structure. These conditions support a structural characterization centered on distributed data governance, auditability, and controlled continuity rather than centralized custodial concentration.</p>
+
+        <h3>Research network and compute environment</h3>
+        <p>Estonia's research network and compute environment is characterized in the current package by EENet research-network infrastructure, NORDUnet and GÉANT connectivity, ETAIS scientific computing infrastructure, and LUMI access through European HPC federation. The current layers show HARNO, EENet, and ETAIS coordinating a nationally visible academic-network and scientific-compute environment rather than preserving isolated institution-level connectivity. They also preserve the Tallinn-Helsinki connection and onward NORDUnet and GÉANT attachment as the main research-network federation anchors. ETAIS adds national scientific-computing, storage, hosting, support, and data-service continuity, while LUMI access extends this environment into wider European compute federation. These conditions support a structural characterization centered on research-network federation and European compute integration rather than a sovereign hyperscale compute stack.</p>
+
+        <h3>Exchange and naming infrastructure environment</h3>
+        <p>Estonia's exchange and naming infrastructure environment is characterized in the current package by .ee registry governance through the Estonian Internet Foundation, DNSSEC implementation, and a registry-registrar operational model. The current layers show the Estonian Internet Foundation carrying naming-layer continuity through administration of .ee and its sub-domains rather than through a broader exchange-layer authority structure. They also preserve DNSSEC availability, DNSSEC adoption statistics, and the registry-registrar model as the main operational continuity anchors inside the national naming environment. These conditions support a structural characterization centered on stable naming governance and DNS security stewardship without inferring broader exchange authority or topology priority.</p>
+
+        <h3>Telecommunications and digital infrastructure environment</h3>
+        <p>Estonia's telecommunications and digital infrastructure environment is characterized in the current package by integrated digital-service infrastructure, identity, access, and service interoperability, GovSSO and TARA shared authentication systems, the X-tee interoperability model, and open-source digital infrastructure components. The current layers show a coordinated service environment spanning eesti.ee, shared authentication, interoperable data exchange, and registry-linked service access rather than a fragmented service stack. They also preserve GovSSO and TARA as reusable authentication building blocks and X-tee as the interoperable service-binding layer across state-related systems. The open-source availability of GovSSO and TARA adds a reusable digital-building-block model inside the wider public digital infrastructure. These conditions support a structural characterization centered on integrated digital-service coordination and interoperable component reuse without assigning telecom hierarchy or routing authority.</p>
+
+        <h3>Energy and grid integration environment</h3>
+        <p>Estonia's energy and grid integration environment is characterized in the current package by Elering transmission-system operation, EstLink interconnections, Balticconnector gas linkage, ENTSO-E synchronization through the Continental Europe Synchronous Area, and Nord Pool electricity-market participation. The current layers show Elering coordinating electricity and gas transmission continuity while preserving cross-border interconnection development rather than a closed national energy perimeter. They also preserve EstLink as the main Finnish-Estonian electricity interconnection surface, Balticconnector as the key gas interconnection surface, and February 2025 synchronisation with Continental Europe as the main wider grid-integration anchor. Nord Pool participation keeps electricity-market continuity inside a wider regional trading environment. These conditions support a structural characterization centered on Baltic and European energy-system integration rather than an isolated national grid system.</p>
+
+        <h3>Cybersecurity and digital resilience environment</h3>
+        <p>Estonia's cybersecurity and digital resilience environment is characterized in the current package by NCSC-EE authority, CERT-EE operations, 24/7 monitoring and response, international CERT cooperation, and CCDCOE presence in Tallinn. The current layers show NCSC-EE carrying national cyber-authority continuity across monitoring, incident response, critical-infrastructure protection, crisis management, standards work, and research coordination rather than preserving fragmented response functions. They also preserve CERT-EE as the operational incident-coordination layer with 24/7 duty coverage and single-point-of-contact functions for foreign CERTs and CSIRTs. International affiliations through FIRST, GÉANT, Trusted Introducer, and the NIS CSIRT Network extend this environment into wider cooperation structures, while CCDCOE places Tallinn inside a NATO-linked cyber-defence and exercise setting. These conditions support a structural characterization centered on centralized cyber coordination and international operational integration across government, infrastructure, and allied cyber environments.</p>
+
+        <h3>EU, Baltic, and NATO coordination environment</h3>
+        <p>Estonia's EU, Baltic, and NATO coordination environment is characterized in the current package by eIDAS interoperability, Eurosystem participation, NORDUnet and GÉANT connectivity, ENTSO-E synchronization, data-embassy cooperation with Luxembourg, and NATO cyber coordination through CCDCOE. The current layers show Estonia attached to standing European, Baltic, and NATO-linked systems across identity interoperability, settlement infrastructure, research networking, electricity synchronisation, data continuity, and cyber cooperation rather than operating in isolation. They preserve EU notified eID support, euro-area and Eurosystem participation, research-network federation, Continental Europe synchronisation, Luxembourg data-embassy cooperation, and CCDCOE presence as the main cross-border institutional anchors. These conditions support a structural characterization centered on corridor-linked institutional integration across EU, Baltic, and NATO systems.</p>
+
+        <h3>Structural constraints</h3>
+        <p>The current Estonia profile also carries clear structural constraints. The current package preserves Eurosystem settlement dependence rather than a standalone national settlement perimeter. It preserves EU identity interoperability dependence rather than a fully autonomous cross-border identity regime. It preserves cross-border data-continuity dependence through the Luxembourg data-embassy arrangement and research-network federation dependence through EENet, NORDUnet, GÉANT, ETAIS, and LUMI-linked structures. The current package does not preserve evidence of a sovereign hyperscale compute stack, and it does not preserve a semiconductor fabrication-stack classification. It also preserves energy and grid integration dependence through EstLink, Balticconnector, Continental Europe synchronisation, and Nord Pool participation. These constraints remain descriptive and do not alter the structural characterization recorded in <code>metadata.md</code>.</p>
+
+        <hr class="section-divider">
+
+        <h3>Profile summary statement</h3>
+        <p>Estonia appears in the profile layer as a digital-governance and data-interoperability coordination jurisdiction, Eurosystem settlement participant, distributed data-governance environment, research-network federation participant, cybersecurity and digital-resilience coordination jurisdiction, energy and grid-integration coordination environment, and EU/Baltic/NATO institutional integration participant.</p>
+
+        <div class="meta-line">Source: profile.md</div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Estonia profile into builder-facing interpretation. This file provides structural interpretation only. It does not assign routing authority, readiness tiers, Atlas surfaces, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Digital governance coordination environment</h3>
+        <p>For builder interpretation, Estonia reads as a digital-governance and data-interoperability coordination environment centered on RIA coordination infrastructure, X-tee data-exchange infrastructure, ID-card identity infrastructure, Mobile-ID and Smart-ID authentication infrastructure, GovSSO and TARA authentication services, the eesti.ee state portal, eIDAS interoperability participation, and the e-Residency environment. The current normalized layers show RIA coordinating a common public digital infrastructure across secure data exchange, authentication, session management, identity carriers, and service access rather than preserving isolated administrative systems. They also preserve X-tee as the distributed interoperability layer, eesti.ee as the common service-access surface, and TARA and GovSSO as the shared authentication environment across public online services. ID-card, Mobile-ID, Smart-ID support, EU notified eID support, and e-Residency place this environment inside a wider domestic and cross-border identity-interoperability setting rather than a fully standalone identity perimeter. These conditions support a builder-facing reading centered on interoperability-first digital-governance coordination, distributed access continuity, and cross-border identity attachment.</p>
+
+        <h3>Settlement infrastructure environment</h3>
+        <p>For builder interpretation, Estonia reads as a Eurosystem settlement participant structured through Eesti Pank central-bank governance authority, Eurosystem participation, TARGET Services participation across T2, TIPS, and T2S, instant-payment participation, securities-settlement participation, and digital euro experimentation participation. The current normalized layers show Eesti Pank operating inside the ESCB and Eurosystem while managing the Estonian TARGET component and supporting a layered settlement environment spanning large-value payments, instant payments, and securities settlement rather than a single undifferentiated payment mechanism. They also preserve TIPS-linked instant-payment participation and T2S-linked securities-settlement responsibilities as the main operational settlement anchors. Digital euro activity remains an experimentation surface inside shared euro-area structures rather than an issuance or sovereign monetary-control condition. These conditions support a builder-facing reading centered on Eurosystem-linked settlement continuity under central-bank governance rather than sovereign monetary independence.</p>
+
+        <h3>Data governance and continuity environment</h3>
+        <p>For builder interpretation, Estonia reads as a distributed data-governance environment structured through X-tee distributed architecture, a data ownership and consent model, auditability and logging infrastructure, a registry-linked service model, and data-embassy cross-border redundancy. The current normalized layers show X-tee coordinating agreement-based exchange among systems rather than consolidating public data into a single central database. They also preserve authentication, authorisation, logging, encryption, and signing as the main secure-exchange and auditability anchors inside the data-governance environment. The stated principle that data owners retain control during exchange, together with eesti.ee data-tracker and consent functions, keeps this environment centered on controlled ownership, transparency, and auditable access rather than centralized custodial concentration. Luxembourg data-embassy continuity adds a bounded cross-border redundancy layer to the wider data-governance structure. These conditions support a builder-facing reading centered on distributed architecture, auditability, data ownership, and continuity through cross-border redundancy.</p>
+
+        <h3>Research network and compute environment</h3>
+        <p>For builder interpretation, Estonia reads as a research-network federation platform structured through EENet research-network infrastructure, NORDUnet and GÉANT connectivity, ETAIS scientific computing infrastructure, and LUMI access through European HPC federation. The current normalized layers show HARNO, EENet, and ETAIS coordinating a nationally visible academic-network and scientific-compute environment rather than preserving isolated institution-level connectivity. They also preserve the Tallinn-Helsinki connection and onward NORDUnet and GÉANT attachment as the main research-network federation anchors. ETAIS adds national scientific-computing, storage, hosting, support, and data-service continuity, while LUMI access extends this environment into wider European compute federation. These conditions support a builder-facing reading centered on federated infrastructure participation and research-network continuity rather than a sovereign hyperscale compute stack.</p>
+
+        <h3>Exchange and naming infrastructure environment</h3>
+        <p>For builder interpretation, Estonia reads as a naming-governance environment centered on .ee registry governance through the Estonian Internet Foundation, DNSSEC implementation, and a registry-registrar operational model. The current normalized layers show the Estonian Internet Foundation carrying naming-layer continuity through administration of .ee and its sub-domains rather than through a broader exchange-layer authority structure. They also preserve DNSSEC availability, DNSSEC adoption statistics, and the registry-registrar model as the main operational continuity anchors inside the national naming environment. These conditions support a builder-facing reading centered on stable naming governance and DNS security stewardship without extending into broader exchange-layer authority or topology inference.</p>
+
+        <h3>Telecommunications and digital infrastructure environment</h3>
+        <p>For builder interpretation, Estonia reads as an integrated digital-service infrastructure environment structured through identity, access, and service interoperability, GovSSO and TARA shared authentication systems, the X-tee interoperability model, the eesti.ee service environment, and open-source digital infrastructure components. The current normalized layers show a coordinated service environment spanning eesti.ee, shared authentication, interoperable data exchange, and registry-linked service access rather than a fragmented service stack. They also preserve GovSSO and TARA as reusable authentication building blocks, X-tee as the interoperable service-binding layer across state-related systems, and open-source component availability as a reusable digital-building-block model inside the wider public digital infrastructure. These conditions support a builder-facing reading centered on interoperability-first digital-service coordination and reusable public digital infrastructure without assigning telecom hierarchy or routing authority.</p>
+
+        <h3>Energy and grid integration environment</h3>
+        <p>For builder interpretation, Estonia reads as an energy and grid-integration coordination environment structured through Elering transmission-system operator continuity, EstLink interconnection infrastructure, Balticconnector gas linkage, ENTSO-E synchronization through the Continental Europe Synchronous Area, and Nord Pool electricity-market participation. The current normalized layers show Elering coordinating electricity and gas transmission continuity while preserving cross-border interconnection development rather than a closed national energy perimeter. They also preserve EstLink as the main Finnish-Estonian electricity interconnection surface, Balticconnector as the key gas interconnection surface, and February 2025 synchronisation with Continental Europe as the main wider grid-integration anchor. Nord Pool participation keeps electricity-market continuity inside a wider regional trading environment. These conditions support a builder-facing reading centered on cross-border energy coordination and grid integration continuity rather than an isolated national energy system.</p>
+
+        <h3>Cybersecurity and digital resilience environment</h3>
+        <p>For builder interpretation, Estonia reads as a cybersecurity and digital-resilience coordination jurisdiction structured through NCSC-EE authority, CERT-EE operations, 24/7 monitoring and response, international CERT cooperation, and CCDCOE presence in Tallinn. The current normalized layers show NCSC-EE carrying national cyber-authority continuity across monitoring, incident response, critical-infrastructure protection, crisis management, standards work, and research coordination rather than preserving fragmented response functions. They also preserve CERT-EE as the operational incident-coordination layer with 24/7 duty coverage and single-point-of-contact functions for foreign CERTs and CSIRTs. International affiliations through FIRST, GÉANT, Trusted Introducer, and the NIS CSIRT Network extend this environment into wider cooperation structures, while CCDCOE places Tallinn inside a NATO-linked cyber-defence and exercise setting. These conditions support a builder-facing reading centered on centralized cyber coordination, operational resilience, and international cooperation continuity.</p>
+
+        <h3>EU, Baltic, and NATO coordination environment</h3>
+        <p>For builder interpretation, Estonia reads as an EU, Baltic, and NATO institutional integration environment structured through eIDAS interoperability, Eurosystem participation, NORDUnet and GÉANT connectivity, ENTSO-E synchronization, data-embassy cooperation with Luxembourg, and NATO cyber coordination through CCDCOE. The current normalized layers show Estonia attached to standing European, Baltic, and NATO-linked systems across identity interoperability, settlement infrastructure, research networking, electricity synchronisation, data continuity, and cyber cooperation rather than operating in isolation. They preserve EU notified eID support, euro-area and Eurosystem participation, research-network federation, Continental Europe synchronisation, Luxembourg data-embassy cooperation, and CCDCOE presence as the main cross-border institutional anchors. These conditions support a builder-facing reading centered on cross-border embedding and federated institutional participation across EU, Baltic, and NATO systems.</p>
+
+        <h3>Structural constraints for builders</h3>
+        <p>The current Estonia builder-mode reading also carries clear structural limits. The normalized layers preserve Eurosystem settlement dependence rather than a standalone national settlement perimeter. They preserve EU identity interoperability dependence rather than a fully autonomous cross-border identity regime. They preserve cross-border data-continuity dependence through the Luxembourg data-embassy arrangement and research-network federation dependence through EENet, NORDUnet, GÉANT, ETAIS, and LUMI-linked structures. The current normalized layers do not document a sovereign hyperscale compute stack, and they do not document a semiconductor fabrication-stack classification. They also preserve energy and grid integration dependence through EstLink, Balticconnector, Continental Europe synchronisation, and Nord Pool participation. These conditions define the documented builder-mode perimeter without being treated as weaknesses or readiness judgments.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder mode summary statement</h3>
+        <p>Estonia appears in builder mode as a digital-governance and data-interoperability coordination jurisdiction, Eurosystem settlement participant, distributed data-governance environment, research-network federation participant, cybersecurity and digital-resilience coordination jurisdiction, energy and grid-integration coordination environment, and EU/Baltic/NATO institutional integration participant.</p>
+
+        <div class="meta-line">Source: builder-mode.md</div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Initial package creation</h3>
+        <p>The Estonia jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The change-log records that <code>evidence.md</code> established RIA coordination infrastructure, X-tee data-exchange infrastructure, ID-card identity infrastructure, Mobile-ID and Smart-ID authentication infrastructure, GovSSO and TARA authentication services, the eesti.ee state portal, eIDAS interoperability participation, the e-Residency digital-identity environment, Eesti Pank central-bank governance authority, Eurosystem participation, TARGET Services participation across T2, TIPS, and T2S, instant-payment participation through TIPS, securities-settlement participation through T2S and Baltic CSD structures, digital euro experimentation participation, X-tee distributed data architecture, the data ownership and consent model, auditability and logging infrastructure, the registry-linked service delivery model, data-embassy cross-border continuity infrastructure, EENet research-network infrastructure, NORDUnet federation participation, GÉANT connectivity, ETAIS scientific computing infrastructure, LUMI access via European HPC federation, .ee registry governance through the Estonian Internet Foundation, DNSSEC implementation, the registry-registrar operational model, the Elering transmission-system operator environment, EstLink interconnection infrastructure, Balticconnector gas interconnection, ENTSO-E synchronization through the Continental Europe Synchronous Area, Nord Pool electricity-market participation, the NCSC-EE national cyber authority, CERT-EE operational coordination, 24/7 cyber monitoring and response, international CERT cooperation, CCDCOE presence in Tallinn, EU, Baltic, and NATO institutional coordination participation, and data-embassy cooperation with Luxembourg.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The change-log records that <code>signals.md</code> derived digital-governance coordination signals, data-interoperability continuity signals, distributed identity and authentication signals, Eurosystem-integrated settlement signals, instant-payment and securities-settlement signals, distributed data-governance and auditability signals, data-embassy redundancy signals, research-network federation signals, European compute-integration signals, naming-layer governance signals, integrated digital-service infrastructure signals, energy and grid-integration signals, cybersecurity coordination signals, EU, Baltic, and NATO institutional embedding signals, and constraint-boundary signals preserving integration dependence and sovereign compute absence.</p>
+
+        <h3>Trust-dimensions layer construction</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> established institutional continuity across digital governance, settlement systems, research-network coordination, energy infrastructure, cybersecurity authority, naming governance, and cross-border institutional embedding; distributed digital identity and interoperability continuity; Eurosystem settlement integration continuity; distributed data governance, auditability, and ownership continuity; research-network and compute federation continuity; naming-layer governance and DNS security continuity; integrated digital infrastructure continuity; energy and grid-integration continuity; cybersecurity coordination continuity; EU, Baltic, and NATO institutional integration continuity; and constraint boundaries preserving integration within European, Baltic, and NATO systems.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The change-log records that <code>metadata.md</code> classified Estonia as a digital-governance and data-interoperability coordination jurisdiction, a Eurosystem settlement participant jurisdiction, a research-network federation participant jurisdiction, a distributed data-governance coordination environment, a cybersecurity and digital-resilience coordination jurisdiction, an energy and grid-integration coordination jurisdiction, and an EU, Baltic, and NATO institutional coordination participant jurisdiction.</p>
+
+        <h3>Profile layer characterization</h3>
+        <p>The change-log records that <code>profile.md</code> characterized Estonia as a Tallinn-centered digital-governance and data-interoperability coordination environment, an Eesti Pank-linked Eurosystem settlement participant, an X-tee-based distributed data-governance environment, an EENet- and ETAIS-linked research-network federation surface, a .ee registry-based naming governance environment, an Elering-linked energy and grid-integration coordination environment, a NCSC-EE-linked cybersecurity coordination jurisdiction, and an EU, Baltic, and NATO institutional coordination participant.</p>
+
+        <h3>Builder mode translation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into digital-governance coordination interpretation, Eurosystem settlement interpretation, distributed data-governance interpretation, research-network federation interpretation, naming-layer governance interpretation, integrated digital-service infrastructure interpretation, energy and grid-integration interpretation, cybersecurity coordination interpretation, EU, Baltic, and NATO institutional integration interpretation, and constraint-boundary interpretation.</p>
+
+        <h3>Structural constraints recorded</h3>
+        <p>The change-log records that normalization preserved Eurosystem settlement dependence, EU identity interoperability dependence, cross-border data-continuity dependence through the data embassy, research-network federation dependence, the absence of sovereign hyperscale compute stack evidence, the absence of semiconductor fabrication-stack evidence, and energy and grid integration dependence.</p>
+
+        <h3>Package completion status</h3>
+        <p>The Estonia jurisdiction package is complete within the Atlas normalization framework and aligned with EU, Baltic, and NATO corridor-layer institutional interpretation standards.</p>
+
+        <div class="meta-line">Normalization status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: change-log.md</div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Estonia jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/estonia/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Estonia</li>
+          <li><strong>Code:</strong> EE</li>
+          <li><strong>Region:</strong> Baltic / Northern Europe</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor alignment</h4>
+        <ul>
+          <li>EU Digital Identity Interoperability Framework</li>
+          <li>Euro-Area Settlement Integration Framework</li>
+          <li>Baltic Electricity and Gas Integration Framework</li>
+          <li>Nordic-Baltic Research Network Federation Framework</li>
+          <li>EU/NATO Cybersecurity Coordination Framework</li>
+          <li>Cross-Border Data Continuity and Interoperability Framework</li>
+        </ul>
+        <h4>Primary coordination cities</h4>
+        <ul>
+          <li>Tallinn</li>
+          <li>Tartu</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Anchors</h3>
+        <h4>Documented surfaces</h4>
+        <ul>
+          <li>RIA · X-tee · eesti.ee · ID-card · Mobile-ID · Smart-ID · TARA · GovSSO · eIDAS · e-Residency</li>
+          <li>Eesti Pank · Eurosystem · TARGET Services (T2 · TIPS · T2S) · Baltic CSD · digital euro experimentation</li>
+          <li>X-tee distributed architecture · data ownership and consent model · auditability and logging · Luxembourg data embassy</li>
+          <li>EENet · NORDUnet · GÉANT · ETAIS · LUMI (European HPC federation)</li>
+          <li>Estonian Internet Foundation (.ee) · DNSSEC · registry-registrar model</li>
+          <li>Elering · EstLink · Balticconnector · ENTSO-E (Continental Europe synchronisation, Feb 2025) · Nord Pool</li>
+          <li>NCSC-EE · CERT-EE · FIRST · GÉANT · Trusted Introducer · NIS CSIRT Network · CCDCOE (Tallinn)</li>
+          <li>EU · Baltic · NATO institutional embedding</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereign hyperscale compute classification.</li>
+          <li>Not a semiconductor fabrication-stack classification.</li>
+          <li>Not a sovereign settlement system.</li>
+          <li>Not a fully autonomous identity regime.</li>
+          <li>Not a deployed CBDC jurisdiction.</li>
+          <li>Not an energy-independent jurisdiction.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
