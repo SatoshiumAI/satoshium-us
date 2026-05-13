@@ -1,91 +1,765 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Brazil | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Brazil Atlas jurisdiction package rendering. Federal Digital Governance and Interoperability, Instant Payments and Settlement Governance, Internet Exchange and Registry Governance, Scientific-Network Federation, Telecommunications and Digital Connectivity, Energy Grid and Industrial Coordination, Cybersecurity and Digital Resilience, Global Logistics and Trade Connectivity, and Regional and Global Institutional Integration alignment.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/brazil/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Brazil</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Brazil</h1>
 
-</article>
-</main>
+  <p class="lede">South American-scale infrastructure jurisdiction combining federal digital-government interoperability, RTGS and instant-payments continuity, internet-exchange and registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics infrastructure, cyber coordination, and regional institutional integration. This page renders the canonical Brazil Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting GOV.BR digital-service systems, Conta GOV.BR identity infrastructure, Carteira de Identidade Nacional, Conecta gov.br interoperability, the Infraestrutura Nacional de Dados, and electronic-signature governance, the Banco Central do Brasil with STR RTGS, Pix instant payments, SPI, and Conta PI regulatory systems, Nuvem de Governo, Serpro, Dataprev, RNDS, and the Portal Brasileiro de Dados Abertos, CGI.br / NIC.br / Registro.br / IX.br distributed internet-governance and exchange infrastructure with ASN/IP resource governance and DNS governance, RNP, Rede Ipê, CAFe, eduroam Brasil, LNCC, the Santos Dumont supercomputer, and SINAPAD scientific-compute coordination, Anatel telecommunications governance with national 5G rollout, the PAIS northern fiber-expansion environment, Telebras backbone infrastructure, and integrated terrestrial and satellite communications, the ONS-coordinated Sistema Interligado Nacional with regional subsystem interconnection and international interchange, Brasil Semicondutores policy systems where documented, the Port of Santos with Tecon Santos expansion, GRU Airport cargo systems, and intercontinental shipping and aviation logistics, CTIR Gov and CERT.br with federal incident-management and cyber-threat coordination, and the MERCOSUL Digital Agenda with digital-signature mutual-recognition, cross-border digital coordination, international energy interchange, global research-network integration, and international logistics integration.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Brazil (BR)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>Brazil currently reads within Atlas as a Brasília- and São Paulo-centered South American-scale federal infrastructure environment, a GOV.BR-, Conta GOV.BR-, and Conecta gov.br-linked digital-governance and interoperability environment, a Banco Central do Brasil-, STR-, Pix-, and SPI-linked payment modernization and settlement-governance environment, a Nuvem de Governo-, Serpro-, Dataprev-, and RNDS-linked public-sector data continuity environment, a CGI.br-, NIC.br-, Registro.br-, and IX.br-linked internet-governance and exchange environment, an RNP-, Rede Ipê-, CAFe-, LNCC-, and Santos Dumont-linked scientific-network and research-compute federation environment, an Anatel-, Telebras-, and PAIS-linked telecommunications and digital-connectivity environment, an ONS- and Sistema Interligado Nacional-linked energy-grid coordination environment, a Port of Santos- and GRU Airport-linked logistics and intercontinental trade-connectivity environment, a CTIR Gov- and CERT.br-linked cybersecurity and digital-resilience coordination environment, and a MERCOSUL-, South Atlantic-, and globally integrated institutional-participation environment. The current package places Brazil inside Carteira de Identidade Nacional identity infrastructure, the Infraestrutura Nacional de Dados, electronic-signature governance, Conta PI regulatory systems, the Portal Brasileiro de Dados Abertos, distributed IX.br exchange environments with ASN/IP resource governance and DNS governance, eduroam Brasil and SINAPAD scientific-compute coordination, national 5G rollout and integrated terrestrial and satellite communications, regional subsystem interconnection and international energy interchange under the Sistema Interligado Nacional, Brasil Semicondutores policy systems where documented, Tecon Santos expansion at the Port of Santos, federal incident-management and national internet-security capability environments under CTIR Gov and CERT.br, MERCOSUL Digital Agenda systems, and digital-signature mutual-recognition. These conditions support a structural characterization centered on federally interoperable institutional continuity across digital-governance, identity, instant-payments and settlement governance, public-sector data continuity, registry and internet-exchange governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics continuity, cybersecurity coordination, and Latin American, South Atlantic, MERCOSUL, and globally integrated institutional participation without assigning readiness tiers, routing authority, or comparative status.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Brazil</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">South American-Scale Federal Infrastructure Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Federal Digital Governance and Interoperability Framework · Instant Payments and Settlement Governance Framework · Internet Exchange and Registry Governance Framework · Scientific-Network Federation Framework · Telecommunications and Digital Connectivity Framework · Energy Grid and Industrial Coordination Framework · Cybersecurity and Digital Resilience Framework · Global Logistics and Trade Connectivity Framework · Regional and Global Institutional Integration Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Brasília · São Paulo · Rio de Janeiro · Campinas · Santos</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records evidence-supported national structures documented for Brazil that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.</p>
+
+        <div class="meta-line">Source: profile.md · metadata.md — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Brazil jurisdiction package across federal digital-governance and identity infrastructure, central-bank settlement and instant-payments infrastructure, public-sector data continuity, registry and internet-exchange governance, scientific-network federation, telecommunications and digital-connectivity infrastructure, energy-grid and industrial coordination, logistics infrastructure, cybersecurity coordination, and regional and globally integrated institutional participation.</p>
+
+        <h3>Digital governance and identity infrastructure</h3>
+        <p>The evidence layer records GOV.BR digital-service systems, Conta GOV.BR identity infrastructure, Carteira de Identidade Nacional systems, Conecta gov.br interoperability systems, Infraestrutura Nacional de Dados systems, and electronic-signature governance systems as the documented federal digital-governance and identity-interoperability surface for the Brazil jurisdiction package.</p>
+
+        <h3>Financial infrastructure and settlement governance</h3>
+        <p>The evidence layer records Banco Central do Brasil systems, STR RTGS infrastructure, Pix instant-payments systems, SPI infrastructure, and Conta PI regulatory systems as the documented central-bank settlement-governance and instant-payments surface.</p>
+
+        <h3>Data infrastructure and public-sector digital continuity</h3>
+        <p>The evidence layer records Nuvem de Governo systems, Serpro infrastructure, Dataprev infrastructure, RNDS interoperability environments, the Portal Brasileiro de Dados Abertos, and mixed-provider sovereign-administration infrastructure environments as the documented public-sector data continuity surface combining federally coordinated administration infrastructure with mixed-provider hosting conditions.</p>
+
+        <h3>Internet exchange and registry governance</h3>
+        <p>The evidence layer records CGI.br-linked governance systems, NIC.br infrastructure systems, Registro.br administration structures, IX.br distributed exchange environments, ASN/IP resource-governance systems, and DNS governance infrastructure as the documented internet-governance and exchange surface.</p>
+
+        <h3>Scientific-network and research-compute infrastructure</h3>
+        <p>The evidence layer records RNP nationwide academic-network infrastructure, Rede Ipê backbone systems, CAFe federation systems, eduroam Brasil systems, LNCC infrastructure, the Santos Dumont supercomputer systems, and SINAPAD scientific-compute coordination environments as the documented scientific-network and research-compute federation surface.</p>
+
+        <h3>Telecommunications and digital connectivity infrastructure</h3>
+        <p>The evidence layer records Anatel telecommunications-governance systems, national 5G rollout infrastructure, PAIS northern fiber-expansion systems, Telebras backbone infrastructure, integrated terrestrial and satellite communications systems, and multi-operator telecommunications environments as the documented telecommunications and digital-connectivity surface.</p>
+
+        <h3>Energy and industrial coordination infrastructure</h3>
+        <p>The evidence layer records ONS coordination systems, Sistema Interligado Nacional infrastructure, regional subsystem interconnection systems, international interchange systems, Brasil Semicondutores policy systems, and industrial technology-development structures where documented as the documented energy-grid and industrial-coordination surface.</p>
+
+        <h3>Logistics and global connectivity infrastructure</h3>
+        <p>The evidence layer records Port of Santos maritime cargo infrastructure, Tecon Santos expansion systems, GRU Airport cargo systems, international shipping and aviation logistics systems, and intercontinental trade-connectivity infrastructure as the documented logistics and global-connectivity surface.</p>
+
+        <h3>Cybersecurity and digital-resilience coordination</h3>
+        <p>The evidence layer records CTIR Gov coordination systems, CERT.br internet-security systems, federal incident-management structures, cyber-threat coordination systems, and national internet-security capability environments as the documented cybersecurity and digital-resilience coordination surface.</p>
+
+        <h3>Regional, MERCOSUL, and globally integrated institutional participation</h3>
+        <p>The evidence layer records MERCOSUL Digital Agenda systems, digital-signature mutual-recognition systems, cross-border digital coordination systems, international energy interchange systems, global research-network integration systems, and international logistics integration systems as the documented cross-border institutional integration surface.</p>
+
+        <div class="meta-line">Source: evidence.md · change-log.md — Evidence Layer Construction</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Strategic position signals</h3>
+        <p>GOV.BR's federal digital-service role, the Banco Central do Brasil's oversight of settlement and instant-payments infrastructure, CGI.br and NIC.br stewardship of registry and exchange infrastructure, RNP's nationwide academic-network position, Anatel's telecommunications-governance role, ONS's energy-grid coordination function, the Port of Santos and GRU Airport's logistics positioning, CTIR Gov and CERT.br's cybersecurity coordination, and Brazil's documented MERCOSUL, South Atlantic, and globally integrated institutional participation together signal Brazil as a South American-scale infrastructure jurisdiction combining federal digital-government interoperability, RTGS and instant-payments continuity, internet-exchange and registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics infrastructure, cyber coordination, and regional institutional integration. The coexistence of federal identity systems, central-bank settlement and instant-payments infrastructure, distributed exchange environments, scientific-network federation, multi-operator telecommunications rollout, an interconnected national grid, large-scale logistics infrastructure, and federal cyber coordination signals a multi-layer national coordination environment rather than a closed domestic stack. The evidence places important parts of Brazil's digital, payment, scientific-network, telecommunications, energy, logistics, and cybersecurity continuity inside MERCOSUL, South Atlantic, and globally integrated institutional frameworks rather than inside a detached standalone perimeter. The evidence supports a continuity-and-coordination signal rooted in federal interoperability, instant-payments and settlement governance, registry and exchange governance, scientific-network linkage, telecommunications rollout, grid coordination, logistics continuity, cyber coordination, and institutional integration, but it does not support routing-authority, topology, or readiness classification.</p>
+
+        <h3>Federal digital-governance and identity signals</h3>
+        <p>GOV.BR, Conta GOV.BR, Carteira de Identidade Nacional, Conecta gov.br, the Infraestrutura Nacional de Dados, and electronic-signature governance together signal federal digital-governance continuity supported by national identity infrastructure, interoperability systems, and data and signature governance. The combination of a federal digital-service portal, federated identity infrastructure, a national identity-document environment, and inter-agency interoperability systems signals continuity through a federally coordinated digital-administration environment rather than fragmented agency-by-agency systems. The Infraestrutura Nacional de Dados and electronic-signature governance signal continuity through national data-infrastructure coordination and statutory recognition of digital signatures attached to federal digital services. Taken together, the evidence signals federal digital-governance and identity continuity supported by national portal, identity, interoperability, data-infrastructure, and signature-governance systems.</p>
+
+        <h3>Financial infrastructure and instant-payments signals</h3>
+        <p>The Banco Central do Brasil's role across STR, Pix, SPI, and Conta PI regulatory systems signals central-bank-coordinated continuity across high-value settlement and instant-payments infrastructure. STR signals continuity through gross-settlement infrastructure supporting the domestic interbank environment. Pix and SPI signal continuity through instant-payments infrastructure and the related settlement environment, while Conta PI signals continuity through regulatory account governance attached to the instant-payments environment. Taken together, the evidence signals RTGS and instant-payments continuity supported by central-bank oversight, gross-settlement infrastructure, instant-payments systems, and regulatory account governance.</p>
+
+        <h3>Public-sector data and digital-continuity signals</h3>
+        <p>Nuvem de Governo, Serpro, Dataprev, RNDS, the Portal Brasileiro de Dados Abertos, and mixed-provider sovereign-administration infrastructure environments together signal public-sector data continuity supported by federally coordinated administration infrastructure operating alongside mixed-provider hosting conditions. Serpro and Dataprev signal continuity through long-duration federal data-administration infrastructure attached to public-sector operations. Nuvem de Governo signals continuity through a federally coordinated cloud-administration environment. RNDS signals continuity through health-data interoperability infrastructure. The Portal Brasileiro de Dados Abertos signals continuity through open-data infrastructure attached to public-sector administration. Taken together, the evidence signals public-sector data continuity supported by federally administered infrastructure, interoperability environments, open-data systems, and mixed-provider hosting conditions.</p>
+
+        <h3>Registry and internet-exchange governance signals</h3>
+        <p>CGI.br, NIC.br, Registro.br, IX.br, ASN/IP resource governance, and DNS governance together signal continuity through institutionally administered internet-governance, registry, and exchange infrastructure. CGI.br signals continuity through stakeholder-coordinated internet governance. NIC.br and Registro.br signal continuity through stewardship of the namespace environment and ASN/IP resource governance attached to the Brazilian internet environment. IX.br signals continuity through a distributed internet-exchange environment across multiple Brazilian metropolitan regions. Taken together, the evidence signals registry and internet-exchange governance continuity supported by stakeholder-coordinated governance, namespace stewardship, ASN/IP resource governance, and distributed exchange infrastructure.</p>
+
+        <h3>Scientific-network and research-compute signals</h3>
+        <p>RNP's nationwide academic-network role, Rede Ipê backbone, CAFe federation, eduroam Brasil, LNCC, the Santos Dumont supercomputer, and SINAPAD scientific-compute coordination together signal nationally coordinated scientific-network and research-compute continuity rather than fragmented academic connectivity. RNP and Rede Ipê signal continuity through the federal academic-network backbone environment. CAFe and eduroam Brasil signal continuity through federated identity and academic-network access infrastructure. LNCC, Santos Dumont, and SINAPAD signal continuity through nationally coordinated scientific-compute infrastructure attached to the academic-network surface. Taken together, the evidence signals scientific-network federation continuity supported by nationwide academic-network infrastructure, federated identity and access systems, and nationally coordinated scientific-compute environments.</p>
+
+        <h3>Telecommunications and digital-connectivity signals</h3>
+        <p>Anatel's telecommunications-governance role, national 5G rollout, the PAIS northern fiber-expansion environment, Telebras backbone infrastructure, integrated terrestrial and satellite communications, and multi-operator telecommunications environments together signal federally documented telecommunications continuity across mobile, fiber, backbone, and satellite layers. Anatel signals continuity through federally administered telecommunications governance. National 5G rollout signals continuity through mobile-network-evolution infrastructure. The PAIS environment signals continuity through northern fiber-expansion infrastructure. Telebras and integrated terrestrial and satellite communications signal continuity through layered backbone and externally connected communications environments. Multi-operator telecommunications environments signal continuity through a competitive operator-level surface rather than a single-operator perimeter. Taken together, the evidence signals telecommunications and digital-connectivity continuity supported by Anatel governance, 5G rollout, northern fiber expansion, backbone infrastructure, and integrated terrestrial and satellite communications.</p>
+
+        <h3>Energy and industrial coordination signals</h3>
+        <p>ONS coordination, the Sistema Interligado Nacional, regional subsystem interconnection, international interchange, Brasil Semicondutores policy systems, and industrial technology-development structures where documented together signal energy-grid and industrial coordination continuity. ONS signals continuity through coordinated operation of the Sistema Interligado Nacional. Regional subsystem interconnection signals continuity through internally federated grid regions. International interchange systems signal continuity through cross-border energy linkage where documented. Brasil Semicondutores and industrial technology-development structures where documented signal continuity through policy-coordinated industrial development. Taken together, the evidence signals energy-grid and industrial coordination continuity supported by national grid coordination, regional subsystem interconnection, international interchange, and documented industrial-policy structures.</p>
+
+        <h3>Logistics and global-connectivity signals</h3>
+        <p>The Port of Santos, Tecon Santos expansion, GRU Airport, international shipping and aviation logistics, and intercontinental trade-connectivity infrastructure together signal logistics and global-connectivity continuity carried through maritime, container, and air-cargo infrastructure. The Port of Santos signals continuity through national-scale maritime cargo operations. Tecon Santos expansion signals continuity through container-terminal expansion infrastructure. GRU Airport signals continuity through intercontinental air-cargo systems. International shipping and aviation logistics signal continuity through externally connected trade routes rather than a domestically isolated logistics environment. Taken together, the evidence signals logistics and global-connectivity continuity supported by maritime, container-terminal, and intercontinental air-cargo infrastructure.</p>
+
+        <h3>Cybersecurity and digital-resilience signals</h3>
+        <p>CTIR Gov, CERT.br, federal incident-management structures, cyber-threat coordination, and national internet-security capability environments together signal cybersecurity and digital-resilience continuity supported by federally coordinated incident management and national internet-security functions. CTIR Gov signals continuity through federal incident-response and management infrastructure. CERT.br signals continuity through national internet-security capability and coordination. Federal incident-management structures and cyber-threat coordination systems signal continuity through institutional resilience and threat-handling functions. Taken together, the evidence signals cybersecurity and digital-resilience continuity supported by CTIR coordination, CERT.br operations, federal incident management, and cyber-threat coordination.</p>
+
+        <h3>Regional, MERCOSUL, and globally integrated institutional integration signals</h3>
+        <p>MERCOSUL Digital Agenda systems, digital-signature mutual-recognition, cross-border digital coordination, international energy interchange, global research-network integration, and international logistics integration together signal regional and globally integrated institutional integration continuity. The MERCOSUL Digital Agenda signals continuity through regional digital-coordination frameworks. Digital-signature mutual-recognition signals continuity through cross-border legal recognition of digital signatures. International energy interchange signals continuity through cross-border grid linkage where documented. Global research-network integration signals continuity through academic-network linkage with wider international research networks. International logistics integration signals continuity through externally linked trade routes attached to Brazilian logistics infrastructure. Taken together, the evidence signals regional and globally integrated institutional integration continuity supported by MERCOSUL coordination, digital-signature mutual-recognition, cross-border digital and energy linkage, and globally integrated research and logistics systems.</p>
+
+        <h3>Constraint boundary signals</h3>
+        <ul>
+          <li>The coexistence of federally coordinated administration infrastructure with mixed-provider hosting conditions signals mixed-provider cloud dependency rather than sovereign hyperscale ownership.</li>
+          <li>The evidence documents nationally coordinated research-compute systems through LNCC, Santos Dumont, and SINAPAD but does not support a sovereign hyperscale compute classification beyond the cited research infrastructure.</li>
+          <li>The evidence documents no sovereign semiconductor fabrication stack; Brasil Semicondutores policy systems and industrial technology-development structures appear at the policy and documented-program level only.</li>
+          <li>The evidence documents IX.br distributed exchange environments and CGI.br / NIC.br / Registro.br registry governance but does not support broader global IX centrality claims beyond documented registry and IX governance.</li>
+          <li>The evidence documents Anatel-administered multi-operator telecommunications environments, signaling mixed regulatory, public, and private telecommunications environments rather than a singular operator-level surface.</li>
+          <li>The coexistence of federal digital governance, instant-payments and settlement infrastructure, distributed exchange environments, scientific-network federation, multi-operator telecommunications, an interconnected national grid, large-scale logistics infrastructure, and federal cyber coordination signals a globally integrated infrastructure environment bounded by cross-border and globally integrated infrastructure dependency.</li>
+          <li>More broadly, the evidence signals a federally interoperable, regionally integrated infrastructure environment rather than a sovereign-isolated stack, and it does not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>Brazil's evidence-derived signals describe a South American-scale infrastructure jurisdiction combining federal digital-government interoperability, RTGS and instant-payments continuity, internet-exchange and registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics infrastructure, cyber coordination, and regional institutional integration. The signals indicate continuity across identity and interoperability infrastructure, central-bank settlement and instant-payments operations, public-sector data administration, distributed exchange and registry governance, nationally coordinated academic-network and scientific-compute environments, multi-layer telecommunications rollout, interconnected national grid coordination, intercontinental logistics infrastructure, federal incident-response and internet-security coordination, and MERCOSUL and globally integrated institutional participation without assigning readiness tiers, routing authority, or topology placement.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: signals.md</div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment eligibility, or infrastructure claims beyond documented anchors.</p>
+
+        <h3>Institutional continuity dimension</h3>
+        <p>The source layers indicate institutional continuity spanning federal digital-governance interoperability, payment modernization, registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics continuity, cybersecurity coordination, and regional institutional integration systems rather than a single centralized national authority operating in isolation. GOV.BR, Conta GOV.BR, and Conecta gov.br indicate continuity through federally coordinated digital-administration governance. The Banco Central do Brasil indicates continuity through central-bank-operated settlement and instant-payments infrastructure. CGI.br, NIC.br, Registro.br, and IX.br indicate continuity through institutionally administered registry and exchange governance. RNP and SINAPAD indicate continuity through nationwide academic-network and scientific-compute coordination. Anatel indicates continuity through regulated multi-operator telecommunications governance. ONS and the Sistema Interligado Nacional indicate continuity through centrally coordinated grid management. The Port of Santos and GRU Airport indicate continuity through intercontinental logistics infrastructure. CTIR Gov and CERT.br indicate continuity through formal cyber-coordination structures. MERCOSUL Digital Agenda systems, digital-signature mutual-recognition, international energy interchange, global research-network integration, and international logistics integration add a standing cross-border institutional-embedding layer that reinforces continuity through repeated regional and international attachment.</p>
+
+        <h3>Digital-governance and identity dimension</h3>
+        <p>The source layers indicate digital-governance and identity continuity carried through national portal, identity, interoperability, data-infrastructure, and signature-governance systems rather than fragmented agency-by-agency service infrastructure. GOV.BR indicates continuity through a federal digital-service portal. Conta GOV.BR and Carteira de Identidade Nacional indicate continuity through federated identity and national identity-document infrastructure. Conecta gov.br indicates continuity through inter-agency interoperability. The Infraestrutura Nacional de Dados indicates continuity through federal data-infrastructure coordination. Electronic-signature governance indicates continuity through statutory recognition of digital signatures attached to federal digital services. The documented trust characteristic is continuity of federal digital-governance and identity infrastructure carried through portal, identity, interoperability, data-infrastructure, and signature-governance systems.</p>
+
+        <h3>RTGS and instant-payments dimension</h3>
+        <p>The source layers indicate RTGS and instant-payments continuity supported by central-bank oversight, gross-settlement infrastructure, instant-payments systems, and regulatory account governance rather than fragmented payment governance. The Banco Central do Brasil indicates continuity through central-bank-coordinated oversight of high-value settlement and instant-payments infrastructure. STR indicates continuity through gross-settlement infrastructure across the domestic interbank environment. Pix and SPI indicate continuity through instant-payments infrastructure and the related settlement environment. Conta PI indicates continuity through regulatory account governance attached to the instant-payments environment. The documented trust characteristic is continuity of central-bank-led payment-system governance carried through RTGS, instant-payments, and regulatory account infrastructure.</p>
+
+        <h3>Public-sector data and digital-continuity dimension</h3>
+        <p>The source layers indicate public-sector data continuity carried through federally administered infrastructure, interoperability environments, open-data systems, and mixed-provider hosting conditions rather than a fully self-contained sovereign cloud stack. Serpro and Dataprev indicate continuity through long-duration federal data-administration infrastructure. Nuvem de Governo indicates continuity through a federally coordinated cloud-administration environment. RNDS indicates continuity through health-data interoperability infrastructure. The Portal Brasileiro de Dados Abertos indicates continuity through open-data infrastructure attached to public-sector administration. Mixed-provider sovereign-administration infrastructure environments indicate continuity through hosting conditions that combine federal administration infrastructure with mixed-provider participation. The documented trust characteristic is continuity of public-sector data administration carried through federal infrastructure operating alongside mixed-provider hosting conditions.</p>
+
+        <h3>Registry and internet-exchange governance dimension</h3>
+        <p>The source layers indicate registry and internet-exchange governance continuity carried through stakeholder-coordinated governance, namespace stewardship, ASN/IP resource governance, and distributed exchange infrastructure rather than centralized exchange primacy. CGI.br indicates continuity through stakeholder-coordinated internet governance. NIC.br and Registro.br indicate continuity through namespace stewardship and ASN/IP resource governance attached to the Brazilian internet environment. IX.br indicates continuity through distributed exchange environments across multiple Brazilian metropolitan regions. DNS governance indicates continuity through national name-resolution administration. The documented trust characteristic is continuity of stakeholder-coordinated internet governance and distributed exchange administration carried through registry, namespace, ASN/IP, and DNS systems.</p>
+
+        <h3>Scientific-network federation dimension</h3>
+        <p>The source layers indicate scientific-network federation continuity carried through nationwide academic-network infrastructure, federated identity and access systems, and nationally coordinated scientific-compute environments rather than fragmented academic connectivity. RNP and Rede Ipê indicate continuity through the federal academic-network backbone environment. CAFe and eduroam Brasil indicate continuity through federated identity and academic-network access infrastructure. LNCC, Santos Dumont, and SINAPAD indicate continuity through nationally coordinated scientific-compute infrastructure attached to the academic-network surface. The documented trust characteristic is continuity of nationwide academic-network federation and nationally coordinated scientific-compute operations.</p>
+
+        <h3>Telecommunications continuity dimension</h3>
+        <p>The source layers indicate telecommunications continuity carried through Anatel governance, 5G rollout, northern fiber expansion, backbone infrastructure, and integrated terrestrial and satellite communications rather than a singular operator-level surface. Anatel indicates continuity through federally administered telecommunications governance. National 5G rollout indicates continuity through mobile-network-evolution infrastructure. PAIS indicates continuity through northern fiber-expansion infrastructure. Telebras indicates continuity through backbone infrastructure. Integrated terrestrial and satellite communications indicate continuity through layered externally connected communications environments. Multi-operator telecommunications environments indicate continuity through competitive operator-level participation. The documented trust characteristic is continuity of federally administered, multi-operator telecommunications and digital connectivity across mobile, fiber, backbone, and satellite layers.</p>
+
+        <h3>Energy-grid coordination dimension</h3>
+        <p>The source layers indicate energy-grid coordination continuity carried through national grid coordination, regional subsystem interconnection, international interchange, and documented industrial-policy structures rather than fragmented grid governance. ONS indicates continuity through coordinated operation of the Sistema Interligado Nacional. Regional subsystem interconnection indicates continuity through internally federated grid regions. International interchange systems indicate continuity through cross-border energy linkage where documented. Brasil Semicondutores policy systems and industrial technology-development structures where documented indicate continuity through documented industrial-coordination structures attached to the broader infrastructure environment. The documented trust characteristic is continuity of nationally coordinated grid operation linked outward through international interchange and adjacent industrial-coordination structures.</p>
+
+        <h3>Logistics continuity dimension</h3>
+        <p>The source layers indicate logistics continuity carried through maritime, container-terminal, and intercontinental air-cargo infrastructure rather than broader logistics-authority claims. The Port of Santos indicates continuity through national-scale maritime cargo operations. Tecon Santos expansion indicates continuity through container-terminal expansion infrastructure. GRU Airport indicates continuity through intercontinental air-cargo systems. International shipping and aviation logistics indicate continuity through externally connected trade routes attached to Brazilian logistics infrastructure. The documented trust characteristic is continuity of intercontinental logistics carried through port, terminal, and air-cargo infrastructure.</p>
+
+        <h3>Cybersecurity and digital-resilience dimension</h3>
+        <p>The source layers indicate cybersecurity and digital-resilience continuity carried through CTIR coordination, CERT.br operations, federal incident management, and cyber-threat coordination rather than isolated incident-handling functions. CTIR Gov indicates continuity through federal incident-response and management infrastructure. CERT.br indicates continuity through national internet-security capability and coordination. Federal incident-management structures and cyber-threat coordination systems indicate continuity through institutional resilience and threat-handling functions. National internet-security capability environments indicate continuity through the broader institutional cyber-coordination surface. The documented trust characteristic is continuity of federal cybersecurity coordination carried through CTIR, CERT.br, federal incident management, and cyber-threat coordination structures.</p>
+
+        <h3>Regional, MERCOSUL, and globally integrated institutional integration dimension</h3>
+        <p>The source layers indicate regional and globally integrated institutional integration continuity carried through MERCOSUL coordination, digital-signature mutual-recognition, cross-border digital and energy linkage, and globally integrated research and logistics systems rather than nationally isolated infrastructure administration. The MERCOSUL Digital Agenda indicates continuity through regional digital-coordination frameworks. Digital-signature mutual-recognition indicates continuity through cross-border legal recognition of digital signatures. International energy interchange indicates continuity through cross-border grid linkage where documented. Global research-network integration indicates continuity through academic-network linkage with wider international research networks. International logistics integration indicates continuity through externally linked trade routes attached to Brazilian logistics infrastructure. The documented trust characteristic is continuity through repeated institutional embedding across MERCOSUL, South Atlantic, and globally integrated digital, energy, research, and logistics coordination structures.</p>
+
+        <h3>Constraint boundary dimension</h3>
+        <ul>
+          <li>The source layers indicate that public-sector data continuity operates alongside mixed-provider hosting conditions rather than a sovereign hyperscale environment.</li>
+          <li>The source layers indicate limited sovereign compute evidence beyond research infrastructure such as LNCC and Santos Dumont.</li>
+          <li>The source layers do not document a sovereign semiconductor fabrication stack; Brasil Semicondutores policy systems and industrial technology-development structures appear at the policy and documented-program level only.</li>
+          <li>The source layers indicate distributed IX.br exchange environments and CGI.br / NIC.br / Registro.br registry governance but do not support broader global IX centrality claims beyond documented registry and IX governance.</li>
+          <li>The source layers indicate mixed regulatory, public, and private telecommunications environments rather than a singular operator-level surface.</li>
+          <li>The source layers indicate cross-border and globally integrated infrastructure dependency boundaries rather than a fully self-contained sovereign stack.</li>
+          <li>More broadly, the source layers do not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Trust dimensions summary statement</h3>
+        <p>Brazil is documented as a South American-scale infrastructure jurisdiction combining federal digital-government interoperability, RTGS and instant-payments continuity, internet-exchange and registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics infrastructure, cyber coordination, and regional institutional integration. The documented trust dimensions indicate continuity across institutional coordination, federal digital-governance and identity infrastructure, central-bank RTGS and instant-payments operations, public-sector data continuity with mixed-provider hosting, stakeholder-coordinated registry and exchange governance, nationwide scientific-network federation, federally administered multi-operator telecommunications, nationally coordinated grid and adjacent industrial structures, intercontinental logistics, federal cybersecurity coordination, and wider MERCOSUL, South Atlantic, and globally integrated institutional embedding without assigning readiness tiers, routing authority, or deployment eligibility.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: trust-dimensions.md</div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility.</p>
+
+        <h3>Jurisdiction identity</h3>
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Brazil</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">South American-Scale Federal Infrastructure Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Federal Digital Governance and Interoperability Framework · Instant Payments and Settlement Governance Framework · Internet Exchange and Registry Governance Framework · Scientific-Network Federation Framework · Telecommunications and Digital Connectivity Framework · Energy Grid and Industrial Coordination Framework · Cybersecurity and Digital Resilience Framework · Global Logistics and Trade Connectivity Framework · Regional and Global Institutional Integration Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Brasília · São Paulo · Rio de Janeiro · Campinas · Santos</span>
+          </div>
+        </div>
+
+        <h3>Infrastructure role classification</h3>
+        <ul>
+          <li>South American-scale federal digital-government jurisdiction</li>
+          <li>national identity and interoperability coordination jurisdiction</li>
+          <li>central-bank payment modernization and settlement-governance jurisdiction</li>
+          <li>internet-exchange and registry-governance environment</li>
+          <li>scientific-network and research-compute federation environment</li>
+          <li>telecommunications and digital-connectivity environment</li>
+          <li>energy-grid and industrial-coordination environment</li>
+          <li>logistics and global-connectivity environment</li>
+          <li>cybersecurity and digital-resilience coordination environment</li>
+          <li>Latin American, South Atlantic, MERCOSUL, and globally integrated institutional-participation jurisdiction</li>
+        </ul>
+
+        <h3>Digital governance and identity classification</h3>
+        <ul>
+          <li>GOV.BR digital-service systems</li>
+          <li>Conta GOV.BR identity infrastructure</li>
+          <li>Carteira de Identidade Nacional systems</li>
+          <li>Conecta gov.br interoperability systems</li>
+          <li>Infraestrutura Nacional de Dados systems</li>
+          <li>electronic-signature governance systems</li>
+        </ul>
+
+        <h3>Financial infrastructure and settlement classification</h3>
+        <ul>
+          <li>Banco Central do Brasil systems</li>
+          <li>STR RTGS infrastructure</li>
+          <li>Pix instant-payments systems</li>
+          <li>SPI infrastructure</li>
+          <li>Conta PI regulatory systems</li>
+        </ul>
+
+        <h3>Data infrastructure and digital continuity classification</h3>
+        <ul>
+          <li>Nuvem de Governo systems</li>
+          <li>Serpro infrastructure</li>
+          <li>Dataprev infrastructure</li>
+          <li>Infraestrutura Nacional de Dados systems</li>
+          <li>RNDS interoperability environments</li>
+          <li>Portal Brasileiro de Dados Abertos systems</li>
+          <li>mixed-provider sovereign-administration infrastructure environments</li>
+        </ul>
+
+        <h3>Research network and scientific compute classification</h3>
+        <ul>
+          <li>RNP nationwide academic-network infrastructure</li>
+          <li>Rede Ipê backbone systems</li>
+          <li>CAFe federation systems</li>
+          <li>eduroam Brasil systems</li>
+          <li>LNCC infrastructure</li>
+          <li>Santos Dumont supercomputer systems</li>
+          <li>SINAPAD scientific-compute coordination environments</li>
+        </ul>
+
+        <h3>Internet exchange and registry governance classification</h3>
+        <ul>
+          <li>CGI.br-linked governance systems</li>
+          <li>NIC.br infrastructure systems</li>
+          <li>Registro.br administration structures</li>
+          <li>IX.br distributed exchange environments</li>
+          <li>ASN/IP resource-governance systems</li>
+          <li>DNS governance infrastructure</li>
+        </ul>
+
+        <h3>Telecommunications and digital connectivity classification</h3>
+        <ul>
+          <li>Anatel telecommunications-governance systems</li>
+          <li>national 5G rollout infrastructure</li>
+          <li>PAIS northern fiber-expansion systems</li>
+          <li>Telebras backbone infrastructure</li>
+          <li>integrated terrestrial and satellite communications systems</li>
+          <li>multi-operator telecommunications environments</li>
+        </ul>
+
+        <h3>Energy and industrial coordination classification</h3>
+        <ul>
+          <li>ONS coordination systems</li>
+          <li>Sistema Interligado Nacional infrastructure</li>
+          <li>regional subsystem interconnection systems</li>
+          <li>international interchange systems</li>
+          <li>Brasil Semicondutores policy systems</li>
+          <li>industrial technology-development structures where documented</li>
+        </ul>
+
+        <h3>Logistics and global connectivity classification</h3>
+        <ul>
+          <li>Port of Santos maritime cargo infrastructure</li>
+          <li>Tecon Santos expansion systems</li>
+          <li>GRU Airport cargo systems</li>
+          <li>international shipping and aviation logistics systems</li>
+          <li>intercontinental trade-connectivity infrastructure</li>
+        </ul>
+
+        <h3>Cybersecurity and digital-resilience classification</h3>
+        <ul>
+          <li>CTIR Gov coordination systems</li>
+          <li>CERT.br internet-security systems</li>
+          <li>federal incident-management structures</li>
+          <li>cyber-threat coordination systems</li>
+          <li>national internet-security capability environments</li>
+        </ul>
+
+        <h3>Regional and global integration classification</h3>
+        <ul>
+          <li>MERCOSUL Digital Agenda systems</li>
+          <li>digital-signature mutual-recognition systems</li>
+          <li>cross-border digital coordination systems</li>
+          <li>international energy interchange systems</li>
+          <li>global research-network integration systems</li>
+          <li>international logistics integration systems</li>
+        </ul>
+
+        <h3>Institutional stability classification</h3>
+        <ul>
+          <li>federally coordinated digital-governance systems</li>
+          <li>central-bank-operated settlement infrastructure</li>
+          <li>institutionally administered registry and exchange governance systems</li>
+          <li>nationwide academic-network federation systems</li>
+          <li>regulated multi-operator telecommunications environments</li>
+          <li>centrally coordinated grid-management systems</li>
+          <li>formal cyber-coordination structures</li>
+        </ul>
+
+        <h3>Constraint classification</h3>
+        <ul>
+          <li>mixed-provider cloud dependency structures</li>
+          <li>limited sovereign compute evidence beyond research systems</li>
+          <li>absence of sovereign semiconductor fabrication stack evidence</li>
+          <li>distributed IX infrastructure without evidence for broader global centrality</li>
+          <li>mixed regulatory/public/private telecommunications environments</li>
+          <li>cross-border and globally integrated infrastructure dependency boundaries</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Metadata summary statement</h3>
+        <p>Brazil appears in the metadata layer as a South American-scale infrastructure jurisdiction combining federal digital-government interoperability, RTGS and instant-payments continuity, internet-exchange and registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics infrastructure, cyber coordination, and regional institutional integration.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: metadata.md</div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+        <h3>Jurisdiction overview</h3>
+        <p>Brazil currently reads within Atlas as a Brasília- and São Paulo-centered South American-scale federal infrastructure environment, a GOV.BR-, Conta GOV.BR-, and Conecta gov.br-linked digital-governance and interoperability environment, a Banco Central do Brasil-, STR-, Pix-, and SPI-linked payment modernization and settlement-governance environment, a Nuvem de Governo-, Serpro-, Dataprev-, and RNDS-linked public-sector data continuity environment, a CGI.br-, NIC.br-, Registro.br-, and IX.br-linked internet-governance and exchange environment, an RNP-, Rede Ipê-, CAFe-, LNCC-, and Santos Dumont-linked scientific-network and research-compute federation environment, an Anatel-, Telebras-, and PAIS-linked telecommunications and digital-connectivity environment, an ONS- and Sistema Interligado Nacional-linked energy-grid coordination environment, a Port of Santos- and GRU Airport-linked logistics and intercontinental trade-connectivity environment, a CTIR Gov- and CERT.br-linked cybersecurity and digital-resilience coordination environment, and a MERCOSUL-, South Atlantic-, and globally integrated institutional-participation environment. The current package places Brazil inside a multi-layer national infrastructure environment combining federal digital governance and identity, RTGS and instant-payments infrastructure, public-sector data administration with mixed-provider hosting, stakeholder-coordinated registry and exchange governance, nationwide scientific-network federation, multi-operator telecommunications rollout, an interconnected national grid with international interchange and adjacent industrial-coordination structures, large-scale intercontinental logistics, federal cyber coordination, and regional, South Atlantic, MERCOSUL, and globally integrated institutional participation. These conditions support a structural characterization centered on federally interoperable institutional continuity rather than monolithically centralized governance, without assigning readiness tiers, routing authority, or comparative status.</p>
+
+        <h3>Digital governance and identity environment</h3>
+        <p>Brazil's digital governance and identity environment is characterized in the current package by GOV.BR digital-service systems, Conta GOV.BR identity infrastructure, the Carteira de Identidade Nacional, Conecta gov.br interoperability, the Infraestrutura Nacional de Dados, and electronic-signature governance. The current layers show GOV.BR coordinating a federal digital-service environment across identity, interoperability, and data infrastructure rather than fragmented agency-by-agency systems. They also preserve Conta GOV.BR and the Carteira de Identidade Nacional as the named federated identity and national identity-document continuity surfaces, Conecta gov.br as the inter-agency interoperability environment, the Infraestrutura Nacional de Dados as the federal data-infrastructure coordination layer, and electronic-signature governance as the statutory digital-signature surface attached to federal digital services. These conditions support a structural characterization centered on federal digital-governance and identity continuity carried through portal, identity, interoperability, data-infrastructure, and signature-governance systems.</p>
+
+        <h3>Financial and settlement environment</h3>
+        <p>Brazil's financial and settlement environment is characterized in the current package by Banco Central do Brasil systems, STR RTGS infrastructure, Pix instant-payments systems, SPI infrastructure, and Conta PI regulatory systems. The current layers show the Banco Central do Brasil carrying continuity through oversight of high-value settlement and instant-payments infrastructure, while STR preserves gross-settlement infrastructure across the domestic interbank environment. They also preserve Pix and SPI as the named instant-payments and related settlement environment and Conta PI as the regulatory account governance layer attached to the instant-payments environment. These conditions support a structural characterization centered on RTGS and instant-payments continuity supported by central-bank oversight, gross-settlement infrastructure, instant-payments systems, and regulatory account governance.</p>
+
+        <h3>Public-sector data and digital continuity environment</h3>
+        <p>Brazil's public-sector data and digital continuity environment is characterized in the current package by Nuvem de Governo, Serpro, Dataprev, the Infraestrutura Nacional de Dados, RNDS interoperability environments, the Portal Brasileiro de Dados Abertos, and mixed-provider sovereign-administration infrastructure environments. The current layers show Serpro and Dataprev preserving long-duration federal data-administration infrastructure attached to public-sector operations, Nuvem de Governo preserving a federally coordinated cloud-administration environment, and RNDS preserving health-data interoperability infrastructure. They also preserve the Portal Brasileiro de Dados Abertos as the open-data infrastructure attached to public-sector administration and mixed-provider sovereign-administration infrastructure environments as the documented hosting condition combining federal administration with mixed-provider participation. These conditions support a structural characterization centered on public-sector data continuity supported by federally administered infrastructure operating alongside mixed-provider hosting conditions rather than a fully self-contained sovereign cloud stack.</p>
+
+        <h3>Internet exchange and registry governance environment</h3>
+        <p>Brazil's internet exchange and registry governance environment is characterized in the current package by CGI.br, NIC.br, Registro.br, IX.br, ASN/IP resource governance, and DNS governance. The current layers show CGI.br carrying continuity through stakeholder-coordinated internet governance, NIC.br and Registro.br preserving namespace stewardship and ASN/IP resource governance, and IX.br preserving a distributed exchange environment across multiple Brazilian metropolitan regions rather than centralized exchange primacy. They also preserve DNS governance as the national name-resolution administration surface. These conditions support a structural characterization centered on registry and internet-exchange governance continuity supported by stakeholder-coordinated governance, namespace stewardship, ASN/IP resource governance, and distributed exchange infrastructure rather than broader global IX centrality.</p>
+
+        <h3>Scientific-network and research-compute environment</h3>
+        <p>Brazil's scientific-network and research-compute environment is characterized in the current package by RNP nationwide academic-network infrastructure, Rede Ipê backbone, CAFe federation, eduroam Brasil, LNCC, the Santos Dumont supercomputer, and SINAPAD scientific-compute coordination. The current layers show RNP and Rede Ipê preserving the federal academic-network backbone environment, CAFe and eduroam Brasil preserving federated identity and academic-network access infrastructure, and LNCC, Santos Dumont, and SINAPAD preserving nationally coordinated scientific-compute infrastructure attached to the academic-network surface. These conditions support a structural characterization centered on scientific-network federation continuity supported by nationwide academic-network infrastructure, federated identity and access systems, and nationally coordinated scientific-compute environments rather than a sovereign hyperscale compute stack.</p>
+
+        <h3>Telecommunications and digital connectivity environment</h3>
+        <p>Brazil's telecommunications and digital connectivity environment is characterized in the current package by Anatel telecommunications governance, national 5G rollout, the PAIS northern fiber-expansion environment, Telebras backbone infrastructure, integrated terrestrial and satellite communications, and multi-operator telecommunications environments. The current layers show Anatel preserving federally administered telecommunications governance, national 5G rollout preserving mobile-network-evolution infrastructure, the PAIS environment preserving northern fiber-expansion infrastructure, and Telebras together with integrated terrestrial and satellite communications preserving layered backbone and externally connected communications environments. They also preserve multi-operator telecommunications environments as a competitive operator-level surface rather than a single-operator perimeter. These conditions support a structural characterization centered on telecommunications and digital-connectivity continuity supported by Anatel governance, 5G rollout, northern fiber expansion, backbone infrastructure, and integrated terrestrial and satellite communications rather than routing-authority infrastructure.</p>
+
+        <h3>Energy and industrial coordination environment</h3>
+        <p>Brazil's energy and industrial coordination environment is characterized in the current package by ONS coordination, the Sistema Interligado Nacional, regional subsystem interconnection, international interchange, Brasil Semicondutores policy systems, and industrial technology-development structures where documented. The current layers show ONS preserving coordinated operation of the Sistema Interligado Nacional, regional subsystem interconnection preserving internally federated grid regions, and international interchange systems preserving cross-border energy linkage where documented. They also preserve Brasil Semicondutores policy systems and industrial technology-development structures where documented as the documented policy-coordinated industrial-development environment adjacent to the broader infrastructure surface. These conditions support a structural characterization centered on energy-grid and industrial coordination continuity supported by national grid coordination, regional subsystem interconnection, international interchange, and documented industrial-policy structures.</p>
+
+        <h3>Logistics and global connectivity environment</h3>
+        <p>Brazil's logistics and global connectivity environment is characterized in the current package by the Port of Santos, Tecon Santos expansion, GRU Airport, international shipping and aviation logistics, and intercontinental trade-connectivity infrastructure. The current layers show the Port of Santos preserving national-scale maritime cargo operations, Tecon Santos expansion preserving container-terminal expansion infrastructure, and GRU Airport preserving intercontinental air-cargo systems. They also preserve international shipping and aviation logistics together with intercontinental trade-connectivity infrastructure as externally connected trade routes attached to Brazilian logistics infrastructure. These conditions support a structural characterization centered on intercontinental logistics continuity supported by maritime, container-terminal, and air-cargo infrastructure.</p>
+
+        <h3>Cybersecurity and digital-resilience environment</h3>
+        <p>Brazil's cybersecurity and digital-resilience environment is characterized in the current package by CTIR Gov coordination, CERT.br internet-security systems, federal incident-management structures, cyber-threat coordination, and national internet-security capability environments. The current layers show CTIR Gov preserving federal incident-response and management infrastructure, CERT.br preserving national internet-security capability and coordination, and federal incident-management structures together with cyber-threat coordination systems preserving institutional resilience and threat-handling functions. They also preserve national internet-security capability environments as the broader institutional cyber-coordination surface. These conditions support a structural characterization centered on cybersecurity and digital-resilience continuity supported by CTIR coordination, CERT.br operations, federal incident management, and cyber-threat coordination structures.</p>
+
+        <h3>Regional, MERCOSUL, and globally integrated institutional integration environment</h3>
+        <p>Brazil's regional, MERCOSUL, and globally integrated institutional integration environment is characterized in the current package by MERCOSUL Digital Agenda systems, digital-signature mutual-recognition systems, cross-border digital coordination, international energy interchange, global research-network integration, and international logistics integration. The current layers show Brazil attached to standing cross-border institutional systems across regional digital coordination, cross-border legal recognition of digital signatures, cross-border energy linkage, academic-network integration with wider international research networks, and externally linked trade routes rather than operating in isolation. These conditions support a structural characterization centered on cross-border institutional continuity carried through MERCOSUL, South Atlantic, and globally integrated digital, energy, research, and logistics coordination systems rather than nationally isolated infrastructure administration.</p>
+
+        <h3>Structural constraints</h3>
+        <p>The current Brazil profile also carries clear structural constraints. The current package preserves mixed-provider cloud dependency structures attached to federal administration infrastructure rather than sovereign hyperscale ownership. It preserves limited sovereign compute evidence beyond LNCC, Santos Dumont, and SINAPAD research-compute systems. It preserves the absence of sovereign semiconductor fabrication stack evidence, with Brasil Semicondutores policy systems and industrial technology-development structures appearing at the policy and documented-program level only. It preserves distributed IX.br exchange environments and CGI.br / NIC.br / Registro.br registry governance without evidence for broader global IX centrality beyond documented registry and IX governance. It preserves mixed regulatory, public, and private telecommunications environments rather than a singular operator-level surface. It preserves cross-border and globally integrated infrastructure dependency boundaries rather than a fully self-contained sovereign stack. These constraints describe boundary conditions reflecting Brazil's federally interoperable, regionally integrated infrastructure environment where continuity derives from federal interoperability, instant-payments and settlement governance, registry and exchange governance, scientific-network federation, telecommunications rollout, grid coordination, logistics continuity, cyber coordination, and institutional integration rather than sovereign-scale compute autonomy.</p>
+
+        <hr class="section-divider">
+
+        <h3>Profile summary statement</h3>
+        <p>Brazil appears in the profile layer as a South American-scale infrastructure jurisdiction combining federal digital-government interoperability, RTGS and instant-payments continuity, internet-exchange and registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics infrastructure, cyber coordination, and regional institutional integration.</p>
+
+        <div class="meta-line">Source: profile.md</div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Brazil profile into builder-facing interpretation. This file provides structural interpretation only. It does not assign routing authority, readiness tiers, Atlas surfaces, Atlas topology authority, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Institutional continuity environment</h3>
+        <p>For builder interpretation, Brazil reads as a federally interoperable institutional continuity environment anchored in digital-governance interoperability, central-bank settlement and instant-payments governance, registry and exchange governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics continuity, cybersecurity coordination, and regional institutional integration rather than a monolithically centralized national operating authority. The current normalized layers show institutional continuity carried through GOV.BR, the Banco Central do Brasil, CGI.br / NIC.br / Registro.br / IX.br, RNP, Anatel, ONS, the Port of Santos and GRU Airport, CTIR Gov / CERT.br, and MERCOSUL, South Atlantic, and globally integrated cross-border institutional participation rather than concentrated single-authority governance. These conditions support a builder-facing reading centered on institutional continuity carried through federal portal, identity, settlement, registry, academic-network, telecommunications, grid, logistics, and cybersecurity coordination systems under regional and globally integrated institutional integration.</p>
+
+        <h3>Digital governance interoperability environment</h3>
+        <p>For builder interpretation, Brazil reads as a federal digital-governance interoperability environment anchored in GOV.BR, Conta GOV.BR, the Carteira de Identidade Nacional, Conecta gov.br, the Infraestrutura Nacional de Dados, and electronic-signature governance. The current normalized layers show identity, interoperability, and data-infrastructure systems operating under federal digital-administration coordination rather than fragmented agency-by-agency service environments. They also preserve Conta GOV.BR and the Carteira de Identidade Nacional as named identity-continuity surfaces, Conecta gov.br as the inter-agency interoperability layer, the Infraestrutura Nacional de Dados as the federal data-infrastructure surface, and electronic-signature governance as the statutory digital-signature continuity layer attached to federal digital services. These conditions support a builder-facing reading centered on federal digital-governance and identity continuity carried through portal, identity, interoperability, data-infrastructure, and signature-governance systems.</p>
+
+        <h3>Payment modernization and settlement-governance environment</h3>
+        <p>For builder interpretation, Brazil reads as a payment modernization and settlement-governance environment anchored in the Banco Central do Brasil, STR RTGS infrastructure, Pix instant-payments systems, SPI infrastructure, and Conta PI regulatory systems. The current normalized layers show central-bank-coordinated continuity across high-value settlement and instant-payments infrastructure, with STR preserving gross settlement, Pix and SPI preserving instant-payments and related settlement, and Conta PI preserving the regulatory account-governance layer attached to the instant-payments environment. These conditions support a builder-facing reading centered on RTGS and instant-payments continuity carried through central-bank oversight, gross-settlement infrastructure, instant-payments systems, and regulatory account governance.</p>
+
+        <h3>Public-sector data and digital-continuity environment</h3>
+        <p>For builder interpretation, Brazil reads as a public-sector data and digital-continuity environment anchored in Nuvem de Governo, Serpro, Dataprev, the Infraestrutura Nacional de Dados, RNDS interoperability environments, the Portal Brasileiro de Dados Abertos, and mixed-provider sovereign-administration infrastructure environments. The current normalized layers show federally administered data-infrastructure operating alongside mixed-provider hosting conditions rather than a fully self-contained sovereign cloud stack. They also preserve Serpro and Dataprev as the named federal data-administration anchors, Nuvem de Governo as the federally coordinated cloud-administration surface, RNDS as the health-data interoperability surface, and the Portal Brasileiro de Dados Abertos as the open-data infrastructure attached to public-sector administration. These conditions support a builder-facing reading centered on public-sector data continuity carried through federally administered infrastructure operating alongside mixed-provider hosting conditions.</p>
+
+        <h3>Registry and internet-exchange governance environment</h3>
+        <p>For builder interpretation, Brazil reads as a registry and internet-exchange governance environment anchored in CGI.br, NIC.br, Registro.br, IX.br, ASN/IP resource governance, and DNS governance. The current normalized layers show stakeholder-coordinated internet governance carried through CGI.br, namespace stewardship and ASN/IP resource governance carried through NIC.br and Registro.br, and a distributed exchange environment carried through IX.br across multiple Brazilian metropolitan regions rather than centralized exchange primacy. They also preserve DNS governance as the national name-resolution administration surface. These conditions support a builder-facing reading centered on registry and internet-exchange governance continuity carried through stakeholder-coordinated governance, namespace stewardship, ASN/IP resource governance, and distributed exchange infrastructure rather than broader global IX centrality.</p>
+
+        <h3>Scientific-network federation environment</h3>
+        <p>For builder interpretation, Brazil reads as a scientific-network federation environment anchored in RNP, Rede Ipê, CAFe, eduroam Brasil, LNCC, the Santos Dumont supercomputer, and SINAPAD. The current normalized layers show RNP and Rede Ipê preserving the federal academic-network backbone environment, CAFe and eduroam Brasil preserving federated identity and academic-network access infrastructure, and LNCC, Santos Dumont, and SINAPAD preserving nationally coordinated scientific-compute infrastructure attached to the academic-network surface. These conditions support a builder-facing reading centered on scientific-network federation continuity carried through nationwide academic-network infrastructure, federated identity and access systems, and nationally coordinated scientific-compute environments rather than a sovereign hyperscale compute stack.</p>
+
+        <h3>Telecommunications and digital connectivity environment</h3>
+        <p>For builder interpretation, Brazil reads as a telecommunications and digital-connectivity environment anchored in Anatel telecommunications governance, national 5G rollout, the PAIS northern fiber-expansion environment, Telebras backbone infrastructure, integrated terrestrial and satellite communications, and multi-operator telecommunications environments. The current normalized layers show Anatel preserving federally administered telecommunications governance, national 5G rollout preserving mobile-network-evolution continuity, PAIS preserving northern fiber-expansion infrastructure, and Telebras together with integrated terrestrial and satellite communications preserving layered backbone and externally connected communications environments. They also preserve multi-operator telecommunications environments as a competitive operator-level surface rather than a single-operator perimeter. These conditions support a builder-facing reading centered on telecommunications and digital-connectivity continuity carried through Anatel governance, 5G rollout, northern fiber expansion, backbone infrastructure, and integrated terrestrial and satellite communications rather than routing-authority infrastructure.</p>
+
+        <h3>Energy-grid and industrial coordination environment</h3>
+        <p>For builder interpretation, Brazil reads as an energy-grid and industrial coordination environment anchored in ONS coordination, the Sistema Interligado Nacional, regional subsystem interconnection, international interchange, Brasil Semicondutores policy systems, and industrial technology-development structures where documented. The current normalized layers show national grid coordination across the Sistema Interligado Nacional under ONS, internally federated grid regions through regional subsystem interconnection, and cross-border energy linkage through international interchange where documented. They also preserve Brasil Semicondutores policy systems and industrial technology-development structures where documented as the policy-coordinated industrial-development surface adjacent to the broader infrastructure environment. These conditions support a builder-facing reading centered on energy-grid and industrial coordination continuity carried through national grid coordination, regional subsystem interconnection, international interchange, and documented industrial-policy structures.</p>
+
+        <h3>Logistics and global connectivity environment</h3>
+        <p>For builder interpretation, Brazil reads as a logistics and global-connectivity environment anchored in the Port of Santos, Tecon Santos expansion, GRU Airport, international shipping and aviation logistics, and intercontinental trade-connectivity infrastructure. The current normalized layers show the Port of Santos preserving national-scale maritime cargo operations, Tecon Santos expansion preserving container-terminal expansion infrastructure, GRU Airport preserving intercontinental air-cargo systems, and international shipping and aviation logistics together with intercontinental trade-connectivity infrastructure preserving externally connected trade routes attached to Brazilian logistics infrastructure rather than broader logistics-authority claims. These conditions support a builder-facing reading centered on intercontinental logistics continuity carried through maritime, container-terminal, and air-cargo infrastructure.</p>
+
+        <h3>Cybersecurity and digital-resilience environment</h3>
+        <p>For builder interpretation, Brazil reads as a cybersecurity and digital-resilience coordination environment anchored in CTIR Gov, CERT.br, federal incident-management structures, cyber-threat coordination, and national internet-security capability environments. The current normalized layers show CTIR Gov preserving federal incident-response and management infrastructure, CERT.br preserving national internet-security capability and coordination, and federal incident-management structures together with cyber-threat coordination systems preserving institutional resilience and threat-handling functions. They also preserve national internet-security capability environments as the broader institutional cyber-coordination surface. These conditions support a builder-facing reading centered on cybersecurity and digital-resilience continuity carried through CTIR coordination, CERT.br operations, federal incident management, and cyber-threat coordination structures rather than centralized operational cyber-command authority.</p>
+
+        <h3>Regional, MERCOSUL, and globally integrated institutional integration environment</h3>
+        <p>For builder interpretation, Brazil reads as a regional, MERCOSUL, and globally integrated institutional integration environment anchored in the MERCOSUL Digital Agenda, digital-signature mutual-recognition, cross-border digital coordination, international energy interchange, global research-network integration, and international logistics integration. The current normalized layers show Brazil attached to standing cross-border institutional systems across regional digital coordination, cross-border legal recognition of digital signatures, cross-border energy linkage where documented, academic-network integration with wider international research networks, and externally linked trade routes rather than operating in isolation. These conditions support a builder-facing reading centered on cross-border institutional continuity carried through MERCOSUL, South Atlantic, and globally integrated digital, energy, research, and logistics coordination systems rather than nationally isolated infrastructure administration.</p>
+
+        <h3>Structural constraints for builders</h3>
+        <p>For builder interpretation, Brazil reads as an environment bounded by mixed-provider cloud dependency structures, limited sovereign compute evidence beyond research systems, absence of sovereign semiconductor fabrication infrastructure, distributed IX infrastructure without evidence for broader global centrality, mixed regulatory, public, and private telecommunications environments, and cross-border and globally integrated infrastructure dependency boundaries. The current normalized layers preserve federal administration infrastructure operating alongside mixed-provider hosting rather than sovereign hyperscale ownership. They preserve LNCC, Santos Dumont, and SINAPAD as the cited research-compute surface rather than a sovereign hyperscale compute stack, and they do not document a sovereign semiconductor fabrication stack; Brasil Semicondutores policy systems and industrial technology-development structures appear at the policy and documented-program level only. They preserve IX.br distributed exchange environments and CGI.br / NIC.br / Registro.br registry governance but do not preserve broader global IX centrality. They preserve regulated multi-operator telecommunications environments rather than a singular operator-level surface. These conditions support a builder-facing reading centered on a federally interoperable, regionally integrated infrastructure environment where continuity derives from federal interoperability, instant-payments and settlement governance, registry and exchange governance, scientific-network federation, telecommunications rollout, grid coordination, logistics continuity, cyber coordination, and institutional integration rather than sovereign-scale compute autonomy.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder mode summary statement</h3>
+        <p>Brazil appears in builder mode as a South American-scale infrastructure jurisdiction combining federal digital-government interoperability, RTGS and instant-payments continuity, internet-exchange and registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics infrastructure, cyber coordination, and regional institutional integration.</p>
+
+        <div class="meta-line">Source: builder-mode.md</div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Initial package creation</h3>
+        <p>The Brazil jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The change-log records that <code>evidence.md</code> established GOV.BR digital-service systems, Conta GOV.BR identity infrastructure, Carteira de Identidade Nacional systems, Conecta gov.br interoperability systems, Infraestrutura Nacional de Dados systems, electronic-signature governance systems, Banco Central do Brasil systems, STR RTGS infrastructure, Pix instant-payments systems, SPI infrastructure, Conta PI regulatory systems, Nuvem de Governo systems, Serpro infrastructure, Dataprev infrastructure, RNDS interoperability environments, the Portal Brasileiro de Dados Abertos, CGI.br-linked governance systems, NIC.br infrastructure systems, Registro.br administration structures, IX.br distributed exchange environments, ASN/IP resource-governance systems, DNS governance infrastructure, Anatel telecommunications-governance systems, national 5G rollout infrastructure, PAIS northern fiber-expansion systems, Telebras backbone infrastructure, integrated terrestrial and satellite communications systems, multi-operator telecommunications environments, RNP nationwide academic-network infrastructure, Rede Ipê backbone systems, CAFe federation systems, eduroam Brasil systems, LNCC infrastructure, Santos Dumont supercomputer systems, SINAPAD scientific-compute coordination environments, ONS coordination systems, Sistema Interligado Nacional infrastructure, regional subsystem interconnection systems, international interchange systems, Brasil Semicondutores policy systems, Port of Santos maritime cargo infrastructure, Tecon Santos expansion systems, GRU Airport cargo systems, international shipping and aviation logistics systems, CTIR Gov coordination systems, CERT.br internet-security systems, federal incident-management structures, cyber-threat coordination systems, MERCOSUL Digital Agenda systems, digital-signature mutual-recognition systems, cross-border digital coordination systems, international energy interchange systems, global research-network integration systems, and international logistics integration systems.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The change-log records that <code>signals.md</code> derived federal digital-governance interoperability signals, identity continuity signals, RTGS and instant-payments continuity signals, public-sector data and digital-continuity signals, registry and internet-exchange governance signals, scientific-network federation signals, telecommunications rollout and connectivity signals, energy-grid coordination signals, logistics and trade-connectivity signals, cybersecurity and digital-resilience coordination signals, regional and global institutional integration signals, and constraint-boundary signals preserving mixed-provider compute dependency, limited sovereign compute evidence, absence of sovereign semiconductor fabrication evidence, distributed IX environments without broader global centrality evidence, mixed telecommunications environments, and globally integrated infrastructure dependency boundaries.</p>
+
+        <h3>Trust-dimensions layer construction</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> established institutional continuity across federal digital-governance interoperability, payment modernization, registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics continuity, cybersecurity coordination, and regional institutional integration systems; digital-governance and identity continuity; RTGS and instant-payments continuity; public-sector data and digital continuity; registry and internet-exchange governance continuity; scientific-network federation continuity; telecommunications continuity; energy-grid coordination continuity; logistics continuity; cybersecurity and digital-resilience continuity; regional institutional integration continuity; and constraint boundaries preserving mixed-provider compute dependency, limited sovereign compute evidence, absence of sovereign semiconductor fabrication evidence, distributed IX environments without broader global centrality evidence, mixed telecommunications environments, and globally integrated infrastructure dependency boundaries.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The change-log records that <code>metadata.md</code> classified Brazil as a South American-scale federal digital-government jurisdiction, a national identity and interoperability coordination jurisdiction, a central-bank payment modernization and settlement-governance jurisdiction, an internet-exchange and registry-governance environment, a scientific-network and research-compute federation environment, a telecommunications and digital-connectivity environment, an energy-grid and industrial-coordination environment, a logistics and global-connectivity environment, a cybersecurity and digital-resilience coordination environment, and a Latin American, South Atlantic, MERCOSUL, and globally integrated institutional-participation jurisdiction.</p>
+
+        <h3>Profile layer characterization</h3>
+        <p>The change-log records that <code>profile.md</code> characterized Brazil as a Brasília- and São Paulo-centered South American-scale federal infrastructure environment, a GOV.BR-, Conta GOV.BR-, and Conecta gov.br-linked digital-governance and interoperability environment, a Banco Central do Brasil-, STR-, Pix-, and SPI-linked payment modernization and settlement-governance environment, a Nuvem de Governo-, Serpro-, Dataprev-, and RNDS-linked public-sector data continuity environment, a CGI.br-, NIC.br-, Registro.br-, and IX.br-linked internet-governance and exchange environment, an RNP-, Rede Ipê-, CAFe-, LNCC-, and Santos Dumont-linked scientific-network and research-compute federation environment, an Anatel-, Telebras-, and PAIS-linked telecommunications and digital-connectivity environment, an ONS- and Sistema Interligado Nacional-linked energy-grid coordination environment, a Port of Santos- and GRU Airport-linked logistics and intercontinental trade-connectivity environment, a CTIR Gov- and CERT.br-linked cybersecurity and digital-resilience coordination environment, and a MERCOSUL-, South Atlantic-, and globally integrated institutional-participation environment.</p>
+
+        <h3>Builder mode translation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into institutional continuity interpretation, digital-governance interoperability interpretation, payment modernization and settlement-governance interpretation, public-sector data and digital-continuity interpretation, registry and internet-exchange governance interpretation, scientific-network federation interpretation, telecommunications and digital-connectivity interpretation, energy-grid and industrial-coordination interpretation, logistics and global-connectivity interpretation, cybersecurity and digital-resilience interpretation, regional and global institutional integration interpretation, and constraint-boundary interpretation.</p>
+
+        <h3>Structural constraints recorded</h3>
+        <p>The change-log records that normalization preserved mixed-provider cloud dependency structures, limited sovereign compute evidence beyond research systems, the absence of sovereign semiconductor fabrication stack evidence, distributed IX infrastructure without evidence for broader global centrality, mixed regulatory/public/private telecommunications environments, and cross-border and globally integrated infrastructure dependency boundaries.</p>
+
+        <h3>Package completion status</h3>
+        <p>The Brazil jurisdiction package is complete within the Atlas normalization framework and aligned with South American-scale federal digital-governance interoperability, RTGS and instant-payments continuity, internet-exchange and registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics infrastructure, cyber coordination, and regional institutional integration interpretation standards.</p>
+
+        <div class="meta-line">Normalization status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: change-log.md</div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Brazil jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/brazil/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Brazil</li>
+          <li><strong>Code:</strong> BR</li>
+          <li><strong>Region:</strong> South American-Scale Federal Infrastructure Environment</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor alignment</h4>
+        <ul>
+          <li>Federal Digital Governance and Interoperability Framework</li>
+          <li>Instant Payments and Settlement Governance Framework</li>
+          <li>Internet Exchange and Registry Governance Framework</li>
+          <li>Scientific-Network Federation Framework</li>
+          <li>Telecommunications and Digital Connectivity Framework</li>
+          <li>Energy Grid and Industrial Coordination Framework</li>
+          <li>Cybersecurity and Digital Resilience Framework</li>
+          <li>Global Logistics and Trade Connectivity Framework</li>
+          <li>Regional and Global Institutional Integration Framework</li>
+        </ul>
+        <h4>Primary coordination cities</h4>
+        <ul>
+          <li>Brasília</li>
+          <li>São Paulo</li>
+          <li>Rio de Janeiro</li>
+          <li>Campinas</li>
+          <li>Santos</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Anchors</h3>
+        <h4>Documented surfaces</h4>
+        <ul>
+          <li>GOV.BR · Conta GOV.BR · Carteira de Identidade Nacional · Conecta gov.br · Infraestrutura Nacional de Dados · electronic-signature governance</li>
+          <li>Banco Central do Brasil · STR RTGS · Pix · SPI · Conta PI regulatory systems</li>
+          <li>Nuvem de Governo · Serpro · Dataprev · RNDS · Portal Brasileiro de Dados Abertos · mixed-provider sovereign-administration</li>
+          <li>CGI.br · NIC.br · Registro.br · IX.br distributed exchange · ASN/IP resource governance · DNS governance</li>
+          <li>RNP · Rede Ipê · CAFe · eduroam Brasil · LNCC · Santos Dumont · SINAPAD</li>
+          <li>Anatel · national 5G rollout · PAIS northern fiber expansion · Telebras · integrated terrestrial and satellite communications · multi-operator telecommunications</li>
+          <li>ONS · Sistema Interligado Nacional · regional subsystem interconnection · international interchange · Brasil Semicondutores policy systems · industrial technology-development structures where documented</li>
+          <li>Port of Santos · Tecon Santos expansion · GRU Airport · international shipping and aviation logistics · intercontinental trade connectivity</li>
+          <li>CTIR Gov · CERT.br · federal incident management · cyber-threat coordination · national internet-security capability</li>
+          <li>MERCOSUL Digital Agenda · digital-signature mutual-recognition · cross-border digital coordination · international energy interchange · global research-network integration · international logistics integration</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereign hyperscale compute classification.</li>
+          <li>Not a sovereign semiconductor fabrication classification.</li>
+          <li>Not a South American telecommunications-dominance classification.</li>
+          <li>Not a BRICS, G20, or Global South geopolitical-leadership classification.</li>
+          <li>Not an international settlement-authority classification beyond domestic and oversight functions.</li>
+          <li>Not a broader global IX centrality classification beyond documented registry and IX governance.</li>
+          <li>Not a geopolitical, military, or regional command-authority classification.</li>
+          <li>Not a monolithically centralized infrastructure environment.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
