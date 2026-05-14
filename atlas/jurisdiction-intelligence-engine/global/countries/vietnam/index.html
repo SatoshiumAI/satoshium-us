@@ -24,7 +24,13 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
 body{padding-top:80px}
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold);text-decoration:underline}
-.wrap{max-width:1080px;margin:0 auto;padding:32px 28px 64px}
+.wrap{max-width:1320px;margin:0 auto;padding:32px 28px 64px}
+.grid-layout{display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start}
+.main-col{min-width:0}
+.sidebar-col{position:sticky;top:96px;display:flex;flex-direction:column;gap:18px;max-height:calc(100vh - 110px);overflow-y:auto;padding-right:4px}
+.sidebar-col::-webkit-scrollbar{width:6px}
+.sidebar-col::-webkit-scrollbar-track{background:transparent}
+.sidebar-col::-webkit-scrollbar-thumb{background:rgba(214,163,74,.2);border-radius:3px}
 .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:18px}
 h1{font-size:48px;line-height:1.1;letter-spacing:-.01em;margin:0 0 18px;font-weight:800;color:var(--text)}
 .lead{font-size:16px;color:var(--text);max-width:78ch;margin:0 0 22px;line-height:1.7}
@@ -56,13 +62,21 @@ ul.bullets li{margin:0 0 6px}
 .src{font-size:11.5px;color:var(--muted);font-style:italic;margin:8px 0 0;display:block}
 .src code{font-style:normal;color:var(--gold2);background:rgba(214,163,74,.06);padding:1px 6px;border-radius:3px;font-size:11px}
 hr.layer-divider{border:none;border-top:1px solid var(--line);margin:24px 0}
-.appendix-section{margin-top:36px;padding-top:24px;border-top:1px solid var(--line-strong)}
-.appendix-section h2{border-bottom:none;color:var(--gold2);font-size:22px;padding-bottom:0}
-.appendix-section h3{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:14px 0 8px}
-.appendix-section ul.bullets li{margin:0 0 5px;font-size:14px}
-.appendix-section p{font-size:14px}
+.appendix-section{margin:0;padding:20px 22px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.appendix-section h2{margin:0 0 4px;border-bottom:none;color:var(--gold2);font-size:17px;padding-bottom:0;font-weight:700;letter-spacing:-.002em}
+.appendix-section h3{color:var(--gold);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:14px 0 8px}
+.appendix-section ul.bullets{margin:6px 0 10px 0;padding-left:18px}
+.appendix-section ul.bullets li{margin:0 0 6px;font-size:13px;line-height:1.5}
+.appendix-section ul.bullets li code{font-size:12px;background:rgba(214,163,74,.08);color:var(--gold2);padding:1px 6px;border-radius:3px;font-style:normal}
+.appendix-section p{font-size:13px;line-height:1.55;margin:0 0 10px;color:var(--text)}
+.appendix-section p:last-child{margin-bottom:0}
+.appendix-section p code{font-size:11.5px;background:rgba(214,163,74,.08);color:var(--gold2);padding:1px 6px;border-radius:3px}
 .page-footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-align:center}
 .page-footer .reflection{font-size:13px;color:var(--muted);font-style:italic;margin:0 0 18px}
+@media (max-width:1080px){
+ .grid-layout{grid-template-columns:1fr;gap:24px}
+ .sidebar-col{position:static;max-height:none;overflow-y:visible;padding-right:0}
+}
 @media (max-width:760px){
  h1{font-size:32px}
  body{padding-top:74px}
@@ -76,6 +90,10 @@ hr.layer-divider{border:none;border-top:1px solid var(--line);margin:24px 0}
 <div id="topbar-slot" data-topbar="universe"></div>
 
 <div class="wrap">
+
+<div class="grid-layout">
+
+  <div class="main-col">
 
   <p class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</p>
 
@@ -581,6 +599,10 @@ hr.layer-divider{border:none;border-top:1px solid var(--line);margin:24px 0}
     <span class="src">Source: <code>change-log.md</code></span>
   </section>
 
+  </div><!-- /.main-col -->
+
+  <aside class="sidebar-col" aria-label="Vietnam canonical sidebar">
+
   <!-- Appendix: Canonical Package -->
   <section class="appendix-section">
     <h2>Canonical Package</h2>
@@ -695,6 +717,10 @@ hr.layer-divider{border:none;border-top:1px solid var(--line);margin:24px 0}
       <li>Not a substitute for the canonical package.</li>
     </ul>
   </section>
+
+  </aside><!-- /.sidebar-col -->
+
+</div><!-- /.grid-layout -->
 
   <footer class="page-footer">
     <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
