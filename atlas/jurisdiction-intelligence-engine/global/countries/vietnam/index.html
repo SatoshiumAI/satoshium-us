@@ -1,91 +1,720 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Vietnam | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Vietnam Atlas jurisdiction package rendering. Digital Governance and Procedural Digitization, Central-Bank Retail Payment Modernization, Telecommunications and Connectivity, Data Infrastructure and Digital Continuity, Registry and DNS Governance, Research Network and Scientific Collaboration, Energy Grid and Industrial Coordination, Maritime Logistics and Trade Connectivity, Cybersecurity and Digital Resilience, and ASEAN and Regional Integration alignment.">
+<link rel="icon" type="image/png" href="/favicon.png">
 <style>
 :root{
  --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
+ --panel:#0c1016;
+ --panel2:#0e131a;
+ --text:#e6e8ec;
+ --muted:#8a93a3;
  --gold:#d6a34a;
  --gold2:#f4c36a;
+ --line:rgba(255,255,255,.08);
+ --line-strong:rgba(214,163,74,.28);
+ --accent-soft:rgba(214,163,74,.07);
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-}
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
-}
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
-}
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold);text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 28px 64px}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:18px}
+h1{font-size:48px;line-height:1.1;letter-spacing:-.01em;margin:0 0 18px;font-weight:800;color:var(--text)}
+.lead{font-size:16px;color:var(--text);max-width:78ch;margin:0 0 22px;line-height:1.7}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0 24px;font-size:13px;color:var(--muted)}
+.hero-meta strong{color:var(--text);font-weight:700}
+.section-nav{margin:24px 0 32px;padding:14px 18px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.015)}
+.section-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.section-nav a{color:var(--gold2);font-size:13px;font-weight:600}
+.section-nav a:hover{color:var(--gold);text-decoration:underline}
+h2{font-size:26px;margin:36px 0 16px;color:var(--gold2);font-weight:700;letter-spacing:-.005em;line-height:1.25;padding-bottom:10px;border-bottom:1px solid var(--line-strong)}
+h2 .num{color:var(--gold);font-weight:700;margin-right:8px}
+h3{font-size:17px;margin:24px 0 10px;color:var(--text);font-weight:700;letter-spacing:-.002em}
+h4{font-size:13px;margin:18px 0 8px;color:var(--gold2);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+p{margin:0 0 14px;color:var(--text)}
+ul.bullets{margin:8px 0 14px 0;padding-left:20px}
+ul.bullets li{margin:0 0 6px}
+.meta-table{margin:18px 0;padding:14px 18px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.015)}
+.meta-table .mt-row{display:grid;grid-template-columns:200px 1fr;gap:14px;padding:7px 0;font-size:13.5px;border-bottom:1px dashed var(--line)}
+.meta-table .mt-row:last-child{border-bottom:none}
+.meta-table .mt-k{color:var(--muted);font-weight:600}
+.meta-table .mt-v{color:var(--text)}
+.scope-note{margin:18px 0;padding:14px 18px;border-left:3px solid var(--gold);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:14px;color:var(--text)}
+.scope-note strong{color:var(--gold2)}
+.summary-stmt{margin:22px 0 6px;padding:16px 18px;border:1px solid var(--line-strong);border-radius:10px;background:linear-gradient(to bottom right, rgba(214,163,74,.05), rgba(214,163,74,.01))}
+.summary-stmt h3{margin:0 0 8px;color:var(--gold2);font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.summary-stmt p{margin:0;font-size:14px;line-height:1.65}
+.status-line{font-size:12px;color:var(--muted);font-style:italic;margin:12px 0 6px}
+.status-line strong{color:var(--gold2);font-style:normal;font-weight:700}
+.src{font-size:11.5px;color:var(--muted);font-style:italic;margin:8px 0 0;display:block}
+.src code{font-style:normal;color:var(--gold2);background:rgba(214,163,74,.06);padding:1px 6px;border-radius:3px;font-size:11px}
+hr.layer-divider{border:none;border-top:1px solid var(--line);margin:24px 0}
+.appendix-section{margin-top:36px;padding-top:24px;border-top:1px solid var(--line-strong)}
+.appendix-section h2{border-bottom:none;color:var(--gold2);font-size:22px;padding-bottom:0}
+.appendix-section h3{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:14px 0 8px}
+.appendix-section ul.bullets li{margin:0 0 5px;font-size:14px}
+.appendix-section p{font-size:14px}
+.page-footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-align:center}
+.page-footer .reflection{font-size:13px;color:var(--muted);font-style:italic;margin:0 0 18px}
+@media (max-width:760px){
+ h1{font-size:32px}
+ body{padding-top:74px}
+ .meta-table .mt-row{grid-template-columns:1fr;gap:4px}
+ .wrap{padding:24px 18px 48px}
 }
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Vietnam</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <p class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</p>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h2>Vietnam</h2>
 
-</article>
-</main>
+  <p class="lead">Coordinated national infrastructure jurisdiction combining digital administration, central-bank-directed retail-payment interoperability, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cyber coordination, and ASEAN-linked regional integration. This page renders the canonical Vietnam Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting the National Public Service Portal and VNeID-linked digital-signature infrastructure under Scheme 06 and population-data and e-KYC coordination, State Bank of Vietnam direction over NAPAS with NAPAS 247 fast-transfer, QR, e-wallet, mobile-money, ATM/POS switching, and cross-border QR-payment links to Singapore, Thailand, Cambodia, and Lao PDR, planned and emerging data infrastructure through national data-centre policy, government cloud, AI Data Centre and Hyperscale Data Centre planning, and commercial buildout including Tan Thuan CMC, VNNIC management of the .VN ccTLD with IPv6, DNSSEC, and Anycast DNS infrastructure across domestic and international clusters and VNIX-linked reporting, Viettel and VNPT 5G licensing under CST regulation with B1 and C2 spectrum bands, 2G shutdown transition, and IPv6 deployment across national infrastructure, VinaREN research-network participation with TEIN-linked development and overseas hydro-meteorological data connectivity, EVN National Load Dispatch Center coordination across production, transmission, and distribution with the North-South 500 kV transmission backbone, the seaport master plan and international gateway-port development with postal backup-capacity planning and regional postal-centre targets, VNCERT/CC and the National Cyber Security Centre with the Cybersecurity Emergency Response Center in Hanoi, Ho Chi Minh City, and Da Nang, and ASEAN-linked cross-border QR-payment connectivity and globally distributed DNS participation.</p>
 
-<div id="footer-container"></div>
+  <p class="hero-meta">
+    Jurisdiction: <strong>Vietnam (VN)</strong> &nbsp;·&nbsp; <strong>Jurisdiction lens</strong> &nbsp;·&nbsp; Completeness: <strong>Phase 1 Global Country Package</strong> &nbsp;·&nbsp; Surface assignment: <strong>none</strong>
+  </p>
 
+  <nav class="section-nav" aria-label="Jump to sections">
+    <ul>
+      <li><a href="#overview">1. Overview</a></li>
+      <li><a href="#evidence">2. Evidence Layer</a></li>
+      <li><a href="#signals">3. Signals Layer</a></li>
+      <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+      <li><a href="#metadata">5. Metadata</a></li>
+      <li><a href="#profile">6. Profile</a></li>
+      <li><a href="#builder-mode">7. Builder Mode</a></li>
+      <li><a href="#change-log">8. Change Log</a></li>
+    </ul>
+  </nav>
+
+  <!-- 1. Overview -->
+  <section id="overview">
+    <h2><span class="num">1.</span>Overview</h2>
+
+    <p>Vietnam currently reads within Atlas as a coordinated national infrastructure environment combining digital administration, retail-payment interoperability, telecommunications modernization, data-infrastructure expansion, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, and public-sector cyber coordination, situated within a maritime-facing and export-connected setting with documented regional and global interface points. The current package places Vietnam inside National Public Service Portal-, VNeID-, and Scheme 06-linked digital-governance and procedural-digitization continuity, State Bank of Vietnam- and NAPAS-linked retail-payment interoperability and cross-border QR-payment connectivity, planned national data-centre and government cloud infrastructure together with mixed-provider hosting through commercial facilities including Tan Thuan CMC, VNNIC- and VNIX-linked registry and DNS governance, Viettel- and VNPT-linked 5G transition under CST regulation, VinaREN- and TEIN-linked research-network participation, EVN National Load Dispatch Center-linked grid coordination, seaport master plan-linked maritime gateway development, VNCERT/CC- and National Cyber Security Centre-linked public-sector cyber coordination, and ASEAN-linked cross-border payment and globally distributed DNS participation. These conditions support a structural characterization centered on nationally coordinated, regionally connected, maritime-facing institutional continuity across digital administration, retail-payment interoperability, telecommunications modernization, data-infrastructure expansion, registry and DNS governance, research-network participation, grid coordination, maritime logistics, cybersecurity coordination, and ASEAN-linked regional integration without assigning readiness tiers, routing authority, or comparative status.</p>
+
+    <div class="meta-table">
+      <div class="mt-row"><div class="mt-k">Country</div><div class="mt-v">Vietnam</div></div>
+      <div class="mt-row"><div class="mt-k">Region</div><div class="mt-v">Southeast Asian Maritime-Facing Coordinated Infrastructure Environment</div></div>
+      <div class="mt-row"><div class="mt-k">Corridor Alignment</div><div class="mt-v">Digital Governance and Procedural Digitization Framework · Central-Bank Retail Payment Modernization Framework · Telecommunications and Connectivity Framework · Data Infrastructure and Digital Continuity Framework · Registry and DNS Governance Framework · Research Network and Scientific Collaboration Framework · Energy Grid and Industrial Coordination Framework · Maritime Logistics and Trade Connectivity Framework · Cybersecurity and Digital Resilience Framework · ASEAN and Regional Integration Framework</div></div>
+      <div class="mt-row"><div class="mt-k">Primary Coordination Cities</div><div class="mt-v">Hanoi · Ho Chi Minh City · Da Nang</div></div>
+    </div>
+
+    <div class="scope-note">
+      <strong>Scope.</strong> This page records evidence-supported national structures documented for Vietnam that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.
+    </div>
+
+    <span class="src">Source: <code>profile.md</code> · <code>metadata.md</code> — Overview</span>
+  </section>
+
+  <!-- 2. Evidence Layer -->
+  <section id="evidence">
+    <h2><span class="num">2.</span>Evidence Layer</h2>
+
+    <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Vietnam jurisdiction package across administrative systems, identity, payments, telecommunications, data infrastructure, internet governance, research networks, energy coordination, logistics, cybersecurity, and regional interfaces.</p>
+
+    <h3>Digital governance and identity infrastructure</h3>
+    <p>The evidence layer records the National Public Service Portal at <code>www.dichvucong.gov.vn</code>, integrated administrative procedures with cross-provincial single-declaration handling, reusable records, and connected business, tax, and insurance datasets, the VNeID application maintained by the Ministry of Public Security, VNPT SmartCA digital-signature registration linked to VNeID level-2 identity verification, and Scheme 06 development of applications for the population database, personal identification, and e-KYC as the documented digital-governance and procedural-digitization surface for the Vietnam jurisdiction package.</p>
+
+    <h3>Financial infrastructure and payment systems</h3>
+    <p>The evidence layer records State Bank of Vietnam (SBV) direction over NAPAS, the NAPAS national retail-payment infrastructure across cards, accounts, QR codes, e-wallets, and mobile money, NAPAS 247 fast-transfer services, ATM/POS switching and online card payments, public-service payment integration across ministries, localities, and issuing organisations, cross-border QR payment connectivity with Singapore through NAPAS-NETS, established QR connections with Thailand, Cambodia, and Lao PDR, and coordination activity with China, the Republic of Korea, and Japan as the documented retail-payment modernization and settlement-governance surface.</p>
+
+    <h3>Data infrastructure and digital continuity</h3>
+    <p>The evidence layer records national data-centre policy targeting at least three national multi-purpose data centres together with regional multi-purpose data centres by 2025, government cloud-ecosystem use across agencies for digital-government services, green-standard data-centre planning, AI Data Centre formation and Hyperscale Data Centre and Digital Hubs planning by 2030, international undersea fibre-optic cable targets, the Tan Thuan CMC Data Centre as documented large-scale commercial data-centre and cloud-computing infrastructure, and additional commercial facility development as the documented mixed public and commercial data-infrastructure surface.</p>
+
+    <h3>Internet exchange and registry governance</h3>
+    <p>The evidence layer records the Vietnam Internet Network Information Center (VNNIC) management of the .VN country-code top-level domain, VNNIC policies and procedures for Internet address and AS number management, the national DNS estate operating with eight server clusters including six domestic clusters in Hanoi, Ho Chi Minh City, and Da Nang and two international clusters with more than 100 points of presence across major cities on five continents, IPv6, DNSSEC, and Anycast deployment in the VNNIC DNS system, VNIX-linked reporting surfaces for internet statistics, DNS query statistics, internet-resource reporting, and VNIX member and IP-member surfaces, and DNS root-server cluster deployment connected to VNIX from 2020 as the documented registry and DNS-governance surface.</p>
+
+    <h3>Telecommunications and connectivity infrastructure</h3>
+    <p>The evidence layer records the April 11, 2024 official licensing of 5G deployment, Viettel and VNPT 5G business licences and spectrum-use permissions, Viettel winning the B1 band and VNPT winning the C2 band in Vietnam's first successful spectrum allocation in 15 years, 2G shutdown acceleration and the stop on new 2G-only phone subscriptions, minimum 1 Gbps internet access targets by 2025 for high-tech parks, concentrated IT parks, and research, development, and innovation centres, two to four additional international telecommunications cable lines by 2025, 5G coverage targets reaching cities, provinces, high-tech zones, research and development centres, industrial parks, stations, ports, and international airports by 2025 and 99 per cent of the population by 2030, and majority-level IPv6 usage with national-scale broadband subscriber adoption as the documented telecommunications and connectivity surface.</p>
+
+    <h3>Research network and scientific infrastructure</h3>
+    <p>The evidence layer records VinaREN supporting international-scale telemedicine sessions, network-based learning, remote thesis presentation, and global computing-network participation since 2009, VinaREN connections to hydro-meteorology data centres in the United States, Canada, and the Asia-Pacific region, VinaREN's 55 member networks across research institutes, universities, hospitals, and major information centres in 11 provinces and cities, Vietnam's participation as one of five Asian countries benefiting from EC support under TEIN2, and MOST approval of the TEIN2-VN project in 2006 as the documented research-network and scientific-collaboration surface.</p>
+
+    <h3>Energy and grid coordination infrastructure</h3>
+    <p>The evidence layer records the EVN National Load Dispatch Center established in 1994 with the core task of commanding and operating power production, transmission, and distribution in the national power system, the May 1994 energization of the North-South 500 kV transmission line as a historical milestone in unification of the power system, the restructured unified dispatch organisation with national and regional levels, and direct responsibility for major power plants and high-voltage transmission infrastructure as the documented grid coordination and operational-continuity surface.</p>
+
+    <h3>Logistics and maritime connectivity infrastructure</h3>
+    <p>The evidence layer records the seaport master plan treating seaports as strategic national infrastructure, coordinated maritime infrastructure for safety, security, and effective transport-mode connection, international gateway ports capable of receiving large-tonnage ships on long sea routes, fourth-industrial-revolution technology application toward green seaports and efficient resource use, postal-network backup-capacity planning for intact and uninterrupted supply chains in emergencies, three to five regional postal centres by 2030, and 5G coverage extending to ports and international airports by 2025 as the documented maritime logistics and trade-connectivity surface.</p>
+
+    <h3>Cybersecurity and digital resilience coordination</h3>
+    <p>The evidence layer records the Cybersecurity Emergency Response Center established in Hanoi with branches in Ho Chi Minh City and Da Nang, formed through reorganisation of the Vietnam Computer Emergency Response Center and the Vietnam Information Security Testing Center, VNCERT/CC functioning as the focal unit coordinating emergency support nationwide, the National Cyber Security Centre supervising cyberspace, supervision centers monitoring key national infrastructure under the Ministry of Public Security and Ministry of National Defence, incident-coordination, verification, monitoring, database and technical-system operation, and testing responsibilities, and Vietnam's placement among the higher-scoring countries in the ITU 2024 Global Cybersecurity Index as the documented cybersecurity and digital-resilience coordination surface.</p>
+
+    <h3>Regional and global integration</h3>
+    <p>The evidence layer records NAPAS-NETS cross-border QR payment connectivity between Vietnam and Singapore, established QR connections with Thailand, Cambodia, and Lao PDR, VinaREN international telemedicine and learning activities and TEIN-linked connectivity to overseas hydro-meteorological data centres, VNNIC's two international DNS clusters and more than 100 points of presence across major cities on five continents, planned operation of at least two new international undersea fibre-optic cables by 2025 and six by 2030, and international gateway ports treating maritime infrastructure as part of international cooperation and trade connectivity as the documented ASEAN and regional integration surface.</p>
+
+    <span class="src">Source: <code>evidence.md</code> · <code>change-log.md</code> — Evidence Layer Construction</span>
+  </section>
+
+  <!-- 3. Signals Layer -->
+  <section id="signals">
+    <h2><span class="num">3.</span>Signals Layer</h2>
+
+    <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, or deployment suitability.</p>
+
+    <h3>Strategic position signals</h3>
+    <p>The National Public Service Portal's unified national service-access role, VNeID's identity-linked digital-signing role across a broad public-service and administrative application estate, State Bank of Vietnam direction over NAPAS retail-payment infrastructure with cross-border QR linkages, VNNIC's stewardship of the .VN ccTLD and DNS estate, Viettel and VNPT's 5G licensing under CST regulation, VinaREN's research-network role with TEIN-linked international connectivity, EVN's National Load Dispatch Center role across the national power system, the seaport master plan's international gateway-port development, and VNCERT/CC and the National Cyber Security Centre's national cyber coordination together signal Vietnam as a coordinated national infrastructure jurisdiction combining digital administration, retail-payment interoperability, telecommunications modernization, data-infrastructure expansion, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cyber coordination, and ASEAN-linked regional integration. The coexistence of these institutional and infrastructure layers signals layered national coordination with selective regional and global interfaces rather than either a wholly closed domestic system or a purely market-fragmented infrastructure environment. The evidence supports a continuity-and-coordination signal rooted in administrative interoperability, retail-payment modernization, telecommunications continuity, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, cybersecurity coordination, and ASEAN-linked regional integration, but it does not support routing-authority, topology, or readiness classification.</p>
+
+    <h3>Administrative and identity coordination signals</h3>
+    <p>The National Public Service Portal, integrated administrative procedures, online fee-payment functions, reusable stored information and documents, and access to connected business, tax, and insurance datasets signal centralized public-service coordination through a unified national access layer and multi-system administrative interoperability rather than fully fragmented agency-by-agency service environments. VNeID-linked digital-signature registration and use across public-service, treasury, tax, banking, insurance, education, healthcare, and provincial systems signal identity-linked service authorization tied to state-verified credentialing rather than standalone service-account authentication alone. Scheme 06 references to population data, personal identification, and e-KYC signal that administrative digitization is being coordinated through linked identity and population-data infrastructure rather than through disconnected procedural modernization tracks.</p>
+
+    <h3>Financial and payment coordination signals</h3>
+    <p>State Bank of Vietnam direction over NAPAS and the documented national retail-payment infrastructure signal centralized coordination of retail-payment interoperability rather than isolated institution-specific payment rails. The coexistence of cards, accounts, QR codes, e-wallets, mobile money, and fast-transfer services within the NAPAS environment signals a layered retail-payment coordination model rather than a single-channel payment architecture. Public-service fee-payment support through bank and payment-intermediary accounts, together with NAPAS public-service integration, signals institutional linkage between payment systems and administrative-service delivery. Cross-border QR links with Singapore, Thailand, Cambodia, and Lao PDR, together with coordination activity involving China, the Republic of Korea, and Japan, signal regional retail-payment interoperability behavior rather than a purely domestic payment perimeter. The evidence supports signals for retail-payment coordination and interoperability, but does not support a full signal of end-to-end visibility into Vietnam's high-value central-bank settlement architecture.</p>
+
+    <h3>Telecommunications and connectivity signals</h3>
+    <p>5G licensing under CST regulation, spectrum awards to Viettel and VNPT in the B1 and C2 bands, and deployment commitments signal institutionally coordinated telecom modernization rather than purely incremental operator-led upgrade activity. Coverage targets spanning cities, provinces, industrial parks, ports, stations, international airports, research centres, and high-tech zones signal a connectivity-planning model that links telecommunications expansion to industrial, transport, and innovation infrastructure. The documented 2G shutdown effort alongside 5G rollout signals generational network transition management rather than simple parallel network growth. Planning for additional international telecommunications cable lines and strategy targets for new undersea fiber-optic cables signal ongoing external-connectivity diversification. Majority-level IPv6 usage, IPv6 operation across important national internet infrastructure, and national adoption targets signal an active protocol-transition environment with broad deployment across the connectivity stack.</p>
+
+    <h3>Data infrastructure and continuity signals</h3>
+    <p>The coexistence of national data-centre planning, regional multi-purpose data-centre targets, and commercial data-centre buildout signals a mixed public and commercial data-infrastructure environment rather than a purely state-operated hosting model. Planning references to national databases, shared databases, and cloud-computing use across government agencies signal continuity-oriented infrastructure design tied to administrative-system persistence. National cloud-ecosystem use across government agencies signals coordinated cloud adoption within public-sector service delivery. International cable expansion plans, green-standard data-centre planning, and AI-data-centre and hyperscale targets signal nationally coordinated data-infrastructure expansion linked to both continuity and scale objectives. The Tan Thuan CMC facility signals that commercial data-centre infrastructure is part of the documented continuity environment serving government, municipal, domestic, and foreign-facing service demand.</p>
+
+    <h3>Internet governance and registry signals</h3>
+    <p>VNNIC management of the .VN ccTLD and its documented role in IP-address and AS-number procedures signal nationally coordinated registry administration rather than loosely distributed namespace governance. The documented DNS estate with domestic and international server clusters signals a distributed authoritative-resolution model combining domestic placement with external service presence. Use of IPv6, DNSSEC, and Anycast within the VNNIC DNS system signals continuity-oriented DNS operation built around protocol modernization, integrity controls, and geographically distributed query handling. VNIX-linked reporting surfaces for internet statistics, DNS query statistics, internet-resource reporting, and VNIX member and IP-member surfaces signal an institutional internet-governance environment combining operations with measurement and reporting. DNS root-server cluster deployment connected to VNIX signals infrastructure-localization behavior inside the documented internet-governance environment, while remaining bounded by the evidence and without implying broader sovereignty claims.</p>
+
+    <h3>Research-network and scientific-collaboration signals</h3>
+    <p>VinaREN participation across research institutes, universities, hospitals, and information centres signals institutional research-network integration rather than isolated academic connectivity. Telemedicine, network-based learning, remote thesis presentation, and global computing-network participation signal operational knowledge exchange across medical, academic, and scientific functions. Connections to overseas hydro-meteorological data centres in the United States, Canada, and the Asia-Pacific region, together with TEIN-linked development history, signal transnational knowledge-network participation rather than a fully domestic research-network perimeter. The distribution of VinaREN members across 11 provinces and cities signals geographically distributed academic and scientific coordination. Because the evidence is bounded by official search-result surfaces and limited direct extraction from some legacy pages, the research-network signals should be read as institutional-participation signals rather than as a full measure of national scientific capacity.</p>
+
+    <h3>Energy and grid coordination signals</h3>
+    <p>The EVN National Load Dispatch Center's operating role across production, transmission, and distribution signals centralized grid coordination rather than a fragmented dispatch environment. The documented national and regional dispatch structure signals layered operational control linking central and regional power-system coordination. The North-South 500 kV transmission milestone and subsequent unified-dispatch framing signal cross-regional synchronization as a core feature of the documented grid environment. Responsibility for major power plants and high-voltage transmission infrastructure signals that operational continuity is coordinated through a national dispatch layer tied to major grid assets. The evidence supports signals of long-standing institutional continuity in grid operations and transmission coordination, without implying wider claims about industrial or energy primacy.</p>
+
+    <h3>Maritime and logistics signals</h3>
+    <p>Seaport planning that treats ports as strategic national infrastructure signals a logistics environment in which maritime systems are embedded in broader national infrastructure coordination. International gateway-port development for large-tonnage and long-route shipping signals outward-facing maritime connectivity through designated gateway functions rather than purely local coastal operations. References to transport-mode connection, safe and secure coordinated maritime development, and logistics-node 5G coverage signal interaction between transport infrastructure and digital-network expansion. Postal-network backup-capacity planning and regional postal-centre targets signal logistics continuity planning that extends beyond seaports into broader supply-chain support infrastructure. Technology adoption, green-seaport goals, and planning for digitally supported maritime operations signal logistics modernization behavior, but not corridor control or wider geopolitical status.</p>
+
+    <h3>Cybersecurity and resilience signals</h3>
+    <p>The Cybersecurity Emergency Response Center in Hanoi with branches in Ho Chi Minh City and Da Nang, VNCERT/CC, and the National Cyber Security Centre together signal a centralized cyber-coordination environment spanning incident response, supervision, monitoring, and testing functions. The documented reorganization of existing cyber institutions into the Cybersecurity Emergency Response Center signals institutional consolidation within the national cyber-response layer. Nationwide incident coordination, verification, monitoring, database and technical-system operation, and testing responsibilities signal operational cyber-resilience governance rather than advisory policy activity alone. References to supervision of cyberspace and monitoring of key national infrastructure under the Ministry of Public Security and Ministry of National Defence signal structured monitoring functions within the documented cyber-governance environment. ITU index placement in the higher-scoring group supports a signal of formalized cybersecurity governance structures within the evidence base, but does not justify any offensive-capability, superiority, or readiness inference.</p>
+
+    <h3>ASEAN and regional integration signals</h3>
+    <p>Cross-border QR-payment connectivity with Singapore and existing links with Thailand, Cambodia, and Lao PDR signal ASEAN-linked payment interoperability through institutionally coordinated retail-payment interfaces. Coordination activity with China, the Republic of Korea, and Japan signals an outward-facing regional payment-integration pattern within the bounds of the cited materials. VinaREN's international scientific linkages and TEIN-related data-sharing functions signal participation in cross-border knowledge-network environments. International DNS cluster placement and globally distributed points of presence signal internet-infrastructure participation that extends beyond a domestic-only resolution footprint. International cable-expansion planning and gateway-port development signal that external digital and maritime connectivity are both being treated as part of the country's documented integration environment. These signals describe regional and global interface behavior only and do not imply geopolitical alignment motives or strategic corridor status.</p>
+
+    <h3>Constraint boundary signals</h3>
+    <ul class="bullets">
+      <li>The coexistence of planned national data-centre policy and government cloud with mixed-provider commercial buildout including Tan Thuan CMC signals mixed public and commercial data-infrastructure dependency rather than sovereign hyperscale ownership.</li>
+      <li>The accessible source set documents NAPAS retail-payment infrastructure and cross-border QR linkages but does not provide equally direct English-language visibility into the full high-value interbank settlement stack.</li>
+      <li>VNNIC materials document .VN management, address and AS-number governance, DNS infrastructure, and VNIX-linked reporting surfaces, but the current source set does not provide a complete real-time national peering or exchange-membership map, signaling bounded IX-centrality evidence beyond documented VNNIC and VNIX governance.</li>
+      <li>VinaREN evidence is supported by official MOST search-result surfaces, but direct extraction from some legacy MOST and VinaREN pages was unreliable, signaling bounded research-network observability beyond documented institutional participation.</li>
+      <li>Telecommunications materials document licensing, strategy targets, IPv6 adoption, and cable-expansion goals but do not independently provide a complete market-share or nationwide service-quality view across all operators.</li>
+      <li>Cybersecurity materials document VNCERT/CC, NCSC, and the Cybersecurity Emergency Response Center but do not provide equally detailed evidence for all-sector certification, audit, and private-sector resilience structures.</li>
+      <li>Logistics materials document seaport and postal planning but the current source set does not provide a full multimodal throughput and corridor map across maritime, air, rail, and inland logistics systems.</li>
+      <li>More broadly, the evidence signals a coordinated national infrastructure environment with selective ASEAN and global interfaces rather than a sovereign-isolated stack, and it does not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+    </ul>
+
+    <hr class="layer-divider">
+
+    <div class="summary-stmt">
+      <h3>Signals summary statement</h3>
+      <p>Vietnam's evidence-derived signals describe a coordinated national infrastructure jurisdiction combining digital administration, central-bank-directed retail-payment interoperability, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cyber coordination, and ASEAN-linked regional integration. The signals indicate continuity across administrative and identity coordination through the National Public Service Portal and VNeID, NAPAS retail-payment interoperability and cross-border QR linkages, mixed public and commercial data-infrastructure expansion, VNNIC and VNIX registry and DNS governance, Viettel and VNPT 5G transition under CST regulation, VinaREN and TEIN research-network participation, EVN grid coordination, seaport master plan-linked maritime gateway development, VNCERT/CC and National Cyber Security Centre public-sector cyber coordination, and ASEAN-linked cross-border payment and globally distributed DNS participation without assigning readiness tiers, routing authority, or topology placement.</p>
+    </div>
+
+    <p class="status-line">Surface assignment status: <strong>none</strong></p>
+
+    <span class="src">Source: <code>signals.md</code></span>
+  </section>
+
+  <!-- 4. Trust Dimensions -->
+  <section id="trust-dimensions">
+    <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+    <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment eligibility, or infrastructure claims beyond documented anchors.</p>
+
+    <h3>Institutional continuity dimension</h3>
+    <p>The source layers indicate institutional continuity spanning digital administration, central-bank-directed retail-payment interoperability, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cybersecurity coordination, and ASEAN-linked cross-border participation rather than a single centralized national authority operating in isolation. The National Public Service Portal and VNeID indicate continuity across unified service access and identity-linked credentialing. State Bank of Vietnam and NAPAS indicate continuity through central-bank-directed retail-payment interoperability. VNNIC indicates continuity through registry administration, DNS infrastructure, and VNIX-linked reporting. Viettel, VNPT, and CST indicate continuity through licensed telecommunications modernization. National data-centre planning, government cloud, and commercial facilities including Tan Thuan CMC indicate continuity through mixed public and commercial data-infrastructure expansion. VinaREN indicates continuity through institutional research-network participation. EVN's National Load Dispatch Center indicates continuity through national grid coordination. The seaport master plan indicates continuity through maritime gateway development. VNCERT/CC, NCSC, and the Cybersecurity Emergency Response Center indicate continuity through public-sector cyber coordination. Cross-border QR-payment links, VinaREN international connectivity, internationally distributed DNS, and gateway-port planning add a standing ASEAN-linked and regionally distributed institutional-embedding layer.</p>
+
+    <h3>Digital governance and identity dimension</h3>
+    <p>The source layers indicate centralized digital-governance and identity-adjacent continuity carried through coordinated national platforms rather than fragmented agency-by-agency systems. The National Public Service Portal indicates continuity through a unified national service-access surface with reusable records, cross-provincial single-declaration handling, and online fee payment. VNeID indicates continuity through identity-linked digital-signature registration. VNPT SmartCA registration through VNeID level-2 verification indicates continuity through linked credentialing. Use of VNeID-linked signatures across public-service, treasury, tax, banking, insurance, education, healthcare, and provincial systems indicates continuity through broad administrative-application integration. Scheme 06 references to population data, personal identification, and e-KYC indicate continuity through shared administrative identity infrastructure. The documented trust characteristic is continuity of centralized digital-governance and identity-adjacent infrastructure under coordinated state administration.</p>
+
+    <h3>Retail-payment interoperability dimension</h3>
+    <p>The source layers indicate central-bank-directed retail-payment interoperability continuity with regional QR-payment connectivity rather than independent global settlement authority. State Bank of Vietnam direction over NAPAS indicates continuity through standing central-bank coordination. NAPAS indicates continuity through national retail-payment infrastructure across cards, accounts, QR codes, e-wallets, and mobile money. NAPAS 247 indicates continuity through fast-transfer service availability. ATM/POS switching, online card payments, and public-service payment integration indicate continuity through multi-channel retail-payment operations. Cross-border QR connectivity with Singapore through NAPAS-NETS, together with established connections to Thailand, Cambodia, and Lao PDR and coordination activity with China, the Republic of Korea, and Japan, indicates continuity through regional retail-payment interoperability. The documented trust characteristic is continuity of central-bank-directed retail-payment interoperability with bounded regional cross-border payment activity, while the accessible source set does not provide equally direct visibility into the full high-value interbank settlement stack.</p>
+
+    <h3>Data infrastructure and continuity dimension</h3>
+    <p>The source layers indicate mixed public and commercial data-infrastructure continuity rather than a fully self-contained sovereign hyperscale stack. National data-centre policy and regional multi-purpose data-centre planning indicate continuity through coordinated national infrastructure expansion. Government cloud-ecosystem use across agencies indicates continuity through shared public-sector cloud-service delivery. National and shared database references indicate continuity through coordinated administrative data structures. Green-standard data-centre planning, AI Data Centre formation, and Hyperscale Data Centre and Digital Hub planning by 2030 indicate continuity through forward-looking infrastructure-expansion targets. The Tan Thuan CMC Data Centre, alongside additional commercial facility development, indicates continuity through commercial data-infrastructure participation. The documented trust characteristic is continuity of mixed public and commercial data-infrastructure expansion combining national planning with commercial buildout.</p>
+
+    <h3>Registry and DNS governance dimension</h3>
+    <p>The source layers indicate registry and DNS governance continuity carried through VNNIC administration of the .VN ccTLD, distributed DNS infrastructure, and VNIX-linked reporting rather than centralized exchange primacy. VNNIC indicates continuity through stewardship of the .VN ccTLD and policies and procedures for Internet address and AS number management. The national DNS estate with eight server clusters — six domestic clusters in Hanoi, Ho Chi Minh City, and Da Nang and two international clusters with more than 100 points of presence across major cities on five continents — indicates continuity through geographically distributed authoritative infrastructure. IPv6, DNSSEC, and Anycast deployment indicates continuity through protocol modernization, integrity controls, and distributed query handling. VNIX-linked reporting surfaces for internet statistics, DNS query statistics, internet-resource reporting, and VNIX member and IP-member surfaces indicate continuity through operational and measurement integration. DNS root-server cluster deployment connected to VNIX from 2020 indicates infrastructure-localization continuity. The documented trust characteristic is continuity of registry and DNS governance under VNNIC administration with VNIX-linked operational and reporting structures.</p>
+
+    <h3>Telecommunications and connectivity dimension</h3>
+    <p>The source layers indicate state-regulated telecommunications continuity with managed generational transition and external-connectivity diversification rather than a lightly coordinated operator environment. CST indicates continuity through sector regulation. The April 11, 2024 5G licensing, Viettel's B1 band and VNPT's C2 band spectrum awards, and operator deployment commitments indicate continuity through coordinated telecom modernization. Coverage targets across cities, provinces, industrial parks, ports, stations, airports, high-tech parks, and research and innovation centres indicate continuity through telecom planning aligned with infrastructure nodes. The 2G shutdown effort alongside 5G deployment indicates continuity through managed generational network transition. Additional international cable-line planning and undersea cable targets indicate external-connectivity diversification. Majority-level IPv6 use together with continued adoption targets indicates protocol-transition persistence across the connectivity stack. The documented trust characteristic is continuity of state-regulated telecommunications coordination integrated with infrastructure-node-aligned deployment.</p>
+
+    <h3>Research network and scientific collaboration dimension</h3>
+    <p>The source layers indicate research-network and scientific-collaboration continuity carried through VinaREN, TEIN-linked development, and overseas data connectivity rather than a sovereign-scale compute stack. VinaREN indicates continuity through international-scale telemedicine, network-based learning, remote thesis presentation, and global computing-network participation since 2009. Connections to hydro-meteorology data centres in the United States, Canada, and the Asia-Pacific region indicate continuity through transnational knowledge-network participation. VinaREN's 55 member networks across research institutes, universities, hospitals, and major information centres in 11 provinces and cities indicate continuity through geographically distributed academic and scientific coordination. TEIN2-VN project approval in 2006 indicates continuity through international research-network development history. The documented trust characteristic is continuity of institutional research-network participation with transnational scientific linkage, while bounded by the partial accessibility of some legacy MOST and VinaREN materials.</p>
+
+    <h3>Energy and grid coordination dimension</h3>
+    <p>The source layers indicate centralized grid coordination continuity carried through the EVN National Load Dispatch Center rather than fragmented grid governance. The EVN National Load Dispatch Center indicates continuity through its 1994-established role commanding and operating production, transmission, and distribution in the national power system. The May 1994 energization of the North-South 500 kV transmission line indicates continuity through historical unification of the power system across the country. The unified dispatch organisation with national and regional levels indicates continuity through layered operational coordination. Direct responsibility for major power plants and high-voltage transmission infrastructure indicates continuity through institutional control of major grid assets. The documented trust characteristic is continuity of long-standing institutional grid operations and transmission coordination, without implying wider claims about industrial or energy primacy.</p>
+
+    <h3>Maritime logistics and trade-connectivity dimension</h3>
+    <p>The source layers indicate maritime logistics and trade-connectivity continuity carried through the seaport master plan and international gateway-port development rather than broader logistics-authority claims. The seaport master plan indicates continuity through treatment of seaports as strategic national infrastructure. International gateway-port development for large-tonnage and long-route shipping indicates continuity through outward-facing maritime connectivity. Coordinated maritime development for safety, security, transport-mode connection, and green-seaport modernization indicates continuity through integrated maritime planning. Postal-network backup-capacity planning and three to five regional postal centres by 2030 indicate continuity through logistics-network support infrastructure. 5G coverage targets extending to ports and international airports by 2025 indicate continuity through transport-digital integration. The documented trust characteristic is continuity of maritime gateway development and logistics-digitization alignment, while leaving multimodal throughput and inland-corridor detail incomplete.</p>
+
+    <h3>Cybersecurity and digital resilience dimension</h3>
+    <p>The source layers indicate centralized cybersecurity coordination continuity across public-sector incident response, supervision, monitoring, and testing functions rather than dispersed institution-by-institution control. The Cybersecurity Emergency Response Center in Hanoi with branches in Ho Chi Minh City and Da Nang indicates continuity through institutional consolidation from the Vietnam Computer Emergency Response Center and Vietnam Information Security Testing Center. VNCERT/CC indicates continuity through its focal-unit role coordinating emergency support nationwide. The National Cyber Security Centre indicates continuity through cyberspace supervision. Supervision centers monitoring key national infrastructure under the Ministry of Public Security and Ministry of National Defence indicate continuity through structured monitoring of national systems. Incident-coordination, verification, monitoring, database and technical-system operation, and testing responsibilities indicate continuity through operational cyber-resilience governance. ITU 2024 Global Cybersecurity Index higher-scoring placement supports a structural reading of formalized cyber-governance persistence. The documented trust characteristic is continuity of public-sector cybersecurity coordination, while broader all-sector certification, audit, and private-sector resilience structures remain only partially visible.</p>
+
+    <h3>ASEAN and regional integration dimension</h3>
+    <p>The source layers indicate ASEAN-linked and regionally distributed institutional integration continuity carried through cross-border QR-payment connectivity, internationally distributed DNS, transnational research-network linkage, and international gateway-port planning rather than nationally isolated infrastructure administration. NAPAS-NETS cross-border QR payment connectivity with Singapore, together with established connections to Thailand, Cambodia, and Lao PDR and coordination activity with China, the Republic of Korea, and Japan, indicates continuity through regional retail-payment integration. VinaREN international telemedicine and learning activities and TEIN-linked connectivity to overseas hydro-meteorological data centres indicate continuity through transnational research-network linkage. VNNIC's two international DNS clusters and more than 100 points of presence across major cities on five continents indicate continuity through internationally distributed DNS participation. Planned operation of at least two new international undersea fibre-optic cables by 2025 and six by 2030 indicates continuity through external connectivity expansion. The documented trust characteristic is continuity through repeated institutional embedding across ASEAN and regionally distributed digital, scientific, cable, and logistics interfaces.</p>
+
+    <h3>Constraint boundary dimension</h3>
+    <ul class="bullets">
+      <li>The source layers indicate that financial continuity is more visible for retail-payment interoperability than for full high-value central-bank settlement architecture.</li>
+      <li>The source layers indicate that data-infrastructure continuity depends on mixed public and commercial buildout rather than a fully sovereign hyperscale stack.</li>
+      <li>The source layers indicate bounded IX-centrality evidence beyond documented VNNIC and VNIX governance.</li>
+      <li>The source layers indicate that research-network continuity is bounded by partial accessibility of some legacy MOST and VinaREN materials.</li>
+      <li>The source layers indicate that telecommunications continuity is documented through licensing, strategy targets, IPv6 adoption, and cable planning but not a complete market-share or nationwide service-quality picture.</li>
+      <li>The source layers indicate that cybersecurity continuity is stronger for public-sector coordination than for all-sector certification, audit, and private-sector resilience structures.</li>
+      <li>The source layers indicate that logistics continuity is bounded by seaport, postal, and transport-node references rather than a complete multimodal throughput map.</li>
+      <li>The source layers do not document a sovereign semiconductor fabrication stack.</li>
+      <li>The source layers do not document a fully sovereign hyperscale compute stack independent of mixed public and commercial participation.</li>
+      <li>More broadly, the source layers do not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+    </ul>
+
+    <hr class="layer-divider">
+
+    <div class="summary-stmt">
+      <h3>Trust dimensions summary statement</h3>
+      <p>Vietnam is documented as a coordinated national infrastructure jurisdiction combining digital administration, central-bank-directed retail-payment interoperability, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cybersecurity coordination, and ASEAN-linked regional integration. The documented trust dimensions indicate continuity across institutional coordination, digital governance and identity-adjacent infrastructure, central-bank-directed retail-payment interoperability with regional QR-payment connectivity, mixed public and commercial data-infrastructure expansion, VNNIC and VNIX registry and DNS governance, state-regulated telecommunications coordination, VinaREN and TEIN research-network participation, EVN grid coordination, seaport master plan-linked maritime gateway development, public-sector cybersecurity coordination, and ASEAN-linked and regionally distributed institutional embedding without assigning readiness tiers, routing authority, or deployment eligibility.</p>
+    </div>
+
+    <p class="status-line">Surface assignment status: <strong>none</strong></p>
+
+    <span class="src">Source: <code>trust-dimensions.md</code></span>
+  </section>
+
+  <!-- 5. Metadata -->
+  <section id="metadata">
+    <h2><span class="num">5.</span>Metadata</h2>
+
+    <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility.</p>
+
+    <h3>Jurisdiction identity</h3>
+    <div class="meta-table">
+      <div class="mt-row"><div class="mt-k">Country</div><div class="mt-v">Vietnam</div></div>
+      <div class="mt-row"><div class="mt-k">Region</div><div class="mt-v">Southeast Asian Maritime-Facing Coordinated Infrastructure Environment</div></div>
+      <div class="mt-row"><div class="mt-k">Corridor Alignment</div><div class="mt-v">Digital Governance and Procedural Digitization Framework · Central-Bank Retail Payment Modernization Framework · Telecommunications and Connectivity Framework · Data Infrastructure and Digital Continuity Framework · Registry and DNS Governance Framework · Research Network and Scientific Collaboration Framework · Energy Grid and Industrial Coordination Framework · Maritime Logistics and Trade Connectivity Framework · Cybersecurity and Digital Resilience Framework · ASEAN and Regional Integration Framework</div></div>
+      <div class="mt-row"><div class="mt-k">Primary Coordination Cities</div><div class="mt-v">Hanoi · Ho Chi Minh City · Da Nang</div></div>
+    </div>
+
+    <h3>Infrastructure role classification</h3>
+    <ul class="bullets">
+      <li>sovereign nation-state</li>
+      <li>ASEAN-connected jurisdiction</li>
+      <li>export-oriented infrastructure environment</li>
+      <li>mixed public and commercial infrastructure environment</li>
+      <li>digitally coordinated administrative and service environment</li>
+      <li>regionally interoperable infrastructure environment</li>
+    </ul>
+
+    <h3>Digital governance and identity classification</h3>
+    <ul class="bullets">
+      <li>National Public Service Portal (<code>www.dichvucong.gov.vn</code>)</li>
+      <li>VNeID application (Ministry of Public Security)</li>
+      <li>VNPT SmartCA digital-signature services</li>
+      <li>Scheme 06 population-data and e-KYC framework</li>
+      <li>cross-provincial single-declaration administrative handling</li>
+      <li>integrated business registration, tax, and insurance database access</li>
+    </ul>
+
+    <h3>Financial infrastructure and payment classification</h3>
+    <ul class="bullets">
+      <li>State Bank of Vietnam (SBV) coordination authority</li>
+      <li>NAPAS national retail-payment infrastructure</li>
+      <li>NAPAS 247 fast-transfer services</li>
+      <li>ATM/POS switching and online card payments</li>
+      <li>QR, e-wallet, and mobile-money interoperability</li>
+      <li>public-service payment integration through banks and payment intermediaries</li>
+      <li>NAPAS-NETS cross-border QR-payment connectivity with Singapore</li>
+      <li>established QR-payment links with Thailand, Cambodia, and Lao PDR</li>
+    </ul>
+
+    <h3>Data infrastructure and digital continuity classification</h3>
+    <ul class="bullets">
+      <li>national data-centre policy and regional multi-purpose data-centre planning</li>
+      <li>government cloud-ecosystem use across agencies</li>
+      <li>national and shared database structures</li>
+      <li>green-standard data-centre planning</li>
+      <li>AI Data Centre and Hyperscale Data Centre / Digital Hub planning</li>
+      <li>international undersea fibre-optic cable expansion targets</li>
+      <li>Tan Thuan CMC Data Centre and additional commercial facility buildout</li>
+      <li>mixed public and commercial hosting environments</li>
+    </ul>
+
+    <h3>Internet exchange and registry governance classification</h3>
+    <ul class="bullets">
+      <li>VNNIC (Vietnam Internet Network Information Center)</li>
+      <li>.VN country-code top-level domain administration</li>
+      <li>VNNIC national DNS estate (IPv6 · DNSSEC · Anycast)</li>
+      <li>eight DNS server clusters (six domestic · two international)</li>
+      <li>VNIX exchange-linked reporting surfaces</li>
+      <li>VNIX-connected DNS root-server clusters</li>
+      <li>Internet address and AS number management procedures</li>
+    </ul>
+
+    <h3>Telecommunications and connectivity classification</h3>
+    <ul class="bullets">
+      <li>CST sector-regulation authority</li>
+      <li>Viettel and VNPT 5G licensing (B1 and C2 spectrum bands)</li>
+      <li>5G coverage targets across cities, provinces, industrial parks, ports, stations, and airports</li>
+      <li>2G shutdown transition activity</li>
+      <li>1 Gbps minimum-speed targets for high-tech parks, IT parks, and R&amp;D centres</li>
+      <li>international telecommunications cable expansion planning</li>
+      <li>majority-level IPv6 deployment across national infrastructure</li>
+    </ul>
+
+    <h3>Research network and scientific infrastructure classification</h3>
+    <ul class="bullets">
+      <li>VinaREN national research and education network</li>
+      <li>TEIN-linked development history (TEIN2-VN approved 2006)</li>
+      <li>55 VinaREN member networks across 11 provinces and cities</li>
+      <li>overseas hydro-meteorological data connectivity (US · Canada · Asia-Pacific)</li>
+      <li>international telemedicine, distance learning, and computing-network participation</li>
+    </ul>
+
+    <h3>Energy and grid coordination classification</h3>
+    <ul class="bullets">
+      <li>EVN National Load Dispatch Center</li>
+      <li>national and regional dispatch coordination</li>
+      <li>North-South 500 kV transmission backbone</li>
+      <li>major power plant and high-voltage transmission infrastructure responsibility</li>
+      <li>long-standing institutional grid-operations continuity</li>
+    </ul>
+
+    <h3>Logistics and maritime connectivity classification</h3>
+    <ul class="bullets">
+      <li>seaport master plan and strategic national port infrastructure</li>
+      <li>international gateway-port development for large-tonnage long-route shipping</li>
+      <li>fourth-industrial-revolution technology adoption and green-seaport planning</li>
+      <li>postal-network backup-capacity planning</li>
+      <li>three to five regional postal centres by 2030</li>
+      <li>logistics-node 5G coverage targets at ports and international airports</li>
+    </ul>
+
+    <h3>Cybersecurity and digital resilience classification</h3>
+    <ul class="bullets">
+      <li>VNCERT/CC (focal coordination unit for emergency support)</li>
+      <li>National Cyber Security Centre (NCSC)</li>
+      <li>Cybersecurity Emergency Response Center (Hanoi · Ho Chi Minh City · Da Nang)</li>
+      <li>incident-coordination, verification, monitoring, and testing functions</li>
+      <li>cyberspace supervision under the Ministry of Public Security and Ministry of National Defence</li>
+      <li>ITU 2024 Global Cybersecurity Index higher-scoring placement</li>
+    </ul>
+
+    <h3>ASEAN and regional integration classification</h3>
+    <ul class="bullets">
+      <li>NAPAS-NETS cross-border QR-payment connectivity</li>
+      <li>established cross-border QR links with Thailand, Cambodia, and Lao PDR</li>
+      <li>coordination activity with China, the Republic of Korea, and Japan</li>
+      <li>VinaREN TEIN-linked international research-network connectivity</li>
+      <li>internationally distributed VNNIC DNS presence (5 continents)</li>
+      <li>planned international undersea fibre-optic cable expansion</li>
+      <li>international gateway-port maritime integration</li>
+    </ul>
+
+    <h3>Constraint classification</h3>
+    <ul class="bullets">
+      <li>bounded visibility into full high-value interbank settlement architecture beyond documented retail-payment layers</li>
+      <li>mixed public and commercial data-infrastructure dependency structures</li>
+      <li>bounded IX-centrality evidence beyond documented VNNIC and VNIX governance</li>
+      <li>partial accessibility of legacy MOST and VinaREN materials affecting research-network observability</li>
+      <li>bounded nationwide telecom-market and operator service-quality visibility</li>
+      <li>bounded all-sector cybersecurity visibility beyond documented public-sector coordination</li>
+      <li>bounded multimodal logistics visibility beyond documented seaport, postal, and transport-node references</li>
+      <li>absence of sovereign semiconductor fabrication stack evidence</li>
+      <li>absence of fully sovereign hyperscale compute stack evidence</li>
+    </ul>
+
+    <hr class="layer-divider">
+
+    <div class="summary-stmt">
+      <h3>Metadata summary statement</h3>
+      <p>Vietnam appears in the metadata layer as a coordinated national infrastructure jurisdiction combining digital administration, central-bank-directed retail-payment interoperability, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cybersecurity coordination, and ASEAN-linked regional integration.</p>
+    </div>
+
+    <p class="status-line">Surface assignment status: <strong>none</strong></p>
+
+    <span class="src">Source: <code>metadata.md</code></span>
+  </section>
+
+  <!-- 6. Profile -->
+  <section id="profile">
+    <h2><span class="num">6.</span>Profile</h2>
+
+    <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+    <h3>Jurisdiction overview</h3>
+    <p>Vietnam currently reads within Atlas as a coordinated national infrastructure environment combining digital administration, retail-payment interoperability, telecommunications modernization, data-infrastructure expansion, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, and public-sector cyber coordination, situated within a maritime-facing and export-connected setting. The current package places Vietnam inside National Public Service Portal-, VNeID-, and Scheme 06-linked digital-governance and procedural-digitization continuity, State Bank of Vietnam- and NAPAS-linked retail-payment interoperability and cross-border QR-payment connectivity, planned national data-centre and government cloud infrastructure with mixed-provider hosting through commercial facilities including Tan Thuan CMC, VNNIC- and VNIX-linked registry and DNS governance, Viettel- and VNPT-linked 5G transition under CST regulation, VinaREN- and TEIN-linked research-network participation, EVN National Load Dispatch Center-linked grid coordination, seaport master plan-linked maritime gateway development, VNCERT/CC- and National Cyber Security Centre-linked public-sector cyber coordination, and ASEAN-linked cross-border payment and globally distributed DNS participation. These conditions support a structural characterization centered on nationally coordinated, regionally connected, maritime-facing institutional continuity rather than monolithically centralized governance, without assigning readiness tiers, routing authority, or comparative status.</p>
+
+    <h3>Digital governance and identity environment</h3>
+    <p>Vietnam's digital governance and identity environment is characterized in the current package by the National Public Service Portal, VNeID, VNPT SmartCA digital-signature services registered through VNeID level-2 verification, Scheme 06 population-data and e-KYC infrastructure, cross-provincial single-declaration handling, reusable records, and connected business, tax, and insurance database access. The current layers show the National Public Service Portal preserving unified national service-access continuity, VNeID preserving identity-linked digital-signature continuity tied to Ministry of Public Security verification, and Scheme 06 preserving population-data and e-KYC coordination attached to the national digital-transformation framework for 2022-2025 with a vision to 2030. They also preserve digital-signature use across treasury, tax, banking, insurance, education, healthcare, and provincial systems as the integrated administrative-application surface. These conditions support a structural characterization centered on digital-governance and procedural-digitization continuity carried through unified service access, identity-linked credentialing, and shared population-data infrastructure.</p>
+
+    <h3>Retail-payment interoperability environment</h3>
+    <p>Vietnam's retail-payment interoperability environment is characterized in the current package by State Bank of Vietnam direction over NAPAS, NAPAS national retail-payment infrastructure across cards, accounts, QR codes, e-wallets, and mobile money, NAPAS 247 fast-transfer services, ATM/POS switching and online card payments, public-service payment integration through banks and payment intermediaries, NAPAS-NETS cross-border QR-payment connectivity with Singapore, and established QR-payment connections with Thailand, Cambodia, and Lao PDR. The current layers show SBV preserving central-bank coordination over NAPAS, NAPAS preserving the national retail-payment switching surface, and NAPAS 247 preserving fast-transfer continuity. They also preserve cross-border QR-payment connectivity as the documented ASEAN-linked regional interface attached to the domestic retail-payment environment. These conditions support a structural characterization centered on central-bank-directed retail-payment interoperability and regional QR-payment integration, while remaining bounded by stronger visibility into retail-payment layers than into the full high-value settlement environment.</p>
+
+    <h3>Data infrastructure and continuity environment</h3>
+    <p>Vietnam's data infrastructure and continuity environment is characterized in the current package by national data-centre policy, regional multi-purpose data-centre planning, government cloud-ecosystem use across agencies, national and shared database structures, green-standard data-centre planning, AI Data Centre formation, Hyperscale Data Centre and Digital Hub planning by 2030, international undersea fibre-optic cable expansion targets, the Tan Thuan CMC Data Centre, and additional commercial facility buildout. The current layers show national data-centre policy preserving coordinated infrastructure expansion, government cloud preserving public-sector service delivery continuity, and Tan Thuan CMC preserving documented commercial data-centre participation. They also preserve mixed public and commercial hosting as the documented hosting condition combining national planning with commercial buildout. These conditions support a structural characterization centered on mixed public and commercial data-infrastructure continuity, while remaining bounded by incomplete visibility into the full national compute inventory.</p>
+
+    <h3>Registry and DNS governance environment</h3>
+    <p>Vietnam's registry and DNS governance environment is characterized in the current package by VNNIC management of the .VN ccTLD, VNNIC procedures for Internet address and AS number management, the national DNS estate with eight server clusters including six domestic and two international, IPv6, DNSSEC, and Anycast deployment, VNIX-linked reporting surfaces, and DNS root-server cluster deployment connected to VNIX from 2020. The current layers show VNNIC preserving stewardship of the .VN registry, the national DNS estate preserving distributed authoritative-resolution operations, and VNIX-linked reporting preserving operational and measurement continuity. These conditions support a structural characterization centered on registry and DNS governance continuity through VNNIC administration with VNIX-linked reporting, rather than broader global IX centrality.</p>
+
+    <h3>Telecommunications and connectivity environment</h3>
+    <p>Vietnam's telecommunications and connectivity environment is characterized in the current package by CST sector regulation, Viettel and VNPT 5G licensing in the B1 and C2 spectrum bands, 5G coverage targets spanning cities, provinces, industrial parks, ports, stations, airports, high-tech parks, and research and innovation centres, 2G shutdown transition activity, minimum 1 Gbps targets for high-tech parks, concentrated IT parks, and R&amp;D centres by 2025, international telecommunications cable expansion planning, and majority-level IPv6 deployment. The current layers show CST preserving sector-regulation continuity, Viettel and VNPT preserving licensed operator-deployment continuity, and 5G coverage targets preserving infrastructure-node alignment. They also preserve the 2G shutdown effort alongside 5G rollout as managed generational network transition. These conditions support a structural characterization centered on state-regulated telecommunications modernization with managed transition and external-connectivity diversification.</p>
+
+    <h3>Research network and scientific collaboration environment</h3>
+    <p>Vietnam's research network and scientific collaboration environment is characterized in the current package by VinaREN, TEIN-linked development history, VinaREN's 55 member networks across 11 provinces and cities, international-scale telemedicine, network-based learning, remote thesis presentation, and global computing-network participation, and connections to hydro-meteorology data centres in the United States, Canada, and the Asia-Pacific region. The current layers show VinaREN preserving Vietnam's national research-and-education network role, TEIN preserving international research-network linkage, and overseas data connectivity preserving transnational scientific participation. These conditions support a structural characterization centered on institutional research-network participation with transnational scientific linkage, while remaining bounded by partial accessibility of some legacy MOST and VinaREN materials.</p>
+
+    <h3>Energy and grid coordination environment</h3>
+    <p>Vietnam's energy and grid coordination environment is characterized in the current package by the EVN National Load Dispatch Center, national and regional dispatch coordination, the North-South 500 kV transmission backbone, and direct responsibility for major power plants and high-voltage transmission infrastructure. The current layers show EVN's National Load Dispatch Center preserving centralized grid-operations continuity since 1994, the unified dispatch organisation preserving layered national and regional coordination, and the North-South 500 kV milestone preserving cross-regional synchronization. These conditions support a structural characterization centered on long-standing institutional grid coordination and transmission-system continuity.</p>
+
+    <h3>Maritime logistics and trade-connectivity environment</h3>
+    <p>Vietnam's maritime logistics and trade-connectivity environment is characterized in the current package by the seaport master plan, international gateway-port development, coordinated maritime infrastructure for safety, security, and transport-mode connection, fourth-industrial-revolution technology adoption and green-seaport planning, postal-network backup-capacity planning, three to five regional postal centres by 2030, and logistics-node 5G coverage at ports and international airports. The current layers show the seaport master plan preserving treatment of seaports as strategic national infrastructure, international gateway-port development preserving outward-facing maritime connectivity, and postal-network backup planning preserving logistics continuity beyond seaport operations alone. These conditions support a structural characterization centered on maritime gateway development, logistics-digitization alignment, and transport-digital integration.</p>
+
+    <h3>Cybersecurity and digital resilience environment</h3>
+    <p>Vietnam's cybersecurity and digital resilience environment is characterized in the current package by VNCERT/CC, the National Cyber Security Centre, the Cybersecurity Emergency Response Center in Hanoi with branches in Ho Chi Minh City and Da Nang, incident-coordination, verification, monitoring, database and technical-system operation, and testing functions, cyberspace supervision under the Ministry of Public Security and Ministry of National Defence, and ITU 2024 Global Cybersecurity Index higher-scoring placement. The current layers show VNCERT/CC preserving the focal coordination role for nationwide emergency support, the National Cyber Security Centre preserving cyberspace supervision, and the Cybersecurity Emergency Response Center preserving institutional consolidation of cyber-response functions. These conditions support a structural characterization centered on centralized public-sector cybersecurity coordination with multi-function operational oversight, while remaining bounded by stronger public-sector visibility than all-sector visibility.</p>
+
+    <h3>ASEAN and regional integration environment</h3>
+    <p>Vietnam's ASEAN and regional integration environment is characterized in the current package by NAPAS-NETS cross-border QR-payment connectivity with Singapore, established QR-payment links with Thailand, Cambodia, and Lao PDR, coordination activity with China, the Republic of Korea, and Japan, VinaREN TEIN-linked international research-network connectivity, VNNIC's internationally distributed DNS presence across major cities on five continents, planned international undersea fibre-optic cable expansion, and international gateway-port maritime integration. The current layers show Vietnam attached to standing cross-border institutional systems across regional retail-payment integration, transnational research-network linkage, internationally distributed DNS participation, external connectivity expansion, and maritime external interfaces rather than operating in isolation. These conditions support a structural characterization centered on ASEAN-linked and regionally distributed institutional integration carried through documented cross-border interfaces.</p>
+
+    <h3>Structural constraints</h3>
+    <p>The current Vietnam profile also carries clear structural constraints. The current package preserves bounded visibility into the full high-value interbank settlement architecture beyond documented retail-payment layers. It preserves mixed public and commercial data-infrastructure dependency structures rather than sovereign hyperscale ownership. It preserves bounded IX-centrality evidence beyond documented VNNIC and VNIX governance. It preserves bounded research-network observability shaped by partial accessibility of some legacy MOST and VinaREN materials. It preserves bounded nationwide telecom-market and operator service-quality visibility. It preserves bounded all-sector cybersecurity visibility beyond documented public-sector coordination. It preserves bounded multimodal logistics visibility beyond documented seaport, postal, and transport-node references. It preserves the absence of sovereign semiconductor fabrication stack evidence and the absence of a fully sovereign hyperscale compute stack independent of mixed public and commercial participation. These constraints describe boundary conditions reflecting Vietnam's coordinated national infrastructure environment with selective ASEAN and global interfaces, where continuity derives from administrative interoperability, retail-payment modernization, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics, cybersecurity coordination, and ASEAN-linked regional integration rather than sovereign-scale compute autonomy.</p>
+
+    <hr class="layer-divider">
+
+    <div class="summary-stmt">
+      <h3>Profile summary statement</h3>
+      <p>Vietnam appears in the profile layer as a coordinated national infrastructure jurisdiction combining digital administration, central-bank-directed retail-payment interoperability, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cybersecurity coordination, and ASEAN-linked regional integration.</p>
+    </div>
+
+    <span class="src">Source: <code>profile.md</code></span>
+  </section>
+
+  <!-- 7. Builder Mode -->
+  <section id="builder-mode">
+    <h2><span class="num">7.</span>Builder Mode</h2>
+
+    <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Vietnam profile into builder-facing interpretation. This file provides structural interpretation only. It does not assign routing authority, readiness tiers, Atlas surfaces, Atlas topology authority, jurisdiction rankings, or deployment suitability.</p>
+
+    <h3>Institutional continuity environment</h3>
+    <p>For builder interpretation, Vietnam reads as a coordinated institutional continuity environment anchored in unified service access, identity-linked credentialing, central-bank-directed retail-payment infrastructure, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, and public-sector cybersecurity coordination rather than a monolithically centralized national operating authority. The current normalized layers show institutional continuity carried through the National Public Service Portal, VNeID, VNPT SmartCA, Scheme 06, State Bank of Vietnam and NAPAS, national data-centre policy with government cloud and Tan Thuan CMC, VNNIC and VNIX, Viettel and VNPT under CST regulation, VinaREN with TEIN linkage, EVN National Load Dispatch Center, the seaport master plan, VNCERT/CC, the National Cyber Security Centre, the Cybersecurity Emergency Response Center, and ASEAN-linked cross-border QR-payment and globally distributed DNS participation. These conditions support a builder-facing reading centered on institutional continuity carried through administrative, identity, payment, telecom, data, registry, scientific-network, grid, logistics, and cybersecurity coordination systems under ASEAN-linked and regionally distributed institutional participation.</p>
+
+    <h3>Digital governance and identity environment</h3>
+    <p>For builder interpretation, Vietnam reads as a digital-governance and procedural-digitization environment anchored in the National Public Service Portal, VNeID, VNPT SmartCA, Scheme 06, and integrated administrative-database access. The current normalized layers show the National Public Service Portal preserving unified service access, VNeID preserving identity-linked credentialing tied to Ministry of Public Security verification, and Scheme 06 preserving population-data and e-KYC coordination attached to the national digital-transformation framework. They also preserve VNPT SmartCA registration through VNeID level-2 verification and digital-signature use across treasury, tax, banking, insurance, education, healthcare, and provincial systems as the documented integrated administrative-application surface. These conditions support a builder-facing reading centered on digital-governance and procedural-digitization continuity carried through unified service access, identity-linked credentialing, and shared population-data infrastructure.</p>
+
+    <h3>Retail-payment interoperability environment</h3>
+    <p>For builder interpretation, Vietnam reads as a central-bank-directed retail-payment interoperability environment anchored in State Bank of Vietnam direction over NAPAS, NAPAS national retail-payment infrastructure, NAPAS 247 fast-transfer services, ATM/POS switching, online card payments, QR, e-wallet, mobile-money interoperability, public-service payment integration, and NAPAS-NETS cross-border QR-payment connectivity. The current normalized layers show SBV preserving central-bank coordination, NAPAS preserving the national retail-payment switching surface, and NAPAS 247 preserving fast-transfer continuity. They also preserve cross-border QR-payment connectivity with Singapore and established connections to Thailand, Cambodia, and Lao PDR as the documented ASEAN-linked regional interface. These conditions support a builder-facing reading centered on retail-payment interoperability continuity carried through central-bank-directed switching, multi-channel payment handling, public-service payment integration, and ASEAN-linked cross-border QR-payment activity, while remaining bounded by stronger visibility into retail-payment layers than into the full high-value settlement environment.</p>
+
+    <h3>Data infrastructure and continuity environment</h3>
+    <p>For builder interpretation, Vietnam reads as a mixed public and commercial data-infrastructure environment anchored in national data-centre policy, regional multi-purpose data-centre planning, government cloud-ecosystem use, national and shared database structures, green-standard data-centre planning, AI Data Centre and Hyperscale Data Centre planning, international undersea cable expansion, Tan Thuan CMC, and additional commercial facility buildout. The current normalized layers show national data-centre policy preserving coordinated infrastructure expansion, government cloud preserving public-sector service delivery continuity, and Tan Thuan CMC preserving commercial data-centre participation. They also preserve mixed public and commercial hosting as the documented hosting condition combining national planning with commercial buildout rather than a fully self-contained sovereign cloud stack. These conditions support a builder-facing reading centered on mixed public and commercial data-infrastructure continuity, while remaining bounded by incomplete visibility into the full national compute inventory.</p>
+
+    <h3>Registry and DNS governance environment</h3>
+    <p>For builder interpretation, Vietnam reads as a registry and DNS governance environment anchored in VNNIC management of the .VN ccTLD, the national DNS estate with eight clusters across IPv6, DNSSEC, and Anycast deployment, VNIX-linked reporting surfaces, and DNS root-server cluster deployment connected to VNIX from 2020. The current normalized layers show VNNIC preserving stewardship of the .VN registry, the national DNS estate preserving distributed authoritative-resolution operations, and VNIX-linked reporting preserving operational and measurement continuity rather than centralized exchange primacy. These conditions support a builder-facing reading centered on registry and DNS governance continuity through VNNIC administration with VNIX-linked operational and reporting structures, while remaining bounded by incomplete visibility into real-time peering and broader IX-centrality conditions.</p>
+
+    <h3>Telecommunications and connectivity environment</h3>
+    <p>For builder interpretation, Vietnam reads as a state-regulated telecommunications and connectivity environment anchored in CST sector regulation, Viettel and VNPT 5G licensing in the B1 and C2 bands, 5G coverage targets across cities, provinces, industrial parks, ports, stations, airports, and R&amp;D centres, 2G shutdown transition, 1 Gbps minimum-speed targets, international cable expansion planning, and majority-level IPv6 deployment. The current normalized layers show CST preserving sector-regulation continuity, Viettel and VNPT preserving licensed operator-deployment continuity, and 5G coverage targets preserving infrastructure-node alignment. They also preserve the 2G shutdown effort alongside 5G rollout as managed generational transition and IPv6 deployment as protocol-transition continuity. These conditions support a builder-facing reading centered on state-regulated telecommunications modernization combining 5G transition, IPv6 continuity, external-connectivity diversification, and infrastructure-node alignment.</p>
+
+    <h3>Research network and scientific collaboration environment</h3>
+    <p>For builder interpretation, Vietnam reads as a research-network and scientific-collaboration environment anchored in VinaREN, TEIN-linked development history, VinaREN's 55 member networks across 11 provinces and cities, international-scale telemedicine, network-based learning, remote thesis presentation, global computing-network participation, and overseas hydro-meteorological data connectivity. The current normalized layers show VinaREN preserving Vietnam's national research-and-education network role, TEIN preserving documented international research-network linkage, and overseas data connectivity preserving transnational scientific participation. These conditions support a builder-facing reading centered on institutional research-network participation and transnational scientific linkage, while remaining bounded by partial accessibility of some legacy MOST and VinaREN materials.</p>
+
+    <h3>Energy and grid coordination environment</h3>
+    <p>For builder interpretation, Vietnam reads as a centralized grid coordination environment anchored in the EVN National Load Dispatch Center, national and regional dispatch coordination, the North-South 500 kV transmission backbone, and direct responsibility for major power plants and high-voltage transmission infrastructure. The current normalized layers show EVN's National Load Dispatch Center preserving centralized grid-operations continuity since 1994, the unified dispatch organisation preserving layered national and regional coordination, and the North-South 500 kV milestone preserving cross-regional synchronization. These conditions support a builder-facing reading centered on long-standing institutional grid coordination and transmission-system continuity.</p>
+
+    <h3>Maritime logistics and trade-connectivity environment</h3>
+    <p>For builder interpretation, Vietnam reads as a maritime logistics and trade-connectivity environment anchored in the seaport master plan, international gateway-port development, coordinated maritime infrastructure, green-seaport planning, postal-network backup-capacity planning, three to five regional postal centres by 2030, and logistics-node 5G coverage. The current normalized layers show the seaport master plan preserving treatment of seaports as strategic national infrastructure, international gateway-port development preserving outward-facing maritime connectivity, and postal-network backup planning preserving logistics continuity beyond seaport operations alone. These conditions support a builder-facing reading centered on maritime gateway development, logistics-digitization alignment, and transport-digital integration.</p>
+
+    <h3>Cybersecurity and digital resilience environment</h3>
+    <p>For builder interpretation, Vietnam reads as a centralized public-sector cybersecurity coordination environment anchored in VNCERT/CC, the National Cyber Security Centre, the Cybersecurity Emergency Response Center in Hanoi with branches in Ho Chi Minh City and Da Nang, incident-coordination, verification, monitoring, database and technical-system operation, and testing functions, and cyberspace supervision under the Ministry of Public Security and Ministry of National Defence. The current normalized layers show VNCERT/CC preserving the focal coordination role for nationwide emergency support, the National Cyber Security Centre preserving cyberspace supervision, and the Cybersecurity Emergency Response Center preserving institutional consolidation of cyber-response functions. These conditions support a builder-facing reading centered on centralized public-sector cybersecurity coordination with multi-function operational oversight rather than centralized operational cyber-command authority.</p>
+
+    <h3>ASEAN and regional integration environment</h3>
+    <p>For builder interpretation, Vietnam reads as an ASEAN-linked and regionally distributed institutional integration environment anchored in NAPAS-NETS cross-border QR-payment connectivity, established QR-payment links with Thailand, Cambodia, and Lao PDR, coordination activity with China, the Republic of Korea, and Japan, VinaREN TEIN-linked international research-network connectivity, VNNIC's internationally distributed DNS presence, planned international undersea fibre-optic cable expansion, and international gateway-port maritime integration. The current normalized layers show Vietnam attached to standing cross-border institutional systems across regional retail-payment integration, transnational research-network linkage, internationally distributed DNS participation, external connectivity expansion, and maritime external interfaces rather than operating in isolation. These conditions support a builder-facing reading centered on ASEAN-linked and regionally distributed institutional integration carried through documented cross-border interfaces.</p>
+
+    <h3>Structural constraints for builders</h3>
+    <p>For builder interpretation, Vietnam reads as an environment bounded by mixed public and commercial data-infrastructure dependency structures, bounded visibility into the full high-value interbank settlement architecture, bounded IX-centrality evidence beyond documented VNNIC and VNIX governance, bounded research-network observability shaped by partial legacy-source accessibility, bounded nationwide telecom-market and operator service-quality visibility, bounded all-sector cybersecurity visibility beyond documented public-sector coordination, and bounded multimodal logistics visibility beyond documented seaport, postal, and transport-node references. The current normalized layers preserve the absence of sovereign semiconductor fabrication stack evidence and the absence of a fully sovereign hyperscale compute stack independent of mixed public and commercial participation. These conditions support a builder-facing reading centered on a coordinated national infrastructure environment with selective ASEAN and global interfaces, where continuity derives from administrative interoperability, retail-payment modernization, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics, cybersecurity coordination, and ASEAN-linked regional integration rather than sovereign-scale compute autonomy.</p>
+
+    <hr class="layer-divider">
+
+    <div class="summary-stmt">
+      <h3>Builder mode summary statement</h3>
+      <p>Vietnam appears in builder mode as a coordinated national infrastructure jurisdiction combining digital administration, central-bank-directed retail-payment interoperability, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cybersecurity coordination, and ASEAN-linked regional integration.</p>
+    </div>
+
+    <span class="src">Source: <code>builder-mode.md</code></span>
+  </section>
+
+  <!-- 8. Change Log -->
+  <section id="change-log">
+    <h2><span class="num">8.</span>Change Log</h2>
+
+    <h3>Initial package creation</h3>
+    <p>The Vietnam jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+    <h3>Evidence layer construction</h3>
+    <p>The change-log records that <code>evidence.md</code> established the National Public Service Portal at <code>www.dichvucong.gov.vn</code>, VNeID application maintained by the Ministry of Public Security, VNPT SmartCA digital-signature services registered through VNeID level-2 verification, Scheme 06 population-data and e-KYC framework, integrated administrative procedures with cross-provincial single-declaration handling, State Bank of Vietnam direction over NAPAS, NAPAS national retail-payment infrastructure across cards, accounts, QR codes, e-wallets, and mobile money, NAPAS 247 fast-transfer services, ATM/POS switching, online card payments, public-service payment integration, NAPAS-NETS cross-border QR-payment connectivity with Singapore, established QR-payment links with Thailand, Cambodia, and Lao PDR, coordination activity with China, the Republic of Korea, and Japan, national data-centre policy and regional multi-purpose data-centre planning, government cloud-ecosystem use, green-standard data-centre planning, AI Data Centre formation and Hyperscale Data Centre and Digital Hub planning, the Tan Thuan CMC Data Centre, additional commercial facility buildout, VNNIC management of the .VN ccTLD, the VNNIC DNS estate with eight clusters across IPv6, DNSSEC, and Anycast deployment, VNIX-linked reporting surfaces, DNS root-server cluster deployment connected to VNIX from 2020, CST sector regulation, Viettel and VNPT 5G licensing in the B1 and C2 bands, 5G coverage targets, 2G shutdown transition, 1 Gbps minimum-speed targets, international cable expansion planning, majority-level IPv6 deployment, VinaREN national research and education network, TEIN-linked development history, VinaREN's 55 member networks across 11 provinces and cities, overseas hydro-meteorological data connectivity, the EVN National Load Dispatch Center, the North-South 500 kV transmission backbone, the seaport master plan, international gateway-port development, postal-network backup-capacity planning, three to five regional postal centres by 2030, VNCERT/CC, the National Cyber Security Centre, the Cybersecurity Emergency Response Center in Hanoi with branches in Ho Chi Minh City and Da Nang, and ASEAN-linked cross-border QR-payment and globally distributed DNS participation.</p>
+
+    <h3>Signals layer derivation</h3>
+    <p>The change-log records that <code>signals.md</code> derived administrative and identity coordination signals, financial and payment coordination signals, telecommunications and connectivity signals, data infrastructure and continuity signals, internet governance and registry signals, research-network and scientific-collaboration signals, energy and grid coordination signals, maritime and logistics signals, cybersecurity and resilience signals, ASEAN and regional integration signals, cross-system structural pattern signals, and constraint-boundary signals preserving bounded visibility into the full high-value settlement architecture, mixed public and commercial data-infrastructure dependency, bounded IX-centrality evidence beyond documented VNNIC and VNIX governance, partial accessibility of legacy MOST and VinaREN materials, bounded nationwide telecom-market visibility, bounded all-sector cybersecurity visibility beyond public-sector coordination, bounded multimodal logistics visibility, and the absence of sovereign hyperscale compute and sovereign semiconductor fabrication evidence.</p>
+
+    <h3>Trust-dimensions layer construction</h3>
+    <p>The change-log records that <code>trust-dimensions.md</code> established institutional continuity across digital administration, central-bank-directed retail-payment interoperability, telecommunications modernization, mixed public and commercial data infrastructure, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cybersecurity coordination, and ASEAN-linked cross-border participation; digital-governance and identity continuity through unified service access and identity-linked credentialing; retail-payment interoperability continuity with regional QR-payment connectivity; data infrastructure continuity through mixed public and commercial buildout; registry and DNS governance continuity through VNNIC and VNIX-linked operations; state-regulated telecommunications continuity with managed generational transition and external-connectivity diversification; research-network and scientific-collaboration continuity through VinaREN and TEIN-linked development; energy and grid coordination continuity through the EVN National Load Dispatch Center; maritime logistics and trade-connectivity continuity through the seaport master plan and gateway-port development; cybersecurity and digital-resilience continuity through public-sector coordination; ASEAN and regional integration continuity through documented cross-border interfaces; and constraint boundaries preserving bounded settlement, IX-centrality, research-network, telecom-market, all-sector cybersecurity, and multimodal logistics visibility along with the absence of sovereign semiconductor and sovereign hyperscale compute evidence.</p>
+
+    <h3>Metadata layer classification</h3>
+    <p>The change-log records that <code>metadata.md</code> classified Vietnam as a sovereign nation-state, ASEAN-connected jurisdiction, export-oriented infrastructure environment, mixed public and commercial infrastructure environment, digitally coordinated administrative and service environment, and regionally interoperable infrastructure environment, with documented characteristics across administrative coordination, identity and service integration, payment and financial coordination, telecommunications, data infrastructure, internet governance, research-network participation, energy coordination, maritime and logistics, cybersecurity, regional interoperability, cross-system patterns, and dependency characteristics.</p>
+
+    <h3>Profile layer characterization</h3>
+    <p>The change-log records that <code>profile.md</code> characterized Vietnam as a coordinated national infrastructure environment combining digital administration, retail-payment interoperability, telecommunications modernization, data-infrastructure expansion, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cyber coordination, and ASEAN-linked regional integration, situated within a maritime-facing and export-connected setting with documented regional and global interface points.</p>
+
+    <h3>Builder mode translation</h3>
+    <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into institutional continuity interpretation, digital-governance and identity interpretation, retail-payment interoperability interpretation, data infrastructure and continuity interpretation, registry and DNS governance interpretation, telecommunications and connectivity interpretation, research-network and scientific-collaboration interpretation, energy and grid coordination interpretation, maritime logistics and trade-connectivity interpretation, cybersecurity and digital-resilience interpretation, ASEAN and regional integration interpretation, and constraint-boundary interpretation.</p>
+
+    <h3>Structural constraints recorded</h3>
+    <p>The change-log records that normalization preserved bounded visibility into the full high-value interbank settlement architecture beyond documented retail-payment layers, mixed public and commercial data-infrastructure dependency structures, bounded IX-centrality evidence beyond documented VNNIC and VNIX governance, bounded research-network observability shaped by partial accessibility of some legacy MOST and VinaREN materials, bounded nationwide telecom-market and operator service-quality visibility, bounded all-sector cybersecurity visibility beyond documented public-sector coordination, bounded multimodal logistics visibility beyond documented seaport, postal, and transport-node references, absence of sovereign semiconductor fabrication stack evidence, and absence of fully sovereign hyperscale compute stack evidence.</p>
+
+    <h3>Package completion status</h3>
+    <p>The Vietnam jurisdiction package is complete within the Atlas normalization framework and aligned with digital-governance continuity, retail-payment interoperability, telecommunications modernization, mixed public and commercial data-infrastructure continuity, registry and DNS governance, research-network participation, grid coordination, maritime logistics planning, public-sector cybersecurity coordination, and ASEAN-linked regional integration normalization standards.</p>
+
+    <p class="status-line">Normalization status: <strong>complete</strong> · Surface assignment status: <strong>none</strong></p>
+
+    <span class="src">Source: <code>change-log.md</code></span>
+  </section>
+
+  <!-- Appendix: Canonical Package -->
+  <section class="appendix-section">
+    <h2>Canonical Package</h2>
+    <h3>Source of truth</h3>
+    <p>This page renders the canonical Vietnam jurisdiction package. The canonical files remain the source of truth.</p>
+    <ul class="bullets">
+      <li><code>evidence.md</code></li>
+      <li><code>signals.md</code></li>
+      <li><code>trust-dimensions.md</code></li>
+      <li><code>profile.md</code></li>
+      <li><code>builder-mode.md</code></li>
+      <li><code>metadata.md</code></li>
+      <li><code>change-log.md</code></li>
+    </ul>
+    <p>Canonical package path: <code>atlas-export/jurisdictions/global/countries/vietnam/</code></p>
+  </section>
+
+  <!-- Appendix: Jurisdiction Identity -->
+  <section class="appendix-section">
+    <h2>Jurisdiction Identity</h2>
+    <h3>Record header</h3>
+    <ul class="bullets">
+      <li><strong>Jurisdiction:</strong> Vietnam</li>
+      <li><strong>Code:</strong> VN</li>
+      <li><strong>Region:</strong> Southeast Asian Maritime-Facing Coordinated Infrastructure Environment</li>
+      <li><strong>Jurisdiction Type:</strong> Country</li>
+      <li><strong>Lens:</strong> jurisdiction lens</li>
+      <li><strong>Surface assignment:</strong> none</li>
+      <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+    </ul>
+  </section>
+
+  <!-- Appendix: Topology Metadata -->
+  <section class="appendix-section">
+    <h2>Topology Metadata</h2>
+    <h3>Corridor alignment</h3>
+    <ul class="bullets">
+      <li>Digital Governance and Procedural Digitization Framework</li>
+      <li>Central-Bank Retail Payment Modernization Framework</li>
+      <li>Telecommunications and Connectivity Framework</li>
+      <li>Data Infrastructure and Digital Continuity Framework</li>
+      <li>Registry and DNS Governance Framework</li>
+      <li>Research Network and Scientific Collaboration Framework</li>
+      <li>Energy Grid and Industrial Coordination Framework</li>
+      <li>Maritime Logistics and Trade Connectivity Framework</li>
+      <li>Cybersecurity and Digital Resilience Framework</li>
+      <li>ASEAN and Regional Integration Framework</li>
+    </ul>
+    <h3>Primary coordination cities</h3>
+    <ul class="bullets">
+      <li>Hanoi</li>
+      <li>Ho Chi Minh City</li>
+      <li>Da Nang</li>
+    </ul>
+    <p>Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+  </section>
+
+  <!-- Appendix: Infrastructure Anchors -->
+  <section class="appendix-section">
+    <h2>Infrastructure Anchors</h2>
+    <h3>Documented surfaces</h3>
+    <ul class="bullets">
+      <li>National Public Service Portal · VNeID · VNPT SmartCA · Ministry of Public Security identity verification · Scheme 06 · population-data and e-KYC infrastructure</li>
+      <li>State Bank of Vietnam · NAPAS · NAPAS 247 fast-transfer · ATM/POS switching · QR · e-wallet · mobile money · public-service payment integration · NAPAS-NETS cross-border QR-payment</li>
+      <li>national data-centre policy · regional multi-purpose data centres · government cloud · shared databases · Tan Thuan CMC · green-standard data-centre · AI Data Centre · Hyperscale Data Centre / Digital Hub planning</li>
+      <li>VNNIC · .VN ccTLD · Internet address and AS-number procedures · DNS estate (IPv6 · DNSSEC · Anycast) · domestic and international DNS clusters · VNIX-linked reporting</li>
+      <li>CST · Viettel · VNPT · 5G licensing (B1 and C2 spectrum bands) · 2G shutdown transition · IPv6 deployment · international cable expansion planning</li>
+      <li>VinaREN · TEIN-linked development · 55 member networks across 11 provinces and cities · overseas hydro-meteorological data connectivity · telemedicine · network-based learning · global computing-network participation</li>
+      <li>EVN · National Load Dispatch Center · national and regional dispatch · North-South 500 kV transmission · high-voltage transmission infrastructure</li>
+      <li>seaport master plan · international gateway ports · green-seaport modernization · postal backup-capacity planning · regional postal centres · logistics-node 5G coverage</li>
+      <li>VNCERT/CC · National Cyber Security Centre · Cybersecurity Emergency Response Center (Hanoi · Ho Chi Minh City · Da Nang) · incident-response · cyberspace supervision · ITU 2024 Global Cybersecurity Index higher-scoring placement</li>
+      <li>NAPAS-NETS cross-border QR-payment · QR links with Thailand, Cambodia, and Lao PDR · TEIN connectivity · internationally distributed DNS presence · planned international undersea fibre-optic cables · international gateway-port maritime integration</li>
+    </ul>
+  </section>
+
+  <!-- Appendix: Normalization Status -->
+  <section class="appendix-section">
+    <h2>Normalization Status</h2>
+    <h3>Layer completeness</h3>
+    <ul class="bullets">
+      <li>Evidence layer: complete</li>
+      <li>Signal layer: complete</li>
+      <li>Trust dimensions: complete</li>
+      <li>Profile: complete</li>
+      <li>Builder-mode: complete</li>
+      <li>Metadata: complete</li>
+      <li>Change-log: complete</li>
+      <li>Topology status: unassigned</li>
+      <li>Surface assignment: none</li>
+    </ul>
+  </section>
+
+  <!-- Appendix: Interpretation Boundary -->
+  <section class="appendix-section">
+    <h2>Interpretation Boundary</h2>
+    <h3>What this page is not</h3>
+    <ul class="bullets">
+      <li>Not a ranking.</li>
+      <li>Not a readiness assessment.</li>
+      <li>Not a routing or surface assignment.</li>
+      <li>Not a forecast.</li>
+      <li>Not a deployment recommendation.</li>
+      <li>Not a sovereign hyperscale compute classification.</li>
+      <li>Not a sovereign semiconductor fabrication classification.</li>
+      <li>Not an ASEAN telecommunications-dominance classification.</li>
+      <li>Not a geopolitical, military, maritime, or regional command-authority classification.</li>
+      <li>Not a NAPAS or QR-payment international settlement-authority classification beyond documented cross-border QR-payment linkage.</li>
+      <li>Not an ASEAN command-hub classification.</li>
+      <li>Not a broader global IX centrality classification beyond documented VNNIC and VNIX governance.</li>
+      <li>Not an economic, political, demographic, military, cultural, manufacturing-superpower, or geopolitical narrative.</li>
+      <li>Not a monolithically centralized infrastructure environment.</li>
+      <li>Not a substitute for the canonical package.</li>
+    </ul>
+  </section>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
