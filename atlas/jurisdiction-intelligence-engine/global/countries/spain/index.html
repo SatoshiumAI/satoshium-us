@@ -1,91 +1,749 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Spain | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Spain Atlas jurisdiction package rendering. Madrid-Centered Administrative Concentration, Multi-Node Logistics Continuity, Atlantic Corridor Participation, Mediterranean Corridor Participation, Iberian Interoperability, EU Payment and Settlement Interoperability, Energy Interconnection Continuity, Shared-Service Administration, RedIRIS Research Network, and Mainland-Plus-Island Territorial Continuity alignment.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/spain/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Spain</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Spain</h1>
 
-</article>
-</main>
+  <p class="lede">Madrid-centered administrative jurisdiction organized around distributed multi-node logistics continuity, in which national coordination spans shared public-administration platforms, rail, airport, and maritime systems, energy interconnections, telecommunications, research networks, and interoperable euro payments rather than a single-node concentration. This page renders the canonical Spain Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting Red SARA multilevel administrative interconnection with Cl@ve, DNIe, @firma, Valide, and the Spanish eIDAS node, Banco de España participation in Eurosystem TARGET and TIPS, ADIF national rail management, Aena's national airport network, and Puertos del Estado maritime coordination, Atlantic Corridor and Mediterranean Corridor rail participation, Red Eléctrica electricity interconnections with France, Portugal, and Morocco including the Bay of Biscay project, Red.es digital coordination with the RedIRIS and RedIRIS Nova 100 research network, MareNostrum 5 at BSC-CNS, and eduroam, INCIBE-CERT and CCN-CERT cyber-response structures, and PERTE Chip and IMB-CNM-CSIC microelectronics development.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Spain (ES)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>Spain currently reads within Atlas as a Madrid-centered administrative environment whose national continuity depends on distributed multi-node logistics coordination across rail, airport, and maritime systems, energy interconnections, telecommunications, research networks, shared public-administration platforms, and interoperable payments. The package places Spain inside Red SARA-, Cl@ve-, @firma-, Valide-, and eIDAS-node-linked administrative and identity coordination, Banco de España- and Eurosystem-linked euro-area settlement through TARGET and TIPS, ADIF-, Aena-, and Puertos del Estado-linked multimodal logistics with Atlantic and Mediterranean corridor participation, Red Eléctrica-linked electricity interconnections with France, Portugal, and Morocco, Red.es-, RedIRIS-, and BSC-CNS-linked digital coordination and research-compute support, and INCIBE-CERT- and CCN-CERT-linked cyber-response continuity. These conditions support a structural characterization centered on Madrid administrative concentration as a bounded inland hinge within a multi-node logistics environment, interoperability as a continuity mechanism, corridor participation, Iberian and EU continuity, and concentration-with-distribution without assigning readiness tiers, routing authority, or comparative status.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Spain</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Iberian Madrid-Centered Multi-Node Corridor-Participating Continuity Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Madrid-Centered Administrative Concentration Framework · Multi-Node Logistics Continuity Framework · Atlantic Corridor Participation Framework · Mediterranean Corridor Participation Framework · Iberian Interoperability Framework · EU Payment and Settlement Interoperability Framework · Energy Interconnection Continuity Framework · Shared-Service Administration Framework · Research Network and Compute-Support Framework · Mainland-Plus-Island Territorial Continuity Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Madrid · Barcelona</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records evidence-supported national structures documented for Spain that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code> · <code>metadata.md</code> — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Spain jurisdiction package across administrative governance, identity, payments, telecommunications, transport, energy, EU and corridor interoperability, cyber-resilience, research-network, and semiconductor surfaces.</p>
+
+        <h3>Strategic position</h3>
+        <p>The evidence layer records European Commission materials placing Spain inside the euro area since 1 January 1999 and identifying Banco de España within the institutional architecture of the single currency. The trans-European corridors entering the Iberian Peninsula are recorded as the Atlantic corridor, from the French border at Irun/Hendaye toward Portugal with branches via Madrid and Algeciras, and the Mediterranean corridor, from the French border at Portbou/Cerbère along the Mediterranean coast toward Algeciras and Seville, with ADIF as the national infrastructure manager. Red.es is recorded as a public corporate entity attached to the Ministry for Digital Transformation and Public Function developing digital-transformation programmes, while INCIBE-CERT and CCN-CERT are recorded as differentiated cyber-response structures, and Aena, Puertos del Estado, and ADIF place Spain inside a documented multi-modal infrastructure footprint.</p>
+
+        <h3>Digital governance and identity infrastructure</h3>
+        <p>The evidence layer records Cl@ve as a system unifying and simplifying citizens' electronic access to public services, functioning as a common platform for identification, authentication, and electronic signature, complementing DNIe and electronic certificates and offering cloud signing, with access modes including Cl@ve PIN, Cl@ve Permanente, and Cl@ve Mobile. PAe identity-and-signature materials are recorded as documenting shared public-administration components including Cl@ve, the @firma product suite, the Spanish eIDAS node, Valide for online validation of signatures and certificates, and Autentica for authentication and single sign-on, with Cl@ve signing certificates adapted to eIDAS requirements.</p>
+
+        <h3>Financial infrastructure and settlement systems</h3>
+        <p>The evidence layer records Banco de España as the national central-bank institution within the euro-area framework, with the new-generation TARGET system settling in euro in central-bank money and providing central liquidity-management services including large-value real-time gross settlement, cash payments related to securities settlement, and settlement of instant payments. TIPS, integrated into TARGET, is recorded as enabling settlement of instant-payment orders in central-bank money 24 hours a day, every day of the year, placing Spain's monetary and payment-settlement posture inside euro-area and Eurosystem-operated infrastructure rather than a separate sovereign settlement stack.</p>
+
+        <h3>Data infrastructure and digital continuity</h3>
+        <p>The evidence layer records PAe materials documenting a shared administrative service layer built around Cl@ve, @firma, Valide, and the Spanish eIDAS node, supporting a common identification, signature, and validation posture across public-administration services, with Valide allowing citizens and businesses to validate signatures and certificates online. Red SARA is recorded as Spain's government intranet interconnecting all ministries, all autonomous communities and autonomous cities, and more than 4,000 local entities representing more than 90% of the population, with the goal of increasing collaboration and interoperability between administrations, while Red.es is recorded as developing digital-transformation programmes placing part of Spain's continuity posture inside ministry-linked shared service and coordination structures.</p>
+
+        <h3>Telecommunications and digital infrastructure</h3>
+        <p>The evidence layer records Ministry for Digital Transformation materials stating that Spain closed the fixed digital divide in 2023 by guaranteeing broadband of at least 100 Mbps to 100% of the population, with 5G coverage reaching 92.3% of the population and 68.9% in rural areas, public investment targeted at municipalities with fewer than 10,000 inhabitants, and 92.5% of households and businesses with access to speeds above 1 Gbps. Red.es is recorded as working on 5G spectrum initiatives, rural broadband deployment, RedIRIS Nova 100, and broader infrastructure capillarity, documenting a ministry-linked, publicly coordinated national digital-infrastructure programme.</p>
+
+        <h3>Transportation and logistics infrastructure</h3>
+        <p>The evidence layer records Aena as operating a network of 46 airports in Spain and two heliports, documenting a nationally coordinated airport system with broad territorial coverage. ADIF is recorded as managing a railway network of 11,672 km, 1,448 stations, and 45 freight terminals, with traffic coordinated through traffic-management centres and control and regulation centres and high-speed traffic management through the DaVinci platform. Puertos del Estado is recorded as the European Union country with the longest coastline, with a state-owned port system including 46 ports of general interest managed by 28 port authorities, responsible for implementation of government port policy and coordination of the state-owned port system, documenting Spain as a multimodal logistics jurisdiction with institutionally coordinated airport, rail, and port infrastructure.</p>
+
+        <h3>Energy and grid integration infrastructure</h3>
+        <p>The evidence layer records Red Eléctrica describing international interconnections as a fundamental tool to end Spain's energy isolation and as strategic infrastructures supporting electricity systems increasingly based on renewable energy sources. The Spanish mainland electricity system is recorded as connected to those of France, Portugal, and Morocco, with the Bay of Biscay interconnection with France recorded as a project of common interest of the European Commission expected to increase exchange capacity and improve security, stability, and quality of supply, and additional interconnection with Portugal recorded as increasing exchange capacity and supporting reliability, renewable integration, and European climate-plan objectives.</p>
+
+        <h3>Research network and compute infrastructure</h3>
+        <p>The evidence layer records RedIRIS as the Spanish academic and research network providing advanced communication services to the scientific community and national universities, funded by the Ministry of Science and Innovation and managed by Red.es, with more than 500 affiliated institutions mainly universities and public research centres. Red.es is recorded as managing RedIRIS Nova 100 to support more than 500 universities and research institutions through services including eduroam. Barcelona Supercomputing Center materials are recorded as documenting MareNostrum 5 as a pre-exascale EuroHPC supercomputer hosted at BSC-CNS with a total peak computational power of 314 PFlops, including large-scale general-purpose and accelerated partitions and multi-hundred-petabyte storage.</p>
+
+        <h3>Cybersecurity and digital resilience coordination</h3>
+        <p>The evidence layer records INCIBE-CERT as the reference security incident response centre for citizens and private-law entities in Spain, coordinating with national and international teams, with incident management affecting critical private-sector operators jointly operated by INCIBE and the Cybersecurity Coordination Office of the Ministry of the Interior. CCN-CERT is recorded as responsible for countering cyberattacks on classified systems, public administrations, and companies and organisations in strategic sectors, with the National Cryptologic Centre coordinating public-administration cryptologic and information-technology security activities, documenting a split but complementary resilience structure distinguishing public-administration and strategic-sector cyber functions from citizen and private-law response roles.</p>
+
+        <h3>Advanced technology and semiconductor infrastructure</h3>
+        <p>The evidence layer records Ministry of Economy materials stating that PERTE Chip was approved on 24 May 2022 as Spain's strategic project for the recovery and transformation of microelectronics and semiconductors, aiming to reinforce design and production capacities across the semiconductor value chain with a €12.25 billion budget. IMB-CNM-CSIC is recorded as the largest centre in Spain dedicated to research and development in micro and nano technologies for electronic applications, with unique capabilities in silicon technology, belonging to the Spanish National Research Council and accredited as a María de Maeztu Unit of Excellence for 2024-2028, documenting an officially backed semiconductor-capacity strategy alongside a domestic microelectronics research base without supporting claims of a complete sovereign leading-edge fabrication stack.</p>
+
+        <h3>EU, Atlantic, and Mediterranean corridor integration</h3>
+        <p>The evidence layer records the Spanish eIDAS node maintaining the Spanish node of the European electronic-identity recognition system, with the Atlantic corridor crossing Spain, Portugal, France, and Germany, and the Mediterranean corridor crossing Spain, France, Italy, Slovenia, Croatia, and Hungary. Mediterranean-corridor materials are recorded as stating that most Spanish lines planned by 2023 were already in operation including one cross-border section with France, with all Spanish MED sections planned operational by 2030, while Atlantic-corridor materials record some Spanish lines already in operation with most planned sections targeted by 2030. RedIRIS and Red.es place Spain's academic networking inside broader European research-network cooperation.</p>
+
+        <hr class="section-divider">
+
+        <h3>Summary evidence statement</h3>
+        <p>The current source set documents Spain as a euro-area, ministry-coordinated digital and infrastructure jurisdiction with shared public-administration identity and signature platforms, Banco de España participation in TARGET and TIPS, Red.es- and RedIRIS-linked digital and research infrastructure, substantial airport, rail, and port coordination, cross-border electricity interconnections, dual-track cyber-resilience institutions, and an officially backed semiconductor-capacity programme anchored by domestic research capability. The evidence places Spain inside strongly European-connected monetary, transport, identity, research, and energy systems while supporting only bounded claims about sovereign control, industrial depth, and continuity posture beyond the cited institutional materials, without assigning readiness tiers, corridor status, routing authority, or broader Atlas interpretation.</p>
+
+        <div class="meta-line">Source: <code>evidence.md</code> · <code>change-log.md</code> — Evidence Layer Construction</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Strategic position signals</h3>
+        <p>Red SARA multilevel administrative interconnection with Cl@ve, @firma, Valide, and the Spanish eIDAS node, Banco de España participation in Eurosystem TARGET and TIPS, ADIF, Aena, and Puertos del Estado multimodal coordination, Atlantic and Mediterranean corridor participation, Red Eléctrica electricity interconnections with France, Portugal, and Morocco, Red.es digital coordination with the RedIRIS research network and MareNostrum 5 compute, and INCIBE-CERT and CCN-CERT cyber-response structures together signal Spain as a Madrid-centered administrative jurisdiction organized around distributed multi-node logistics continuity, EU payment and settlement interoperability, corridor participation, Iberian energy and rail continuity, and research-network and compute support. The coexistence of these layers signals continuity through interoperability and shared coordination structures rather than single-node concentration. The evidence supports a continuity-and-coordination signal rooted in administrative concentration, multi-node distribution, corridor participation, and interoperability without supporting routing-authority, topology, or readiness classification.</p>
+
+        <h3>Administrative and identity coordination signals</h3>
+        <p>Cl@ve, @firma, Valide, Autentica, and the Spanish eIDAS node signal shared public-administration identity and signature coordination through common service components rather than agency-isolated implementation. Cl@ve's role as a common platform for identification, authentication, and electronic signature signals centralized access logic layered over distributed public-service execution. The coexistence of Cl@ve, DNIe, and certificate-based access signals multi-method administrative interoperability rather than dependence on a single identity channel. The Spanish eIDAS node signals public-administration identity flows designed for EU-compatible interoperability rather than a national-only credential perimeter. Red SARA's interconnection of ministries, autonomous communities, autonomous cities, and local entities signals administrative continuity reinforced through a shared communications substrate across multiple levels of government.</p>
+
+        <h3>Financial and payment coordination signals</h3>
+        <p>Euro-area membership signals Spain's payment and settlement continuity being structurally coupled to the Eurosystem rather than organized as a fully separate national monetary perimeter. Banco de España's role within TARGET signals central-bank-coordinated settlement continuity across large-value payments, securities-related cash settlement, and liquidity management. TIPS participation signals instant-payment interoperability maintained through standing Eurosystem infrastructure operating in central-bank money around the clock. The coexistence of TARGET and TIPS signals layered settlement coordination across high-value and instant-payment functions rather than a single-rail payment architecture.</p>
+
+        <h3>Telecommunications and connectivity signals</h3>
+        <p>The documented closure of the fixed digital divide and broad broadband coverage signal nationwide territorial digital continuity rather than infrastructure concentration limited to major urban markets. The 5G coverage figures and rural-expansion programmes signal coordinated national mobile-network extension rather than commercially bounded deployment alone. Red.es' role across 5G initiatives, rural broadband, public digital programmes, RedIRIS support, and `.es` management signals ministry-linked digital-capillarity coordination spanning multiple infrastructure layers. The combination of high gigabit availability and state-supported rural rollout signals public and market infrastructure layers interacting to sustain national connectivity continuity.</p>
+
+        <h3>Transportation and logistics coordination signals</h3>
+        <p>The combined presence of Aena's national airport network, ADIF's rail network, and Puertos del Estado's state port system signals multimodal logistics coordination across aviation, rail, and maritime systems rather than modal isolation. ADIF's traffic-management centres, control and regulation centres, and national rail-management role signal centralized operational coordination over a geographically distributed transport network. Puertos del Estado's coordination of 46 ports of general interest through 28 port authorities signals distributed maritime infrastructure operating within a common state-coordination framework. The European Commission's corridor description signals Spain's rail logistics structure linked to both Atlantic and Mediterranean freight and passenger continuities rather than a closed domestic rail topology. The Atlantic corridor branch via Madrid signals that Madrid appears as one inland coordination hinge within documented rail topology, while the broader evidence supports a multi-node logistics environment rather than a Madrid-only transport structure, and Aena's broad airport coverage signals aviation-supported territorial continuity without enough detail to assign a stronger island-specific continuity signal.</p>
+
+        <h3>Energy and industrial coordination signals</h3>
+        <p>Red Eléctrica's description of interconnections as tools for ending energy isolation signals continuity reinforced through cross-border linkage rather than self-contained electricity operation. The documented electricity links with France, Portugal, and Morocco signal Spain's grid continuity partly sustained through external interfaces across more than one neighboring system. The Bay of Biscay and Portugal interconnection projects signal renewable-integration support, exchange-capacity expansion, and supply-stability reinforcement through interconnection growth. PERTE Chip signals state-backed industrial coordination around semiconductor-capacity development rather than a purely market-led microelectronics posture, while IMB-CNM-CSIC's role as a major national microelectronics research centre signals industrial-research support capacity linked to Spain's wider semiconductor policy layer.</p>
+
+        <h3>EU, Iberian, and corridor interoperability signals</h3>
+        <p>Euro-area participation, the Spanish eIDAS node, TARGET, and TIPS signal that EU interoperability functions as a standing continuity mechanism across financial and administrative layers rather than an occasional external interface. The Atlantic and Mediterranean corridor evidence signals transport interoperability structured through two major trans-European rail continuities rather than a single directional corridor pattern. The Atlantic corridor's cross-border relation with Portugal and France signals Iberian and wider European rail continuity embedded in Spain's inland network design, while the Mediterranean corridor signals eastern and southern rail continuity tied to cross-border and coastal European movement. Red Eléctrica's France and Portugal interconnections signal Iberian and EU energy interoperability functioning as an operational continuity layer, and Red SARA, Cl@ve-related shared services, and the eIDAS node signal digital-administration interoperability spanning domestic multilevel governance and EU-recognition structures simultaneously.</p>
+
+        <h3>Disaster-response and continuity signals</h3>
+        <p>INCIBE-CERT's role for citizens and private-law entities signals dedicated civil and private-sector cyber-response coordination rather than a single undifferentiated national incident-response model. CCN-CERT's documented role around classified systems, public administrations, and strategic-sector entities signals a parallel government and strategic-infrastructure cyber-coordination layer. The coexistence of INCIBE-CERT and CCN-CERT signals a split-but-coordinated cyber-resilience architecture in which different constituencies are handled through differentiated response structures. Red SARA and shared administrative service components signal that digital-service continuity depends partly on common platforms and inter-administration connectivity, with the current evidence supporting cyber-resilience and service-continuity signals more clearly than broader disaster-response or civil-protection interpretations.</p>
+
+        <h3>Data infrastructure and continuity signals</h3>
+        <p>Red SARA's multi-level public-administration interconnection signals distributed digital-service continuity coordinated through a common communications and service-sharing layer. Cl@ve, @firma, Valide, and the eIDAS node signal identity, signature, and validation persistence across public-administration workflows rather than one-off service integrations. Red.es' ministry-linked digital-service role signals continuity reinforced through shared public digital infrastructure and programme coordination rather than department-by-department reinvention. The `.es` registry function signals namespace continuity and trust support within Spain's publicly coordinated digital-infrastructure environment, with the current evidence supporting administrative and registry continuity signals more clearly than broader national exchange-control or hyperscale-cloud signals.</p>
+
+        <h3>Research and knowledge-network signals</h3>
+        <p>RedIRIS' role as the Spanish academic and research network signals dedicated national coordination for research and education connectivity rather than reliance on general commercial connectivity alone. RedIRIS' more than 500 affiliated institutions signal broad research-network continuity across universities and public research centres rather than a narrow elite-network footprint. Red.es' management of RedIRIS Nova 100 and support for eduroam signal research-network interoperability reinforced through common backbone and access services. MareNostrum 5 at BSC-CNS signals nationally significant compute concentration within the research layer, not a broader claim about Spain's total scientific or industrial compute posture beyond the documented HPC node, with the coexistence of RedIRIS and MareNostrum 5 signaling networked knowledge infrastructure in which research connectivity and high-performance compute reinforce one another.</p>
+
+        <h3>Regional and international connectivity signals</h3>
+        <p>The combined evidence from corridors, airports, ports, energy interconnections, euro-area settlement participation, and RedIRIS signals that Spain's regional and international connectivity is distributed across transport, energy, financial, and research-network layers rather than dependent on a single gateway type. France and Portugal appearing repeatedly across rail and energy evidence signal sustained Iberian and wider European continuity through cross-border infrastructure coupling. Morocco's appearance in electricity interconnection evidence signals regional connectivity extending beyond EU-only infrastructure interfaces while remaining within documented grid-continuity context. Aena's airport network and Puertos del Estado's state port system signal outward-facing connectivity supported simultaneously by aviation and maritime layers, with the Atlantic and Mediterranean corridor evidence signaling external transport connectivity reinforced by more than one major cross-border rail pathway.</p>
+
+        <h3>Cross-system structural signals</h3>
+        <p>The strongest recurring pattern is interoperability as a continuity mechanism, appearing across euro-area payments, TARGET and TIPS, the Spanish eIDAS node, Red SARA, electricity interconnections, and the Atlantic and Mediterranean transport corridors. A second recurring pattern is centralized coordination with distributed execution, appearing in shared administrative identity services, Red.es programme coordination, ADIF rail management, Puertos del Estado port governance, and RedIRIS network management. A third recurring pattern is multi-node logistics continuity rather than single-node concentration. A fourth recurring pattern is corridor participation reinforcing domestic continuity rather than appearing as an external overlay only, and a fifth is layered continuity across digital, payment, transport, energy, and research systems, with only a limited Madrid concentration signal and a limited mainland-plus-island continuity signal preserved because the current evidence documents broad territorial coverage more clearly than island-targeted mechanisms.</p>
+
+        <h3>Constraint boundary signals</h3>
+        <ul>
+          <li>Bounded visibility applies across logistics operations, telecom topology, cyber coordination, island-specific continuity mechanisms, and some operational infrastructure layers.</li>
+          <li>Observability remains uneven because public documentation is stronger for national operators, ministry-linked coordination structures, and corridor-linked systems than for all regional and island-specific conditions.</li>
+          <li>The accessible source set does not provide a full real-time inventory of transport, telecom, energy, cyber, payment, and administrative operating conditions.</li>
+          <li>Limits remain around broader exchange authority, sovereign cloud depth, and fully specified mainland-plus-island continuity mechanisms in the current public record.</li>
+          <li>More broadly, the evidence signals a Madrid-centered, multi-node, corridor-participating Iberian continuity environment rather than a Mediterranean-gateway, Atlantic-gateway, or single-corridor environment, and it does not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>Spain's evidence-derived signals describe a Madrid-centered administrative jurisdiction organized around distributed multi-node logistics continuity, combining EU payment and settlement interoperability, Atlantic and Mediterranean corridor participation, Iberian energy and rail continuity, shared-service administration, research-network and compute support, and bounded cross-border continuity. The signals indicate continuity across Red SARA-, Cl@ve-, and eIDAS-node-coordinated administration, Banco de España-coordinated TARGET and TIPS settlement, ADIF-, Aena-, and Puertos del Estado-coordinated multimodal logistics with corridor participation, Red Eléctrica-coordinated electricity interconnections with France, Portugal, and Morocco, Red.es- and RedIRIS-coordinated digital and research infrastructure with MareNostrum 5 compute, and INCIBE-CERT- and CCN-CERT-coordinated cyber-response without assigning readiness tiers, routing authority, or topology placement.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>signals.md</code></div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment eligibility, or infrastructure claims beyond documented anchors.</p>
+
+        <h3>Administrative continuity characteristics</h3>
+        <p>The source layers indicate Red SARA-coordinated administrative continuity through a shared government intranet interconnecting ministries, autonomous communities, autonomous cities, and local entities rather than fully separate institutional stacks. The relationship between Red SARA and Red.es-linked programme coordination supports centralized coordination with distributed execution across multiple government levels. The coexistence of common communications and service-sharing layers indicates administrative interoperability reinforced through shared substrates rather than agency-isolated systems. The overall pattern indicates continuity through common coordination structures without implying a complete inventory of all administrative systems.</p>
+
+        <h3>Identity and service integration characteristics</h3>
+        <p>The package reflects linked identity-service continuity through Cl@ve as a common platform for identification, authentication, and electronic signature, complemented by DNIe and certificate-based access. The @firma suite, Valide validation, and the Spanish eIDAS node indicate multi-method identity coordination organized through shared public-administration components rather than isolated application-specific identity models. The Spanish eIDAS node indicates identity-service continuity designed for EU-recognition interoperability. This dimension remains bounded to documented public-administration functions and does not imply broader state visibility or surveillance posture beyond the public evidence.</p>
+
+        <h3>Payment and financial coordination characteristics</h3>
+        <p>The source layers indicate euro-area settlement continuity structurally coupled to the Eurosystem rather than a fully separate national monetary perimeter. Banco de España's role within TARGET supports central-bank-coordinated settlement continuity across large-value payments, securities-related cash settlement, and liquidity management. TIPS participation reflects instant-payment interoperability maintained through standing Eurosystem infrastructure operating in central-bank money around the clock. The coexistence of TARGET and TIPS indicates layered settlement coordination across high-value and instant-payment functions rather than a single-rail payment architecture, without implying comparative financial-system superiority.</p>
+
+        <h3>Telecommunications and connectivity characteristics</h3>
+        <p>The evidence indicates nationwide territorial digital continuity through the documented closure of the fixed digital divide and broad broadband coverage rather than concentration limited to major urban markets. The 5G coverage figures and rural-expansion programmes indicate coordinated national mobile-network extension rather than commercially bounded deployment alone. Red.es' role across 5G initiatives, rural broadband, public digital programmes, RedIRIS support, and `.es` management indicates ministry-linked digital-capillarity coordination spanning multiple infrastructure layers. The overall pattern indicates public and market infrastructure layers interacting to sustain national connectivity continuity.</p>
+
+        <h3>Transportation and logistics continuity characteristics</h3>
+        <p>The package reflects multimodal logistics continuity across Aena's national airport network, ADIF's rail network, and Puertos del Estado's state port system rather than modal isolation. ADIF's traffic-management centres and national rail-management role support centralized operational coordination over a geographically distributed transport network, while Puertos del Estado's coordination of 46 ports of general interest through 28 port authorities supports distributed maritime infrastructure within a common state-coordination framework. The Atlantic and Mediterranean corridors support rail logistics linked to trans-European freight and passenger continuities, with Madrid appearing as one inland coordination hinge within a multi-node logistics environment rather than a Madrid-only transport structure. Aena's broad airport coverage supports aviation-backed territorial continuity, while island-specific transport mechanisms remain only partially visible in the current record.</p>
+
+        <h3>Energy and industrial coordination characteristics</h3>
+        <p>The source layers indicate electricity interconnection continuity reinforced through cross-border linkage rather than self-contained operation. The documented links with France, Portugal, and Morocco support grid continuity partly sustained through external interfaces across more than one neighboring system. The Bay of Biscay and Portugal interconnection projects support renewable-integration, exchange-capacity expansion, and supply-stability reinforcement. PERTE Chip supports state-backed industrial coordination around semiconductor-capacity development, and IMB-CNM-CSIC supports industrial-research capacity linked to Spain's wider semiconductor policy layer, documented as coordination and continuity structures rather than superiority or sovereignty claims.</p>
+
+        <h3>EU, Iberian, and corridor interoperability characteristics</h3>
+        <p>The evidence indicates that EU interoperability functions as a standing continuity mechanism across financial, administrative, transport, energy, and research-network layers rather than an occasional external interface. Euro-area participation, TARGET, and TIPS support financial interoperability, while the Spanish eIDAS node and Red SARA support administrative interoperability spanning domestic multilevel governance and EU-recognition structures. The Atlantic and Mediterranean corridors support transport interoperability through two major trans-European rail continuities, and Red Eléctrica's France and Portugal interconnections support Iberian and EU energy interoperability as an operational continuity layer. The overall pattern indicates interoperability beyond national boundaries functioning as a recurring continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and operational resilience characteristics</h3>
+        <p>The package reflects INCIBE-CERT-coordinated civil and private-law cyber-response continuity distinguished from CCN-CERT-coordinated public-administration and strategic-sector cyber-response. The coexistence of INCIBE-CERT and CCN-CERT supports a split-but-coordinated cyber-resilience architecture in which different constituencies are handled through differentiated response structures. Red SARA and shared administrative service components support service-continuity reinforced through common platforms and inter-administration connectivity. The overall pattern indicates that operational-awareness and resilience characteristics are most clearly documented in cyber and digital-service continuity layers rather than broader civil-protection structures, bounded to documented public mechanisms.</p>
+
+        <h3>Data infrastructure and continuity characteristics</h3>
+        <p>The source layers indicate Red SARA-supported digital continuity across multiple levels of government. Shared-service persistence through Cl@ve, @firma, Valide, and eIDAS-linked components supports identity-signature-validation interoperability within the public-administration environment. Red.es' ministry-linked digital-service role supports continuity reinforced through shared public digital infrastructure rather than department-by-department reinvention. The `.es` namespace continuity through Red.es-linked registry governance supports namespace trust and continuity. The overall pattern indicates distributed digital-service coordination with stronger evidence for administrative continuity than for broader exchange-control or sovereign cloud authority.</p>
+
+        <h3>Research and knowledge-network characteristics</h3>
+        <p>The evidence indicates RedIRIS participation as the national academic and research network layer, with RedIRIS Nova 100 continuity and eduroam-supported research-network interoperability. RedIRIS' more than 500 affiliated institutions indicate broad research-network continuity across universities and public research centres. MareNostrum 5 compute concentration at BSC-CNS indicates research-compute support through interaction between RedIRIS connectivity and BSC-hosted HPC capacity. This dimension remains documented as infrastructure support rather than a broader scientific-capability claim, limited to the network and compute layers themselves.</p>
+
+        <h3>Regional and international connectivity characteristics</h3>
+        <p>The evidence indicates EU integration across payments, identity interoperability, transport corridors, energy linkage, and research networking. Iberian connectivity through recurring France- and Portugal-linked infrastructure interaction in rail and energy layers indicates regional coupling embedded in core infrastructure. France connectivity indicates a standing transport- and energy-interface characteristic, while the Atlantic and Mediterranean corridors indicate documented external transport-continuity pathways. Morocco energy linkage through electricity interconnection indicates regional connectivity extending beyond EU-only interfaces, and aviation and maritime continuity through Aena's airport system and Puertos del Estado's maritime coordination indicates connectivity distributed across more than one infrastructure class rather than dependent on a single gateway type.</p>
+
+        <h3>Cross-system stability characteristics</h3>
+        <p>The package reflects interoperability as a continuity mechanism across payment, identity, transport, energy, and research-network layers. A recurring stability characteristic is centralized coordination with distributed execution across administrative, digital, rail, port, and research-network systems. A second recurring stability characteristic is multi-node logistics continuity rather than single-node concentration. A third recurring stability characteristic is corridor participation reinforcing domestic continuity rather than appearing as an external overlay only, and a fourth is layered continuity across digital, payment, transport, energy, and research systems, with limited Madrid concentration preserved as an inland administrative and corridor hinge without over-centralizing the national topology.</p>
+
+        <h3>Dependency and constraint characteristics</h3>
+        <ul>
+          <li>Euro-area settlement dependencies are visible through TARGET and TIPS participation.</li>
+          <li>Cross-border energy interconnection dependencies are visible through France-, Portugal-, and Morocco-linked electricity interfaces.</li>
+          <li>Corridor interoperability dependencies are visible through Atlantic and Mediterranean rail-continuity structures.</li>
+          <li>Shared digital-administration dependencies are visible through Red SARA, Cl@ve, @firma, Valide, and eIDAS-linked components.</li>
+          <li>Bounded observability remains a standing characteristic across telecom topology, logistics operations, island-specific transport continuity, and some operational infrastructure layers, with limits around broader exchange authority, sovereign cloud depth, and fully specified mainland-plus-island continuity mechanisms.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Trust dimensions summary statement</h3>
+        <p>Spain is documented as a Madrid-centered, multi-node, corridor-participating Iberian continuity jurisdiction whose trust dimensions describe operational continuity, interoperability, coordination, resilience, and dependency characteristics across overlapping physical and digital systems. The documented trust dimensions indicate continuity across Red SARA- and Cl@ve-coordinated administration and identity, Banco de España-coordinated TARGET and TIPS settlement, multimodal logistics through ADIF, Aena, and Puertos del Estado with Atlantic and Mediterranean corridor participation, Red Eléctrica-coordinated electricity interconnections with France, Portugal, and Morocco, EU and Iberian interoperability across financial, administrative, transport, and energy layers, split-but-coordinated cyber resilience through INCIBE-CERT and CCN-CERT, RedIRIS research networking with MareNostrum 5 compute support, and distributed regional interoperability without assigning readiness tiers, routing authority, or deployment eligibility.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>trust-dimensions.md</code></div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility.</p>
+
+        <h3>Jurisdiction identity</h3>
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Spain</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Iberian Madrid-Centered Multi-Node Corridor-Participating Continuity Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Madrid-Centered Administrative Concentration Framework · Multi-Node Logistics Continuity Framework · Atlantic Corridor Participation Framework · Mediterranean Corridor Participation Framework · Iberian Interoperability Framework · EU Payment and Settlement Interoperability Framework · Energy Interconnection Continuity Framework · Shared-Service Administration Framework · Research Network and Compute-Support Framework · Mainland-Plus-Island Territorial Continuity Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Madrid · Barcelona</span>
+          </div>
+        </div>
+
+        <h3>Infrastructure role classification</h3>
+        <ul>
+          <li>sovereign European nation-state</li>
+          <li>Madrid-centered administrative environment with bounded evidence support</li>
+          <li>multi-node logistics environment</li>
+          <li>Iberian interoperability environment</li>
+          <li>EU-interoperable infrastructure environment</li>
+          <li>corridor-participating infrastructure environment</li>
+          <li>mainland-plus-island territorial environment with limited island-specific continuity visibility</li>
+        </ul>
+
+        <h3>Administrative and identity classification</h3>
+        <ul>
+          <li>Red SARA-connected multilevel public-administration environment</li>
+          <li>Red.es-linked programme coordination</li>
+          <li>Cl@ve identification, authentication, and electronic signature (Cl@ve PIN · Permanente · Mobile)</li>
+          <li>DNIe and certificate-based access</li>
+          <li>@firma signature-service suite · Valide validation · Autentica single sign-on</li>
+          <li>Spanish eIDAS node for EU-recognition interoperability</li>
+        </ul>
+
+        <h3>Financial infrastructure and payment classification</h3>
+        <ul>
+          <li>Banco de España-participating euro-area settlement environment</li>
+          <li>TARGET payment and liquidity-management structure</li>
+          <li>TIPS instant-payment structure</li>
+          <li>layered settlement continuity across large-value and instant-payment functions</li>
+          <li>domestic financial continuity operating inside Eurosystem structures</li>
+        </ul>
+
+        <h3>Telecommunications and connectivity classification</h3>
+        <ul>
+          <li>nationwide broadband continuity (100 Mbps to 100% of population, 2023)</li>
+          <li>national 5G expansion (92.3% population · 68.9% rural) with rural-extension programmes</li>
+          <li>Red.es-linked digital coordination across broadband, 5G, public programmes, RedIRIS support, and `.es` administration</li>
+          <li>gigabit availability above 1 Gbps for 92.5% of households and businesses</li>
+        </ul>
+
+        <h3>Transportation and logistics classification</h3>
+        <ul>
+          <li>ADIF national rail management (11,672 km · 1,448 stations · 45 freight terminals · DaVinci platform)</li>
+          <li>Aena national airport network (46 airports · 2 heliports)</li>
+          <li>Puertos del Estado maritime coordination (46 ports of general interest · 28 port authorities)</li>
+          <li>Atlantic corridor participation (Irun/Hendaye → Portugal · branches via Madrid and Algeciras)</li>
+          <li>Mediterranean corridor participation (Portbou/Cerbère → Algeciras and Seville)</li>
+          <li>Iberian gauge and UIC gauge high-speed sections</li>
+        </ul>
+
+        <h3>Energy and grid coordination classification</h3>
+        <ul>
+          <li>Red Eléctrica electricity interconnection environment</li>
+          <li>France, Portugal, and Morocco energy interfaces</li>
+          <li>Bay of Biscay interconnection (EU project of common interest)</li>
+          <li>renewable-integration continuity through interconnection and exchange-capacity growth</li>
+          <li>PERTE Chip semiconductor and microelectronics development (€12.25 billion)</li>
+          <li>IMB-CNM-CSIC domestic microelectronics research</li>
+        </ul>
+
+        <h3>EU, Iberian, and corridor interoperability classification</h3>
+        <ul>
+          <li>EU interoperability across settlement, identity, transport, energy, and research-network layers</li>
+          <li>Iberian synchronization through France- and Portugal-linked rail and electricity continuity</li>
+          <li>Atlantic corridor interoperability (western and inland rail continuity)</li>
+          <li>Mediterranean corridor interoperability (eastern and southern rail continuity)</li>
+          <li>payment interoperability through euro-area participation, TARGET, and TIPS</li>
+          <li>digital interoperability through Red SARA and the Spanish eIDAS node</li>
+        </ul>
+
+        <h3>Disaster-response and continuity classification</h3>
+        <ul>
+          <li>INCIBE-CERT civil and private-law cyber-response environment</li>
+          <li>CCN-CERT public-administration and strategic-sector cyber-response environment</li>
+          <li>National Cryptologic Centre cryptologic and IT-security coordination</li>
+          <li>differentiated cyber-response structure with service-continuity support through shared administrative platforms</li>
+        </ul>
+
+        <h3>Research and knowledge-network classification</h3>
+        <ul>
+          <li>RedIRIS national academic and research network (500+ affiliated institutions)</li>
+          <li>RedIRIS Nova 100 continuity</li>
+          <li>eduroam-supported research-network interoperability</li>
+          <li>MareNostrum 5 compute concentration at BSC-CNS (314 PFlops · pre-exascale EuroHPC)</li>
+        </ul>
+
+        <h3>Regional and international integration classification</h3>
+        <ul>
+          <li>EU integration across payments, identity interoperability, transport corridors, energy linkage, and research networking</li>
+          <li>Iberian connectivity through France- and Portugal-linked rail and energy interaction</li>
+          <li>Atlantic and Mediterranean corridor connectivity as documented external transport-continuity pathways</li>
+          <li>Morocco energy linkage through electricity interconnection</li>
+          <li>aviation and maritime continuity through Aena and Puertos del Estado</li>
+        </ul>
+
+        <h3>Constraint classification</h3>
+        <ul>
+          <li>bounded observability across telecom topology, logistics operations, island-specific transport continuity, and some operational infrastructure layers</li>
+          <li>uneven regional visibility stronger for national operators and corridor-linked systems</li>
+          <li>limited Madrid concentration preserved as an inland administrative and corridor hinge</li>
+          <li>incomplete island-specific continuity evidence</li>
+          <li>limits around broader exchange authority and sovereign cloud depth</li>
+          <li>absence of a complete domestic leading-edge semiconductor fabrication stack and sovereign hyperscale cloud stack evidence</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Metadata summary statement</h3>
+        <p>Spain appears in the metadata layer as the descriptor-oriented classification of the Madrid-centered, multi-node, corridor-participating Iberian continuity environment established in the evidence, signals, and trust-dimensions layers, with jurisdiction-type, geographic, and infrastructure-orientation classifications spanning the documented administrative, identity, financial, telecommunications, transport, energy, EU and corridor, cyber-resilience, data, research-network, and regional connectivity surfaces.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>metadata.md</code></div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+        <h3>Jurisdiction overview</h3>
+        <p>Spain presents as a Madrid-centered administrative environment whose national continuity depends on distributed multi-node logistics coordination across rail, airport, and maritime systems, energy interconnections, telecommunications, research networks, shared public-administration platforms, and interoperable payments. The jurisdiction's structure is Iberian and corridor-participating, with continuity sustained through shared coordination institutions and cross-border interoperability rather than single-node concentration. Public and commercial infrastructures operate in combination, with administrative, identity, payment, cyber-resilience, and research-network layers interacting with operator-led rail, airport, port, and energy environments. The overall profile is therefore that of a distributed national network organized around administrative concentration, multi-node logistics, and layered interoperability.</p>
+
+        <h3>Administrative and identity profile</h3>
+        <p>The administrative and identity profile is characterized by Red SARA as the government intranet interconnecting ministries, autonomous communities, autonomous cities, and more than 4,000 local entities, with Red.es-linked programme coordination across digital public-service functions. Cl@ve provides a common platform for identification, authentication, and electronic signature complemented by DNIe and certificate-based access, while @firma, Valide, Autentica, and the Spanish eIDAS node provide shared signature, validation, and EU-recognition components. The administrative environment reflects centralized coordination with distributed execution through common communications and service-sharing layers rather than fully separate institutional stacks, bounded to publicly documented functions.</p>
+
+        <h3>Payment and financial profile</h3>
+        <p>The payment profile is structured around Banco de España participation in the euro area and Eurosystem settlement infrastructure. TARGET settles in euro in central-bank money and provides central liquidity-management services including large-value real-time gross settlement, securities-related cash settlement, and instant-payment settlement, while TIPS enables instant-payment settlement in central-bank money around the clock. The coexistence of TARGET and TIPS provides layered settlement coordination across high-value and instant-payment functions. The overall payment environment reflects domestic financial continuity operating inside Eurosystem structures rather than a wholly separate national settlement perimeter, and does not imply comparative payment-system status.</p>
+
+        <h3>Telecommunications and connectivity profile</h3>
+        <p>The telecommunications profile is marked by nationwide broadband continuity, national 5G expansion, and ministry-linked digital coordination. Spain closed the fixed digital divide in 2023 with 100 Mbps access to the full population, 5G coverage reaching the large majority of the population with rural-extension programmes, and gigabit availability above 1 Gbps for most households and businesses. Red.es coordinates 5G initiatives, rural broadband, public digital programmes, RedIRIS support, and `.es` management, producing territorial digital continuity supported by interacting public and market deployment layers. The resulting profile is one of nationwide connectivity continuity sustained through coordinated public and commercial infrastructure rather than urban-only concentration.</p>
+
+        <h3>Transportation and logistics profile</h3>
+        <p>Spain has a multi-node logistics profile in which Aena's national airport network, ADIF's rail network, and Puertos del Estado's state port system interact across aviation, rail, and maritime systems. ADIF coordinates 11,672 km of railway, 1,448 stations, and 45 freight terminals through traffic-management and control centres and the DaVinci platform, while Puertos del Estado coordinates 46 ports of general interest through 28 port authorities. The Atlantic and Mediterranean corridors link Spanish rail logistics to trans-European freight and passenger continuities, with Madrid appearing as one inland coordination hinge within the documented topology. The resulting transport profile is best characterized as multi-node logistics continuity coordinated through common institutions rather than a single-node transport structure, with mainland-plus-island continuity only partially visible beyond broad airport coverage.</p>
+
+        <h3>Energy and industrial coordination profile</h3>
+        <p>The energy profile is structured around Red Eléctrica electricity interconnections described as tools for ending energy isolation. The Spanish mainland electricity system connects to those of France, Portugal, and Morocco, with the Bay of Biscay interconnection with France as an EU project of common interest and additional Portugal interconnection supporting exchange capacity and renewable integration. PERTE Chip provides state-backed industrial coordination around semiconductor-capacity development with a substantial budget, and IMB-CNM-CSIC provides a domestic microelectronics research base. These industrial and energy characteristics are documented as coordination and continuity structures rather than superiority or sovereignty claims.</p>
+
+        <h3>EU, Iberian, and corridor interoperability profile</h3>
+        <p>Spain's interoperability profile functions as a standing continuity mechanism across settlement, identity, transport, energy, and research-network layers. Euro-area participation, TARGET, and TIPS provide financial interoperability, while the Spanish eIDAS node and Red SARA provide administrative interoperability spanning domestic multilevel governance and EU-recognition structures. The Atlantic and Mediterranean corridors provide transport interoperability through two major trans-European rail continuities, and Red Eléctrica's France and Portugal interconnections provide Iberian and EU energy interoperability. Interoperability beyond national boundaries functions as a recurring continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity profile</h3>
+        <p>The disaster-response profile is characterized by INCIBE-CERT for citizens and private-law entities and CCN-CERT for public administrations, classified systems, and strategic-sector entities, with the National Cryptologic Centre coordinating public-administration cryptologic and IT-security activities. The coexistence of INCIBE-CERT and CCN-CERT provides a split-but-coordinated cyber-resilience architecture in which different constituencies are handled through differentiated response structures, while Red SARA and shared administrative service components support service continuity through common platforms and inter-administration connectivity. The overall disaster-response profile is most clearly documented in cyber and digital-service continuity layers rather than broader civil-protection structures, bounded to documented public mechanisms.</p>
+
+        <h3>Data infrastructure profile</h3>
+        <p>The data-infrastructure profile combines Red SARA-supported digital continuity across multiple levels of government with shared-service persistence through Cl@ve, @firma, Valide, and eIDAS-linked components. Identity-signature-validation interoperability operates within the public-administration environment, and Red.es-linked digital-service coordination reinforces continuity through shared public digital infrastructure rather than department-by-department reinvention. The `.es` namespace continuity through Red.es-linked registry governance supports namespace trust and continuity. The resulting profile is one of distributed digital-service coordination with stronger evidence for administrative continuity than for broader exchange-control or sovereign cloud authority.</p>
+
+        <h3>Research and knowledge-network profile</h3>
+        <p>The research and knowledge-network profile is anchored by RedIRIS as the national academic and research network with more than 500 affiliated institutions, RedIRIS Nova 100 continuity, and eduroam-supported interoperability. MareNostrum 5 at BSC-CNS provides nationally significant compute concentration within the research layer, with research-compute support through interaction between RedIRIS connectivity and BSC-hosted HPC capacity. This profile remains documented as infrastructure support rather than a broader scientific-capability claim, limited to the network and compute layers themselves.</p>
+
+        <h3>Regional and international connectivity profile</h3>
+        <p>Spain's regional integration profile includes EU integration across payments, identity interoperability, transport corridors, energy linkage, and research networking, Iberian connectivity through France- and Portugal-linked rail and energy interaction, and corridor connectivity through the Atlantic and Mediterranean pathways. Morocco energy linkage through electricity interconnection extends connectivity beyond EU-only interfaces, while aviation and maritime continuity through Aena's airport system and Puertos del Estado's maritime coordination distribute connectivity across more than one infrastructure class rather than depending on a single gateway type.</p>
+
+        <h3>Cross-system operational profile</h3>
+        <p>The strongest cross-system pattern is interoperability as a continuity mechanism across payment, identity, transport, energy, and research-network layers. A second recurring pattern is centralized coordination with distributed execution across administrative, digital, rail, port, and research-network systems. Multi-node logistics continuity functions as a dominant transport characteristic, while corridor participation reinforces domestic continuity rather than appearing as an external overlay only. The profile also reflects layered continuity across digital, payment, transport, energy, and research systems, with limited Madrid concentration preserved as an inland administrative and corridor hinge without over-centralizing the national topology. Spain operates as a distributed multi-node coordination environment rather than a single-node or single-corridor system.</p>
+
+        <h3>Structural constraints</h3>
+        <p>The current Spain profile carries clear structural constraints. The package preserves euro-area settlement dependencies through TARGET and TIPS, cross-border energy interconnection dependencies through France-, Portugal-, and Morocco-linked interfaces, corridor interoperability dependencies through Atlantic and Mediterranean rail structures, and shared digital-administration dependencies through Red SARA, Cl@ve, @firma, Valide, and eIDAS-linked components. Public observability remains bounded across telecom topology, logistics operations, island-specific transport continuity, and some operational infrastructure layers, with limits around broader exchange authority, sovereign cloud depth, and fully specified mainland-plus-island continuity mechanisms. The package also preserves the absence of a complete domestic leading-edge semiconductor fabrication stack and the absence of sovereign hyperscale cloud stack evidence. These constraints describe boundary conditions reflecting a Madrid-centered, multi-node, corridor-participating Iberian continuity environment in which continuity derives from distributed coordination and interoperability rather than sovereign-scale compute autonomy.</p>
+
+        <hr class="section-divider">
+
+        <h3>Profile summary statement</h3>
+        <p>Spain appears in the profile layer as the structural characterization of the Madrid-centered, multi-node, corridor-participating Iberian continuity environment established in the evidence, signals, trust-dimensions, and metadata layers, situated within an EU-interoperable, France- and Portugal-adjacent setting and carried through documented administrative, identity, financial, telecommunications, transport, energy, EU and corridor, cyber-resilience, data, research-network, and regional connectivity anchors.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code></div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Spain profile into builder-facing interpretation. It provides structural interpretation only and does not assign routing authority, readiness tiers, Atlas surfaces, Atlas topology authority, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Administrative and service environment</h3>
+        <p>In builder-facing terms, Spain presents as a Red SARA-connected multilevel administrative structure interconnecting ministries, autonomous communities, autonomous cities, and local entities, with Red.es-linked programme coordination across digital public-service functions. Centralized coordination operates over distributed execution across multiple government levels. The administrative environment appears as shared coordination through common communications and service-sharing layers rather than fully separate institutional stacks.</p>
+
+        <h3>Identity and credential environment</h3>
+        <p>The identity environment appears as a multi-method coordination structure through Cl@ve, DNIe, and certificate-based access, with @firma signature services, Valide validation, and the Spanish eIDAS node providing shared components. Cl@ve functions as a common platform for identification, authentication, and electronic signature with PIN, Permanente, and Mobile access modes, while the eIDAS node provides EU-recognition interoperability. Identity functions as a reusable coordination mechanism across public-service workflows rather than an application-specific model, bounded to documented public-administration functions.</p>
+
+        <h3>Payment and interoperability environment</h3>
+        <p>The payment environment appears as a Banco de España-participating euro-area settlement structure through TARGET and TIPS. TARGET settles large-value payments, securities-related cash settlement, and instant payments in central-bank money, while TIPS provides around-the-clock instant-payment settlement. The coexistence of TARGET and TIPS provides layered settlement coordination across high-value and instant-payment functions. The payment environment presents as continuity-oriented and interoperable across the euro area without implying comparative financial-system status.</p>
+
+        <h3>Telecommunications and connectivity environment</h3>
+        <p>Builders encounter Spain as a nationwide connectivity environment with broad broadband and 5G coverage and ministry-linked digital coordination through Red.es. The closure of the fixed digital divide, national 5G expansion with rural-extension programmes, and high gigabit availability indicate territorial digital continuity supported by interacting public and market deployment layers. The telecommunications environment presents as nationally distributed rather than urban-only concentrated.</p>
+
+        <h3>Transportation and logistics environment</h3>
+        <p>The transportation and logistics environment appears as a multi-node structure through Aena's national airport network, ADIF's rail network, and Puertos del Estado's state port system. ADIF coordinates rail traffic through traffic-management and control centres and the DaVinci platform, Puertos del Estado coordinates ports of general interest through port authorities, and the Atlantic and Mediterranean corridors link rail logistics to trans-European continuities. Madrid appears as one inland coordination hinge rather than a sufficient description of the full topology, and the logistics environment presents as multi-node continuity coordinated through common institutions.</p>
+
+        <h3>Energy and industrial coordination environment</h3>
+        <p>The energy environment appears as a Red Eléctrica interconnection structure linking the Spanish mainland system to those of France, Portugal, and Morocco, with the Bay of Biscay project and additional Portugal interconnection supporting exchange capacity and renewable integration. PERTE Chip provides state-backed semiconductor-capacity coordination, and IMB-CNM-CSIC provides a domestic microelectronics research base. The energy and industrial environment presents as interconnection-supported and coordination-oriented rather than a self-contained or sovereignty-claiming system.</p>
+
+        <h3>EU, Iberian, and corridor interoperability environment</h3>
+        <p>The interoperability environment appears as a standing continuity structure across settlement, identity, transport, energy, and research-network layers. Euro-area participation, TARGET, and TIPS provide financial interoperability, the Spanish eIDAS node and Red SARA provide administrative interoperability, the Atlantic and Mediterranean corridors provide transport interoperability, and Red Eléctrica interconnections provide energy interoperability. This environment presents as interoperability functioning as a recurring continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity environment</h3>
+        <p>The disaster-response environment appears as a split-but-coordinated cyber-resilience structure through INCIBE-CERT for citizens and private-law entities and CCN-CERT for public administrations and strategic-sector entities, with the National Cryptologic Centre coordinating public-administration security activities. Red SARA and shared administrative service components support service continuity. The continuity environment presents as most clearly documented in cyber and digital-service layers rather than broader civil-protection structures.</p>
+
+        <h3>Data infrastructure environment</h3>
+        <p>The data environment appears as a Red SARA-supported continuity structure across multiple levels of government, with shared-service persistence through Cl@ve, @firma, Valide, and eIDAS-linked components and `.es` namespace continuity through Red.es-linked registry governance. The data environment presents as distributed digital-service coordination with stronger administrative continuity than broader exchange-control or sovereign cloud authority.</p>
+
+        <h3>Research and knowledge-network environment</h3>
+        <p>The research and knowledge-network environment appears through RedIRIS as the national academic and research network with more than 500 affiliated institutions, RedIRIS Nova 100 continuity, and eduroam interoperability, with MareNostrum 5 at BSC-CNS providing compute concentration within the research layer. This environment presents as networked knowledge infrastructure in which research connectivity and high-performance compute reinforce one another without implying broader scientific ranking.</p>
+
+        <h3>Regional and international connectivity environment</h3>
+        <p>Regional interoperability appears through EU integration across payments, identity interoperability, transport corridors, energy linkage, and research networking, Iberian connectivity through France- and Portugal-linked rail and energy interaction, Atlantic and Mediterranean corridor connectivity, Morocco energy linkage, and aviation and maritime continuity through Aena and Puertos del Estado. Regional interaction appears through payment, energy, transport, and research-network interfaces rather than a single external-facing gateway narrative.</p>
+
+        <h3>Cross-system interaction environment</h3>
+        <p>The strongest visible interaction pattern is interoperability as a continuity mechanism across payment, identity, transport, energy, and research-network layers, with centralized coordination operating over distributed execution. Multi-node logistics continuity, corridor participation reinforcing domestic continuity, and layered continuity across digital, payment, transport, energy, and research systems reinforce one another, with Madrid appearing as a bounded inland administrative and corridor hinge. The builder-facing environment appears as a distributed coordination model in which shared service layers and cross-border couplings reinforce domestic operation.</p>
+
+        <h3>Operational visibility and dependency environment</h3>
+        <p>The operational environment is shaped by euro-area settlement dependencies through TARGET and TIPS, cross-border energy interconnection dependencies through France-, Portugal-, and Morocco-linked interfaces, corridor interoperability dependencies through Atlantic and Mediterranean rail structures, and shared digital-administration dependencies through Red SARA and Cl@ve-related components. Public observability remains bounded across telecom topology, logistics operations, island-specific transport continuity, and some operational infrastructure layers. The environment appears strongly observable around national operators and ministry-linked coordination structures while remaining incompletely transparent across island-specific continuity and private operational layers.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder mode summary statement</h3>
+        <p>Spain appears in builder mode as the builder-facing reading of the Madrid-centered, multi-node, corridor-participating Iberian continuity environment established across the evidence, signals, trust-dimensions, metadata, and profile layers, with interaction surfaces spanning the documented administrative, identity, payment, telecommunications, transport, energy, EU and corridor, cyber-resilience, data, research-network, and regional connectivity environments without deployment recommendation, readiness assignment, or routing authority.</p>
+
+        <div class="meta-line">Source: <code>builder-mode.md</code></div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Initial package creation</h3>
+        <p>The Spain jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The change-log records that <code>evidence.md</code> established euro-area membership with Banco de España participation in TARGET and TIPS, Cl@ve, DNIe, @firma, Valide, Autentica, and the Spanish eIDAS node identity and signature components, Red SARA multilevel administrative interconnection with Red.es programme coordination, ministry-linked broadband and 5G expansion, ADIF national rail management with 11,672 km, 1,448 stations, 45 freight terminals, and the DaVinci platform, Aena's 46-airport network, Puertos del Estado coordination of 46 ports of general interest through 28 port authorities, Atlantic and Mediterranean corridor participation, Red Eléctrica electricity interconnections with France, Portugal, and Morocco including the Bay of Biscay project, RedIRIS and RedIRIS Nova 100 with eduroam and MareNostrum 5 at BSC-CNS, INCIBE-CERT and CCN-CERT cyber-response structures, and PERTE Chip and IMB-CNM-CSIC semiconductor and microelectronics development.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The change-log records that <code>signals.md</code> derived administrative and identity coordination signals, financial and payment coordination signals, telecommunications and connectivity signals, transportation and logistics coordination signals, energy and industrial coordination signals, EU, Iberian, and corridor interoperability signals, disaster-response and continuity signals, data infrastructure and continuity signals, research and knowledge-network signals, regional and international connectivity signals, cross-system structural signals, and constraint-boundary signals preserving bounded visibility across logistics operations, telecom topology, cyber coordination, and island-specific continuity mechanisms, a limited Madrid concentration signal, a limited mainland-plus-island continuity signal, and the absence of a complete domestic leading-edge semiconductor fabrication stack and sovereign hyperscale cloud evidence.</p>
+
+        <h3>Trust-dimensions layer construction</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> established Red SARA-coordinated administrative continuity, identity-service integration through Cl@ve and the eIDAS node, Banco de España-coordinated TARGET and TIPS settlement, nationwide telecommunications continuity, multi-node multimodal logistics continuity through ADIF, Aena, and Puertos del Estado with corridor participation, electricity interconnection continuity with France, Portugal, and Morocco, EU, Iberian, and corridor interoperability, split-but-coordinated cyber resilience through INCIBE-CERT and CCN-CERT, Red SARA-supported data continuity, RedIRIS research networking with MareNostrum 5 compute support, and distributed regional interoperability.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The change-log records that <code>metadata.md</code> classified Spain as a sovereign European nation-state, Madrid-centered administrative environment with bounded evidence support, multi-node logistics environment, Iberian interoperability environment, EU-interoperable infrastructure environment, corridor-participating infrastructure environment, and mainland-plus-island territorial environment with limited island-specific continuity visibility, with documented characteristics across administrative coordination, identity, payment and financial structures, telecommunications, transportation and logistics, energy and industrial coordination, EU, Iberian, and corridor interoperability, cyber-resilience, data infrastructure, research and knowledge-network participation, regional connectivity, cross-system patterns, and dependency characteristics.</p>
+
+        <h3>Profile layer characterization</h3>
+        <p>The change-log records that <code>profile.md</code> characterized Spain as a Madrid-centered, multi-node, corridor-participating Iberian continuity environment, EU-interoperable and France- and Portugal-adjacent, organized through distributed multi-node logistics, shared-service administration, and layered interoperability, with public and commercial infrastructures combining to sustain continuity through shared coordination institutions and cross-border interoperability rather than single-node concentration.</p>
+
+        <h3>Builder mode translation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into administrative and service interpretation, identity and credential interpretation, payment and interoperability interpretation, telecommunications and connectivity interpretation, transportation and logistics interpretation, energy and industrial coordination interpretation, EU, Iberian, and corridor interoperability interpretation, disaster-response and continuity interpretation, data infrastructure interpretation, research and knowledge-network interpretation, regional and international connectivity interpretation, cross-system interaction interpretation, and operational visibility and dependency interpretation.</p>
+
+        <h3>Structural boundary decisions recorded</h3>
+        <p>The change-log records that limited Madrid concentration was preserved as an inland administrative and corridor hinge without over-centralizing the national topology, that multi-node logistics continuity was preserved without collapsing the package into a single-node model, and that corridor participation and interoperability were preserved as standing structural mechanisms. Military interpretation was excluded, intelligence inference was excluded, Mediterranean-gateway and Atlantic-gateway strategic framing was excluded, separatist and regional-political commentary was excluded, tourism, lifestyle, and startup-ecosystem framing was excluded, deployment readiness interpretation was excluded, geopolitical ranking was excluded, and superiority framing, hidden-state capability, deployment suitability, operational approval, and strategic forecasting were preserved as excluded inference categories.</p>
+
+        <h3>Package completion status</h3>
+        <p>The Spain jurisdiction package is complete within the Atlas normalization framework and aligned with Madrid-centered administrative concentration, multi-node logistics continuity, Atlantic and Mediterranean corridor participation, Iberian interoperability, EU payment and settlement interoperability, energy interconnection continuity, shared-service administration, research-network and compute support, and mainland-plus-island territorial continuity normalization standards.</p>
+
+        <div class="meta-line">Normalization status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>change-log.md</code></div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Spain jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/spain/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Spain</li>
+          <li><strong>Code:</strong> ES</li>
+          <li><strong>Region:</strong> Iberian Madrid-Centered Multi-Node Corridor-Participating Continuity Environment</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor alignment</h4>
+        <ul>
+          <li>Madrid-Centered Administrative Concentration Framework</li>
+          <li>Multi-Node Logistics Continuity Framework</li>
+          <li>Atlantic Corridor Participation Framework</li>
+          <li>Mediterranean Corridor Participation Framework</li>
+          <li>Iberian Interoperability Framework</li>
+          <li>EU Payment and Settlement Interoperability Framework</li>
+          <li>Energy Interconnection Continuity Framework</li>
+          <li>Shared-Service Administration Framework</li>
+          <li>Research Network and Compute-Support Framework</li>
+          <li>Mainland-Plus-Island Territorial Continuity Framework</li>
+        </ul>
+        <h4>Primary coordination cities</h4>
+        <ul>
+          <li>Madrid</li>
+          <li>Barcelona</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Anchors</h3>
+        <h4>Documented surfaces</h4>
+        <ul>
+          <li>Red SARA · Cl@ve (PIN · Permanente · Mobile) · DNIe · @firma · Valide · Autentica · Spanish eIDAS node · Red.es</li>
+          <li>Banco de España · euro area · Eurosystem TARGET · TIPS</li>
+          <li>ADIF (11,672 km · 1,448 stations · 45 freight terminals · DaVinci) · Aena (46 airports · 2 heliports) · Puertos del Estado (46 ports · 28 port authorities)</li>
+          <li>Atlantic Corridor (Irun/Hendaye · Madrid · Algeciras) · Mediterranean Corridor (Portbou/Cerbère · Algeciras · Seville)</li>
+          <li>Red Eléctrica · France · Portugal · Morocco interconnections · Bay of Biscay project</li>
+          <li>Ministry for Digital Transformation broadband and 5G programmes · `.es` registry</li>
+          <li>RedIRIS · RedIRIS Nova 100 · eduroam · MareNostrum 5 · BSC-CNS</li>
+          <li>INCIBE-CERT · CCN-CERT · National Cryptologic Centre</li>
+          <li>PERTE Chip · IMB-CNM-CSIC microelectronics research</li>
+          <li>mainland-plus-island territorial continuity (partial visibility)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereign hyperscale compute classification.</li>
+          <li>Not a complete sovereign leading-edge semiconductor fabrication classification.</li>
+          <li>Not a Mediterranean-gateway or Atlantic-gateway classification.</li>
+          <li>Not a separatist or regional-political commentary.</li>
+          <li>Not a tourism, lifestyle, digital-nomad, or startup-ecosystem narrative.</li>
+          <li>Not a TARGET or TIPS settlement-authority classification beyond documented Eurosystem participation.</li>
+          <li>Not a broader internet-exchange centrality classification beyond documented `.es` registry governance.</li>
+          <li>Not a "world-class," "regional leader," "gateway," "European leader," or "powerhouse" classification.</li>
+          <li>Not an economic, political, demographic, military, cultural, or superpower narrative.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
