@@ -1,91 +1,745 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Czech Republic | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Czech Republic — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Czech Republic Atlas jurisdiction package rendering. Prague-Centered Administrative Concentration, Distributed Territorial Continuity, Central European Connectivity, EU Interoperability, Energy Interconnection, CERTIS Domestic Settlement with SEPA-Facing Interoperability, Layered Identity and Public-Service Continuity, Exchange-Plus-Backbone Digital Architecture, and CESNET Research Network alignment.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/czech-republic/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Czech Republic</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Czech Republic</h1>
 
-</article>
-</main>
+  <p class="lede">Prague-centered administrative jurisdiction whose national continuity rests on distributed territorial coordination across rail, motorway, airport, electricity, gas, internet exchange, research-network, payment, identity, and emergency-coordination layers rather than any single system. This page renders the canonical Czech Republic Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting Správa železnic and České dráhy national rail with D1 motorway continuity and Václav Havel Airport Prague aviation, Czech National Bank coordination of CERTIS interbank settlement and instant payments with SEPA-facing creditor-register administration, NIX.CZ exchange concentration extending to Bratislava, Vienna, and Frankfurt alongside CZ.NIC `.cz` administration and anycast DNS, the CESNET research backbone linked into GÉANT, Internet2, ESnet, and APAn, ČEPS electricity transmission and NET4GAS gas transmission with cross-border interfaces, Citizen Portal and databox access with the Citizen Identity multi-path credential environment including the eGovernment Mobile Key, NIA ID, bank identity, and eObčanka alongside mojeID verified login, and NÚKIB and GovCERT.CZ cyber coordination together with the Fire Rescue Service and the Civil Emergency Planning Committee.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Czech Republic (CZ)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>The Czech Republic currently reads within Atlas as a Prague-centered administrative environment whose national continuity depends on distributed coordination across rail, motorway, airport, electricity, gas, internet exchange, research-network, payment, identity, and emergency-coordination layers rather than any single system. The package places the Czech Republic inside Citizen Portal-, databox-, and Citizen Identity-linked public-service administration with layered credential paths including the eGovernment Mobile Key, NIA ID, bank identity, eObčanka, and mojeID, Czech National Bank-coordinated CERTIS interbank settlement and instant payments alongside SEPA-facing creditor-register administration, Správa železnic- and České dráhy-linked rail continuity with D1 motorway and Václav Havel Airport Prague aviation, ČEPS- and NET4GAS-linked electricity and gas interconnection toward Germany, Slovakia, and Poland-side delivery, NIX.CZ-, CZ.NIC-, and CESNET-linked exchange-plus-backbone digital continuity into GÉANT, Internet2, ESnet, and APAn, and NÚKIB-, GovCERT.CZ-, and Fire Rescue Service-linked continuity layers. These conditions support a structural characterization centered on Prague administrative concentration, distributed territorial continuity, Central European connectivity, EU and energy interoperability, and concentration-with-distribution without assigning readiness tiers, routing authority, or comparative status.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Czech Republic</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Central European Prague-Centered Distributed Territorial Continuity Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Prague-Centered Administrative Concentration Framework · Distributed Territorial Continuity Framework · Central European Connectivity Framework · EU Interoperability Framework · Energy Interconnection Framework · CERTIS Domestic Settlement and SEPA-Facing Interoperability Framework · Layered Identity and Public-Service Continuity Framework · Exchange-Plus-Backbone Digital Architecture Framework · Research Network and Knowledge-Network Framework · Cyber and Civil-Protection Coordination Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Prague · Brno · Ostrava</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records evidence-supported national structures documented for the Czech Republic that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code> · <code>metadata.md</code> — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Czech Republic jurisdiction package across administrative governance, identity, payments, telecommunications, transport, energy, EU and Central European interoperability, disaster-response, and connectivity surfaces.</p>
+
+        <h3>Geographic and regional position</h3>
+        <p>The evidence layer records the Czech Republic as a sovereign state in Central Europe with land borders with Germany, Poland, Slovakia, and Austria, whose inland territorial continuity makes road, rail, energy, and digital interconnection operationally significant, with public Czech infrastructure materials presenting the state as a land-connected system whose national continuity depends on stable internal links plus reliable border interfaces. The country is recorded as a member of the European Union since 1 May 2004 and part of Schengen since 21 December 2007, placing transport, payment, energy, and digital-service systems inside broader European interoperability frameworks rather than a purely domestic operating environment.</p>
+
+        <h3>Transportation and logistics infrastructure</h3>
+        <p>The evidence layer records Správa železnic as a state organization with a registered office in Prague responsible for operation, operability, maintenance, repair, development, and modernization of railway infrastructure, with the state owning the majority of railway lines and Správa železnic acting as guarantor of operability, modernization, and development. České dráhy is recorded with Prague-centered and national routes including Brno to Prague, Ostrava to Prague, Plzeň to Prague, Prague to Dresden, and Prague to Poprad-Tatry, indicating Prague as a primary rail node with long-distance flows extending across the country and into neighboring states. The Czech Ministry of Transport is recorded as stating in December 2022 that the Říkovice to Přerov section was the last missing section of the D1 motorway, reinforcing the D1 as a central domestic trunk route linking the Prague, Brno, and Ostrava axes. Aviation concentration is recorded as strongest at Václav Havel Airport Prague, with 16,353,522 passengers and 134,609 aircraft take-offs and landings in 2024.</p>
+
+        <h3>Energy and industrial structure</h3>
+        <p>The evidence layer records ČEPS as the sole Czech transmission system operator holding an exclusive licence under the Energy Act, responsible for maintaining and upgrading 45 substations with 82 transformers, operating 4,188 km of 400 kV lines and 1,687 km of 220 kV lines, maintaining the real-time balance of electricity supply and demand, and organizing cross-border power exchanges including transits, placing electricity continuity as national in coverage but structurally interlinked with surrounding European systems. Gas transmission is recorded through NET4GAS, holder of the exclusive gas transmission-system-operator licence with more than 4,000 km of pipelines, compressor stations, and around 100 transfer stations at the interface with domestic gas distribution, providing transmission services 24 hours a day and 7 days a week, with delivery and measurement points at interfaces with Slovakia and Germany plus delivery at Cieszyn on the Polish side, describing itself as a Central European gas transmission operator active in connecting and integrating European energy markets.</p>
+
+        <h3>Digital and telecommunications infrastructure</h3>
+        <p>The evidence layer records CZ.NIC as the administrator of the `.cz` domain space and an operator of key Czech internet services, with DNS anycast infrastructure built for stability, resilience, and software and hardware diversity, with stated global traffic coverage and 1.5 Tbps of total DNS-service capacity. NIX.CZ is recorded as a neutral internet exchange with a leaf-spine topology built on VxLAN and EVPN that increased stability and scalability while enabling integration of additional locations including Bratislava, Vienna, and Frankfurt, with multiple Prague nodes and support for 100GE and 400GE connections, placing Prague in a clear national peering role with direct extension into nearby Central European exchange locations. CESNET is recorded as a separate academic and research-network layer, originally connecting ten Czech and Moravian university towns with the Prague to Brno route as an early backbone path, currently operating at hundreds of gigabits per second with redundant topology, 24/7 monitoring, and access to partner networks including GÉANT, Internet2, ESnet, and APAn.</p>
+
+        <h3>Financial and payment infrastructure</h3>
+        <p>The evidence layer records the Czech National Bank as the key public institution for payment infrastructure oversight and operation, with oversight identified as one of its basic functions helping ensure safe and efficient operation of payment and settlement systems, central securities depositories, and electronic payment instruments and schemes, giving the central bank a direct structural role rather than only a supervisory one. CERTIS is recorded as the only interbank payment system in the Czech Republic handling interbank payments in Czech koruna, with the CNB operating the instant-payments component of CERTIS, processing payments 24/7 including nights and weekends. Euro-area interoperability is recorded through CNB administration of rules for maintaining the register of SEPA Direct Debit creditors in the Czech Republic for EUR direct-debit collections, combining a koruna-denominated domestic interbank rail with EU-facing payment-standard interfaces.</p>
+
+        <h3>Government and administrative technology structure</h3>
+        <p>The evidence layer records the Citizen Portal as the fastest way to state services, listing functions including connection to databoxes, notifications, criminal-record requests, document access, vehicle and point-account information, and downloadable records, indicating a centralized access layer for multiple public-service interactions rather than isolated agency portals. Access is recorded as requiring Citizen Identity or a databox of a natural person or entrepreneur, with Citizen Identity including means such as the eGovernment Mobile Key, NIA ID, bank identity, and other identification methods used to prove identity across state and public-administration portals. Public administration portals are recorded as maintaining dedicated pages for eObčanka and citizen-identity pathways, with mojeID operated by CZ.NIC as a related but distinct identity-support layer where verified users can use electronic services of public administration and local government, indicating a layered identity model rather than a single credential type.</p>
+
+        <h3>EU and Central European interoperability infrastructure</h3>
+        <p>The evidence layer records EU and Central European interoperability as visible across transport, energy, payments, and digital networks, with the European Commission describing TEN-T as the framework for a coherent, efficient, multimodal, and cross-border transport network and Czech transport fitting into that logic through nationally managed rail infrastructure, D1 motorway completion, Prague Airport's role as the main aviation gateway, and rail services linking Prague with Dresden and Slovakia-facing destinations. ČEPS is recorded as organizing cross-border power exchanges and participating in European international organizations, and NET4GAS as operating a Central European transmission system with border interfaces to Germany, Slovakia, and Poland-side delivery. Payment and digital interoperability are recorded through CNB SEPA creditor-register administration, NIX.CZ's Prague-based exchange extending to Bratislava, Vienna, and Frankfurt, and CESNET's access to GÉANT and other international research networks.</p>
+
+        <h3>Disaster resilience, cybersecurity, and operational coordination</h3>
+        <p>The evidence layer records NÚKIB and GovCERT.CZ as the public cybersecurity and continuity layer, with NÚKIB materials describing Government CERT and related teams as playing a key role in protecting critical information infrastructure and important information systems under the Cybersecurity Act, and GovCERT.CZ's constituency including public sector institutions and critical information infrastructure, operating within the National Cyber Security Centre. GovCERT.CZ is recorded as providing coordination and aid in resolving incidents, performing network-data and log analysis, operating detection-system services, and connecting organizations with Czech and foreign partners when incidents cross borders. The Ministry of the Interior's Directorate General of the Fire Rescue Service is recorded with a Civil Emergency Preparedness and Strategies division focusing on international cooperation, especially within the EU and NATO, in civil protection, civil emergency planning, and critical infrastructure protection, serving as secretariat to the national Civil Emergency Planning Committee.</p>
+
+        <h3>Regional and international connectivity</h3>
+        <p>The evidence layer records regional and international connectivity as visible across land transport, aviation, energy, and digital systems, with Germany-facing continuity directly visible in Prague to Dresden rail service and gas-transfer points on the German border, Slovakia-facing continuity in Prague to Poprad-Tatry rail service and the Lanžhot gas interface, Poland-facing connectivity through land-border position and gas delivery at Cieszyn on the Polish side, and Austria-facing continuity through railjet services and the Vienna extension of NIX.CZ's peering footprint. Prague Airport is recorded as the main international aviation layer, with D1 motorway continuity strengthening domestic access between Prague, Brno, and the eastern part of the country, and digital internationalization visible through NIX.CZ's multi-city peering footprint, CESNET's links to GÉANT, Internet2, ESnet, and APAn, and CZ.NIC's globally distributed anycast DNS infrastructure.</p>
+
+        <hr class="section-divider">
+
+        <h3>Summary evidence statement</h3>
+        <p>The current source set documents the Czech Republic as a Prague-centered administrative and interconnection environment supported by distributed national operators, with Prague the clearest concentration point for rail administration, airport traffic, internet exchange, and central public-service access, while rail infrastructure, D1 motorway continuity, electricity transmission, gas transmission, research-network connectivity, and emergency-planning functions are documented as nationwide or cross-border systems. Layered interoperability appears across transport, energy, payments, and digital networks through direct interfaces with EU or Central European frameworks, with publicly visible Czech systems designed to move people, electricity, gas, and data inside the country and to connect them reliably to neighboring states and European operating standards. The cited evidence supports a layered infrastructure environment in which Prague-centered administrative concentration, national territorial continuity, energy interconnection, payment coordination, digital exchange, and research-network support operate as mutually reinforcing systems, without assigning readiness tiers, corridor status, routing authority, or broader Atlas interpretation.</p>
+
+        <div class="meta-line">Source: <code>evidence.md</code> · <code>change-log.md</code> — Evidence Layer Construction</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Strategic position signals</h3>
+        <p>Citizen Portal and Citizen Identity public-service administration with layered credential paths, Czech National Bank coordination of CERTIS and instant payments alongside SEPA-facing creditor-register administration, Správa železnic and České dráhy rail continuity with D1 motorway and Václav Havel Airport Prague, ČEPS and NET4GAS energy interconnection toward Germany, Slovakia, and Poland-side delivery, NIX.CZ exchange concentration with CZ.NIC `.cz` administration and the CESNET research backbone into GÉANT, Internet2, ESnet, and APAn, and NÚKIB, GovCERT.CZ, and Fire Rescue Service continuity together signal the Czech Republic as a Prague-centered administrative environment organized around distributed territorial continuity, Central European connectivity, EU and energy interoperability, layered identity, and exchange-plus-backbone digital architecture. The coexistence of these layers signals continuity through interaction among transport, energy, payments, digital identity, and interconnection systems rather than dependence on any single network. The evidence supports a continuity-and-coordination signal rooted in Prague concentration with distributed national operators without supporting routing-authority, topology, or readiness classification.</p>
+
+        <h3>Administrative and identity coordination signals</h3>
+        <p>The Citizen Portal as the fastest way to state services listing connection to databoxes, notifications, criminal-record requests, document access, and downloadable records signals a centralized access layer rather than isolated agency portals. The requirement for Citizen Identity or a databox of a natural person or entrepreneur signals access organized through reusable identity and message-routing components. Citizen Identity including the eGovernment Mobile Key, NIA ID, bank identity, eObčanka, and adjacent verified mojeID login signals a layered identity model rather than a single credential type. Together these signal administrative continuity reinforced through connected portal, databox, and reusable identity components.</p>
+
+        <h3>Financial and payment coordination signals</h3>
+        <p>CNB oversight of payment and settlement systems, central securities depositories, and electronic payment instruments signals a direct structural role in financial-system continuity rather than only a supervisory posture. CERTIS as the only interbank payment system in the Czech Republic handling interbank payments in Czech koruna signals a koruna-denominated domestic settlement layer with national-scope continuity. CNB operation of the instant-payments component of CERTIS processing payments 24/7 including nights and weekends signals continuous instant-payment continuity through central-bank-operated infrastructure. CNB administration of the SEPA Direct Debit creditor register signals EU-facing payment-standard interfaces alongside the domestic settlement rail.</p>
+
+        <h3>Telecommunications and connectivity signals</h3>
+        <p>CZ.NIC as administrator of the `.cz` domain space and operator of key Czech internet services, with anycast DNS infrastructure built for stability and resilience and 1.5 Tbps of total DNS-service capacity, signals namespace and DNS continuity through publicly coordinated infrastructure. NIX.CZ as a neutral internet exchange with a leaf-spine VxLAN and EVPN topology, multiple Prague nodes, 100GE and 400GE support, and integration of Bratislava, Vienna, and Frankfurt signals a Prague-centered regional peering role with direct Central European extension. CESNET as a separate academic and research-network layer operating at hundreds of gigabits per second with redundant topology, 24/7 monitoring, and access to GÉANT, Internet2, ESnet, and APAn signals exchange-plus-backbone interaction combining domestic peering and international research-network linkage.</p>
+
+        <h3>Transportation and logistics coordination signals</h3>
+        <p>Správa železnic's role as guarantor of operability, modernization, and development of the railway system signals state-anchored rail-infrastructure coordination. České dráhy's Prague-centered routes including Brno, Ostrava, Plzeň, Dresden, and Poprad-Tatry signal Prague as a primary rail node with long-distance flows extending across the country and into neighboring states. The Ministry of Transport's confirmation of the Říkovice to Přerov section as the last missing D1 motorway segment signals the D1 as a central domestic trunk route linking the Prague, Brno, and Ostrava axes. Václav Havel Airport Prague's 2024 traffic of 16,353,522 passengers and 134,609 aircraft take-offs and landings signals the country's clearest public aviation gateway, together signaling a layered transport environment with strong Prague concentration and distributed territorial reach.</p>
+
+        <h3>Energy and industrial coordination signals</h3>
+        <p>ČEPS's role as the sole Czech transmission system operator with 45 substations, 82 transformers, 4,188 km of 400 kV lines, and 1,687 km of 220 kV lines signals centralized national electricity transmission coordination. ČEPS's responsibility for real-time balance of electricity supply and demand and organization of cross-border power exchanges including transits signals continuity reinforced through external interfaces. NET4GAS as the exclusive gas transmission-system operator with more than 4,000 km of pipelines, compressor stations, and around 100 transfer stations at the interface with domestic distribution signals nationally coordinated gas transmission. NET4GAS's delivery and measurement points at interfaces with Slovakia and Germany plus delivery at Cieszyn on the Polish side signal a regionally interconnected gas system, with NET4GAS describing itself as a Central European gas transmission operator active in connecting European energy markets.</p>
+
+        <h3>EU and Central European interoperability signals</h3>
+        <p>TEN-T placement signals transport interoperability through European corridor frameworks, with nationally managed rail, D1 motorway completion, Prague Airport, and Prague-Dresden rail service signaling participation in cross-border transport continuity. ČEPS organization of cross-border power exchanges and participation in European international organizations signals electricity interoperability, while NET4GAS interfaces with Germany, Slovakia, and Poland-side delivery signal gas interoperability across multiple neighboring systems. CNB SEPA creditor-register administration signals payment-standard interoperability alongside the domestic CERTIS rail, NIX.CZ's extension to Bratislava, Vienna, and Frankfurt signals regional digital interconnection, and CESNET's access to GÉANT, Internet2, ESnet, and APAn signals research-network interoperability, together signaling interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity signals</h3>
+        <p>NÚKIB and GovCERT.CZ's role under the Cybersecurity Act in protecting critical information infrastructure and important information systems signals a publicly coordinated cyber-resilience function. GovCERT.CZ's constituency including public sector institutions and critical information infrastructure, operating within the National Cyber Security Centre, signals a constituency-bounded national CERT layer. GovCERT.CZ's coordination and aid in resolving incidents, network-data and log analysis, detection-system services, and cross-border partner connection signal active operational coordination. The Fire Rescue Service's Civil Emergency Preparedness and Strategies division serving as secretariat to the Civil Emergency Planning Committee and focusing on EU and NATO civil-protection cooperation signals a layered civil-protection and critical-infrastructure-protection coordination structure.</p>
+
+        <h3>Data infrastructure and continuity signals</h3>
+        <p>NIX.CZ's multi-node Prague exchange with leaf-spine topology signals interconnection continuity through shared neutral exchange infrastructure. CZ.NIC anycast DNS with global traffic coverage and 1.5 Tbps capacity signals namespace resilience through distributed DNS architecture. CESNET's redundant high-capacity backbone signals research-network continuity alongside commercial connectivity. The Citizen Portal, databox connectivity, and layered identity components signal shared public-service and identity continuity. Together these signal exchange-plus-backbone interaction across NIX.CZ, CZ.NIC, CESNET, portal access, and shared identity layers without implying a fully visible or uniform national compute topology.</p>
+
+        <h3>Research and knowledge-network signals</h3>
+        <p>CESNET's historical role in connecting ten Czech and Moravian university towns with the Prague to Brno route as an early backbone path signals distributed academic-network persistence beyond a single-city footprint. Current operation at hundreds of gigabits per second with redundant topology and 24/7 monitoring signals high-capacity research-network continuity. Access to partner networks including GÉANT, Internet2, ESnet, and APAn signals international knowledge-network interoperability extending beyond domestic academic traffic into broader research cooperation.</p>
+
+        <h3>Regional and international connectivity signals</h3>
+        <p>Prague to Dresden rail service and gas-transfer points on the German border signal Germany-facing continuity, while Prague to Poprad-Tatry rail service and the Lanžhot gas interface signal Slovakia-facing continuity. Poland-facing connectivity through land-border position and Cieszyn gas delivery and Austria-facing continuity through railjet services and the Vienna extension of NIX.CZ signal layered regional interfaces. Prague Airport adds the main international aviation layer, D1 motorway continuity strengthens the Prague-Brno-Ostrava axis, and digital internationalization through NIX.CZ's multi-city footprint, CESNET's international research-network links, and CZ.NIC's globally distributed anycast DNS signal Czech connectivity spanning multiple infrastructure classes rather than reducing to a single corridor or border interface.</p>
+
+        <h3>Cross-system structural signals</h3>
+        <p>The strongest recurring pattern is Prague administrative concentration with distributed execution across rail administration, airport activity, internet exchange, and central public-service access. A second recurring pattern is distributed territorial continuity through rail, D1 motorway, electricity transmission, gas transmission, research networking, and emergency-planning structures. A third recurring pattern is interoperability as a continuity mechanism across transport, payments, energy, digital interconnection, and research networking. A fourth recurring pattern is exchange-plus-backbone interaction across NIX.CZ, CZ.NIC, and CESNET, and a fifth is layered identity and public-service continuity through the Citizen Portal, databox integration, and multi-path credential environment, with concentration-with-distribution as the dominant operating model in which Prague is prominent but national operators and corridor-linked infrastructures remain structurally relevant.</p>
+
+        <h3>Constraint boundary signals</h3>
+        <ul>
+          <li>Bounded visibility applies across commercial data-centre distribution, private telecommunications topology, detailed airport and freight-operating constraints, and internal cybersecurity procedures.</li>
+          <li>Observability remains uneven because public documentation is strongest for Prague-centered nodes, national operators, and selected continuity systems rather than uniformly detailed across all regions.</li>
+          <li>The accessible source set describes institutional roles, network structure, and interoperability frameworks more clearly than real-time redundancy, traffic engineering, or contingency operations.</li>
+          <li>Some public pages are navigation-heavy, dynamically rendered, inconsistently translated, or better exposed through search-result summaries than through clean extraction.</li>
+          <li>More broadly, the evidence signals a Prague-centered, distributed-territorial Central European continuity environment rather than a transit-state, East-West-bridge, or industrial-power environment, and it does not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>The Czech Republic's evidence-derived signals describe a Prague-centered administrative environment organized around distributed territorial continuity, Central European connectivity, EU and energy interoperability, layered identity and public-service continuity, and exchange-plus-backbone digital architecture. The signals indicate continuity across Citizen Portal- and Citizen Identity-coordinated administration with the eGovernment Mobile Key, NIA ID, bank identity, eObčanka, and mojeID, CNB-coordinated CERTIS settlement and SEPA-facing payment administration, Správa železnic- and České dráhy-coordinated rail with D1 motorway and Václav Havel Airport Prague, ČEPS- and NET4GAS-coordinated electricity and gas with cross-border interfaces, NIX.CZ-, CZ.NIC-, and CESNET-coordinated exchange and research networking into GÉANT, Internet2, ESnet, and APAn, and NÚKIB-, GovCERT.CZ-, and Fire Rescue Service-coordinated continuity without assigning readiness tiers, routing authority, or topology placement.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>signals.md</code></div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment eligibility, or infrastructure claims beyond documented anchors.</p>
+
+        <h3>Administrative continuity characteristics</h3>
+        <p>The source layers indicate Prague-centered administrative continuity through the Citizen Portal as the fastest way to state services rather than isolated agency portals. The integration of databox connectivity supports administrative persistence reinforced by reusable message-routing within the public digital-service environment, while the requirement for Citizen Identity or a databox of a natural person or entrepreneur supports identity-coupled access. The overall pattern indicates centralized service entry with distributed execution and connected portal, databox, and reusable identity components, without implying a complete inventory of all administrative systems.</p>
+
+        <h3>Identity and service integration characteristics</h3>
+        <p>The package reflects layered identity continuity through Citizen Identity including the eGovernment Mobile Key, NIA ID, bank identity, and other identification methods, with eObčanka and adjacent mojeID verified login providing complementary credential paths. The use of multiple identification methods to prove identity across state and public-administration portals indicates a multi-path credential environment rather than a single credential type. The overall structure indicates standardized public-service access through shared identity and service-entry layers, with identity functioning as a reusable coordination mechanism across portal and login layers. This dimension remains bounded to documented digital-service and identity functions and does not imply broader state visibility beyond the public evidence.</p>
+
+        <h3>Payment and financial coordination characteristics</h3>
+        <p>The source layers indicate CNB-coordinated payment continuity through a direct structural role in oversight and operation rather than a purely supervisory posture. CERTIS as the only interbank payment system handling interbank payments in Czech koruna supports a koruna-denominated domestic settlement layer, while CNB operation of the instant-payments component of CERTIS processing payments 24/7 including nights and weekends supports continuous instant-payment continuity. CNB administration of the SEPA Direct Debit creditor register supports EU-facing payment-standard interfaces alongside the domestic rail. The overall pattern indicates layered payment coordination across domestic settlement and EU-facing payment-standard interfaces without implying comparative financial-system superiority.</p>
+
+        <h3>Telecommunications and connectivity characteristics</h3>
+        <p>The evidence indicates NIX.CZ exchange concentration in Prague with leaf-spine topology, multiple Prague nodes, and integration of Bratislava, Vienna, and Frankfurt supporting a Prague-centered regional peering role with direct Central European extension. CZ.NIC `.cz` administration with anycast DNS infrastructure of 1.5 Tbps capacity supports namespace and DNS continuity. CESNET as a separate research-and-education backbone operating at hundreds of gigabits per second with redundant topology and 24/7 monitoring supports a distinct national academic-network layer. The overall pattern indicates exchange-plus-backbone interaction across NIX.CZ, CZ.NIC, and CESNET combining Prague-centered interconnection concentration with nationally distributed network support.</p>
+
+        <h3>Transportation and logistics continuity characteristics</h3>
+        <p>The package reflects Prague-centered transport concentration through rail administration and main-airport activity. Správa železnic's role as guarantor of operability, modernization, and development supports rail-infrastructure continuity, while České dráhy's Prague-centered routes including Brno, Ostrava, Plzeň, Dresden, and Poprad-Tatry support both domestic and cross-border rail continuity. D1 motorway continuity along the Prague-Brno-Ostrava axis supports a central domestic trunk route, and Václav Havel Airport Prague supports the country's clearest public aviation gateway. The overall pattern indicates distributed territorial transport persistence through rail, road, and airport interaction rather than one mode alone, with regional continuity support through Prague-linked domestic trunk routes and neighboring-state rail interfaces.</p>
+
+        <h3>Energy and industrial coordination characteristics</h3>
+        <p>The source layers indicate ČEPS transmission structures as the core electricity continuity layer, with the sole transmission system operator role supporting centralized national coordination and cross-border power exchanges supporting continuity reinforced through external interfaces. Real-time balancing within the national transmission environment supports operational stability. NET4GAS transmission continuity through a centralized operator framework supports nationally coordinated gas transmission, with Germany-, Slovakia-, and Poland-side delivery interfaces supporting border-facing interconnection. The overall pattern indicates energy-system interconnection across electricity and gas layers rather than isolated sector-only structures, within a coordinated electricity-and-gas environment.</p>
+
+        <h3>EU and Central European interoperability characteristics</h3>
+        <p>The evidence indicates EU interoperability across transport, payments, energy, digital interconnection, and research-network continuity layers. TEN-T participation supports transport interoperability through European corridor alignment, while SEPA-facing creditor-register administration supports EU-linked payment administration. ČEPS cross-border power exchanges and NET4GAS interfaces with Germany, Slovakia, and Poland-side delivery support energy interoperability through standing cross-border power and gas interfaces. NIX.CZ's multi-city footprint and CESNET's GÉANT, Internet2, ESnet, and APAn linkage support regional digital and research-network interoperability. The overall pattern indicates interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and operational resilience characteristics</h3>
+        <p>The package reflects NÚKIB and GovCERT.CZ coordination through key roles in protecting critical information infrastructure and important information systems under the Cybersecurity Act. GovCERT.CZ's operation within the National Cyber Security Centre, with coordination and aid in resolving incidents, network-data and log analysis, detection-system services, and cross-border partner connection, supports active operational coordination. The Fire Rescue Service's Civil Emergency Preparedness and Strategies division serving as secretariat to the Civil Emergency Planning Committee and focusing on EU and NATO civil-protection cooperation supports civil-emergency preparedness and critical-infrastructure-protection coordination. The overall pattern indicates continuity-through-coordination across institutionally distinct but aligned cyber, emergency-planning, and interagency structures.</p>
+
+        <h3>Data infrastructure and continuity characteristics</h3>
+        <p>The source layers indicate Prague digital concentration through NIX.CZ nodes, central public-service access, major airport activity, and nationally visible administrative functions. NIX.CZ exchange continuity through shared domestic and regional interconnection fabric, CZ.NIC DNS resilience through anycast-supported naming infrastructure, and CESNET backbone continuity through a separate research-and-education network layer support overlapping public and neutral-interconnection infrastructure. Citizen Portal continuity through a common public-service entry structure, databox continuity through shared digital-message and access interaction, and layered identity continuity through Citizen Identity, eObčanka, NIA ID, eGovernment Mobile Key, and related methods support shared identity and service-access persistence.</p>
+
+        <h3>Research and knowledge-network characteristics</h3>
+        <p>The evidence indicates CESNET participation as the national research-and-education network layer, with current operation at hundreds of gigabits per second and redundant topology supporting high-capacity research-network persistence. Historical connection of ten Czech and Moravian university towns supports distributed academic-network continuity through historically multi-city and nationally visible backbone structures. GÉANT, Internet2, ESnet, and APAn interoperability supports standing international research-network linkage. This dimension remains limited to documented network continuity characteristics and does not imply broader scientific ranking or capability claims beyond the network layer itself.</p>
+
+        <h3>Regional and international connectivity characteristics</h3>
+        <p>The evidence indicates Germany connectivity through rail and gas interfaces, Slovakia connectivity through rail and gas interfaces, Poland connectivity through land-border position and gas delivery arrangements, and Austria connectivity through rail services and Vienna-linked digital interconnection. Rail continuity across domestic trunk routes and neighboring-state services and aviation continuity through Václav Havel Airport Prague as the main international aviation node indicate layered transport continuity. Energy interconnection continuity through cross-border electricity exchange and gas border interfaces and SEPA-facing interoperability through EU-linked payment administration alongside domestic settlement continuity indicate connectivity distributed across transport, energy, digital, research-network, and payment-linked structures.</p>
+
+        <h3>Cross-system stability characteristics</h3>
+        <p>The package reflects Prague administrative concentration with distributed execution as the dominant recurring stability characteristic. Distributed territorial continuity remains visible through rail, D1 motorway continuity, electricity transmission, gas transmission, research networking, and emergency-planning structures. Interoperability functions as a continuity mechanism across transport, payments, energy, digital interconnection, and research networking, while exchange-plus-backbone interaction across NIX.CZ, CZ.NIC, and CESNET supports a recurring digital characteristic. Layered identity and public-service continuity through the Citizen Portal, databox integration, and multi-path credential environment supports administrative persistence, and Prague concentration coexists with nationally distributed operators rather than replacing territorial infrastructure continuity.</p>
+
+        <h3>Dependency and constraint characteristics</h3>
+        <ul>
+          <li>CERTIS settlement dependencies remain central to Czech-koruna interbank payment continuity.</li>
+          <li>Cross-border energy-interconnection dependencies are visible through electricity exchanges and gas interfaces with Germany, Slovakia, and Poland-side delivery arrangements.</li>
+          <li>Exchange and backbone dependencies are visible through Prague-centered NIX.CZ concentration, CZ.NIC DNS services, and the separate CESNET backbone.</li>
+          <li>Shared identity-service dependencies are visible through the Citizen Portal, databox access, and reusable identity methods.</li>
+          <li>Prague concentration dependencies remain visible across rail administration, airport activity, public-service access, and interconnection concentration, with bounded observability across telecom topology, commercial data-centre distribution, detailed freight operations, and internal cyber procedures.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Trust dimensions summary statement</h3>
+        <p>The Czech Republic is documented as a Prague-centered, distributed-territorial Central European continuity jurisdiction whose trust dimensions describe operational continuity, interoperability, coordination, resilience, and dependency characteristics across overlapping physical and digital systems. The documented trust dimensions indicate continuity across Citizen Portal- and Citizen Identity-coordinated administration with layered credential paths, CNB-coordinated CERTIS settlement and SEPA-facing payment administration, distributed transport through Správa železnic, České dráhy, D1, and Václav Havel Airport Prague, ČEPS- and NET4GAS-coordinated electricity and gas with cross-border interfaces, exchange-plus-backbone digital architecture through NIX.CZ, CZ.NIC, and CESNET into GÉANT, Internet2, ESnet, and APAn, cyber and civil-protection coordination through NÚKIB, GovCERT.CZ, the Fire Rescue Service, and the Civil Emergency Planning Committee, and distributed Central European connectivity without assigning readiness tiers, routing authority, or deployment eligibility.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>trust-dimensions.md</code></div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility.</p>
+
+        <h3>Jurisdiction identity</h3>
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Czech Republic</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Central European Prague-Centered Distributed Territorial Continuity Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Prague-Centered Administrative Concentration Framework · Distributed Territorial Continuity Framework · Central European Connectivity Framework · EU Interoperability Framework · Energy Interconnection Framework · CERTIS Domestic Settlement and SEPA-Facing Interoperability Framework · Layered Identity and Public-Service Continuity Framework · Exchange-Plus-Backbone Digital Architecture Framework · Research Network and Knowledge-Network Framework · Cyber and Civil-Protection Coordination Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Prague · Brno · Ostrava</span>
+          </div>
+        </div>
+
+        <h3>Infrastructure role classification</h3>
+        <ul>
+          <li>sovereign European nation-state</li>
+          <li>Prague-centered administrative environment</li>
+          <li>distributed territorial continuity environment</li>
+          <li>Central European connectivity environment</li>
+          <li>EU-interoperable infrastructure environment</li>
+          <li>layered identity and public-service environment</li>
+          <li>energy-interconnected environment</li>
+          <li>research-network-supported environment</li>
+        </ul>
+
+        <h3>Administrative and identity classification</h3>
+        <ul>
+          <li>Citizen Portal-centered public-service access</li>
+          <li>databox-linked administrative coordination</li>
+          <li>Citizen Identity reusable access layer</li>
+          <li>eGovernment Mobile Key · NIA ID · bank identity · eObčanka credential paths</li>
+          <li>mojeID verified-login layer (CZ.NIC)</li>
+          <li>multi-path credential environment for state and public-administration portals</li>
+        </ul>
+
+        <h3>Financial infrastructure and payment classification</h3>
+        <ul>
+          <li>Czech National Bank payment oversight and operation</li>
+          <li>CERTIS sole interbank payment system (Czech koruna)</li>
+          <li>CNB-operated instant-payments component of CERTIS (24/7)</li>
+          <li>SEPA-facing creditor-register administration</li>
+          <li>Prague financial concentration through central-bank coordination</li>
+        </ul>
+
+        <h3>Telecommunications and connectivity classification</h3>
+        <ul>
+          <li>NIX.CZ neutral internet exchange (leaf-spine VxLAN/EVPN · multiple Prague nodes · 100GE/400GE)</li>
+          <li>NIX.CZ extension to Bratislava, Vienna, and Frankfurt</li>
+          <li>CZ.NIC `.cz` administration and anycast DNS (1.5 Tbps capacity)</li>
+          <li>CESNET research-and-education backbone (hundreds of Gbps · redundant · 24/7 monitoring)</li>
+          <li>exchange-plus-backbone interaction across NIX.CZ, CZ.NIC, and CESNET</li>
+        </ul>
+
+        <h3>Transportation and logistics classification</h3>
+        <ul>
+          <li>Správa železnic state organization (registered office in Prague · majority of railway lines)</li>
+          <li>České dráhy national and cross-border rail (Brno · Ostrava · Plzeň · Dresden · Poprad-Tatry)</li>
+          <li>D1 motorway (Prague-Brno-Ostrava axis · final Říkovice-Přerov section, December 2022)</li>
+          <li>Václav Havel Airport Prague (16,353,522 passengers · 134,609 movements in 2024)</li>
+          <li>distributed rail-road-air continuity rather than single-mode dependence</li>
+        </ul>
+
+        <h3>Energy and grid coordination classification</h3>
+        <ul>
+          <li>ČEPS sole transmission system operator (45 substations · 82 transformers · 4,188 km 400 kV · 1,687 km 220 kV)</li>
+          <li>cross-border power exchanges and transits</li>
+          <li>NET4GAS exclusive gas TSO (4,000+ km pipelines · ~100 transfer stations · 24/7 transmission)</li>
+          <li>Germany, Slovakia, and Poland-side delivery interfaces (Lanžhot · Cieszyn)</li>
+          <li>coordinated electricity-and-gas environment</li>
+        </ul>
+
+        <h3>EU and Central European interoperability classification</h3>
+        <ul>
+          <li>EU membership since 1 May 2004 · Schengen since 21 December 2007</li>
+          <li>TEN-T participation through cross-border transport alignment</li>
+          <li>SEPA-facing interoperability through EU-linked payment administration</li>
+          <li>GÉANT, Internet2, ESnet, and APAn interoperability through CESNET</li>
+          <li>NIX.CZ regional digital interoperability across Central Europe</li>
+        </ul>
+
+        <h3>Disaster-response and continuity classification</h3>
+        <ul>
+          <li>NÚKIB and GovCERT.CZ cyber coordination under the Cybersecurity Act</li>
+          <li>GovCERT.CZ within the National Cyber Security Centre · incident coordination · detection services</li>
+          <li>Fire Rescue Service Civil Emergency Preparedness and Strategies (secretariat to the Civil Emergency Planning Committee)</li>
+          <li>EU and NATO civil-protection cooperation</li>
+        </ul>
+
+        <h3>Research and knowledge-network classification</h3>
+        <ul>
+          <li>CESNET national research and education network</li>
+          <li>historically multi-city backbone (ten Czech and Moravian university towns · Prague-Brno early backbone)</li>
+          <li>partner networks: GÉANT · Internet2 · ESnet · APAn</li>
+          <li>redundant topology with 24/7 monitoring</li>
+        </ul>
+
+        <h3>Regional and international integration classification</h3>
+        <ul>
+          <li>Germany connectivity through rail (Prague-Dresden) and gas interfaces</li>
+          <li>Slovakia connectivity through rail (Prague-Poprad-Tatry) and gas interfaces (Lanžhot)</li>
+          <li>Poland connectivity through land-border position and gas delivery (Cieszyn)</li>
+          <li>Austria connectivity through railjet services and Vienna NIX.CZ extension</li>
+          <li>aviation connectivity through Václav Havel Airport Prague</li>
+        </ul>
+
+        <h3>Constraint classification</h3>
+        <ul>
+          <li>bounded observability across commercial data-centre distribution, private telecommunications topology, detailed airport and freight operations, and internal cyber procedures</li>
+          <li>uneven regional visibility strongest for Prague-centered nodes and national operators</li>
+          <li>incomplete telecom and data-center visibility limiting characterization of commercial backbones and compute distribution</li>
+          <li>concentration-with-distribution with Prague prominent but national operators structurally relevant</li>
+          <li>real-time operating conditions incompletely visible in public materials</li>
+          <li>absence of sovereign hyperscale compute or semiconductor fabrication stack evidence</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Metadata summary statement</h3>
+        <p>The Czech Republic appears in the metadata layer as the descriptor-oriented classification of the Prague-centered, distributed-territorial Central European continuity environment established in the evidence, signals, and trust-dimensions layers, with jurisdiction-type, geographic, and infrastructure-orientation classifications spanning the documented administrative, identity, financial, telecommunications, transport, energy, EU and Central European, disaster-response, data, research-network, and regional connectivity surfaces.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>metadata.md</code></div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+        <h3>Jurisdiction overview</h3>
+        <p>The Czech Republic presents as a Prague-centered administrative environment whose national continuity depends on layered coordination across public-service access, payments, telecommunications, transport, energy systems, and research-network infrastructure. The jurisdiction also presents as a distributed territorial continuity environment in which rail, motorway, airport, energy, and digital systems reinforce one another across a nationally distributed but capital-centered topology. The overall structure is that of a Central European connectivity environment, an EU-interoperable infrastructure environment, an energy-interconnected environment, and a layered identity and public-service environment. The resulting profile is one of exchange-plus-backbone digital continuity, Prague administrative concentration, distributed national persistence, and recurring interoperability across transport, payments, energy, and research networking.</p>
+
+        <h3>Administrative and identity profile</h3>
+        <p>The administrative and identity profile is characterized by the Citizen Portal as the fastest way to state services, connection to databoxes, and access requiring Citizen Identity or a databox of a natural person or entrepreneur. Citizen Identity includes the eGovernment Mobile Key, NIA ID, bank identity, and other identification methods, with eObčanka and adjacent mojeID verified login providing complementary paths. The portal listing functions including notifications, criminal-record requests, document access, vehicle and point-account information, and downloadable records indicates a centralized access layer rather than isolated agency portals. The administrative environment reflects layered identity and public-service continuity through connected portal, databox, and reusable identity components, bounded to publicly documented functions.</p>
+
+        <h3>Payment and financial profile</h3>
+        <p>The payment profile is structured around the Czech National Bank's direct structural role in payment-system oversight and operation. CERTIS as the only interbank payment system handling interbank payments in Czech koruna provides the core domestic settlement layer, while CNB operation of the instant-payments component of CERTIS processing payments 24/7 supports continuous instant-payment continuity. CNB administration of the SEPA Direct Debit creditor register provides an EU-facing payment-standard interface alongside the domestic rail. The overall payment environment reflects layered coordination across domestic koruna settlement and SEPA-facing interoperability rather than dependence on a single rail type, and does not imply comparative payment-system status.</p>
+
+        <h3>Telecommunications and connectivity profile</h3>
+        <p>The telecommunications profile is marked by exchange-plus-backbone architecture across NIX.CZ, CZ.NIC, and CESNET. NIX.CZ's leaf-spine VxLAN and EVPN topology with multiple Prague nodes, 100GE and 400GE support, and integration of Bratislava, Vienna, and Frankfurt anchors Prague-centered regional peering. CZ.NIC `.cz` administration and anycast DNS infrastructure with 1.5 Tbps capacity provides namespace and DNS continuity, while CESNET's hundreds-of-gigabits-per-second backbone with redundant topology, 24/7 monitoring, and access to GÉANT, Internet2, ESnet, and APAn provides a separate research-and-education layer. The resulting profile is one of Prague-centered interconnection concentration with nationally distributed network support and international research-network linkage.</p>
+
+        <h3>Transportation and logistics profile</h3>
+        <p>The Czech Republic has a Prague-centered transport profile in which Správa železnic rail administration, České dráhy national and cross-border services, D1 motorway continuity, and Václav Havel Airport Prague interact across rail, road, and air layers. Správa železnic operates the majority of railway lines as guarantor of operability and modernization, while České dráhy connects Brno, Ostrava, Plzeň, Dresden, and Poprad-Tatry through Prague-centered routes. D1 motorway completion in 2022 reinforces the Prague-Brno-Ostrava axis, and Václav Havel Airport Prague's 2024 traffic supports the country's clearest public aviation gateway. The resulting transport profile is best characterized as distributed territorial transport persistence through rail, road, and airport interaction rather than one mode alone.</p>
+
+        <h3>Energy and industrial coordination profile</h3>
+        <p>The energy profile is structured around ČEPS as the sole Czech transmission system operator with 45 substations, 82 transformers, and 4,188 km of 400 kV plus 1,687 km of 220 kV lines, maintaining real-time supply-demand balance and organizing cross-border power exchanges. NET4GAS as the exclusive gas TSO with more than 4,000 km of pipelines and around 100 transfer stations at the interface with domestic distribution provides 24/7 transmission, with border interfaces to Germany, Slovakia, and Poland-side delivery and a self-description as a Central European gas transmission operator. The energy profile reflects energy-system interconnection across electricity and gas layers within a coordinated electricity-and-gas environment, regionally interconnected rather than a closed national grid.</p>
+
+        <h3>EU and Central European interoperability profile</h3>
+        <p>The Czech Republic's interoperability profile is reinforced through connection to wider EU and Central European systems. TEN-T placement provides transport interoperability, with nationally managed rail, D1 motorway completion, Prague Airport, and Prague-Dresden rail service supporting cross-border continuity. ČEPS cross-border power exchanges and NET4GAS interfaces with Germany, Slovakia, and Poland-side delivery provide energy interoperability, while CNB SEPA creditor-register administration provides payment-standard interoperability, NIX.CZ's extension to Bratislava, Vienna, and Frankfurt provides regional digital interconnection, and CESNET's access to GÉANT, Internet2, ESnet, and APAn provides research-network interoperability. Interoperability functions as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity profile</h3>
+        <p>The disaster-response profile is characterized by NÚKIB and GovCERT.CZ as the public cybersecurity and continuity layer under the Cybersecurity Act. GovCERT.CZ operates within the National Cyber Security Centre with a constituency including public sector institutions and critical information infrastructure, providing coordination and aid in resolving incidents, network-data and log analysis, detection-system services, and cross-border partner connection. The Fire Rescue Service's Civil Emergency Preparedness and Strategies division serves as secretariat to the Civil Emergency Planning Committee and focuses on EU and NATO civil-protection cooperation. The overall disaster-response profile combines cyber coordination, incident response, civil-protection planning, and interagency continuity structures, bounded to documented public mechanisms.</p>
+
+        <h3>Data infrastructure profile</h3>
+        <p>The data-infrastructure profile combines Prague digital concentration through NIX.CZ exchange nodes, central public-service access, major airport activity, and nationally visible administrative functions with nationwide research-network reach through CESNET. NIX.CZ provides shared domestic and regional interconnection fabric, CZ.NIC provides DNS resilience through anycast-supported naming infrastructure, and CESNET provides a separate research-and-education backbone. The Citizen Portal provides a common public-service entry structure, databox connectivity provides shared digital-message and access interaction, and Citizen Identity, eObčanka, NIA ID, eGovernment Mobile Key, and mojeID provide layered identity continuity. The resulting profile is one of exchange-plus-backbone interaction across NIX.CZ, CZ.NIC, CESNET, portal access, and shared identity layers rather than a single-provider environment.</p>
+
+        <h3>Research and knowledge-network profile</h3>
+        <p>The research and knowledge-network profile is anchored by CESNET as the national research-and-education network, originally connecting ten Czech and Moravian university towns with the Prague-Brno route as an early backbone path. Current operation at hundreds of gigabits per second with redundant topology and 24/7 monitoring supports high-capacity research-network continuity, while access to GÉANT, Internet2, ESnet, and APAn supports international knowledge-network interoperability. This profile remains limited to documented network continuity and cross-border knowledge-network participation and does not imply broader scientific ranking or capability claims.</p>
+
+        <h3>Regional and international connectivity profile</h3>
+        <p>The Czech Republic's regional integration profile includes Germany connectivity through Prague to Dresden rail service and gas-transfer points on the German border, Slovakia connectivity through Prague to Poprad-Tatry rail service and the Lanžhot gas interface, Poland connectivity through land-border position and Cieszyn gas delivery, and Austria connectivity through railjet services and Vienna NIX.CZ extension. Václav Havel Airport Prague provides the main international aviation layer, D1 motorway continuity strengthens the Prague-Brno-Ostrava axis, and digital internationalization through NIX.CZ's multi-city footprint, CESNET's international research-network links, and CZ.NIC's anycast DNS infrastructure spans multiple infrastructure classes rather than reducing to a single corridor or border interface.</p>
+
+        <h3>Cross-system operational profile</h3>
+        <p>The strongest cross-system pattern is Prague administrative concentration with distributed execution across rail administration, airport activity, internet exchange, and central public-service access. A second recurring pattern is distributed territorial continuity through rail, D1 motorway, electricity transmission, gas transmission, research networking, and emergency-planning structures. Interoperability functions as a continuity mechanism across transport, payments, energy, digital interconnection, and research networking, exchange-plus-backbone interaction across NIX.CZ, CZ.NIC, and CESNET reinforces digital continuity, and layered identity and public-service continuity through the Citizen Portal, databox integration, and multi-path credential environment reinforces administrative persistence. The Czech Republic operates as a layered Central European coordination environment rather than a single-corridor or single-node system.</p>
+
+        <h3>Structural constraints</h3>
+        <p>The current Czech Republic profile carries clear structural constraints. The package preserves CERTIS settlement dependencies for Czech-koruna interbank continuity, cross-border energy-interconnection dependencies through ČEPS and NET4GAS interfaces with Germany, Slovakia, and Poland-side delivery, exchange and backbone dependencies through NIX.CZ, CZ.NIC, and CESNET, shared identity-service dependencies through the Citizen Portal, databox access, and reusable identity methods, and Prague concentration dependencies across rail administration, airport activity, public-service access, and interconnection concentration. Public observability remains bounded across commercial data-centre distribution, private telecommunications topology, detailed airport and freight operations, and internal cyber procedures. The package also preserves the absence of sovereign hyperscale compute stack evidence and the absence of semiconductor fabrication stack evidence. These constraints describe boundary conditions reflecting a Prague-centered, distributed-territorial Central European continuity environment in which continuity derives from layered concentration, distributed coordination, and interoperability rather than sovereign-scale compute autonomy.</p>
+
+        <hr class="section-divider">
+
+        <h3>Profile summary statement</h3>
+        <p>The Czech Republic appears in the profile layer as the structural characterization of the Prague-centered, distributed-territorial Central European continuity environment established in the evidence, signals, trust-dimensions, and metadata layers, situated within an EU-interoperable, energy-interconnected, exchange-plus-backbone setting and carried through documented administrative, identity, financial, telecommunications, transport, energy, EU and Central European, disaster-response, data, research-network, and regional connectivity anchors.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code></div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Czech Republic profile into builder-facing interpretation. It provides structural interpretation only and does not assign routing authority, readiness tiers, Atlas surfaces, Atlas topology authority, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Administrative and service environment</h3>
+        <p>In builder-facing terms, the Czech Republic presents as a Prague-centered administrative structure organized around the Citizen Portal as the fastest way to state services and databox connectivity within the public digital-service environment. Access requires Citizen Identity or a databox of a natural person or entrepreneur, providing centralized service entry over distributed execution. The administrative environment appears as shared coordination through portal, databox, and reusable identity components rather than isolated agency front ends.</p>
+
+        <h3>Identity and credential environment</h3>
+        <p>The identity environment appears as a layered multi-path credential structure through Citizen Identity including the eGovernment Mobile Key, NIA ID, bank identity, and other identification methods, with eObčanka and adjacent mojeID verified login providing complementary paths. Identity is operationally coupled to public-service access through standardized access mechanisms rather than service-specific credentials. Identity functions as a reusable coordination mechanism across portal and login layers, bounded to documented digital-service and identity functions and without implying broader state visibility beyond the public record.</p>
+
+        <h3>Payment and interoperability environment</h3>
+        <p>The payment environment appears as a CNB-coordinated structure with CERTIS as the only interbank payment system handling interbank payments in Czech koruna and CNB-operated instant payments processing 24/7. CNB administration of the SEPA Direct Debit creditor register provides an EU-facing payment-standard interface alongside the domestic koruna rail. The payment environment presents as layered coordination across domestic settlement and SEPA-facing interoperability without implying comparative financial-system status.</p>
+
+        <h3>Telecommunications and connectivity environment</h3>
+        <p>Builders encounter the Czech Republic as an exchange-plus-backbone connectivity environment in which NIX.CZ anchors Prague-centered regional peering through a leaf-spine topology with extension to Bratislava, Vienna, and Frankfurt, CZ.NIC provides `.cz` administration and anycast DNS with 1.5 Tbps capacity, and CESNET provides a separate high-capacity research-and-education backbone with international partner connectivity. The telecommunications environment presents as Prague-centered interconnection concentration combined with nationally distributed network support and international research-network linkage.</p>
+
+        <h3>Transportation and logistics environment</h3>
+        <p>The transportation and logistics environment appears as a Prague-centered distributed structure through Správa železnic rail administration, České dráhy national and cross-border services, D1 motorway continuity along the Prague-Brno-Ostrava axis, and Václav Havel Airport Prague. Rail, road, and airport layers reinforce one another, with Brno, Ostrava, Plzeň, Dresden, and Poprad-Tatry routes extending across the country and into neighboring states. The logistics environment presents as distributed territorial persistence connected to neighboring-state rail and aviation rather than a single-mode transport structure.</p>
+
+        <h3>Energy and industrial coordination environment</h3>
+        <p>The energy environment appears as a ČEPS-coordinated transmission structure with 45 substations, 82 transformers, 4,188 km of 400 kV lines, and 1,687 km of 220 kV lines, maintaining real-time supply-demand balance and organizing cross-border power exchanges. NET4GAS provides exclusive gas transmission with more than 4,000 km of pipelines, around 100 transfer stations, and 24/7 transmission services, with border interfaces to Germany, Slovakia (Lanžhot), and Poland-side delivery (Cieszyn). The energy environment presents as interconnection-supported across a coordinated electricity-and-gas environment rather than isolated domestic utility operation.</p>
+
+        <h3>EU and Central European interoperability environment</h3>
+        <p>The interoperability environment appears as a standing continuity structure across transport, payments, energy, digital interconnection, and research networking. TEN-T provides transport interoperability, SEPA-facing creditor-register administration provides payment-standard interoperability, ČEPS cross-border power exchanges and NET4GAS border interfaces provide energy interoperability, NIX.CZ's extension to Bratislava, Vienna, and Frankfurt provides regional digital interconnection, and CESNET provides research-network interoperability through GÉANT, Internet2, ESnet, and APAn. This environment presents as interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity environment</h3>
+        <p>The disaster-response environment appears as a NÚKIB- and GovCERT.CZ-coordinated cyber structure operating within the National Cyber Security Centre under the Cybersecurity Act, with a constituency including public sector institutions and critical information infrastructure. GovCERT.CZ provides incident coordination, network-data and log analysis, detection-system services, and cross-border partner connection. The Fire Rescue Service's Civil Emergency Preparedness and Strategies division serves as secretariat to the Civil Emergency Planning Committee with EU and NATO civil-protection cooperation. The continuity environment presents as continuity-through-coordination across institutionally distinct but aligned cyber and civil-protection layers rather than isolated crisis-response channels.</p>
+
+        <h3>Data infrastructure environment</h3>
+        <p>The data environment appears as a Prague-concentrated but nationally distributed structure through NIX.CZ exchange nodes, CZ.NIC DNS anycast infrastructure, CESNET research backbone reach, and central public-service access layers. NIX.CZ provides shared neutral interconnection fabric, CZ.NIC provides namespace and DNS resilience, and CESNET provides a separate research-and-education backbone with international partner connectivity. The Citizen Portal, databox connectivity, and layered identity components provide shared public-service and identity continuity. The data environment presents as exchange-plus-backbone interaction across NIX.CZ, CZ.NIC, CESNET, portal access, and shared identity layers rather than a single-provider or single-site environment.</p>
+
+        <h3>Research and knowledge-network environment</h3>
+        <p>The research and knowledge-network environment appears through CESNET as the national research-and-education network, historically connecting ten Czech and Moravian university towns with the Prague-Brno route as an early backbone path and currently operating at hundreds of gigabits per second with redundant topology, 24/7 monitoring, and access to GÉANT, Internet2, ESnet, and APAn. CESNET presents as a distinct nationally distributed network layer alongside commercial telecom infrastructure without implying broader scientific ranking.</p>
+
+        <h3>Regional and international connectivity environment</h3>
+        <p>Regional interoperability appears through Germany connectivity via Prague-Dresden rail and gas-transfer points on the German border, Slovakia connectivity via Prague-Poprad-Tatry rail and the Lanžhot gas interface, Poland connectivity via land-border position and Cieszyn gas delivery, and Austria connectivity via railjet services and the Vienna extension of NIX.CZ. Václav Havel Airport Prague provides the main international aviation layer, and digital internationalization appears through NIX.CZ's multi-city footprint, CESNET's international research-network links, and CZ.NIC's globally distributed anycast DNS infrastructure. Regional interaction appears through transport, energy, digital, research, and payment interfaces rather than a single external-facing gateway narrative.</p>
+
+        <h3>Cross-system interaction environment</h3>
+        <p>The strongest visible interaction pattern is Prague administrative concentration with distributed execution, where rail administration, airport activity, internet exchange, and central public-service access appear in coordinated proximity. Distributed territorial continuity, interoperability as a continuity mechanism, exchange-plus-backbone interaction across NIX.CZ, CZ.NIC, and CESNET, and layered identity and public-service continuity through the Citizen Portal, databox integration, and multi-path credential environment reinforce one another, with Brno, Ostrava, and corridor-linked infrastructures remaining structurally relevant. The builder-facing environment appears as a concentration-with-distribution model in which physical and digital systems reinforce one another across capital concentration and territorial reach.</p>
+
+        <h3>Operational visibility and dependency environment</h3>
+        <p>The operational environment is shaped by CERTIS settlement dependencies for Czech-koruna interbank continuity, cross-border energy-interconnection dependencies through ČEPS and NET4GAS interfaces, exchange and backbone dependencies through NIX.CZ, CZ.NIC, and CESNET, shared identity-service dependencies through the Citizen Portal, databox access, and reusable identity methods, and Prague concentration dependencies across rail administration, airport activity, public-service access, and interconnection concentration. Public observability remains bounded across commercial data-centre distribution, private telecommunications topology, detailed airport and freight operations, and internal cyber procedures. The environment appears strongly observable around national operators and Prague-centered nodes while remaining incompletely transparent across private operational layers and uniform regional detail.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder mode summary statement</h3>
+        <p>The Czech Republic appears in builder mode as the builder-facing reading of the Prague-centered, distributed-territorial Central European continuity environment established across the evidence, signals, trust-dimensions, metadata, and profile layers, with interaction surfaces spanning the documented administrative, identity, payment, telecommunications, transport, energy, EU and Central European, disaster-response, data, research-network, and regional connectivity environments without deployment recommendation, readiness assignment, or routing authority.</p>
+
+        <div class="meta-line">Source: <code>builder-mode.md</code></div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Initial package creation</h3>
+        <p>The Czech Republic jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The change-log records that <code>evidence.md</code> established Správa železnic and České dráhy national rail with Prague-centered routes including Brno, Ostrava, Plzeň, Dresden, and Poprad-Tatry, D1 motorway completion through the Říkovice-Přerov section, Václav Havel Airport Prague's 2024 traffic of 16,353,522 passengers and 134,609 movements, ČEPS electricity transmission with 45 substations, 82 transformers, 4,188 km of 400 kV lines, and 1,687 km of 220 kV lines and cross-border power exchanges, NET4GAS gas transmission with more than 4,000 km of pipelines, around 100 transfer stations, and Germany, Slovakia (Lanžhot), and Poland-side (Cieszyn) interfaces, CZ.NIC `.cz` administration and anycast DNS with 1.5 Tbps capacity, NIX.CZ leaf-spine VxLAN/EVPN exchange with Bratislava, Vienna, and Frankfurt extension, CESNET research backbone into GÉANT, Internet2, ESnet, and APAn, CNB-coordinated CERTIS interbank settlement with 24/7 instant payments and SEPA-facing creditor-register administration, Citizen Portal and databox public-service access with Citizen Identity, eGovernment Mobile Key, NIA ID, bank identity, eObčanka, and mojeID credential paths, and NÚKIB, GovCERT.CZ, and Fire Rescue Service continuity layers.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The change-log records that <code>signals.md</code> derived administrative and identity coordination signals, financial and payment coordination signals, telecommunications and connectivity signals, transportation and logistics coordination signals, energy and industrial coordination signals, EU and Central European interoperability signals, disaster-response and continuity signals, data infrastructure and continuity signals, research and knowledge-network signals, regional and international connectivity signals, cross-system structural signals, and constraint-boundary signals preserving bounded visibility across commercial data-centre distribution, private telecommunications topology, detailed airport and freight operating constraints, and internal cybersecurity procedures, uneven regional observability, and the absence of sovereign hyperscale compute and semiconductor fabrication evidence.</p>
+
+        <h3>Trust-dimensions layer construction</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> established Prague-centered administrative continuity through the Citizen Portal and databox connectivity, layered identity continuity through Citizen Identity, eGovernment Mobile Key, NIA ID, bank identity, eObčanka, and mojeID, CNB-coordinated CERTIS settlement and SEPA-facing payment administration, distributed transport continuity through Správa železnic, České dráhy, D1, and Václav Havel Airport Prague, ČEPS- and NET4GAS-coordinated electricity and gas continuity with cross-border interfaces, exchange-plus-backbone digital architecture through NIX.CZ, CZ.NIC, and CESNET, EU and Central European interoperability, cyber and civil-protection coordination through NÚKIB, GovCERT.CZ, the Fire Rescue Service, and the Civil Emergency Planning Committee, and distributed Central European connectivity.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The change-log records that <code>metadata.md</code> classified the Czech Republic as a sovereign European nation-state, Prague-centered administrative environment, distributed territorial continuity environment, Central European connectivity environment, EU-interoperable infrastructure environment, layered identity and public-service environment, energy-interconnected environment, and research-network-supported environment, with documented characteristics across administrative coordination, identity, payment and financial structures, telecommunications, transportation and logistics, energy and industrial coordination, EU and Central European interoperability, disaster-response, data infrastructure, research and knowledge-network participation, regional connectivity, cross-system patterns, and dependency characteristics.</p>
+
+        <h3>Profile layer characterization</h3>
+        <p>The change-log records that <code>profile.md</code> characterized the Czech Republic as a Prague-centered administrative environment with distributed territorial continuity, Central European, EU-interoperable, energy-interconnected, exchange-plus-backbone digital, and supported by layered identity, payment, transport, and research-network systems, organized through interaction among public-service access, payments, telecommunications, transport, energy, and research-network layers, with public and commercial infrastructures combining to sustain continuity through interaction among capital concentration and distributed national persistence rather than single-corridor dependence.</p>
+
+        <h3>Builder mode translation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into administrative and service interpretation, identity and credential interpretation, payment and interoperability interpretation, telecommunications and connectivity interpretation, transportation and logistics interpretation, energy and industrial coordination interpretation, EU and Central European interoperability interpretation, disaster-response and continuity interpretation, data infrastructure interpretation, research and knowledge-network interpretation, regional and international connectivity interpretation, cross-system interaction interpretation, and operational visibility and dependency interpretation.</p>
+
+        <h3>Structural boundary decisions recorded</h3>
+        <p>The change-log records that Prague administrative concentration was preserved without collapsing the package into a single-node model, that distributed territorial continuity and layered identity continuity were preserved as standing structural characteristics, and that Central European connectivity and energy interconnection were handled as infrastructure rather than strategy. Military interpretation was excluded, intelligence inference was excluded, East-West bridge and transit-state framing was excluded, tourism, cultural-history, industrial-power, and startup-ecosystem framing was excluded, deployment readiness interpretation was excluded, geopolitical ranking was excluded, and superiority framing, hidden-state capability, deployment suitability, operational approval, and strategic forecasting were preserved as excluded inference categories.</p>
+
+        <h3>Package completion status</h3>
+        <p>The Czech Republic jurisdiction package is complete within the Atlas normalization framework and aligned with Prague-centered administrative concentration, distributed territorial continuity, Central European connectivity, EU interoperability, energy interconnection, CERTIS domestic settlement with SEPA-facing interoperability, layered identity and public-service continuity, exchange-plus-backbone digital architecture, research-network, and cyber and civil-protection coordination normalization standards.</p>
+
+        <div class="meta-line">Normalization status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>change-log.md</code></div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Czech Republic jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/czech-republic/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Czech Republic</li>
+          <li><strong>Code:</strong> CZ</li>
+          <li><strong>Region:</strong> Central European Prague-Centered Distributed Territorial Continuity Environment</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor alignment</h4>
+        <ul>
+          <li>Prague-Centered Administrative Concentration Framework</li>
+          <li>Distributed Territorial Continuity Framework</li>
+          <li>Central European Connectivity Framework</li>
+          <li>EU Interoperability Framework</li>
+          <li>Energy Interconnection Framework</li>
+          <li>CERTIS Domestic Settlement and SEPA-Facing Interoperability Framework</li>
+          <li>Layered Identity and Public-Service Continuity Framework</li>
+          <li>Exchange-Plus-Backbone Digital Architecture Framework</li>
+          <li>Research Network and Knowledge-Network Framework</li>
+          <li>Cyber and Civil-Protection Coordination Framework</li>
+        </ul>
+        <h4>Primary coordination cities</h4>
+        <ul>
+          <li>Prague</li>
+          <li>Brno</li>
+          <li>Ostrava</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Anchors</h3>
+        <h4>Documented surfaces</h4>
+        <ul>
+          <li>Citizen Portal · databox · Citizen Identity · eGovernment Mobile Key · NIA ID · bank identity · eObčanka · mojeID</li>
+          <li>Czech National Bank · CERTIS interbank settlement (Czech koruna) · CNB-operated instant payments (24/7) · SEPA creditor register</li>
+          <li>NIX.CZ (leaf-spine VxLAN/EVPN · Prague nodes · 100GE/400GE · Bratislava · Vienna · Frankfurt)</li>
+          <li>CZ.NIC `.cz` administration · anycast DNS (1.5 Tbps)</li>
+          <li>CESNET research backbone · GÉANT · Internet2 · ESnet · APAn</li>
+          <li>Správa železnic state organization (Prague registered office) · České dráhy national and cross-border rail</li>
+          <li>D1 motorway (Prague-Brno-Ostrava axis · Říkovice-Přerov section completed December 2022)</li>
+          <li>Václav Havel Airport Prague (16,353,522 passengers · 134,609 movements in 2024)</li>
+          <li>ČEPS transmission (45 substations · 82 transformers · 4,188 km 400 kV · 1,687 km 220 kV)</li>
+          <li>NET4GAS gas transmission (4,000+ km · ~100 transfer stations · Germany · Slovakia · Lanžhot · Cieszyn)</li>
+          <li>NÚKIB · GovCERT.CZ · Fire Rescue Service · Civil Emergency Planning Committee</li>
+          <li>EU member since 1 May 2004 · Schengen since 21 December 2007 · TEN-T participation</li>
+          <li>Central European cross-border interfaces (Germany · Poland · Slovakia · Austria)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereign hyperscale compute classification.</li>
+          <li>Not a sovereign semiconductor fabrication classification.</li>
+          <li>Not an East-West bridge, transit-state, or strategic-corridor classification.</li>
+          <li>Not a tourism, cultural-history, industrial-power, or startup-ecosystem narrative.</li>
+          <li>Not a CERTIS or SEPA settlement-authority classification beyond documented CNB and EU-facing administration.</li>
+          <li>Not a broader internet-exchange centrality classification beyond documented NIX.CZ, CZ.NIC, and CESNET governance.</li>
+          <li>Not a "world-class," "regional leader," "gateway," "European leader," or "powerhouse" classification.</li>
+          <li>Not an economic, political, demographic, military, cultural, or superpower narrative.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
