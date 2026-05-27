@@ -1,91 +1,748 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Poland | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poland — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Poland Atlas jurisdiction package rendering. Warsaw-Centered Administrative Concentration, Distributed Territorial Continuity, Baltic-Plus-Inland Continuity, Baltic and Central European Connectivity, EU Interoperability, Energy Interconnection, Zloty Settlement with Euro-Facing Payment Interoperability, Layered Identity and Public-Service Continuity, and Research-Network and Cyber-Coordination Support.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/poland/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Poland</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Poland</h1>
 
-</article>
-</main>
+  <p class="lede">Warsaw-centered administrative jurisdiction whose national continuity rests on distributed territorial coordination across rail, motorway, seaport, airport, electricity, gas, digital-service, payment, cybersecurity, and crisis-management layers rather than any single network, with Baltic-plus-inland continuity organized through Gdańsk and Gdynia maritime nodes and inland trunk routes. This page renders the canonical Poland Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting PKP Polskie Linie Kolejowe national rail management with PKP Intercity passenger services and the Baltic Express to Prague, GDDKiA road continuity across the A1, A2, and A4 motorway axes, Port Gdańsk and Port Gdynia Baltic maritime infrastructure with Warsaw Chopin Airport aviation, Narodowy Bank Polski coordination of the wholesale SORBNET3 and TARGET-NBP systems with KIR-operated Elixir, Euro Elixir, and Express Elixir clearing, Profil Zaufany, ePUAP, mObywatel, and gov.pl public-service access, NASK with CERT Polska cyber coordination and the PIONIER research-and-education network into GÉANT, PSE electricity transmission and GAZ-SYSTEM gas transmission including the Świnoujście LNG terminal and Baltic Pipe, and the Government Centre for Security (RCB) crisis-management layer.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Poland (PL)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>Poland currently reads within Atlas as a Warsaw-centered administrative environment whose national continuity depends on distributed coordination across rail, motorway, seaport, airport, electricity, gas, digital-service, payment, cybersecurity, and crisis-management layers rather than any single network. The package places Poland inside Profil Zaufany-, ePUAP-, mObywatel-, and gov.pl-linked public-service administration, Narodowy Bank Polski-coordinated wholesale settlement through SORBNET3 and TARGET-NBP alongside KIR-operated Elixir, Euro Elixir, and Express Elixir clearing, PKP Polskie Linie Kolejowe- and PKP Intercity-linked rail with Baltic Express cross-border services, GDDKiA-linked motorway continuity across the A1, A2, and A4 axes, Port Gdańsk- and Port Gdynia-linked Baltic maritime infrastructure with Warsaw Chopin Airport aviation, PSE- and GAZ-SYSTEM-linked electricity and gas with the Świnoujście LNG terminal and Baltic Pipe, NASK- and CERT Polska-linked cyber coordination alongside PIONIER research networking into GÉANT, and Government Centre for Security crisis-management coordination. These conditions support a structural characterization centered on Warsaw administrative concentration, distributed territorial continuity, Baltic-plus-inland continuity, EU and energy interoperability, layered identity and public-service continuity, and concentration-with-distribution without assigning readiness tiers, routing authority, or comparative status.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Poland</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Central European Warsaw-Centered Baltic-Plus-Inland Distributed Territorial Continuity Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Warsaw-Centered Administrative Concentration Framework · Distributed Territorial Continuity Framework · Baltic-Plus-Inland Continuity Framework · Baltic and Central European Connectivity Framework · EU Interoperability Framework · Energy Interconnection Framework · Zloty Settlement and Euro-Facing Payment Interoperability Framework · Layered Identity and Public-Service Continuity Framework · Research Network and Cyber-Coordination Framework · Rail-Maritime-Motorway Continuity Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Warsaw · Gdańsk · Gdynia</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records evidence-supported national structures documented for Poland that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code> · <code>metadata.md</code> — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Poland jurisdiction package across administrative governance, identity, payments, telecommunications, transport, energy, EU and Central European interoperability, disaster-response, and connectivity surfaces.</p>
+
+        <h3>Geographic and regional position</h3>
+        <p>The evidence layer records Poland as a sovereign state in Central Europe with Baltic Sea access and land borders with Germany, the Czech Republic, Slovakia, Lithuania, Belarus, Ukraine, and Russia through the Kaliningrad region, combining a large land-connected national territory with northern maritime interfaces, making corridor management, domestic continuity, and border-facing infrastructure operationally significant. European Union materials are recorded as identifying Warsaw as the capital, confirming Poland's EU membership since 1 May 2004 and Schengen membership since 21 December 2007, and describing a state structure divided into 16 voivodeships, placing Polish transport, payment, energy, and digital-service systems inside wider European interoperability frameworks rather than a purely domestic operating environment.</p>
+
+        <h3>Transportation and logistics infrastructure</h3>
+        <p>The evidence layer records PKP Polskie Linie Kolejowe as the manager of the national railway network, with PKP Intercity as the leader of the passenger-transport market operating 505 trains daily, linking city centers and tourist centers, and enabling cross-European travel, with cross-border services such as the Baltic Express linking the Polish Baltic coast through major inland nodes to Prague. Road continuity is recorded through GDDKiA's nationwide structure of national roads, motorways, expressways, and regional branches across the voivodeships, with continued operating relevance of the A1, A2, and A4 motorway axes inside the TEN-T framework. Maritime continuity is recorded as concentrated at the Baltic coast, with Port Gdańsk divided into an Inner Port and an Outer Port on Gdańsk Bay with deepwater terminals handling the largest vessels through the Danish Straits and regular shipping links across the Baltic Sea, North Sea, the Americas, and Asia, and Port Gdynia as a universal port specializing in general cargo, containers, and ro-ro traffic with multimodal hinterland connections and short-sea and ferry links. Warsaw Chopin Airport is recorded as the principal public aviation node organized around arrivals, departures, transfers, and passenger services.</p>
+
+        <h3>Energy and industrial structure</h3>
+        <p>The evidence layer records PSE as performing the duties of the transmission system operator using its own highest-voltage transmission grid, with published network-scale figures as of 31 December 2025 including 309 lines totaling 16,520 km, 112 extra-high-voltage substations, and the under-sea 450 kV DC connection between Poland and Sweden. PSE is recorded as contributing to security of electricity supply, maintaining interconnections with other power systems, managing congestion on interconnections, balancing the power system, preparing defence and restoration plans, and ensuring long-term ability of the system to meet domestic and cross-border transmission demand, with responsibility for balancing the Polish Power System and ensuring nationwide electricity delivery through the transmission layer into local distribution. Gas transmission is recorded through GAZ-SYSTEM as responsible for natural-gas transmission across Poland and operator of major gas pipelines, as controller of the President Lech Kaczyński LNG Terminal in Świnoujście, with Baltic Pipe as a strategic infrastructure project creating a new gas-supply corridor between Norway, Denmark, and Poland.</p>
+
+        <h3>Digital and telecommunications infrastructure</h3>
+        <p>The evidence layer records NASK as a national research institute specializing in cybersecurity, operating research divisions and specialized departments focused on cybersecurity, artificial intelligence, and cloud computing, with work for public institutions including secure document-management systems for government agencies and cybersecurity training for public officials. CERT Polska is recorded as operating within NASK as the first Polish computer emergency response team, with incident handling, active response to direct threats, cooperation with national and international CERT teams, security research and development, malware analysis, monitoring and threat-correlation tooling, annual cybersecurity reporting, and participation in FIRST and TF-CSIRT. PIONIER is recorded as a research-network consortium with 8,504 km of fiber-optic lines including domestic and foreign segments, high-capacity DWDM transmission, connection of Polish scientific users to European research networks through GÉANT, and access to the global Internet. PLIX-specific descriptive topology is recorded as not stably retrievable in public form during compilation, so no detailed PLIX topology or capacity claims appear in the evidence layer.</p>
+
+        <h3>Financial and payment infrastructure</h3>
+        <p>The evidence layer records Narodowy Bank Polski as operator of the wholesale payment systems SORBNET3 and TARGET-NBP, in which accounts of authorized financial institutions are maintained in Polish zloty and euro respectively, with the Governor of NBP overseeing the functioning of payment schemes and NBP granting authorizations for new payment systems and major rules changes. KIR is recorded as providing the main domestic clearing layer, with systems launched for interbank transactions providing the technological foundations for electronic banking in Poland, and Elixir, Euro Elixir, and Express Elixir identified as active transaction-handling systems, with Express Elixir's instant-payment service processed in real time and guaranteed uninterrupted availability 24 hours a day, 7 days a week, including public holidays. The evidence supports a layered payment structure in which Warsaw-centered central-bank functions, wholesale settlement rails, and KIR-operated interbank clearing systems interact with domestic zloty payments and euro-facing interoperability.</p>
+
+        <h3>Government and administrative technology structure</h3>
+        <p>The evidence layer records Profil Zaufany as a means of electronic identification that enables users to confirm their identity online and sign documents electronically when handling official matters, usable for access to multiple public systems including ZUS, the patient account, tax services, and ePUAP. ePUAP is recorded as a nationwide ICT platform enabling communication between citizens and entrepreneurs and public entities and among public-administration entities, allowing public bodies to provide services electronically without each institution building a separate system, with a single account usable across many public entities. mObywatel is recorded as a separate mobile and web access layer providing digital documents, electronic forms and applications, payments to public-administration entities, access to mailboxes for contact with public administration, vehicle-and-driver services, and case history. The evidence supports a layered identity-and-service environment rather than a set of isolated agency portals.</p>
+
+        <h3>EU and Central European interoperability infrastructure</h3>
+        <p>The evidence layer records Poland's infrastructure as deeply connected to European interoperability frameworks, with the European Commission describing TEN-T as the framework for a coherent multimodal network and the Baltic Sea-Adriatic Sea corridor placing Polish Baltic ports, Warsaw, and inland Polish nodes directly inside a cross-border corridor structure reaching Czechia, Slovakia, Austria, Hungary, Slovenia, Croatia, and Italy. Energy interoperability is recorded through PSE's responsibilities for maintaining interconnections with other power systems, cross-border transmission demand, and congestion management on interconnections, and through Baltic Pipe linking Norway, Denmark, and Poland alongside GAZ-SYSTEM's wider regional gas flows. Payment interoperability is recorded through NBP's TARGET-NBP operation and KIR's Euro Elixir and other euro-facing payment services, while digital interoperability is recorded through the European Commission's eIDAS framework for mutual recognition of national eID schemes and PIONIER's connection to GÉANT.</p>
+
+        <h3>Disaster resilience, cybersecurity, and operational coordination</h3>
+        <p>The evidence layer records the Government Centre for Security as a supraministerial structure created to optimize and standardize threat perception across government departments, conduct comprehensive risk analysis, coordinate information flow on threats, launch crisis-management procedures at the national level, support critical-infrastructure protection, organize trainings and exercises, and serve as a national center for crisis management under the Prime Minister. CERT Polska is recorded as providing the principal publicly documented cyber-response layer through registration and handling of network-security incidents, active response to direct threats, cooperation with national and international CERT teams, and development of detection and analysis tooling. CERT Polska operating within NASK is recorded as placing Poland's cybersecurity coordination as part of a broader national digital-infrastructure and research environment, with RCB and CERT Polska together supporting a combination of crisis-management coordination, critical-infrastructure planning, incident response, and national-to-international cooperation.</p>
+
+        <h3>Regional and international connectivity</h3>
+        <p>The evidence layer records regional and international connectivity as layered across rail, road, maritime, aviation, electricity, gas, payments, and research networks, with Germany-, Czech-, and Slovakia-facing continuity visible in road and rail corridor structures, the Baltic Express to Prague, and TEN-T and Baltic Sea-Adriatic corridor documentation, and Lithuania-facing and broader Baltic connectivity visible through the maritime layer at Gdańsk and Gdynia. Maritime connectivity is recorded as concentrated on the Baltic coast with direct regular links from Port Gdańsk to Baltic, North Sea, intercontinental, and Asian shipping networks and Port Gdynia's multimodal general-cargo, container, and ro-ro specialization, while Warsaw Chopin Airport provides the main visible aviation interface. Electricity connectivity is recorded through PSE's interconnections and the Sweden link, gas connectivity through LNG infrastructure and Baltic Pipe, and research-network connectivity through PIONIER's connection to GÉANT and European scientific networks.</p>
+
+        <hr class="section-divider">
+
+        <h3>Summary evidence statement</h3>
+        <p>The current source set documents Poland as a Warsaw-centered administrative and payment environment supported by nationally distributed transport, energy, digital, and continuity operators, with Warsaw the clearest concentration point for government technology, central-bank payment infrastructure, and the most visible aviation gateway, while rail management, long-distance passenger rail, motorways, Baltic port infrastructure, electricity transmission, gas transmission, research networking, and crisis-management functions are documented as nationwide or corridor-based systems. Layered interoperability appears across transport, energy, payments, digital identity, and research networks through direct interfaces with EU or Central European frameworks, and Baltic access interacts with inland continuity through publicly visible systems connecting domestic networks to maritime gateways, neighboring states, and European operating frameworks. The cited evidence supports a layered infrastructure environment in which Warsaw-centered administration, distributed territorial continuity, Baltic and Central European connectivity, energy interconnection, digital public-service access, payment coordination, and research-network support operate as mutually reinforcing systems, without assigning readiness tiers, corridor status, routing authority, or broader Atlas interpretation.</p>
+
+        <div class="meta-line">Source: <code>evidence.md</code> · <code>change-log.md</code> — Evidence Layer Construction</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Strategic position signals</h3>
+        <p>Profil Zaufany, ePUAP, mObywatel, and gov.pl public-service administration, NBP coordination of SORBNET3 and TARGET-NBP with KIR-operated Elixir, Euro Elixir, and Express Elixir, PKP Polskie Linie Kolejowe and PKP Intercity rail with the Baltic Express, GDDKiA motorway continuity across the A1, A2, and A4 axes, Port Gdańsk and Port Gdynia Baltic infrastructure with Warsaw Chopin Airport, PSE and GAZ-SYSTEM energy systems with the Świnoujście LNG terminal and Baltic Pipe, NASK and CERT Polska cyber coordination with the PIONIER research backbone into GÉANT, and Government Centre for Security crisis-management together signal Poland as a Warsaw-centered administrative environment organized around distributed territorial continuity, Baltic-plus-inland continuity, EU and energy interoperability, layered identity and public-service continuity, and research-network and cyber-coordination support. The coexistence of these layers signals continuity through interaction among transport, energy, payments, digital identity, and continuity systems rather than dependence on any single network. The evidence supports a continuity-and-coordination signal rooted in Warsaw concentration with distributed national operators and Baltic-plus-inland reach without supporting routing-authority, topology, or readiness classification.</p>
+
+        <h3>Administrative and identity coordination signals</h3>
+        <p>Profil Zaufany as a means of electronic identification enabling online identity confirmation and electronic signing across ZUS, the patient account, tax services, and ePUAP signals a reusable national authentication layer rather than service-by-service credentials. ePUAP as a nationwide ICT platform enabling communication between citizens, entrepreneurs, and public entities and among public-administration entities signals a centralized service-delivery rail with a single account usable across many public entities. mObywatel as a mobile and web access layer providing digital documents, electronic forms, payments, mailbox access, vehicle-and-driver services, and case history signals a parallel mobile-public-service interface. Together these signal administrative continuity reinforced through layered identity and public-service components rather than isolated agency portals.</p>
+
+        <h3>Financial and payment coordination signals</h3>
+        <p>NBP operation of SORBNET3 and TARGET-NBP with zloty and euro accounts respectively signals a layered central-bank settlement structure across domestic and euro-facing rails. NBP Governor oversight of payment schemes and authorization of new payment systems signal a direct structural role in payment-system continuity rather than a purely supervisory posture. KIR's Elixir, Euro Elixir, and Express Elixir signal layered domestic clearing across batch, euro-facing, and instant payments. Express Elixir's real-time processing and guaranteed uninterrupted 24/7/365 availability signal continuous instant-payment continuity through standing clearing infrastructure, together signaling a layered zloty-plus-euro-facing payment environment.</p>
+
+        <h3>Telecommunications and connectivity signals</h3>
+        <p>NASK as a national research institute specializing in cybersecurity, artificial intelligence, and cloud computing, with work for public institutions including secure document-management systems and cybersecurity training, signals a public-sector-oriented digital institute role. CERT Polska's operation within NASK with incident handling, active threat response, security research, malware analysis, threat-correlation tooling, and FIRST and TF-CSIRT participation signals an operational cyber-coordination layer tied directly to the national digital environment. PIONIER's 8,504 km of fiber-optic lines with DWDM transmission and GÉANT connectivity signals a separate research-and-education backbone alongside commercial telecommunications. The absence of stable public PLIX topology in the evidence signals bounded observability for commercial exchange topology rather than absence of exchange activity.</p>
+
+        <h3>Transportation and logistics coordination signals</h3>
+        <p>PKP Polskie Linie Kolejowe as the manager of the national railway network signals state-anchored rail-infrastructure coordination. PKP Intercity's 505 trains daily and Baltic Express service to Prague signal both intensive domestic passenger continuity and cross-border rail reach. GDDKiA's nationwide road, motorway, and expressway structure across the voivodeships with continued A1, A2, and A4 motorway relevance inside TEN-T signals a distributed national road system. Port Gdańsk's deepwater Inner and Outer Port with Baltic, North Sea, intercontinental, and Asian links and Port Gdynia's universal port specializing in general cargo, containers, and ro-ro signal Baltic maritime continuity through two distinct port nodes, while Warsaw Chopin Airport's continuously operating passenger-airport interface signals Warsaw as the principal aviation node, together signaling layered logistics combining national rail, long-distance passenger rail, motorway continuity, Baltic port infrastructure, and a Warsaw-centered aviation gateway.</p>
+
+        <h3>Energy and industrial coordination signals</h3>
+        <p>PSE's role as transmission system operator with 309 lines, 16,520 km, 112 extra-high-voltage substations, and the 450 kV DC under-sea connection to Sweden signals centralized national transmission coordination with a documented external interconnection. PSE's responsibilities for security of supply, interconnection maintenance, congestion management, system balancing, defence and restoration planning, and cross-border transmission demand signal continuity reinforced through external interfaces rather than a closed domestic grid. GAZ-SYSTEM's national gas transmission, operator role for major pipelines, and control of the President Lech Kaczyński LNG Terminal in Świnoujście signal centrally coordinated gas transmission with a documented LNG interface. Baltic Pipe as a strategic gas corridor between Norway, Denmark, and Poland signals an external-facing gas-supply route alongside national transmission.</p>
+
+        <h3>EU, Baltic, and Central European interoperability signals</h3>
+        <p>TEN-T and Baltic Sea-Adriatic corridor placement signal transport interoperability through cross-border corridor structures reaching Czechia, Slovakia, Austria, Hungary, Slovenia, Croatia, and Italy. PSE's interconnections and cross-border transmission responsibilities and Baltic Pipe's Norway-Denmark-Poland route signal energy interoperability across electricity and gas systems. NBP's TARGET-NBP operation and KIR's Euro Elixir signal euro-facing payment interoperability alongside the domestic zloty rail, while the European Commission's eIDAS framework signals digital-identity interoperability and PIONIER's GÉANT linkage signals research-network interoperability, together signaling interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity signals</h3>
+        <p>The Government Centre for Security as a supraministerial structure standardizing threat perception across government departments, conducting comprehensive risk analysis, coordinating information flow, launching crisis-management procedures at the national level, supporting critical-infrastructure protection, and serving as a national center for crisis management under the Prime Minister signals a centralized national crisis-management coordination layer. CERT Polska's incident handling, active threat response, national and international CERT cooperation, and detection and analysis tooling signal active operational cyber-coordination. CERT Polska operating within NASK signals cybersecurity coordination embedded within a broader national digital-infrastructure and research environment, together signaling resilience combining crisis-management coordination, critical-infrastructure planning, incident response, and international cooperation.</p>
+
+        <h3>Data infrastructure and continuity signals</h3>
+        <p>Profil Zaufany, ePUAP, mObywatel, and gov.pl together signal a shared public-service and identity continuity layer through reusable identity and centralized service interfaces. NASK's secure document-management systems for government agencies signal public-sector data-infrastructure continuity beyond front-end citizen services. PIONIER's 8,504 km fiber backbone with DWDM transmission and GÉANT linkage signals a separate high-capacity research-network layer. The absence of stable public PLIX topology and the bounded visibility of commercial telecom backbones signal that data-infrastructure continuity is documented most clearly through public, research, and cyber-coordination components rather than through complete commercial-exchange visibility.</p>
+
+        <h3>Research and knowledge-network signals</h3>
+        <p>PIONIER's fiber-optic backbone evolving toward terabit bandwidths and supporting open science signals a research-network continuity orientation. The 8,504 km of fiber-optic lines including domestic and foreign segments signals distributed research-network reach beyond a single-region footprint. DWDM transmission and connection to GÉANT signal high-capacity research-network linkage to European academic structures, together signaling a distinct research-and-education layer alongside commercial connectivity.</p>
+
+        <h3>Regional and international connectivity signals</h3>
+        <p>Germany-, Czech-, and Slovakia-facing continuity through road, rail, and TEN-T corridor structures and the Baltic Express to Prague signal direct continental interfaces, while Lithuania-facing and broader Baltic connectivity through the Gdańsk and Gdynia maritime layer signal a separate northern maritime gateway. Port Gdańsk's Baltic, North Sea, intercontinental, and Asian shipping links and Port Gdynia's short-sea and ferry links signal layered maritime connectivity, Warsaw Chopin Airport signals the main aviation interface, PSE's external interconnections and the Sweden link signal external electricity connectivity, Baltic Pipe and Świnoujście LNG signal external gas connectivity, NBP's TARGET-NBP and KIR's Euro Elixir signal Europeanized financial connectivity, and PIONIER's GÉANT linkage signals research-network connectivity, together signaling layered connectivity spanning multiple infrastructure classes rather than dependence on a single corridor or border interface.</p>
+
+        <h3>Cross-system structural signals</h3>
+        <p>The strongest recurring pattern is Warsaw administrative concentration with distributed execution across government technology, central-bank payment infrastructure, aviation, and public-service access. A second recurring pattern is distributed territorial continuity through national rail management, long-distance passenger rail, motorways, Baltic port infrastructure, electricity transmission, gas transmission, research networking, and crisis-management structures. A third recurring pattern is Baltic-plus-inland continuity through the interaction between Baltic maritime nodes and inland administrative and corridor systems. A fourth recurring pattern is interoperability as a continuity mechanism across transport, energy, payments, digital identity, and research networking, and a fifth is layered identity and public-service continuity through Profil Zaufany, ePUAP, mObywatel, and gov.pl, with concentration-with-distribution as the dominant operating model in which Warsaw is prominent but national operators and Baltic coastal infrastructure remain structurally relevant.</p>
+
+        <h3>Constraint boundary signals</h3>
+        <ul>
+          <li>Bounded visibility applies across commercial telecom backbone topology, exchange topology, port operating metrics, parts of gas-system topology, and internal cybersecurity procedures.</li>
+          <li>Observability remains uneven because public documentation is strongest for Warsaw-centered nodes, national operators, and selected continuity systems rather than uniformly detailed across all voivodeships.</li>
+          <li>The accessible source set describes institutional roles, corridor participation, and network scale more clearly than real-time redundancy, traffic engineering, or contingency procedures.</li>
+          <li>PLIX-specific descriptive topology was not stably retrievable in public form during compilation, and no hidden inference is made to fill that gap.</li>
+          <li>More broadly, the evidence signals a Warsaw-centered, distributed-territorial, Baltic-plus-inland environment rather than a transit-state, frontier-state, or Baltic-gateway environment, and it does not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>Poland's evidence-derived signals describe a Warsaw-centered administrative environment organized around distributed territorial continuity, Baltic-plus-inland continuity, EU and energy interoperability, layered identity and public-service continuity, and research-network and cyber-coordination support. The signals indicate continuity across Profil Zaufany-, ePUAP-, mObywatel-, and gov.pl-coordinated administration, NBP-coordinated SORBNET3 and TARGET-NBP wholesale settlement with KIR-operated Elixir, Euro Elixir, and Express Elixir clearing, PKP Polskie Linie Kolejowe- and PKP Intercity-coordinated rail with Baltic Express service, GDDKiA-coordinated motorways including A1, A2, and A4, Port Gdańsk- and Port Gdynia-coordinated Baltic maritime infrastructure with Warsaw Chopin Airport, PSE- and GAZ-SYSTEM-coordinated electricity and gas with the Świnoujście LNG terminal and Baltic Pipe, NASK- and CERT Polska-coordinated cyber and PIONIER research networking into GÉANT, and Government Centre for Security crisis-management coordination without assigning readiness tiers, routing authority, or topology placement.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>signals.md</code></div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment eligibility, or infrastructure claims beyond documented anchors.</p>
+
+        <h3>Administrative continuity characteristics</h3>
+        <p>The source layers indicate Warsaw-centered administrative continuity through Profil Zaufany, ePUAP, mObywatel, and gov.pl as a layered identity and public-service environment rather than isolated agency portals. Profil Zaufany supports reusable electronic identification and digital signing across multiple public systems, ePUAP supports nationwide communication between citizens, entrepreneurs, and public entities with a single account usable across many bodies, and mObywatel supports mobile and web public-service access including digital documents, electronic forms, payments, and case history. The overall pattern indicates administrative continuity reinforced through shared identity, centralized service interfaces, and mobile access layers, with distributed execution across central and territorial structures and without implying a complete inventory of all administrative systems.</p>
+
+        <h3>Identity and service integration characteristics</h3>
+        <p>The package reflects layered identity continuity through Profil Zaufany electronic identification, ePUAP service-account integration, and mObywatel mobile and web identity-coupled access. The use of Profil Zaufany for confirming identity online and signing documents electronically when handling official matters indicates identity operationally coupled to public-service access rather than existing as a separate credential layer alone. Integration with EU eIDAS mutual recognition of national eID schemes indicates identity continuity extended beyond domestic services to cross-border digital identity and trust services. This dimension remains bounded to documented digital-service and identity functions and does not imply broader state visibility beyond the public evidence.</p>
+
+        <h3>Payment and financial coordination characteristics</h3>
+        <p>The source layers indicate NBP-coordinated payment continuity through a direct infrastructure role across SORBNET3 and TARGET-NBP wholesale settlement in zloty and euro respectively. NBP Governor oversight of payment schemes and authorization functions supports a structural payment-system role rather than a purely supervisory posture, while KIR's Elixir, Euro Elixir, and Express Elixir support layered domestic clearing across batch, euro-facing, and instant payments. Express Elixir's real-time processing with guaranteed uninterrupted 24/7/365 availability supports continuous instant-payment continuity. The overall pattern indicates layered payment coordination across domestic zloty settlement and euro-facing interoperability without implying comparative payment-system superiority.</p>
+
+        <h3>Telecommunications and connectivity characteristics</h3>
+        <p>The evidence indicates NASK as a national research institute specializing in cybersecurity, artificial intelligence, and cloud computing, with secure document-management systems for government agencies supporting public-sector digital coordination. CERT Polska's operation within NASK supports a cyber-coordination layer tied to the broader national digital environment, while PIONIER's 8,504 km fiber-optic backbone with DWDM transmission and GÉANT connectivity supports a separate research-and-education layer. The overall pattern indicates connectivity continuity reinforced through public, research, and cyber-coordination components, with bounded observability for commercial exchange topology and commercial telecom backbones.</p>
+
+        <h3>Transportation and logistics continuity characteristics</h3>
+        <p>The package reflects distributed territorial transport continuity through rail, motorway, Baltic maritime, and aviation layers. PKP Polskie Linie Kolejowe's role as national railway-network manager supports rail-infrastructure continuity, while PKP Intercity's 505 trains daily and Baltic Express service support both intensive domestic passenger continuity and cross-border reach. GDDKiA's nationwide road and motorway structure including A1, A2, and A4 supports inland surface continuity, Port Gdańsk's deepwater Inner and Outer Port and Port Gdynia's universal multimodal specialization support Baltic maritime continuity, and Warsaw Chopin Airport supports the principal aviation interface. The overall pattern indicates rail-maritime-motorway continuity with Warsaw-centered aviation rather than dependence on a single transport mode.</p>
+
+        <h3>Energy and industrial coordination characteristics</h3>
+        <p>The source layers indicate PSE transmission as the core electricity continuity layer, with TSO duties exercised through PSE's own highest-voltage grid, 309 lines totaling 16,520 km, 112 extra-high-voltage substations, and the 450 kV DC under-sea connection to Sweden. Responsibilities for security of supply, interconnection maintenance, congestion management, system balancing, defence and restoration plans, and cross-border transmission demand support continuity reinforced through external interfaces. GAZ-SYSTEM's national gas transmission, major pipelines, control of the Świnoujście LNG terminal, and Baltic Pipe connection to Norway and Denmark support an electricity-and-gas environment with national operators, Baltic interfaces, and explicit regional interoperability.</p>
+
+        <h3>EU, Baltic, and Central European interoperability characteristics</h3>
+        <p>The evidence indicates EU interoperability across transport, energy, payments, digital identity, and research-network continuity layers. TEN-T and Baltic Sea-Adriatic corridor placement support transport interoperability through cross-border corridor structures, PSE cross-border interconnections and Baltic Pipe support energy interoperability across electricity and gas, NBP's TARGET-NBP and KIR's Euro Elixir support euro-facing payment interoperability alongside the domestic zloty rail, eIDAS supports digital-identity interoperability, and PIONIER's GÉANT linkage supports research-network interoperability. The overall pattern indicates interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and operational resilience characteristics</h3>
+        <p>The package reflects Government Centre for Security coordination as a centralized national crisis-management layer with comprehensive risk analysis, information-flow coordination, crisis-management procedures, critical-infrastructure protection, and exercises and trainings. CERT Polska supports the principal documented cyber-response layer with incident handling, active threat response, national and international CERT cooperation, and detection and analysis tooling, while its operation within NASK supports cybersecurity coordination embedded in the broader digital-infrastructure and research environment. The overall pattern indicates resilience combining crisis-management coordination, critical-infrastructure planning, incident response, and national-to-international cooperation rather than a single emergency-service model.</p>
+
+        <h3>Data infrastructure and continuity characteristics</h3>
+        <p>The source layers indicate shared public-service and identity continuity through Profil Zaufany, ePUAP, mObywatel, and gov.pl as a reusable digital-service environment. NASK's secure document-management systems for government agencies support public-sector data-infrastructure continuity beyond citizen-facing services, while PIONIER's fiber-optic backbone supports a separate research-network data layer. Commercial exchange topology and parts of commercial telecom backbones remain incompletely visible in public materials, and the absence of stable public PLIX topology supports bounded observability rather than absence inference. The overall pattern indicates documented data-infrastructure continuity concentrated in public-service, research, and cyber-coordination components.</p>
+
+        <h3>Research and knowledge-network characteristics</h3>
+        <p>The evidence indicates PIONIER participation as the national research-and-education network layer, with 8,504 km of fiber-optic lines including domestic and foreign segments supporting distributed research-network reach. DWDM transmission and continuous evolution toward terabit bandwidths support high-capacity research-network continuity, while connection to GÉANT and broader European research networks supports international knowledge-network linkage. This dimension remains limited to documented networking and institutional coordination characteristics and does not imply broader scientific ranking or capability claims beyond the network layer itself.</p>
+
+        <h3>Regional and international connectivity characteristics</h3>
+        <p>The evidence indicates Germany-, Czech-, and Slovakia-facing continuity through road and rail corridor structures and the Baltic Express to Prague, with Lithuania-facing and broader Baltic connectivity through the Gdańsk and Gdynia maritime layer and the north-south framing of the Baltic Sea-Adriatic corridor. Maritime connectivity is concentrated on the Baltic coast with Port Gdańsk's intercontinental shipping links and Port Gdynia's multimodal cargo specialization, aviation connectivity is concentrated at Warsaw Chopin Airport, electricity connectivity is visible through PSE's interconnections and the Sweden link, gas connectivity is visible through LNG infrastructure and Baltic Pipe, and research-network connectivity is visible through PIONIER's GÉANT linkage. The overall pattern indicates connectivity spanning multiple infrastructure classes rather than dependence on a single border interface.</p>
+
+        <h3>Cross-system stability characteristics</h3>
+        <p>The package reflects Warsaw administrative concentration with distributed execution as the dominant recurring stability characteristic. Distributed territorial continuity remains visible through national rail management, long-distance passenger rail, motorways, Baltic port infrastructure, electricity transmission, gas transmission, research networking, and crisis-management structures. Baltic-plus-inland continuity emerges through interaction between Baltic maritime nodes and inland administrative and corridor systems, while interoperability functions as a continuity mechanism across transport, energy, payments, digital identity, and research networking. Layered identity and public-service continuity through Profil Zaufany, ePUAP, mObywatel, and gov.pl supports administrative persistence, and Warsaw concentration coexists with nationally distributed operators rather than replacing territorial infrastructure continuity.</p>
+
+        <h3>Dependency and constraint characteristics</h3>
+        <ul>
+          <li>SORBNET3 and TARGET-NBP settlement dependencies remain central to zloty and euro-facing wholesale payment continuity.</li>
+          <li>KIR Elixir, Euro Elixir, and Express Elixir clearing dependencies support domestic and euro-facing payment continuity, including 24/7/365 instant-payment availability.</li>
+          <li>Cross-border energy-interconnection dependencies are visible through PSE interconnections including the Sweden link and through Baltic Pipe and Świnoujście LNG.</li>
+          <li>Shared identity-service dependencies are visible through Profil Zaufany, ePUAP, mObywatel, and gov.pl alongside eIDAS-linked cross-border identity recognition.</li>
+          <li>Warsaw concentration dependencies remain visible across government technology, central-bank payment infrastructure, and aviation, with bounded observability across commercial exchange topology, port operating metrics, parts of gas-system topology, and internal cyber procedures.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Trust dimensions summary statement</h3>
+        <p>Poland is documented as a Warsaw-centered, distributed-territorial, Baltic-plus-inland continuity jurisdiction whose trust dimensions describe operational continuity, interoperability, coordination, resilience, and dependency characteristics across overlapping physical and digital systems. The documented trust dimensions indicate continuity across Profil Zaufany-, ePUAP-, mObywatel-, and gov.pl-coordinated administration, NBP-coordinated SORBNET3 and TARGET-NBP wholesale settlement with KIR-operated clearing, distributed transport through PKP Polskie Linie Kolejowe, PKP Intercity, GDDKiA motorways, Port Gdańsk, Port Gdynia, and Warsaw Chopin Airport, PSE- and GAZ-SYSTEM-coordinated electricity and gas with the Sweden link, Świnoujście LNG, and Baltic Pipe, NASK and CERT Polska cyber coordination with PIONIER research networking into GÉANT, crisis-management coordination through the Government Centre for Security, and EU and Baltic interoperability without assigning readiness tiers, routing authority, or deployment eligibility.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>trust-dimensions.md</code></div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility.</p>
+
+        <h3>Jurisdiction identity</h3>
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Poland</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Central European Warsaw-Centered Baltic-Plus-Inland Distributed Territorial Continuity Environment</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Warsaw-Centered Administrative Concentration Framework · Distributed Territorial Continuity Framework · Baltic-Plus-Inland Continuity Framework · Baltic and Central European Connectivity Framework · EU Interoperability Framework · Energy Interconnection Framework · Zloty Settlement and Euro-Facing Payment Interoperability Framework · Layered Identity and Public-Service Continuity Framework · Research Network and Cyber-Coordination Framework · Rail-Maritime-Motorway Continuity Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Warsaw · Gdańsk · Gdynia</span>
+          </div>
+        </div>
+
+        <h3>Infrastructure role classification</h3>
+        <ul>
+          <li>sovereign European nation-state</li>
+          <li>Warsaw-centered administrative environment</li>
+          <li>distributed territorial continuity environment</li>
+          <li>Baltic and Central European connectivity environment</li>
+          <li>EU-interoperable infrastructure environment</li>
+          <li>layered identity and public-service environment</li>
+          <li>energy-interconnected environment</li>
+          <li>research-network and cyber-coordination-supported environment</li>
+        </ul>
+
+        <h3>Administrative and identity classification</h3>
+        <ul>
+          <li>Profil Zaufany electronic identification and digital signing</li>
+          <li>ePUAP nationwide ICT communication platform</li>
+          <li>mObywatel mobile and web public-service access</li>
+          <li>gov.pl public-service portal layer</li>
+          <li>eIDAS-linked cross-border identity recognition</li>
+          <li>centralized service entry with distributed national execution</li>
+        </ul>
+
+        <h3>Financial infrastructure and payment classification</h3>
+        <ul>
+          <li>Narodowy Bank Polski wholesale settlement operator</li>
+          <li>SORBNET3 (Polish zloty) · TARGET-NBP (euro)</li>
+          <li>KIR Elixir · Euro Elixir · Express Elixir (24/7/365 instant payments)</li>
+          <li>NBP Governor oversight and payment-scheme authorization</li>
+          <li>layered zloty-plus-euro-facing payment environment</li>
+        </ul>
+
+        <h3>Telecommunications and connectivity classification</h3>
+        <ul>
+          <li>NASK national research institute (cybersecurity · artificial intelligence · cloud computing)</li>
+          <li>CERT Polska computer emergency response (within NASK · FIRST · TF-CSIRT)</li>
+          <li>PIONIER research-and-education backbone (8,504 km fiber · DWDM · evolving toward terabit)</li>
+          <li>GÉANT international research-network linkage</li>
+          <li>PLIX topology: not stably retrievable in public form (no detailed claims made)</li>
+        </ul>
+
+        <h3>Transportation and logistics classification</h3>
+        <ul>
+          <li>PKP Polskie Linie Kolejowe — national railway-network manager</li>
+          <li>PKP Intercity (505 trains daily · Baltic Express to Prague)</li>
+          <li>GDDKiA national roads, motorways, and expressways (A1 · A2 · A4)</li>
+          <li>Port Gdańsk (Inner Port · Outer Port · Gdańsk Bay · deepwater) · Port Gdynia (universal · containers · ro-ro · short-sea · ferry)</li>
+          <li>Warsaw Chopin Airport — principal public aviation node</li>
+        </ul>
+
+        <h3>Energy and grid coordination classification</h3>
+        <ul>
+          <li>PSE transmission system operator (309 lines · 16,520 km · 112 EHV substations · 450 kV DC Sweden link)</li>
+          <li>system balancing · defence and restoration plans · cross-border transmission demand</li>
+          <li>GAZ-SYSTEM national gas transmission and major pipelines</li>
+          <li>President Lech Kaczyński LNG Terminal (Świnoujście)</li>
+          <li>Baltic Pipe (Norway · Denmark · Poland)</li>
+        </ul>
+
+        <h3>EU, Baltic, and Central European interoperability classification</h3>
+        <ul>
+          <li>EU membership since 1 May 2004 · Schengen since 21 December 2007</li>
+          <li>TEN-T participation</li>
+          <li>Baltic Sea-Adriatic corridor (Czechia · Slovakia · Austria · Hungary · Slovenia · Croatia · Italy)</li>
+          <li>euro-facing payment interoperability through TARGET-NBP and Euro Elixir</li>
+          <li>eIDAS cross-border digital-identity recognition</li>
+          <li>GÉANT research-network linkage through PIONIER</li>
+        </ul>
+
+        <h3>Disaster-response and continuity classification</h3>
+        <ul>
+          <li>Government Centre for Security (RCB) — supraministerial crisis-management coordination</li>
+          <li>national center for crisis management under the Prime Minister</li>
+          <li>CERT Polska — incident handling · active response · national and international CERT cooperation</li>
+          <li>CERT Polska within NASK — cybersecurity coordination embedded in research environment</li>
+        </ul>
+
+        <h3>Research and knowledge-network classification</h3>
+        <ul>
+          <li>PIONIER national research-and-education network</li>
+          <li>8,504 km fiber-optic backbone with domestic and foreign segments</li>
+          <li>DWDM transmission · evolution toward terabit bandwidths</li>
+          <li>GÉANT linkage to European research networks</li>
+        </ul>
+
+        <h3>Regional and international integration classification</h3>
+        <ul>
+          <li>Germany-, Czech-, and Slovakia-facing road and rail continuity</li>
+          <li>Lithuania-facing and Baltic connectivity through Gdańsk and Gdynia</li>
+          <li>Baltic Sea-Adriatic corridor north-south framing</li>
+          <li>electricity connectivity through PSE interconnections and Sweden link</li>
+          <li>gas connectivity through LNG and Baltic Pipe</li>
+          <li>research-network connectivity through PIONIER and GÉANT</li>
+        </ul>
+
+        <h3>Constraint classification</h3>
+        <ul>
+          <li>bounded observability across commercial telecom backbone topology, exchange topology, port operating metrics, parts of gas-system topology, and internal cyber procedures</li>
+          <li>uneven regional visibility strongest for Warsaw-centered nodes and national operators</li>
+          <li>PLIX topology not stably retrievable in public form during compilation</li>
+          <li>concentration-with-distribution with Warsaw prominent but national operators and Baltic coastal infrastructure structurally relevant</li>
+          <li>real-time operating conditions incompletely visible in public materials</li>
+          <li>absence of sovereign hyperscale compute or semiconductor fabrication stack evidence</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Metadata summary statement</h3>
+        <p>Poland appears in the metadata layer as the descriptor-oriented classification of the Warsaw-centered, distributed-territorial, Baltic-plus-inland continuity environment established in the evidence, signals, and trust-dimensions layers, with jurisdiction-type, geographic, and infrastructure-orientation classifications spanning the documented administrative, identity, financial, telecommunications, transport, energy, EU and Central European, disaster-response, data, research-network, and regional connectivity surfaces.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>metadata.md</code></div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+        <h3>Jurisdiction overview</h3>
+        <p>Poland presents as a Warsaw-centered administrative environment whose national continuity depends on layered coordination across identity, public-service access, payments, transport, energy systems, telecommunications, crisis-management structures, and research-network infrastructure. The jurisdiction also presents as a distributed territorial continuity environment in which rail, motorways, ports, airports, electricity systems, gas systems, and digital-service layers reinforce one another across a nationally distributed but capital-centered topology. The overall structure is that of a Baltic and Central European connectivity environment, an EU-interoperable infrastructure environment, a layered identity and public-service environment, and an energy-interconnected environment. The resulting profile is one of layered transport, payment, digital, energy, crisis-management, and research-network interaction defined by Warsaw administrative concentration, distributed national persistence, Baltic-plus-inland continuity, and recurring interoperability across European-facing systems.</p>
+
+        <h3>Administrative and identity profile</h3>
+        <p>The administrative and identity profile is characterized by Profil Zaufany, ePUAP, mObywatel, and gov.pl as the layered public-service access environment. Profil Zaufany provides electronic identification and digital signing across multiple public systems including ZUS, the patient account, tax services, and ePUAP, ePUAP provides a nationwide ICT platform for communication between citizens, entrepreneurs, and public entities with a single account usable across many bodies, and mObywatel provides a mobile and web layer with digital documents, electronic forms, payments, mailbox access, vehicle-and-driver services, and case history. eIDAS-linked cross-border identity recognition extends the identity environment into European trust services. The administrative environment reflects layered identity and public-service continuity bounded to publicly documented functions.</p>
+
+        <h3>Payment and financial profile</h3>
+        <p>The payment profile is structured around Narodowy Bank Polski's operation of SORBNET3 and TARGET-NBP with zloty and euro accounts respectively, alongside NBP Governor oversight of payment schemes and authorization of new payment systems and rules changes. KIR provides the main domestic clearing layer through Elixir for batch interbank payments, Euro Elixir for euro-facing payments, and Express Elixir for instant payments processed in real time with guaranteed uninterrupted 24/7/365 availability. The overall payment environment reflects layered zloty-plus-euro-facing coordination across wholesale settlement and interbank clearing rather than dependence on a single rail, and does not imply comparative payment-system status.</p>
+
+        <h3>Telecommunications and connectivity profile</h3>
+        <p>The telecommunications profile is marked by NASK as the national research institute specializing in cybersecurity, artificial intelligence, and cloud computing, with CERT Polska operating within NASK as the national CERT layer participating in FIRST and TF-CSIRT. PIONIER provides a separate research-and-education backbone with 8,504 km of fiber-optic lines, DWDM transmission, evolution toward terabit bandwidths, and GÉANT linkage. The absence of stable public PLIX topology is preserved as a bounded-observability characteristic rather than absence inference. The resulting profile is one of public, research, and cyber-coordination components combining to support documented digital and connectivity continuity alongside commercial telecommunications visibility.</p>
+
+        <h3>Transportation and logistics profile</h3>
+        <p>Poland has a distributed territorial transport profile in which PKP Polskie Linie Kolejowe national rail management, PKP Intercity passenger services with 505 trains daily and Baltic Express cross-border continuity, GDDKiA roads and motorways including A1, A2, and A4, Port Gdańsk Inner and Outer Port deepwater operations, Port Gdynia universal multimodal specialization, and Warsaw Chopin Airport aviation reinforce one another. The TEN-T framework places major Polish road and rail routes inside broader European corridor planning, and Baltic port infrastructure provides a separate maritime gateway alongside inland trunk routes. The resulting transport profile is best characterized as rail-maritime-motorway continuity with Warsaw-centered aviation rather than dependence on a single transport mode.</p>
+
+        <h3>Energy and industrial coordination profile</h3>
+        <p>The energy profile is structured around PSE as transmission system operator with 309 lines totaling 16,520 km, 112 extra-high-voltage substations, and the 450 kV DC under-sea connection to Sweden, with responsibilities for security of supply, interconnection maintenance, congestion management, system balancing, defence and restoration plans, and cross-border transmission demand. GAZ-SYSTEM provides national gas transmission and operator role for major pipelines, with control of the President Lech Kaczyński LNG Terminal in Świnoujście, and Baltic Pipe provides a strategic gas corridor linking Norway, Denmark, and Poland. The energy profile reflects an electricity-and-gas environment with national operators, Baltic interfaces, and explicit regional interoperability rather than a closed national grid.</p>
+
+        <h3>EU, Baltic, and Central European interoperability profile</h3>
+        <p>Poland's interoperability profile is reinforced through connection to wider EU and Central European systems. TEN-T and Baltic Sea-Adriatic corridor placement provide transport interoperability through cross-border corridor structures reaching Czechia, Slovakia, Austria, Hungary, Slovenia, Croatia, and Italy. PSE cross-border interconnections including the Sweden link and Baltic Pipe with Norway and Denmark provide energy interoperability across electricity and gas, while NBP's TARGET-NBP and KIR's Euro Elixir provide euro-facing payment interoperability alongside the domestic zloty rail, eIDAS provides cross-border digital-identity recognition, and PIONIER's GÉANT linkage provides research-network interoperability. Interoperability functions as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity profile</h3>
+        <p>The disaster-response profile is characterized by the Government Centre for Security as a supraministerial structure coordinating threat perception, risk analysis, information flow, crisis-management procedures, critical-infrastructure protection, and exercises and trainings, serving as a national center for crisis management under the Prime Minister. CERT Polska provides the principal cyber-response layer through incident registration and handling, active threat response, national and international CERT cooperation, and detection and analysis tooling, with operation within NASK embedding cybersecurity coordination in the broader national digital-infrastructure and research environment. The overall disaster-response profile combines crisis-management coordination, critical-infrastructure planning, incident response, and national-to-international cooperation, bounded to documented public mechanisms.</p>
+
+        <h3>Data infrastructure profile</h3>
+        <p>The data-infrastructure profile combines layered identity and public-service continuity through Profil Zaufany, ePUAP, mObywatel, and gov.pl with NASK's secure document-management systems for government agencies and PIONIER's research-network backbone. Commercial exchange topology and parts of commercial telecom backbones remain incompletely visible in public materials, and the absence of stable public PLIX topology is preserved as bounded observability rather than absence inference. The resulting profile is one of documented continuity concentrated in public-service, research, and cyber-coordination components rather than a single-provider or single-site environment.</p>
+
+        <h3>Research and knowledge-network profile</h3>
+        <p>The research and knowledge-network profile is anchored by PIONIER as the national research-and-education network, with 8,504 km of fiber-optic lines including domestic and foreign segments supporting distributed research-network reach and DWDM transmission with continued evolution toward terabit bandwidths supporting high-capacity continuity. PIONIER's GÉANT linkage places part of Poland's digital and research infrastructure inside wider European academic-network structures. This profile remains limited to documented network continuity and cross-border knowledge-network participation and does not imply broader scientific ranking or capability claims.</p>
+
+        <h3>Regional and international connectivity profile</h3>
+        <p>Poland's regional integration profile includes Germany-, Czech-, and Slovakia-facing continuity through road and rail corridor structures and the Baltic Express to Prague, Lithuania-facing and broader Baltic connectivity through the Gdańsk and Gdynia maritime layer, and TEN-T and Baltic Sea-Adriatic corridor north-south framing. Maritime connectivity through Baltic, North Sea, intercontinental, and Asian shipping links and short-sea and ferry services adds external maritime reach, Warsaw Chopin Airport provides the main visible aviation interface, PSE's external interconnections and the Sweden link extend electricity connectivity, Baltic Pipe and Świnoujście LNG extend gas connectivity, NBP's TARGET-NBP and KIR's Euro Elixir extend financial connectivity, and PIONIER's GÉANT linkage extends research-network connectivity.</p>
+
+        <h3>Cross-system operational profile</h3>
+        <p>The strongest cross-system pattern is Warsaw administrative concentration with distributed execution across government technology, central-bank payment infrastructure, aviation, and public-service access. A second recurring pattern is distributed territorial continuity through national rail management, long-distance passenger rail, motorways, Baltic port infrastructure, electricity transmission, gas transmission, research networking, and crisis-management structures. A third recurring pattern is Baltic-plus-inland continuity through interaction between Baltic maritime nodes and inland systems, while interoperability functions as a continuity mechanism across transport, energy, payments, digital identity, and research networking. Layered identity and public-service continuity reinforces administrative persistence, and concentration-with-distribution operates as the dominant model in which Warsaw is prominent but national operators and Baltic coastal infrastructure remain structurally relevant. Poland operates as a layered Central European coordination environment rather than a single-corridor or single-node system.</p>
+
+        <h3>Structural constraints</h3>
+        <p>The current Poland profile carries clear structural constraints. The package preserves SORBNET3 and TARGET-NBP settlement dependencies for zloty and euro-facing wholesale continuity, KIR Elixir, Euro Elixir, and Express Elixir clearing dependencies including 24/7/365 instant-payment availability, cross-border energy-interconnection dependencies through PSE interconnections including the Sweden link and through Baltic Pipe and Świnoujście LNG, shared identity-service dependencies through Profil Zaufany, ePUAP, mObywatel, and gov.pl alongside eIDAS-linked recognition, and Warsaw concentration dependencies across government technology, central-bank payment infrastructure, and aviation. Public observability remains bounded across commercial exchange topology, port operating metrics, parts of gas-system topology, commercial telecom backbones, and internal cyber procedures. The package also preserves the absence of sovereign hyperscale compute stack evidence and the absence of semiconductor fabrication stack evidence. These constraints describe boundary conditions reflecting a Warsaw-centered, distributed-territorial, Baltic-plus-inland continuity environment in which continuity derives from layered concentration, distributed coordination, and interoperability rather than sovereign-scale compute autonomy.</p>
+
+        <hr class="section-divider">
+
+        <h3>Profile summary statement</h3>
+        <p>Poland appears in the profile layer as the structural characterization of the Warsaw-centered, distributed-territorial, Baltic-plus-inland continuity environment established in the evidence, signals, trust-dimensions, and metadata layers, situated within an EU-interoperable, energy-interconnected, layered-identity setting and carried through documented administrative, identity, financial, telecommunications, transport, energy, EU and Central European, disaster-response, data, research-network, and regional connectivity anchors.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code></div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Poland profile into builder-facing interpretation. It provides structural interpretation only and does not assign routing authority, readiness tiers, Atlas surfaces, Atlas topology authority, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Administrative and service environment</h3>
+        <p>In builder-facing terms, Poland presents as a Warsaw-centered administrative structure organized around Profil Zaufany electronic identification, ePUAP nationwide ICT communication, mObywatel mobile and web access, and the gov.pl public-service portal. Profil Zaufany enables online identity confirmation and electronic signing across multiple public systems, ePUAP enables communication between citizens, entrepreneurs, and public entities with a single account, and mObywatel adds a mobile and web layer for documents, forms, payments, mailboxes, and case history. The administrative environment appears as shared identity and centralized service coordination with distributed national execution rather than isolated agency front ends.</p>
+
+        <h3>Identity and credential environment</h3>
+        <p>The identity environment appears as a layered structure through Profil Zaufany as the principal electronic-identification rail, ePUAP and mObywatel as identity-coupled service interfaces, and eIDAS-linked cross-border recognition extending identity into wider European trust services. Identity is operationally coupled to public-service access through reusable authentication and digital signing rather than service-by-service credentials. Identity functions as a reusable coordination mechanism across portal, mobile, and cross-border layers, bounded to documented digital-service and identity functions and without implying broader state visibility beyond the public record.</p>
+
+        <h3>Payment and interoperability environment</h3>
+        <p>The payment environment appears as an NBP-coordinated wholesale structure with SORBNET3 for zloty and TARGET-NBP for euro, alongside NBP Governor oversight and payment-scheme authorization. KIR adds the main domestic clearing layer with Elixir for batch interbank payments, Euro Elixir for euro-facing payments, and Express Elixir for real-time instant payments with guaranteed uninterrupted 24/7/365 availability. The payment environment presents as layered zloty-plus-euro-facing coordination across wholesale settlement and interbank clearing without implying comparative financial-system status.</p>
+
+        <h3>Telecommunications and connectivity environment</h3>
+        <p>Builders encounter Poland as a layered connectivity environment in which NASK anchors public-sector and research-oriented cybersecurity, AI, and cloud-computing work, CERT Polska anchors operational cyber coordination within NASK with FIRST and TF-CSIRT participation, and PIONIER anchors a separate research-and-education backbone with 8,504 km of fiber, DWDM transmission, terabit-direction evolution, and GÉANT linkage. The absence of stable public PLIX topology is preserved as bounded observability. The telecommunications environment presents as public, research, and cyber-coordination components combining to support documented connectivity continuity alongside commercial telecommunications visibility.</p>
+
+        <h3>Transportation and logistics environment</h3>
+        <p>The transportation and logistics environment appears as a distributed territorial structure through PKP Polskie Linie Kolejowe national rail management, PKP Intercity passenger services with 505 trains daily and Baltic Express to Prague, GDDKiA roads and motorways including the A1, A2, and A4 axes, Port Gdańsk Inner and Outer Port deepwater operations and Port Gdynia universal multimodal specialization, and Warsaw Chopin Airport aviation. Rail, motorway, Baltic maritime, and aviation layers reinforce one another, with TEN-T and Baltic Sea-Adriatic corridor placement extending continuity into European corridor flows. The logistics environment presents as rail-maritime-motorway continuity with Warsaw-centered aviation rather than dependence on a single transport mode.</p>
+
+        <h3>Energy and industrial coordination environment</h3>
+        <p>The energy environment appears as a PSE-coordinated transmission structure with 309 lines totaling 16,520 km, 112 extra-high-voltage substations, and the 450 kV DC under-sea connection to Sweden, with responsibilities for security of supply, interconnection maintenance, congestion management, system balancing, and defence and restoration planning. GAZ-SYSTEM provides national gas transmission and major pipelines with control of the Świnoujście LNG terminal, and Baltic Pipe provides a Norway-Denmark-Poland gas corridor. The energy environment presents as an electricity-and-gas environment with national operators, Baltic interfaces, and explicit regional interoperability rather than a closed domestic grid.</p>
+
+        <h3>EU, Baltic, and Central European interoperability environment</h3>
+        <p>The interoperability environment appears as a standing continuity structure across transport, energy, payments, digital identity, and research networking. TEN-T and Baltic Sea-Adriatic corridor placement provide transport interoperability, PSE cross-border interconnections and Baltic Pipe provide energy interoperability, TARGET-NBP and Euro Elixir provide euro-facing payment interoperability alongside the domestic zloty rail, eIDAS provides cross-border digital-identity recognition, and PIONIER and GÉANT provide research-network interoperability. This environment presents as interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity environment</h3>
+        <p>The disaster-response environment appears as a Government Centre for Security-coordinated structure under the Prime Minister with comprehensive risk analysis, information-flow coordination, crisis-management procedures, critical-infrastructure protection, and exercises and trainings. CERT Polska provides the principal cyber-response layer through incident handling, active threat response, national and international CERT cooperation, and detection and analysis tooling, with operation within NASK embedding cybersecurity coordination in the broader digital-infrastructure and research environment. The continuity environment presents as crisis-management coordination, critical-infrastructure planning, incident response, and international cooperation combined into a layered resilience structure.</p>
+
+        <h3>Data infrastructure environment</h3>
+        <p>The data environment appears as a Warsaw-concentrated but nationally distributed structure through Profil Zaufany, ePUAP, mObywatel, and gov.pl public-service access, NASK's secure document-management systems for government agencies, and the PIONIER research backbone. The absence of stable public PLIX topology is preserved as bounded observability. The data environment presents as documented continuity concentrated in public-service, research, and cyber-coordination components rather than a single-provider or single-site environment.</p>
+
+        <h3>Research and knowledge-network environment</h3>
+        <p>The research and knowledge-network environment appears through PIONIER as the national research-and-education network with 8,504 km of fiber-optic lines, DWDM transmission, evolution toward terabit bandwidths, and GÉANT linkage. PIONIER presents as a distinct nationally distributed network layer alongside commercial telecommunications without implying broader scientific ranking.</p>
+
+        <h3>Regional and international connectivity environment</h3>
+        <p>Regional interoperability appears through Germany-, Czech-, and Slovakia-facing road and rail continuity including the Baltic Express to Prague, Lithuania-facing and Baltic connectivity through Gdańsk and Gdynia, TEN-T and Baltic Sea-Adriatic corridor north-south framing, Sweden electricity link, Baltic Pipe and Świnoujście LNG, TARGET-NBP and Euro Elixir financial connectivity, and PIONIER-GÉANT research connectivity. Regional interaction appears through transport, energy, payment, identity, and research interfaces rather than a single external-facing gateway narrative.</p>
+
+        <h3>Cross-system interaction environment</h3>
+        <p>The strongest visible interaction pattern is Warsaw administrative concentration with distributed execution, where government technology, central-bank payment infrastructure, aviation, and public-service access appear in coordinated proximity. Distributed territorial continuity, Baltic-plus-inland continuity, interoperability as a continuity mechanism, and layered identity and public-service continuity reinforce one another, with Gdańsk, Gdynia, the voivodeship-distributed road and rail systems, and corridor-linked infrastructures remaining structurally relevant. The builder-facing environment appears as a concentration-with-distribution model in which physical and digital systems reinforce one another across capital concentration, Baltic maritime nodes, and inland reach.</p>
+
+        <h3>Operational visibility and dependency environment</h3>
+        <p>The operational environment is shaped by SORBNET3 and TARGET-NBP wholesale dependencies, KIR clearing dependencies including 24/7/365 instant-payment availability, cross-border energy-interconnection dependencies through PSE and the Sweden link, Baltic Pipe and Świnoujście LNG gas dependencies, shared identity-service dependencies through Profil Zaufany, ePUAP, mObywatel, and gov.pl with eIDAS-linked recognition, and Warsaw concentration dependencies across government technology, central-bank payment infrastructure, and aviation. Public observability remains bounded across commercial exchange topology, port operating metrics, parts of gas-system topology, commercial telecom backbones, and internal cyber procedures, and PLIX-specific descriptive topology remains not stably retrievable in public form. The environment appears strongly observable around national operators and Warsaw-centered nodes while remaining incompletely transparent across private operational layers and uniform regional detail.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder mode summary statement</h3>
+        <p>Poland appears in builder mode as the builder-facing reading of the Warsaw-centered, distributed-territorial, Baltic-plus-inland continuity environment established across the evidence, signals, trust-dimensions, metadata, and profile layers, with interaction surfaces spanning the documented administrative, identity, payment, telecommunications, transport, energy, EU and Central European, disaster-response, data, research-network, and regional connectivity environments without deployment recommendation, readiness assignment, or routing authority.</p>
+
+        <div class="meta-line">Source: <code>builder-mode.md</code></div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Initial package creation</h3>
+        <p>The Poland jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The change-log records that <code>evidence.md</code> established PKP Polskie Linie Kolejowe and PKP Intercity national and cross-border rail with the Baltic Express to Prague, GDDKiA nationwide road and motorway structure including A1, A2, and A4, Port Gdańsk deepwater Inner and Outer Port operations and Port Gdynia universal multimodal specialization, Warsaw Chopin Airport aviation, PSE electricity transmission with 309 lines totaling 16,520 km, 112 EHV substations, and the 450 kV DC Sweden connection, GAZ-SYSTEM national gas transmission with the Świnoujście LNG terminal and Baltic Pipe, NASK with CERT Polska cyber coordination and PIONIER's 8,504 km fiber backbone into GÉANT, NBP-coordinated SORBNET3 and TARGET-NBP wholesale settlement with KIR-operated Elixir, Euro Elixir, and Express Elixir, Profil Zaufany, ePUAP, mObywatel, and gov.pl public-service and identity structures, and the Government Centre for Security crisis-management layer.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The change-log records that <code>signals.md</code> derived administrative and identity coordination signals, financial and payment coordination signals, telecommunications and connectivity signals, transportation and logistics coordination signals, energy and industrial coordination signals, EU, Baltic, and Central European interoperability signals, disaster-response and continuity signals, data infrastructure and continuity signals, research and knowledge-network signals, regional and international connectivity signals, cross-system structural signals, and constraint-boundary signals preserving bounded visibility across commercial telecom backbones, exchange topology, port operating metrics, parts of gas-system topology, and internal cybersecurity procedures, the unstable retrievability of PLIX-specific topology, uneven regional observability, and the absence of sovereign hyperscale compute and semiconductor fabrication evidence.</p>
+
+        <h3>Trust-dimensions layer construction</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> established Warsaw-centered administrative continuity through Profil Zaufany, ePUAP, mObywatel, and gov.pl, layered identity continuity through eIDAS-linked recognition, NBP-coordinated SORBNET3 and TARGET-NBP wholesale settlement with KIR-operated clearing including 24/7/365 instant payments, distributed territorial transport continuity through PKP Polskie Linie Kolejowe, PKP Intercity, GDDKiA, Port Gdańsk, Port Gdynia, and Warsaw Chopin Airport, PSE- and GAZ-SYSTEM-coordinated electricity and gas continuity including the Sweden link, Świnoujście LNG, and Baltic Pipe, EU and Baltic interoperability, NASK and CERT Polska cyber coordination with PIONIER research networking into GÉANT, and Government Centre for Security crisis-management coordination.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The change-log records that <code>metadata.md</code> classified Poland as a sovereign European nation-state, Warsaw-centered administrative environment, distributed territorial continuity environment, Baltic and Central European connectivity environment, EU-interoperable infrastructure environment, layered identity and public-service environment, energy-interconnected environment, and research-network and cyber-coordination-supported environment, with documented characteristics across administrative coordination, identity, payment and financial structures, telecommunications, transportation and logistics, energy and industrial coordination, EU and Baltic interoperability, disaster-response, data infrastructure, research and knowledge-network participation, regional connectivity, cross-system patterns, and dependency characteristics.</p>
+
+        <h3>Profile layer characterization</h3>
+        <p>The change-log records that <code>profile.md</code> characterized Poland as a Warsaw-centered administrative environment with distributed territorial continuity, Baltic and Central European, EU-interoperable, energy-interconnected, layered in identity and public-service continuity, and supported by dedicated research-network and cyber-coordination layers, organized through layered transport, payment, digital, energy, crisis-management, and research-network interaction, with public and commercial infrastructures combining to sustain continuity through interaction among capital concentration, Baltic maritime nodes, and inland reach rather than single-corridor dependence.</p>
+
+        <h3>Builder mode translation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into administrative and service interpretation, identity and credential interpretation, payment and interoperability interpretation, telecommunications and connectivity interpretation, transportation and logistics interpretation, energy and industrial coordination interpretation, EU and Baltic interoperability interpretation, disaster-response and continuity interpretation, data infrastructure interpretation, research and knowledge-network interpretation, regional and international connectivity interpretation, cross-system interaction interpretation, and operational visibility and dependency interpretation.</p>
+
+        <h3>Structural boundary decisions recorded</h3>
+        <p>The change-log records that Warsaw administrative concentration was preserved without collapsing the package into a single-node model, that distributed territorial continuity and Baltic-plus-inland continuity were preserved as standing structural characteristics, and that Baltic and Central European connectivity, energy interconnection, layered identity and public-service continuity, and research-network and cyber-coordination support were handled as infrastructure rather than strategy. Military interpretation was excluded, intelligence inference was excluded, East-West shield, frontier-state, geopolitical-buffer, transit-state, and Baltic-gateway framing was excluded, tourism, cultural-history, industrial-power, and startup-ecosystem framing was excluded, deployment readiness interpretation was excluded, geopolitical ranking was excluded, and superiority framing, hidden-state capability, deployment suitability, operational approval, and strategic forecasting were preserved as excluded inference categories.</p>
+
+        <h3>Package completion status</h3>
+        <p>The Poland jurisdiction package is complete within the Atlas normalization framework and aligned with Warsaw-centered administrative concentration, distributed territorial continuity, Baltic-plus-inland continuity, Baltic and Central European connectivity, EU interoperability, energy interconnection, zloty settlement and euro-facing payment interoperability, layered identity and public-service continuity, research-network and cyber-coordination support, and rail-maritime-motorway continuity normalization standards.</p>
+
+        <div class="meta-line">Normalization status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>change-log.md</code></div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Poland jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/poland/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Poland</li>
+          <li><strong>Code:</strong> PL</li>
+          <li><strong>Region:</strong> Central European Warsaw-Centered Baltic-Plus-Inland Distributed Territorial Continuity Environment</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor alignment</h4>
+        <ul>
+          <li>Warsaw-Centered Administrative Concentration Framework</li>
+          <li>Distributed Territorial Continuity Framework</li>
+          <li>Baltic-Plus-Inland Continuity Framework</li>
+          <li>Baltic and Central European Connectivity Framework</li>
+          <li>EU Interoperability Framework</li>
+          <li>Energy Interconnection Framework</li>
+          <li>Zloty Settlement and Euro-Facing Payment Interoperability Framework</li>
+          <li>Layered Identity and Public-Service Continuity Framework</li>
+          <li>Research Network and Cyber-Coordination Framework</li>
+          <li>Rail-Maritime-Motorway Continuity Framework</li>
+        </ul>
+        <h4>Primary coordination cities</h4>
+        <ul>
+          <li>Warsaw</li>
+          <li>Gdańsk</li>
+          <li>Gdynia</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Anchors</h3>
+        <h4>Documented surfaces</h4>
+        <ul>
+          <li>Profil Zaufany · ePUAP · mObywatel · gov.pl · eIDAS-linked recognition</li>
+          <li>Narodowy Bank Polski · SORBNET3 (zloty) · TARGET-NBP (euro)</li>
+          <li>KIR · Elixir · Euro Elixir · Express Elixir (24/7/365 instant payments)</li>
+          <li>NASK · CERT Polska (FIRST · TF-CSIRT) · PIONIER (8,504 km fiber · DWDM · GÉANT)</li>
+          <li>PKP Polskie Linie Kolejowe (national rail manager) · PKP Intercity (505 trains daily · Baltic Express)</li>
+          <li>GDDKiA national roads and motorways (A1 · A2 · A4) · TEN-T</li>
+          <li>Port Gdańsk (Inner Port · Outer Port · Gdańsk Bay · deepwater) · Port Gdynia (universal · ro-ro · short-sea · ferry)</li>
+          <li>Warsaw Chopin Airport</li>
+          <li>PSE (309 lines · 16,520 km · 112 EHV substations · 450 kV DC Sweden link)</li>
+          <li>GAZ-SYSTEM · President Lech Kaczyński LNG Terminal (Świnoujście) · Baltic Pipe (Norway · Denmark · Poland)</li>
+          <li>Government Centre for Security (RCB) · national crisis-management coordination under the Prime Minister</li>
+          <li>EU member since 1 May 2004 · Schengen since 21 December 2007 · 16 voivodeships</li>
+          <li>Baltic Sea-Adriatic corridor (Czechia · Slovakia · Austria · Hungary · Slovenia · Croatia · Italy)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereign hyperscale compute classification.</li>
+          <li>Not a sovereign semiconductor fabrication classification.</li>
+          <li>Not an East-West shield, frontier-state, geopolitical-buffer, or transit-state classification.</li>
+          <li>Not a Baltic-gateway or strategic-maritime classification.</li>
+          <li>Not a tourism, cultural-history, industrial-power, or startup-ecosystem narrative.</li>
+          <li>Not a TARGET-NBP, SORBNET3, or Euro Elixir settlement-authority classification beyond documented NBP and KIR administration.</li>
+          <li>Not a broader internet-exchange centrality classification: PLIX topology was not stably retrievable in public form during compilation.</li>
+          <li>Not a "world-class," "regional leader," "gateway," "European leader," or "powerhouse" classification.</li>
+          <li>Not an economic, political, demographic, military, cultural, or superpower narrative.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
