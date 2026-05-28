@@ -1,91 +1,744 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Georgia | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Georgia — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Georgia Atlas jurisdiction package rendering. Tbilisi-Centered Administrative Concentration, Black Sea and Poti Maritime Continuity, Distributed Territorial Continuity, Regional Interoperability, Energy Interconnection, Central-Bank Payment Coordination, Layered Digital Public-Service Continuity, Research-Network Support, and Disaster-Response and Cyber-Coordination Support.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/georgia/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Georgia</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Georgia</h1>
 
-</article>
-</main>
+  <p class="lede">Tbilisi-centered administrative jurisdiction whose national continuity depends on distributed territorial coordination across road, rail, airport, port, electricity, gas, telecommunications, payment, public-service, and emergency-response layers, with Black Sea maritime continuity centered most visibly at Poti. This page renders the canonical Georgia Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting Georgian Railway national rail with Tbilisi-Batumi and Tbilisi-Yerevan services, the Roads Department of Georgia E-60 and E-70 axes joining at Poti, United Airports of Georgia at Tbilisi, Kutaisi, and Batumi, APM Terminals Poti maritime infrastructure, National Bank of Georgia coordination of the RTGS system, the instant payment system, and GSSS securities settlement, Public Service Hall and my.gov.ge public-service access with ComCom regulation, NIC.GE naming administration, and the GRENA research federation into eduGAIN, Georgian State Electrosystem transmission under the National Dispatch Center and Georgian Gas Transportation Company gas transmission including the South Caucasus Pipeline, North-South Main Gas Pipeline, and Enguri HPP, and Public Safety Command Center 112 with Tbilisi-Rustavi answering-point redundancy.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Georgia (GE)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>Georgia currently reads within Atlas as a Tbilisi-centered administrative and system-coordination environment whose national continuity depends on distributed coordination across road, rail, airport, port, electricity, gas, telecommunications, payment, public-service, and emergency-response layers rather than any single system. The package places Georgia inside Public Service Hall-, my.gov.ge-, ComCom-, and NIC.GE-linked public-service, regulatory, and naming administration with the GRENA research federation into eduGAIN, National Bank of Georgia-coordinated RTGS, instant-payment, and GSSS securities-settlement rails, Georgian Railway-, Roads Department-, United Airports-, and APM Terminals Poti-linked transport with Black Sea maritime continuity, Georgian State Electrosystem- and Georgian Gas Transportation Company-linked electricity and gas interconnection with the South Caucasus and North-South pipelines and Enguri hydropower, and Public Safety Command Center 112-linked emergency coordination with Tbilisi-Rustavi answering-point redundancy. These conditions support a structural characterization centered on Tbilisi administrative concentration, Poti maritime continuity where evidenced, distributed territorial continuity, regional and energy interoperability, and concentration-with-distribution without assigning readiness tiers, routing authority, or comparative status.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Georgia</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">South Caucasus Tbilisi-Centered Distributed Territorial Continuity Environment with Black Sea Poti Maritime Continuity</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Tbilisi-Centered Administrative Concentration Framework · Black Sea and Poti Maritime Continuity Framework · Distributed Territorial Continuity Framework · Regional Interoperability Framework · Energy Interconnection Framework · Central-Bank Payment Coordination Framework · Layered Digital Public-Service Continuity Framework · Research Network Support Framework · Disaster-Response and Cyber-Coordination Framework · Bounded Observability Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Tbilisi · Poti</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records evidence-supported national structures documented for Georgia that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, or Atlas surfaces.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code> · <code>metadata.md</code> — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Georgia jurisdiction package across administrative governance, identity, payments, telecommunications, transport, energy, regional interoperability, disaster-response, and connectivity surfaces, bounded throughout by public observability.</p>
+
+        <h3>Geographic and regional position</h3>
+        <p>The evidence layer records Georgia as a sovereign state with land borders with Russia, Azerbaijan, Armenia, and Turkey and a direct Black Sea coastline, combining inland territorial continuity with coast-facing maritime interfaces. Public transport, energy, digital-service, and emergency-management materials are recorded as showing a national system that maintains continuity across capital-centered institutions, western maritime nodes, and border-facing road, rail, gas, and power interfaces. The public record is recorded as treating topography and regional dispersion as service-delivery conditions rather than symbolic geographic narratives, with Roads Department materials distinguishing major west-to-east and coast-to-border highways and ComCom's Log-in Georgia materials referencing mountainous settlements as targets for broadband and digital-service expansion.</p>
+
+        <h3>Transportation and logistics infrastructure</h3>
+        <p>The evidence layer records Georgian Railway as a nationally coordinated rail system supporting domestic and cross-border services including Tbilisi-Batumi fast trains and Tbilisi-Yerevan international passenger service, with official-site statistics describing rail infrastructure totaling 1,992 km including 1,441.66 km of main rails, and the 2020 annual report stating 4,407 active freight railcars and 39 active passenger wagons at year-end. Road continuity is recorded more clearly through the Roads Department of Georgia, responsible for 1,455 km of international roads and 6,943 km of secondary roads, with the E-60 running from Poti to Tbilisi to Red Bridge and the E-70 running from Poti to Batumi to Sarpi, the two joining in Poti to form the main transit road with a total length of 450 km. Aviation continuity is recorded through United Airports of Georgia, a 100% state-owned enterprise owning all three international and three domestic airports, with Tbilisi (operated by TAV Georgia), Kutaisi, and Batumi as the principal international aviation nodes. Maritime continuity is recorded most clearly at Poti, where APM Terminals describes Georgia's largest seaport handling container, cargo, and passenger-ferry traffic, carrying around 80% of the country's container traffic, with 15 berths, 2,900 meters of quay, 29 quay cranes, 22 km of rail track, direct ferry connections to Romania, and full integration with the national road and railway network.</p>
+
+        <h3>Energy and industrial structure</h3>
+        <p>The evidence layer records Georgian State Electrosystem as the sole electricity transmission system operator owning and operating 3,419.68 km of transmission lines and 43 substations across the country, with the network managed by the National Dispatch Center and technical maintenance provided by eastern, western, and southern regional networks, and cross-border transmission lines interconnecting with Russia, Turkey, Armenia, and Azerbaijan. GSE's head office at 2 Baratashvili Street in Tbilisi, providing power transmission and dispatch services under GNERC regulation, is recorded as supporting a Tbilisi-centered coordination model layered over territorially distributed transmission infrastructure. Gas supply and transportation are recorded through Georgian Oil and Gas Corporation, with natural gas accounting for about 40% of total energy-resource supply, local production under 0.5% of annual consumption, demand mainly balanced by imports, and transit provided by the South Caucasus Pipeline (Georgian section 249 km) and the North-South Main Gas Pipeline (Georgian section 234 km), with the system operated by the state-owned Georgian Gas Transportation Company as transport licensee since 2009. Hydropower is recorded through Enguri HPP, a 100% state-owned company contributing more than 35% of the country's power supply and having generated more than 130 billion kWh over 45 years.</p>
+
+        <h3>Digital and telecommunications infrastructure</h3>
+        <p>The evidence layer records ComCom as an independent body regulating electronic communications and broadcasting, protecting consumer rights, and ensuring competition, making sector regulation visible as a formal national coordination layer. The public domain-administration layer is recorded through NIC.GE, with Caucasus Online managing the .ge country-code top-level-domain registry under Georgian legislation and ICANN-related standards through a registrar model, membership of ccNSO within the ICANN structure, and a .ge dispute-resolution arrangement with WIPO. A separate academic and research interoperability layer is recorded through GRENA, with the GRENA Identity Federation as federation operator, Georgian educational and research institutions joining as identity providers, and entities able to request publication for participation in eduGAIN. Public digital-service expansion is recorded as not confined to Tbilisi, with ComCom's Log-in Georgia project designed to provide 1,000 villages and 500,000 citizens, including people in mountainous regions, with high-quality internet access and digital services. Public visibility is recorded as materially weaker for commercial peering, internet-exchange topology, backbone routing, and data-center distribution than for regulation, domain administration, and research federation, so no hidden exchange map or private backbone architecture is inferred.</p>
+
+        <h3>Financial and payment infrastructure</h3>
+        <p>The evidence layer records Georgia's payment infrastructure as publicly centered on the National Bank of Georgia, with the national payment and settlement environment including wholesale and retail payment systems, a central depository, and securities settlement systems, and the Bank acting as regulator, infrastructure operator, and initiator of change. The RTGS system is recorded as operating since 3 December 2010, processing both high-value and low-value transactions with the National Bank, the Treasury Department of the Ministry of Finance, and commercial banks as participants, settling interbank payments in real time, using modern information-security controls and priority-based processing, integrated with the CSD system for delivery-versus-payment settlement, with published availability above 99.9% across reported years. The instant payment system is recorded as a 24/7/365 electronic retail-payment solution in GEL with commercial banks and non-bank payment service providers as participants and multi-channel access including branches, internet banking, mobile applications, and QR codes. The GSSS system is recorded as a unified securities-settlement environment for government and corporate securities, integrated with RTGS on a delivery-versus-payment basis in central-bank money, with the National Bank, the Central Securities Depository of Georgia, commercial banks, and brokers as participants, and integration with Bloomberg and future stock-exchange trading platforms.</p>
+
+        <h3>Government and administrative technology structure</h3>
+        <p>The evidence layer records Georgia's public-service access layer as visible through Public Service Hall and my.gov.ge, with Public Service Hall presenting itself as a consolidated service environment under the formula "Everything in one space," indicating an administrative model that groups multiple public services into a single service-access layer. The my.gov.ge platform is recorded as a second visible layer of digital public-service access with functions including user profile, notifications, history, electronic document storage, and correspondence with public agencies. Public digital-service expansion programs are recorded as connecting this layer to broader national administration through ComCom's role in Log-in Georgia, linking broadband rollout with access to electronic governance, remote learning, telemedicine, and other digital services outside major urban centers. Because public extraction from these platforms is incomplete, the evidence layer is recorded as not inferring deeper internal workflow integration, identity assurance architecture, or electronic-signature capability beyond what is directly visible.</p>
+
+        <h3>Regional and international interoperability infrastructure</h3>
+        <p>The evidence layer records interoperability across transport, energy, payment, maritime, and research-network layers. In transport, the Roads Department's E-60 Poti-Tbilisi-Red Bridge and E-70 Poti-Batumi-Sarpi routes are recorded as creating documented road interfaces toward Azerbaijan and Turkey while preserving a Poti-centered junction, with Georgian Railway showing domestic continuity and an active Tbilisi-Yerevan interface and APM Terminals documenting Poti as integrated with rail and road and connected by ferry to Romania. Energy interoperability is recorded as especially explicit, with GSE transmission lines interconnecting with Russia, Turkey, Armenia, and Azerbaijan, the South Caucasus Pipeline carrying Azerbaijani gas to Turkey through Georgia, and the North-South Main Gas Pipeline transiting Russian gas to Armenia through Georgia as operator-documented interfaces. Financial interoperability is recorded more narrowly through RTGS's use of customized SWIFT and ISO-standard messages and GSSS integration with Bloomberg and future stock-exchange platforms, while digital interoperability is recorded through GRENA's eduGAIN participation and NIC.GE's operation within ICANN-related domain-governance structures.</p>
+
+        <h3>Disaster resilience, cybersecurity, and operational coordination</h3>
+        <p>The evidence layer records public emergency coordination as clearly visible through Public Safety Command Center 112, with Georgia's single emergency number established in 2012, 112 and the Joint Operations Center merged in 2019 to form the present command center, and call-takers and dispatchers operating 24/7 to transfer incident information to relevant emergency units. PSCC 112 is recorded as operating two public-safety answering points, in Tbilisi and Rustavi, with the Rustavi PSAP serving as operational backup for the main Tbilisi PSAP, providing strong public evidence of a central emergency-dispatch layer with explicit continuity design. Operational continuity is recorded in the financial infrastructure through NBG's business-continuity materials, with payment-system and securities-settlement continuity treated as critical, recovery planning aiming to restore critical functions within the same settlement day, and RTGS remaining operational during the COVID-19 period while staff worked remotely. Public cyber-coordination visibility is recorded as more limited but not absent, with Georgia's Law on Information Security assigning incident-management and coordination responsibilities to CERT.GOV.GE and official materials indicating a national-level CERT function on the Operative-Technical Agency domain, though detailed operational topology was not consistently extractable during this research pass.</p>
+
+        <h3>Regional and international connectivity</h3>
+        <p>The evidence layer records Georgia's regional and international connectivity as distributed across road, rail, maritime, aviation, energy, financial, and research-network layers rather than through any single interface. Turkey-facing continuity is recorded through the E-70 Poti-Batumi-Sarpi road axis, GSE's electricity interconnection with Turkey, and the South Caucasus Pipeline's onward gas flow toward Turkey, while Azerbaijan-facing continuity is recorded through the E-60 Poti-Tbilisi-Red Bridge axis, GSE's Azerbaijan interconnection, and Azerbaijani gas transit through the South Caucasus Pipeline. Armenia-facing connectivity is recorded through Georgian Railway's Tbilisi-Yerevan service, GSE's Armenia interconnection, and the North-South Main Gas Pipeline's transit of Russian gas to Armenia, with Russia-facing connectivity recorded more narrowly through GSE's power-system interconnection and the same pipeline, treated as infrastructure interfaces only. Black Sea connectivity is recorded most clearly through Poti, with direct ferry links to Romania and integration with national road and rail, while aviation connectivity is recorded through the national airport system around Tbilisi, Kutaisi, and Batumi, research-network connectivity through GRENA's eduGAIN participation, and payment-system connectivity through SWIFT, ISO messaging, and Bloomberg-linked settlement infrastructure.</p>
+
+        <hr class="section-divider">
+
+        <h3>Summary evidence statement</h3>
+        <p>The current source set documents Georgia as a Tbilisi-centered administrative and coordination environment supported by distributed territorial infrastructure, with Tbilisi concentration visible in the headquarters and operating locations of major coordination bodies including the National Bank of Georgia, Georgian State Electrosystem, the main PSCC 112 answering point, and national public-service structures, while roads, rail, airports, hydropower, transmission networks, gas pipelines, service halls, broadband-expansion programs, and backup emergency sites are documented as distributed systems. Black Sea-facing continuity is visible especially at Poti, where maritime infrastructure, rail linkage, and the two principal international road axes intersect in practical transport terms, while layered interoperability appears across roads, ports, railway services, cross-border electricity lines, gas pipelines, central-bank payment rails, domain administration, and research-network federation. The cited evidence supports a layered infrastructure environment in which Tbilisi-centered administration, Poti-centered maritime visibility, distributed territorial road and rail continuity, central-bank payment coordination, regulated communications structure, hydropower-supported generation, cross-border transmission and pipeline interfaces, research-network participation, and emergency-response redundancy operate as mutually reinforcing systems, without assigning readiness tiers, corridor status, routing authority, or broader Atlas interpretation, and treating absence of evidence as bounded public visibility rather than evidence of absence.</p>
+
+        <div class="meta-line">Source: <code>evidence.md</code> · <code>change-log.md</code> — Evidence Layer Construction</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Strategic position signals</h3>
+        <p>Public Service Hall, my.gov.ge, ComCom, and NIC.GE public-service, regulatory, and naming administration, National Bank of Georgia coordination of RTGS, the instant payment system, and GSSS, Georgian Railway, Roads Department, United Airports, and APM Terminals Poti transport with Black Sea continuity, Georgian State Electrosystem and Georgian Gas Transportation Company energy interconnection with the South Caucasus and North-South pipelines and Enguri hydropower, the GRENA research federation into eduGAIN, and Public Safety Command Center 112 emergency coordination together signal Georgia as a Tbilisi-centered administrative environment organized around Poti maritime continuity where evidenced, distributed territorial continuity, regional and energy interoperability, layered digital public-service continuity, and disaster-response and cyber-coordination support. The coexistence of these layers signals continuity through interaction among transport, energy, payments, public services, and emergency systems rather than dependence on any single network. The evidence supports a continuity-and-coordination signal rooted in Tbilisi concentration with distributed national operators and Poti maritime visibility without supporting routing-authority, topology, or readiness classification.</p>
+
+        <h3>Administrative and identity coordination signals</h3>
+        <p>Public Service Hall presenting itself as a consolidated service environment under "Everything in one space" signals an administrative model grouping multiple public services into a single service-access layer rather than fully separate agency front ends. The my.gov.ge platform's functions including user profile, notifications, history, electronic document storage, and correspondence with public agencies signal a citizen-facing online service and document-management layer in parallel with physical service halls. ComCom's role in Log-in Georgia linking broadband rollout with electronic governance, remote learning, and telemedicine signals distributed national service-extension beyond urban concentration. Together these signal administrative continuity reinforced through consolidated service halls, an online citizen portal, and network-extension programs, with incomplete platform extractability preserved as bounded observability rather than absence inference.</p>
+
+        <h3>Financial and payment coordination signals</h3>
+        <p>NBG's role as regulator, infrastructure operator, and initiator of change across wholesale and retail payment systems, a central depository, and securities settlement signals a centrally coordinated payment structure rather than a fully decentralized market. The RTGS system operating since 3 December 2010 with real-time interbank settlement, CSD integration for delivery-versus-payment, and published availability above 99.9% signals continuity-oriented wholesale settlement. The instant payment system as a 24/7/365 GEL retail solution with multi-channel access signals continuous retail-payment continuity. The GSSS securities-settlement environment integrated with RTGS on a delivery-versus-payment basis in central-bank money and integrated with Bloomberg signals a second integrated settlement layer, together signaling Tbilisi-centered central-bank payment coordination with wholesale, retail, and securities functions.</p>
+
+        <h3>Telecommunications and connectivity signals</h3>
+        <p>ComCom's role as an independent body regulating electronic communications and broadcasting signals a formal national sector-coordination layer. NIC.GE's management of the .ge registry under Georgian legislation and ICANN-related standards, ccNSO membership, and a WIPO dispute-resolution arrangement signals a formal national naming layer with internationally aligned governance. GRENA's identity federation with eduGAIN participation signals a research-network identity layer connected to broader international federation structures. The materially weaker public visibility of commercial peering, internet-exchange topology, backbone routing, and data-center distribution signals bounded observability for commercial network architecture, with no hidden exchange map or private backbone inferred beyond ComCom, NIC.GE, and GRENA materials.</p>
+
+        <h3>Transportation and logistics coordination signals</h3>
+        <p>Georgian Railway's nationally coordinated system with Tbilisi-Batumi fast trains, Tbilisi-Yerevan international service, 1,992 km of rail infrastructure including 1,441.66 km of main rails, and documented freight and passenger rolling stock signals a continuing freight and passenger backbone with domestic and Armenia-facing interfaces. The Roads Department's 1,455 km of international roads and 6,943 km of secondary roads, with the E-60 and E-70 joining at Poti to form a 450 km main transit road, signals one of the clearest nationally distributed transport layers. United Airports of Georgia's state ownership of all three international and three domestic airports with Tbilisi, Kutaisi, and Batumi as principal nodes signals a centrally owned but geographically distributed aviation structure. APM Terminals Poti as Georgia's largest seaport carrying around 80% of container traffic with 15 berths, 2,900 meters of quay, 29 quay cranes, 22 km of rail track, and ferry links to Romania signals Black Sea maritime continuity centered most clearly at Poti.</p>
+
+        <h3>Energy and industrial coordination signals</h3>
+        <p>GSE's role as the sole transmission system operator with 3,419.68 km of transmission lines and 43 substations managed by the National Dispatch Center signals centrally coordinated national electricity transmission. GSE's cross-border transmission lines interconnecting with Russia, Turkey, Armenia, and Azerbaijan signal continuity reinforced through external interconnection. GOGC's documentation of natural gas as about 40% of energy-resource supply, import-dependent demand, and transit through the South Caucasus Pipeline (Georgian section 249 km) and North-South Main Gas Pipeline (Georgian section 234 km) operated by the Georgian Gas Transportation Company signals an organized import-dependent gas transmission environment. Enguri HPP's contribution of more than 35% of the country's power supply signals hydropower as a major generation component within the broader transmission and dispatch system.</p>
+
+        <h3>Regional interoperability signals</h3>
+        <p>The Roads Department's E-60 and E-70 routes, Georgian Railway's Tbilisi-Yerevan interface, and APM Terminals' ferry link to Romania signal multimodal transport interoperability rather than isolated assets. GSE's interconnections with Russia, Turkey, Armenia, and Azerbaijan and GOGC's documentation of Azerbaijani gas to Turkey through the South Caucasus Pipeline and Russian gas to Armenia through the North-South pipeline signal operator-documented energy interfaces. RTGS's customized SWIFT and ISO-standard messages and GSSS integration with Bloomberg signal financial-system interoperability with broader messaging and market standards, while GRENA's eduGAIN participation and NIC.GE's ICANN-related governance signal digital interoperability, together signaling interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity signals</h3>
+        <p>Public Safety Command Center 112's single emergency number established in 2012, the 2019 merger of 112 and the Joint Operations Center, and 24/7 call-takers and dispatchers signal a central emergency-dispatch layer. The two public-safety answering points in Tbilisi and Rustavi, with the Rustavi PSAP serving as operational backup for the main Tbilisi PSAP, signal explicit continuity design through answering-point redundancy. NBG's business-continuity materials treating payment-system and securities-settlement continuity as critical, with same-settlement-day recovery planning and RTGS operating through the COVID-19 period, signal continuity planning in a nationally significant infrastructure sector. The Law on Information Security assigning incident-management responsibilities to CERT.GOV.GE and a national-level CERT function on the Operative-Technical Agency domain signal documented cyber-coordination structures, with incomplete operational visibility preserved as bounded observability.</p>
+
+        <h3>Data infrastructure and continuity signals</h3>
+        <p>Public Service Hall and my.gov.ge signal shared public-service and document-management continuity through consolidated access layers. NIC.GE's .ge registry administration signals nationally administered naming continuity, and GRENA's research federation signals a separate research-network identity layer. NBG's RTGS, instant-payment, and GSSS systems signal central-bank-operated settlement-data continuity. The materially weaker public visibility of commercial data-center distribution and backbone topology signals that data-infrastructure continuity is documented most clearly through public-service, naming, research-network, and payment components rather than complete commercial-exchange visibility, with no hidden inference made to fill that gap.</p>
+
+        <h3>Research and knowledge-network signals</h3>
+        <p>GRENA's role as the Georgian research-and-education federation operator signals a dedicated research-network layer rather than reliance on commercial connectivity alone. Georgian educational and research institutions joining the federation as identity providers signal structured academic-network participation. GRENA's eduGAIN participation model signals research-network identity interoperability extending beyond domestic academic traffic into broader international federation structures.</p>
+
+        <h3>Regional and international connectivity signals</h3>
+        <p>Turkey-facing continuity through the E-70 axis, GSE's Turkey interconnection, and the South Caucasus Pipeline, and Azerbaijan-facing continuity through the E-60 axis, GSE's Azerbaijan interconnection, and Azerbaijani gas transit signal multiple operational border interfaces. Armenia-facing continuity through the Tbilisi-Yerevan service, GSE's Armenia interconnection, and North-South pipeline transit, and Russia-facing continuity through GSE's power interconnection and the same pipeline signal further infrastructure interfaces treated as operational rather than geopolitical. Black Sea connectivity through Poti's ferry links to Romania and road-rail integration, aviation connectivity through Tbilisi, Kutaisi, and Batumi, research-network connectivity through GRENA's eduGAIN participation, and payment connectivity through SWIFT, ISO messaging, and Bloomberg signal a multi-interface connectivity environment across land, sea, air, power, gas, research-network, and financial systems.</p>
+
+        <h3>Cross-system structural signals</h3>
+        <p>The strongest recurring pattern is Tbilisi administrative concentration with distributed execution across the headquarters and operating locations of major coordination bodies. A second recurring pattern is Poti-centered Black Sea maritime visibility where the two principal international road axes, rail linkage, and maritime infrastructure intersect. A third recurring pattern is distributed territorial continuity across roads, rail, airports, hydropower, transmission networks, gas pipelines, service halls, and backup emergency sites. A fourth recurring pattern is layered interoperability across transport, energy, payment, maritime, and research-network systems, and a fifth is bounded observability in which public documentation is strongest for regulated and state-operated systems, with concentration-with-distribution as the dominant operating model in which Tbilisi is prominent but national operators and Poti maritime infrastructure remain structurally relevant.</p>
+
+        <h3>Constraint boundary signals</h3>
+        <ul>
+          <li>Bounded visibility applies across commercial peering and exchange topology, private backbone architecture, data-center distribution, Batumi port operations, detailed airport operating metrics, and some Georgian Railway pages.</li>
+          <li>Observability remains uneven because several official Georgian sites are dynamically rendered, partially translated, intermittently accessible, or weakly extractable.</li>
+          <li>Some narrow railway and airport facts rely on official-site URLs and search-discoverable official snippets where direct page extraction was inconsistent.</li>
+          <li>Public cyber-coordination visibility is incomplete, with documented existence of cyber-response structures but limited stable detail on current CERT operational topology.</li>
+          <li>More broadly, the evidence signals a Tbilisi-centered, Poti-linked, distributed-territorial environment rather than a transit-state, Europe-Asia-gateway, Silk Road, or energy-corridor environment, and it does not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>Georgia's evidence-derived signals describe a Tbilisi-centered administrative environment organized around Poti maritime continuity where evidenced, distributed territorial continuity, regional and energy interoperability, central-bank payment coordination, layered digital public-service continuity, research-network support, and disaster-response and cyber-coordination support. The signals indicate continuity across Public Service Hall-, my.gov.ge-, ComCom-, and NIC.GE-coordinated administration and naming, NBG-coordinated RTGS, instant-payment, and GSSS rails, Georgian Railway-, Roads Department-, United Airports-, and APM Terminals Poti-coordinated transport, GSE- and Georgian Gas Transportation Company-coordinated electricity and gas with the South Caucasus and North-South pipelines and Enguri hydropower, GRENA research networking into eduGAIN, and Public Safety Command Center 112 emergency coordination with Tbilisi-Rustavi redundancy without assigning readiness tiers, routing authority, or topology placement.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>signals.md</code></div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment eligibility, or infrastructure claims beyond documented anchors.</p>
+
+        <h3>Administrative continuity characteristics</h3>
+        <p>The source layers indicate Tbilisi-centered administrative continuity through Public Service Hall as a consolidated service environment grouping multiple public services into a single access layer rather than fully separate agency front ends. The my.gov.ge platform supports administrative persistence through a citizen-facing online service and document-management layer in parallel with physical service halls. ComCom's role in Log-in Georgia supports distributed service-extension linking broadband rollout with electronic governance beyond urban centers. The overall pattern indicates centralized service coordination with distributed territorial execution, with incomplete platform extractability preserved as bounded observability rather than implying a complete inventory of administrative systems.</p>
+
+        <h3>Identity and service integration characteristics</h3>
+        <p>The package reflects identity-service continuity through Public Service Hall consolidated access coupled with my.gov.ge online profile, notification, history, document-storage, and correspondence functions. The combination of physical service halls and an online citizen portal indicates service access organized through reusable consolidated layers rather than isolated service-specific systems. The overall structure indicates continuity across consolidated and online service access, bounded to documented public-service functions, with the evidence layer not inferring deeper identity-assurance architecture or electronic-signature capability beyond what is directly visible. This dimension does not imply broader state visibility beyond the public evidence.</p>
+
+        <h3>Payment and financial coordination characteristics</h3>
+        <p>The source layers indicate NBG-coordinated payment continuity through a direct role as regulator, infrastructure operator, and initiator of change. The RTGS system since 3 December 2010 with real-time interbank settlement, CSD integration for delivery-versus-payment, and published availability above 99.9% supports wholesale settlement continuity, while the instant payment system as a 24/7/365 GEL retail solution supports continuous retail-payment continuity. The GSSS securities-settlement environment integrated with RTGS on a delivery-versus-payment basis in central-bank money supports a second integrated settlement layer. The overall pattern indicates Tbilisi-centered central-bank payment coordination across wholesale, retail, and securities functions without implying comparative financial-system superiority.</p>
+
+        <h3>Telecommunications and connectivity characteristics</h3>
+        <p>The evidence indicates ComCom regulation as a formal national sector-coordination layer and NIC.GE .ge administration as a formal national naming layer with internationally aligned governance through ccNSO and WIPO arrangements. GRENA's identity federation with eduGAIN participation supports a research-network identity layer connected to international federation structures. The materially weaker public visibility of commercial peering, internet-exchange topology, backbone routing, and data-center distribution supports bounded observability for commercial network architecture. The overall pattern indicates connectivity continuity documented most clearly through regulation, naming administration, and research-network components rather than complete commercial-exchange visibility.</p>
+
+        <h3>Transportation and logistics continuity characteristics</h3>
+        <p>The package reflects distributed territorial transport continuity through rail, road, aviation, and maritime layers. Georgian Railway's 1,992 km of rail infrastructure with Tbilisi-Batumi and Tbilisi-Yerevan services supports a freight and passenger backbone, while the Roads Department's E-60 and E-70 axes joining at Poti to form a 450 km main transit road support one of the clearest nationally distributed transport layers. United Airports of Georgia's state ownership of all six airports with Tbilisi, Kutaisi, and Batumi as principal nodes supports a centrally owned but distributed aviation structure, and APM Terminals Poti as the largest seaport carrying around 80% of container traffic with road and rail integration and ferry links to Romania supports Black Sea maritime continuity. The overall pattern indicates multimodal continuity with Tbilisi coordination and Poti maritime visibility rather than dependence on a single transport mode.</p>
+
+        <h3>Energy and industrial coordination characteristics</h3>
+        <p>The source layers indicate GSE transmission as the core electricity continuity layer, with the sole transmission system operator role over 3,419.68 km of lines and 43 substations managed by the National Dispatch Center supporting centrally coordinated transmission and cross-border interconnection with Russia, Turkey, Armenia, and Azerbaijan supporting continuity reinforced through external interfaces. GOGC's import-dependent gas environment with transit through the South Caucasus Pipeline and North-South Main Gas Pipeline operated by the Georgian Gas Transportation Company supports an organized gas transmission environment, and Enguri HPP's contribution of more than 35% of power supply supports hydropower as a major generation component. The overall pattern indicates a centrally coordinated electricity-and-gas environment with documented pipeline interfaces and hydropower generation rather than isolated sector-only structures.</p>
+
+        <h3>Regional interoperability characteristics</h3>
+        <p>The evidence indicates transport interoperability through the E-60 and E-70 road axes, Georgian Railway's Tbilisi-Yerevan interface, and APM Terminals' ferry link to Romania and rail-road integration. Energy interoperability through GSE's interconnections with Russia, Turkey, Armenia, and Azerbaijan and GOGC's documented pipeline transit functions supports operational interconnection rather than abstract regional claims. Financial interoperability through RTGS's customized SWIFT and ISO-standard messages and GSSS integration with Bloomberg, and digital interoperability through GRENA's eduGAIN participation and NIC.GE's ICANN-related governance, support broader system-standard alignment. The overall pattern indicates interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and operational resilience characteristics</h3>
+        <p>The package reflects Public Safety Command Center 112 coordination through a central emergency-dispatch layer with a single emergency number, 24/7 call-takers and dispatchers, and the 2019 merger forming the present command center. The two answering points in Tbilisi and Rustavi, with the Rustavi PSAP serving as operational backup for the main Tbilisi PSAP, support explicit continuity design through redundancy. NBG's business-continuity materials treating payment and securities-settlement continuity as critical, with same-settlement-day recovery planning and RTGS operating through the COVID-19 period, support continuity planning in a nationally significant sector. The Law on Information Security assigning incident-management responsibilities to CERT.GOV.GE and a national-level CERT function support documented cyber-coordination structures, with incomplete operational visibility preserved as bounded observability.</p>
+
+        <h3>Data infrastructure and continuity characteristics</h3>
+        <p>The source layers indicate shared public-service continuity through Public Service Hall and my.gov.ge consolidated and online access, with NIC.GE .ge administration supporting nationally administered naming continuity and GRENA supporting a separate research-network identity layer. NBG's RTGS, instant-payment, and GSSS systems support central-bank-operated settlement-data continuity. Commercial data-center distribution and backbone topology remain incompletely visible in public materials, supporting bounded observability rather than absence inference. The overall pattern indicates documented data-infrastructure continuity concentrated in public-service, naming, research-network, and payment components.</p>
+
+        <h3>Research and knowledge-network characteristics</h3>
+        <p>The evidence indicates GRENA as the Georgian research-and-education federation operator, with Georgian educational and research institutions joining the federation as identity providers supporting structured academic-network participation. GRENA's eduGAIN participation model indicates research-network identity interoperability extending beyond domestic academic traffic into broader international federation structures. This dimension remains limited to documented networking and institutional coordination characteristics and does not imply broader scientific ranking or capability claims beyond the network layer itself.</p>
+
+        <h3>Regional and international connectivity characteristics</h3>
+        <p>The evidence indicates Turkey-facing continuity through the E-70 axis, GSE's Turkey interconnection, and the South Caucasus Pipeline, Azerbaijan-facing continuity through the E-60 axis, GSE's Azerbaijan interconnection, and Azerbaijani gas transit, Armenia-facing continuity through the Tbilisi-Yerevan service, GSE's Armenia interconnection, and North-South pipeline transit, and Russia-facing continuity through GSE's power interconnection and the same pipeline as infrastructure interfaces. Black Sea connectivity through Poti's ferry links to Romania and road-rail integration, aviation connectivity through Tbilisi, Kutaisi, and Batumi, research-network connectivity through GRENA's eduGAIN participation, and payment connectivity through SWIFT, ISO messaging, and Bloomberg indicate a multi-interface connectivity environment rather than a single border interface.</p>
+
+        <h3>Cross-system stability characteristics</h3>
+        <p>The package reflects Tbilisi administrative concentration with distributed execution as the dominant recurring stability characteristic, with Poti-centered Black Sea maritime visibility as a second recurring characteristic. Distributed territorial continuity remains visible through roads, rail, airports, hydropower, transmission networks, gas pipelines, service halls, and backup emergency sites, while layered interoperability across transport, energy, payment, maritime, and research-network systems supports continuity. Bounded observability operates as a standing characteristic in which public documentation is strongest for regulated and state-operated systems, and concentration-with-distribution operates as the dominant model in which Tbilisi is prominent but national operators and Poti maritime infrastructure remain structurally relevant.</p>
+
+        <h3>Dependency and constraint characteristics</h3>
+        <ul>
+          <li>Central-bank payment dependencies remain central to RTGS, instant-payment, and GSSS continuity.</li>
+          <li>Cross-border energy-interconnection dependencies are visible through GSE interconnections and GOGC pipeline transit functions.</li>
+          <li>Black Sea maritime dependencies are visible through Poti's container, ferry, and road-rail integration.</li>
+          <li>Shared public-service dependencies are visible through Public Service Hall, my.gov.ge, and NIC.GE naming administration.</li>
+          <li>Bounded observability remains a standing characteristic across commercial peering, exchange, backbone, data-center, Batumi port, airport-metric, and cyber-operational detail, with absence of evidence treated as bounded public visibility rather than evidence of absence.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Trust dimensions summary statement</h3>
+        <p>Georgia is documented as a Tbilisi-centered, Poti-linked, distributed-territorial continuity jurisdiction whose trust dimensions describe operational continuity, interoperability, coordination, resilience, and dependency characteristics across overlapping physical and digital systems. The documented trust dimensions indicate continuity across Public Service Hall-, my.gov.ge-, ComCom-, and NIC.GE-coordinated administration and naming, NBG-coordinated RTGS, instant-payment, and GSSS rails, multimodal transport through Georgian Railway, the Roads Department, United Airports, and APM Terminals Poti, GSE- and Georgian Gas Transportation Company-coordinated electricity and gas with the South Caucasus and North-South pipelines and Enguri hydropower, GRENA research networking into eduGAIN, and disaster-response and cyber coordination through Public Safety Command Center 112 and CERT structures without assigning readiness tiers, routing authority, or deployment eligibility.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>trust-dimensions.md</code></div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility.</p>
+
+        <h3>Jurisdiction identity</h3>
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Georgia</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">South Caucasus Tbilisi-Centered Distributed Territorial Continuity Environment with Black Sea Poti Maritime Continuity</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Tbilisi-Centered Administrative Concentration Framework · Black Sea and Poti Maritime Continuity Framework · Distributed Territorial Continuity Framework · Regional Interoperability Framework · Energy Interconnection Framework · Central-Bank Payment Coordination Framework · Layered Digital Public-Service Continuity Framework · Research Network Support Framework · Disaster-Response and Cyber-Coordination Framework · Bounded Observability Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Tbilisi · Poti</span>
+          </div>
+        </div>
+
+        <h3>Infrastructure role classification</h3>
+        <ul>
+          <li>sovereign Georgian state</li>
+          <li>Tbilisi-centered administrative environment</li>
+          <li>Black Sea and Poti continuity environment where publicly evidenced</li>
+          <li>distributed territorial continuity environment</li>
+          <li>regional interoperability environment</li>
+          <li>energy-interconnected environment</li>
+          <li>research-network-supported environment</li>
+          <li>disaster-response and cyber-coordination-supported environment</li>
+        </ul>
+
+        <h3>Administrative and identity classification</h3>
+        <ul>
+          <li>Public Service Hall consolidated service environment ("Everything in one space")</li>
+          <li>my.gov.ge online public-service and document-management layer</li>
+          <li>ComCom electronic communications and broadcasting regulation</li>
+          <li>NIC.GE .ge naming administration (ccNSO · WIPO dispute resolution)</li>
+          <li>Log-in Georgia broadband and digital-service extension (1,000 villages · 500,000 citizens)</li>
+        </ul>
+
+        <h3>Financial infrastructure and payment classification</h3>
+        <ul>
+          <li>National Bank of Georgia payment coordination (regulator · operator · initiator)</li>
+          <li>RTGS system (since 3 December 2010 · CSD-integrated · availability above 99.9%)</li>
+          <li>instant payment system (24/7/365 · GEL · multi-channel)</li>
+          <li>GSSS securities settlement (delivery-versus-payment · central-bank money · Bloomberg-integrated)</li>
+          <li>Tbilisi-centered central-bank coordination</li>
+        </ul>
+
+        <h3>Telecommunications and connectivity classification</h3>
+        <ul>
+          <li>ComCom independent communications and broadcasting regulator</li>
+          <li>NIC.GE .ge country-code top-level-domain registry (Caucasus Online · registrar model)</li>
+          <li>GRENA research-and-education identity federation</li>
+          <li>eduGAIN international federation participation</li>
+          <li>bounded visibility for commercial peering, exchange, backbone, and data-center topology</li>
+        </ul>
+
+        <h3>Transportation and logistics classification</h3>
+        <ul>
+          <li>Georgian Railway (1,992 km rail · 1,441.66 km main rails · Tbilisi-Batumi · Tbilisi-Yerevan)</li>
+          <li>Roads Department of Georgia (1,455 km international · 6,943 km secondary · E-60 · E-70 · 450 km main transit)</li>
+          <li>United Airports of Georgia (state-owned · Tbilisi · Kutaisi · Batumi)</li>
+          <li>APM Terminals Poti (largest seaport · ~80% container traffic · 15 berths · 2,900 m quay · ferry to Romania)</li>
+          <li>multimodal rail-road-air-maritime continuity</li>
+        </ul>
+
+        <h3>Energy and grid coordination classification</h3>
+        <ul>
+          <li>Georgian State Electrosystem sole TSO (3,419.68 km lines · 43 substations · National Dispatch Center)</li>
+          <li>cross-border interconnection (Russia · Turkey · Armenia · Azerbaijan)</li>
+          <li>Georgian Gas Transportation Company (transport licensee since 2009)</li>
+          <li>South Caucasus Pipeline (Georgian section 249 km) · North-South Main Gas Pipeline (Georgian section 234 km)</li>
+          <li>Enguri HPP hydropower (more than 35% of power supply)</li>
+        </ul>
+
+        <h3>Regional interoperability classification</h3>
+        <ul>
+          <li>transport interoperability through E-60, E-70, Tbilisi-Yerevan rail, and Poti ferry links</li>
+          <li>energy interoperability through GSE interconnections and pipeline transit</li>
+          <li>Turkey-, Azerbaijan-, Armenia-, and Russia-facing infrastructure interfaces</li>
+          <li>financial interoperability through SWIFT, ISO messaging, and Bloomberg-linked settlement</li>
+          <li>research-network interoperability through GRENA and eduGAIN</li>
+        </ul>
+
+        <h3>Disaster-response and continuity classification</h3>
+        <ul>
+          <li>Public Safety Command Center 112 (single emergency number since 2012 · 2019 merger · 24/7)</li>
+          <li>Tbilisi and Rustavi public-safety answering points (Rustavi PSAP as Tbilisi backup)</li>
+          <li>NBG business-continuity planning (same-settlement-day recovery)</li>
+          <li>CERT.GOV.GE incident-management under the Law on Information Security</li>
+          <li>Operative-Technical Agency national CERT function</li>
+        </ul>
+
+        <h3>Research and knowledge-network classification</h3>
+        <ul>
+          <li>GRENA Georgian research-and-education network and identity federation</li>
+          <li>educational and research institutions as identity providers</li>
+          <li>eduGAIN participation model</li>
+          <li>internationally aligned research-network federation structures</li>
+        </ul>
+
+        <h3>Regional and international integration classification</h3>
+        <ul>
+          <li>Turkey connectivity through E-70, electricity interconnection, and South Caucasus Pipeline</li>
+          <li>Azerbaijan connectivity through E-60, electricity interconnection, and gas transit</li>
+          <li>Armenia connectivity through Tbilisi-Yerevan rail, electricity interconnection, and North-South pipeline</li>
+          <li>Russia connectivity through power interconnection and North-South pipeline transit</li>
+          <li>Black Sea connectivity through Poti ferry links and road-rail integration</li>
+        </ul>
+
+        <h3>Constraint classification</h3>
+        <ul>
+          <li>incomplete infrastructure visibility as a standing constraint in the public source record</li>
+          <li>bounded operational observability across real-time transport, energy, telecom, payment, cyber, and administrative conditions</li>
+          <li>uneven regional visibility strongest for regulated and state-operated systems</li>
+          <li>incomplete telecom, exchange, data-center, and private-network observability</li>
+          <li>incomplete cyber-operational visibility with documented existence but limited topology detail</li>
+          <li>absence of evidence treated as bounded public visibility, not evidence of absence; no hidden-capability inference</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Metadata summary statement</h3>
+        <p>Georgia appears in the metadata layer as the descriptor-oriented classification of the Tbilisi-centered, Poti-linked, distributed-territorial continuity environment established in the evidence, signals, and trust-dimensions layers, with jurisdiction-type, geographic, and infrastructure-orientation classifications spanning the documented administrative, identity, financial, telecommunications, transport, energy, regional, disaster-response, data, research-network, and connectivity surfaces, bounded throughout by public observability.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>metadata.md</code></div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package.</p>
+
+        <h3>Jurisdiction overview</h3>
+        <p>Georgia presents as a Tbilisi-centered administrative environment whose national continuity depends on layered coordination across public-service access, payments, transport, energy systems, telecommunications regulation, naming administration, research networking, and emergency-response structures. The jurisdiction also presents as a distributed territorial continuity environment in which roads, railways, airports, ports, electricity systems, gas systems, and digital-service layers reinforce one another across a nationally distributed but capital-centered topology. The overall structure is that of a Black Sea and Poti continuity environment where publicly evidenced, a regional interoperability environment, an energy-interconnected environment, and a layered transport, payment, digital, and energy environment. The resulting profile is one of Tbilisi administrative concentration, Poti-centered maritime visibility, distributed national persistence, research-network support, and disaster-response and cyber-coordination support across interacting infrastructure layers.</p>
+
+        <h3>Administrative and identity profile</h3>
+        <p>The administrative and identity profile is characterized by Public Service Hall as a consolidated service environment under "Everything in one space" and my.gov.ge as a citizen-facing online service and document-management layer with profile, notification, history, document-storage, and correspondence functions. ComCom's role in the Log-in Georgia project links broadband rollout with electronic governance, remote learning, and telemedicine beyond major urban centers. The administrative environment reflects layered continuity combining physical service halls, an online citizen portal, and network-extension programs, with incomplete platform extractability preserved as bounded observability and no inference of deeper identity-assurance architecture or electronic-signature capability beyond what is directly visible.</p>
+
+        <h3>Payment and financial profile</h3>
+        <p>The payment profile is structured around the National Bank of Georgia's role as regulator, infrastructure operator, and initiator of change. The RTGS system, operating since 3 December 2010 with real-time interbank settlement, CSD integration for delivery-versus-payment, and availability above 99.9%, provides wholesale settlement continuity, while the instant payment system as a 24/7/365 GEL retail solution with multi-channel access provides continuous retail-payment continuity. The GSSS securities-settlement environment, integrated with RTGS on a delivery-versus-payment basis in central-bank money and integrated with Bloomberg, provides a second integrated settlement layer. The overall payment environment reflects Tbilisi-centered central-bank coordination across wholesale, retail, and securities functions rather than a fully decentralized market, and does not imply comparative payment-system status.</p>
+
+        <h3>Telecommunications and connectivity profile</h3>
+        <p>The telecommunications profile is marked by ComCom regulation, NIC.GE .ge naming administration, and the GRENA research federation. ComCom provides formal national sector coordination, NIC.GE provides .ge registry administration under Georgian legislation and ICANN-related standards with ccNSO membership and a WIPO dispute-resolution arrangement, and GRENA provides a research-network identity layer with eduGAIN participation. The materially weaker public visibility of commercial peering, internet-exchange topology, backbone routing, and data-center distribution is preserved as a bounded-observability characteristic. The resulting profile is one of regulation, naming-administration, and research-network components combining to support documented connectivity continuity alongside partially visible commercial telecommunications.</p>
+
+        <h3>Transportation and logistics profile</h3>
+        <p>Georgia has a multimodal transport profile in which Georgian Railway, the Roads Department, United Airports of Georgia, and APM Terminals Poti reinforce one another. Georgian Railway's 1,992 km of rail with Tbilisi-Batumi and Tbilisi-Yerevan services supports a freight and passenger backbone, the Roads Department's E-60 and E-70 axes joining at Poti to form a 450 km main transit road support nationally distributed road continuity, United Airports' state ownership of Tbilisi, Kutaisi, and Batumi supports a distributed aviation structure, and APM Terminals Poti as the largest seaport carrying around 80% of container traffic with road-rail integration and ferry links to Romania supports Black Sea maritime continuity. The resulting transport profile is best characterized as multimodal continuity with Tbilisi coordination and Poti maritime visibility rather than dependence on a single transport mode.</p>
+
+        <h3>Energy and industrial coordination profile</h3>
+        <p>The energy profile is structured around Georgian State Electrosystem as the sole transmission system operator with 3,419.68 km of transmission lines and 43 substations managed by the National Dispatch Center and cross-border interconnection with Russia, Turkey, Armenia, and Azerbaijan. Georgian Oil and Gas Corporation documents an import-dependent gas environment with transit through the South Caucasus Pipeline and North-South Main Gas Pipeline operated by the Georgian Gas Transportation Company, and Enguri HPP contributes more than 35% of the country's power supply. The energy profile reflects a centrally coordinated electricity-and-gas environment with documented pipeline interfaces and major hydropower generation rather than a closed or single-source system.</p>
+
+        <h3>Regional interoperability profile</h3>
+        <p>Georgia's interoperability profile is reinforced through connection to wider regional systems. Transport interoperability appears through the E-60 and E-70 road axes, Georgian Railway's Tbilisi-Yerevan interface, and APM Terminals' ferry link to Romania and rail-road integration. Energy interoperability appears through GSE's interconnections with Russia, Turkey, Armenia, and Azerbaijan and GOGC's documented pipeline transit functions. Financial interoperability appears through RTGS's customized SWIFT and ISO-standard messages and GSSS integration with Bloomberg, and digital interoperability appears through GRENA's eduGAIN participation and NIC.GE's ICANN-related governance. Interoperability functions as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity profile</h3>
+        <p>The disaster-response profile is characterized by Public Safety Command Center 112 as a central emergency-dispatch layer with a single emergency number since 2012, the 2019 merger forming the present command center, and 24/7 call-takers and dispatchers. The two answering points in Tbilisi and Rustavi, with the Rustavi PSAP serving as operational backup for the main Tbilisi PSAP, provide explicit continuity design through redundancy. NBG's business-continuity materials treat payment and securities-settlement continuity as critical with same-settlement-day recovery planning, and the Law on Information Security assigns incident-management responsibilities to CERT.GOV.GE with a national-level CERT function. The overall disaster-response profile combines emergency dispatch, answering-point redundancy, financial-continuity planning, and documented cyber-coordination structures, with incomplete cyber-operational visibility preserved as bounded observability.</p>
+
+        <h3>Data infrastructure profile</h3>
+        <p>The data-infrastructure profile combines Public Service Hall and my.gov.ge consolidated and online public-service access with NIC.GE naming administration, the GRENA research federation, and NBG's RTGS, instant-payment, and GSSS settlement systems. Public Service Hall and my.gov.ge provide shared public-service and document-management continuity, NIC.GE provides nationally administered naming continuity, GRENA provides a separate research-network identity layer, and NBG provides central-bank-operated settlement-data continuity. Commercial data-center distribution and backbone topology remain incompletely visible in public materials, preserved as bounded observability rather than absence inference. The resulting profile is one of documented continuity concentrated in public-service, naming, research-network, and payment components rather than a single-provider environment.</p>
+
+        <h3>Research and knowledge-network profile</h3>
+        <p>The research and knowledge-network profile is anchored by GRENA as the Georgian research-and-education federation operator, with Georgian educational and research institutions joining the federation as identity providers and entities able to request publication for participation in eduGAIN. GRENA's eduGAIN participation places part of Georgia's digital environment inside broader international research-network federation structures. This profile remains limited to documented network continuity and cross-border knowledge-network participation and does not imply broader scientific ranking or capability claims.</p>
+
+        <h3>Regional and international connectivity profile</h3>
+        <p>Georgia's regional integration profile includes Turkey-facing continuity through the E-70 axis, GSE's Turkey interconnection, and the South Caucasus Pipeline, Azerbaijan-facing continuity through the E-60 axis, GSE's Azerbaijan interconnection, and Azerbaijani gas transit, Armenia-facing continuity through the Tbilisi-Yerevan service, GSE's Armenia interconnection, and North-South pipeline transit, and Russia-facing continuity through GSE's power interconnection and the same pipeline as infrastructure interfaces. Black Sea connectivity through Poti's ferry links to Romania and road-rail integration, aviation connectivity through Tbilisi, Kutaisi, and Batumi, research-network connectivity through GRENA's eduGAIN participation, and payment connectivity through SWIFT, ISO messaging, and Bloomberg extend connectivity across land, sea, air, power, gas, research-network, and financial systems.</p>
+
+        <h3>Cross-system operational profile</h3>
+        <p>The strongest cross-system pattern is Tbilisi administrative concentration with distributed execution across the headquarters and operating locations of major coordination bodies. A second recurring pattern is Poti-centered Black Sea maritime visibility where the two principal international road axes, rail linkage, and maritime infrastructure intersect. A third recurring pattern is distributed territorial continuity across roads, rail, airports, hydropower, transmission networks, gas pipelines, service halls, and backup emergency sites, while layered interoperability across transport, energy, payment, maritime, and research-network systems reinforces continuity. Bounded observability operates as a standing characteristic, and concentration-with-distribution operates as the dominant model in which Tbilisi is prominent but national operators and Poti maritime infrastructure remain structurally relevant. Georgia operates as a layered Tbilisi-centered coordination environment with Poti maritime continuity rather than a single-corridor or single-node system.</p>
+
+        <h3>Structural constraints</h3>
+        <p>The current Georgia profile carries clear structural constraints, rendered here as a normalization safeguard rather than a negative judgment. Incomplete infrastructure visibility remains a standing constraint in the public source record, with bounded operational observability across real-time transport, energy, telecom, payment, cyber, and administrative conditions and uneven regional visibility strongest for regulated and state-operated systems. Incomplete telecom, exchange, data-center, and private-network observability limits stronger characterization of commercial backbone topology and compute distribution, and incomplete cyber-operational visibility means documented cyber-response structures exist without stable detail on current operational topology. The package preserves central-bank payment dependencies through RTGS, the instant payment system, and GSSS, cross-border energy-interconnection dependencies through GSE and GOGC, Black Sea maritime dependencies through Poti, shared public-service dependencies through Public Service Hall, my.gov.ge, and NIC.GE, and the absence of sovereign hyperscale compute or semiconductor fabrication stack evidence. Absence of evidence is treated as bounded public visibility rather than evidence of absence, and no hidden-capability inference is made. These constraints describe boundary conditions reflecting a Tbilisi-centered, Poti-linked, distributed-territorial continuity environment in which continuity derives from layered concentration, distributed coordination, and interoperability rather than sovereign-scale compute autonomy.</p>
+
+        <hr class="section-divider">
+
+        <h3>Profile summary statement</h3>
+        <p>Georgia appears in the profile layer as the structural characterization of the Tbilisi-centered, Poti-linked, distributed-territorial continuity environment established in the evidence, signals, trust-dimensions, and metadata layers, situated within a regionally interoperable, energy-interconnected setting and carried through documented administrative, identity, financial, telecommunications, transport, energy, regional, disaster-response, data, research-network, and connectivity anchors, bounded throughout by public observability.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code></div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Georgia profile into builder-facing interpretation. It provides structural interpretation only and does not assign routing authority, readiness tiers, Atlas surfaces, Atlas topology authority, jurisdiction rankings, or deployment suitability.</p>
+
+        <h3>Administrative and service environment</h3>
+        <p>In builder-facing terms, Georgia presents as a Tbilisi-centered administrative structure organized around Public Service Hall as a consolidated service environment and my.gov.ge as a citizen-facing online service and document-management layer. Public Service Hall groups multiple public services into a single access layer, while my.gov.ge provides profile, notification, history, document-storage, and correspondence functions. ComCom's Log-in Georgia role links broadband rollout with electronic governance beyond urban centers. The administrative environment appears as layered continuity combining physical service halls, an online portal, and network-extension programs rather than isolated agency front ends, with incomplete platform extractability preserved as bounded observability.</p>
+
+        <h3>Identity and credential environment</h3>
+        <p>The identity environment appears as a consolidated-access structure through Public Service Hall and my.gov.ge online service access. Service access is organized through reusable consolidated layers rather than isolated service-specific systems. The evidence layer does not infer deeper identity-assurance architecture or electronic-signature capability beyond what is directly visible, so the identity environment is bounded to documented public-service functions and does not imply broader state visibility beyond the public record.</p>
+
+        <h3>Payment and interoperability environment</h3>
+        <p>The payment environment appears as a National Bank of Georgia-coordinated structure with RTGS for real-time wholesale settlement since 3 December 2010, an instant payment system providing 24/7/365 GEL retail payments, and GSSS for securities settlement integrated with RTGS on a delivery-versus-payment basis. RTGS's customized SWIFT and ISO-standard messages and GSSS integration with Bloomberg provide system-standard interoperability. The payment environment presents as Tbilisi-centered central-bank coordination across wholesale, retail, and securities functions without implying comparative financial-system status.</p>
+
+        <h3>Telecommunications and connectivity environment</h3>
+        <p>Builders encounter Georgia as a layered connectivity environment in which ComCom anchors communications and broadcasting regulation, NIC.GE anchors .ge naming administration with ICANN-related governance, and GRENA anchors a research-and-education identity federation with eduGAIN participation. The materially weaker public visibility of commercial peering, internet-exchange topology, backbone routing, and data-center distribution is preserved as bounded observability. The telecommunications environment presents as regulation, naming-administration, and research-network components combining to support documented connectivity continuity alongside partially visible commercial telecommunications.</p>
+
+        <h3>Transportation and logistics environment</h3>
+        <p>The transportation and logistics environment appears as a multimodal structure through Georgian Railway with Tbilisi-Batumi and Tbilisi-Yerevan services, the Roads Department's E-60 and E-70 axes joining at Poti to form a 450 km main transit road, United Airports of Georgia's Tbilisi, Kutaisi, and Batumi nodes, and APM Terminals Poti as the largest seaport with road-rail integration and ferry links to Romania. Rail, road, aviation, and maritime layers reinforce one another. The logistics environment presents as multimodal continuity with Tbilisi coordination and Poti maritime visibility rather than dependence on a single transport mode.</p>
+
+        <h3>Energy and industrial coordination environment</h3>
+        <p>The energy environment appears as a Georgian State Electrosystem-coordinated transmission structure with 3,419.68 km of lines and 43 substations managed by the National Dispatch Center and cross-border interconnection with Russia, Turkey, Armenia, and Azerbaijan. Georgian Oil and Gas Corporation documents an import-dependent gas environment with transit through the South Caucasus Pipeline and North-South Main Gas Pipeline operated by the Georgian Gas Transportation Company, and Enguri HPP contributes more than 35% of power supply. The energy environment presents as a centrally coordinated electricity-and-gas environment with documented pipeline interfaces and major hydropower generation rather than a closed or single-source system.</p>
+
+        <h3>Regional interoperability environment</h3>
+        <p>The interoperability environment appears as a standing continuity structure across transport, energy, payment, maritime, and research networking. The E-60 and E-70 axes, Tbilisi-Yerevan rail, and Poti ferry links provide transport interoperability, GSE interconnections and GOGC pipeline transit provide energy interoperability, RTGS SWIFT/ISO messaging and GSSS Bloomberg integration provide financial interoperability, and GRENA eduGAIN participation and NIC.GE ICANN-related governance provide digital interoperability. This environment presents as interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity environment</h3>
+        <p>The disaster-response environment appears as a Public Safety Command Center 112-coordinated structure with a single emergency number since 2012, the 2019 merger forming the present command center, 24/7 dispatch, and two answering points in Tbilisi and Rustavi where the Rustavi PSAP serves as operational backup for the main Tbilisi PSAP. NBG's business-continuity planning treats payment and securities-settlement continuity as critical with same-settlement-day recovery, and the Law on Information Security assigns incident-management responsibilities to CERT.GOV.GE with a national-level CERT function. The continuity environment presents as emergency dispatch, answering-point redundancy, financial-continuity planning, and documented cyber-coordination combined into a layered resilience structure, with incomplete cyber-operational visibility preserved as bounded observability.</p>
+
+        <h3>Data infrastructure environment</h3>
+        <p>The data environment appears as a Tbilisi-coordinated but nationally distributed structure through Public Service Hall and my.gov.ge public-service access, NIC.GE naming administration, the GRENA research federation, and NBG's RTGS, instant-payment, and GSSS settlement systems. Commercial data-center distribution and backbone topology remain incompletely visible in public materials, preserved as bounded observability. The data environment presents as documented continuity concentrated in public-service, naming, research-network, and payment components rather than a single-provider or single-site environment.</p>
+
+        <h3>Research and knowledge-network environment</h3>
+        <p>The research and knowledge-network environment appears through GRENA as the Georgian research-and-education federation operator, with educational and research institutions joining as identity providers and entities able to request publication for participation in eduGAIN. GRENA presents as a distinct research-network identity layer connected to international federation structures without implying broader scientific ranking.</p>
+
+        <h3>Regional and international connectivity environment</h3>
+        <p>Regional interoperability appears through Turkey-facing continuity via the E-70 axis, electricity interconnection, and the South Caucasus Pipeline, Azerbaijan-facing continuity via the E-60 axis, electricity interconnection, and gas transit, Armenia-facing continuity via Tbilisi-Yerevan rail, electricity interconnection, and North-South pipeline transit, Russia-facing continuity via power interconnection and the same pipeline, Black Sea connectivity via Poti ferry links and road-rail integration, aviation connectivity via Tbilisi, Kutaisi, and Batumi, and research connectivity via GRENA and eduGAIN. Regional interaction appears through transport, energy, maritime, research, and payment interfaces rather than a single external-facing gateway narrative.</p>
+
+        <h3>Cross-system interaction environment</h3>
+        <p>The strongest visible interaction pattern is Tbilisi administrative concentration with distributed execution alongside Poti-centered Black Sea maritime visibility, where coordination bodies, road axes, rail linkage, and maritime infrastructure appear in coordinated proximity. Distributed territorial continuity, regional interoperability, layered digital public-service continuity, and bounded observability reinforce one another, with national rail, road, hydropower, transmission, pipeline, and emergency infrastructure remaining structurally relevant. The builder-facing environment appears as a concentration-with-distribution model in which physical and digital systems reinforce one another across capital concentration, maritime continuity, and territorial reach.</p>
+
+        <h3>Operational visibility and dependency environment</h3>
+        <p>The operational environment is shaped by central-bank payment dependencies through RTGS, the instant payment system, and GSSS, cross-border energy-interconnection dependencies through GSE and GOGC, Black Sea maritime dependencies through Poti, shared public-service dependencies through Public Service Hall, my.gov.ge, and NIC.GE, and Tbilisi concentration dependencies across coordination bodies. Public observability remains bounded across commercial peering, exchange, backbone, data-center, Batumi port, airport-metric, and cyber-operational detail. The environment appears strongly observable around regulated and state-operated systems while remaining incompletely transparent across private operational layers and uniform regional detail, with absence of evidence treated as bounded public visibility rather than evidence of absence.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder mode summary statement</h3>
+        <p>Georgia appears in builder mode as the builder-facing reading of the Tbilisi-centered, Poti-linked, distributed-territorial continuity environment established across the evidence, signals, trust-dimensions, metadata, and profile layers, with interaction surfaces spanning the documented administrative, identity, payment, telecommunications, transport, energy, regional, disaster-response, data, research-network, and connectivity environments without deployment recommendation, readiness assignment, or routing authority.</p>
+
+        <div class="meta-line">Source: <code>builder-mode.md</code></div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Initial package creation</h3>
+        <p>The Georgia jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The change-log records that <code>evidence.md</code> established Georgian Railway national rail with Tbilisi-Batumi and Tbilisi-Yerevan services and 1,992 km of infrastructure, the Roads Department's E-60 and E-70 axes joining at Poti to form a 450 km main transit road, United Airports of Georgia's Tbilisi, Kutaisi, and Batumi nodes, APM Terminals Poti as the largest seaport carrying around 80% of container traffic, Georgian State Electrosystem transmission with 3,419.68 km of lines, 43 substations, and cross-border interconnection, Georgian Oil and Gas Corporation gas transit through the South Caucasus and North-South pipelines operated by the Georgian Gas Transportation Company, Enguri HPP hydropower, ComCom regulation with NIC.GE naming administration and the GRENA research federation into eduGAIN, National Bank of Georgia-coordinated RTGS, instant-payment, and GSSS rails, Public Service Hall and my.gov.ge public-service access, and Public Safety Command Center 112 emergency coordination with Tbilisi-Rustavi redundancy, bounded throughout by public observability.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The change-log records that <code>signals.md</code> derived administrative and identity coordination signals, financial and payment coordination signals, telecommunications and connectivity signals, transportation and logistics coordination signals, energy and industrial coordination signals, regional interoperability signals, disaster-response and continuity signals, data infrastructure and continuity signals, research and knowledge-network signals, regional and international connectivity signals, cross-system structural signals, and constraint-boundary signals preserving bounded visibility across commercial peering and exchange topology, private backbone architecture, data-center distribution, Batumi port operations, detailed airport metrics, some Georgian Railway pages, and cyber-operational topology, with absence of evidence treated as bounded public visibility rather than evidence of absence.</p>
+
+        <h3>Trust-dimensions layer construction</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> established Tbilisi-centered administrative continuity through Public Service Hall and my.gov.ge, central-bank-coordinated RTGS, instant-payment, and GSSS continuity, multimodal transport continuity through Georgian Railway, the Roads Department, United Airports, and APM Terminals Poti, GSE- and Georgian Gas Transportation Company-coordinated electricity and gas continuity with the South Caucasus and North-South pipelines and Enguri hydropower, regional interoperability, GRENA research networking into eduGAIN, and disaster-response and cyber coordination through Public Safety Command Center 112 and CERT structures, alongside Black Sea and Poti maritime continuity and bounded observability.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The change-log records that <code>metadata.md</code> classified Georgia as a sovereign Georgian state, Tbilisi-centered administrative environment, Black Sea and Poti continuity environment where publicly evidenced, distributed territorial continuity environment, regional interoperability environment, energy-interconnected environment, research-network-supported environment, and disaster-response and cyber-coordination-supported environment, with documented characteristics across administrative coordination, identity, payment and financial structures, telecommunications, transportation and logistics, energy and industrial coordination, regional interoperability, disaster-response, data infrastructure, research and knowledge-network participation, regional connectivity, cross-system patterns, and dependency characteristics, bounded throughout by public observability.</p>
+
+        <h3>Profile layer characterization</h3>
+        <p>The change-log records that <code>profile.md</code> characterized Georgia as a Tbilisi-centered administrative environment with distributed territorial continuity, Black Sea and Poti-linked where publicly evidenced, regionally interoperable, energy-interconnected, and layered across transport, payment, digital, and energy systems, organized through interaction among public-service, payment, logistics, energy, telecommunications, research-network, and emergency-response systems, with public and operator infrastructures combining to sustain continuity through interaction among capital concentration, maritime continuity, and territorial reach rather than single-corridor dependence.</p>
+
+        <h3>Builder mode translation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into administrative and service interpretation, identity and credential interpretation, payment and interoperability interpretation, telecommunications and connectivity interpretation, transportation and logistics interpretation, energy and industrial coordination interpretation, regional interoperability interpretation, disaster-response and continuity interpretation, data infrastructure interpretation, research and knowledge-network interpretation, regional and international connectivity interpretation, cross-system interaction interpretation, and operational visibility and dependency interpretation.</p>
+
+        <h3>Structural boundary decisions recorded</h3>
+        <p>The change-log records that Tbilisi administrative concentration and Poti maritime continuity were preserved without collapsing the package into a single-node model, that distributed territorial continuity and bounded observability were preserved as standing structural characteristics, and that regional interoperability and energy interconnection were handled as infrastructure rather than strategy. Military interpretation was excluded, intelligence inference was excluded, East-West bridge, Europe-Asia gateway, Silk Road, regional-power, symbolic-geography, transit-state, and energy-corridor framing was excluded, tourism, cultural-history, and startup-ecosystem framing was excluded, deployment readiness interpretation was excluded, geopolitical ranking was excluded, and superiority framing, hidden-state capability, deployment suitability, operational approval, and strategic forecasting were preserved as excluded inference categories.</p>
+
+        <h3>Package completion status</h3>
+        <p>The Georgia jurisdiction package is complete within the Atlas normalization framework and aligned with Tbilisi-centered administrative concentration, Black Sea and Poti maritime continuity, distributed territorial continuity, regional interoperability, energy interconnection, central-bank payment coordination, layered digital public-service continuity, research-network support, disaster-response and cyber-coordination support, and bounded observability normalization standards.</p>
+
+        <div class="meta-line">Normalization status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>change-log.md</code></div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Georgia jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/georgia/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Georgia</li>
+          <li><strong>Code:</strong> GE</li>
+          <li><strong>Region:</strong> South Caucasus Tbilisi-Centered Distributed Territorial Continuity Environment with Black Sea Poti Maritime Continuity</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor alignment</h4>
+        <ul>
+          <li>Tbilisi-Centered Administrative Concentration Framework</li>
+          <li>Black Sea and Poti Maritime Continuity Framework</li>
+          <li>Distributed Territorial Continuity Framework</li>
+          <li>Regional Interoperability Framework</li>
+          <li>Energy Interconnection Framework</li>
+          <li>Central-Bank Payment Coordination Framework</li>
+          <li>Layered Digital Public-Service Continuity Framework</li>
+          <li>Research Network Support Framework</li>
+          <li>Disaster-Response and Cyber-Coordination Framework</li>
+          <li>Bounded Observability Framework</li>
+        </ul>
+        <h4>Primary coordination cities</h4>
+        <ul>
+          <li>Tbilisi</li>
+          <li>Poti</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Anchors</h3>
+        <h4>Documented surfaces</h4>
+        <ul>
+          <li>Public Service Hall · my.gov.ge · ComCom · NIC.GE (.ge) · GRENA · eduGAIN</li>
+          <li>National Bank of Georgia · RTGS · instant payment system · GSSS</li>
+          <li>Georgian Railway (1,992 km · Tbilisi-Batumi · Tbilisi-Yerevan)</li>
+          <li>Roads Department of Georgia · E-60 · E-70 (450 km main transit · join at Poti)</li>
+          <li>United Airports of Georgia · Tbilisi · Kutaisi · Batumi</li>
+          <li>APM Terminals Poti (largest seaport · ~80% container traffic · ferry to Romania)</li>
+          <li>Georgian State Electrosystem (3,419.68 km · 43 substations · National Dispatch Center)</li>
+          <li>Georgian Gas Transportation Company · South Caucasus Pipeline · North-South Main Gas Pipeline</li>
+          <li>Enguri HPP (more than 35% of power supply)</li>
+          <li>Public Safety Command Center 112 · Tbilisi and Rustavi PSAPs · CERT.GOV.GE</li>
+          <li>Cross-border interfaces (Russia · Turkey · Armenia · Azerbaijan)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereign hyperscale compute classification.</li>
+          <li>Not a sovereign semiconductor fabrication classification.</li>
+          <li>Not an East-West bridge, Europe-Asia gateway, or Silk Road classification.</li>
+          <li>Not a transit-state, regional-power, or energy-corridor classification.</li>
+          <li>Not a symbolic-geography or civilizational narrative.</li>
+          <li>Not a tourism, cultural-history, or startup-ecosystem narrative.</li>
+          <li>Not an RTGS, instant-payment, or GSSS settlement-authority classification beyond documented central-bank roles.</li>
+          <li>Not a broader internet-exchange centrality classification beyond documented ComCom, NIC.GE, and GRENA governance.</li>
+          <li>Not a "world-class," "regional leader," "gateway," "bridge," "crossroads," or "powerhouse" classification.</li>
+          <li>Not an economic, political, demographic, military, cultural, or superpower narrative.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
