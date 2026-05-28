@@ -1,0 +1,143 @@
+# Georgia — Evidence Layer
+
+## Overview
+
+Georgia functions as a Tbilisi-centered administrative and system-coordination environment whose publicly visible continuity depends on interlocking road, rail, airport, port, electricity-transmission, gas-transmission, telecommunications-regulation, domain-administration, payment-system, public-service, and emergency-response layers. Public materials from the Roads Department of Georgia, Georgian Railway, United Airports of Georgia, APM Terminals Poti, Georgian State Electrosystem, Georgian Oil and Gas Corporation, the National Bank of Georgia, ComCom, NIC.GE, GRENA, Public Service Hall, my.gov.ge, and Public Safety Command Center 112 show a structure in which national coordination is concentrated in Tbilisi while territorial continuity is maintained through distributed transport, energy, and service infrastructure.
+
+At the same time, continuity is not confined to the capital. Roads Department materials identify the Poti-Tbilisi-Red Bridge and Poti-Batumi-Sarpi highways as the main international road axes, APM Terminals documents Poti as Georgia’s largest seaport with rail and road integration and Black Sea ferry links, Georgian State Electrosystem documents cross-border power interconnections, and the National Bank documents nationally significant payment and settlement systems operated from Tbilisi. Public evidence therefore supports normalization of Georgia as a Tbilisi-centered but territorially distributed infrastructure environment with documented Black Sea-facing maritime continuity, regulated digital layers, central-bank payment rails, and multiple regional infrastructure interfaces.
+
+## Geographic & Regional Position
+
+Georgia is a sovereign state with land borders with Russia, Azerbaijan, Armenia, and Turkey, and with a direct Black Sea coastline. Its infrastructure record therefore combines inland territorial continuity with coast-facing maritime interfaces. Public transport, energy, digital-service, and emergency-management materials show a national system that must maintain continuity across capital-centered institutions, western maritime nodes, and border-facing road, rail, gas, and power interfaces.
+
+Public documentation also shows that geography matters in practical infrastructure terms without requiring geopolitical interpretation. Roads Department materials distinguish major west-to-east and coast-to-border highways, while ComCom’s Log-in Georgia materials explicitly reference mountainous settlements as targets for broadband and digital-service expansion. The public record therefore supports treating topography and regional dispersion as service-delivery conditions rather than as symbolic geographic narratives.
+
+## Transportation & Logistics Infrastructure
+
+Rail remains a core public transport layer even though direct public extraction from Georgian Railway’s site is uneven. Official Georgian Railway materials and official-site search-visible schedule pages show a nationally coordinated rail system that supports both domestic and cross-border services, including Tbilisi-Batumi fast trains and Tbilisi-Yerevan international passenger service. Official-site statistics materials further describe rail infrastructure totaling 1,992 km, including 1,441.66 km of main rails, while the 2020 annual report states that Georgian Railway had 4,407 active freight railcars and 39 active passenger wagons at year-end. Public evidence therefore supports normalization of rail as a continuing freight and passenger backbone with both domestic and Armenia-facing interfaces, even where deeper operational detail is not stably extractable.
+
+Road continuity is much more clearly visible. The Roads Department of Georgia states that it is responsible for 1,455 km of international roads and 6,943 km of secondary roads. The same materials identify construction and rehabilitation of the E-60 and E-70 highways, together with construction and rehabilitation of international and secondary roads, as core priorities. Roads Department materials further state that E-60 runs from Poti to Tbilisi to Red Bridge and E-70 runs from Poti to Batumi to Sarpi, that the two roads join in Poti, and that they form the main transit road with a total length of 450 km. In public evidence, this makes road continuity one of the clearest nationally distributed transport layers.
+
+Aviation continuity is publicly visible but less evenly documented than roads. United Airports of Georgia states that it is a 100% state-owned enterprise under the Ministry of Economy and Sustainable Development of Georgia and that it owns all three international and three domestic airports in the country. Official airport pages identify Tbilisi, Kutaisi, and Batumi as the principal international aviation nodes; the Tbilisi airport page states that the airport is operated by TAV Georgia, while official Kutaisi and Batumi pages document those airports as active parts of the same national airport structure. Because parts of the airport web estate are JS-heavy and inconsistently extractable, this evidence layer uses only these narrow operator and ownership facts and does not infer deeper route or capacity structure beyond what is publicly visible.
+
+Maritime continuity is most clearly documented at Poti. APM Terminals states that Poti is the largest seaport in Georgia, handles container and cargo traffic as well as passenger ferries, carries around 80% of the country’s container traffic, and includes 15 berths, 2,900 meters of quay, 29 quay cranes, and 22 km of rail track. The same operator materials state that Poti has direct ferry connections to Romania and full integration with Georgia’s road and railway network. This makes Black Sea maritime continuity publicly visible as a multimodal port-facing layer centered most clearly on Poti. By contrast, public operator detail for Batumi Port was materially weaker in the accessible record, so this evidence layer does not infer equivalent visibility there.
+
+## Energy & Industrial Structure
+
+Georgia’s electricity backbone is publicly organized through Georgian State Electrosystem. GSE states that it is the sole electricity transmission system operator, that it owns and operates 3,419.68 km of transmission lines and 43 substations across the country, and that the transmission network is managed by the National Dispatch Center with technical maintenance provided by eastern, western, and southern regional networks. GSE also states that it manages cross-border transmission lines interconnecting with Russia, Turkey, Armenia, and Azerbaijan. Public materials therefore support normalization of Georgia’s electricity structure as a centrally coordinated national grid with explicitly documented regional and cross-border interfaces.
+
+Administrative concentration within the power system is also visible. GSE states that its head office is at 2 Baratashvili Street in Tbilisi and that it provides power transmission and dispatch services across the country under GNERC regulation. This supports a Tbilisi-centered coordination model layered over territorially distributed transmission infrastructure.
+
+Gas supply and transportation are publicly documented through Georgian Oil and Gas Corporation. GOGC states that natural gas accounts for about 40% of total energy-resource supply in Georgia, that local gas production is less than 0.5% of annual consumption, and that demand is mainly balanced by imports from two foreign sources under several contracts. The same materials state that gas transit is provided by the South Caucasus Pipeline and the North-South Main Gas Pipeline, with the Georgian section of the South Caucasus Pipeline measuring 249 km and the Georgian section of the North-South Main Gas Pipeline measuring 234 km. GOGC further states that the Georgian gas transportation system is operated by the state-owned Georgian Gas Transportation Company, the transport licensee since 2009. This public record supports normalization of Georgia’s gas structure as an import-dependent but organized transmission environment with clearly documented pipeline interfaces.
+
+Hydropower remains a major visible generation layer. Enguri HPP states that it is a 100% state-owned limited liability company whose main activity is electricity production and sale, that its contribution to the country’s power supply is more than 35%, and that it has generated more than 130 billion kWh over 45 years of operation. Public evidence therefore supports normalization of hydropower, and specifically Enguri, as a major generation component within Georgia’s broader transmission and dispatch system.
+
+## Digital & Telecommunications Infrastructure
+
+Georgia’s digital and telecommunications environment is publicly structured through regulation, domain administration, broadband-expansion programs, and a separate research-and-education network layer. ComCom states that it is an independent body regulating electronic communications and broadcasting, protecting consumer rights, and ensuring competition in those markets. This makes sector regulation publicly visible as a formal national coordination layer rather than a purely commercial arrangement.
+
+The public domain-administration layer is visible through NIC.GE. NIC.GE states that Caucasus Online.GE manages the .ge country-code top-level-domain registry, operates under Georgian legislation and ICANN-related standards, and functions through a registry model in which registration services are performed by accredited registrars. NIC.GE also states that Caucasus Online is a member of ccNSO within the ICANN structure and has established a .ge dispute-resolution arrangement with WIPO. Public evidence therefore supports normalization of .ge administration as a formal national naming layer with internationally aligned governance interfaces.
+
+A separate academic and research interoperability layer is visible through GRENA. The GRENA Identity Federation metadata registration statement identifies GRENA as the federation operator, states that Georgian educational and research institutions may join the federation as identity providers, and states that entities may request publication for participation in eduGAIN. This supports normalization of Georgia’s digital environment as including a research-network identity layer connected to broader international federation structures.
+
+Public materials also show that digital-service expansion is not confined to Tbilisi. ComCom’s Log-in Georgia materials state that the project’s digital-service component is designed to provide 1,000 villages and 500,000 citizens, including people in mountainous regions, with high-quality internet access and digital services such as electronic healthcare, remote learning, and electronic governance. This is evidence of distributed national service-extension policy rather than only urban digital concentration.
+
+At the same time, public visibility is materially weaker for commercial peering, internet-exchange topology, backbone routing, and data-center distribution than for regulation, domain administration, and research federation structure. Accordingly, this evidence layer does not infer a hidden exchange map or private backbone architecture beyond what is directly visible from ComCom, NIC.GE, GRENA, and related public materials.
+
+## Financial & Payment Infrastructure
+
+Georgia’s payment infrastructure is publicly centered on the National Bank of Georgia. NBG states that the national payment and settlement environment includes both wholesale and retail payment systems, a central depository, and securities settlement systems, and that the Bank acts as regulator, payment and settlement infrastructure operator, and initiator of change. Public evidence therefore supports normalization of Georgia’s financial infrastructure as a centrally coordinated system rather than a fully decentralized market structure.
+
+This central role is especially visible in RTGS. NBG states that the current RTGS system has operated since 3 December 2010, processes both high-value and low-value transactions, and includes the National Bank, the Treasury Department of the Ministry of Finance, and commercial banks as participants. NBG further states that interbank payments are settled in real time during the day, that the system uses modern information-security controls and priority-based processing, and that the RTGS system is closely integrated with the CSD system to support delivery-versus-payment settlement. Public availability data published by NBG shows RTGS availability above 99.9% across the reported years.
+
+Retail and near-real-time payment infrastructure is also publicly visible. NBG states that the instant payment system is a 24/7/365 electronic retail-payment solution in GEL, that participating institutions include commercial banks and non-bank payment service providers, and that customers may initiate payments through branches, internet banking, mobile applications, QR codes, and other access channels. This makes Georgia’s retail-payment layer visible as a central-bank-coordinated multi-channel system rather than a set of isolated proprietary rails.
+
+Securities and settlement infrastructure adds a second integrated layer. NBG states that the GSSS system is a unified securities-settlement environment for government and corporate securities, that it is closely integrated with RTGS on a delivery-versus-payment basis in central-bank money, and that participants include the National Bank, the Central Securities Depository of Georgia, commercial banks, and brokers. NBG also states that the system is integrated with Bloomberg and future stock-exchange trading platforms. Together with NBG’s Tbilisi address at 1 Zviad Gamsakhurdia Embankment, these materials support normalization of Georgia’s financial infrastructure as a Tbilisi-centered coordination layer with nationally significant payment, settlement, and securities functions.
+
+## Government & Administrative Technology Structure
+
+Georgia’s public-service access layer is visible through Public Service Hall and my.gov.ge, although both platforms are only partially extractable through public web tools. Public Service Hall publicly presents itself as a consolidated service environment under the formula “Everything in one space,” indicating an administrative model that groups multiple public services into a single service-access layer rather than distributing them entirely across separate agency front ends.
+
+The my.gov.ge platform provides a second visible layer of digital public-service access. Official-site search-visible help materials indicate functions including user profile, notifications, history, electronic document storage, and correspondence with public agencies. Even with limited public extractability from the live portal, these materials are sufficient to show that Georgia maintains a citizen-facing online service and document-management layer in parallel with physical service halls.
+
+Public digital-service expansion programs connect this layer to broader national administration. ComCom’s role in the Log-in Georgia project explicitly links broadband rollout with access to electronic governance, remote learning, telemedicine, and other digital services outside major urban centers. Public evidence therefore supports normalization of Georgia’s administrative-technology structure as a layered environment combining physical service halls, an online citizen portal, and network-extension programs that expand access beyond the capital.
+
+Because public extraction from these platforms is incomplete, this evidence layer does not infer deeper internal workflow integration, identity assurance architecture, or electronic-signature capability beyond what is directly visible from official pages and search-discoverable service descriptions.
+
+## Regional & International Interoperability Infrastructure
+
+Georgia’s public infrastructure record shows interoperability across transport, energy, payment, maritime, and research-network layers. In transport, the Roads Department documents the E-60 Poti-Tbilisi-Red Bridge route and the E-70 Poti-Batumi-Sarpi route, creating clearly documented road interfaces toward Azerbaijan and Turkey while preserving a Poti-centered junction point on the Black Sea side. Georgian Railway materials and official schedule pages similarly show domestic rail continuity and an active Tbilisi-Yerevan passenger interface. APM Terminals documents Poti as integrated with Georgia’s rail and road network and connected by ferry to Romania. Taken together, these sources show multimodal interoperability rather than isolated transport assets.
+
+Energy interoperability is especially explicit. GSE states that its transmission lines interconnect with Russia, Turkey, Armenia, and Azerbaijan, while GOGC states that the South Caucasus Pipeline carries Azerbaijani gas to Turkey through Georgia and that the North-South Main Gas Pipeline transits Russian gas to Armenia through Georgia. These are operator-documented interfaces inside the electricity and gas systems, not inferred strategic narratives.
+
+Financial interoperability is narrower but still visible. NBG states that RTGS uses customized SWIFT and ISO-standard messages and that GSSS integrates with Bloomberg and future stock-exchange trading platforms. This makes part of Georgia’s payment and securities environment publicly visible as interoperable with broader messaging and market-system standards.
+
+Digital interoperability is clearest in the research and naming layers. GRENA’s participation model for eduGAIN and NIC.GE’s operation within ICANN-related domain-governance structures show that parts of Georgia’s digital environment are connected to wider international frameworks even where commercial telecom topology remains only partially visible.
+
+## Disaster Resilience, Cybersecurity & Operational Coordination
+
+Public emergency coordination is clearly visible through Public Safety Command Center 112. PSCC 112 states that Georgia’s single emergency number was established in 2012, that 112 and the Joint Operations Center were merged in 2019 to form the present command center, and that call-takers and dispatchers operate 24/7 to transfer incident information to relevant emergency units. PSCC 112 also states that it operates two public-safety answering points, in Tbilisi and Rustavi, and that the Rustavi PSAP serves as operational backup for the main Tbilisi PSAP. This provides strong public evidence of a central emergency-dispatch layer with explicit continuity design.
+
+Operational continuity is also visible in the financial infrastructure. NBG’s business-continuity materials state that payment-system and securities-settlement continuity is of critical importance, that recovery planning should restore critical functions within the same settlement day, and that NBG has developed a business continuity plan covering critical services and related systems. RTGS materials further state that the system remained operational during the COVID-19 period while staff worked remotely. This shows continuity planning in at least one nationally significant infrastructure sector through direct official documentation.
+
+Public cyber-coordination visibility is more limited but not absent. Georgia’s Law on Information Security assigns incident-management and coordination responsibilities to CERT.GOV.GE within the national information-security framework, and official search-visible materials also indicate a national-level CERT function on the Operative-Technical Agency domain. However, detailed operational topology, staffing, and current service visibility for public cyber-response infrastructure were not consistently extractable from stable official pages during this research pass. Accordingly, this evidence layer recognizes the documented existence of cyber-coordination structures but does not infer deeper capability from incomplete public visibility.
+
+## Regional & International Connectivity
+
+Georgia’s regional and international connectivity is distributed across road, rail, maritime, aviation, energy, financial, and research-network layers rather than through any single interface. Turkey-facing continuity is visible through the E-70 Poti-Batumi-Sarpi road axis, GSE’s documented electricity interconnection with Turkey, and the South Caucasus Pipeline’s onward gas flow toward Turkey. Azerbaijan-facing continuity is visible through the E-60 Poti-Tbilisi-Red Bridge axis, GSE’s Azerbaijan interconnection, and GOGC’s documentation of Azerbaijani gas transit through the South Caucasus Pipeline.
+
+Armenia-facing connectivity is directly visible in Georgian Railway’s Tbilisi-Yerevan passenger service, GSE’s Armenia interconnection, and GOGC’s documentation that the North-South Main Gas Pipeline transits Russian gas to Armenia through Georgia. Russia-facing connectivity is documented more narrowly through GSE’s power-system interconnection and through the same North-South Main Gas Pipeline transit description. These references are infrastructure interfaces only and are not treated here as geopolitical claims.
+
+Black Sea connectivity is most clearly visible through Poti. APM Terminals documents direct ferry links to Romania and integration with national road and rail networks, while Roads Department materials show that both principal international highway routes connect at Poti. Aviation connectivity is publicly visible through the national airport system organized around Tbilisi, Kutaisi, and Batumi. Research-network connectivity is visible through GRENA’s eduGAIN participation model, and payment-system connectivity is visible more narrowly through SWIFT, ISO messaging, and Bloomberg-linked settlement infrastructure. The combined public record supports normalization of Georgia as a multi-interface connectivity environment with documented land, sea, air, power, gas, research-network, and financial-system links.
+
+## Structural Observations
+
+Public evidence supports normalization of Georgia as a Tbilisi-centered administrative and coordination environment supported by distributed territorial infrastructure. Tbilisi concentration is clearly visible in the headquarters and operating locations of major coordination bodies including the National Bank of Georgia, Georgian State Electrosystem, the main PSCC 112 answering point, and national public-service structures. That concentration does not eliminate the importance of the rest of the territory, because roads, rail, airports, hydropower, transmission networks, gas pipelines, service halls, broadband-expansion programs, and backup emergency sites are publicly documented as distributed systems.
+
+A second structural feature is the visible importance of Black Sea-facing continuity, especially at Poti. Public operator and road materials show that maritime infrastructure, rail linkage, and the two principal international road axes intersect there in practical transport terms. A third structural feature is layered interoperability: roads, ports, railway services, cross-border electricity lines, gas pipelines, central-bank payment rails, domain administration, and research-network federation all expose formal interfaces with systems beyond Georgia’s borders.
+
+Overall, Georgia presents in public evidence as a layered infrastructure environment in which Tbilisi-centered administration, Poti-centered maritime visibility, distributed territorial road and rail continuity, central-bank payment coordination, regulated communications structure, hydropower-supported generation, cross-border transmission and pipeline interfaces, research-network participation, and emergency-response redundancy operate as mutually reinforcing systems.
+
+## Constraints & Structural Limitations
+
+This evidence layer is bounded by public observability. It relies on official or operator-published materials from Georgian regulators, ministries, infrastructure operators, state entities, and public-service platforms. These sources describe institutional roles, route structure, service interfaces, and system scale more clearly than they describe real-time redundancy, traffic engineering, load margins, internal contingency procedures, private telecom topology, or detailed commercial operating data.
+
+Visibility is uneven across sectors. Roads, payments, gas transportation, electricity transmission, domain administration, research identity federation, and emergency-call handling are comparatively visible. By contrast, commercial peering and exchange topology, private backbone architecture, data-center distribution, Batumi port operations, detailed airport operating metrics, and some Georgian Railway pages are less uniformly exposed through stable public pages. Several official Georgian sites are dynamically rendered, partially translated, intermittently accessible, or weakly extractable. In this file, some narrow railway and airport facts therefore rely on official-site URLs and search-discoverable official snippets where direct page extraction was inconsistent.
+
+Public cyber-coordination visibility is also incomplete. Legal and search-visible official materials indicate national cyber-response structures, but stable detailed documentation of current CERT operational topology was limited during this research pass. Accordingly, absence of evidence in this file should be treated as bounded public visibility rather than as evidence of absence. No hidden-capability inference is intended, and no military, intelligence, or undisclosed strategic capability is inferred from partial public documentation.
+
+## Sources
+
+- Roads Department of Georgia, road infrastructure overview: https://www.georoad.ge/?lang=eng&act=pages&func=menu&pid=1384436889
+- Georgian Railway, official site: https://www.railway.ge/en/
+- Georgian Railway, Statistics: https://www.railway.ge/en/statistics/
+- Georgian Railway, Traffic General Schedule: https://www.railway.ge/en/traffic-general-schedule/
+- Georgian Railway, International trains: https://www.railway.ge/en/passenger-traffic/international-trains/
+- Georgian Railway, About us: https://www.railway.ge/en/about-us/
+- Georgian Railway, 2020 Annual Report: http://www.railway.ge/app/uploads/2021/04/annual_2020.pdf
+- United Airports of Georgia, official site: https://airports.ge/
+- United Airports of Georgia, About Us: https://airports.ge/about-us/about-us
+- United Airports of Georgia, Tbilisi International Airport: https://airports.ge/about-us/airports/tbilisi
+- United Airports of Georgia, Kutaisi International Airport: https://airports.ge/about-us/airports/kutaisi
+- United Airports of Georgia, Batumi International Airport: https://airports.ge/about-us/airports/batumi
+- APM Terminals Poti, Our Port: https://www.apmterminals.com/en/poti/our-port/our-port
+- Georgian State Electrosystem, Who we are: https://www.gse.com.ge/about-us/who-we-are
+- Georgian State Electrosystem, Contact us: https://www.gse.com.ge/about-us/contact-us
+- Georgian Oil & Gas Corporation, Natural Gas: https://www.gogc.ge/en/page/activities-fields/natural-gas/6
+- Enguri HPP, The Activity: https://www.engurhesi.ge/en/page/6-The-Activity
+- National Bank of Georgia, Payment Systems: https://nbg.gov.ge/en/page/payment-systems
+- National Bank of Georgia, RTGS System: https://nbg.gov.ge/en/page/rtgs-system
+- National Bank of Georgia, Instant Payment System Project: https://nbg.gov.ge/en/page/project
+- National Bank of Georgia, Business Continuity: https://nbg.gov.ge/en/page/business-continuity-1
+- National Bank of Georgia, Securities and settlement systems: https://nbg.gov.ge/en/page/securities-and-settlement-systems
+- National Bank of Georgia, Contact: https://nbg.gov.ge/en/contact
+- Communications Commission, About the Commission: https://www.comcom.ge/en/the-commission/about-commission
+- Communications Commission, Log-in Georgia digital service component: https://comcom.ge/en/news/press-releases/log-in-georgia-comcom-to-implement-the-digital-service-component-of-the-world-bank-project.page
+- NIC.GE, About Us: https://nic.ge/en/administrator/about-us
+- GRENA Identity Federation, Metadata Registration Practice Statement: https://mtd.gif.grena.ge/
+- Public Service Hall: https://psh.gov.ge/en
+- my.gov.ge: https://www.my.gov.ge/
+- Public Safety Command Center 112, General Information: https://112.gov.ge/?lang=en&page_id=1677
+- Public Safety Command Center 112, When to Call 112: https://112.gov.ge/?page_id=1686&lang=en
+- Law of Georgia on Information Security: https://matsne.gov.ge/en/document/view/1679424
+- Operative-Technical Agency of Georgia CERT page: https://cert.ota.gov.ge/en.html
