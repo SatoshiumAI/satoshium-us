@@ -1,91 +1,819 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#b91c1c">
-<title>Panama | Satoshium Atlas</title>
-<meta name="description" content="Temporary global country page for Satoshium Atlas.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panama — Atlas: Jurisdiction Intelligence Engine | Satoshium</title>
+<meta name="description" content="Canonical Panama Atlas jurisdiction package rendering. Panama City-Centered Administrative Concentration, Distributed Territorial Continuity, Layered Transport/Payment/Digital/Energy Continuity, Canal-Administered Operational Continuity, Regulated Telecommunications, Maritime Continuity, Regional Interconnection, Research-Network Support, and Bounded Observability.">
+<link rel="canonical" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/panama/">
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
+  --bg:#07090d;
+  --panel:#0c1118;
+  --panel-2:#10161f;
+  --line:#1c2430;
+  --line-soft:#161d28;
+  --ink:#e8ecf1;
+  --ink-dim:#aab3c0;
+  --ink-mute:#7c8695;
+  --gold:#d6a34a;
+  --gold-soft:#b88a3a;
 }
-body{
- margin:0;
- padding-top:80px;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+body{padding-top:80px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92em;color:var(--ink);background:var(--panel-2);padding:1px 6px;border-radius:4px;border:1px solid var(--line-soft)}
+hr.section-divider{border:0;border-top:1px solid var(--line);margin:26px 0}
+
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px 60px}
+
+/* Eyebrow pill */
+.eyebrow{display:inline-block;background:rgba(214,163,74,.08);border:1px solid rgba(214,163,74,.35);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:500}
+
+/* Title block */
+h1.page-title{font-size:54px;line-height:1.1;margin:0 0 18px 0;font-weight:600;letter-spacing:-.02em;color:var(--gold)}
+.lede{color:var(--ink-dim);max-width:820px;margin:0 0 22px;font-size:15px;line-height:1.6}
+
+/* Metadata pill row */
+.meta-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.meta-pills .pill{background:var(--panel);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim)}
+.meta-pills .pill strong{color:var(--ink);font-weight:500}
+
+/* Numbered nav pill row */
+.section-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;padding:0;list-style:none}
+.section-nav li{margin:0}
+.section-nav a{display:inline-block;background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink-dim);transition:border-color .15s,color .15s}
+.section-nav a:hover{border-color:var(--gold);color:var(--gold);text-decoration:none}
+
+/* Two-column layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  h1.page-title{font-size:42px}
 }
-.wrap{max-width:980px;margin:auto;padding:34px 18px}
-.card{
- background:rgba(12,16,24,.95);
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:24px;
+
+/* Main content card */
+main.content{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:36px 40px}
+@media (max-width:600px){
+  main.content{padding:24px 22px}
+  .wrap{padding:24px 16px 50px}
 }
-.eyebrow{
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
- display:inline-block;
+
+main.content section{margin-bottom:42px;padding-bottom:36px;border-bottom:1px solid var(--line-soft)}
+main.content section:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+main.content h2{margin:0 0 14px 0;font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--gold)}
+main.content h2 .num{color:var(--gold);margin-right:10px;font-weight:500}
+main.content h3{margin:24px 0 8px 0;font-size:15px;color:var(--gold);letter-spacing:.01em;font-weight:600}
+main.content p{color:var(--ink-dim);margin:10px 0;line-height:1.7}
+main.content p strong{color:var(--ink);font-weight:600}
+main.content ul{color:var(--ink-dim);margin:10px 0;padding-left:22px}
+main.content ul li{margin-bottom:5px}
+
+/* Topology fields block */
+.topo-fields{margin:14px 0 18px;display:grid;grid-template-columns:1fr;gap:0}
+.topo-row{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.topo-row:last-child{border-bottom:0}
+.topo-row .lbl{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.topo-row .val{color:var(--ink);font-size:15px}
+
+/* Status meta line */
+.meta-line{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-mute);font-style:italic}
+.meta-line .sep{color:var(--gold-soft);margin:0 8px}
+
+/* Sidebar */
+aside.sidebar{display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+@media (max-width:980px){
+  aside.sidebar{position:static}
 }
-h1{color:var(--gold2)}
-.muted{color:var(--muted)}
-.btn{
- display:inline-block;
- margin:10px 10px 0 0;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
- text-decoration:none;
-}
+aside .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+aside .card h3{margin:0 0 4px 0;color:var(--gold);font-size:16px;font-weight:600}
+aside .card h4{margin:14px 0 8px 0;color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+aside .card p{color:var(--ink-dim);font-size:13px;margin:6px 0;line-height:1.6}
+aside .card ul{margin:6px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+aside .card ul li{margin-bottom:5px}
+aside .card .small-note{font-size:12px;color:var(--ink-mute);margin-top:12px;line-height:1.55}
+
+/* Footer */
+footer.page-footer{margin-top:60px;padding-top:32px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;text-align:center}
+footer.page-footer .reflection{font-style:italic;margin-bottom:24px;color:var(--ink-dim)}
 </style>
 </head>
 <body>
 
 <div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
 
-<main class="wrap">
-<article class="card">
-<div class="eyebrow">Atlas · Global Country Page</div>
-<h1>Panama</h1>
+<div class="wrap">
 
-<p class="muted">
-This Atlas global jurisdiction page is being prepared for structured package publication.
-Canonical package layers and public-facing interpretation surfaces are still in development.
-</p>
+  <div class="eyebrow">Atlas · Jurisdiction Intelligence Engine · Global Country Record</div>
 
-<a class="btn" href="/atlas/">Back to Atlas →</a>
-<a class="btn" href="/atlas/jurisdiction-intelligence-engine/">Open Jurisdiction Intelligence Engine →</a>
+  <h1 class="page-title">Panama</h1>
 
-</article>
-</main>
+  <p class="lede">Panama City-centered administrative jurisdiction whose national continuity depends on distributed territorial coordination across road, rail, canal, aviation, maritime, electricity, payment, digital-service, research-network, and emergency-coordination layers rather than any single system, with canal-administered operational continuity and dual-coast maritime continuity through Atlantic and Pacific terminal environments. This page renders the canonical Panama Atlas jurisdiction package; the canonical files remain the source of truth and this document is a structured rendering only, reflecting AIG-, Panamá Digital-, and Panamá Conecta-coordinated public-service access with the Red Nacional Multiservicio and Tribunal Electoral cédula and Cédula Inteligente continuity, Superintendencia de Bancos de Panamá supervision with Banco Nacional de Panamá and TELERED interbank transfer through ACH and ACH Xpress and Latin Clear securities settlement, ASEP communications regulation alongside NIC Panamá .pa naming administration through PANNet and the Universidad Tecnológica de Panamá, ETESA national transmission with the Centro Nacional de Despacho and the Panama-Costa Rica 230 kV interconnection between Río Claro and Progreso, MOP road administration with the Panama Canal Railway isthmus rail corridor, the Autoridad del Canal de Panamá administering the Gatun, Pedro Miguel, and Miraflores lock system with notices-to-shipping, reservation-system, maintenance, and customer-service continuity, AMP-administered Atlantic and Pacific container terminals including Manzanillo International Terminal, Cristóbal-Panamá Ports Company, Colon Container Terminal, Balboa, and PSA Panamá, Tocumen International Airport with the Autoridad de Aeronáutica Civil providing NOTAM, AIS/AIM, drone, and reporting resources, SINAPROC disaster coordination through the Centro de Operaciones de Emergencia, CSIRT Panamá cyber coordination, and Datos Abiertos Panamá data governance.</p>
 
-<div id="footer-container"></div>
+  <div class="meta-pills">
+    <span class="pill">Jurisdiction: <strong>Panama (PA)</strong></span>
+    <span class="pill"><strong>Jurisdiction lens</strong></span>
+    <span class="pill">Completeness: <strong>Phase 1 Global Country Package</strong></span>
+    <span class="pill">Surface assignment: <strong>none</strong></span>
+  </div>
 
+  <ul class="section-nav" aria-label="Page sections">
+    <li><a href="#overview">1. Overview</a></li>
+    <li><a href="#evidence">2. Evidence Layer</a></li>
+    <li><a href="#signals">3. Signals Layer</a></li>
+    <li><a href="#trust-dimensions">4. Trust Dimensions</a></li>
+    <li><a href="#metadata">5. Metadata</a></li>
+    <li><a href="#profile">6. Profile</a></li>
+    <li><a href="#builder-mode">7. Builder Mode</a></li>
+    <li><a href="#change-log">8. Change Log</a></li>
+  </ul>
+
+  <div class="layout">
+
+    <main class="content">
+
+      <!-- 1. Overview -->
+      <section id="overview">
+        <h2><span class="num">1.</span>Overview</h2>
+
+        <p>Panama currently reads within Atlas as a Panama City-centered administrative environment whose national continuity depends on distributed coordination across administrative, payment, regulatory, transport, canal, aviation, maritime, emergency, cyber, and research-network layers rather than any single system. The package places Panama inside AIG-, Panamá Digital-, Panamá Conecta-, and Red Nacional Multiservicio-linked public-service administration with Tribunal Electoral cédula and Cédula Inteligente identity continuity, Superintendencia de Bancos de Panamá-supervised banking with Banco Nacional de Panamá and TELERED interbank transfer through ACH and ACH Xpress and Latin Clear securities settlement, ASEP-regulated telecommunications alongside NIC Panamá .pa naming administration through PANNet and the Universidad Tecnológica de Panamá, ETESA- and Centro Nacional de Despacho-coordinated electricity with the Panama-Costa Rica 230 kV interconnection, MOP road administration with the Panama Canal Railway isthmus corridor, Autoridad del Canal de Panamá lock-system, reservation, maintenance, and customer-service continuity, AMP-administered dual-coast Atlantic and Pacific terminal environments, Tocumen and Autoridad de Aeronáutica Civil aviation continuity, and SINAPROC and CSIRT Panamá disaster-response and cyber coordination. These conditions support a structural characterization centered on Panama City administrative concentration, distributed territorial continuity, canal-administered operational continuity, dual-coast maritime continuity, regional interconnection, and continuity-through-overlapping systems under explicit bounded observability, without assigning readiness tiers, routing authority, deployment suitability, canal-power interpretation, trade-route narrative, logistics-superpower interpretation, or financial-secrecy meaning.</p>
+
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Panama</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Central American Isthmus Panama City-Centered Distributed Territorial Continuity Environment with Dual-Coast Maritime Continuity</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Panama City-Centered Administrative Concentration Framework · Distributed Territorial Continuity Framework · Layered Transport, Payment, Digital, and Energy Continuity Framework · Canal-Administered Operational Continuity Framework · Dual-Coast Maritime Continuity Framework · Regulated Telecommunications Framework · Regional Interconnection Framework · Research-Network Continuity Framework · Disaster-Response and Cyber-Coordination Framework · Bounded Observability Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Panama City</span>
+          </div>
+        </div>
+
+        <p><strong>Scope.</strong> This page records evidence-supported national structures documented for Panama that are relevant to Atlas normalization. It does not assign trust posture, routing role, coordination tier, corridor meaning, readiness, placement classification, Atlas surfaces, deployment suitability, canal-power interpretation, trade-route narrative, logistics-superpower interpretation, or financial-secrecy meaning.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code> · <code>metadata.md</code> — Overview</div>
+      </section>
+
+      <!-- 2. Evidence Layer -->
+      <section id="evidence">
+        <h2><span class="num">2.</span>Evidence Layer</h2>
+
+        <p>The change-log records that <code>evidence.md</code> established the documented institutional and infrastructure anchors for the Panama jurisdiction package across administrative governance, identity, payments, telecommunications, electricity, transport, canal, aviation, maritime, disaster-response, cyber-coordination, research networking, and regional interoperability surfaces, bounded throughout by public observability.</p>
+
+        <h3>Geographic and regional position</h3>
+        <p>The evidence layer records Panama as a sovereign isthmus state with Atlantic and Pacific coastlines, Panama City concentration inside a wider nationally distributed continuity environment, and adjacency to Costa Rica through documented electrical interconnection structures. Dual-coast maritime continuity is recorded as interacting with inland administrative, payment, transport, canal, aviation, and digital-service layers. Distributed territorial continuity is recorded through overlapping road, rail, electricity, payment, digital-service, and emergency-coordination environments rather than a single-corridor or capital-only operational profile.</p>
+
+        <h3>Administrative and public-service infrastructure</h3>
+        <p>The evidence layer records Panama as a Panama City-centered administrative environment with distributed sectoral service layers. Official web surfaces are recorded as showing distinct institutional roles for the Autoridad Nacional para la Innovación Gubernamental (AIG) in digital-government infrastructure, the Autoridad Nacional de los Servicios Públicos (ASEP) in utilities and telecommunications regulation, the Superintendencia de Bancos de Panamá in banking supervision, the Autoridad de Aeronáutica Civil in civil-aviation administration, the Autoridad Marítima de Panamá in maritime and port administration, the Autoridad del Canal de Panamá in canal administration, the Sistema Nacional de Protección Civil in emergency coordination, and the Ministerio de Obras Públicas in road and public-works administration. Panamá Digital and Panamá Conecta are recorded as presenting a single-access logic for procedures and services drawn from multiple public entities, with Panamá Conecta explicitly listing services from IFARHU, MITRADEL, AMPYME, DIJ, the Ministry of Foreign Affairs, SIACAP, ANATI, MINSA, and Sistema 311, supporting normalization as a capital-centered but multi-agency continuity environment in which administrative coordination is concentrated while service delivery is distributed.</p>
+
+        <h3>Identity and digital-service infrastructure</h3>
+        <p>The evidence layer records Panama's public identity layer as anchored by the Tribunal Electoral and its cédula infrastructure, with the cédula identified as the national personal identity document and a public program to upgrade it through the Proyecto Cédula Inteligente described as an enhancement of the Panamanian identity card through incorporation of a chip and higher technical standards. The public digital-service layer is recorded as centered on Panamá Digital as a digital process environment reducing physical queues and travel while providing online attention and security evidence, with AIG's Panamá Conecta adding a second centralization layer by consolidating frequently used public procedures in one site and one mobile application. AIG materials are recorded as tying the Red Nacional Multiservicio to interoperability between institutions, indicating that the user-facing service layer is supported by a cross-government communications and systems-integration environment, with deeper authentication architecture only partially visible.</p>
+
+        <h3>Payment and financial infrastructure</h3>
+        <p>The evidence layer records Panama's public financial infrastructure as visibly organized around a supervisory layer, interbank transfer rails, and a securities-custody layer. The Superintendencia de Bancos de Panamá is recorded as publishing principal indicators, a current list of banks, local credit and deposit figures, liquidity data, and interbank-rate references, making supervisory visibility and recurring sector reporting directly observable, with Banco Nacional de Panamá maintaining an active public institutional banking surface and recorded as participating in ACH Xpress. TELERED is recorded as describing ACH as a platform that allows participating financial institutions to offer interbank transfers, with same-bank transfers resolving immediately and interbank transfers moving funds through a compensation process, alongside ACH Xpress as an immediate bank-to-bank transfer service with mobile-number-based transfer functionality. Latin Clear is recorded as a central securities custody and administration platform regulated and supervised by the Superintendencia del Mercado de Valores, supporting a layered environment combining bank supervision, interbank retail transfer rails, an instant-transfer layer, and a separate securities custody layer without invoking offshore, secrecy, or tax narratives.</p>
+
+        <h3>Telecommunications and connectivity infrastructure</h3>
+        <p>The evidence layer records telecommunications as a regulated public-service environment, with ASEP stating that telecommunications constitute a public service regulated by Law No. 31 of 8 February 1996 and that its Dirección Nacional de Telecomunicaciones regulates, orders, supervises, and administers telecommunications as well as radio and television services. A second visible layer is recorded through AIG's Red Nacional Multiservicio, created by Executive Decree No. 519 of 9 August 2012 as an MPLS network for exclusive use by public institutions with data, internet, and telephony services, supporting institutional interoperability, network-level security, mail protection, state DNS, and WAF services. A third visible layer is recorded through national domain administration, with UTP's NIC-Panamá page identifying the .pa country-code top-level domain as administered by PANNet of the Universidad Tecnológica de Panamá under IANA and ICANN delegation and operating the primary and secondary DNS servers and WHOIS database for the zone, with public visibility materially weaker for commercial carrier topology, private fiber routes, internet-exchange structure, and peering relationships.</p>
+
+        <h3>Electricity and energy infrastructure</h3>
+        <p>The evidence layer records Panama's electricity infrastructure through ETESA as the national electricity transmission company and the Centro Nacional de Despacho as responsible for operating the Sistema Interconectado Nacional and administering the wholesale electricity market, with the CND coordinating cross-border electricity transactions with the regional operator. Regional electrical integration is recorded through ETESA's historical materials identifying completion of the Panama-Costa Rica interconnection through a 230 kV line between Río Claro in Costa Rica and Progreso in Panama, with ETESA's corporate materials publicly describing shareholdings or participation in Empresa Propietaria de la Red, Red Centroamericana de Fibra Óptica, and Interconexión Colombia-Panamá related entities, supporting normalization as a centrally coordinated national grid with formal regional interconnection interfaces, while detailed reserve margins, private-generation operational topology, and non-public contingency procedures remain bounded.</p>
+
+        <h3>Transportation and logistics infrastructure</h3>
+        <p>The evidence layer records public transport continuity outside the canal, port, and airport sectors as most clearly visible through road administration and a narrow rail layer. MOP is recorded as identifying a national maintenance function responsible for the urban and interurban road network and other public structures under national responsibility, with ongoing road-rehabilitation and road-project activity across the country, sufficient public evidence to identify road continuity as a national public-works function even where a complete current network map is not consistently extractable. A rail layer is recorded as visible through the Panama Canal Railway Company's official web presence and passenger-service pages, supporting recognition of an operating rail corridor between the Panama and Colón sides of the isthmus, with the public record not providing the same stable depth of national technical detail as the road and utility sectors.</p>
+
+        <h3>Canal infrastructure</h3>
+        <p>The evidence layer records the canal strictly as administered infrastructure and an operational continuity system, with the Autoridad del Canal de Panamá publicly documenting the lock system and its operating notices. ACP materials are recorded as describing the original lock design with Gatun consisting of three steps or pairs of chambers, Pedro Miguel one step, and Miraflores two steps, for six pairs and twelve chambers overall, arranged as two side-by-side traffic lanes, with the mechanical and hydraulic structure of the locks described as a formal engineered operating environment rather than a symbolic national feature. Operational continuity is recorded through ACP's maritime-service publications, with the public notices-to-shipping archive showing repeated modifications to the transit reservation system, scheduled lock maintenance, tariff adjustments, and related operating notices, customer-information pages exposing a standing administrative surface for shipping agencies and maritime-service users, and official FAQ materials distinguishing Panamax and Neopanamax operating contexts within the canal's service framework, supporting normalization as a continuously administered lock, reservation, maintenance, and customer-coordination environment.</p>
+
+        <h3>Aviation infrastructure</h3>
+        <p>The evidence layer records Panama's aviation infrastructure through an airport-administration layer and a national civil-aviation regulatory and operational-information layer. Tocumen International Airport is recorded as maintaining an active public institutional web presence with contact, location, terminal, and cargo-service surfaces, with a dedicated cargo-terminal surface and ongoing dual-terminal passenger operations supporting Tocumen as an active airport-administration and aviation-continuity node. The Autoridad de Aeronáutica Civil is recorded as providing the national administrative and operational-information layer, with its public site exposing NOTAM access, AIS/AIM information, drone procedures, aviation-security references, aeromedical services, and aircraft-accident reporting resources, supporting normalization as a state-administered system combining airport operations with civil-aviation regulatory and pilot-information services, with route economics, slot allocation, and deeper operational redundancy preserved as bounded observability.</p>
+
+        <h3>Maritime and port infrastructure</h3>
+        <p>The evidence layer records Panama's maritime and port environment through AMP's administrative role, publicly listed port infrastructure, and operator-facing service surfaces on both coasts. AMP's infrastructure materials are recorded as stating that Panama has twenty-five state ports under its administration and publishing a specific container-terminal inventory identifying Atlantic-side container terminals including Manzanillo International Terminal, Cristóbal-Panamá Ports Company, Colon Container Terminal, and Panama Colon Container Port under construction, alongside Pacific-side container terminals at Balboa and PSA Panamá, making dual-coast terminal continuity directly observable. The maritime-service layer is recorded through operator and customer interfaces, with ACP's customer-information pages listing shipping agencies and maritime service contacts and PSA Panamá maintaining an active official operator site for its Pacific terminal presence, supporting maritime continuity through visible state port administration, multiple Atlantic and Pacific container terminals, and public ship-service interfaces without strategic, gateway, or dominance framing.</p>
+
+        <h3>Disaster-response and emergency coordination infrastructure</h3>
+        <p>The evidence layer records Panama's emergency-coordination layer through SINAPROC and its Centro de Operaciones de Emergencia, with SINAPROC stating that the COE is organized through multiple coordination tables including technical-scientific, emergency response, health, public security, infrastructure and public servants, logistics, and humanitarian assistance, and listing participating institutions including SINAPROC, the fire service, the Autoridad de Aeronáutica Civil, the Autoridad Marítima de Panamá, the Autoridad del Canal de Panamá, IDAAN, SUME 911, ASEP, MOP, ETESA forecasting, electric companies, the Tribunal Electoral, and other public and civil-society actors. Public continuity is recorded through recurring operational updates with the COE remaining active during adverse weather conditions and publishing monitoring and response reports across multiple provinces, supporting normalization as a coordinated national emergency system with institutionalized response tables, public monitoring, and distributed territorial activation.</p>
+
+        <h3>Cybersecurity and data infrastructure</h3>
+        <p>The evidence layer records Panama's public cyber-response layer through AIG and CSIRT Panamá, with AIG stating that CSIRT Panamá is the national team for response to information-security incidents and describing its objectives as prevention, treatment, identification, and resolution of attacks affecting critical infrastructure and citizens' access to information, alongside incident-reporting procedures framing CSIRT Panamá as a coordination mechanism for improving security across government information and communications systems. Public digital-security and data-governance infrastructure is recorded through adjacent AIG systems, with the Red Nacional Multiservicio publicly including platform security, state DNS, WAF, and mail-protection services for government connectivity and AIG's Datos Abiertos Panamá page documenting an open-data framework under Executive Decree 511 of 24 November 2017 and its implementing resolution, with internal security architecture, incident volumes, private data-center topology, and classified cyber capabilities preserved as bounded observability.</p>
+
+        <h3>Research and education network infrastructure</h3>
+        <p>The evidence layer records Panama's research and education network layer through PANNet and the Universidad Tecnológica de Panamá, with UTP's NIC-Panamá page identifying PANNet as the Red Académica y de Investigación Nacional and stating that this academic network administers the .pa country-code domain under IANA and ICANN delegation, directly linking national academic-network infrastructure to a continuing operational role in internet naming and DNS administration. Additional UTP public materials are recorded as identifying the university as an early institutional anchor in Panama's connection to academic networking and the internet, supporting normalization as an education-and-research network layer centered on UTP and PANNet, with current detailed academic backbone topology, external research peering, and institution-by-institution participation maps preserved as bounded observability.</p>
+
+        <h3>Regional and international interoperability</h3>
+        <p>The evidence layer records Panama's regional and international connectivity across electricity, telecommunications administration, payments, maritime services, aviation, and internet governance. In electricity, ETESA and the CND are recorded as exposing regional interfaces through the Costa Rica interconnection and coordination with the regional operator, with ETESA's published participation in REDCA showing an additional regional infrastructure linkage associated with transmission corridors. In telecommunications and naming, NIC-Panamá's IANA and ICANN delegation is recorded as providing a formal international governance interface for the national domain. Payment interoperability is recorded through TELERED's ACH and ACH Xpress services across participating banks including Banco Nacional in the immediate-transfer layer, maritime continuity through the coexistence of Atlantic and Pacific container terminals and ACP's ship-service and reservation notices, aviation continuity through Tocumen's active international-airport administration and the AAC's national flight-information services, and research-network connectivity through PANNet's role in internet naming and the academic-network structure centered on UTP, supporting normalization as a multi-interface connectivity environment without treating any one interface as a geopolitical or strategic narrative.</p>
+
+        <h3>Distributed territorial continuity</h3>
+        <p>The evidence layer records Panama as both a Panama City-centered and territorially distributed continuity environment. Administrative concentration is recorded through the location and public contact surfaces of major coordinating institutions in Panama City including AIG, SBP, Tocumen, and several sector regulators and operators. At the same time, critical continuity is recorded as not confined to the capital, with public infrastructure records showing Atlantic terminals in the Colón area, Pacific terminals on the Panama-Pacific side, a rail corridor across the isthmus, national road-maintenance functions, the nationwide electricity transmission and dispatch system, and multi-province emergency reporting through SINAPROC.</p>
+
+        <hr class="section-divider">
+
+        <h3>Summary evidence statement</h3>
+        <p>The current source set documents Panama as a Panama City-centered administrative and coordination environment supported by distributed territorial infrastructure, with administrative concentration visible across Panama City-based institutions including AIG, SBP, Tocumen, and several sector regulators and operators, and continuity distributed through Atlantic terminals in the Colón area, Pacific terminals on the Panama-Pacific side, the isthmus rail corridor, MOP-coordinated national road maintenance, ETESA and CND nationwide transmission and dispatch, and SINAPROC multi-province emergency reporting. Layered interoperability appears across electricity, payments, research-network, maritime, aviation, and naming-governance systems through the Panama-Costa Rica 230 kV interconnection between Río Claro and Progreso, TELERED ACH and ACH Xpress with Banco Nacional participation and Latin Clear securities custody, NIC-Panamá's IANA and ICANN-delegated administration of .pa through PANNet and UTP, ACP-administered canal continuity through the Gatun, Pedro Miguel, and Miraflores lock system, and dual-coast maritime continuity through AMP-administered Atlantic and Pacific terminals. The cited evidence supports a layered infrastructure environment in which Panama City-centered administration, distributed territorial continuity, canal-administered operational continuity, dual-coast maritime continuity, regulated telecommunications, central-bank-supervised banking and payment interoperability, regional electrical interconnection, research-network support, and disaster-response and cyber-coordination layers operate as mutually reinforcing systems, without assigning readiness tiers, corridor status, routing authority, deployment suitability, canal-power interpretation, trade-route narrative, logistics-superpower meaning, or financial-secrecy framing, and treating absence of evidence as bounded public visibility rather than evidence of absence.</p>
+
+        <div class="meta-line">Source: <code>evidence.md</code> · <code>change-log.md</code> — Evidence Layer Construction</div>
+      </section>
+
+      <!-- 3. Signals Layer -->
+      <section id="signals">
+        <h2><span class="num">3.</span>Signals Layer</h2>
+
+        <p>Signal derivation constraint: signals derive strictly from <code>evidence.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment suitability, canal-power interpretation, trade-route narrative, logistics-superpower meaning, or financial-secrecy framing.</p>
+
+        <h3>Strategic position signals</h3>
+        <p>AIG, Panamá Digital, Panamá Conecta, the Red Nacional Multiservicio, and Tribunal Electoral cédula and Cédula Inteligente continuity, Superintendencia de Bancos de Panamá supervision with Banco Nacional de Panamá and TELERED ACH and ACH Xpress and Latin Clear securities, ASEP regulation and NIC Panamá .pa administration through PANNet and UTP, ETESA transmission with the Centro Nacional de Despacho and the Panama-Costa Rica 230 kV interconnection, MOP road administration with the Panama Canal Railway isthmus corridor, Autoridad del Canal de Panamá lock-system, reservation, maintenance, and customer-service continuity, AMP-administered Atlantic and Pacific terminal continuity, Tocumen International Airport and the Autoridad de Aeronáutica Civil operational-information layer, and SINAPROC and CSIRT Panamá coordination together signal Panama as a Panama City-centered administrative environment organized around distributed territorial continuity, canal-administered operational continuity, dual-coast maritime continuity, regulated telecommunications, regional electrical interconnection, research-network support, and disaster-response and cyber-coordination support. The coexistence of these layers signals continuity through interaction among administrative, identity, payment, transport, canal, maritime, aviation, energy, naming, research-network, and emergency systems rather than dependence on any single network.</p>
+
+        <h3>Administrative and identity coordination signals</h3>
+        <p>Panama City-centered location and public contact surfaces of AIG, SBP, Tocumen, and several sector regulators and operators signal capital-centered administrative coordination. Panamá Digital and Panamá Conecta as single-access service environments drawing procedures from IFARHU, MITRADEL, AMPYME, DIJ, the Ministry of Foreign Affairs, SIACAP, ANATI, MINSA, and Sistema 311 signal centralized public-service entry with distributed institutional execution. The Tribunal Electoral cédula and the Proyecto Cédula Inteligente upgrade incorporating a chip and higher technical standards signal a formal national identity-administration layer, and Red Nacional Multiservicio interoperability across institutions signals a cross-government communications and systems-integration environment supporting the user-facing service layer.</p>
+
+        <h3>Financial and payment coordination signals</h3>
+        <p>SBP's publication of principal indicators, a current list of banks, local credit and deposit figures, liquidity data, and interbank-rate references signals supervisory visibility and recurring sector reporting. Banco Nacional de Panamá's active public institutional banking surface and participation in ACH Xpress signal public-sector banking participation in the wider payment environment. TELERED's ACH platform allowing participating financial institutions to offer interbank transfers through a compensation process and ACH Xpress as an immediate bank-to-bank transfer service with mobile-number-based functionality signal layered interbank transfer rails. Latin Clear's role as a central securities custody and administration platform regulated by the Superintendencia del Mercado de Valores signals a separate securities-processing layer, together signaling a layered environment combining bank supervision, interbank retail transfer rails, an instant-transfer layer, and securities custody without offshore, secrecy, or tax narratives.</p>
+
+        <h3>Telecommunications and connectivity signals</h3>
+        <p>ASEP's role regulating, ordering, supervising, and administering telecommunications and radio and television services under Law No. 31 of 8 February 1996 signals a formal national sector-coordination layer. The Red Nacional Multiservicio as an MPLS network for exclusive use by public institutions with data, internet, telephony, institutional interoperability, network-level security, mail protection, state DNS, and WAF services signals a state communications backbone with shared security functions. UTP's NIC-Panamá administration of .pa under IANA and ICANN delegation operating primary and secondary DNS servers and WHOIS database signals formal national naming administration. The materially weaker public visibility of commercial carrier topology, private fiber routes, internet-exchange structure, and peering relationships signals bounded observability for commercial network architecture.</p>
+
+        <h3>Electricity and energy-regulation signals</h3>
+        <p>ETESA's role as the national electricity transmission company and the Centro Nacional de Despacho's responsibility for operating the Sistema Interconectado Nacional and administering the wholesale electricity market signal centrally coordinated national transmission and dispatch. The CND's coordination of cross-border electricity transactions with the regional operator and the Panama-Costa Rica 230 kV interconnection between Río Claro and Progreso signal explicit regional electrical interaction. ETESA's published participation in Empresa Propietaria de la Red, Red Centroamericana de Fibra Óptica, and Interconexión Colombia-Panamá-related entities signals additional regional infrastructure linkage associated with transmission corridors, together signaling a centrally coordinated national grid with formal regional interconnection interfaces rather than isolated national operation.</p>
+
+        <h3>Transportation and logistics coordination signals</h3>
+        <p>MOP's national maintenance function for the urban and interurban road network and other public structures under national responsibility, with ongoing road-rehabilitation and road-project activity across the country, signals a continuing national public-works function for road continuity. The Panama Canal Railway Company's official web presence and passenger-service pages signal an operating rail corridor between the Panama and Colón sides of the isthmus. The overlap of road, rail, airport, canal, and port infrastructure signals layered transport continuity rather than dependence on a single mode, with broader freight, warehousing, and internal terminal topology preserved as bounded observability.</p>
+
+        <h3>Canal-administered continuity signals</h3>
+        <p>ACP's documentation of the lock system as Gatun three steps or pairs of chambers, Pedro Miguel one step, and Miraflores two steps for six pairs and twelve chambers overall arranged as two side-by-side traffic lanes signals a formally engineered operating environment. ACP's notices-to-shipping archive showing repeated modifications to the transit reservation system, scheduled lock maintenance, tariff adjustments, and related operating notices signals continuous administrative operation. Customer-information pages exposing a standing administrative surface for shipping agencies and maritime-service users signal customer-coordination continuity, and official FAQ materials distinguishing Panamax and Neopanamax operating contexts signal recurring operational classification within the canal's service framework. Together these signal canal-administered operational continuity through lock-system, reservation-system, maintenance-cycle, and customer-service layers without geopolitical, strategic, or trade-dominance framing.</p>
+
+        <h3>Aviation coordination signals</h3>
+        <p>Tocumen International Airport's active public institutional web presence with contact, location, terminal, and cargo-service surfaces and dedicated cargo-terminal and dual-terminal passenger operations signal a continuing airport-administration and aviation-continuity node. The Autoridad de Aeronáutica Civil's exposure of NOTAM access, AIS/AIM information, drone procedures, aviation-security references, aeromedical services, and aircraft-accident reporting resources signals a formal national civil-aviation regulatory and operational-information layer. Together these signal a state-administered aviation system combining airport operations with regulatory and pilot-information services, with route economics, slot allocation, and deeper operational redundancy preserved as bounded observability.</p>
+
+        <h3>Maritime coordination signals</h3>
+        <p>AMP's administration of twenty-five state ports and its published container-terminal inventory identifying Atlantic-side container terminals including Manzanillo International Terminal, Cristóbal-Panamá Ports Company, Colon Container Terminal, and Panama Colon Container Port under construction, alongside Pacific-side container terminals at Balboa and PSA Panamá, signals dual-coast terminal continuity within formal state maritime administration. ACP's customer-information pages listing shipping agencies and maritime service contacts and PSA Panamá's active official operator site signal operator and customer-service interfaces, together signaling maritime continuity through state port administration, multiple Atlantic and Pacific container terminals, and public ship-service interfaces.</p>
+
+        <h3>Disaster-response and continuity signals</h3>
+        <p>SINAPROC's Centro de Operaciones de Emergencia organized through technical-scientific, emergency response, health, public security, infrastructure and public servants, logistics, and humanitarian assistance coordination tables with participating institutions including SINAPROC, the fire service, AAC, AMP, ACP, IDAAN, SUME 911, ASEP, MOP, ETESA forecasting, electric companies, the Tribunal Electoral, and other public and civil-society actors signals a multi-agency all-hazards coordination surface. The COE remaining active during adverse weather conditions and publishing monitoring and response reports across multiple provinces signals continuity-through-public operational visibility and distributed territorial activation, with non-public continuity protocols and internal escalation procedures preserved as bounded observability.</p>
+
+        <h3>Cyber-coordination and data signals</h3>
+        <p>CSIRT Panamá's role as the national team for response to information-security incidents with objectives of prevention, treatment, identification, and resolution of attacks affecting critical infrastructure and citizens' access to information signals a formal public cyber-incident response structure. The Red Nacional Multiservicio's platform security, state DNS, WAF, and mail-protection services for government connectivity signal shared security-services continuity. AIG's Datos Abiertos Panamá page documenting an open-data framework under Executive Decree 511 of 24 November 2017 and Panamá Conecta and Panamá Digital state investment in shared digital-service platforms signal ongoing public digital-governance activity, with internal security architecture, incident volumes, private data-center topology, and classified cyber capabilities preserved as bounded observability.</p>
+
+        <h3>Research and knowledge-network signals</h3>
+        <p>PANNet as the Red Académica y de Investigación Nacional administering the .pa country-code domain under IANA and ICANN delegation signals a research-and-education network layer with continuing operational role in internet naming and DNS administration. UTP's institutional anchoring of PANNet and NIC Panamá administration signals a university-centered research-network structure. Current detailed academic backbone topology, external research peering, and institution-by-institution participation maps signal bounded observability rather than absence inference.</p>
+
+        <h3>Regional and international connectivity signals</h3>
+        <p>ETESA and CND regional interfaces through the Costa Rica interconnection and coordination with the regional operator and ETESA's published participation in REDCA signal regional electrical interaction. NIC-Panamá's IANA and ICANN delegation signals formal international governance interface for the national domain. TELERED's ACH and ACH Xpress services across participating banks with Banco Nacional in the immediate-transfer layer signal payment interoperability. The coexistence of Atlantic and Pacific container terminals, ACP's ship-service and reservation notices, and publicly listed shipping agencies signal maritime continuity, Tocumen's international-airport administration and the AAC's national flight-information services signal aviation connectivity, and PANNet's role in internet naming and the academic-network structure centered on UTP signal research-network connectivity, together signaling a multi-interface connectivity environment without treating any one interface as a geopolitical or strategic narrative.</p>
+
+        <h3>Cross-system structural signals</h3>
+        <p>The strongest recurring pattern is Panama City administrative concentration with distributed execution across administrative, payment, regulatory, transport, canal, aviation, maritime, emergency, cyber, and research-network layers. A second recurring pattern is continuity-through-overlapping systems with identity, digital-service, payment, connectivity, electricity, transport, canal, aviation, maritime, emergency, and research-network layers reinforcing one another. A third recurring pattern is interoperability as continuity through Panamá Digital, Panamá Conecta, RNM, ACH and ACH Xpress, electricity interconnection, and naming-governance structures. A fourth recurring pattern is canal-maritime-transport interaction through ACP administration, dual-coast port continuity, rail movement across the isthmus, and road infrastructure as adjacent operational layers, and a fifth is bounded observability across deeper private, commercial, or security-sensitive topology, with concentration-with-distribution as the dominant operating model in which Panama City is prominent but national operators and dual-coast terminal infrastructure remain structurally relevant.</p>
+
+        <h3>Constraint boundary signals</h3>
+        <ul>
+          <li>Bounded visibility applies across commercial backbone routes, exchange structure, carrier interconnection, submarine-cable landing operations, and private network engineering.</li>
+          <li>Private-network visibility is incomplete across banking, enterprise, port, and state-contractor environments.</li>
+          <li>Cyber-operational visibility is incomplete beyond the public existence of CSIRT Panamá, AIG programs, and published government digital-security functions.</li>
+          <li>Logistics visibility is incomplete for private freight routing, warehouse topology, internal port operating procedures, and commercial contingency arrangements.</li>
+          <li>Commercial-topology visibility is incomplete for terminal ownership interfaces, private service contracts, bank settlement mechanics beyond published rails, and operator-specific redundancy arrangements.</li>
+          <li>More broadly, the evidence signals a Panama City-centered, distributed-territorial, canal-administered, dual-coast environment rather than a canal-power, trade-dominance, logistics-superpower, geopolitical-chokepoint, gateway, or financial-secrecy environment, and it does not support routing authority, readiness tiers, jurisdiction rankings, or deployment-eligibility conclusions.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Signals summary statement</h3>
+        <p>Panama's evidence-derived signals describe a Panama City-centered administrative environment organized around distributed territorial continuity, canal-administered operational continuity, dual-coast maritime continuity, regulated telecommunications, regional electrical interconnection, central-bank-supervised banking and payment interoperability, research-network support, and disaster-response and cyber-coordination support. The signals indicate continuity across AIG-, Panamá Digital-, Panamá Conecta-, and RNM-coordinated administration with Tribunal Electoral cédula continuity, SBP-supervised banking with Banco Nacional and TELERED ACH and ACH Xpress and Latin Clear, ASEP-regulated telecommunications and NIC Panamá .pa administration through PANNet and UTP, ETESA and CND coordination with the Panama-Costa Rica 230 kV interconnection, MOP roads and the Panama Canal Railway isthmus corridor, ACP-administered canal continuity, AMP-administered Atlantic and Pacific terminals, Tocumen and AAC aviation, and SINAPROC and CSIRT Panamá coordination without assigning readiness tiers, routing authority, topology placement, canal-power interpretation, trade-route narrative, logistics-superpower meaning, or financial-secrecy framing.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>signals.md</code></div>
+      </section>
+
+      <!-- 4. Trust Dimensions -->
+      <section id="trust-dimensions">
+        <h2><span class="num">4.</span>Trust Dimensions</h2>
+
+        <p>Trust derivation constraint: trust dimensions derive strictly from <code>evidence.md</code> and <code>signals.md</code>. This file does not assign routing authority, topology placement, readiness tiers, jurisdiction rankings, deployment eligibility, canal-power interpretation, trade-route narrative, logistics-superpower meaning, financial-secrecy framing, or infrastructure claims beyond documented anchors.</p>
+
+        <h3>Administrative continuity characteristics</h3>
+        <p>The source layers indicate Panama City-centered administrative continuity through AIG digital-government infrastructure, ASEP utilities and telecommunications regulation, SBP banking supervision, AAC civil-aviation administration, AMP maritime and port administration, ACP canal administration, SINAPROC emergency coordination, and MOP road and public-works administration acting as overlapping coordination layers rather than a single consolidated state stack. Panamá Digital and Panamá Conecta support layered public-service coordination through centralized access surfaces over distributed institutional service ownership rather than agency-by-agency fragmentation. The overall pattern indicates continuity-through-shared-service systems, recurring regulator-operator interaction, and distributed territorial administrative continuity, with platform extractability variability preserved as bounded observability.</p>
+
+        <h3>Identity and service integration characteristics</h3>
+        <p>The package reflects identity-service continuity through Tribunal Electoral cédula administration with the Proyecto Cédula Inteligente upgrade incorporating a chip and higher technical standards, Panamá Digital online attention and security evidence, Panamá Conecta consolidation of frequently used public procedures in one site and one mobile application, and Red Nacional Multiservicio interoperability between institutions. The combination indicates layered digital public-service continuity, identity-validation continuity, and distributed service-access continuity without surveillance inference, cybersecurity-superiority claims, or digital-state ranking, with deeper shared authentication architecture preserved as bounded observability.</p>
+
+        <h3>Payment and financial coordination characteristics</h3>
+        <p>The source layers indicate SBP-supervised banking continuity through publication of principal indicators, a current list of banks, local credit and deposit figures, liquidity data, and interbank-rate references. Banco Nacional de Panamá participation in ACH Xpress supports public-sector banking participation in the wider payment environment, TELERED's ACH and ACH Xpress support layered interbank transfer rails through a compensation process and an immediate bank-to-bank transfer service, and Latin Clear's central securities custody and administration role regulated by the Superintendencia del Mercado de Valores supports a separate securities-processing layer. The overall pattern indicates layered settlement continuity combining bank supervision, interbank retail transfer rails, an instant-transfer layer, and securities custody without offshore-finance, tax-haven, secrecy, or financial-power narratives.</p>
+
+        <h3>Telecommunications and connectivity characteristics</h3>
+        <p>The evidence indicates ASEP regulation as a formal national sector-coordination layer under Law No. 31 of 8 February 1996, the Red Nacional Multiservicio as a public-sector MPLS communications backbone with data, internet, telephony, institutional interoperability, network-level security, mail protection, state DNS, and WAF services, and NIC-Panamá's administration of .pa through PANNet and UTP under IANA and ICANN delegation operating the primary and secondary DNS servers and WHOIS database for the zone. The materially weaker public visibility of commercial carrier topology, private fiber routes, internet-exchange structure, and peering relationships supports bounded observability for commercial network architecture. The overall pattern indicates regulated connectivity continuity, institutional connectivity continuity through a state backbone, and formal country-domain administration alongside a partially visible commercial topology.</p>
+
+        <h3>Electricity coordination characteristics</h3>
+        <p>The package reflects ETESA-coordinated transmission and CND-coordinated dispatch as the core electricity continuity layers, with the Sistema Interconectado Nacional and wholesale-market administration supporting centralized national coordination and the Panama-Costa Rica 230 kV interconnection between Río Claro and Progreso supporting cross-border interconnection. ETESA's participation in Empresa Propietaria de la Red, Red Centroamericana de Fibra Óptica, and Interconexión Colombia-Panamá-related entities supports additional regional infrastructure linkage. The overall pattern indicates a centrally coordinated national grid with formal regional interconnection interfaces, with detailed reserve margins, private-generation operational topology, and non-public contingency procedures preserved as bounded observability.</p>
+
+        <h3>Transportation and logistics continuity characteristics</h3>
+        <p>The package reflects layered transport continuity through MOP-coordinated national road maintenance for the urban and interurban road network and other public structures under national responsibility and Panama Canal Railway Company's operating rail corridor between the Panama and Colón sides of the isthmus. The overlap of road, rail, airport, canal, and port infrastructure supports continuity-through-overlapping transport systems rather than dependence on a single mode. The overall pattern indicates layered transport interaction and distributed road continuity, with private freight, warehousing, and internal terminal topology preserved as bounded observability.</p>
+
+        <h3>Canal-administered continuity characteristics</h3>
+        <p>The source layers indicate canal-administered continuity through ACP-documented lock-system, reservation-system, maintenance-cycle, and customer-service operation. The Gatun, Pedro Miguel, and Miraflores lock structure organized as six pairs and twelve chambers across two side-by-side traffic lanes supports a formally engineered operating environment. The notices-to-shipping archive with repeated modifications to the transit reservation system, scheduled lock maintenance, tariff adjustments, and related operating notices supports continuous administrative operation, and the customer-information surface for shipping agencies and maritime-service users supports customer-coordination continuity, together supporting canal-administered operational continuity strictly as infrastructure, operations, maintenance, and administration without geopolitical, strategic, or trade-dominance interpretation.</p>
+
+        <h3>Aviation continuity characteristics</h3>
+        <p>The package reflects aviation continuity through Tocumen International Airport's active public institutional web presence with contact, location, terminal, and cargo-service surfaces, dedicated cargo-terminal surface, and ongoing dual-terminal passenger operations, and the Autoridad de Aeronáutica Civil's national administrative and operational-information layer exposing NOTAM access, AIS/AIM information, drone procedures, aviation-security references, aeromedical services, and aircraft-accident reporting resources. The overall pattern indicates a state-administered system combining airport operations with civil-aviation regulatory and pilot-information services, with route economics, slot allocation, and deeper operational redundancy preserved as bounded observability.</p>
+
+        <h3>Maritime continuity characteristics</h3>
+        <p>The package reflects dual-coast maritime continuity through AMP-administered twenty-five state ports and the published container-terminal inventory identifying Atlantic-side container terminals including Manzanillo International Terminal, Cristóbal-Panamá Ports Company, Colon Container Terminal, and Panama Colon Container Port under construction, alongside Pacific-side container terminals at Balboa and PSA Panamá. ACP's customer-information pages listing shipping agencies and maritime service contacts and PSA Panamá's active official operator site support operator and customer-service interfaces. The overall pattern indicates maritime continuity through state port administration, multiple Atlantic and Pacific container terminals, and public ship-service interfaces without strategic, gateway, or dominance framing.</p>
+
+        <h3>Disaster-response and operational resilience characteristics</h3>
+        <p>The package reflects SINAPROC coordination through the Centro de Operaciones de Emergencia organized through technical-scientific, emergency response, health, public security, infrastructure and public servants, logistics, and humanitarian assistance tables, with participating institutions including SINAPROC, the fire service, AAC, AMP, ACP, IDAAN, SUME 911, ASEP, MOP, ETESA forecasting, electric companies, the Tribunal Electoral, and other public and civil-society actors supporting a multi-agency all-hazards coordination surface. Recurring operational updates with the COE active during adverse weather conditions and publishing monitoring and response reports across multiple provinces support continuity-through-public operational visibility, with non-public continuity protocols and internal escalation procedures preserved as bounded observability.</p>
+
+        <h3>Cyber-coordination and data characteristics</h3>
+        <p>The evidence indicates CSIRT Panamá as a national team for response to information-security incidents with objectives of prevention, treatment, identification, and resolution of attacks affecting critical infrastructure and citizens' access to information. The Red Nacional Multiservicio's platform security, state DNS, WAF, and mail-protection services support shared security-services continuity, and AIG's Datos Abiertos Panamá open-data framework under Executive Decree 511 of 24 November 2017 supports data-governance continuity. The overall pattern indicates a formal public cyber-incident response structure combined with shared security services and open-data governance, with internal security architecture, incident volumes, private data-center topology, and classified cyber capabilities preserved as bounded observability.</p>
+
+        <h3>Research and knowledge-network characteristics</h3>
+        <p>The evidence indicates PANNet as the Red Académica y de Investigación Nacional administering .pa under IANA and ICANN delegation, with UTP as the institutional anchor. Public materials identify UTP as an early institutional anchor in Panama's connection to academic networking and the internet. This dimension remains limited to documented network continuity and institutional administration characteristics and does not imply broader scientific ranking or capability claims beyond the network and naming layer itself, with current detailed academic backbone topology, external research peering, and institution-by-institution participation maps preserved as bounded observability.</p>
+
+        <h3>Regional and international connectivity characteristics</h3>
+        <p>The evidence indicates Costa Rica-facing electrical interconnection continuity through the 230 kV Río Claro-Progreso line and CND coordination with the regional operator, with ETESA's published participation in REDCA supporting additional regional infrastructure linkage. NIC-Panamá's IANA and ICANN delegation supports formal international naming governance, TELERED's ACH and ACH Xpress across participating banks supports payment interoperability, dual-coast Atlantic and Pacific container terminals and ACP ship-service and reservation notices support maritime continuity, Tocumen and AAC support aviation continuity, and PANNet supports research-network connectivity, indicating a multi-interface connectivity environment rather than a single external-facing interface.</p>
+
+        <h3>Cross-system stability characteristics</h3>
+        <p>The package reflects Panama City administrative concentration with distributed execution as the dominant recurring stability characteristic. Continuity-through-overlapping systems remains visible across identity, digital-service, payment, connectivity, electricity, transport, canal, aviation, maritime, emergency, and research-network layers, while interoperability as continuity operates through Panamá Digital, Panamá Conecta, RNM, ACH and ACH Xpress, electricity interconnection, and naming-governance structures. Canal-maritime-transport interaction operates as a standing operational relationship among ACP administration, dual-coast port continuity, rail movement across the isthmus, and road infrastructure, and concentration-with-distribution operates as the dominant model in which Panama City is prominent but national operators and dual-coast terminal infrastructure remain structurally relevant.</p>
+
+        <h3>Dependency and constraint characteristics</h3>
+        <ul>
+          <li>SBP supervisory dependencies remain central to banking continuity, with TELERED ACH and ACH Xpress and Latin Clear securities supporting overlapping settlement and custody layers.</li>
+          <li>ETESA and CND dependencies remain central to electricity transmission and dispatch continuity, with the Panama-Costa Rica 230 kV interconnection supporting cross-border interaction.</li>
+          <li>Canal-administered dependencies through ACP remain central to lock-system, reservation, maintenance, and customer-coordination continuity.</li>
+          <li>AMP-administered Atlantic and Pacific terminal dependencies support dual-coast maritime continuity.</li>
+          <li>Shared public-service dependencies are visible through AIG, Panamá Digital, Panamá Conecta, RNM, Tribunal Electoral cédula administration, and NIC-Panamá naming administration.</li>
+          <li>Bounded observability remains a standing characteristic across incomplete telecom, private-network, cyber-operational, logistics, and commercial-topology visibility, with absence of evidence treated as bounded public visibility rather than evidence of absence.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Trust dimensions summary statement</h3>
+        <p>Panama is documented as a Panama City-centered, distributed-territorial, canal-administered, dual-coast continuity jurisdiction whose trust dimensions describe operational continuity, interoperability, coordination, resilience, and dependency characteristics across overlapping physical and digital systems. The documented trust dimensions indicate continuity across AIG-, Panamá Digital-, Panamá Conecta-, and RNM-coordinated administration with Tribunal Electoral cédula continuity, SBP-supervised banking with Banco Nacional and TELERED ACH and ACH Xpress and Latin Clear, ASEP-regulated telecommunications and NIC-Panamá .pa administration through PANNet and UTP, ETESA and CND coordination with the Panama-Costa Rica 230 kV interconnection, MOP roads and the Panama Canal Railway isthmus corridor, ACP-administered canal continuity, AMP-administered Atlantic and Pacific terminals, Tocumen and AAC aviation, and SINAPROC and CSIRT Panamá coordination without assigning readiness tiers, routing authority, deployment eligibility, canal-power interpretation, trade-route narrative, logistics-superpower meaning, or financial-secrecy framing.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>trust-dimensions.md</code></div>
+      </section>
+
+      <!-- 5. Metadata -->
+      <section id="metadata">
+        <h2><span class="num">5.</span>Metadata</h2>
+
+        <p>Metadata derivation constraint: this file derives strictly from <code>evidence.md</code>, <code>signals.md</code>, and <code>trust-dimensions.md</code>. It does not introduce new infrastructure claims, assign routing authority, assign readiness tiers, rank jurisdictions, or infer deployment eligibility, canal-power interpretation, trade-route narrative, logistics-superpower meaning, or financial-secrecy framing.</p>
+
+        <h3>Jurisdiction identity</h3>
+        <div class="topo-fields">
+          <div class="topo-row">
+            <span class="lbl">Country</span>
+            <span class="val">Panama</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Region</span>
+            <span class="val">Central American Isthmus Panama City-Centered Distributed Territorial Continuity Environment with Dual-Coast Maritime Continuity</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Corridor Alignment</span>
+            <span class="val">Panama City-Centered Administrative Concentration Framework · Distributed Territorial Continuity Framework · Layered Transport, Payment, Digital, and Energy Continuity Framework · Canal-Administered Operational Continuity Framework · Dual-Coast Maritime Continuity Framework · Regulated Telecommunications Framework · Regional Interconnection Framework · Research-Network Continuity Framework · Disaster-Response and Cyber-Coordination Framework · Bounded Observability Framework</span>
+          </div>
+          <div class="topo-row">
+            <span class="lbl">Primary Coordination Cities</span>
+            <span class="val">Panama City</span>
+          </div>
+        </div>
+
+        <h3>Infrastructure role classification</h3>
+        <ul>
+          <li>sovereign Panamanian state</li>
+          <li>Panama City-centered administrative environment</li>
+          <li>distributed territorial continuity environment</li>
+          <li>canal-administered operational continuity environment</li>
+          <li>dual-coast maritime continuity environment</li>
+          <li>regulated telecommunications environment</li>
+          <li>regional interconnection environment</li>
+          <li>layered transport, payment, digital-service, and energy environment</li>
+          <li>research-network-supported environment</li>
+          <li>bounded-observability environment</li>
+        </ul>
+
+        <h3>Administrative and identity classification</h3>
+        <ul>
+          <li>AIG · Autoridad Nacional para la Innovación Gubernamental (digital-government infrastructure)</li>
+          <li>Panamá Digital · Panamá Conecta (single-access service environments)</li>
+          <li>Red Nacional Multiservicio (RNM) public-sector MPLS backbone (Executive Decree No. 519 of 9 August 2012)</li>
+          <li>Tribunal Electoral cédula administration · Proyecto Cédula Inteligente</li>
+          <li>Multi-agency service consolidation (IFARHU · MITRADEL · AMPYME · DIJ · MFA · SIACAP · ANATI · MINSA · Sistema 311)</li>
+        </ul>
+
+        <h3>Financial infrastructure and payment classification</h3>
+        <ul>
+          <li>Superintendencia de Bancos de Panamá (SBP) banking supervision</li>
+          <li>Banco Nacional de Panamá (public-sector banking participation · ACH Xpress)</li>
+          <li>TELERED · ACH (interbank compensation) · ACH Xpress (immediate transfer · mobile-number functionality)</li>
+          <li>Latin Clear (central securities custody and administration · regulated by Superintendencia del Mercado de Valores)</li>
+          <li>layered settlement continuity without offshore, tax-haven, secrecy, or financial-power framing</li>
+        </ul>
+
+        <h3>Telecommunications and connectivity classification</h3>
+        <ul>
+          <li>ASEP (Law No. 31 of 8 February 1996 · Dirección Nacional de Telecomunicaciones)</li>
+          <li>Red Nacional Multiservicio (data · internet · telephony · state DNS · WAF · mail protection)</li>
+          <li>NIC Panamá .pa administration (IANA and ICANN delegation · primary and secondary DNS · WHOIS)</li>
+          <li>PANNet of the Universidad Tecnológica de Panamá</li>
+          <li>bounded visibility for commercial carrier topology, fiber routes, exchange, and peering</li>
+        </ul>
+
+        <h3>Electricity and energy classification</h3>
+        <ul>
+          <li>ETESA national electricity transmission</li>
+          <li>Centro Nacional de Despacho (CND) · Sistema Interconectado Nacional · wholesale market</li>
+          <li>Panama-Costa Rica 230 kV interconnection (Río Claro · Progreso)</li>
+          <li>ETESA participation in EPR, Red Centroamericana de Fibra Óptica, and Interconexión Colombia-Panamá-related entities</li>
+          <li>cross-border electricity coordination through the regional operator</li>
+        </ul>
+
+        <h3>Transportation and logistics classification</h3>
+        <ul>
+          <li>Ministerio de Obras Públicas (MOP) national road maintenance</li>
+          <li>Panama Canal Railway Company isthmus rail corridor (Panama–Colón)</li>
+          <li>multimodal continuity through road, rail, airport, canal, and port overlap</li>
+          <li>distributed national road continuity beyond the capital</li>
+          <li>bounded visibility for freight routing, warehousing, and internal port operating detail</li>
+        </ul>
+
+        <h3>Canal classification</h3>
+        <ul>
+          <li>Autoridad del Canal de Panamá (ACP)</li>
+          <li>Gatun (three steps), Pedro Miguel (one step), Miraflores (two steps) — six pairs · twelve chambers · two traffic lanes</li>
+          <li>notices-to-shipping archive · reservation-system modifications · maintenance cycle · tariff adjustments</li>
+          <li>shipping-agency and maritime-service customer-coordination surface</li>
+          <li>Panamax and Neopanamax operating contexts</li>
+        </ul>
+
+        <h3>Aviation classification</h3>
+        <ul>
+          <li>Tocumen International Airport (passenger · cargo · dual-terminal operations)</li>
+          <li>Autoridad de Aeronáutica Civil (AAC)</li>
+          <li>NOTAM access · AIS/AIM information · drone procedures · aviation security · aeromedical · accident reporting</li>
+          <li>state-administered aviation system combining airport operations with regulatory and information services</li>
+        </ul>
+
+        <h3>Maritime and port classification</h3>
+        <ul>
+          <li>Autoridad Marítima de Panamá (AMP) administration of twenty-five state ports</li>
+          <li>Atlantic terminals — Manzanillo International Terminal · Cristóbal-Panamá Ports Company · Colon Container Terminal · Panama Colon Container Port (under construction)</li>
+          <li>Pacific terminals — Balboa · PSA Panamá</li>
+          <li>ACP shipping-agency listings · PSA Panamá operator surface</li>
+          <li>dual-coast terminal continuity within formal state maritime administration</li>
+        </ul>
+
+        <h3>Disaster-response and continuity classification</h3>
+        <ul>
+          <li>Sistema Nacional de Protección Civil (SINAPROC)</li>
+          <li>Centro de Operaciones de Emergencia (technical-scientific · emergency response · health · public security · infrastructure · logistics · humanitarian)</li>
+          <li>participating institutions: SINAPROC · fire service · AAC · AMP · ACP · IDAAN · SUME 911 · ASEP · MOP · ETESA forecasting · electric companies · Tribunal Electoral · civil-society actors</li>
+          <li>multi-province monitoring and response reporting</li>
+        </ul>
+
+        <h3>Cyber-coordination and data classification</h3>
+        <ul>
+          <li>CSIRT Panamá (AIG-linked national cyber-incident response)</li>
+          <li>RNM shared security services (state DNS · WAF · mail protection · platform security)</li>
+          <li>Datos Abiertos Panamá (Executive Decree 511 of 24 November 2017)</li>
+          <li>Panamá Digital and Panamá Conecta as shared digital-service platforms</li>
+          <li>bounded visibility for incident volumes, private data-center topology, and classified cyber capabilities</li>
+        </ul>
+
+        <h3>Research and knowledge-network classification</h3>
+        <ul>
+          <li>PANNet — Red Académica y de Investigación Nacional</li>
+          <li>Universidad Tecnológica de Panamá (institutional anchor)</li>
+          <li>.pa administration under IANA and ICANN delegation</li>
+          <li>primary and secondary DNS servers · WHOIS database</li>
+        </ul>
+
+        <h3>Regional and international integration classification</h3>
+        <ul>
+          <li>Costa Rica electricity interconnection (230 kV Río Claro–Progreso · CND regional coordination)</li>
+          <li>Empresa Propietaria de la Red · Red Centroamericana de Fibra Óptica · Interconexión Colombia-Panamá-related participation</li>
+          <li>IANA and ICANN-delegated naming governance</li>
+          <li>TELERED ACH and ACH Xpress payment interoperability</li>
+          <li>dual-coast Atlantic and Pacific maritime connectivity</li>
+        </ul>
+
+        <h3>Constraint classification</h3>
+        <ul>
+          <li>incomplete telecom visibility as a standing constraint (commercial backbone, exchange, peering, submarine-cable landing operations)</li>
+          <li>incomplete private-network visibility across banking, enterprise, port, and state-contractor environments</li>
+          <li>incomplete cyber-operational visibility beyond public CSIRT Panamá and AIG surfaces</li>
+          <li>incomplete logistics visibility for freight routing, warehouse topology, internal port operating procedures, and commercial contingency arrangements</li>
+          <li>incomplete commercial-topology visibility for terminal ownership interfaces, private service contracts, and operator-specific redundancy</li>
+          <li>absence of evidence treated as bounded public visibility, not evidence of absence; no hidden-capability inference</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>Metadata summary statement</h3>
+        <p>Panama appears in the metadata layer as the descriptor-oriented classification of the Panama City-centered, distributed-territorial, canal-administered, dual-coast continuity environment established in the evidence, signals, and trust-dimensions layers, with jurisdiction-type, geographic, and infrastructure-orientation classifications spanning the documented administrative, identity, financial, telecommunications, electricity, transport, canal, aviation, maritime, regional, disaster-response, cyber, research-network, and connectivity surfaces, bounded throughout by public observability.</p>
+
+        <div class="meta-line">Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>metadata.md</code></div>
+      </section>
+
+      <!-- 6. Profile -->
+      <section id="profile">
+        <h2><span class="num">6.</span>Profile</h2>
+
+        <p>Profile derivation constraint: profile content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, and <code>metadata.md</code>. Profile is the characterization layer of the package and does not imply rankings, deployment suitability, canal-power interpretation, trade-route narrative, logistics-superpower meaning, or financial-secrecy framing.</p>
+
+        <h3>Jurisdiction overview</h3>
+        <p>Panama presents as a Panama City-centered administrative environment whose nationally visible continuity depends on distinct regulators, operators, and public-service institutions acting as overlapping coordination layers rather than as a single consolidated state stack. AIG, ASEP, SBP, AAC, AMP, ACP, SINAPROC, MOP, and related public institutions together indicate centralized coordination with distributed execution across digital-government, telecommunications, banking, aviation, maritime, canal, emergency, transport, and electricity-linked functions. Panamá Digital and Panamá Conecta indicate layered public-service coordination through centralized access surfaces placed over distributed institutional service ownership rather than agency-by-agency outward fragmentation. The visible pattern is one of continuity-through-shared-service systems, recurring regulator-operator interaction, and distributed territorial administrative continuity beyond the capital without governance-quality rhetoric or political interpretation.</p>
+
+        <h3>Identity and digital-service profile</h3>
+        <p>The identity and digital-service environment is structured around Tribunal Electoral cédula continuity, identity-validation continuity, Panamá Digital, Panamá Conecta, and RNM-supported interoperability as interacting continuity layers rather than separate service silos. The cédula administration and Proyecto Cédula Inteligente upgrade program indicate a formal national identity layer, Panamá Digital and Panamá Conecta indicate recurring digital-service continuity through common citizen-facing access points, and the relationship between these portals and the Red Nacional Multiservicio indicates interoperability-platform continuity and distributed service-access continuity. Shared access continuity is publicly visible through centralized service entry, while deeper shared authentication architecture remains only partially visible in the public record. The resulting profile is one of layered digital public-service continuity, identity-validation continuity, and distributed service-access continuity without surveillance inference, cybersecurity-superiority claims, or digital-state ranking.</p>
+
+        <h3>Payment and financial profile</h3>
+        <p>The payment and financial environment is structured around SBP continuity, Banco Nacional participation continuity, TELERED interoperability continuity, and Latin Clear as a separate securities-processing layer rather than fragmented institution-specific financial coordination. SBP indicates a visible supervisory and reporting continuity layer for the banking environment, TELERED indicates payment interoperability continuity through ACH and ACH Xpress operating as layered transfer rails, Banco Nacional's visible participation in ACH Xpress indicates public-sector banking participation inside the wider payment environment, and Latin Clear indicates securities-processing continuity and layered settlement continuity operating alongside bank-transfer infrastructure. The resulting profile is one of layered settlement continuity, payment interoperability continuity, and securities-processing continuity kept strictly operational and without offshore-finance, tax-haven, secrecy, or financial-power narratives.</p>
+
+        <h3>Telecommunications and connectivity profile</h3>
+        <p>The telecommunications and connectivity environment is marked by ASEP continuity, RNM continuity, NIC Panamá continuity, .pa administration, and PANNet continuity as overlapping connectivity layers rather than a purely operator-defined communications environment. ASEP indicates regulated connectivity continuity through a visible telecommunications oversight structure, RNM indicates institutional connectivity continuity through a common public-sector communications backbone supporting data, internet, telephony, interoperability, and related shared services, NIC Panamá indicates formal .pa naming and DNS administration through PANNet and UTP under IANA and ICANN delegation, and the materially weaker public visibility of commercial carrier topology, internet-exchange structure, peering relationships, and private fiber routes is preserved as bounded observability. The resulting profile is one of regulated connectivity continuity, institutional connectivity continuity, and formal naming-administration continuity alongside a partially visible commercial topology.</p>
+
+        <h3>Electricity and energy profile</h3>
+        <p>The electricity and energy environment is structured around ETESA national transmission and Centro Nacional de Despacho dispatch and wholesale-market coordination, with the Sistema Interconectado Nacional supporting centrally coordinated grid operation. The Panama-Costa Rica 230 kV interconnection between Río Claro and Progreso provides explicit cross-border interconnection, and ETESA's participation in Empresa Propietaria de la Red, Red Centroamericana de Fibra Óptica, and Interconexión Colombia-Panamá-related entities adds further regional infrastructure linkage. The energy profile reflects a centrally coordinated national grid with documented regional interconnection interfaces, with detailed reserve margins, private-generation operational topology, and non-public contingency procedures preserved as bounded observability.</p>
+
+        <h3>Transportation and logistics profile</h3>
+        <p>Panama has a layered transport profile in which MOP-coordinated national road maintenance, the Panama Canal Railway Company's isthmus rail corridor between the Panama and Colón sides, and the overlap of road, rail, airport, canal, and port infrastructure reinforce one another. MOP indicates a national maintenance function for the urban and interurban road network and other public structures, the Panama Canal Railway Company indicates a publicly visible isthmus rail layer for passenger movement, and the wider transport environment indicates continuity-through-overlapping systems rather than dependence on any single mode. The resulting transport profile is best characterized as multimodal continuity with distributed road continuity beyond the capital and a publicly visible isthmus rail corridor, with private freight, warehousing, and internal terminal topology preserved as bounded observability.</p>
+
+        <h3>Canal-administered continuity profile</h3>
+        <p>The canal-administered continuity profile is anchored by the Autoridad del Canal de Panamá and treated strictly as administered infrastructure and an operational continuity system. The Gatun, Pedro Miguel, and Miraflores lock structure organized as six pairs and twelve chambers across two side-by-side traffic lanes provides a formally engineered operating environment, the notices-to-shipping archive with modifications to the transit reservation system, scheduled lock maintenance, tariff adjustments, and related operating notices provides continuous administrative operation, and the customer-information surface for shipping agencies and maritime-service users provides customer-coordination continuity. Panamax and Neopanamax operating contexts within the canal's service framework provide recurring operational classification. The canal-administered profile reflects lock-system, reservation-system, maintenance-cycle, customer-service, and operational-oversight continuity, treated strictly as infrastructure, operations, maintenance, and administration without geopolitical, strategic, or trade-dominance interpretation.</p>
+
+        <h3>Aviation profile</h3>
+        <p>The aviation profile is characterized by Tocumen International Airport's active public institutional presence including contact, location, terminal, and cargo-service surfaces and ongoing dual-terminal passenger operations, alongside the Autoridad de Aeronáutica Civil's national administrative and operational-information layer exposing NOTAM access, AIS/AIM information, drone procedures, aviation-security references, aeromedical services, and aircraft-accident reporting resources. The aviation profile reflects airport-administration continuity combined with civil-aviation regulatory and pilot-information continuity, with route economics, slot allocation, and deeper operational redundancy preserved as bounded observability.</p>
+
+        <h3>Maritime and port profile</h3>
+        <p>The port and maritime environment is coordinated through the Autoridad Marítima de Panamá and structured around dual-coast container-terminal continuity through Atlantic terminals including Manzanillo International Terminal, Cristóbal-Panamá Ports Company, Colon Container Terminal, and Panama Colon Container Port under construction, alongside Pacific terminals at Balboa and PSA Panamá. AMP-administered twenty-five state ports support formal state maritime administration, ACP customer-information pages and PSA Panamá's operator surface support service interfaces, and dual-coast terminal continuity supports maritime continuity within the wider transport environment. The resulting profile is one of layered port continuity, dual-coast maritime continuity, and bounded port-road-canal interaction continuity without gateway, dominance, or strategic-port framing.</p>
+
+        <h3>Disaster-response and continuity profile</h3>
+        <p>The disaster-response profile is defined by SINAPROC and its Centro de Operaciones de Emergencia, with technical-scientific, emergency response, health, public security, infrastructure and public servants, logistics, and humanitarian assistance coordination tables and participating institutions including SINAPROC, the fire service, AAC, AMP, ACP, IDAAN, SUME 911, ASEP, MOP, ETESA forecasting, electric companies, the Tribunal Electoral, and other public and civil-society actors supporting a multi-agency all-hazards coordination surface. Recurring operational updates with the COE active during adverse weather conditions and publishing monitoring and response reports across multiple provinces support continuity-through-public operational visibility, with non-public continuity protocols and internal escalation procedures preserved as bounded observability.</p>
+
+        <h3>Cyber-coordination and data profile</h3>
+        <p>The cyber-coordination and data profile is structured around CSIRT Panamá, AIG digital-governance functions, RNM-linked shared security services, Panamá Digital and Panamá Conecta, and Datos Abiertos Panamá as overlapping cyber, identity-validation, naming, and administrative-data continuity layers. CSIRT Panamá indicates a standing public-sector cyber-coordination environment through prevention, treatment, identification, and resolution of incidents affecting critical infrastructure and citizens' access to information, RNM platform security, state DNS, WAF, and mail protection support shared security-services continuity, and Datos Abiertos Panamá supports open-data continuity. The resulting profile is one of cyber-incident continuity management, public-sector cyber coordination, and distributed digital-verification continuity, while remaining bounded because deeper operational cyber architecture is not publicly visible.</p>
+
+        <h3>Research and knowledge-network profile</h3>
+        <p>The research and knowledge-network profile is anchored by PANNet as the Red Académica y de Investigación Nacional and the Universidad Tecnológica de Panamá as institutional anchor, with PANNet administering .pa under IANA and ICANN delegation and operating the primary and secondary DNS servers and WHOIS database. UTP's institutional role as an early anchor in Panama's connection to academic networking and the internet places PANNet inside the broader national connectivity environment. This profile remains limited to documented network continuity and cross-border knowledge-network participation and does not imply broader scientific ranking or capability claims, with current detailed academic backbone topology, external research peering, and institution-by-institution participation maps preserved as bounded observability.</p>
+
+        <h3>Regional and international connectivity profile</h3>
+        <p>Panama's regional integration profile includes Costa Rica-facing electrical interconnection continuity through the 230 kV Río Claro-Progreso line and CND coordination with the regional operator, additional regional infrastructure linkage through ETESA's participation in REDCA, formal international naming governance through NIC-Panamá's IANA and ICANN delegation, payment interoperability through TELERED's ACH and ACH Xpress across participating banks, dual-coast Atlantic and Pacific maritime continuity through AMP-administered terminals and ACP ship-service and reservation notices, aviation continuity through Tocumen's international-airport administration and AAC's national flight-information services, and research-network connectivity through PANNet's role in internet naming and the academic-network structure centered on UTP. Regional interaction appears through electricity, payments, maritime, aviation, research, and naming interfaces rather than a single external-facing gateway narrative.</p>
+
+        <h3>Cross-system operational profile</h3>
+        <p>The strongest cross-system pattern is centralized coordination with distributed execution across administrative institutions, digital-service platforms, payment rails, telecommunications governance, electricity coordination, canal administration, aviation administration, maritime administration, emergency coordination, and research-network functions. A second recurring pattern is continuity-through-overlapping systems with identity, digital-service, payment, connectivity, electricity, transport, canal, aviation, maritime, emergency, and research-network layers reinforcing one another. A third recurring pattern is interoperability as continuity through Panamá Digital, Panamá Conecta, RNM, ACH and ACH Xpress, electricity interconnection, and naming-governance structures. A fourth recurring pattern is canal-maritime-transport interaction with ACP administration, dual-coast port continuity, rail movement across the isthmus, and road infrastructure appearing as adjacent operational layers without strategic interpretation, and a fifth is bounded observability across deeper private, commercial, or security-sensitive topology. Panama operates as a Panama City-centered, distributed-territorial, layered transport-payment-digital-energy, canal-administered, regulated-telecommunications, maritime-continuity, research-network-supported, regional-interconnection, bounded-observability environment rather than a single-corridor or single-node system.</p>
+
+        <h3>Structural constraints</h3>
+        <p>The current Panama profile carries clear structural constraints, rendered here as a normalization safeguard rather than a negative judgment. Incomplete telecom visibility, incomplete private-network visibility, incomplete cyber-operational visibility, incomplete logistics visibility, and incomplete commercial-topology visibility remain part of the canonical record. Regional visibility is uneven across sectors, and operational transparency is stronger for public administrative, payment, transmission, canal, port, airport, naming, and research-network layers than for deeper operator-internal or security-sensitive topology. The package preserves SBP supervisory dependencies and TELERED and Latin Clear settlement layers, ETESA and CND electricity dependencies with the Panama-Costa Rica 230 kV interconnection, ACP canal-administered dependencies, AMP dual-coast terminal dependencies, AIG, Panamá Digital, Panamá Conecta, RNM, Tribunal Electoral, and NIC-Panamá public-service and naming dependencies, and the absence of sovereign hyperscale compute or semiconductor fabrication stack evidence. Bounded observability is preserved throughout this profile, absence of evidence is not treated as evidence of absence, hidden-capability inference is prohibited, and the profile remains evidence-bound and does not imply rankings, deployment suitability, canal-power interpretation, trade-route narrative, logistics-superpower meaning, or financial-secrecy framing.</p>
+
+        <hr class="section-divider">
+
+        <h3>Profile summary statement</h3>
+        <p>Panama appears in the profile layer as the structural characterization of the Panama City-centered, distributed-territorial, canal-administered, dual-coast continuity environment established in the evidence, signals, trust-dimensions, and metadata layers, situated within a regulated-telecommunications, regionally interconnected, research-network-supported setting and carried through documented administrative, identity, financial, telecommunications, electricity, transport, canal, aviation, maritime, regional, disaster-response, cyber, research-network, and connectivity anchors, bounded throughout by public observability.</p>
+
+        <div class="meta-line">Source: <code>profile.md</code></div>
+      </section>
+
+      <!-- 7. Builder Mode -->
+      <section id="builder-mode">
+        <h2><span class="num">7.</span>Builder Mode</h2>
+
+        <p>Builder-mode derivation constraint: builder-mode content derives strictly from <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, and <code>profile.md</code>. This file translates the normalized Panama profile into builder-facing interpretation. It provides structural interpretation only and does not assign routing authority, readiness tiers, Atlas surfaces, Atlas topology authority, jurisdiction rankings, deployment suitability, canal-power interpretation, trade-route narrative, logistics-superpower meaning, or financial-secrecy framing.</p>
+
+        <h3>Administrative and service environment</h3>
+        <p>In builder-facing terms, Panama presents as a Panama City-centered administrative structure organized around AIG digital-government infrastructure, ASEP regulation, SBP supervision, AAC aviation administration, AMP maritime administration, ACP canal administration, SINAPROC emergency coordination, and MOP road and public-works administration. Panamá Digital and Panamá Conecta provide single-access service environments over distributed institutional service ownership, and the Red Nacional Multiservicio provides cross-government communications and systems-integration. The administrative environment appears as layered public-service coordination with recurring regulator-operator interaction rather than isolated agency front ends.</p>
+
+        <h3>Identity and credential environment</h3>
+        <p>The identity environment appears as a layered structure through Tribunal Electoral cédula administration and the Proyecto Cédula Inteligente upgrade incorporating a chip and higher technical standards, alongside Panamá Digital and Panamá Conecta centralized service entry and RNM-supported interoperability. The identity environment is bounded to documented digital-service and identity functions and does not imply broader state visibility beyond the public record.</p>
+
+        <h3>Payment and interoperability environment</h3>
+        <p>The payment environment appears as an SBP-supervised structure with Banco Nacional de Panamá public-sector banking participation, TELERED's ACH platform for participating financial institutions and ACH Xpress immediate bank-to-bank transfer with mobile-number functionality, and Latin Clear central securities custody regulated by the Superintendencia del Mercado de Valores. The payment environment presents as layered settlement continuity across supervision, interbank retail, instant transfer, and securities custody without offshore, tax-haven, secrecy, or financial-power framing.</p>
+
+        <h3>Telecommunications and connectivity environment</h3>
+        <p>Builders encounter Panama as a layered connectivity environment in which ASEP anchors telecommunications regulation under Law No. 31 of 8 February 1996, the Red Nacional Multiservicio anchors a public-sector MPLS backbone with state DNS, WAF, and mail protection, and NIC Panamá anchors .pa administration through PANNet and UTP under IANA and ICANN delegation. The materially weaker public visibility of commercial carrier topology, exchange structure, and peering relationships is preserved as bounded observability. The telecommunications environment presents as regulation, state-backbone, and naming-administration components combining to support documented connectivity continuity.</p>
+
+        <h3>Electricity and energy environment</h3>
+        <p>The energy environment appears as an ETESA-coordinated transmission structure with the Centro Nacional de Despacho operating the Sistema Interconectado Nacional and administering the wholesale market, alongside the Panama-Costa Rica 230 kV interconnection between Río Claro and Progreso and ETESA's participation in Empresa Propietaria de la Red, Red Centroamericana de Fibra Óptica, and Interconexión Colombia-Panamá-related entities. The energy environment presents as a centrally coordinated national grid with formal regional interconnection interfaces and operational cross-border coordination without strategic-energy framing.</p>
+
+        <h3>Transportation and logistics environment</h3>
+        <p>The transportation environment appears as a multimodal structure through MOP national road maintenance, the Panama Canal Railway Company isthmus rail corridor between the Panama and Colón sides, and the overlap of road, rail, airport, canal, and port infrastructure. The logistics environment presents as continuity-through-overlapping transport systems and distributed road continuity beyond the capital, with deeper freight routing, warehouse topology, and internal terminal operating procedures preserved as bounded observability.</p>
+
+        <h3>Canal-administered environment</h3>
+        <p>The canal-administered environment appears as an ACP-coordinated structure with the Gatun, Pedro Miguel, and Miraflores lock system organized as six pairs and twelve chambers across two side-by-side traffic lanes, the notices-to-shipping archive providing reservation-system, maintenance, and tariff continuity, customer-information pages providing shipping-agency and maritime-service coordination, and Panamax and Neopanamax operating contexts providing operational classification. The canal environment presents as continuously administered lock-system, reservation-system, maintenance-cycle, and customer-service continuity treated strictly as infrastructure, operations, maintenance, and administration without geopolitical, strategic, or trade-dominance interpretation.</p>
+
+        <h3>Aviation environment</h3>
+        <p>The aviation environment appears as a Tocumen-anchored structure with active institutional presence including contact, location, terminal, and cargo-service surfaces and ongoing dual-terminal passenger operations, alongside the Autoridad de Aeronáutica Civil's national administrative and operational-information layer providing NOTAM access, AIS/AIM information, drone procedures, aviation-security references, aeromedical services, and aircraft-accident reporting resources. The aviation environment presents as state-administered airport-and-information continuity with deeper route, slot, and contingency topology preserved as bounded observability.</p>
+
+        <h3>Maritime and port environment</h3>
+        <p>The maritime environment appears as an AMP-coordinated structure administering twenty-five state ports with Atlantic-side container terminals including Manzanillo International Terminal, Cristóbal-Panamá Ports Company, Colon Container Terminal, and Panama Colon Container Port under construction, alongside Pacific-side container terminals at Balboa and PSA Panamá. ACP shipping-agency listings and PSA Panamá's operator surface provide service interfaces. The maritime environment presents as dual-coast container-terminal continuity through formal state maritime administration without gateway, dominance, or strategic-port framing.</p>
+
+        <h3>Regional interconnection environment</h3>
+        <p>The interoperability environment appears as a standing continuity structure across electricity, payments, maritime, aviation, research networking, and naming governance. The Panama-Costa Rica 230 kV interconnection between Río Claro and Progreso and ETESA participation in REDCA provide electricity interoperability, TELERED ACH and ACH Xpress with Banco Nacional participation provide payment interoperability, NIC-Panamá's IANA and ICANN delegation provides naming interoperability, dual-coast Atlantic and Pacific container terminals provide maritime continuity interfaces, Tocumen and AAC provide aviation continuity, and PANNet and UTP provide research-network continuity. This environment presents as interoperability functioning as a continuity mechanism rather than a peripheral external interface.</p>
+
+        <h3>Disaster-response and continuity environment</h3>
+        <p>The disaster-response environment appears as a SINAPROC-coordinated structure through the Centro de Operaciones de Emergencia with multiple coordination tables and a wide range of participating institutions including SINAPROC, the fire service, AAC, AMP, ACP, IDAAN, SUME 911, ASEP, MOP, ETESA forecasting, electric companies, the Tribunal Electoral, and other public and civil-society actors. The COE remaining active during adverse weather conditions and publishing monitoring and response reports across multiple provinces supports continuity-through-public operational visibility, with non-public continuity protocols and internal escalation procedures preserved as bounded observability.</p>
+
+        <h3>Cyber-coordination and data environment</h3>
+        <p>The cyber environment appears as a CSIRT Panamá-coordinated structure within AIG with prevention, treatment, identification, and resolution of incidents affecting critical infrastructure and citizens' access to information, alongside RNM-linked shared security services providing platform security, state DNS, WAF, and mail protection, and Datos Abiertos Panamá providing open-data continuity under Executive Decree 511 of 24 November 2017. The data environment presents as documented continuity concentrated in public-service, naming, research-network, and payment components rather than a single-provider or single-site environment, with internal security architecture, incident volumes, and private data-center topology preserved as bounded observability.</p>
+
+        <h3>Research and knowledge-network environment</h3>
+        <p>The research and knowledge-network environment appears through PANNet as the Red Académica y de Investigación Nacional and UTP as institutional anchor, with PANNet administering .pa under IANA and ICANN delegation and operating the primary and secondary DNS servers and WHOIS database. PANNet presents as a distinct research-and-education layer combined with national naming administration without implying broader scientific ranking.</p>
+
+        <h3>Regional and international connectivity environment</h3>
+        <p>Regional interoperability appears through Costa Rica-linked electricity continuity via the 230 kV Río Claro-Progreso line, REDCA participation, IANA and ICANN-delegated naming governance through NIC-Panamá, TELERED ACH and ACH Xpress payment continuity, dual-coast Atlantic and Pacific maritime continuity through AMP-administered terminals and ACP ship-service notices, aviation continuity through Tocumen and AAC, and research-network continuity through PANNet and UTP. Regional interaction appears through electricity, payments, maritime, aviation, research, and naming interfaces rather than a single external-facing gateway narrative.</p>
+
+        <h3>Cross-system interaction environment</h3>
+        <p>The strongest visible interaction pattern is centralized coordination with distributed execution alongside continuity-through-overlapping systems, in which identity, digital-service, payment, connectivity, electricity, transport, canal, aviation, maritime, emergency, and research-network layers reinforce one another. Canal-maritime-transport interaction, interoperability as continuity, and bounded observability operate as recurring conditions. The builder-facing environment appears as a concentration-with-distribution model in which physical and digital systems reinforce one another across capital concentration and dual-coast territorial reach.</p>
+
+        <h3>Operational visibility and dependency environment</h3>
+        <p>The operational environment is shaped by SBP, TELERED, and Latin Clear payment and supervisory dependencies, ETESA and CND electricity dependencies with the Panama-Costa Rica 230 kV interconnection, ACP canal-administered dependencies, AMP-administered Atlantic and Pacific terminal dependencies, AIG, Panamá Digital, Panamá Conecta, RNM, Tribunal Electoral, and NIC-Panamá public-service and naming dependencies, and Panama City concentration dependencies across coordination institutions. Public observability remains bounded across incomplete telecom visibility, private-network visibility, cyber-operational visibility, logistics visibility, and commercial-topology visibility, with absence of evidence treated as bounded public visibility rather than evidence of absence.</p>
+
+        <hr class="section-divider">
+
+        <h3>Builder mode summary statement</h3>
+        <p>Panama appears in builder mode as the builder-facing reading of the Panama City-centered, distributed-territorial, canal-administered, dual-coast continuity environment established across the evidence, signals, trust-dimensions, metadata, and profile layers, with interaction surfaces spanning the documented administrative, identity, payment, telecommunications, electricity, transport, canal, aviation, maritime, regional, disaster-response, cyber, research-network, and connectivity environments without deployment recommendation, readiness assignment, routing authority, canal-power interpretation, trade-route narrative, logistics-superpower meaning, or financial-secrecy framing.</p>
+
+        <div class="meta-line">Source: <code>builder-mode.md</code></div>
+      </section>
+
+      <!-- 8. Change Log -->
+      <section id="change-log">
+        <h2><span class="num">8.</span>Change Log</h2>
+
+        <h3>Initial package creation</h3>
+        <p>The Panama jurisdiction package was created as part of Atlas global jurisdiction normalization. The package includes <code>evidence.md</code>, <code>signals.md</code>, <code>trust-dimensions.md</code>, <code>metadata.md</code>, <code>profile.md</code>, <code>builder-mode.md</code>, and <code>change-log.md</code>.</p>
+
+        <h3>Evidence layer construction</h3>
+        <p>The change-log records that <code>evidence.md</code> established AIG-, Panamá Digital-, Panamá Conecta-, and Red Nacional Multiservicio-coordinated public-service administration with Tribunal Electoral cédula and Proyecto Cédula Inteligente continuity, Superintendencia de Bancos de Panamá supervision with Banco Nacional de Panamá and TELERED ACH and ACH Xpress and Latin Clear securities settlement, ASEP-regulated telecommunications under Law No. 31 of 8 February 1996 and NIC Panamá .pa administration through PANNet and the Universidad Tecnológica de Panamá under IANA and ICANN delegation, ETESA national transmission with the Centro Nacional de Despacho and the Panama-Costa Rica 230 kV interconnection between Río Claro and Progreso, MOP national road maintenance with the Panama Canal Railway Company isthmus rail corridor, Autoridad del Canal de Panamá lock-system continuity through the Gatun, Pedro Miguel, and Miraflores structure with notices-to-shipping, reservation, maintenance, and customer-service surfaces, Autoridad Marítima de Panamá administration of twenty-five state ports with Atlantic and Pacific container terminals, Tocumen International Airport and the Autoridad de Aeronáutica Civil aviation continuity, SINAPROC and the Centro de Operaciones de Emergencia disaster coordination, and CSIRT Panamá and Datos Abiertos Panamá cyber and data governance, bounded throughout by public observability.</p>
+
+        <h3>Signals layer derivation</h3>
+        <p>The change-log records that <code>signals.md</code> derived administrative and identity coordination signals, financial and payment coordination signals, telecommunications and connectivity signals, electricity and energy-regulation signals, transportation and logistics coordination signals, canal-administered continuity signals, aviation coordination signals, maritime coordination signals, disaster-response and continuity signals, cyber-coordination and data signals, research and knowledge-network signals, regional and international connectivity signals, cross-system structural signals, and constraint-boundary signals preserving bounded visibility across commercial backbone routes, exchange structure, carrier interconnection, submarine-cable landing operations, private network engineering, banking, enterprise, port, and state-contractor environments, cyber-operational topology, logistics routing, and commercial-topology mechanics, with absence of evidence treated as bounded public visibility rather than evidence of absence.</p>
+
+        <h3>Trust-dimensions layer construction</h3>
+        <p>The change-log records that <code>trust-dimensions.md</code> established Panama City-centered administrative continuity through AIG, ASEP, SBP, AAC, AMP, ACP, SINAPROC, and MOP coordination, SBP-supervised banking continuity with Banco Nacional, TELERED ACH and ACH Xpress, and Latin Clear settlement, ASEP-regulated telecommunications with Red Nacional Multiservicio and NIC Panamá .pa naming continuity, ETESA and CND electricity continuity with the Panama-Costa Rica 230 kV interconnection, multimodal transport continuity through MOP and the Panama Canal Railway, canal-administered continuity through ACP, dual-coast maritime continuity through AMP-administered Atlantic and Pacific terminals, aviation continuity through Tocumen and AAC, and SINAPROC and CSIRT Panamá disaster-response and cyber coordination, alongside distributed territorial continuity and bounded observability.</p>
+
+        <h3>Metadata layer classification</h3>
+        <p>The change-log records that <code>metadata.md</code> classified Panama as a sovereign Panamanian state, Panama City-centered administrative environment, distributed territorial continuity environment, canal-administered operational continuity environment, dual-coast maritime continuity environment, regulated telecommunications environment, regional interconnection environment, layered transport-payment-digital-energy environment, research-network-supported environment, and bounded-observability environment, with documented characteristics across administrative coordination, identity, payment and financial structures, telecommunications, electricity, transportation and logistics, canal, aviation, maritime, regional interoperability, disaster-response, cyber, data infrastructure, research and knowledge-network participation, regional connectivity, cross-system patterns, and dependency characteristics.</p>
+
+        <h3>Profile layer characterization</h3>
+        <p>The change-log records that <code>profile.md</code> characterized Panama as a Panama City-centered administrative environment with distributed territorial continuity, canal-administered operational continuity, dual-coast maritime continuity, regulated telecommunications, regional electrical interconnection through the Panama-Costa Rica 230 kV interconnection, central-bank-supervised banking and payment interoperability, research-network support through PANNet and UTP, and disaster-response and cyber coordination through SINAPROC and CSIRT Panamá, organized through continuity-through-overlapping systems rather than isolated sectors and bounded throughout by public observability.</p>
+
+        <h3>Builder mode translation</h3>
+        <p>The change-log records that <code>builder-mode.md</code> translated the normalized jurisdiction profile into administrative and service interpretation, identity and credential interpretation, payment and interoperability interpretation, telecommunications and connectivity interpretation, electricity and energy interpretation, transportation and logistics interpretation, canal-administered interpretation, aviation interpretation, maritime and port interpretation, regional interconnection interpretation, disaster-response and continuity interpretation, cyber-coordination and data interpretation, research and knowledge-network interpretation, regional and international connectivity interpretation, cross-system interaction interpretation, and operational visibility and dependency interpretation.</p>
+
+        <h3>Structural boundary decisions recorded</h3>
+        <p>The change-log records that Panama City administrative concentration and distributed territorial continuity were preserved without collapsing the package into a single-node model, that canal-administered operational continuity through ACP was preserved strictly as infrastructure, operations, maintenance, and administration rather than as canal-power or geopolitical-chokepoint framing, that dual-coast maritime continuity through Atlantic and Pacific terminals was preserved as infrastructure rather than as a gateway or trade-dominance narrative, and that bounded observability was preserved as a standing structural characteristic. Canal-power framing was excluded, geopolitical-chokepoint framing was excluded, trade-dominance narratives were excluded, logistics-superpower narratives were excluded, gateway and bridge-of-the-world rhetoric were excluded, tax-haven, secrecy-jurisdiction, and financial-power framings were excluded, symbolic-geography and strategic-trade-route framings were excluded, tourism and startup-ecosystem framings were excluded, deployment readiness interpretation was excluded, geopolitical ranking was excluded, and superiority framing, hidden-state capability, deployment suitability, operational approval, and strategic forecasting were preserved as excluded inference categories.</p>
+
+        <h3>Package completion status</h3>
+        <p>The Panama jurisdiction package is complete within the Atlas normalization framework and aligned with Panama City-centered administrative concentration, distributed territorial continuity, layered transport/payment/digital/energy continuity, canal-administered operational continuity, dual-coast maritime continuity, regulated telecommunications, regional interconnection, central-bank-supervised banking and payment interoperability, research-network support, disaster-response and cyber-coordination support, and bounded observability normalization standards.</p>
+
+        <div class="meta-line">Normalization status: complete <span class="sep">·</span> Surface assignment status: none</div>
+        <div class="meta-line" style="border-top:0;padding-top:6px">Source: <code>change-log.md</code></div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="card">
+        <h3>Canonical Package</h3>
+        <h4>Source of truth</h4>
+        <p>This page renders the canonical Panama jurisdiction package. The canonical files remain the source of truth.</p>
+        <ul>
+          <li><code>evidence.md</code></li>
+          <li><code>signals.md</code></li>
+          <li><code>trust-dimensions.md</code></li>
+          <li><code>profile.md</code></li>
+          <li><code>builder-mode.md</code></li>
+          <li><code>metadata.md</code></li>
+          <li><code>change-log.md</code></li>
+        </ul>
+        <p class="small-note">Canonical package path: <code>atlas-export/jurisdictions/global/countries/panama/</code></p>
+      </div>
+
+      <div class="card">
+        <h3>Jurisdiction Identity</h3>
+        <h4>Record header</h4>
+        <ul>
+          <li><strong>Jurisdiction:</strong> Panama</li>
+          <li><strong>Code:</strong> PA</li>
+          <li><strong>Region:</strong> Central American Isthmus Panama City-Centered Distributed Territorial Continuity Environment with Dual-Coast Maritime Continuity</li>
+          <li><strong>Jurisdiction Type:</strong> Country</li>
+          <li><strong>Lens:</strong> jurisdiction lens</li>
+          <li><strong>Surface assignment:</strong> none</li>
+          <li><strong>Completeness:</strong> Phase 1 Global Country Package</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Topology Metadata</h3>
+        <h4>Corridor alignment</h4>
+        <ul>
+          <li>Panama City-Centered Administrative Concentration Framework</li>
+          <li>Distributed Territorial Continuity Framework</li>
+          <li>Layered Transport, Payment, Digital, and Energy Continuity Framework</li>
+          <li>Canal-Administered Operational Continuity Framework</li>
+          <li>Dual-Coast Maritime Continuity Framework</li>
+          <li>Regulated Telecommunications Framework</li>
+          <li>Regional Interconnection Framework</li>
+          <li>Research-Network Continuity Framework</li>
+          <li>Disaster-Response and Cyber-Coordination Framework</li>
+          <li>Bounded Observability Framework</li>
+        </ul>
+        <h4>Primary coordination cities</h4>
+        <ul>
+          <li>Panama City</li>
+        </ul>
+        <p class="small-note">Classification-only metadata. The metadata layer records that it does not assign routing authority, Atlas surfaces, readiness, rankings, or deployment suitability.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Anchors</h3>
+        <h4>Documented surfaces</h4>
+        <ul>
+          <li>AIG · Panamá Digital · Panamá Conecta · Red Nacional Multiservicio (RNM)</li>
+          <li>Tribunal Electoral cédula · Proyecto Cédula Inteligente</li>
+          <li>Superintendencia de Bancos de Panamá · Banco Nacional de Panamá</li>
+          <li>TELERED · ACH · ACH Xpress · Latin Clear (securities custody)</li>
+          <li>ASEP (Law No. 31 of 8 February 1996) · NIC Panamá · .pa · PANNet · UTP</li>
+          <li>ETESA · Centro Nacional de Despacho · Sistema Interconectado Nacional</li>
+          <li>Panama-Costa Rica 230 kV interconnection (Río Claro · Progreso) · EPR · REDCA</li>
+          <li>MOP national road maintenance · Panama Canal Railway (isthmus corridor)</li>
+          <li>Autoridad del Canal de Panamá · Gatun · Pedro Miguel · Miraflores (6 pairs · 12 chambers · 2 lanes)</li>
+          <li>AMP (25 state ports) · Atlantic terminals (Manzanillo · Cristóbal-Panamá Ports · Colon Container Terminal · Panama Colon Container Port) · Pacific terminals (Balboa · PSA Panamá)</li>
+          <li>Tocumen International Airport · Autoridad de Aeronáutica Civil (NOTAM · AIS/AIM)</li>
+          <li>SINAPROC · Centro de Operaciones de Emergencia · CSIRT Panamá · Datos Abiertos Panamá</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Normalization Status</h3>
+        <h4>Layer completeness</h4>
+        <ul>
+          <li>Evidence layer: complete</li>
+          <li>Signal layer: complete</li>
+          <li>Trust dimensions: complete</li>
+          <li>Profile: complete</li>
+          <li>Builder-mode: complete</li>
+          <li>Metadata: complete</li>
+          <li>Change-log: complete</li>
+          <li>Topology status: unassigned</li>
+          <li>Surface assignment: none</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interpretation Boundary</h3>
+        <h4>What this page is not</h4>
+        <ul>
+          <li>Not a ranking.</li>
+          <li>Not a readiness assessment.</li>
+          <li>Not a routing or surface assignment.</li>
+          <li>Not a forecast.</li>
+          <li>Not a deployment recommendation.</li>
+          <li>Not a sovereign hyperscale compute classification.</li>
+          <li>Not a sovereign semiconductor fabrication classification.</li>
+          <li>Not a canal-power, canal-leverage, or canal-as-strategic-instrument classification.</li>
+          <li>Not a geopolitical-chokepoint, trade-route-control, or strategic-corridor classification.</li>
+          <li>Not a trade-dominance, logistics-superpower, or gateway-state classification.</li>
+          <li>Not a tax-haven, secrecy-jurisdiction, or financial-power narrative.</li>
+          <li>Not a symbolic-geography, "bridge of the world," or "global crossroads" narrative.</li>
+          <li>Not a tourism, cultural-history, or startup-ecosystem narrative.</li>
+          <li>Not an ACH, ACH Xpress, or Latin Clear settlement-authority classification beyond documented SBP, TELERED, and SMV roles.</li>
+          <li>Not a broader internet-exchange centrality classification beyond documented ASEP, RNM, and NIC-Panamá governance.</li>
+          <li>Not a "world-class," "regional leader," "gateway," "bridge," "crossroads," or "powerhouse" classification.</li>
+          <li>Not a substitute for the canonical package.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    <p class="reflection">Satoshium is being built slowly, in public, and with architectural discipline.</p>
+    <div id="footer-container"></div>
+  </footer>
+
+</div>
+
+<script src="/components/topbar-loader.js" defer></script>
 <script>
-fetch("https://satoshium.link/components/footer.html")
-.then(r=>r.text())
-.then(d=>{document.getElementById("footer-container").innerHTML=d});
+(function(){
+  fetch('https://satoshium.link/components/footer.html')
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var el = document.getElementById('footer-container');
+      if(el){ el.innerHTML = html; }
+    })
+    .catch(function(){});
+})();
 </script>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
