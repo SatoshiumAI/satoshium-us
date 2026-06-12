@@ -3,15 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
 <meta name="theme-color" content="#d6a34a">
+
 <title>Satoshium Certifier · Reports</title>
 <meta name="description" content="Certification Reports preserve detailed Certifier review records.">
 <link rel="canonical" href="https://satoshium.us/certifier/reports/">
-<style>
 
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
 :root{
  --bg:#07090d;
  --panel:#0c1018;
@@ -21,7 +28,9 @@
  --gold2:#f4c36a;
  --line:rgba(214,163,74,.18);
 }
+
 *{box-sizing:border-box}
+
 html,body{
  margin:0;
  padding:0;
@@ -31,46 +40,15 @@ html,body{
  line-height:1.6;
  scroll-behavior:smooth;
 }
-body{padding-top:82px}
+
+body{padding-top:80px}
+
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
+
 .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
 .content{padding:34px 18px 64px}
-.site-nav{
- position:fixed;
- top:0; left:0; right:0;
- z-index:1000;
- background:rgba(7,9,13,.92);
- backdrop-filter:blur(10px);
- border-bottom:1px solid var(--line);
-}
-.nav-inner{
- max-width:1120px;
- margin:0 auto;
- padding:14px 18px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:18px;
-}
-.brand{
- font-weight:800;
- letter-spacing:.04em;
- color:var(--gold2);
-}
-.nav-links{
- display:flex;
- gap:14px;
- flex-wrap:wrap;
- justify-content:flex-end;
-}
-.nav-links a{
- color:var(--muted);
- font-size:14px;
- font-weight:700;
-}
-.nav-links a:hover,
-.nav-links a.active{color:var(--gold2)}
+
 .hero{
  border:1px solid var(--line);
  border-radius:22px;
@@ -80,6 +58,7 @@ a:hover{color:var(--gold)}
  radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
  linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
 }
+
 .eyebrow{
  display:inline-flex;
  padding:8px 14px;
@@ -91,22 +70,44 @@ a:hover{color:var(--gold)}
  letter-spacing:.08em;
  text-transform:uppercase;
 }
-h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
-.lead{max-width:920px;color:var(--muted);font-size:20px}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
 .grid{
  display:grid;
  grid-template-columns:repeat(2,minmax(0,1fr));
  gap:18px;
  margin-top:18px;
 }
+
 .card{
  background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
  border:1px solid rgba(214,163,74,.15);
  border-radius:18px;
  padding:22px;
 }
-.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
-.card p{margin:0 0 14px;color:var(--muted)}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
 .note{
  margin-top:16px;
  padding:14px 16px;
@@ -115,18 +116,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
  background:rgba(214,163,74,.05);
  color:var(--muted);
 }
-.btn{
- display:inline-block;
- margin-top:14px;
- margin-right:10px;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
-}
-.btn:hover{background:rgba(214,163,74,.12)}
+
 .status{
  display:inline-block;
  padding:4px 10px;
@@ -138,70 +128,102 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
  letter-spacing:.06em;
  text-transform:uppercase;
 }
-footer{
- border-top:1px solid var(--line);
- padding:24px 0 42px;
- color:var(--muted);
- font-size:14px;
-}
+
+.muted{color:var(--muted)}
+
 @media (max-width:900px){
  .grid{grid-template-columns:1fr}
  h1{font-size:34px}
- body{padding-top:118px}
- .nav-inner{align-items:flex-start;flex-direction:column}
- .nav-links{justify-content:flex-start}
 }
-
 </style>
 </head>
 
 <body>
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a class="brand" href="/certifier/">Satoshium Certifier</a>
-    <div class="nav-links">
-      <a  href="/certifier/">Certifier</a>
-      <a  href="/certifier/standards/">Standards</a>
-      <a  href="/certifier/certified-items/">Certified Items</a>
-      <a class="active" href="/certifier/reports/">Reports</a>
-      <a  href="/certifier/receipts/">Receipts</a>
-      <a  href="/certifier/registry/">Registry</a>
-      <a  href="/certifier/attestations/">Attestations</a>
-    </div>
-  </div>
-</nav>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
 
 <main class="wrap content">
+
 <section class="hero">
   <div class="eyebrow">Certifier · Reports</div>
   <h1>Certification Reports</h1>
-  <p class="lead">Reports preserve the evidence, findings, methodology, limitations, and reasoning behind certification determinations.</p>
-  <p class="lead">No certification reports have been published yet.</p>
+
+  <p class="lead">
+    Reports preserve the evidence, findings, methodology, limitations, and reasoning behind
+    certification determinations.
+  </p>
+
+  <p class="lead">
+    No certification reports have been published yet.
+  </p>
 </section>
 
 <section class="grid">
+
 <article class="card">
   <h2>Atlas Initial Build Certification Report</h2>
-  <p>Expected first Certification Report documenting the review of the Atlas Initial Build Phase.</p>
+
+  <p>
+    Expected first Certification Report documenting the review of the Atlas Initial Build Phase.
+  </p>
+
   <span class="status">Coming Soon</span>
-  
 </article>
+
 <article class="card">
   <h2>Report Template</h2>
-  <p>The Certification Report template defines the structure used for future reports.</p>
+
+  <p>
+    The Certification Report template defines the structure used for future reports,
+    including scope, evidence, findings, determination, limitations, and recommendations.
+  </p>
+
   <span class="status">Defined</span>
-  
 </article>
+
 </section>
 
-<div class="note">This page is part of the initial static Certifier interface and may be expanded as operational certification records are issued.</div>
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Report Role</h2>
+
+  <p>
+    Certification Reports are the authoritative review records within Certifier.
+    They connect evidence to findings and findings to certification determinations.
+  </p>
+
+  <div class="note">
+    Evidence provides facts. Standards define expectations. Reports preserve the reasoning
+    behind certification outcomes.
+  </div>
+</article>
+
+</section>
+
 </main>
 
-<footer>
-  <div class="wrap">
-    Satoshium Certifier is an informational certification framework. Certification reflects review against defined standards and available evidence at the time of review.
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Satoshium Certifier preserves review reasoning through certification reports.
   </div>
-</footer>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 
 </body>
 </html>
