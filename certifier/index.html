@@ -1,17 +1,25 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#d6a34a">
-<title>Satoshium Certifier</title>
-<meta name="description" content="Satoshium Certifier — standards, evidence, review, and certification records for the Satoshium ecosystem.">
-<link rel="canonical" href="https://satoshium.us/certifier/">
-<style>
 
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Certifier</title>
+<meta name="description" content="Satoshium Certifier — trust and certification layer for reviewing digital artifacts, standards, evidence, reports, receipts, registry references, and attestations across the Satoshium ecosystem.">
+<link rel="canonical" href="https://satoshium.us/certifier/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
 :root{
  --bg:#07090d;
  --panel:#0c1018;
@@ -21,7 +29,9 @@
  --gold2:#f4c36a;
  --line:rgba(214,163,74,.18);
 }
+
 *{box-sizing:border-box}
+
 html,body{
  margin:0;
  padding:0;
@@ -31,46 +41,15 @@ html,body{
  line-height:1.6;
  scroll-behavior:smooth;
 }
-body{padding-top:82px}
+
+body{padding-top:80px}
+
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
+
 .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
 .content{padding:34px 18px 64px}
-.site-nav{
- position:fixed;
- top:0; left:0; right:0;
- z-index:1000;
- background:rgba(7,9,13,.92);
- backdrop-filter:blur(10px);
- border-bottom:1px solid var(--line);
-}
-.nav-inner{
- max-width:1120px;
- margin:0 auto;
- padding:14px 18px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:18px;
-}
-.brand{
- font-weight:800;
- letter-spacing:.04em;
- color:var(--gold2);
-}
-.nav-links{
- display:flex;
- gap:14px;
- flex-wrap:wrap;
- justify-content:flex-end;
-}
-.nav-links a{
- color:var(--muted);
- font-size:14px;
- font-weight:700;
-}
-.nav-links a:hover,
-.nav-links a.active{color:var(--gold2)}
+
 .hero{
  border:1px solid var(--line);
  border-radius:22px;
@@ -80,6 +59,7 @@ a:hover{color:var(--gold)}
  radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
  linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
 }
+
 .eyebrow{
  display:inline-flex;
  padding:8px 14px;
@@ -91,22 +71,44 @@ a:hover{color:var(--gold)}
  letter-spacing:.08em;
  text-transform:uppercase;
 }
-h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
-.lead{max-width:920px;color:var(--muted);font-size:20px}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
 .grid{
  display:grid;
  grid-template-columns:repeat(2,minmax(0,1fr));
  gap:18px;
  margin-top:18px;
 }
+
 .card{
  background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
  border:1px solid rgba(214,163,74,.15);
  border-radius:18px;
  padding:22px;
 }
-.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
-.card p{margin:0 0 14px;color:var(--muted)}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
 .note{
  margin-top:16px;
  padding:14px 16px;
@@ -115,6 +117,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
  background:rgba(214,163,74,.05);
  color:var(--muted);
 }
+
 .btn{
  display:inline-block;
  margin-top:14px;
@@ -126,106 +129,174 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
  color:var(--gold2);
  font-weight:700;
 }
+
 .btn:hover{background:rgba(214,163,74,.12)}
-.status{
- display:inline-block;
- padding:4px 10px;
- border-radius:999px;
- border:1px solid rgba(214,163,74,.24);
- color:var(--gold2);
- font-size:12px;
- font-weight:800;
- letter-spacing:.06em;
- text-transform:uppercase;
-}
-footer{
- border-top:1px solid var(--line);
- padding:24px 0 42px;
- color:var(--muted);
- font-size:14px;
-}
+
+.muted{color:var(--muted)}
+
 @media (max-width:900px){
  .grid{grid-template-columns:1fr}
  h1{font-size:34px}
- body{padding-top:118px}
- .nav-inner{align-items:flex-start;flex-direction:column}
- .nav-links{justify-content:flex-start}
 }
-
 </style>
 </head>
 
 <body>
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a class="brand" href="/certifier/">Satoshium Certifier</a>
-    <div class="nav-links">
-      <a class="active" href="/certifier/">Certifier</a>
-      <a  href="/certifier/standards/">Standards</a>
-      <a  href="/certifier/certified-items/">Certified Items</a>
-      <a  href="/certifier/reports/">Reports</a>
-      <a  href="/certifier/receipts/">Receipts</a>
-      <a  href="/certifier/registry/">Registry</a>
-      <a  href="/certifier/attestations/">Attestations</a>
-    </div>
-  </div>
-</nav>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
 
 <main class="wrap content">
+
 <section class="hero">
   <div class="eyebrow">Certifier · Trust Layer</div>
   <h1>Satoshium Certifier</h1>
-  <p class="lead">Satoshium Certifier is the trust and certification layer of the Satoshium ecosystem. It reviews digital artifacts, workflows, services, reports, datasets, and tools against defined standards and preserves evidence-supported certification records.</p>
-  <p class="lead">Certifier begins as a static public interface for standards, certified items, reports, receipts, registry references, and future attestations.</p>
+
+  <p class="lead">
+    Satoshium Certifier is the trust and certification layer of the Satoshium ecosystem.
+    It reviews digital artifacts, workflows, services, reports, datasets, and tools against
+    defined standards and preserves evidence-supported certification records.
+  </p>
+
+  <p class="lead">
+    Certifier begins as a public interface for standards, certified items, reports, receipts,
+    registry references, and future attestations. Its first major certification target is expected
+    to be the Satoshium Atlas Initial Build Phase.
+  </p>
 </section>
 
 <section class="grid">
+
 <article class="card">
   <h2>Standards</h2>
-  <p>Certification standards define the requirements, criteria, evidence expectations, and determination rules used by Certifier.</p>
-  <span class="status">Framework</span>
-  <a class="btn" href="/certifier/standards/">Open Standards →</a>
+  <p>
+    Certification standards define the requirements, criteria, evidence expectations,
+    and determination rules used by Certifier.
+  </p>
+  <a class="btn" href="/certifier/standards/">
+    Open Standards →
+  </a>
 </article>
+
 <article class="card">
   <h2>Certified Items</h2>
-  <p>Certified Items will list artifacts, services, workflows, datasets, tools, and pages that have completed review under Certifier.</p>
-  <span class="status">Pending First Certification</span>
-  <a class="btn" href="/certifier/certified-items/">View Certified Items →</a>
+  <p>
+    Certified Items will list artifacts, services, workflows, datasets, tools, and pages
+    that have completed review under Certifier.
+  </p>
+  <a class="btn" href="/certifier/certified-items/">
+    View Certified Items →
+  </a>
 </article>
+
 <article class="card">
   <h2>Reports</h2>
-  <p>Certification Reports preserve the detailed review record, including scope, evidence, findings, limitations, and determination.</p>
-  <span class="status">Authoritative Record</span>
-  <a class="btn" href="/certifier/reports/">Open Reports →</a>
+  <p>
+    Certification Reports preserve the detailed review record, including scope, evidence,
+    findings, limitations, recommendations, and determination.
+  </p>
+  <a class="btn" href="/certifier/reports/">
+    Open Reports →
+  </a>
 </article>
+
 <article class="card">
   <h2>Receipts</h2>
-  <p>Certification Receipts provide concise public summaries documenting that certification occurred and where supporting records can be found.</p>
-  <span class="status">Public Proof</span>
-  <a class="btn" href="/certifier/receipts/">Open Receipts →</a>
+  <p>
+    Certification Receipts provide concise public summaries documenting that certification
+    occurred and where supporting records can be found.
+  </p>
+  <a class="btn" href="/certifier/receipts/">
+    Open Receipts →
+  </a>
 </article>
+
 <article class="card">
   <h2>Registry</h2>
-  <p>Registry will catalog certification records and make certified outputs discoverable across the Satoshium ecosystem.</p>
-  <span class="status">Future Integration</span>
-  <a class="btn" href="/certifier/registry/">Open Registry →</a>
+  <p>
+    Registry references will catalog certification records and make certified outputs
+    discoverable across the Satoshium ecosystem.
+  </p>
+  <a class="btn" href="/certifier/registry/">
+    Open Registry →
+  </a>
 </article>
+
 <article class="card">
   <h2>Attestations</h2>
-  <p>Attestations will support independent verification of certification records, receipts, evidence, hashes, and Registry entries.</p>
-  <span class="status">Future Verification</span>
-  <a class="btn" href="/certifier/attestations/">Open Attestations →</a>
+  <p>
+    Attestations will support independent verification of certification records, receipts,
+    evidence, hashes, and Registry entries.
+  </p>
+  <a class="btn" href="/certifier/attestations/">
+    Open Attestations →
+  </a>
 </article>
+
 </section>
 
-<div class="note">Initial Certifier structure is being established. The first major certification target is expected to be the Atlas Initial Build Phase.</div>
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Initial Certifier Structure</h2>
+
+  <p>
+    Certifier is currently being established as a standards-based framework for review,
+    evidence preservation, certification reporting, public receipts, Registry integration,
+    and future attestation support.
+  </p>
+
+  <div class="note">
+    The first major certification target is expected to be the Atlas Initial Build Phase.
+    This will establish Certifier’s first operational certification record, report, receipt,
+    and Registry-ready reference.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Certifier Workflow</h2>
+
+  <p>
+    Certifier follows a simple review sequence: input, review, evidence, certification,
+    receipt, and Registry. This workflow transforms digital artifacts into documented,
+    reviewable trust records.
+  </p>
+
+  <div class="note">
+    Atlas creates intelligence. Certifier reviews it. Registry catalogs it.
+    Chronicle remembers it. Anchor preserves it. Attestor verifies it.
+  </div>
+</article>
+
+</section>
+
 </main>
 
-<footer>
-  <div class="wrap">
-    Satoshium Certifier is an informational certification framework. Certification reflects review against defined standards and available evidence at the time of review.
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Satoshium Certifier is being built as a trust layer — one certification record at a time.
   </div>
-</footer>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 
 </body>
 </html>
+```
