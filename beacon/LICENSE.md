@@ -1,7 +1,10 @@
 # License
 
 **Subsystem:** Satoshium Beacon
+
 **License:** MIT License
+
+Copyright Holder: Christopher D. Burris — Satoshium™ Intelligence Systems
 
 ---
 
