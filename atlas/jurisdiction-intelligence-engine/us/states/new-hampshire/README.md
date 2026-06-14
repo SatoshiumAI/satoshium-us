@@ -1,0 +1,122 @@
+# New Hampshire
+
+## Atlas Jurisdiction Package
+
+New Hampshire is a jurisdiction package within the Satoshium Atlas jurisdiction intelligence framework.
+
+This package provides a structured jurisdiction record designed to support research, analysis, orientation, comparison, discovery, and future interoperability across the broader Atlas ecosystem.
+
+---
+
+## Jurisdiction Summary
+
+The canonical package records New Hampshire as a Northeast Institutional Support jurisdiction completing the three-state Northeast Institutional Support Corridor cluster with Rhode Island and Vermont, under the jurisdiction lens "Northeast institutional support continuity within Northeast completion" — a topology-collapse state where Foundation Layer and Completion Layer are the same. The evidence layer is retained from corridor continuity between adjacent Atlas states — Massachusetts, Vermont, New York, and Maine — with Vermont cited at evidence and signals depth and Maine cited as a forward-chained adjacency, rather than from independent state-sourced research. The signals layer reflects four structural coordination signals: a northern Northeast institutional support continuity signal through retained placement inside the Massachusetts, Vermont, and New York-facing northern frame; a northward research-bearing continuation signal through retained continuation from Massachusetts' research-bearing structure; a Maine completion-continuation signal through retained support-position continuity between the northern Northeast frame and Maine's terminal completion structure; and an inland northward continuity signal linking Vermont, Massachusetts, and the New York-facing frame, with no independent establishment of coastal adjacency within the Gulf of Maine frame, Class I rail visibility, National Highway Freight Network visibility, ISO-NE participation, or BEAD coordination.
+
+---
+
+## Package Purpose
+
+The purpose of this package is to organize jurisdiction intelligence into a standardized structure that supports:
+
+* Evidence collection
+* Signal identification
+* Trust-dimension analysis
+* Jurisdiction profiling
+* Metadata normalization
+* Builder guidance
+* Historical change tracking
+
+This package serves as both a human-readable and machine-readable jurisdiction record.
+
+---
+
+## Canonical Resources
+
+### Canonical Jurisdiction Page
+
+https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/new-hampshire/
+
+### Orientation Media Page
+
+https://satoshium.us/atlas/media/orientation/us/states/new-hampshire/
+
+---
+
+## Package Contents
+
+### evidence.md
+
+Evidence sources, supporting references, observations, and documented findings used to support the jurisdiction record.
+
+### signals.md
+
+Key jurisdiction signals, indicators, trends, and notable characteristics identified within the jurisdiction.
+
+### trust-dimensions.md
+
+Analysis across Atlas trust dimensions and jurisdiction evaluation categories.
+
+### metadata.md
+
+Structured metadata supporting classification, indexing, categorization, and package normalization.
+
+### profile.md
+
+Jurisdiction profile summarizing major characteristics, strengths, opportunities, and contextual information.
+
+### builder-mode.md
+
+Builder guidance describing package construction methodology, assumptions, scope, and implementation considerations.
+
+### change-log.md
+
+Historical record of significant package updates, revisions, corrections, and maintenance activities.
+
+---
+
+## Jurisdiction Classification
+
+**Jurisdiction Type:** State
+
+**Parent Framework:** United States
+
+**Atlas Layer:** Jurisdiction Intelligence Engine
+
+**Package Status:** Active
+
+---
+
+## Atlas Principles
+
+This package follows the core Atlas principles of:
+
+* Evidence before conclusions
+* Structured jurisdiction intelligence
+* Transparent methodology
+* Repeatable analysis
+* Interoperable records
+* Continuous refinement
+
+---
+
+## Related Resources
+
+* Canonical Jurisdiction Page
+* Orientation Media Page
+* Atlas Jurisdiction Surface (AJS)
+* Atlas Orientation Video
+* Satoshium Atlas
+
+---
+
+## Status
+
+Active Atlas Jurisdiction Package
+
+Last Updated: 2026-04-19
+
+Version: 1.0
+
+---
+
+**Know the Jurisdictions. Navigate the Future.**
