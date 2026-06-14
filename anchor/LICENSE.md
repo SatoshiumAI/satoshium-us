@@ -1,7 +1,10 @@
 # License
 
 **Subsystem:** Satoshium Anchor
+
 **License:** MIT License
+
+Copyright Holder: Christopher D. Burris — Satoshium™ Intelligence Systems
 
 ---
 
