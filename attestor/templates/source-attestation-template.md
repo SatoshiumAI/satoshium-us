@@ -1,14 +1,14 @@
-# Evidence Attestation Template
+# Source Attestation Template
 
 ## Purpose
 
-This template provides a standardized format for documenting attestations regarding evidence.
+This template provides a standardized format for documenting attestations regarding sources.
 
-Its purpose is to preserve transparency, attribution, traceability, and context when an attestor makes a statement concerning evidence, supporting documentation, records, datasets, media, or other information relevant to a claim, event, identity, or record.
+Its purpose is to preserve attribution, transparency, traceability, and context when an attestor makes a statement concerning a source, its origin, relevance, authorship, provenance, or relationship to a claim, record, event, or subject.
 
-An evidence attestation documents an observation or statement about evidence.
+A source attestation documents a statement about a source.
 
-It does not determine whether the evidence is correct.
+It does not determine whether the source is correct, authoritative, or trustworthy.
 
 ---
 
@@ -17,7 +17,7 @@ It does not determine whether the evidence is correct.
 ```yaml
 attestation_id:
 
-attestation_type: evidence_attestation
+attestation_type: source_attestation
 
 status:
 
@@ -29,20 +29,20 @@ subject:
   id:
   type:
 
-evidence_record:
+source_record:
   id:
   type:
 
 attestation_statement:
 
-evidence_classification:
+source_classification:
 
-support_level:
-
-evidence_refs:
-  -
+source_relationship:
 
 source_refs:
+  -
+
+evidence_refs:
   -
 
 related_records:
@@ -63,12 +63,12 @@ notes:
 
 ### attestation_id
 
-Unique identifier assigned to the evidence attestation.
+Unique identifier assigned to the source attestation.
 
 Example:
 
 ```text
-ATT-EVD-000001
+ATT-SRC-000001
 ```
 
 ---
@@ -80,7 +80,7 @@ Classification of attestation.
 Example:
 
 ```text
-evidence_attestation
+source_attestation
 ```
 
 ---
@@ -103,7 +103,7 @@ superseded
 
 ### attestor
 
-Identity issuing the evidence attestation.
+Identity issuing the source attestation.
 
 Example:
 
@@ -117,7 +117,7 @@ attestor:
 
 ### subject
 
-The claim, event, identity, record, or object associated with the evidence.
+The claim, record, event, identity, or object associated with the source.
 
 Example:
 
@@ -129,55 +129,55 @@ subject:
 
 ---
 
-### evidence_record
+### source_record
 
-Reference to the evidence being discussed.
+Reference to the source being discussed.
 
 Example:
 
 ```yaml
-evidence_record:
-  id: EVD-000501
-  type: document
+source_record:
+  id: SRC-000021
+  type: publication
 ```
 
 ---
 
 ### attestation_statement
 
-Statement regarding the evidence.
+Statement regarding the source.
 
 Example:
 
 ```text
-The referenced evidence supports the associated participation claim.
+The referenced source supports the associated claim.
 ```
 
 ---
 
-### evidence_classification
+### source_classification
 
-Classification of evidence.
+Classification of source.
 
 Examples:
 
 ```text
-document
+government_record
 publication
-record
-image
-video
-audio
-dataset
-historical_record
+media_source
+academic_source
+corporate_source
+archive
+database
+website
 other
 ```
 
 ---
 
-### support_level
+### source_relationship
 
-Relationship between the evidence and the subject.
+Describes how the source relates to the subject.
 
 Examples:
 
@@ -185,25 +185,13 @@ Examples:
 supports
 partially_supports
 contradicts
-neutral
+references
+documents
+mentions
 unclear
 ```
 
-Support levels provide context and should not be interpreted as proof.
-
----
-
-### evidence_refs
-
-References to related evidence.
-
-Example:
-
-```yaml
-evidence_refs:
-  - EVD-000501
-  - EVD-000502
-```
+Relationship classifications provide context and should not be interpreted as proof.
 
 ---
 
@@ -216,6 +204,19 @@ Example:
 ```yaml
 source_refs:
   - SRC-000021
+```
+
+---
+
+### evidence_refs
+
+References to associated evidence.
+
+Example:
+
+```yaml
+evidence_refs:
+  - EVD-000501
 ```
 
 ---
@@ -282,17 +283,17 @@ Additional contextual information.
 Example:
 
 ```text
-Evidence independently reviewed and linked to supporting records.
+Source independently reviewed and linked to supporting evidence.
 ```
 
 ---
 
-## Example Evidence Attestation
+## Example Source Attestation
 
 ```yaml
-attestation_id: ATT-EVD-000001
+attestation_id: ATT-SRC-000001
 
-attestation_type: evidence_attestation
+attestation_type: source_attestation
 
 status: active
 
@@ -304,22 +305,22 @@ subject:
   id: REG-000301
   type: record
 
-evidence_record:
-  id: EVD-000501
-  type: document
+source_record:
+  id: SRC-000021
+  type: publication
 
 attestation_statement: >
-  The referenced evidence supports the associated participation claim.
+  The referenced source supports the associated claim.
 
-evidence_classification: document
+source_classification: publication
 
-support_level: supports
-
-evidence_refs:
-  - EVD-000501
+source_relationship: supports
 
 source_refs:
   - SRC-000021
+
+evidence_refs:
+  - EVD-000501
 
 related_records:
   - REG-000301
@@ -329,71 +330,89 @@ created_at: 2026-06-15T00:00:00Z
 confidence_indicator: medium
 
 notes: >
-  Evidence reviewed and associated with supporting records.
+  Source independently reviewed and linked to supporting evidence.
 ```
 
 ---
 
-## Evidence Categories
+## Source Categories
 
 The template may be used for:
 
-### Documentary Evidence
+### Government Sources
 
-Reports, agreements, publications, and records.
+Official records, filings, court records, and regulatory documents.
 
-### Digital Evidence
+### Academic Sources
 
-Metadata, logs, transaction records, and digital artifacts.
+Research papers, journals, and scholarly publications.
 
-### Media Evidence
+### Media Sources
 
-Images, audio recordings, and video materials.
+News organizations, journalists, and investigative reporting.
 
-### Historical Evidence
+### Corporate Sources
 
-Archived materials and historical records.
+Official company disclosures, reports, and filings.
 
-### Dataset Evidence
+### Historical Sources
 
-Structured collections of information.
+Archives, preserved records, and historical collections.
 
-### Observational Evidence
+### Digital Sources
 
-Direct observations and witness reports.
+Websites, databases, repositories, and online publications.
 
-Additional categories may emerge over time.
+Additional source categories may emerge over time.
 
 ---
 
-## Relationship to Attestations
+## Relationship to Sources
 
-Evidence attestations are specialized attestations.
+Source attestations are statements about sources.
 
 A simplified relationship may be represented as:
 
 ```text
-Evidence
-    ↓
-Evidence Attestation
-    ↓
+Source
+   ↓
+Source Attestation
+   ↓
 Trust Context
 ```
 
-The evidence remains separate from the statement made about it.
+The source remains distinct from the statement made about it.
+
+---
+
+## Relationship to Evidence
+
+Sources often support evidence.
+
+A simplified relationship may be represented as:
+
+```text
+Source
+   ↓
+Evidence
+   ↓
+Attestation
+```
+
+Source attestations help preserve those relationships.
 
 ---
 
 ## Relationship to Verification
 
-Evidence attestations may reference verification activities.
+Source attestations may reference verification activities.
 
 Verification remains the responsibility of Certifier.
 
 A simplified distinction may be represented as:
 
 ```text
-Evidence Attestation → Statement
+Source Attestation → Statement
 Verification → Evaluation
 ```
 
@@ -403,36 +422,36 @@ Verification → Evaluation
 
 ### Attribution
 
-Evidence origins should remain visible.
+Source origins should remain visible.
 
 ### Transparency
 
-Evidence relationships should remain understandable.
+Source relationships should remain understandable.
 
 ### Traceability
 
-Evidence references should support review and investigation.
+Source references should support review and investigation.
 
 ### Context
 
-Evidence should remain connected to relevant records.
+Sources should remain connected to associated records.
 
 ### Preservation
 
-Evidence history should remain available whenever practical.
+Historical source information should remain available whenever practical.
 
 ---
 
 ## Guiding Statement
 
 ```text
-Evidence provides information.
+Sources provide origin.
 
-Evidence attestations explain how that information relates to a subject.
+Source attestations document how those origins relate to trust.
 ```
 
 ---
 
 ## Status
 
-This template represents an initial conceptual evidence-attestation format and may evolve as Attestor standards mature.
+This template represents an initial conceptual source-attestation format and may evolve as Attestor standards mature.
