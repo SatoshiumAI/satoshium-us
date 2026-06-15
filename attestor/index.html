@@ -11,9 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Attestor</title>
-
-<meta name="description" content="Satoshium Attestor — the trust layer of the Satoshium ecosystem, focused on attestations, evidence, trust signals, accountability, reputation, and trust-related records.">
-
+<meta name="description" content="Satoshium Attestor — trust layer for documenting attestations, evidence, corrections, definitions, rules, scope, and trust-related records across the Satoshium ecosystem.">
 <link rel="canonical" href="https://satoshium.us/attestor/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -24,7 +22,6 @@
 :root{
  --bg:#07090d;
  --panel:#0c1018;
- --panel2:#111827;
  --text:#e8edf7;
  --muted:#9aa7bd;
  --gold:#d6a34a;
@@ -41,45 +38,32 @@ html,body{
  color:var(--text);
  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
  line-height:1.6;
+ scroll-behavior:smooth;
 }
 
-body{
- padding-top:80px;
-}
+body{padding-top:80px}
 
-a{
- color:inherit;
- text-decoration:none;
-}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
 
-.wrap{
- max-width:1180px;
- margin:0 auto;
- padding:0 18px;
-}
-
-.content{
- padding:34px 18px 70px;
-}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
 
 .hero{
  border:1px solid var(--line);
- border-radius:24px;
- padding:34px 28px;
- margin-bottom:24px;
-
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
  background:
- radial-gradient(circle at top right, rgba(214,163,74,.14), transparent 32%),
- linear-gradient(to bottom right,
- rgba(12,16,24,.98),
- rgba(12,16,24,.90));
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
 }
 
 .eyebrow{
  display:inline-flex;
  padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
  border-radius:999px;
- border:1px solid rgba(214,163,74,.25);
  color:var(--gold2);
  font-size:13px;
  font-weight:700;
@@ -88,80 +72,70 @@ a{
 }
 
 h1{
- margin:12px 0;
- font-size:54px;
- line-height:1.05;
+ margin:10px 0 12px;
+ font-size:44px;
  color:var(--gold2);
 }
 
 .lead{
  max-width:920px;
- font-size:20px;
  color:var(--muted);
+ font-size:20px;
 }
 
 .grid{
  display:grid;
- grid-template-columns:repeat(3,minmax(0,1fr));
+ grid-template-columns:repeat(2,minmax(0,1fr));
  gap:18px;
- margin-top:22px;
+ margin-top:18px;
 }
 
 .card{
- display:block;
- background:
- linear-gradient(to bottom right,
- rgba(12,16,24,.95),
- rgba(12,16,24,.88));
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
  border:1px solid rgba(214,163,74,.15);
  border-radius:18px;
  padding:22px;
- transition:.18s ease;
-}
-
-.card:hover{
- transform:translateY(-2px);
- border-color:rgba(214,163,74,.35);
 }
 
 .card h2{
  margin:0 0 10px;
+ font-size:24px;
  color:var(--gold2);
- font-size:22px;
 }
 
 .card p{
- margin:0;
+ margin:0 0 14px;
  color:var(--muted);
 }
 
-.section{
- margin-top:22px;
-}
-
 .note{
- padding:16px;
- border-radius:14px;
+ margin-top:16px;
+ padding:14px 16px;
  border:1px solid var(--line);
+ border-radius:14px;
  background:rgba(214,163,74,.05);
  color:var(--muted);
 }
 
-@media (max-width:1000px){
- .grid{
-  grid-template-columns:repeat(2,minmax(0,1fr));
- }
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
 }
 
-@media (max-width:700px){
+.btn:hover{background:rgba(214,163,74,.12)}
 
- h1{
-  font-size:38px;
- }
+.muted{color:var(--muted)}
 
- .grid{
-  grid-template-columns:1fr;
- }
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
 }
 </style>
 </head>
@@ -174,157 +148,252 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
+  <div class="eyebrow">Attestor · Trust Layer</div>
+  <h1>Satoshium Attestor</h1>
 
-<div class="eyebrow">Satoshium Suite · Trust Layer</div>
+  <p class="lead">
+    Satoshium Attestor is the trust layer of the Satoshium ecosystem.
+    It exists to document, preserve, organize, and contextualize trust-related
+    information across attestations, evidence, corrections, definitions,
+    records, rules, scope, and interoperability.
+  </p>
 
-<h1>Attestor</h1>
+  <p class="lead">
+    Attestor does not determine truth by itself. It helps preserve the
+    information, context, accountability, and relationships that allow trust
+    to be evaluated over time.
+  </p>
+</section>
 
-<p class="lead">
-Attestor is the trust layer of the Satoshium ecosystem.
-It explores how attestations, evidence, trust signals,
-reputation, accountability, and historical context
-may contribute to trust-related understanding.
-</p>
+<section class="grid">
 
-<p class="lead">
-Attestor does not determine truth.
-It preserves information relevant to trust.
-</p>
+<article class="card">
+  <h2>Purpose</h2>
+  <p>
+    Purpose explains why Attestor exists, what problem it solves, and how it
+    supports trust-related documentation across the Satoshium ecosystem.
+  </p>
+  <a class="btn" href="/attestor/purpose/">
+    Open Purpose →
+  </a>
+</article>
+
+<article class="card">
+  <h2>Attestations</h2>
+  <p>
+    Attestations are statements made by an attestor regarding a subject,
+    claim, event, identity, record, relationship, or observation.
+  </p>
+  <a class="btn" href="/attestor/attestations/">
+    Open Attestations →
+  </a>
+</article>
+
+<article class="card">
+  <h2>Attestation Types</h2>
+  <p>
+    Attestation Types define categories of statements, including identity,
+    participation, ownership, qualification, source, evidence, and relationship attestations.
+  </p>
+  <a class="btn" href="/attestor/attestation-types/">
+    Open Attestation Types →
+  </a>
+</article>
+
+<article class="card">
+  <h2>Evidence</h2>
+  <p>
+    Evidence provides supporting information, documentation, records, sources,
+    or materials that may clarify, support, or challenge trust-related statements.
+  </p>
+  <a class="btn" href="/attestor/evidence/">
+    Open Evidence →
+  </a>
+</article>
+
+<article class="card">
+  <h2>Corrections</h2>
+  <p>
+    Corrections preserve amendments, clarifications, revisions, and retractions
+    while maintaining historical transparency and accountability.
+  </p>
+  <a class="btn" href="/attestor/corrections/">
+    Open Corrections →
+  </a>
+</article>
+
+<article class="card">
+  <h2>Definitions</h2>
+  <p>
+    Definitions establish the shared vocabulary used throughout Attestor,
+    helping preserve consistency across trust-related records and systems.
+  </p>
+  <a class="btn" href="/attestor/definitions/">
+    Open Definitions →
+  </a>
+</article>
+
+<article class="card">
+  <h2>Rules</h2>
+  <p>
+    Rules define foundational operating standards for attribution,
+    transparency, correction, traceability, and responsible trust documentation.
+  </p>
+  <a class="btn" href="/attestor/rules/">
+    Open Rules →
+  </a>
+</article>
+
+<article class="card">
+  <h2>Scope</h2>
+  <p>
+    Scope defines Attestor's responsibilities, boundaries, limitations,
+    and relationship to other systems within the Satoshium Suite.
+  </p>
+  <a class="btn" href="/attestor/scope/">
+    Open Scope →
+  </a>
+</article>
+
+<article class="card">
+  <h2>Interoperability</h2>
+  <p>
+    Interoperability explains how Attestor connects trust-related information
+    across Atlas, Navigator, Beacon, Certifier, Registry, Chronicle, and Anchor.
+  </p>
+  <a class="btn" href="/attestor/interoperability/">
+    Open Interoperability →
+  </a>
+</article>
+
+<article class="card">
+  <h2>Status</h2>
+  <p>
+    Status provides the current development state, capabilities, limitations,
+    roadmap, and implementation posture of Attestor.
+  </p>
+  <a class="btn" href="/attestor/status/">
+    Open Status →
+  </a>
+</article>
+
+<article class="card">
+  <h2>FAQ</h2>
+  <p>
+    FAQ answers common questions about Attestor, attestations, evidence,
+    corrections, verification boundaries, reputation, and trust signals.
+  </p>
+  <a class="btn" href="/attestor/faq/">
+    Open FAQ →
+  </a>
+</article>
 
 </section>
 
-<div class="grid">
+<section style="margin-top:18px;">
 
-<a class="card" href="https://satoshium.us/attestor/purpose/">
-<h2>Purpose</h2>
-<p>Why Attestor exists and the role it serves within the Satoshium ecosystem.</p>
-</a>
+<article class="card">
+  <h2>Attestor Framework</h2>
 
-<a class="card" href="https://satoshium.us/attestor/principles/">
-<h2>Principles</h2>
-<p>Foundational principles guiding trust, accountability, transparency, and reputation.</p>
-</a>
+  <p>
+    Attestor follows a simple trust-context sequence: statements are made,
+    evidence provides context, trust signals emerge, reputation develops,
+    and trust may be evaluated by observers over time.
+  </p>
 
-<a class="card" href="https://satoshium.us/attestor/scope/">
-<h2>Scope</h2>
-<p>Defines responsibilities, boundaries, and limitations of the trust layer.</p>
-</a>
+  <div class="note">
+    Attestation → Evidence → Trust Signal → Reputation → Trust
+  </div>
+</article>
 
-<a class="card" href="https://satoshium.us/attestor/attestations/">
-<h2>Attestations</h2>
-<p>Statements regarding identities, claims, events, records, and relationships.</p>
-</a>
+</section>
 
-<a class="card" href="https://satoshium.us/attestor/attestation-types/">
-<h2>Attestation Types</h2>
-<p>Identity, participation, ownership, qualification, source, evidence, and related categories.</p>
-</a>
+<section style="margin-top:18px;">
 
-<a class="card" href="https://satoshium.us/attestor/evidence/">
-<h2>Evidence</h2>
-<p>Supporting information, documentation, records, and contextual materials.</p>
-</a>
+<article class="card">
+  <h2>Role Within the Satoshium Suite</h2>
 
-<a class="card" href="https://satoshium.us/attestor/trust-signals/">
-<h2>Trust Signals</h2>
-<p>Information that may influence credibility, accountability, and reputation.</p>
-</a>
+  <p>
+    Attestor is designed to operate after discovery, records, history,
+    identity, and verification have created context. It preserves the
+    trust-related relationships that help observers evaluate information.
+  </p>
 
-<a class="card" href="https://satoshium.us/attestor/records/">
-<h2>Records</h2>
-<p>Trust-related records and relationships across the broader ecosystem.</p>
-</a>
+  <div class="note">
+    Atlas → Data<br>
+    Navigator → Query<br>
+    Beacon → Discovery<br>
+    Certifier → Verification<br>
+    Registry → Records<br>
+    Chronicle → History<br>
+    Anchor → Identity<br>
+    Attestor → Trust
+  </div>
+</article>
 
-<a class="card" href="https://satoshium.us/attestor/corrections/">
-<h2>Corrections</h2>
-<p>Amendments, revisions, clarifications, and retractions preserving transparency.</p>
-</a>
+</section>
 
-<a class="card" href="https://satoshium.us/attestor/definitions/">
-<h2>Definitions</h2>
-<p>Core terminology and vocabulary used throughout Attestor.</p>
-</a>
+<section style="margin-top:18px;">
 
-<a class="card" href="https://satoshium.us/attestor/rules/">
-<h2>Rules</h2>
-<p>Operational standards supporting consistency and accountability.</p>
-</a>
+<article class="card">
+  <h2>Initial Attestor Structure</h2>
 
-<a class="card" href="https://satoshium.us/attestor/interoperability/">
-<h2>Interoperability</h2>
-<p>How Attestor connects with Atlas, Anchor, Beacon, Certifier, Registry, and Chronicle.</p>
-</a>
+  <p>
+    Attestor is currently being established as a foundational trust framework.
+    Its initial structure includes purpose, attestations, attestation types,
+    evidence, corrections, definitions, rules, scope, interoperability, status,
+    and FAQ documentation.
+  </p>
 
-<a class="card" href="https://satoshium.us/attestor/schemas/">
-<h2>Schemas</h2>
-<p>Data structures supporting attestations, trust signals, evidence, and corrections.</p>
-</a>
+  <div class="note">
+    The architecture exists. The documentation exists. The trust framework comes later.
+  </div>
+</article>
 
-<a class="card" href="https://satoshium.us/attestor/templates/">
-<h2>Templates</h2>
-<p>Reference templates for trust-related records and attestations.</p>
-</a>
+</section>
 
-<a class="card" href="https://satoshium.us/attestor/status/">
-<h2>Status</h2>
-<p>Current development status and future milestones for Attestor.</p>
-</a>
+<section style="margin-top:18px;">
 
-<a class="card" href="https://satoshium.us/attestor/faq/">
-<h2>FAQ</h2>
-<p>Frequently asked questions regarding Attestor and trust systems.</p>
-</a>
+<article class="card">
+  <h2>Attestor Workflow</h2>
 
-</div>
+  <p>
+    Attestor does not replace systems that create data, discover signals,
+    verify records, preserve history, or manage identities. It helps preserve
+    trust context across those systems.
+  </p>
 
-<section class="section">
-
-<div class="note">
-
-<strong>Satoshium Ecosystem</strong><br><br>
-
-Atlas → Data<br>
-Navigator → Query<br>
-Beacon → Discovery<br>
-Certifier → Verification<br>
-Registry → Records<br>
-Chronicle → History<br>
-Anchor → Identity<br>
-<strong style="color:#f4c36a;">Attestor → Trust</strong>
-
-</div>
+  <div class="note">
+    Atlas provides data. Navigator asks questions. Beacon discovers signals.
+    Certifier verifies. Registry catalogs records. Chronicle remembers history.
+    Anchor preserves identity. Attestor preserves trust context.
+  </div>
+</article>
 
 </section>
 
 </main>
 
 <div class="wrap reflection">
-<hr>
-
-<div id="random-saying"
-style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">
-Trust emerges from transparency, accountability, evidence, and time.
-</div>
-
-<hr>
-
-<div id="footer-container"></div>
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Satoshium Attestor is being built as a trust layer — one attestation at a time.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
 </div>
 
 <script src="https://satoshium.link/assets/sayings.js"></script>
-
 <script>
 fetch("https://satoshium.link/components/footer.html")
-.then(response => response.text())
-.then(data => {
-document.getElementById("footer-container").innerHTML = data;
-});
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
 </script>
 
-<script defer
-src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'>
-</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 
 </body>
 </html>
