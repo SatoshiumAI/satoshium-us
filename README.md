@@ -146,5 +146,3 @@ Satoshium explores how decentralized intelligence systems can be built using:
 
 © Satoshium  
 Experimental platform under active development.
-
-<img width="647" height="2743" alt="image" src="https://github.com/user-attachments/assets/2195a641-ff38-4bd3-80bc-b4ddfed23548" />
