@@ -1,1 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Atlas Viewer | Satoshium Navigator</title>
+<meta name="description" content="Atlas Viewer is the primary viewing framework of Satoshium Navigator, providing structured access to Atlas records, jurisdiction intelligence, signals, trust dimensions, and related information.">
+<link rel="canonical" href="https://satoshium.us/navigator/atlas-viewer/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --green:#76d48b;
+ --blue:#8fb8ff;
+ --dim:#778399;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:940px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+ position:relative;
+ overflow:hidden;
+}
+
+.card::after{
+ content:"";
+ position:absolute;
+ top:0;
+ right:0;
+ width:120px;
+ height:120px;
+ background:radial-gradient(circle at top right, rgba(214,163,74,.08), transparent 62%);
+ pointer-events:none;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.status{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ margin-bottom:14px;
+ padding:6px 10px;
+ border:1px solid rgba(214,163,74,.20);
+ border-radius:999px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+ font-size:13px;
+ font-weight:700;
+}
+
+.status.active{color:var(--green)}
+.status.partial{color:var(--blue)}
+.status.future{color:var(--dim)}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+ line-height:1.9;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+.section-title{
+ margin:34px 0 0;
+ font-size:28px;
+ color:var(--gold2);
+}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+ .lead{font-size:18px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Navigator · Atlas Viewing Layer</div>
+
+  <h1>Atlas Viewer</h1>
+
+  <p class="lead">
+    Atlas Viewer is the primary viewing framework of Satoshium Navigator.
+    It provides structured access to Atlas records, jurisdiction intelligence,
+    evidence, signals, trust dimensions, metadata, and related resources.
+  </p>
+
+  <p class="lead">
+    While Atlas serves as the underlying intelligence repository, Atlas Viewer
+    serves as the interface through which that information becomes accessible,
+    navigable, comparable, and understandable.
+  </p>
+</section>
+
+<h2 class="section-title">Viewer Purpose</h2>
+
+<section class="grid">
+
+<article class="card">
+  <div class="status active">● Navigator Component</div>
+  <h2>Structured Access</h2>
+
+  <p>
+    Atlas Viewer transforms Atlas records into a navigable experience by providing
+    organized access to jurisdiction profiles, evidence, signals, trust dimensions,
+    metadata, change logs, and related records.
+  </p>
+</article>
+
+<article class="card">
+  <div class="status active">● Atlas Interface</div>
+  <h2>Exploration Layer</h2>
+
+  <p>
+    Atlas Viewer supports discovery, retrieval, comparison, and analysis while
+    preserving Atlas as the authoritative source repository for jurisdictional
+    intelligence.
+  </p>
+</article>
+
+</section>
+<h2 class="section-title">Viewing Capabilities</h2>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Record Exploration</h2>
+
+  <p>
+    Review individual Atlas records and associated information through a
+    consistent viewing framework designed to improve clarity, accessibility,
+    context, and understanding.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Jurisdiction Review</h2>
+
+  <p>
+    Explore intelligence packages associated with specific jurisdictions,
+    including profiles, evidence layers, signals, trust dimensions,
+    metadata, and historical references.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Comparative Analysis</h2>
+
+  <p>
+    Compare jurisdictions, signals, trust dimensions, and related records
+    in order to identify similarities, differences, trends, and
+    contextual relationships.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Query-Based Discovery</h2>
+
+  <p>
+    Locate information through structured search, filtering, and
+    exploration mechanisms provided through Navigator.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Cross-Referenced Records</h2>
+
+  <p>
+    Navigate relationships between jurisdictions, records, signals,
+    evidence, and supporting documentation across the broader
+    Satoshium ecosystem.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Historical Context</h2>
+
+  <p>
+    Access historical information, development records, change logs,
+    and Chronicle references that help provide context for
+    interpretation and analysis.
+  </p>
+</article>
+
+</section>
+
+<h2 class="section-title">Supported Atlas Components</h2>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Profiles</h2>
+
+  <p>
+    Jurisdiction-specific intelligence summaries that organize key
+    information into structured and accessible records.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Evidence</h2>
+
+  <p>
+    Supporting information associated with Atlas records, including
+    references, documentation, context, and source-oriented materials.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Signals</h2>
+
+  <p>
+    Observable indicators relevant to jurisdictions, institutions,
+    events, policies, trends, and related subjects.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Trust Dimensions</h2>
+
+  <p>
+    Structured categories used to evaluate characteristics such as
+    stability, transparency, predictability, accessibility,
+    and consistency.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Metadata</h2>
+
+  <p>
+    Reference information describing records, classifications,
+    identifiers, relationships, categories, and supporting context.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Change Logs</h2>
+
+  <p>
+    Historical modifications, record updates, and documented changes
+    that help preserve continuity, accountability, and traceability.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Builder Mode</h2>
+
+  <p>
+    Development-oriented information that documents construction,
+    methodology, structure, and operational considerations
+    associated with Atlas records.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Related Resources</h2>
+
+  <p>
+    Connections to Registry records, Chronicle entries,
+    certifications, attestations, and future ecosystem resources
+    when available.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Viewer Workflow</h2>
+
+  <p>
+    Atlas Viewer allows users to interact with Atlas information through
+    Navigator without modifying underlying records. It provides access,
+    presentation, filtering, and exploration while preserving Atlas as
+    the source repository.
+  </p>
+
+  <div class="note">
+User Query<br>
+↓<br>
+Navigator<br>
+↓<br>
+Atlas Viewer<br>
+↓<br>
+Atlas Records<br>
+↓<br>
+Results
+  </div>
+
+</article>
+
+</section>
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Relationship to Navigator</h2>
+
+  <p>
+    Navigator provides the broader exploration framework.
+    Atlas Viewer provides the primary interface for accessing Atlas
+    information through Navigator. Together they support discovery,
+    retrieval, filtering, comparison, and analysis.
+  </p>
+
+  <a class="btn" href="/navigator/">
+    Open Navigator →
+  </a>
+
+  <a class="btn" href="/atlas/">
+    Open Atlas →
+  </a>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Relationship to Atlas</h2>
+
+  <p>
+    Atlas serves as the jurisdiction intelligence repository of the
+    Satoshium ecosystem.
+  </p>
+
+  <p>
+    Atlas Viewer does not replace Atlas. Instead, it provides a
+    structured viewing environment through which Atlas information
+    becomes more accessible, understandable, and usable.
+  </p>
+
+  <div class="note">
+Atlas organizes intelligence.<br>
+Atlas Viewer presents intelligence.<br>
+Navigator explores intelligence.
+  </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Relationship to the Satoshium Ecosystem</h2>
+
+  <p>
+    Atlas Viewer may interact with information originating from
+    multiple systems throughout the broader Satoshium ecosystem.
+  </p>
+
+  <div class="note">
+Atlas provides intelligence.<br>
+Navigator explores intelligence.<br>
+Certifier evaluates information.<br>
+Registry organizes records.<br>
+Chronicle preserves history.<br>
+Anchor preserves integrity.<br>
+Beacon improves discoverability.<br>
+Attestor supports evidentiary assertions.
+  </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Guiding Principles</h2>
+
+  <p>
+    Atlas Viewer is designed to make jurisdiction intelligence easier
+    to access, understand, compare, and evaluate while preserving
+    transparency and traceability to underlying records.
+  </p>
+
+  <div class="note">
+Accessibility over complexity.<br>
+Exploration over obscurity.<br>
+Transparency over opacity.<br>
+Context over isolation.<br>
+Traceability over uncertainty.<br>
+Understanding over confusion.<br>
+Evidence over assumption.
+  </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Disclaimer</h2>
+
+  <p>
+    Atlas Viewer is an informational viewing framework.
+    Information presented through Atlas Viewer is derived from
+    available Atlas records and associated resources.
+  </p>
+
+  <p>
+    Atlas Viewer does not create intelligence records and should not
+    be interpreted as legal, financial, investment, tax, medical,
+    immigration, or professional advice.
+  </p>
+
+  <p>
+    Users remain responsible for evaluating information and making
+    decisions based upon their own circumstances.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Atlas Viewer Status</h2>
+
+  <p>
+    Atlas Viewer serves as the primary viewing layer for Atlas and is
+    intended to expand alongside Navigator as additional search,
+    filtering, comparison, and analytical capabilities are introduced.
+  </p>
+
+  <div class="note">
+Version 1.0 focuses on structured viewing,
+exploration, comparison, and discovery of Atlas information.
+  </div>
+
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+
+  <hr>
+
+  <div id="random-saying"
+       class="muted"
+       style="margin-bottom:14px; max-width:760px;">
+
+    Atlas Viewer exists to make Atlas intelligence accessible through structured exploration.
+  </div>
+
+  <hr>
+
+  <div id="footer-container"></div>
+
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'>
+</script>
+
+</body>
+</html>
