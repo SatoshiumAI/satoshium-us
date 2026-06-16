@@ -1,244 +1,248 @@
 # Satoshium Navigator
 
-## Overview
+**Understanding through exploration.**
 
-Satoshium Navigator is the query, exploration, and viewing layer of the Satoshium Suite.
+Satoshium Navigator is the query and exploration framework of the Satoshium ecosystem.
 
-Navigator is designed to help users discover, access, compare, filter, and interpret information contained within Atlas and related systems. While Atlas serves as the intelligence repository, Navigator serves as the interface through which that intelligence can be explored.
+Navigator exists to help users discover, access, compare, and interpret information contained within Atlas and other connected systems.
 
-Navigator does not exist to create records. Its purpose is to help users navigate them.
+While Atlas organizes intelligence, Registry organizes records, Chronicle preserves history, and Certifier evaluates information, Navigator provides the mechanism through which users interact with those resources.
 
----
-
-## Mission
-
-The mission of Navigator is to provide structured access to jurisdictional intelligence and related records through transparent, repeatable, and user-driven queries.
-
-Navigator seeks to transform large collections of information into accessible and actionable insights while preserving traceability to underlying records.
+Navigator transforms large collections of information into structured, searchable, and understandable outputs.
 
 ---
 
-## Core Functions
+## Purpose
 
-Navigator is designed to support:
+Modern information systems generate vast quantities of records, intelligence, evidence, signals, classifications, and historical information.
 
-* Information discovery
-* Jurisdiction lookup
-* Jurisdiction comparison
-* Signal exploration
-* Record retrieval
-* Filtered searches
-* Trend analysis
-* Query-based intelligence review
-* Cross-system navigation
+Even when information is available, it is often difficult to locate, compare, analyze, or understand.
 
----
+Navigator exists to answer fundamental questions:
 
-## Relationship to Atlas
+* What information is available?
+* What jurisdictions can be explored?
+* What signals exist?
+* How do jurisdictions compare?
+* What records are connected?
+* What patterns can be identified?
+* What information is relevant to a specific query?
 
-Atlas serves as the intelligence layer.
-
-Navigator serves as the viewing and query layer.
-
-Atlas collects, organizes, and maintains intelligence records. Navigator provides mechanisms to locate, access, compare, and analyze those records.
-
-Together, Atlas and Navigator form the foundation of jurisdictional intelligence within the Satoshium ecosystem.
+Navigator provides a structured framework for discovering and interacting with information.
 
 ---
 
-## Guiding Principles
+## Core Mission
 
-### Transparency
+The mission of Satoshium Navigator is to provide transparent, repeatable, and accessible exploration of information contained throughout the Satoshium ecosystem.
 
-Users should understand where information originates and how results are produced.
-
-### Traceability
-
-Results should be connected to underlying records whenever possible.
-
-### Accessibility
-
-Information should be easier to discover, compare, and understand.
-
-### Consistency
-
-Queries should produce repeatable and understandable outputs.
-
-### User Control
-
-Users should determine what they search, compare, and analyze.
+Navigator seeks to increase discoverability, understanding, comparison, accessibility, and analytical insight.
 
 ---
 
-## What Navigator Is
+## Navigator Targets
 
-Navigator is:
+Version 1.0 is designed to support exploration of:
 
-* A query system
-* A viewing system
-* A discovery system
-* An exploration system
-* A comparison system
-* A retrieval system
+* Jurisdictions
+* Profiles
+* Signals
+* Evidence
+* Trust Dimensions
+* Atlas Records
+* Registry Records
+* Chronicle Records
+* Certifications
+* Attestations
 
-Navigator helps users interact with information.
-
----
-
-## What Navigator Is Not
-
-Navigator is not:
-
-* A social network
-* A voting platform
-* A recommendation engine
-* A ranking authority
-* A legal advisor
-* A financial advisor
-* A substitute for independent research
-
-Navigator presents information. Users remain responsible for decisions.
+Future versions may support additional data sources and analytical capabilities.
 
 ---
 
-## Primary Components
+## Navigator Workflow
 
-### Queries
+```text
+Query
+  ↓
+Retrieve
+  ↓
+Filter
+  ↓
+Analyze
+  ↓
+Compare
+  ↓
+Present
+```
 
-Structured requests for information.
-
-### Query Types
-
-Standardized methods for retrieving information.
-
-### Jurisdictions
-
-Access to jurisdiction-specific intelligence records.
-
-### Signals
-
-Exploration of observable indicators and trends.
-
-### Comparisons
-
-Side-by-side evaluation of records and jurisdictions.
-
-### Filters
-
-Mechanisms for narrowing and refining results.
-
-### Outputs
-
-Structured responses generated from user queries.
+This workflow transforms user requests into structured and understandable outputs.
 
 ---
 
-## Interoperability
+## Navigator Outputs
 
-Navigator is designed to operate alongside other Satoshium systems.
+A Navigator query may produce:
+
+* Search Results
+* Jurisdiction Profiles
+* Comparison Reports
+* Signal Reviews
+* Filtered Results
+* Query Summaries
+* Analytical Outputs
+* Cross-Referenced Records
+
+These outputs are intended to improve understanding while preserving traceability to underlying records.
+
+---
+
+## Relationship to the Satoshium Ecosystem
+
+Navigator operates as one subsystem within the broader Satoshium ecosystem.
+
+```text
+Atlas
+  ↓
+Navigator
+  ↓
+Certifier
+  ↓
+Registry
+  ↓
+Chronicle
+  ↓
+Anchor
+  ↓
+Beacon
+  ↓
+Attestor
+```
 
 ### Atlas
 
-Provides source intelligence and jurisdictional records.
+Provides the underlying intelligence and information resources.
+
+### Navigator
+
+Provides exploration, retrieval, comparison, and viewing capabilities.
 
 ### Certifier
 
-Provides verification-oriented outputs and assessments.
+Evaluates information against defined standards and methodologies.
 
 ### Registry
 
-Provides permanent recordkeeping and reference records.
+Organizes and catalogs records.
 
 ### Chronicle
 
-Provides historical documentation and chronology.
+Preserves historical records and development history.
 
 ### Anchor
 
-Provides identity and reference-point structures.
+Preserves integrity references and permanence records.
 
 ### Beacon
 
-Provides discovery and visibility mechanisms.
+Improves discoverability across the ecosystem.
 
 ### Attestor
 
-Provides evidentiary and trust-oriented assertions.
+Supports evidentiary assertions and future trust frameworks.
 
 ---
 
-## Intended Users
+## Repository Structure
 
-Navigator may be useful for:
-
-* Researchers
-* Analysts
-* Journalists
-* Policymakers
-* Businesses
-* Investors
-* Educators
-* Citizens
-* Developers
-
-Any user seeking structured access to jurisdictional intelligence may benefit from Navigator.
-
----
-
-## Development Status
-
-Navigator is currently under development.
-
-Features, interfaces, query capabilities, schemas, and outputs may evolve over time.
+```text
+navigator/
+├── queries/
+├── query-types/
+├── jurisdictions/
+├── signals/
+├── comparisons/
+├── filters/
+├── outputs/
+├── schemas/
+├── templates/
+└── examples/
+```
 
 ---
 
 ## Documentation
 
-Additional documentation is available in:
+Core documentation is located throughout the repository.
 
-* Purpose
-* Scope
-* Queries
-* Query Types
-* Atlas Viewer
-* Jurisdictions
-* Signals
-* Comparisons
-* Filters
-* Outputs
-* Rules
-* Interoperability
-* Status
-* FAQ
-* Definitions
+Key documents include:
 
----
-
-## Navigator Within the Suite
-
-Atlas = Data
-
-Navigator = Query
-
-Certifier = Verification
-
-Registry = Recordkeeping
-
-Chronicle = History
-
-Anchor = Identity
-
-Beacon = Discovery
-
-Attestor = Trust
-
-Together these systems form the operational layers of the Satoshium Suite.
+* README.md
+* PURPOSE.md
+* SCOPE.md
+* QUERIES.md
+* QUERY-TYPES.md
+* JURISDICTIONS.md
+* SIGNALS.md
+* COMPARISONS.md
+* FILTERS.md
+* OUTPUTS.md
+* STATUS.md
+* FAQ.md
 
 ---
 
-**Status:** Draft
+## Current Status
 
-**Version:** Initial Framework
+**Version:** 1.0 (Draft)
 
-**Maintainer:** Satoshium
+Current focus areas include:
+
+* Query architecture
+* Atlas integration
+* Search capabilities
+* Comparison frameworks
+* Filtering systems
+* Output formats
+* Ecosystem interoperability
+
+The first major objective is establishing the initial public Navigator framework for Satoshium.
+
+---
+
+## Guiding Principles
+
+Navigator is built upon several foundational principles:
+
+* Exploration over obscurity
+* Transparency over opacity
+* Accessibility over complexity
+* Understanding over confusion
+* Discovery over limitation
+* Comparison over assumption
+* Evidence over speculation
+
+---
+
+## Disclaimer
+
+Satoshium Navigator is an informational exploration framework.
+
+Navigator retrieves, organizes, and presents information based on available records and system data.
+
+Navigator does not provide legal, financial, investment, medical, or professional advice.
+
+Users remain responsible for evaluating information and making decisions based upon their own circumstances.
+
+---
+
+## Guiding Statement
+
+> Information can be collected.
+>
+> Records can be preserved.
+>
+> Intelligence can be organized.
+>
+> Understanding can be improved.
+>
+> Satoshium Navigator exists to make that possible.
