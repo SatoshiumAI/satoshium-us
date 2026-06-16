@@ -244,5 +244,7 @@ For more information, review:
 ---
 
 **Status:** Draft
+
 **Version:** Initial Framework
+
 **Maintainer:** Satoshium
