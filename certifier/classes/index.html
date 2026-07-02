@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Certifier · Certification Classes</title>
+<meta name="description" content="Certification Classes define the level and intent of certifications issued by Satoshium Certifier.">
+<link rel="canonical" href="https://satoshium.us/certifier/classes/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+
+<style>
+:root{
+ --bg:#07090d;--text:#e8edf7;--muted:#9aa7bd;
+ --gold:#d6a34a;--gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+}
+body{padding-top:80px}
+.wrap{max-width:1120px;margin:auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero,.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90));
+ border:1px solid var(--line);
+ border-radius:22px;
+}
+.hero{padding:28px 24px;margin-bottom:18px}
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
+.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{padding:22px}
+.card h2{margin:0 0 10px;color:var(--gold2)}
+.card p{color:var(--muted)}
+.status{
+ display:inline-block;
+ padding:4px 10px;
+ border-radius:999px;
+ border:1px solid rgba(214,163,74,.24);
+ color:var(--gold2);
+ font-size:12px;
+ font-weight:800;
+ text-transform:uppercase;
+}
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+.muted{color:var(--muted)}
+@media(max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Certifier · Certification Classes</div>
+
+<h1>Certification Classes</h1>
+
+<p class="lead">
+Certification Classes communicate the scope, confidence, and intended use of a certification.
+Every certification issued by Satoshium Certifier belongs to a defined certification class.
+</p>
+
+<p class="lead">
+The initial Certifier framework establishes three certification classes designed for long-term scalability.
+</p>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+<h2>Informational</h2>
+<p>
+Informational certifications document observations, facts, or conditions without asserting operational readiness or comprehensive verification.
+</p>
+<span class="status">Foundation</span>
+</article>
+
+<article class="card">
+<h2>Operational</h2>
+<p>
+Operational certifications indicate that a target has been reviewed against published standards and is functioning according to its intended operational scope.
+</p>
+<span class="status">Operational</span>
+</article>
+
+<article class="card">
+<h2>Verified</h2>
+<p>
+Verified certifications represent Certifier's highest certification class and indicate that evidence, standards, methodology, and review support a high level of confidence in the certification determination.
+</p>
+<span class="status">Highest Class</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+<h2>Certification Class Role</h2>
+
+<p>
+Certification Classes communicate the level of review—not the value of the certification target. They help visitors understand the depth of review performed and the confidence associated with each certification.
+</p>
+
+<div class="note">
+Certification Classes may expand in future versions of Certifier while preserving backwards compatibility with previously issued certification records.
+</div>
+
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+Not every certification serves the same purpose. Certification Classes communicate the depth of review.
+</div>
+<hr>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(r=>r.text())
+.then(d=>document.getElementById("footer-container").innerHTML=d);
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
