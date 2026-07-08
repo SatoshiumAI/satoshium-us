@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registry Entry Model | Satoshium Registry</title>
+  <meta name="description" content="Defines the canonical Registry object: the Satoshium Registry Entry, or SREG." />
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #111821;
+      --panel-2: #151f2b;
+      --text: #e8eef5;
+      --muted: #a9b6c5;
+      --accent: #f2a900;
+      --border: #263241;
+      --soft: rgba(242, 169, 0, 0.12);
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .hero {
+      padding: 72px 24px 52px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top right, rgba(242,169,0,.12), transparent 35%),
+        linear-gradient(180deg, #101722 0%, #0b0f14 100%);
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1.05;
+      margin: 0 0 24px;
+    }
+
+    .hero p {
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 1.18rem;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin: 36px 0;
+    }
+
+    .card, .section, .note {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .card h2, .section h2, .note h2 {
+      margin-top: 0;
+      color: var(--text);
+      font-size: 1.45rem;
+    }
+
+    .card p, .section p, .note p, li {
+      color: var(--muted);
+    }
+
+    .section {
+      margin: 28px 0;
+      background: var(--panel-2);
+    }
+
+    .note {
+      background: var(--soft);
+      border-color: rgba(242,169,0,.32);
+      margin: 28px 0;
+    }
+
+    .flow {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text);
+      background: #0f1620;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin: 28px 0;
+      letter-spacing: .02em;
+    }
+
+    .flow span {
+      color: var(--accent);
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    .button-row {
+      margin-top: 42px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .reflection {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-style: italic;
+      max-width: 880px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        padding: 36px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Satoshium Registry</div>
+      <h1>Registry Entry Model</h1>
+      <p>
+        The Registry Entry Model defines the canonical object preserved by the Satoshium Registry:
+        the Satoshium Registry Entry, or SREG.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="grid">
+      <section class="card">
+        <h2>What Is an SREG?</h2>
+        <p>
+          An SREG is a Satoshium Registry Entry. It is the Registry’s primary operational artifact:
+          a cataloged, version-aware, publicly referenceable entry that preserves the existence,
+          status, relationships, and source references of an authoritative record.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Why Registry Creates SREG</h2>
+        <p>
+          Registry creates SREG entries so authoritative records produced elsewhere in the Suite can
+          be discovered, referenced, related, and preserved over time without transferring authority
+          away from the system that produced them.
+        </p>
+      </section>
+    </div>
+
+    <section class="section">
+      <h2>The Core Relationship</h2>
+      <p>
+        The architectural relationship between Certifier and Registry is intentionally direct.
+        Certifier produces the certification. Registry catalogs the resulting public record.
+      </p>
+
+      <div class="flow">
+        <span>Certification Package</span><br />
+        ↓<br />
+        <span>SCRD</span><br />
+        ↓<br />
+        <span>SREG</span>
+      </div>
+
+      <p>
+        The Certification Package remains the canonical certification. The SCRD is the public
+        Certified Record produced by Certifier. Registry receives the SCRD and creates an independent
+        SREG Registry Entry.
+      </p>
+    </section>
+
+    <section class="note">
+      <h2>Architectural Principle</h2>
+      <p>
+        Registry preserves records. Registry does not create their authority.
+      </p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Registry References</h2>
+        <p>
+          Registry references Certification Packages, SCRDs, source systems, and public locations.
+          It does not duplicate the certification itself or modify the package from which the record
+          originates.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Registry Does Not Certify</h2>
+        <p>
+          Certification remains the responsibility of Certifier. Registry does not evaluate evidence,
+          assign scores, issue certificates, or alter certification outcomes. Registry catalogs.
+        </p>
+      </section>
+    </div>
+
+    <section class="section">
+      <h2>What an SREG Contains</h2>
+      <p>
+        Each Registry Entry contains enough information to identify, locate, classify, relate, and
+        preserve a record over time. The final schema is defined separately, but every SREG is expected
+        to include core registry metadata.
+      </p>
+
+      <ul>
+        <li><strong>Registry Identifier</strong> — the unique Registry-level identifier for the entry.</li>
+        <li><strong>Record Type</strong> — the classification of the registered record.</li>
+        <li><strong>Source System</strong> — the Suite tool or external system that produced the source record.</li>
+        <li><strong>Source Record</strong> — the authoritative record being registered.</li>
+        <li><strong>Status</strong> — the current Registry status of the entry.</li>
+        <li><strong>Version</strong> — the Registry version of the entry.</li>
+        <li><strong>Relationships</strong> — preserved links to related records, packages, receipts, attestations, or entries.</li>
+        <li><strong>Public References</strong> — public URLs, file paths, or published locations.</li>
+        <li><strong>Registration Date</strong> — the date the entry was registered.</li>
+        <li><strong>Last Updated</strong> — the date the Registry Entry was last updated.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Relationship to Certification Packages</h2>
+      <p>
+        An SREG may reference a Certification Package, but it does not become the package. The package
+        remains the authoritative certification artifact. The Registry Entry provides a durable catalog
+        layer that makes the package and its public certified record discoverable within the broader
+        Satoshium Suite.
+      </p>
+      <p>
+        This separation allows Certifier and Registry to preserve distinct responsibilities while still
+        forming a coherent operational chain.
+      </p>
+    </section>
+
+    <section class="note">
+      <h2>Reference, Do Not Duplicate</h2>
+      <p>
+        Registry avoids unnecessary duplication because duplicated records can drift from their source.
+        By referencing authoritative records instead of copying them, Registry preserves provenance,
+        reduces ambiguity, and supports long-term trust.
+      </p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Long-Term Discoverability</h2>
+        <p>
+          SREG entries allow records to remain findable after pages move, systems evolve, schemas mature,
+          or future tools are introduced. Registry becomes the catalog layer that helps the Suite remember
+          where records came from and how they relate.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Future Interoperability</h2>
+        <p>
+          Because SREG entries preserve identifiers, relationships, source systems, statuses, and public
+          references, they can support future interoperability across Chronicle, Anchor, Beacon, Attestor,
+          Navigator, and external systems.
+        </p>
+      </section>
+    </div>
+
+    <section class="section">
+      <h2>Canonical Object Alignment</h2>
+      <p>
+        The Registry Entry Model establishes architectural symmetry across the Suite. Certifier’s canonical
+        object is the Certification Package. Registry’s canonical object is the SREG.
+      </p>
+      <p>
+        This distinction allows each system to remain clean, intentional, and bounded. Certifier produces
+        authority through certification. Registry preserves the public record of that authority through
+        cataloging.
+      </p>
+    </section>
+
+    <section class="note">
+      <h2>Institutional Position</h2>
+      <p>
+        An SREG is not a replacement for the record it references. It is the Registry’s institutional
+        acknowledgment that the record exists, has a source, has relationships, has a status, and should
+        remain discoverable.
+      </p>
+    </section>
+
+    <div class="button-row">
+      <a class="button" href="../">← Back to Registry</a>
+    </div>
+
+    <p class="reflection">
+      The Registry does not become the source of truth by claiming authority over records. It becomes
+      trustworthy by preserving where authority came from, how records are related, and how they can be
+      found again.
+    </p>
+
+  </main>
+
+  <footer>
+    Satoshium Registry · Registry Entry Model · SREG
+  </footer>
+
+</body>
+</html>
