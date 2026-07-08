@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Anchor Anchoring Process</title>
+<meta name="description" content="Satoshium Anchor Anchoring Process — defines the process by which artifacts are hashed, timestamped, signed, anchored, and preserved for integrity verification.">
+<link rel="canonical" href="https://satoshium.us/anchor/anchoring-process/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Anchor · Anchoring Process</div>
+  <h1>Satoshium Anchor Anchoring Process</h1>
+
+  <p class="lead">
+    Anchoring Process defines how important artifacts become integrity-preserved
+    within Anchor.
+  </p>
+
+  <p class="lead">
+    The process answers a simple question:
+    how does an artifact become anchored?
+  </p>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Purpose</h2>
+  <p>
+    The Anchoring Process provides a structured lifecycle for transforming an
+    artifact into an integrity-preserved reference that can be verified later.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Process Boundary</h2>
+  <p>
+    Anchor does not create the artifact or define its meaning. Anchor begins
+    when an artifact is ready to receive an integrity reference.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Artifact Focus</h2>
+  <p>
+    The process applies to artifacts whose integrity matters, including
+    Certification Packages, SCPRs, SCRs, SCRDs, Registry Entries, historical
+    events, attestations, or future Suite outputs.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Verification Goal</h2>
+  <p>
+    The goal of anchoring is to make future verification possible by preserving
+    references that can be compared against the artifact later.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Anchoring Sequence</h2>
+
+  <p>
+    The anchoring sequence describes the institutional path from artifact
+    creation to preserved integrity.
+  </p>
+
+  <div class="note">
+    Artifact Created → Hash Generated → Anchor Produced → Timestamp Recorded →
+    Signature Applied → Integrity Preserved
+  </div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Artifact Created</h2>
+  <p>
+    An artifact is created by its source system, such as Certifier, Registry,
+    Chronicle, Attestor, or another approved Suite component.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Hash Generated</h2>
+  <p>
+    A cryptographic hash is generated from the artifact or from a defined
+    canonical representation of the artifact.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Anchor Produced</h2>
+  <p>
+    An anchor is produced from the integrity reference so the artifact can be
+    associated with a preserved verification point.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Timestamp Recorded</h2>
+  <p>
+    A timestamp is recorded to establish when the integrity reference was
+    created, observed, published, or preserved.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Signature Applied</h2>
+  <p>
+    A signature may be applied to identify the system, authority, process, or
+    identity responsible for producing or preserving the anchor.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Integrity Preserved</h2>
+  <p>
+    The artifact's integrity state is preserved so future reviewers can compare
+    the artifact against the anchored reference.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>What the Process Produces</h2>
+
+  <p>
+    The anchoring process produces integrity evidence that can be referenced by
+    other Suite systems without requiring Anchor to own the artifact itself.
+  </p>
+
+  <div class="note">
+    Anchor Reference · Artifact Identifier · Hash · Timestamp · Signature · Verification Metadata
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Canonical Representation</h2>
+
+  <p>
+    For anchoring to be useful, the artifact or its selected representation must
+    be clearly defined. Anchor may reference a file, record, package, public page,
+    structured object, or canonical export.
+  </p>
+
+  <div class="note">
+    A stable representation makes later verification repeatable.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Verification After Anchoring</h2>
+
+  <p>
+    After anchoring, future verification compares the artifact against the
+    preserved integrity reference. If the values match, the artifact appears
+    consistent with the anchored state. If they do not match, the difference
+    indicates that the artifact, representation, or verification process must
+    be reviewed.
+  </p>
+
+  <div class="note">
+    Anchor makes change detectable. Review explains what the change means.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Process Philosophy</h2>
+
+  <p>
+    Anchoring is not a declaration of truth. It is a preservation of integrity.
+    The process helps future reviewers determine whether an artifact remains
+    consistent with the preserved reference.
+  </p>
+
+  <p>
+    The goal is not to make every artifact permanent. The goal is to preserve
+    the ability to detect meaningful change.
+  </p>
+
+  <a class="btn" href="/anchor/">
+    Back to Anchor →
+  </a>
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    An anchor does not explain meaning. It preserves the ability to verify form.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
