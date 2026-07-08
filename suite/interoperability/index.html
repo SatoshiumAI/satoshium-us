@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Suite Interoperability</title>
+<meta name="description" content="Satoshium Suite Interoperability defines how Atlas, Certifier, Registry, Chronicle, Anchor, Beacon, Attestor, and Navigator work together through shared certification architecture.">
+<link rel="canonical" href="https://satoshium.us/suite/interoperability/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">SUITE · INTEROPERABILITY</div>
+  <h1>Satoshium Suite Interoperability</h1>
+
+  <p class="lead">
+    Suite Interoperability defines how Atlas, Certifier, Registry, Chronicle,
+    Anchor, Beacon, Attestor, and Navigator work together through shared
+    certification architecture.
+  </p>
+
+  <p class="lead">
+    The Certification Package becomes the shared source object from which the
+    rest of the Suite can catalog, preserve, anchor, discover, attest, and
+    orchestrate.
+  </p>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Purpose</h2>
+  <p>
+    Suite Interoperability explains how independent Satoshium systems cooperate
+    without collapsing their responsibilities into one system.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Core Principle</h2>
+  <p>
+    Each Suite system preserves its own authority, object, and responsibility
+    while referencing the shared certification architecture.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Shared Source Object</h2>
+  <p>
+    The Certification Package is the canonical certification object produced by
+    Certifier and referenced by the rest of the Suite.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Reference-Based Design</h2>
+  <p>
+    Suite systems reference authoritative objects instead of duplicating,
+    replacing, or reinterpreting them.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Interoperability Architecture</h2>
+
+  <p>
+    Atlas provides the subject. Certifier creates the Certification Package.
+    The rest of the Suite uses that package and its related outputs as the
+    reference point for their own institutional responsibilities.
+  </p>
+
+  <div class="note">
+    Atlas<br>
+    ↓<br>
+    Certification Package<br>
+    ↓<br>
+    Registry · Chronicle · Anchor · Beacon · Attestor · Navigator
+  </div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Atlas</h2>
+  <p>
+    Atlas provides intelligence records, jurisdiction data, evidence, metadata,
+    and source material that may become candidates for certification.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Certifier</h2>
+  <p>
+    Certifier evaluates the subject and produces the Certification Package,
+    including public outputs such as SCPR, SCR, and SCRD.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry</h2>
+  <p>
+    Registry receives or references certified records and creates independent
+    SREG Registry Entries to catalog them over time.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Chronicle</h2>
+  <p>
+    Chronicle preserves certification events such as creation, renewal,
+    suspension, revocation, expiration, and other historical milestones.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Anchor</h2>
+  <p>
+    Anchor preserves integrity references such as hashes, timestamps,
+    signatures, and tamper-evidence for important artifacts.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Beacon</h2>
+  <p>
+    Beacon publishes discovery signals and discovery metadata so certification
+    information can be found, filtered, surfaced, and interpreted.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Attestor</h2>
+  <p>
+    Attestor produces Trust Statements and attestations derived from
+    authoritative records and supporting references.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Navigator</h2>
+  <p>
+    Navigator orchestrates certification workflows, automation, queries, and
+    cross-system operational coordination.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Canonical Suite Flow</h2>
+
+  <p>
+    The Suite becomes interoperable because each system understands where its
+    responsibility begins and ends.
+  </p>
+
+  <div class="note">
+    Atlas provides the subject.<br>
+    Certifier creates the Certification Package.<br>
+    Registry catalogs it.<br>
+    Chronicle records events about it.<br>
+    Anchor preserves its integrity.<br>
+    Beacon publishes discovery signals about it.<br>
+    Attestor produces trust statements from it.<br>
+    Navigator orchestrates workflows around it.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>What Interoperability Does Not Do</h2>
+
+  <p>
+    Interoperability does not merge all systems into one authority. It does not
+    allow Registry to certify, Chronicle to anchor, Beacon to verify, Attestor
+    to replace Certifier, or Navigator to own data.
+  </p>
+
+  <div class="note">
+    Interoperability connects responsibilities. It does not erase boundaries.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Institutional Objects</h2>
+
+  <p>
+    Each system has a distinct object or responsibility that allows the Suite to
+    remain organized, intelligible, and interoperable.
+  </p>
+
+  <div class="note">
+    Certifier → Certification Package<br>
+    Registry → SREG<br>
+    Chronicle → Historical Event<br>
+    Anchor → Integrity Reference<br>
+    Beacon → Discovery Signal / Discovery Metadata<br>
+    Attestor → Trust Statement<br>
+    Navigator → Workflow Definition
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Interoperability Philosophy</h2>
+
+  <p>
+    The Satoshium Suite is strongest when each tool performs one institutional
+    role clearly and references the work of the others responsibly.
+  </p>
+
+  <p>
+    Interoperability does not require centralization. It requires stable
+    objects, clear boundaries, durable references, and repeatable workflows.
+  </p>
+
+  <a class="btn" href="/suite/">
+    Back to Suite →
+  </a>
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Interoperability makes independent institutions work as one ecosystem without making them the same institution.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
