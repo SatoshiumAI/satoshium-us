@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Chronicle Integration</title>
+<meta name="description" content="Satoshium Chronicle Integration — defines how Chronicle relates to Certifier, Registry, and other Satoshium systems by preserving certification events rather than certification records.">
+<link rel="canonical" href="https://satoshium.us/chronicle/integration/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Integration</div>
+  <h1>Satoshium Chronicle Integration</h1>
+
+  <p class="lead">
+    Chronicle Integration defines how Chronicle relates to Certifier, Registry,
+    and the broader Satoshium Suite by preserving certification events rather
+    than certification records.
+  </p>
+
+  <p class="lead">
+    Integration answers a simple question:
+    what history should Chronicle preserve?
+  </p>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Purpose</h2>
+  <p>
+    Chronicle Integration establishes the boundary between operational records
+    and historical events. Chronicle does not store certifications. Chronicle
+    preserves the history of certification activity.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Core Distinction</h2>
+  <p>
+    Certifier creates certification records. Registry catalogs certified records.
+    Chronicle preserves certification events.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Not a Certification Store</h2>
+  <p>
+    Chronicle does not become the home of Certification Packages, SCRDs, receipts,
+    or Registry Entries. Those records remain with the systems responsible for
+    creating or cataloging them.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Historical Layer</h2>
+  <p>
+    Chronicle serves as the historical layer that records when meaningful
+    certification-related events occurred and why they matter within the broader
+    Satoshium ecosystem.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Integration Relationship</h2>
+
+  <p>
+    Chronicle integrates with Certifier and Registry by observing or referencing
+    significant certification activity. It preserves the event history without
+    assuming authority over the certification or the Registry Entry.
+  </p>
+
+  <div class="note">
+    Certifier creates certification records.<br>
+    Registry catalogs certified records.<br>
+    Chronicle preserves certification events.
+  </div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Certifier Relationship</h2>
+  <p>
+    Certifier remains the authority for certification outcomes, evidence review,
+    scoring, certification status, Certification Packages, SCRDs, and receipts.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry Relationship</h2>
+  <p>
+    Registry remains the public catalog for certified records and their Registry
+    lifecycle state through SREG Registry Entries.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Chronicle Relationship</h2>
+  <p>
+    Chronicle preserves the historical occurrence of certification events, such
+    as creation, renewal, suspension, revocation, expiration, or other significant
+    certification milestones.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Suite Relationship</h2>
+  <p>
+    Chronicle may support future interoperability by preserving historical context
+    that can be referenced by Anchor, Attestor, Beacon, Navigator, Registry, and
+    other Suite systems.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Certification Events</h2>
+
+  <p>
+    Chronicle preserves events that describe meaningful moments in the life of a
+    certification. These events provide historical context without duplicating the
+    certification record itself.
+  </p>
+
+  <div class="note">
+    Certification Created → Certification Renewed → Certification Suspended →
+    Certification Revoked → Certification Expired
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Why Chronicle Preserves Events</h2>
+
+  <p>
+    Certifications may change over time. A certification may be created, renewed,
+    suspended, revoked, superseded, or allowed to expire. The certification record
+    documents the operational state. Chronicle documents the historical event.
+  </p>
+
+  <div class="note">
+    Records explain what exists. Events explain what happened.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Authority Boundaries</h2>
+
+  <p>
+    Chronicle does not determine whether a certification is valid, active,
+    suspended, revoked, or expired. Those meanings belong to Certifier and,
+    where applicable, Registry’s cataloging lifecycle.
+  </p>
+
+  <p>
+    Chronicle records that an event occurred, preserves the context of that event,
+    and references the systems or records that establish its authority.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Integration Philosophy</h2>
+
+  <p>
+    Chronicle should preserve history without absorbing the responsibilities of
+    other systems. Its role is not to certify, catalog, attest, anchor, or discover.
+    Its role is to remember.
+  </p>
+
+  <div class="note">
+    Chronicle preserves the historical memory of the Suite.
+  </div>
+
+  <a class="btn" href="/chronicle/">
+    Back to Chronicle →
+  </a>
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Records preserve what exists. Chronicle preserves what happened.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
