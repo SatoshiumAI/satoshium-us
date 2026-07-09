@@ -1,169 +1,369 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Satoshium Atlas — Certification Framework</title>
 
-<meta name="theme-color" content="#d6a34a">
+<meta name="description" content="Satoshium Atlas Certification Framework — defines how Atlas records participate in the Satoshium Suite certification architecture through Suite Standards, Suite Methodology, and interoperable certification outputs.">
 
-<title>Atlas Certification Framework | Satoshium Atlas</title>
+<meta property="og:title" content="Satoshium Atlas — Certification Framework">
+<meta property="og:description" content="Defines how Atlas records become certifiable under the Satoshium Suite without replacing Suite Standards or Suite Methodology.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://satoshium.us/atlas/certification-framework/">
+<meta property="og:image" content="https://satoshium.ai/assets/og-us.png">
+<meta property="og:site_name" content="Satoshium">
+<meta property="og:locale" content="en_US">
 
-<meta name="description" content="Defines how Atlas records participate in the Satoshium Suite certification architecture through the application of Suite Standards and Suite Methodology.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Satoshium Atlas — Certification Framework">
+<meta name="twitter:description" content="The Atlas Certification Framework applies Suite Standards and Suite Methodology to Atlas intelligence records.">
+<meta name="twitter:image" content="https://satoshium.ai/assets/og-us.png">
+<meta name="twitter:site" content="@SatoshiumAI">
 
 <link rel="canonical" href="https://satoshium.us/atlas/certification-framework/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
 
 <style>
+:root{
+ --card-wm: url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
 
-/* Match existing Atlas / Suite styling */
+:focus-visible{
+ outline:2px solid var(--gold2);
+ outline-offset:3px;
+}
 
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+
+.wrap.content{
+ opacity:0;
+ transform:translateY(6px);
+ animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes pageEnter{
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+
+h1{font-size:34px;color:var(--gold2);line-height:1.15}
+h2{font-size:22px;color:var(--gold2)}
+h3{font-size:15px;color:var(--text)}
+
+.muted{color:var(--muted)}
+
+.hero{
+ position:relative;
+ overflow:hidden;
+ border:1px solid var(--line);
+ border-radius:20px;
+ padding:28px 22px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),
+ linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:16px;
+ padding:16px;
+ margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);
+ transition:transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.btn{
+ display:inline-flex;
+ align-items:center;
+ gap:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+ 
+ .eyebrow{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ margin-bottom:12px;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+ 
+.grid-2{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:16px
+}
+
+.note{
+ margin-top:10px;
+ padding:12px 14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+ font-size:14px;
+}
+
+.span-2{
+ grid-column: 1 / -1;
+}
+
+.mini{font-size:13px}
+
+ul{
+ margin:8px 0 0 18px;
+}
+
+code,pre{
+ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+ color:#f7d58a;
+}
+
+pre{
+ white-space:pre-wrap;
+ margin:10px 0 0;
+ padding:14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.045);
+ color:var(--muted);
+ overflow:auto;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ margin-top:10px;
+ overflow:hidden;
+ border-radius:12px;
+ border:1px solid var(--line);
+}
+th,td{
+ text-align:left;
+ vertical-align:top;
+ padding:12px 14px;
+ border-bottom:1px solid rgba(214,163,74,.12);
+ color:var(--muted);
+}
+th{
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+}
+tr:last-child td{border-bottom:0}
+
+@media (max-width:760px){
+ .grid-2{grid-template-columns:1fr}
+ .span-2{grid-column:auto}
+ h1{font-size:30px}
+}
+
+@media (prefers-reduced-motion:reduce){
+ html,body{
+  scroll-behavior:auto;
+ }
+
+ .wrap.content{
+  animation:none;
+  opacity:1;
+  transform:none;
+ }
+
+ .card{
+  transition:none;
+ }
+
+ .card:hover{
+  transform:none;
+ }
+}
 </style>
 </head>
 
 <body>
 
-<header class="hero">
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
 
-<div class="eyebrow">
-ATLAS • CERTIFICATION
-</div>
+<main id="main-content" class="wrap content">
 
-<h1>
-Atlas Certification Framework
-</h1>
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="eyebrow">ATLAS · CERTIFICATION</div>
+  <h1 id="heading-hero">🧭 Atlas Certification Framework</h1>
 
-<p>
+  <p class="muted" style="max-width:920px;">
+    The <strong>Atlas Certification Framework</strong> defines how Atlas records participate within
+    the Satoshium Suite certification ecosystem.
+  </p>
 
-The Atlas Certification Framework defines how Atlas records participate within the
-Satoshium Suite certification ecosystem.
+  <p class="muted">
+    Rather than establishing independent certification standards, this Framework applies the existing
+    <strong>Suite Standards</strong> and <strong>Suite Methodology</strong> to Atlas intelligence records
+    through a consistent, transparent, and repeatable certification architecture.
+  </p>
 
-Rather than establishing independent certification standards, this Framework applies
-the existing Suite Standards and Suite Methodology to Atlas intelligence records
-through a consistent, transparent, and repeatable certification architecture.
+  <p style="margin-top:14px;">
+    <a class="btn" href="/atlas/">Return to Atlas →</a>
+  </p>
 
-</p>
+  <p style="margin-top:6px;">
+    <a class="btn" href="/suite/standards/">Open Suite Standards →</a>
+  </p>
 
-</header>
+  <p style="margin-top:6px;">
+    <a class="btn" href="/suite/methodology/">Open Suite Methodology →</a>
+  </p>
 
-<main>
-
-<section class="grid">
-
-<div class="card">
-
-<span class="label">
-PURPOSE
-</span>
-
-<h2>
-Purpose
-</h2>
-
-<p>
-
-The Atlas Certification Framework serves as the constitutional bridge between Atlas
-and the Satoshium Suite certification ecosystem.
-
-It defines how Atlas records become eligible for evaluation while preserving the
-authority of the Suite Standards and Suite Methodology.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<span class="label">
-AUTHORITY
-</span>
-
-<h2>
-Authority
-</h2>
-
-<p>
-
-The Framework derives its authority entirely from the Satoshium Suite.
-
-It does not establish independent standards or methodologies. Instead, it applies
-existing Suite governance specifically to Atlas certification subjects.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<span class="label">
-APPLICABILITY
-</span>
-
-<h2>
-Applicability
-</h2>
-
-<p>
-
-This Framework applies to Atlas records submitted for certification, including
-jurisdiction intelligence records, supporting metadata, evidence, trust dimensions,
-signals, change histories, and other canonical Atlas artifacts.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<span class="label">
-IMPLEMENTATION
-</span>
-
-<h2>
-Framework Role
-</h2>
-
-<p>
-
-Suite Standards define what certification requires.
-
-Suite Methodology defines how certification is performed.
-
-The Atlas Certification Framework applies both consistently to Atlas records,
-creating a repeatable certification implementation without introducing new
-governing rules.
-
-</p>
-
-</div>
-
+  <p style="margin-top:6px;">
+    <a class="btn" href="/suite/interoperability/">Open Suite Interoperability →</a>
+  </p>
 </section>
 
-<section class="card">
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-purpose">
+    <h2 id="heading-purpose">Purpose</h2>
 
-<span class="label">
-CERTIFICATION MODEL
-</span>
+    <p class="muted">
+      The Atlas Certification Framework serves as the constitutional bridge between Atlas
+      and the Satoshium Suite certification ecosystem.
+    </p>
 
-<h2>
-Evaluation Model
-</h2>
+    <p class="muted">
+      It defines how Atlas records become eligible for evaluation while preserving the
+      authority of the Suite Standards and Suite Methodology.
+    </p>
 
-<p>
+    <div class="note">
+      The Framework connects Atlas to certification without creating a separate standards authority.
+    </div>
+  </div>
 
-Atlas records progress through a structured evaluation process that transforms
-authoritative intelligence into certified public artifacts.
+  <div class="card" aria-labelledby="heading-authority">
+    <h2 id="heading-authority">Authority</h2>
 
-</p>
+    <p class="muted">
+      The Framework derives its authority entirely from the Satoshium Suite.
+      It does not establish independent standards or methodologies.
+    </p>
 
-<pre>
+    <p class="muted">
+      Instead, it applies existing Suite governance specifically to Atlas certification subjects.
+    </p>
 
-Suite Standards
+    <div class="note mini">
+      Suite Standards define expectations. Suite Methodology defines execution. This Framework applies both to Atlas.
+    </div>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-hierarchy">
+  <h2 id="heading-hierarchy">Certification Authority Hierarchy</h2>
+
+  <p class="muted">
+    Atlas certifications are governed by the Suite-level constitutional layer and implemented through this Framework.
+  </p>
+
+  <pre>Suite Standards
+        │
+Suite Methodology
+        │
+Atlas Certification Framework
+        │
+Atlas Certifications</pre>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-applicability">
+    <h2 id="heading-applicability">Applicability</h2>
+
+    <p class="muted">
+      This Framework applies to Atlas records submitted for certification, including canonical
+      intelligence records and their supporting artifacts.
+    </p>
+
+    <ul>
+      <li>Jurisdiction Records</li>
+      <li>Jurisdiction Intelligence Engine outputs</li>
+      <li>Metadata</li>
+      <li>Evidence</li>
+      <li>Signals</li>
+      <li>Trust Dimensions</li>
+      <li>Change histories</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-role">
+    <h2 id="heading-role">Framework Role</h2>
+
+    <p class="muted">
+      The Framework does not redefine Atlas records. Atlas remains the authority for its own
+      intelligence objects, files, metadata, signals, and jurisdiction artifacts.
+    </p>
+
+    <p class="muted">
+      The Framework defines how those Atlas records become certification subjects within the Suite.
+    </p>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-evaluation">
+  <h2 id="heading-evaluation">Evaluation Model</h2>
+
+  <p class="muted">
+    Atlas records progress through a structured evaluation process that transforms authoritative
+    intelligence into certified public artifacts.
+  </p>
+
+  <pre>Suite Standards
         │
 Suite Methodology
         │
@@ -175,287 +375,191 @@ Evidence Evaluation
         │
 Certification Decision
         │
-Certification Package
+Certification Package</pre>
 
-</pre>
+  <div class="note">
+    The Evaluation Model does not replace scoring, evidence rules, or decision logic. It places Atlas records within them.
+  </div>
+</div>
 
-</section>
+<div class="card" aria-labelledby="heading-workflow">
+  <h2 id="heading-workflow">Certification Workflow</h2>
 
-<section class="card">
+  <p class="muted">
+    The Framework follows the operational workflow defined by the Suite Methodology and referenced by Suite Interoperability.
+  </p>
 
-<span class="label">
-WORKFLOW
-</span>
-
-<h2>
-Certification Workflow
-</h2>
-
-<p>
-
-The Framework follows the operational workflow defined by the Suite Methodology.
-
-</p>
-
-<pre>
-
-Atlas Record
-
+  <pre>Atlas Record
         ↓
-
 Evidence Collection
-
         ↓
-
 Evaluation
-
         ↓
-
 Certification Decision
-
         ↓
-
 Certification Package
-
         ↓
-
 Registry
-
         ↓
-
 Chronicle
-
         ↓
-
 Anchor
-
         ↓
-
 Beacon
-
         ↓
-
 Attestor
-
         ↓
-
-Navigator
-
-</pre>
-
-</section>
-
-<section class="grid">
-
-<div class="card">
-
-<span class="label">
-OUTPUTS
-</span>
-
-<h2>
-Certification Outputs
-</h2>
-
-<p>
-
-Successful Atlas certifications produce authoritative certification artifacts
-used throughout the Suite.
-
-</p>
-
-<ul>
-
-<li>SCPR — Satoshium Certification Public Report</li>
-
-<li>SCR — Satoshium Certification Receipt</li>
-
-<li>SCRD — Satoshium Certification Record</li>
-
-</ul>
-
+Navigator</pre>
 </div>
 
-<div class="card">
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-outputs">
+    <h2 id="heading-outputs">Certification Outputs</h2>
 
-<span class="label">
-SUITE OUTPUTS
-</span>
+    <p class="muted">
+      Successful Atlas certifications produce authoritative certification artifacts used throughout the Suite.
+    </p>
 
-<h2>
-Institutional Results
-</h2>
+    <ul>
+      <li>SCPR — Satoshium Certification Public Report</li>
+      <li>SCR — Satoshium Certification Receipt</li>
+      <li>SCRD — Satoshium Certification Record</li>
+    </ul>
+  </div>
 
-<p>
+  <div class="card" aria-labelledby="heading-results">
+    <h2 id="heading-results">Institutional Results</h2>
 
-Certification Packages become authoritative references consumed throughout the
-operational Suite.
+    <p class="muted">
+      Certification Packages become authoritative references consumed throughout the operational Suite.
+    </p>
 
-</p>
-
-<ul>
-
-<li>Registry Entry (SREG)</li>
-
-<li>Chronicle Event</li>
-
-<li>Anchor Integrity Reference</li>
-
-<li>Beacon Discovery Signal</li>
-
-<li>Attestor Trust Statement</li>
-
-<li>Navigator Workflow Reference</li>
-
-</ul>
-
+    <ul>
+      <li>Registry Entry (SREG)</li>
+      <li>Chronicle Event</li>
+      <li>Anchor Integrity Reference</li>
+      <li>Beacon Discovery Signal</li>
+      <li>Attestor Trust Statement</li>
+      <li>Navigator Workflow Reference</li>
+    </ul>
+  </div>
 </div>
 
-</section>
+<div class="card" aria-labelledby="heading-relationship">
+  <h2 id="heading-relationship">Relationship to the Suite</h2>
 
-<section class="card">
+  <p class="muted">
+    The Framework sits below Suite-level governance and above individual Atlas certifications.
+  </p>
 
-<span class="label">
-RELATIONSHIP
-</span>
+  <table>
+    <thead>
+      <tr>
+        <th>Suite Layer</th>
+        <th>Responsibility</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Suite Standards</td>
+        <td>Defines certification expectations.</td>
+      </tr>
+      <tr>
+        <td>Suite Methodology</td>
+        <td>Defines certification execution.</td>
+      </tr>
+      <tr>
+        <td>Atlas Certification Framework</td>
+        <td>Applies Standards and Methodology to Atlas records.</td>
+      </tr>
+      <tr>
+        <td>Suite Interoperability</td>
+        <td>Defines how certified Atlas outputs move throughout the Suite.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h2>
-Relationship to the Suite
-</h2>
+<div class="card" aria-labelledby="heading-versioning">
+  <h2 id="heading-versioning">Framework Versioning</h2>
 
-<table>
+  <p class="muted">
+    The Atlas Certification Framework is versioned independently from individual Atlas certifications.
+    Each certification references the Framework version under which the evaluation was performed.
+  </p>
 
-<thead>
-
-<tr>
-
-<th>Suite Layer</th>
-
-<th>Responsibility</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>Suite Standards</td>
-
-<td>Defines certification expectations.</td>
-
-</tr>
-
-<tr>
-
-<td>Suite Methodology</td>
-
-<td>Defines certification execution.</td>
-
-</tr>
-
-<tr>
-
-<td>Atlas Certification Framework</td>
-
-<td>Applies Standards and Methodology to Atlas records.</td>
-
-</tr>
-
-<tr>
-
-<td>Suite Interoperability</td>
-
-<td>Defines how certified Atlas outputs move throughout the Suite.</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-</section>
-
-<section class="card">
-
-<span class="label">
-VERSIONING
-</span>
-
-<h2>
-Framework Versioning
-</h2>
-
-<p>
-
-The Atlas Certification Framework is versioned independently from individual
-Atlas certifications.
-
-Each certification references the Framework version under which the evaluation
-was performed, ensuring long-term transparency and reproducibility.
-
-</p>
-
-<pre>
-
-Framework v1
-
-↓
-
+  <pre>Framework v1
+        ↓
 Framework v2
+        ↓
+Framework v3</pre>
 
-↓
-
-Framework v3
-
-</pre>
-
-</section>
-
-<section class="card">
-
-<span class="label">
-PHILOSOPHY
-</span>
-
-<h2>
-Framework Philosophy
-</h2>
-
-<p>
-
-Standards establish expectations.
-
-Methodology establishes execution.
-
-The Atlas Certification Framework applies both consistently to Atlas records,
-allowing them to participate as authoritative certification subjects throughout
-the Satoshium Suite.
-
-</p>
-
-<div class="note">
-
-The Framework connects Atlas to the certification ecosystem without replacing
-the constitutional authority of the Suite Standards or Suite Methodology.
-
+  <div class="note">
+    Versioning preserves transparency, reproducibility, and long-term interpretability of certified Atlas records.
+  </div>
 </div>
 
-</section>
+<div class="card" aria-labelledby="heading-boundaries">
+  <h2 id="heading-boundaries">Boundary Rules</h2>
+
+  <p class="muted">
+    The Framework preserves institutional boundaries across the Suite.
+  </p>
+
+  <ul>
+    <li>Atlas owns the intelligence records.</li>
+    <li>Certifier owns the certification process.</li>
+    <li>Registry catalogs certified records.</li>
+    <li>Chronicle preserves certification events.</li>
+    <li>Anchor preserves integrity references.</li>
+    <li>Beacon publishes discovery signals.</li>
+    <li>Attestor produces Trust Statements.</li>
+    <li>Navigator orchestrates workflows.</li>
+  </ul>
+
+  <div class="note">
+    The Framework connects responsibilities. It does not erase boundaries.
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-philosophy">
+  <h2 id="heading-philosophy">Framework Philosophy</h2>
+
+  <p class="muted">
+    Standards establish expectations. Methodology establishes execution.
+  </p>
+
+  <p class="muted">
+    The Atlas Certification Framework applies both consistently to Atlas records, allowing them
+    to participate as authoritative certification subjects throughout the Satoshium Suite.
+  </p>
+
+  <div class="note">
+    The Framework connects Atlas to the certification ecosystem without replacing the constitutional authority of the Suite Standards or Suite Methodology.
+  </div>
+</div>
 
 </main>
 
-<footer>
+<div class="wrap reflection">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Intelligence becomes durable when it can be evaluated, referenced, and preserved.
+</div>
+<hr />
 
-<a class="button"
-href="/atlas/">
+<div id="footer-container"></div>
 
-Back to Atlas →
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+  document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
 
-</a>
-
-</footer>
-
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
