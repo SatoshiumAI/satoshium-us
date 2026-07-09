@@ -1,74 +1,370 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Atlas Certification Scope | Satoshium Atlas</title>
-<link rel="icon" href="/assets/favicon.ico">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Satoshium Atlas — Certification Scope</title>
+
+<meta name="description" content="Satoshium Atlas Certification Scope — defines the Atlas record characteristics evaluated during Suite certification, including identity, structure, metadata, evidence, traceability, trust dimensions, signals, currency, and reproducibility.">
+
+<meta property="og:title" content="Satoshium Atlas — Certification Scope">
+<meta property="og:description" content="Defines the evaluated characteristics of Atlas records during Satoshium Suite certification.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://satoshium.us/atlas/certification-scope/">
+<meta property="og:image" content="https://satoshium.ai/assets/og-us.png">
+<meta property="og:site_name" content="Satoshium">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Satoshium Atlas — Certification Scope">
+<meta name="twitter:description" content="The Atlas Certification Scope identifies the Atlas record attributes examined during certification.">
+<meta name="twitter:image" content="https://satoshium.ai/assets/og-us.png">
+<meta name="twitter:site" content="@SatoshiumAI">
+
+<link rel="canonical" href="https://satoshium.us/atlas/certification-scope/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
 <style>
-:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18);}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,sans-serif;padding-top:80px}
-.wrap{max-width:1080px;margin:auto;padding:0 18px 60px}
-.hero,.card{background:linear-gradient(to bottom right,rgba(12,16,24,.96),rgba(12,16,24,.9));border:1px solid var(--line);border-radius:18px;padding:24px;margin:18px 0}
-.hero h1,.card h2{color:var(--gold2)} .eyebrow{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:999px;color:var(--gold2);font-weight:700;font-size:13px;text-transform:uppercase}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.note{margin-top:12px;padding:12px;border:1px solid var(--line);border-radius:12px;background:rgba(214,163,74,.05);color:var(--muted)}
-.btn{display:inline-block;margin:6px 8px 0 0;padding:11px 16px;border:1px solid var(--line);border-radius:12px;color:var(--gold2);text-decoration:none}
-table{width:100%;border-collapse:collapse}th,td{border:1px solid var(--line);padding:10px;text-align:left}th{color:var(--gold2)}
-@media(max-width:760px){.grid{grid-template-columns:1fr}}
+:root{
+ --card-wm: url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+:focus-visible{
+ outline:2px solid var(--gold2);
+ outline-offset:3px;
+}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+
+.wrap.content{
+ opacity:0;
+ transform:translateY(6px);
+ animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes pageEnter{
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+
+h1{font-size:34px;color:var(--gold2);line-height:1.15}
+h2{font-size:22px;color:var(--gold2)}
+h3{font-size:15px;color:var(--text)}
+
+.muted{color:var(--muted)}
+
+.hero{
+ position:relative;
+ overflow:hidden;
+ border:1px solid var(--line);
+ border-radius:20px;
+ padding:28px 22px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),
+ linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:16px;
+ padding:16px;
+ margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);
+ transition:transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.btn{
+ display:inline-flex;
+ align-items:center;
+ gap:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+ 
+ .eyebrow{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ margin-bottom:12px;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+ 
+.grid-2{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:16px
+}
+
+.note{
+ margin-top:10px;
+ padding:12px 14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+ font-size:14px;
+}
+
+.span-2{
+ grid-column: 1 / -1;
+}
+
+.mini{font-size:13px}
+
+ul{
+ margin:8px 0 0 18px;
+}
+
+code,pre{
+ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+ color:#f7d58a;
+}
+
+pre{
+ white-space:pre-wrap;
+ margin:10px 0 0;
+ padding:14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.045);
+ color:var(--muted);
+ overflow:auto;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ margin-top:10px;
+ overflow:hidden;
+ border-radius:12px;
+ border:1px solid var(--line);
+}
+th,td{
+ text-align:left;
+ vertical-align:top;
+ padding:12px 14px;
+ border-bottom:1px solid rgba(214,163,74,.12);
+ color:var(--muted);
+}
+th{
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+}
+tr:last-child td{border-bottom:0}
+
+@media (max-width:760px){
+ .grid-2{grid-template-columns:1fr}
+ .span-2{grid-column:auto}
+ h1{font-size:30px}
+}
+
+@media (prefers-reduced-motion:reduce){
+ html,body{
+  scroll-behavior:auto;
+ }
+
+ .wrap.content{
+  animation:none;
+  opacity:1;
+  transform:none;
+ }
+
+ .card{
+  transition:none;
+ }
+
+ .card:hover{
+  transform:none;
+ }
+}
 </style>
 </head>
+
 <body>
-<div class="wrap">
-<section class="hero">
-<div class="eyebrow">ATLAS · CERTIFICATION SCOPE</div>
-<h1>🧭 Atlas Certification Scope</h1>
-<p>The Atlas Certification Scope defines the boundaries of Atlas certification by identifying which Atlas artifacts are eligible for certification, what is evaluated, and what remains outside the certification process.</p>
-<a class="btn" href="/atlas/">Return to Atlas →</a>
-<a class="btn" href="/atlas/certification/atlas-certification-framework/">Open Framework →</a>
-<a class="btn" href="/atlas/certification/atlas-certification-profile/">Open Profile →</a>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+
+<main id="main-content" class="wrap content">
+
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="eyebrow">ATLAS · CERTIFICATION SCOPE</div>
+  <h1 id="heading-hero">🧭 Atlas Certification Scope</h1>
+
+  <p class="muted" style="max-width:920px;">
+    The Atlas Certification Scope defines the certification boundary for <strong>Satoshium Atlas</strong>
+    by identifying which Atlas artifacts participate in certification under the Satoshium Suite.
+  </p>
+
+  <p class="muted">
+    The Scope does not replace the Suite Standards, Suite Methodology, or Atlas Certification Framework.
+    It establishes the institutional boundary of what is, and is not, evaluated during Atlas certification.
+  </p>
+
+  <p style="margin-top:14px;"><a class="btn" href="/atlas/">Return to Atlas →</a></p>
+  <p style="margin-top:6px;"><a class="btn" href="/atlas/certification/atlas-certification-framework/">View Certification Framework →</a></p>
+  <p style="margin-top:6px;"><a class="btn" href="/atlas/certification/atlas-certification-scope/">View Certification Scope →</a></p>
 </section>
 
-<div class="grid">
-<div class="card"><h2>Purpose</h2><p>Defines the certification boundaries for Atlas records so every evaluation is consistent, transparent, and repeatable.</p></div>
-<div class="card"><h2>Authority</h2><p>The Scope derives its authority from the Suite Standards, Suite Methodology, and Atlas Certification Framework.</p></div>
-<div class="card"><h2>Included</h2>
-<ul>
-<li>Jurisdiction Intelligence Engine (JIE) records</li>
-<li>Country and State intelligence records</li>
+<div class="card">
+<h2>Purpose</h2>
+<p class="muted">The Atlas Certification Scope establishes the certification boundary for Atlas by defining which Atlas artifacts are eligible for certification and which institutional records remain outside the Atlas certification process.</p>
+<div class="note">The Scope answers one primary question: what is included in Atlas certification?</div>
+</div>
+
+<div class="grid-2">
+<div class="card">
+<h2>Scope Role</h2>
+<p class="muted">The Scope complements the Atlas Certification Framework and Profile by defining the institutional boundary of Atlas certification.</p>
+<pre>Framework
+      │
+Profile
+      │
+Scope
+      │
+Certification Boundary</pre>
+</div>
+
+<div class="card">
+<h2>Boundary Principle</h2>
+<p class="muted">Atlas certification evaluates Atlas records only. Operational records produced by other Suite systems are referenced, not certified by Atlas.</p>
+<div class="note mini">Institutional responsibility remains with the system that owns the record.</div>
+</div>
+</div>
+
+<div class="grid-2">
+<div class="card"><h2>Included Within Scope</h2><ul>
+<li>Jurisdiction Intelligence Engine (JIE)</li>
+<li>Country & State records</li>
 <li>Evidence</li>
 <li>Metadata</li>
-<li>Trust Dimensions</li>
 <li>Signals</li>
+<li>Trust Dimensions</li>
 <li>Change Logs</li>
+<li>Canonical Atlas artifacts</li>
 </ul></div>
-<div class="card"><h2>Excluded</h2>
-<ul>
+
+<div class="card"><h2>Outside Scope</h2><ul>
 <li>Registry Entries (SREG)</li>
 <li>Chronicle Events</li>
 <li>Anchor Integrity References</li>
 <li>Beacon Discovery Metadata</li>
 <li>Attestor Trust Statements</li>
 <li>Navigator Workflows</li>
+<li>Certification scoring</li>
+<li>Suite governance documents</li>
 </ul></div>
 </div>
 
 <div class="card">
-<h2>Certification Boundary</h2>
+<h2>Certification Boundary Matrix</h2>
 <table>
-<tr><th>Subject</th><th>Within Scope</th></tr>
-<tr><td>Atlas intelligence records</td><td>✔</td></tr>
-<tr><td>Atlas supporting evidence</td><td>✔</td></tr>
-<tr><td>Atlas metadata</td><td>✔</td></tr>
-<tr><td>Certification Package outputs</td><td>Referenced only</td></tr>
-<tr><td>Operational Suite records</td><td>Outside scope</td></tr>
+<thead><tr><th>Institutional Object</th><th>Atlas Scope</th></tr></thead>
+<tbody>
+<tr><td>Atlas intelligence records</td><td>Included</td></tr>
+<tr><td>Atlas evidence & metadata</td><td>Included</td></tr>
+<tr><td>Certification Package</td><td>Referenced</td></tr>
+<tr><td>Registry Entry</td><td>Outside Scope</td></tr>
+<tr><td>Chronicle Event</td><td>Outside Scope</td></tr>
+<tr><td>Anchor Reference</td><td>Outside Scope</td></tr>
+<tr><td>Beacon Signal</td><td>Outside Scope</td></tr>
+<tr><td>Navigator Workflow</td><td>Outside Scope</td></tr>
+</tbody>
 </table>
 </div>
 
 <div class="card">
+<h2>Scope Flow</h2>
+<pre>Atlas Record
+      │
+Within Scope
+      │
+Certification Evaluation
+      │
+Certification Package
+      │
+Referenced by Operational Suite</pre>
+<div class="note">Atlas certification ends with the Certification Package. Other Suite systems consume that package under their own authority.</div>
+</div>
+
+<div class="card">
 <h2>Scope Philosophy</h2>
-<p>Atlas certification evaluates Atlas. It does not certify the operational records created by the rest of the Satoshium Suite. Each institutional component remains responsible for its own authoritative objects.</p>
-<div class="note">A clear certification boundary preserves institutional responsibility while enabling interoperability across the Suite.</div>
+<p class="muted">Clear certification boundaries preserve institutional responsibility while enabling interoperability across the Satoshium Suite.</p>
+<div class="note">Atlas certifies Atlas. Registry catalogs. Chronicle preserves history. Anchor preserves integrity. Beacon publishes discovery. Attestor issues Trust Statements. Navigator orchestrates workflows.</div>
 </div>
+
+</main>
+</main>
+
+<div class="wrap reflection">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
 </div>
+<hr />
+
+<div id="footer-container"></div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+  document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
