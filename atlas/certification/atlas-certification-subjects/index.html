@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Satoshium Atlas — Certification Subjects</title>
+
+<meta name="description" content="Satoshium Atlas Certification Subjects — defines the canonical Atlas objects eligible to become certification subjects under the Satoshium Suite certification architecture.">
+
+<meta property="og:title" content="Satoshium Atlas — Certification Subjects">
+<meta property="og:description" content="Defines which Atlas objects may become certification subjects during Satoshium Suite certification.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://satoshium.us/atlas/certification/atlas-certification-subjects/">
+<meta property="og:image" content="https://satoshium.ai/assets/og-us.png">
+<meta property="og:site_name" content="Satoshium">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Satoshium Atlas — Certification Subjects">
+<meta name="twitter:description" content="The Atlas Certification Subjects page identifies the canonical Atlas objects eligible for certification.">
+<meta name="twitter:image" content="https://satoshium.ai/assets/og-us.png">
+<meta name="twitter:site" content="@SatoshiumAI">
+
+<link rel="canonical" href="https://satoshium.us/atlas/certification/atlas-certification-subjects/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --card-wm: url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+:focus-visible{
+ outline:2px solid var(--gold2);
+ outline-offset:3px;
+}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+
+.wrap.content{
+ opacity:0;
+ transform:translateY(6px);
+ animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes pageEnter{
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+
+h1{font-size:34px;color:var(--gold2);line-height:1.15}
+h2{font-size:22px;color:var(--gold2)}
+h3{font-size:15px;color:var(--text)}
+
+.muted{color:var(--muted)}
+
+.hero{
+ position:relative;
+ overflow:hidden;
+ border:1px solid var(--line);
+ border-radius:20px;
+ padding:28px 22px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),
+ linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:16px;
+ padding:16px;
+ margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);
+ transition:transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.btn{
+ display:inline-flex;
+ align-items:center;
+ gap:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+ 
+ .eyebrow{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ margin-bottom:12px;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+ 
+.grid-2{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:16px
+}
+
+.note{
+ margin-top:10px;
+ padding:12px 14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+ font-size:14px;
+}
+
+.span-2{
+ grid-column: 1 / -1;
+}
+
+.mini{font-size:13px}
+
+ul{
+ margin:8px 0 0 18px;
+}
+
+code,pre{
+ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+ color:#f7d58a;
+}
+
+pre{
+ white-space:pre-wrap;
+ margin:10px 0 0;
+ padding:14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.045);
+ color:var(--muted);
+ overflow:auto;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ margin-top:10px;
+ overflow:hidden;
+ border-radius:12px;
+ border:1px solid var(--line);
+}
+th,td{
+ text-align:left;
+ vertical-align:top;
+ padding:12px 14px;
+ border-bottom:1px solid rgba(214,163,74,.12);
+ color:var(--muted);
+}
+th{
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+}
+tr:last-child td{border-bottom:0}
+
+@media (max-width:760px){
+ .grid-2{grid-template-columns:1fr}
+ .span-2{grid-column:auto}
+ h1{font-size:30px}
+}
+
+@media (prefers-reduced-motion:reduce){
+ html,body{
+  scroll-behavior:auto;
+ }
+
+ .wrap.content{
+  animation:none;
+  opacity:1;
+  transform:none;
+ }
+
+ .card{
+  transition:none;
+ }
+
+ .card:hover{
+  transform:none;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+
+<main id="main-content" class="wrap content">
+
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="eyebrow">ATLAS · CERTIFICATION SUBJECTS</div>
+  <h1 id="heading-hero">🧭 Atlas Certification Subjects</h1>
+
+  <p class="muted" style="max-width:920px;">
+    Atlas Certification Subjects define the canonical <strong>Satoshium Atlas</strong>
+    objects that may be submitted for certification under the Satoshium Suite.
+  </p>
+
+  <p class="muted">
+    This page distinguishes certification subjects from supporting artifacts. Complete Atlas
+    intelligence records may become certification subjects; evidence, metadata, signals, trust
+    dimensions, and change logs support certification but are not normally certified as isolated objects.
+  </p>
+
+  <p style="margin-top:14px;"><a class="btn" href="/atlas/">Return to Atlas →</a></p>
+  <p style="margin-top:6px;"><a class="btn" href="/atlas/certification/atlas-certification-framework/">View Certification Framework →</a></p>
+  <p style="margin-top:6px;"><a class="btn" href="/atlas/certification/atlas-certification-profile/">View Certification Profile →</a></p>
+  <p style="margin-top:6px;"><a class="btn" href="/atlas/certification/atlas-certification-scope/">View Certification Scope →</a></p>
+</section>
+
+<div class="card" aria-labelledby="heading-purpose">
+  <h2 id="heading-purpose">Purpose</h2>
+
+  <p class="muted">
+    The Atlas Certification Subjects page identifies which Atlas objects may serve as the
+    primary subject of a certification evaluation. It prevents supporting artifacts from being
+    confused with the complete Atlas records they support.
+  </p>
+
+  <div class="note">
+    The Subjects page answers one primary question: what Atlas object is being certified?
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-role">
+    <h2 id="heading-role">Subjects Role</h2>
+
+    <p class="muted">
+      Certification Subjects sit beneath the Framework, Profile, and Scope. The Framework explains
+      how Atlas participates in certification; the Profile identifies evaluated characteristics;
+      the Scope defines the boundary; Subjects identify the actual objects eligible for certification.
+    </p>
+
+    <pre>Atlas Certification Framework
+        │
+Atlas Certification Profile
+        │
+Atlas Certification Scope
+        │
+Atlas Certification Subjects
+        │
+Certification Candidate</pre>
+  </div>
+
+  <div class="card" aria-labelledby="heading-principle">
+    <h2 id="heading-principle">Subject Principle</h2>
+
+    <p class="muted">
+      Atlas certification applies to complete intelligence records rather than isolated supporting
+      files. Supporting artifacts provide evidence, context, traceability, and review material for
+      the subject, but they do not ordinarily become independent certification subjects.
+    </p>
+
+    <div class="note mini">
+      The certification subject is the record being evaluated. Supporting artifacts explain and substantiate that record.
+    </div>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-primary">
+  <h2 id="heading-primary">Primary Certification Subjects</h2>
+
+  <p class="muted">
+    Primary certification subjects are complete Atlas record objects that may be evaluated,
+    certified, and referenced throughout the Satoshium Suite.
+  </p>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-jie">
+    <h2 id="heading-jie">Jurisdiction Intelligence Engine Records</h2>
+
+    <p class="muted">
+      A Jurisdiction Intelligence Engine record is the primary Atlas certification subject.
+      It represents a complete jurisdiction intelligence package with supporting evidence,
+      metadata, trust dimensions, signals, and change history.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-country">
+    <h2 id="heading-country">Country Records</h2>
+
+    <p class="muted">
+      Country records may serve as certification subjects when they represent complete,
+      canonical Atlas jurisdiction records for a nation-state or country-level jurisdiction.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-state">
+    <h2 id="heading-state">State Records</h2>
+
+    <p class="muted">
+      State records may serve as certification subjects when they represent complete,
+      canonical Atlas jurisdiction records for a U.S. state or comparable subnational jurisdiction.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-future">
+    <h2 id="heading-future">Future Atlas Record Families</h2>
+
+    <p class="muted">
+      Future Atlas record families may become certification subjects if they are defined as
+      complete canonical records with evidence, metadata, traceability, and reproducible review material.
+    </p>
+
+    <div class="note mini">
+      Future candidates may include corridor records, regional records, institutional records, or dataset records if Atlas formally defines them.
+    </div>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-supporting">
+  <h2 id="heading-supporting">Supporting Certification Artifacts</h2>
+
+  <p class="muted">
+    Supporting artifacts are reviewed as part of certification but are not usually the certification
+    subject. They help Certifier evaluate the record, reconstruct the reasoning, and preserve traceability.
+  </p>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">Evidence</h2>
+    <p class="muted">
+      Evidence supports the certification subject by documenting source material, substantiating
+      claims, and preserving the basis for review.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-metadata">
+    <h2 id="heading-metadata">Metadata</h2>
+    <p class="muted">
+      Metadata supports identification, classification, versioning, update state, repository structure,
+      and machine-readable record context.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">Signals</h2>
+    <p class="muted">
+      Signals support evaluation by identifying evidence-derived indicators used within the Atlas
+      record and certification review process.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">Trust Dimensions</h2>
+    <p class="muted">
+      Trust dimensions support evaluation by organizing the trust-related qualities examined
+      within the Atlas record.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-change">
+    <h2 id="heading-change">Change Logs</h2>
+    <p class="muted">
+      Change logs support certification by preserving update history, revision context, and
+      certification-relevant record changes.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-builder">
+    <h2 id="heading-builder">Builder Mode &amp; Profile Files</h2>
+    <p class="muted">
+      Builder mode, profile, and related files support the complete record by documenting
+      record construction, organization, and review context.
+    </p>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-matrix">
+  <h2 id="heading-matrix">Certification Subject Matrix</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Atlas Object</th>
+        <th>Certification Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jurisdiction Intelligence Engine Record</td>
+        <td>Primary certification subject</td>
+      </tr>
+      <tr>
+        <td>Country Record</td>
+        <td>Primary certification subject</td>
+      </tr>
+      <tr>
+        <td>State Record</td>
+        <td>Primary certification subject</td>
+      </tr>
+      <tr>
+        <td>Future Corridor Record</td>
+        <td>Potential future certification subject</td>
+      </tr>
+      <tr>
+        <td>Future Dataset Record</td>
+        <td>Potential future certification subject</td>
+      </tr>
+      <tr>
+        <td>Evidence</td>
+        <td>Supporting artifact</td>
+      </tr>
+      <tr>
+        <td>Metadata</td>
+        <td>Supporting artifact</td>
+      </tr>
+      <tr>
+        <td>Signals</td>
+        <td>Supporting artifact</td>
+      </tr>
+      <tr>
+        <td>Trust Dimensions</td>
+        <td>Supporting artifact</td>
+      </tr>
+      <tr>
+        <td>Change Log</td>
+        <td>Supporting artifact</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card" aria-labelledby="heading-flow">
+  <h2 id="heading-flow">Subject Flow</h2>
+
+  <p class="muted">
+    Certification begins with a defined Atlas subject and proceeds through review of its supporting artifacts.
+  </p>
+
+  <pre>Atlas Certification Subject
+        │
+Supporting Artifacts
+        │
+Profile Evaluation
+        │
+Scope Boundary
+        │
+Certification Decision
+        │
+Certification Package</pre>
+
+  <div class="note">
+    The subject is certified as a complete record. Supporting artifacts remain part of the record context.
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-includes">
+    <h2 id="heading-includes">Subjects Include</h2>
+
+    <ul>
+      <li>Complete Atlas jurisdiction records</li>
+      <li>Canonical JIE record packages</li>
+      <li>Country-level Atlas records</li>
+      <li>State-level Atlas records</li>
+      <li>Future Atlas record families formally defined as certification subjects</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-excludes">
+    <h2 id="heading-excludes">Subjects Exclude</h2>
+
+    <ul>
+      <li>Standalone evidence files</li>
+      <li>Standalone metadata files</li>
+      <li>Standalone signal files</li>
+      <li>Standalone trust dimension files</li>
+      <li>Standalone change logs</li>
+      <li>Registry, Chronicle, Anchor, Beacon, Attestor, or Navigator records</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-rules">
+  <h2 id="heading-rules">Subject Rules</h2>
+
+  <p class="muted">
+    Atlas certification subjects must preserve the distinction between complete records and their supporting materials.
+  </p>
+
+  <ul>
+    <li>A certification subject must be a complete Atlas record or formally defined Atlas record family.</li>
+    <li>Supporting artifacts may be evaluated but are not normally certified independently.</li>
+    <li>Certification subjects must be identifiable, traceable, and reproducible.</li>
+    <li>Certifier evaluates the subject using the Atlas Certification Profile and Scope.</li>
+    <li>Operational Suite outputs remain owned by their respective systems.</li>
+  </ul>
+
+  <div class="note">
+    Subject discipline prevents the Suite from certifying fragments when the authoritative object is the complete Atlas record.
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-versioning">
+  <h2 id="heading-versioning">Subject Versioning</h2>
+
+  <p class="muted">
+    Certification subjects may evolve as Atlas expands. New subject families should be documented
+    before they become eligible for certification, and certification packages should identify the
+    subject type evaluated at the time of certification.
+  </p>
+
+  <pre>Jurisdiction Records
+        ↓
+Corridor Records
+        ↓
+Regional Records
+        ↓
+Dataset Records</pre>
+</div>
+
+<div class="card" aria-labelledby="heading-philosophy">
+  <h2 id="heading-philosophy">Subjects Philosophy</h2>
+
+  <p class="muted">
+    Atlas certifies complete intelligence records rather than isolated fragments. Supporting artifacts
+    make those records reviewable, but the certification subject remains the complete canonical Atlas object.
+  </p>
+
+  <div class="note">
+    Certification subjects define what may be certified. Supporting artifacts explain why certification can be trusted.
+  </div>
+</div>
+
+</main>
+
+</main>
+
+<div class="wrap reflection">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+
+<div id="footer-container"></div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+  document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
