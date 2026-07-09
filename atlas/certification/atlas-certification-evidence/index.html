@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Satoshium Atlas — Certification Evidence</title>
+
+<meta name="description" content="Satoshium Atlas Certification Evidence — defines the evidence role, evidence boundaries, and supporting material used to evaluate Atlas records under the Satoshium Suite certification architecture.">
+
+<meta property="og:title" content="Satoshium Atlas — Certification Evidence">
+<meta property="og:description" content="Defines how Atlas evidence supports certification evaluation under the Satoshium Suite.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://satoshium.us/atlas/certification/atlas-certification-evidence/">
+<meta property="og:image" content="https://satoshium.ai/assets/og-us.png">
+<meta property="og:site_name" content="Satoshium">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Satoshium Atlas — Certification Evidence">
+<meta name="twitter:description" content="The Atlas Certification Evidence page identifies how evidence supports Atlas certification.">
+<meta name="twitter:image" content="https://satoshium.ai/assets/og-us.png">
+<meta name="twitter:site" content="@SatoshiumAI">
+
+<link rel="canonical" href="https://satoshium.us/atlas/certification/atlas-certification-evidence/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --card-wm: url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+:focus-visible{
+ outline:2px solid var(--gold2);
+ outline-offset:3px;
+}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+
+.wrap.content{
+ opacity:0;
+ transform:translateY(6px);
+ animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes pageEnter{
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+
+h1{font-size:34px;color:var(--gold2);line-height:1.15}
+h2{font-size:22px;color:var(--gold2)}
+h3{font-size:15px;color:var(--text)}
+
+.muted{color:var(--muted)}
+
+.hero{
+ position:relative;
+ overflow:hidden;
+ border:1px solid var(--line);
+ border-radius:20px;
+ padding:28px 22px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),
+ linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:16px;
+ padding:16px;
+ margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);
+ transition:transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.btn{
+ display:inline-flex;
+ align-items:center;
+ gap:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+ 
+ .eyebrow{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ margin-bottom:12px;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+ 
+.grid-2{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:16px
+}
+
+.note{
+ margin-top:10px;
+ padding:12px 14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+ font-size:14px;
+}
+
+.span-2{
+ grid-column: 1 / -1;
+}
+
+.mini{font-size:13px}
+
+ul{
+ margin:8px 0 0 18px;
+}
+
+code,pre{
+ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+ color:#f7d58a;
+}
+
+pre{
+ white-space:pre-wrap;
+ margin:10px 0 0;
+ padding:14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.045);
+ color:var(--muted);
+ overflow:auto;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ margin-top:10px;
+ overflow:hidden;
+ border-radius:12px;
+ border:1px solid var(--line);
+}
+th,td{
+ text-align:left;
+ vertical-align:top;
+ padding:12px 14px;
+ border-bottom:1px solid rgba(214,163,74,.12);
+ color:var(--muted);
+}
+th{
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+}
+tr:last-child td{border-bottom:0}
+
+@media (max-width:760px){
+ .grid-2{grid-template-columns:1fr}
+ .span-2{grid-column:auto}
+ h1{font-size:30px}
+}
+
+@media (prefers-reduced-motion:reduce){
+ html,body{
+  scroll-behavior:auto;
+ }
+
+ .wrap.content{
+  animation:none;
+  opacity:1;
+  transform:none;
+ }
+
+ .card{
+  transition:none;
+ }
+
+ .card:hover{
+  transform:none;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+
+<main id="main-content" class="wrap content">
+
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="eyebrow">ATLAS · CERTIFICATION EVIDENCE</div>
+  <h1 id="heading-hero">🧭 Atlas Certification Evidence</h1>
+
+  <p class="muted" style="max-width:920px;">
+    Atlas Certification Evidence defines the supporting material used to evaluate
+    <strong>Satoshium Atlas</strong> records under the Satoshium Suite certification architecture.
+  </p>
+
+  <p class="muted">
+    Evidence does not become the certification subject by itself. It supports the certification
+    subject by making Atlas records traceable, reviewable, reproducible, and capable of being
+    evaluated under the Suite Standards, Suite Methodology, and Atlas Certification Framework.
+  </p>
+
+  <p style="margin-top:14px;"><a class="btn" href="/atlas/">Return to Atlas →</a></p>
+  <p style="margin-top:6px;"><a class="btn" href="/atlas/certification/atlas-certification-framework/">View Certification Framework →</a></p>
+  <p style="margin-top:6px;"><a class="btn" href="/atlas/certification/atlas-certification-profile/">View Certification Profile →</a></p>
+  <p style="margin-top:6px;"><a class="btn" href="/atlas/certification/atlas-certification-scope/">View Certification Scope →</a></p>
+  <p style="margin-top:6px;"><a class="btn" href="/atlas/certification/atlas-certification-subjects/">View Certification Subjects →</a></p>
+</section>
+
+<div class="card" aria-labelledby="heading-purpose">
+  <h2 id="heading-purpose">Purpose</h2>
+
+  <p class="muted">
+    The Atlas Certification Evidence page defines how evidence functions within Atlas certification.
+    It identifies the material that supports certification review without converting supporting
+    artifacts into independent certification subjects.
+  </p>
+
+  <div class="note">
+    Evidence answers one primary question: what supports the certification conclusion?
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-role">
+    <h2 id="heading-role">Evidence Role</h2>
+
+    <p class="muted">
+      Evidence supports the certification subject by preserving the source basis, record context,
+      factual support, and review material used during certification evaluation.
+    </p>
+
+    <pre>Certification Subject
+        │
+Evidence
+        │
+Profile Evaluation
+        │
+Methodology Application
+        │
+Certification Decision</pre>
+  </div>
+
+  <div class="card" aria-labelledby="heading-boundary">
+    <h2 id="heading-boundary">Evidence Boundary</h2>
+
+    <p class="muted">
+      Evidence is reviewed during certification but is not normally certified as an isolated object.
+      The certified object remains the complete Atlas record or formally defined Atlas certification subject.
+    </p>
+
+    <div class="note mini">
+      Evidence supports certification. It does not replace the certification subject.
+    </div>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-categories">
+  <h2 id="heading-categories">Evidence Categories</h2>
+
+  <p class="muted">
+    Atlas certification may rely on several categories of evidence depending on the record type,
+    certification subject, and evaluation profile.
+  </p>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-source">
+    <h2 id="heading-source">Source Evidence</h2>
+
+    <p class="muted">
+      Source evidence includes cited references, jurisdiction materials, official records, public
+      documentation, preserved links, and other materials used to support Atlas record claims.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-record">
+    <h2 id="heading-record">Record Evidence</h2>
+
+    <p class="muted">
+      Record evidence includes Atlas files that show how a record was created, structured,
+      updated, reviewed, and maintained as part of the Atlas record family.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-signal">
+    <h2 id="heading-signal">Signal Evidence</h2>
+
+    <p class="muted">
+      Signal evidence supports the indicators used within an Atlas record by connecting signals
+      to source material, observed attributes, and certification-relevant record conclusions.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">Trust Dimension Evidence</h2>
+
+    <p class="muted">
+      Trust dimension evidence supports evaluation of readiness, transparency, reliability,
+      stability, or other trust dimensions defined within the Atlas record.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-metadata">
+    <h2 id="heading-metadata">Metadata Evidence</h2>
+
+    <p class="muted">
+      Metadata evidence supports identification, versioning, repository location, update state,
+      canonical paths, record dates, and machine-readable context.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-change">
+    <h2 id="heading-change">Change Evidence</h2>
+
+    <p class="muted">
+      Change evidence preserves update history, record revisions, certification-relevant changes,
+      and the historical context needed to understand the record state at evaluation time.
+    </p>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-matrix">
+  <h2 id="heading-matrix">Evidence Matrix</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Evidence Type</th>
+        <th>Certification Function</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Source Evidence</td>
+        <td>Supports claims, facts, and jurisdiction references.</td>
+      </tr>
+      <tr>
+        <td>Record Evidence</td>
+        <td>Supports record structure, organization, and canonical identity.</td>
+      </tr>
+      <tr>
+        <td>Signal Evidence</td>
+        <td>Supports signal definitions and evidence-derived indicators.</td>
+      </tr>
+      <tr>
+        <td>Trust Dimension Evidence</td>
+        <td>Supports trust-related evaluation categories.</td>
+      </tr>
+      <tr>
+        <td>Metadata Evidence</td>
+        <td>Supports identification, versioning, and machine-readable context.</td>
+      </tr>
+      <tr>
+        <td>Change Evidence</td>
+        <td>Supports review of update state and historical continuity.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card" aria-labelledby="heading-flow">
+  <h2 id="heading-flow">Evidence Flow</h2>
+
+  <p class="muted">
+    Evidence enters certification as supporting material for the Atlas subject and is preserved
+    through the resulting certification package.
+  </p>
+
+  <pre>Atlas Certification Subject
+        │
+Supporting Evidence
+        │
+Profile Evaluation
+        │
+Scope Review
+        │
+Certification Decision
+        │
+Certification Package
+        │
+Registry / Chronicle / Anchor / Beacon / Attestor / Navigator</pre>
+
+  <div class="note">
+    Evidence makes certification reviewable. The Certification Package preserves the conclusion and references the supporting record context.
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-includes">
+    <h2 id="heading-includes">Evidence Includes</h2>
+
+    <ul>
+      <li>Documented source references</li>
+      <li>Atlas evidence files</li>
+      <li>Metadata supporting record identity</li>
+      <li>Signal support material</li>
+      <li>Trust dimension support material</li>
+      <li>Change-log references</li>
+      <li>Repository paths and canonical record locations</li>
+      <li>Certification-relevant review material</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-excludes">
+    <h2 id="heading-excludes">Evidence Excludes</h2>
+
+    <ul>
+      <li>Independent certification authority</li>
+      <li>Final certification decisions</li>
+      <li>Registry entry ownership</li>
+      <li>Chronicle event preservation rules</li>
+      <li>Anchor integrity logic</li>
+      <li>Beacon discovery policy</li>
+      <li>Attestor statement generation</li>
+      <li>Navigator orchestration rules</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-requirements">
+  <h2 id="heading-requirements">Evidence Requirements</h2>
+
+  <p class="muted">
+    Evidence used in Atlas certification should be sufficient to support review, traceability,
+    reproducibility, and institutional confidence in the certification decision.
+  </p>
+
+  <ul>
+    <li>Evidence should be identifiable and attributable to the record it supports.</li>
+    <li>Evidence should be accessible through preserved Atlas materials or referenced locations.</li>
+    <li>Evidence should support the claims, signals, metadata, or trust dimensions being evaluated.</li>
+    <li>Evidence should be organized consistently enough for review and reconstruction.</li>
+    <li>Evidence should preserve the context needed to understand the record at certification time.</li>
+  </ul>
+
+  <div class="note">
+    Evidence quality determines whether an Atlas record can be meaningfully reviewed under the certification architecture.
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-relationship">
+  <h2 id="heading-relationship">Relationship to Certification Artifacts</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Certification Artifact</th>
+        <th>Evidence Relationship</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SCPR</td>
+        <td>Summarizes the public certification outcome and may reference evidence-supported conclusions.</td>
+      </tr>
+      <tr>
+        <td>SCR</td>
+        <td>Records receipt-level certification information and points to the evaluated subject.</td>
+      </tr>
+      <tr>
+        <td>SCRD</td>
+        <td>Preserves the certification record and structured evidence context.</td>
+      </tr>
+      <tr>
+        <td>SREG</td>
+        <td>Catalogs the certified record after certification; it does not become Atlas evidence.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card" aria-labelledby="heading-rules">
+  <h2 id="heading-rules">Evidence Rules</h2>
+
+  <p class="muted">
+    Atlas certification evidence must preserve the distinction between support material and institutional outputs.
+  </p>
+
+  <ul>
+    <li>Evidence supports the certification subject; it does not become the certified subject unless formally defined as one.</li>
+    <li>Evidence must remain traceable to the Atlas record or certification package it supports.</li>
+    <li>Evidence should be preserved in a form that enables later review or reconstruction.</li>
+    <li>Evidence does not replace Suite Standards, Suite Methodology, or certification judgment.</li>
+    <li>Operational outputs from other Suite tools may reference evidence but remain owned by those tools.</li>
+  </ul>
+
+  <div class="note">
+    Evidence discipline prevents certification from becoming unsupported assertion while preserving institutional separation across the Suite.
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-versioning">
+  <h2 id="heading-versioning">Evidence Versioning</h2>
+
+  <p class="muted">
+    Evidence should preserve the record state evaluated during certification. When Atlas records
+    change, updated evidence and change history should allow future reviewers to distinguish between
+    the record as certified and the record as later updated.
+  </p>
+
+  <pre>Evidence at Certification
+        ↓
+Certified Record State
+        ↓
+Later Record Updates
+        ↓
+Change History
+        ↓
+Future Review</pre>
+</div>
+
+<div class="card" aria-labelledby="heading-philosophy">
+  <h2 id="heading-philosophy">Evidence Philosophy</h2>
+
+  <p class="muted">
+    Atlas certification is not based on assertion alone. It depends on evidence that allows a record
+    to be examined, traced, understood, and reconstructed within the Satoshium Suite certification architecture.
+  </p>
+
+  <div class="note">
+    Evidence turns an Atlas record from a claim surface into a reviewable certification subject.
+  </div>
+</div>
+
+</main>
+
+
+</main>
+
+<div class="wrap reflection">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+
+<div id="footer-container"></div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+  document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
