@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#b91c1c">
+<title>Satoshium Atlas — Certification Profile</title>
+
+<meta name="description" content="Satoshium Atlas Certification Profile — defines the Atlas record characteristics evaluated during Suite certification, including identity, structure, metadata, evidence, traceability, trust dimensions, signals, currency, and reproducibility.">
+
+<meta property="og:title" content="Satoshium Atlas — Certification Profile">
+<meta property="og:description" content="Defines the evaluated characteristics of Atlas records during Satoshium Suite certification.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://satoshium.us/atlas/certification/certification-profile/">
+<meta property="og:image" content="https://satoshium.ai/assets/og-us.png">
+<meta property="og:site_name" content="Satoshium">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Satoshium Atlas — Certification Profile">
+<meta name="twitter:description" content="The Atlas Certification Profile identifies the Atlas record attributes examined during certification.">
+<meta name="twitter:image" content="https://satoshium.ai/assets/og-us.png">
+<meta name="twitter:site" content="@SatoshiumAI">
+
+<link rel="canonical" href="https://satoshium.us/atlas/certification/certification-profile/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --card-wm: url('https://satoshium.link/assets/seal.png');
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.55;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+:focus-visible{
+ outline:2px solid var(--gold2);
+ outline-offset:3px;
+}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 60px}
+
+.wrap.content{
+ opacity:0;
+ transform:translateY(6px);
+ animation:pageEnter .28s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes pageEnter{
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+
+h1{font-size:34px;color:var(--gold2);line-height:1.15}
+h2{font-size:22px;color:var(--gold2)}
+h3{font-size:15px;color:var(--text)}
+
+.muted{color:var(--muted)}
+
+.hero{
+ position:relative;
+ overflow:hidden;
+ border:1px solid var(--line);
+ border-radius:20px;
+ padding:28px 22px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.10), transparent 28%),
+ linear-gradient(to bottom right, rgba(12,16,24,.96), rgba(12,16,24,.90));
+ box-shadow:0 0 0 1px rgba(214,163,74,.08),0 20px 50px rgba(0,0,0,.45);
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.94),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:16px;
+ padding:16px;
+ margin:16px 0;
+ box-shadow:0 20px 50px rgba(0,0,0,.45);
+ transition:transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.btn{
+ display:inline-flex;
+ align-items:center;
+ gap:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+ 
+ .eyebrow{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ margin-bottom:12px;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+ 
+.grid-2{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:16px
+}
+
+.note{
+ margin-top:10px;
+ padding:12px 14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+ font-size:14px;
+}
+
+.span-2{
+ grid-column: 1 / -1;
+}
+
+.mini{font-size:13px}
+
+ul{
+ margin:8px 0 0 18px;
+}
+
+code,pre{
+ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+ color:#f7d58a;
+}
+
+pre{
+ white-space:pre-wrap;
+ margin:10px 0 0;
+ padding:14px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:rgba(214,163,74,.045);
+ color:var(--muted);
+ overflow:auto;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ margin-top:10px;
+ overflow:hidden;
+ border-radius:12px;
+ border:1px solid var(--line);
+}
+th,td{
+ text-align:left;
+ vertical-align:top;
+ padding:12px 14px;
+ border-bottom:1px solid rgba(214,163,74,.12);
+ color:var(--muted);
+}
+th{
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+}
+tr:last-child td{border-bottom:0}
+
+@media (max-width:760px){
+ .grid-2{grid-template-columns:1fr}
+ .span-2{grid-column:auto}
+ h1{font-size:30px}
+}
+
+@media (prefers-reduced-motion:reduce){
+ html,body{
+  scroll-behavior:auto;
+ }
+
+ .wrap.content{
+  animation:none;
+  opacity:1;
+  transform:none;
+ }
+
+ .card{
+  transition:none;
+ }
+
+ .card:hover{
+  transform:none;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main id="main-content" class="wrap content">
+
+<section class="hero" aria-labelledby="heading-hero">
+  <div class="eyebrow">ATLAS · CERTIFICATION PROFILE</div>
+  <h1 id="heading-hero">🧭 Atlas Certification Profile</h1>
+
+  <p class="muted" style="max-width:920px;">
+    The Atlas Certification Profile defines the characteristics of <strong>Satoshium Atlas</strong>
+    records that are evaluated during certification under the Satoshium Suite.
+  </p>
+
+  <p class="muted">
+    The Profile does not replace the Suite Standards, Suite Methodology, or Atlas Certification Framework.
+    It identifies the evaluation surfaces that make Atlas records reviewable, traceable, and certifiable.
+  </p>
+
+  <p style="margin-top:14px;">
+    <a class="btn" href="/atlas/">Return to Atlas →</a>
+  </p>
+
+  <p style="margin-top:6px;">
+    <a class="btn" href="/atlas/certification/certification-framework/">View Certification Framework →</a>
+  </p>
+
+  <p style="margin-top:6px;">
+    <a class="btn" href="/suite/standards/">View Suite Standards →</a>
+  </p>
+
+  <p style="margin-top:6px;">
+    <a class="btn" href="/suite/methodology/">View Suite Methodology →</a>
+  </p>
+</section>
+
+<div class="card" aria-labelledby="heading-purpose">
+  <h2 id="heading-purpose">Purpose</h2>
+
+  <p class="muted">
+    The Atlas Certification Profile identifies what must be examined when an Atlas record
+    is submitted for certification. It creates a consistent evaluation lens for Atlas records
+    without redefining the records themselves.
+  </p>
+
+  <div class="note">
+    The Profile answers one primary question: what characteristics of an Atlas record are evaluated?
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-role">
+    <h2 id="heading-role">Profile Role</h2>
+
+    <p class="muted">
+      The Profile functions beneath the Atlas Certification Framework. The Framework explains
+      how Atlas participates in certification; the Profile identifies the record characteristics
+      evaluated within that process.
+    </p>
+
+    <pre>Atlas Certification Framework
+        │
+Atlas Certification Profile
+        │
+Evaluated Atlas Record Characteristics</pre>
+  </div>
+
+  <div class="card" aria-labelledby="heading-boundary">
+    <h2 id="heading-boundary">Profile Boundary</h2>
+
+    <p class="muted">
+      The Profile is not a scoring rubric, registry model, evidence rulebook, or certification decision.
+      It is the defined set of Atlas attributes that reviewers, tools, and certification workflows examine.
+    </p>
+
+    <div class="note mini">
+      The Profile defines what is reviewed. The Methodology governs how review is performed.
+    </div>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-domains">
+  <h2 id="heading-domains">Evaluation Domains</h2>
+
+  <p class="muted">
+    Atlas certification evaluates a record through a defined set of profile domains.
+    These domains allow different Atlas records to be reviewed consistently while preserving
+    the specific content and structure of each record type.
+  </p>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-identity">
+    <h2 id="heading-identity">Identity</h2>
+    <p class="muted">
+      Confirms the record's canonical name, jurisdiction, record type, repository path,
+      public location, version reference, and relationship to the Atlas record family.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-structure">
+    <h2 id="heading-structure">Structure</h2>
+    <p class="muted">
+      Evaluates whether required Atlas artifacts are present, organized consistently,
+      and aligned with the expected record architecture.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-metadata">
+    <h2 id="heading-metadata">Metadata</h2>
+    <p class="muted">
+      Reviews supporting metadata such as identifiers, dates, record state, source references,
+      classification fields, update history, and machine-readable descriptors.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-evidence">
+    <h2 id="heading-evidence">Evidence</h2>
+    <p class="muted">
+      Examines whether claims made within the Atlas record are supported by documented evidence,
+      source references, and preserved evaluation material.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-traceability">
+    <h2 id="heading-traceability">Traceability</h2>
+    <p class="muted">
+      Determines whether record conclusions can be traced back to source material,
+      evidence files, signal definitions, trust dimensions, and change-log entries.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-trust">
+    <h2 id="heading-trust">Trust Dimensions</h2>
+    <p class="muted">
+      Reviews whether the record identifies and explains the trust dimensions used
+      to evaluate jurisdictional readiness, transparency, stability, or reliability.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-signals">
+    <h2 id="heading-signals">Signals</h2>
+    <p class="muted">
+      Evaluates whether Atlas signals are documented, internally consistent,
+      evidence-derived, and aligned with the relevant jurisdiction record.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-currency">
+    <h2 id="heading-currency">Currency</h2>
+    <p class="muted">
+      Reviews whether the record reflects an identifiable update state, preserved change history,
+      and certification-relevant freshness context.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-completeness">
+    <h2 id="heading-completeness">Completeness</h2>
+    <p class="muted">
+      Assesses whether required Atlas files, references, explanations, and evaluation materials
+      are present for the record type being certified.
+    </p>
+  </div>
+
+  <div class="card" aria-labelledby="heading-reproducibility">
+    <h2 id="heading-reproducibility">Reproducibility</h2>
+    <p class="muted">
+      Determines whether another reviewer or Suite tool could reconstruct the certification
+      evaluation from the preserved Atlas materials and certification package outputs.
+    </p>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-table">
+  <h2 id="heading-table">Profile Evaluation Matrix</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Profile Domain</th>
+        <th>Primary Evaluation Question</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Identity</td>
+        <td>Is the Atlas record clearly identifiable as a canonical certification subject?</td>
+      </tr>
+      <tr>
+        <td>Structure</td>
+        <td>Does the record follow the expected Atlas architecture for its record type?</td>
+      </tr>
+      <tr>
+        <td>Metadata</td>
+        <td>Are record descriptors, identifiers, dates, and reference fields complete and usable?</td>
+      </tr>
+      <tr>
+        <td>Evidence</td>
+        <td>Are record claims supported by documented evidence and source material?</td>
+      </tr>
+      <tr>
+        <td>Traceability</td>
+        <td>Can certification conclusions be traced back to preserved Atlas materials?</td>
+      </tr>
+      <tr>
+        <td>Trust Dimensions</td>
+        <td>Are trust categories defined, supported, and consistently applied?</td>
+      </tr>
+      <tr>
+        <td>Signals</td>
+        <td>Are signals evidence-derived, internally consistent, and jurisdiction-specific?</td>
+      </tr>
+      <tr>
+        <td>Currency</td>
+        <td>Is the record's update state and change history visible?</td>
+      </tr>
+      <tr>
+        <td>Completeness</td>
+        <td>Are required artifacts present for meaningful certification review?</td>
+      </tr>
+      <tr>
+        <td>Reproducibility</td>
+        <td>Can the evaluation be reconstructed from the preserved record and package?</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card" aria-labelledby="heading-flow">
+  <h2 id="heading-flow">Profile Flow</h2>
+
+  <p class="muted">
+    The Profile operates as the evaluation lens between the Atlas record and the certification decision.
+  </p>
+
+  <pre>Atlas Record
+        │
+Profile Domains
+        │
+Evidence Review
+        │
+Methodology Application
+        │
+Certification Decision
+        │
+Certification Package</pre>
+
+  <div class="note">
+    The Profile makes Atlas records consistently reviewable without converting certification into a generic checklist.
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card" aria-labelledby="heading-included">
+    <h2 id="heading-included">Profile Includes</h2>
+
+    <ul>
+      <li>Record identity characteristics</li>
+      <li>Atlas artifact structure</li>
+      <li>Metadata fields and descriptors</li>
+      <li>Evidence and source support</li>
+      <li>Traceability paths</li>
+      <li>Trust dimensions</li>
+      <li>Signals and change histories</li>
+      <li>Completeness and reproducibility review</li>
+    </ul>
+  </div>
+
+  <div class="card" aria-labelledby="heading-excluded">
+    <h2 id="heading-excluded">Profile Excludes</h2>
+
+    <ul>
+      <li>Creation of new Suite Standards</li>
+      <li>Replacement of Suite Methodology</li>
+      <li>Final certification scoring</li>
+      <li>Registry entry modeling</li>
+      <li>Chronicle event preservation rules</li>
+      <li>Beacon discovery rules</li>
+      <li>Anchor integrity logic</li>
+      <li>Navigator workflow orchestration</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-rules">
+  <h2 id="heading-rules">Profile Rules</h2>
+
+  <p class="muted">
+    Atlas certification profile review must preserve institutional boundaries across the Suite.
+  </p>
+
+  <ul>
+    <li>The Profile identifies evaluation characteristics; it does not issue certification decisions.</li>
+    <li>Atlas owns the underlying intelligence record and supporting artifacts.</li>
+    <li>Certifier owns the certification process and resulting Certification Package.</li>
+    <li>Registry catalogs resulting certified records through Registry Entries.</li>
+    <li>Chronicle preserves certification events, not the Atlas record itself.</li>
+    <li>Beacon publishes discovery signals derived from certified outputs.</li>
+    <li>Anchor preserves integrity references associated with certified artifacts.</li>
+  </ul>
+
+  <div class="note">
+    The Profile creates evaluation consistency while preserving separation of institutional responsibilities.
+  </div>
+</div>
+
+<div class="card" aria-labelledby="heading-versioning">
+  <h2 id="heading-versioning">Profile Versioning</h2>
+
+  <p class="muted">
+    The Atlas Certification Profile may evolve as Atlas record families mature. Certifications
+    should identify the Profile version used during evaluation so future reviewers can understand
+    the evaluation lens applied at the time of certification.
+  </p>
+
+  <pre>Atlas Certification Profile v1
+        ↓
+Atlas Certification Profile v2
+        ↓
+Atlas Certification Profile v3</pre>
+</div>
+
+<div class="card" aria-labelledby="heading-philosophy">
+  <h2 id="heading-philosophy">Profile Philosophy</h2>
+
+  <p class="muted">
+    Atlas records are not certified merely because they exist. They are certified when their
+    identity, evidence, structure, traceability, trust signals, and preserved record state can be
+    evaluated consistently under the Satoshium Suite certification architecture.
+  </p>
+
+  <div class="note">
+    The Profile turns Atlas intelligence into a reviewable certification subject without changing the authority of the underlying Suite Standards and Methodology.
+  </div>
+</div>
+
+</main>
+
+<div class="wrap reflection">
+<hr />
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Satoshium is being built slowly, in public, and with architectural discipline.
+</div>
+<hr />
+
+<div id="footer-container"></div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => {
+  document.getElementById("footer-container").innerHTML = data;
+ });
+</script>
+</div>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
