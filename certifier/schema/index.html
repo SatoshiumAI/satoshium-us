@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Certifier · Schema</title>
-<meta name="description" content="Schema defines the structured record format used by Satoshium Certifier.">
+<meta name="description" content="Schema defines the structured formats used by Satoshium Certifier to represent Certification Packages, generated artifacts, evidence inventories, certified records, and Suite-ready references.">
 <link rel="canonical" href="https://satoshium.us/certifier/schema/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -20,13 +20,16 @@
 <style>
 :root{
  --bg:#07090d;
+ --panel:#0c1018;
  --text:#e8edf7;
  --muted:#9aa7bd;
  --gold:#d6a34a;
  --gold2:#f4c36a;
  --line:rgba(214,163,74,.18);
 }
+
 *{box-sizing:border-box}
+
 html,body{
  margin:0;
  padding:0;
@@ -36,20 +39,25 @@ html,body{
  line-height:1.6;
  scroll-behavior:smooth;
 }
+
 body{padding-top:80px}
+
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
+
 .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
 .content{padding:34px 18px 64px}
+
 .hero{
  border:1px solid var(--line);
  border-radius:22px;
  padding:28px 24px;
  margin-bottom:18px;
  background:
- radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),
- linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90));
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
 }
+
 .eyebrow{
  display:inline-flex;
  padding:8px 14px;
@@ -61,17 +69,44 @@ a:hover{color:var(--gold)}
  letter-spacing:.08em;
  text-transform:uppercase;
 }
-h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
-.lead{max-width:920px;color:var(--muted);font-size:20px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
 .card{
  background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
  border:1px solid rgba(214,163,74,.15);
  border-radius:18px;
  padding:22px;
 }
-.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
-.card p{margin:0 0 14px;color:var(--muted)}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
 .note{
  margin-top:16px;
  padding:14px 16px;
@@ -80,24 +115,59 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
  background:rgba(214,163,74,.05);
  color:var(--muted);
 }
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
 .status{
  display:inline-block;
+ margin-top:4px;
+ margin-bottom:12px;
  padding:4px 10px;
  border-radius:999px;
  border:1px solid rgba(214,163,74,.24);
  color:var(--gold2);
  font-size:12px;
  font-weight:800;
- letter-spacing:.06em;
+ letter-spacing:.05em;
  text-transform:uppercase;
 }
+
+.flow{
+ margin-top:18px;
+ padding:22px;
+ border:1px solid var(--line);
+ border-radius:18px;
+ background:rgba(214,163,74,.03);
+ color:var(--gold2);
+ text-align:center;
+ font-size:22px;
+ font-weight:800;
+ line-height:1.9;
+}
+
 code{
  color:var(--gold2);
+ font-family:Consolas,Monaco,"Courier New",monospace;
 }
+
 .muted{color:var(--muted)}
-@media(max-width:900px){
+
+@media (max-width:900px){
  .grid{grid-template-columns:1fr}
  h1{font-size:34px}
+ .flow{font-size:18px}
 }
 </style>
 </head>
@@ -114,75 +184,104 @@ code{
 <h1>Schema</h1>
 
 <p class="lead">
-Schema defines the structured, machine-readable record format used by Satoshium Certifier.
-It allows certification records to remain consistent, portable, searchable, and interoperable.
+Schema defines the structured formats used by Satoshium Certifier to represent Certification Packages, generated artifacts, evidence inventories, certified records, and Suite-ready references.
 </p>
 
 <p class="lead">
-The schema layer supports certification records, reports, receipts, evidence references,
-Registry entries, Anchor references, and future attestation records.
+Suite Standards define the meaning of certification. Suite Methodology defines the process. Certifier schemas preserve the operational records produced when that process is executed.
 </p>
+
+<a class="btn" href="/suite/standards/">Suite Standards →</a>
+<a class="btn" href="/suite/methodology/">Suite Methodology →</a>
+<a class="btn" href="/certifier/tools/ops-toolkit/">Operations Toolkit →</a>
 </section>
 
 <section class="grid">
 
 <article class="card">
-<h2>Certification Record Schema</h2>
+<h2>Certification Package Schema</h2>
+<span class="status">Canonical Source</span>
 <p>
-The core schema defines structured fields for certification targets, classes, statuses,
-lifecycle states, standards, evidence, findings, outputs, integrity references, and history.
+The Certification Package schema defines the primary certification object, including the certification subject, scope, governing standards, applicable methodology, evidence inventory, evaluation, decision, history, and generated outputs.
 </p>
-<span class="status">Core Schema</span>
 </article>
 
 <article class="card">
-<h2>Machine Readability</h2>
+<h2>SCRD JSON Schema</h2>
+<span class="status">Certified Record</span>
 <p>
-Schema allows Certifier records to be validated, indexed, exchanged, preserved, and read
-by future software systems.
+The SCRD JSON schema defines the machine-readable certified record generated from the canonical Certification Package for public indexing, Registry integration, future APIs, and long-term interoperability.
 </p>
-<span class="status">Structured</span>
 </article>
 
 <article class="card">
-<h2>Interoperability</h2>
+<h2>Evidence Inventory Schema</h2>
+<span class="status">SEV Support</span>
 <p>
-Shared schema conventions allow Certifier records to connect with Registry, Chronicle,
-Anchor, Beacon, Attestor, Navigator, and other Satoshium subsystems.
+Evidence schemas organize the factual materials reviewed during certification, including source references, evidence types, traceability notes, review status, integrity references, and mapped standards support.
 </p>
-<span class="status">Connected</span>
 </article>
 
 <article class="card">
-<h2>Versioning</h2>
+<h2>Generated Artifact Fields</h2>
+<span class="status">Derived Outputs</span>
 <p>
-Schemas should be versioned as Certifier evolves so that historical certification records
-remain understandable even when newer schema versions are introduced.
+Schema conventions support generated artifacts including SCPR reports, SCR receipts, SCRD HTML records, SCRD JSON records, evidence maps, and release readiness checklists.
 </p>
-<span class="status">Versioned</span>
+</article>
+
+<article class="card">
+<h2>Suite Reference Stubs</h2>
+<span class="status">Integration Ready</span>
+<p>
+Structured reference stubs prepare certification records for Registry cataloging, Chronicle preservation, Anchor integrity references, and Attestor verification support.
+</p>
+</article>
+
+<article class="card">
+<h2>Versioning & Portability</h2>
+<span class="status">Durable Records</span>
+<p>
+Schemas should be versioned so historical certification records remain understandable even when newer schema versions, stronger validation rules, or additional Suite integrations are introduced.
+</p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
+<article class="card">
+<h2>Schema Flow</h2>
+<p>
+Certifier schema begins with the Certification Package as the canonical source object. Generated artifacts and Suite references should derive from that source rather than becoming independent certification decisions.
+</p>
+<div class="flow">
+Certification Package JSON<br>
+↓<br>
+Evidence Inventory · Evidence Map<br>
+↓<br>
+SCPR · SCR · SCRD HTML / JSON<br>
+↓<br>
+SREG · SCHR · ANCH · SATR
+</div>
+<div class="note">
+Schema does not certify by itself. It preserves the structure of a certification decision made through Suite Standards, Suite Methodology, evidence review, and Certifier execution.
+</div>
+</article>
+</section>
 
+<section style="margin-top:18px;">
 <article class="card">
 <h2>Schema Role</h2>
-
 <p>
-Schema is the structural layer of Certifier. Documentation explains the system, reports
-preserve reasoning, receipts summarize outcomes, and schema gives certification records
-a durable machine-readable form.
+Schema is the structural record layer of Certifier. Documentation explains the system, reports preserve reasoning, receipts summarize outcomes, and schema gives certification records a durable machine-readable form.
 </p>
-
+<p>
+The initial schema focus is the Certification Package and its generated representations. The Operations Toolkit supports this structure by generating and validating repository-based artifact sets without hosting a public service or replacing certification judgment.
+</p>
 <div class="note">
-The initial schema focus is <code>certification-schema.json</code>. Future schema files may
-define receipts, reports, evidence records, registry entries, Anchor references, and
-attestations.
+Standards define expectations. Methodology defines the process. Certifier executes the workflow. Schema preserves the result in forms that people, repositories, and future systems can verify.
 </div>
-
 </article>
-
 </section>
 
 </main>
@@ -190,7 +289,7 @@ attestations.
 <div class="wrap reflection">
 <hr>
 <div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
-Schemas allow trust records to be understood by people and machines.
+Schemas let certification records endure beyond the page that first published them.
 </div>
 <hr>
 <div id="footer-container"></div>
