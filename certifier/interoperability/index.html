@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Certifier · Interoperability</title>
-<meta name="description" content="Interoperability defines how Satoshium Certifier connects with Atlas, Registry, Chronicle, Anchor, Beacon, Attestor, Navigator, and future Satoshium subsystems.">
+<meta name="description" content="Interoperability defines how Satoshium Certifier applies Suite Standards and Suite Methodology to produce certification packages, certified records, and Suite-ready references across Registry, Chronicle, Anchor, Beacon, Attestor, and Navigator.">
 <link rel="canonical" href="https://satoshium.us/certifier/interoperability/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -82,6 +82,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 }
 .status{
  display:inline-block;
+ margin-bottom:12px;
  padding:4px 10px;
  border-radius:999px;
  border:1px solid rgba(214,163,74,.24);
@@ -91,6 +92,18 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
  letter-spacing:.06em;
  text-transform:uppercase;
 }
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+.btn:hover{background:rgba(214,163,74,.12)}
 .flow{
  margin-top:18px;
  padding:24px;
@@ -103,11 +116,13 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
  text-align:center;
  line-height:2;
 }
+.full{grid-column:1/-1}
 .muted{color:var(--muted)}
 @media(max-width:900px){
  .grid{grid-template-columns:1fr}
  h1{font-size:34px}
  .flow{font-size:18px}
+ .full{grid-column:auto}
 }
 </style>
 </head>
@@ -124,77 +139,170 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 <h1>Interoperability</h1>
 
 <p class="lead">
-Interoperability defines how Satoshium Certifier connects with other Satoshium subsystems,
-including Atlas, Registry, Chronicle, Anchor, Beacon, Attestor, Navigator, and future tools.
+Interoperability defines how Satoshium Certifier connects certification activity to the broader
+Satoshium Suite while preserving clear institutional responsibility between systems.
 </p>
 
 <p class="lead">
-Certifier is designed to create certification records that can be discovered, preserved,
-referenced, verified, and reused across the broader Satoshium ecosystem.
+Certifier applies Suite Standards and Suite Methodology to produce Certification Packages,
+reports, receipts, certified records, machine-readable outputs, and Suite-ready references that
+can be cataloged, preserved, anchored, discovered, attested, and orchestrated by other systems.
 </p>
+
+<a class="btn" href="/suite/interoperability/">Open Suite Interoperability →</a>
+<a class="btn" href="/suite/standards/">Suite Standards →</a>
+<a class="btn" href="/suite/methodology/">Suite Methodology →</a>
 </section>
 
 <div class="flow">
-Atlas → Certifier → Registry → Chronicle → Anchor → Attestor
+Certification Subject<br>
+↓<br>
+Certification Package<br>
+↓<br>
+SCPR · SCR · SCRD HTML / JSON<br>
+↓<br>
+SREG · SCHR · ANCH · SATR<br>
+↓<br>
+Registry · Chronicle · Anchor · Beacon · Attestor · Navigator
 </div>
 
 <section class="grid">
 
 <article class="card">
+<h2>Suite Standards &amp; Methodology</h2>
+<span class="status">Governing Foundation</span>
+<p>
+Suite Standards define the expectations applied during certification. Suite Methodology defines
+the repeatable process used to perform review, organize evidence, evaluate findings, and issue
+decisions.
+</p>
+<a class="btn" href="/suite/standards/">Suite Standards →</a>
+<a class="btn" href="/suite/methodology/">Suite Methodology →</a>
+</article>
+
+<article class="card">
 <h2>Atlas</h2>
-<p>Atlas provides certification targets, jurisdiction records, pages, datasets, workflows, and evidence-ready public artifacts.</p>
-<span class="status">Source Layer</span>
+<span class="status">Certification Subject Source</span>
+<p>
+Atlas provides certification subjects, jurisdiction intelligence records, public pages, metadata,
+evidence, signals, trust dimensions, and change histories that may be reviewed by Certifier.
+</p>
+<a class="btn" href="/atlas/certification/">Atlas Certification →</a>
+</article>
+
+<article class="card">
+<h2>Certification Package</h2>
+<span class="status">Canonical Object</span>
+<p>
+The Certification Package is the canonical certification record. Reports, receipts, certified
+records, evidence inventories, and Suite references are generated from or traceable to this package.
+</p>
+<a class="btn" href="/certifier/schema/">Open Schema →</a>
+<a class="btn" href="/certifier/workflow/">Open Workflow →</a>
 </article>
 
 <article class="card">
 <h2>Registry</h2>
-<p>Registry catalogs certification records, reports, receipts, standards, and references so they can be discovered and managed.</p>
 <span class="status">Catalog Layer</span>
+<p>
+Registry catalogs certification records after Certifier issues them. Certifier produces
+registry-ready references such as SREG stubs, while Registry preserves discoverability and record
+location.
+</p>
+<a class="btn" href="/registry/integration/">Registry Integration →</a>
 </article>
 
 <article class="card">
 <h2>Chronicle</h2>
-<p>Chronicle records major certification milestones, historical events, launches, standards adoption, and ecosystem transitions.</p>
-<span class="status">History Layer</span>
+<span class="status">Historical Preservation</span>
+<p>
+Chronicle records certification events, completion milestones, public issuance moments, lifecycle
+changes, and other historical facts associated with certified records.
+</p>
+<a class="btn" href="/chronicle/integration/">Chronicle Integration →</a>
 </article>
 
 <article class="card">
 <h2>Anchor</h2>
-<p>Anchor preserves hashes, integrity references, timestamps, evidence packages, and preservation-ready certification artifacts.</p>
-<span class="status">Preservation Layer</span>
+<span class="status">Integrity Preservation</span>
+<p>
+Anchor preserves integrity references, hashes, timestamps, and anchoring records associated with
+Certification Packages, certified records, evidence inventories, and generated artifacts.
+</p>
+<a class="btn" href="/anchor/integration/">Anchor Integration →</a>
+</article>
+
+<article class="card">
+<h2>Beacon</h2>
+<span class="status">Discovery Metadata</span>
+<p>
+Beacon publishes discovery signals and metadata so certification records, verified outputs, and
+related Suite references can be found and interpreted by users and future systems.
+</p>
+<a class="btn" href="/beacon/integration/">Beacon Integration →</a>
 </article>
 
 <article class="card">
 <h2>Attestor</h2>
-<p>Attestor supports future independent verification of certification records, receipts, reports, hashes, and Registry entries.</p>
-<span class="status">Verification Layer</span>
+<span class="status">Trust Statement Support</span>
+<p>
+Attestor supports future verification by producing or referencing trust statements derived from
+certification records, receipts, evidence references, hashes, registry entries, and anchor records.
+</p>
+<a class="btn" href="/attestor/integration/">Attestor Integration →</a>
 </article>
 
 <article class="card">
 <h2>Navigator</h2>
-<p>Navigator may help route users, records, schemas, jurisdiction data, and certification outputs across the Satoshium Suite.</p>
-<span class="status">Routing Layer</span>
+<span class="status">Workflow Orchestration</span>
+<p>
+Navigator helps users and systems move through certification-related records, queries, workflows,
+Suite references, and future automation paths without changing the authority of Certifier.
+</p>
+<a class="btn" href="/navigator/integration/">Navigator Integration →</a>
+</article>
+
+<article class="card">
+<h2>Certified Records</h2>
+<span class="status">Human &amp; Machine Readable</span>
+<p>
+SCRD HTML provides a human-readable certified record. SCRD JSON provides a machine-readable record
+that can be indexed, exchanged, referenced, and used by downstream Suite systems.
+</p>
+<a class="btn" href="/certifier/receipts/">Open Receipts →</a>
+<a class="btn" href="/certifier/reports/">Open Reports →</a>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
 <h2>Interoperability Role</h2>
-
 <p>
-Interoperability ensures that Certifier is not an isolated review tool. It allows certification
-outputs to move across the Satoshium ecosystem as structured, traceable, and reusable records.
+Interoperability ensures that Certifier is not an isolated review surface. It turns certification
+outputs into structured, traceable, reusable records that can participate in the Satoshium Suite
+without collapsing the distinct responsibilities of each system.
 </p>
-
 <div class="note">
-Atlas creates intelligence. Certifier reviews it. Registry catalogs it. Chronicle remembers it.
-Anchor preserves it. Attestor verifies it. Navigator helps users and systems move through it.
+Certifier certifies. Registry catalogs. Chronicle preserves history. Anchor preserves integrity.
+Beacon publishes discovery. Attestor supports verification. Navigator orchestrates use.
 </div>
-
 </article>
+</section>
 
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Boundary Principle</h2>
+<p>
+Interoperability does not mean that every Suite system performs certification. Certifier remains
+the operational certification implementation. Other Suite systems consume, preserve, reference,
+verify, discover, or route certification outputs according to their own institutional roles.
+</p>
+<div class="note">
+The Certification Package remains the canonical source. Suite references extend its usability;
+they do not replace the certification decision.
+</div>
+</article>
 </section>
 
 </main>
@@ -202,7 +310,7 @@ Anchor preserves it. Attestor verifies it. Navigator helps users and systems mov
 <div class="wrap reflection">
 <hr>
 <div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
-Interoperability turns individual records into an ecosystem.
+Interoperability turns certification records into Suite infrastructure.
 </div>
 <hr>
 <div id="footer-container"></div>
