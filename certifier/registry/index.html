@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="alternate icon" href="/assets/favicon.ico">
@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Certifier · Registry</title>
-<meta name="description" content="Registry references prepare Certifier records for future cataloging and discovery.">
+<meta name="description" content="Registry explains how Satoshium Certifier prepares certification records for cataloging, discovery, and Suite integration through the Satoshium Registry.">
 <link rel="canonical" href="https://satoshium.us/certifier/registry/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -119,6 +119,8 @@ h1{
 
 .status{
  display:inline-block;
+ margin-top:4px;
+ margin-bottom:12px;
  padding:4px 10px;
  border-radius:999px;
  border:1px solid rgba(214,163,74,.24);
@@ -129,11 +131,39 @@ h1{
  text-transform:uppercase;
 }
 
+.flow{
+ margin-top:18px;
+ padding:24px;
+ border:1px solid var(--line);
+ border-radius:22px;
+ background:rgba(214,163,74,.03);
+ color:var(--gold2);
+ font-size:22px;
+ font-weight:800;
+ text-align:center;
+ line-height:2;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
 .muted{color:var(--muted)}
 
 @media (max-width:900px){
  .grid{grid-template-columns:1fr}
  h1{font-size:34px}
+ .flow{font-size:18px}
 }
 </style>
 </head>
@@ -150,13 +180,14 @@ h1{
   <h1>Registry</h1>
 
   <p class="lead">
-    Registry will catalog certification records and make them discoverable across the
-    Satoshium ecosystem.
+    Registry describes how Satoshium Certifier prepares certification records for cataloging,
+    discovery, preservation, and Suite integration after a certification decision is issued.
   </p>
 
   <p class="lead">
-    Until the Registry subsystem is built, this page serves as the Certifier-side
-    placeholder for registry-ready records.
+    Certifier produces registry-ready references from the canonical Certification Package.
+    The Satoshium Registry catalogs those references as SREG entries while preserving the
+    distinction between certification authority and record discovery.
   </p>
 </section>
 
@@ -164,45 +195,105 @@ h1{
 
 <article class="card">
   <h2>SREG-2026-000001</h2>
-
+  <span class="status">Registry-Ready Reference</span>
   <p>
-    Reserved conceptually for the first Registry Entry associated with the Atlas Initial
-    Build Phase certification.
+    The inaugural registry-ready reference corresponds to SC-CERT-2026-0001, the
+    Atlas Jurisdiction Record — El Salvador certification. The Certification Package
+    remains the canonical certification object; the SREG entry provides cataloging and
+    discovery context.
   </p>
-
-  <span class="status">Reserved</span>
 </article>
 
 <article class="card">
-  <h2>Registry Entry Template</h2>
-
+  <h2>Registry Entry Model</h2>
+  <span class="status">SREG</span>
   <p>
-    The Registry Entry template defines how certification records may be cataloged,
-    referenced, and prepared for future discovery.
+    A Satoshium Registry Entry catalogs certification identifiers, subjects, statuses,
+    artifact references, evidence references, integrity references, and related Suite records
+    without replacing the underlying Certification Package.
   </p>
+</article>
 
-  <span class="status">Defined</span>
+<article class="card">
+  <h2>Certification Package Source</h2>
+  <span class="status">Canonical Object</span>
+  <p>
+    Registry references are derived from Certification Packages, not from informal summaries.
+    This preserves traceability from SREG back to SCPR, SCR, SCRD HTML, SCRD JSON,
+    evidence records, and the certification decision.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Discoverability</h2>
+  <span class="status">Catalog Layer</span>
+  <p>
+    Registry makes certified records discoverable across the Suite by organizing
+    certification outputs into structured, queryable, and historically stable references.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Suite Integration</h2>
+  <span class="status">Interoperable</span>
+  <p>
+    Registry entries connect Certifier outputs with Chronicle history, Anchor integrity
+    references, Beacon discovery metadata, Attestor trust statements, and Navigator workflows.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Authority Boundary</h2>
+  <span class="status">Separated Roles</span>
+  <p>
+    Certifier certifies. Registry catalogs. Registry does not issue certification decisions,
+    alter determinations, or replace the Certification Package as the authoritative source.
+  </p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Handoff Flow</h2>
 
+  <p>
+    The registry handoff begins after Certifier has established a certification subject,
+    reviewed evidence, created the canonical Certification Package, issued a decision, and
+    generated public and machine-readable certification artifacts.
+  </p>
+
+  <div class="flow">
+    Certification Package<br>
+    ↓<br>
+    SCPR · SCR · SCRD HTML / JSON<br>
+    ↓<br>
+    SREG Registry Entry<br>
+    ↓<br>
+    Discovery · Preservation · Verification
+  </div>
+
+  <div class="note">
+    Registry begins where certification becomes catalogable. The SREG entry is a discovery
+    and reference object; the Certification Package remains the authoritative certification record.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
 <article class="card">
   <h2>Registry Role</h2>
 
   <p>
-    Certifier creates records. Registry organizes records. This page preserves the
-    initial handoff point between certification activity and future ecosystem discovery.
+    Certifier creates certification records. Registry organizes and exposes those records
+    for long-term discovery across the Satoshium ecosystem. This page preserves the
+    Certifier-side handoff between operational certification and Registry cataloging.
   </p>
 
-  <div class="note">
-    Discovery begins where certification ends. Registry will eventually provide the
-    public catalog layer for certified records, receipts, reports, standards, and
-    attestations.
-  </div>
+  <a class="btn" href="/registry/">Open Registry →</a>
+  <a class="btn" href="/registry/entry-model/">Registry Entry Model →</a>
+  <a class="btn" href="/certifier/interoperability/">Certifier Interoperability →</a>
 </article>
-
 </section>
 
 </main>
@@ -210,7 +301,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Satoshium Certifier prepares certified records for discovery through Registry.
+    Certifier issues the record; Registry makes the record discoverable.
   </div>
   <hr>
   <div id="footer-container"></div>
