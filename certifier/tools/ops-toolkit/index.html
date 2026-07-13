@@ -1,384 +1,270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Satoshium Certifier Operations Toolkit</title>
-  <meta name="description" content="Internal repository-based operations toolkit for generating, validating, and organizing Satoshium Certifier certification artifacts." />
-  <style>
-    :root {
-      --bg: #05070b;
-      --panel: #0b111c;
-      --panel-2: #101827;
-      --border: #263449;
-      --text: #eef5ff;
-      --muted: #a9b7c9;
-      --accent: #6fb7ff;
-      --accent-2: #a7d5ff;
-      --good: #65d6a4;
-      --warn: #ffd166;
-      --code: #07101c;
-      --shadow: 0 22px 60px rgba(0,0,0,.35);
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    * { box-sizing: border-box; }
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(111,183,255,.16), transparent 34rem),
-        radial-gradient(circle at bottom right, rgba(101,214,164,.08), transparent 38rem),
-        var(--bg);
-    }
+<title>Satoshium Certifier · Operations Toolkit</title>
+<meta name="description" content="The Operations Toolkit is a repository-based command-line support system for generating, validating, and organizing Satoshium Certifier certification artifacts from a canonical Certification Package.">
+<link rel="canonical" href="https://satoshium.us/certifier/tools/ops-toolkit/">
 
-    a { color: var(--accent-2); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
 
-    .wrap {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 42px 0 64px;
-    }
-
-    header {
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(16,24,39,.94), rgba(7,16,28,.92));
-      border-radius: 24px;
-      padding: 36px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      inset: auto -80px -140px auto;
-      width: 320px;
-      height: 320px;
-      border-radius: 999px;
-      background: rgba(111,183,255,.11);
-      filter: blur(4px);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent-2);
-      border: 1px solid rgba(111,183,255,.35);
-      background: rgba(111,183,255,.08);
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 13px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(32px, 5vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      max-width: 850px;
-    }
-
-    .lead {
-      max-width: 800px;
-      color: var(--muted);
-      font-size: 18px;
-      margin: 18px 0 0;
-    }
-
-    .notice {
-      margin-top: 26px;
-      border: 1px solid rgba(255,209,102,.35);
-      background: rgba(255,209,102,.08);
-      border-radius: 16px;
-      padding: 16px 18px;
-      color: #ffe7a3;
-      max-width: 900px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .card {
-      grid-column: span 6;
-      background: rgba(11,17,28,.86);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.18);
-    }
-
-    .card.full { grid-column: 1 / -1; }
-    .card.third { grid-column: span 4; }
-
-    h2 {
-      margin: 0 0 10px;
-      font-size: 23px;
-      letter-spacing: -0.02em;
-    }
-
-    h3 {
-      margin: 22px 0 8px;
-      font-size: 17px;
-      color: var(--accent-2);
-    }
-
-    p { margin: 0 0 12px; color: var(--muted); }
-
-    ul {
-      margin: 10px 0 0 20px;
-      padding: 0;
-      color: var(--muted);
-    }
-
-    li { margin: 7px 0; }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .pill {
-      border: 1px solid rgba(111,183,255,.26);
-      background: rgba(111,183,255,.07);
-      color: var(--accent-2);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 13px;
-    }
-
-    code, pre {
-      font-family: Consolas, Monaco, "Courier New", monospace;
-    }
-
-    pre {
-      position: relative;
-      overflow-x: auto;
-      white-space: pre;
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(111,183,255,.20);
-      background: var(--code);
-      color: #e8f3ff;
-      margin: 14px 0 0;
-      font-size: 14px;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(111,183,255,.4);
-      background: rgba(111,183,255,.10);
-      color: var(--text);
-      border-radius: 12px;
-      padding: 10px 14px;
-      font-weight: 700;
-    }
-
-    .btn.primary {
-      color: #03101c;
-      background: var(--accent-2);
-      border-color: var(--accent-2);
-    }
-
-    .status {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .status div {
-      border: 1px solid var(--border);
-      background: rgba(16,24,39,.75);
-      border-radius: 16px;
-      padding: 14px;
-    }
-
-    .status strong {
-      display: block;
-      color: var(--good);
-      font-size: 18px;
-    }
-
-    .status span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    footer {
-      margin-top: 34px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 820px) {
-      header { padding: 26px; }
-      .card, .card.third { grid-column: 1 / -1; }
-      .status { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 520px) {
-      .status { grid-template-columns: 1fr; }
-    }
-  </style>
+<style>
+:root{--bg:#07090d;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18);--panel:rgba(12,16,24,.94);--code:#06080d;--green:#8fd6b3;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero,.card{background:linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90));border:1px solid var(--line);border-radius:22px}
+.hero{padding:28px 24px;margin-bottom:18px}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;line-height:1.1;color:var(--gold2)}
+h2{margin:0 0 10px;color:var(--gold2)}
+h3{margin:18px 0 8px;color:var(--gold2);font-size:18px}
+p{margin:0 0 12px;color:var(--muted)}
+ul{margin:10px 0 0 20px;padding:0;color:var(--muted)}
+li{margin:7px 0}
+.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{padding:22px}
+.card p{color:var(--muted)}
+.card.full{grid-column:1/-1}
+.status{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid rgba(214,163,74,.24);color:var(--gold2);font-size:12px;font-weight:800;text-transform:uppercase}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.warning{margin-top:18px;padding:16px 18px;border:1px solid rgba(214,163,74,.28);border-radius:16px;background:rgba(214,163,74,.07);color:var(--muted)}
+.workflow{margin-top:18px;padding:28px;border:1px solid var(--line);border-radius:22px;text-align:center;background:rgba(214,163,74,.03)}
+.flow{font-size:24px;font-weight:700;color:var(--gold2);line-height:2}
+.flow small{display:block;color:var(--muted);font-size:15px;font-weight:500;line-height:1.4;margin-top:4px}
+.button-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(214,163,74,.30);background:rgba(214,163,74,.06);color:var(--gold2);border-radius:999px;padding:9px 13px;font-size:14px;font-weight:800}
+.btn.primary{background:rgba(214,163,74,.14);border-color:rgba(244,195,106,.42)}
+.kv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+.kv div{padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(214,163,74,.035)}
+.kv strong{display:block;color:var(--gold2);font-size:18px}
+.kv span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pill{display:inline-flex;padding:5px 10px;border-radius:999px;border:1px solid rgba(214,163,74,.24);color:var(--gold2);font-size:13px;font-weight:700;background:rgba(214,163,74,.045)}
+pre{overflow-x:auto;margin:14px 0 0;padding:16px;border:1px solid rgba(214,163,74,.20);border-radius:16px;background:var(--code);color:#e8edf7;font:14px/1.55 Consolas,Monaco,"Courier New",monospace;white-space:pre}
+code{font-family:Consolas,Monaco,"Courier New",monospace;color:var(--text)}
+.artifacts{columns:2;column-gap:36px}
+.artifacts li{break-inside:avoid}
+.muted{color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line)}
+@media(max-width:900px){.grid,.grid.three{grid-template-columns:1fr}h1{font-size:34px}.flow{font-size:20px}.kv{grid-template-columns:1fr 1fr}.artifacts{columns:1}}
+@media(max-width:560px){.kv{grid-template-columns:1fr}.hero{padding:24px 20px}.card{padding:20px}.content{padding-left:10px;padding-right:10px}}
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <div class="eyebrow">Satoshium Certifier · Internal Operations Tool</div>
-      <h1>Certifier Operations Toolkit</h1>
-      <p class="lead">
-        A repository-based command-line toolkit for creating, validating, and organizing Satoshium Certifier certification artifacts from a canonical Certification Package.
-      </p>
-      <div class="notice">
-        <strong>Execution note:</strong> this page does not run Python in the browser. The toolkit executes locally from the command line or through GitHub Actions. This page is the operating console, documentation index, and quick-start guide.
-      </div>
-      <div class="button-row">
-        <a class="btn primary" href="README.md">Open README</a>
-        <a class="btn" href="docs/workflow.md">Workflow Guide</a>
-        <a class="btn" href="docs/artifacts.md">Artifact Reference</a>
-        <a class="btn" href="examples/SC-CERT-2026-0001/">Example Certification</a>
-      </div>
-    </header>
 
-    <section class="grid">
-      <article class="card full">
-        <h2>Purpose</h2>
-        <p>
-          The toolkit supports Satoshium Certifier by turning one canonical Certification Package into structured certification artifacts. It does not decide whether something is certified, redefine Suite Standards, or replace Certifier judgment.
-        </p>
-        <div class="status">
-          <div><strong>v0.1.0</strong><span>Initial toolkit version</span></div>
-          <div><strong>CLI</strong><span>No hosted app required</span></div>
-          <div><strong>Python</strong><span>Standard library only</span></div>
-          <div><strong>Repo-based</strong><span>Designed for GitHub storage</span></div>
-        </div>
-      </article>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
 
-      <article class="card">
-        <h2>Local Execution</h2>
-        <p>Run these commands from the toolkit folder:</p>
-        <pre>cd certifier/tools/ops-toolkit
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Certifier · Tools</div>
+<h1>Operations Toolkit</h1>
+
+<p class="lead">
+The Operations Toolkit is a repository-based command-line support system for generating, validating, and organizing Satoshium Certifier certification artifacts from a canonical Certification Package.
+</p>
+
+<p class="lead">
+It supports Certifier operations, repeatability, and release readiness. It does not define standards, replace methodology, or certify anything by itself.
+</p>
+
+<div class="button-row">
+<a class="btn primary" href="README.md">Open README</a>
+<a class="btn" href="docs/workflow.md">Workflow Guide</a>
+<a class="btn" href="docs/artifacts.md">Artifact Reference</a>
+<a class="btn" href="examples/SC-CERT-2026-0001/">Example Certification</a>
+</div>
+
+<div class="warning">
+<strong>Execution note:</strong> this page does not run Python in the browser. The toolkit runs locally from the command line or through GitHub Actions. This page serves as the operating console, documentation index, and quick-start guide.
+</div>
+</section>
+
+<div class="workflow">
+<div class="flow">
+Certification Package<br>↓<br>
+SCPR<br>↓<br>
+SCR<br>↓<br>
+SCRD HTML / SCRD JSON<br>↓<br>
+SREG / SCHR / ANCH / SATR
+<small>Canonical source first. Generated representations and Suite references follow.</small>
+</div>
+</div>
+
+<section class="grid">
+
+<article class="card full">
+<h2>Operational Role</h2>
+<p>
+The toolkit helps turn one canonical Certification Package into structured reports, receipts, certified records, evidence references, and integration stubs. It is an operational helper for Certifier, not an independent authority.
+</p>
+<div class="kv">
+<div><strong>v0.1.0</strong><span>Initial toolkit version</span></div>
+<div><strong>CLI</strong><span>No hosted service required</span></div>
+<div><strong>Python</strong><span>Standard library only</span></div>
+<div><strong>Repo-Based</strong><span>Stored and run from GitHub</span></div>
+</div>
+</article>
+
+<article class="card">
+<h2>Local Execution</h2>
+<p>Run these commands from the toolkit folder:</p>
+<pre>cd certifier/tools/ops-toolkit
 
 python scripts/new_certification.py SC-CERT-2026-0002
 python scripts/validate_certification.py output/SC-CERT-2026-0002
 python scripts/generate_artifacts.py output/SC-CERT-2026-0002
 python scripts/check_release.py output/SC-CERT-2026-0002</pre>
-      </article>
+<div class="note">
+Generated certification folders should remain under <code>output/</code> unless a completed record is intentionally preserved elsewhere.
+</div>
+</article>
 
-      <article class="card">
-        <h2>GitHub Actions</h2>
-        <p>
-          The validation workflow should live at the repository root, not inside this folder:
-        </p>
-        <pre>.github/workflows/certifier-ops-toolkit.yml</pre>
-        <p style="margin-top:14px;">
-          Use GitHub Actions to confirm syntax, imports, tests, smoke checks, fixture behavior, and release-readiness logic after each push.
-        </p>
-      </article>
+<article class="card">
+<h2>GitHub Actions</h2>
+<p>
+The validation workflow should live at the repository root so GitHub can run it after each push.
+</p>
+<pre>.github/workflows/certifier-ops-toolkit.yml</pre>
+<p style="margin-top:14px;">
+The workflow is intended to confirm syntax, imports, unit tests, fixture behavior, smoke checks, and release-readiness logic before the toolkit is relied upon operationally.
+</p>
+<span class="status">Recommended</span>
+</article>
 
-      <article class="card third">
-        <h2>Canonical Source</h2>
-        <p>The Certification Package is the authoritative source object.</p>
-        <div class="pill-row">
-          <span class="pill">certification_package.json</span>
-          <span class="pill">certification_package.md</span>
-        </div>
-      </article>
+</section>
 
-      <article class="card third">
-        <h2>Generated Outputs</h2>
-        <p>Reports, receipts, and records are generated from the package.</p>
-        <div class="pill-row">
-          <span class="pill">SCPR</span>
-          <span class="pill">SCR</span>
-          <span class="pill">SCRD HTML</span>
-          <span class="pill">SCRD JSON</span>
-        </div>
-      </article>
+<section class="grid three">
 
-      <article class="card third">
-        <h2>Suite References</h2>
-        <p>Stub records prepare the certification for Suite integration.</p>
-        <div class="pill-row">
-          <span class="pill">SREG</span>
-          <span class="pill">SCHR</span>
-          <span class="pill">ANCH</span>
-          <span class="pill">SATR</span>
-        </div>
-      </article>
+<article class="card">
+<h2>Canonical Source</h2>
+<p>The Certification Package remains the authoritative source object.</p>
+<div class="pills">
+<span class="pill">certification_package.json</span>
+<span class="pill">certification_package.md</span>
+</div>
+</article>
 
-      <article class="card full">
-        <h2>Artifact Set</h2>
-        <ul>
-          <li>Certification Package JSON</li>
-          <li>Certification Package Markdown</li>
-          <li>Satoshium Certification Process Report — SCPR</li>
-          <li>Satoshium Certification Receipt — SCR</li>
-          <li>Satoshium Certified Record — SCRD HTML</li>
-          <li>Satoshium Certified Record — SCRD JSON</li>
-          <li>Evidence Inventory JSON</li>
-          <li>Evidence Map Markdown</li>
-          <li>SREG Registry Entry JSON stub</li>
-          <li>SCHR Chronicle Record JSON stub</li>
-          <li>ANCH Anchor Reference JSON stub</li>
-          <li>SATR Attestation Record JSON stub</li>
-          <li>Release Checklist Markdown</li>
-        </ul>
-      </article>
+<article class="card">
+<h2>Generated Outputs</h2>
+<p>Reports, receipts, and certified records are generated from the package.</p>
+<div class="pills">
+<span class="pill">SCPR</span>
+<span class="pill">SCR</span>
+<span class="pill">SCRD HTML</span>
+<span class="pill">SCRD JSON</span>
+</div>
+</article>
 
-      <article class="card">
-        <h2>Recommended July Use</h2>
-        <ul>
-          <li>Use the toolkit to harden SC-CERT-2026-0001.</li>
-          <li>Use generated outputs to test repeatability.</li>
-          <li>Use release checks before publishing any certification package.</li>
-          <li>Use GitHub Actions as the final sanity check before relying on generated artifacts.</li>
-        </ul>
-      </article>
+<article class="card">
+<h2>Suite References</h2>
+<p>Stub records prepare the certification for Suite integration.</p>
+<div class="pills">
+<span class="pill">SREG</span>
+<span class="pill">SCHR</span>
+<span class="pill">ANCH</span>
+<span class="pill">SATR</span>
+</div>
+</article>
 
-      <article class="card">
-        <h2>Important Boundaries</h2>
-        <ul>
-          <li>The toolkit does not certify by itself.</li>
-          <li>The toolkit does not define Suite Standards.</li>
-          <li>The toolkit does not replace Suite Methodology.</li>
-          <li>The toolkit does not host a public service.</li>
-          <li>The toolkit does not require Replit after export.</li>
-        </ul>
-      </article>
-    </section>
+</section>
 
-    <footer>
-      <p>
-        Satoshium Certifier Operations Toolkit · Repository-based operational support for certification artifact generation, validation, and release readiness.
-      </p>
-    </footer>
-  </main>
+<section style="margin-top:18px">
+<article class="card">
+<h2>Artifact Set</h2>
+<p>The toolkit organizes the full operational artifact set used by Certifier.</p>
+<ul class="artifacts">
+<li>Certification Package JSON</li>
+<li>Certification Package Markdown</li>
+<li>Satoshium Certification Process Report — SCPR</li>
+<li>Satoshium Certification Receipt — SCR</li>
+<li>Satoshium Certified Record — SCRD HTML</li>
+<li>Satoshium Certified Record — SCRD JSON</li>
+<li>Evidence Inventory JSON</li>
+<li>Evidence Map Markdown</li>
+<li>SREG Registry Entry JSON stub</li>
+<li>SCHR Chronicle Record JSON stub</li>
+<li>ANCH Anchor Reference JSON stub</li>
+<li>SATR Attestation Record JSON stub</li>
+<li>Release Checklist Markdown</li>
+</ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+<h2>Recommended July Use</h2>
+<ul>
+<li>Use the toolkit to harden <strong>SC-CERT-2026-0001</strong>.</li>
+<li>Use generated outputs to test repeatability.</li>
+<li>Use release checks before publishing any certification package.</li>
+<li>Use GitHub Actions as the final sanity check before relying on generated artifacts.</li>
+</ul>
+<span class="status">Operational Support</span>
+</article>
+
+<article class="card">
+<h2>Important Boundaries</h2>
+<ul>
+<li>The toolkit does not certify by itself.</li>
+<li>The toolkit does not define Suite Standards.</li>
+<li>The toolkit does not replace Suite Methodology.</li>
+<li>The toolkit does not host a public service.</li>
+<li>The toolkit does not require Replit after export.</li>
+</ul>
+<span class="status">Bounded</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Toolkit Role</h2>
+<p>
+Certifier remains the reference implementation for certification across the Satoshium Suite. The Operations Toolkit provides repeatable mechanical support for generating, validating, organizing, and checking the artifacts produced through that implementation.
+</p>
+<div class="note">
+A trustworthy certification process should not depend on memory, improvisation, or manual formatting. The toolkit preserves repeatability while leaving certification judgment where it belongs: in the Suite Standards, Suite Methodology, and Certifier workflow.
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+Repeatable tooling strengthens repeatable trust.
+</div>
+<hr>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(r=>r.text())
+.then(d=>document.getElementById("footer-container").innerHTML=d);
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
 </body>
 </html>
