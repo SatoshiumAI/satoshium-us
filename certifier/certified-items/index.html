@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Certifier · Certified Items</title>
-<meta name="description" content="Certified Items catalog artifacts that have completed Satoshium Certifier review.">
+<meta name="description" content="Certified Items catalog certification subjects reviewed through Satoshium Certifier under Suite Standards and Suite Methodology.">
 <link rel="canonical" href="https://satoshium.us/certifier/certified-items/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -97,6 +97,8 @@ h1{
  padding:22px;
 }
 
+.card.full{grid-column:1/-1}
+
 .card h2{
  margin:0 0 10px;
  font-size:24px;
@@ -129,11 +131,40 @@ h1{
  text-transform:uppercase;
 }
 
+.btn{
+ display:inline-block;
+ margin-top:10px;
+ margin-right:10px;
+ padding:10px 14px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.flow{
+ margin-top:18px;
+ padding:22px;
+ border:1px solid var(--line);
+ border-radius:18px;
+ background:rgba(214,163,74,.03);
+ color:var(--gold2);
+ text-align:center;
+ font-size:21px;
+ font-weight:800;
+ line-height:1.9;
+}
+
 .muted{color:var(--muted)}
 
 @media (max-width:900px){
  .grid{grid-template-columns:1fr}
+ .card.full{grid-column:auto}
  h1{font-size:34px}
+ .flow{font-size:18px}
 }
 </style>
 </head>
@@ -150,30 +181,63 @@ h1{
   <h1>Certified Items</h1>
 
   <p class="lead">
-    Certified Items will list all targets that have completed Certifier review and received a determination.
+    Certified Items catalog certification subjects reviewed through Satoshium Certifier under the governing Suite Standards and Suite Methodology.
   </p>
 
   <p class="lead">
-    No certifications have been issued yet.
+    Each listed item should reference a canonical Certification Package and the generated artifacts that make the certification reviewable, verifiable, and interoperable across the Satoshium Suite.
   </p>
 </section>
 
 <section class="grid">
 
-<article class="card">
-  <h2>Atlas Initial Build Phase</h2>
+<article class="card full">
+  <h2>Atlas Jurisdiction Record — El Salvador</h2>
+  <span class="status">SC-CERT-2026-0001 · Operational Certification</span>
   <p>
-    Expected first major certification target for Certifier v1.
+    The Atlas Jurisdiction Record for El Salvador serves as the inaugural operational certification subject within Satoshium Certifier. This certification established the Certification Package as the canonical source object and generated the first supporting report, receipt, certified record, and machine-readable output.
   </p>
-  <span class="status">Pending</span>
+  <p>
+    The certification demonstrates Certifier’s role as the Suite’s operational certification implementation: Suite Standards define the expectations, Suite Methodology defines the process, and Certifier executes the evidence-based workflow.
+  </p>
+  <a class="btn" href="/certifier/reports/">Open Reports →</a>
+  <a class="btn" href="/certifier/receipts/">Open Receipts →</a>
+  <a class="btn" href="/certifier/registry/">Registry References →</a>
+  <a class="btn" href="/atlas/certification/">Atlas Certification →</a>
 </article>
 
 <article class="card">
-  <h2>Certifier v1 Public Interface</h2>
+  <h2>Atlas Certification Library</h2>
+  <span class="status">Certification Architecture</span>
   <p>
-    Potential future certification target after the initial public structure is complete.
+    Atlas now includes a dedicated certification architecture describing certification profile, scope, subjects, evidence, and the relationship between Atlas records and Suite certification outputs.
   </p>
-  <span class="status">Candidate</span>
+  <a class="btn" href="/atlas/certification/">Open Atlas Certification →</a>
+</article>
+
+<article class="card">
+  <h2>Certifier Public Interface</h2>
+  <span class="status">Release Candidate</span>
+  <p>
+    The Certifier public interface is a candidate for future certification review after the July release structure, pages, terminology, artifacts, and operational toolkit are complete.
+  </p>
+  <a class="btn" href="/certifier/">Open Certifier →</a>
+</article>
+
+<article class="card">
+  <h2>Future Suite Certifications</h2>
+  <span class="status">Planned</span>
+  <p>
+    Future certified items may include Suite tools, workflow implementations, public records, schema libraries, registry entries, anchoring references, attestation records, and operational documentation.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Certification Package Reference</h2>
+  <span class="status">Canonical Object</span>
+  <p>
+    Every certified item should be traceable to a Certification Package containing subject, scope, applicable standards, methodology references, evidence inventory, evaluation, assessment, decision, and certification history.
+  </p>
 </article>
 
 </section>
@@ -181,16 +245,24 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Certification Status</h2>
+  <h2>Certified Item Flow</h2>
 
   <p>
-    This page is part of the initial static Certifier interface and may be expanded as
-    operational certification records are issued.
+    A certified item is not merely a page or artifact that has been reviewed. It is a certification subject connected to a preserved decision record and generated certification artifacts.
   </p>
 
+  <div class="flow">
+    Certification Subject<br>
+    ↓<br>
+    Certification Package<br>
+    ↓<br>
+    SCPR · SCR · SCRD HTML / JSON<br>
+    ↓<br>
+    Registry · Chronicle · Anchor · Attestor
+  </div>
+
   <div class="note">
-    The first expected certified item is the Atlas Initial Build Phase, which will establish
-    Certifier's first operational certification record, report, receipt, and Registry-ready reference.
+    This page indexes certification outcomes. It does not make certification decisions by itself. Decisions remain grounded in the Certification Package, evidence record, applicable Suite Standards, and Suite Methodology.
   </div>
 </article>
 
@@ -201,7 +273,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Satoshium Certifier is being built as a trust layer — one certification record at a time.
+    Certified items are not assertions; they are records supported by evidence, standards, methodology, and preserved decisions.
   </div>
   <hr>
   <div id="footer-container"></div>
