@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "evidence_inventory.schema.json",
+  "title": "Satoshium Evidence Inventory",
+  "description": "Schema for the Evidence Inventory JSON artifact",
+  "type": "object",
+  "required": ["certification_id", "generated_date", "items"],
+  "properties": {
+    "certification_id": {
+      "type": "string",
+      "description": "The certification this inventory belongs to"
+    },
+    "generated_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "total_items": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "title", "type", "location", "status"],
+        "properties": {
+          "evidence_id": { "type": "string" },
+          "title": { "type": "string" },
+          "type": { "type": "string" },
+          "description": { "type": "string" },
+          "location": { "type": "string" },
+          "format": { "type": "string" },
+          "hash": { "type": "string" },
+          "collected_date": { "type": "string", "format": "date" },
+          "collected_by": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["COLLECTED", "PENDING", "REJECTED", "SUPERSEDED"]
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

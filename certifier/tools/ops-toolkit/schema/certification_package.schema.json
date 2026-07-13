@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "certification_package.schema.json",
+  "title": "Satoshium Certification Package",
+  "description": "Schema for the canonical Satoshium Certification Package JSON",
+  "type": "object",
+  "required": [
+    "certification_id",
+    "schema_version",
+    "issued_date",
+    "status",
+    "certifier",
+    "subject",
+    "standard",
+    "methodology",
+    "scope",
+    "outcome",
+    "evidence_references",
+    "metadata"
+  ],
+  "properties": {
+    "certification_id": {
+      "type": "string",
+      "description": "Unique certification identifier",
+      "pattern": "^SC-CERT-\\d{4}-\\d{4}$"
+    },
+    "schema_version": {
+      "type": "string",
+      "description": "Version of this schema"
+    },
+    "issued_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the certification was issued (YYYY-MM-DD)"
+    },
+    "effective_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the certification becomes effective"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the certification expires (if applicable)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PENDING", "CERTIFIED", "REJECTED", "SUSPENDED", "WITHDRAWN"],
+      "description": "Overall certification status"
+    },
+    "certifier": {
+      "type": "object",
+      "required": ["id", "name", "role"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "contact": { "type": "string" }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "required": ["id", "name", "type", "description"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "version": { "type": "string" },
+        "repository": { "type": "string" }
+      }
+    },
+    "standard": {
+      "type": "object",
+      "required": ["id", "name", "version"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "reference_url": { "type": "string" }
+      }
+    },
+    "methodology": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["summary"],
+      "properties": {
+        "summary": { "type": "string" },
+        "inclusions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "exclusions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "required": ["status", "summary"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "CERTIFIED", "REJECTED", "SUSPENDED", "WITHDRAWN"]
+        },
+        "summary": { "type": "string" },
+        "determination_date": { "type": "string", "format": "date" },
+        "conditions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "evidence_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "title", "type", "location"],
+        "properties": {
+          "evidence_id": { "type": "string" },
+          "title": { "type": "string" },
+          "type": { "type": "string" },
+          "location": { "type": "string" },
+          "hash": { "type": "string" },
+          "collected_date": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "related_artifacts": {
+      "type": "object",
+      "properties": {
+        "scpr_id": { "type": "string" },
+        "scr_id": { "type": "string" },
+        "scrd_id": { "type": "string" },
+        "sreg_id": { "type": "string" },
+        "schr_id": { "type": "string" },
+        "anch_id": { "type": "string" },
+        "satr_id": { "type": "string" }
+      }
+    },
+    "notes": { "type": "string" },
+    "metadata": {
+      "type": "object",
+      "required": ["created_by", "created_at"],
+      "properties": {
+        "created_by": { "type": "string" },
+        "created_at": { "type": "string" },
+        "last_modified_by": { "type": "string" },
+        "last_modified_at": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
