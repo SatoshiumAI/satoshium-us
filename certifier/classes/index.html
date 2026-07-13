@@ -10,34 +10,47 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Certifier · Certification Classes</title>
-<meta name="description" content="Certification Classes define the level and intent of certifications issued by Satoshium Certifier.">
+<meta name="description" content="Certification Classes describe the level, scope, and confidence posture of certifications issued by Satoshium Certifier under the Suite Standards and Suite Methodology.">
 <link rel="canonical" href="https://satoshium.us/certifier/classes/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
 
 <style>
 :root{
- --bg:#07090d;--text:#e8edf7;--muted:#9aa7bd;
- --gold:#d6a34a;--gold2:#f4c36a;
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
  --line:rgba(214,163,74,.18);
 }
 *{box-sizing:border-box}
 html,body{
- margin:0;padding:0;
+ margin:0;
+ padding:0;
  background:var(--bg);
  color:var(--text);
  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
  line-height:1.6;
+ scroll-behavior:smooth;
 }
 body{padding-top:80px}
-.wrap{max-width:1120px;margin:auto;padding:0 18px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
 .content{padding:34px 18px 64px}
-.hero,.card{
- background:linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90));
+.hero{
  border:1px solid var(--line);
  border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),
+ linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90));
 }
-.hero{padding:28px 24px;margin-bottom:18px}
 .eyebrow{
  display:inline-flex;
  padding:8px 14px;
@@ -52,19 +65,15 @@ body{padding-top:80px}
 h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 .lead{max-width:920px;color:var(--muted);font-size:20px}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
-.card{padding:22px}
-.card h2{margin:0 0 10px;color:var(--gold2)}
-.card p{color:var(--muted)}
-.status{
- display:inline-block;
- padding:4px 10px;
- border-radius:999px;
- border:1px solid rgba(214,163,74,.24);
- color:var(--gold2);
- font-size:12px;
- font-weight:800;
- text-transform:uppercase;
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
 }
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}
 .note{
  margin-top:16px;
  padding:14px 16px;
@@ -73,10 +82,46 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
  background:rgba(214,163,74,.05);
  color:var(--muted);
 }
+.status{
+ display:inline-block;
+ padding:4px 10px;
+ border-radius:999px;
+ border:1px solid rgba(214,163,74,.24);
+ color:var(--gold2);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.06em;
+ text-transform:uppercase;
+}
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+.btn:hover{background:rgba(214,163,74,.12)}
+.flow{
+ margin-top:18px;
+ padding:24px;
+ border:1px solid var(--line);
+ border-radius:22px;
+ background:rgba(214,163,74,.03);
+ color:var(--gold2);
+ text-align:center;
+ font-size:22px;
+ font-weight:800;
+ line-height:2;
+}
 .muted{color:var(--muted)}
 @media(max-width:900px){
- .grid{grid-template-columns:1fr}
+ .grid,.grid.two{grid-template-columns:1fr}
  h1{font-size:34px}
+ .flow{font-size:18px}
 }
 </style>
 </head>
@@ -90,18 +135,19 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 
 <section class="hero">
 <div class="eyebrow">Certifier · Certification Classes</div>
-
 <h1>Certification Classes</h1>
 
 <p class="lead">
-Certification Classes communicate the scope, confidence, and intended use of a certification.
-Every certification issued by Satoshium Certifier belongs to a defined certification class.
+Certification Classes communicate the level, scope, and confidence posture of a certification issued by Satoshium Certifier under the governing Suite Standards and Suite Methodology.
 </p>
 
 <p class="lead">
-The initial Certifier framework establishes three certification classes designed for long-term scalability.
+Classes do not create certification authority by themselves. They describe the type of review performed, the intended use of the certification result, and the relationship between evidence, methodology, and the resulting Certification Package.
 </p>
 
+<a class="btn" href="/suite/standards/">Suite Standards →</a>
+<a class="btn" href="/suite/methodology/">Suite Methodology →</a>
+<a class="btn" href="/certifier/workflow/">Certifier Workflow →</a>
 </section>
 
 <section class="grid">
@@ -109,7 +155,10 @@ The initial Certifier framework establishes three certification classes designed
 <article class="card">
 <h2>Informational</h2>
 <p>
-Informational certifications document observations, facts, or conditions without asserting operational readiness or comprehensive verification.
+Informational certifications document observations, facts, records, structures, or conditions without asserting operational readiness or comprehensive verification.
+</p>
+<p>
+This class is useful when the purpose is to preserve reviewable information, identify evidence, or describe a certification subject without issuing a stronger operational conclusion.
 </p>
 <span class="status">Foundation</span>
 </article>
@@ -117,7 +166,10 @@ Informational certifications document observations, facts, or conditions without
 <article class="card">
 <h2>Operational</h2>
 <p>
-Operational certifications indicate that a target has been reviewed against published standards and is functioning according to its intended operational scope.
+Operational certifications indicate that a certification subject has been reviewed against applicable Suite Standards and Suite Methodology and is functioning within its defined operational scope.
+</p>
+<p>
+This class is appropriate when evidence, scope, assessment, and decision support a repeatable operational certification result.
 </p>
 <span class="status">Operational</span>
 </article>
@@ -125,7 +177,10 @@ Operational certifications indicate that a target has been reviewed against publ
 <article class="card">
 <h2>Verified</h2>
 <p>
-Verified certifications represent Certifier's highest certification class and indicate that evidence, standards, methodology, and review support a high level of confidence in the certification determination.
+Verified certifications represent the highest initial class and indicate that evidence, standards, methodology, review, and supporting references justify a high-confidence certification determination.
+</p>
+<p>
+Verified status may require stronger evidence preservation, integrity references, attestation support, and downstream Suite verification readiness.
 </p>
 <span class="status">Highest Class</span>
 </article>
@@ -133,20 +188,73 @@ Verified certifications represent Certifier's highest certification class and in
 </section>
 
 <section style="margin-top:18px;">
+<article class="card">
+<h2>Class Assignment Flow</h2>
+<p>
+A Certification Class is assigned during the certification workflow after scope, evidence, applicable standards, methodology, evaluation, assessment, and decision have been documented. The class becomes part of the canonical Certification Package and is reflected in generated artifacts.
+</p>
+<div class="flow">
+Certification Subject<br>
+↓<br>
+Evidence &amp; Scope<br>
+↓<br>
+Suite Standards / Suite Methodology<br>
+↓<br>
+Evaluation &amp; Decision<br>
+↓<br>
+Certification Class<br>
+↓<br>
+Certification Package · SCPR · SCR · SCRD
+</div>
+</article>
+</section>
+
+<section class="grid two">
 
 <article class="card">
-<h2>Certification Class Role</h2>
-
+<h2>Current Class Use</h2>
 <p>
-Certification Classes communicate the level of review—not the value of the certification target. They help visitors understand the depth of review performed and the confidence associated with each certification.
+The inaugural operational certification, SC-CERT-2026-0001 for the Atlas Jurisdiction Record — El Salvador, demonstrates the Operational class as Certifier’s first active certification posture.
 </p>
-
-<div class="note">
-Certification Classes may expand in future versions of Certifier while preserving backwards compatibility with previously issued certification records.
-</div>
-
+<span class="status">Active Use</span>
 </article>
 
+<article class="card">
+<h2>Artifact Reflection</h2>
+<p>
+The assigned class should appear consistently in the Certification Package, Certification Process Report, Certification Receipt, SCRD HTML, SCRD JSON, and Suite-ready reference records.
+</p>
+<span class="status">Required Consistency</span>
+</article>
+
+<article class="card">
+<h2>Not a Value Judgment</h2>
+<p>
+Certification Classes communicate the level and purpose of review. They do not measure commercial value, importance, popularity, ownership, or general superiority of a certification subject.
+</p>
+<span class="status">Boundary</span>
+</article>
+
+<article class="card">
+<h2>Future Evolution</h2>
+<p>
+Classes may expand as the Suite matures, but historical certification records should remain understandable, backward-compatible, and traceable to the class definitions in effect when issued.
+</p>
+<span class="status">Versioned</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Certification Class Role</h2>
+<p>
+Certification Classes are the classification layer of Certifier. Standards define expectations, Methodology defines the process, evidence supports review, and Certifier assigns a class as part of the documented certification decision.
+</p>
+<div class="note">
+A class should always be read together with the Certification Package, the applicable Suite Standards, the applicable Suite Methodology, the evidence inventory, and the generated certification artifacts.
+</div>
+</article>
 </section>
 
 </main>
@@ -154,7 +262,7 @@ Certification Classes may expand in future versions of Certifier while preservin
 <div class="wrap reflection">
 <hr>
 <div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
-Not every certification serves the same purpose. Certification Classes communicate the depth of review.
+Certification Classes communicate the depth, scope, and confidence posture of review.
 </div>
 <hr>
 <div id="footer-container"></div>
