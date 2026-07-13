@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Certifier · Standards</title>
-<meta name="description" content="Certification Standards define the rules used by Satoshium Certifier.">
+<meta name="description" content="Standards identifies how Satoshium Certifier applies Suite Standards as the governing expectations for certification review, evidence, records, interoperability, and certification artifacts.">
 <link rel="canonical" href="https://satoshium.us/certifier/standards/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -129,6 +129,20 @@ h1{
  text-transform:uppercase;
 }
 
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
 .muted{color:var(--muted)}
 
 @media (max-width:900px){
@@ -150,58 +164,115 @@ h1{
   <h1>Certification Standards</h1>
 
   <p class="lead">
-    Standards define what Certifier evaluates and how certification determinations are made.
+    Standards define the expectations applied during certification. Within the Satoshium ecosystem,
+    those expectations are governed at the Suite level and implemented operationally by Certifier.
   </p>
 
   <p class="lead">
-    The first expected standard is the Atlas Initial Build Standard v1.0.
+    Certifier does not independently own the certification rule layer. Suite Standards define what
+    certification requires; Suite Methodology defines how review is performed; Certifier applies both
+    to produce Certification Packages, reports, receipts, certified records, and Suite-ready references.
   </p>
+
+  <a class="btn" href="/suite/standards/">Open Suite Standards →</a>
+  <a class="btn" href="/suite/methodology/">Open Suite Methodology →</a>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Atlas Initial Build Standard v1.0</h2>
+  <h2>Suite Standards</h2>
 
   <p>
-    Planned standard for evaluating the completed initial Atlas build phase and issuing
-    Certifier’s first major certification record.
+    Suite Standards are the governing expectations used across the Satoshium Suite. They define the
+    institutional requirements for certification, evidence, trust, governance, interoperability,
+    schemas, terminology, scoring, and versioning.
   </p>
 
-  <span class="status">Coming Soon</span>
+  <span class="status">Governing Layer</span>
 </article>
 
 <article class="card">
-  <h2>Workflow Standards</h2>
+  <h2>Certifier Implementation</h2>
 
   <p>
-    Future standards for evaluating repeatable publishing, review, evidence collection,
-    and certification workflows.
+    Certifier serves as the operational implementation of the Suite certification framework. It applies
+    Suite Standards to certification subjects and records the resulting evidence, evaluation, decision,
+    and generated artifacts.
   </p>
 
-  <span class="status">Planned</span>
+  <span class="status">Operational</span>
 </article>
 
 <article class="card">
-  <h2>Tool Standards</h2>
+  <h2>Certification Standard</h2>
 
   <p>
-    Future standards for evaluating Satoshium subsystem tools, public service surfaces,
-    and operational framework components.
+    The Certification Standard defines the expectations for a certification review, including scope,
+    applicable standards, evidence sufficiency, evaluation logic, certification class, decision, and
+    certification history.
   </p>
 
-  <span class="status">Planned</span>
+  <span class="status">Applied</span>
 </article>
 
 <article class="card">
-  <h2>Evidence Standards</h2>
+  <h2>Evidence Standard</h2>
 
   <p>
-    Future standards for evaluating screenshots, notes, hashes, reports, receipts,
-    and preservation-ready certification evidence.
+    The Evidence Standard defines the factual materials needed to support certification findings,
+    including source references, documentation, reports, screenshots, inventories, mapping, and
+    preserved context.
   </p>
 
-  <span class="status">Planned</span>
+  <span class="status">Applied</span>
+</article>
+
+<article class="card">
+  <h2>Trust Standard</h2>
+
+  <p>
+    The Trust Standard supports reviewable trust by requiring visible reasoning, preserved evidence,
+    transparent determinations, public artifacts, and long-term references across the Suite.
+  </p>
+
+  <span class="status">Applied</span>
+</article>
+
+<article class="card">
+  <h2>Interoperability Standards</h2>
+
+  <p>
+    Interoperability Standards ensure Certifier outputs can be referenced by Registry, preserved by
+    Chronicle, integrity-supported by Anchor, surfaced by Beacon, attested by Attestor, and orchestrated
+    by Navigator.
+  </p>
+
+  <span class="status">Integrated</span>
+</article>
+
+<article class="card">
+  <h2>Schema Standards</h2>
+
+  <p>
+    Schema Standards define the structured formats used by Certification Packages, SCRD JSON records,
+    evidence inventories, Registry references, Chronicle references, Anchor references, and future
+    attestation records.
+  </p>
+
+  <span class="status">Structured</span>
+</article>
+
+<article class="card">
+  <h2>Versioning Standards</h2>
+
+  <p>
+    Versioning Standards preserve the relationship between certification records, standard versions,
+    methodology versions, review dates, generated artifacts, revisions, renewals, revocations, and
+    archived states.
+  </p>
+
+  <span class="status">Preserved</span>
 </article>
 
 </section>
@@ -212,14 +283,33 @@ h1{
   <h2>Standards Role</h2>
 
   <p>
-    Standards are the rule layer of Certifier. They define what must be reviewed,
-    what evidence is required, and what a Pass, Conditional Pass, Fail, or Revoked
-    determination means for a certification target.
+    Standards are the expectation layer of certification. They define what must be reviewed, what
+    evidence is required, what conditions must be satisfied, and how a certification decision can be
+    understood by future reviewers, systems, and users.
   </p>
 
   <div class="note">
-    Without standards, certification becomes opinion. With standards, certification
-    becomes a reviewable process.
+    Certifier applies standards; it does not replace them. The governing standards live at the Suite
+    level so certification remains consistent across Certifier, Atlas, Registry, Chronicle, Anchor,
+    Beacon, Attestor, Navigator, and future Satoshium systems.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Operational Standard Flow</h2>
+
+  <p>
+    Certifier applies Suite Standards through a repeatable operational sequence: identify the certification
+    subject, confirm scope, collect evidence, assemble the Certification Package, evaluate the record,
+    issue a decision, and generate certification artifacts.
+  </p>
+
+  <div class="note">
+    Certification Package → SCPR → SCR → SCRD HTML → SCRD JSON → SREG / SCHR / ANCH / SATR references.
   </div>
 </article>
 
@@ -230,7 +320,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Satoshium Certifier begins with standards because trust requires defined expectations.
+    Suite Standards define the expectations; Certifier makes their application reviewable.
   </div>
   <hr>
   <div id="footer-container"></div>
