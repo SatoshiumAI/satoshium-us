@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Certifier · Completion Checklist</title>
+<meta name="description" content="The July 2026 Satoshium Certifier Completion Checklist preserves the reconciliation path for completing Certifier as the Suite's operational certification implementation.">
+<link rel="canonical" href="https://satoshium.us/certifier/completion-checklist/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --good:#86efac;
+ --warn:#facc15;
+ --hold:#cbd5e1;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.grid-3{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:16px 0 8px;
+ font-size:17px;
+ color:var(--text);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.status{
+ display:inline-block;
+ margin-top:4px;
+ margin-bottom:12px;
+ padding:4px 10px;
+ border-radius:999px;
+ border:1px solid rgba(214,163,74,.24);
+ color:var(--gold2);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.05em;
+ text-transform:uppercase;
+}
+
+.done{color:var(--good);border-color:rgba(134,239,172,.30);background:rgba(134,239,172,.06)}
+.progress{color:var(--warn);border-color:rgba(250,204,21,.30);background:rgba(250,204,21,.06)}
+.pending{color:var(--hold);border-color:rgba(203,213,225,.25);background:rgba(203,213,225,.04)}
+
+.checklist{
+ list-style:none;
+ margin:10px 0 0;
+ padding:0;
+ color:var(--muted);
+}
+
+.checklist li{
+ display:flex;
+ gap:10px;
+ padding:9px 0;
+ border-bottom:1px solid rgba(214,163,74,.08);
+}
+
+.checklist li:last-child{border-bottom:0}
+
+.check{
+ flex:0 0 auto;
+ width:28px;
+ color:var(--gold2);
+ font-weight:800;
+}
+
+.flow{
+ margin-top:18px;
+ padding:22px;
+ border:1px solid var(--line);
+ border-radius:18px;
+ background:rgba(214,163,74,.03);
+ color:var(--gold2);
+ text-align:center;
+ font-size:21px;
+ font-weight:800;
+ line-height:1.9;
+}
+
+.table-wrap{
+ overflow:auto;
+ margin-top:14px;
+ border:1px solid var(--line);
+ border-radius:14px;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ min-width:760px;
+}
+
+th,td{
+ padding:12px 14px;
+ text-align:left;
+ vertical-align:top;
+ border-bottom:1px solid rgba(214,163,74,.12);
+ color:var(--muted);
+}
+
+th{
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+ font-size:13px;
+ letter-spacing:.04em;
+ text-transform:uppercase;
+}
+
+tr:last-child td{border-bottom:0}
+
+code{
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid,.grid-3{grid-template-columns:1fr}
+ h1{font-size:34px}
+ .flow{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Certifier · July 2026</div>
+  <h1>Completion Checklist</h1>
+
+  <p class="lead">
+    The Completion Checklist preserves the July 2026 reconciliation path for finishing Satoshium Certifier as the operational certification implementation of the Satoshium Suite.
+  </p>
+
+  <p class="lead">
+    It tracks the transition from Certifier-owned framing to Suite-governed certification, where Suite Standards define expectations, Suite Methodology defines the process, and Certifier executes the workflow through evidence-supported certification artifacts.
+  </p>
+
+  <a class="btn" href="/certifier/">Return to Certifier →</a>
+  <a class="btn" href="/suite/standards/">Suite Standards →</a>
+  <a class="btn" href="/suite/methodology/">Suite Methodology →</a>
+</section>
+
+<section class="grid-3">
+  <article class="card">
+    <h2>July 14 Status</h2>
+    <span class="status done">Reconciled</span>
+    <p>Core Certifier pages have been refactored around the Suite Standards and Suite Methodology shift.</p>
+  </article>
+
+  <article class="card">
+    <h2>July 31 Target</h2>
+    <span class="status progress">Release Path</span>
+    <p>Certifier should be public, coherent, operational, repeatable, and evidence-ready by the end of July.</p>
+  </article>
+
+  <article class="card">
+    <h2>Canonical Object</h2>
+    <span class="status done">Certification Package</span>
+    <p>The Certification Package is the authoritative source object from which reports, receipts, records, and Suite references are generated.</p>
+  </article>
+</section>
+
+<section style="margin-top:18px;">
+  <article class="card">
+    <h2>Reconciled Architecture</h2>
+    <p>
+      The July reconciliation confirms that Certifier does not own the governing certification rules. Certifier operates beneath the Suite-level institutional framework and applies that framework through review, evidence, artifacts, and references.
+    </p>
+
+    <div class="flow">
+      Suite Standards<br>
+      ↓<br>
+      Suite Methodology<br>
+      ↓<br>
+      Certifier Execution<br>
+      ↓<br>
+      Certification Package<br>
+      ↓<br>
+      SCPR · SCR · SCRD HTML / JSON<br>
+      ↓<br>
+      Registry · Chronicle · Anchor · Attestor · Beacon · Navigator
+    </div>
+
+    <div class="note">
+      Standards define expectations. Methodology defines the process. Certifier executes certification. Suite systems catalog, preserve, anchor, discover, verify, and orchestrate the resulting records.
+    </div>
+  </article>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <h2>Architecture Alignment</h2>
+    <ul class="checklist">
+      <li><span class="check">✓</span><span>Certifier homepage reframed as the Suite's operational certification implementation.</span></li>
+      <li><span class="check">✓</span><span>Suite Standards identified as the governing expectation layer.</span></li>
+      <li><span class="check">✓</span><span>Suite Methodology identified as the governing process layer.</span></li>
+      <li><span class="check">✓</span><span>Future-tense language removed from the primary Certifier identity.</span></li>
+      <li><span class="check">✓</span><span>Certification Package introduced as the canonical source object.</span></li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h2>Canonical Object Alignment</h2>
+    <ul class="checklist">
+      <li><span class="check">✓</span><span>Certification Package identified as the authoritative certification record.</span></li>
+      <li><span class="check">✓</span><span>SCPR identified as the Certification Process Report.</span></li>
+      <li><span class="check">✓</span><span>SCR identified as the public Certification Receipt.</span></li>
+      <li><span class="check">✓</span><span>SCRD HTML and SCRD JSON identified as human-readable and machine-readable certified records.</span></li>
+      <li><span class="check">✓</span><span>SREG, SCHR, ANCH, and SATR identified as downstream Suite-ready reference structures.</span></li>
+    </ul>
+  </article>
+</section>
+
+<section style="margin-top:18px;">
+  <article class="card">
+    <h2>Page Reconciliation Matrix</h2>
+    <p>The following table tracks Certifier pages affected by the Suite Standards / Suite Methodology shift.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Reconciliation Result</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="/certifier/">Home</a></td><td>Repositioned Certifier as the Suite's operational certification implementation.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/standards/">Standards</a></td><td>Clarified that Suite Standards govern expectations and Certifier applies them.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/methodology/">Methodology</a></td><td>Clarified that Suite Methodology governs process and Certifier applies it.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/workflow/">Workflow</a></td><td>Inserted Certification Package-centered workflow and Suite reference flow.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/evidence/">Evidence</a></td><td>Aligned evidence with package support, SEV-style records, and Suite references.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/schema/">Schema</a></td><td>Clarified Certification Package, SCRD JSON, evidence inventory, and Suite reference structures.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/interoperability/">Interoperability</a></td><td>Clarified distinct roles for Registry, Chronicle, Anchor, Beacon, Attestor, and Navigator.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/certified-items/">Certified Items</a></td><td>Replaced future-only framing with SC-CERT-2026-0001 and certified item indexing.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/reports/">Reports</a></td><td>Reframed reports as generated SCPR artifacts derived from the Certification Package.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/receipts/">Receipts</a></td><td>Reframed receipts as generated verification artifacts derived from the Certification Package.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/registry/">Registry</a></td><td>Clarified SREG as a catalog/reference object, not the certification authority.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/attestations/">Attestations</a></td><td>Clarified SATR/Attestor as verification support, not certification authority.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/governance/">Governance</a></td><td>Aligned Certifier governance beneath Suite Standards and Suite Methodology.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/definitions/">Definitions</a></td><td>Added terminology for Certification Package, SCPR, SCR, SCRD, SREG, SCHR, ANCH, SATR, and SEV.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/classes/">Classes</a></td><td>Clarified classes as review-depth and confidence posture under the Suite framework.</td><td><span class="status done">Updated</span></td></tr>
+          <tr><td><a href="/certifier/trust/">Trust Model</a></td><td>Trust model inserted into the Certifier homepage; standalone page should be confirmed or published.</td><td><span class="status progress">Confirm</span></td></tr>
+          <tr><td><a href="/certifier/status/">Status</a></td><td>Status should be updated from development framing to operational / July release candidate posture.</td><td><span class="status pending">Remaining</span></td></tr>
+          <tr><td>Evaluation / Scoring</td><td>Review to ensure scoring or evaluation language does not imply Certifier defines standards outside the Suite.</td><td><span class="status pending">Remaining</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <h2>Public Operational Proof</h2>
+    <p>Certifier should preserve public proof that certification is not merely conceptual.</p>
+    <ul class="checklist">
+      <li><span class="check">□</span><span>Confirm public location for <code>SC-CERT-2026-0001</code>.</span></li>
+      <li><span class="check">□</span><span>Confirm Certification Package page or file is published.</span></li>
+      <li><span class="check">□</span><span>Confirm SCPR page or file is published.</span></li>
+      <li><span class="check">□</span><span>Confirm SCR page or file is published.</span></li>
+      <li><span class="check">□</span><span>Confirm SCRD HTML and SCRD JSON are published.</span></li>
+      <li><span class="check">□</span><span>Confirm Registry, Chronicle, Anchor, and Attestor references are linked or stubbed.</span></li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h2>Release Readiness</h2>
+    <p>Before July completion, Certifier should pass a final consistency and navigation review.</p>
+    <ul class="checklist">
+      <li><span class="check">□</span><span>Run link and path check across <code>/certifier/</code>.</span></li>
+      <li><span class="check">□</span><span>Scan for outdated phrases such as “coming soon,” “expected,” and “no certifications issued yet.”</span></li>
+      <li><span class="check">□</span><span>Confirm page titles, descriptions, and canonical URLs.</span></li>
+      <li><span class="check">□</span><span>Confirm topbar and footer behavior across updated pages.</span></li>
+      <li><span class="check">□</span><span>Update July status and Chronicle / journal records after completion.</span></li>
+      <li><span class="check">□</span><span>Capture URLs and screenshots for future Statement of Use evidence.</span></li>
+    </ul>
+  </article>
+</section>
+
+<section style="margin-top:18px;">
+  <article class="card">
+    <h2>Definition of Completion</h2>
+    <p>
+      Satoshium Certifier is complete for the July 2026 milestone when it is public, coherent, operational, repeatable, and evidence-ready. Completion does not require full automation, external attestations, or mature API infrastructure. It requires a functioning certification implementation that can issue, preserve, and explain certification artifacts under the Suite's governing framework.
+    </p>
+
+    <div class="note">
+      July completion means Certifier is ready as the Suite's first operational certification implementation. Later months may strengthen automation, Registry maturity, external verification, and workflow orchestration.
+    </div>
+  </article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Certification is completed through alignment, evidence, artifacts, and preservation.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
