@@ -209,20 +209,29 @@ Each certification moves from subject identification and evidence assembly into 
 <a class="btn" href="/certifier/schema/">Certifier Schema →</a>
 </section>
 
-<div class="workflow">
-<div class="flow">
-Certification Subject<br>
-↓<br>
-Evidence Inventory &amp; Evidence Review<br>
-↓<br>
-Certification Package<br>
-↓<br>
-Evaluation &amp; Certification Decision<br>
-↓<br>
-SCPR · SCR · SCRD HTML / JSON<br>
-↓<br>
-Registry · Chronicle · Anchor · Attestor
-</div>
+<div class="workflow-box">
+
+  <div class="workflow-step">Certification Subject</div>
+  <div class="workflow-arrow">↓</div>
+
+  <div class="workflow-step">Evidence Inventory</div>
+  <div class="workflow-arrow">↓</div>
+
+  <div class="workflow-step">Certification Package</div>
+  <div class="workflow-arrow">↓</div>
+
+  <div class="workflow-step">Evaluation &amp; Certification Decision</div>
+  <div class="workflow-arrow">↓</div>
+
+  <div class="workflow-step">
+    SCPR • SCR • SCRD HTML / JSON
+  </div>
+  <div class="workflow-arrow">↓</div>
+
+  <div class="workflow-step">
+    Registry • Chronicle • Anchor • Attestor
+  </div>
+
 </div>
 
 <section class="grid">
@@ -242,10 +251,15 @@ The subject must be bounded clearly enough that evidence can be gathered, standa
 <h2>2. Evidence Assembly</h2>
 <span class="status">Review Foundation</span>
 <p>
-Evidence is collected, organized, and mapped to the applicable Suite Standards and Suite Methodology requirements.
+Evidence is collected, organized, preserved, and associated with the
+Certification Package. The evidence inventory becomes part of the canonical
+certification record evaluated under the governing Suite Standards and
+Suite Methodology.
 </p>
+
 <p>
-Evidence may include URLs, screenshots, reports, metadata, source records, supporting documentation, hashes, and preserved references.
+Evidence may include URLs, screenshots, reports, metadata, source records,
+supporting documentation, hashes, and preserved references.
 </p>
 </article>
 
@@ -256,7 +270,8 @@ Evidence may include URLs, screenshots, reports, metadata, source records, suppo
 The Certification Package is the authoritative source object for the certification. It preserves the subject, scope, standards, methodology, evidence, review notes, assessment, decision, and history.
 </p>
 <p>
-Generated artifacts should derive from the Certification Package rather than redefining the certification independently.
+Generated artifacts should derive from the Certification Package rather than
+redefining the certification independently.
 </p>
 </article>
 
@@ -264,7 +279,14 @@ Generated artifacts should derive from the Certification Package rather than red
 <h2>4. Evaluation &amp; Decision</h2>
 <span class="status">Determination</span>
 <p>
-Certifier evaluates the evidence against Suite Standards using Suite Methodology, then records the certification decision, limitations, confidence posture, and review rationale.
+Certifier evaluates the evidence against Suite Standards using Suite
+Methodology, records the certification decision, limitations, confidence
+posture, and review rationale within the Certification Package.
+</p>
+
+<p>
+Only after the certification decision is finalized are public certification
+artifacts generated from the completed Certification Package.
 </p>
 <p>
 The decision may support public certification, conditional certification, failure, expiration, renewal, or revocation depending on the applicable standard and lifecycle status.
@@ -275,7 +297,10 @@ The decision may support public certification, conditional certification, failur
 <h2>5. Generated Artifacts</h2>
 <span class="status">Outputs</span>
 <p>
-The completed Certification Package produces the Satoshium Certification Process Report, Certification Receipt, Certified Record HTML, Certified Record JSON, and supporting evidence maps.
+Once the certification decision is finalized, the Certification Package
+generates the Satoshium Certification Process Report (SCPR), Certification
+Receipt (SCR), Certified Record HTML (SCRD HTML), Certified Record JSON
+(SCRD JSON), and supporting certification artifacts.
 </p>
 <p>
 These artifacts allow the certification to be read, reviewed, verified, indexed, preserved, and reused across the Satoshium ecosystem.
@@ -286,10 +311,15 @@ These artifacts allow the certification to be read, reviewed, verified, indexed,
 <h2>6. Suite References</h2>
 <span class="status">Integration</span>
 <p>
-After certification, Registry catalogs the record, Chronicle preserves the event history, Anchor preserves integrity references, and Attestor supports verification statements.
+After certification artifacts are generated, downstream Suite systems
+preserve, catalog, discover, verify, and orchestrate those records without
+modifying the certification itself.
 </p>
+
 <p>
-Beacon and Navigator may later use certified records to support discovery, queries, automation, and workflow orchestration.
+Registry catalogs. Chronicle preserves history. Anchor preserves integrity.
+Beacon publishes discovery metadata. Attestor supports independent
+verification. Navigator orchestrates workflows using certified records.
 </p>
 </article>
 
@@ -309,14 +339,22 @@ A consistent workflow ensures that every certification can be reproduced, unders
 
 <article class="card">
 <h2>Workflow Outputs</h2>
-<ul class="list">
+<ul>
+
 <li>Certification Package</li>
+
+<li>Evidence Inventory</li>
+
 <li>SCPR — Certification Process Report</li>
+
 <li>SCR — Certification Receipt</li>
-<li>SCRD — Certified Record HTML</li>
-<li>SCRD JSON — Machine-readable certified record</li>
-<li>Evidence Inventory and Evidence Map</li>
-<li>SREG, SCHR, ANCH, and SATR references</li>
+
+<li>SCRD HTML — Certified Record</li>
+
+<li>SCRD JSON — Machine-readable Certified Record</li>
+
+<li>Suite References (SREG, SCHR, ANCH, SATR)</li>
+
 </ul>
 </article>
 
