@@ -202,7 +202,10 @@ Suite Standards define the meaning of certification. Suite Methodology defines t
 <h2>Certification Package Schema</h2>
 <span class="status">Canonical Source</span>
 <p>
-The Certification Package schema defines the primary certification object, including the certification subject, scope, governing standards, applicable methodology, evidence inventory, evaluation, decision, history, and generated outputs.
+The Certification Package schema defines Certifier’s canonical operational record,
+including the Certification Subject, Profile, Scope, applicable Suite Standards,
+applicable Suite Methodology, Evidence Inventory, evaluation, certification decision,
+generated artifacts, lifecycle state, and certification history.
 </p>
 </article>
 
@@ -210,7 +213,10 @@ The Certification Package schema defines the primary certification object, inclu
 <h2>SCRD JSON Schema</h2>
 <span class="status">Certified Record</span>
 <p>
-The SCRD JSON schema defines the machine-readable certified record generated from the canonical Certification Package for public indexing, Registry integration, future APIs, and long-term interoperability.
+The SCRD JSON schema defines the machine-readable serialization of the canonical
+Certified Record generated from the Certification Package. It supports public indexing,
+Registry integration, structured exchange, future APIs, and long-term interoperability
+without creating a separate certification object.
 </p>
 </article>
 
@@ -218,7 +224,10 @@ The SCRD JSON schema defines the machine-readable certified record generated fro
 <h2>Evidence Inventory Schema</h2>
 <span class="status">SEV Support</span>
 <p>
-Evidence schemas organize the factual materials reviewed during certification, including source references, evidence types, traceability notes, review status, integrity references, and mapped standards support.
+The Evidence Inventory schema organizes the factual materials associated with a
+Certification Package, including Evidence Record identifiers, source references,
+evidence types, traceability notes, review status, integrity references, and mapped
+Suite Standards requirements.
 </p>
 </article>
 
@@ -226,7 +235,10 @@ Evidence schemas organize the factual materials reviewed during certification, i
 <h2>Generated Artifact Fields</h2>
 <span class="status">Derived Outputs</span>
 <p>
-Schema conventions support generated artifacts including SCPR reports, SCR receipts, SCRD HTML records, SCRD JSON records, evidence maps, and release readiness checklists.
+Schema conventions define the fields used by generated certification artifacts,
+including the Certification Process Report (SCPR), Certification Receipt (SCR),
+Certified Record HTML representation, Certified Record JSON serialization,
+Evidence Maps, and related Suite-ready references.
 </p>
 </article>
 
@@ -234,7 +246,9 @@ Schema conventions support generated artifacts including SCPR reports, SCR recei
 <h2>Suite Reference Stubs</h2>
 <span class="status">Integration Ready</span>
 <p>
-Structured reference stubs prepare certification records for Registry cataloging, Chronicle preservation, Anchor integrity references, and Attestor verification support.
+Structured reference stubs prepare certification records for Registry cataloging,
+Chronicle preservation, Anchor integrity references, Beacon discovery metadata,
+Attestor verification support, and Navigator workflow orchestration.
 </p>
 </article>
 
@@ -252,19 +266,27 @@ Schemas should be versioned so historical certification records remain understan
 <article class="card">
 <h2>Schema Flow</h2>
 <p>
-Certifier schema begins with the Certification Package as the canonical source object. Generated artifacts and Suite references should derive from that source rather than becoming independent certification decisions.
+Certifier schema begins with the Certification Package as Certifier’s canonical
+operational record. Evidence structures, generated artifacts, Certified Record
+representations, and Suite-ready references derive from that Package without
+becoming independent certification decisions.
 </p>
+
 <div class="flow">
-Certification Package JSON<br>
+Certification Package Schema<br>
 ↓<br>
 Evidence Inventory · Evidence Map<br>
 ↓<br>
-SCPR · SCR · SCRD HTML / JSON<br>
+SCPR · SCR · SCRD<br>
+↓<br>
+SCRD HTML · SCRD JSON<br>
 ↓<br>
 SREG · SCHR · ANCH · SATR
 </div>
 <div class="note">
-Schema does not certify by itself. It preserves the structure of a certification decision made through Suite Standards, Suite Methodology, evidence review, and Certifier execution.
+Schema does not certify by itself. It preserves the structure of a certification
+performed through Suite Standards, Suite Methodology, evidence review, evaluation,
+certification decision, and Certifier execution.
 </div>
 </article>
 </section>
@@ -273,13 +295,23 @@ Schema does not certify by itself. It preserves the structure of a certification
 <article class="card">
 <h2>Schema Role</h2>
 <p>
-Schema is the structural record layer of Certifier. Documentation explains the system, reports preserve reasoning, receipts summarize outcomes, and schema gives certification records a durable machine-readable form.
+Schema is Certifier’s structural record layer. Documentation explains the system,
+the SCPR preserves certification reasoning, the SCR provides public confirmation,
+and the SCRD preserves the canonical Certified Record through human-readable HTML
+and machine-readable JSON representations.
 </p>
 <p>
-The initial schema focus is the Certification Package and its generated representations. The Operations Toolkit supports this structure by generating and validating repository-based artifact sets without hosting a public service or replacing certification judgment.
+The initial schema focus is the Certification Package and the evidence structures,
+generated artifacts, Certified Record representations, and Suite-ready references
+derived from it. The Operations Toolkit supports this architecture by generating
+and validating repository-based artifact sets without replacing certification
+judgment or operating as an independent certification authority.
 </p>
 <div class="note">
-Standards define expectations. Methodology defines the process. Certifier executes the workflow. Schema preserves the result in forms that people, repositories, and future systems can verify.
+Standards define expectations. Methodology defines the process. Certifier executes
+the workflow and issues the certification. Schema preserves the resulting records
+in durable forms that people, repositories, and future systems can interpret,
+validate, and exchange.
 </div>
 </article>
 </section>
