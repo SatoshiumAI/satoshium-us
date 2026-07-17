@@ -1,240 +1,389 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certification Package — SC-CERT-2026-0001</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+
+<title>SC-CERT-2026-0001 · Certification Package</title>
+<meta name="description" content="Canonical Certification Package for SC-CERT-2026-0001, the inaugural operational certification of the Satoshium Atlas Jurisdiction Record for El Salvador.">
+<link rel="canonical" href="https://satoshium.us/certifier/certifications/sc-cert-2026-0001/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --green:#76d48b;
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),
+ linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90));
+}
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+h1{margin:10px 0 12px;color:var(--gold2);font-size:44px;line-height:1.15}
+h2{margin:0 0 10px;color:var(--gold2);font-size:24px}
+.lead{max-width:940px;color:var(--muted);font-size:20px}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:10px 0 0 20px;padding:0;color:var(--muted)}
+.card li{margin:7px 0}
+.status{
+ display:inline-block;
+ margin:4px 0 12px;
+ padding:4px 10px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.06em;
+ text-transform:uppercase;
+}
+.status.active{color:var(--green)}
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:12px;
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+.btn:hover{background:rgba(214,163,74,.12)}
+.term-list{
+ margin:10px 0 0;
+ padding:0;
+ list-style:none;
+ color:var(--muted);
+}
+.term-list li{
+ padding:10px 0;
+ border-top:1px solid rgba(214,163,74,.10);
+}
+.term-list li:first-child{border-top:0}
+.term-list strong{color:var(--gold2)}
+.table-wrap{overflow-x:auto}
+table{
+ width:100%;
+ border-collapse:collapse;
+ margin-top:14px;
+ min-width:720px;
+}
+th,td{
+ padding:12px 14px;
+ border-bottom:1px solid rgba(214,163,74,.12);
+ text-align:left;
+ vertical-align:top;
+}
+th{
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+}
+td{color:var(--muted)}
+.flow{
+ margin-top:18px;
+ padding:24px;
+ border:1px solid var(--line);
+ border-radius:22px;
+ background:rgba(214,163,74,.03);
+ color:var(--gold2);
+ text-align:center;
+ font-size:22px;
+ font-weight:800;
+ line-height:2;
+}
+.muted{color:var(--muted)}
+@media(max-width:900px){
+ .grid,.grid.three{grid-template-columns:1fr}
+ h1{font-size:34px}
+ .lead{font-size:18px}
+ .flow{font-size:18px}
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Certification Package — SC-CERT-2026-0001</h1>
-  <p><strong>Certification ID:</strong> SC-CERT-2026-0001</p>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
 
-  <h2>Certification Subject</h2>
+<main class="wrap content">
 
-  <p><strong>Certification Subject:</strong> Atlas Jurisdiction Record — El Salvador</p>
-  <p><strong>Subject System:</strong> Satoshium Atlas</p>
-  <p><strong>Subject Type:</strong> Jurisdiction Intelligence Engine Record</p>
-  <p><strong>Certification Date:</strong> July 5, 2026</p>
-  <p><strong>Primary Record:</strong>
-    <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/">
-      https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/
-    </a>
-  </p>
+<section class="hero">
+<div class="eyebrow">Certifier · Canonical Certification Package</div>
+<h1>SC-CERT-2026-0001</h1>
 
-  <h2>Certification Scope</h2>
-
-  <p>
-    This certification evaluates the Atlas Jurisdiction Intelligence Engine record for El Salvador as it existed on July 5, 2026.
-  </p>
-
-  <p>
-    The certification applies only to the evidence sources identified below.
-  </p>
-
-  <h2>Certification Status</h2>
-
- <p><strong>Current Phase:</strong> Certification Complete</p>
-<p><strong>Certification State:</strong> Certified</p>
-
-  <h2>Governing Standards</h2>
-
-  <p>The following Suite Standards govern this certification:</p>
-
-  <ul>
-    <li>Certification Standard v1.0</li>
-    <li>Evidence Standard v1.0</li>
-    <li>Trust Standard v1.0</li>
-    <li>Scoring Standard v1.0</li>
-  </ul>
-
-  <h2>Governing Methodology</h2>
-
-  <p>The following Suite Methodology components govern this certification:</p>
-
-  <ul>
-    <li>Suite Methodology v1.0</li>
-    <li>Certification Lifecycle</li>
-    <li>Certification Workflow</li>
-    <li>Evaluation Criteria</li>
-    <li>Evidence Requirements</li>
-    <li>Certification Logic</li>
-    <li>Decision Process</li>
-  </ul>
-
-  <h2>Evidence Sources</h2>
-
-  <p>The following Atlas records have been identified as evidence sources for this certification:</p>
-
-  <ul>
-    <li><a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/">Primary Atlas Record</a></li>
-    <li><a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/profile.md">Profile Record</a></li>
-    <li><a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/metadata.md">Metadata Record</a></li>
-    <li><a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/evidence.md">Evidence Record</a></li>
-    <li><a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/signals.md">Signals Record</a></li>
-    <li><a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/trust-dimensions.md">Trust Dimensions Record</a></li>
-    <li><a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/change-log.md">Change Log</a></li>
-    <li><a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/builder-mode.md">Builder Mode Record</a></li>
-  </ul>
-
-<section>
-  <h2>Evidence Inventory</h2>
-
-  <p>
-    Certifier identified the following evidence sources as available for review
-    under the Suite Certification Methodology.
-  </p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Evidence Source</th>
-        <th>Required</th>
-        <th>Present</th>
-        <th>Inventory Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Primary Atlas Record</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Located</td>
-      </tr>
-      <tr>
-        <td>Profile Record</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Located</td>
-      </tr>
-      <tr>
-        <td>Metadata Record</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Located</td>
-      </tr>
-      <tr>
-        <td>Evidence Record</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Located</td>
-      </tr>
-      <tr>
-        <td>Signals Record</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Located</td>
-      </tr>
-      <tr>
-        <td>Trust Dimensions Record</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Located</td>
-      </tr>
-      <tr>
-        <td>Change Log</td>
-        <td>Supplemental</td>
-        <td>Yes</td>
-        <td>Located</td>
-      </tr>
-      <tr>
-        <td>Builder Mode Record</td>
-        <td>Supplemental</td>
-        <td>Yes</td>
-        <td>Located</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<section>
-
-<h2>Evidence Review</h2>
-
-<p>
-The evidence sources identified within this Certification Package were reviewed
-to determine whether they satisfy the requirements established by the
-Satoshium Suite Evidence Standard and the Suite Certification Methodology.
+<p class="lead">
+This is the canonical Certification Package for the inaugural operational certification of the
+<strong>Satoshium Atlas Jurisdiction Record — El Salvador</strong>.
 </p>
 
-<table>
+<p class="lead">
+The Package preserves the Certification Subject, certification boundary, governing Suite Standards,
+applied Suite Methodology, Evidence Inventory, evaluation, certification decision, assigned
+Certification Class, generated artifacts, lifecycle state, and downstream Suite references.
+</p>
 
+<a class="btn" href="/certifier/certified-items/">View Certified Item →</a>
+<a class="btn" href="/atlas/certification/">Atlas Certification Library →</a>
+<a class="btn" href="/certifier/">Return to Certifier →</a>
+</section>
+
+<section class="grid three">
+
+<article class="card">
+<h2>Certification Status</h2>
+<span class="status active">Issued · Active</span>
+<p>
+The certification completed the operational Certifier workflow on July 5, 2026 and remains an
+active public certification record.
+</p>
+</article>
+
+<article class="card">
+<h2>Certification Class</h2>
+<span class="status">Operational</span>
+<p>
+The Operational class indicates that the Certification Subject was evaluated against applicable
+Suite Standards and Suite Methodology within its documented operational scope.
+</p>
+</article>
+
+<article class="card">
+<h2>Certification Authority</h2>
+<span class="status">Satoshium Certifier</span>
+<p>
+Certifier performs certification as the Suite’s operational certification implementation.
+Suite Standards define expectations, and Suite Methodology defines the repeatable process.
+</p>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+<h2>Certification Subject</h2>
+<ul class="term-list">
+<li><strong>Subject:</strong> Atlas Jurisdiction Record — El Salvador</li>
+<li><strong>Subject System:</strong> Satoshium Atlas</li>
+<li><strong>Subject Type:</strong> Jurisdiction Intelligence Engine Record</li>
+<li><strong>Certification Date:</strong> July 5, 2026</li>
+<li><strong>Primary Record:</strong> <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/">Open Atlas Record</a></li>
+</ul>
+<div class="note">
+Atlas owns and maintains the underlying jurisdiction intelligence. Certifier evaluates the defined
+Certification Subject without assuming Atlas authority.
+</div>
+</article>
+
+<article class="card">
+<h2>Certification Scope</h2>
+<p>
+This certification evaluates the Atlas Jurisdiction Intelligence Engine record for El Salvador as
+it existed on July 5, 2026, together with the identified supporting records available during review.
+</p>
+<p>
+The certification applies only to the defined subject state and evidence sources listed within this
+Package. Future modifications may require renewed review or recertification.
+</p>
+<div class="note">
+Registry Entries, Chronicle Records, Anchor references, Beacon metadata, Attestation Records, and
+Navigator workflows are downstream Suite objects and remain outside the Certification Subject.
+</div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+<h2>Governing Standards</h2>
+<ul>
+<li>Suite Certification Standard v1.0</li>
+<li>Suite Evidence Standard v1.0</li>
+<li>Suite Trust Standard v1.0</li>
+<li>Suite Scoring Standard v1.0 — prototype assessment support</li>
+</ul>
+<div class="note">
+The governing Suite Standards define the expectations applied to this certification.
+</div>
+</article>
+
+<article class="card">
+<h2>Governing Methodology</h2>
+<ul>
+<li>Suite Methodology v1.0</li>
+<li>Certification Lifecycle</li>
+<li>Certification Workflow</li>
+<li>Evaluation Criteria</li>
+<li>Evidence Requirements</li>
+<li>Certification Logic</li>
+<li>Decision Process</li>
+</ul>
+<div class="note">
+Suite Methodology defines how Certifier performs the review and records the result.
+</div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Evidence Sources</h2>
+<p>
+The following Atlas records were identified as evidence sources for this certification.
+</p>
+<ul class="term-list">
+<li><strong>Primary Atlas Record:</strong> <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/">Open record</a></li>
+<li><strong>Profile Record:</strong> <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/profile.md">Open profile.md</a></li>
+<li><strong>Metadata Record:</strong> <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/metadata.md">Open metadata.md</a></li>
+<li><strong>Evidence Record:</strong> <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/evidence.md">Open evidence.md</a></li>
+<li><strong>Signals Record:</strong> <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/signals.md">Open signals.md</a></li>
+<li><strong>Trust Dimensions Record:</strong> <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/trust-dimensions.md">Open trust-dimensions.md</a></li>
+<li><strong>Change Log:</strong> <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/change-log.md">Open change-log.md</a></li>
+<li><strong>Builder Mode Record:</strong> <a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/builder-mode.md">Open builder-mode.md</a></li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Evidence Inventory</h2>
+<p>
+Certifier identified the following Evidence Records as available for review and associated them
+with this canonical Certification Package.
+</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Evidence Source</th>
+<th>Requirement</th>
+<th>Present</th>
+<th>Inventory Status</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Primary Atlas Record</td><td>Required</td><td>Yes</td><td>Located</td></tr>
+<tr><td>Profile Record</td><td>Required</td><td>Yes</td><td>Located</td></tr>
+<tr><td>Metadata Record</td><td>Required</td><td>Yes</td><td>Located</td></tr>
+<tr><td>Evidence Record</td><td>Required</td><td>Yes</td><td>Located</td></tr>
+<tr><td>Signals Record</td><td>Required</td><td>Yes</td><td>Located</td></tr>
+<tr><td>Trust Dimensions Record</td><td>Required</td><td>Yes</td><td>Located</td></tr>
+<tr><td>Change Log</td><td>Supplemental</td><td>Yes</td><td>Located</td></tr>
+<tr><td>Builder Mode Record</td><td>Supplemental</td><td>Yes</td><td>Located</td></tr>
+</tbody>
+</table>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Evidence Review</h2>
+<p>
+The identified evidence was reviewed to determine whether it supported evaluation under the
+applicable Suite Standards and Suite Methodology.
+</p>
+<div class="table-wrap">
+<table>
 <thead>
 <tr>
 <th>Evidence Source</th>
 <th>Review Result</th>
-<th>Notes</th>
+<th>Review Note</th>
 </tr>
 </thead>
-
 <tbody>
-
-<tr>
-<td>Primary Atlas Record</td>
-<td>Pass</td>
-<td>Canonical jurisdiction record available and publicly accessible.</td>
-</tr>
-
-<tr>
-<td>Profile Record</td>
-<td>Pass</td>
-<td>Subject profile complete.</td>
-</tr>
-
-<tr>
-<td>Metadata Record</td>
-<td>Pass</td>
-<td>Metadata present and internally consistent.</td>
-</tr>
-
-<tr>
-<td>Evidence Record</td>
-<td>Pass</td>
-<td>Evidence sources documented.</td>
-</tr>
-
-<tr>
-<td>Signals Record</td>
-<td>Pass</td>
-<td>Trust signals documented.</td>
-</tr>
-
-<tr>
-<td>Trust Dimensions Record</td>
-<td>Pass</td>
-<td>Trust dimensions present.</td>
-</tr>
-
-<tr>
-<td>Change Log</td>
-<td>Reviewed</td>
-<td>Historical modifications documented.</td>
-</tr>
-
-<tr>
-<td>Builder Mode Record</td>
-<td>Reviewed</td>
-<td>Internal development information available.</td>
-</tr>
-
+<tr><td>Primary Atlas Record</td><td>Pass</td><td>Canonical jurisdiction record available and publicly accessible.</td></tr>
+<tr><td>Profile Record</td><td>Pass</td><td>Subject profile available and sufficiently complete for review.</td></tr>
+<tr><td>Metadata Record</td><td>Pass</td><td>Metadata present and internally consistent with the subject record.</td></tr>
+<tr><td>Evidence Record</td><td>Pass</td><td>Evidence sources documented and available for review.</td></tr>
+<tr><td>Signals Record</td><td>Pass</td><td>Certification-relevant signals documented.</td></tr>
+<tr><td>Trust Dimensions Record</td><td>Pass</td><td>Trust dimensions present and reviewable.</td></tr>
+<tr><td>Change Log</td><td>Reviewed</td><td>Historical modifications documented.</td></tr>
+<tr><td>Builder Mode Record</td><td>Reviewed</td><td>Construction and review context available as supplemental material.</td></tr>
 </tbody>
-
 </table>
-
+</div>
+</article>
 </section>
 
-<section>
-
+<section style="margin-top:18px;">
+<article class="card">
 <h2>Certification Evaluation</h2>
-
 <p>
-Following completion of the Evidence Review, the certification subject was
-evaluated in accordance with the applicable Suite Standards and the Suite
-Certification Methodology.
+Following Evidence Review, Certifier evaluated the Certification Subject against the applicable
+Suite Standards using Suite Methodology.
 </p>
-
+<div class="table-wrap">
 <table>
-
 <thead>
 <tr>
 <th>Evaluation Category</th>
@@ -242,192 +391,224 @@ Certification Methodology.
 <th>Assessment</th>
 </tr>
 </thead>
-
 <tbody>
-
-<tr>
-<td>Subject Identification</td>
-<td>Pass</td>
-<td>The certification subject is clearly identified and uniquely distinguishable.</td>
-</tr>
-
-<tr>
-<td>Evidence Completeness</td>
-<td>Pass</td>
-<td>Required evidence sources are complete and available for evaluation.</td>
-</tr>
-
-<tr>
-<td>Evidence Integrity</td>
-<td>Pass</td>
-<td>The reviewed records demonstrate internal consistency and structural integrity.</td>
-</tr>
-
-<tr>
-<td>Transparency</td>
-<td>Pass</td>
-<td>Supporting documentation is publicly accessible and traceable.</td>
-</tr>
-
-<tr>
-<td>Methodology Compliance</td>
-<td>Pass</td>
-<td>The certification process followed the published Suite Certification Methodology.</td>
-</tr>
-
-<tr>
-<td>Standards Compliance</td>
-<td>Pass</td>
-<td>The subject satisfies the applicable Suite Certification Standards.</td>
-</tr>
-
+<tr><td>Subject Identification</td><td>Pass</td><td>The Certification Subject is clearly identified and uniquely distinguishable.</td></tr>
+<tr><td>Evidence Completeness</td><td>Pass</td><td>Required Evidence Records were present and available for evaluation.</td></tr>
+<tr><td>Evidence Integrity</td><td>Pass</td><td>The reviewed records demonstrated internal consistency and structural integrity.</td></tr>
+<tr><td>Transparency</td><td>Pass</td><td>Supporting documentation was publicly accessible and traceable.</td></tr>
+<tr><td>Methodology Compliance</td><td>Pass</td><td>The certification process followed the published Suite Methodology.</td></tr>
+<tr><td>Standards Compliance</td><td>Pass</td><td>The subject satisfied the applicable Suite Standards within the documented scope.</td></tr>
 </tbody>
-
 </table>
-
+</div>
+</article>
 </section>
 
-<section>
+<section class="grid">
 
-<h2>Certification Assessment</h2>
-
+<article class="card">
+<h2>Assessment &amp; Confidence Posture</h2>
 <p>
-Following the Certification Evaluation, Certifier assigned a prototype
-certification score using the applicable Suite Scoring Standard.
+The original July 5 certification included a prototype numerical assessment under the early Suite
+Scoring Standard.
 </p>
+<ul class="term-list">
+<li><strong>Prototype Assessment:</strong> 100 / 100</li>
+<li><strong>Prototype Trust Level:</strong> High</li>
+<li><strong>Operational Confidence Posture:</strong> Supported</li>
+</ul>
+<div class="note">
+The prototype score is retained as historical assessment data. The authoritative public classification
+of this certification is the <strong>Operational</strong> Certification Class.
+</div>
+</article>
 
+<article class="card">
+<h2>Findings &amp; Limitations</h2>
+<p>
+The review found the Certification Subject sufficiently complete, internally consistent, publicly
+traceable, and supported by the required evidence for certification within the stated scope.
+</p>
+<p>
+No material deficiency was identified during the original review. This certification does not
+guarantee future record states, independently certify each supporting file, or transfer ownership
+or authority away from Satoshium Atlas.
+</p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Certification Decision</h2>
+<p>
+Following completion of Evidence Review, evaluation, and assessment, Satoshium Certifier determined
+that the Certification Subject satisfied the applicable Suite Standards and Suite Methodology within
+the documented certification boundary.
+</p>
+<div class="table-wrap">
 <table>
-  <thead>
-    <tr>
-      <th>Scoring Category</th>
-      <th>Result</th>
-      <th>Score</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>Subject Identification</td>
-      <td>Pass</td>
-      <td>20 / 20</td>
-    </tr>
-
-    <tr>
-      <td>Evidence Completeness</td>
-      <td>Pass</td>
-      <td>20 / 20</td>
-    </tr>
-
-    <tr>
-      <td>Evidence Integrity</td>
-      <td>Pass</td>
-      <td>20 / 20</td>
-    </tr>
-
-    <tr>
-      <td>Transparency</td>
-      <td>Pass</td>
-      <td>20 / 20</td>
-    </tr>
-
-    <tr>
-      <td>Methodology Compliance</td>
-      <td>Pass</td>
-      <td>20 / 20</td>
-    </tr>
-  </tbody>
+<tbody>
+<tr><th>Certification ID</th><td>SC-CERT-2026-0001</td></tr>
+<tr><th>Certification Subject</th><td>Atlas Jurisdiction Record — El Salvador</td></tr>
+<tr><th>Certification Outcome</th><td>Certified</td></tr>
+<tr><th>Certification Status</th><td>Issued · Active</td></tr>
+<tr><th>Certification Class</th><td>Operational</td></tr>
+<tr><th>Certification Date</th><td>July 5, 2026</td></tr>
+<tr><th>Decision Authority</th><td>Satoshium Certifier</td></tr>
+<tr><th>Applicable Standards</th><td>Satoshium Suite Standards v1.0</td></tr>
+<tr><th>Applicable Methodology</th><td>Satoshium Suite Methodology v1.0</td></tr>
+<tr><th>Confidence Posture</th><td>Supported</td></tr>
+</tbody>
 </table>
-
-<p><strong>Total Certification Score:</strong> 100 / 100</p>
-
-<p><strong>Prototype Trust Level:</strong> High</p>
-
+</div>
+<div class="note">
+The certification decision is preserved within this Package before being communicated through
+the SCPR, SCR, and SCRD representations.
+</div>
+</article>
 </section>
 
- <h2>Certification Decision</h2>
+<section class="grid">
 
-  <p>
-    Following completion of the Certification Evaluation and Certification
-    Scoring, Certifier determined that the certification subject satisfies the
-    applicable Suite Standards and the Suite Certification Methodology.
-  </p>
-
-  <table>
-    <tbody>
-
-      <tr>
-        <th>Certification Scope</th>
-        <td>Atlas Jurisdiction Record</td>
-    </tr>
-      
-      <tr>
-        <th>Certification Outcome</th>
-        <td>Certified</td>
-      </tr>
-
-      <tr>
-        <th>Certification Status</th>
-        <td>Approved</td>
-      </tr>
-
-      <tr>
-        <th>Certification Date</th>
-        <td>July 5, 2026</td>
-      </tr>
-
-      <tr>
-        <th>Certification ID</th>
-        <td>SC-CERT-2026-0001</td>
-      </tr>
-
-      <tr>
-        <th>Decision Authority</th>
-        <td>Satoshium Certifier</td>
-      </tr>
-
-      <tr>
-        <th>Applicable Standards</th>
-        <td>Suite Standards v1.0</td>
-      </tr>
-
-      <tr>
-        <th>Applicable Methodology</th>
-        <td>Suite Methodology v1.0</td>
-      </tr>
-
-    </tbody>
-  </table>
-
-</section>
-  
-<section>
- 
+<article class="card">
 <h2>Certification History</h2>
-
+<div class="table-wrap">
 <table>
-
-<tr>
-<th>Date</th>
-<th>Action</th>
-<th>Version</th>
-</tr>
-
-<tr>
-<td>July 5, 2026</td>
-<td>Initial Certification</td>
-<td>1.0</td>
-</tr>
-
+<thead>
+<tr><th>Date</th><th>Action</th><th>Version</th></tr>
+</thead>
+<tbody>
+<tr><td>July 5, 2026</td><td>Initial operational certification issued</td><td>1.0</td></tr>
+<tr><td>July 17, 2026</td><td>Certification Package architecture hardened and terminology reconciled</td><td>1.1</td></tr>
+</tbody>
 </table>
-  
-  <h2>Generated Artifacts</h2>
+</div>
+</article>
 
-  <ul>
-    <li><strong>SCPR:</strong> <a href="reports/scpr.html">Certification Process Report</a></li>
+<article class="card">
+<h2>Lifecycle State</h2>
+<ul class="term-list">
+<li><strong>Current State:</strong> Active</li>
+<li><strong>Original Issuance:</strong> July 5, 2026</li>
+<li><strong>Hardening Review:</strong> July 17, 2026</li>
+<li><strong>Renewal:</strong> Not currently scheduled</li>
+<li><strong>Superseded By:</strong> None</li>
+<li><strong>Revocation Status:</strong> Not revoked</li>
+</ul>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Generated Artifact Manifest</h2>
+<ul class="term-list">
+<li><strong>SCPR:</strong> <a href="reports/scpr.html">Certification Process Report</a></li>
 <li><strong>SCR:</strong> <a href="receipts/scr.html">Certification Receipt</a></li>
-<li><strong>SCRD:</strong> <a href="records/scrd.html">Certified Record</a></li>
-<li><strong>SCRD JSON:</strong> <a href="records/scrd.json">Machine-Readable Certified Record</a></li>
-  </ul>
+<li><strong>SCRD HTML:</strong> <a href="records/scrd.html">Human-readable Certified Record</a></li>
+<li><strong>SCRD JSON:</strong> <a href="records/scrd.json">Machine-readable Certified Record</a></li>
+</ul>
+<div class="note">
+The SCPR, SCR, and SCRD representations derive from this canonical Certification Package and must
+remain internally consistent with it.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Suite Reference Readiness</h2>
+<p>
+The Package and generated artifacts are structured to support downstream Suite records without
+transferring certification authority away from Certifier.
+</p>
+<div class="flow">
+Certification Package<br>
+↓<br>
+SCPR · SCR · SCRD<br>
+↓<br>
+SCRD HTML · SCRD JSON<br>
+↓<br>
+SREG · SCHR · ANCH · SATR<br>
+↓<br>
+Registry · Chronicle · Anchor · Beacon · Attestor · Navigator
+</div>
+<div class="note">
+Certifier certifies. Registry catalogs. Chronicle preserves history. Anchor preserves integrity.
+Beacon publishes discovery metadata. Attestor verifies selected claims and relationships.
+Navigator orchestrates use.
+</div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+<h2>Package Identity</h2>
+<ul class="term-list">
+<li><strong>Certification ID:</strong> SC-CERT-2026-0001</li>
+<li><strong>Package Version:</strong> 1.1</li>
+<li><strong>Certification Class:</strong> Operational</li>
+<li><strong>Certification Status:</strong> Issued · Active</li>
+<li><strong>Certifying System:</strong> Satoshium Certifier</li>
+<li><strong>Subject Authority:</strong> Satoshium Atlas</li>
+<li><strong>Canonical URL:</strong> /certifier/certifications/sc-cert-2026-0001/</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Canonical Record Principle</h2>
+<p>
+This Certification Package is Certifier’s canonical operational record for SC-CERT-2026-0001.
+Every public artifact, machine-readable representation, Registry reference, historical record,
+integrity reference, and future Attestation Record must remain traceable to this Package.
+</p>
+<div class="note">
+A discrepancy between a generated artifact and this Package should be resolved by correcting the
+affected representation to match the finalized Certification Package.
+</div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Hardening Record</h2>
+<p>
+The July 17, 2026 hardening review reconciled the original July 5 prototype package with the finalized
+Certifier object model, public terminology, Certification Class architecture, SCRD representation model,
+and downstream Suite boundaries.
+</p>
+<div class="note">
+Hardening did not reopen or replace the original certification decision. It strengthened the public
+record so every artifact can faithfully represent the certification already issued.
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+The Certification Package is the canonical operational record from which every certification artifact derives.
+</div>
+<hr>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+});
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 
 </body>
 </html>
