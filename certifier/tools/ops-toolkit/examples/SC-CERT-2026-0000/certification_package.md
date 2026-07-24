@@ -1,4 +1,4 @@
-# Certification Package — SC-CERT-2026-0001
+# Certification Package — SC-CERT-2026-0000
 
 **Status:** CERTIFIED  
 **Issued Date:** 2026-07-13  
@@ -12,7 +12,7 @@
 
 | Field | Value |
 |---|---|
-| ID | SUBJECT-MODULE-001 |
+| ID | SUBJECT-MODULE-000 |
 | Name | Satoshium Core Validation Module v1.0 |
 | Type | Software Module |
 | Version | 1.0.0 |
@@ -26,7 +26,7 @@
 
 | Field | Value |
 |---|---|
-| ID | CERTIFIER-ALPHA-001 |
+| ID | CERTIFIER-ALPHA-000 |
 | Name | Alpha Certifier Node |
 | Role | Primary Certifier |
 | Contact | certifier@satoshium.example |
@@ -37,10 +37,10 @@
 
 | Field | Value |
 |---|---|
-| ID | SATOSHIUM-STD-001 |
+| ID | SATOSHIUM-STD-000 |
 | Name | Satoshium Core Certification Standard |
 | Version | 1.0 |
-| Reference | https://satoshium.example/standards/STD-001 |
+| Reference | https://satoshium.example/standards/STD-000 |
 
 ---
 
@@ -48,7 +48,7 @@
 
 | Field | Value |
 |---|---|
-| ID | SATOSHIUM-METHOD-001 |
+| ID | SATOSHIUM-METHOD-000 |
 | Name | Satoshium Structured Review Methodology |
 | Version | 1.0 |
 
@@ -88,7 +88,7 @@
 
 | # | ID | Title | Type | Location |
 |---|---|---|---|---|
-| 1 | EVD-0001 | Source Code Review Report | Review Report | https://evidence.satoshium.example/EVD-0001 |
+| 1 | EVD-0000 | Source Code Review Report | Review Report | https://evidence.satoshium.example/EVD-0000 |
 | 2 | EVD-0002 | Automated Test Suite Results | Test Report | https://evidence.satoshium.example/EVD-0002 |
 | 3 | EVD-0003 | Security Assessment Summary | Security Assessment | https://evidence.satoshium.example/EVD-0003 |
 
