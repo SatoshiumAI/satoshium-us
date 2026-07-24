@@ -56,15 +56,15 @@ cd satoshium-certifier-ops-toolkit
 ### 2. Initialize a new certification folder
 
 ```bash
-python scripts/new_certification.py SC-CERT-2026-0001
+python scripts/new_certification.py SC-CERT-2026-0000
 ```
 
-This creates `output/SC-CERT-2026-0001/` with a pre-filled `certification_package.json` template. Open it and fill in all `PLACEHOLDER` fields before proceeding.
+This creates `output/SC-CERT-2026-0000/` with a pre-filled `certification_package.json` template. Open it and fill in all `PLACEHOLDER` fields before proceeding.
 
 ### 3. Generate all artifacts
 
 ```bash
-python scripts/generate_artifacts.py output/SC-CERT-2026-0001
+python scripts/generate_artifacts.py output/SC-CERT-2026-0000
 ```
 
 This reads `certification_package.json` and produces all other artifact files in the same folder.
@@ -72,7 +72,7 @@ This reads `certification_package.json` and produces all other artifact files in
 ### 4. Validate the certification package
 
 ```bash
-python scripts/validate_certification.py output/SC-CERT-2026-0001
+python scripts/validate_certification.py output/SC-CERT-2026-0000
 ```
 
 Reports missing or incomplete operational fields in the canonical Certification Package.
@@ -80,7 +80,7 @@ Reports missing or incomplete operational fields in the canonical Certification 
 ### 5. Check release readiness
 
 ```bash
-python scripts/check_release.py output/SC-CERT-2026-0001
+python scripts/check_release.py output/SC-CERT-2026-0000
 ```
 
 Reports which certification artifacts are present, missing, or contain unfilled placeholders before publication.
@@ -117,7 +117,7 @@ satoshium-certifier-ops-toolkit/
 │   ├── generate_artifacts.py
 │   └── check_release.py
 ├── examples/
-│   └── SC-CERT-2026-0001/      # Sample certification (fully filled)
+│   └── SC-CERT-2026-0000/      # Sample certification (fully filled)
 │       ├── certification_package.json
 │       ├── certification_package.md
 │       ├── scpr.md
