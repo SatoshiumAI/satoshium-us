@@ -1,4 +1,4 @@
-# Release Checklist — SC-CERT-2026-0001
+# Release Checklist — SC-CERT-2026-0000
 
 Generated: 2026-07-13
 
@@ -24,8 +24,8 @@ Verify that each artifact file exists and all placeholder values have been repla
 
 ## Validation Steps
 
-- [ ] `python scripts/validate_certification.py output/SC-CERT-2026-0001` — passes with 0 errors
-- [ ] `python scripts/check_release.py output/SC-CERT-2026-0001` — passes with 0 missing files and 0 placeholders
+- [ ] `python scripts/validate_certification.py output/SC-CERT-2026-0000` — passes with 0 errors
+- [ ] `python scripts/check_release.py output/SC-CERT-2026-0000` — passes with 0 missing files and 0 placeholders
 
 ---
 
