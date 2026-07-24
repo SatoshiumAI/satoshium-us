@@ -22,25 +22,25 @@ python3 --version
 ## Step 1 — Initialize a New Certification
 
 ```bash
-python scripts/new_certification.py SC-CERT-2026-0001
+python scripts/new_certification.py SC-CERT-2026-0000
 ```
 
 **What it does:**
-- Creates `output/SC-CERT-2026-0001/`
+- Creates `output/SC-CERT-2026-0000/`
 - Copies the `package-templates/certification_package.json` template into the folder
-- Sets `certification_id` to `SC-CERT-2026-0001`
+- Sets `certification_id` to `SC-CERT-2026-0000`
 
 **Expected output:**
 
 ```
-✅  Initialized certification folder: output/SC-CERT-2026-0001
+✅  Initialized certification folder: output/SC-CERT-2026-0000
 ```
 
 ---
 
 ## Step 2 — Fill In the Certification Package
 
-Open `output/SC-CERT-2026-0001/certification_package.json` in any text editor and replace every value marked `PLACEHOLDER` or `YYYY-MM-DD` with real data.
+Open `output/SC-CERT-2026-0000/certification_package.json` in any text editor and replace every value marked `PLACEHOLDER` or `YYYY-MM-DD` with real data.
 
 Refer to `docs/artifacts.md` for a full field reference.
 
@@ -60,14 +60,14 @@ Refer to `docs/artifacts.md` for a full field reference.
 
 Also remove the `_instructions` key when you are done.
 
-See `examples/SC-CERT-2026-0001/certification_package.json` for a fully completed reference.
+See `examples/SC-CERT-2026-0000/certification_package.json` for a fully completed reference.
 
 ---
 
 ## Step 3 — Validate the Certification Package
 
 ```bash
-python scripts/validate_certification.py output/SC-CERT-2026-0001
+python scripts/validate_certification.py output/SC-CERT-2026-0000
 ```
 
 **What it checks:**
@@ -100,7 +100,7 @@ Fix all errors before proceeding to artifact generation.
 ## Step 4 — Generate All Artifacts
 
 ```bash
-python scripts/generate_artifacts.py output/SC-CERT-2026-0001
+python scripts/generate_artifacts.py output/SC-CERT-2026-0000
 ```
 
 **What it generates** (12 derived artifacts):
@@ -142,7 +142,7 @@ The four stub files (`sreg_stub.json`, `schr_stub.json`, `anch_stub.json`, `satr
 ## Step 6 — Check Release Readiness
 
 ```bash
-python scripts/check_release.py output/SC-CERT-2026-0001
+python scripts/check_release.py output/SC-CERT-2026-0000
 ```
 
 **What it checks:**
@@ -201,7 +201,7 @@ python scripts/check_release.py output/SC-CERT-2026-XXXX
 See [README.md](../README.md#pushing-to-github) for the full push workflow.
 
 ```bash
-git add output/SC-CERT-2026-0001
-git commit -m "Add certification artifacts: SC-CERT-2026-0001"
+git add output/SC-CERT-2026-0000
+git commit -m "Add certification artifacts: SC-CERT-2026-0000"
 git push
 ```
