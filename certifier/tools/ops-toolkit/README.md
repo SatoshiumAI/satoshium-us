@@ -6,13 +6,13 @@ A command-line toolkit for generating, validating, and organizing certification 
 
 ## Overview
 
-The **Certification Package JSON** is the canonical certification object. All other artifacts are generated representations or references derived from it.
+The **Certification Package JSON** is the canonical operational certification object from which all certification artifacts are generated.
 
 This toolkit helps you:
 - Initialize a new certification folder from a certification ID
-- Generate all 13 artifact types from the canonical package
-- Validate required fields
-- Check release readiness
+- Generate all certification artifacts from the canonical Certification Package
+- Validate the Certification Package against required operational fields
+- Validate certification publication readiness
 
 ---
 
@@ -20,12 +20,12 @@ This toolkit helps you:
 
 | Artifact | File | Description |
 |---|---|---|
-| Certification Package JSON | `certification_package.json` | Canonical certification object |
-| Certification Package Markdown | `certification_package.md` | Human-readable certification summary |
-| SCPR Markdown | `scpr.md` | Satoshium Certification Progress Report |
-| SCR Markdown | `scr.md` | Satoshium Certification Record |
-| SCRD HTML | `scrd.html` | Satoshium Certification Record Document (HTML) |
-| SCRD JSON | `scrd.json` | Satoshium Certification Record Document (JSON) |
+| Certification Package JSON | `certification_package.json` | Canonical operational certification object |
+| Certification Package Markdown | `certification_package.md` | Human-readable representation of the canonical Certification Package |
+| SCPR Markdown | `scpr.md` | Satoshium Certification Process Report |
+| SCR Markdown | `scr.md` | Satoshium Certification Receipt |
+| SCRD HTML | `scrd.html` | Satoshium Certified Record (HTML) |
+| SCRD JSON | `scrd.json` | Satoshium Certified Record (JSON) |
 | Evidence Inventory JSON | `evidence_inventory.json` | Structured evidence inventory |
 | Evidence Map Markdown | `evidence_map.md` | Evidence map narrative |
 | SREG Registry Entry JSON stub | `sreg_stub.json` | Registry Entry reference stub |
@@ -47,8 +47,9 @@ This toolkit helps you:
 
 ### 1. Clone or download the repository
 
+Clone or download the repository from its official GitHub location, then open a terminal in the repository root:
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/satoshium-certifier-ops-toolkit.git
 cd satoshium-certifier-ops-toolkit
 ```
 
@@ -74,7 +75,7 @@ This reads `certification_package.json` and produces all other artifact files in
 python scripts/validate_certification.py output/SC-CERT-2026-0001
 ```
 
-Reports any missing or incomplete required fields.
+Reports missing or incomplete operational fields in the canonical Certification Package.
 
 ### 5. Check release readiness
 
@@ -82,7 +83,7 @@ Reports any missing or incomplete required fields.
 python scripts/check_release.py output/SC-CERT-2026-0001
 ```
 
-Reports which artifact files are present, missing, or contain unfilled placeholders.
+Reports which certification artifacts are present, missing, or contain unfilled placeholders before publication.
 
 ---
 
@@ -138,38 +139,13 @@ satoshium-certifier-ops-toolkit/
 
 ---
 
-## Pushing to GitHub
+## Platform Compatibility
 
-### First time
+This toolkit runs on any system with **Python 3.8+** and requires no external Python packages.
 
-```bash
-# Inside the repo directory
-git init
-git add .
-git commit -m "Initial commit: satoshium-certifier-ops-toolkit"
-git remote add origin https://github.com/YOUR_USERNAME/satoshium-certifier-ops-toolkit.git
-git push -u origin main
-```
-
-### Subsequent pushes
-
-```bash
-git add output/SC-CERT-2026-XXXX
-git commit -m "Add certification SC-CERT-2026-XXXX artifacts"
-git push
-```
-
-> **Note:** The `output/` folder is git-ignored by default. Remove the `output/` line from `.gitignore` if you want to commit generated artifacts, or copy finished certifications into a separate versioned folder.
-
----
-
-## Running Completely Outside Replit
-
-This toolkit has **no Replit dependencies**. To use it anywhere:
-
-1. Copy or clone the repo to any machine with Python 3.8+.
-2. Run scripts directly with `python scripts/<script>.py ...`
-3. No `pip install` step is required — only the Python standard library is used.
+1. Copy or clone the repository to a compatible system.
+2. Run scripts directly with `python scripts/<script>.py ...`.
+3. No `pip install` step is required because the toolkit uses only the Python standard library.
 
 ---
 
