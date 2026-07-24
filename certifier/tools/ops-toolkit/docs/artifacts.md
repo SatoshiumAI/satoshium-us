@@ -14,7 +14,7 @@ This document describes each artifact type, its purpose, field structure, and ge
 
 | Field | Required | Description |
 |---|---|---|
-| `certification_id` | ✅ | Unique ID (e.g. `SC-CERT-2026-0001`) |
+| `certification_id` | ✅ | Unique ID (e.g. `SC-CERT-2026-0000`) |
 | `schema_version` | ✅ | Version of the certification schema |
 | `issued_date` | ✅ | Date issued (YYYY-MM-DD) |
 | `effective_date` | — | Date certification takes effect |
