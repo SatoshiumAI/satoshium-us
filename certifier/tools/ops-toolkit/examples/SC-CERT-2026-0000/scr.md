@@ -1,6 +1,6 @@
 # SCR — Satoshium Certification Record
 
-**Certification ID:** SC-CERT-2026-0001  
+**Certification ID:** SC-CERT-2026-0000  
 **Issued Date:** 2026-07-13  
 **Status:** CERTIFIED
 
@@ -46,7 +46,7 @@ The subject met all applicable requirements under the referenced standard using 
 
 | # | ID | Title | Type | Location |
 |---|---|---|---|---|
-| 1 | EVD-0001 | Source Code Review Report | Review Report | https://evidence.satoshium.example/EVD-0001 |
+| 1 | EVD-0000 | Source Code Review Report | Review Report | https://evidence.satoshium.example/EVD-0000 |
 | 2 | EVD-0002 | Automated Test Suite Results | Test Report | https://evidence.satoshium.example/EVD-0002 |
 | 3 | EVD-0003 | Security Assessment Summary | Security Assessment | https://evidence.satoshium.example/EVD-0003 |
 
