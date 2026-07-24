@@ -43,18 +43,18 @@ python -m unittest tests.test_new_certification -v
 To manually verify the full CLI flow:
 
 ```bash
-python scripts/new_certification.py SC-CERT-SMOKE-0001
-# Edit output/SC-CERT-SMOKE-0001/certification_package.json — replace all PLACEHOLDER values
-python scripts/validate_certification.py output/SC-CERT-SMOKE-0001
-python scripts/generate_artifacts.py output/SC-CERT-SMOKE-0001
-python scripts/check_release.py output/SC-CERT-SMOKE-0001
+python scripts/new_certification.py SC-CERT-SMOKE-0000
+# Edit output/SC-CERT-SMOKE-0000/certification_package.json — replace all PLACEHOLDER values
+python scripts/validate_certification.py output/SC-CERT-SMOKE-0000
+python scripts/generate_artifacts.py output/SC-CERT-SMOKE-0000
+python scripts/check_release.py output/SC-CERT-SMOKE-0000
 ```
 
 The example package can be used as a reference:
 
 ```bash
 # Validate and run checklist against the pre-generated example
-python scripts/validate_certification.py examples/SC-CERT-2026-0001
-python scripts/generate_artifacts.py examples/SC-CERT-2026-0001
-python scripts/check_release.py examples/SC-CERT-2026-0001
+python scripts/validate_certification.py examples/SC-CERT-2026-0000
+python scripts/generate_artifacts.py examples/SC-CERT-2026-0000
+python scripts/check_release.py examples/SC-CERT-2026-0000
 ```
