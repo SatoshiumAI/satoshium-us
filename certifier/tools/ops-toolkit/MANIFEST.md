@@ -36,23 +36,23 @@ Complete file listing for version 0.1.0. Every file in the repository and its pu
 
 ## `examples/`
 
-Pre-generated, fully populated sample certification using ID `SC-CERT-2026-0001`. All 13 artifact files are present. Values are illustrative only.
+Pre-generated, fully populated sample certification using ID `SC-CERT-2026-0000`. All 13 artifact files are present. Values are illustrative only.
 
 | File | Purpose |
 |---|---|
-| `examples/SC-CERT-2026-0001/certification_package.json` | Canonical certification object — primary source for all other artifacts |
-| `examples/SC-CERT-2026-0001/certification_package.md` | Human-readable Markdown summary of the certification package |
-| `examples/SC-CERT-2026-0001/scpr.md` | Satoshium Certification Progress Report |
-| `examples/SC-CERT-2026-0001/scr.md` | Satoshium Certification Record |
-| `examples/SC-CERT-2026-0001/scrd.html` | Satoshium Certification Record Document (HTML, self-contained, no external dependencies) |
-| `examples/SC-CERT-2026-0001/scrd.json` | Satoshium Certification Record Document (JSON) |
-| `examples/SC-CERT-2026-0001/evidence_inventory.json` | Structured inventory of all evidence items |
-| `examples/SC-CERT-2026-0001/evidence_map.md` | Narrative Markdown map of evidence items |
-| `examples/SC-CERT-2026-0001/sreg_stub.json` | SREG Registry Entry stub — partially populated; fill before Registry submission |
-| `examples/SC-CERT-2026-0001/schr_stub.json` | SCHR Chronicle Record stub — partially populated; fill before Chronicle submission |
-| `examples/SC-CERT-2026-0001/anch_stub.json` | ANCH Anchor Reference stub — partially populated; fill before anchoring |
-| `examples/SC-CERT-2026-0001/satr_stub.json` | SATR Attestation Record stub — partially populated; fill before Attestor submission |
-| `examples/SC-CERT-2026-0001/release_checklist.md` | Release readiness checklist with checkboxes for all 13 artifacts and validation steps |
+| `examples/SC-CERT-2026-0000/certification_package.json` | Canonical certification object — primary source for all other artifacts |
+| `examples/SC-CERT-2026-0000/certification_package.md` | Human-readable Markdown summary of the certification package |
+| `examples/SC-CERT-2026-0000/scpr.md` | Satoshium Certification Progress Report |
+| `examples/SC-CERT-2026-0000/scr.md` | Satoshium Certification Record |
+| `examples/SC-CERT-2026-0000/scrd.html` | Satoshium Certification Record Document (HTML, self-contained, no external dependencies) |
+| `examples/SC-CERT-2026-0000/scrd.json` | Satoshium Certification Record Document (JSON) |
+| `examples/SC-CERT-2026-0000/evidence_inventory.json` | Structured inventory of all evidence items |
+| `examples/SC-CERT-2026-0000/evidence_map.md` | Narrative Markdown map of evidence items |
+| `examples/SC-CERT-2026-0000/sreg_stub.json` | SREG Registry Entry stub — partially populated; fill before Registry submission |
+| `examples/SC-CERT-2026-0000/schr_stub.json` | SCHR Chronicle Record stub — partially populated; fill before Chronicle submission |
+| `examples/SC-CERT-2026-0000/anch_stub.json` | ANCH Anchor Reference stub — partially populated; fill before anchoring |
+| `examples/SC-CERT-2026-0000/satr_stub.json` | SATR Attestation Record stub — partially populated; fill before Attestor submission |
+| `examples/SC-CERT-2026-0000/release_checklist.md` | Release readiness checklist with checkboxes for all 13 artifacts and validation steps |
 
 ---
 
@@ -180,9 +180,9 @@ The workflow at `.github/workflows/validate-toolkit.yml` runs 10 steps:
 | 3 | Syntax check — tests/ | All `tests/` Python files compile without `SyntaxError` |
 | 4 | Import check — src modules | All `src/` modules import cleanly (catches broken relative imports, `ImportError`, load-time `NameError`) |
 | 5 | Run unit tests | Full `unittest discover tests` suite passes (68+ assertions) |
-| 6 | Smoke — validate example | `validate_certification.py examples/SC-CERT-2026-0001` exits 0 |
-| 7 | Smoke — generate artifacts | `generate_artifacts.py examples/SC-CERT-2026-0001` exits 0 and produces files |
-| 8 | Smoke — new certification | `new_certification.py SC-CERT-CI-0001` exits 0 and creates the expected folder |
+| 6 | Smoke — validate example | `validate_certification.py examples/SC-CERT-2026-0000` exits 0 |
+| 7 | Smoke — generate artifacts | `generate_artifacts.py examples/SC-CERT-2026-0000` exits 0 and produces files |
+| 8 | Smoke — new certification | `new_certification.py SC-CERT-CI-0000` exits 0 and creates the expected folder |
 | 9 | **Release check — complete fixture must PASS** | `check_release.py tests/fixtures/complete-certification` exits 0; CI fails if it exits 1 |
 | 10 | **Release check — incomplete fixture must FAIL** | `check_release.py tests/fixtures/incomplete-certification` exits 1; CI fails if it exits 0 |
 | 11 | Check for Replit-specific files | `.replit`, `replit.nix`, `.breakpoints` must be absent |
@@ -199,7 +199,7 @@ The workflow at `.github/workflows/validate-toolkit.yml` runs 10 steps:
 | Root (README, LICENSE, etc.) | 6 |
 | `.github/workflows/` | 1 |
 | `docs/` | 2 |
-| `examples/SC-CERT-2026-0001/` | 13 |
+| `examples/SC-CERT-2026-0000/` | 13 |
 | `output/` | 1 |
 | `package-templates/` | 7 |
 | `schema/` | 2 |
