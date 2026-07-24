@@ -3,61 +3,321 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SCPR-SC-CERT-2026-0001 — Satoshium Certification Process Report</title>
-<meta name="description" content="Certification Process Report generated from Certification Package SC-CERT-2026-0001.">
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+
+<title>SC-CERT-2026-0001 · Certification Process Report</title>
+<meta name="description" content="The Satoshium Certification Process Report for SC-CERT-2026-0001 documents the scope, evidence review, findings, limitations, assessment, reasoning, and certification decision for the Atlas Jurisdiction Record — El Salvador.">
+<link rel="canonical" href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/reports/certification-process-report/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
 <style>
-body{margin:40px auto;max-width:980px;padding:0 20px;font-family:system-ui,Arial,sans-serif;line-height:1.7;color:#222}
-h1,h2{color:#8a5a00}
-table{border-collapse:collapse;width:100%;margin:18px 0}
-th,td{border:1px solid #ddd;padding:10px;text-align:left;vertical-align:top}
-th{background:#f7f2e8}
-.note{border-left:4px solid #c79b42;background:#faf7ef;padding:14px;margin:20px 0}
-strong.key{color:#8a5a00}
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --green:#76d48b;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{color:var(--gold)}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),
+ linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ color:var(--gold2);
+ font-size:44px;
+ line-height:1.15;
+}
+
+h2{
+ margin:0 0 12px;
+ color:var(--gold2);
+ font-size:25px;
+}
+
+h3{
+ margin:20px 0 10px;
+ color:var(--gold2);
+ font-size:20px;
+}
+
+.lead{
+ max-width:940px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.small{
+ margin:10px 0 14px;
+ color:var(--muted);
+ font-size:14px;
+}
+
+.card{
+ margin-top:18px;
+ padding:22px;
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ background:
+ linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.card ul{
+ margin:10px 0 0 20px;
+ padding:0;
+ color:var(--muted);
+}
+
+.card li{margin:7px 0}
+
+.status{
+ display:inline-block;
+ margin:2px 0 14px;
+ padding:4px 10px;
+ border:1px solid rgba(63,185,80,.35);
+ border-radius:999px;
+ color:var(--green);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.06em;
+ text-transform:uppercase;
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.note strong{color:var(--gold2)}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:12px;
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+.table-wrap{
+ overflow-x:auto;
+}
+
+table{
+ width:100%;
+ min-width:700px;
+ margin-top:14px;
+ border-collapse:collapse;
+}
+
+th,td{
+ padding:12px 14px;
+ border-bottom:1px solid rgba(214,163,74,.12);
+ text-align:left;
+ vertical-align:top;
+}
+
+th{
+ color:var(--gold2);
+ background:rgba(214,163,74,.05);
+}
+
+td{color:var(--muted)}
+
+.term-list{
+ margin:10px 0 0;
+ padding:0;
+ list-style:none;
+ color:var(--muted);
+}
+
+.term-list li{
+ padding:10px 0;
+ border-top:1px solid rgba(214,163,74,.10);
+}
+
+.term-list li:first-child{
+ border-top:0;
+}
+
+.term-list strong{
+ color:var(--gold2);
+}
+
+.muted{color:var(--muted)}
+
+@media(max-width:900px){
+ h1{font-size:34px}
+ .lead{font-size:18px}
+}
 </style>
 </head>
+
 <body>
 
-<h1>Satoshium Certification Process Report (SCPR)</h1>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
 
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Certifier · Certification Process Report</div>
+
+<p class="small">
+<a href="/certifier/">Certifier</a> /
+<a href="/certifier/reports/">Reports</a> /
+<a href="/certifier/certifications/SC-CERT-2026-0001/">SC-CERT-2026-0001</a> /
+SCPR
+</p>
+
+<h1>Satoshium Certification Process Report</h1>
+
+<span class="status">Issued · Active</span>
+
+<p class="lead">
+This Certification Process Report documents the review scope, evidence evaluation,
+findings, limitations, assessment, reasoning, and certification decision associated
+with <strong>SC-CERT-2026-0001</strong>.
+</p>
+
+<p class="lead">
+The report is generated from the canonical Certification Package. It preserves the
+reasoning behind the certification decision without replacing the Package as
+Certifier's authoritative operational record.
+</p>
+
+<a class="btn" href="/certifier/reports/">Reports Index →</a>
+<a class="btn" href="/certifier/certifications/SC-CERT-2026-0001/">Certification Package →</a>
+<a class="btn" href="/certifier/certifications/SC-CERT-2026-0001/receipts/certification-receipts/">Certification Receipt →</a>
+<a class="btn" href="/certifier/certifications/SC-CERT-2026-0001/records/certified-record/">Certified Record →</a>
+</section>
+
+<section class="card">
 <h2>Report Identity</h2>
 
+<div class="table-wrap">
 <table>
-<tr><th>Report ID</th><td>SCPR-SC-CERT-2026-0001</td></tr>
-<tr><th>Source Package</th><td><a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/">Certification Package SC-CERT-2026-0001</a></td></tr>
-<tr><th>Certification Subject</th><td>Atlas Jurisdiction Record — El Salvador</td></tr>
-<tr><th>Generated By</th><td>Satoshium Certifier</td></tr>
-<tr><th>Original Certification</th><td>July 5, 2026</td></tr>
-<tr><th>Report Version</th><td>1.1</td></tr>
+<tbody>
+<tr>
+<th>Certification ID</th>
+<td>SC-CERT-2026-0001</td>
+</tr>
+<tr>
+<th>Source Package</th>
+<td>
+<a href="/certifier/certifications/SC-CERT-2026-0001/">
+Certification Package SC-CERT-2026-0001
+</a>
+</td>
+</tr>
+<tr>
+<th>Certification Subject</th>
+<td>Atlas Jurisdiction Record — El Salvador</td>
+</tr>
+<tr>
+<th>Generated By</th>
+<td>Satoshium Certifier</td>
+</tr>
+<tr>
+<th>Original Certification</th>
+<td>July 5, 2026</td>
+</tr>
+<tr>
+<th>Report Version</th>
+<td>1.1</td>
+</tr>
+</tbody>
 </table>
-
-<div class="note">
-<strong class="key">Canonical Relationship.</strong>
-This Certification Process Report is generated from Certification Package
-<strong>SC-CERT-2026-0001</strong>. The Certification Package remains Certifier's
-canonical operational record. This report preserves the reasoning and review process
-that produced the certification decision.
 </div>
 
+<div class="note">
+<strong>Canonical Relationship.</strong>
+This Certification Process Report is generated from Certification Package
+<strong>SC-CERT-2026-0001</strong>. The Certification Package remains Certifier's
+canonical operational record. This report preserves the reasoning and review
+process that produced the certification decision.
+</div>
+</section>
+
+<section class="card">
 <h2>Executive Summary</h2>
-<p>
-<h3>Review Scope</h3>
-</p><p>
-This certification reviewed the <strong>Atlas Jurisdiction Record for El Salvador</strong> as it existed on July 5, 2026.
-</p><p>
-The review included:
-</p><p>
-<ul>
-<li>subject identification</li>
-<li>evidence inventory</li>
-<li>metadata consistency</li>
-<li>public documentation</li>
-<li>structural integrity</li>
-<li>methodology compliance</li>
-<li>certification decision</li>
-</ul>
-</p><p>
-Only evidence preserved within the Certification Package was considered during this certification.
-</p>
+
 <p>
 Satoshium Certifier completed an operational certification of the
 <strong>Atlas Jurisdiction Record — El Salvador</strong> by applying the governing
@@ -71,35 +331,71 @@ requirements within the documented certification boundary and was issued as an
 <strong>Operational</strong> certification.
 </p>
 
+<h3>Review Scope</h3>
+
+<p>
+This certification reviewed the <strong>Atlas Jurisdiction Record for El Salvador</strong>
+as it existed on July 5, 2026.
+</p>
+
+<p>The review included:</p>
+
+<ul>
+<li>Subject identification</li>
+<li>Evidence inventory</li>
+<li>Metadata consistency</li>
+<li>Public documentation</li>
+<li>Structural integrity</li>
+<li>Methodology compliance</li>
+<li>Standards compliance</li>
+<li>Certification decision</li>
+</ul>
+
+<div class="note">
+Only evidence preserved within the canonical Certification Package was considered
+during this certification.
+</div>
+</section>
+
+<section class="card">
 <h2>Certification Overview</h2>
 
+<div class="table-wrap">
 <table>
+<tbody>
 <tr><th>Certification ID</th><td>SC-CERT-2026-0001</td></tr>
 <tr><th>Certification Class</th><td>Operational</td></tr>
 <tr><th>Certification Outcome</th><td>Certified</td></tr>
 <tr><th>Certification Status</th><td>Issued · Active</td></tr>
 <tr><th>Confidence Posture</th><td>Supported</td></tr>
-<tr><th>Assessment</th><td>Historical Prototype Assessment (100 / 100)</td></tr>
+<tr><th>Assessment</th><td>Historical Prototype Assessment — 100 / 100</td></tr>
+</tbody>
 </table>
+</div>
+</section>
 
+<section class="card">
 <h2>Evaluation Narrative</h2>
 
 <p>
 The certification followed the published Suite Methodology. Evidence was identified,
 organized into an Evidence Inventory, reviewed against the applicable Suite Standards,
-and evaluated within the Certification Package before a certification decision was recorded.
+and evaluated within the Certification Package before the certification decision was
+recorded.
 </p>
 
 <ul>
-<li>Certification Subject identified and confirmed.</li>
-<li>Required Evidence Records located.</li>
-<li>Evidence Inventory completed.</li>
-<li>Evidence reviewed for completeness, integrity, and traceability.</li>
-<li>Applicable Suite Standards and Suite Methodology applied.</li>
-<li>Certification decision recorded within the Certification Package.</li>
-<li>Generated artifacts produced from the completed Package.</li>
+<li>The Certification Subject was identified and confirmed.</li>
+<li>Required Evidence Records were located.</li>
+<li>The Evidence Inventory was completed.</li>
+<li>Evidence was reviewed for completeness, integrity, and traceability.</li>
+<li>Applicable Suite Standards and Suite Methodology were applied.</li>
+<li>The certification decision was recorded within the Certification Package.</li>
+<li>Generated artifacts were produced from the completed Package.</li>
 </ul>
+</section>
 
+<section class="card">
 <h2>Findings</h2>
 
 <p>
@@ -111,52 +407,143 @@ documented certification requirements.
 <p>
 No material deficiencies were identified during the certification review.
 </p>
+</section>
 
+<section class="card">
 <h2>Limitations</h2>
 
 <p>
 This certification applies only to the Certification Subject and evidence identified
-within <a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/">Certification Package SC-CERT-2026-0001</a>. Future
-changes to the Atlas record may require review or recertification.
+within
+<a href="/certifier/certifications/SC-CERT-2026-0001/">
+Certification Package SC-CERT-2026-0001
+</a>.
+Future changes to the Atlas record may require additional review or recertification.
 </p>
 
+<p>
+The certification does not guarantee future record states, independently certify
+each supporting file, or transfer ownership or authority away from Satoshium Atlas.
+</p>
+</section>
+
+<section class="card">
 <h2>Certification Decision</h2>
 
+<div class="table-wrap">
 <table>
+<tbody>
 <tr><th>Decision Authority</th><td>Satoshium Certifier</td></tr>
 <tr><th>Applicable Standards</th><td>Satoshium Suite Standards v1.0</td></tr>
 <tr><th>Applicable Methodology</th><td>Satoshium Suite Methodology v1.0</td></tr>
 <tr><th>Decision</th><td>Certification Approved and Issued</td></tr>
 <tr><th>Certification Class</th><td>Operational</td></tr>
+<tr><th>Confidence Posture</th><td>Supported</td></tr>
+</tbody>
 </table>
+</div>
 
 <div class="note">
 This report explains <strong>how</strong> the certification decision was reached.
 The Certification Package preserves the authoritative record of that decision,
-while the SCR and SCRD communicate the result in public-facing forms.
+while the SCR and SCRD communicate the result through public-facing artifacts.
 </div>
+</section>
 
+<section class="card">
 <h2>Related Records</h2>
 
-<ul>
-<li><a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/">Certification Package</a></li>
-<li><a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/receipts/certification-receipts/">Certification Receipt (SCR)</a></li>
-<li><a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/records/certified-record/">Certified Record (SCRD HTML)</a></li>
-<li><a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/records/certified-record/scrd_json.json">Certified Record (SCRD JSON)</a></li>
-<li><a href="https://satoshium.us/suite/standards/">Suite Standards</a></li>
-<li><a href="https://satoshium.us/suite/methodology/">Suite Methodology</a></li>
-<li><a href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/">Atlas Jurisdiction Record — El Salvador</a></li>
+<ul class="term-list">
+<li>
+<strong>Certification Package:</strong>
+<a href="/certifier/certifications/SC-CERT-2026-0001/">
+Open canonical Certification Package
+</a>
+</li>
+<li>
+<strong>Certification Receipt:</strong>
+<a href="/certifier/certifications/SC-CERT-2026-0001/receipts/certification-receipts/">
+Open SCR
+</a>
+</li>
+<li>
+<strong>Certified Record:</strong>
+<a href="/certifier/certifications/SC-CERT-2026-0001/records/certified-record/">
+Open SCRD HTML
+</a>
+</li>
+<li>
+<strong>Machine-Readable Certified Record:</strong>
+<a href="/certifier/certifications/SC-CERT-2026-0001/records/certified-record/scrd_json.json">
+Open SCRD JSON
+</a>
+</li>
+<li>
+<strong>Suite Standards:</strong>
+<a href="/suite/standards/">Open Suite Standards</a>
+</li>
+<li>
+<strong>Suite Methodology:</strong>
+<a href="/suite/methodology/">Open Suite Methodology</a>
+</li>
+<li>
+<strong>Certification Subject:</strong>
+<a href="/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/">
+Open Atlas Jurisdiction Record — El Salvador
+</a>
+</li>
 </ul>
+</section>
 
+<section class="card">
 <h2>Report Metadata</h2>
 
+<div class="table-wrap">
 <table>
+<tbody>
 <tr><th>Document Type</th><td>SCPR</td></tr>
+<tr><th>Certification ID</th><td>SC-CERT-2026-0001</td></tr>
 <tr><th>Derived From</th><td>Certification Package SC-CERT-2026-0001</td></tr>
 <tr><th>Original Report</th><td>July 5, 2026</td></tr>
 <tr><th>Architecture Hardening</th><td>July 17, 2026</td></tr>
 <tr><th>Version</th><td>1.1</td></tr>
+<tr>
+<th>Canonical URL</th>
+<td>/certifier/certifications/SC-CERT-2026-0001/reports/certification-process-report/</td>
+</tr>
+</tbody>
 </table>
+</div>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr>
+
+<div id="random-saying" class="muted"
+style="margin-bottom:14px;max-width:760px;">
+The Certification Package preserves the decision. The SCPR preserves the reasoning.
+</div>
+
+<hr>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => {
+ document.getElementById("footer-container").innerHTML = data;
+});
+</script>
+
+<script defer
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'>
+</script>
 
 </body>
 </html>
