@@ -49,14 +49,14 @@ artifacts generated from the canonical Markdown source layers.
 
 ### Canonical Jurisdiction JSON
 
--   argentina.json
+-   estonia.json
 
 The primary machine-readable representation of this jurisdiction
 package.
 
 ### Generation Manifest
 
--   argentina.manifest.json
+-   estonia.manifest.json
 
 The matched generation manifest preserving generation metadata,
 validation results, source-file references, and publication information.
