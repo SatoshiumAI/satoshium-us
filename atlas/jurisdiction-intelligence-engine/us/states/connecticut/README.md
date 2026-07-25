@@ -40,7 +40,28 @@ https://satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/connecticu
 
 https://satoshium.us/atlas/media/orientation/us/states/connecticut/
 
----
+------------------------------------------------------------------------
+
+## Machine-Readable Resources
+
+The Atlas jurisdiction package includes the following machine-readable
+artifacts generated from the canonical Markdown source layers.
+
+### Canonical Jurisdiction JSON
+
+-   connecticut.json
+
+The primary machine-readable representation of this jurisdiction
+package.
+
+### Generation Manifest
+
+-   connecticut.manifest.json
+
+The matched generation manifest preserving generation metadata,
+validation results, source-file references, and publication information.
+
+------------------------------------------------------------------------
 
 ## Package Contents
 
@@ -111,11 +132,15 @@ This package follows the core Atlas principles of:
 
 ## Status
 
-Active Atlas Jurisdiction Package
+**Atlas Jurisdiction Package**
 
-Last Updated: 2026-04-17
+**Status:** Published · Complete
 
-Version: 1.0
+**Last Updated:** 2026-07-25
+
+**Version:** 1.1
+
+**Machine-Readable Resources:** Published
 
 ---
 
