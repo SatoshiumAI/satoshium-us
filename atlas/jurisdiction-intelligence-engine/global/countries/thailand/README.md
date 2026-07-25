@@ -40,7 +40,29 @@ https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/tha
 
 https://satoshium.us/atlas/media/orientation/global/thailand/
 
----
+------------------------------------------------------------------------
+
+## Machine-Readable Resources
+
+The Atlas jurisdiction package includes the following machine-readable
+artifacts generated from the canonical Markdown source layers.
+
+### Canonical Jurisdiction JSON
+
+-   thailand.json
+
+The primary machine-readable representation of this jurisdiction
+package.
+
+### Generation Manifest
+
+-   thailand.manifest.json
+
+The matched generation manifest preserving generation metadata,
+validation results, source-file references, and publication information.
+
+------------------------------------------------------------------------
+
 
 ## Package Contents
 
