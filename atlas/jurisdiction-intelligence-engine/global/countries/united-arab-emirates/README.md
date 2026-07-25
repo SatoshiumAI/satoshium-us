@@ -142,6 +142,7 @@ This package follows the core Atlas principles of:
 **Version:** 1.1
 
 **Machine-Readable Resources:** Published
+
 ---
 
 **Know the Jurisdictions. Navigate the Future.**
