@@ -42,22 +42,6 @@ https://satoshium.us/atlas/media/orientation/global/argentina/
 
 ---
 
-## Machine-Readable Resources
-
-### Canonical Jurisdiction JSON
-
-* argentina.json
-
-The consolidated machine-readable representation of the complete Atlas jurisdiction package.
-
-### Generation Manifest
-
-* argentina.manifest.json
-
-The matched generation manifest documenting source files, generation metadata, validation results, output size, and publication status.
-
----
-
 ## Package Contents
 
 ### evidence.md
