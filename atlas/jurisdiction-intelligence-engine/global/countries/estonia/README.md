@@ -132,11 +132,15 @@ This package follows the core Atlas principles of:
 
 ## Status
 
-Active Atlas Jurisdiction Package
+**Atlas Jurisdiction Package**
 
-Last Updated: 2026-04-21
+**Status:** Published · Complete
 
-Version: 1.0
+**Last Updated:** 2026-07-25
+
+**Version:** 1.1
+
+**Machine-Readable Resources:** Published
 
 ---
 
