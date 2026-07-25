@@ -12,7 +12,29 @@ This package provides a structured jurisdiction record designed to support resea
 
 The canonical package records Brazil as a Brasília- and São Paulo-centered South American-scale federal infrastructure jurisdiction combining federal digital-government interoperability, RTGS and instant-payments continuity, internet-exchange and registry governance, scientific-network federation, telecommunications rollout, energy-grid coordination, logistics infrastructure, cyber coordination, and regional institutional integration, spanning federal digital governance and interoperability, instant payments and settlement governance, internet exchange and registry governance, scientific-network federation, telecommunications and digital connectivity, energy grid and industrial coordination, cybersecurity and digital resilience, global logistics and trade connectivity, and regional and global institutional integration frameworks. The evidence layer documents GOV.BR, Conta GOV.BR, Carteira de Identidade Nacional, Conecta gov.br, the Infraestrutura Nacional de Dados, and electronic-signature governance digital infrastructure; Banco Central do Brasil STR RTGS, Pix instant payments, SPI, and Conta PI regulatory systems; Nuvem de Governo, Serpro, Dataprev, RNDS, and the Portal Brasileiro de Dados Abertos public-sector data continuity; CGI.br, NIC.br, Registro.br, and IX.br distributed internet-governance and exchange infrastructure with ASN and IP resource governance and DNS governance; RNP, Rede Ipê, CAFe, eduroam Brasil, LNCC, Santos Dumont supercomputer, and SINAPAD scientific-compute coordination; Anatel telecommunications governance with national 5G rollout, PAIS northern fiber expansion, and Telebras backbone; the ONS-coordinated Sistema Interligado Nacional with regional subsystem interconnection and international interchange; the Port of Santos with Tecon Santos expansion and GRU Airport cargo; CTIR Gov and CERT.br federal incident-management and cyber-threat coordination; and the MERCOSUL Digital Agenda with digital-signature mutual-recognition and cross-border digital coordination.
 
----
+------------------------------------------------------------------------
+
+## Machine-Readable Resources
+
+The Atlas jurisdiction package includes the following machine-readable
+artifacts generated from the canonical Markdown source layers.
+
+### Canonical Jurisdiction JSON
+
+-   brazil.json
+
+The primary machine-readable representation of this jurisdiction
+package.
+
+### Generation Manifest
+
+-   brazil.manifest.json
+
+The matched generation manifest preserving generation metadata,
+validation results, source-file references, and publication information.
+
+------------------------------------------------------------------------
+
 
 ## Package Purpose
 
