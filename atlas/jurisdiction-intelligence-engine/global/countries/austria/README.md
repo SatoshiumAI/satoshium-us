@@ -12,7 +12,29 @@ This package provides a structured jurisdiction record designed to support resea
 
 The canonical package records Austria as a Vienna-centered coordination jurisdiction operating as a layered Central European coordination environment spanning digital-government interoperability, EU payment and settlement integration, rail and road infrastructure, energy transmission, research-network federation, neutral internet exchange infrastructure, and cybersecurity coordination. The evidence layer documents ID Austria digital identity, eGovernment coordination, and eIDAS interoperability digital-governance infrastructure; OeNB Oesterreichische Nationalbank participation in Eurosystem TARGET2 and TIPS settlement; ÖBB rail infrastructure and ASFINAG motorway network; Hafen Wien and viadonau inland-waterway infrastructure; APG Austrian Power Grid electricity transmission including Baumgarten gas hub connectivity with cross-border energy-transition coordination; VIX Vienna Internet Exchange neutral exchange infrastructure; ACOnet research-network infrastructure with GÉANT connectivity; AGGM and Gas Connect Austria gas transmission and storage coordination; SKKM civil-emergency coordination; RTR telecommunications regulatory authority; and CERT.at national cybersecurity coordination. The canonical package records Austria as operating as a layered Central European coordination environment rather than a single-corridor or single-node system, without assigning routing authority, readiness tiers, or comparative status.
 
----
+------------------------------------------------------------------------
+
+## Machine-Readable Resources
+
+The Atlas jurisdiction package includes the following machine-readable
+artifacts generated from the canonical Markdown source layers.
+
+### Canonical Jurisdiction JSON
+
+-   austria.json
+
+The primary machine-readable representation of this jurisdiction
+package.
+
+### Generation Manifest
+
+-   austria.manifest.json
+
+The matched generation manifest preserving generation metadata,
+validation results, source-file references, and publication information.
+
+------------------------------------------------------------------------
+
 
 ## Package Purpose
 
