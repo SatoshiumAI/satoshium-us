@@ -1,566 +1,161 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<meta name="theme-color" content="#d6a34a">
-
-<title>Satoshium Atlas</title>
-<meta name="description" content="Satoshium Atlas — the jurisdiction intelligence layer of the Satoshium ecosystem, organizing evidence, signals, trust dimensions, metadata, media, and jurisdiction packages for exploration through Navigator and related Suite systems.">
-<link rel="canonical" href="https://satoshium.us/atlas/">
-
-<link rel="preconnect" href="https://satoshium.link" crossorigin>
-<link rel="dns-prefetch" href="https://satoshium.link">
-<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
-
-<style>
-:root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
- --line:rgba(214,163,74,.18);
- --green:#76d48b;
- --blue:#8fb8ff;
- --dim:#778399;
-}
-
-*{box-sizing:border-box}
-
-html,body{
- margin:0;
- padding:0;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
- line-height:1.6;
- scroll-behavior:smooth;
-}
-
-body{padding-top:80px}
-
-a{color:var(--gold2);text-decoration:none}
-a:hover{color:var(--gold)}
-
-.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
-.content{padding:34px 18px 64px}
-
-.hero{
- border:1px solid var(--line);
- border-radius:22px;
- padding:28px 24px;
- margin-bottom:18px;
- background:
- radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
- linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
-}
-
-.eyebrow{
- display:inline-flex;
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
-}
-
-h1{
- margin:10px 0 12px;
- font-size:44px;
- color:var(--gold2);
-}
-
-.lead{
- max-width:940px;
- color:var(--muted);
- font-size:20px;
-}
-
-.grid{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:18px;
- margin-top:18px;
-}
-
-.card{
- background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:22px;
- position:relative;
- overflow:hidden;
-}
-
-.card::after{
- content:"";
- position:absolute;
- top:0;
- right:0;
- width:120px;
- height:120px;
- background:radial-gradient(circle at top right, rgba(214,163,74,.08), transparent 62%);
- pointer-events:none;
-}
-
-.card h2{
- margin:0 0 10px;
- font-size:24px;
- color:var(--gold2);
-}
-
-.card p{
- margin:0 0 14px;
- color:var(--muted);
-}
-
-.status{
- display:inline-flex;
- align-items:center;
- gap:8px;
- margin-bottom:14px;
- padding:6px 10px;
- border:1px solid rgba(214,163,74,.20);
- border-radius:999px;
- background:rgba(214,163,74,.05);
- color:var(--muted);
- font-size:13px;
- font-weight:700;
-}
-
-.status.active{color:var(--green)}
-.status.partial{color:var(--blue)}
-.status.future{color:var(--dim)}
-
-.note{
- margin-top:16px;
- padding:14px 16px;
- border:1px solid var(--line);
- border-radius:14px;
- background:rgba(214,163,74,.05);
- color:var(--muted);
- line-height:1.9;
-}
-
-.btn{
- display:inline-block;
- margin-top:14px;
- margin-right:10px;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
-}
-
-.btn:hover{background:rgba(214,163,74,.12)}
-
-.muted{color:var(--muted)}
-
-.section-title{
- margin:34px 0 0;
- font-size:28px;
- color:var(--gold2);
-}
-
-@media (max-width:900px){
- .grid{grid-template-columns:1fr}
- h1{font-size:34px}
- .lead{font-size:18px}
-}
-</style>
-</head>
-
-<body>
-
-<div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-<section class="hero">
-  <div class="eyebrow">Suite · Jurisdiction Intelligence Layer</div>
-
-  <h1>Satoshium Atlas</h1>
-
-  <p class="lead">
-    Satoshium Atlas is the jurisdiction intelligence layer of the Satoshium ecosystem.
-    It organizes jurisdictions, evidence, signals, trust dimensions, metadata,
-    historical context, media, and supporting intelligence into structured packages.
-  </p>
-
-  <p class="lead">
-    Atlas serves as the primary intelligence repository supporting Navigator,
-    Certifier, Registry, Chronicle, Anchor, Beacon, Attestor, and future
-    Satoshium systems.
-  </p>
-</section>
-
-<h2 class="section-title">Atlas & Navigator</h2>
-
-<section class="grid">
-
-<article class="card">
-  <div class="status active">● Intelligence Repository</div>
-  <h2>Atlas</h2>
-
-  <p>
-    Atlas stores and organizes jurisdiction intelligence through structured
-    state, country, media, evidence, signal, trust dimension, metadata,
-    and framework records.
-  </p>
-
-  <a class="btn" href="/atlas/jurisdiction-intelligence-engine/">
-    Open Atlas Intelligence →
-  </a>
-</article>
-
-<article class="card">
-  <div class="status active">● Exploration Layer</div>
-  <h2>Navigator</h2>
-
-  <p>
-    Navigator is the exploration and discovery layer built on top of Atlas.
-    It provides structured access through queries, comparisons, filters,
-    signals, outputs, and analytical frameworks.
-  </p>
-
-  <a class="btn" href="/navigator/">
-    Open Navigator →
-  </a>
-</article>
-
-</section>
-
- <h2 class="section-title">Atlas Resources</h2>
-
-<section class="grid">
-
-<article class="card">
-  <h2>Jurisdiction Intelligence Engine</h2>
-
-  <p>
-    Enter the structured jurisdiction navigation layer that routes visitors into
-    U.S. state packages, global country packages, jurisdiction profiles,
-    evidence layers, signals, trust dimensions, metadata, and related records.
-  </p>
-
-  <a class="btn" href="/atlas/jurisdiction-intelligence-engine/">
-    Open Jurisdiction Intelligence Engine →
-  </a>
-</article>
-
-<article class="card">
-  <h2>United States Package</h2>
-
-  <p>
-    Access the operational United States Atlas package and its complete
-    state-level jurisdiction intelligence surfaces, including all 50
-    U.S. state packages and related normalization layers.
-  </p>
-
-  <a class="btn" href="/atlas/jurisdiction-intelligence-engine/us/">
-    Open United States Package →
-  </a>
-</article>
-
-<article class="card">
-  <h2>Global Package</h2>
-
-  <p>
-    Enter the Atlas international jurisdiction surface. This package organizes
-    country-level jurisdiction intelligence and supports global comparison,
-    discovery, and future interoperability across the ecosystem.
-  </p>
-
-  <a class="btn" href="/atlas/jurisdiction-intelligence-engine/global/">
-    Open Global Package →
-  </a>
-</article>
-
-<article class="card">
-  <h2>Atlas Media Library</h2>
-
-  <p>
-    Explore the Atlas media layer supporting jurisdiction familiarity,
-    geographic awareness, cultural context, institutional literacy,
-    and orientation across state and global Atlas packages.
-  </p>
-
-  <a class="btn" href="/atlas/media/">
-    Open Atlas Media Library →
-  </a>
-</article>
-
-<article class="card">
-  <h2>U.S. State Index</h2>
-
-  <p>
-    Browse all 50 U.S. state packages using the state index and jurisdiction
-    navigation surfaces created for the Atlas United States package.
-  </p>
-
-  <a class="btn" href="/atlas/jurisdiction-intelligence-engine/us/states/">
-    Explore U.S. State Packages →
-  </a>
-</article>
-
-<article class="card">
-  <h2>Global Country Index</h2>
-
-  <p>
-    Browse the Atlas international country index. This surface provides
-    direct routing into global jurisdiction packages and supports structured
-    exploration beyond the United States baseline.
-  </p>
-
-  <a class="btn" href="/atlas/jurisdiction-intelligence-engine/global/countries/">
-    Explore Global Country Packages →
-  </a>
-</article>
-
-<article class="card">
-  <h2>Corridors Index</h2>
-
-  <p>
-    Explore the corridor structure of Atlas, including membership groupings,
-    alignment surfaces, cross-jurisdiction navigation pathways, and
-    corridor-aware interpretation resources.
-  </p>
-
-  <a class="btn" href="/atlas/corridors/">
-    Explore Corridors Index →
-  </a>
-</article>
-
-<article class="card">
-  <h2>Framework Library</h2>
-
-  <p>
-    Access the Atlas framework doctrine layer, including canonical
-    specifications, methodology references, signal logic, jurisdiction
-    structures, and supporting rule boundaries.
-  </p>
-
-  <a class="btn" href="/atlas/docs/framework/">
-    Open Framework Library →
-  </a>
-</article>
-
-</section>
-
-
-<h2 class="section-title">Atlas Certification</h2>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Atlas Certification Library</h2>
-
-  <p>
-    Explore the Atlas Certification Library, the institutional entry point for
-    understanding how Atlas intelligence participates in the Satoshium Suite
-    certification architecture.
-  </p>
-
-  <p>
-    The Library connects visitors to the Atlas Certification Framework, Profile,
-    Scope, Subjects, Evidence, Suite foundations, and the complete certification flow
-    from Atlas record to Certification Package and downstream Suite references.
-  </p>
-
-  <a class="btn" href="/atlas/certification/">
-    Open Atlas Certification Library →
-  </a>
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Atlas Foundation Complete</h2>
-
-  <p>
-    Atlas has completed its initial jurisdiction intelligence foundation.
-    The Atlas repository now contains all 50 United States state packages,
-    52 global country packages, supporting media libraries, canonical
-    documentation structures, evidence layers, signals, trust dimensions,
-    metadata, historical references, and framework resources.
-  </p>
-
-  <p>
-    Atlas now serves as the intelligence repository powering Navigator
-    and supporting future Suite systems through structured jurisdiction
-    intelligence and related records.
-  </p>
-
-  <div class="note">
-    Foundation Complete:<br>
-    United States Jurisdiction Packages · Global Country Packages · Media Libraries ·
-    Evidence Layers · Signals · Trust Dimensions · Metadata · Framework Resources
-  </div>
-</article>
-
-</section>
-
- <section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Relationship to the Satoshium Suite</h2>
-
-  <p>
-    Atlas serves as the intelligence layer within the Satoshium Suite.
-    While Atlas organizes and preserves jurisdiction intelligence,
-    other Suite systems build upon, reference, verify, explore,
-    record, preserve, discover, and attest to that information.
-  </p>
-
-  <div class="note">
-Atlas maps.<br>
-Navigator explores.<br>
-Certifier verifies.<br>
-Registry records.<br>
-Chronicle remembers.<br>
-Anchor preserves trust references.<br>
-Beacon discovers.<br>
-Attestor proves.
-  </div>
-
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Atlas Expansion Path</h2>
-
-  <p>
-    Atlas is designed as a long-horizon jurisdiction intelligence framework.
-    The initial foundation establishes structured intelligence packages,
-    media resources, evidence layers, signals, trust dimensions,
-    metadata, and framework documentation.
-  </p>
-
-  <p>
-    Future Atlas development may expand jurisdiction coverage,
-    comparative intelligence capabilities, signal systems,
-    trust-dimension frameworks, historical analysis layers,
-    and interoperability across the broader Satoshium ecosystem.
-  </p>
-
-  <div class="note">
-United States Foundation Complete.<br>
-Global Foundation Established.<br>
-Media Libraries Established.<br>
-Navigator Integration Active.<br>
-Future Expansion Ongoing.
-  </div>
-
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Guiding Principles</h2>
-
-  <p>
-    Atlas is designed to improve accessibility, organization,
-    transparency, context, and understanding through structured
-    jurisdiction intelligence.
-  </p>
-
-  <div class="note">
-Evidence over assumption.<br>
-Context over isolation.<br>
-Transparency over opacity.<br>
-Structure improves understanding.<br>
-Intelligence should be accessible.<br>
-Jurisdictions should be comparable.<br>
-Information becomes more useful when organized.
-  </div>
-
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Atlas Status</h2>
-
-  <p>
-    Atlas has completed its initial foundation and now serves as the
-    primary jurisdiction intelligence repository of the Satoshium ecosystem.
-  </p>
-
-  <p>
-    Atlas currently supports all completed state and country packages,
-    media resources, evidence layers, trust dimensions, metadata,
-    historical references, and framework documentation required to
-    support Navigator and future Suite systems.
-  </p>
-
-  <div class="note">
-Version 1.0 Foundation Complete.<br>
-50 U.S. State Packages.<br>
-52 Global Country Packages.<br>
-Media Libraries Established.<br>
-Navigator Integration Active.<br>
-Suite Intelligence Repository.
-  </div>
-
-</article>
-
-</section>
-
-</main>
-
-<div class="wrap reflection">
-
-<hr>
-
-<div id="random-saying"
-     class="muted"
-     style="margin-bottom:14px; max-width:760px;">
-
-Atlas organizes intelligence. Navigator transforms intelligence into understanding.
-</div>
-
-<hr>
-
-<div id="footer-container"></div>
-
-</div>
-
-<script src="https://satoshium.link/assets/sayings.js"></script>
-
-<script>
-fetch("https://satoshium.link/components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer-container").innerHTML = data;
-  });
-</script>
-
-<script defer
-src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'>
-</script>
-
-</body>
-</html>
+# Argentina
+
+## Atlas Jurisdiction Package
+
+Argentina is a jurisdiction package within the Satoshium Atlas
+jurisdiction intelligence framework.
+
+This package provides a structured jurisdiction record designed to
+support research, analysis, orientation, comparison, discovery, and
+future interoperability across the broader Atlas ecosystem.
+
+------------------------------------------------------------------------
+
+## Jurisdiction Summary
+
+The canonical package records Argentina as a Buenos Aires-centered
+federally coordinated South American infrastructure jurisdiction
+combining interoperable public administration systems, RTGS and
+immediate-payment modernization, cooperative exchange governance,
+public-sector fiber and datacenter infrastructure, scientific-network
+federation, logistics modernization, cyber coordination, and Mercosur
+procedural integration.
+
+------------------------------------------------------------------------
+
+## Package Purpose
+
+The purpose of this package is to organize jurisdiction intelligence
+into a standardized structure that supports:
+
+-   Evidence collection
+-   Signal identification
+-   Trust-dimension analysis
+-   Jurisdiction profiling
+-   Metadata normalization
+-   Builder guidance
+-   Historical change tracking
+
+This package serves as both a human-readable and machine-readable
+jurisdiction record.
+
+------------------------------------------------------------------------
+
+## Canonical Resources
+
+### Canonical Jurisdiction Page
+
+https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/argentina/
+
+### Orientation Media Page
+
+https://satoshium.us/atlas/media/orientation/global/argentina/
+
+------------------------------------------------------------------------
+
+## Machine-Readable Resources
+
+The Atlas jurisdiction package includes the following machine-readable
+artifacts generated from the canonical Markdown source layers.
+
+### Canonical Jurisdiction JSON
+
+-   argentina.json
+
+The primary machine-readable representation of this jurisdiction
+package.
+
+### Generation Manifest
+
+-   argentina.manifest.json
+
+The matched generation manifest preserving generation metadata,
+validation results, source-file references, and publication information.
+
+------------------------------------------------------------------------
+
+## Package Contents
+
+### evidence.md
+
+Evidence sources, supporting references, observations, and documented
+findings used to support the jurisdiction record.
+
+### signals.md
+
+Key jurisdiction signals, indicators, trends, and notable
+characteristics identified within the jurisdiction.
+
+### trust-dimensions.md
+
+Analysis across Atlas trust dimensions and jurisdiction evaluation
+categories.
+
+### metadata.md
+
+Structured metadata supporting classification, indexing, categorization,
+and package normalization.
+
+### profile.md
+
+Jurisdiction profile summarizing major characteristics, strengths,
+opportunities, and contextual information.
+
+### builder-mode.md
+
+Builder guidance describing package construction methodology,
+assumptions, scope, and implementation considerations.
+
+### change-log.md
+
+Historical record of significant package updates, revisions,
+corrections, and maintenance activities.
+
+------------------------------------------------------------------------
+
+## Jurisdiction Classification
+
+**Jurisdiction Type:** Country
+
+**Parent Framework:** Global Countries
+
+**Atlas Layer:** Jurisdiction Intelligence Engine
+
+**Package Status:** Active
+
+------------------------------------------------------------------------
+
+## Atlas Principles
+
+This package follows the core Atlas principles of:
+
+-   Evidence before conclusions
+-   Structured jurisdiction intelligence
+-   Transparent methodology
+-   Repeatable analysis
+-   Interoperable records
+-   Continuous refinement
+
+------------------------------------------------------------------------
+
+## Related Resources
+
+-   Canonical Jurisdiction Page
+-   Orientation Media Page
+-   Atlas Jurisdiction Surface (AJS)
+-   Atlas Orientation Video
+-   Satoshium Atlas
+
+------------------------------------------------------------------------
+
+## Status
+
+Active Atlas Jurisdiction Package
+
+Last Updated: 2026-04-21
+
+Version: 1.0
+
+------------------------------------------------------------------------
+
+**Know the Jurisdictions. Navigate the Future.**
