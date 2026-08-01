@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Registry Records</title>
-<meta name="description" content="Satoshium Registry Records — structured public records for organizing, cataloging, and preserving Satoshium tools, jurisdictions, media, signals, certifications, attestations, and historical references.">
+<meta name="description" content="Satoshium Registry Records — defines how authoritative source records are represented through Satoshium Registry Entries, classified by Record Type, validated, versioned, related, and preserved.">
 <link rel="canonical" href="https://satoshium.us/registry/records/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -103,10 +103,25 @@ h1{
  color:var(--gold2);
 }
 
-.card p{
- margin:0 0 14px;
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
  color:var(--muted);
 }
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
 
 .note{
  margin-top:16px;
@@ -116,6 +131,22 @@ h1{
  background:rgba(214,163,74,.05);
  color:var(--muted);
 }
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
 
 .btn{
  display:inline-block;
@@ -148,129 +179,424 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-  <div class="eyebrow">Registry · Records</div>
-  <h1>Registry Records</h1>
+  <div class="eyebrow">Registry · Operational Records</div>
+  <h1>Satoshium Registry Records</h1>
 
   <p class="lead">
-    Registry Records identify, classify, catalog, and preserve information across the
-    Satoshium ecosystem.
+    Registry Records are Satoshium Registry Entries, or SREGs, that identify,
+    classify, reference, relate, version, and preserve Authoritative Source Records.
   </p>
 
   <p class="lead">
-    Records are the primary operational artifacts maintained by Registry. They provide
-    structured references that support discoverability, continuity, organization, and
-    interoperability.
+    Registry maintains the SREG. The Source Institution retains authority over the
+    Source Record.
   </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <div class="flow" aria-label="Registry records constitutional hierarchy">
+    <strong>Suite Standards</strong>
+    <span>→</span>
+    <strong>Suite Methodology</strong>
+    <span>→</span>
+    <strong>Suite Interoperability</strong>
+    <span>→</span>
+    <strong>Registry Institutional Implementation</strong>
+    <span>→</span>
+    <strong>SREG</strong>
+  </div>
+
+  <div class="note">
+    Registry Records implement Suite-wide expectations through Registry-owned
+    identifiers, classifications, references, relationships, statuses, versions,
+    corrections, lifecycle controls, and publication.
+  </div>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Is a Registry Record?</h2>
+
+  <p>
+    A Registry Record is an operational SREG maintained by Satoshium Registry.
+  </p>
+
+  <p>
+    It is not the Authoritative Source Record itself. It is Registry's structured,
+    public, version-aware representation of how that source record can be identified,
+    classified, found, related, and understood.
+  </p>
+
+  <div class="note">
+    Registry Record = Satoshium Registry Entry (SREG)
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Operational Hierarchy</h2>
+
+  <div class="flow" aria-label="Canonical Registry record hierarchy">
+    <strong>Satoshium Registry</strong>
+    <span>→</span>
+    <strong>Registry Entry (SREG)</strong>
+    <span>→</span>
+    <strong>Registry Record Type</strong>
+    <span>→</span>
+    <strong>Authoritative Source Record</strong>
+  </div>
+
+  <p>
+    The SREG is Registry's canonical operational object. The Record Type classifies
+    the SREG. The Authoritative Source Record remains owned by the originating institution.
+  </p>
+</article>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Tools</h2>
+  <h2>Tool Records</h2>
   <p>
-    Tool records describe ecosystem applications, services, frameworks, and systems,
-    including Atlas, Certifier, Registry, Chronicle, Anchor, and Attestor.
+    Tool SREGs catalog systems, services, frameworks, platforms, institutions, and
+    operational components.
   </p>
 </article>
 
 <article class="card">
-  <h2>Jurisdictions</h2>
+  <h2>Jurisdiction Records</h2>
   <p>
-    Jurisdiction records describe geographic and governmental entities such as countries,
-    states, provinces, territories, regions, and future jurisdiction categories.
+    Jurisdiction SREGs catalog authoritative jurisdiction resources for countries,
+    states, provinces, territories, regions, municipalities, and other approved classes.
   </p>
 </article>
 
 <article class="card">
-  <h2>Media</h2>
+  <h2>Media Records</h2>
   <p>
-    Media records describe videos, images, thumbnails, audio resources, media pages,
-    documents, and public-facing content.
+    Media SREGs catalog videos, images, audio resources, transcripts, thumbnails,
+    media pages, and other approved media artifacts.
   </p>
 </article>
 
 <article class="card">
-  <h2>Signals</h2>
+  <h2>Certification Records</h2>
   <p>
-    Signal records document public signals, announcements, discovery artifacts,
-    historical markers, and notable informational references.
+    Certification SREGs catalog Certifier-owned Certification Packages, SCRDs,
+    reports, receipts, and related certification artifacts.
   </p>
 </article>
 
 <article class="card">
-  <h2>Certifications</h2>
+  <h2>Attestation Records</h2>
   <p>
-    Certification records document certification activities, reports, receipts,
-    standards, certified items, and related evidence references.
+    Attestation SREGs catalog Attestor-owned trust statements, attestations,
+    validations, and supporting verification references.
   </p>
 </article>
 
 <article class="card">
-  <h2>Attestations</h2>
+  <h2>Signal Records</h2>
   <p>
-    Attestation records document future verification, validation, integrity confirmation,
-    and attestation-related activities.
+    Signal SREGs catalog Beacon-owned discovery signals, announcements, visibility
+    metadata, and other approved discovery-oriented records.
   </p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
+<article class="card">
+  <h2>What Registry Records Answer</h2>
+
+  <ul>
+    <li>What Source Record exists?</li>
+    <li>Which institution created it?</li>
+    <li>What Registry Identifier identifies the SREG?</li>
+    <li>What Source-System Identifier identifies the Source Record?</li>
+    <li>What Record Type applies?</li>
+    <li>Where can the source be found?</li>
+    <li>What is the Registry Status?</li>
+    <li>What is the Registry Lifecycle State?</li>
+    <li>What is the Source-Record Status?</li>
+    <li>Which versions apply?</li>
+    <li>What relationships exist?</li>
+    <li>What corrections or historical changes occurred?</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
 
 <article class="card">
-  <h2>What Records Answer</h2>
+  <h2>Registry Identifier</h2>
+  <p>
+    Identifies the SREG and remains distinct from the Source-System Identifier.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source Attribution</h2>
+  <p>
+    Identifies the Source Institution and Authoritative Source Record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Record Type</h2>
+  <p>
+    Assigns one approved primary classification to the SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Status</h2>
+  <p>
+    Preserves Registry Status separately from Source-Record Status.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Lifecycle</h2>
+  <p>
+    Preserves the institutional condition and history of the SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Versions</h2>
+  <p>
+    Preserves Registry Entry, schema, profile, specification, and source versions.
+  </p>
+</article>
+
+<article class="card">
+  <h2>References</h2>
+  <p>
+    Preserves canonical source locations, repository paths, public pages, and
+    machine-readable records.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Relationships</h2>
+  <p>
+    Preserves typed links among SREGs, Source Records, institutions, certifications,
+    events, attestations, integrity references, signals, and workflows.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Source Authority and Registry Authority</h2>
 
   <p>
-    Records exist to answer several important questions: what exists, what category it
-    belongs to, what its current status is, what it is related to, and how it can be
-    found later.
+    Registry is authoritative for:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>Registry Record Type;</li>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>Registry Entry Version;</li>
+    <li>Registry relationships;</li>
+    <li>Registry correction history;</li>
+    <li>Registry publication.</li>
+  </ul>
+
+  <p>
+    The Source Institution remains authoritative for:
+  </p>
+
+  <ul>
+    <li>Source Record content;</li>
+    <li>Source-System Identifier;</li>
+    <li>Source-Record version;</li>
+    <li>Source-Record Status;</li>
+    <li>institutional meaning;</li>
+    <li>certification or attestation outcomes;</li>
+    <li>ownership and rights.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Record Method</h2>
+
+  <div class="note">
+    Identify or Receive Source Record → Confirm Source Authority → Determine
+    Registrability → Assign Record Type → Assign Registry Identifier → Establish
+    References and Relationships → Construct SREG → Validate → Publish → Maintain
+  </div>
+
+  <p>
+    This method preserves a repeatable path from an authoritative source object to
+    an operational Registry Record.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema Architecture</h2>
+
+  <div class="flow" aria-label="Registry record schema hierarchy">
+    <strong>Suite Schema Standard</strong>
+    <span>→</span>
+    <strong>Registry Schema Specification</strong>
+    <span>→</span>
+    <strong>SREG Base Schema</strong>
+    <span>→</span>
+    <strong>Record-Type Profile</strong>
+    <span>→</span>
+    <strong>Published SREG</strong>
+  </div>
+
+  <p>
+    Every operational Registry Record should conform to the SREG Base Schema and
+    the applicable Record-Type Profile.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Human-Readable and Machine-Readable Forms</h2>
+
+  <p>
+    A Registry Record may be published through:
+  </p>
+
+  <ul>
+    <li>human-readable Registry Entry page;</li>
+    <li>machine-readable SREG JSON;</li>
+    <li>catalog index;</li>
+    <li>relationship index;</li>
+    <li>version history;</li>
+    <li>correction history;</li>
+    <li>supersession, revocation, or archival record.</li>
+  </ul>
+
+  <div class="note">
+    Official forms of the same SREG must agree on identity, classification, source,
+    status, lifecycle, versions, references, and relationships.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Record Lifecycle</h2>
+
+  <p>
+    Registry Records do not follow one mandatory linear sequence, but may move through
+    approved lifecycle states such as:
   </p>
 
   <div class="note">
-    Registry is not merely a list. It is a structured reference framework designed to
-    preserve the relationship between information, status, context, and time.
+    Pending Registration · Registered · Active · Updated · Superseded · Revoked · Archived
   </div>
-</article>
 
+  <p>
+    Lifecycle describes the condition of the SREG. It does not replace the lifecycle
+    or status of the Source Record.
+  </p>
+</article>
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Record Lifecycle</h2>
+  <h2>Updates and Corrections</h2>
 
   <p>
-    Registry records may move through a simple lifecycle: create, classify, catalog,
-    maintain, and preserve.
+    Registry Records may change because:
+  </p>
+
+  <ul>
+    <li>Registry-owned metadata improves;</li>
+    <li>public references change;</li>
+    <li>relationships evolve;</li>
+    <li>the Source Record publishes a new version;</li>
+    <li>the Source-Record Status changes;</li>
+    <li>a Registry-owned error is corrected;</li>
+    <li>schema migration occurs;</li>
+    <li>the Record-Type Profile changes.</li>
+  </ul>
+
+  <p>
+    Updates, corrections, supersession, and revocation must remain distinct and
+    preserve prior versions where material.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Requirements</h2>
+
+  <p>
+    Before publication, Registry should confirm:
+  </p>
+
+  <ul>
+    <li>the Source Institution is identified;</li>
+    <li>the Authoritative Source Record exists or is historically documented;</li>
+    <li>the Registry Identifier is valid;</li>
+    <li>the Source-System Identifier is preserved when available;</li>
+    <li>the Record Type is approved;</li>
+    <li>required metadata is complete;</li>
+    <li>required references and relationships exist;</li>
+    <li>Registry and source status values remain separate;</li>
+    <li>version metadata is complete;</li>
+    <li>the applicable schema validates;</li>
+    <li>official publication forms agree.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Records Do Not</h2>
+
+  <ul>
+    <li>replace Source Records;</li>
+    <li>create certification authority;</li>
+    <li>create attestation conclusions;</li>
+    <li>establish ownership or legal rights;</li>
+    <li>rewrite Source-System Identifiers;</li>
+    <li>merge institutional responsibilities;</li>
+    <li>guarantee continued availability of external resources;</li>
+    <li>create truth merely through registration.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Records Principle</h2>
+
+  <p>
+    Registry Records create durable institutional structure around authoritative
+    source objects without absorbing their authority.
   </p>
 
   <div class="note">
-    Create → Classify → Catalog → Maintain → Preserve
+    The Source Record carries institutional meaning.
+    The SREG preserves identity, classification, relationships, versions,
+    and the path back to the source.
   </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/entry-model/">Open Entry Model →</a>
+  <a class="btn" href="/registry/record-types/">Open Record Types →</a>
 </article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Records Philosophy</h2>
-
-  <p>
-    Records are more than entries. They are reference points that help preserve context,
-    relationships, and continuity across time.
-  </p>
-
-  <p>
-    Registry provides the framework. Records provide the content. Together they create
-    an organized public record system.
-  </p>
-
-  <a class="btn" href="/registry/">
-    Back to Registry →
-  </a>
-</article>
-
 </section>
 
 </main>
@@ -278,7 +604,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Information may be scattered. Records create structure. Registry preserves that structure.
+    Source records hold authority. Registry Records preserve the structured path back to them.
   </div>
   <hr>
   <div id="footer-container"></div>
@@ -294,7 +620,7 @@ fetch("https://satoshium.link/components/footer.html")
 </script>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 
 </body>
 </html>
