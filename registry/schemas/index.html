@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Registry Schemas</title>
-<meta name="description" content="Satoshium Registry Schemas — structural models defining how Registry records are organized, classified, validated, and preserved across the Satoshium ecosystem.">
+<meta name="description" content="Satoshium Registry Schemas — defines the Suite-aligned structural hierarchy for SREGs, Record-Type Profiles, validation, versions, relationships, publication consistency, and long-term interoperability.">
 <link rel="canonical" href="https://satoshium.us/registry/schemas/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -98,10 +98,25 @@ h1{
  color:var(--gold2);
 }
 
-.card p{
- margin:0 0 14px;
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
  color:var(--muted);
 }
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
 
 .note{
  margin-top:16px;
@@ -112,9 +127,26 @@ h1{
  color:var(--muted);
 }
 
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
 .btn{
  display:inline-block;
  margin-top:14px;
+ margin-right:10px;
  padding:12px 16px;
  border-radius:12px;
  border:1px solid rgba(214,163,74,.24);
@@ -142,128 +174,523 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-  <div class="eyebrow">Registry · Schemas</div>
+  <div class="eyebrow">Registry · Structural Architecture</div>
   <h1>Satoshium Registry Schemas</h1>
 
   <p class="lead">
-    Schemas define the structural models used by Registry records.
-    They establish consistency, improve discoverability, support interoperability,
-    and help preserve information over time.
+    Registry Schemas define the structure, constraints, controlled values,
+    relationships, and validation requirements used by Satoshium Registry Entries,
+    or SREGs.
   </p>
 
   <p class="lead">
-    Registry schemas answer a simple question:
-    what should a record look like?
+    Schemas preserve one shared Registry architecture while allowing Record-Type
+    Profiles to add controlled requirements for different kinds of Source Records.
   </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <div class="flow" aria-label="Registry schema hierarchy">
+    <strong>Suite Schema Standard</strong>
+    <span>→</span>
+    <strong>Registry Schema Specification</strong>
+    <span>→</span>
+    <strong>SREG Base Schema</strong>
+    <span>→</span>
+    <strong>Record-Type Profile</strong>
+    <span>→</span>
+    <strong>Published SREG</strong>
+  </div>
+
+  <div class="note">
+    Registry Schemas implement Suite-wide structural expectations without replacing
+    Source Institution schemas or source-owned records.
+  </div>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What a Registry Schema Does</h2>
+
+  <p>
+    A Registry schema defines what a SREG must contain, which values are permitted,
+    how relationships are expressed, how versions are recorded, and how official
+    publication forms are validated.
+  </p>
+
+  <p>
+    It may define:
+  </p>
+
+  <ul>
+    <li>required fields;</li>
+    <li>optional fields;</li>
+    <li>field types;</li>
+    <li>controlled values;</li>
+    <li>identifier formats;</li>
+    <li>relationship structures;</li>
+    <li>status and lifecycle values;</li>
+    <li>version fields;</li>
+    <li>date formats;</li>
+    <li>reference requirements;</li>
+    <li>validation rules.</li>
+  </ul>
+</article>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Registry Record Schema</h2>
+  <h2>Suite Schema Standard</h2>
   <p>
-    The foundational schema used by Registry. It defines the common fields,
-    metadata, references, statuses, and relationships expected across all
-    Registry record types.
+    Defines Suite-wide structural expectations for identifiers, versions, dates,
+    references, relationships, authority attribution, and machine-readable publication.
   </p>
 </article>
 
 <article class="card">
-  <h2>Tool Record Schema</h2>
+  <h2>Registry Schema Specification</h2>
   <p>
-    Defines how tools, services, applications, frameworks, and ecosystem
-    components are represented within Registry.
+    Defines Registry-wide structural rules, controlled values, validation behavior,
+    schema versioning, and publication requirements.
   </p>
 </article>
 
 <article class="card">
-  <h2>Jurisdiction Record Schema</h2>
+  <h2>SREG Base Schema</h2>
   <p>
-    Defines how countries, states, provinces, territories, regions, and future
-    jurisdiction classes are represented within Registry.
+    Defines the common fields and behaviors shared by every operational SREG,
+    regardless of Record Type.
   </p>
 </article>
 
 <article class="card">
-  <h2>Media Record Schema</h2>
+  <h2>Record-Type Profile</h2>
   <p>
-    Defines how videos, images, thumbnails, audio resources, documents,
-    media pages, and future media assets are represented.
+    Extends the SREG Base Schema with type-specific requirements for Tool,
+    Jurisdiction, Media, Certification, Attestation, Signal, and future approved types.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>SREG Base Schema</h2>
+
+  <p>
+    The SREG Base Schema should define common fields such as:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>title;</li>
+    <li>Registry Record Type;</li>
+    <li>Source Institution;</li>
+    <li>Authoritative Source Record;</li>
+    <li>Source-System Identifier;</li>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>Source-Record Status;</li>
+    <li>Registry Entry Version;</li>
+    <li>Source-Record Version;</li>
+    <li>schema version;</li>
+    <li>Record-Type Profile version;</li>
+    <li>public references;</li>
+    <li>typed relationships;</li>
+    <li>registration date;</li>
+    <li>last updated date;</li>
+    <li>correction and historical references.</li>
+  </ul>
+
+  <div class="note">
+    The Base Schema defines shared Registry structure.
+    Record-Type Profiles add only the requirements needed for a specific type.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Tool Record-Type Profile</h2>
+  <p>
+    Adds fields for Tool Class, institutional purpose, operational function,
+    maintainer, implementation status, dependencies, repositories, and integrations.
   </p>
 </article>
 
 <article class="card">
-  <h2>Consistency</h2>
+  <h2>Jurisdiction Record-Type Profile</h2>
   <p>
-    Schemas ensure that records follow predictable structures. Consistency
-    improves understanding, navigation, maintenance, and future automation.
+    Adds fields for Jurisdiction Class, canonical and alternate names, parent
+    jurisdiction, geographic codes, hierarchy, and historical relationships.
   </p>
 </article>
 
+<article class="card">
+  <h2>Media Record-Type Profile</h2>
+  <p>
+    Adds fields for Media Class, format, subject, publisher, platform, language,
+    visibility, rights, access, and integrity references.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Certification Record-Type Profile</h2>
+  <p>
+    Adds fields for Certification Identifier, certified subject, class, outcome,
+    Certification Status, standards, methodology, scope, evidence, and Certifier artifacts.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Attestation Record-Type Profile</h2>
+  <p>
+    Adds fields for attestation classification, attested subject, statement,
+    evidence references, Attestor status, and trust-related relationships.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Signal Record-Type Profile</h2>
+  <p>
+    Adds fields for Signal Class, signal statement, chronology, originating channel,
+    associated event or subject, and discovery relationships.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Authority Separation</h2>
+
+  <p>
+    Registry Schemas govern Registry-owned SREG structure.
+  </p>
+
+  <p>
+    They do not govern or overwrite the internal schema of the Source Institution.
+  </p>
+
+  <div class="note">
+    Source schemas define source records.
+    Registry schemas define how those records are cataloged through SREGs.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Requirements</h2>
+
+  <p>
+    Registry Schemas must preserve identifier domains separately.
+  </p>
+
+  <ul>
+    <li>Registry Identifier identifies the SREG.</li>
+    <li>Source-System Identifier identifies the Authoritative Source Record.</li>
+    <li>Certification Identifier identifies a certification.</li>
+    <li>Attestation Identifier identifies an attestation when applicable.</li>
+    <li>Integrity Reference Identifier identifies an Anchor-owned record when applicable.</li>
+  </ul>
+
+  <div class="note">
+    Identifiers may be related. They must not be collapsed into one field.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Status and Lifecycle Requirements</h2>
+
+  <p>
+    Registry Schemas must distinguish:
+  </p>
+
+  <ul>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>Source-Record Status;</li>
+    <li>Certification Status;</li>
+    <li>attestation status;</li>
+    <li>tool implementation status;</li>
+    <li>media publication or access status.</li>
+  </ul>
+
+  <p>
+    A controlled value from one status domain must not be reused as though it belongs
+    to another domain without an explicit mapping.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Requirements</h2>
+
+  <p>
+    Registry Schemas should preserve independent version fields for:
+  </p>
+
+  <ul>
+    <li>Registry Entry Version;</li>
+    <li>Source-Record Version;</li>
+    <li>SREG Base Schema version;</li>
+    <li>Record-Type Profile version;</li>
+    <li>Registry Schema Specification version;</li>
+    <li>Registry Rules version;</li>
+    <li>Registry Policy version;</li>
+    <li>Suite Standards version;</li>
+    <li>Suite Methodology version.</li>
+  </ul>
+
+  <div class="note">
+    A change in one version domain does not automatically imply a change in another.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship Requirements</h2>
+
+  <p>
+    Registry Schemas should represent relationships as typed, attributable,
+    directional structures.
+  </p>
+
+  <p>
+    A relationship may include:
+  </p>
+
+  <ul>
+    <li>relationship type;</li>
+    <li>source identifier;</li>
+    <li>target identifier;</li>
+    <li>direction;</li>
+    <li>target institution;</li>
+    <li>effective date;</li>
+    <li>status;</li>
+    <li>version or historical context;</li>
+    <li>supporting reference.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation</h2>
+
+  <p>
+    Schema validation should confirm:
+  </p>
+
+  <ul>
+    <li>required fields are present;</li>
+    <li>field types are correct;</li>
+    <li>controlled values are approved;</li>
+    <li>identifiers conform to expected formats;</li>
+    <li>required relationships exist;</li>
+    <li>relationship targets are valid;</li>
+    <li>status and lifecycle values belong to the correct domains;</li>
+    <li>version metadata is complete;</li>
+    <li>dates use approved formats;</li>
+    <li>human-readable and machine-readable forms agree materially.</li>
+  </ul>
+
+  <div class="note">
+    Registry schema validation confirms SREG structure.
+    It does not certify, attest to, or independently verify the Source Record.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Human-Readable and Machine-Readable Publication</h2>
+
+  <p>
+    A SREG may be represented through:
+  </p>
+
+  <ul>
+    <li>human-readable Registry Entry HTML;</li>
+    <li>machine-readable SREG JSON;</li>
+    <li>catalog indexes;</li>
+    <li>relationship indexes;</li>
+    <li>version histories;</li>
+    <li>correction records;</li>
+    <li>supersession, revocation, retirement, and archival records.</li>
+  </ul>
+
+  <p>
+    Official forms must preserve equivalent institutional meaning.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema Versioning</h2>
+
+  <p>
+    Every published schema should include:
+  </p>
+
+  <ul>
+    <li>schema name;</li>
+    <li>schema identifier;</li>
+    <li>schema version;</li>
+    <li>status;</li>
+    <li>effective date;</li>
+    <li>superseded version, when applicable;</li>
+    <li>compatibility notes;</li>
+    <li>migration guidance;</li>
+    <li>validation references;</li>
+    <li>changelog reference.</li>
+  </ul>
+
+  <p>
+    Prior schema versions should remain preserved and discoverable.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema Migration</h2>
+
+  <p>
+    Schema migration should preserve:
+  </p>
+
+  <ul>
+    <li>prior schema version;</li>
+    <li>new schema version;</li>
+    <li>migration date;</li>
+    <li>changed fields;</li>
+    <li>transformation rules;</li>
+    <li>validation result;</li>
+    <li>prior SREG version;</li>
+    <li>replacement SREG version;</li>
+    <li>compatibility or breaking-change notes.</li>
+  </ul>
+
+  <div class="note">
+    Schema migration changes Registry structure.
+    It does not necessarily mean the Source Record changed.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Rules, Policies, and Procedures</h2>
+
+  <p>
+    Schemas, Rules, Policies, and Procedures serve different functions.
+  </p>
+
+  <div class="flow" aria-label="Schema governance relationship">
+    <strong>Rules</strong>
+    <span>→</span>
+    <strong>Policies</strong>
+    <span>→</span>
+    <strong>Procedures</strong>
+    <span>→</span>
+    <strong>Schemas</strong>
+    <span>→</span>
+    <strong>Validated SREG</strong>
+  </div>
+
+  <ul>
+    <li>Rules define foundational requirements.</li>
+    <li>Policies define domain-specific obligations.</li>
+    <li>Procedures define repeatable operational steps.</li>
+    <li>Schemas define the structure that must validate.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
 <article class="card">
   <h2>Interoperability</h2>
-  <p>
-    Shared schemas allow records from different categories to interact
-    through common metadata, references, identifiers, and relationships.
-  </p>
-</article>
 
+  <p>
+    Registry Schemas support interoperability by preserving:
+  </p>
+
+  <ul>
+    <li>source attribution;</li>
+    <li>stable identifiers;</li>
+    <li>typed relationships;</li>
+    <li>version references;</li>
+    <li>status mappings;</li>
+    <li>canonical public references;</li>
+    <li>machine-readable publication;</li>
+    <li>authority boundaries.</li>
+  </ul>
+
+  <div class="note">
+    Interoperability connects institutional objects.
+    Schema design must not collapse institutional authority.
+  </div>
+</article>
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Why Schemas Matter</h2>
+  <h2>Schema Governance</h2>
 
   <p>
-    A record is easier to understand when its structure is predictable.
-    A collection of records is easier to manage when they follow the same
-    foundational model.
+    Registry Schemas should be reviewed when:
+  </p>
+
+  <ul>
+    <li>Suite Standards change;</li>
+    <li>Suite Methodology changes;</li>
+    <li>Registry Rules change;</li>
+    <li>new Record Types are introduced;</li>
+    <li>identifier architecture changes;</li>
+    <li>status or lifecycle frameworks change;</li>
+    <li>new relationship types are introduced;</li>
+    <li>publication formats change;</li>
+    <li>validation failures reveal ambiguity;</li>
+    <li>interoperability requirements change.</li>
+  </ul>
+
+  <p>
+    Material schema changes should be versioned, documented, and preserved in the
+    Registry Changelog.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema Principle</h2>
+
+  <p>
+    Registry Schemas preserve one coherent structural model for all SREGs while
+    allowing controlled type-specific extension.
   </p>
 
   <div class="note">
-    Schemas transform collections of information into organized records
-    that can be searched, classified, referenced, validated, and preserved.
+    Records preserve information.
+    SREGs preserve Registry context.
+    Schemas preserve structure.
   </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/entry-model/">Open Entry Model →</a>
+  <a class="btn" href="/registry/record-types/">Open Record Types →</a>
 </article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Relationship to Policies</h2>
-
-  <p>
-    Schemas define structure. Policies define process.
-  </p>
-
-  <div class="note">
-    Schemas describe what a record looks like.
-    Policies describe how records are created, updated, corrected,
-    retired, and maintained.
-  </div>
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Future Development</h2>
-
-  <p>
-    Future Registry schemas may support machine-readable formats,
-    automated validation, metadata enforcement, relationship mapping,
-    preservation references, and interoperability with Certifier,
-    Chronicle, Anchor, and Attestor.
-  </p>
-
-  <a class="btn" href="/registry/">
-    Back to Registry →
-  </a>
-</article>
-
 </section>
 
 </main>
@@ -271,7 +698,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Records preserve information. Schemas preserve structure.
+    One shared SREG model. Controlled profiles. Distinct authority. Consistent publication.
   </div>
   <hr>
   <div id="footer-container"></div>
