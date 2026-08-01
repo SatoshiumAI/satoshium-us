@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Registry Status</title>
-<meta name="description" content="Satoshium Registry Status — defines Registry development status, Registry lifecycle status, and the distinction between Certification Status and Registry Status.">
+<meta name="description" content="Satoshium Registry Status — defines Registry development condition, Registry Status, Registry Lifecycle State, source-controlled statuses, status ownership, mappings, transitions, and publication requirements.">
 <link rel="canonical" href="https://satoshium.us/registry/status/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -90,10 +90,21 @@ h1{
  font-size:24px;
  color:var(--gold2);
 }
-.card p{
- margin:0 0 14px;
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+.card p,
+.card li{
  color:var(--muted);
 }
+.card p{margin:0 0 14px}
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+.card li{margin:7px 0}
 .note{
  margin-top:16px;
  padding:14px 16px;
@@ -102,9 +113,23 @@ h1{
  background:rgba(214,163,74,.05);
  color:var(--muted);
 }
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+.flow span{color:var(--gold)}
 .btn{
  display:inline-block;
  margin-top:14px;
+ margin-right:10px;
  padding:12px 16px;
  border-radius:12px;
  border:1px solid rgba(214,163,74,.24);
@@ -129,134 +154,231 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-  <div class="eyebrow">Registry · Status</div>
+  <div class="eyebrow">Registry · Status Architecture</div>
   <h1>Satoshium Registry Status</h1>
 
   <p class="lead">
-    Registry Status defines both the current development condition of the
-    Satoshium Registry and the operational status model used to track Registry
-    Entries over time.
+    Registry Status defines the Registry-controlled condition of a Satoshium Registry
+    Entry, or SREG. It must remain distinct from Registry Lifecycle State and every
+    source-controlled status domain.
   </p>
 
   <p class="lead">
-    The central distinction is simple:
-    Certifier owns certification status. Registry owns registry status.
+    The central rule is simple: each institution owns the status values whose meaning
+    it creates.
   </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <div class="flow" aria-label="Status authority hierarchy">
+    <strong>Source Institution</strong>
+    <span>→</span>
+    <strong>Source-Record Status</strong>
+    <span>·</span>
+    <strong>Registry</strong>
+    <span>→</span>
+    <strong>Registry Status</strong>
+    <span>·</span>
+    <strong>Registry Lifecycle State</strong>
+  </div>
+
+  <div class="note">
+    Registry may report source-controlled status values, but it does not own or redefine
+    them. Registry owns only Registry Status and Registry Lifecycle State.
+  </div>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Current Status</h2>
+  <h2>Registry Development Condition</h2>
   <p>
-    Initial Framework Development
-  </p>
-  <p>
-    Registry currently exists as a developing public record framework designed
-    to support discoverability, continuity, organization, and preservation
-    across the Satoshium ecosystem.
+    Registry is in active institutional implementation, with its architecture,
+    rules, schemas, policies, record types, record profiles, and public pages being
+    formalized for operational use.
   </p>
 </article>
 
 <article class="card">
-  <h2>Current Priorities</h2>
+  <h2>Current Institutional Priority</h2>
   <p>
-    Core documentation, Registry Entry definitions, lifecycle states, schemas,
-    record types, policies, organizational structures, and public Registry pages.
+    Establish one coherent SREG framework with controlled identifiers, statuses,
+    lifecycle states, versions, relationships, schemas, validation, and publication.
   </p>
 </article>
 
 <article class="card">
-  <h2>Current Capabilities</h2>
+  <h2>Current Capability</h2>
   <p>
-    Registry currently supports conceptual development of record identification,
-    classification, lifecycle planning, relationship mapping, and ecosystem
-    integration.
+    Registry supports the architecture required to identify, classify, catalog,
+    relate, validate, publish, update, correct, supersede, revoke, and preserve SREGs.
   </p>
 </article>
 
 <article class="card">
-  <h2>Current Limitations</h2>
+  <h2>Current Limitation</h2>
   <p>
-    Registry remains in an early stage of development with evolving schemas,
-    classifications, interoperability requirements, and operational record
-    populations.
+    Operational record populations, automated validation, machine-readable indexes,
+    status mappings, and lifecycle automation remain subject to continuing implementation.
   </p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
   <h2>Status Ownership</h2>
 
   <p>
-    Status values must remain attached to the system that owns their meaning.
-    Certifier determines certification outcomes and certification status.
-    Registry determines the status of Registry Entries.
+    Every status value must remain attached to the institution that defines its meaning.
   </p>
 
+  <ul>
+    <li>Certifier owns Certification Status and Certification Outcome.</li>
+    <li>Attestor owns attestation status and attestation conclusions.</li>
+    <li>Atlas owns source-resource status for Atlas records.</li>
+    <li>Chronicle owns event status within Chronicle.</li>
+    <li>Anchor owns integrity-reference status.</li>
+    <li>Beacon owns signal status.</li>
+    <li>Navigator owns workflow status.</li>
+    <li>Registry owns Registry Status and Registry Lifecycle State.</li>
+  </ul>
+
   <div class="note">
-    Certification Outcome: Certified<br>
-    Certification Status: Active<br>
-    Registry Status: Registered
+    Status may be referenced across institutions. Authority over that status does not transfer.
   </div>
 </article>
-
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Certification Outcome</h2>
-  <p>
-    Certification Outcome describes the result of Certifier’s evaluation.
-    It belongs to Certifier, not Registry.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Certification Status</h2>
-  <p>
-    Certification Status describes the current condition of the certification
-    as maintained by Certifier.
-  </p>
-</article>
-
-<article class="card">
   <h2>Registry Status</h2>
   <p>
-    Registry Status describes the current condition of the SREG Registry Entry
-    created by Registry.
+    Registry Status describes the Registry-controlled operational condition of the SREG.
+    It answers whether Registry considers the entry eligible for active publication,
+    historical publication, restricted publication, or another approved Registry condition.
   </p>
 </article>
 
 <article class="card">
-  <h2>SREG Context</h2>
+  <h2>Registry Lifecycle State</h2>
   <p>
-    Registry may reference certification outcome and certification status, but
-    the SREG maintains its own Registry Status.
+    Registry Lifecycle State describes the institutional stage or condition of the SREG
+    over time. It supports creation, maintenance, replacement, revocation, and preservation.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source-Record Status</h2>
+  <p>
+    Source-Record Status is controlled by the Source Institution and describes the
+    condition of the Authoritative Source Record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source-Specific Status</h2>
+  <p>
+    Certification, attestation, tool, media, jurisdiction, signal, workflow, and integrity
+    statuses remain source-specific even when reproduced inside a SREG.
   </p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
+<article class="card">
+  <h2>Status Domains Must Remain Distinct</h2>
 
+  <div class="note">
+    Registry Status ≠ Registry Lifecycle State ≠ Source-Record Status ≠ Certification Status
+    ≠ Certification Outcome ≠ Attestation Status ≠ Tool Implementation Status
+  </div>
+
+  <p>
+    Reusing one status value across domains without explicit mapping creates ambiguity
+    and may misrepresent institutional authority.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Illustrative Status Combination</h2>
+
+  <div class="note">
+    Certification Outcome: Certified<br>
+    Certification Status: Revoked<br>
+    Source-Record Status: Published Historical Record<br>
+    Registry Status: Active Historical Entry<br>
+    Registry Lifecycle State: Active
+  </div>
+
+  <p>
+    This combination is valid because the certification may be revoked while Registry
+    continues to preserve an active historical SREG documenting that certification.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Potential Registry Status Values</h2>
+
+  <p>
+    Registry Status values should be defined through controlled governance.
+    Potential values may include:
+  </p>
+
+  <ul>
+    <li>Pending Review;</li>
+    <li>Active;</li>
+    <li>Active Historical Entry;</li>
+    <li>Restricted;</li>
+    <li>Suspended;</li>
+    <li>Withdrawn;</li>
+    <li>Archived.</li>
+  </ul>
+
+  <div class="note">
+    These values describe Registry publication or recognition of the SREG.
+    They do not describe the truth, validity, or authority of the Source Record.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
 <article class="card">
   <h2>Registry Lifecycle States</h2>
 
   <p>
-    Registry uses lifecycle states to describe the institutional condition of
-    Registry Entries over time.
+    Potential approved lifecycle states may include:
   </p>
 
+  <div class="flow" aria-label="Registry lifecycle states">
+    <strong>Pending Registration</strong>
+    <span>→</span>
+    <strong>Registered</strong>
+    <span>→</span>
+    <strong>Active</strong>
+    <span>·</span>
+    <strong>Updated</strong>
+    <span>·</span>
+    <strong>Superseded</strong>
+    <span>·</span>
+    <strong>Revoked</strong>
+    <span>·</span>
+    <strong>Archived</strong>
+  </div>
+
   <div class="note">
-    Pending Registration → Registered → Active → Updated → Superseded → Revoked → Archived
+    These states do not necessarily form one mandatory linear chain. A SREG moves only
+    through the states required by its actual institutional history.
   </div>
 </article>
-
 </section>
 
 <section class="grid">
@@ -264,131 +386,244 @@ h1{
 <article class="card">
   <h2>Pending Registration</h2>
   <p>
-    The entry has been identified for registration but has not yet been formally
-    entered into the Registry.
+    The source has been identified for possible registration, but the SREG has not yet
+    completed authority, registrability, schema, and publication review.
   </p>
 </article>
 
 <article class="card">
   <h2>Registered</h2>
   <p>
-    The entry has been formally created within Registry and assigned its Registry
-    Identifier.
+    Registry has created the SREG, assigned its Registry Identifier, and completed the
+    minimum required registration controls.
   </p>
 </article>
 
 <article class="card">
   <h2>Active</h2>
   <p>
-    The entry is current, discoverable, and recognized as the active Registry
-    representation of the referenced record.
+    The SREG is the current active Registry representation of the referenced Source Record
+    or is intentionally maintained as an active historical entry.
   </p>
 </article>
 
 <article class="card">
   <h2>Updated</h2>
   <p>
-    The entry has been modified to reflect new information, corrected references,
-    revised metadata, or Registry-maintained changes.
+    Registry has published a revised SREG version reflecting new source information,
+    changed Registry metadata, relationships, references, or schema migration.
   </p>
 </article>
 
 <article class="card">
   <h2>Superseded</h2>
   <p>
-    The entry has been replaced by a newer Registry Entry or version while
-    remaining preserved for historical reference.
+    A distinct successor SREG or replacement Registry object has taken its place.
+    The prior entry remains discoverable for historical continuity.
   </p>
 </article>
 
 <article class="card">
   <h2>Revoked</h2>
   <p>
-    The entry has been withdrawn from active recognition due to invalidation,
-    reversal, material error, loss of source authority, or another stated reason.
+    Registry has withdrawn the SREG from active Registry recognition because of a
+    Registry-controlled defect, invalid registration, or another documented reason.
   </p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
   <h2>Archived</h2>
 
   <p>
-    The entry is no longer active but remains preserved as part of the historical
-    Registry record.
+    The SREG is preserved outside active operational use.
   </p>
 
   <div class="note">
-    Archived does not mean deleted. It means preserved outside active operational use.
+    Archived does not mean deleted. It means preserved with identity, source references,
+    versions, relationships, corrections, and history intact.
   </div>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
+<article class="card">
+  <h2>Status Transition Requirements</h2>
 
+  <p>
+    A Registry Status or Lifecycle transition should preserve:
+  </p>
+
+  <ul>
+    <li>affected Registry Identifier;</li>
+    <li>prior value;</li>
+    <li>new value;</li>
+    <li>effective date;</li>
+    <li>reason;</li>
+    <li>authority for the change;</li>
+    <li>affected Registry Entry Version;</li>
+    <li>related source-status change, when applicable;</li>
+    <li>supporting reference;</li>
+    <li>successor or archival reference, when applicable.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Status Mapping</h2>
+
+  <p>
+    Registry may map source-controlled statuses to Registry display or workflow behavior,
+    but the mapping must be explicit.
+  </p>
+
+  <p>
+    A mapping should identify:
+  </p>
+
+  <ul>
+    <li>source status domain;</li>
+    <li>source status value;</li>
+    <li>Registry interpretation;</li>
+    <li>Registry Status effect, if any;</li>
+    <li>Registry Lifecycle effect, if any;</li>
+    <li>whether human review is required;</li>
+    <li>effective version;</li>
+    <li>governing policy.</li>
+  </ul>
+
+  <div class="note">
+    Mapping does not transfer ownership of the source-controlled status to Registry.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
 <article class="card">
   <h2>Relationship to Certifier</h2>
 
+  <div class="flow" aria-label="Certification to Registry path">
+    <strong>Certification Package</strong>
+    <span>→</span>
+    <strong>SCRD</strong>
+    <span>→</span>
+    <strong>Certification SREG</strong>
+  </div>
+
   <p>
-    Registry receives the SCRD from Certifier and creates an independent SREG
-    Registry Entry. Certifier remains the authority for certification. Registry
-    becomes the permanent public catalog of certified records and their lifecycle
-    state.
+    Certifier remains authoritative for Certification Outcome, Certification Status,
+    the Certification Package, SCPR, SCR, and SCRD.
   </p>
 
-  <div class="note">
-    Certification Package → SCRD → SREG
-  </div>
+  <p>
+    Registry remains authoritative for the Certification SREG, Registry Status,
+    Registry Lifecycle State, Registry Entry Version, Registry relationships, and
+    Registry publication history.
+  </p>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Relationship to the Ecosystem</h2>
+  <h2>Relationship to the Suite</h2>
 
   <p>
-    Registry serves as a connecting layer across the broader Satoshium ecosystem.
+    Registry connects Suite institutions while preserving status ownership.
   </p>
 
   <div class="note">
-    Atlas creates intelligence.
-    Certifier reviews it.
-    Registry catalogs it.
-    Chronicle remembers it.
-    Anchor preserves it.
-    Attestor verifies it.
+    Atlas creates jurisdiction intelligence. Certifier creates certification records.
+    Chronicle creates historical events. Anchor creates integrity references.
+    Beacon creates signals. Attestor creates attestations. Navigator creates workflows.
+    Registry creates SREGs.
   </div>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Future Milestones</h2>
+  <h2>Validation Requirements</h2>
 
   <p>
-    Future milestones may include expanded record populations, machine-readable
-    schemas, validation frameworks, preservation references, relationship
-    mapping, lifecycle automation, and cross-system interoperability.
+    Status validation should confirm:
   </p>
 
-  <p>
-    Registry is being built deliberately, with long-term continuity prioritized
-    over rapid expansion.
-  </p>
-
-  <a class="btn" href="/registry/">
-    Back to Registry →
-  </a>
+  <ul>
+    <li>Registry Status uses an approved Registry-controlled value;</li>
+    <li>Registry Lifecycle State uses an approved lifecycle value;</li>
+    <li>Source-Record Status remains attributable to the Source Institution;</li>
+    <li>source-specific statuses are stored in the correct domains;</li>
+    <li>status mappings are explicit;</li>
+    <li>transition history is preserved;</li>
+    <li>human-readable and machine-readable forms agree;</li>
+    <li>status values do not imply unsupported authority.</li>
+  </ul>
 </article>
+</section>
 
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Requirements</h2>
+
+  <p>
+    Human-readable and machine-readable forms of the same SREG should agree on:
+  </p>
+
+  <ul>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>Source-Record Status;</li>
+    <li>source-specific status values;</li>
+    <li>effective dates;</li>
+    <li>version context;</li>
+    <li>transition references;</li>
+    <li>successor, revocation, or archival references.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Future Development</h2>
+
+  <p>
+    Future status capabilities may include:
+  </p>
+
+  <ul>
+    <li>machine-readable status enumerations;</li>
+    <li>status transition records;</li>
+    <li>source-to-Registry mapping tables;</li>
+    <li>automated consistency checks;</li>
+    <li>status history indexes;</li>
+    <li>cross-institution synchronization;</li>
+    <li>status-based catalog filters;</li>
+    <li>lifecycle automation with human review controls.</li>
+  </ul>
+
+  <p>
+    Future development must preserve institutional status ownership.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Status Principle</h2>
+
+  <div class="note">
+    Source Institutions own source status. Registry owns Registry Status.
+    Registry Lifecycle State describes the SREG. Historical preservation does not
+    require pretending that the source remains active.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/lifecycle/">Open Lifecycle →</a>
+  <a class="btn" href="/registry/schemas/">Open Schemas →</a>
+</article>
 </section>
 
 </main>
@@ -396,7 +631,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Certifier determines certification. Registry preserves the record of where certification can be found.
+    Status follows authority. Lifecycle follows the SREG. History remains preserved.
   </div>
   <hr>
   <div id="footer-container"></div>
