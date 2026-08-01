@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Registry Entry Model</title>
-<meta name="description" content="Satoshium Registry Entry Model — defines the canonical Registry object, the SREG, used to catalog authoritative records across the Satoshium ecosystem.">
+<meta name="description" content="Satoshium Registry Entry Model — defines the SREG as Registry's canonical operational object and establishes its relationship to record types, source institutions, source records, statuses, versions, references, and relationships.">
 <link rel="canonical" href="https://satoshium.us/registry/entry-model/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -28,7 +28,9 @@
  --gold2:#f4c36a;
  --line:rgba(214,163,74,.18);
 }
+
 *{box-sizing:border-box}
+
 html,body{
  margin:0;
  padding:0;
@@ -38,9 +40,12 @@ html,body{
  line-height:1.6;
  scroll-behavior:smooth;
 }
+
 body{padding-top:80px}
+
 a{color:var(--gold2);text-decoration:none}
 a:hover{color:var(--gold)}
+
 .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
 .content{padding:34px 18px 64px}
 
@@ -98,10 +103,24 @@ h1{
  color:var(--gold2);
 }
 
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
 .card p{
  margin:0 0 14px;
  color:var(--muted);
 }
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+ color:var(--muted);
+}
+
+.card li{margin:7px 0}
 
 .note{
  margin-top:16px;
@@ -112,9 +131,26 @@ h1{
  color:var(--muted);
 }
 
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
 .btn{
  display:inline-block;
  margin-top:14px;
+ margin-right:10px;
  padding:12px 16px;
  border-radius:12px;
  border:1px solid rgba(214,163,74,.24);
@@ -127,9 +163,7 @@ h1{
 
 .muted{color:var(--muted)}
 
-code{
- color:var(--gold2);
-}
+code{color:var(--gold2)}
 
 @media (max-width:900px){
  .grid{grid-template-columns:1fr}
@@ -146,18 +180,46 @@ code{
 <main class="wrap content">
 
 <section class="hero">
-  <div class="eyebrow">Registry · Entry Model</div>
+  <div class="eyebrow">Registry · Canonical Operational Object</div>
   <h1>Satoshium Registry Entry Model</h1>
 
   <p class="lead">
-    The Registry Entry Model defines the canonical object preserved by the
-    Satoshium Registry: the Satoshium Registry Entry, or SREG.
+    The Registry Entry Model defines the Satoshium Registry Entry, or SREG,
+    as the canonical operational object of Satoshium Registry.
   </p>
 
   <p class="lead">
-    Registry entries answer a simple question:
-    how should an authoritative record be cataloged?
+    A SREG identifies, classifies, references, connects, versions, and preserves
+    the discoverability of an authoritative source record without transferring
+    authority away from the institution that created it.
   </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    The SREG implements the Satoshium Suite constitutional hierarchy at the
+    Registry institutional layer.
+  </p>
+
+  <div class="flow" aria-label="SREG constitutional hierarchy">
+    <strong>Suite Standards</strong>
+    <span>→</span>
+    <strong>Suite Methodology</strong>
+    <span>→</span>
+    <strong>Suite Interoperability</strong>
+    <span>→</span>
+    <strong>Registry Implementation</strong>
+    <span>→</span>
+    <strong>SREG</strong>
+  </div>
+
+  <div class="note">
+    Suite Standards define shared expectations. Suite Methodology defines
+    repeatable implementation principles. Suite Interoperability preserves
+    institutional boundaries. Registry applies those foundations through the SREG.
+  </div>
 </section>
 
 <section class="grid">
@@ -165,86 +227,162 @@ code{
 <article class="card">
   <h2>What Is an SREG?</h2>
   <p>
-    An SREG is a Satoshium Registry Entry. It is the Registry’s primary
-    operational artifact: a cataloged, version-aware, publicly referenceable
-    entry that preserves the existence, status, relationships, and source
-    references of an authoritative record.
+    A SREG is an independently maintained Registry record that identifies,
+    classifies, references, and connects an Authoritative Source Record.
   </p>
 </article>
 
 <article class="card">
-  <h2>Why Registry Creates SREG</h2>
+  <h2>Why Registry Creates SREGs</h2>
   <p>
-    Registry creates SREG entries so authoritative records produced elsewhere
-    in the Satoshium Suite can be discovered, referenced, related, and preserved
-    without transferring authority away from the system that created them.
+    Registry creates SREGs so records produced by Suite institutions can remain
+    publicly discoverable, version-aware, related, and traceable without losing
+    source ownership or institutional authority.
   </p>
 </article>
 
 <article class="card">
   <h2>Canonical Object</h2>
   <p>
-    Certifier’s canonical object is the Certification Package.
-    Registry’s canonical object is the SREG.
+    The SREG is Registry's canonical operational object. Other institutions retain
+    their own canonical objects, such as the Certification Package, Historical Event,
+    Integrity Reference, Discovery Signal, Trust Statement, and Workflow Definition.
   </p>
 </article>
 
 <article class="card">
-  <h2>Registry Catalogs</h2>
+  <h2>Registry Authority</h2>
   <p>
-    Registry does not certify, score, validate evidence, or alter certification
-    outcomes. Registry catalogs records and preserves their discoverability.
+    Registry is authoritative for the SREG, its identifier, classification,
+    Registry status, Registry lifecycle, relationships, versions, corrections,
+    and public catalog presentation.
   </p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Core Relationship</h2>
+  <h2>Canonical Operational Hierarchy</h2>
 
   <p>
-    The architectural relationship between Certifier and Registry is intentionally
-    direct. Certifier produces the certification. Registry catalogs the resulting
-    public certified record.
+    The Registry Entry Model is organized through four distinct layers.
   </p>
 
-  <div class="note">
-    Certification Package → SCRD → SREG
+  <div class="flow" aria-label="Canonical Registry hierarchy">
+    <strong>Satoshium Registry</strong>
+    <span>→</span>
+    <strong>Registry Entry (SREG)</strong>
+    <span>→</span>
+    <strong>Registry Record Type</strong>
+    <span>→</span>
+    <strong>Authoritative Source Record</strong>
   </div>
 
+  <h3>Satoshium Registry</h3>
   <p>
-    The Certification Package remains the canonical certification. The SCRD is
-    the public Certified Record produced by Certifier. Registry receives the
-    SCRD and creates an independent SREG Registry Entry.
+    The institution responsible for the public catalog and Registry operations.
+  </p>
+
+  <h3>Registry Entry (SREG)</h3>
+  <p>
+    The canonical Registry object that maintains Registry-owned information about
+    the record being cataloged.
+  </p>
+
+  <h3>Registry Record Type</h3>
+  <p>
+    The controlled primary classification assigned to the SREG.
+  </p>
+
+  <h3>Authoritative Source Record</h3>
+  <p>
+    The record created and maintained by the originating institution.
   </p>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Registry References Rather Than Duplicates</h2>
+  <h2>Source Authority</h2>
 
   <p>
-    An SREG may reference a Certification Package, SCRD, source system, public
-    page, receipt, attestation, or related Registry Entry. It does not become
-    those records.
+    A SREG does not inherit the authority of the Source Record.
+  </p>
+
+  <p>
+    The Source Institution remains authoritative for:
+  </p>
+
+  <ul>
+    <li>source-record content;</li>
+    <li>source-record identifier;</li>
+    <li>source-record version;</li>
+    <li>source-record status;</li>
+    <li>certification outcomes;</li>
+    <li>attestation conclusions;</li>
+    <li>historical event content;</li>
+    <li>integrity references;</li>
+    <li>discovery signals;</li>
+    <li>jurisdiction intelligence;</li>
+    <li>workflow definitions.</li>
+  </ul>
+
+  <div class="note">
+    Registry may report or reference source-controlled values. Registry does not
+    redefine them.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Certification Relationship</h2>
+
+  <p>
+    The first operational Certifier-to-Registry relationship follows this path:
   </p>
 
   <div class="note">
-    Registry references authoritative records. It does not duplicate them,
-    replace them, or claim ownership over their authority.
+    Atlas Resource → Certifier Evaluation → Certification Package → SCRD → SREG
   </div>
 
   <p>
-    This preserves provenance, reduces ambiguity, prevents record drift, and
-    allows each Suite system to maintain its own responsibility.
+    The Certification Package remains Certifier's canonical certification object.
+    The SCRD remains a Certifier-owned certified record. Registry creates an
+    independent SREG that catalogs and references those records.
+  </p>
+
+  <p>
+    This is one interoperability path, not the limit of Registry scope. Registry
+    may also catalog Atlas resources, Chronicle events, Anchor records, Beacon
+    signals, Attestor trust statements, Navigator workflows, tools, media, and
+    other approved Source Records.
   </p>
 </article>
+</section>
 
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry References Rather Than Replaces</h2>
+
+  <p>
+    A SREG may reference a Source Record, Certification Package, SCRD, repository,
+    public page, integrity reference, attestation, historical event, discovery signal,
+    workflow definition, or related SREG.
+  </p>
+
+  <div class="note">
+    Registry preserves the structured path back to authority. It does not duplicate
+    every source, absorb source ownership, or create a substitute source record.
+  </div>
+
+  <p>
+    This approach preserves provenance, limits record drift, strengthens
+    interoperability, and allows each Suite institution to retain its own
+    responsibility.
+  </p>
+</article>
 </section>
 
 <section class="grid">
@@ -252,115 +390,235 @@ code{
 <article class="card">
   <h2>Registry Identifier</h2>
   <p>
-    Every SREG has a Registry Identifier that uniquely identifies the entry
-    within the Registry.
+    Every SREG receives a stable and unique Registry Identifier that identifies the
+    SREG itself.
   </p>
 </article>
 
 <article class="card">
-  <h2>Record Type</h2>
+  <h2>Registry Record Type</h2>
   <p>
-    Every SREG identifies the type of record being registered, such as a
-    certified record, jurisdiction record, media record, tool record, or future
-    supported record class.
+    Every SREG receives a controlled Record Type that governs classification,
+    validation, profile application, discoverability, and relationship behavior.
   </p>
 </article>
 
 <article class="card">
-  <h2>Source System</h2>
+  <h2>Source Institution</h2>
   <p>
-    Every SREG identifies the system that produced the source record, such as
-    Certifier, Atlas, Chronicle, Anchor, Beacon, Attestor, Navigator, or an
-    approved external source.
+    Every SREG identifies the institution that created and maintains the
+    Authoritative Source Record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source-System Identifier</h2>
+  <p>
+    Every SREG preserves the source identifier when one exists. The source identifier
+    remains distinct from the Registry Identifier.
   </p>
 </article>
 
 <article class="card">
   <h2>Source Record</h2>
   <p>
-    Every SREG references the authoritative source record being cataloged.
-    Registry preserves the reference without taking ownership of the source.
+    Every SREG identifies and references the Authoritative Source Record being
+    cataloged.
   </p>
 </article>
 
 <article class="card">
-  <h2>Status and Version</h2>
+  <h2>Registry and Source Status</h2>
   <p>
-    Every SREG preserves status and version information so Registry entries can
-    remain understandable as records evolve over time.
+    Every SREG distinguishes Registry Status from Source-Record Status and other
+    institution-controlled status values.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Versions</h2>
+  <p>
+    Every SREG preserves applicable Registry Entry, schema, Record-Type Profile,
+    and Source-Record version information.
   </p>
 </article>
 
 <article class="card">
   <h2>Relationships</h2>
   <p>
-    Every SREG may preserve relationships to packages, receipts, attestations,
-    source records, public references, other Registry Entries, and future Suite
-    objects.
+    Every SREG may preserve typed relationships to other SREGs, Source Records,
+    institutions, schemas, events, integrity references, attestations, and workflows.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Public References</h2>
+  <p>
+    Every SREG should preserve approved public locations, canonical URLs,
+    repository paths, machine-readable records, or other durable references.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Lifecycle History</h2>
+  <p>
+    Every SREG should preserve registration, update, correction, supersession,
+    revocation, and archival history as applicable.
   </p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Expected Registry Entry Fields</h2>
+  <h2>Conceptual SREG Fields</h2>
 
   <p>
-    The final machine-readable schema will be defined separately. At this stage,
-    the Registry Entry Model introduces the expected conceptual fields that every
-    SREG should preserve.
+    The machine-readable Registry Schema Specification defines the authoritative
+    field names, data types, required values, and validation rules. The Entry Model
+    establishes the conceptual information that a complete SREG must support.
   </p>
 
   <div class="note">
-    Registry Identifier · Record Type · Source System · Source Record · Status ·
-    Version · Relationships · Public References · Registration Date · Last Updated
+    Registry Identifier · Registry Record Type · Title · Source Institution ·
+    Source-System Identifier · Authoritative Source Record · Source-Record Version ·
+    Source-Record Status · Registry Status · Registry Lifecycle State · SREG Version ·
+    Schema Version · Public References · Relationships · Registration Date ·
+    Last Updated · Correction History · Supersession · Revocation · Archival
   </div>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema Architecture</h2>
 
+  <p>
+    SREGs are implemented through a shared schema hierarchy.
+  </p>
+
+  <div class="flow" aria-label="SREG schema hierarchy">
+    <strong>Suite Schema Standard</strong>
+    <span>→</span>
+    <strong>Registry Schema Specification</strong>
+    <span>→</span>
+    <strong>SREG Base Schema</strong>
+    <span>→</span>
+    <strong>Record-Type Profile</strong>
+    <span>→</span>
+    <strong>Published SREG</strong>
+  </div>
+
+  <p>
+    The SREG Base Schema defines the common structure. Record-Type Profiles add
+    type-specific requirements without creating unrelated Registry record models.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Status and Source Status</h2>
+
+  <p>
+    The condition of the SREG and the condition of the Source Record must remain
+    separate.
+  </p>
+
+  <div class="note">
+    Certification Outcome: Certified · Certification Status: Revoked ·
+    Registry Status: Active
+  </div>
+
+  <p>
+    In this example, the certification is revoked, but the SREG remains active as
+    a public historical catalog entry that accurately reports the source condition.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version and Correction Model</h2>
+
+  <p>
+    A SREG may change because Registry-owned information changes, because the Source
+    Record changes, or because the applicable schema evolves.
+  </p>
+
+  <p>
+    Those changes must remain distinguishable.
+  </p>
+
+  <div class="note">
+    Prior SREG Version → Documented Change → Replacement SREG Version
+  </div>
+
+  <p>
+    Material corrections should preserve what changed, why it changed, when it
+    changed, which version was affected, and which version replaced it.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Human-Readable and Machine-Readable Forms</h2>
+
+  <p>
+    Registry should publish equivalent human-readable and machine-readable
+    representations of the same SREG.
+  </p>
+
+  <ul>
+    <li>Human-readable Registry Entry page.</li>
+    <li>Machine-readable SREG JSON record.</li>
+    <li>Catalog and relationship indexes.</li>
+    <li>Version and correction history.</li>
+  </ul>
+
+  <div class="note">
+    Official representations of the same SREG must agree on identity,
+    classification, status, version, source, and relationships.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
 <article class="card">
   <h2>Long-Term Discoverability</h2>
 
   <p>
-    SREG entries allow records to remain findable after public pages move,
-    schemas mature, systems evolve, or new Suite tools are introduced.
+    SREGs allow records to remain identifiable and understandable after public pages
+    move, schemas evolve, Source Records change, institutions mature, or new Suite
+    systems are introduced.
   </p>
 
   <p>
-    Registry becomes the catalog layer that helps the Satoshium Suite remember
-    where records came from, what they reference, and how they relate to the
-    broader ecosystem.
+    Registry preserves the identity, provenance, source references, relationships,
+    versions, and historical context necessary to find and interpret the record later.
   </p>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Future Interoperability</h2>
+  <h2>Entry Model Principle</h2>
 
   <p>
-    Because SREG entries preserve identifiers, statuses, source systems,
-    relationships, public references, registration dates, and update history,
-    they can support future interoperability across Certifier, Chronicle,
-    Anchor, Beacon, Attestor, Navigator, Atlas, and external systems.
+    The SREG is not a copy of institutional authority. It is Registry's durable,
+    structured representation of how that authority may be found and understood.
   </p>
 
   <div class="note">
-    Registry preserves records. Registry does not create their authority.
+    The source retains authority. The SREG preserves identity, classification,
+    relationships, versions, and discovery.
   </div>
 
-  <a class="btn" href="/registry/">
-    Back to Registry →
-  </a>
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/record-types/">Open Record Types →</a>
+  <a class="btn" href="/registry/schemas/">Open Schemas →</a>
 </article>
-
 </section>
 
 </main>
@@ -368,7 +626,7 @@ code{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Records preserve authority at the source. Registry preserves the path back to it.
+    The source holds authority. The SREG preserves the path back to it.
   </div>
   <hr>
   <div id="footer-container"></div>
