@@ -1,758 +1,738 @@
-# Satoshium Registry Lifecycle
-
-**Institutional lifecycle framework for Satoshium Registry Entries**
-
-This directory contains the public documentation and supporting materials for the Satoshium Registry Lifecycle.
-
-Registry Lifecycle defines the institutional states, permitted transitions, version events, correction events, and preservation rules governing a Satoshium Registry Entry, or SREG.
-
-Lifecycle describes the condition of the SREG within Registry.
-
-It does not replace the lifecycle or status of the Authoritative Source Record.
-
----
-
-## Purpose
-
-The purpose of Registry Lifecycle is to provide a controlled institutional model for understanding how a SREG changes over time.
-
-The lifecycle framework supports:
-
-- registration;
-- activation;
-- update;
-- correction;
-- supersession;
-- revocation;
-- archival;
-- version preservation;
-- status separation;
-- historical continuity;
-- machine-readable validation;
-- public transparency.
-
-Registry Lifecycle exists to ensure that state changes remain documented without erasing identity, provenance, versions, or source relationships.
-
----
-
-## Constitutional Position
-
-Registry Lifecycle operates beneath the Satoshium Suite constitutional hierarchy:
-
-```text
-Suite Standards
-  ↓
-Registry Policy
-  ↓
-Registry Procedure
-  ↓
-SREG Lifecycle
-  ↓
-Preserved History
-```
-
-Lifecycle implementation must remain consistent with:
-
-- Satoshium Suite Standards;
-- Satoshium Suite Methodology;
-- Satoshium Suite Interoperability;
-- Registry Rules;
-- Registry Policies;
-- Registry Procedures;
-- Registry Schemas;
-- Registry Corrections;
-- Registry Status.
-
-Lifecycle changes must remain:
-
-- documented;
-- attributable;
-- version-aware;
-- schema-valid;
-- interoperable;
-- historically preserved;
-- consistent across official publication formats.
-
----
-
-## Lifecycle Scope
-
-Registry Lifecycle applies to the SREG.
-
-It governs:
-
-- Registry Lifecycle State;
-- Registry Status transitions where applicable;
-- Registry Entry Versions;
-- update events;
-- correction events;
-- supersession;
-- revocation;
-- archival;
-- lifecycle history;
-- transition validation;
-- lifecycle publication.
-
-Registry Lifecycle does not govern:
-
-- Certification Lifecycle;
-- Certification Status;
-- Certification Outcome;
-- Attestation lifecycle;
-- Source-Record lifecycle;
-- Source Institution status;
-- Chronicle event chronology;
-- Anchor integrity status;
-- Beacon discovery status;
-- Navigator workflow state.
-
-Those values remain controlled by their applicable institutions.
-
----
-
-## Lifecycle, Status, and Synchronization
-
-These concepts must remain distinct.
-
-### Lifecycle State
-
-Describes the institutional stage or condition of the SREG.
-
-### Registry Status
-
-Describes the current operational designation assigned to the SREG.
-
-### Source-Record Status
-
-Describes the condition of the Authoritative Source Record as determined by the Source Institution.
-
-### Synchronization
-
-Describes technical alignment between systems or publications.
-
-Lifecycle is not status.
-
-Lifecycle is not synchronization.
-
-Source lifecycle is not Registry lifecycle.
-
----
-
-## Core Lifecycle States
-
-Initial Registry Lifecycle States include:
-
-- Pending Registration;
-- Registered;
-- Active;
-- Updated;
-- Superseded;
-- Revoked;
-- Archived.
-
-These states do not form one mandatory linear sequence.
-
-The appropriate transition depends on:
-
-- the prior lifecycle state;
-- the reason for change;
-- the condition of the SREG;
-- the condition of the Source Record;
-- the applicable Registry Policy;
-- the applicable Registry Procedure;
-- version and publication requirements.
-
----
-
-## Lifecycle Model
-
-Illustrative transition patterns include:
-
-```text
-Pending Registration
-  ↓
-Registered
-  ↓
-Active
-```
-
-```text
-Active
-  ↓
-Updated
-  ↓
-Active
-```
-
-```text
-Active
-  ↓
-Superseded
-  ↓
-Archived
-```
-
-```text
-Active
-  ↓
-Revoked
-  ↓
-Archived
-```
-
-```text
-Registered
-  ↓
-Revoked
-```
-
-These examples do not define every possible transition.
-
-The authoritative transition rules should be defined in Registry Policy, Procedure, and machine-readable validation logic.
-
----
-
-## Pending Registration
-
-A proposed SREG is in **Pending Registration** when it has been identified or received but has not completed formal Registry intake.
-
-Pending Registration may include:
-
-- source identification;
-- source-authority confirmation;
-- registrability review;
-- Record Type assignment;
-- reference collection;
-- relationship preparation;
-- schema preparation;
-- pre-publication review.
-
-A Pending Registration entry does not yet constitute an operational SREG.
-
----
-
-## Registered
-
-A SREG is **Registered** when:
-
-- the Registry Entry has been formally created;
-- a Registry Identifier has been assigned;
-- required Registry fields exist;
-- source attribution has been established;
-- the entry has completed the required registration action.
-
-Registered does not necessarily mean Active.
-
-A Registered SREG may still require final publication or operational activation.
-
----
-
-## Active
-
-A SREG is **Active** when it is the current discoverable Registry representation of the referenced Source Record.
-
-An Active SREG should:
-
-- be publicly discoverable;
-- have a valid Registry Identifier;
-- identify the Source Institution;
-- identify the Authoritative Source Record;
-- preserve Registry and source status values separately;
-- identify applicable versions;
-- satisfy the applicable schema;
-- have consistent human-readable and machine-readable forms.
-
-Active does not mean that the Source Record itself is active.
-
-A historical SREG may remain Active while accurately reporting that the Source Record is revoked, expired, retired, or superseded.
-
----
-
-## Updated
-
-**Updated** describes a documented Registry event in which the SREG has changed.
-
-Updated may function as an event between active versions rather than as a permanent terminal state.
-
-An update may be triggered by:
-
-- corrected metadata;
-- new or repaired public references;
-- new relationships;
-- changed Source-Record version;
-- changed Source-Record status;
-- schema migration;
-- Record Type refinement;
-- publication reconciliation;
-- improved Registry-owned information.
-
-A typical update pattern is:
-
-```text
-Prior Active Version
-  ↓
-Updated Event
-  ↓
-Replacement Active Version
-```
-
----
-
-## Superseded
-
-A SREG or SREG version is **Superseded** when it has been replaced by a newer Registry object or version.
-
-Supersession means replaced.
-
-It does not necessarily mean invalid.
-
-A superseded entry should preserve:
-
-- Registry Identifier;
-- final SREG version;
-- replacement Registry Identifier or version;
-- supersession date;
-- supersession reason;
-- prior source references;
-- relationship history;
-- prior Registry Status;
-- prior lifecycle history.
-
-A superseded entry may later be archived.
-
----
-
-## Revoked
-
-A SREG is **Revoked** when Registry withdraws it from active recognition for a documented reason.
-
-Possible reasons include:
-
-- invalid registration;
-- material Registry error;
-- loss of source authority;
-- irreparable misclassification;
-- institutional reversal;
-- invalid source attribution;
-- another approved governance reason.
-
-A Revocation Record should preserve:
-
-- Registry Identifier;
-- affected SREG version;
-- revocation reason;
-- revocation date;
-- responsible Registry action;
-- Source Record impact;
-- resulting Registry Status;
-- replacement or archival path.
-
-Revocation preserves accountability.
-
-It does not require deletion.
-
----
-
-## Archived
-
-A SREG is **Archived** when it is no longer in active operational use but remains preserved as part of Registry history.
-
-Archived does not mean deleted.
-
-Archival should preserve:
-
-- Registry identity;
-- prior versions;
-- source attribution;
-- source references;
-- relationships;
-- correction history;
-- supersession history;
-- revocation history;
-- archival date;
-- archival reason.
-
-Archived entries should remain discoverable through appropriate historical, supersession, revocation, or archival indexes.
-
----
-
-## Transition Principles
-
-Every lifecycle transition should satisfy the following principles:
-
-- the prior state must be valid;
-- the proposed next state must be permitted;
-- the reason for transition must be documented;
-- the event date must be preserved;
-- the responsible Registry action must be attributable;
-- the affected SREG version must be identified;
-- source impact must be recorded where applicable;
-- required references must remain preserved;
-- Registry Status and Source-Record Status must remain distinct;
-- human-readable and machine-readable records must remain consistent;
-- invalid transitions must fail validation.
-
----
-
-## Permitted Transition Examples
-
-### Pending Registration → Registered
-
-Occurs when intake is complete, a Registry Identifier is assigned, required fields exist, and the SREG is formally created.
-
-### Registered → Active
-
-Occurs when the SREG is approved for current public catalog use and published in all required official forms.
-
-### Active → Updated → Active
-
-Occurs when the SREG is corrected or revised and the replacement version becomes the current active entry.
-
-### Active → Superseded
-
-Occurs when a newer SREG or version replaces the current one.
-
-### Active → Revoked
-
-Occurs when Registry withdraws the SREG from active recognition.
-
-### Superseded → Archived
-
-Occurs when the superseded entry is preserved as a historical Registry object.
-
-### Revoked → Archived
-
-Occurs when the revoked entry is preserved outside active use while retaining the revocation record and prior references.
-
----
-
-## Corrections and Lifecycle
-
-Correction and lifecycle are related but separate.
-
-### Registry Correction
-
-Applies to Registry-owned information.
-
-A correction may create a new SREG version without changing the Source Record.
-
-### Source Update
-
-Reflects a change made by the Source Institution.
-
-A source update may require a SREG update without constituting a Registry correction.
-
-Registry should preserve which event occurred and why.
-
-Example:
-
-```text
-Source Record changes
-  ↓
-Registry updates source-reported metadata
-  ↓
-New SREG version published
-```
-
-Example:
-
-```text
-Registry metadata error identified
-  ↓
-Registry correction performed
-  ↓
-New SREG version published
-```
-
-These events should not be recorded as though they were the same action.
-
----
-
-## Lifecycle and Versions
-
-Registry distinguishes among:
-
-- Registry Entry Version;
-- SREG schema version;
-- Record-Type Profile version;
-- Registry specification version;
-- Source-Record version;
-- Source Institution publication version;
-- applicable Suite Standards version;
-- applicable Suite Methodology version.
-
-Lifecycle events should preserve the version state before and after the transition.
-
-Example:
-
-```text
-SREG Version 1.0.0 — Active
-  ↓
-Update Event
-  ↓
-SREG Version 1.1.0 — Active
-```
-
-The lifecycle event should not erase the prior version.
-
----
-
-## Registry Lifecycle and Source Lifecycle
-
-Registry Lifecycle and Source-Record Lifecycle must remain separate.
-
-Example:
-
-```text
-Source-Record Status: Revoked
-Registry Lifecycle State: Active
-Registry Status: Active Historical Entry
-```
-
-In this example:
-
-- the Source Institution has revoked the Source Record;
-- Registry preserves the SREG as an active historical catalog entry;
-- the SREG accurately reports the source condition;
-- discoverability and continuity remain preserved.
-
----
-
-## Lifecycle Event Record
-
-A material lifecycle event should preserve, at minimum:
-
-- Registry Identifier;
-- prior Lifecycle State;
-- new Lifecycle State;
-- prior Registry Status;
-- new Registry Status;
-- event date;
-- event reason;
-- affected SREG version;
-- replacement version or entry;
-- Source Record impact;
-- Source-Record Status;
-- related correction record;
-- related supersession record;
-- related revocation record;
-- related archival record;
-- publication status;
-- schema version.
-
----
-
-## Validation Requirements
-
-Registry should validate lifecycle events against approved transition rules.
-
-Validation may confirm:
-
-- the prior Lifecycle State is valid;
-- the next Lifecycle State is permitted;
-- the transition reason is documented;
-- the responsible Registry action is identified;
-- required version metadata exists;
-- required source references remain preserved;
-- Registry and source status values remain distinct;
-- the event satisfies the applicable schema;
-- human-readable and machine-readable forms agree;
-- required history records exist.
-
-Lifecycle validation does not verify or redefine the Source Record.
-
----
-
-## Human-Readable Publication
-
-Lifecycle changes should be reflected in human-readable artifacts such as:
-
-- Registry Entry pages;
-- lifecycle-history sections;
-- version-history pages;
-- correction-history pages;
-- supersession notices;
-- revocation notices;
-- archival pages;
-- public catalog indexes.
-
-Users should be able to understand:
-
-- the current Lifecycle State;
-- the current Registry Status;
-- the current Source-Record Status;
-- what changed;
-- why it changed;
-- which version is current;
-- which prior versions remain preserved.
-
----
-
-## Machine-Readable Publication
-
-Lifecycle information may be published through:
-
-- SREG JSON records;
-- lifecycle event records;
-- version manifests;
-- correction records;
-- supersession records;
-- revocation records;
-- archival records;
-- catalog indexes;
-- relationship indexes;
-- API responses.
-
-Machine-readable lifecycle data should remain consistent with the Registry Schema Specification and applicable Record-Type Profile.
-
----
-
-## Publication Consistency
-
-Lifecycle changes must be applied consistently across:
-
-- human-readable Registry Entry pages;
-- machine-readable SREG records;
-- catalog indexes;
-- relationship indexes;
-- version history;
-- correction history;
-- supersession records;
-- revocation records;
-- archival records;
-- interoperability references.
-
-A lifecycle transition is incomplete when official Registry formats disagree about the condition of the same SREG.
-
----
-
-## Preservation Requirements
-
-Lifecycle preservation should maintain:
-
-- Registry Identifier;
-- prior Lifecycle States;
-- prior Registry Status values;
-- prior SREG versions;
-- source attribution;
-- source references;
-- Source-Record Status history where available;
-- relationships;
-- correction history;
-- supersession history;
-- revocation history;
-- archival history;
-- event dates;
-- event reasons;
-- responsible Registry actions.
-
-State may change.
-
-Identity and history should remain discoverable.
-
----
-
-## Directory Role
-
-This directory is intended to contain the public Lifecycle page and related implementation materials.
-
-A possible structure is:
-
-```text
-lifecycle/
-├── index.html
-├── README.md
-├── policy.md
-├── procedure.md
-├── transitions.md
-├── schema/
-│   └── lifecycle-event.schema.json
-├── records/
-├── examples/
-└── assets/
-```
-
-Possible supporting materials may include:
-
-- permitted-transition specification;
-- lifecycle policy;
-- lifecycle procedure;
-- lifecycle event schema;
-- lifecycle examples;
-- lifecycle validation fixtures;
-- supersession records;
-- revocation records;
-- archival records.
-
-The exact structure may evolve through documented Registry governance.
-
----
-
-## Related Registry Documentation
-
-Registry Lifecycle should remain consistent with:
-
-- Registry Entry Model;
-- Registry Status;
-- Registry Corrections;
-- Registry Records;
-- Registry Record Types;
-- Registry Schemas;
-- Registry Rules;
-- Registry Policies;
-- Registry Procedures;
-- Registry Definitions;
-- Registry Scope;
-- Registry Integration;
-- Registry Changelog.
-
----
-
-## Guiding Principles
-
-- Lifecycle applies to the SREG.
-- Source lifecycle remains controlled by the Source Institution.
-- Lifecycle State and Registry Status are distinct.
-- Registry Status and Source-Record Status are distinct.
-- Lifecycle does not require one mandatory linear path.
-- Every material transition should be documented.
-- Every material transition should preserve versions.
-- Supersession means replaced, not necessarily invalid.
-- Revocation preserves accountability.
-- Archival preserves history.
-- Archived does not mean deleted.
-- Human-readable and machine-readable forms should agree.
-- Invalid transitions should fail validation.
-- Registry should preserve identity, provenance, and discoverability through change.
-
----
-
-## Disclaimer
-
-The Registry Lifecycle framework governs the institutional condition of Satoshium Registry Entries.
-
-It does not control:
-
-- Certification Lifecycle;
-- Certification Outcome;
-- Certification Status;
-- Attestation conclusions;
-- Source-Record lifecycle;
-- external legal status;
-- ownership;
-- regulatory approval;
-- Source Institution authority.
-
-Those forms of authority remain with the applicable institution, Source Record, rights holder, governing authority, or responsible external system.
-
----
-
-## Guiding Statement
-
-> State changes.
->
-> Identity persists.
->
-> Versions remain preserved.
->
-> History remains discoverable.
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Lifecycle</title>
+<meta name="description" content="Satoshium Registry Lifecycle — defines the institutional states, permitted transitions, version events, correction events, and preservation rules governing Satoshium Registry Entries.">
+<link rel="canonical" href="https://satoshium.us/registry/lifecycle/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Institutional Lifecycle</div>
+  <h1>Satoshium Registry Lifecycle</h1>
+
+  <p class="lead">
+    Registry Lifecycle defines the institutional states, permitted transitions,
+    version events, correction events, and preservation rules governing a
+    Satoshium Registry Entry, or SREG.
+  </p>
+
+  <p class="lead">
+    Lifecycle describes the condition of the SREG within Registry. It does not
+    replace the lifecycle or status of the Authoritative Source Record.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Registry Lifecycle operates beneath Satoshium Suite Standards, Suite Methodology,
+    and Suite Interoperability.
+  </p>
+
+  <div class="flow" aria-label="Registry lifecycle hierarchy">
+    <strong>Suite Standards</strong>
+    <span>→</span>
+    <strong>Registry Policy</strong>
+    <span>→</span>
+    <strong>Registry Procedure</strong>
+    <span>→</span>
+    <strong>SREG Lifecycle</strong>
+    <span>→</span>
+    <strong>Preserved History</strong>
+  </div>
+
+  <div class="note">
+    Lifecycle changes must remain documented, version-aware, schema-valid,
+    attributable, and consistent across human-readable and machine-readable records.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Purpose</h2>
+  <p>
+    Registry Lifecycle provides a controlled model for understanding the
+    institutional condition of a SREG over time.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Lifecycle Is Not Status</h2>
+  <p>
+    Lifecycle describes the stage or condition of the SREG. Registry Status is
+    the current operational designation assigned to the SREG. The two concepts
+    may relate, but they are not interchangeable.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Lifecycle Is Not Synchronization</h2>
+  <p>
+    Synchronization describes technical alignment between systems. Lifecycle
+    describes the institutional condition of the Registry Entry.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source Lifecycle Is Separate</h2>
+  <p>
+    The Source Record may be active, expired, revoked, retired, or superseded
+    while the SREG remains active as a current or historical catalog entry.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Version Awareness</h2>
+  <p>
+    Lifecycle events must preserve which SREG version is current, which versions
+    were corrected or replaced, and which versions remain historically significant.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Preservation</h2>
+  <p>
+    Registry does not erase prior history merely because an entry changes.
+    Lifecycle preserves continuity across updates, corrections, supersession,
+    revocation, and archival.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Lifecycle Model</h2>
+
+  <p>
+    A SREG may move among defined lifecycle states according to documented policy.
+    The states do not form one mandatory linear sequence.
+  </p>
+
+  <div class="note">
+    Pending Registration → Registered → Active
+    <br><br>
+    Active → Updated → Active
+    <br><br>
+    Active → Superseded → Archived
+    <br><br>
+    Active → Revoked → Archived
+    <br><br>
+    Registered → Revoked
+  </div>
+
+  <p>
+    The valid transition depends on the reason for change, the condition of the SREG,
+    and the condition of the Authoritative Source Record.
+  </p>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Pending Registration</h2>
+  <p>
+    The proposed entry has been identified or received but has not yet completed
+    Registry intake, validation, identifier assignment, and publication.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registered</h2>
+  <p>
+    The SREG has been formally created and assigned a Registry Identifier but may
+    not yet be designated as the current active public representation.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Active</h2>
+  <p>
+    The SREG is the current discoverable Registry representation of the referenced
+    Source Record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Updated</h2>
+  <p>
+    The SREG has undergone a documented change to Registry-owned information or
+    has been revised to reflect a source-record change.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Superseded</h2>
+  <p>
+    The SREG or a specific SREG version has been replaced by a newer Registry object
+    while remaining preserved for succession and historical continuity.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Revoked</h2>
+  <p>
+    The SREG has been withdrawn from active Registry recognition because of
+    invalid registration, material error, loss of source authority, reversal,
+    or another documented reason.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Archived</h2>
+
+  <p>
+    The SREG is no longer in active operational use but remains preserved as part
+    of the historical Registry record.
+  </p>
+
+  <div class="note">
+    Archived does not mean deleted. It means preserved outside active operational use.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Transition Principles</h2>
+
+  <ul>
+    <li>Every transition must have an identified reason.</li>
+    <li>Every material transition should be attributable and dated.</li>
+    <li>Every material transition should preserve the affected SREG version.</li>
+    <li>Transitions must remain consistent across HTML, JSON, indexes, and history.</li>
+    <li>Source-record changes and Registry lifecycle changes must remain distinguishable.</li>
+    <li>Terminal or historical states should not erase prior Registry identity.</li>
+    <li>Invalid transitions should fail validation.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Permitted Transition Examples</h2>
+
+  <h3>Pending Registration → Registered</h3>
+  <p>
+    Occurs when intake is complete, the Registry Identifier is assigned, required
+    fields are present, and the SREG is formally created.
+  </p>
+
+  <h3>Registered → Active</h3>
+  <p>
+    Occurs when the SREG is approved for current public catalog use and published
+    in its required official forms.
+  </p>
+
+  <h3>Active → Updated → Active</h3>
+  <p>
+    Occurs when the SREG is corrected or revised and the replacement version becomes
+    the current active entry.
+  </p>
+
+  <h3>Active → Superseded</h3>
+  <p>
+    Occurs when a newer SREG or version replaces the current one.
+  </p>
+
+  <h3>Active → Revoked</h3>
+  <p>
+    Occurs when Registry withdraws the SREG from active recognition for a documented reason.
+  </p>
+
+  <h3>Superseded → Archived</h3>
+  <p>
+    Occurs when the superseded entry remains preserved as a historical object.
+  </p>
+
+  <h3>Revoked → Archived</h3>
+  <p>
+    Occurs when the revoked entry is preserved outside active use while retaining
+    the revocation record and prior references.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Update Events</h2>
+
+  <p>
+    Updated may function as an event recorded between active versions rather than
+    as a long-term terminal state.
+  </p>
+
+  <p>
+    An update may be triggered by:
+  </p>
+
+  <ul>
+    <li>corrected metadata;</li>
+    <li>new or repaired public references;</li>
+    <li>new relationships;</li>
+    <li>a source-record version change;</li>
+    <li>a source-record status change;</li>
+    <li>schema migration;</li>
+    <li>Record Type refinement;</li>
+    <li>publication reconciliation.</li>
+  </ul>
+
+  <div class="note">
+    Prior Active Version → Updated Event → Replacement Active Version
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Corrections and Lifecycle</h2>
+
+  <p>
+    A correction may create a new SREG version without changing the underlying
+    Source Record.
+  </p>
+
+  <p>
+    A source change may require a SREG update without constituting a Registry correction.
+  </p>
+
+  <div class="note">
+    Correction applies to Registry-owned information.
+    Source update reflects a Source Institution change.
+  </div>
+
+  <p>
+    Registry should preserve which event occurred and why.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Supersession</h2>
+
+  <p>
+    Supersession preserves succession between Registry objects or versions.
+  </p>
+
+  <p>
+    A superseded SREG should preserve:
+  </p>
+
+  <ul>
+    <li>its Registry Identifier;</li>
+    <li>its final SREG version;</li>
+    <li>the replacement Registry Identifier or version;</li>
+    <li>the supersession date;</li>
+    <li>the reason for supersession;</li>
+    <li>prior source references;</li>
+    <li>relationship history.</li>
+  </ul>
+
+  <div class="note">
+    Supersession means replaced, not invalid.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Revocation</h2>
+
+  <p>
+    Revocation withdraws the SREG from active Registry recognition.
+  </p>
+
+  <p>
+    A revocation record should preserve:
+  </p>
+
+  <ul>
+    <li>the affected Registry Identifier;</li>
+    <li>the affected SREG version;</li>
+    <li>the revocation reason;</li>
+    <li>the revocation date;</li>
+    <li>the responsible Registry action;</li>
+    <li>the Source Record impact, if any;</li>
+    <li>the resulting Registry Status;</li>
+    <li>the archival or replacement path.</li>
+  </ul>
+
+  <div class="note">
+    Revocation preserves accountability. It does not require deletion.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Archival</h2>
+
+  <p>
+    Archival preserves a SREG outside active operational use.
+  </p>
+
+  <p>
+    Archived entries should remain discoverable through appropriate historical,
+    supersession, revocation, or archival indexes.
+  </p>
+
+  <p>
+    Archival should preserve:
+  </p>
+
+  <ul>
+    <li>Registry identity;</li>
+    <li>prior versions;</li>
+    <li>source attribution;</li>
+    <li>source references;</li>
+    <li>relationships;</li>
+    <li>correction history;</li>
+    <li>supersession or revocation history;</li>
+    <li>archival date and reason.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Lifecycle and Source Lifecycle</h2>
+
+  <p>
+    Registry Lifecycle and Source-Record Lifecycle must remain separate.
+  </p>
+
+  <div class="note">
+    Source-Record Status: Revoked
+    <br>
+    Registry Lifecycle State: Active
+    <br>
+    Registry Status: Active Historical Entry
+  </div>
+
+  <p>
+    In this example, Registry preserves the active public catalog entry while
+    accurately reporting that the Source Record has been revoked.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Lifecycle and Versions</h2>
+
+  <p>
+    Registry distinguishes among:
+  </p>
+
+  <ul>
+    <li>Registry Entry Version;</li>
+    <li>SREG schema version;</li>
+    <li>Record-Type Profile version;</li>
+    <li>Registry specification version;</li>
+    <li>Source-Record version;</li>
+    <li>Source Institution publication version.</li>
+  </ul>
+
+  <p>
+    Lifecycle events should preserve the version state before and after the transition.
+  </p>
+
+  <div class="note">
+    SREG Version 1.0.0 Active → Update Event → SREG Version 1.1.0 Active
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Lifecycle Record Requirements</h2>
+
+  <p>
+    A material lifecycle event should preserve, at minimum:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>prior lifecycle state;</li>
+    <li>new lifecycle state;</li>
+    <li>prior Registry Status;</li>
+    <li>new Registry Status;</li>
+    <li>event date;</li>
+    <li>event reason;</li>
+    <li>affected SREG version;</li>
+    <li>replacement version or entry, if applicable;</li>
+    <li>Source Record impact;</li>
+    <li>related correction, supersession, revocation, or archival record.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Requirements</h2>
+
+  <p>
+    Registry should validate lifecycle events against approved transition rules.
+  </p>
+
+  <p>
+    Validation may confirm:
+  </p>
+
+  <ul>
+    <li>the prior state is valid;</li>
+    <li>the proposed next state is permitted;</li>
+    <li>the reason is documented;</li>
+    <li>required version metadata exists;</li>
+    <li>required references remain preserved;</li>
+    <li>human-readable and machine-readable records agree;</li>
+    <li>source status and Registry status remain separate;</li>
+    <li>the lifecycle event satisfies the applicable schema.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Consistency</h2>
+
+  <p>
+    Lifecycle changes must be applied consistently across:
+  </p>
+
+  <ul>
+    <li>human-readable Registry Entry pages;</li>
+    <li>machine-readable SREG records;</li>
+    <li>catalog indexes;</li>
+    <li>relationship indexes;</li>
+    <li>version history;</li>
+    <li>correction history;</li>
+    <li>supersession, revocation, and archival records;</li>
+    <li>interoperability references.</li>
+  </ul>
+
+  <div class="note">
+    A lifecycle transition is incomplete when official Registry formats disagree
+    about the current condition of the same SREG.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Lifecycle Principle</h2>
+
+  <p>
+    Registry Lifecycle exists to preserve the institutional condition of the SREG
+    without erasing its identity, provenance, versions, or source relationships.
+  </p>
+
+  <div class="note">
+    State changes. Identity persists. History remains discoverable.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/status/">Open Status →</a>
+  <a class="btn" href="/registry/corrections/">Open Corrections →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Registry does not erase the past. It preserves the state and history of the SREG.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
