@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Registry Record Types</title>
-<meta name="description" content="Satoshium Registry Record Types — categories for organizing tools, jurisdictions, media, signals, certifications, attestations, and historical records across the Satoshium ecosystem.">
+<meta name="description" content="Satoshium Registry Record Types — defines the controlled primary classifications applied to Satoshium Registry Entries and their relationship to source records, schemas, profiles, lifecycle, and interoperability.">
 <link rel="canonical" href="https://satoshium.us/registry/record-types/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -103,10 +103,25 @@ h1{
  color:var(--gold2);
 }
 
-.card p{
- margin:0 0 14px;
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
  color:var(--muted);
 }
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
 
 .note{
  margin-top:16px;
@@ -116,6 +131,22 @@ h1{
  background:rgba(214,163,74,.05);
  color:var(--muted);
 }
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
 
 .btn{
  display:inline-block;
@@ -148,132 +179,405 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-  <div class="eyebrow">Registry · Record Types</div>
-  <h1>Registry Record Types</h1>
+  <div class="eyebrow">Registry · Controlled Classifications</div>
+  <h1>Satoshium Registry Record Types</h1>
 
   <p class="lead">
-    Registry organizes information through defined record types. Record types establish
-    structure, improve discoverability, and support interoperability across the
-    Satoshium ecosystem.
+    Registry Record Types define the controlled primary classifications assigned
+    to Satoshium Registry Entries, or SREGs.
   </p>
 
   <p class="lead">
-    Each Registry record belongs to one primary record type. Additional categories may
-    be introduced as Registry evolves.
+    Record Types organize Registry without replacing the Authoritative Source Record
+    or transferring authority away from the Source Institution.
   </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Registry Record Types operate beneath the Satoshium Suite constitutional hierarchy.
+  </p>
+
+  <div class="flow" aria-label="Record Type constitutional hierarchy">
+    <strong>Suite Standards</strong>
+    <span>→</span>
+    <strong>Registry Rules</strong>
+    <span>→</span>
+    <strong>Record Type Governance</strong>
+    <span>→</span>
+    <strong>Record-Type Profile</strong>
+    <span>→</span>
+    <strong>Published SREG</strong>
+  </div>
+
+  <div class="note">
+    Record Types classify SREGs. They do not define the authority or substantive
+    meaning of the Source Record.
+  </div>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Operational Hierarchy</h2>
+
+  <div class="flow" aria-label="Canonical Registry hierarchy">
+    <strong>Satoshium Registry</strong>
+    <span>→</span>
+    <strong>Registry Entry (SREG)</strong>
+    <span>→</span>
+    <strong>Registry Record Type</strong>
+    <span>→</span>
+    <strong>Authoritative Source Record</strong>
+  </div>
+
+  <p>
+    Each SREG receives one primary Registry Record Type. The Record Type governs
+    classification, applicable profile requirements, discoverability, and relationship
+    behavior.
+  </p>
+</article>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Tool Records</h2>
+  <h2>Tool</h2>
   <p>
-    Tool Records document systems, applications, services, frameworks, and ecosystem
-    components such as Atlas, Certifier, Registry, Chronicle, Anchor, and Attestor.
+    Tool Records catalog systems, applications, services, frameworks, institutions,
+    platforms, and operational components.
+  </p>
+  <p>
+    Examples may include Atlas, Certifier, Registry, Chronicle, Anchor, Beacon,
+    Attestor, Navigator, or approved external tools.
   </p>
 </article>
 
 <article class="card">
-  <h2>Jurisdiction Records</h2>
+  <h2>Jurisdiction</h2>
   <p>
-    Jurisdiction Records document geographic and governmental entities, including
-    countries, states, provinces, territories, regions, and future jurisdiction classes.
+    Jurisdiction Records catalog authoritative jurisdiction resources for countries,
+    states, provinces, territories, regions, municipalities, and other approved
+    geographic or governmental classifications.
   </p>
 </article>
 
 <article class="card">
-  <h2>Media Records</h2>
+  <h2>Media</h2>
   <p>
-    Media Records document public media resources such as videos, images, thumbnails,
-    audio resources, media pages, and future media assets.
+    Media Records catalog videos, images, audio resources, transcripts, thumbnails,
+    media pages, and other public-facing media artifacts.
   </p>
 </article>
 
 <article class="card">
-  <h2>Signal Records</h2>
+  <h2>Certification</h2>
   <p>
-    Signal Records document formal public signals, announcements, discovery records,
-    historical markers, and other notable informational artifacts.
+    Certification Records catalog Certifier-owned certification artifacts such as
+    Certification Packages, SCRDs, receipts, reports, and related certification records.
+  </p>
+  <p>
+    Registry does not create the Certification Outcome.
   </p>
 </article>
 
 <article class="card">
-  <h2>Certification Records</h2>
+  <h2>Attestation</h2>
   <p>
-    Certification Records document certification activities and outputs, including
-    reports, receipts, certified items, standards, and determinations.
+    Attestation Records catalog Attestor-owned trust statements, attestations,
+    validations, and supporting verification references.
   </p>
 </article>
 
 <article class="card">
-  <h2>Attestation Records</h2>
+  <h2>Signal</h2>
   <p>
-    Attestation Records document future verification and attestation activities,
-    including integrity confirmations, verification references, and evidence relationships.
+    Signal Records catalog Beacon-owned discovery signals, announcements, visibility
+    metadata, and other approved discovery-oriented records.
   </p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Additional Record Types</h2>
+  <h2>Additional and Future Record Types</h2>
 
   <p>
-    Registry may also support Historical Records, Reference Records, Schema Records,
-    and Policy Records.
+    Registry may introduce additional Record Types when a genuine operational need exists.
   </p>
 
   <p>
-    Historical Records preserve milestones and significant ecosystem events. Reference
-    Records connect related resources. Schema Records define record structures. Policy
-    Records document operational guidance.
+    Potential future Record Types may include:
+  </p>
+
+  <ul>
+    <li>Historical Event;</li>
+    <li>Integrity Reference;</li>
+    <li>Workflow Definition;</li>
+    <li>Schema;</li>
+    <li>Policy;</li>
+    <li>Governance;</li>
+    <li>Preservation;</li>
+    <li>Reference;</li>
+    <li>Evidence;</li>
+    <li>Research;</li>
+    <li>External Institutional Record.</li>
+  </ul>
+
+  <div class="note">
+    A future Record Type must be approved through Registry governance before use
+    in an operational SREG.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>One Primary Record Type</h2>
+
+  <p>
+    Every operational SREG must receive one primary Registry Record Type.
+  </p>
+
+  <p>
+    Secondary classifications may be permitted by the applicable Record-Type Profile,
+    but they must not conflict with the primary type.
   </p>
 
   <div class="note">
-    Registry is designed to evolve. Future categories may include research records,
-    evidence records, preservation records, governance records, network records, and
-    AI agent records.
+    Record Type defines the primary Registry classification.
+    Relationships connect the SREG to other objects.
   </div>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Record Type Relationships</h2>
+  <h2>Record-Type Profiles</h2>
 
   <p>
-    Record types help Registry preserve relationships between tools, jurisdictions,
-    media, signals, certifications, attestations, and historical references.
+    Each approved Record Type should have a corresponding Record-Type Profile.
+  </p>
+
+  <p>
+    A Record-Type Profile may define:
+  </p>
+
+  <ul>
+    <li>required fields;</li>
+    <li>optional fields;</li>
+    <li>controlled classifications;</li>
+    <li>required relationships;</li>
+    <li>permitted relationships;</li>
+    <li>identifier expectations;</li>
+    <li>status values;</li>
+    <li>lifecycle requirements;</li>
+    <li>public reference requirements;</li>
+    <li>validation rules.</li>
+  </ul>
+
+  <div class="note">
+    The SREG Base Schema defines the shared structure.
+    The Record-Type Profile adds type-specific requirements.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema Relationship</h2>
+
+  <div class="flow" aria-label="Record Type schema hierarchy">
+    <strong>Suite Schema Standard</strong>
+    <span>→</span>
+    <strong>Registry Schema Specification</strong>
+    <span>→</span>
+    <strong>SREG Base Schema</strong>
+    <span>→</span>
+    <strong>Record-Type Profile</strong>
+    <span>→</span>
+    <strong>Published SREG</strong>
+  </div>
+
+  <p>
+    Record Types should not create unrelated Registry record models. They extend
+    the shared SREG architecture through controlled profiles.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Classification Authority</h2>
+
+  <p>
+    Registry is authoritative for assigning the Registry Record Type to the SREG.
+  </p>
+
+  <p>
+    The Source Institution remains authoritative for the Source Record's own
+    classification, meaning, status, and content.
   </p>
 
   <div class="note">
-    Tools may connect to certifications, media, signals, attestations, and references.
-    Jurisdictions may connect to media, signals, and Atlas records. Historical records
-    may connect to Chronicle, Anchor, and Registry references.
+    Registry classification describes how Registry catalogs the record.
+    It does not redefine what the Source Record is.
   </div>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
+<article class="card">
+  <h2>Record Type and Source Institution</h2>
 
+  <p>
+    Record Type and Source Institution are separate fields.
+  </p>
+
+  <p>
+    The same Source Institution may produce records cataloged under multiple Record Types.
+  </p>
+
+  <div class="note">
+    Atlas may be cataloged as a Tool.
+    An Atlas jurisdiction resource may be cataloged as a Jurisdiction.
+    An Atlas media artifact may be cataloged as Media.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Record Type and Relationships</h2>
+
+  <p>
+    Record Type determines the primary classification of the SREG.
+    Relationships describe how the SREG connects to other objects.
+  </p>
+
+  <p>
+    Examples include:
+  </p>
+
+  <ul>
+    <li>Tool SREG → produces → Jurisdiction SREG;</li>
+    <li>Jurisdiction SREG → related to → Media SREG;</li>
+    <li>Certification SREG → references → Jurisdiction SREG;</li>
+    <li>Attestation SREG → attests to → Certification SREG;</li>
+    <li>Signal SREG → discovers → Media SREG;</li>
+    <li>SREG → anchored by → Integrity Reference.</li>
+  </ul>
+
+  <p>
+    Relationships must use approved relationship types and preserve direction where applicable.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Record Type Changes</h2>
+
+  <p>
+    A Record Type change may be material because it can affect:
+  </p>
+
+  <ul>
+    <li>schema validation;</li>
+    <li>required fields;</li>
+    <li>relationships;</li>
+    <li>discovery;</li>
+    <li>public interpretation;</li>
+    <li>lifecycle behavior;</li>
+    <li>interoperability.</li>
+  </ul>
+
+  <p>
+    A material Record Type change should follow the applicable Update or Correction Policy
+    and may require supersession when Registry identity changes fundamentally.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Record Type Approval</h2>
+
+  <p>
+    A new Record Type should be approved only when:
+  </p>
+
+  <ul>
+    <li>existing types cannot accurately classify the source object;</li>
+    <li>a distinct institutional object exists;</li>
+    <li>the type has clear scope and boundaries;</li>
+    <li>a Record-Type Profile can be defined;</li>
+    <li>schema validation can be supported;</li>
+    <li>relationship behavior can be documented;</li>
+    <li>interoperability consequences are understood;</li>
+    <li>governance approval is recorded.</li>
+  </ul>
+
+  <div class="note">
+    Record Type expansion should reflect architectural need, not convenience.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Record Type Validation</h2>
+
+  <p>
+    Before publication, Registry should confirm:
+  </p>
+
+  <ul>
+    <li>the primary Record Type is approved;</li>
+    <li>the selected type accurately fits the Source Record;</li>
+    <li>the applicable profile version is identified;</li>
+    <li>required fields are present;</li>
+    <li>required relationships are present;</li>
+    <li>controlled values are valid;</li>
+    <li>the SREG satisfies the applicable schema;</li>
+    <li>human-readable and machine-readable forms agree.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
 <article class="card">
   <h2>Why Record Types Matter</h2>
 
   <p>
-    Information may take many forms. Registry exists to organize those forms into
-    understandable records.
+    Record Types give Registry a controlled way to organize different kinds of
+    institutional objects without collapsing them into one undifferentiated catalog.
   </p>
 
-  <a class="btn" href="/registry/">
-    Back to Registry →
-  </a>
-</article>
+  <p>
+    They improve:
+  </p>
 
+  <ul>
+    <li>discoverability;</li>
+    <li>schema consistency;</li>
+    <li>relationship clarity;</li>
+    <li>validation;</li>
+    <li>interoperability;</li>
+    <li>long-term maintenance.</li>
+  </ul>
+
+  <div class="note">
+    Information may take many forms.
+    Registry Record Types preserve those distinctions within one shared SREG model.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/entry-model/">Open Entry Model →</a>
+  <a class="btn" href="/registry/schemas/">Open Schemas →</a>
+</article>
 </section>
 
 </main>
@@ -281,7 +585,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Information may take many forms. Registry exists to organize those forms into records.
+    Record Types organize the catalog. Source Institutions preserve authority.
   </div>
   <hr>
   <div id="footer-container"></div>
@@ -297,7 +601,7 @@ fetch("https://satoshium.link/components/footer.html")
 </script>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 
 </body>
 </html>
