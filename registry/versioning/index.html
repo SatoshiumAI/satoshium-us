@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Versioning</title>
+<meta name="description" content="Satoshium Registry Versioning — defines how Registry separates, assigns, preserves, validates, publishes, and relates Registry Entry Versions, Source-Record Versions, schema versions, profile versions, rules, policies, standards, and methodology versions.">
+<link rel="canonical" href="https://satoshium.us/registry/versioning/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Versioning</div>
+  <h1>Satoshium Registry Versioning</h1>
+
+  <p class="lead">
+    Satoshium Registry Versioning defines how Registry identifies, separates,
+    increments, validates, publishes, and preserves the distinct version domains
+    that govern SREGs and their Authoritative Source Records.
+  </p>
+
+  <p class="lead">
+    Versioning allows Registry to show what changed, when it changed, which
+    requirements applied, and which prior states remain historically discoverable.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Versioning operates across the complete Registry lifecycle and applies to
+    records, schemas, profiles, rules, policies, procedures, standards, and methodology.
+  </p>
+
+  <div class="flow" aria-label="Registry versioning position">
+    <strong>Source Record</strong>
+    <span>→</span>
+    <strong>SREG Construction</strong>
+    <span>→</span>
+    <strong>Registry Entry Version</strong>
+    <span>→</span>
+    <strong>Validation</strong>
+    <span>→</span>
+    <strong>Publication History</strong>
+  </div>
+
+  <div class="note">
+    Registry Identifier preserves continuing identity.
+    Versioning preserves the changing states of that identity.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Versioning Matters</h2>
+  <p>
+    A SREG may change because its source changes, Registry metadata changes,
+    schemas evolve, relationships are corrected, statuses transition, or
+    publication requirements mature.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>
+    Versioning asks:
+  </p>
+  <div class="note">
+    What changed, which version domain changed, why did it change, and how can
+    prior states still be found?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Registry's Responsibility</h2>
+  <p>
+    Registry must assign and preserve Registry Entry Versions, distinguish them
+    from source and governance versions, and publish clear version history.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry's Limitation</h2>
+  <p>
+    Registry does not control Source-Record Versions, Certification Package
+    Versions, Attestation Versions, or other institution-owned version domains.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Version Distinction</h2>
+
+  <div class="flow" aria-label="Canonical version distinction">
+    <strong>Registry Identifier</strong>
+    <span>≠</span>
+    <strong>Registry Entry Version</strong>
+    <span>≠</span>
+    <strong>Source-Record Version</strong>
+  </div>
+
+  <p>
+    The Registry Identifier identifies the continuing SREG.
+    The Registry Entry Version identifies one published state of that SREG.
+    The Source-Record Version identifies one state of the Authoritative Source Record.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Domains</h2>
+
+  <ul>
+    <li><strong>Registry Entry Version</strong> — version of the SREG.</li>
+    <li><strong>Source-Record Version</strong> — version assigned by the Source Institution.</li>
+    <li><strong>SREG Base Schema Version</strong> — version of the base SREG structure.</li>
+    <li><strong>Record-Type Profile Version</strong> — version of the applicable Record-Type Profile.</li>
+    <li><strong>Registry Schema Specification Version</strong> — version of Registry schema architecture.</li>
+    <li><strong>Registry Rules Version</strong> — version of the governing Registry Rules.</li>
+    <li><strong>Registry Policy Version</strong> — version of an applicable Registry policy.</li>
+    <li><strong>Registry Procedure Version</strong> — version of an operational procedure.</li>
+    <li><strong>Controlled-Value Set Version</strong> — version of approved enumerations.</li>
+    <li><strong>Validation Workflow Version</strong> — version of the validation method or checklist.</li>
+    <li><strong>Suite Standards Version</strong> — version of applicable Suite Standards.</li>
+    <li><strong>Suite Methodology Version</strong> — version of applicable Suite Methodology.</li>
+    <li><strong>Suite Interoperability Version</strong> — version of applicable interoperability requirements.</li>
+  </ul>
+
+  <div class="note">
+    A change in one version domain does not automatically require a change in every other domain.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Record Version</h2>
+  <p>
+    Identifies one state of a SREG or Source Record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Schema Version</h2>
+  <p>
+    Identifies the structural requirements used to express a record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Profile Version</h2>
+  <p>
+    Identifies Record-Type-specific requirements applied to the SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Governance Version</h2>
+  <p>
+    Identifies the rules, policies, procedures, standards, and methodology in effect.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Entry Version</h2>
+
+  <p>
+    Every published SREG should declare a Registry Entry Version.
+  </p>
+
+  <div class="code-block" aria-label="Illustrative Registry Entry Version">
+Registry Identifier: SREG-JUR-2026-0001
+Registry Entry Version: 1.2.0
+  </div>
+
+  <p>
+    The Registry Entry Version changes when the published Registry object changes materially.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Source-Record Version</h2>
+
+  <p>
+    Registry should preserve the Source-Record Version exactly as assigned by the
+    Source Institution whenever available.
+  </p>
+
+  <p>
+    Registry should not:
+  </p>
+
+  <ul>
+    <li>replace the Source-Record Version with the Registry Entry Version;</li>
+    <li>invent a source version that was never assigned;</li>
+    <li>normalize source version syntax without preserving the original value;</li>
+    <li>assume a source change occurred merely because Registry changed;</li>
+    <li>assume Registry must change merely because a source version label changed.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Illustrative Version Relationship</h2>
+
+  <div class="code-block" aria-label="Illustrative version relationship">
+Registry Identifier: SREG-CERT-2026-0001
+Registry Entry Version: 1.1.0
+Source-System Identifier: SC-CERT-2026-0001
+Source-Record Version: 1.0.0
+SREG Base Schema Version: 1.0.0
+Certification Profile Version: 1.0.0
+  </div>
+
+  <div class="note">
+    Each value belongs to a different version or identifier domain and must be
+    preserved independently.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Increment Model</h2>
+
+  <p>
+    Registry may use semantic versioning for Registry Entry Versions:
+  </p>
+
+  <div class="code-block" aria-label="Semantic version pattern">
+MAJOR.MINOR.PATCH
+  </div>
+
+  <ul>
+    <li><strong>MAJOR</strong> — materially changes the structure, identity interpretation, or institutional meaning of the SREG.</li>
+    <li><strong>MINOR</strong> — adds or materially updates Registry information without replacing the continuing SREG identity.</li>
+    <li><strong>PATCH</strong> — corrects or clarifies non-structural information without materially changing institutional meaning.</li>
+  </ul>
+
+  <div class="note">
+    Final increment rules remain subject to Registry governance and may vary when
+    migration or compatibility requirements require a different model.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Major Change</h2>
+  <p>
+    May involve incompatible structure, a material redefinition, or a governance-directed migration.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Minor Change</h2>
+  <p>
+    Adds or materially updates metadata, relationships, provenance, or publication content.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Patch Change</h2>
+  <p>
+    Corrects typographical, formatting, link, or other limited defects.
+  </p>
+</article>
+
+<article class="card">
+  <h2>No Version Change</h2>
+  <p>
+    May apply to non-substantive deployment changes that do not alter the official SREG.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Potential Major-Version Triggers</h2>
+
+  <ul>
+    <li>incompatible SREG structure;</li>
+    <li>material change to identity interpretation;</li>
+    <li>migration to a new identifier architecture;</li>
+    <li>material Record-Type reclassification requiring reconstruction;</li>
+    <li>governance-directed reset of version lineage;</li>
+    <li>replacement of the canonical source object while retaining controlled continuity;</li>
+    <li>substantial publication architecture change affecting machine compatibility.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Potential Minor-Version Triggers</h2>
+
+  <ul>
+    <li>new relationship;</li>
+    <li>new provenance information;</li>
+    <li>source version update reflected in Registry;</li>
+    <li>Registry Status change;</li>
+    <li>Registry Lifecycle transition;</li>
+    <li>material metadata addition;</li>
+    <li>new archival reference;</li>
+    <li>new integrity reference;</li>
+    <li>profile migration that remains backward compatible;</li>
+    <li>material publication notice.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Potential Patch-Version Triggers</h2>
+
+  <ul>
+    <li>typographical correction;</li>
+    <li>formatting correction;</li>
+    <li>broken-link repair that does not change source identity;</li>
+    <li>clarifying note;</li>
+    <li>non-material metadata correction;</li>
+    <li>accessibility improvement that does not alter record meaning;</li>
+    <li>machine-readable formatting correction without field-value change.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Assignment Authority</h2>
+
+  <p>
+    Registry assigns Registry Entry Versions.
+  </p>
+
+  <p>
+    Source Institutions assign Source-Record Versions within their own systems.
+  </p>
+
+  <p>
+    Governance authorities assign versions to:
+  </p>
+
+  <ul>
+    <li>schemas;</li>
+    <li>Record-Type Profiles;</li>
+    <li>Rules;</li>
+    <li>Policies;</li>
+    <li>Procedures;</li>
+    <li>controlled-value sets;</li>
+    <li>Suite Standards;</li>
+    <li>Suite Methodology;</li>
+    <li>Suite Interoperability requirements.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Assignment Record</h2>
+
+  <p>
+    Every material Registry Entry Version should preserve:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>new Registry Entry Version;</li>
+    <li>prior Registry Entry Version;</li>
+    <li>version date;</li>
+    <li>version authority or workflow;</li>
+    <li>change classification;</li>
+    <li>change summary;</li>
+    <li>changed fields;</li>
+    <li>reason for change;</li>
+    <li>Source-Record Version, when applicable;</li>
+    <li>schema and profile versions applied;</li>
+    <li>validation result;</li>
+    <li>publication record;</li>
+    <li>correction or supersession reference.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version History</h2>
+
+  <p>
+    Version history should preserve:
+  </p>
+
+  <ul>
+    <li>every published Registry Entry Version;</li>
+    <li>release date;</li>
+    <li>change summary;</li>
+    <li>validation result;</li>
+    <li>applicable schema and profile versions;</li>
+    <li>Source-Record Version;</li>
+    <li>status and lifecycle at publication;</li>
+    <li>correction references;</li>
+    <li>supersession relationships;</li>
+    <li>archival access;</li>
+    <li>canonical publication path;</li>
+    <li>downloadable historical artifacts.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Current and Historical Versions</h2>
+
+  <p>
+    One version should be designated as the current published Registry Entry Version.
+  </p>
+
+  <p>
+    Prior versions should remain:
+  </p>
+
+  <ul>
+    <li>identifiable;</li>
+    <li>resolvable;</li>
+    <li>dated;</li>
+    <li>linked to the current version;</li>
+    <li>clearly marked as historical;</li>
+    <li>available with applicable notices and restrictions.</li>
+  </ul>
+
+  <div class="note">
+    Current publication identifies the latest valid state.
+    Historical publication preserves how that state was reached.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Relationships</h2>
+
+  <p>
+    Version lineage may use typed relationships such as:
+  </p>
+
+  <ul>
+    <li>version of;</li>
+    <li>previous version;</li>
+    <li>next version;</li>
+    <li>derived from;</li>
+    <li>corrects;</li>
+    <li>corrected by;</li>
+    <li>supersedes;</li>
+    <li>superseded by;</li>
+    <li>migrated from;</li>
+    <li>migrated to;</li>
+    <li>compatible with;</li>
+    <li>incompatible with.</li>
+  </ul>
+
+  <p>
+    Final labels and controlled values remain subject to Registry governance.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version and Correction Distinction</h2>
+
+  <p>
+    Every material correction may create a new Registry Entry Version.
+  </p>
+
+  <p>
+    Not every new Registry Entry Version represents a correction.
+  </p>
+
+  <div class="flow" aria-label="Version and correction distinction">
+    <strong>Correction</strong>
+    <span>→</span>
+    <strong>New Version</strong>
+    <span>but</span>
+    <strong>New Version</strong>
+    <span>≠</span>
+    <strong>Correction</strong>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version and Supersession Distinction</h2>
+
+  <p>
+    A new Registry Entry Version updates the continuing SREG.
+  </p>
+
+  <p>
+    Supersession may replace one SREG with a different SREG and Registry Identifier.
+  </p>
+
+  <div class="note">
+    Versioning preserves states within one identity.
+    Supersession connects separate identities.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema and Profile Migration</h2>
+
+  <p>
+    When schemas or profiles change, Registry should determine whether existing
+    SREGs require:
+  </p>
+
+  <ul>
+    <li>no change;</li>
+    <li>validation against the new version;</li>
+    <li>targeted migration;</li>
+    <li>new Registry Entry Version;</li>
+    <li>major Registry Entry Version;</li>
+    <li>deprecation notice;</li>
+    <li>continued publication under the prior schema;</li>
+    <li>compatibility bridge;</li>
+    <li>governance exception.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Backward Compatible</h2>
+  <p>
+    Existing records remain valid without structural reconstruction.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Migration Required</h2>
+  <p>
+    Existing SREGs must be updated to satisfy the new schema or profile.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Deprecated</h2>
+  <p>
+    Prior structure remains historically supported but should not be used for new SREGs.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Unsupported</h2>
+  <p>
+    Prior structure is no longer accepted for current operational publication.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Controlled-Value Versioning</h2>
+
+  <p>
+    Registry should version controlled-value sets for:
+  </p>
+
+  <ul>
+    <li>Record Types;</li>
+    <li>Registry Status values;</li>
+    <li>Registry Lifecycle States;</li>
+    <li>relationship types;</li>
+    <li>relationship statuses;</li>
+    <li>validation outcomes;</li>
+    <li>publication readiness outcomes;</li>
+    <li>authority-review outcomes;</li>
+    <li>Registrability outcomes;</li>
+    <li>correction categories;</li>
+    <li>notice types.</li>
+  </ul>
+
+  <p>
+    A removed or renamed value should remain interpretable in historical SREGs.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Validation</h2>
+
+  <p>
+    Validation should confirm:
+  </p>
+
+  <ul>
+    <li>Registry Entry Version is declared;</li>
+    <li>version syntax is valid;</li>
+    <li>prior version exists when required;</li>
+    <li>increment classification matches the change;</li>
+    <li>Source-Record Version remains separate;</li>
+    <li>schema and profile versions are declared;</li>
+    <li>governance versions are identifiable;</li>
+    <li>current and historical versions are not confused;</li>
+    <li>supersession does not overwrite version lineage;</li>
+    <li>human-readable and machine-readable version fields agree;</li>
+    <li>version history is complete;</li>
+    <li>historical artifacts remain attributable.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Invalid Version Conditions</h2>
+
+  <ul>
+    <li>missing Registry Entry Version;</li>
+    <li>invalid version syntax;</li>
+    <li>version rollback without governance approval;</li>
+    <li>duplicate version number for different published states;</li>
+    <li>Registry Entry Version used as Source-Record Version;</li>
+    <li>Source-Record Version overwritten;</li>
+    <li>undeclared schema or profile version;</li>
+    <li>major change represented as patch;</li>
+    <li>silent version replacement;</li>
+    <li>historical version presented as current;</li>
+    <li>prior version made undiscoverable;</li>
+    <li>human-readable and machine-readable mismatch.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Rollback</h2>
+
+  <p>
+    Registry should not silently restore an earlier version as though later
+    versions never existed.
+  </p>
+
+  <p>
+    A rollback should preserve:
+  </p>
+
+  <ul>
+    <li>version being withdrawn;</li>
+    <li>version being restored or recreated;</li>
+    <li>rollback date;</li>
+    <li>rollback authority;</li>
+    <li>reason;</li>
+    <li>validation result;</li>
+    <li>publication record;</li>
+    <li>continued access to intervening versions;</li>
+    <li>new Registry Entry Version when required.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Publication</h2>
+
+  <p>
+    Every material publication should identify the Registry Entry Version being released.
+  </p>
+
+  <p>
+    Publication should expose:
+  </p>
+
+  <ul>
+    <li>current version;</li>
+    <li>prior versions;</li>
+    <li>release dates;</li>
+    <li>change summaries;</li>
+    <li>validation outcomes;</li>
+    <li>schema and profile versions;</li>
+    <li>Source-Record Version;</li>
+    <li>correction and supersession references.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Provenance</h2>
+
+  <p>
+    Version history is part of Registry Provenance.
+  </p>
+
+  <p>
+    Provenance should preserve how each version was created, validated, published,
+    corrected, superseded, or archived.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Lifecycle</h2>
+
+  <p>
+    Version changes and Lifecycle transitions are related but distinct.
+  </p>
+
+  <ul>
+    <li>An update may create a new version while the SREG remains Active.</li>
+    <li>Supersession may create a final version and point to a successor SREG.</li>
+    <li>Revocation may create a new version carrying the revocation notice.</li>
+    <li>Archival transition may create a final archival publication version.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Source Institutions</h2>
+
+  <p>
+    Registry must preserve source-owned version values without taking control of them.
+  </p>
+
+  <div class="grid">
+
+    <div>
+      <h3>Atlas</h3>
+      <p>
+        Atlas controls versions of Atlas resources, jurisdiction records, packages,
+        manifests, and source artifacts.
+      </p>
+    </div>
+
+    <div>
+      <h3>Certifier</h3>
+      <p>
+        Certifier controls Certification Package, SCPR, SCR, SCRD, and certification
+        framework versions.
+      </p>
+    </div>
+
+    <div>
+      <h3>Attestor</h3>
+      <p>
+        Attestor controls versions of attestations, trust statements, and
+        Attestor-owned schemas.
+      </p>
+    </div>
+
+    <div>
+      <h3>Registry</h3>
+      <p>
+        Registry controls Registry Entry Versions, SREG schemas, Record-Type Profiles,
+        Registry Rules, Policies, and Procedures.
+      </p>
+    </div>
+
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Versioning Does Not Establish</h2>
+
+  <ul>
+    <li>It does not create Source Authority.</li>
+    <li>It does not certify the Source Record.</li>
+    <li>It does not make a newer version substantively better.</li>
+    <li>It does not make prior versions invalid automatically.</li>
+    <li>It does not convert a source version into a Registry version.</li>
+    <li>It does not eliminate correction requirements.</li>
+    <li>It does not replace supersession relationships.</li>
+    <li>It does not permit historical erasure.</li>
+    <li>It does not guarantee backward compatibility.</li>
+    <li>It does not transfer version authority from another institution.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Versioning Principle</h2>
+
+  <p>
+    Registry Versioning should preserve one stable Registry identity while making
+    every material state, governing requirement, and historical change explicit.
+  </p>
+
+  <div class="note">
+    Identity remains stable.
+    Versions record change.
+    History preserves accountability.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/identifiers/">Open Identifiers →</a>
+  <a class="btn" href="/registry/publication/">Open Publication →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    A durable Registry preserves not only what a record is, but every accountable state through which it passed.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
