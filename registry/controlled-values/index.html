@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Controlled Values</title>
+<meta name="description" content="Satoshium Registry Controlled Values — defines the governed vocabularies, enumerations, identifiers, statuses, lifecycle states, relationship types, validation outcomes, publication notices, and other approved values used across SREGs and Registry operations.">
+<link rel="canonical" href="https://satoshium.us/registry/controlled-values/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul,
+.card ol{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Controlled Values</div>
+  <h1>Satoshium Registry Controlled Values</h1>
+
+  <p class="lead">
+    Satoshium Registry Controlled Values define the governed vocabularies,
+    enumerations, codes, statuses, lifecycle states, relationship types,
+    validation outcomes, publication notices, and other approved terms used
+    across SREGs and Registry operations.
+  </p>
+
+  <p class="lead">
+    Controlled Values ensure that human-readable and machine-readable Registry
+    materials use the same institutional language.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Controlled Values operate beneath Registry Governance and within the SREG
+    Base Schema, Record-Type Profiles, Rules, Policies, Procedures, Validation,
+    Publication, and Interoperability requirements.
+  </p>
+
+  <div class="flow" aria-label="Controlled values hierarchy">
+    <strong>Suite Standards</strong>
+    <span>→</span>
+    <strong>Registry Governance</strong>
+    <span>→</span>
+    <strong>Controlled-Value Sets</strong>
+    <span>→</span>
+    <strong>Schemas and Profiles</strong>
+    <span>→</span>
+    <strong>Published SREGs</strong>
+  </div>
+
+  <div class="note">
+    Controlled Values define approved language.
+    They do not replace the institutional rules that govern when each value applies.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Controlled Values Matter</h2>
+  <p>
+    Without governed values, equivalent concepts may be expressed through
+    inconsistent labels, abbreviations, capitalization, codes, or interpretations.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>
+    Controlled Values ask:
+  </p>
+  <div class="note">
+    Which approved value must Registry use to represent this condition, class,
+    relationship, outcome, or notice?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Registry's Responsibility</h2>
+  <p>
+    Registry must define, version, validate, publish, deprecate, and preserve the
+    controlled vocabularies used in Registry-owned fields.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry's Limitation</h2>
+  <p>
+    Registry must not replace source-owned values with Registry terms when the
+    Source Institution remains authoritative for the source-domain field.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Controlled-Value Model</h2>
+
+  <div class="flow" aria-label="Canonical controlled-value model">
+    <strong>Value Set</strong>
+    <span>→</span>
+    <strong>Approved Value</strong>
+    <span>→</span>
+    <strong>Definition</strong>
+    <span>→</span>
+    <strong>Usage Rule</strong>
+    <span>→</span>
+    <strong>Schema Field</strong>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Controlled-Value Requirements</h2>
+
+  <p>
+    Every governed value should identify:
+  </p>
+
+  <ul>
+    <li>value-set identifier;</li>
+    <li>value-set title;</li>
+    <li>value-set version;</li>
+    <li>canonical value;</li>
+    <li>machine-readable code;</li>
+    <li>human-readable label;</li>
+    <li>definition;</li>
+    <li>usage rule;</li>
+    <li>authority;</li>
+    <li>effective date;</li>
+    <li>status;</li>
+    <li>aliases or legacy values;</li>
+    <li>replacement value, when applicable;</li>
+    <li>related schema fields;</li>
+    <li>change history.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Canonical</h2>
+  <p>
+    One approved value represents the concept in current Registry materials.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Defined</h2>
+  <p>
+    Every value has a stable institutional definition and usage boundary.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Versioned</h2>
+  <p>
+    Changes to values and value sets preserve prior versions and effective dates.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Validatable</h2>
+  <p>
+    Schemas and Procedures can determine whether a submitted value is approved.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Core Controlled-Value Sets</h2>
+
+  <ul>
+    <li>Registry Record Types;</li>
+    <li>Registry Status values;</li>
+    <li>Registry Lifecycle States;</li>
+    <li>Source Authority Review Outcomes;</li>
+    <li>Registrability Outcomes;</li>
+    <li>Identifier States;</li>
+    <li>Relationship Types;</li>
+    <li>Relationship Statuses;</li>
+    <li>Validation Outcomes;</li>
+    <li>Validation Finding Classes;</li>
+    <li>Publication Readiness Outcomes;</li>
+    <li>Publication Notice Types;</li>
+    <li>Correction Categories;</li>
+    <li>Access and Restriction Conditions;</li>
+    <li>Custody Types;</li>
+    <li>Provenance Artifact Types;</li>
+    <li>Version Change Classes;</li>
+    <li>Governance Decision Statuses;</li>
+    <li>Policy Statuses;</li>
+    <li>Procedure Statuses;</li>
+    <li>Exception Statuses;</li>
+    <li>Preservation Conditions.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Record Types</h2>
+
+  <p>
+    Initial Registry Record Types may include:
+  </p>
+
+  <ul>
+    <li><strong>Tool</strong></li>
+    <li><strong>Jurisdiction</strong></li>
+    <li><strong>Media</strong></li>
+    <li><strong>Certification</strong></li>
+    <li><strong>Attestation</strong></li>
+    <li><strong>Signal</strong></li>
+    <li><strong>Event</strong></li>
+    <li><strong>Integrity Reference</strong></li>
+    <li><strong>Workflow</strong></li>
+    <li><strong>Institution</strong></li>
+    <li><strong>Schema</strong></li>
+    <li><strong>Policy</strong></li>
+    <li><strong>Procedure</strong></li>
+    <li><strong>Governance Decision</strong></li>
+  </ul>
+
+  <div class="note">
+    Final Record Types and Profile assignments remain subject to Registry Governance.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Status Values</h2>
+
+  <p>
+    Registry Status describes the current Registry condition of the SREG.
+  </p>
+
+  <ul>
+    <li><strong>Pending</strong> — under Registry review and not yet operational.</li>
+    <li><strong>Active</strong> — valid and currently published for operational use.</li>
+    <li><strong>Restricted</strong> — operational but subject to access or publication limits.</li>
+    <li><strong>Disputed</strong> — material Registry or source conflict remains unresolved.</li>
+    <li><strong>Superseded</strong> — replaced by a successor SREG or Registry representation.</li>
+    <li><strong>Revoked</strong> — withdrawn from valid operational use by Registry authority.</li>
+    <li><strong>Retired</strong> — intentionally removed from active use without direct revocation.</li>
+    <li><strong>Archived</strong> — preserved primarily for historical reference.</li>
+  </ul>
+
+  <div class="note">
+    Registry Status must remain separate from Source-Record Status,
+    Certification Status, Attestation Status, and Registry Lifecycle State.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Lifecycle States</h2>
+
+  <p>
+    Registry Lifecycle State describes where the SREG is within its institutional lifecycle.
+  </p>
+
+  <ul>
+    <li><strong>Proposed</strong></li>
+    <li><strong>Under Review</strong></li>
+    <li><strong>Registered</strong></li>
+    <li><strong>Published</strong></li>
+    <li><strong>Updated</strong></li>
+    <li><strong>Superseded</strong></li>
+    <li><strong>Revoked</strong></li>
+    <li><strong>Retired</strong></li>
+    <li><strong>Archived</strong></li>
+  </ul>
+
+  <p>
+    Permitted transitions and exact semantics remain governed by the Registry Lifecycle framework.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Source Authority Review Outcomes</h2>
+
+  <ul>
+    <li><strong>Confirmed</strong> — Source Authority is sufficiently established.</li>
+    <li><strong>Confirmed with Conditions</strong> — authority is sufficient but limitations apply.</li>
+    <li><strong>Delegated</strong> — authority is exercised through a documented delegation.</li>
+    <li><strong>Historical</strong> — authority applied historically and remains relevant for provenance.</li>
+    <li><strong>External</strong> — authority belongs to an institution outside the Suite.</li>
+    <li><strong>Conflicted</strong> — competing authority claims remain unresolved.</li>
+    <li><strong>Insufficient</strong> — available evidence does not support Source Authority.</li>
+    <li><strong>Not Evaluated</strong> — review has not yet occurred.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registrability Outcomes</h2>
+
+  <ul>
+    <li><strong>Registrable</strong> — requirements are satisfied.</li>
+    <li><strong>Conditionally Registrable</strong> — registration may proceed under documented conditions.</li>
+    <li><strong>Provisionally Registrable</strong> — registration may proceed pending additional review.</li>
+    <li><strong>Restricted Registrable</strong> — registration is permitted with access limitations.</li>
+    <li><strong>Historical Registrable</strong> — appropriate for historical Registry preservation.</li>
+    <li><strong>Not Registrable</strong> — one or more blocking conditions prevent registration.</li>
+    <li><strong>Indeterminate</strong> — available evidence is insufficient to decide.</li>
+    <li><strong>Not Evaluated</strong> — review has not yet occurred.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier States</h2>
+
+  <ul>
+    <li><strong>Reserved</strong> — held for a proposed Registry object.</li>
+    <li><strong>Assigned</strong> — formally assigned to a SREG.</li>
+    <li><strong>Published</strong> — resolves through an official Registry publication.</li>
+    <li><strong>Superseded</strong> — remains resolvable but points to a successor context.</li>
+    <li><strong>Revoked</strong> — no longer valid for active operational use.</li>
+    <li><strong>Archived</strong> — preserved for historical resolution.</li>
+  </ul>
+
+  <div class="note">
+    Identifier State describes the condition of the identifier.
+    It does not replace Registry Status or Lifecycle State.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship Types</h2>
+
+  <p>
+    Initial relationship values may include:
+  </p>
+
+  <ul>
+    <li>sourced from;</li>
+    <li>source of;</li>
+    <li>produced by;</li>
+    <li>produces;</li>
+    <li>references;</li>
+    <li>referenced by;</li>
+    <li>concerns;</li>
+    <li>concerned by;</li>
+    <li>certifies;</li>
+    <li>certified by;</li>
+    <li>attests to;</li>
+    <li>attested by;</li>
+    <li>anchored by;</li>
+    <li>integrity reference for;</li>
+    <li>documents;</li>
+    <li>documented by;</li>
+    <li>announces;</li>
+    <li>announced by;</li>
+    <li>depends on;</li>
+    <li>dependency of;</li>
+    <li>integrates with;</li>
+    <li>supersedes;</li>
+    <li>superseded by;</li>
+    <li>successor to;</li>
+    <li>predecessor of;</li>
+    <li>derived from;</li>
+    <li>has derivative;</li>
+    <li>version of;</li>
+    <li>archived as;</li>
+    <li>archival representation of.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship Statuses</h2>
+
+  <ul>
+    <li><strong>Active</strong></li>
+    <li><strong>Historical</strong></li>
+    <li><strong>Provisional</strong></li>
+    <li><strong>Disputed</strong></li>
+    <li><strong>Superseded</strong></li>
+    <li><strong>Revoked</strong></li>
+    <li><strong>Invalid</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Outcomes</h2>
+
+  <ul>
+    <li><strong>Valid</strong></li>
+    <li><strong>Valid with Warnings</strong></li>
+    <li><strong>Conditionally Valid</strong></li>
+    <li><strong>Invalid</strong></li>
+    <li><strong>Indeterminate</strong></li>
+    <li><strong>Not Evaluated</strong></li>
+  </ul>
+
+  <p>
+    These values describe Registry-object conformance.
+    They do not certify the Source Record.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Finding Classes</h2>
+
+  <ul>
+    <li><strong>Blocking Error</strong></li>
+    <li><strong>Warning</strong></li>
+    <li><strong>Exception</strong></li>
+    <li><strong>Informational Finding</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Readiness Outcomes</h2>
+
+  <ul>
+    <li><strong>Ready</strong></li>
+    <li><strong>Ready with Notices</strong></li>
+    <li><strong>Restricted</strong></li>
+    <li><strong>Not Ready</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Notice Types</h2>
+
+  <ul>
+    <li>provisional publication;</li>
+    <li>restricted source access;</li>
+    <li>source unavailable;</li>
+    <li>validation warning;</li>
+    <li>correction issued;</li>
+    <li>superseded entry;</li>
+    <li>revoked entry;</li>
+    <li>retired entry;</li>
+    <li>archived entry;</li>
+    <li>historical record;</li>
+    <li>disputed relationship;</li>
+    <li>external-source disclaimer;</li>
+    <li>rights or reuse limitation;</li>
+    <li>governance exception;</li>
+    <li>migration notice.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Correction Categories</h2>
+
+  <ul>
+    <li><strong>Identifier Correction</strong></li>
+    <li><strong>Source Attribution Correction</strong></li>
+    <li><strong>Classification Correction</strong></li>
+    <li><strong>Provenance Correction</strong></li>
+    <li><strong>Relationship Correction</strong></li>
+    <li><strong>Status Correction</strong></li>
+    <li><strong>Lifecycle Correction</strong></li>
+    <li><strong>Version Correction</strong></li>
+    <li><strong>Publication Correction</strong></li>
+    <li><strong>Schema or Format Correction</strong></li>
+    <li><strong>Typographical Correction</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Access and Restriction Conditions</h2>
+
+  <ul>
+    <li><strong>Public</strong></li>
+    <li><strong>Public Metadata Only</strong></li>
+    <li><strong>Restricted</strong></li>
+    <li><strong>Controlled Access</strong></li>
+    <li><strong>Internal</strong></li>
+    <li><strong>Withdrawn</strong></li>
+    <li><strong>Unavailable</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Custody Types</h2>
+
+  <ul>
+    <li><strong>Original Custody</strong></li>
+    <li><strong>Delegated Custody</strong></li>
+    <li><strong>Archival Custody</strong></li>
+    <li><strong>Successor Custody</strong></li>
+    <li><strong>External Custody</strong></li>
+  </ul>
+
+  <div class="note">
+    Custody describes possession or preservation.
+    It does not establish Source Authority.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Provenance Artifact Types</h2>
+
+  <ul>
+    <li><strong>Original Source</strong></li>
+    <li><strong>Canonical Source</strong></li>
+    <li><strong>Derived Artifact</strong></li>
+    <li><strong>Generated Artifact</strong></li>
+    <li><strong>Mirror</strong></li>
+    <li><strong>Archived Snapshot</strong></li>
+    <li><strong>Generation Manifest</strong></li>
+    <li><strong>Integrity Reference</strong></li>
+    <li><strong>Supporting Evidence</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Change Classes</h2>
+
+  <ul>
+    <li><strong>Major</strong></li>
+    <li><strong>Minor</strong></li>
+    <li><strong>Patch</strong></li>
+    <li><strong>Non-Versioned</strong></li>
+    <li><strong>Rollback</strong></li>
+    <li><strong>Migration</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Decision Statuses</h2>
+
+  <ul>
+    <li><strong>Draft</strong></li>
+    <li><strong>Under Review</strong></li>
+    <li><strong>Approved</strong></li>
+    <li><strong>Active</strong></li>
+    <li><strong>Amended</strong></li>
+    <li><strong>Superseded</strong></li>
+    <li><strong>Retired</strong></li>
+    <li><strong>Archived</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy and Procedure Statuses</h2>
+
+  <ul>
+    <li><strong>Draft</strong></li>
+    <li><strong>Under Review</strong></li>
+    <li><strong>Approved</strong></li>
+    <li><strong>Active</strong></li>
+    <li><strong>Revised</strong></li>
+    <li><strong>Superseded</strong></li>
+    <li><strong>Retired</strong></li>
+    <li><strong>Archived</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Exception Statuses</h2>
+
+  <ul>
+    <li><strong>Requested</strong></li>
+    <li><strong>Under Review</strong></li>
+    <li><strong>Approved</strong></li>
+    <li><strong>Approved with Conditions</strong></li>
+    <li><strong>Denied</strong></li>
+    <li><strong>Expired</strong></li>
+    <li><strong>Revoked</strong></li>
+    <li><strong>Closed</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Preservation Conditions</h2>
+
+  <ul>
+    <li><strong>Current</strong></li>
+    <li><strong>Historically Preserved</strong></li>
+    <li><strong>Archived</strong></li>
+    <li><strong>Source Unavailable</strong></li>
+    <li><strong>Partial Preservation</strong></li>
+    <li><strong>Integrity Verified</strong></li>
+    <li><strong>Integrity Unverified</strong></li>
+    <li><strong>Preservation Restricted</strong></li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Machine-Readable Codes</h2>
+
+  <p>
+    Controlled values may use stable machine-readable codes while preserving
+    human-readable labels.
+  </p>
+
+  <div class="code-block" aria-label="Illustrative controlled-value codes">
+registry_status: "active"
+registry_lifecycle_state: "published"
+validation_outcome: "valid_with_warnings"
+publication_readiness: "ready_with_notices"
+  </div>
+
+  <div class="note">
+    Final codes, casing, separators, and serialization remain subject to the SREG
+    Base Schema and Registry Schema Specification.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Labels, Codes, and Definitions</h2>
+
+  <p>
+    Each controlled concept may have:
+  </p>
+
+  <ul>
+    <li>canonical machine-readable code;</li>
+    <li>canonical human-readable label;</li>
+    <li>plain-language description;</li>
+    <li>formal institutional definition;</li>
+    <li>usage conditions;</li>
+    <li>prohibited uses;</li>
+    <li>legacy labels or aliases;</li>
+    <li>replacement value, when deprecated.</li>
+  </ul>
+
+  <div class="note">
+    Labels may support presentation.
+    Codes support consistency.
+    Definitions preserve meaning.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Aliases and Legacy Values</h2>
+
+  <p>
+    Registry may preserve aliases for:
+  </p>
+
+  <ul>
+    <li>historic terminology;</li>
+    <li>deprecated labels;</li>
+    <li>prior machine-readable codes;</li>
+    <li>common abbreviations;</li>
+    <li>source-system equivalents;</li>
+    <li>migration compatibility.</li>
+  </ul>
+
+  <p>
+    Aliases should not replace the current canonical value in new Registry records.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Deprecation and Retirement</h2>
+
+  <p>
+    When a value is deprecated or retired, Registry should preserve:
+  </p>
+
+  <ul>
+    <li>prior canonical code;</li>
+    <li>prior label;</li>
+    <li>definition;</li>
+    <li>effective period;</li>
+    <li>deprecation or retirement date;</li>
+    <li>reason;</li>
+    <li>replacement value, when applicable;</li>
+    <li>migration guidance;</li>
+    <li>historical interpretation requirements.</li>
+  </ul>
+
+  <div class="note">
+    A retired value may disappear from new records.
+    It must remain understandable in historical records.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Controlled-Value Versioning</h2>
+
+  <p>
+    Value-set changes should preserve:
+  </p>
+
+  <ul>
+    <li>prior value-set version;</li>
+    <li>new value-set version;</li>
+    <li>change date;</li>
+    <li>effective date;</li>
+    <li>approval authority;</li>
+    <li>added values;</li>
+    <li>amended values;</li>
+    <li>deprecated values;</li>
+    <li>retired values;</li>
+    <li>replacement mappings;</li>
+    <li>affected schemas and profiles;</li>
+    <li>migration requirements;</li>
+    <li>historical publication.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Controlled-Value Governance</h2>
+
+  <p>
+    Registry Governance should control:
+  </p>
+
+  <ul>
+    <li>creation of value sets;</li>
+    <li>definitions;</li>
+    <li>codes and labels;</li>
+    <li>usage rules;</li>
+    <li>aliases;</li>
+    <li>inverse relationships;</li>
+    <li>symmetry rules;</li>
+    <li>versioning;</li>
+    <li>deprecation;</li>
+    <li>retirement;</li>
+    <li>migration;</li>
+    <li>exception handling;</li>
+    <li>publication and preservation.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Controlled-Value Validation</h2>
+
+  <p>
+    Validation should confirm:
+  </p>
+
+  <ul>
+    <li>value belongs to the approved value set;</li>
+    <li>value-set version is declared when required;</li>
+    <li>code and label correspond;</li>
+    <li>deprecated values are not used in new records without authorization;</li>
+    <li>retired values remain interpretable historically;</li>
+    <li>field usage matches the value definition;</li>
+    <li>aliases are not used as canonical values;</li>
+    <li>human-readable and machine-readable forms agree;</li>
+    <li>source-owned values are not replaced improperly;</li>
+    <li>migration mappings are preserved.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Invalid Controlled-Value Conditions</h2>
+
+  <ul>
+    <li>unrecognized value;</li>
+    <li>incorrect code;</li>
+    <li>label and code mismatch;</li>
+    <li>value used in the wrong field;</li>
+    <li>deprecated value used without authorization;</li>
+    <li>retired value presented as current;</li>
+    <li>alias used as canonical value;</li>
+    <li>source-owned value overwritten by Registry terminology;</li>
+    <li>undefined inverse relationship;</li>
+    <li>assumed symmetry without governance;</li>
+    <li>missing value-set version when required;</li>
+    <li>human-readable and machine-readable mismatch.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Schemas</h2>
+
+  <p>
+    Schemas identify which fields require Controlled Values and which value sets apply.
+  </p>
+
+  <p>
+    Controlled Values define the permitted terms within those fields.
+  </p>
+
+  <div class="note">
+    Schemas define structure.
+    Controlled Values define permitted institutional language.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Record-Type Profiles</h2>
+
+  <p>
+    Record-Type Profiles may:
+  </p>
+
+  <ul>
+    <li>require specific Controlled Values;</li>
+    <li>limit a field to a subset of a value set;</li>
+    <li>define type-specific relationships;</li>
+    <li>define type-specific status conditions;</li>
+    <li>require additional notice or provenance values.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Source Values</h2>
+
+  <p>
+    Registry-controlled values and Source-System values should remain distinct when
+    their meanings or authorities differ.
+  </p>
+
+  <p>
+    Registry may preserve:
+  </p>
+
+  <ul>
+    <li>original source value;</li>
+    <li>source-value definition;</li>
+    <li>Registry mapping;</li>
+    <li>mapping authority;</li>
+    <li>mapping confidence or limitation;</li>
+    <li>effective mapping version.</li>
+  </ul>
+
+  <div class="note">
+    Mapping supports interoperability.
+    It does not transfer authority over the source value.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Interoperability</h2>
+
+  <p>
+    Controlled Values support interoperability by giving Suite institutions and
+    external systems stable meanings, codes, and mappings.
+  </p>
+
+  <p>
+    Interoperability should preserve:
+  </p>
+
+  <ul>
+    <li>canonical Registry value;</li>
+    <li>external equivalent;</li>
+    <li>mapping direction;</li>
+    <li>mapping authority;</li>
+    <li>mapping version;</li>
+    <li>known semantic differences;</li>
+    <li>deprecation or migration history.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Controlled Values Do Not Establish</h2>
+
+  <ul>
+    <li>They do not create Source Authority.</li>
+    <li>They do not determine Source-Record truth.</li>
+    <li>They do not replace Rules, Policies, or Procedures.</li>
+    <li>They do not certify a record.</li>
+    <li>They do not create an attestation.</li>
+    <li>They do not make similar source and Registry terms identical.</li>
+    <li>They do not permit silent semantic change.</li>
+    <li>They do not erase deprecated or retired meanings.</li>
+    <li>They do not override source-owned vocabularies.</li>
+    <li>They do not expand Registry authority.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Controlled-Values Principle</h2>
+
+  <p>
+    Registry Controlled Values should provide stable, governed, versioned language
+    that preserves shared meaning across human-readable records, machine-readable
+    data, procedures, validation, publication, and interoperability.
+  </p>
+
+  <div class="note">
+    Structure organizes data.
+    Controlled Values preserve meaning.
+    Governance keeps that meaning stable.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/schemas/">Open Schemas →</a>
+  <a class="btn" href="/registry/governance/">Open Governance →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Shared systems become trustworthy when the same words preserve the same meaning across every form.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
