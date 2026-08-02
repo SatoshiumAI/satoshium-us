@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Validation</title>
+<meta name="description" content="Satoshium Registry Validation — defines how Registry confirms that a constructed SREG satisfies structural, institutional, identifier, provenance, relationship, lifecycle, version, and publication requirements without certifying the substantive truth of the Source Record.">
+<link rel="canonical" href="https://satoshium.us/registry/validation/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Validation</div>
+  <h1>Satoshium Registry Validation</h1>
+
+  <p class="lead">
+    Satoshium Registry Validation defines how Registry confirms that a constructed
+    SREG satisfies the structural, institutional, identifier, provenance,
+    relationship, version, lifecycle, status, and publication requirements
+    governing Registry records.
+  </p>
+
+  <p class="lead">
+    Validation confirms that Registry represented the source correctly according
+    to Registry rules. It does not certify the substantive truth of the Source Record.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Validation occurs after SREG construction and before publication or material
+    republication.
+  </p>
+
+  <div class="flow" aria-label="Registry validation position">
+    <strong>Source Authority</strong>
+    <span>→</span>
+    <strong>Registrability</strong>
+    <span>→</span>
+    <strong>Identifier Assignment</strong>
+    <span>→</span>
+    <strong>SREG Construction</strong>
+    <span>→</span>
+    <strong>Validation</strong>
+    <span>→</span>
+    <strong>Publication</strong>
+  </div>
+
+  <div class="note">
+    Registrability determines whether Registry should create the SREG.
+    Validation determines whether the constructed SREG is ready to publish.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Validation Matters</h2>
+  <p>
+    Even a registrable source may be represented incorrectly if identifiers,
+    source references, versions, relationships, statuses, or publication forms
+    are incomplete or inconsistent.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>
+    Validation asks:
+  </p>
+  <div class="note">
+    Does this SREG accurately and consistently implement the applicable Registry
+    requirements?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Registry's Responsibility</h2>
+  <p>
+    Registry must validate its own object, fields, classifications, references,
+    relationships, versions, and publication forms.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry's Limitation</h2>
+  <p>
+    Registry Validation does not certify the subject, confirm every claim,
+    establish legal ownership, grant approval, or replace Source Institution review.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Validation Model</h2>
+
+  <div class="flow" aria-label="Canonical validation model">
+    <strong>Rules</strong>
+    <span>+</span>
+    <strong>Schema</strong>
+    <span>+</span>
+    <strong>Record-Type Profile</strong>
+    <span>+</span>
+    <strong>Institutional Requirements</strong>
+    <span>→</span>
+    <strong>Validation Result</strong>
+  </div>
+
+  <p>
+    Validation applies the current approved requirements to one defined SREG version.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Domains</h2>
+
+  <ul>
+    <li>Source Authority validation;</li>
+    <li>Registrability validation;</li>
+    <li>Identifier validation;</li>
+    <li>schema validation;</li>
+    <li>Record-Type Profile validation;</li>
+    <li>provenance validation;</li>
+    <li>relationship validation;</li>
+    <li>version validation;</li>
+    <li>Registry Status validation;</li>
+    <li>Registry Lifecycle validation;</li>
+    <li>correction validation;</li>
+    <li>publication validation;</li>
+    <li>human-readable and machine-readable consistency validation.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Structural Validation</h2>
+  <p>
+    Confirms required fields, data types, formats, cardinality, and schema conformance.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Institutional Validation</h2>
+  <p>
+    Confirms that Registry authority, source authority, scope, and institutional
+    boundaries are represented correctly.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Referential Validation</h2>
+  <p>
+    Confirms identifiers, source references, relationships, URLs, and linked
+    records resolve or are intentionally historical.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Semantic Validation</h2>
+  <p>
+    Confirms controlled values and fields are used according to their defined meaning.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Temporal Validation</h2>
+  <p>
+    Confirms dates, versions, effective periods, supersession, and lifecycle order
+    remain coherent.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Publication Validation</h2>
+  <p>
+    Confirms official human-readable and machine-readable forms are complete,
+    aligned, and publication-ready.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Inputs</h2>
+
+  <p>
+    A Registry validation should identify the exact requirements being applied.
+  </p>
+
+  <ul>
+    <li>SREG Base Schema Version;</li>
+    <li>applicable Record-Type Profile Version;</li>
+    <li>Registry Schema Specification Version;</li>
+    <li>Registry Rules Version;</li>
+    <li>Registry Policy Version;</li>
+    <li>Registry Procedure Version;</li>
+    <li>Suite Standards Version;</li>
+    <li>Suite Methodology Version;</li>
+    <li>Suite Interoperability requirements;</li>
+    <li>controlled-value set versions;</li>
+    <li>validation workflow or checklist version.</li>
+  </ul>
+
+  <div class="note">
+    A validation result is meaningful only when the governing requirement versions
+    are known.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Source Authority Validation</h2>
+
+  <p>
+    Validation should confirm:
+  </p>
+
+  <ul>
+    <li>Source Institution is identified;</li>
+    <li>Authoritative Source Record is identifiable;</li>
+    <li>authority evidence or review reference exists;</li>
+    <li>custody is not misrepresented as authority;</li>
+    <li>mirrors and derivatives are not presented as canonical sources;</li>
+    <li>authority changes are historically preserved;</li>
+    <li>Registry does not claim source-domain authority.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registrability Validation</h2>
+
+  <p>
+    Validation should confirm:
+  </p>
+
+  <ul>
+    <li>positive Registrability outcome exists;</li>
+    <li>conditions or limitations are preserved;</li>
+    <li>approved Record Type applies;</li>
+    <li>minimum metadata requirements were satisfied;</li>
+    <li>duplicate and conflict review was performed;</li>
+    <li>the SREG remains within Registry scope;</li>
+    <li>restricted publication requirements are honored.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Validation</h2>
+
+  <p>
+    Identifier validation should confirm:
+  </p>
+
+  <ul>
+    <li>Registry Identifier matches the approved pattern;</li>
+    <li>Registry Identifier is unique;</li>
+    <li>identifier has not been reused;</li>
+    <li>assignment record exists;</li>
+    <li>identifier namespace is valid;</li>
+    <li>Registry Identifier and Source-System Identifier remain distinct;</li>
+    <li>aliases are not represented as canonical identifiers;</li>
+    <li>resolution target exists or is intentionally historical;</li>
+    <li>supersession and replacement relationships are preserved.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema Validation</h2>
+
+  <p>
+    Schema validation should confirm:
+  </p>
+
+  <ul>
+    <li>required fields are present;</li>
+    <li>field names match the approved schema;</li>
+    <li>data types are correct;</li>
+    <li>required formats are valid;</li>
+    <li>cardinality requirements are satisfied;</li>
+    <li>controlled values are approved;</li>
+    <li>required objects and arrays are structured correctly;</li>
+    <li>deprecated fields are absent or handled according to migration rules;</li>
+    <li>schema version is declared;</li>
+    <li>machine-readable representation parses successfully.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Record-Type Profile Validation</h2>
+
+  <p>
+    Record-Type Profile validation should confirm:
+  </p>
+
+  <ul>
+    <li>one approved primary Record Type is assigned;</li>
+    <li>the correct Profile Version is declared;</li>
+    <li>profile-specific required fields are present;</li>
+    <li>profile-specific controlled values are valid;</li>
+    <li>record-type relationships are represented correctly;</li>
+    <li>record-type publication requirements are satisfied;</li>
+    <li>the SREG is not forced into an inaccurate classification.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Provenance Validation</h2>
+
+  <p>
+    Provenance validation should confirm:
+  </p>
+
+  <ul>
+    <li>Source Institution is attributable;</li>
+    <li>Source Record is traceable;</li>
+    <li>Source-System Identifier is preserved when available;</li>
+    <li>canonical source reference is present;</li>
+    <li>source and Registry versions remain separate;</li>
+    <li>derived artifacts identify their source;</li>
+    <li>archival references are labeled accurately;</li>
+    <li>historical provenance remains discoverable;</li>
+    <li>corrections preserve prior provenance values.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship Validation</h2>
+
+  <p>
+    Relationship validation should confirm:
+  </p>
+
+  <ul>
+    <li>source and target identifiers exist or are valid external references;</li>
+    <li>identifier domains are declared;</li>
+    <li>relationship type is approved;</li>
+    <li>direction is valid;</li>
+    <li>relationship authority is identified;</li>
+    <li>version and temporal context are coherent;</li>
+    <li>inverse relationships are correct when published;</li>
+    <li>duplicate relationships are prevented;</li>
+    <li>relationship status is valid;</li>
+    <li>supporting references exist when required.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Validation</h2>
+
+  <p>
+    Version validation should confirm:
+  </p>
+
+  <ul>
+    <li>Registry Entry Version is declared;</li>
+    <li>Source-Record Version is preserved when available;</li>
+    <li>schema and profile versions are declared;</li>
+    <li>version changes follow approved increment rules;</li>
+    <li>prior versions remain discoverable;</li>
+    <li>current and historical versions are not confused;</li>
+    <li>supersession does not overwrite prior identity;</li>
+    <li>human-readable and machine-readable versions agree.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Status and Lifecycle Validation</h2>
+
+  <p>
+    Validation should confirm:
+  </p>
+
+  <ul>
+    <li>Registry Status uses an approved value;</li>
+    <li>Registry Lifecycle State uses an approved value;</li>
+    <li>Source-Record Status remains separate;</li>
+    <li>Certification or Attestation Status remains source-owned;</li>
+    <li>status and lifecycle dates are coherent;</li>
+    <li>transitions follow approved rules;</li>
+    <li>superseded, revoked, retired, and archived states preserve history;</li>
+    <li>public notices match the current Registry condition.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Correction Validation</h2>
+
+  <p>
+    Correction validation should confirm:
+  </p>
+
+  <ul>
+    <li>prior value is preserved;</li>
+    <li>corrected value is identified;</li>
+    <li>correction reason is documented;</li>
+    <li>correction date and authority are preserved;</li>
+    <li>affected Registry Entry Version is identified;</li>
+    <li>supporting evidence exists;</li>
+    <li>public correction notice is published when required;</li>
+    <li>human-readable and machine-readable corrections agree;</li>
+    <li>correction does not erase historical traceability.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Validation</h2>
+
+  <p>
+    Publication validation should confirm:
+  </p>
+
+  <ul>
+    <li>canonical title is correct;</li>
+    <li>Registry Identifier is visible;</li>
+    <li>canonical URL is declared;</li>
+    <li>human-readable SREG is complete;</li>
+    <li>machine-readable SREG is complete;</li>
+    <li>downloadable artifacts are available when required;</li>
+    <li>Source Record and Source Institution links are present;</li>
+    <li>status and lifecycle notices are accurate;</li>
+    <li>version information is visible;</li>
+    <li>relationships and provenance are represented consistently;</li>
+    <li>metadata and page content agree;</li>
+    <li>redirects and historical references are preserved.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Cross-Format Consistency</h2>
+
+  <p>
+    Registry should compare human-readable and machine-readable forms field by field.
+  </p>
+
+  <p>
+    Consistency review should include:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>title;</li>
+    <li>Record Type;</li>
+    <li>Source Institution;</li>
+    <li>Source-System Identifier;</li>
+    <li>canonical source reference;</li>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>Registry Entry Version;</li>
+    <li>Source-Record Version;</li>
+    <li>relationships;</li>
+    <li>provenance;</li>
+    <li>correction references;</li>
+    <li>publication dates.</li>
+  </ul>
+
+  <div class="note">
+    A SREG is not fully validated when its official formats disagree.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Automated Validation</h2>
+  <p>
+    Applies schemas, controlled values, identifier rules, required fields, formats,
+    cardinality, and machine-readable consistency checks.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Institutional Review</h2>
+  <p>
+    Confirms authority boundaries, meaning, classification, exceptions, provenance,
+    relationships, and publication readiness.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Cross-Artifact Review</h2>
+  <p>
+    Compares HTML, JSON, downloadable records, packages, manifests, and source references.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Historical Review</h2>
+  <p>
+    Confirms corrections, supersession, archived versions, and prior states remain traceable.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Workflow</h2>
+
+  <div class="flow" aria-label="Registry validation workflow">
+    <strong>Prepare SREG</strong>
+    <span>→</span>
+    <strong>Run Structural Checks</strong>
+    <span>→</span>
+    <strong>Review Authority and Provenance</strong>
+    <span>→</span>
+    <strong>Validate Relationships and Versions</strong>
+    <span>→</span>
+    <strong>Compare Publication Formats</strong>
+    <span>→</span>
+    <strong>Record Result</strong>
+    <span>→</span>
+    <strong>Publish or Return for Correction</strong>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Record</h2>
+
+  <p>
+    Every material validation should preserve:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>Registry Entry Version;</li>
+    <li>validation date;</li>
+    <li>validation authority or workflow;</li>
+    <li>requirements and versions applied;</li>
+    <li>checks performed;</li>
+    <li>findings;</li>
+    <li>warnings;</li>
+    <li>exceptions;</li>
+    <li>result;</li>
+    <li>required corrections;</li>
+    <li>revalidation date, when applicable;</li>
+    <li>supporting report or artifact reference.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Outcomes</h2>
+
+  <ul>
+    <li><strong>Valid</strong> — all required checks pass.</li>
+    <li><strong>Valid with Warnings</strong> — required checks pass, but non-blocking concerns remain documented.</li>
+    <li><strong>Conditionally Valid</strong> — publication may proceed only under explicit approved conditions.</li>
+    <li><strong>Invalid</strong> — one or more blocking requirements fail.</li>
+    <li><strong>Indeterminate</strong> — available evidence or system capability is insufficient to determine validity.</li>
+    <li><strong>Not Evaluated</strong> — validation has not yet been completed.</li>
+  </ul>
+
+  <div class="note">
+    Validation outcome describes the Registry object's conformance.
+    It does not certify the Source Record's substantive truth.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Blocking Error</h2>
+  <p>
+    Prevents publication or continued presentation as a valid operational SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Warning</h2>
+  <p>
+    Identifies a non-blocking concern that should remain visible and reviewable.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Exception</h2>
+  <p>
+    Documents an approved departure from a requirement under defined governance.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Informational Finding</h2>
+  <p>
+    Records context that does not affect validation outcome.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Invalid Conditions</h2>
+
+  <ul>
+    <li>missing required field;</li>
+    <li>invalid controlled value;</li>
+    <li>duplicate or reused Registry Identifier;</li>
+    <li>unsupported Source Authority;</li>
+    <li>missing Registrability outcome;</li>
+    <li>incorrect Record Type;</li>
+    <li>broken canonical source reference;</li>
+    <li>missing or contradictory provenance;</li>
+    <li>invalid relationship direction or type;</li>
+    <li>collapsed version domains;</li>
+    <li>incoherent status or lifecycle transition;</li>
+    <li>silent correction;</li>
+    <li>human-readable and machine-readable mismatch;</li>
+    <li>publication before required validation completion.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Revalidation</h2>
+
+  <p>
+    Revalidation may be required after:
+  </p>
+
+  <ul>
+    <li>Registry Entry update;</li>
+    <li>Source Record version change;</li>
+    <li>schema or profile change;</li>
+    <li>identifier correction;</li>
+    <li>relationship change;</li>
+    <li>provenance correction;</li>
+    <li>status or lifecycle transition;</li>
+    <li>publication-path change;</li>
+    <li>governance exception;</li>
+    <li>material rule or policy update;</li>
+    <li>discovery of a validation defect.</li>
+  </ul>
+
+  <p>
+    Revalidation should identify which domains changed and whether full or
+    targeted review is required.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation and Existing Publication</h2>
+
+  <p>
+    If a published SREG later fails validation, Registry may:
+  </p>
+
+  <ul>
+    <li>publish a correction notice;</li>
+    <li>return the SREG to review;</li>
+    <li>restrict publication;</li>
+    <li>mark validation as failed or indeterminate;</li>
+    <li>supersede the affected version;</li>
+    <li>revoke or archive the SREG when required;</li>
+    <li>preserve the prior public state for history;</li>
+    <li>publish a corrected Registry Entry Version.</li>
+  </ul>
+
+  <div class="note">
+    Validation failure should change the Registry condition transparently.
+    It should not erase the historical record.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Registrability</h2>
+
+  <p>
+    Registrability occurs before construction and answers whether Registry should
+    create the SREG.
+  </p>
+
+  <p>
+    Validation occurs after construction and answers whether the SREG conforms to
+    the governing requirements.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Certification</h2>
+
+  <p>
+    Registry Validation and Certifier Certification are separate institutional acts.
+  </p>
+
+  <div class="flow" aria-label="Validation and certification distinction">
+    <strong>Registry Validation</strong>
+    <span>≠</span>
+    <strong>Certifier Certification</strong>
+  </div>
+
+  <p>
+    Registry validates the SREG as a Registry object.
+    Certifier evaluates a certification subject under applicable certification
+    standards and methodology.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Attestation</h2>
+
+  <p>
+    Validation does not create an attestation.
+  </p>
+
+  <p>
+    Attestor may issue a distinct trust statement about a record, process, or
+    validation result. Registry may catalog that attestation through a separate SREG.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Publication</h2>
+
+  <p>
+    A production SREG should not be published as valid until required validation is complete.
+  </p>
+
+  <p>
+    Publication should preserve:
+  </p>
+
+  <ul>
+    <li>validation outcome;</li>
+    <li>validation date;</li>
+    <li>validated Registry Entry Version;</li>
+    <li>requirements applied;</li>
+    <li>warnings or conditions;</li>
+    <li>revalidation history;</li>
+    <li>validation report reference, when public.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Validation Does Not Establish</h2>
+
+  <ul>
+    <li>It does not certify the Source Record.</li>
+    <li>It does not verify every substantive claim.</li>
+    <li>It does not create Source Authority.</li>
+    <li>It does not create legal ownership.</li>
+    <li>It does not grant licensing rights.</li>
+    <li>It does not establish governmental approval.</li>
+    <li>It does not create endorsement or affiliation.</li>
+    <li>It does not guarantee permanent source availability.</li>
+    <li>It does not eliminate future revalidation.</li>
+    <li>It does not transfer authority from another Suite institution.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Principle</h2>
+
+  <p>
+    Registry Validation should confirm that each SREG is structurally complete,
+    institutionally coherent, traceable to its source, internally consistent, and
+    ready for accurate publication.
+  </p>
+
+  <div class="note">
+    Validation confirms Registry conformance.
+    Certification evaluates a subject.
+    The two must remain institutionally distinct.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/provenance/">Open Provenance →</a>
+  <a class="btn" href="/registry/schemas/">Open Schemas →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Validation protects the integrity of the Registry object without claiming authority over the source.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
