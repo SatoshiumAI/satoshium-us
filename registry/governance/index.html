@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Governance</title>
+<meta name="description" content="Satoshium Registry Governance — defines the authority, decision rights, approvals, accountability, change control, exceptions, conflicts, reviews, and institutional stewardship governing SREGs and Registry operations.">
+<link rel="canonical" href="https://satoshium.us/registry/governance/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul,
+.card ol{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Governance</div>
+  <h1>Satoshium Registry Governance</h1>
+
+  <p class="lead">
+    Satoshium Registry Governance defines the authority, decision rights,
+    approvals, accountability, change control, exception handling, conflict
+    resolution, review, and institutional stewardship governing SREGs and
+    Registry operations.
+  </p>
+
+  <p class="lead">
+    Governance ensures that Registry decisions remain authorized, consistent,
+    reviewable, versioned, transparent, and aligned with the wider Satoshium Suite.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Registry Governance operates within Suite authority and governs the Registry's
+    own Rules, Policies, Procedures, schemas, profiles, controlled values, records,
+    publications, and operational decisions.
+  </p>
+
+  <div class="flow" aria-label="Registry governance hierarchy">
+    <strong>Suite Standards</strong>
+    <span>→</span>
+    <strong>Suite Methodology</strong>
+    <span>→</span>
+    <strong>Suite Interoperability</strong>
+    <span>→</span>
+    <strong>Registry Governance</strong>
+    <span>→</span>
+    <strong>Registry Rules, Policies, Procedures, and Operations</strong>
+  </div>
+
+  <div class="note">
+    Governance protects institutional coherence.
+    It does not replace Source Authority or the independent authority of other Suite institutions.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Governance Matters</h2>
+  <p>
+    Registry requires durable decision authority for identifiers, schemas,
+    classifications, policies, exceptions, corrections, publication, and historical preservation.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>
+    Governance asks:
+  </p>
+  <div class="note">
+    Who may decide, approve, change, interpret, review, or override a Registry-controlled matter?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Registry's Responsibility</h2>
+  <p>
+    Registry must preserve decision authority, rationale, effective dates,
+    versions, approvals, conflicts, exceptions, and institutional history.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry's Limitation</h2>
+  <p>
+    Registry Governance governs Registry. It must not absorb Source Authority,
+    Certifier authority, Attestor authority, or the constitutional responsibilities
+    of other Suite institutions.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Framework</h2>
+
+  <div class="flow" aria-label="Registry governance framework">
+    <strong>Issue or Change Need</strong>
+    <span>→</span>
+    <strong>Authority Determination</strong>
+    <span>→</span>
+    <strong>Analysis and Draft</strong>
+    <span>→</span>
+    <strong>Review</strong>
+    <span>→</span>
+    <strong>Approval</strong>
+    <span>→</span>
+    <strong>Publication</strong>
+    <span>→</span>
+    <strong>Implementation</strong>
+    <span>→</span>
+    <strong>Monitoring and Revision</strong>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Domains</h2>
+
+  <ul>
+    <li>constitutional alignment;</li>
+    <li>Registry authority and scope;</li>
+    <li>Rules governance;</li>
+    <li>Policy governance;</li>
+    <li>Procedure governance;</li>
+    <li>schema and profile governance;</li>
+    <li>controlled-value governance;</li>
+    <li>identifier governance;</li>
+    <li>Record-Type governance;</li>
+    <li>relationship governance;</li>
+    <li>provenance governance;</li>
+    <li>validation governance;</li>
+    <li>publication governance;</li>
+    <li>versioning governance;</li>
+    <li>correction governance;</li>
+    <li>status and lifecycle governance;</li>
+    <li>exception governance;</li>
+    <li>conflict resolution;</li>
+    <li>restricted-access governance;</li>
+    <li>preservation and archival governance;</li>
+    <li>transparency and accountability.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Authorized</h2>
+  <p>
+    Material decisions must be made by an appropriate Registry authority or approved process.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Documented</h2>
+  <p>
+    Decisions should preserve rationale, evidence, authority, date, scope, and effect.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Versioned</h2>
+  <p>
+    Governance-controlled materials should preserve current and historical versions.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Reviewable</h2>
+  <p>
+    Decisions, exceptions, and conflicts should remain reconstructable and open to appropriate review.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Authority</h2>
+
+  <p>
+    Governance authority may be exercised through:
+  </p>
+
+  <ul>
+    <li>the Registry institution;</li>
+    <li>the Founder or designated institutional steward;</li>
+    <li>approved Registry governance roles;</li>
+    <li>approved review bodies or councils;</li>
+    <li>documented automated controls operating under approved authority;</li>
+    <li>delegated decision roles with defined scope;</li>
+    <li>Suite-level authority where constitutional alignment is required.</li>
+  </ul>
+
+  <div class="note">
+    Delegation permits another role or process to act.
+    It does not remove accountability from the governing institution.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Decision Rights</h2>
+
+  <p>
+    Governance should define who may:
+  </p>
+
+  <ul>
+    <li>approve Registry Rules;</li>
+    <li>approve or amend Policies;</li>
+    <li>approve or revise Procedures;</li>
+    <li>create or retire Registry Record Types;</li>
+    <li>approve schemas and Record-Type Profiles;</li>
+    <li>approve controlled values;</li>
+    <li>approve identifier namespaces and patterns;</li>
+    <li>approve validation outcomes or exceptions;</li>
+    <li>authorize publication, correction, restriction, revocation, or archival action;</li>
+    <li>resolve conflicts;</li>
+    <li>approve migrations and compatibility changes;</li>
+    <li>delegate operational authority;</li>
+    <li>review or reverse prior Registry decisions.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Roles</h2>
+
+  <p>
+    Registry may distinguish among:
+  </p>
+
+  <ul>
+    <li><strong>Authority</strong> — holds final decision responsibility.</li>
+    <li><strong>Approver</strong> — formally approves a proposal or action.</li>
+    <li><strong>Reviewer</strong> — evaluates consistency, evidence, risk, and readiness.</li>
+    <li><strong>Operator</strong> — executes approved Procedures.</li>
+    <li><strong>Maintainer</strong> — preserves records, schemas, documentation, and publication.</li>
+    <li><strong>Custodian</strong> — preserves artifacts or records without necessarily controlling meaning.</li>
+    <li><strong>Observer</strong> — monitors compliance or reports concerns without decision authority.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Separation of Duties</h2>
+
+  <p>
+    Material Registry actions may require separation among:
+  </p>
+
+  <ul>
+    <li>proposal;</li>
+    <li>review;</li>
+    <li>approval;</li>
+    <li>implementation;</li>
+    <li>validation;</li>
+    <li>publication;</li>
+    <li>audit or historical review.</li>
+  </ul>
+
+  <p>
+    Separation should be proportional to the significance, risk, and reversibility of the action.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Decision Record</h2>
+
+  <p>
+    Material governance decisions should preserve:
+  </p>
+
+  <ul>
+    <li>decision identifier;</li>
+    <li>title;</li>
+    <li>decision authority;</li>
+    <li>proposal or issue reference;</li>
+    <li>decision date;</li>
+    <li>effective date;</li>
+    <li>scope;</li>
+    <li>decision text;</li>
+    <li>rationale;</li>
+    <li>evidence reviewed;</li>
+    <li>affected Registry materials;</li>
+    <li>implementation requirements;</li>
+    <li>exceptions or conditions;</li>
+    <li>review date;</li>
+    <li>superseded decision reference;</li>
+    <li>publication and history references.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Illustrative Governance Record</h2>
+
+  <div class="code-block" aria-label="Illustrative governance record">
+decision_identifier: "SREG-GOV-2026-0001"
+decision_title: "Approval of Registry Publication Policy"
+authority: "Satoshium Registry"
+decision_date: "2026-08-02"
+effective_date: "2026-08-02"
+status: "active"
+  </div>
+
+  <div class="note">
+    Final governance identifiers, field names, and controlled values remain subject
+    to Registry approval.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Rules Governance</h2>
+
+  <ul>
+    <li>Registry Rules require clear authority and approval.</li>
+    <li>Rule changes must preserve version history and effective dates.</li>
+    <li>Rules must remain aligned with Suite Standards and Methodology.</li>
+    <li>Conflicting Rules must be resolved through documented Governance.</li>
+    <li>Rules should not be changed through ordinary Procedure updates.</li>
+    <li>Superseded Rules must remain historically discoverable.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Governance</h2>
+
+  <ul>
+    <li>Policies require identified authority, scope, version, approval, and effective date.</li>
+    <li>Policies must remain consistent with Rules.</li>
+    <li>Material policy changes require review of affected Procedures, schemas, profiles, and publications.</li>
+    <li>Exceptions must not silently rewrite Policy.</li>
+    <li>Prior Policy Versions must remain discoverable.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Procedure Governance</h2>
+
+  <ul>
+    <li>Procedures require defined authority, version, prerequisites, steps, outputs, and records.</li>
+    <li>Procedures must remain consistent with Rules and Policies.</li>
+    <li>Operational convenience must not silently change institutional requirements.</li>
+    <li>Procedure changes should trigger training, migration, or workflow updates when needed.</li>
+    <li>Prior Procedure Versions must remain discoverable.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema and Profile Governance</h2>
+
+  <ul>
+    <li>SREG Base Schema changes require documented approval.</li>
+    <li>Record-Type Profiles require versioning and compatibility review.</li>
+    <li>Breaking changes require migration or explicit continued support for prior versions.</li>
+    <li>Deprecated fields and values must remain interpretable in historical records.</li>
+    <li>Schema changes must be reconciled with Validation and Publication requirements.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Controlled-Value Governance</h2>
+
+  <ul>
+    <li>Controlled values require approved definitions.</li>
+    <li>Addition, amendment, deprecation, and retirement must be documented.</li>
+    <li>Renamed values must preserve historical interpretation.</li>
+    <li>Inverse and symmetry rules for relationships require approval.</li>
+    <li>Validation outcomes, statuses, lifecycle states, and notice types must remain governed.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Governance</h2>
+
+  <ul>
+    <li>Identifier namespaces and patterns require approval.</li>
+    <li>Registry Identifiers must remain unique and non-reusable.</li>
+    <li>Identifier corrections require preserved history.</li>
+    <li>Reserved, assigned, published, superseded, and archived identifier conditions must be governed.</li>
+    <li>Changes to identifier architecture require migration and resolution planning.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Record-Type Governance</h2>
+
+  <ul>
+    <li>New Registry Record Types require defined scope and purpose.</li>
+    <li>Each Record Type should have an approved Profile.</li>
+    <li>Overlapping types require documented boundaries.</li>
+    <li>Reclassification rules must preserve history.</li>
+    <li>Deprecated Record Types must remain interpretable for historical SREGs.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Governance</h2>
+
+  <ul>
+    <li>Validation requirements and outcomes require approved definitions.</li>
+    <li>Blocking errors, warnings, exceptions, and informational findings must remain distinct.</li>
+    <li>Conditional validation requires defined authority and visible conditions.</li>
+    <li>Revalidation triggers must be governed.</li>
+    <li>Validation must not be represented as Certifier Certification.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Governance</h2>
+
+  <ul>
+    <li>Publication authority and readiness requirements must be defined.</li>
+    <li>Canonical URL and resolution patterns require approval.</li>
+    <li>Restricted publication and withdrawal require documented authority.</li>
+    <li>Corrections, supersession, revocation, and archival presentation must preserve history.</li>
+    <li>Official human-readable and machine-readable forms must remain aligned.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Correction Governance</h2>
+
+  <ul>
+    <li>Material errors must be correctable through an approved process.</li>
+    <li>Correction authority and evidence must be preserved.</li>
+    <li>Silent material correction is prohibited.</li>
+    <li>Disputed corrections require escalation and visible status.</li>
+    <li>Corrections must preserve prior values and affected versions.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Status and Lifecycle Governance</h2>
+
+  <ul>
+    <li>Status and Lifecycle controlled values require approval.</li>
+    <li>Permitted transitions must be defined.</li>
+    <li>Transition authority, reason, date, and evidence must be preserved.</li>
+    <li>Supersession, revocation, retirement, and archival actions require accountable decision records.</li>
+    <li>Registry Status and Registry Lifecycle State must remain separate.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Exception Governance</h2>
+
+  <p>
+    Exceptions should be approved only when:
+  </p>
+
+  <ul>
+    <li>the governing requirement is identified;</li>
+    <li>the requesting need is documented;</li>
+    <li>the approving authority is competent within scope;</li>
+    <li>risk and impact are considered;</li>
+    <li>scope and duration are limited;</li>
+    <li>compensating controls are documented;</li>
+    <li>material effects are visible in Validation and Publication;</li>
+    <li>review or expiration is defined.</li>
+  </ul>
+
+  <div class="note">
+    An exception changes application in a governed case.
+    It does not silently change the governing Rule or Policy.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Conflict Resolution</h2>
+
+  <p>
+    When Registry materials or decisions conflict, Governance should:
+  </p>
+
+  <ol>
+    <li>identify the conflicting provisions or decisions;</li>
+    <li>determine the governing authority hierarchy;</li>
+    <li>identify current and historical versions;</li>
+    <li>apply the more specific requirement when appropriate;</li>
+    <li>apply clear supersession when documented;</li>
+    <li>pause material action when ambiguity creates risk;</li>
+    <li>issue an interim decision when necessary;</li>
+    <li>approve correction, amendment, or supersession;</li>
+    <li>publish the resolution;</li>
+    <li>preserve the prior conflict and decision history.</li>
+  </ol>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Appeal and Reconsideration</h2>
+
+  <p>
+    Registry Governance may permit reconsideration when:
+  </p>
+
+  <ul>
+    <li>new evidence becomes available;</li>
+    <li>authority was misidentified;</li>
+    <li>a Rule or Policy was applied incorrectly;</li>
+    <li>a material conflict was overlooked;</li>
+    <li>a decision exceeded delegated authority;</li>
+    <li>an exception or restriction is no longer necessary;</li>
+    <li>the governing framework materially changed.</li>
+  </ul>
+
+  <p>
+    Reconsideration should preserve the original decision, new review, outcome,
+    authority, and effective date.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Emergency Governance</h2>
+
+  <p>
+    Temporary emergency action may be appropriate when delay would create material:
+  </p>
+
+  <ul>
+    <li>security risk;</li>
+    <li>safety risk;</li>
+    <li>privacy harm;</li>
+    <li>rights violation;</li>
+    <li>publication deception;</li>
+    <li>integrity failure;</li>
+    <li>systemic Registry damage.</li>
+  </ul>
+
+  <p>
+    Emergency action should preserve:
+  </p>
+
+  <ul>
+    <li>emergency authority;</li>
+    <li>action taken;</li>
+    <li>reason;</li>
+    <li>date and time;</li>
+    <li>affected records and systems;</li>
+    <li>temporary duration;</li>
+    <li>required post-action review;</li>
+    <li>final ratification, modification, or reversal.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Delegation</h2>
+
+  <p>
+    Delegation should identify:
+  </p>
+
+  <ul>
+    <li>delegating authority;</li>
+    <li>delegated role or process;</li>
+    <li>scope;</li>
+    <li>permitted decisions or actions;</li>
+    <li>limitations;</li>
+    <li>effective date;</li>
+    <li>expiration or review date;</li>
+    <li>oversight requirements;</li>
+    <li>revocation conditions.</li>
+  </ul>
+
+  <div class="note">
+    Delegated authority must remain traceable to the institution that granted it.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Review</h2>
+
+  <p>
+    Governance materials should be reviewed when:
+  </p>
+
+  <ul>
+    <li>Suite Standards or Methodology change;</li>
+    <li>Registry architecture changes;</li>
+    <li>new Record Types are introduced;</li>
+    <li>exceptions recur;</li>
+    <li>conflicts expose ambiguity;</li>
+    <li>Validation identifies systemic defects;</li>
+    <li>publication or source architecture changes;</li>
+    <li>roles or authority boundaries change;</li>
+    <li>legal, privacy, rights, safety, or security conditions change;</li>
+    <li>scheduled review dates arrive.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Validation</h2>
+
+  <p>
+    Before a governance action becomes effective, Registry should confirm:
+  </p>
+
+  <ul>
+    <li>decision authority is valid;</li>
+    <li>scope is within Registry authority;</li>
+    <li>Suite alignment is preserved;</li>
+    <li>conflicts have been reviewed;</li>
+    <li>affected materials are identified;</li>
+    <li>implementation requirements are clear;</li>
+    <li>version and effective date are assigned;</li>
+    <li>exceptions and conditions are documented;</li>
+    <li>publication and historical preservation are planned;</li>
+    <li>human-readable and machine-readable governance records agree when both exist.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Transparency</h2>
+
+  <p>
+    Registry should publish or preserve appropriate visibility into:
+  </p>
+
+  <ul>
+    <li>current Rules, Policies, and Procedures;</li>
+    <li>current schema and profile versions;</li>
+    <li>current controlled values;</li>
+    <li>material governance decisions;</li>
+    <li>effective dates;</li>
+    <li>change summaries;</li>
+    <li>exceptions that materially affect public interpretation;</li>
+    <li>conflict resolutions;</li>
+    <li>superseded governance materials;</li>
+    <li>review and amendment history.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Suite Governance</h2>
+
+  <p>
+    Registry Governance must remain aligned with Suite-level constitutional,
+    standards, methodology, and interoperability decisions.
+  </p>
+
+  <p>
+    Registry may govern its implementation without redefining Suite-wide authority.
+  </p>
+
+  <div class="note">
+    Suite Governance protects the whole.
+    Registry Governance protects the institution within it.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Source Institutions</h2>
+
+  <p>
+    Registry Governance may determine how Registry represents a Source Record.
+  </p>
+
+  <p>
+    It may not determine the Source Institution's own substantive meaning,
+    outcome, rights, source status, or source-domain versioning.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Chronicle</h2>
+
+  <p>
+    Material governance decisions may become Chronicle events when they have
+    institutional or historical significance.
+  </p>
+
+  <p>
+    Registry remains authoritative for the Governance Decision Record.
+    Chronicle remains authoritative for its historical event record.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Navigator</h2>
+
+  <p>
+    Navigator may coordinate governance review, approval, implementation, and
+    recurring review as formal workflows.
+  </p>
+
+  <p>
+    Registry remains authoritative for governance decisions.
+    Navigator remains authoritative for Navigator-created workflow definitions and execution records.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Governance Does Not Establish</h2>
+
+  <ul>
+    <li>It does not create Source Authority.</li>
+    <li>It does not certify Source Records.</li>
+    <li>It does not create attestations.</li>
+    <li>It does not override Suite Standards or Methodology.</li>
+    <li>It does not override lawful authority or rights holders.</li>
+    <li>It does not permit undocumented exceptions.</li>
+    <li>It does not eliminate institutional accountability through delegation.</li>
+    <li>It does not permit silent change or historical erasure.</li>
+    <li>It does not transfer authority from another Suite institution.</li>
+    <li>It does not expand Registry beyond its constitutional scope.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Principle</h2>
+
+  <p>
+    Registry Governance should ensure that every material Registry decision is
+    authorized, documented, reviewable, versioned, implementable, transparent,
+    and preserved as part of institutional history.
+  </p>
+
+  <div class="note">
+    Authority makes decisions legitimate.
+    Governance makes them accountable.
+    History makes them enduring.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/policies/">Open Policies →</a>
+  <a class="btn" href="/registry/procedures/">Open Procedures →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Institutions endure when authority, decisions, and history remain visible to one another.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
