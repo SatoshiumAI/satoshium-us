@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Identifiers</title>
+<meta name="description" content="Satoshium Registry Identifiers — defines the permanent Registry Identifier architecture for SREGs and preserves the distinction between Registry identity, Source-System identity, external references, versions, aliases, and successor records.">
+<link rel="canonical" href="https://satoshium.us/registry/identifiers/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Identifiers</div>
+  <h1>Satoshium Registry Identifiers</h1>
+
+  <p class="lead">
+    Satoshium Registry Identifiers provide the permanent identity layer for
+    Satoshium Registry Entries while preserving the independent identifiers
+    assigned by Source Institutions and external systems.
+  </p>
+
+  <p class="lead">
+    Registry identity must remain stable even when titles, URLs, versions,
+    statuses, institutions, or source locations change.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Identifier assignment follows a positive Registrability outcome and precedes
+    operational SREG construction and publication.
+  </p>
+
+  <div class="flow" aria-label="Identifier assignment position">
+    <strong>Source Authority</strong>
+    <span>→</span>
+    <strong>Registrability</strong>
+    <span>→</span>
+    <strong>Registry Identifier Assignment</strong>
+    <span>→</span>
+    <strong>SREG Construction</strong>
+    <span>→</span>
+    <strong>Validation and Publication</strong>
+  </div>
+
+  <div class="note">
+    Registrability authorizes identity creation.
+    Registry Identifier assignment creates the permanent Registry identity of the SREG.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Identifiers Matter</h2>
+  <p>
+    Titles change. URLs move. repositories are reorganized. institutions merge.
+    records are superseded. versions accumulate.
+  </p>
+  <p>
+    A durable Registry Identifier allows the SREG to remain discoverable through
+    those changes.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Distinction</h2>
+  <div class="note">
+    Registry Identifier ≠ Source-System Identifier
+  </div>
+  <p>
+    The Registry Identifier identifies the SREG.
+    The Source-System Identifier identifies the Authoritative Source Record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry Authority</h2>
+  <p>
+    Registry is authoritative for assigning, preserving, resolving, correcting,
+    and retiring Registry Identifiers.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source Authority</h2>
+  <p>
+    The Source Institution remains authoritative for identifiers assigned within
+    its own institutional system.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Identifier Relationship</h2>
+
+  <div class="flow" aria-label="Canonical identifier relationship">
+    <strong>Registry Identifier</strong>
+    <span>→</span>
+    <strong>SREG</strong>
+    <span>→</span>
+    <strong>Source-System Identifier</strong>
+    <span>→</span>
+    <strong>Authoritative Source Record</strong>
+  </div>
+
+  <p>
+    Registry links these identifiers without collapsing them into one identity domain.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Domains</h2>
+
+  <ul>
+    <li><strong>Registry Identifier</strong> — identifies the SREG.</li>
+    <li><strong>Source-System Identifier</strong> — identifies the Source Record within its originating institution.</li>
+    <li><strong>External Identifier</strong> — identifies the record or subject in a third-party system.</li>
+    <li><strong>Version Identifier</strong> — identifies a specific version or release.</li>
+    <li><strong>Artifact Identifier</strong> — identifies a generated report, receipt, record, package, or derivative artifact.</li>
+    <li><strong>Relationship Identifier</strong> — identifies a governed relationship object when required.</li>
+    <li><strong>Integrity Identifier</strong> — identifies a hash, signature, timestamp, commitment, or Anchor reference.</li>
+    <li><strong>Workflow Identifier</strong> — identifies a process, review, validation, or Navigator workflow.</li>
+  </ul>
+
+  <div class="note">
+    Identifier domains may be linked, but they must remain semantically distinct.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Registry Identifier</h2>
+  <p>
+    Permanent Registry-controlled identity assigned to one SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source-System Identifier</h2>
+  <p>
+    Identifier assigned by the institution that owns the Authoritative Source Record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>External Identifier</h2>
+  <p>
+    Identifier assigned by an outside platform, standards body, archive, repository,
+    jurisdiction, or database.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Version Identifier</h2>
+  <p>
+    Identifier or version label associated with one state of a SREG or Source Record.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Identifier Requirements</h2>
+
+  <p>
+    Every production Registry Identifier should be:
+  </p>
+
+  <ul>
+    <li>globally unique within Satoshium Registry;</li>
+    <li>permanent after assignment;</li>
+    <li>non-reusable;</li>
+    <li>machine-readable;</li>
+    <li>human-recognizable;</li>
+    <li>resolvable to the canonical SREG publication;</li>
+    <li>independent from mutable titles and URLs;</li>
+    <li>independent from Source-System Identifiers;</li>
+    <li>preserved after supersession, revocation, retirement, or archival;</li>
+    <li>documented through an assignment record;</li>
+    <li>validated before publication;</li>
+    <li>historically traceable after correction.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Structure</h2>
+
+  <p>
+    A production Registry Identifier should use a controlled structure that can
+    distinguish Registry ownership, Record Type, year or issuance context, and
+    sequence without embedding mutable meaning.
+  </p>
+
+  <div class="code-block" aria-label="Illustrative identifier pattern">
+SREG-[TYPE]-[YEAR]-[SEQUENCE]
+  </div>
+
+  <p>
+    Illustrative examples:
+  </p>
+
+  <div class="code-block" aria-label="Illustrative Registry Identifiers">
+SREG-JUR-2026-0001
+SREG-CERT-2026-0001
+SREG-TOOL-2026-0001
+SREG-MEDIA-2026-0001
+  </div>
+
+  <div class="note">
+    These examples illustrate structure only.
+    Final production prefixes, abbreviations, and controlled values remain subject
+    to Registry governance.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Prefix</h2>
+  <p>
+    Identifies the Registry identifier domain, such as SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Type Segment</h2>
+  <p>
+    May indicate the approved Registry Record Type without replacing the Record Type field.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Issuance Segment</h2>
+  <p>
+    May preserve year or other controlled issuance context.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Sequence</h2>
+  <p>
+    Provides uniqueness within the applicable identifier namespace.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Assignment Authority</h2>
+
+  <p>
+    Registry alone assigns Registry Identifiers.
+  </p>
+
+  <p>
+    Identifier assignment should occur only after:
+  </p>
+
+  <ul>
+    <li>Source Authority review is complete or explicitly provisional;</li>
+    <li>Registrability outcome permits progression;</li>
+    <li>the proposed SREG is not a duplicate;</li>
+    <li>one approved Record Type is selected;</li>
+    <li>minimum identity metadata is available;</li>
+    <li>identifier namespace is confirmed;</li>
+    <li>the next available sequence is reserved;</li>
+    <li>the assignment event is recorded.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Assignment Record</h2>
+
+  <p>
+    The assignment record should preserve:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>identifier namespace;</li>
+    <li>identifier pattern version;</li>
+    <li>Record Type;</li>
+    <li>proposed SREG title;</li>
+    <li>Source Institution;</li>
+    <li>Source-System Identifier;</li>
+    <li>assignment date;</li>
+    <li>assignment authority;</li>
+    <li>Registrability outcome reference;</li>
+    <li>status at assignment;</li>
+    <li>reservation or publication state;</li>
+    <li>supporting workflow reference.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Permanence and Non-Reuse</h2>
+
+  <p>
+    Once assigned, a production Registry Identifier should never be reassigned
+    to a different SREG.
+  </p>
+
+  <p>
+    This applies even when the original SREG becomes:
+  </p>
+
+  <ul>
+    <li>superseded;</li>
+    <li>revoked;</li>
+    <li>retired;</li>
+    <li>archived;</li>
+    <li>withdrawn from active publication;</li>
+    <li>historical;</li>
+    <li>unavailable.</li>
+  </ul>
+
+  <div class="note">
+    Registry lifecycle may change.
+    Registry identity remains permanent.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Reserved Identifiers</h2>
+
+  <p>
+    Registry may reserve an identifier before publication when a positive
+    Registrability outcome has been reached and operational construction is underway.
+  </p>
+
+  <p>
+    A reserved identifier should preserve:
+  </p>
+
+  <ul>
+    <li>reservation date;</li>
+    <li>proposed Record Type;</li>
+    <li>proposed source reference;</li>
+    <li>reservation status;</li>
+    <li>expiration or review rule, if any;</li>
+    <li>reason for reservation;</li>
+    <li>workflow or reviewer reference.</li>
+  </ul>
+
+  <p>
+    Reserved identifiers must not be silently reused if the proposal is later withdrawn.
+  </p>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Assigned</h2>
+  <p>
+    Identifier is permanently associated with one SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Reserved</h2>
+  <p>
+    Identifier is held for one approved pending SREG and is not yet publicly active.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Published</h2>
+  <p>
+    Identifier resolves to the official human-readable and machine-readable SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Historical</h2>
+  <p>
+    Identifier remains resolvable after the SREG leaves active use.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Source-System Identifiers</h2>
+
+  <p>
+    Registry should preserve Source-System Identifiers exactly as assigned by the
+    Source Institution whenever possible.
+  </p>
+
+  <p>
+    Registry should not:
+  </p>
+
+  <ul>
+    <li>rewrite a Source-System Identifier for stylistic consistency;</li>
+    <li>replace it with the Registry Identifier;</li>
+    <li>infer an identifier that the Source Institution never assigned;</li>
+    <li>treat a URL as an identifier when it is only a location;</li>
+    <li>collapse multiple source identifiers into one field;</li>
+    <li>hide identifier changes made by the Source Institution.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Multiple Source Identifiers</h2>
+
+  <p>
+    A Source Record may possess multiple valid identifiers, including:
+  </p>
+
+  <ul>
+    <li>institutional identifier;</li>
+    <li>repository identifier;</li>
+    <li>publication identifier;</li>
+    <li>package identifier;</li>
+    <li>artifact identifier;</li>
+    <li>legacy identifier;</li>
+    <li>external standards identifier;</li>
+    <li>archive identifier;</li>
+    <li>hash or integrity reference.</li>
+  </ul>
+
+  <p>
+    Registry should preserve each identifier with its domain, issuing authority,
+    purpose, and status.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Aliases and Alternate References</h2>
+
+  <p>
+    A SREG may preserve aliases that improve discovery without replacing the
+    canonical Registry Identifier.
+  </p>
+
+  <p>
+    Aliases may include:
+  </p>
+
+  <ul>
+    <li>former titles;</li>
+    <li>abbreviations;</li>
+    <li>legacy identifiers;</li>
+    <li>common names;</li>
+    <li>translated names;</li>
+    <li>former URLs;</li>
+    <li>repository paths;</li>
+    <li>external database references.</li>
+  </ul>
+
+  <div class="note">
+    An alias improves discovery.
+    It does not become the canonical Registry identity.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Resolution</h2>
+
+  <p>
+    A published Registry Identifier should resolve to the canonical SREG
+    presentation and expose links to:
+  </p>
+
+  <ul>
+    <li>human-readable SREG;</li>
+    <li>machine-readable SREG;</li>
+    <li>Authoritative Source Record;</li>
+    <li>Source Institution;</li>
+    <li>Source-System Identifier;</li>
+    <li>current Registry Status;</li>
+    <li>current Registry Lifecycle State;</li>
+    <li>Registry Entry Version;</li>
+    <li>correction history;</li>
+    <li>supersession or successor relationships;</li>
+    <li>archival references.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical URLs</h2>
+
+  <p>
+    The Registry Identifier should remain independent from the canonical URL,
+    but the canonical URL should resolve the identifier.
+  </p>
+
+  <div class="code-block" aria-label="Illustrative canonical URL">
+https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/
+  </div>
+
+  <p>
+    If a publication path changes, Registry should preserve redirects and prior
+    references without changing the Registry Identifier.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Corrections</h2>
+
+  <p>
+    A Registry Identifier should not be changed merely because:
+  </p>
+
+  <ul>
+    <li>the title changes;</li>
+    <li>the source URL moves;</li>
+    <li>the source version changes;</li>
+    <li>the Source Institution changes through succession;</li>
+    <li>the SREG is corrected;</li>
+    <li>the Registry Status changes;</li>
+    <li>the Lifecycle State changes.</li>
+  </ul>
+
+  <p>
+    Identifier correction should be exceptional and limited to conditions such as:
+  </p>
+
+  <ul>
+    <li>assignment collision;</li>
+    <li>format defect;</li>
+    <li>namespace error;</li>
+    <li>misassignment to the wrong SREG;</li>
+    <li>security or integrity failure;</li>
+    <li>governance-directed migration.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Correction Without Erasure</h2>
+
+  <p>
+    When an identifier defect requires replacement, Registry should preserve:
+  </p>
+
+  <ul>
+    <li>the original identifier;</li>
+    <li>the replacement identifier;</li>
+    <li>the correction date;</li>
+    <li>the reason;</li>
+    <li>the governing authority;</li>
+    <li>the affected SREG;</li>
+    <li>redirect or resolution behavior;</li>
+    <li>correction history;</li>
+    <li>machine-readable equivalence or replacement relationship.</li>
+  </ul>
+
+  <div class="note">
+    An identifier correction changes the reference.
+    It must not erase the historical path.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Supersession and Successor Identifiers</h2>
+
+  <p>
+    When one SREG is replaced by another, the original Registry Identifier remains
+    permanent and resolvable.
+  </p>
+
+  <div class="flow" aria-label="Supersession identifier relationship">
+    <strong>Prior Registry Identifier</strong>
+    <span>→</span>
+    <strong>Superseded SREG</strong>
+    <span>→</span>
+    <strong>Successor Relationship</strong>
+    <span>→</span>
+    <strong>New Registry Identifier</strong>
+  </div>
+
+  <p>
+    Supersession creates a relationship between identities.
+    It does not overwrite one identity with another.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Identifiers</h2>
+
+  <p>
+    Registry Entry Version must remain separate from Registry Identifier.
+  </p>
+
+  <div class="code-block" aria-label="Illustrative Registry identity and version">
+Registry Identifier: SREG-JUR-2026-0001
+Registry Entry Version: 1.2.0
+  </div>
+
+  <p>
+    The Registry Identifier identifies the continuing SREG.
+    The Registry Entry Version identifies one published state of that SREG.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Validation</h2>
+
+  <p>
+    Identifier validation should confirm:
+  </p>
+
+  <ul>
+    <li>format matches the approved identifier pattern;</li>
+    <li>identifier is unique within the namespace;</li>
+    <li>identifier has not been reused;</li>
+    <li>Record Type segment is valid when used;</li>
+    <li>assignment record exists;</li>
+    <li>Registrability reference exists;</li>
+    <li>Registry Identifier and Source-System Identifier are distinct;</li>
+    <li>aliases are not marked as canonical identifiers;</li>
+    <li>human-readable and machine-readable SREGs agree;</li>
+    <li>resolution target exists or is intentionally historical;</li>
+    <li>correction and supersession relationships are preserved.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Invalid Identifier Conditions</h2>
+
+  <ul>
+    <li>duplicate Registry Identifier;</li>
+    <li>reused identifier;</li>
+    <li>identifier assigned before Registrability approval;</li>
+    <li>Source-System Identifier used as Registry Identifier;</li>
+    <li>mutable title embedded as required identity;</li>
+    <li>incorrect Record Type segment;</li>
+    <li>missing assignment record;</li>
+    <li>unresolvable published identifier without historical explanation;</li>
+    <li>alias represented as canonical identity;</li>
+    <li>silent identifier replacement;</li>
+    <li>human-readable and machine-readable mismatch;</li>
+    <li>identifier collision across namespaces.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Record Types</h2>
+
+  <p>
+    Record Type may influence the identifier namespace or type segment.
+  </p>
+
+  <p>
+    Record Type remains a separate controlled field and must not be inferred only
+    from the identifier string.
+  </p>
+
+  <div class="note">
+    The identifier may reflect classification.
+    The Record Type field remains authoritative for classification.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Relationships</h2>
+
+  <p>
+    Identifiers provide the stable endpoints used by typed Registry relationships.
+  </p>
+
+  <p>
+    A relationship should identify:
+  </p>
+
+  <ul>
+    <li>source identifier;</li>
+    <li>source identifier domain;</li>
+    <li>target identifier;</li>
+    <li>target identifier domain;</li>
+    <li>relationship type;</li>
+    <li>direction;</li>
+    <li>authority;</li>
+    <li>effective date;</li>
+    <li>version context.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Lifecycle</h2>
+
+  <p>
+    Registry Lifecycle State may change throughout the SREG's history.
+  </p>
+
+  <p>
+    The Registry Identifier remains stable through:
+  </p>
+
+  <ul>
+    <li>Pending Registration;</li>
+    <li>Registered;</li>
+    <li>Active;</li>
+    <li>Updated;</li>
+    <li>Superseded;</li>
+    <li>Revoked;</li>
+    <li>Archived.</li>
+  </ul>
+
+  <p>
+    Lifecycle describes institutional condition.
+    Identifier preserves identity.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Publication</h2>
+
+  <p>
+    Publication should expose the Registry Identifier consistently across:
+  </p>
+
+  <ul>
+    <li>page title;</li>
+    <li>metadata;</li>
+    <li>canonical URL;</li>
+    <li>human-readable SREG;</li>
+    <li>machine-readable SREG;</li>
+    <li>downloadable artifacts;</li>
+    <li>relationship objects;</li>
+    <li>correction records;</li>
+    <li>history and version references.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Suite Identifier Examples</h2>
+
+  <div class="grid">
+
+    <div>
+      <h3>Certifier</h3>
+      <p>
+        A Certification Identifier such as <strong>SC-CERT-2026-0001</strong>
+        identifies the Certifier-owned Certification Package. A Registry Certification
+        SREG receives its own separate Registry Identifier.
+      </p>
+    </div>
+
+    <div>
+      <h3>Atlas</h3>
+      <p>
+        Atlas jurisdiction codes, package identifiers, repository paths, and canonical
+        JSON references remain Atlas-controlled source identifiers.
+      </p>
+    </div>
+
+    <div>
+      <h3>Attestor</h3>
+      <p>
+        Attestation identifiers remain controlled by Attestor. Registry creates a
+        separate SREG Identifier when cataloging the attestation.
+      </p>
+    </div>
+
+    <div>
+      <h3>Anchor</h3>
+      <p>
+        Hashes, signatures, timestamps, and integrity references remain Anchor or
+        source-system identifiers and may be linked from a SREG.
+      </p>
+    </div>
+
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Identifier Assignment Does Not Establish</h2>
+
+  <ul>
+    <li>It does not create Source Authority.</li>
+    <li>It does not certify the Source Record.</li>
+    <li>It does not create legal ownership.</li>
+    <li>It does not establish endorsement or affiliation.</li>
+    <li>It does not replace Source-System Identifiers.</li>
+    <li>It does not guarantee permanent source availability.</li>
+    <li>It does not determine Registry Status.</li>
+    <li>It does not determine Source-Record Status.</li>
+    <li>It does not eliminate versioning requirements.</li>
+    <li>It does not permit identifier reuse after retirement.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Principle</h2>
+
+  <p>
+    Registry identity must remain permanent, unique, resolvable, and independent
+    from mutable source details.
+  </p>
+
+  <div class="note">
+    The Registry Identifier identifies the SREG.
+    The Source-System Identifier identifies the Source Record.
+    Their relationship must be preserved without collapsing their authority.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/registrability/">Open Registrability →</a>
+  <a class="btn" href="/registry/entry-model/">Open Entry Model →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Identity remains stable while records, versions, locations, and institutions change.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
