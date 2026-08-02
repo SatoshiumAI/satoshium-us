@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Catalog</title>
+<meta name="description" content="Satoshium Registry Catalog — defines how published Satoshium Registry Entries are organized, resolved, discovered, filtered, related, versioned, and presented through the Registry's public catalog layer.">
+<link rel="canonical" href="https://satoshium.us/registry/catalog/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul,
+.card ol{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Catalog</div>
+  <h1>Satoshium Registry Catalog</h1>
+
+  <p class="lead">
+    The Satoshium Registry Catalog is the public discovery and resolution layer
+    through which published Satoshium Registry Entries are organized, browsed,
+    filtered, related, versioned, and accessed.
+  </p>
+
+  <p class="lead">
+    The Catalog presents Registry-owned SREGs while preserving direct attribution
+    to the Authoritative Source Records and Source Institutions they reference.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    The Catalog sits above published SREGs and provides the public interface through
+    which Registry identity, classification, status, relationships, provenance,
+    versions, corrections, and history become discoverable.
+  </p>
+
+  <div class="flow" aria-label="Registry Catalog position">
+    <strong>Authoritative Source Record</strong>
+    <span>→</span>
+    <strong>SREG</strong>
+    <span>→</span>
+    <strong>Validation</strong>
+    <span>→</span>
+    <strong>Publication</strong>
+    <span>→</span>
+    <strong>Registry Catalog</strong>
+  </div>
+
+  <div class="note">
+    Registry owns the Catalog presentation.
+    Source Institutions retain authority over their Source Records.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why the Catalog Matters</h2>
+  <p>
+    Publication makes an individual SREG available. The Catalog makes the wider
+    body of published Registry records discoverable as one coherent institutional system.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>
+    The Catalog asks:
+  </p>
+  <div class="note">
+    How should a user or system find, understand, compare, and resolve published SREGs?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Registry's Responsibility</h2>
+  <p>
+    Registry must provide stable identity resolution, accurate catalog metadata,
+    governed filtering, version awareness, relationship navigation, and historical continuity.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry's Limitation</h2>
+  <p>
+    Catalog inclusion does not certify, endorse, own, or replace the underlying Source Record.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Catalog Model</h2>
+
+  <div class="flow" aria-label="Canonical Catalog model">
+    <strong>Published SREGs</strong>
+    <span>→</span>
+    <strong>Catalog Metadata</strong>
+    <span>→</span>
+    <strong>Browse, Search, Filter, Resolve</strong>
+    <span>→</span>
+    <strong>Canonical SREG Page</strong>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Functions</h2>
+
+  <ul>
+    <li>browse published SREGs;</li>
+    <li>search by identifier, title, source, institution, or keyword;</li>
+    <li>filter by Record Type;</li>
+    <li>filter by Registry Status;</li>
+    <li>filter by Registry Lifecycle State;</li>
+    <li>filter by Source Institution;</li>
+    <li>filter by publication date or update date;</li>
+    <li>resolve Registry Identifiers;</li>
+    <li>navigate typed relationships;</li>
+    <li>view current and historical versions;</li>
+    <li>view corrections, notices, restrictions, and supersession;</li>
+    <li>access machine-readable records and downloadable artifacts;</li>
+    <li>support Suite and external-system discovery.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Browse</h2>
+  <p>
+    Presents ordered collections of published SREGs by institutional category.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Search</h2>
+  <p>
+    Finds SREGs through identifiers, titles, source references, and indexed metadata.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Filter</h2>
+  <p>
+    Narrows results through governed fields and Controlled Values.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Resolve</h2>
+  <p>
+    Connects a Registry Identifier to its canonical current and historical Registry context.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Entry</h2>
+
+  <p>
+    Each Catalog result should represent one published SREG and may display:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>title;</li>
+    <li>short description;</li>
+    <li>Registry Record Type;</li>
+    <li>Source Institution;</li>
+    <li>Source-System Identifier;</li>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>Registry Entry Version;</li>
+    <li>publication date;</li>
+    <li>last update date;</li>
+    <li>restriction or notice indicators;</li>
+    <li>canonical SREG link;</li>
+    <li>machine-readable record link.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Illustrative Catalog Entry</h2>
+
+  <div class="code-block" aria-label="Illustrative Catalog entry">
+registry_identifier: "SREG-JUR-2026-0001"
+title: "El Salvador"
+record_type: "jurisdiction"
+source_institution: "Satoshium Atlas"
+source_system_identifier: "atlas-jurisdiction-el-salvador"
+registry_status: "active"
+registry_lifecycle_state: "published"
+registry_entry_version: "1.0.0"
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Primary Catalog Views</h2>
+
+  <ul>
+    <li><strong>All Records</strong> — complete current public catalog.</li>
+    <li><strong>By Record Type</strong> — grouped by approved Registry Record Type.</li>
+    <li><strong>By Source Institution</strong> — grouped by Source Institution.</li>
+    <li><strong>By Status</strong> — grouped by current Registry Status.</li>
+    <li><strong>By Lifecycle</strong> — grouped by Registry Lifecycle State.</li>
+    <li><strong>Recently Published</strong> — ordered by first-publication date.</li>
+    <li><strong>Recently Updated</strong> — ordered by latest material update.</li>
+    <li><strong>Corrections and Notices</strong> — records with material public notices.</li>
+    <li><strong>Historical Records</strong> — superseded, revoked, retired, or archived SREGs.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Record-Type Collections</h2>
+
+  <p>
+    Catalog collections may include:
+  </p>
+
+  <ul>
+    <li>Tools;</li>
+    <li>Jurisdictions;</li>
+    <li>Media;</li>
+    <li>Certifications;</li>
+    <li>Attestations;</li>
+    <li>Signals;</li>
+    <li>Events;</li>
+    <li>Integrity References;</li>
+    <li>Workflows;</li>
+    <li>Institutions;</li>
+    <li>Schemas;</li>
+    <li>Policies;</li>
+    <li>Procedures;</li>
+    <li>Governance Decisions.</li>
+  </ul>
+
+  <div class="note">
+    Catalog collections reflect Registry classifications.
+    They do not redefine the Source Records placed within them.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Searchable Fields</h2>
+
+  <p>
+    Catalog search may index:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>Source-System Identifier;</li>
+    <li>title;</li>
+    <li>alternate titles;</li>
+    <li>description;</li>
+    <li>Record Type;</li>
+    <li>Source Institution;</li>
+    <li>canonical source URL;</li>
+    <li>jurisdiction;</li>
+    <li>keywords;</li>
+    <li>relationships;</li>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>version;</li>
+    <li>publication date;</li>
+    <li>correction and notice metadata.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Search Behavior</h2>
+
+  <p>
+    Search should:
+  </p>
+
+  <ul>
+    <li>prioritize exact Registry Identifier matches;</li>
+    <li>preserve Source-System Identifier matches;</li>
+    <li>distinguish current from historical SREGs;</li>
+    <li>surface active records before historical records when relevance is comparable;</li>
+    <li>expose disputed, restricted, superseded, revoked, and archived conditions;</li>
+    <li>avoid presenting aliases as canonical identity;</li>
+    <li>preserve source attribution in results;</li>
+    <li>support machine-readable query and response patterns when implemented.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Filters</h2>
+
+  <p>
+    Filters should use governed Controlled Values where applicable.
+  </p>
+
+  <ul>
+    <li>Registry Record Type;</li>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>Source Institution;</li>
+    <li>Access Condition;</li>
+    <li>Validation Outcome;</li>
+    <li>Publication Readiness Outcome;</li>
+    <li>publication date range;</li>
+    <li>last update date range;</li>
+    <li>version condition;</li>
+    <li>notice type;</li>
+    <li>historical condition.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Resolution</h2>
+
+  <p>
+    Every published Registry Identifier should resolve to its canonical current SREG context.
+  </p>
+
+  <div class="code-block" aria-label="Illustrative canonical resolution path">
+https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/
+  </div>
+
+  <p>
+    The canonical page should expose:
+  </p>
+
+  <ul>
+    <li>current Registry Entry Version;</li>
+    <li>current Registry Status;</li>
+    <li>current Registry Lifecycle State;</li>
+    <li>Source Institution;</li>
+    <li>Authoritative Source Record;</li>
+    <li>machine-readable form;</li>
+    <li>relationships;</li>
+    <li>provenance;</li>
+    <li>corrections;</li>
+    <li>historical versions;</li>
+    <li>supersession or archival notices.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Machine-Readable Catalog</h2>
+
+  <p>
+    Registry may publish a machine-readable catalog index containing:
+  </p>
+
+  <ul>
+    <li>Catalog Version;</li>
+    <li>generation date;</li>
+    <li>included Registry Identifiers;</li>
+    <li>current Registry Entry Versions;</li>
+    <li>Record Types;</li>
+    <li>Source Institutions;</li>
+    <li>statuses;</li>
+    <li>lifecycle states;</li>
+    <li>canonical URLs;</li>
+    <li>machine-readable URLs;</li>
+    <li>publication dates;</li>
+    <li>update dates;</li>
+    <li>notices and restrictions;</li>
+    <li>integrity or generation references.</li>
+  </ul>
+
+  <div class="code-block" aria-label="Illustrative machine-readable Catalog path">
+https://satoshium.us/registry/catalog/index.json
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Versioning</h2>
+
+  <p>
+    The Catalog itself may be versioned independently from individual SREGs.
+  </p>
+
+  <p>
+    Catalog version records should preserve:
+  </p>
+
+  <ul>
+    <li>Catalog Version;</li>
+    <li>generation date;</li>
+    <li>included records;</li>
+    <li>added SREGs;</li>
+    <li>updated SREGs;</li>
+    <li>removed-from-current-view SREGs;</li>
+    <li>schema or index-format version;</li>
+    <li>generation method;</li>
+    <li>integrity reference;</li>
+    <li>prior Catalog Version.</li>
+  </ul>
+
+  <div class="note">
+    Catalog Version describes the indexed collection.
+    Registry Entry Version describes an individual SREG.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Current and Historical Catalog Views</h2>
+
+  <p>
+    The current Catalog should prioritize current operational SREGs.
+  </p>
+
+  <p>
+    Historical views should preserve:
+  </p>
+
+  <ul>
+    <li>superseded SREGs;</li>
+    <li>revoked SREGs;</li>
+    <li>retired SREGs;</li>
+    <li>archived SREGs;</li>
+    <li>prior Registry Entry Versions;</li>
+    <li>prior Catalog Versions;</li>
+    <li>correction history;</li>
+    <li>former classifications;</li>
+    <li>former status and lifecycle values;</li>
+    <li>former canonical paths where applicable.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship Navigation</h2>
+
+  <p>
+    Catalog pages may provide navigable relationships such as:
+  </p>
+
+  <ul>
+    <li>Source Record and Source Institution;</li>
+    <li>certification and certified subject;</li>
+    <li>attestation and attested subject;</li>
+    <li>jurisdiction and related certifications;</li>
+    <li>event and documented records;</li>
+    <li>signal and announced record;</li>
+    <li>integrity reference and protected artifact;</li>
+    <li>workflow and dependent records;</li>
+    <li>predecessor and successor SREGs;</li>
+    <li>current and historical versions;</li>
+    <li>derived and archival artifacts.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Notices and Conditions</h2>
+
+  <p>
+    Catalog results and SREG pages should visibly identify material conditions such as:
+  </p>
+
+  <ul>
+    <li>provisional publication;</li>
+    <li>restricted access;</li>
+    <li>source unavailable;</li>
+    <li>validation warning;</li>
+    <li>correction issued;</li>
+    <li>disputed relationship;</li>
+    <li>superseded entry;</li>
+    <li>revoked entry;</li>
+    <li>retired entry;</li>
+    <li>archived entry;</li>
+    <li>external-source disclaimer;</li>
+    <li>rights or reuse limitation;</li>
+    <li>governance exception;</li>
+    <li>migration notice.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Restricted Catalog Entries</h2>
+
+  <p>
+    Restricted SREGs may appear with limited public metadata when appropriate.
+  </p>
+
+  <p>
+    A restricted Catalog entry may expose:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>title or generalized title;</li>
+    <li>Record Type;</li>
+    <li>Source Institution;</li>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>restriction notice;</li>
+    <li>public provenance summary;</li>
+    <li>review date or access condition.</li>
+  </ul>
+
+  <p>
+    Restricted content must not be exposed through search indexes, machine-readable
+    Catalog files, cached excerpts, or downloadable artifacts.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Ordering</h2>
+
+  <p>
+    Catalog views may support ordering by:
+  </p>
+
+  <ul>
+    <li>Registry Identifier;</li>
+    <li>title;</li>
+    <li>Record Type;</li>
+    <li>Source Institution;</li>
+    <li>first-publication date;</li>
+    <li>last-update date;</li>
+    <li>Registry Status;</li>
+    <li>Registry Lifecycle State;</li>
+    <li>relevance;</li>
+    <li>historical sequence.</li>
+  </ul>
+
+  <div class="note">
+    Ordering should support discovery without implying institutional rank,
+    endorsement, quality, or substantive importance unless explicitly governed.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Metadata</h2>
+
+  <p>
+    Catalog-specific metadata may include:
+  </p>
+
+  <ul>
+    <li>Catalog inclusion date;</li>
+    <li>Catalog display title;</li>
+    <li>Catalog summary;</li>
+    <li>search keywords;</li>
+    <li>browse collections;</li>
+    <li>filter facets;</li>
+    <li>sort values;</li>
+    <li>thumbnail or visual reference;</li>
+    <li>featured or highlighted condition;</li>
+    <li>indexing status;</li>
+    <li>last indexed date;</li>
+    <li>Catalog Version.</li>
+  </ul>
+
+  <div class="note">
+    Catalog metadata supports discovery.
+    It must not silently change canonical SREG meaning.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Inclusion</h2>
+
+  <p>
+    A SREG should enter the public Catalog only when:
+  </p>
+
+  <ul>
+    <li>required Validation permits publication;</li>
+    <li>official Publication is complete;</li>
+    <li>canonical resolution is functioning;</li>
+    <li>Catalog metadata is complete;</li>
+    <li>Controlled Values are valid;</li>
+    <li>notices and restrictions are correctly represented;</li>
+    <li>machine-readable and human-readable forms agree;</li>
+    <li>search and filter fields are safe for indexing.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Removal from Current Views</h2>
+
+  <p>
+    A SREG may be removed from current browse views when it becomes:
+  </p>
+
+  <ul>
+    <li>superseded;</li>
+    <li>revoked;</li>
+    <li>retired;</li>
+    <li>archived;</li>
+    <li>withdrawn from public access;</li>
+    <li>restricted from indexing;</li>
+    <li>invalidly published.</li>
+  </ul>
+
+  <p>
+    Removal from current views should not erase canonical resolution or historical
+    Catalog presence unless access itself must be restricted.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Validation</h2>
+
+  <p>
+    Validation should confirm:
+  </p>
+
+  <ul>
+    <li>Catalog entry points to the correct Registry Identifier;</li>
+    <li>title and Record Type match the SREG;</li>
+    <li>Source Institution is accurate;</li>
+    <li>Registry Status and Lifecycle State are current;</li>
+    <li>Registry Entry Version is current;</li>
+    <li>canonical and machine-readable URLs resolve;</li>
+    <li>filters use approved Controlled Values;</li>
+    <li>notices and restrictions are visible;</li>
+    <li>historical SREGs are not presented as current;</li>
+    <li>restricted fields are not indexed;</li>
+    <li>Catalog metadata does not contradict canonical SREG content;</li>
+    <li>current and historical views remain distinguishable.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Invalid Catalog Conditions</h2>
+
+  <ul>
+    <li>Catalog entry resolves to the wrong SREG;</li>
+    <li>duplicate canonical Catalog entry;</li>
+    <li>missing Registry Identifier;</li>
+    <li>incorrect Record Type;</li>
+    <li>incorrect Source Institution;</li>
+    <li>stale Registry Status or Lifecycle State;</li>
+    <li>historical version presented as current;</li>
+    <li>broken canonical or machine-readable URL;</li>
+    <li>restricted information exposed;</li>
+    <li>unapproved filter value;</li>
+    <li>Catalog summary contradicts the SREG;</li>
+    <li>superseded or revoked SREG presented without notice;</li>
+    <li>Catalog metadata silently alters canonical meaning.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Publication</h2>
+
+  <p>
+    Publication creates the official SREG.
+  </p>
+
+  <p>
+    The Catalog indexes and presents that published SREG for discovery and resolution.
+  </p>
+
+  <div class="note">
+    Publication establishes availability.
+    The Catalog establishes discoverability.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Identifiers</h2>
+
+  <p>
+    The Catalog uses Registry Identifiers as the canonical resolution keys for SREGs.
+  </p>
+
+  <p>
+    Search aliases and Source-System Identifiers may help discovery but must not replace
+    the canonical Registry Identifier.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Relationships</h2>
+
+  <p>
+    The Catalog makes typed Registry Relationships navigable across SREG pages and collections.
+  </p>
+
+  <p>
+    Relationship navigation should preserve:
+  </p>
+
+  <ul>
+    <li>direction;</li>
+    <li>identifier domains;</li>
+    <li>Relationship Authority;</li>
+    <li>Relationship Status;</li>
+    <li>version context;</li>
+    <li>temporal context;</li>
+    <li>correction history.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Controlled Values</h2>
+
+  <p>
+    Catalog filters, facets, labels, notices, and collection names should use approved
+    Controlled Values whenever the underlying field is governed.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Beacon</h2>
+
+  <p>
+    Beacon may announce newly published, updated, corrected, superseded, or archived SREGs.
+  </p>
+
+  <p>
+    Beacon signals may link into the Catalog.
+    Registry remains authoritative for Catalog entries and SREGs.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Chronicle</h2>
+
+  <p>
+    Chronicle may record historically significant Catalog releases, major Registry
+    publication milestones, or material institutional transitions.
+  </p>
+
+  <p>
+    Registry remains authoritative for Catalog Versions and inclusion history.
+    Chronicle remains authoritative for Chronicle-created event records.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Governance</h2>
+
+  <p>
+    Registry Governance should control:
+  </p>
+
+  <ul>
+    <li>Catalog inclusion requirements;</li>
+    <li>Catalog metadata fields;</li>
+    <li>browse collections;</li>
+    <li>search behavior;</li>
+    <li>filter facets;</li>
+    <li>ordering rules;</li>
+    <li>featured conditions;</li>
+    <li>restricted indexing;</li>
+    <li>Catalog versioning;</li>
+    <li>historical Catalog views;</li>
+    <li>machine-readable Catalog publication;</li>
+    <li>Catalog correction and withdrawal.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What the Catalog Does Not Establish</h2>
+
+  <ul>
+    <li>It does not create Source Authority.</li>
+    <li>It does not certify Source Records.</li>
+    <li>It does not create attestations.</li>
+    <li>It does not transfer ownership.</li>
+    <li>It does not establish endorsement or affiliation.</li>
+    <li>It does not make Catalog order a measure of importance.</li>
+    <li>It does not replace the canonical SREG.</li>
+    <li>It does not replace the Authoritative Source Record.</li>
+    <li>It does not permit restricted information to be indexed.</li>
+    <li>It does not erase historical Catalog presence.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Principle</h2>
+
+  <p>
+    The Registry Catalog should make published SREGs easy to discover and resolve
+    while preserving canonical identity, source attribution, version history,
+    governed classifications, material notices, and institutional boundaries.
+  </p>
+
+  <div class="note">
+    Publication makes a record available.
+    The Catalog makes the Registry discoverable.
+    Resolution preserves identity.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/publication/">Open Publication →</a>
+  <a class="btn" href="/registry/controlled-values/">Open Controlled Values →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    A Registry becomes useful when every durable identity can be found, understood, and followed through time.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
