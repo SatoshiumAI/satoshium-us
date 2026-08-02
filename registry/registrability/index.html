@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Registrability</title>
+<meta name="description" content="Satoshium Registry Registrability — defines the institutional threshold a Source Record must satisfy before Registry may create and publish a Satoshium Registry Entry.">
+<link rel="canonical" href="https://satoshium.us/registry/registrability/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Registrability</div>
+  <h1>Satoshium Registry Registrability</h1>
+
+  <p class="lead">
+    Registrability defines the institutional threshold an Authoritative Source Record
+    must satisfy before Satoshium Registry may create, validate, and publish a
+    Satoshium Registry Entry.
+  </p>
+
+  <p class="lead">
+    Not every identifiable source should become a SREG. Registration requires
+    authority, scope, classification, minimum metadata, and a durable reason for
+    inclusion.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Registrability operates after Source Authority review and before operational
+    SREG construction.
+  </p>
+
+  <div class="flow" aria-label="Registrability position">
+    <strong>Source Identified</strong>
+    <span>→</span>
+    <strong>Source Authority Confirmed</strong>
+    <span>→</span>
+    <strong>Registrability Determined</strong>
+    <span>→</span>
+    <strong>SREG Constructed</strong>
+    <span>→</span>
+    <strong>Validated and Published</strong>
+  </div>
+
+  <div class="note">
+    Source Authority answers who controls the source.
+    Registrability determines whether Registry should create a SREG for it.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Registrability Matters</h2>
+  <p>
+    A Registry that catalogs everything without threshold or discipline becomes
+    noisy, inconsistent, and difficult to trust.
+  </p>
+  <p>
+    Registrability protects the quality, coherence, and long-term usefulness of
+    the Registry catalog.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>
+    Registrability asks:
+  </p>
+  <div class="note">
+    Does this Source Record possess sufficient authority, identity, scope,
+    structure, and institutional relevance to justify creation of a SREG?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Registry's Responsibility</h2>
+  <p>
+    Registry must evaluate proposed records consistently and document why a
+    record was accepted, accepted with conditions, deferred, or rejected.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry's Limitation</h2>
+  <p>
+    A Registrability determination does not certify the Source Record, endorse
+    its content, establish legal authority, or confirm every substantive claim.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Registrability Threshold</h2>
+
+  <div class="flow" aria-label="Registrability threshold">
+    <strong>Authority</strong>
+    <span>+</span>
+    <strong>Identity</strong>
+    <span>+</span>
+    <strong>Scope</strong>
+    <span>+</span>
+    <strong>Record Type</strong>
+    <span>+</span>
+    <strong>Minimum Metadata</strong>
+    <span>+</span>
+    <strong>Durable Relevance</strong>
+    <span>→</span>
+    <strong>Registrable</strong>
+  </div>
+
+  <p>
+    The exact threshold may vary by Record Type, but every operational SREG should
+    satisfy the shared institutional minimum.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Core Registrability Requirements</h2>
+
+  <ul>
+    <li>a sufficiently identified Source Institution;</li>
+    <li>a sufficiently identified Authoritative Source Record;</li>
+    <li>a supported Source Authority determination;</li>
+    <li>a clear reason the record belongs within Registry scope;</li>
+    <li>an approved Registry Record Type;</li>
+    <li>minimum metadata required by the SREG Base Schema;</li>
+    <li>minimum fields required by the applicable Record-Type Profile;</li>
+    <li>a durable canonical or archival reference;</li>
+    <li>enough provenance to trace the record back to its source;</li>
+    <li>no unresolved defect that would materially misrepresent the source;</li>
+    <li>no prohibited legal, privacy, safety, or security condition;</li>
+    <li>a documented Registrability outcome.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Authority Requirement</h2>
+  <p>
+    The Source Institution must be identified with enough confidence to support
+    attribution and preserve institutional responsibility.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Identity Requirement</h2>
+  <p>
+    The Source Record must be distinguishable from related records, versions,
+    mirrors, derivatives, and subjects.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Scope Requirement</h2>
+  <p>
+    The proposed record must fall within Registry's approved institutional scope.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Classification Requirement</h2>
+  <p>
+    One approved primary Registry Record Type must accurately classify the SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Metadata Requirement</h2>
+  <p>
+    Required Base Schema and Record-Type Profile fields must be available or
+    capable of documented completion.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Durability Requirement</h2>
+  <p>
+    The source should possess enough institutional relevance, persistence, or
+    historical significance to justify durable cataloging.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Scope Review</h2>
+
+  <p>
+    A proposed source should align with one or more Registry purposes:
+  </p>
+
+  <ul>
+    <li>public discoverability;</li>
+    <li>institutional continuity;</li>
+    <li>cross-Suite interoperability;</li>
+    <li>preservation of identity and provenance;</li>
+    <li>classification of authoritative records;</li>
+    <li>relationship mapping;</li>
+    <li>version and lifecycle tracking;</li>
+    <li>historical preservation;</li>
+    <li>machine-readable publication;</li>
+    <li>support for future workflows and queries.</li>
+  </ul>
+
+  <p>
+    A source that cannot reasonably serve an approved Registry purpose may be
+    outside scope even when it is legitimate and authoritative.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Approved Source Categories</h2>
+
+  <p>
+    Potential registrable source categories include:
+  </p>
+
+  <ul>
+    <li>Suite institutional records;</li>
+    <li>Atlas jurisdiction resources;</li>
+    <li>Certifier certification artifacts;</li>
+    <li>Chronicle historical events;</li>
+    <li>Anchor integrity references;</li>
+    <li>Beacon signals;</li>
+    <li>Attestor attestations;</li>
+    <li>Navigator workflow definitions;</li>
+    <li>approved tools and systems;</li>
+    <li>approved media records;</li>
+    <li>approved external records;</li>
+    <li>historical records with durable institutional relevance.</li>
+  </ul>
+
+  <div class="note">
+    Inclusion in a general category does not guarantee that every individual
+    record is registrable.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Public and Non-Public Sources</h2>
+
+  <p>
+    Public availability may support discoverability, but it is not the only
+    possible basis for registration.
+  </p>
+
+  <p>
+    Registry may consider:
+  </p>
+
+  <ul>
+    <li>public Source Records;</li>
+    <li>restricted institutional records;</li>
+    <li>historical records preserved through archives;</li>
+    <li>machine-readable records without public presentation;</li>
+    <li>public summaries referencing controlled source artifacts;</li>
+    <li>records whose metadata may be public even when content is restricted.</li>
+  </ul>
+
+  <p>
+    Restricted registration requires clear authority, access controls, rights
+    review, and publication boundaries.
+  </p>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Public Registrability</h2>
+  <p>
+    The SREG and its essential metadata may be published openly.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Restricted Registrability</h2>
+  <p>
+    The SREG may be created with controlled or limited publication when justified
+    by rights, privacy, safety, security, or institutional policy.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Historical Registrability</h2>
+  <p>
+    A record may remain registrable after retirement, withdrawal, revocation,
+    unavailability, or institutional dissolution.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Provisional Registrability</h2>
+  <p>
+    Registry may defer final publication while preserving a documented pending
+    review state.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Minimum Metadata</h2>
+
+  <p>
+    The shared minimum should normally include:
+  </p>
+
+  <ul>
+    <li>proposed title;</li>
+    <li>proposed Registry Record Type;</li>
+    <li>Source Institution;</li>
+    <li>Authoritative Source Record;</li>
+    <li>Source-System Identifier, when available;</li>
+    <li>canonical or archival reference;</li>
+    <li>source object description;</li>
+    <li>Source-Record Status, when available;</li>
+    <li>source version, when available;</li>
+    <li>source publication or effective date, when available;</li>
+    <li>provenance information;</li>
+    <li>applicable Record-Type Profile;</li>
+    <li>Registrability review outcome;</li>
+    <li>review date and supporting references.</li>
+  </ul>
+
+  <p>
+    Record-Type Profiles may require additional fields.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Durable Relevance</h2>
+
+  <p>
+    Registry should prioritize records that provide enduring value beyond a
+    temporary mention, isolated draft, or transient technical artifact.
+  </p>
+
+  <p>
+    Durable relevance may arise from:
+  </p>
+
+  <ul>
+    <li>institutional authority;</li>
+    <li>operational use;</li>
+    <li>historical significance;</li>
+    <li>cross-Suite relationships;</li>
+    <li>public accountability;</li>
+    <li>version or lifecycle importance;</li>
+    <li>future workflow dependency;</li>
+    <li>preservation need;</li>
+    <li>machine-readable interoperability;</li>
+    <li>continued discovery value.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Duplicate and Redundant Sources</h2>
+
+  <p>
+    Registry should determine whether a proposed source is:
+  </p>
+
+  <ul>
+    <li>already represented by an existing SREG;</li>
+    <li>a new version of an existing Source Record;</li>
+    <li>a mirror or duplicate publication;</li>
+    <li>a derivative that merits its own SREG;</li>
+    <li>a distinct record concerning the same subject;</li>
+    <li>a successor requiring supersession;</li>
+    <li>an archival representation of an unavailable source.</li>
+  </ul>
+
+  <div class="note">
+    Duplicate publication should not create duplicate Registry identity.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Potentially Non-Registrable Sources</h2>
+
+  <p>
+    A proposed source may be non-registrable when:
+  </p>
+
+  <ul>
+    <li>Source Authority cannot be established;</li>
+    <li>the source object cannot be identified reliably;</li>
+    <li>the record falls outside Registry scope;</li>
+    <li>no approved Record Type applies;</li>
+    <li>minimum metadata is unavailable;</li>
+    <li>the proposal is merely a duplicate or mirror;</li>
+    <li>the source is too transient to justify durable identity;</li>
+    <li>the record would materially misrepresent institutional authority;</li>
+    <li>publication would violate rights, privacy, safety, or security obligations;</li>
+    <li>the proposal seeks endorsement rather than cataloging;</li>
+    <li>the record is fabricated, deceptive, or materially unsupported;</li>
+    <li>the proposed SREG would create unresolved contradiction with existing Registry records.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registrability Review Process</h2>
+
+  <div class="flow" aria-label="Registrability review process">
+    <strong>Receive Proposal</strong>
+    <span>→</span>
+    <strong>Confirm Source Authority</strong>
+    <span>→</span>
+    <strong>Check Scope</strong>
+    <span>→</span>
+    <strong>Identify Record Type</strong>
+    <span>→</span>
+    <strong>Review Metadata</strong>
+    <span>→</span>
+    <strong>Check Duplicates and Conflicts</strong>
+    <span>→</span>
+    <strong>Record Outcome</strong>
+  </div>
+
+  <p>
+    A positive outcome authorizes SREG construction. It does not complete
+    validation or publication.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registrability Review Record</h2>
+
+  <p>
+    A review should preserve:
+  </p>
+
+  <ul>
+    <li>proposed Source Institution;</li>
+    <li>proposed Source Record;</li>
+    <li>Source Authority outcome;</li>
+    <li>scope determination;</li>
+    <li>proposed Record Type;</li>
+    <li>minimum metadata assessment;</li>
+    <li>duplicate and conflict review;</li>
+    <li>rights, privacy, safety, and security review;</li>
+    <li>durable-relevance assessment;</li>
+    <li>review outcome;</li>
+    <li>conditions or limitations;</li>
+    <li>review date;</li>
+    <li>reviewer or process;</li>
+    <li>supporting references;</li>
+    <li>required follow-up.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registrability Outcomes</h2>
+
+  <ul>
+    <li><strong>Registrable</strong> — the source satisfies the required threshold.</li>
+    <li><strong>Registrable with Conditions</strong> — the source may proceed subject to documented limitations or follow-up.</li>
+    <li><strong>Provisionally Registrable</strong> — the source may proceed only within a controlled pending state.</li>
+    <li><strong>Deferred</strong> — the source may become registrable after additional evidence, metadata, or governance review.</li>
+    <li><strong>Non-Registrable</strong> — the source does not satisfy the current threshold.</li>
+    <li><strong>Rejected</strong> — the proposal is materially unsupported, deceptive, prohibited, or outside institutional scope.</li>
+  </ul>
+
+  <div class="note">
+    A Registrability outcome governs whether Registry proceeds.
+    It does not determine the truth or substantive merit of the Source Record.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Registrable</h2>
+  <p>
+    Registry may proceed to identifier assignment and SREG construction.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registrable with Conditions</h2>
+  <p>
+    Registry may proceed while preserving required limitations, review dates, or
+    publication controls.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Deferred</h2>
+  <p>
+    Registry pauses the proposal pending evidence, metadata, classification, or
+    governance action.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Non-Registrable</h2>
+  <p>
+    Registry does not create an operational SREG under the current proposal.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Conditional Registrability</h2>
+
+  <p>
+    Conditions may include:
+  </p>
+
+  <ul>
+    <li>additional authority evidence;</li>
+    <li>restricted publication;</li>
+    <li>future metadata completion;</li>
+    <li>provisional classification;</li>
+    <li>scheduled review;</li>
+    <li>source-version confirmation;</li>
+    <li>rights clarification;</li>
+    <li>relationship reconciliation;</li>
+    <li>duplicate resolution;</li>
+    <li>governance approval.</li>
+  </ul>
+
+  <p>
+    Conditions should be explicit, attributable, versioned, and reviewable.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Historical and Unavailable Records</h2>
+
+  <p>
+    A record may remain registrable even when it is no longer active or publicly
+    available.
+  </p>
+
+  <p>
+    Historical registrability may be supported by:
+  </p>
+
+  <ul>
+    <li>archival copies;</li>
+    <li>integrity references;</li>
+    <li>prior canonical URLs;</li>
+    <li>version history;</li>
+    <li>institutional release records;</li>
+    <li>Chronicle events;</li>
+    <li>successor references;</li>
+    <li>documented source withdrawal or retirement.</li>
+  </ul>
+
+  <div class="note">
+    Historical value may strengthen registrability even when current availability is limited.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>External Records</h2>
+
+  <p>
+    External records may be registrable when:
+  </p>
+
+  <ul>
+    <li>the Source Institution is identifiable;</li>
+    <li>the source is within Registry scope;</li>
+    <li>an approved Record Type applies;</li>
+    <li>the source has durable relevance;</li>
+    <li>minimum metadata is available;</li>
+    <li>provenance can be preserved;</li>
+    <li>registration does not imply endorsement or affiliation;</li>
+    <li>rights and publication boundaries are respected.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Identifier Assignment</h2>
+
+  <p>
+    Registry should assign a permanent Registry Identifier only after a positive
+    Registrability outcome.
+  </p>
+
+  <div class="note">
+    Registrability authorizes identity creation.
+    Identifier assignment does not retroactively make a source registrable.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Validation</h2>
+
+  <p>
+    Registrability review determines whether Registry should create the SREG.
+  </p>
+
+  <p>
+    Validation determines whether the constructed SREG satisfies the applicable
+    schema, profile, identifier, status, version, relationship, provenance, and
+    publication requirements.
+  </p>
+
+  <div class="note">
+    Registrability comes before construction.
+    Validation comes after construction.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Registry Lifecycle</h2>
+
+  <p>
+    Proposed entries may begin in a pending state while Registrability is under review.
+  </p>
+
+  <p>
+    A positive outcome may allow progression toward Registered or Active status.
+    Deferred, non-registrable, or rejected proposals should not be presented as
+    operational SREGs.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Corrections</h2>
+
+  <p>
+    A Registrability determination may require correction when:
+  </p>
+
+  <ul>
+    <li>Source Authority was misidentified;</li>
+    <li>the source was outside scope;</li>
+    <li>the wrong Record Type was selected;</li>
+    <li>duplicate identity was overlooked;</li>
+    <li>minimum metadata was materially incomplete;</li>
+    <li>rights or restrictions were misstated;</li>
+    <li>the review outcome was recorded incorrectly.</li>
+  </ul>
+
+  <p>
+    Corrections should preserve the original decision, the corrected decision,
+    supporting evidence, date, reason, and affected Registry version.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Requirements</h2>
+
+  <p>
+    A Registrability review should confirm:
+  </p>
+
+  <ul>
+    <li>Source Authority review is complete or explicitly provisional;</li>
+    <li>the source falls within Registry scope;</li>
+    <li>one approved Record Type applies;</li>
+    <li>minimum metadata is present;</li>
+    <li>required references are available;</li>
+    <li>duplicate and conflict checks were performed;</li>
+    <li>conditions and limitations are explicit;</li>
+    <li>the outcome is attributable and dated;</li>
+    <li>the outcome is consistent across human-readable and machine-readable records.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Registrability Does Not Establish</h2>
+
+  <ul>
+    <li>It does not certify the Source Record.</li>
+    <li>It does not confirm every substantive claim.</li>
+    <li>It does not establish legal ownership.</li>
+    <li>It does not grant licensing rights.</li>
+    <li>It does not create governmental authority.</li>
+    <li>It does not create endorsement or affiliation.</li>
+    <li>It does not guarantee permanent availability.</li>
+    <li>It does not guarantee publication.</li>
+    <li>It does not replace schema validation.</li>
+    <li>It does not transfer source authority to Registry.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registrability Principle</h2>
+
+  <p>
+    Registry should create a SREG only when the Source Record can be attributed,
+    classified, described, traced, and preserved without misrepresenting the
+    authority or meaning of the source.
+  </p>
+
+  <div class="note">
+    Authority makes the source attributable.
+    Registrability determines whether Registry should create the SREG.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/source-authority/">Open Source Authority →</a>
+  <a class="btn" href="/registry/entry-model/">Open Entry Model →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Not every source requires a Registry Entry. Registrability protects the catalog.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
