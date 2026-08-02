@@ -1,0 +1,1817 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Definitions</title>
+<meta name="description" content="Satoshium Registry Definitions — establishes the canonical institutional vocabulary used across Satoshium Registry, including SREG, Registry Record Type, Source Record, Source Authority, identifiers, status, lifecycle, versioning, publication, validation, history, transparency, and related terms.">
+<link rel="canonical" href="https://satoshium.us/registry/definitions/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul,
+.card ol{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.term{
+ margin-top:14px;
+ padding-top:14px;
+ border-top:1px solid rgba(214,163,74,.12);
+}
+
+.term:first-of-type{
+ margin-top:0;
+ padding-top:0;
+ border-top:0;
+}
+
+.term strong{
+ color:var(--gold2);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Definitions</div>
+  <h1>Satoshium Registry Definitions</h1>
+
+  <p class="lead">
+    Satoshium Registry Definitions establishes the canonical institutional
+    vocabulary used across Registry architecture, operations, schemas,
+    publications, records, and public documentation.
+  </p>
+
+  <p class="lead">
+    Definitions preserve shared meaning. They distinguish similar terms,
+    prevent authority drift, and ensure that human-readable and machine-readable
+    Registry materials describe the same institutional concepts.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Registry Definitions operates beneath Suite Standards and Suite Methodology
+    and supports every Registry framework, including Scope, Rules, Policies,
+    Procedures, Schemas, Controlled Values, Validation, Publication, Governance,
+    Catalog, History, and Transparency.
+  </p>
+
+  <div class="flow" aria-label="Registry Definitions constitutional position">
+    <strong>Suite Standards</strong>
+    <span>→</span>
+    <strong>Suite Methodology</strong>
+    <span>→</span>
+    <strong>Registry Definitions</strong>
+    <span>→</span>
+    <strong>Registry Frameworks and Records</strong>
+  </div>
+
+  <div class="note">
+    Definitions explain what institutional terms mean.
+    Controlled Values identify which governed values may be used.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Definitions Matter</h2>
+  <p>
+    Registry depends on precise distinctions between institutions, objects,
+    identifiers, authority, status, lifecycle, versions, validation, publication,
+    and historical records.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>
+    Definitions asks:
+  </p>
+  <div class="note">
+    What does this term mean within Satoshium Registry, and how is it distinct
+    from related terms?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Registry's Responsibility</h2>
+  <p>
+    Registry must define its canonical vocabulary, maintain those definitions,
+    preserve prior meanings, and prevent silent semantic change.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry's Limitation</h2>
+  <p>
+    Registry Definitions must not redefine Source Institution terminology or
+    another Suite institution's authoritative concepts outside Registry scope.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Definition Model</h2>
+
+  <div class="flow" aria-label="Canonical definition model">
+    <strong>Term</strong>
+    <span>→</span>
+    <strong>Canonical Definition</strong>
+    <span>→</span>
+    <strong>Authority Boundary</strong>
+    <span>→</span>
+    <strong>Approved Usage</strong>
+    <span>→</span>
+    <strong>Versioned History</strong>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Definition Requirements</h2>
+
+  <p>
+    A governed Registry definition should identify:
+  </p>
+
+  <ul>
+    <li>canonical term;</li>
+    <li>canonical definition;</li>
+    <li>institutional authority;</li>
+    <li>approved usage;</li>
+    <li>distinction from related terms;</li>
+    <li>aliases or deprecated terminology;</li>
+    <li>effective date;</li>
+    <li>definition version;</li>
+    <li>related Registry frameworks;</li>
+    <li>change history.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Canonical</h2>
+  <p>
+    One current institutional definition governs Registry usage.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Distinct</h2>
+  <p>
+    Similar terms remain separated when their authority or meaning differs.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Versioned</h2>
+  <p>
+    Material definition changes preserve prior meanings and effective periods.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Operational</h2>
+  <p>
+    Definitions support schemas, Procedures, Validation, Publication, and records.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Foundational Architecture</h2>
+
+  <div class="code-block" aria-label="Foundational Registry architecture">
+Satoshium Registry
+  ↓
+Satoshium Registry Entry (SREG)
+  ↓
+Registry Record Type
+  ↓
+Authoritative Source Record
+  </div>
+
+  <p>
+    This layered model distinguishes the Registry institution, its canonical
+    operational object, the Registry classification applied to that object, and
+    the Source Record whose authority remains with its originating institution.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Institutional Terms</h2>
+
+  <div class="term">
+    <strong>Satoshium Suite</strong>
+    <p>
+      The coordinated institutional environment containing Satoshium Registry
+      and the other Suite institutions, governed by Suite Standards, Suite
+      Methodology, and Suite Interoperability.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Satoshium Registry</strong>
+    <p>
+      The Suite institution responsible for canonical registration, SREG
+      identity, Registry classification, Registry-owned metadata, Registry
+      Relationships, Validation, Publication, Versioning, Corrections, Status,
+      Lifecycle, Catalog presentation, History, Transparency, and related
+      institutional Governance.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Institution</strong>
+    <p>
+      Satoshium Registry understood as an enduring institutional authority,
+      distinct from any individual SREG, web page, schema, Catalog, or software
+      implementation.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Suite Institution</strong>
+    <p>
+      A defined institution within Satoshium Suite that holds authority over a
+      distinct functional domain, such as Atlas, Certifier, Registry, Chronicle,
+      Anchor, Beacon, Attestor, or Navigator.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Source Institution</strong>
+    <p>
+      The institution, organization, authority, system, or recognized origin
+      responsible for the authoritative meaning of a Source Record.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>External Institution</strong>
+    <p>
+      A Source Institution or governing authority outside Satoshium Suite whose
+      records, identifiers, rights, or decisions may be referenced by Registry
+      without becoming Registry-owned.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registry Object Terms</h2>
+
+  <div class="term">
+    <strong>Satoshium Registry Entry (SREG)</strong>
+    <p>
+      The canonical Registry operational object used to identify, classify,
+      describe, relate, version, publish, correct, preserve, and resolve a
+      registrable Source Record or Registry-governed object.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Entry</strong>
+    <p>
+      The full-form name for a SREG. Within Registry architecture, “Registry
+      Entry” and “SREG” refer to the same canonical operational object.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Record</strong>
+    <p>
+      A general term for a record maintained by Registry. Depending on context,
+      it may refer to a SREG or to a Registry-owned supporting record such as a
+      Validation Record, Publication Record, Correction Record, History Record,
+      Governance Decision Record, Scope Record, or Transparency Record.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Record Type</strong>
+    <p>
+      A governed Registry classification assigned to a SREG, such as Tool,
+      Jurisdiction, Media, Certification, Attestation, Signal, Event, Integrity
+      Reference, Workflow, Institution, Schema, Policy, Procedure, or Governance
+      Decision.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Record-Type Profile</strong>
+    <p>
+      A governed schema specialization defining the additional fields,
+      Controlled Values, relationships, Validation rules, and Publication
+      requirements applicable to a particular Registry Record Type.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Object</strong>
+    <p>
+      Any object governed or maintained directly by Registry, including SREGs,
+      supporting Registry Records, schemas, profiles, Controlled-Value Sets,
+      Catalog indexes, Policies, Procedures, and Governance materials.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Source Record Terms</h2>
+
+  <div class="term">
+    <strong>Source Record</strong>
+    <p>
+      A record, artifact, resource, decision, event, package, statement, signal,
+      or other source-domain object created or controlled by a Source Institution
+      and represented by Registry without transferring its authority.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Authoritative Source Record</strong>
+    <p>
+      The Source Record recognized as the authoritative source-domain object to
+      which a SREG points. Its substantive meaning remains under Source
+      Institution authority.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Canonical Source</strong>
+    <p>
+      The preferred authoritative source location or representation identified
+      by the Source Institution or supported by Registry provenance.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Derived Artifact</strong>
+    <p>
+      An artifact generated, transformed, summarized, converted, or otherwise
+      derived from an original or canonical Source Record.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Generated Artifact</strong>
+    <p>
+      A machine-created or process-created artifact produced through an approved
+      generation method, often accompanied by a generation manifest or integrity
+      reference.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Source Representation</strong>
+    <p>
+      The Registry's recorded description or reference to a Source Record. A
+      Source Representation is not the Source Record itself and does not transfer
+      Source Authority.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Authority Terms</h2>
+
+  <div class="term">
+    <strong>Source Authority</strong>
+    <p>
+      The institutional authority responsible for the substantive meaning,
+      status, outcome, rights, or source-domain lifecycle of a Source Record.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Authority</strong>
+    <p>
+      The authority held by Satoshium Registry over SREG identity, Registry-owned
+      fields, classification, Validation, Publication, Versioning, Corrections,
+      Status, Lifecycle, Catalog presentation, History, and Governance.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Relationship Authority</strong>
+    <p>
+      The institution, Governance decision, source evidence, or authorized
+      process responsible for establishing or maintaining a Registry Relationship.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Decision Authority</strong>
+    <p>
+      The role, institution, governing body, or authorized process empowered to
+      approve a Registry decision.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Delegated Authority</strong>
+    <p>
+      Authority exercised by a role, process, or institution under a documented
+      delegation from the authority that retains ultimate accountability.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Authority Boundary</strong>
+    <p>
+      The defined limit separating Registry authority from Source Institution,
+      other Suite institution, external legal, regulatory, governmental, or
+      rights-holder authority.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Scope and Admission Terms</h2>
+
+  <div class="term">
+    <strong>Registry Scope</strong>
+    <p>
+      The institutional, operational, technical, object, field, action,
+      geographic, temporal, and authority boundaries within which Registry may act.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Scope Determination</strong>
+    <p>
+      A formal or operational decision establishing whether an object,
+      responsibility, field, or action falls within Registry authority.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Scope Outcome</strong>
+    <p>
+      A governed result of Scope Determination, such as Within Scope, Within
+      Scope with Conditions, Shared or Coordinated Scope, Restricted Scope,
+      Outside Scope, or Indeterminate.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Shared or Coordinated Scope</strong>
+    <p>
+      A condition in which Registry has a defined registration, cataloging,
+      publication, or preservation role while another institution retains related
+      substantive authority.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Restricted Scope</strong>
+    <p>
+      A condition in which an object remains within Registry's institutional
+      domain but access, Publication, indexing, or disclosure is limited.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registrability</strong>
+    <p>
+      The determination of whether a specific object satisfies Registry
+      requirements for registration as a SREG.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registrability Outcome</strong>
+    <p>
+      The governed result of Registrability review, such as Registrable,
+      Conditionally Registrable, Provisionally Registrable, Restricted
+      Registrable, Historical Registrable, Not Registrable, Indeterminate, or
+      Not Evaluated.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Terms</h2>
+
+  <div class="term">
+    <strong>Registry Identifier</strong>
+    <p>
+      The permanent, unique, non-reused identifier assigned by Registry to a
+      SREG or other approved Registry object.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>SREG Identifier</strong>
+    <p>
+      A Registry Identifier assigned specifically to a Satoshium Registry Entry.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Source-System Identifier</strong>
+    <p>
+      An identifier assigned by the Source Institution or source system to the
+      Authoritative Source Record.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Identifier Domain</strong>
+    <p>
+      The institutional namespace or system within which an identifier is
+      assigned and interpreted.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Identifier State</strong>
+    <p>
+      The governed condition of an identifier, such as Reserved, Assigned,
+      Published, Superseded, Revoked, or Archived.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Canonical Resolution</strong>
+    <p>
+      The process by which a Registry Identifier resolves to the official current
+      Registry context while preserving access to prior and historical states.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Alias</strong>
+    <p>
+      A non-canonical alternate label, identifier, title, code, or historical
+      reference preserved for discovery, compatibility, or interpretation.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Classification and Schema Terms</h2>
+
+  <div class="term">
+    <strong>SREG Base Schema</strong>
+    <p>
+      The common structural schema defining fields and requirements shared
+      across all Satoshium Registry Entries.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Schema Specification</strong>
+    <p>
+      The Registry-level specification governing how schemas, fields, types,
+      constraints, versions, and machine-readable representations are defined.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Schema Version</strong>
+    <p>
+      The version assigned to a schema definition used to interpret and validate
+      Registry records.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Controlled Value</strong>
+    <p>
+      A governed canonical value, code, label, status, outcome, type, or notice
+      approved for use within a defined Registry field or value set.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Controlled-Value Set</strong>
+    <p>
+      A governed collection of related Controlled Values, definitions, codes,
+      labels, usage rules, versions, aliases, and historical replacements.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Canonical Definition</strong>
+    <p>
+      The current authoritative Registry meaning assigned to a term.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship Terms</h2>
+
+  <div class="term">
+    <strong>Registry Relationship</strong>
+    <p>
+      A typed, directed or governed association between Registry Identifiers,
+      Source-System Identifiers, Source Records, institutions, versions, or
+      related objects.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Relationship Type</strong>
+    <p>
+      The governed meaning assigned to a Registry Relationship, such as sourced
+      from, references, certifies, attests to, supersedes, derived from, or
+      archived as.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Relationship Status</strong>
+    <p>
+      The governed current condition of a Registry Relationship, such as Active,
+      Historical, Provisional, Disputed, Superseded, Revoked, or Invalid.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Inverse Relationship</strong>
+    <p>
+      The governed reciprocal expression of a directed relationship, such as
+      “sourced from” and “source of.”
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Symmetric Relationship</strong>
+    <p>
+      A relationship whose meaning applies identically in both directions when
+      explicitly defined as symmetric by Registry Governance.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Relationship Context</strong>
+    <p>
+      The temporal, version, authority, evidence, or scope conditions under which
+      a Registry Relationship applies.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Provenance and Custody Terms</h2>
+
+  <div class="term">
+    <strong>Provenance</strong>
+    <p>
+      The recorded origin, authority, source lineage, custody, derivation,
+      transformation, publication, and preservation history of a Registry object
+      or Source Record representation.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Custody</strong>
+    <p>
+      The possession, storage, stewardship, or preservation of a record or
+      artifact. Custody does not by itself establish Source Authority.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Original Custody</strong>
+    <p>
+      Custody held by the original creator or originating institution.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Archival Custody</strong>
+    <p>
+      Custody held for preservation of a record or artifact after or apart from
+      its original operational use.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Generation Manifest</strong>
+    <p>
+      A machine-readable or human-readable record describing how a generated
+      artifact was produced, including source inputs, process, date, version, and
+      integrity information.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Integrity Reference</strong>
+    <p>
+      A record or value used to support integrity verification of an artifact,
+      record, version, or publication.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Terms</h2>
+
+  <div class="term">
+    <strong>Registry Validation</strong>
+    <p>
+      The process of evaluating whether a SREG or Registry object conforms to
+      applicable Registry Rules, Policies, Procedures, schemas, profiles,
+      Controlled Values, and Publication requirements.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Validation Record</strong>
+    <p>
+      A Registry-owned record documenting the object validated, requirements
+      applied, date, findings, exceptions, outcome, and related action.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Validation Outcome</strong>
+    <p>
+      The governed result of Registry Validation, such as Valid, Valid with
+      Warnings, Conditionally Valid, Invalid, Indeterminate, or Not Evaluated.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Blocking Error</strong>
+    <p>
+      A Validation finding that prevents approval, Publication, or continued
+      operation until resolved or governed through an authorized process.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Warning</strong>
+    <p>
+      A non-blocking Validation finding that must remain visible or be reviewed
+      but does not necessarily prevent Publication.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Validation Exception</strong>
+    <p>
+      A documented and authorized departure from an otherwise applicable
+      Validation requirement.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Informational Finding</strong>
+    <p>
+      A Validation observation recorded for context, future review, or
+      transparency without constituting an error or warning.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Terms</h2>
+
+  <div class="term">
+    <strong>Registry Publication</strong>
+    <p>
+      The authorized release of a SREG or Registry object as an official
+      human-readable, machine-readable, downloadable, indexed, or historical
+      Registry representation.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Publication Record</strong>
+    <p>
+      A Registry-owned record documenting publication authority, date, version,
+      canonical URLs, Validation outcome, notices, restrictions, and related history.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Publication Readiness</strong>
+    <p>
+      The governed determination of whether a Registry object satisfies the
+      requirements for Publication.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Publication Readiness Outcome</strong>
+    <p>
+      The governed result of Publication review, such as Ready, Ready with
+      Notices, Restricted, or Not Ready.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Canonical Human-Readable Record</strong>
+    <p>
+      The official Registry presentation designed for human interpretation.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Canonical Machine-Readable Record</strong>
+    <p>
+      The official Registry representation designed for structured processing by systems.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Publication Notice</strong>
+    <p>
+      A visible Registry statement identifying a material condition, warning,
+      restriction, Correction, supersession, revocation, archival state, or limitation.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Terms</h2>
+
+  <div class="term">
+    <strong>Registry Entry Version</strong>
+    <p>
+      The version assigned by Registry to a distinct state of a SREG.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Source-Record Version</strong>
+    <p>
+      The version assigned by the Source Institution or source system to the
+      Authoritative Source Record.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Catalog Version</strong>
+    <p>
+      The version assigned to a generated or published Registry Catalog
+      collection, distinct from the versions of individual SREGs.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Definition Version</strong>
+    <p>
+      The version assigned to a canonical Registry definition or Definitions set.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Major Change</strong>
+    <p>
+      A material change that alters structure, meaning, compatibility, authority,
+      or interpretation sufficiently to require a major version increment.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Minor Change</strong>
+    <p>
+      A backward-compatible material addition or refinement that does not replace
+      the prior fundamental meaning or structure.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Patch Change</strong>
+    <p>
+      A limited correction or refinement that preserves the existing meaning,
+      structure, and compatibility of the record.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Supersession</strong>
+    <p>
+      The governed replacement of a Registry object, version, decision, Policy,
+      Procedure, schema, profile, or value by a successor while preserving the
+      prior object historically.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Correction Terms</h2>
+
+  <div class="term">
+    <strong>Registry Correction</strong>
+    <p>
+      An authorized change to a Registry-owned field, record, representation, or
+      historical statement made to remedy an identified error or omission.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Correction Record</strong>
+    <p>
+      A Registry-owned record documenting the affected object or version, prior
+      value, corrected value, reason, authority, evidence, date, and resulting version.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Correction Authority</strong>
+    <p>
+      The Registry role, institution, Governance decision, or authorized process
+      empowered to approve a Correction.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Source Correction</strong>
+    <p>
+      A Correction made under Source Institution authority to the Source Record
+      itself, distinct from a Registry Correction.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Silent Correction</strong>
+    <p>
+      A material change made without preserving or disclosing the prior state,
+      Correction authority, or change history. Silent material Correction is not
+      permitted within Registry.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Status and Lifecycle Terms</h2>
+
+  <div class="term">
+    <strong>Registry Status</strong>
+    <p>
+      The current Registry condition of a SREG, such as Pending, Active,
+      Restricted, Disputed, Superseded, Revoked, Retired, or Archived.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Lifecycle State</strong>
+    <p>
+      The stage occupied by a SREG within the Registry lifecycle, such as
+      Proposed, Under Review, Registered, Published, Updated, Superseded,
+      Revoked, Retired, or Archived.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Source-Record Status</strong>
+    <p>
+      The source-domain status assigned to the Authoritative Source Record by the
+      Source Institution.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Lifecycle Transition</strong>
+    <p>
+      An authorized movement from one Registry Lifecycle State to another.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Revocation</strong>
+    <p>
+      The authorized withdrawal of a SREG, relationship, identifier use,
+      exception, or other Registry object from valid active operation.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Retirement</strong>
+    <p>
+      The intentional removal of a Registry object from active operational use
+      without necessarily declaring it invalid.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Archival</strong>
+    <p>
+      The transition of a Registry object or artifact into a preserved historical
+      condition with continued contextual resolution.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Governance Terms</h2>
+
+  <div class="term">
+    <strong>Registry Governance</strong>
+    <p>
+      The institutional framework through which Registry authority, decision
+      rights, roles, approvals, changes, exceptions, conflicts, delegations,
+      reviews, and accountability are controlled.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Governance Decision</strong>
+    <p>
+      An authorized institutional decision affecting Registry Rules, Policies,
+      Procedures, schemas, profiles, Controlled Values, Scope, operations, or
+      other governed materials.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Governance Decision Record</strong>
+    <p>
+      A Registry-owned record documenting a Governance Decision, authority,
+      rationale, evidence, date, scope, conditions, implementation, and history.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Rule</strong>
+    <p>
+      A binding Registry requirement governing institutional or operational conduct.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Policy</strong>
+    <p>
+      A governed statement defining institutional principles, requirements,
+      decision criteria, or operating conditions under Registry Rules.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Procedure</strong>
+    <p>
+      A governed operational sequence describing how Registry implements an
+      approved Rule, Policy, framework, or decision.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Governance Exception</strong>
+    <p>
+      An authorized, limited, documented departure from an applicable Registry
+      requirement that does not silently amend the underlying Rule or Policy.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Delegation</strong>
+    <p>
+      A documented grant of defined decision or action authority to a role,
+      process, or institution while accountability remains traceable to the
+      delegating authority.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Catalog Terms</h2>
+
+  <div class="term">
+    <strong>Registry Catalog</strong>
+    <p>
+      The public discovery and resolution layer through which published SREGs
+      are organized, browsed, searched, filtered, related, versioned, and accessed.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Catalog Entry</strong>
+    <p>
+      The discovery-oriented representation of a published SREG within the
+      Registry Catalog.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Catalog Metadata</strong>
+    <p>
+      Registry-owned metadata used to support discovery, filtering, ordering,
+      indexing, notices, and Catalog presentation without changing canonical SREG meaning.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Catalog Collection</strong>
+    <p>
+      A governed grouping of SREGs by Record Type, Source Institution, Status,
+      Lifecycle, publication period, historical condition, or other approved classification.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Catalog Inclusion</strong>
+    <p>
+      The governed act of placing a published SREG into current or historical
+      Catalog views.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>History Terms</h2>
+
+  <div class="term">
+    <strong>Registry History</strong>
+    <p>
+      The chronological, versioned, attributable, and resolvable institutional
+      history of Registry objects, actions, decisions, versions, Corrections,
+      transitions, Publications, Catalog releases, and Governance changes.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>History Record</strong>
+    <p>
+      A Registry-owned record documenting a material Registry event, prior state,
+      new state, date, authority, version context, evidence, and historical resolution.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>History Event Type</strong>
+    <p>
+      A governed classification describing the kind of institutional event
+      recorded in Registry History.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Historical State</strong>
+    <p>
+      A prior state of a Registry object preserved for interpretation,
+      accountability, provenance, or archival resolution.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Historical Artifact</strong>
+    <p>
+      A preserved prior publication, record, schema, profile, Policy, Procedure,
+      Controlled-Value Set, Catalog, or other artifact retained as part of Registry History.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Historical Resolution</strong>
+    <p>
+      The ability to locate and interpret a prior Registry state or artifact
+      through stable identifiers, versions, relationships, or archival paths.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Transparency Terms</h2>
+
+  <div class="term">
+    <strong>Registry Transparency</strong>
+    <p>
+      The institutional framework through which Registry makes its authority,
+      requirements, decisions, conditions, limitations, versions, Corrections,
+      restrictions, and history visible and accountable.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Transparency Record</strong>
+    <p>
+      A Registry-owned record documenting the subject, Disclosure Level, public
+      fields, restricted fields, authority, basis, effective date, review date,
+      and change history of a transparency decision.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Disclosure Level</strong>
+    <p>
+      The governed visibility condition applied to information, such as Public
+      Disclosure, Public Summary, Controlled Access, Internal Record, or Non-Disclosure.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Public Summary</strong>
+    <p>
+      A limited public disclosure that communicates material facts while
+      withholding restricted supporting information.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Restriction</strong>
+    <p>
+      A governed limitation on access, Publication, indexing, reuse, disclosure,
+      or resolution arising from privacy, rights, safety, security, contractual,
+      legal, Source Institution, or institutional requirements.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Withdrawal</strong>
+    <p>
+      The authorized removal of a Registry Publication or public representation
+      from current public availability while preserving appropriate historical accountability.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Interoperability Terms</h2>
+
+  <div class="term">
+    <strong>Suite Interoperability</strong>
+    <p>
+      The Suite-level framework defining how institutions exchange, reference,
+      preserve, and coordinate records while maintaining authority boundaries.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Registry Interoperability</strong>
+    <p>
+      The Registry implementation of Suite Interoperability through identifiers,
+      schemas, profiles, Controlled Values, relationships, provenance, mappings,
+      Publications, and workflows.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Mapping</strong>
+    <p>
+      A documented correspondence between Registry values, fields, identifiers,
+      or concepts and those of another system or institution.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Semantic Mapping</strong>
+    <p>
+      A mapping that identifies corresponding or related meanings while
+      preserving known differences and authority boundaries.
+    </p>
+  </div>
+
+  <div class="term">
+    <strong>Integration</strong>
+    <p>
+      A governed technical or institutional connection through which Registry
+      exchanges, references, receives, publishes, or coordinates records with
+      another Suite or external system.
+    </p>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Terms That Must Remain Distinct</h2>
+
+  <ul>
+    <li><strong>Registry</strong> is not the same as <strong>SREG</strong>.</li>
+    <li><strong>SREG</strong> is not the same as the <strong>Source Record</strong>.</li>
+    <li><strong>Registry Record Type</strong> is not the same as the <strong>Source Institution's classification</strong>.</li>
+    <li><strong>Registry Identifier</strong> is not the same as the <strong>Source-System Identifier</strong>.</li>
+    <li><strong>Registry Entry Version</strong> is not the same as the <strong>Source-Record Version</strong>.</li>
+    <li><strong>Registry Status</strong> is not the same as <strong>Registry Lifecycle State</strong>.</li>
+    <li><strong>Registry Status</strong> is not the same as <strong>Source-Record Status</strong>.</li>
+    <li><strong>Validation</strong> is not the same as <strong>Certification</strong>.</li>
+    <li><strong>Registration</strong> is not the same as <strong>endorsement</strong>.</li>
+    <li><strong>Publication</strong> is not the same as <strong>Source Authority</strong>.</li>
+    <li><strong>Custody</strong> is not the same as <strong>Authority</strong>.</li>
+    <li><strong>Catalog inclusion</strong> is not the same as <strong>affiliation</strong>.</li>
+    <li><strong>Registry History</strong> is not the same as <strong>Chronicle event records</strong>.</li>
+    <li><strong>Controlled Values</strong> are not the same as <strong>Definitions</strong>.</li>
+    <li><strong>Scope</strong> is not the same as <strong>Registrability</strong>.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Definitions and Controlled Values</h2>
+
+  <p>
+    Definitions and Controlled Values serve related but distinct purposes.
+  </p>
+
+  <ul>
+    <li><strong>Definitions</strong> establish what institutional terms mean.</li>
+    <li><strong>Controlled Values</strong> establish which approved values may be used in governed fields.</li>
+  </ul>
+
+  <div class="note">
+    “Registry Status” is a defined concept.
+    “Active,” “Restricted,” and “Archived” are Controlled Values within that concept.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Aliases and Deprecated Terms</h2>
+
+  <p>
+    Registry may preserve:
+  </p>
+
+  <ul>
+    <li>historic terms;</li>
+    <li>prior names;</li>
+    <li>abbreviations;</li>
+    <li>common aliases;</li>
+    <li>deprecated terminology;</li>
+    <li>replacement terms;</li>
+    <li>effective periods;</li>
+    <li>migration guidance.</li>
+  </ul>
+
+  <p>
+    Aliases and deprecated terms should not replace current canonical terminology
+    in new Registry materials.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Definition Versioning</h2>
+
+  <p>
+    A material definition change should preserve:
+  </p>
+
+  <ul>
+    <li>prior Definition Version;</li>
+    <li>new Definition Version;</li>
+    <li>prior definition;</li>
+    <li>new definition;</li>
+    <li>change summary;</li>
+    <li>reason;</li>
+    <li>approval authority;</li>
+    <li>effective date;</li>
+    <li>affected Registry materials;</li>
+    <li>migration or interpretation guidance;</li>
+    <li>historical publication.</li>
+  </ul>
+
+  <div class="note">
+    Definitions may evolve.
+    Their historical meanings must remain interpretable.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Definitions Validation</h2>
+
+  <p>
+    Validation should confirm:
+  </p>
+
+  <ul>
+    <li>canonical term is used consistently;</li>
+    <li>definition matches current Registry authority;</li>
+    <li>related terms remain distinct;</li>
+    <li>deprecated terminology is identified;</li>
+    <li>aliases are not presented as current canonical terms;</li>
+    <li>human-readable and machine-readable materials use compatible meanings;</li>
+    <li>Source Institution terminology is not silently redefined;</li>
+    <li>definition versions are identified when required;</li>
+    <li>historical meanings remain discoverable;</li>
+    <li>affected schemas, Policies, Procedures, and Controlled Values are aligned.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Invalid Definition Conditions</h2>
+
+  <ul>
+    <li>one term used for multiple conflicting institutional meanings;</li>
+    <li>Registry and Source Institution authority combined into one definition;</li>
+    <li>SREG treated as identical to the Source Record;</li>
+    <li>Registry Status confused with Registry Lifecycle State;</li>
+    <li>Validation represented as Certification;</li>
+    <li>Catalog inclusion represented as endorsement;</li>
+    <li>custody represented as Source Authority;</li>
+    <li>deprecated term presented as current without notice;</li>
+    <li>definition changed without version or history;</li>
+    <li>human-readable and machine-readable meanings conflict;</li>
+    <li>another Suite institution's term redefined outside Registry authority.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Definitions Governance</h2>
+
+  <p>
+    Registry Governance should control:
+  </p>
+
+  <ul>
+    <li>creation of canonical terms;</li>
+    <li>definition approval;</li>
+    <li>authority boundaries;</li>
+    <li>aliases;</li>
+    <li>deprecated terminology;</li>
+    <li>replacement terms;</li>
+    <li>Definition Versioning;</li>
+    <li>definition conflicts;</li>
+    <li>Suite terminology alignment;</li>
+    <li>Source Institution terminology boundaries;</li>
+    <li>historical preservation;</li>
+    <li>human-readable and machine-readable consistency.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Definition Review Triggers</h2>
+
+  <p>
+    Definitions should be reviewed when:
+  </p>
+
+  <ul>
+    <li>Suite Standards change;</li>
+    <li>Suite Methodology changes;</li>
+    <li>Suite Interoperability changes;</li>
+    <li>Registry Scope changes;</li>
+    <li>a new Registry Record Type is approved;</li>
+    <li>a new schema or Profile introduces a new concept;</li>
+    <li>a Controlled-Value Set reveals ambiguity;</li>
+    <li>Validation identifies inconsistent usage;</li>
+    <li>Source Institution terminology changes;</li>
+    <li>a new Suite institution is created;</li>
+    <li>authority conflicts expose semantic ambiguity;</li>
+    <li>historical records become difficult to interpret.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Scope</h2>
+
+  <p>
+    Scope defines Registry authority and boundaries.
+  </p>
+
+  <p>
+    Definitions provides the canonical meanings required to describe those
+    boundaries consistently.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Schemas</h2>
+
+  <p>
+    Schemas define fields, types, structure, and constraints.
+  </p>
+
+  <p>
+    Definitions explains the institutional meaning of the concepts represented
+    by those fields.
+  </p>
+
+  <div class="note">
+    Schemas define structure.
+    Definitions preserve semantic meaning.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Policies and Procedures</h2>
+
+  <p>
+    Policies and Procedures should use canonical Registry terminology.
+  </p>
+
+  <p>
+    They may apply Definitions but should not silently redefine foundational terms
+    through operational language.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Transparency</h2>
+
+  <p>
+    Transparency depends on definitions that make authority, limitations,
+    conditions, and historical changes understandable.
+  </p>
+
+  <p>
+    Public materials should not require users to infer the difference between
+    Registry-owned concepts and source-owned concepts.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Definitions Do Not Establish</h2>
+
+  <ul>
+    <li>Definitions do not create Source Authority.</li>
+    <li>Definitions do not make an object registrable.</li>
+    <li>Definitions do not replace Rules, Policies, or Procedures.</li>
+    <li>Definitions do not replace schemas or Controlled Values.</li>
+    <li>Definitions do not certify a Source Record.</li>
+    <li>Definitions do not create an attestation.</li>
+    <li>Definitions do not transfer ownership or rights.</li>
+    <li>Definitions do not override Suite Standards or Methodology.</li>
+    <li>Definitions do not redefine another institution's authority.</li>
+    <li>Definitions do not eliminate the need for context, version, or Governance.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Definitions Principle</h2>
+
+  <p>
+    Registry Definitions should provide stable, precise, versioned institutional
+    meanings that preserve authority boundaries, operational consistency,
+    historical interpretation, and semantic alignment across every Registry form.
+  </p>
+
+  <div class="note">
+    Shared language creates coherence.
+    Precise distinctions preserve authority.
+    Versioned definitions preserve meaning through time.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/scope/">Open Scope →</a>
+  <a class="btn" href="/registry/controlled-values/">Open Controlled Values →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Institutions remain coherent when their words preserve the same boundaries, meanings, and responsibilities across every record and every generation.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
