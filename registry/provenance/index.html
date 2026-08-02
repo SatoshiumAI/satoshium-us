@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Provenance</title>
+<meta name="description" content="Satoshium Registry Provenance — defines how every SREG preserves a traceable path back to its Authoritative Source Record, Source Institution, versions, publication history, custody, and supporting references.">
+<link rel="canonical" href="https://satoshium.us/registry/provenance/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Provenance</div>
+  <h1>Satoshium Registry Provenance</h1>
+
+  <p class="lead">
+    Satoshium Registry Provenance defines how every SREG preserves a traceable,
+    attributable, version-aware path back to its Authoritative Source Record and
+    the institution responsible for that source.
+  </p>
+
+  <p class="lead">
+    Provenance allows Registry users to understand where a record came from,
+    how it entered Registry, what changed, and which source remains authoritative.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Provenance operates across the complete SREG lifecycle, beginning with Source
+    Authority and continuing through registration, validation, publication,
+    updates, corrections, supersession, retirement, and archival preservation.
+  </p>
+
+  <div class="flow" aria-label="Registry provenance position">
+    <strong>Source Institution</strong>
+    <span>→</span>
+    <strong>Authoritative Source Record</strong>
+    <span>→</span>
+    <strong>Source References</strong>
+    <span>→</span>
+    <strong>SREG</strong>
+    <span>→</span>
+    <strong>Registry History</strong>
+  </div>
+
+  <div class="note">
+    Authority identifies who controls the source.
+    Provenance preserves the path from the SREG back to it.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Provenance Matters</h2>
+  <p>
+    A Registry Entry without provenance may identify a record but fail to explain
+    its origin, custody, source version, publication history, or relationship to
+    the institution that created it.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>
+    Provenance asks:
+  </p>
+  <div class="note">
+    Where did this SREG come from, what source supports it, and how can its history
+    be traced?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Registry's Responsibility</h2>
+  <p>
+    Registry must preserve enough structured evidence and references to reconstruct
+    the identity, source, versions, custody, publication, and maintenance history
+    of the SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry's Limitation</h2>
+  <p>
+    Provenance demonstrates traceability. It does not by itself certify the truth,
+    legality, accuracy, completeness, or institutional merit of the Source Record.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Provenance Path</h2>
+
+  <div class="flow" aria-label="Canonical provenance path">
+    <strong>SREG</strong>
+    <span>→</span>
+    <strong>Registry Source Reference</strong>
+    <span>→</span>
+    <strong>Authoritative Source Record</strong>
+    <span>→</span>
+    <strong>Source Institution</strong>
+  </div>
+
+  <p>
+    Supporting layers may include source versions, publication locations,
+    repositories, manifests, archival copies, integrity references, workflow
+    records, and correction history.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Core Provenance Requirements</h2>
+
+  <ul>
+    <li>Source Institution;</li>
+    <li>Authoritative Source Record;</li>
+    <li>Source-System Identifier;</li>
+    <li>canonical source reference;</li>
+    <li>source object type;</li>
+    <li>source version;</li>
+    <li>source publication or issuance date;</li>
+    <li>source effective date;</li>
+    <li>Source-Record Status;</li>
+    <li>repository, publisher, or platform;</li>
+    <li>acquisition or registration context;</li>
+    <li>authority-review reference;</li>
+    <li>Registrability review reference;</li>
+    <li>identifier-assignment reference;</li>
+    <li>validation and publication references;</li>
+    <li>correction, version, and lifecycle history.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Origin Provenance</h2>
+  <p>
+    Identifies where the Source Record originated and which institution created
+    or issued it.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Custody Provenance</h2>
+  <p>
+    Preserves how the Source Record moved through repositories, publishers,
+    archives, custodians, or successor institutions.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Version Provenance</h2>
+  <p>
+    Connects the SREG to the relevant Source-Record Version and Registry Entry Version.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Publication Provenance</h2>
+  <p>
+    Preserves where, when, and in what form the source and SREG were published.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Operational Provenance</h2>
+  <p>
+    Preserves reviews, workflows, validations, corrections, and maintenance actions.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Historical Provenance</h2>
+  <p>
+    Preserves prior states, supersession, withdrawal, retirement, archival custody,
+    and successor relationships.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Source Provenance</h2>
+
+  <p>
+    Source Provenance should preserve:
+  </p>
+
+  <ul>
+    <li>Source Institution name and identifier;</li>
+    <li>Source-System Identifier;</li>
+    <li>canonical source title;</li>
+    <li>canonical source location;</li>
+    <li>source object type;</li>
+    <li>source version;</li>
+    <li>publication date;</li>
+    <li>effective date;</li>
+    <li>source status;</li>
+    <li>publisher or repository;</li>
+    <li>rights or licensing reference;</li>
+    <li>known mirrors or derivatives;</li>
+    <li>known predecessor or successor sources.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registration Provenance</h2>
+
+  <p>
+    Registry should preserve how the Source Record became a proposed and then
+    operational SREG.
+  </p>
+
+  <div class="flow" aria-label="Registration provenance">
+    <strong>Source Identified</strong>
+    <span>→</span>
+    <strong>Authority Reviewed</strong>
+    <span>→</span>
+    <strong>Registrability Determined</strong>
+    <span>→</span>
+    <strong>Identifier Assigned</strong>
+    <span>→</span>
+    <strong>SREG Constructed</strong>
+  </div>
+
+  <p>
+    Registration provenance should include review outcomes, dates, authorities,
+    workflow references, conditions, and supporting evidence.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Provenance</h2>
+
+  <p>
+    Publication provenance should preserve:
+  </p>
+
+  <ul>
+    <li>first publication date;</li>
+    <li>canonical human-readable URL;</li>
+    <li>canonical machine-readable URL;</li>
+    <li>publication version;</li>
+    <li>publication authority;</li>
+    <li>validation result;</li>
+    <li>schema and profile versions;</li>
+    <li>downloadable artifact references;</li>
+    <li>integrity references, when available;</li>
+    <li>prior publication paths and redirects.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Version Provenance</h2>
+
+  <p>
+    Version Provenance should distinguish among:
+  </p>
+
+  <ul>
+    <li>Registry Entry Version;</li>
+    <li>Source-Record Version;</li>
+    <li>SREG Base Schema Version;</li>
+    <li>Record-Type Profile Version;</li>
+    <li>Registry Schema Specification Version;</li>
+    <li>Registry Rules Version;</li>
+    <li>Registry Policy Version;</li>
+    <li>Suite Standards Version;</li>
+    <li>Suite Methodology Version.</li>
+  </ul>
+
+  <div class="note">
+    A change in one version domain does not automatically imply a change in another.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Custody Provenance</h2>
+
+  <p>
+    A Source Record may move between:
+  </p>
+
+  <ul>
+    <li>institutional repositories;</li>
+    <li>public websites;</li>
+    <li>package structures;</li>
+    <li>publication platforms;</li>
+    <li>archives;</li>
+    <li>successor institutions;</li>
+    <li>preservation services;</li>
+    <li>controlled-access environments.</li>
+  </ul>
+
+  <p>
+    Registry should preserve custody changes without implying that every custodian
+    becomes the Source Institution.
+  </p>
+
+  <div class="note">
+    Custody identifies who holds or preserves a record.
+    Authority identifies who controls its institutional meaning.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Original Custody</h2>
+  <p>
+    The Source Institution directly publishes or stores the Source Record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Delegated Custody</h2>
+  <p>
+    Another platform or repository hosts the record on behalf of the Source Institution.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Archival Custody</h2>
+  <p>
+    An archive preserves the record after active publication changes or ends.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Successor Custody</h2>
+  <p>
+    A successor institution assumes preservation or maintenance responsibility.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Derived and Generated Records</h2>
+
+  <p>
+    Provenance must distinguish original Source Records from derived or generated artifacts.
+  </p>
+
+  <p>
+    Examples include:
+  </p>
+
+  <ul>
+    <li>Certification Package and generated SCPR, SCR, and SCRD artifacts;</li>
+    <li>canonical Markdown and derived JSON;</li>
+    <li>canonical jurisdiction JSON and generation manifest;</li>
+    <li>source media and derived thumbnails;</li>
+    <li>source evidence and generated summaries;</li>
+    <li>original record and archived snapshot;</li>
+    <li>source data and machine-readable export.</li>
+  </ul>
+
+  <div class="note">
+    Derived artifacts may be authoritative representations within their own
+    defined role, but they must preserve the path back to the canonical source.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Provenance Relationships</h2>
+
+  <p>
+    Provenance may use typed relationships such as:
+  </p>
+
+  <ul>
+    <li>sourced from;</li>
+    <li>produced by;</li>
+    <li>derived from;</li>
+    <li>generated from;</li>
+    <li>published by;</li>
+    <li>hosted by;</li>
+    <li>preserved by;</li>
+    <li>archived as;</li>
+    <li>version of;</li>
+    <li>supersedes;</li>
+    <li>superseded by;</li>
+    <li>successor to;</li>
+    <li>predecessor of;</li>
+    <li>validated by;</li>
+    <li>anchored by;</li>
+    <li>documented by.</li>
+  </ul>
+
+  <p>
+    Final labels and controlled values remain subject to Registry governance.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Provenance Evidence</h2>
+
+  <p>
+    Supporting evidence may include:
+  </p>
+
+  <ul>
+    <li>institutional metadata;</li>
+    <li>repository history;</li>
+    <li>release records;</li>
+    <li>publication manifests;</li>
+    <li>generation manifests;</li>
+    <li>version-control history;</li>
+    <li>signed artifacts;</li>
+    <li>hashes and integrity references;</li>
+    <li>Chronicle events;</li>
+    <li>Attestor statements;</li>
+    <li>Certifier artifacts;</li>
+    <li>archival snapshots;</li>
+    <li>governance decisions;</li>
+    <li>correction records.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Machine-Readable Provenance</h2>
+
+  <p>
+    Machine-readable SREGs should preserve provenance through structured fields
+    rather than narrative text alone.
+  </p>
+
+  <div class="code-block" aria-label="Illustrative machine-readable provenance">
+source_institution: "Satoshium Atlas"
+source_identifier: "atlas-jurisdiction-el-salvador"
+source_version: "1.0.0"
+canonical_source: "https://satoshium.us/atlas/..."
+derived_artifact: "jurisdiction.json"
+generation_manifest: "manifest.json"
+registry_identifier: "SREG-JUR-2026-0001"
+  </div>
+
+  <div class="note">
+    Final field names and structures remain subject to the SREG Base Schema and
+    Registry Schema Specification.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Human-Readable Provenance</h2>
+
+  <p>
+    Human-readable SREGs should present provenance clearly enough for a visitor to
+    identify:
+  </p>
+
+  <ul>
+    <li>who created the Source Record;</li>
+    <li>what the authoritative source is;</li>
+    <li>where the source can be found;</li>
+    <li>which version applies;</li>
+    <li>when it was published or became effective;</li>
+    <li>how Registry acquired or registered it;</li>
+    <li>what derived artifacts exist;</li>
+    <li>what changed over time;</li>
+    <li>where prior versions or archival copies can be found.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Unavailable Sources</h2>
+
+  <p>
+    When a Source Record becomes unavailable, Registry should preserve:
+  </p>
+
+  <ul>
+    <li>last known Source Institution;</li>
+    <li>last known canonical source reference;</li>
+    <li>Source-System Identifier;</li>
+    <li>last known source version;</li>
+    <li>last known Source-Record Status;</li>
+    <li>archival references;</li>
+    <li>integrity references;</li>
+    <li>date availability changed;</li>
+    <li>reason for unavailability, when known;</li>
+    <li>successor or replacement source, when applicable.</li>
+  </ul>
+
+  <div class="note">
+    Source unavailability changes access.
+    It does not erase provenance.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Historical Provenance</h2>
+
+  <p>
+    Historical Provenance should preserve:
+  </p>
+
+  <ul>
+    <li>prior Source Institutions;</li>
+    <li>prior canonical URLs;</li>
+    <li>prior Source-System Identifiers;</li>
+    <li>prior source versions;</li>
+    <li>prior Registry Entry Versions;</li>
+    <li>superseded and revoked relationships;</li>
+    <li>withdrawal, retirement, and archival events;</li>
+    <li>custody transfers;</li>
+    <li>correction history;</li>
+    <li>Chronicle event references;</li>
+    <li>successor and predecessor records.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Provenance Corrections</h2>
+
+  <p>
+    Provenance may require correction when:
+  </p>
+
+  <ul>
+    <li>Source Institution was misidentified;</li>
+    <li>Source-System Identifier was incorrect;</li>
+    <li>canonical source reference was wrong;</li>
+    <li>source version was misstated;</li>
+    <li>publication date was incorrect;</li>
+    <li>custody was confused with authority;</li>
+    <li>a mirror was presented as canonical;</li>
+    <li>a derivative was presented as original;</li>
+    <li>a historical source was presented as current;</li>
+    <li>a generation path was incomplete.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Correction Without Erasure</h2>
+
+  <p>
+    Provenance corrections should preserve:
+  </p>
+
+  <ul>
+    <li>prior provenance value;</li>
+    <li>corrected provenance value;</li>
+    <li>correction reason;</li>
+    <li>correction date;</li>
+    <li>correction authority;</li>
+    <li>supporting evidence;</li>
+    <li>affected Registry Entry Version;</li>
+    <li>affected relationship or reference;</li>
+    <li>public Correction Record.</li>
+  </ul>
+
+  <div class="note">
+    Corrected provenance should improve traceability without deleting the history
+    of the original Registry assertion.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Provenance Validation</h2>
+
+  <p>
+    Validation should confirm:
+  </p>
+
+  <ul>
+    <li>Source Institution is identified;</li>
+    <li>Authoritative Source Record is identifiable;</li>
+    <li>Source-System Identifier is preserved when available;</li>
+    <li>canonical source reference is attributable;</li>
+    <li>source and Registry versions are distinguishable;</li>
+    <li>custody and authority are not conflated;</li>
+    <li>derived artifacts identify their source;</li>
+    <li>archival references are labeled accurately;</li>
+    <li>corrections preserve prior values;</li>
+    <li>human-readable and machine-readable provenance agree;</li>
+    <li>historical records are not presented as current;</li>
+    <li>required supporting references exist.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Invalid Provenance Conditions</h2>
+
+  <ul>
+    <li>missing Source Institution;</li>
+    <li>missing Source Record reference;</li>
+    <li>unsupported source attribution;</li>
+    <li>mirror presented as canonical source;</li>
+    <li>derivative presented as original;</li>
+    <li>custodian presented as Source Institution without support;</li>
+    <li>Source-System Identifier replaced by Registry Identifier;</li>
+    <li>source and Registry versions collapsed;</li>
+    <li>historical source presented as current;</li>
+    <li>unavailable source removed without archival context;</li>
+    <li>silent provenance correction;</li>
+    <li>human-readable and machine-readable mismatch.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Source Authority</h2>
+
+  <p>
+    Source Authority determines who controls the Source Record.
+  </p>
+
+  <p>
+    Provenance preserves the traceable path from the SREG back to that Source
+    Institution and Source Record.
+  </p>
+
+  <div class="note">
+    Authority answers who.
+    Provenance explains how the record can be traced.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Relationships</h2>
+
+  <p>
+    Provenance relies on typed relationships to connect:
+  </p>
+
+  <ul>
+    <li>SREG to Source Record;</li>
+    <li>Source Record to Source Institution;</li>
+    <li>derived artifact to canonical source;</li>
+    <li>current version to prior version;</li>
+    <li>active source to archival source;</li>
+    <li>record to integrity reference;</li>
+    <li>SREG to review, correction, and publication history.</li>
+  </ul>
+
+  <div class="note">
+    Provenance explains origin.
+    Relationships explain context.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Validation</h2>
+
+  <p>
+    Provenance validation confirms that Registry can support and reconstruct its
+    source attribution and history.
+  </p>
+
+  <p>
+    It does not certify the substantive truth of the Source Record.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Publication</h2>
+
+  <p>
+    Provenance should be visible and consistent across:
+  </p>
+
+  <ul>
+    <li>human-readable SREG;</li>
+    <li>machine-readable SREG;</li>
+    <li>canonical Registry page;</li>
+    <li>downloadable records;</li>
+    <li>version history;</li>
+    <li>correction records;</li>
+    <li>archival presentation;</li>
+    <li>relationship objects.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Suite Provenance Examples</h2>
+
+  <div class="grid">
+
+    <div>
+      <h3>Atlas</h3>
+      <p>
+        Provenance may connect canonical Markdown, jurisdiction JSON, generation
+        manifest, repository path, Atlas package, and resulting Jurisdiction SREG.
+      </p>
+    </div>
+
+    <div>
+      <h3>Certifier</h3>
+      <p>
+        Provenance may connect Certification Package, SCPR, SCR, SCRD HTML, SCRD JSON,
+        certification subject, evidence, and Certification SREG.
+      </p>
+    </div>
+
+    <div>
+      <h3>Attestor</h3>
+      <p>
+        Provenance may connect an Attestation Record to the issuing authority,
+        subject, evidence, certification, integrity reference, and Attestation SREG.
+      </p>
+    </div>
+
+    <div>
+      <h3>Anchor</h3>
+      <p>
+        Provenance may connect a record version to hashes, signatures, timestamps,
+        commitments, and durable integrity references.
+      </p>
+    </div>
+
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Provenance Does Not Establish</h2>
+
+  <ul>
+    <li>It does not certify the Source Record.</li>
+    <li>It does not verify every substantive claim.</li>
+    <li>It does not create Source Authority.</li>
+    <li>It does not create legal ownership.</li>
+    <li>It does not grant licensing rights.</li>
+    <li>It does not establish endorsement or affiliation.</li>
+    <li>It does not guarantee current availability.</li>
+    <li>It does not make every archived copy canonical.</li>
+    <li>It does not replace relationship validation.</li>
+    <li>It does not erase prior errors when corrected.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Provenance Principle</h2>
+
+  <p>
+    Every SREG should preserve enough structured history to explain where it came
+    from, what source it represents, which institution controls that source, and
+    how the Registry record changed over time.
+  </p>
+
+  <div class="note">
+    Authority begins at the source.
+    Provenance preserves the path.
+    Registry keeps that path discoverable.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/source-authority/">Open Source Authority →</a>
+  <a class="btn" href="/registry/relationships/">Open Relationships →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    A durable record preserves not only identity, but the path by which that identity became known.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
