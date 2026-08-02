@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Source Authority</title>
+<meta name="description" content="Satoshium Registry Source Authority — defines how Registry identifies the institution responsible for an Authoritative Source Record, preserves source ownership, resolves ambiguity, and documents the path back to institutional authority.">
+<link rel="canonical" href="https://satoshium.us/registry/source-authority/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
+.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card h3{margin:18px 0 8px;font-size:18px;color:var(--gold2)}
+.card p,.card li{color:var(--muted)}
+.card p{margin:0 0 14px}
+.card ul{margin:10px 0 0;padding-left:22px}
+.card li{margin:7px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:16px;color:var(--muted)}
+.flow strong{color:var(--gold2);font-weight:700}
+.flow span{color:var(--gold)}
+.btn{display:inline-block;margin-top:14px;margin-right:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,163,74,.24);background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700}
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+<section class="hero">
+  <div class="eyebrow">Registry · Source Authority</div>
+  <h1>Satoshium Registry Source Authority</h1>
+  <p class="lead">Source Authority defines how Satoshium Registry identifies the institution responsible for an Authoritative Source Record and preserves the path back to that institution without transferring or recreating its authority.</p>
+  <p class="lead">Registry may catalog a source. It may not become the source merely by registering it.</p>
+</section>
+<section class="card">
+  <h2>Constitutional Position</h2>
+  <p>Source Authority operates within the Satoshium Suite constitutional hierarchy and the Registry's canonical operational model.</p>
+  <div class="flow" aria-label="Source authority hierarchy"><strong>Suite Standards</strong><span>→</span><strong>Suite Methodology</strong><span>→</span><strong>Suite Interoperability</strong><span>→</span><strong>Source Institution</strong><span>→</span><strong>Authoritative Source Record</strong><span>→</span><strong>SREG</strong></div>
+  <div class="note">The Source Institution creates and controls the Source Record. Registry creates and controls the SREG that catalogs it.</div>
+</section>
+<section class="grid">
+<article class="card"><h2>Why Source Authority Matters</h2><p>Registry must know who is responsible for a source before it can represent that source accurately.</p><p>Without clear authority, a SREG may misidentify ownership, reproduce an unofficial copy, preserve outdated information, or imply institutional approval that does not exist.</p></article>
+<article class="card"><h2>The Core Question</h2><p>Source Authority asks:</p><div class="note">Which institution created, issued, maintains, or otherwise controls the authoritative record being registered?</div></article>
+<article class="card"><h2>Registry's Responsibility</h2><p>Registry must identify, document, and preserve the Source Institution, Source-System Identifier, canonical source reference, source version, and available source-status information.</p></article>
+<article class="card"><h2>Registry's Limitation</h2><p>Registry does not create source authority, legal authority, ownership, certification authority, attestation authority, governmental authority, or editorial authority merely by cataloging a record.</p></article>
+</section>
+<section style="margin-top:18px;"><article class="card"><h2>Canonical Authority Relationship</h2><div class="flow" aria-label="Canonical source authority relationship"><strong>Source Institution</strong><span>→</span><strong>Authoritative Source Record</strong><span>→</span><strong>Registry Reference</strong><span>→</span><strong>SREG</strong></div><p>The Source Institution owns the source-domain meaning of the record. Registry preserves the structured public path back to it.</p></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Source Authority Determination</h2><p>Registry should determine Source Authority by reviewing the strongest available evidence of institutional responsibility.</p><ul><li>canonical institutional publication;</li><li>official repository ownership;</li><li>signed or issued institutional artifact;</li><li>documented identifier assignment;</li><li>governing policy or institutional statement;</li><li>recognized publication channel;</li><li>record metadata identifying the issuer or maintainer;</li><li>version history or release history;</li><li>corresponding machine-readable source record;</li><li>archival evidence preserving prior institutional control.</li></ul></article></section>
+<section class="grid">
+<article class="card"><h2>Primary Source Institution</h2><p>The institution with direct responsibility for creating, issuing, publishing, or maintaining the Authoritative Source Record.</p></article>
+<article class="card"><h2>Supporting Institution</h2><p>An institution that provides evidence, hosting, preservation, publication, or interoperability support without owning the Source Record's institutional meaning.</p></article>
+<article class="card"><h2>Platform or Repository</h2><p>A technical service may host or distribute a record without becoming the Source Institution.</p></article>
+<article class="card"><h2>Rights Holder</h2><p>Ownership or licensing authority may belong to a rights holder distinct from the Source Institution that created or issued the record.</p></article>
+</section>
+<section style="margin-top:18px;"><article class="card"><h2>Required Authority Fields</h2><p>A SREG should preserve the following authority information when applicable:</p><ul><li>Source Institution name;</li><li>Source Institution identifier;</li><li>Authoritative Source Record title or name;</li><li>Source-System Identifier;</li><li>canonical source reference;</li><li>source object type;</li><li>source version;</li><li>source publication or issuance date;</li><li>source effective date;</li><li>Source-Record Status;</li><li>publisher or repository;</li><li>rights or licensing reference;</li><li>supporting authority evidence;</li><li>authority determination date;</li><li>Registry review reference.</li></ul></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Authority Evidence</h2><p>Registry should preserve enough evidence to explain why a particular institution was identified as the Source Institution.</p><div class="note">Authority evidence supports the Registry determination. It does not replace the Source Institution's own authority.</div><p>Evidence may be direct, corroborating, historical, or archival. The evidence type and confidence should be clear when authority is not self-evident.</p></article></section>
+<section class="grid">
+<article class="card"><h2>Direct Authority</h2><p>The Source Institution publishes or issues the record through its own canonical channel.</p></article>
+<article class="card"><h2>Delegated Publication</h2><p>A Source Institution authorizes another platform, repository, or publisher to distribute the record while retaining institutional authority.</p></article>
+<article class="card"><h2>Historical Authority</h2><p>The original Source Institution may no longer operate, but historical records establish who created or controlled the source.</p></article>
+<article class="card"><h2>External Authority</h2><p>Registry may catalog approved external sources when institutional ownership, provenance, registrability, and scope are sufficiently established.</p></article>
+</section>
+<section style="margin-top:18px;"><article class="card"><h2>Multiple Sources</h2><p>Multiple institutions may publish information about the same subject. Registry must determine whether they represent:</p><ul><li>the same Source Record;</li><li>different versions of one Source Record;</li><li>distinct Source Records about the same subject;</li><li>a canonical source and one or more mirrors;</li><li>an original source and derivative records;</li><li>competing institutional claims;</li><li>historical predecessor and successor records.</li></ul><div class="note">Similar subject matter does not make two records the same source object.</div></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Conflicting Authority Claims</h2><p>When two or more institutions claim authority over the same Source Record, Registry should not silently choose one without documented review.</p><p>Registry may:</p><ul><li>delay registration;</li><li>mark the authority determination as unresolved;</li><li>register distinct records when the source objects are genuinely separate;</li><li>preserve competing claims as structured relationships;</li><li>request additional institutional evidence;</li><li>record a provisional determination;</li><li>refer the matter through Registry governance.</li></ul></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Mirrors, Copies, and Derivatives</h2><p>A mirror, copy, transcript, export, cached page, archived snapshot, translated version, or derived representation may support discovery or preservation.</p><p>It should not be treated as the Authoritative Source Record unless the Source Institution explicitly designates it as authoritative.</p><div class="note">A preserved copy may be important. A preserved copy is not automatically the canonical source.</div></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Unavailable or Removed Sources</h2><p>A Source Record may become unavailable because a page moved, a repository was deleted, access was restricted, a platform removed content, or an institution ceased operation.</p><p>Registry may preserve:</p><ul><li>the last known Source Institution;</li><li>the last known canonical reference;</li><li>the Source-System Identifier;</li><li>the last known source version;</li><li>archival references;</li><li>integrity references;</li><li>historical relationships;</li><li>the date availability changed;</li><li>the reason for unavailability, when known.</li></ul><p>Source unavailability does not automatically erase prior authority or require deletion of the SREG.</p></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Authority Changes</h2><p>Institutional responsibility for a Source Record may change through:</p><ul><li>organizational succession;</li><li>repository transfer;</li><li>publisher migration;</li><li>merger or acquisition;</li><li>governance reassignment;</li><li>formal delegation;</li><li>institutional dissolution;</li><li>archival transfer.</li></ul><p>Registry should preserve both prior and current authority context rather than silently overwriting the historical record.</p></article></section>
+<section class="grid">
+<article class="card"><h2>Authority Change</h2><p>The institution responsible for the same continuing Source Record changes.</p></article>
+<article class="card"><h2>Source Replacement</h2><p>A new Source Record replaces the prior object and may require supersession or a new SREG.</p></article>
+<article class="card"><h2>Institutional Succession</h2><p>A successor institution assumes responsibility for records created by a predecessor.</p></article>
+<article class="card"><h2>Archival Custody</h2><p>An archive preserves the record without necessarily inheriting the original institution's substantive authority.</p></article>
+</section>
+<section style="margin-top:18px;"><article class="card"><h2>Source Authority Review</h2><p>A source-authority review should document:</p><ul><li>the proposed Source Institution;</li><li>the proposed Authoritative Source Record;</li><li>supporting authority evidence;</li><li>the canonical reference;</li><li>known mirrors or derivatives;</li><li>known competing claims;</li><li>historical authority context;</li><li>confidence or certainty;</li><li>review outcome;</li><li>review date;</li><li>reviewer or process;</li><li>required follow-up.</li></ul></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Source Authority Outcomes</h2><p>Potential review outcomes may include:</p><ul><li><strong>Confirmed</strong> — Source Institution and Source Record are sufficiently established.</li><li><strong>Confirmed with Conditions</strong> — authority is established, but limitations or review conditions remain.</li><li><strong>Provisional</strong> — the best available authority is identified pending additional evidence.</li><li><strong>Ambiguous</strong> — multiple plausible authority claims remain unresolved.</li><li><strong>Insufficient</strong> — available evidence does not support registration.</li><li><strong>Rejected</strong> — the proposed authority claim is materially unsupported or incorrect.</li></ul><div class="note">These values describe Registry's authority review. They do not create or revoke source authority.</div></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Relationship to Registrability</h2><div class="flow" aria-label="Source authority to registrability"><strong>Source Identified</strong><span>→</span><strong>Authority Reviewed</strong><span>→</span><strong>Authority Outcome</strong><span>→</span><strong>Registrability Review</strong></div><p>Source Authority is a prerequisite for Registrability.</p><p>A source should not proceed to operational SREG creation when Registry cannot identify who controls the Source Record or cannot explain the basis for its authority determination.</p></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Relationship to Provenance</h2><p>Source Authority identifies who controls the Source Record.</p><p>Provenance preserves the traceable path from the SREG back through references, versions, custody, publication, and institutional history.</p><div class="note">Authority answers who. Provenance explains the path.</div></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Relationship to Validation</h2><p>Source-authority validation should confirm:</p><ul><li>the Source Institution is identified;</li><li>the Authoritative Source Record is identifiable;</li><li>the source reference is attributable;</li><li>the Source-System Identifier is preserved when available;</li><li>mirrors and derivatives are not misrepresented as canonical sources;</li><li>rights and ownership are not inferred without support;</li><li>authority changes are historically preserved;</li><li>human-readable and machine-readable SREG forms agree.</li></ul><div class="note">Registry validation confirms the structure and support for its authority determination. It does not certify the ultimate truth of the Source Record.</div></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Suite Institution Examples</h2><div class="grid">
+<div><h3>Atlas</h3><p>Atlas is authoritative for Atlas jurisdiction resources, canonical jurisdiction records, evidence layers, and Atlas machine-readable packages.</p></div>
+<div><h3>Certifier</h3><p>Certifier is authoritative for Certification Packages, SCPR, SCR, SCRD, Certification Outcome, and Certification Status.</p></div>
+<div><h3>Chronicle</h3><p>Chronicle is authoritative for Chronicle-created historical events and institutional chronology records.</p></div>
+<div><h3>Anchor</h3><p>Anchor is authoritative for Anchor-created integrity references, hashes, timestamps, signatures, and verification points.</p></div>
+<div><h3>Beacon</h3><p>Beacon is authoritative for Beacon-created signals and discovery metadata.</p></div>
+<div><h3>Attestor</h3><p>Attestor is authoritative for attestations, trust statements, validation records, and Attestor-controlled status.</p></div>
+<div><h3>Navigator</h3><p>Navigator is authoritative for Navigator-created workflow definitions and coordination records.</p></div>
+<div><h3>Registry</h3><p>Registry is authoritative for SREGs and Registry-owned metadata, not for the substantive source objects created by other institutions.</p></div>
+</div></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>What Source Authority Does Not Establish</h2><ul><li>It does not certify the Source Record.</li><li>It does not verify every substantive claim in the source.</li><li>It does not establish legal ownership without supporting authority.</li><li>It does not grant licensing or reuse rights.</li><li>It does not make a mirror canonical.</li><li>It does not convert a platform into the Source Institution.</li><li>It does not resolve governmental or territorial disputes.</li><li>It does not transfer authority to Registry.</li><li>It does not guarantee continued source availability.</li><li>It does not eliminate the need for provenance and validation.</li></ul></article></section>
+<section style="margin-top:18px;"><article class="card"><h2>Source Authority Principle</h2><p>Registry must be able to explain who controls the source, what record is authoritative, where that record can be found, and what evidence supports the determination.</p><div class="note">The source institution holds authority. Registry preserves the structured path back to it.</div><a class="btn" href="/registry/">Back to Registry →</a><a class="btn" href="/registry/entry-model/">Open Entry Model →</a><a class="btn" href="/registry/integration/">Open Integration →</a></article></section>
+</main>
+<div class="wrap reflection"><hr><div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">Authority begins at the source. Registry preserves the path back to it.</div><hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
