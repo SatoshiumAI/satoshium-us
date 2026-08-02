@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Registry Policies</title>
+<meta name="description" content="Satoshium Registry Policies — defines the durable institutional policies governing Registry authority, source handling, registrability, identifiers, relationships, provenance, validation, publication, versioning, corrections, lifecycle, access, preservation, and governance.">
+<link rel="canonical" href="https://satoshium.us/registry/policies/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Registry · Policies</div>
+  <h1>Satoshium Registry Policies</h1>
+
+  <p class="lead">
+    Satoshium Registry Policies define the durable institutional decisions that
+    govern how Registry accepts sources, constructs SREGs, assigns identifiers,
+    preserves provenance, validates records, publishes official forms, manages
+    versions, applies corrections, and protects historical continuity.
+  </p>
+
+  <p class="lead">
+    Policies establish what Registry requires and permits. Procedures define how
+    those policies are carried out.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Constitutional Position</h2>
+
+  <p>
+    Registry Policies operate beneath Suite Standards and Suite Methodology and
+    above Registry Procedures and operational workflows.
+  </p>
+
+  <div class="flow" aria-label="Registry policy hierarchy">
+    <strong>Suite Standards</strong>
+    <span>→</span>
+    <strong>Suite Methodology</strong>
+    <span>→</span>
+    <strong>Registry Rules</strong>
+    <span>→</span>
+    <strong>Registry Policies</strong>
+    <span>→</span>
+    <strong>Registry Procedures</strong>
+    <span>→</span>
+    <strong>Operational Actions</strong>
+  </div>
+
+  <div class="note">
+    Rules define binding Registry requirements.
+    Policies define durable institutional decisions.
+    Procedures define repeatable implementation.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Policies Matter</h2>
+  <p>
+    Policies provide consistent institutional decisions where individual records,
+    source conditions, access limitations, corrections, and exceptions may vary.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>
+    Policies ask:
+  </p>
+  <div class="note">
+    What durable position should Registry apply consistently across comparable cases?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Registry's Responsibility</h2>
+  <p>
+    Registry must publish, version, apply, review, and preserve its policies in a
+    manner consistent with Suite authority and Registry governance.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Registry's Limitation</h2>
+  <p>
+    Registry Policies govern Registry conduct. They do not override Source
+    Institutions, external law, rights holders, or other Suite institutions within
+    their own authority domains.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Framework</h2>
+
+  <div class="flow" aria-label="Policy framework">
+    <strong>Policy Need</strong>
+    <span>→</span>
+    <strong>Authority Review</strong>
+    <span>→</span>
+    <strong>Policy Draft</strong>
+    <span>→</span>
+    <strong>Governance Approval</strong>
+    <span>→</span>
+    <strong>Publication</strong>
+    <span>→</span>
+    <strong>Implementation</strong>
+    <span>→</span>
+    <strong>Review and Versioning</strong>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Core Policy Domains</h2>
+
+  <ul>
+    <li>Source Authority Policy;</li>
+    <li>Registrability Policy;</li>
+    <li>Identifier Policy;</li>
+    <li>Record-Type Policy;</li>
+    <li>Relationship Policy;</li>
+    <li>Provenance Policy;</li>
+    <li>Validation Policy;</li>
+    <li>Publication Policy;</li>
+    <li>Versioning Policy;</li>
+    <li>Correction Policy;</li>
+    <li>Status Policy;</li>
+    <li>Lifecycle Policy;</li>
+    <li>Restricted-Access Policy;</li>
+    <li>External-Source Policy;</li>
+    <li>Preservation and Archival Policy;</li>
+    <li>Exception Policy;</li>
+    <li>Transparency Policy;</li>
+    <li>Policy Governance Policy.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Normative</h2>
+  <p>
+    Establishes what Registry must, must not, should, or may do.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Durable</h2>
+  <p>
+    Applies beyond a single record or isolated operational decision.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Versioned</h2>
+  <p>
+    Preserves effective versions, prior versions, amendments, and supersession.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Governed</h2>
+  <p>
+    Requires documented authority, approval, publication, and review.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Language</h2>
+
+  <p>
+    Registry Policies should use consistent normative terms:
+  </p>
+
+  <ul>
+    <li><strong>Must</strong> — mandatory requirement.</li>
+    <li><strong>Must Not</strong> — prohibited action or condition.</li>
+    <li><strong>Should</strong> — expected practice unless documented circumstances justify departure.</li>
+    <li><strong>Should Not</strong> — generally prohibited practice unless documented circumstances justify departure.</li>
+    <li><strong>May</strong> — permitted action or option.</li>
+  </ul>
+
+  <div class="note">
+    Normative language should be interpreted consistently across policy,
+    procedure, validation, and governance materials.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Source Authority Policy</h2>
+
+  <ul>
+    <li>Registry must identify the Source Institution for every operational SREG.</li>
+    <li>Registry must preserve the Authoritative Source Record when identifiable.</li>
+    <li>Registry must not treat custody, mirroring, or hosting as Source Authority without evidence.</li>
+    <li>Registry must preserve authority changes, succession, and archival custody.</li>
+    <li>Registry must not absorb source-domain authority through registration.</li>
+    <li>Registry may publish external-source SREGs when authority and provenance are sufficiently documented.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Registrability Policy</h2>
+
+  <ul>
+    <li>Registry must determine Registrability before assigning an operational Registry Identifier.</li>
+    <li>Registrability must consider authority, identity, scope, Record Type, minimum metadata, provenance, and durable relevance.</li>
+    <li>Registry must not register records that cannot be distinguished from duplicates, fragments, or unsupported claims.</li>
+    <li>Conditional or provisional registration must preserve visible limitations.</li>
+    <li>Restricted records may be registrable even when full public access is not permitted.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Identifier Policy</h2>
+
+  <ul>
+    <li>Every operational SREG must receive one permanent Registry Identifier.</li>
+    <li>Registry Identifiers must be unique and must not be reused.</li>
+    <li>Registry Identifier and Source-System Identifier must remain distinct.</li>
+    <li>Aliases must not replace the canonical Registry Identifier.</li>
+    <li>Superseded and archived identifiers must remain resolvable.</li>
+    <li>Identifier corrections must preserve prior values and public history.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Record-Type Policy</h2>
+
+  <ul>
+    <li>Every SREG must receive one approved primary Registry Record Type.</li>
+    <li>Record Type must describe the Registry classification, not redefine the Source Record.</li>
+    <li>Record-Type Profiles must define type-specific requirements.</li>
+    <li>Registry must not force a record into an inaccurate type for convenience.</li>
+    <li>Reclassification must preserve prior classifications and version history.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship Policy</h2>
+
+  <ul>
+    <li>Material relationships must be typed, directional, and attributable.</li>
+    <li>Identifier domains must be explicit.</li>
+    <li>Inverse relationships must be governed rather than assumed.</li>
+    <li>Symmetry must be explicitly defined.</li>
+    <li>Relationships must not imply ownership, endorsement, affiliation, or authority transfer unless supported.</li>
+    <li>Historical and corrected relationships must remain discoverable.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Provenance Policy</h2>
+
+  <ul>
+    <li>Every SREG must preserve a traceable path to its Authoritative Source Record and Source Institution.</li>
+    <li>Registry must distinguish original, derived, mirrored, and archived records.</li>
+    <li>Custody and authority must remain separate.</li>
+    <li>Derived artifacts must identify their canonical source.</li>
+    <li>Unavailable sources must retain archival and last-known context.</li>
+    <li>Provenance corrections must preserve prior assertions.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Policy</h2>
+
+  <ul>
+    <li>Production SREGs must be validated before official publication.</li>
+    <li>Validation must apply declared rules, schemas, profiles, policies, and controlled values.</li>
+    <li>Validation must distinguish blocking errors, warnings, exceptions, and informational findings.</li>
+    <li>Human-readable and machine-readable forms must agree.</li>
+    <li>Material changes must trigger appropriate revalidation.</li>
+    <li>Validation must not be represented as certification of the Source Record.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Policy</h2>
+
+  <ul>
+    <li>Official publication must follow required Validation.</li>
+    <li>Every published SREG must expose stable canonical resolution.</li>
+    <li>Human-readable and machine-readable forms must represent the same Registry object.</li>
+    <li>Publication notices must make material limitations visible.</li>
+    <li>Corrections and supersession must not erase prior publication states.</li>
+    <li>Revoked and archived SREGs should remain historically discoverable unless access must be restricted.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Versioning Policy</h2>
+
+  <ul>
+    <li>Every published SREG must declare a Registry Entry Version.</li>
+    <li>Registry Entry Version and Source-Record Version must remain separate.</li>
+    <li>Version increments must reflect the scale and meaning of change.</li>
+    <li>Prior Registry Entry Versions must remain discoverable.</li>
+    <li>Rollbacks must be recorded as accountable events.</li>
+    <li>Schema, profile, policy, procedure, and controlled-value versions must be identifiable.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Correction Policy</h2>
+
+  <ul>
+    <li>Material errors must be corrected transparently.</li>
+    <li>Corrections must preserve prior values, reasons, dates, authority, and affected versions.</li>
+    <li>Corrections must be reflected across official publication forms.</li>
+    <li>Silent correction of material Registry content is prohibited.</li>
+    <li>Correction records should remain publicly discoverable when publication is public.</li>
+    <li>Correction must not be used to erase historical accountability.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Status Policy</h2>
+
+  <ul>
+    <li>Registry Status must use approved controlled values.</li>
+    <li>Registry Status must remain separate from Source-Record Status.</li>
+    <li>Certification Status and Attestation Status must remain institution-owned.</li>
+    <li>Status changes must be dated and attributable.</li>
+    <li>Historical statuses must remain discoverable.</li>
+    <li>Public presentation must reflect the current Registry Status accurately.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Lifecycle Policy</h2>
+
+  <ul>
+    <li>Registry Lifecycle State must use approved controlled values.</li>
+    <li>Lifecycle transitions must follow approved rules.</li>
+    <li>Supersession must identify successor records when applicable.</li>
+    <li>Revocation, retirement, and archival transitions must preserve history.</li>
+    <li>Lifecycle changes may require new Registry Entry Versions and revalidation.</li>
+    <li>Lifecycle State must not be collapsed into Registry Status.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Restricted-Access Policy</h2>
+
+  <p>
+    Registry may restrict access when required by:
+  </p>
+
+  <ul>
+    <li>privacy;</li>
+    <li>rights or licensing;</li>
+    <li>safety;</li>
+    <li>security;</li>
+    <li>contractual obligation;</li>
+    <li>controlled-source conditions;</li>
+    <li>lawful authority;</li>
+    <li>institutional policy.</li>
+  </ul>
+
+  <p>
+    Restriction should be limited to what is necessary and should preserve public
+    metadata and accountable history when appropriate.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>External-Source Policy</h2>
+
+  <ul>
+    <li>External ownership and Source Institution attribution must be explicit.</li>
+    <li>Registry must not imply endorsement or affiliation without support.</li>
+    <li>External identifiers and Registry identifiers must remain distinct.</li>
+    <li>Rights and reuse conditions must be preserved.</li>
+    <li>Source availability should be periodically reviewable.</li>
+    <li>External-source records may be restricted, archived, or marked unavailable without erasing provenance.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Preservation and Archival Policy</h2>
+
+  <ul>
+    <li>Registry should preserve prior versions and material publication states.</li>
+    <li>Archived SREGs should remain resolvable when lawful and appropriate.</li>
+    <li>Unavailable Source Records should retain last-known references and archival context.</li>
+    <li>Preservation copies must be identified as archival, mirrored, or derived.</li>
+    <li>Archival custody must not be represented as original Source Authority.</li>
+    <li>Material loss of access should be documented.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Exception Policy</h2>
+
+  <p>
+    An exception may be approved only when:
+  </p>
+
+  <ul>
+    <li>the governing requirement is identified;</li>
+    <li>the reason is documented;</li>
+    <li>the approving authority is identified;</li>
+    <li>scope is limited;</li>
+    <li>duration or review date is defined;</li>
+    <li>risk and impact are considered;</li>
+    <li>the exception is visible in Validation and Publication when material;</li>
+    <li>the exception does not exceed Registry authority.</li>
+  </ul>
+
+  <div class="note">
+    Exceptions permit governed departures.
+    They do not silently rewrite policy.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Transparency Policy</h2>
+
+  <ul>
+    <li>Registry should publish its current policies.</li>
+    <li>Material policy changes should include effective dates and change summaries.</li>
+    <li>Prior policy versions should remain discoverable.</li>
+    <li>Public SREGs should expose material warnings, restrictions, corrections, and historical conditions.</li>
+    <li>Governance exceptions should be disclosed when they materially affect interpretation.</li>
+    <li>Registry should distinguish current requirements from historical requirements.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Document Requirements</h2>
+
+  <p>
+    Every formal Registry policy should identify:
+  </p>
+
+  <ul>
+    <li>policy title;</li>
+    <li>policy identifier;</li>
+    <li>policy version;</li>
+    <li>authority;</li>
+    <li>approval date;</li>
+    <li>effective date;</li>
+    <li>scope;</li>
+    <li>purpose;</li>
+    <li>normative requirements;</li>
+    <li>exceptions;</li>
+    <li>related Rules;</li>
+    <li>related Procedures;</li>
+    <li>review date;</li>
+    <li>superseded policy reference;</li>
+    <li>change history.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Illustrative Policy Record</h2>
+
+  <div class="code-block" aria-label="Illustrative policy record">
+policy_identifier: "SREG-POL-PUBLICATION"
+policy_title: "Registry Publication Policy"
+policy_version: "1.0.0"
+authority: "Satoshium Registry"
+effective_date: "2026-08-02"
+status: "active"
+  </div>
+
+  <div class="note">
+    Final policy identifiers, field names, and controlled values remain subject to
+    Registry governance.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Lifecycle</h2>
+
+  <div class="flow" aria-label="Policy lifecycle">
+    <strong>Draft</strong>
+    <span>→</span>
+    <strong>Review</strong>
+    <span>→</span>
+    <strong>Approved</strong>
+    <span>→</span>
+    <strong>Active</strong>
+    <span>→</span>
+    <strong>Amended</strong>
+    <span>→</span>
+    <strong>Superseded or Retired</strong>
+    <span>→</span>
+    <strong>Archived</strong>
+  </div>
+
+  <p>
+    Policy lifecycle values should remain separate from SREG Lifecycle States,
+    although comparable governance patterns may apply.
+  </p>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Draft</h2>
+  <p>
+    Proposed policy not yet approved for operational use.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Active</h2>
+  <p>
+    Current approved policy governing applicable Registry activity.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Superseded</h2>
+  <p>
+    Replaced by a newer policy while remaining historically discoverable.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Retired</h2>
+  <p>
+    No longer operational and not replaced by a direct successor.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Versioning</h2>
+
+  <p>
+    Policy changes should preserve:
+  </p>
+
+  <ul>
+    <li>prior policy version;</li>
+    <li>new policy version;</li>
+    <li>change date;</li>
+    <li>effective date;</li>
+    <li>approval authority;</li>
+    <li>change summary;</li>
+    <li>affected Procedures;</li>
+    <li>affected schemas and profiles;</li>
+    <li>migration or transition requirements;</li>
+    <li>supersession reference;</li>
+    <li>historical publication.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Review</h2>
+
+  <p>
+    Policies should be reviewed when:
+  </p>
+
+  <ul>
+    <li>Suite Standards or Methodology change;</li>
+    <li>Registry Rules change;</li>
+    <li>new Record Types are introduced;</li>
+    <li>operational gaps become visible;</li>
+    <li>exceptions recur;</li>
+    <li>Validation identifies systemic defects;</li>
+    <li>legal, rights, privacy, safety, or security conditions change;</li>
+    <li>interoperability requirements change;</li>
+    <li>source or publication architecture changes materially;</li>
+    <li>scheduled review date arrives.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Validation</h2>
+
+  <p>
+    Before approval or republication, a policy should be checked for:
+  </p>
+
+  <ul>
+    <li>authority;</li>
+    <li>scope;</li>
+    <li>consistency with Suite Standards and Methodology;</li>
+    <li>consistency with Registry Rules;</li>
+    <li>consistency with other Registry Policies;</li>
+    <li>clear normative language;</li>
+    <li>defined exceptions;</li>
+    <li>implementable Procedures;</li>
+    <li>version and effective date;</li>
+    <li>publication readiness;</li>
+    <li>historical continuity.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Conflicts</h2>
+
+  <p>
+    When policies conflict, Registry should:
+  </p>
+
+  <ul>
+    <li>identify the conflicting provisions;</li>
+    <li>determine governing authority and hierarchy;</li>
+    <li>apply the more specific policy when appropriate;</li>
+    <li>apply the newer approved policy when supersession is clear;</li>
+    <li>escalate unresolved conflicts to Governance;</li>
+    <li>document interim treatment;</li>
+    <li>correct or supersede the conflicting policy;</li>
+    <li>preserve the historical record.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Rules</h2>
+
+  <p>
+    Registry Rules establish binding requirements for Registry operation.
+  </p>
+
+  <p>
+    Policies interpret and organize durable institutional positions within those Rules.
+  </p>
+
+  <div class="note">
+    Rules establish requirements.
+    Policies establish consistent institutional decisions.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Procedures</h2>
+
+  <p>
+    Procedures convert policies into repeatable operational steps.
+  </p>
+
+  <div class="flow" aria-label="Policy and procedure relationship">
+    <strong>Policy</strong>
+    <span>→</span>
+    <strong>Required Institutional Position</strong>
+    <span>→</span>
+    <strong>Procedure</strong>
+    <span>→</span>
+    <strong>Operational Action</strong>
+  </div>
+
+  <p>
+    A Procedure may implement a Policy but should not silently expand or contradict it.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Governance</h2>
+
+  <p>
+    Registry Governance should control:
+  </p>
+
+  <ul>
+    <li>policy authority;</li>
+    <li>approval;</li>
+    <li>versioning;</li>
+    <li>effective dates;</li>
+    <li>exceptions;</li>
+    <li>conflict resolution;</li>
+    <li>review cycles;</li>
+    <li>supersession;</li>
+    <li>retirement;</li>
+    <li>publication;</li>
+    <li>historical preservation.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Policies Do Not Establish</h2>
+
+  <ul>
+    <li>They do not override Suite Standards or Methodology.</li>
+    <li>They do not replace Registry Rules.</li>
+    <li>They do not replace operational Procedures.</li>
+    <li>They do not transfer Source Authority.</li>
+    <li>They do not certify Source Records.</li>
+    <li>They do not create attestations.</li>
+    <li>They do not override lawful authority or rights restrictions.</li>
+    <li>They do not permit silent exceptions.</li>
+    <li>They do not erase prior policy versions.</li>
+    <li>They do not expand Registry authority beyond its institutional scope.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Policy Principle</h2>
+
+  <p>
+    Registry Policies should translate enduring Registry principles into consistent,
+    reviewable, versioned institutional decisions that can be implemented through
+    clear Procedures.
+  </p>
+
+  <div class="note">
+    Standards define expectations.
+    Methodology defines implementation.
+    Rules establish requirements.
+    Policies establish durable decisions.
+    Procedures carry them out.
+  </div>
+
+  <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/rules/">Open Rules →</a>
+  <a class="btn" href="/registry/procedures/">Open Procedures →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Durable institutions turn principles into consistent decisions before those decisions become operational actions.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
