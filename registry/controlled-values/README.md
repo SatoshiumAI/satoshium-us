@@ -153,6 +153,35 @@ Creation, amendment, deprecation, retirement, and migration require approved aut
 
 ---
 
+## Machine-Readable Controlled Values
+
+Registry now publishes a canonical machine-readable Controlled Values resource alongside this human-readable framework.
+
+```text
+Controlled Values Framework
+  ↓
+controlled-values.json
+  ↓
+Schemas and Record-Type Profiles
+  ↓
+Published SREGs
+```
+
+Current production metadata:
+
+- **Canonical File:** `controlled-values.json`
+- **Version:** `1.0`
+- **Authority:** Satoshium Registry
+- **Effective Date:** August 14, 2026
+- **Canonical URL:** `https://satoshium.us/registry/controlled-values/controlled-values.json`
+- **Current Machine-Readable Scope:** the initial published resource operationalizes the **Registry Status** value set beginning with the production value **Active**.
+
+The machine-readable resource does not replace this institutional framework.
+
+This README and the public Controlled Values page define the governed meaning, architecture, usage boundaries, and maintenance expectations of Controlled Values. `controlled-values.json` provides the canonical machine-readable publication of value sets as they are formally operationalized.
+
+---
+
 ## Core Controlled-Value Sets
 
 The Registry Controlled Values framework may include:
@@ -644,22 +673,33 @@ Initial Preservation Conditions may include:
 
 ## Machine-Readable Codes
 
-Controlled Values may use stable machine-readable codes while preserving human-readable labels.
+Controlled Values use stable machine-readable codes while preserving corresponding human-readable labels.
 
-Illustrative examples:
+The current production resource includes:
 
 ```text
 registry_status: "active"
+```
+
+Framework examples for additional governed sets include:
+
+```text
 registry_lifecycle_state: "published"
 validation_outcome: "valid_with_warnings"
 publication_readiness: "ready_with_notices"
 ```
 
-Final codes, casing, separators, and serialization remain subject to:
+The canonical machine-readable publication is:
 
-- SREG Base Schema;
-- Registry Schema Specification;
-- Record-Type Profiles;
+```text
+https://satoshium.us/registry/controlled-values/controlled-values.json
+```
+
+Additional value sets and codes should be added to `controlled-values.json` as they are formally operationalized and reconciled with:
+
+- the SREG Base Schema;
+- applicable Record-Type Profiles;
+- the Registry Schema Specification;
 - Registry Governance.
 
 ---
@@ -921,7 +961,8 @@ Publication should expose canonical labels and codes consistently across:
 registry/
 └── controlled-values/
     ├── index.html
-    └── README.md
+    ├── README.md
+    └── controlled-values.json
 ```
 
 ### `index.html`
@@ -932,12 +973,17 @@ The public Registry Controlled Values page.
 
 The directory-level documentation explaining value sets, codes, labels, definitions, statuses, outcomes, aliases, versioning, Governance, Validation, and maintenance.
 
+### `controlled-values.json`
+
+The canonical machine-readable publication of Registry Controlled-Value sets as they are formally operationalized. Version 1.0 begins with the production Registry Status value set and may be expanded through governed updates without fragmenting each value set into a separate file unless operational requirements later justify that structure.
+
 Future supporting materials may include:
 
 ```text
 controlled-values/
 ├── index.html
 ├── README.md
+├── controlled-values.json
 ├── record-types.md
 ├── registry-statuses.md
 ├── lifecycle-states.md
@@ -1005,6 +1051,7 @@ When Controlled-Value architecture changes:
 
 - update `index.html`;
 - update this README;
+- update `controlled-values.json`;
 - update value-set identifiers;
 - update definitions;
 - update codes and labels;
@@ -1030,6 +1077,7 @@ When Controlled-Value architecture changes:
 ## Guiding Principles
 
 - Controlled Values must be governed.
+- Machine-readable Controlled Values must remain aligned with the human-readable framework.
 - Every canonical value must be defined.
 - Codes and labels must correspond.
 - Value-set versions must be preserved.
