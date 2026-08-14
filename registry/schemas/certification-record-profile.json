@@ -1,0 +1,532 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://satoshium.us/registry/schemas/certification-record-profile.json",
+  "title": "Satoshium Registry Certification Record-Type Profile",
+  "description": "Production machine-readable Record-Type Profile for Certification SREGs. This profile extends the SREG Base Schema with certification-specific requirements while preserving Satoshium Certifier as authoritative for certification meaning, outcome, status, class, evidence, and generated certification artifacts.",
+  "allOf": [
+    {
+      "$ref": "https://satoshium.us/registry/schemas/sreg-base-schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "registry_record_type",
+        "source_authority",
+        "registered_subject",
+        "source_certification",
+        "source_artifacts",
+        "governing_framework",
+        "registry_relationships",
+        "provenance",
+        "registry_validation",
+        "registry_publication"
+      ],
+      "properties": {
+        "registry_record_type": {
+          "type": "object",
+          "required": [
+            "code",
+            "label"
+          ],
+          "properties": {
+            "code": {
+              "const": "certification"
+            },
+            "label": {
+              "const": "Certification"
+            }
+          },
+          "additionalProperties": false
+        },
+        "source_authority": {
+          "type": "object",
+          "required": [
+            "source_institution",
+            "source_authority",
+            "source_system_identifier",
+            "source_record_type",
+            "authoritative_source_record",
+            "source_record_version",
+            "canonical_source_url",
+            "authority_statement"
+          ],
+          "properties": {
+            "source_institution": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Institution that owns and governs the authoritative certification Source Record."
+            },
+            "source_authority": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_system_identifier": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Source-system identifier assigned by the certification authority."
+            },
+            "source_record_type": {
+              "type": "string",
+              "const": "Certification Package"
+            },
+            "authoritative_source_record": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_record_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "canonical_source_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "authority_statement": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "registered_subject": {
+          "type": "object",
+          "required": [
+            "subject_name",
+            "subject_system",
+            "subject_authority",
+            "subject_type",
+            "canonical_subject_url",
+            "authority_statement"
+          ],
+          "properties": {
+            "subject_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "subject_system": {
+              "type": "string",
+              "minLength": 1
+            },
+            "subject_authority": {
+              "type": "string",
+              "minLength": 1
+            },
+            "subject_type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "subject_state_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "canonical_subject_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "authority_statement": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "source_certification": {
+          "$ref": "#/$defs/sourceCertification"
+        },
+        "source_artifacts": {
+          "type": "object",
+          "required": [
+            "certification_package",
+            "certification_process_report",
+            "certification_receipt",
+            "certified_record_html",
+            "certified_record_json"
+          ],
+          "properties": {
+            "certification_package": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/certificationArtifact"
+                },
+                {
+                  "properties": {
+                    "artifact_type": {
+                      "const": "Certification Package"
+                    },
+                    "canonical": {
+                      "const": true
+                    }
+                  },
+                  "required": [
+                    "canonical"
+                  ]
+                }
+              ]
+            },
+            "certification_process_report": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/certificationArtifact"
+                },
+                {
+                  "properties": {
+                    "artifact_type": {
+                      "const": "SCPR"
+                    },
+                    "canonical": {
+                      "const": false
+                    },
+                    "derived_from": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "canonical",
+                    "derived_from"
+                  ]
+                }
+              ]
+            },
+            "certification_receipt": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/certificationArtifact"
+                },
+                {
+                  "properties": {
+                    "artifact_type": {
+                      "const": "SCR"
+                    },
+                    "canonical": {
+                      "const": false
+                    },
+                    "derived_from": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "canonical",
+                    "derived_from"
+                  ]
+                }
+              ]
+            },
+            "certified_record_html": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/certificationArtifact"
+                },
+                {
+                  "properties": {
+                    "artifact_type": {
+                      "const": "SCRD HTML"
+                    },
+                    "canonical": {
+                      "const": false
+                    },
+                    "derived_from": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "canonical",
+                    "derived_from"
+                  ]
+                }
+              ]
+            },
+            "certified_record_json": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/certificationArtifact"
+                },
+                {
+                  "properties": {
+                    "artifact_type": {
+                      "const": "SCRD JSON"
+                    },
+                    "canonical": {
+                      "const": false
+                    },
+                    "derived_from": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "canonical",
+                    "derived_from"
+                  ]
+                }
+              ]
+            }
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/certificationArtifact"
+          }
+        },
+        "governing_framework": {
+          "$ref": "#/$defs/certificationGoverningFramework"
+        },
+        "registry_relationships": {
+          "type": "array",
+          "minItems": 2,
+          "contains": {
+            "type": "object",
+            "required": [
+              "relationship_type"
+            ],
+            "properties": {
+              "relationship_type": {
+                "const": "registers"
+              }
+            }
+          },
+          "items": {
+            "$ref": "https://satoshium.us/registry/schemas/sreg-base-schema.json#/$defs/relationship"
+          },
+          "description": "A Certification SREG must include at least the Registry-owned relationship showing that the SREG registers the authoritative Certification Package. Additional Certifier- or subject-authority relationships are permitted when supported."
+        },
+        "provenance": {
+          "type": "object",
+          "required": [
+            "provenance_chain",
+            "provenance_statement"
+          ],
+          "properties": {
+            "provenance_chain": {
+              "type": "array",
+              "minItems": 4,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "provenance_statement": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "registry_validation": {
+          "allOf": [
+            {
+              "$ref": "https://satoshium.us/registry/schemas/sreg-base-schema.json#/$defs/registryValidation"
+            },
+            {
+              "properties": {
+                "validation_notice": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "validation_notice"
+              ]
+            }
+          ]
+        },
+        "registry_publication": {
+          "$ref": "https://satoshium.us/registry/schemas/sreg-base-schema.json#/$defs/registryPublication"
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sourceCertification": {
+      "type": "object",
+      "required": [
+        "certification_id",
+        "certification_date",
+        "certification_version",
+        "certification_outcome",
+        "certification_status",
+        "certification_class",
+        "confidence_posture",
+        "decision_authority",
+        "scope_statement"
+      ],
+      "properties": {
+        "certification_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "certification_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "certification_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "certification_outcome": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Certification outcome copied from the authoritative Source Record. Registry does not originate or reinterpret this value."
+        },
+        "certification_status": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Source-controlled certification status. It is distinct from Registry Status and Registry Lifecycle State."
+        },
+        "certification_class": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence_posture": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "historical_prototype_assessment": {
+          "type": "object",
+          "properties": {
+            "assessment_type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "score": {
+              "type": "string",
+              "minLength": 1
+            },
+            "prototype_trust_level": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": true
+        },
+        "scope_statement": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "certificationArtifact": {
+      "type": "object",
+      "required": [
+        "artifact_type",
+        "url"
+      ],
+      "properties": {
+        "artifact_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonical": {
+          "type": "boolean"
+        },
+        "derived_from": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": true
+    },
+    "certificationGoverningFramework": {
+      "type": "object",
+      "required": [
+        "suite_standards",
+        "suite_methodology"
+      ],
+      "properties": {
+        "suite_standards": {
+          "type": "object",
+          "required": [
+            "name",
+            "version",
+            "url",
+            "applicable_standards"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "applicable_standards": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "suite_methodology": {
+          "type": "object",
+          "required": [
+            "name",
+            "version",
+            "url",
+            "applicable_components"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "applicable_components": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "x-satoshium-profile-metadata": {
+    "profile_name": "Certification Record-Type Profile",
+    "profile_identifier": "https://satoshium.us/registry/schemas/certification-record-profile.json",
+    "profile_version": "1.0",
+    "status": "Production",
+    "effective_date": "2026-08-14",
+    "authority": "Satoshium Registry",
+    "base_schema": "https://satoshium.us/registry/schemas/sreg-base-schema.json",
+    "registry_record_type": "Certification",
+    "source_authority_boundary": "Satoshium Registry is authoritative for the SREG and Registry classification. Satoshium Certifier remains authoritative for the Certification Package, certification decision, outcome, status, class, evidence, and generated artifacts.",
+    "canonical_source_rule": "The Certification Package is the authoritative certification Source Record. SCPR, SCR, SCRD HTML, and SCRD JSON are related generated or derived artifacts and do not replace the Certification Package.",
+    "reference_implementation": "SREG-2026-0001",
+    "reference_source_record": "SC-CERT-2026-0001",
+    "record_types_reference": "https://satoshium.us/registry/record-types/",
+    "validation_reference": "https://satoshium.us/registry/validation/"
+  }
+}
