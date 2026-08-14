@@ -495,6 +495,51 @@ Every material validation should preserve:
 
 ---
 
+## Operational Validation Implementation
+
+Registry Validation is preserved within the canonical machine-readable SREG through the `registry_validation` object and reflected in the corresponding human-readable Registry publication.
+
+The inaugural production implementation, `SREG-2026-0001`, demonstrates this model and has been successfully validated against:
+
+- **SREG Base Schema v1.0**;
+- **Certification Record-Type Profile v1.0**;
+- applicable Registry Controlled Values;
+- Source Authority and Provenance requirements;
+- Registry Relationship requirements;
+- Registry Version requirements;
+- human-readable and machine-readable publication consistency.
+
+The canonical SREG may itself preserve the material Validation Record through its `registry_validation` structure.
+
+A separate validation report or supporting validation artifact is not required when the canonical SREG already preserves the complete material Validation Record.
+
+Registry may publish a separate validation report when:
+
+- findings require extended explanation;
+- exceptions require separate governance treatment;
+- supporting evidence is too extensive for the canonical SREG;
+- validation involves multiple stages or institutions;
+- operational complexity warrants an independent artifact;
+- public transparency benefits from a dedicated report.
+
+```text
+Normal SREG
+  ↓
+registry_validation within record.json
+  ↓
+Human-readable Validation presentation
+
+Complex Validation Case
+  ↓
+registry_validation within record.json
+  +
+Optional separate Validation report
+```
+
+This implementation preserves Validation as a required Registry function without creating an unnecessary mandatory artifact for every SREG.
+
+---
+
 ## Validation Outcomes
 
 ### Valid
@@ -797,6 +842,12 @@ The public Registry Validation page.
 
 The directory-level documentation explaining validation scope, domains, methods, outcomes, findings, records, revalidation, and maintenance.
 
+### Operational Validation Record
+
+The material Validation Record for a normal production SREG is preserved within the SREG's canonical `record.json` through the `registry_validation` object and reflected in the corresponding human-readable Registry Entry or Registration Overview.
+
+No additional file is required solely to duplicate that validation record.
+
 Future supporting materials may include:
 
 ```text
@@ -812,7 +863,7 @@ validation/
 └── versions/
 ```
 
-These materials should be introduced only when corresponding operational resources exist.
+These materials should be introduced only when corresponding operational resources exist or when validation complexity demonstrates a need for a dedicated supporting artifact. They are not mandatory components of every SREG package.
 
 ---
 
@@ -863,6 +914,7 @@ When Validation architecture changes:
 - update publication thresholds;
 - update automated-validation rules;
 - update institutional-review requirements;
+- keep `registry_validation` requirements aligned with the SREG Base Schema and Record-Type Profiles;
 - update the SREG Base Schema;
 - update affected Record-Type Profiles;
 - update Registry Policies;
@@ -877,6 +929,8 @@ When Validation architecture changes:
 ## Guiding Principles
 
 - Validation applies to the SREG as a Registry object.
+- The canonical SREG should preserve its material Validation Record.
+- Separate validation reports should be created only when operational complexity justifies them.
 - Validation follows SREG construction.
 - Validation precedes official publication.
 - Validation and Certification remain distinct.
