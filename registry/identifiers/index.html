@@ -378,30 +378,29 @@ h1{
   <h2>Identifier Structure</h2>
 
   <p>
-    A production Registry Identifier should use a controlled structure that can
-    distinguish Registry ownership, Record Type, year or issuance context, and
-    sequence without embedding mutable meaning.
+    A production Registry Identifier uses a controlled structure that identifies
+    Registry ownership, issuance year, and sequence without embedding Record Type
+    or other mutable classification meaning.
   </p>
 
-  <div class="code-block" aria-label="Illustrative identifier pattern">
-SREG-[TYPE]-[YEAR]-[SEQUENCE]
+  <div class="code-block" aria-label="Canonical Registry identifier pattern">
+SREG-[YEAR]-[SEQUENCE]
   </div>
 
   <p>
     Illustrative examples:
   </p>
 
-  <div class="code-block" aria-label="Illustrative Registry Identifiers">
-SREG-JUR-2026-0001
-SREG-CERT-2026-0001
-SREG-TOOL-2026-0001
-SREG-MEDIA-2026-0001
+  <div class="code-block" aria-label="Canonical Registry Identifier examples">
+SREG-2026-0001
+SREG-2026-0002
+SREG-2026-0003
   </div>
 
   <div class="note">
-    These examples illustrate structure only.
-    Final production prefixes, abbreviations, and controlled values remain subject
-    to Registry governance.
+    This is the canonical production pattern established by
+    <strong>SREG-2026-0001</strong>. Record Type remains a separate controlled SREG
+    field and is not encoded within the Registry Identifier.
   </div>
 </article>
 </section>
@@ -416,16 +415,18 @@ SREG-MEDIA-2026-0001
 </article>
 
 <article class="card">
-  <h2>Type Segment</h2>
+  <h2>Year Segment</h2>
   <p>
-    May indicate the approved Registry Record Type without replacing the Record Type field.
+    Preserves the four-digit year in which the Registry Identifier is assigned.
+    The year is part of the permanent identifier and does not encode Record Type.
   </p>
 </article>
 
 <article class="card">
-  <h2>Issuance Segment</h2>
+  <h2>Record Type Separation</h2>
   <p>
-    May preserve year or other controlled issuance context.
+    Registry Record Type remains a separate controlled SREG field. Classification
+    may change through governance without requiring a different identifier pattern.
   </p>
 </article>
 
@@ -696,8 +697,8 @@ SREG-MEDIA-2026-0001
     but the canonical URL should resolve the identifier.
   </p>
 
-  <div class="code-block" aria-label="Illustrative canonical URL">
-https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/
+  <div class="code-block" aria-label="Canonical SREG URL example">
+https://satoshium.us/registry/registered-items/SREG-2026-0001/
   </div>
 
   <p>
@@ -801,9 +802,9 @@ https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/
     Registry Entry Version must remain separate from Registry Identifier.
   </p>
 
-  <div class="code-block" aria-label="Illustrative Registry identity and version">
-Registry Identifier: SREG-JUR-2026-0001
-Registry Entry Version: 1.2.0
+  <div class="code-block" aria-label="Registry identity and version example">
+Registry Identifier: SREG-2026-0001
+Registry Entry Version: 1.0
   </div>
 
   <p>
@@ -825,7 +826,7 @@ Registry Entry Version: 1.2.0
     <li>format matches the approved identifier pattern;</li>
     <li>identifier is unique within the namespace;</li>
     <li>identifier has not been reused;</li>
-    <li>Record Type segment is valid when used;</li>
+    <li>year and sequence segments match the approved production pattern;</li>
     <li>assignment record exists;</li>
     <li>Registrability reference exists;</li>
     <li>Registry Identifier and Source-System Identifier are distinct;</li>
@@ -847,7 +848,7 @@ Registry Entry Version: 1.2.0
     <li>identifier assigned before Registrability approval;</li>
     <li>Source-System Identifier used as Registry Identifier;</li>
     <li>mutable title embedded as required identity;</li>
-    <li>incorrect Record Type segment;</li>
+    <li>incorrect year or sequence segment;</li>
     <li>missing assignment record;</li>
     <li>unresolvable published identifier without historical explanation;</li>
     <li>alias represented as canonical identity;</li>
@@ -863,17 +864,18 @@ Registry Entry Version: 1.2.0
   <h2>Relationship to Record Types</h2>
 
   <p>
-    Record Type may influence the identifier namespace or type segment.
+    Registry Record Type does not alter the canonical Registry Identifier pattern.
   </p>
 
   <p>
-    Record Type remains a separate controlled field and must not be inferred only
-    from the identifier string.
+    Record Type remains a separate controlled field within the SREG and must not
+    be inferred from the identifier string.
   </p>
 
   <div class="note">
-    The identifier may reflect classification.
-    The Record Type field remains authoritative for classification.
+    Identifier preserves Registry identity.
+    Record Type preserves Registry classification.
+    The two remain deliberately separate.
   </div>
 </article>
 </section>
