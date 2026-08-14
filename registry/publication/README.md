@@ -87,6 +87,27 @@ Official publication should preserve one consistent Registry object across all s
 
 ---
 
+## Reusable SREG Publication Package
+
+A normal production SREG is published through a reusable four-file package using the Registry Identifier as the directory name.
+
+```text
+SREG-YYYY-NNNN/
+├── index.html
+├── registry-entry.html
+├── record.json
+└── README.md
+```
+
+- `index.html` — Registration Overview;
+- `registry-entry.html` — canonical human-readable SREG;
+- `record.json` — canonical machine-readable SREG;
+- `README.md` — directory-level documentation.
+
+Record-Type Profiles may require additional source artifacts, relationships, references, or supporting materials, but they do not replace the canonical four-file publication package.
+
+---
+
 ## Why Publication Matters
 
 A SREG may be structurally complete and validated but still unavailable to users, systems, and Suite institutions until it is formally published.
@@ -125,7 +146,9 @@ A production publication should normally include:
 - correction references;
 - publication date;
 - validation date;
-- consistent official forms.
+- consistent official forms;
+- complete reusable four-file SREG package;
+- discovery through Registered Items.
 
 ---
 
@@ -227,23 +250,24 @@ They must not describe different Registry objects.
 
 ## Canonical URLs
 
-Every published SREG should have a stable canonical URL.
+Every published SREG should have a stable canonical Registry location that resolves through **Registered Items**.
 
-Illustrative human-readable path:
-
-```text
-https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/
-```
-
-Illustrative machine-readable path:
+Production example:
 
 ```text
-https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/index.json
+https://satoshium.us/registry/registered-items/SREG-2026-0001/
 ```
 
-URL structure may evolve.
+The canonical human-readable SREG and machine-readable SREG are published within the same Registry Identifier directory.
 
-The Registry Identifier must remain stable.
+```text
+https://satoshium.us/registry/registered-items/SREG-2026-0001/registry-entry.html
+https://satoshium.us/registry/registered-items/SREG-2026-0001/record.json
+```
+
+Registered Items is the production publication location for completed SREG registrations.
+
+URL architecture may evolve through governed change, but the Registry Identifier must remain stable and prior resolution must remain historically traceable.
 
 ---
 
@@ -263,6 +287,26 @@ A published Registry Identifier should resolve to:
 - supersession notices;
 - successor references;
 - archival references when no longer active.
+
+---
+
+## Operational Publication Sequence
+
+```text
+Construct SREG Package
+  ↓
+Validate
+  ↓
+Publish
+  ↓
+Registered Items
+  ↓
+Maintain
+```
+
+Publication is operationally complete when the validated SREG package resolves through its production Registry location and is discoverable through **Registered Items**.
+
+Maintenance after publication is governed through Registry Versioning, Corrections, Status, Lifecycle, History, and the applicable update, supersession, revocation, restriction, and archival procedures.
 
 ---
 
@@ -556,7 +600,8 @@ Before release, Registry should confirm:
 - history references are present;
 - restricted information is not exposed;
 - metadata and canonical tags are correct;
-- publication record is complete.
+- publication record is complete;
+- the SREG is discoverable through Registered Items.
 
 ---
 
@@ -593,6 +638,26 @@ Publication releases the validated SREG through official Registry channels.
 Validation confirms readiness.
 Publication creates discoverability.
 ```
+
+---
+
+## Relationship to Registered Items
+
+Registered Items is the concise public listing of completed Registry registrations.
+
+A newly published SREG should be added to Registered Items after production publication and resolution are confirmed.
+
+```text
+Validated SREG
+  ↓
+Published SREG Package
+  ↓
+Registered Items
+  ↓
+Ongoing Maintenance
+```
+
+Registered Items does not replace the canonical SREG package. It provides direct public discovery of completed registrations.
 
 ---
 
@@ -772,6 +837,7 @@ This directory should remain consistent with:
 - Registry Relationships;
 - Registry Provenance;
 - Registry Validation;
+- Registry Registered Items;
 - Registry Entry Model;
 - Registry Records;
 - Registry Record Types;
@@ -799,6 +865,8 @@ When Publication architecture changes:
 - update publication requirements;
 - update readiness outcomes;
 - update canonical URL rules;
+- update reusable SREG package requirements;
+- update Registered Items publication and discovery requirements;
 - update publication-record fields;
 - update notice requirements;
 - update restricted-publication rules;
@@ -821,6 +889,8 @@ When Publication architecture changes:
 ## Guiding Principles
 
 - Publication follows Validation.
+- Normal production publication uses the canonical four-file SREG package.
+- Completed publications should be discoverable through Registered Items.
 - Registry Identifier must resolve consistently.
 - Human-readable and machine-readable forms must agree.
 - Canonical URLs may change; Registry identity must not.
