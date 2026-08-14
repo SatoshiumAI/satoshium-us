@@ -216,24 +216,23 @@ Every production Registry Identifier should be:
 
 A production Registry Identifier should use a controlled pattern.
 
-An illustrative pattern is:
+The canonical production pattern is:
 
 ```text
-SREG-[TYPE]-[YEAR]-[SEQUENCE]
+SREG-[YEAR]-[SEQUENCE]
 ```
 
-Illustrative examples:
+Production examples:
 
 ```text
-SREG-JUR-2026-0001
-SREG-CERT-2026-0001
-SREG-TOOL-2026-0001
-SREG-MEDIA-2026-0001
+SREG-2026-0001
+SREG-2026-0002
+SREG-2026-0003
 ```
 
-These examples illustrate structure only.
+This production pattern was established by the inaugural operational Registry Entry, `SREG-2026-0001`.
 
-Final production prefixes, abbreviations, segment definitions, and controlled values remain subject to Registry governance.
+Registry Record Type remains a separate controlled SREG field and is not encoded within the Registry Identifier.
 
 ---
 
@@ -249,15 +248,17 @@ Example:
 SREG
 ```
 
-### Type Segment
+### Year Segment
 
-May reflect the approved Registry Record Type.
+Preserves the four-digit year in which the Registry Identifier is assigned.
 
-The Record Type field remains authoritative for classification.
+The year is part of the permanent Registry Identifier and does not encode Registry Record Type.
 
-### Issuance Segment
+### Record Type Separation
 
-May preserve year or another controlled issuance context.
+Registry Record Type remains a separate controlled SREG field.
+
+Classification is governed through the Record Type field and applicable Record-Type Profile rather than through the Registry Identifier string.
 
 ### Sequence
 
@@ -455,10 +456,12 @@ Resolution should expose links or references to:
 
 The Registry Identifier should remain independent from the canonical publication URL.
 
-An illustrative URL may be:
+The canonical publication pattern currently resolves through Registered Items.
+
+Example:
 
 ```text
-https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/
+https://satoshium.us/registry/registered-items/SREG-2026-0001/
 ```
 
 If the publication path changes:
@@ -546,8 +549,8 @@ Registry Identifier and Registry Entry Version must remain separate.
 Example:
 
 ```text
-Registry Identifier: SREG-JUR-2026-0001
-Registry Entry Version: 1.2.0
+Registry Identifier: SREG-2026-0001
+Registry Entry Version: 1.0
 ```
 
 The Registry Identifier identifies the continuing SREG.
@@ -569,13 +572,14 @@ Other version domains may include:
 
 ## Relationship to Record Types
 
-Record Type may influence the identifier namespace or type segment.
+Registry Record Type does not alter the canonical Registry Identifier pattern.
 
-The approved Record Type field remains authoritative for classification.
+The approved Record Type remains a separate controlled SREG field and is authoritative for classification.
 
 ```text
-The identifier may reflect classification.
-The Record Type field establishes classification.
+Identifier preserves Registry identity.
+Record Type preserves Registry classification.
+The two remain deliberately separate.
 ```
 
 ---
@@ -690,7 +694,7 @@ Identifier validation should confirm:
 - identifier is unique;
 - identifier has not been reused;
 - namespace is valid;
-- Record Type segment is valid when present;
+- year and sequence segments match the approved production pattern;
 - assignment record exists;
 - Registrability reference exists;
 - Registry Identifier and Source-System Identifier are distinct;
@@ -711,7 +715,7 @@ Invalid conditions include:
 - identifier assigned before Registrability approval;
 - Source-System Identifier used as Registry Identifier;
 - mutable title embedded as required identity;
-- incorrect Record Type segment;
+- incorrect year or sequence segment;
 - missing assignment record;
 - unresolvable published identifier without explanation;
 - alias represented as canonical identity;
@@ -868,6 +872,7 @@ When Identifier architecture changes:
 - Identifier correction must preserve historical traceability.
 - Supersession creates a relationship between identities.
 - Version identifiers remain separate from Registry identity.
+- Registry Record Type is not embedded in the production Registry Identifier pattern.
 - Identifier assignment does not create Source Authority.
 - Identifier assignment does not certify the Source Record.
 - Human-readable and machine-readable forms must agree.
