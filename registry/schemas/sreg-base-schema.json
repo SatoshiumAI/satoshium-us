@@ -1,0 +1,800 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://satoshium.us/registry/schemas/sreg-base-schema.json",
+  "title": "Satoshium Registry Entry (SREG) Base Schema",
+  "description": "Production machine-readable base schema for Satoshium Registry Entries. It defines Registry-wide fields shared across operational SREGs while allowing Record-Type Profiles to add type-specific requirements without replacing Source Institution authority.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "record_type",
+    "record_name",
+    "registry_identifier",
+    "registry_entry_version",
+    "title",
+    "registry_record_type",
+    "registry_status",
+    "registry_lifecycle_state",
+    "registration",
+    "canonical_urls",
+    "source_authority"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://satoshium.us/registry/schemas/sreg-base-schema.json",
+      "description": "Canonical URI of the SREG Base Schema."
+    },
+    "record_type": {
+      "type": "string",
+      "const": "SREG",
+      "description": "Registry object family. Every record governed directly by this Base Schema is a SREG."
+    },
+    "record_name": {
+      "type": "string",
+      "const": "Satoshium Registry Entry",
+      "description": "Canonical human-readable name of the Registry object family."
+    },
+    "registry_identifier": {
+      "type": "string",
+      "pattern": "^SREG-[0-9]{4}-[0-9]{4}$",
+      "description": "Permanent Registry-controlled identifier. The production pattern currently implemented by SREG-2026-0001 is SREG-[YEAR]-[SEQUENCE]."
+    },
+    "registry_entry_version": {
+      "$ref": "#/$defs/versionString"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "registry_record_type": {
+      "$ref": "#/$defs/registryRecordType"
+    },
+    "registry_status": {
+      "$ref": "#/$defs/registryStatus"
+    },
+    "registry_lifecycle_state": {
+      "$ref": "#/$defs/registryLifecycleState"
+    },
+    "registration": {
+      "$ref": "#/$defs/registration"
+    },
+    "canonical_urls": {
+      "$ref": "#/$defs/canonicalUrls"
+    },
+    "source_authority": {
+      "$ref": "#/$defs/sourceAuthority"
+    },
+    "registered_subject": {
+      "type": "object",
+      "description": "Optional subject structure used when the registered Source Record concerns a distinct subject object. Record-Type Profiles may further constrain this object.",
+      "additionalProperties": true
+    },
+    "source_artifacts": {
+      "type": "object",
+      "description": "Optional collection of source-owned or source-derived artifacts. Record-Type Profiles define type-specific artifact requirements.",
+      "additionalProperties": {
+        "$ref": "#/$defs/sourceArtifact"
+      }
+    },
+    "governing_framework": {
+      "type": "object",
+      "description": "Optional references to applicable Suite or institutional governing frameworks.",
+      "additionalProperties": true
+    },
+    "registry_relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "registry_validation": {
+      "$ref": "#/$defs/registryValidation"
+    },
+    "registry_publication": {
+      "$ref": "#/$defs/registryPublication"
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/historyEvent"
+      },
+      "default": []
+    },
+    "corrections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/correctionReference"
+      },
+      "default": []
+    },
+    "notices_and_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "default": []
+    },
+    "institutional_correlation": {
+      "type": "object",
+      "description": "Optional cross-institutional correlation references.",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "maintenance": {
+      "type": "object",
+      "description": "Optional Registry maintenance policies or entry-specific maintenance statements.",
+      "additionalProperties": true
+    },
+    "schema_metadata": {
+      "$ref": "#/$defs/schemaMetadata"
+    }
+  },
+  "$defs": {
+    "versionString": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+(?:\\.[0-9]+)?$",
+      "description": "Version string such as 1.0, 1.1, or 1.0.0."
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "codeLabel": {
+      "type": "object",
+      "required": [
+        "code",
+        "label"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z0-9]+(?:[_-][a-z0-9]+)*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "registryRecordType": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/codeLabel"
+        },
+        {
+          "properties": {
+            "code": {
+              "enum": [
+                "tool",
+                "jurisdiction",
+                "media",
+                "certification",
+                "attestation",
+                "signal",
+                "event",
+                "integrity_reference",
+                "workflow",
+                "institution",
+                "schema",
+                "policy",
+                "procedure",
+                "governance_decision"
+              ]
+            },
+            "label": {
+              "enum": [
+                "Tool",
+                "Jurisdiction",
+                "Media",
+                "Certification",
+                "Attestation",
+                "Signal",
+                "Event",
+                "Integrity Reference",
+                "Workflow",
+                "Institution",
+                "Schema",
+                "Policy",
+                "Procedure",
+                "Governance Decision"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "registryStatus": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/codeLabel"
+        },
+        {
+          "properties": {
+            "code": {
+              "enum": [
+                "pending",
+                "active",
+                "restricted",
+                "disputed",
+                "superseded",
+                "revoked",
+                "retired",
+                "archived"
+              ]
+            },
+            "label": {
+              "enum": [
+                "Pending",
+                "Active",
+                "Restricted",
+                "Disputed",
+                "Superseded",
+                "Revoked",
+                "Retired",
+                "Archived"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "registryLifecycleState": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/codeLabel"
+        },
+        {
+          "properties": {
+            "code": {
+              "enum": [
+                "proposed",
+                "under_review",
+                "registered",
+                "published",
+                "updated",
+                "superseded",
+                "revoked",
+                "retired",
+                "archived"
+              ]
+            },
+            "label": {
+              "enum": [
+                "Proposed",
+                "Under Review",
+                "Registered",
+                "Published",
+                "Updated",
+                "Superseded",
+                "Revoked",
+                "Retired",
+                "Archived"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "registration": {
+      "type": "object",
+      "required": [
+        "registration_date",
+        "registration_authority"
+      ],
+      "properties": {
+        "registration_date": {
+          "$ref": "#/$defs/date"
+        },
+        "publication_date": {
+          "$ref": "#/$defs/date"
+        },
+        "last_updated_date": {
+          "$ref": "#/$defs/date"
+        },
+        "registration_authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "registration_position": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "canonicalUrls": {
+      "type": "object",
+      "required": [
+        "registration_overview",
+        "human_readable_registry_entry",
+        "machine_readable_registry_entry"
+      ],
+      "properties": {
+        "registration_overview": {
+          "$ref": "#/$defs/uri"
+        },
+        "human_readable_registry_entry": {
+          "$ref": "#/$defs/uri"
+        },
+        "machine_readable_registry_entry": {
+          "$ref": "#/$defs/uri"
+        },
+        "repository_documentation": {
+          "$ref": "#/$defs/uri"
+        },
+        "registered_items_directory": {
+          "$ref": "#/$defs/uri"
+        }
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/uri"
+      }
+    },
+    "sourceAuthority": {
+      "type": "object",
+      "required": [
+        "source_institution",
+        "source_authority",
+        "source_system_identifier",
+        "source_record_type",
+        "authoritative_source_record",
+        "canonical_source_url"
+      ],
+      "properties": {
+        "source_institution": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_system": {
+          "type": "string"
+        },
+        "source_system_identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_record_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authoritative_source_record": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_record_status": {
+          "type": [
+            "string",
+            "object",
+            "null"
+          ]
+        },
+        "source_record_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "canonical_source_url": {
+          "$ref": "#/$defs/uri"
+        },
+        "authority_statement": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sourceArtifact": {
+      "type": "object",
+      "required": [
+        "artifact_type",
+        "url"
+      ],
+      "properties": {
+        "artifact_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonical": {
+          "type": "boolean"
+        },
+        "derived_from": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "url": {
+          "$ref": "#/$defs/uri"
+        }
+      },
+      "additionalProperties": true
+    },
+    "relationshipEndpoint": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "identifier_domain": {
+          "type": "string"
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "institution": {
+          "type": "string"
+        },
+        "record": {
+          "type": "string"
+        },
+        "url": {
+          "$ref": "#/$defs/uri"
+        }
+      },
+      "additionalProperties": true
+    },
+    "relationship": {
+      "type": "object",
+      "required": [
+        "relationship_type",
+        "source",
+        "target",
+        "relationship_authority"
+      ],
+      "properties": {
+        "relationship_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/relationshipEndpoint"
+        },
+        "target": {
+          "$ref": "#/$defs/relationshipEndpoint"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "relationship_authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship_status": {
+          "enum": [
+            "Active",
+            "Historical",
+            "Provisional",
+            "Disputed",
+            "Superseded",
+            "Revoked",
+            "Invalid"
+          ]
+        },
+        "effective_date": {
+          "$ref": "#/$defs/date"
+        },
+        "version_context": {
+          "type": "string"
+        },
+        "supporting_reference": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "provenance_statement"
+      ],
+      "properties": {
+        "provenance_chain": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "provenance_statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceArtifact"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "validationCheck": {
+      "type": "object",
+      "required": [
+        "check",
+        "result"
+      ],
+      "properties": {
+        "check": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result": {
+          "type": "string",
+          "minLength": 1
+        },
+        "finding_class": {
+          "enum": [
+            "Blocking Error",
+            "Warning",
+            "Exception",
+            "Informational Finding"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "registryValidation": {
+      "type": "object",
+      "required": [
+        "validation_date",
+        "validation_authority",
+        "validation_outcome",
+        "validated_registry_entry_version"
+      ],
+      "properties": {
+        "validation_date": {
+          "$ref": "#/$defs/date"
+        },
+        "validation_authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validation_outcome": {
+          "enum": [
+            "Valid",
+            "Valid with Warnings",
+            "Conditionally Valid",
+            "Invalid",
+            "Indeterminate",
+            "Not Evaluated"
+          ]
+        },
+        "validated_registry_entry_version": {
+          "$ref": "#/$defs/versionString"
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/validationCheck"
+          }
+        },
+        "validation_notice": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "registryPublication": {
+      "type": "object",
+      "required": [
+        "publication_status",
+        "publication_date",
+        "publication_authority",
+        "publication_readiness_outcome",
+        "published_registry_entry_version"
+      ],
+      "properties": {
+        "publication_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publication_date": {
+          "$ref": "#/$defs/date"
+        },
+        "publication_authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publication_readiness_outcome": {
+          "enum": [
+            "Ready",
+            "Ready with Notices",
+            "Restricted",
+            "Not Ready"
+          ]
+        },
+        "published_registry_entry_version": {
+          "$ref": "#/$defs/versionString"
+        },
+        "representations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "format",
+              "role",
+              "url"
+            ],
+            "properties": {
+              "format": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "$ref": "#/$defs/uri"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "historyEvent": {
+      "type": "object",
+      "required": [
+        "date",
+        "event_type",
+        "authority",
+        "description"
+      ],
+      "properties": {
+        "date": {
+          "$ref": "#/$defs/date"
+        },
+        "event_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "registry_entry_version": {
+          "type": "string"
+        },
+        "source_record_version": {
+          "type": "string"
+        },
+        "supporting_reference": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "correctionReference": {
+      "type": "object",
+      "required": [
+        "correction_category",
+        "correction_date",
+        "correction_authority",
+        "description"
+      ],
+      "properties": {
+        "correction_category": {
+          "enum": [
+            "Identifier Correction",
+            "Source Attribution Correction",
+            "Classification Correction",
+            "Provenance Correction",
+            "Relationship Correction",
+            "Status Correction",
+            "Lifecycle Correction",
+            "Version Correction",
+            "Publication Correction",
+            "Schema or Format Correction",
+            "Typographical Correction"
+          ]
+        },
+        "correction_date": {
+          "$ref": "#/$defs/date"
+        },
+        "correction_authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "affected_registry_entry_version": {
+          "type": "string"
+        },
+        "resulting_registry_entry_version": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "schemaMetadata": {
+      "type": "object",
+      "properties": {
+        "schema_name": {
+          "type": "string"
+        },
+        "schema_identifier": {
+          "$ref": "#/$defs/uri"
+        },
+        "schema_version": {
+          "$ref": "#/$defs/versionString"
+        },
+        "status": {
+          "type": "string"
+        },
+        "effective_date": {
+          "$ref": "#/$defs/date"
+        },
+        "superseded_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compatibility_notes": {
+          "type": "string"
+        },
+        "migration_guidance": {
+          "type": "string"
+        },
+        "validation_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "changelog_reference": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "x-satoshium-schema-metadata": {
+    "schema_name": "SREG Base Schema",
+    "schema_identifier": "https://satoshium.us/registry/schemas/sreg-base-schema.json",
+    "schema_version": "1.0",
+    "status": "Production",
+    "effective_date": "2026-08-14",
+    "authority": "Satoshium Registry",
+    "compatibility_notes": "Version 1.0 is designed to validate the Registry-wide structure already demonstrated by SREG-2026-0001 while permitting Record-Type Profiles to add type-specific fields and constraints.",
+    "migration_guidance": "Initial production schema; no prior machine-readable SREG Base Schema version exists.",
+    "validation_reference": "https://satoshium.us/registry/validation/",
+    "human_readable_schema_reference": "https://satoshium.us/registry/schemas/",
+    "controlled_values_reference": "https://satoshium.us/registry/controlled-values/"
+  }
+}
