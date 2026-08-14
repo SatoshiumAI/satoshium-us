@@ -305,13 +305,21 @@ The Registry Identifier Assignment Procedure should:
 
 1. Confirm a positive Registrability outcome.
 2. Confirm the assigned Registry Record Type.
-3. Select the applicable identifier namespace and type code.
-4. Generate the next available sequence value.
-5. Check uniqueness and non-reuse.
-6. Create the identifier-assignment record.
-7. Preserve the Source-System Identifier separately.
-8. Reserve or assign the Registry Identifier.
-9. Route the record to SREG Construction.
+3. Confirm the current production Registry Identifier pattern: `SREG-[YEAR]-[SEQUENCE]`.
+4. Determine the applicable issuance year.
+5. Generate the next available annual sequence value.
+6. Construct the Registry Identifier using the approved pattern.
+7. Check uniqueness and non-reuse.
+8. Create the identifier-assignment record.
+9. Preserve Registry Record Type as a separate controlled classification and do not encode it into the Registry Identifier.
+10. Preserve the Source-System Identifier separately.
+11. Reserve or assign the Registry Identifier.
+12. Route the record to SREG Construction.
+
+```text
+Registry identity and Registry classification are separate.
+The production Registry Identifier does not contain a Record Type segment.
+```
 
 ---
 
@@ -329,8 +337,25 @@ The SREG Construction Procedure should:
 8. Construct typed relationships.
 9. Assign Registry Status and Registry Lifecycle State.
 10. Assign Registry Entry Version.
-11. Generate human-readable and machine-readable forms.
-12. Route the constructed SREG to Validation.
+11. Construct the reusable four-file SREG package using the assigned Registry Identifier as the directory name.
+12. Generate `index.html` as the Registration Overview.
+13. Generate `registry-entry.html` as the canonical human-readable SREG.
+14. Generate `record.json` as the canonical machine-readable SREG.
+15. Generate `README.md` as the directory-level documentation.
+16. Confirm the four files describe the same Registry object and preserve the same canonical identity, authority, provenance, relationship, version, Validation, and Publication context.
+17. Route the completed SREG package to Validation.
+
+```text
+SREG-YYYY-NNNN/
+├── index.html
+├── registry-entry.html
+├── record.json
+└── README.md
+```
+
+The four-file package is the repeatable publication structure for a normal SREG.
+
+Record-Type Profiles may require additional fields, relationships, source artifacts, or supporting references, but they do not replace the canonical four-file package.
 
 ---
 
@@ -390,15 +415,22 @@ The Publication Procedure should:
 
 1. Confirm the Validation outcome permits publication.
 2. Confirm the current Registry Entry Version.
-3. Assign canonical human-readable and machine-readable URLs.
-4. Confirm the Registry Identifier resolves correctly.
-5. Generate required downloadable artifacts.
-6. Confirm official forms agree.
-7. Apply required warnings, restrictions, or historical notices.
-8. Create the publication record.
-9. Release the SREG through official Registry channels.
-10. Verify production resolution and artifact availability.
-11. Record publication history and any Chronicle or Beacon references.
+3. Confirm the canonical SREG directory and four-file publication package are complete.
+4. Assign canonical human-readable and machine-readable URLs.
+5. Confirm the Registry Identifier resolves correctly.
+6. Confirm required downloadable or supporting artifacts are available.
+7. Confirm official forms agree.
+8. Apply required warnings, restrictions, or historical notices.
+9. Create the publication record.
+10. Release the SREG through official Registry channels.
+11. Add the published SREG to **Registered Items**.
+12. Verify production resolution, file availability, and Registered Items discovery.
+13. Record publication history and any Chronicle or Beacon references.
+
+```text
+Registered Items is the concise public listing of completed Registry registrations.
+Publication of a SREG is not operationally complete until the published entry is discoverable there.
+```
 
 ---
 
@@ -918,6 +950,9 @@ When Procedure architecture changes:
 - Procedures must be attributable.
 - Procedures must be versioned.
 - Procedures must preserve operational records.
+- Registry identity and Record Type classification must remain separate.
+- SREG construction should use the canonical reusable four-file package.
+- Publication should include Registered Items discovery.
 - Decision points must be explicit.
 - Exceptions must be governed and documented.
 - Automation does not eliminate accountability.
