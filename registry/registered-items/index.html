@@ -327,6 +327,79 @@ h1{
 
 </section>
 
+<!-- REUSABLE SREG PACKAGE STRUCTURE -->
+<div aria-labelledby="heading-sreg-package-template" class="card">
+  <h2 id="heading-sreg-package-template">
+    Reusable SREG Package Structure
+  </h2>
+
+  <p>
+    Each published <strong>Satoshium Registry Entry (SREG)</strong> should resolve
+    to a dedicated directory containing the same four core artifacts demonstrated
+    by <strong>SREG-2026-0001</strong>. This structure establishes the reusable
+    publication package for future Registry Entries while allowing each
+    Record-Type Profile to add type-specific content within those artifacts.
+  </p>
+
+  <div class="flow">
+    <strong>SREG-YYYY-NNNN/</strong><br>
+    ├── <strong>index.html</strong><br>
+    ├── <strong>registry-entry.html</strong><br>
+    ├── <strong>record.json</strong><br>
+    └── <strong>README.md</strong>
+  </div>
+
+  <ul>
+    <li>
+      <strong>index.html</strong> — the public registration overview summarizing
+      Registry identity, Source Authority, Record Type, status, lifecycle,
+      provenance, Validation, Publication, relationships, and available artifacts.
+    </li>
+
+    <li>
+      <strong>registry-entry.html</strong> — the canonical human-readable
+      Registry Entry containing the complete Registry-owned representation of the
+      SREG.
+    </li>
+
+    <li>
+      <strong>record.json</strong> — the canonical machine-readable
+      representation of the same SREG, governed by the
+      <strong>SREG Base Schema</strong> and the applicable
+      <strong>Record-Type Profile</strong>.
+    </li>
+
+    <li>
+      <strong>README.md</strong> — the repository-level documentation describing
+      file responsibilities, authority boundaries, Source Record relationships,
+      versions, Validation, Publication, Corrections, History, and maintenance
+      requirements.
+    </li>
+  </ul>
+
+  <div class="note">
+    <strong>Template Principle.</strong>
+    The four-file package defines the shared publication structure of a SREG.
+    Record-Type Profiles may require additional fields, relationships, source
+    artifacts, or supporting references, but they do not replace the canonical
+    four-artifact package.
+  </div>
+
+  <p>
+    The directory name should match the permanent Registry Identifier:
+    <strong>SREG-[YEAR]-[SEQUENCE]</strong>. The inaugural implementation,
+    <strong>SREG-2026-0001</strong>, serves as the reference implementation for
+    this reusable structure.
+  </p>
+
+  <div class="actions">
+    <a class="btn" href="/registry/schemas/">Open Schemas →</a>
+    <a class="btn" href="/registry/record-types/">Open Record Types →</a>
+    <a class="btn" href="/registry/procedures/">Open Procedures →</a>
+  </div>
+</div>
+
+ 
 <section style="margin-top:18px;">
 <article class="card">
   <h2>Authority Chain</h2>
