@@ -297,6 +297,38 @@ h1{
 
 <section style="margin-top:18px;">
 <article class="card">
+  <h2>Reusable SREG Publication Package</h2>
+
+  <p>
+    A normal production SREG is published through a reusable four-file package
+    using the Registry Identifier as the directory name.
+  </p>
+
+  <div class="code-block" aria-label="Reusable SREG publication package">
+SREG-YYYY-NNNN/
+├── index.html
+├── registry-entry.html
+├── record.json
+└── README.md
+  </div>
+
+  <ul>
+    <li><strong>index.html</strong> — Registration Overview;</li>
+    <li><strong>registry-entry.html</strong> — canonical human-readable SREG;</li>
+    <li><strong>record.json</strong> — canonical machine-readable SREG;</li>
+    <li><strong>README.md</strong> — directory-level documentation.</li>
+  </ul>
+
+  <div class="note">
+    Record-Type Profiles may require additional source artifacts, relationships,
+    references, or supporting materials, but they do not replace the canonical
+    four-file publication package.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
   <h2>Publication Requirements</h2>
 
   <ul>
@@ -316,7 +348,9 @@ h1{
     <li>version and correction references;</li>
     <li>publication date;</li>
     <li>validation result and date;</li>
-    <li>consistent official forms.</li>
+    <li>consistent official forms;</li>
+    <li>complete reusable four-file SREG package;</li>
+    <li>discovery through Registered Items.</li>
   </ul>
 </article>
 </section>
@@ -448,25 +482,29 @@ h1{
   <h2>Canonical URLs</h2>
 
   <p>
-    Every published SREG should have a stable canonical URL that resolves its
-    Registry Identifier.
+    Every published SREG should have a stable canonical Registry location that
+    resolves through <strong>Registered Items</strong>.
   </p>
 
-  <div class="code-block" aria-label="Illustrative canonical SREG URL">
-https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/
+  <div class="code-block" aria-label="Production canonical SREG URL">
+https://satoshium.us/registry/registered-items/SREG-2026-0001/
   </div>
 
   <p>
-    Supporting machine-readable publication may use a corresponding stable path.
+    The canonical human-readable SREG and machine-readable SREG are published
+    within the same Registry Identifier directory.
   </p>
 
-  <div class="code-block" aria-label="Illustrative machine-readable SREG URL">
-https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/index.json
+  <div class="code-block" aria-label="Production canonical SREG artifact URLs">
+https://satoshium.us/registry/registered-items/SREG-2026-0001/registry-entry.html
+https://satoshium.us/registry/registered-items/SREG-2026-0001/record.json
   </div>
 
   <div class="note">
-    URL structure may evolve.
-    Registry Identifier must remain stable.
+    Registered Items is the production publication location for completed SREG
+    registrations. URL architecture may evolve through governed change, but the
+    Registry Identifier must remain stable and prior resolution must remain
+    historically traceable.
   </div>
 </article>
 </section>
@@ -491,6 +529,36 @@ https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/index.json
     <li>supersession or successor notices;</li>
     <li>archival references when the entry is no longer active.</li>
   </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Operational Publication Sequence</h2>
+
+  <div class="flow" aria-label="Operational SREG publication sequence">
+    <strong>Construct SREG Package</strong>
+    <span>→</span>
+    <strong>Validate</strong>
+    <span>→</span>
+    <strong>Publish</strong>
+    <span>→</span>
+    <strong>Registered Items</strong>
+    <span>→</span>
+    <strong>Maintain</strong>
+  </div>
+
+  <p>
+    Publication is operationally complete when the validated SREG package resolves
+    through its production Registry location and is discoverable through
+    <strong>Registered Items</strong>.
+  </p>
+
+  <div class="note">
+    Maintenance after publication is governed through Registry Versioning,
+    Corrections, Status, Lifecycle, History, and the applicable update,
+    supersession, revocation, restriction, and archival procedures.
+  </div>
 </article>
 </section>
 
@@ -866,7 +934,8 @@ https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/index.json
     <li>correction and history references are present;</li>
     <li>restricted information is not exposed;</li>
     <li>metadata and canonical tags are correct;</li>
-    <li>publication record is complete.</li>
+    <li>publication record is complete;</li>
+    <li>the SREG is discoverable through Registered Items.</li>
   </ul>
 </article>
 </section>
@@ -1038,6 +1107,7 @@ https://satoshium.us/registry/catalog/SREG-JUR-2026-0001/index.json
   </div>
 
   <a class="btn" href="/registry/">Back to Registry →</a>
+  <a class="btn" href="/registry/registered-items/">Open Registered Items →</a>
   <a class="btn" href="/registry/validation/">Open Validation →</a>
   <a class="btn" href="/registry/provenance/">Open Provenance →</a>
 </article>
