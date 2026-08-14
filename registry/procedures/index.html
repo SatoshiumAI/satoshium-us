@@ -512,14 +512,22 @@ status: "active"
   <ol>
     <li>Confirm positive Registrability outcome.</li>
     <li>Confirm assigned Registry Record Type.</li>
-    <li>Select the applicable identifier namespace and type code.</li>
-    <li>Generate the next available sequence value.</li>
+    <li>Confirm the current production Registry Identifier pattern: <strong>SREG-[YEAR]-[SEQUENCE]</strong>.</li>
+    <li>Determine the applicable issuance year.</li>
+    <li>Generate the next available annual sequence value.</li>
+    <li>Construct the Registry Identifier using the approved pattern.</li>
     <li>Check uniqueness and non-reuse.</li>
     <li>Create the identifier-assignment record.</li>
+    <li>Preserve Registry Record Type as a separate controlled classification and do not encode it into the Registry Identifier.</li>
     <li>Preserve the Source-System Identifier separately.</li>
     <li>Reserve or assign the Registry Identifier.</li>
     <li>Route the record to SREG Construction.</li>
   </ol>
+
+  <div class="note">
+    Registry identity and Registry classification are separate.
+    The production Registry Identifier does not contain a Record Type segment.
+  </div>
 </article>
 </section>
 
@@ -538,9 +546,28 @@ status: "active"
     <li>Construct typed relationships.</li>
     <li>Assign Registry Status and Registry Lifecycle State.</li>
     <li>Assign Registry Entry Version.</li>
-    <li>Generate human-readable and machine-readable forms.</li>
-    <li>Route the constructed SREG to Validation.</li>
+    <li>Construct the reusable four-file SREG package using the assigned Registry Identifier as the directory name.</li>
+    <li>Generate <strong>index.html</strong> as the Registration Overview.</li>
+    <li>Generate <strong>registry-entry.html</strong> as the canonical human-readable SREG.</li>
+    <li>Generate <strong>record.json</strong> as the canonical machine-readable SREG.</li>
+    <li>Generate <strong>README.md</strong> as the directory-level documentation.</li>
+    <li>Confirm the four files describe the same Registry object and preserve the same canonical identity, authority, provenance, relationship, version, Validation, and Publication context.</li>
+    <li>Route the completed SREG package to Validation.</li>
   </ol>
+
+  <div class="code-block" aria-label="Reusable SREG package structure">
+SREG-YYYY-NNNN/
+├── index.html
+├── registry-entry.html
+├── record.json
+└── README.md
+  </div>
+
+  <div class="note">
+    The four-file package is the repeatable publication structure for a normal SREG.
+    Record-Type Profiles may require additional fields, relationships, source artifacts,
+    or supporting references, but they do not replace the canonical four-file package.
+  </div>
 </article>
 </section>
 
@@ -607,16 +634,23 @@ status: "active"
   <ol>
     <li>Confirm the Validation outcome permits publication.</li>
     <li>Confirm the current Registry Entry Version.</li>
+    <li>Confirm the canonical SREG directory and four-file publication package are complete.</li>
     <li>Assign canonical human-readable and machine-readable URLs.</li>
     <li>Confirm the Registry Identifier resolves correctly.</li>
-    <li>Generate required downloadable artifacts.</li>
+    <li>Confirm required downloadable or supporting artifacts are available.</li>
     <li>Confirm official forms agree.</li>
     <li>Apply required warnings, restrictions, or historical notices.</li>
     <li>Create the publication record.</li>
     <li>Release the SREG through official Registry channels.</li>
-    <li>Verify production resolution and artifact availability.</li>
+    <li>Add the published SREG to <strong>Registered Items</strong>.</li>
+    <li>Verify production resolution, file availability, and Registered Items discovery.</li>
     <li>Record publication history and any Chronicle or Beacon references.</li>
   </ol>
+
+  <div class="note">
+    Registered Items is the concise public listing of completed Registry registrations.
+    Publication of a SREG is not operationally complete until the published entry is discoverable there.
+  </div>
 </article>
 </section>
 
