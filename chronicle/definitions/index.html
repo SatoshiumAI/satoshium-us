@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Chronicle Definitions</title>
+<meta name="description" content="Satoshium Chronicle Definitions — canonical terminology for Chronicle Entries, Occurrences, Preservation Eligibility, Historical Significance, Sources, Evidence, Provenance, authority, verification, validation, corrections, versions, relationships, lifecycle, and historical preservation.">
+<link rel="canonical" href="https://satoshium.us/chronicle/definitions/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.term{
+ color:var(--gold2);
+ font-weight:800;
+}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Definitions</div>
+  <h1>Satoshium Chronicle Definitions</h1>
+
+  <p class="lead">
+    Definitions establishes the canonical terminology used throughout Chronicle
+    documentation, schemas, records, procedures, and public historical-preservation
+    interfaces.
+  </p>
+
+  <p class="lead">
+    Consistent terminology protects architectural clarity. Terms should retain
+    their defined meaning across Chronicle and remain compatible with broader
+    Satoshium Suite standards.
+  </p>
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Core Chronicle Model</h2>
+
+  <div class="note">
+    Occurrence → Preservation Eligibility → Chronicle Entry
+  </div>
+
+  <p style="margin-top:14px;">
+    The Occurrence is what happened. The Chronicle Entry is Chronicle's canonical
+    structured historical-preservation record representing that qualifying Occurrence.
+  </p>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Chronicle</h2>
+  <p>
+    The historical-preservation institution of the Satoshium Suite. Chronicle is
+    authoritative for its own Entries and historical-preservation state while
+    referenced Suite systems retain authority for their own objects.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Chronicle Entry</h2>
+  <p>
+    The canonical historical-preservation object of Chronicle. A Chronicle Entry
+    represents one qualifying historical Occurrence.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Occurrence</h2>
+  <p>
+    An event, action, change, decision, publication, milestone, lifecycle transition,
+    governance development, or other thing that happened independently of Chronicle.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Event Type</h2>
+  <p>
+    A controlled classification describing the kind of Occurrence represented by
+    a Chronicle Entry. Event Type does not create a second canonical object.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Event-Type Profile</h2>
+  <p>
+    A specialization of the Chronicle Base Schema that adds Event-Type-specific
+    requirements without creating a new canonical record class.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Preservation Eligibility</h2>
+  <p>
+    Chronicle's admission rule for historical preservation. It answers:
+    “Should Chronicle preserve this occurrence?”
+  </p>
+</article>
+
+<article class="card">
+  <h2>Historical Significance</h2>
+  <p>
+    The substantive reason an Occurrence is important enough to preserve. It answers:
+    “Why is this occurrence worth preserving?”
+  </p>
+</article>
+
+<article class="card">
+  <h2>Record</h2>
+  <p>
+    An architectural umbrella term for structured information created, maintained,
+    or governed within Chronicle. Record is not a competing canonical object.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Supporting Record</h2>
+  <p>
+    A Chronicle-owned record serving a distinct function in support of Chronicle Entries,
+    such as Source, Evidence, Verification, Correction, Provenance, Relationship, or Version records.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Authoritative Record</h2>
+  <p>
+    A record whose institutional authority comes from the system responsible for
+    creating or governing it. Chronicle may reference it without assuming its authority.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Source, Evidence, and Provenance</h2>
+
+  <div class="note">
+    Source = Where information came from.<br>
+    Evidence = What bears on the Entry or claim.<br>
+    Provenance = How the information originated, moved, and entered Chronicle.
+  </div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Source</h2>
+  <p>
+    The origin of information referenced by Chronicle. A Source does not automatically
+    establish truth or Chronicle authority.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source Record</h2>
+  <p>
+    A supporting Chronicle-owned record documenting source attribution, temporal
+    context, location, provenance, archival state, limitations, and relationships.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source Type</h2>
+  <p>
+    A controlled classification describing what a Source is, such as a webpage,
+    document, archive, database, institutional record, repository, dataset, or statement.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source Role</h2>
+  <p>
+    A controlled classification describing how a Source functions in relation to
+    a Chronicle Entry or Evidence Record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Evidence</h2>
+  <p>
+    Material that supports, challenges, contradicts, clarifies, corroborates,
+    contextualizes, or limits confidence in a Chronicle Entry or claim.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Evidence Record</h2>
+  <p>
+    A supporting Chronicle-owned record describing the role, origin, integrity,
+    limitations, provenance, and relationships of Evidence.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Provenance</h2>
+  <p>
+    The documented origin and movement of information, Sources, Evidence, records,
+    or artifacts into Chronicle.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Attribution</h2>
+  <p>
+    Identification of the creator, publisher, institution, system, person, or Source
+    responsible for originating or distributing information.
+  </p>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Authority</h2>
+  <p>
+    Institutional responsibility assigned to a Suite system for its own objects,
+    determinations, actions, and lifecycle.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Verification</h2>
+  <p>
+    Review of Chronicle's own historical representation using authoritative references,
+    Sources, Evidence, Provenance, temporal information, relationships, and limitations.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Validation</h2>
+  <p>
+    Determination that a Chronicle-owned record conforms to applicable structural
+    and procedural requirements.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Correction</h2>
+  <p>
+    A documented change to a Chronicle-owned record intended to improve accuracy,
+    clarity, context, provenance, references, relationships, or completeness.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Version</h2>
+  <p>
+    A preserved state within the lineage of a Chronicle-owned record. Record Version
+    is distinct from Schema Version.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Schema Version</h2>
+  <p>
+    The version of the schema governing the structure of a Chronicle-owned record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Controlled Value</h2>
+  <p>
+    An approved enumerated term used where consistency, interoperability, validation,
+    or machine readability requires a governed vocabulary.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Relationship</h2>
+  <p>
+    A structured connection between a Chronicle Entry, supporting record,
+    Authoritative Record, or other referenced object.
+  </p>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Lifecycle</h2>
+  <p>
+    The defined sequence of institutional states or procedures through which a
+    Chronicle-owned record progresses over time.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Publication</h2>
+  <p>
+    The institutional process by which a Chronicle-owned record is approved and
+    made publicly available.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Preservation State</h2>
+  <p>
+    The current archival or preservation condition of a Chronicle-owned record,
+    Source, Evidence item, or referenced material.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Retrospective Preservation</h2>
+  <p>
+    Preservation of an Occurrence after it happened when later context establishes
+    Preservation Eligibility.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Historical Continuity</h2>
+  <p>
+    Preservation of relationships, context, provenance, corrections, versions,
+    and temporal order across Chronicle history.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Timeline</h2>
+  <p>
+    A downstream discovery view that organizes published Chronicle Entries
+    chronologically. Timeline is not a separate canonical historical object.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Institutional Memory</h2>
+  <p>
+    Durable preservation of historically significant context, relationships,
+    decisions, milestones, records, and changes needed to understand Satoshium over time.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Traceability</h2>
+  <p>
+    The ability to reconstruct relationships among Chronicle Entries, authoritative
+    records, Sources, Evidence, Provenance, Verification, Corrections, Versions,
+    and publication history.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>State Separation</h2>
+
+  <p>
+    Chronicle uses several distinct institutional states. These concepts should
+    not be collapsed into one generalized status field.
+  </p>
+
+  <div class="note">
+    Verification State ≠ Validation State ≠ Publication State ≠ Preservation State ≠ Lifecycle State
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Authority Principle</h2>
+
+  <p>
+    Chronicle may reference authoritative objects from across the Satoshium Suite,
+    but the originating system retains institutional authority.
+  </p>
+
+  <div class="note">
+    Reference does not transfer authority.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Definitions Summary</h2>
+
+  <p>
+    Chronicle terminology exists to preserve architectural precision across
+    documentation, records, schemas, validation, publication, and historical review.
+  </p>
+
+  <div class="note">
+    Events happen. Suite systems establish authority. Chronicle preserves qualifying historical memory.
+  </div>
+
+  <a class="btn" href="/chronicle/">
+    Back to Chronicle →
+  </a>
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Clear definitions preserve clear architecture.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
