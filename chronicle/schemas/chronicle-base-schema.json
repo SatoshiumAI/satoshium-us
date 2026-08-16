@@ -1,0 +1,390 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://satoshium.us/chronicle/schemas/chronicle-base-schema.json",
+  "title": "Satoshium Chronicle Base Schema",
+  "description": "Canonical machine-readable Base Schema for Satoshium Chronicle Entries. Defines universal Chronicle Entry structure and conditional extension points. Event-Type-specific requirements belong in Event-Type Profiles.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entry_id",
+    "schema_id",
+    "schema_version",
+    "entry_version",
+    "title",
+    "summary",
+    "event_type",
+    "event_date",
+    "historical_context",
+    "provenance",
+    "verification_state",
+    "lifecycle_state",
+    "publication_state",
+    "entry_created_at"
+  ],
+  "properties": {
+    "entry_id": {
+      "type": "string",
+      "pattern": "^CHR-[0-9]{4}-[0-9]{4}$",
+      "description": "Permanent canonical Chronicle Entry identifier. The identifier remains stable across Corrections and Entry Versions.",
+      "examples": [
+        "CHR-2026-0001"
+      ]
+    },
+    "schema_id": {
+      "const": "chronicle-entry",
+      "description": "Stable identifier for the Chronicle Base Schema."
+    },
+    "schema_version": {
+      "const": "1.0.0",
+      "description": "Version of the Chronicle Base Schema governing this Entry."
+    },
+    "entry_version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Sequential preserved Version of the same canonical Chronicle Entry. Entry Version is distinct from Schema Version.",
+      "examples": [
+        1
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Concise human-readable title describing the preserved Occurrence."
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Brief factual summary of the preserved Occurrence."
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "certification_created",
+        "certification_renewed",
+        "certification_suspended",
+        "certification_revoked",
+        "certification_expired"
+      ],
+      "description": "Controlled classification of the Occurrence represented by the Entry. Values are governed by the Chronicle Controlled Values Registry."
+    },
+    "event_date": {
+      "description": "Date or timestamp of the historical Occurrence itself. Use null only when the Event Date is not determinable under current Chronicle rules.",
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "historical_context": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Historical context needed to understand the Occurrence. Must remain distinguishable from authoritative source material and Evidence."
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "verification_state": {
+      "type": "string",
+      "enum": [
+        "not_reviewed",
+        "in_review",
+        "verified",
+        "verified_with_limitations",
+        "unresolved"
+      ],
+      "description": "Current Chronicle Verification State for this Entry Version. Verification reviews Chronicle's own historical representation."
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "superseded",
+        "withdrawn",
+        "preserved"
+      ],
+      "description": "Current Lifecycle State of the Chronicle Entry."
+    },
+    "publication_state": {
+      "type": "string",
+      "enum": [
+        "not_published",
+        "pending_publication",
+        "published",
+        "withdrawn_from_publication"
+      ],
+      "description": "Current Publication State of the Chronicle Entry."
+    },
+    "entry_created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when Chronicle created the Entry."
+    },
+    "event_type_profile": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Reference to the Event-Type Profile governing the Entry when an approved Profile applies."
+    },
+    "authoritative_record_references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      },
+      "uniqueItems": true,
+      "description": "Durable references to authoritative external or Suite-owned records. Reference does not transfer authority."
+    },
+    "source_references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      },
+      "uniqueItems": true,
+      "description": "References to Source Records or referenced external Sources used by the Entry."
+    },
+    "evidence_references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      },
+      "uniqueItems": true,
+      "description": "References to Evidence Records or Evidence items bearing on the Entry or claim."
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      },
+      "description": "Structured Relationships connecting the Entry to other Chronicle Entries, authoritative records, or supporting records."
+    },
+    "correction_references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      },
+      "uniqueItems": true,
+      "description": "References to formal Chronicle Correction Records affecting the Entry."
+    },
+    "prior_version_reference": {
+      "$ref": "#/$defs/version_reference"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this Entry Version was published."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp for the most recent non-historical maintenance action affecting the current representation. Does not replace Correction or Version lineage."
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "description": "Material limitations affecting Chronicle's current historical representation."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "publication_state": {
+            "const": "published"
+          }
+        },
+        "required": [
+          "publication_state"
+        ]
+      },
+      "then": {
+        "required": [
+          "published_at"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "verification_state": {
+            "const": "verified_with_limitations"
+          }
+        },
+        "required": [
+          "verification_state"
+        ]
+      },
+      "then": {
+        "required": [
+          "limitations"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "reference": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "description": "Stable identifier or durable reference."
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "reference"
+          ],
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "system": {
+              "type": "string",
+              "minLength": 1
+            },
+            "record_type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "origin",
+        "acquisition_method",
+        "retrieved_at"
+      ],
+      "properties": {
+        "origin": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Origin of the information represented in Chronicle."
+        },
+        "acquisition_method": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Method by which Chronicle accessed, obtained, or captured the information."
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time Chronicle retrieved, accessed, or captured the information."
+        },
+        "source_reference": {
+          "$ref": "#/$defs/reference"
+        },
+        "authoritative_record_reference": {
+          "$ref": "#/$defs/reference"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "transfer_history": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "transformation_history": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "preservation_path": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "integrity_metadata": {
+          "type": "object",
+          "description": "Optional integrity metadata such as checksums, repository commits, timestamps, signatures, or Anchor references."
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "target"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "references",
+            "related_to",
+            "derived_from",
+            "supersedes",
+            "superseded_by",
+            "corrects",
+            "corrected_by",
+            "precedes",
+            "follows"
+          ]
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_system": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "version_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entry_id",
+        "entry_version"
+      ],
+      "properties": {
+        "entry_id": {
+          "type": "string",
+          "pattern": "^CHR-[0-9]{4}-[0-9]{4}$"
+        },
+        "entry_version": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "description": "Reference to a preserved prior Version of the same Chronicle Entry."
+    }
+  }
+}
