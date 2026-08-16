@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Chronicle Entry Model</title>
+<meta name="description" content="Satoshium Chronicle Entry Model — conceptual structure of the canonical Chronicle Entry, including identity, event representation, temporal information, event type, historical context, sources, relationships, provenance, evidence, verification, versioning, corrections, publication state, and lifecycle.">
+<link rel="canonical" href="https://satoshium.us/chronicle/entry-model/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.req{
+ display:inline-block;
+ margin-top:10px;
+ padding:4px 10px;
+ border-radius:999px;
+ border:1px solid rgba(214,163,74,.24);
+ color:var(--gold2);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.06em;
+ text-transform:uppercase;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Entry Model</div>
+  <h1>Chronicle Entry Model</h1>
+
+  <p class="lead">
+    The Chronicle Entry Model defines the canonical conceptual structure of a
+    Chronicle Entry before that structure is implemented in formal schemas.
+  </p>
+
+  <p class="lead">
+    The model establishes which logical components every Entry must contain,
+    which components become required only under defined conditions, and which
+    components remain optional when they add meaningful historical context.
+  </p>
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Canonical Principle</h2>
+
+  <p>
+    A Chronicle Entry is the canonical historical-preservation object of Chronicle.
+    It represents one qualifying historical Occurrence.
+  </p>
+
+  <div class="note">
+    Occurrence → Preservation Eligibility → Chronicle Entry
+  </div>
+
+  <p style="margin-top:14px;">
+    The Entry Model defines the conceptual anatomy of that canonical object.
+    It does not yet freeze field names, identifier formats, controlled values,
+    machine-readable schema syntax, or final validation rules.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Component Requirement Classes</h2>
+
+  <div class="note">
+    Required → present in every production Chronicle Entry<br>
+    Conditional → required when a defined circumstance applies<br>
+    Optional → permitted when historically useful but not universally necessary
+  </div>
+
+  <p style="margin-top:14px;">
+    Optional does not mean unimportant. It means the component is not universally
+    applicable to every Chronicle Entry.
+  </p>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Identity</h2>
+  <p>
+    Establishes the stable identity of the Chronicle Entry and distinguishes it
+    from every other Chronicle-owned record.
+  </p>
+  <p>
+    Identity conceptually includes the Entry identifier, Entry title or label,
+    governing schema version, and Entry version.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+<article class="card">
+  <h2>Event Representation</h2>
+  <p>
+    Describes the qualifying Occurrence being preserved: what happened, what changed,
+    or what historically significant state or milestone the Entry represents.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+<article class="card">
+  <h2>Temporal Information</h2>
+  <p>
+    Preserves when the underlying Occurrence happened and distinguishes that time
+    from when Chronicle created, validated, published, corrected, or versioned the Entry.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+<article class="card">
+  <h2>Event Type</h2>
+  <p>
+    Classifies the Occurrence using an approved Chronicle Event Type and determines
+    whether an Event-Type Profile applies.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+<article class="card">
+  <h2>Historical Context</h2>
+  <p>
+    Explains why the Occurrence matters and provides the surrounding institutional,
+    temporal, relational, or historical context needed to understand it.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+<article class="card">
+  <h2>Source Record References</h2>
+  <p>
+    Connects the Entry to Chronicle Source Records documenting where supporting
+    information originated.
+  </p>
+  <span class="req">Conditional</span>
+</article>
+
+<article class="card">
+  <h2>Relationships</h2>
+  <p>
+    Connects the Entry to other Chronicle Entries, supporting Chronicle records,
+    authoritative Suite objects, or other referenced records when those relationships
+    are historically meaningful.
+  </p>
+  <span class="req">Conditional</span>
+</article>
+
+<article class="card">
+  <h2>Provenance</h2>
+  <p>
+    Documents how information, authoritative references, Sources, Evidence, or other
+    material originated, moved, and entered Chronicle.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+<article class="card">
+  <h2>Evidence</h2>
+  <p>
+    Connects the Entry to Evidence Records or other approved Evidence structures that
+    support, challenge, contradict, clarify, corroborate, contextualize, or limit confidence.
+  </p>
+  <span class="req">Conditional</span>
+</article>
+
+<article class="card">
+  <h2>Verification</h2>
+  <p>
+    Records Chronicle's review of its own historical representation, including
+    verification state, review context, limitations, and applicable references.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+<article class="card">
+  <h2>Version</h2>
+  <p>
+    Identifies the preserved state of the Chronicle Entry and supports traceable
+    lineage when the Entry changes over time.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+<article class="card">
+  <h2>Correction History</h2>
+  <p>
+    Connects the Entry to Correction Records and prior or resulting versions when
+    Chronicle has materially corrected its own historical record.
+  </p>
+  <span class="req">Conditional</span>
+</article>
+
+<article class="card">
+  <h2>Publication State</h2>
+  <p>
+    Identifies the Entry's state within Chronicle's publication process and distinguishes
+    publication from Verification, Validation, lifecycle, and preservation state.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+<article class="card">
+  <h2>Lifecycle / Status</h2>
+  <p>
+    Represents the Entry's institutional state within Chronicle's own lifecycle,
+    independent of the lifecycle or status of the underlying object preserved by the Entry.
+  </p>
+  <span class="req">Required</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Required Components</h2>
+
+  <p>
+    Every production Chronicle Entry should contain the conceptual components needed
+    to identify the Entry, represent the Occurrence, establish time, classify the event,
+    explain historical context, preserve provenance, support review, maintain version
+    lineage, and express publication and lifecycle state.
+  </p>
+
+  <div class="note">
+    Identity · Event Representation · Temporal Information · Event Type ·
+    Historical Context · Provenance · Verification · Version ·
+    Publication State · Lifecycle / Status
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Conditional Components</h2>
+
+  <p>
+    Conditional components become required when the nature of the Entry, its
+    Event-Type Profile, its history, or its supporting material makes them applicable.
+  </p>
+
+  <div class="note">
+    Source Record References · Relationships · Evidence · Correction History
+  </div>
+
+  <p style="margin-top:14px;">
+    An Event-Type Profile may convert a normally conditional component into a required
+    component for that Event Type.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Optional Components</h2>
+
+  <p>
+    Optional components may be added when they improve historical understanding without
+    being universally required across all Chronicle Entries.
+  </p>
+
+  <p>
+    Examples may later include supplemental notes, public-facing summaries,
+    interpretive context, archival annotations, display metadata, or other approved
+    extensions.
+  </p>
+
+  <div class="note">
+    Optional components must not redefine the canonical object or bypass required structure.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Authority Within the Entry</h2>
+
+  <p>
+    A Chronicle Entry may reference authoritative records from other Suite systems,
+    but those references do not transfer institutional authority to Chronicle.
+  </p>
+
+  <div class="note">
+    Chronicle owns the Entry.<br>
+    The originating system owns the authoritative external object.<br>
+    Reference does not transfer authority.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Event Date and Entry Dates</h2>
+
+  <p>
+    The Entry Model must preserve the distinction between the time of the underlying
+    Occurrence and Chronicle's own recordkeeping actions.
+  </p>
+
+  <div class="note">
+    Event Date ≠ Entry Creation Date ≠ Publication Date ≠ Correction Date ≠ Version Date
+  </div>
+
+  <p style="margin-top:14px;">
+    This distinction is essential for retrospective preservation.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Entry Model and Schemas</h2>
+
+  <p>
+    The Entry Model defines the logical structure first.
+    The Chronicle Base Schema will later translate that model into formal fields,
+    required properties, data types, controlled values, relationships, and
+    machine-readable validation rules.
+  </p>
+
+  <div class="note">
+    Entry Model → Base Schema → Event-Type Profile → Production Chronicle Entry
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Entry Model Principle</h2>
+
+  <p>
+    Every Chronicle Entry should contain enough structure to remain identifiable,
+    understandable, traceable, reviewable, correctable, versioned, and preservable
+    across time.
+  </p>
+
+  <a class="btn" href="/chronicle/">
+    Back to Chronicle →
+  </a>
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    The schema will define the fields. The Entry Model defines what the record must mean.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
