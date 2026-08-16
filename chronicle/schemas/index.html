@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Schemas</title>
-<meta name="description" content="Satoshium Chronicle Schemas — structured definitions for entries, sources, evidence, corrections, and other historical records preserved within Chronicle.">
+<meta name="description" content="Satoshium Chronicle Schemas — Suite-aligned machine-readable structures for canonical Chronicle Entries, supporting records, Event-Type Profiles, validation, and long-term schema evolution.">
 <link rel="canonical" href="https://satoshium.us/chronicle/schemas/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -151,64 +151,118 @@ h1{
   <h1>Satoshium Chronicle Schemas</h1>
 
   <p class="lead">
-    Schemas provide the structural foundation for Chronicle records.
-    They define how historical information is organized, represented,
-    related, and preserved across the system.
+    Chronicle Schemas define the machine-readable structures used to represent
+    canonical Chronicle Entries and supporting Chronicle-owned records. They provide
+    the structural language required for consistency, validation, interoperability,
+    versioning, and long-term preservation.
   </p>
 
   <p class="lead">
-    Consistent schemas improve transparency, interoperability,
-    traceability, and long-term historical preservation.
+    Chronicle schemas operate within the Satoshium Schemas Standard and should
+    remain compatible with Suite-wide expectations for shared objects, stable
+    identifiers, required fields, metadata, validation-ready records, and schema
+    evolution.
   </p>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Consistency</h2>
+  <h2>Suite Alignment</h2>
   <p>
-    Schemas provide common structures for similar record types,
-    making historical information easier to understand and review.
+    Chronicle Schemas implement the Satoshium Schemas Standard within Chronicle.
+    They should follow Suite expectations for common record models, required fields,
+    validation rules, schema evolution, stable identifiers, and machine-readable
+    records.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Authority Boundary</h2>
+  <p>
+    Chronicle schemas define Chronicle-owned objects only. A Chronicle schema may
+    reference an external authoritative object, but it does not redefine the
+    Certification Package, SREG, Integrity Reference, Discovery Signal, Trust
+    Statement, Workflow Definition, Atlas record, or other Suite-owned structure.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Canonical Structure</h2>
+  <p>
+    The Chronicle Base Schema defines the common structure required for canonical
+    Chronicle Entries. Specialized Event-Type Profiles may extend that base with
+    additional requirements without creating competing canonical Entry objects.
   </p>
 </article>
 
 <article class="card">
   <h2>Traceability</h2>
   <p>
-    Structured relationships help connect entries, sources,
-    evidence, corrections, and verification activities.
+    Structured fields should preserve identifiers, provenance, relationships,
+    authoritative references, evidence links, verification state, corrections, and
+    version lineage so Chronicle records remain reconstructable over time.
   </p>
 </article>
 
 <article class="card">
   <h2>Interoperability</h2>
   <p>
-    Well-defined schemas improve compatibility between systems,
-    repositories, tools, and future implementations.
+    Chronicle schemas support reference-based interoperability by representing
+    durable references to authoritative Suite objects without duplicating or
+    redefining the schemas owned by Certifier, Registry, Atlas, Anchor, Beacon,
+    Attestor, Navigator, or other Suite systems.
   </p>
 </article>
 
 <article class="card">
-  <h2>Longevity</h2>
+  <h2>Schema Evolution</h2>
   <p>
-    Historical records become more valuable when they remain
-    understandable across changing technologies and generations.
+    Chronicle schemas should be versioned, extensible, and historically preserved.
+    Schema changes must remain traceable so older Chronicle Entries continue to be
+    understandable and valid under the schema version that governed them.
   </p>
 </article>
 
 <article class="card">
   <h2>Validation</h2>
   <p>
-    Schemas help ensure that records contain the information
-    necessary for preservation, review, and historical context.
+    Schemas define the structure against which Chronicle records can be validated.
+    Validation rules determine whether required fields, identifiers, controlled
+    values, relationships, references, and other structural requirements are met
+    before publication or other operational use.
   </p>
 </article>
 
 <article class="card">
-  <h2>Relationships</h2>
+  <h2>Controlled Relationships</h2>
   <p>
-    Structured references allow Chronicle records to remain
-    connected and understandable within a broader historical network.
+    Relationship fields should use stable, controlled values where direction or
+    meaning matters. Schema structure should make those relationships machine-
+    readable without implying unsupported causation or authority transfer.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Chronicle Base Schema</h2>
+
+  <p>
+    The Chronicle Base Schema should define only the universal fields required by
+    every production Chronicle Entry. It is the canonical structural contract for
+    the Chronicle Entry model.
+  </p>
+
+  <div class="note">
+    Identity · Event / Occurrence Classification · Temporal Context · Originating System · Authoritative References · Historical Context · Relationships · Provenance · Verification / Validation State · Status · Version / Correction Lineage
+  </div>
+
+  <p style="margin-top:14px;">
+    Required, conditional, and optional fields should be formally defined once the
+    Entry Model and Identifier Architecture are settled.
   </p>
 </article>
 
@@ -220,16 +274,64 @@ h1{
   <h2>Current Schemas</h2>
 
   <p>
-    Chronicle currently defines several foundational schema types
-    for organizing historical records.
+    Chronicle's operational schema architecture should center on a Chronicle Base
+    Schema for the canonical Entry, with supporting schemas added only where a
+    distinct Chronicle-owned record function requires them.
   </p>
 
   <div class="note">
-    Chronicle Entry Schema<br>
-    Source Record Schema<br>
+    Chronicle Base Schema<br>
+    Event-Type Profiles<br>
     Evidence Record Schema<br>
-    Correction Record Schema
+    Verification Record Schema<br>
+    Correction Record Schema<br>
+    Provenance / Relationship / Version Structures as operationally required
   </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Event-Type Profiles</h2>
+
+  <p>
+    Event-Type Profiles extend the Chronicle Base Schema for specific classes of
+    preserved occurrences. A profile may add required fields, controlled values,
+    authoritative-reference rules, relationship constraints, or validation
+    requirements that apply only to that event class.
+  </p>
+
+  <p>
+    The Certification Event-Type Profile is expected to be the first operational
+    profile. It should extend the Base Schema without duplicating the authoritative
+    Certification Package.
+  </p>
+
+  <div class="note">
+    Base Schema + Event-Type Profile = Specialized Chronicle Entry
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Controlled Values</h2>
+
+  <p>
+    Controlled values should be governed separately from structural schema
+    definitions where practical. Schemas reference approved vocabularies for fields
+    such as Event Type, Entry Status, Relationship Type, Verification State,
+    Publication State, Correction Type, and other enumerated concepts.
+  </p>
+
+  <p>
+    This separation allows terminology to remain governed and interoperable without
+    forcing unnecessary structural schema changes.
+  </p>
 </article>
 
 </section>
@@ -240,13 +342,49 @@ h1{
   <h2>Schema Relationships</h2>
 
   <p>
-    Chronicle schemas work together to create a structured
-    historical preservation system.
+    Chronicle schemas should form a layered architecture rather than a linear chain
+    of co-equal record types. The Base Schema defines the common Entry structure;
+    Event-Type Profiles specialize it; supporting schemas document distinct
+    Chronicle-owned functions.
   </p>
 
   <div class="note">
-    Entry → Source → Evidence → Verification → Correction
+    Chronicle Base Schema → Event-Type Profile → Supporting Chronicle Schemas → Validation → Publication / Preservation
   </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Schema, Validation, and Publication</h2>
+
+  <p>
+    Schema defines structure. Validation determines whether a Chronicle record
+    conforms to that structure and to applicable controlled values, references,
+    relationships, and operational rules. Publication determines whether a valid
+    record is approved for public production use.
+  </p>
+
+  <div class="note">
+    Schema ≠ Validation ≠ Publication
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Schema Versioning and Compatibility</h2>
+
+  <p>
+    Every production Chronicle Entry should remain associated with the schema
+    version that governed it. Schema evolution should define compatibility,
+    deprecation, migration, and preservation rules so historical Entries remain
+    interpretable without silently rewriting older structures.
+  </p>
 </article>
 
 </section>
@@ -257,13 +395,16 @@ h1{
   <h2>Schema Philosophy</h2>
 
   <p>
-    Schemas should support preservation without dictating
-    interpretation. Their purpose is to organize information,
-    not determine conclusions.
+    Schemas should define structure without determining historical conclusions or
+    assuming authority that belongs to another Suite system. Their purpose is to
+    make Chronicle records portable, reviewable, machine-readable, validatable, and
+    durable.
   </p>
 
   <p>
-    The goal is not complexity. The goal is clarity.
+    The goal is not schema proliferation. The goal is one coherent structural
+    language with the minimum extensions necessary for Chronicle's institutional
+    responsibilities.
   </p>
 
   <a class="btn" href="/chronicle/">
@@ -278,7 +419,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Structure improves preservation. Preservation improves understanding.
+    Durable history requires durable structure. Chronicle schemas make that structure reviewable.
   </div>
   <hr>
   <div id="footer-container"></div>
