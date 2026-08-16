@@ -903,7 +903,7 @@ limitations
 The production machine-readable implementation should be defined in:
 
 ```text
-chronicle-entry-schema.json
+chronicle-base-schema.json
 ```
 
 This Markdown document is the human-readable institutional specification.
@@ -911,10 +911,10 @@ This Markdown document is the human-readable institutional specification.
 Conceptually:
 
 ```text
-chronicle-entry-schema.md
+chronicle-base-schema.md
 → Human-readable Base Schema specification
 
-chronicle-entry-schema.json
+chronicle-base-schema.json
 → Machine-readable production contract
 ```
 
@@ -1224,7 +1224,7 @@ The Base Schema begins the Phase VII production schema family.
 Initial artifacts:
 
 ```text
-chronicle-entry-schema.md
+chronicle-base-schema.md
 chronicle-entry-schema.json
 ```
 
@@ -1259,7 +1259,7 @@ The canonical identifier format, initial Controlled Values, Lifecycle State, Ver
 The corresponding machine-readable implementation is to be defined in:
 
 ```text
-chronicle-entry-schema.json
+chronicle-base-schema.json
 ```
 
 The Certification Event-Type Profile will supply Certification-specific requirements without altering the universal Base Schema boundary.
