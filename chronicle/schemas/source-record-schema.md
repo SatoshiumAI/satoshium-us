@@ -2,177 +2,283 @@
 
 ## Purpose
 
-The Chronicle Source Record Schema defines the structure used to represent sources referenced or maintained by Satoshium Chronicle.
+The Chronicle Source Record Schema defines the Chronicle-owned supporting structure used to identify, describe, reference, and preserve Sources used by Satoshium Chronicle.
 
-A Source Record identifies where information originated and preserves the context needed to trace that information back to its source.
+A Source Record answers the institutional question:
 
-Sources may contain or lead to:
+> Where did this information come from?
 
-* Evidence
-* Claims
-* Statements
-* Records
-* Publications
-* Observations
-* Metadata
-* Archival material
-* Authoritative Suite objects
-* Other historical context
+A Source Record preserves enough structured information to make a Source identifiable, attributable, traceable, reviewable, and historically durable.
 
-A source does not determine truth merely because Chronicle references it.
+A Source Record is not the canonical Chronicle historical object.
 
-The Source Record exists to preserve origin, attribution, access context, provenance, archival state, and relationships so the information used by Chronicle can be reviewed, compared, verified, challenged, corrected, and preserved over time.
+The canonical object remains the **Chronicle Entry**.
+
+A Source Record also does not become authoritative merely because Chronicle preserves or references it.
+
+The governing principle is:
+
+> Identify the Source. Preserve the reference. Trace the path. Keep authority visible.
 
 ---
 
-## Suite Alignment
+# Canonical Role
 
-Chronicle Source Records should align with the Satoshium Suite Standards, Methodology, Schemas Standard, Evidence Standard, and Interoperability principles.
-
-The schema should support:
-
-* Stable identifiers
-* Clear source attribution
-* Provenance and traceability
-* Durable references
-* Archival preservation
-* Source limitations
-* Structured relationships
-* Validation-ready records
-* Version preservation
-* Reference-based interoperability
-* Clear authority boundaries
-
-Chronicle should not create a competing source-authority model where another Suite system already owns the authoritative object.
-
----
-
-## Canonical Role
-
-A Source Record is a **supporting Chronicle-owned record**.
-
-It is not the canonical historical-preservation object.
-
-The canonical Chronicle object remains the **Chronicle Entry**.
+A Chronicle Source Record is a **supporting Chronicle-owned record**.
 
 Conceptually:
 
 ```text
 Chronicle Entry
       ↓
-Source Relationship
+Source Reference
       ↓
 Source Record
       ↓
 Evidence / Provenance / Verification Context
 ```
 
-A Source Record exists to document where information came from and how Chronicle can trace it.
+A Source Record exists when Chronicle needs more structure than a simple direct Source reference can provide.
+
+Examples include situations requiring:
+
+* structured Source identity
+* attribution
+* archival context
+* material limitations
+* Provenance
+* reuse across Entries
+* integrity metadata
+* Version lineage
+* public Source discovery
+* Validation
+
+A direct external reference may be sufficient when those additional requirements are unnecessary.
 
 ---
 
-## Source, Evidence, and Provenance
+# Source, Evidence, Provenance, and Verification
 
-Source, Evidence, and Provenance are related but distinct.
+These concepts remain distinct.
 
-### Source
+## Source
 
 Answers:
 
 > Where did the information come from?
 
-### Evidence
+## Evidence
 
 Answers:
 
-> What material bears on the Chronicle Entry, claim, or occurrence?
+> What material bears on the Chronicle Entry or claim?
 
-Evidence may support, challenge, contradict, clarify, corroborate, contextualize, or limit confidence.
-
-### Provenance
+## Provenance
 
 Answers:
 
-> How did the information or evidence originate, move, and enter Chronicle?
+> How did the information or Evidence originate, move, and enter Chronicle?
 
-A single source may contain multiple evidence items.
+## Verification
 
-A single evidence item may depend on one or more sources.
+Answers:
 
-A Source Record should not be used as a substitute for Evidence or Provenance Records where those functions require separate structure.
+> Has Chronicle reviewed the relevant aspects of its own historical representation and supporting references?
+
+Conceptually:
+
+```text
+Source ≠ Evidence ≠ Provenance ≠ Verification
+```
+
+A Source Record should not duplicate Evidence or Provenance structures unnecessarily.
 
 ---
 
-## Schema Overview
+# Source Contexts
 
-A Chronicle Source Record should answer:
+Chronicle recognizes three operational Source contexts.
 
-* What is the source?
-* What type of source is it?
-* Where is it located?
-* Who or what created or published it?
-* When was it created or published?
-* When was it accessed or captured?
-* How did Chronicle obtain or preserve the source?
-* Which Chronicle Entries rely on it?
-* Which Evidence Records derive from or relate to it?
-* Is the source itself an authoritative Suite object?
-* What limitations or conflicts are known?
-* What archival or integrity information is available?
-* Has Chronicle verified aspects of the source?
-* Has the Source Record passed structural validation?
+## Authoritative Source Record
+
+A Chronicle Source Record documenting an authoritative object or institutional Source.
+
+The Source Record itself does not become the authority.
+
+Authority remains with the originating institution or system.
+
+---
+
+## Supporting Source
+
+A Source used for:
+
+* context
+* corroboration
+* background
+* attribution
+* interpretation
+* temporal detail
+* historical understanding
+
+A Supporting Source may be highly useful without being authoritative for the underlying institutional action.
+
+---
+
+## Referenced External Source
+
+A Source outside Chronicle, and possibly outside the Suite, referenced directly where a separate Source Record would add little operational value.
+
+A direct reference may be sufficient when the Source is:
+
+* stable
+* narrowly used
+* easily identifiable
+* adequately attributable
+* not in need of independent Chronicle lifecycle treatment
+
+---
+
+# Production Status
+
+This specification defines the Phase VII production architecture for Chronicle Source Records.
+
+The current canonical human-readable file is:
+
+```text
+source-record-schema.md
+```
+
+A future machine-readable implementation may be created as:
+
+```text
+source-record-schema.json
+```
+
+only after the production field boundary is exercised against a real Chronicle Entry and Source Record.
 
 ---
 
 # Field Architecture
 
-The exact production identifier format, controlled values, and required/conditional designations remain subject to Chronicle Identifier Architecture, Controlled Values, Validation Rules, Provenance Model, Source procedures, and Publication Standard.
+The Source Record Schema distinguishes:
 
-The structure below is an operational architectural draft.
+```text
+Required
+Conditional
+Optional
+```
+
+A field should not be Required unless every production Source Record needs it.
 
 ---
 
-## Identity Fields
+# Universal Required Fields
 
-### `source_id`
+Every production Chronicle Source Record should contain:
+
+```text
+source_id
+schema_id
+schema_version
+source_record_version
+
+title
+source_type
+
+provenance
+
+created_at
+```
+
+These form the minimum Source Record identity and traceability structure.
+
+---
+
+# Identity Fields
+
+## `source_id`
 
 Stable unique identifier assigned to the Chronicle Source Record.
 
-**Status:** Required in production.
+**Requirement:** Required.
 
-The final identifier format is not yet settled.
+The final Source Record identifier namespace remains to be formally established.
 
-Example placeholder:
+Until that identifier architecture is approved, production implementation should not invent a permanent namespace casually.
 
-```text
-<SOURCE-IDENTIFIER>
-```
+The Source Record identifier must remain:
 
-Legacy examples such as `SRC-000001` should not be treated as canonical.
+* stable
+* unique
+* non-reusable
+* independent of Source Type
+* independent of publication or verification state
 
 ---
 
-### `schema_version`
+## `schema_id`
+
+Stable identifier for the Source Record Schema.
+
+**Requirement:** Required.
+
+Initial value:
+
+```text
+chronicle-source-record
+```
+
+---
+
+## `schema_version`
 
 Version of the Source Record Schema governing the record.
 
-**Status:** Required.
+**Requirement:** Required.
 
-Example:
+Initial production convention:
 
 ```text
 1.0.0
 ```
 
-Schema version and Source Record version should remain distinct concepts.
+Schema Version is distinct from Source Record Version.
 
 ---
 
-### `title`
+## `source_record_version`
 
-Concise human-readable title describing the source.
+Sequential preserved Version of the same Chronicle Source Record.
 
-**Status:** Required.
+**Requirement:** Required.
+
+Initial value:
+
+```text
+1
+```
+
+Material changes should advance the Source Record Version when they alter institutional meaning or review context.
+
+Examples may include:
+
+* changed Source identity
+* changed attribution
+* changed Provenance
+* changed archival representation
+* material limitation discovery
+* changed authoritative reference
+
+---
+
+# Human-Readable Identity
+
+## `title`
+
+Concise human-readable title identifying the Source.
+
+**Requirement:** Required.
 
 Example:
 
@@ -182,145 +288,144 @@ Satoshium Chronicle Public Launch Page
 
 ---
 
-### `description`
+## `description`
 
-Brief factual description of the source.
+Brief factual description of the Source.
 
-**Status:** Required.
+**Requirement:** Conditional.
 
-Example:
-
-```text
-Public Satoshium webpage documenting the Chronicle launch.
-```
+Required when the title alone does not adequately explain what the Source is.
 
 ---
 
-## Source Classification Fields
+# Source Type
 
-### `source_type`
+## `source_type`
 
-Controlled classification identifying the type of source.
+Controlled classification identifying the type of Source.
 
-**Status:** Required.
+**Requirement:** Required.
 
-Possible working concepts may include:
+Approved Chronicle Source Type values are:
 
 ```text
-webpage
-document
-publication
-archive
-database
-public_record
-institutional_record
-statement
-interview
-broadcast
-repository
+authoritative_record
+institutional_document
+web_page
+repository_record
 dataset
-social_post
-authoritative_suite_record
-other_approved
+archive
+statement
+other
 ```
 
-These values are illustrative only until Chronicle Controlled Values are formally approved.
-
-The Source Record Schema should not assume that all legacy categories remain canonical.
-
----
-
-### `source_role`
-
-Controlled value describing the source's role in relation to the Chronicle Entry or Evidence Record.
-
-**Status:** Conditional.
-
-Potential working concepts may include:
+Human-readable labels:
 
 ```text
-primary_source
-secondary_source
-contextual_source
-archival_source
-authoritative_source
-corroborating_source
-reference_source
+Authoritative Record
+Institutional Document
+Web Page
+Repository Record
+Dataset
+Archive
+Statement
+Other
 ```
 
-These values remain provisional.
+Rules:
 
-Source type and source role should remain distinct concepts.
-
----
-
-## Creator and Publisher Fields
-
-### `creator`
-
-Entity, person, organization, institution, or system that created the source.
-
-**Status:** Conditional.
+* Source Type describes what kind of Source this is.
+* Source Type does not establish institutional authority by itself.
+* Source Type does not replace Source Role.
+* `other` should be used only when no approved value accurately fits.
+* Repeated use of `other` should trigger Controlled Values review.
 
 ---
 
-### `publisher`
+# Source Role
 
-Entity, person, organization, institution, or system that published or distributed the source.
+## `source_role`
 
-**Status:** Conditional.
+Describes the Source's role in relation to an Entry, claim, Evidence item, or historical representation.
 
-Creator and publisher may be the same entity but should not be assumed to be identical.
+**Requirement:** Conditional.
 
----
+Source Role is **not yet a frozen Controlled Value set**.
 
-## Temporal Fields
+Candidate concepts include:
 
-### `original_created_at`
+```text
+authoritative
+supporting
+primary
+secondary
+contextual
+archival
+corroborating
+reference
+```
 
-Date or timestamp associated with creation of the source, when known.
+These terms remain provisional.
 
-**Status:** Conditional.
+Source Role should become a formal Controlled Value set only when production use demonstrates a stable need.
 
----
-
-### `published_at`
-
-Date or timestamp associated with publication or release of the source, when applicable.
-
-**Status:** Conditional.
-
----
-
-### `accessed_at`
-
-Date or timestamp when Chronicle or another documented process accessed the source.
-
-**Status:** Conditional.
+Source Type and Source Role must remain distinct.
 
 ---
 
-### `captured_at`
+# Creator and Publisher
 
-Date or timestamp when Chronicle or another documented process captured or archived the source.
+## `creator`
 
-**Status:** Conditional.
+Entity, person, organization, institution, or system responsible for creating the Source.
 
-These timestamps should remain distinct where the events differ.
+**Requirement:** Conditional.
 
-Legacy use of one universal `access_timestamp` should not collapse creation, publication, access, and capture into a single concept.
+Required when known and materially relevant.
 
 ---
 
-## Location and Reference Fields
+## `publisher`
 
-### `source_location`
+Entity, person, organization, institution, or system responsible for publishing or distributing the Source.
 
-Durable location or reference where the source can be found.
+**Requirement:** Conditional.
 
-**Status:** Required when a location or reference exists.
+Creator and publisher may be the same.
+
+They should not be assumed to be identical.
+
+---
+
+# Source Reference and Location
+
+## `stable_reference`
+
+Stable identifier, canonical reference, archive identifier, repository identifier, government record number, dataset identifier, DOI-like identifier, commit reference, or other durable Source identity.
+
+**Requirement:** Conditional.
+
+Preferred over a bare URL where available.
 
 Examples may include:
+
+```text
+SC-CERT-2026-0001
+SREG-2026-0001
+repository commit
+archive identifier
+dataset identifier
+```
+
+---
+
+## `source_location`
+
+Location where the Source can be accessed.
+
+**Requirement:** Conditional.
+
+May include:
 
 ```text
 https://...
@@ -328,23 +433,32 @@ repository://...
 archive://...
 ```
 
-The final permitted formats should be governed by Chronicle reference rules.
+A URL is a location.
+
+It is not necessarily the Source's identity.
 
 ---
 
-### `archive_reference`
+## `archive_reference`
 
-Reference to an archived or preserved representation of the source.
+Reference to an archived or preserved representation of the Source.
 
-**Status:** Conditional.
+**Requirement:** Conditional.
+
+Required when:
+
+* the original Source is unstable
+* the original Source is unavailable
+* Chronicle relies on an archived representation
+* long-term reviewability depends on the archive
 
 ---
 
-### `authoritative_record_reference`
+## `authoritative_record_reference`
 
-Reference to an authoritative Suite object when the source itself is an authoritative institutional record.
+Reference to an authoritative external or Suite object when the Source itself corresponds to such a record.
 
-**Status:** Conditional.
+**Requirement:** Conditional.
 
 Examples may include:
 
@@ -356,113 +470,209 @@ Examples may include:
 * Workflow Definition
 * Atlas record
 
-Chronicle may reference such objects as sources while preserving their distinct institutional authority.
+Rules:
+
+* Chronicle references the object.
+* Chronicle does not duplicate its authoritative schema.
+* Chronicle does not inherit its institutional authority.
 
 ---
 
-## Provenance Fields
+# Temporal Fields
 
-### `provenance`
+Temporal fields should remain distinct.
 
-Structured information describing how the source originated, moved, was discovered, accessed, captured, archived, and entered Chronicle.
+## `original_created_at`
 
-**Status:** Expected to become required in production.
+Date or timestamp associated with creation of the Source.
 
-Provenance may include:
-
-* Originating institution
-* Discovery method
-* Acquisition path
-* Access method
-* Capture method
-* Archive path
-* Transfer history
-* Preservation history
-* Related authoritative record
-
-The final structure will be governed by the Chronicle Provenance Model.
+**Requirement:** Conditional.
 
 ---
 
-## Relationship Fields
+## `published_at`
 
-### `related_entry_references`
+Date or timestamp associated with publication or release of the Source.
 
-References to Chronicle Entries associated with the source.
-
-**Status:** Required when the Source Record supports or contextualizes a Chronicle Entry.
+**Requirement:** Conditional.
 
 ---
 
-### `related_evidence_references`
+## `accessed_at`
 
-References to Evidence Records derived from or associated with the source.
+Date or timestamp when Chronicle accessed the Source.
 
-**Status:** Conditional.
+**Requirement:** Conditional.
 
----
-
-### `related_correction_references`
-
-References to Correction Records involving this Source Record or its relationship to Chronicle.
-
-**Status:** Conditional.
+Required for mutable Sources where later review needs to know when Chronicle observed the Source.
 
 ---
 
-### `related_source_references`
+## `captured_at`
 
-References to related Source Records.
+Date or timestamp when Chronicle captured, archived, downloaded, exported, or otherwise preserved the Source.
 
-**Status:** Conditional.
+**Requirement:** Conditional.
 
-Relationships should use Chronicle controlled relationship values where direction or meaning matters.
-
----
-
-## Source Reliability and Limitations
-
-### `reliability_notes`
-
-Structured or narrative notes regarding reliability, conflicts, context, or known weaknesses.
-
-**Status:** Conditional.
-
-This field should not be treated as an institutional truth determination.
+These timestamps should not be collapsed into one generic access timestamp.
 
 ---
 
-### `limitations`
+## `created_at`
 
-Structured or narrative description of known source limitations.
+Date and time Chronicle created the Source Record.
 
-**Status:** Required when material limitations exist.
+**Requirement:** Required.
+
+This is Chronicle record time.
+
+It is not Source creation time.
+
+---
+
+# Provenance
+
+## `provenance`
+
+Structured information describing how the Source originated, was discovered, accessed, captured, transferred, transformed, archived, and entered Chronicle.
+
+**Requirement:** Required.
+
+Every production Source Record should preserve, at minimum:
+
+```text
+origin
+acquisition_method
+retrieved_at
+```
+
+and, when applicable:
+
+```text
+source_reference
+authoritative_record_reference
+limitations
+```
+
+Expanded Provenance may include:
+
+* discovery method
+* capture method
+* transfer history
+* transformation history
+* archive path
+* preservation history
+* integrity metadata
+
+The Provenance Model governs meaning.
+
+The Source Record Schema should not redefine that model independently.
+
+---
+
+# Entry Linkage
+
+## `related_entry_references`
+
+References to Chronicle Entries associated with the Source.
+
+**Requirement:** Conditional.
+
+Required when the Source Record exists because one or more Chronicle Entries rely upon it.
+
+A Source Record may be reused across multiple Entries.
+
+---
+
+# Evidence Linkage
+
+## `related_evidence_references`
+
+References to Evidence Records or Evidence items associated with the Source.
+
+**Requirement:** Conditional.
+
+A Source may contain or produce multiple Evidence items.
+
+The Source Record should not flatten those Evidence items into the Source itself.
+
+---
+
+# Correction Linkage
+
+## `related_correction_references`
+
+References to Correction Records affecting this Source Record or its relationship to Chronicle.
+
+**Requirement:** Conditional.
+
+Required when a formal Correction applies.
+
+---
+
+# Related Sources
+
+## `related_source_references`
+
+References to other Source Records.
+
+**Requirement:** Conditional.
+
+Where structured Relationship semantics matter, approved Chronicle Relationship Types should be used.
+
+---
+
+# Limitations
+
+## `limitations`
+
+Structured or narrative description of known Source limitations.
+
+**Requirement:** Conditional.
+
+Required when material limitations exist.
 
 Examples may include:
 
-* Incomplete
-* Stale
-* Unavailable
-* Archived copy only
-* Ambiguous authorship
-* Broken reference
-* Conflicting publication date
-* Secondary or derivative source
-* Missing provenance
-* Context-limited
-* Altered or reformatted representation
+* incomplete
+* stale
+* unavailable
+* archived copy only
+* ambiguous authorship
+* broken reference
+* conflicting publication date
+* derivative
+* missing Provenance
+* context-limited
+* altered or reformatted representation
 
-Source limitations should remain visible over time.
+Limitations are part of the historical record.
+
+They should not be hidden merely because the Source remains useful.
 
 ---
 
-## Integrity and Preservation Fields
+# Reliability Notes
 
-### `checksum`
+## `reliability_notes`
 
-Cryptographic checksum or digest for preserved source material where available.
+Narrative or structured observations relevant to Source reliability.
 
-**Status:** Optional or conditional.
+**Requirement:** Optional.
+
+This field should not become a universal truth score.
+
+Chronicle should avoid unsupported numerical reliability scoring unless later Suite standards explicitly require it.
+
+---
+
+# Integrity Metadata
+
+## `checksum`
+
+Cryptographic checksum or digest for preserved Source material.
+
+**Requirement:** Optional / Conditional.
 
 Example:
 
@@ -472,271 +682,402 @@ sha256:<HASH>
 
 ---
 
-### `digital_signature_reference`
+## `digital_signature_reference`
 
-Reference to a digital signature, attestation, or signature-verification artifact.
+Reference to a signature or signature-verification artifact.
 
-**Status:** Conditional.
+**Requirement:** Conditional.
 
 ---
 
-### `preservation_status`
+## `integrity_metadata`
 
-Controlled value describing the source's preservation condition.
+Other integrity information relevant to the Source.
 
-**Status:** Expected to become required.
+**Requirement:** Optional / Conditional.
 
-Potential working concepts may include:
+May include:
+
+* repository commit
+* timestamp
+* immutable object identifier
+* Anchor Integrity Reference
+* content hash
+* file metadata
+
+Integrity metadata supports reviewability.
+
+It does not replace Provenance or authority.
+
+---
+
+# Preservation Information
+
+## `preservation_notes`
+
+Information describing archival state, capture method, long-term accessibility, or preservation limitations.
+
+**Requirement:** Conditional.
+
+A separate Controlled Preservation State is **not yet frozen** for Source Records.
+
+Therefore the schema should not invent a production `preservation_status` vocabulary at this stage.
+
+If production experience demonstrates the need, Preservation State can later be added through schema evolution.
+
+---
+
+# Verification
+
+## `verification_state`
+
+Chronicle Verification State associated with the Source Record where Chronicle separately reviews Source-level questions.
+
+**Requirement:** Conditional.
+
+Approved values:
 
 ```text
-available
-archived
-captured_copy
-referenced_only
-unavailable
-superseded
-preserved_copy
-```
-
-These values remain provisional.
-
----
-
-### `preservation_notes`
-
-Notes describing archival state, capture method, source availability, preservation limitations, or long-term accessibility.
-
-**Status:** Conditional.
-
----
-
-## Verification Fields
-
-### `verification_state`
-
-Current Chronicle verification state relating to the Source Record.
-
-**Status:** Conditional.
-
-The final controlled values remain to be defined.
-
-Legacy values such as:
-
-```text
-unverified
-under_review
-partially_verified
+not_reviewed
+in_review
 verified
-disputed
-unavailable
+verified_with_limitations
+unresolved
 ```
 
-should be treated as historical draft vocabulary, not approved controlled values.
+Human-readable labels:
 
----
+```text
+Not Reviewed
+In Review
+Verified
+Verified with Limitations
+Unresolved
+```
 
-### `verification_references`
-
-References to Chronicle verification records or activities.
-
-**Status:** Conditional.
-
-Verification may review:
+Source-level Verification may review:
 
 * Source existence
-* Attribution
-* Creator or publisher identity
-* Publication date
-* Access or capture consistency
-* Archival consistency
+* attribution
+* creator / publisher identity
+* publication date
+* access consistency
+* archive consistency
 * Provenance
-* Relationship integrity
-* Internal consistency
-* Source limitations
+* limitations
+* reference integrity
 
-Verification does not convert the source into Chronicle authority.
-
----
-
-## Validation Fields
-
-### `validation_state`
-
-State or result of Chronicle Source Record validation.
-
-**Status:** Required before production publication or operational use where validation is required.
-
-Validation may include:
-
-* Identifier integrity
-* Schema conformance
-* Required fields
-* Controlled values
-* Source-location integrity
-* Archive-reference integrity
-* Related-entry integrity
-* Provenance requirements
-* Preservation-status requirements
-* Version linkage
-* Publication readiness
-
-Verification and Validation are separate functions.
+Verification does not convert the Source into Chronicle authority.
 
 ---
 
-### `validation_references`
+## `verification_references`
 
-References to validation records or results where Chronicle preserves them separately.
+References to separately preserved Verification activity or records.
 
-**Status:** Conditional.
+**Requirement:** Conditional.
+
+Whether a distinct Verification Record is required remains subject to later production architecture.
 
 ---
 
-## Lifecycle and Publication Fields
+# Validation
 
-### `source_status`
+The Source Record Schema is designed for Validation.
 
-Current lifecycle state of the Chronicle Source Record.
-
-**Status:** Required.
-
-The final controlled values remain to be defined.
-
-Legacy values such as:
+It does not presently require a universal embedded:
 
 ```text
-draft
-active
-archived
-superseded
-unavailable
+validation_state
 ```
 
-should not be assumed to be canonical.
+The Validation Procedure should determine where validation results are preserved.
+
+Validation may test:
+
+* Source Record identifier integrity
+* schema conformance
+* required fields
+* Controlled Values
+* reference integrity
+* Provenance requirements
+* Entry linkage
+* Evidence linkage
+* Version linkage
+* publication prerequisites
+
+Conceptually:
+
+```text
+Schema ≠ Verification ≠ Validation
+```
 
 ---
 
-### `publication_state`
+# Lifecycle
 
-Current publication state of the Source Record.
+A separate production `source_status` field is not yet required.
 
-**Status:** Conditional or required depending on Chronicle publication architecture.
+Chronicle's currently approved Lifecycle State values were established for Chronicle Entries:
 
-Not every source reference or preserved source should necessarily be public.
+```text
+Draft
+Active
+Superseded
+Withdrawn
+Preserved
+```
+
+They should not automatically be applied to Source Records without operational evidence that the same state model fits.
+
+The Source Record lifecycle may still conceptually include:
+
+```text
+identified
+structured
+reviewed
+validated
+used
+maintained
+corrected / versioned
+preserved
+```
+
+But those process stages should not be prematurely converted into Controlled Values.
 
 ---
 
-## Versioning Fields
+# Publication
 
-### `source_record_version`
+## `publication_state`
 
-Version or preserved state of the Chronicle Source Record.
+Publication State of the Source Record when Source Records themselves are independently published.
 
-**Status:** Required if Chronicle adopts explicit Source Record versioning.
+**Requirement:** Conditional.
+
+Approved Chronicle Publication State values are:
+
+```text
+not_published
+pending_publication
+published
+withdrawn_from_publication
+```
+
+Not every Source Record must be public merely because an associated Chronicle Entry is public.
 
 ---
 
-### `prior_version_reference`
+## `published_record_at`
 
-Reference to the prior Source Record state where applicable.
+Date and time the Source Record itself was published by Chronicle.
 
-**Status:** Conditional.
+**Requirement:** Conditional.
 
-Material changes to source location, provenance, limitations, preservation status, or attribution should remain traceable.
+Required when `publication_state` is:
+
+```text
+published
+```
+
+This field is distinct from the Source's own `published_at`.
 
 ---
 
-## Discovery Fields
+# Versioning
 
-### `tags`
+## `source_record_version`
+
+Sequential Version of the Source Record.
+
+**Requirement:** Required.
+
+Material Source Record changes should create a new Version when a future reviewer would reasonably need to know that the prior Source Record said something materially different.
+
+Examples:
+
+* Source attribution changes
+* Source identity changes
+* Provenance changes
+* archive representation changes
+* material limitation changes
+* authoritative-reference changes
+
+---
+
+## `prior_version_reference`
+
+Reference to the immediately prior preserved Source Record Version.
+
+**Requirement:** Conditional.
+
+Required for Version 2 and later when prior Version linkage is represented directly.
+
+Prior substantive Source Record states should remain preserved.
+
+---
+
+# Corrections
+
+A Source Record may be corrected through Chronicle's Correction architecture.
+
+Material Corrections should preserve:
+
+```text
+Original information
+Corrected information
+Correction date
+Reason
+Affected fields
+Resulting Version
+```
+
+Chronicle must not silently rewrite material Source identity, attribution, Provenance, limitations, or archival context.
+
+---
+
+# Discovery Fields
+
+## `tags`
 
 Optional discovery metadata.
 
-**Status:** Optional.
+**Requirement:** Optional.
 
-Tags should not replace controlled source type or source role values.
-
----
-
-### `jurisdiction`
-
-Optional geographic, organizational, legal, or operational scope associated with the source.
-
-**Status:** Conditional.
-
-Where jurisdiction matters, Chronicle should prefer controlled or authoritative references over ambiguous free text.
+Tags should not replace Source Type or later approved Source Role values.
 
 ---
 
-## Deprecated Legacy Fields
+## `jurisdiction`
 
-The following concepts from the original draft should not be carried forward unchanged:
+Geographic, legal, organizational, or operational scope associated with the Source.
 
-### `access_timestamp`
+**Requirement:** Optional / Conditional.
 
-Deprecated as a universal temporal field.
+Where important, Chronicle should prefer stable identifiers or authoritative references over ambiguous free text.
 
-Use more precise timestamps such as:
+---
 
-* `original_created_at`
-* `published_at`
-* `accessed_at`
-* `captured_at`
+# Fields Intentionally Not Frozen
 
-### `verification_status`
+The following concepts remain intentionally provisional:
 
-Deprecated in favor of:
+```text
+source_role
+preservation_state
+validation_state location
+source_record identifier namespace
+```
+
+They should not be turned into production Controlled Values merely to make the schema appear complete.
+
+Production experience should determine whether they are necessary.
+
+---
+
+# Deprecated Legacy Concepts
+
+The following older draft concepts should not govern production Source Records.
+
+## Legacy Source Type vocabulary
+
+Do not use older ad hoc values such as:
+
+```text
+webpage
+document
+publication
+database
+public_record
+interview
+broadcast
+social_post
+authoritative_suite_record
+other_approved
+```
+
+unless they map to an approved Source Type.
+
+Use the current Controlled Values instead.
+
+---
+
+## `access_timestamp`
+
+Deprecated as an ambiguous universal time field.
+
+Use:
+
+```text
+original_created_at
+published_at
+accessed_at
+captured_at
+created_at
+```
+
+according to meaning.
+
+---
+
+## `verification_status`
+
+Deprecated.
+
+Use:
 
 ```text
 verification_state
 ```
 
-once controlled values are settled.
+---
 
-### `verification_reference`
+## Generic `version`
 
-Deprecated in favor of:
-
-```text
-verification_references
-```
-
-to support one or more verification records.
-
-### `author`
-
-Deprecated as a universal field.
-
-Use explicit actor-role fields where needed.
-
-### Generic `version`
-
-Deprecated as ambiguous.
+Deprecated.
 
 Use:
 
-* `schema_version`
-* `source_record_version`
-
-as separate concepts.
+```text
+schema_version
+source_record_version
+```
 
 ---
 
-# Working Example
+## Universal `author`
 
-The following is conceptual only and does not establish final identifiers, controlled values, or production field names.
+Deprecated.
+
+Use explicit fields such as:
+
+```text
+creator
+publisher
+```
+
+where applicable.
+
+---
+
+# Production Example
+
+The following example demonstrates the current production architecture.
+
+The Source Record identifier remains illustrative until its namespace is formally established.
 
 ```yaml
 source_id: <SOURCE-IDENTIFIER>
+schema_id: chronicle-source-record
 schema_version: 1.0.0
+source_record_version: 1
 
 title: Satoshium Chronicle Public Launch Page
 
 description: >
-  Public Satoshium webpage documenting the Chronicle launch.
+  Public Satoshium webpage documenting Chronicle.
 
-source_type: webpage
-source_role: primary_source
+source_type: web_page
 
 creator: Satoshium
 publisher: Satoshium
@@ -746,159 +1087,204 @@ accessed_at: 2026-09-01T09:00:00Z
 captured_at: 2026-09-01T09:05:00Z
 
 source_location: https://example.com/chronicle
-archive_reference: <ARCHIVE-REFERENCE>
 
 provenance:
+  origin: satoshium_web
   acquisition_method: direct_web_access
-  capture_method: archival_capture
+  retrieved_at: 2026-09-01T09:00:00Z
 
 related_entry_references:
-  - <CHRONICLE-ENTRY-ID>
+  - CHR-2026-0001
 
-related_evidence_references:
-  - <EVIDENCE-RECORD-ID>
+verification_state: not_reviewed
 
-limitations: []
+publication_state: not_published
 
-preservation_status: <CONTROLLED-VALUE>
-verification_state: <CONTROLLED-VALUE>
-validation_state: <CONTROLLED-VALUE>
-source_status: <CONTROLLED-VALUE>
-publication_state: <CONTROLLED-VALUE>
-
-source_record_version: <VERSION>
+created_at: 2026-09-01T09:10:00Z
 ```
 
-This example intentionally avoids inventing final values that have not yet been architecturally approved.
+This example does not establish a permanent Source Record identifier format.
 
 ---
 
-## Source and Evidence Distinction
+# Source Record Creation Test
 
-Sources and evidence remain separate concepts.
+A separate Source Record should ordinarily be created when one or more of the following are true:
 
-A Source Record identifies origin.
+* structured identity is required
+* attribution is material
+* limitations are material
+* Provenance is complex
+* the Source is reused across Entries
+* archival context matters
+* integrity metadata matters
+* independent Versioning is required
+* an Event-Type Profile requires it
+* Validation requires it
+* public Source discovery is needed
 
-An Evidence Record describes material that bears on the Chronicle Entry or claim.
+Otherwise a direct Source reference may be sufficient.
+
+---
+
+# Source Record Lifecycle
+
+A generalized operational path may be:
+
+```text
+Source Identified
+      ↓
+Need for Source Record Assessed
+      ↓
+Source Record Created
+      ↓
+Source Type Assigned
+      ↓
+Attribution / Dates / References Recorded
+      ↓
+Provenance Recorded
+      ↓
+Entry / Evidence Linkage Established
+      ↓
+Limitations / Integrity Recorded
+      ↓
+Verification where Applicable
+      ↓
+Validation
+      ↓
+Use / Publication / Maintenance
+      ↓
+Correction / Versioning when Necessary
+      ↓
+Historical Preservation
+```
+
+Not every Source Record will require public publication or separate Verification.
+
+---
+
+# Authority Boundary
+
+Chronicle Source Records document Sources.
+
+They do not replace institutional authority.
 
 Examples:
 
-* A webpage may be a source.
-* A screenshot captured from that webpage may be evidence.
-* A Certification Package may be an authoritative Suite source and may also provide strong evidentiary support.
-* A news article may be a source containing multiple claims, quotations, images, or other evidence.
+* Certification Package remains authoritative within Certifier.
+* SREG Registry Entry remains authoritative within Registry.
+* Integrity Reference remains authoritative within Anchor.
+* Trust Statement remains authoritative within Attestor.
+* Workflow Definition remains authoritative within Navigator.
+* Atlas records remain authoritative within Atlas.
 
-Chronicle should preserve the distinction instead of treating every source as evidence or every evidence item as a source.
+Chronicle may document those objects through Source Records.
 
----
-
-## Source and Authority Distinction
-
-Some sources are authoritative within another Suite system.
-
-For example:
-
-* A Certification Package is authoritative within Certifier for its certification determination.
-* An SREG Registry Entry is authoritative within Registry for its catalog record.
-* An Integrity Reference is authoritative within Anchor for anchoring.
-* A Trust Statement is authoritative within Attestor for attestation.
-
-Chronicle may reference these objects as sources.
-
-Their authority comes from the originating system, not from Chronicle's Source Record.
-
-A Source Record should preserve that distinction explicitly.
+Authority remains where it originated.
 
 ---
 
-## Source Record Lifecycle
+# Validation Expectations
 
-A generalized Source Record lifecycle may include:
+A production Source Record should ultimately be validated against:
 
-1. Source identified
-2. Source type and role classified
-3. Creator and publisher documented
-4. Temporal information recorded
-5. Source location established
-6. Provenance documented
-7. Entry and Evidence relationships established
-8. Limitations documented
-9. Integrity or archival information recorded
-10. Verification performed where applicable
-11. Validation performed
-12. Source Record published, retained privately, or otherwise applied according to Chronicle rules
-13. Source Record maintained
-14. Corrections or versioning applied when necessary
-15. Preservation status maintained
+* Source Record Schema
+* Source Record identifier rules
+* required fields
+* Source Type Controlled Values
+* reference integrity
+* Provenance requirements
+* related Entry references
+* related Evidence references
+* Versioning rules
+* publication prerequisites
 
-Not every Source Record will require every step.
+Source Role should not be validated against a frozen vocabulary until Source Role is formally governed.
 
 ---
 
-## Preservation Principles
+# Schema Versioning and Compatibility
 
-Chronicle should preserve durable source references and source context whenever practical.
+Every production Source Record should remain associated with the Source Record Schema Version that governed it.
 
-Where direct source preservation is appropriate and permitted:
+Schema evolution should preserve:
 
-* Original material should remain available
-* Archive references should remain maintained
-* Provenance should remain documented
-* Integrity information should remain available
-* Source limitations should remain visible
-* Relationships to Entries and Evidence should remain intact
-* Prior substantive Source Record states should remain traceable
+* Schema identity
+* Schema Version
+* compatibility classification
+* deprecation history
+* migration guidance
+* Validation behavior
+* historical interpretability
 
-Where direct preservation is not appropriate or possible, Chronicle should preserve enough durable reference, metadata, provenance, archival information, and preservation context to support future review.
-
-A source becoming unavailable should not silently erase its historical role.
+Older Source Records should remain understandable under the schema Version that originally governed them.
 
 ---
 
-## Design Goals
+# Design Principles
 
-The Chronicle Source Record Schema should:
+## Source Identity First
 
-* Preserve information origin
-* Support attribution
-* Maintain provenance
-* Preserve source limitations
-* Maintain archival context
-* Support source/evidence distinction
-* Preserve authority boundaries
-* Support verification
-* Support validation
-* Maintain traceability
-* Support version lineage
-* Support long-term historical preservation
-* Remain machine-readable and durable
+A Source Record exists to identify and trace a Source.
+
+## Source ≠ Evidence
+
+Source and Evidence remain distinct.
+
+## Provenance Is Required
+
+A Source Record without information-path traceability is institutionally incomplete.
+
+## Stable Reference Over Bare URL
+
+Prefer durable identity where possible.
+
+## Authority Remains External
+
+Chronicle does not become authoritative for an external object by documenting it.
+
+## Controlled Source Types
+
+Production Source Type values come from the Controlled Values Registry.
+
+## Source Role Remains Provisional
+
+Do not freeze Source Role prematurely.
+
+## Preserve Limitations
+
+Uncertainty and Source weakness remain visible.
+
+## Preserve Prior States
+
+Material Source Record changes remain Versioned and traceable.
 
 ---
 
-## Future Development
+# Guiding Principle
 
-Future Chronicle Source Schema work may include:
-
-* Final Source Record identifier architecture
-* Controlled source types
-* Controlled source-role values
-* Formal provenance structures
-* Source validation rules
-* Archival-reference structures
-* Automated source capture
-* Automated archive integration
-* Integrity metadata
-* Cryptographic timestamping
-* Source availability monitoring
-* Cross-system reference validation
-* Public source discovery where appropriate
+> Identify the Source. Preserve the reference. Trace the path. Keep authority visible.
 
 ---
 
 ## Status
 
-**Architectural draft — not yet a frozen production schema.**
+**Phase VII reconciled Chronicle Source Record Schema specification.**
 
-This document has been reconciled with the current Chronicle Source architecture, Chronicle Evidence architecture, Chronicle Records model, Chronicle Base Schema direction, and Satoshium Suite Standards, Methodology, Schemas Standard, Evidence Standard, and Interoperability principles.
+The Source Record Schema is now aligned with:
 
-The final identifier format, controlled values, source-role vocabulary, provenance requirements, validation rules, preservation-status values, versioning conventions, and publication requirements must be settled through the remaining Chronicle operational-development steps before this schema becomes production authoritative.
+* Chronicle Base Schema
+* Source architecture
+* Controlled Values Registry
+* Provenance Model
+* Relationship Model
+* Verification Procedure
+* Versioning Policy
+* Corrections
+* authority boundaries
+
+The approved Source Type vocabulary is incorporated.
+
+Source Role, Source Record identifier namespace, Preservation State, and the location of Validation results remain intentionally unresolved pending operational evidence.
+
+A machine-readable `source-record-schema.json` should be created only after this human-readable specification is tested against the first production Source Record.
