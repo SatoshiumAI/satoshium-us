@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Integration</title>
-<meta name="description" content="Satoshium Chronicle Integration — defines how Chronicle relates to Certifier, Registry, and other Satoshium systems by preserving certification events rather than certification records.">
+<meta name="description" content="Satoshium Chronicle Integration — defines how Chronicle interoperates with the Satoshium Suite through stable references, clear authority boundaries, and historical preservation through Chronicle Entries.">
 <link rel="canonical" href="https://satoshium.us/chronicle/integration/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -151,14 +151,16 @@ h1{
   <h1>Satoshium Chronicle Integration</h1>
 
   <p class="lead">
-    Chronicle Integration defines how Chronicle relates to Certifier, Registry,
-    and the broader Satoshium Suite by preserving certification events rather
-    than certification records.
+    Chronicle Integration defines how Chronicle interoperates with Certifier,
+    Registry, Atlas, Anchor, Beacon, Attestor, Navigator, and the broader
+    Satoshium Suite while preserving clear institutional authority boundaries.
   </p>
 
   <p class="lead">
-    Integration answers a simple question:
-    what history should Chronicle preserve?
+    Integration answers two questions: how does Chronicle reference authoritative
+    Suite objects without duplicating them, and how does Chronicle preserve the
+    historical occurrences associated with those objects through canonical
+    Chronicle Entries?
   </p>
 </section>
 
@@ -167,36 +169,61 @@ h1{
 <article class="card">
   <h2>Purpose</h2>
   <p>
-    Chronicle Integration establishes the boundary between operational records
-    and historical events. Chronicle does not store certifications. Chronicle
-    preserves the history of certification activity.
+    Chronicle Integration establishes the boundary between authoritative
+    operational objects and Chronicle’s historical-preservation responsibility.
+    Chronicle references authoritative Suite records and preserves qualifying
+    occurrences through Chronicle Entries rather than absorbing another system’s
+    operational record.
   </p>
 </article>
 
 <article class="card">
   <h2>Core Distinction</h2>
   <p>
-    Certifier creates certification records. Registry catalogs certified records.
-    Chronicle preserves certification events.
+    Certifier creates the canonical Certification Package. Registry creates
+    independent SREG Registry Entries. Chronicle creates Chronicle Entries that
+    preserve qualifying historical occurrences while referencing those authoritative
+    Suite objects.
   </p>
 </article>
 
 <article class="card">
   <h2>Not a Certification Store</h2>
   <p>
-    Chronicle does not become the home of Certification Packages, SCRDs, receipts,
-    or Registry Entries. Those records remain with the systems responsible for
-    creating or cataloging them.
+    Chronicle does not become the authoritative home of Certification Packages,
+    SCPRs, SCRs, SCRDs, receipts, SREGs, Integrity References, Discovery Signals,
+    Trust Statements, Workflow Definitions, Atlas records, or other Suite objects.
+    Those objects remain authoritative within the systems responsible for them.
   </p>
 </article>
 
 <article class="card">
   <h2>Historical Layer</h2>
   <p>
-    Chronicle serves as the historical layer that records when meaningful
-    certification-related events occurred and why they matter within the broader
-    Satoshium ecosystem.
+    Chronicle serves as the historical-preservation layer that records qualifying
+    occurrences, their temporal context, relationships, provenance, and historical
+    significance across the Suite without replacing the operational systems that
+    produced the underlying records or actions.
   </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Suite Interoperability Alignment</h2>
+
+  <p>
+    Suite Interoperability requires each system to preserve its own authority,
+    object, and responsibility while referencing authoritative objects maintained
+    elsewhere. Chronicle follows that reference-based design and does not duplicate,
+    replace, or reinterpret the objects it references.
+  </p>
+
+  <div class="note">
+    Stable Objects · Clear Boundaries · Durable References · Repeatable Workflows
+  </div>
 </article>
 
 </section>
@@ -207,15 +234,42 @@ h1{
   <h2>Integration Relationship</h2>
 
   <p>
-    Chronicle integrates with Certifier and Registry by observing or referencing
-    significant certification activity. It preserves the event history without
-    assuming authority over the certification or the Registry Entry.
+    Chronicle integrates through stable references to authoritative Suite objects.
+    In the certification-centered Suite flow, Chronicle may preserve qualifying
+    certification occurrences by referencing the canonical Certification Package
+    and related SREG or supporting outputs. Chronicle preserves its own historical
+    Entry without assuming authority over those referenced objects.
   </p>
 
   <div class="note">
-    Certifier creates certification records.<br>
-    Registry catalogs certified records.<br>
-    Chronicle preserves certification events.
+    Certifier → Certification Package<br>
+    Registry → SREG Registry Entry<br>
+    Chronicle → Chronicle Entry preserving a qualifying occurrence
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Chronicle’s Institutional Object</h2>
+
+  <p>
+    Chronicle’s canonical object is the Chronicle Entry. The historical occurrence
+    is what happened; the Chronicle Entry is Chronicle’s structured preservation
+    record of that qualifying occurrence.
+  </p>
+
+  <p>
+    Within Suite interoperability, references to Chronicle “historical events”
+    should therefore be understood as Chronicle’s responsibility to preserve
+    historical occurrences, not as a separate canonical object competing with the
+    Chronicle Entry.
+  </p>
+
+  <div class="note">
+    Occurrence → Preservation Eligibility → Chronicle Entry
   </div>
 </article>
 
@@ -226,34 +280,68 @@ h1{
 <article class="card">
   <h2>Certifier Relationship</h2>
   <p>
-    Certifier remains the authority for certification outcomes, evidence review,
-    scoring, certification status, Certification Packages, SCRDs, and receipts.
+    Certifier remains authoritative for certification evaluation, determinations,
+    lifecycle actions, certification status, and the canonical Certification
+    Package, including its related public outputs.
   </p>
 </article>
 
 <article class="card">
   <h2>Registry Relationship</h2>
   <p>
-    Registry remains the public catalog for certified records and their Registry
-    lifecycle state through SREG Registry Entries.
+    Registry remains authoritative for independent SREG Registry Entries,
+    registration and cataloging, Registry metadata, Registry relationships, and
+    Registry lifecycle state.
   </p>
 </article>
 
 <article class="card">
   <h2>Chronicle Relationship</h2>
   <p>
-    Chronicle preserves the historical occurrence of certification events, such
-    as creation, renewal, suspension, revocation, expiration, or other significant
-    certification milestones.
+    Chronicle creates and maintains Chronicle Entries that preserve qualifying
+    historical occurrences, including certification creation, renewal, suspension,
+    revocation, expiration, and other approved historical event classes.
   </p>
 </article>
 
 <article class="card">
   <h2>Suite Relationship</h2>
   <p>
-    Chronicle may support future interoperability by preserving historical context
-    that can be referenced by Anchor, Attestor, Beacon, Navigator, Registry, and
-    other Suite systems.
+    Chronicle participates in Suite interoperability as an independent institution.
+    Its published Entries may be referenced by other Suite systems where useful,
+    while Chronicle itself may reference Atlas, Certifier, Registry, Anchor, Beacon,
+    Attestor, Navigator, and other authoritative Suite records for historical context.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Suite-Wide Relationships</h2>
+
+  <p>
+    Certification is the current canonical interoperability flow of the Suite, but
+    Chronicle’s historical-preservation role may also apply to qualifying occurrences
+    originating in other Suite systems when those occurrences satisfy Chronicle
+    Preservation Eligibility.
+  </p>
+
+  <div class="note">
+    Atlas → source intelligence, jurisdiction data, evidence, metadata, source material<br>
+    Certifier → Certification Package and certification authority<br>
+    Registry → SREG Registry Entry and catalog authority<br>
+    Anchor → Integrity Reference<br>
+    Beacon → Discovery Signal / Discovery Metadata<br>
+    Attestor → Trust Statement / attestation<br>
+    Navigator → Workflow Definition / orchestration<br>
+    Chronicle → Chronicle Entry preserving qualifying historical occurrence
+  </div>
+
+  <p style="margin-top:14px;">
+    A Chronicle Entry about an Anchor, Attestor, Registry, Beacon, Navigator, Atlas,
+    or Certifier occurrence does not transfer that system’s authority to Chronicle.
   </p>
 </article>
 
@@ -265,9 +353,10 @@ h1{
   <h2>Certification Events</h2>
 
   <p>
-    Chronicle preserves events that describe meaningful moments in the life of a
-    certification. These events provide historical context without duplicating the
-    certification record itself.
+    Within certification-centered interoperability, Chronicle may preserve
+    certification occurrences that satisfy Preservation Eligibility. The Chronicle
+    Entry provides historical context without duplicating or reinterpreting the
+    authoritative Certification Package.
   </p>
 
   <div class="note">
@@ -281,17 +370,63 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
+  <h2>Certification-Centered Source Object</h2>
+
+  <p>
+    In the canonical certification interoperability flow, the Certification Package
+    is the shared source object produced by Certifier and referenced by downstream
+    Suite systems. Chronicle should use that package as the authoritative
+    certification reference when preserving certification-related occurrences.
+  </p>
+
+  <p>
+    This does not mean every future Chronicle occurrence must originate from a
+    Certification Package. A Registry milestone, Anchor event, governance change,
+    or other approved occurrence may originate from a different authoritative
+    Suite object or institutional source.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
   <h2>Why Chronicle Preserves Events</h2>
 
   <p>
-    Certifications may change over time. A certification may be created, renewed,
-    suspended, revoked, superseded, or allowed to expire. The certification record
-    documents the operational state. Chronicle documents the historical event.
+    Certifications may change over time through actions and lifecycle states
+    governed by Certifier. The Certification Package and Certifier lifecycle remain
+    authoritative for certification state. Chronicle preserves qualifying historical
+    occurrences associated with those changes through Chronicle Entries.
   </p>
 
   <div class="note">
-    Records explain what exists. Events explain what happened.
+    Authoritative records establish institutional state. Chronicle Entries preserve what happened and how it fits history.
   </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Preservation Eligibility and Integration</h2>
+
+  <p>
+    Interoperability does not automatically make every Suite action a Chronicle
+    Entry. Chronicle applies its own Preservation Eligibility rules before creating
+    a historical record.
+  </p>
+
+  <div class="note">
+    Suite Activity ≠ Automatic Chronicle Entry
+  </div>
+
+  <p style="margin-top:14px;">
+    This prevents Chronicle from becoming a duplicate activity log or operational
+    ledger for the rest of the Suite.
+  </p>
 </article>
 
 </section>
@@ -303,13 +438,16 @@ h1{
 
   <p>
     Chronicle does not determine whether a certification is valid, active,
-    suspended, revoked, or expired. Those meanings belong to Certifier and,
-    where applicable, Registry’s cataloging lifecycle.
+    suspended, revoked, expired, or otherwise in a Certifier-defined state.
+    Certification meanings remain with Certifier. Registry separately governs its
+    own cataloging and Registry lifecycle state.
   </p>
 
   <p>
-    Chronicle records that an event occurred, preserves the context of that event,
-    and references the systems or records that establish its authority.
+    Chronicle preserves its own historical representation of a qualifying
+    occurrence and references the authoritative systems or records that establish
+    the underlying action, state, or institutional fact. Chronicle does not convert
+    those references into Chronicle authority.
   </p>
 </article>
 
@@ -322,12 +460,13 @@ h1{
 
   <p>
     Chronicle should preserve history without absorbing the responsibilities of
-    other systems. Its role is not to certify, catalog, attest, anchor, or discover.
-    Its role is to remember.
+    other systems. Its role is not to certify, catalog, anchor, signal, attest,
+    orchestrate, or replace Atlas source intelligence. Its role is to preserve
+    qualifying historical memory through structured, durable Chronicle Entries.
   </p>
 
   <div class="note">
-    Chronicle preserves the historical memory of the Suite.
+    Interoperability connects Chronicle to the Suite. It does not erase institutional boundaries.
   </div>
 
   <a class="btn" href="/chronicle/">
@@ -342,7 +481,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Records preserve what exists. Chronicle preserves what happened.
+    Suite systems preserve their authority. Chronicle preserves qualifying historical memory.
   </div>
   <hr>
   <div id="footer-container"></div>
