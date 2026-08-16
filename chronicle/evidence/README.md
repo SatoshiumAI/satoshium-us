@@ -2,259 +2,438 @@
 
 ## Purpose
 
-Evidence provides support for historical records.
+Chronicle Evidence defines how evidence is referenced, described, evaluated, and preserved in support of Chronicle Entries.
 
-Within Chronicle, evidence represents information, artifacts, documentation, observations, or records that help establish confidence in an entry, event, claim, or conclusion.
+Within Chronicle, evidence may support, challenge, contradict, clarify, or contextualize Chronicle's historical representation of a qualifying occurrence.
 
-Evidence does not determine truth by itself.
+Chronicle does not create a competing evidence system. Evidence used by Chronicle should align with the Satoshium Suite Evidence Standard and with Suite-wide requirements for traceability, provenance, integrity, structured records, validation, and reference-based interoperability.
 
-Instead, evidence contributes to the historical record and allows others to evaluate the strength of a claim independently.
+Evidence does not determine another Suite system's authoritative outcome.
+
+Instead, Chronicle uses evidence to keep its own historical record transparent, reviewable, and understandable over time.
+
+---
+
+## Suite Alignment
+
+Chronicle Evidence operates within the Satoshium Suite architecture.
+
+Evidence handling should follow Suite-wide expectations for:
+
+* Recognized evidence types
+* Evidence quality
+* Evidence integrity
+* Evidence sufficiency
+* Evidence limitations
+* Traceability
+* Provenance
+* Preservation status
+* Structured evidence records
+* Validation-ready data
+* Durable references
+
+Chronicle should inherit the Suite Evidence Standard rather than invent a separate Chronicle-only evidence standard.
 
 ---
 
 ## What Is Evidence?
 
-Evidence is any information that may help support, challenge, clarify, or contextualize a Chronicle entry.
+Evidence is information, documentation, material, data, testimony, metadata, media, or another approved record that bears on a Chronicle Entry, occurrence, claim, relationship, or historical representation.
 
-Evidence may include:
+Evidence may:
 
-* Documents
-* Images
-* Video recordings
-* Audio recordings
-* Screenshots
-* Logs
-* Measurements
-* Public records
-* Research findings
-* Archived materials
-* Witness statements
-* Physical artifacts
-* Digital artifacts
+* Support
+* Challenge
+* Contradict
+* Clarify
+* Contextualize
+* Corroborate
+* Qualify
+* Limit confidence
 
-Evidence may support or contradict an existing record.
+Chronicle should preserve the relationship between the evidence item and the Entry or claim it affects.
 
-Both outcomes are valuable to the historical process.
+Evidence should not be treated as uniformly supportive merely because it is attached to a Chronicle record.
 
 ---
 
 ## Core Principles
 
-### Preserve the Record
+### Preserve Reviewability
 
-Evidence should remain available whenever practical.
-
-Historical understanding often improves when evidence can be revisited and reevaluated.
+Evidence references and material context should remain available whenever practical so future reviewers can understand the basis for Chronicle's historical representation.
 
 ### Transparency
 
-Evidence should be clearly identified and documented.
+Evidence should be clearly described and documented.
 
-Reviewers should understand:
+Reviewers should be able to determine, where applicable:
 
 * What the evidence is
 * Where it originated
-* When it was collected
-* How it relates to a Chronicle entry
+* When it was created, obtained, or observed
+* How it entered the Chronicle record
+* Which Entry or claim it relates to
+* Whether it supports, challenges, contradicts, or contextualizes that Entry or claim
+* What limitations apply
+* Whether the evidence remains available
+
+### Provenance
+
+Evidence provenance should describe how the evidence originated, was obtained, and entered Chronicle.
+
+Provenance is related to, but distinct from, Source.
 
 ### Independence
 
-Evidence should be evaluated independently from conclusions.
+Evidence should remain distinguishable from the conclusions drawn from it.
 
-The existence of evidence does not automatically validate a claim.
+The existence of an evidence item does not automatically validate a claim.
 
-Likewise, the absence of evidence does not automatically invalidate a claim.
+Likewise, absence of evidence does not automatically prove that an occurrence did not happen.
 
 ### Context Matters
 
 Evidence gains meaning through context.
 
-Chronicle seeks to preserve both the evidence itself and the surrounding circumstances that help explain its significance.
+Chronicle should preserve enough context for later reviewers to understand how the evidence related to the historical occurrence at the time.
+
+### Authority Boundaries
+
+Evidence referenced by Chronicle does not transfer authority from another Suite system.
+
+Chronicle may preserve and evaluate evidence relevant to its own Entry while Certifier, Registry, Anchor, Beacon, Attestor, Navigator, Atlas, and other Suite systems retain authority over their own records and determinations.
 
 ---
 
-## Evidence Categories
+## Recognized Evidence Categories
 
-### Documentary Evidence
+Chronicle should use evidence categories recognized by the Satoshium Suite Evidence Standard.
 
-Written records and documentation.
+Depending on the applicable Suite standard and controlled values, these may include:
 
-Examples:
+### Primary Sources
 
-* Reports
-* Contracts
-* Letters
-* Publications
-* Official records
+Materials created directly by participants, systems, institutions, or processes associated with the occurrence.
 
-### Visual Evidence
+### Secondary Sources
 
-Images and visual records.
+Materials that analyze, describe, summarize, or report information derived from primary or other sources.
 
-Examples:
+### Institutional Records
 
-* Photographs
-* Screenshots
-* Maps
-* Diagrams
+Official records produced by an organization, system, government, institution, or Suite component.
 
-### Audio Evidence
+### Self-Attestations
 
-Recorded sound.
+Statements or declarations made by the subject, participant, organization, or system associated with the information.
 
-Examples:
+### Cryptographic Records
 
-* Interviews
-* Statements
-* Broadcast recordings
+Evidence supported by hashes, signatures, blockchain records, timestamps, integrity proofs, or other cryptographic mechanisms.
 
-### Video Evidence
+### Metadata
 
-Motion-picture records.
+Structured contextual information describing creation, modification, identity, location, version, relationships, or other properties.
 
-Examples:
+### Screenshots and Images
 
-* Recordings
-* Surveillance footage
-* Public broadcasts
+Visual captures used to preserve or document observable information.
 
-### Digital Evidence
+### Archives
 
-Electronic records and data.
+Archived webpages, records, snapshots, repositories, or other preserved historical materials.
 
-Examples:
+### Audio and Video
 
-* System logs
-* Blockchain records
-* Metadata
-* Software artifacts
+Recorded media preserving statements, actions, conditions, broadcasts, demonstrations, or other occurrences.
 
-### Physical Evidence
+### Receipts and Transaction Records
 
-Tangible objects or artifacts.
+Records showing transactions, submissions, processing, issuance, publication, or other documented actions.
 
-Examples:
+### Witness Statements
 
-* Printed materials
-* Historical artifacts
-* Instruments
-* Physical records
+Statements made by individuals with direct or relevant knowledge.
 
-### Testimonial Evidence
+### Other Approved Evidence Types
 
-Statements provided by individuals.
-
-Examples:
-
-* Interviews
-* Witness accounts
-* Recorded observations
+Additional evidence types may be recognized through Suite controlled values or Chronicle Event-Type Profiles as the architecture develops.
 
 ---
 
-## Evidence Attributes
+## Evidence Quality
 
-Evidence records may include:
+Chronicle should not reduce evidence quality to a simple present/absent determination.
 
-### Identifier
+Relevant evidence-quality factors may include:
 
-A unique reference for the evidence item.
+* Authority
+* Independence
+* Completeness
+* Authenticity
+* Timeliness
+* Reproducibility
+* Traceability
+* Resistance to alteration
+* Resistance to misinterpretation
+* Corroboration
+* Contextual adequacy
 
-### Description
+The significance of any factor may vary depending on the type of occurrence and the purpose for which the evidence is being used.
 
-A summary of the evidence.
+---
 
-### Collection Date
+## Evidence Limitations
 
-When the evidence was obtained or recorded.
+Evidence limitations are part of the historical record and should remain visible.
 
-### Source Reference
+Examples may include:
+
+* Incomplete evidence
+* Conflicting evidence
+* Stale evidence
+* Missing provenance
+* Unverifiable evidence
+* Unsupported assertions
+* Broken or unavailable references
+* Ambiguous authorship
+* Uncertain dates
+* Limited context
+* Altered or derivative materials
+
+Chronicle should disclose material limitations rather than implying certainty that the evidence does not support.
+
+---
+
+## Evidence Integrity
+
+Evidence integrity concerns whether an evidence item remains reviewable and whether its identity, authenticity, completeness, and history can be evaluated.
+
+Integrity information may include:
+
+* Cryptographic hashes
+* Checksums
+* Digital signatures
+* Timestamps
+* Chain-of-custody information
+* Version information
+* Archival references
+* Preservation status
+* Source-system identifiers
+* File or object metadata
+
+Integrity information supports reviewability but does not automatically establish the truth of every claim associated with an evidence item.
+
+---
+
+## Evidence Record Structure
+
+Evidence referenced by Chronicle should ultimately use structured record concepts compatible with the Suite Evidence Standard.
+
+Expected evidence-record elements may include:
+
+### Source
 
 The origin of the evidence.
 
-### Related Entries
+### Evidence Type
 
-Chronicle entries associated with the evidence.
+The controlled evidence category.
 
-### Verification Status
+### Authority
 
-Current confidence or review status.
+The authority or institutional weight associated with the evidence source where applicable.
+
+### Date
+
+The relevant creation, publication, collection, observation, or preservation date.
+
+### Relationship to Entry or Claim
+
+How the evidence bears on the Chronicle Entry or specific claim.
+
+### Provenance
+
+How the evidence originated, was obtained, and entered Chronicle.
+
+### Preservation Status
+
+Whether the evidence remains available, archived, referenced, unavailable, superseded, or otherwise preserved.
 
 ### Integrity Information
 
-Optional information supporting authenticity and preservation.
+Hashes, signatures, timestamps, version information, or other integrity indicators where applicable.
 
-Examples:
+### Review Notes
 
-* Checksums
-* Cryptographic hashes
-* Digital signatures
-* Chain-of-custody records
+Documented limitations, conflicts, context, or review observations.
+
+### Public Reference
+
+A durable public or archival reference where available.
+
+The final schema and controlled values will be defined through Chronicle's operational architecture and applicable Suite standards.
 
 ---
 
 ## Evidence and Sources
 
-Evidence and sources are related but distinct.
+Evidence and Sources are related but distinct.
 
-A source answers:
+A Source answers:
 
 > Where did the information originate?
 
 Evidence answers:
 
-> What supports the claim?
+> What material bears on the claim or occurrence?
 
-A single source may contain multiple pieces of evidence.
+Provenance answers:
 
-Likewise, multiple sources may contribute evidence supporting a single entry.
+> How did that information or evidence originate, move, and enter the Chronicle record?
+
+A single Source may contain multiple evidence items.
+
+Multiple Sources may contribute evidence relevant to one Chronicle Entry.
+
+One evidence item may also relate to multiple claims or Entries.
+
+---
+
+## Evidence and Authoritative Records
+
+An authoritative Suite record is not merely evidence in the same sense as an ordinary supporting item.
+
+For example:
+
+* A Certification Package is authoritative within Certifier for its certification determination.
+* An SREG Registry Entry is authoritative within Registry for the registry record.
+* An Integrity Reference is authoritative within Anchor for the anchoring function.
+* A Trust Statement is authoritative within Attestor for the attestation function.
+
+Chronicle may reference those records both as authoritative sources for the historical occurrence and as part of the evidentiary context.
+
+Chronicle should preserve the distinction between authoritative record and supporting evidence.
 
 ---
 
 ## Evidence and Verification
 
-Evidence contributes to verification.
+Evidence contributes to Chronicle verification.
 
-Verification evaluates:
+Verification may assess:
 
 * Authenticity
 * Reliability
 * Consistency
 * Corroboration
+* Provenance
+* Traceability
+* Reference integrity
+* Temporal consistency
+* Evidence limitations
+* Relationship consistency
 
-Strong evidence may increase confidence in a record.
+Verification concerns Chronicle's own historical representation.
 
-Conflicting evidence may lead to review, clarification, or correction.
+It does not re-adjudicate an outcome owned by another Suite system.
+
+---
+
+## Evidence and Validation
+
+Validation and evidence review are separate functions.
+
+Evidence review concerns the content, quality, integrity, provenance, limitations, and relationship of evidence.
+
+Validation concerns whether Chronicle's structured record conforms to required schemas, controlled values, required fields, references, and publication rules.
+
+An Entry may contain evidence yet still fail validation.
+
+Likewise, a structurally valid Entry may contain evidence with known limitations.
+
+---
+
+## Evidence, Preservation Eligibility, and Sufficiency
+
+Preservation Eligibility and evidence sufficiency are separate questions.
+
+Preservation Eligibility asks:
+
+> Should Chronicle preserve this occurrence?
+
+Evidence sufficiency asks:
+
+> Is the available evidence adequate for the particular purpose for which it is being used?
+
+A historically significant occurrence may warrant preservation even when evidence is incomplete, disputed, or limited, provided Chronicle records those limitations transparently and follows applicable rules.
+
+Chronicle should not automatically import a Certifier evidence-sufficiency threshold into historical preservation.
+
+Different Chronicle Event-Type Profiles may require different evidence expectations.
 
 ---
 
 ## Preservation
 
-Chronicle favors preservation whenever practical.
+Chronicle favors durable evidence references and preservation information whenever practical.
 
-Evidence should remain accessible in its original form whenever possible.
+Evidence should remain accessible in its original or authoritative form where possible.
 
-Derived interpretations may change over time, but the underlying evidence should remain available for future review.
+When direct preservation of the evidence itself is not appropriate or permitted, Chronicle should preserve enough reference, provenance, metadata, archival information, and integrity information to maintain historical reviewability.
+
+Chronicle should not silently replace earlier evidence with later material.
+
+Changes in evidence availability, provenance, or interpretation may themselves become part of an Entry's historical context.
+
+---
+
+## Corrections and Versioning
+
+New evidence may justify:
+
+* Supplemental context
+* A correction
+* A new version
+* Reverification
+* A relationship update
+* A new Chronicle Entry describing a later occurrence
+
+Chronicle should correct only its own preservation record.
+
+If another Suite system changes an authoritative record, Chronicle may preserve that later occurrence and update its references according to Chronicle rules.
+
+Substantive changes to Chronicle's evidentiary representation should remain traceable through versioning and correction history.
 
 ---
 
 ## Future Development
 
-Future Chronicle implementations may support:
+Future Chronicle Evidence work may include:
 
+* Formal evidence schemas
+* Controlled evidence types
+* Evidence relationship values
+* Provenance requirements
+* Preservation-status values
+* Integrity metadata
+* Automated validation
 * Cryptographic integrity verification
 * Digital signatures
 * Chain-of-custody tracking
-* Distributed evidence storage
-* Public evidence repositories
-* Evidence provenance tracking
 * Long-term archival preservation
+* Event-Type-specific evidence requirements
+* Public evidence discovery where appropriate
+
+Future development should remain aligned with the Satoshium Suite Evidence Standard and Suite authority boundaries.
 
 ---
 
 ## Status
 
-Draft specification.
+Draft operational specification.
 
-This document defines the conceptual role of evidence within Chronicle and may evolve as Chronicle develops.
+This README has been reconciled with the Satoshium Suite Standards, Methodology, Interoperability, and Evidence Standard architecture, and with the current Chronicle model establishing Chronicle Entry as the canonical Chronicle object.
 
+Evidence schemas, controlled values, preservation rules, validation requirements, and Event-Type-specific evidence requirements may evolve as Chronicle operational development continues.
