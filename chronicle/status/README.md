@@ -4,55 +4,99 @@
 
 Satoshium Chronicle is the historical-preservation institution of the Satoshium Suite.
 
-Its purpose is to preserve qualifying historical occurrences through canonical **Chronicle Entries** while maintaining durable references to authoritative Suite records, sources, evidence, provenance, relationships, corrections, versions, and publication state.
+Its purpose is to preserve qualifying historical Occurrences through canonical **Chronicle Entries** while maintaining durable references to authoritative Suite records, Sources, Evidence, Provenance, Relationships, Corrections, Versions, Verification state, Publication state, and preservation lineage.
 
-Chronicle is currently in **pre-operational architectural development**.
-
-Its foundational architecture is substantially defined, but Chronicle is not yet production operational.
-
-This repository serves as the implementation foundation for the transition from architecture into validated production records and repeatable operating procedures.
-
----
-
-## Current Status
-
-### Project Phase
+Chronicle is currently in:
 
 ```text
 Pre-Operational Architecture & Implementation Preparation
 ```
 
-### Maturity Level
+Its institutional architecture is now substantially established, but Chronicle is not yet production operational.
+
+This repository serves as the implementation foundation for the transition from architecture into validated production records and repeatable operating procedures.
+
+---
+
+# Status Architecture
+
+Chronicle distinguishes two different status layers.
+
+## Chronicle System Status
+
+Describes Chronicle itself as an institution or production system.
+
+It answers questions such as:
+
+* Is Chronicle conceptual, pre-operational, operational, or retired?
+* How mature is the architecture?
+* Is production operation established?
+* Are production records being created?
+* Is the system publicly operational?
+
+## Individual Entry State
+
+Describes the condition of a specific Chronicle Entry.
+
+It may include:
+
+* Lifecycle State
+* Entry Status
+* Verification State
+* Publication State
+* Future Preservation State, if formalized
+
+These state systems must not be confused with Chronicle-wide institutional status.
+
+Conceptually:
 
 ```text
-Architectural Foundation Established
+Chronicle System Status
+≠
+Individual Chronicle Entry State
 ```
 
-### Canonical Object
+---
+
+# Current Chronicle System Status
+
+## Project Phase
+
+```text
+Pre-Operational Architecture & Implementation Preparation
+```
+
+## Maturity Level
+
+```text
+Institutional Architecture Substantially Established
+```
+
+## Canonical Object
 
 ```text
 Chronicle Entry
 ```
 
-### Primary Function
+## Primary Function
 
 ```text
 Preservation of Qualifying Historical Occurrences
 ```
 
-### Operational Status
+## Operational Status
 
 ```text
 Not Yet Production Operational
 ```
 
-### Public Availability
+## Public Availability
 
 ```text
-Foundational Documentation
+Institutional and Foundational Documentation
 ```
 
-### Production Records
+## Production Records
 
 ```text
 Not Yet Established
@@ -60,134 +104,469 @@ Not Yet Established
 
 ---
 
-## What Has Been Established
+# What Has Been Established
 
-Chronicle has moved beyond early conceptual design.
+Chronicle has moved well beyond early conceptual design.
 
-Several constitutional and architectural decisions are now established.
+The following architectural areas are now established at the institutional level.
 
-### Canonical Object
+---
+
+## Canonical Object
 
 The canonical Chronicle object is the **Chronicle Entry**.
 
-The occurrence is what happened.
+The Occurrence is what happened.
 
-The Chronicle Entry is Chronicle's structured historical-preservation record representing that qualifying occurrence.
+The Chronicle Entry is Chronicle's structured historical-preservation record representing that qualifying Occurrence.
 
-### Preservation Eligibility
+No separate canonical “Chronicle Event” object exists.
+
+---
+
+## Preservation Eligibility
 
 Chronicle does not preserve every activity, action, or system record.
 
-An occurrence must satisfy **Preservation Eligibility** before becoming a Chronicle Entry.
+An Occurrence must satisfy **Preservation Eligibility** before becoming a Chronicle Entry.
 
-### Historical Significance
+Preservation Eligibility asks:
 
-Historical Significance may provide a principal basis for Preservation Eligibility.
+> Should Chronicle preserve this Occurrence?
 
-It answers:
+---
 
-> Why is this occurrence worth preserving?
+## Historical Significance
 
-### Authority Boundaries
+Historical Significance remains the principal substantive rationale within Preservation Eligibility.
 
-Chronicle is authoritative for its own historical-preservation record.
+It asks:
 
-Other Suite systems remain authoritative for their own objects and institutional responsibilities.
+> Why is this Occurrence worth preserving?
 
-### Reference-Based Interoperability
+Historical Significance is not currently a separate governance system.
 
-Chronicle references authoritative Suite objects rather than duplicating, replacing, or reinterpreting them.
+---
 
-### Corrections
+## Identifier Architecture
+
+The canonical Chronicle Entry identifier format is established as:
+
+```text
+CHR-YYYY-NNNN
+```
+
+Example:
+
+```text
+CHR-2026-0001
+```
+
+The year represents identifier assignment year.
+
+The identifier remains permanent across:
+
+* Corrections
+* Entry Versions
+* Event-Type reclassification
+* Publication changes
+* Lifecycle changes
+
+Identifiers are never reused.
+
+---
+
+## Controlled Values
+
+The Chronicle Controlled Values Registry is established.
+
+Initial controlled value sets include:
+
+```text
+Event Type
+Entry Status
+Source Type
+Evidence Type
+Relationship Type
+Verification State
+Publication State
+Lifecycle State
+Correction Type
+```
+
+These vocabularies provide stable institutional semantics for schemas, Validation, interoperability, and machine-readable records.
+
+---
+
+## Relationship Model
+
+The Chronicle Relationship Model is established.
+
+Relationships may connect Chronicle Entries to:
+
+* Authoritative Source Records
+* Registry Entries
+* Other Chronicle Entries
+* Preceding / following Occurrences
+* Originating systems
+* Superseding or related Occurrences
+* Supporting records
+
+Core rule:
+
+> Relationship does not transfer authority.
+
+---
+
+## Provenance Model
+
+The Chronicle Provenance Model is established.
+
+Every production Entry must preserve minimum Provenance including:
+
+```text
+Origin
+Acquisition / Access Method
+Capture / Retrieval Date
+Source or Authoritative Record Reference when available
+Provenance Limitations when applicable
+```
+
+Provenance answers:
+
+> How did this information get here?
+
+---
+
+## Sources
+
+Chronicle Source architecture distinguishes:
+
+```text
+Authoritative Source Record
+Supporting Source
+Referenced External Source
+```
+
+Source identity remains separate from:
+
+* Evidence
+* Provenance
+* Verification
+
+Citation and reference expectations are now defined.
+
+---
+
+## Evidence
+
+Evidence is defined as material that bears on Chronicle's historical representation.
+
+Evidence does not become the authoritative event or authoritative institutional determination.
+
+Controlled Evidence Types include:
+
+```text
+Authoritative Evidence
+Documentary Evidence
+Repository Evidence
+Archival Evidence
+Machine-Generated Evidence
+Testimonial Evidence
+Contextual Evidence
+Other
+```
+
+---
+
+## Verification Procedure
+
+Chronicle Verification is now defined as a structured review of Chronicle's own historical representation.
+
+Verification may confirm:
+
+* Entry identifier correctness
+* Source Record existence
+* Authoritative-reference correctness
+* Event-date consistency
+* Relationship consistency
+* Evidence availability
+* Provenance consistency
+* Historical Context support
+* Material limitations
+
+Verification does not re-adjudicate authority owned by another institution.
+
+---
+
+## Lifecycle
+
+The Chronicle Entry Lifecycle is established.
+
+Conceptually:
+
+```text
+Occurrence Identified
+        ↓
+Preservation Eligibility
+        ↓
+Entry Drafted
+        ↓
+Sources Linked
+        ↓
+Evidence / Provenance / Relationships Assembled
+        ↓
+Verification
+        ↓
+Validation
+        ↓
+Publication
+        ↓
+Maintenance
+        ↓
+Correction / Versioning when necessary
+        ↓
+Historical Preservation
+```
+
+Publication is not the end of the Entry's institutional life.
+
+---
+
+## Versioning
+
+The Chronicle Versioning Policy is established.
+
+It distinguishes:
+
+```text
+Editorial Update
+New Entry Version
+Formal Correction
+Superseding Entry
+```
+
+Core rule:
+
+> Correct forward. Preserve backward.
+
+Prior substantive Versions remain preserved.
+
+---
+
+## Corrections
 
 Chronicle corrects only Chronicle-owned records.
 
-Substantive corrections should remain version-aware and preserve prior states.
-
-### Schema Model
-
-Chronicle schema architecture now centers on:
+Every formal Correction should preserve:
 
 ```text
-Chronicle Base Schema + Event-Type Profile
+Original information
+Corrected information
+Correction date
+Reason
+Affected fields
+Resulting Version
 ```
 
-Supporting Source, Evidence, Correction, Verification, Provenance, Relationship, and Version structures exist only where operationally justified.
-
-### Historical Discovery
-
-Chronicle Entries are the production historical objects.
-
-A future Timeline should remain downstream of published Chronicle Entries.
+Chronicle prohibits silent substantive historical rewriting.
 
 ---
 
-## Completed Foundational Areas
+## Authority Boundaries
 
-Foundational documentation exists for:
+Chronicle is authoritative for its own:
 
-* Purpose
-* Entries
-* Records
-* Sources
-* Evidence
-* Verification
-* Corrections
-* Schemas
-* Integration
-* Certification Events
-* Historical Preservation
-* Status
+* Chronicle Entry identity
+* Historical Context
+* Provenance
+* Relationships
+* Verification state
+* Correction lineage
+* Version lineage
+* Publication state
+* Preservation lineage
 
-These materials are being systematically reconciled to the later-established Suite architecture.
+Other Suite systems remain authoritative for their own objects and responsibilities.
 
----
-
-## Reconciled Schema Architecture
-
-The current schema family includes:
-
-### Chronicle Base Schema
-
-Repository file:
-
-```text
-chronicle-entry-schema.md
-```
-
-This file now serves as the architectural Base Schema for canonical Chronicle Entries.
-
-### Source Record Schema
-
-```text
-source-record-schema.md
-```
-
-Defines Source Records as supporting Chronicle-owned structures.
-
-### Evidence Record Schema
-
-```text
-evidence-record-schema.md
-```
-
-Defines Evidence Records as supporting Chronicle-owned structures.
-
-### Correction Record Schema
-
-```text
-correction-record-schema.md
-```
-
-Defines Correction Records as supporting Chronicle-owned structures for changes to Chronicle's own records.
-
-Additional supporting schemas may be created only when distinct operational requirements justify them.
+Reference does not transfer authority.
 
 ---
 
-## Current Architectural Model
+# Chronicle System Status vs. Entry State
 
-Chronicle currently operates conceptually through the following model:
+Chronicle's institutional status must remain separate from Entry-specific state systems.
+
+---
+
+## Chronicle System Status
+
+Current:
+
+```text
+Pre-Operational Architecture & Implementation Preparation
+```
+
+This describes Chronicle as a system.
+
+It does not describe any specific Chronicle Entry.
+
+---
+
+# Individual Chronicle Entry State
+
+An Entry may carry several distinct controlled state values.
+
+---
+
+## Lifecycle State
+
+Lifecycle State describes where the Entry is in its broader institutional journey.
+
+Current Controlled Values:
+
+```text
+Draft
+Active
+Superseded
+Withdrawn
+Preserved
+```
+
+Example:
+
+```text
+Lifecycle State:
+Active
+```
+
+---
+
+## Entry Status
+
+Entry Status provides a concise current operational summary where useful.
+
+Current Controlled Values:
+
+```text
+Draft
+Under Review
+Approved
+Published
+Superseded
+Withdrawn
+```
+
+Example:
+
+```text
+Entry Status:
+Published
+```
+
+However, Entry Status remains under architectural review because it overlaps with:
+
+* Lifecycle State
+* Verification State
+* Publication State
+
+If production use demonstrates that Entry Status is redundant, it should be deprecated rather than maintained unnecessarily.
+
+---
+
+## Verification State
+
+Verification State describes the result of Chronicle Verification.
+
+Current Controlled Values:
+
+```text
+Not Reviewed
+In Review
+Verified
+Verified with Limitations
+Unresolved
+```
+
+Example:
+
+```text
+Verification State:
+Verified with Limitations
+```
+
+---
+
+## Publication State
+
+Publication State describes the Entry's position in the publication process.
+
+Current Controlled Values:
+
+```text
+Not Published
+Pending Publication
+Published
+Withdrawn from Publication
+```
+
+Example:
+
+```text
+Publication State:
+Published
+```
+
+---
+
+# State Systems Must Not Collapse
+
+One Chronicle Entry may legitimately hold:
+
+```text
+Lifecycle State:
+Active
+
+Entry Status:
+Published
+
+Verification State:
+Verified with Limitations
+
+Publication State:
+Published
+```
+
+These values answer different institutional questions.
+
+They should remain separate unless production experience proves one is redundant.
+
+---
+
+# System Status Is Not an Entry Value
+
+System-level institutional status should not be stored as:
+
+* Lifecycle State
+* Entry Status
+* Verification State
+* Publication State
+
+For example:
+
+```text
+Pre-Operational
+```
+
+describes Chronicle.
+
+It does not describe an individual Chronicle Entry.
+
+---
+
+# Current Architectural Model
+
+Chronicle now operates conceptually through:
 
 ```text
 Occurrence
@@ -196,15 +575,23 @@ Preservation Eligibility
     ↓
 Chronicle Entry
     ↓
+Identifier
+Event Type
 Authoritative References
 Sources
 Evidence
 Provenance
 Relationships
+    ↓
 Verification
+    ↓
 Validation
+    ↓
 Publication
-Versioning / Corrections
+    ↓
+Maintenance
+    ↓
+Corrections / Versioning
     ↓
 Historical Preservation
 ```
@@ -213,88 +600,89 @@ This model is architecturally established but has not yet been exercised through
 
 ---
 
-## Current Limitations
+# Current Limitations
 
 Chronicle currently provides:
 
 * Reconciled foundational documentation
-* Canonical object architecture
-* Preservation Eligibility framework
+* Canonical Chronicle Entry architecture
+* Preservation Eligibility Model
+* Identifier Specification
+* Controlled Values Registry
+* Relationship Model
+* Provenance Model
+* Source architecture
+* Evidence architecture
+* Verification Procedure
+* Lifecycle Model
+* Versioning Policy
+* Correction architecture
 * Authority-boundary model
-* Reference-based interoperability model
-* Initial Base Schema architecture
-* Supporting Source, Evidence, and Correction schema architecture
 * Historical-preservation principles
-* Correction and versioning principles
-* Initial integration architecture
+* Initial Base Schema architecture
+* Integration architecture
 
 Chronicle does not yet provide:
 
-* A finalized Chronicle identifier architecture
-* Final controlled values
-* Final Event-Type Profiles
-* Production machine-readable schemas
-* Final relationship vocabulary
-* Final provenance model
-* Final verification rules
-* Final validation rules
-* Final versioning procedure
-* Final publication procedure
-* Final production operating procedure
-* A canonical production Chronicle Entry
-* A public production Entry index populated with records
+* Final production Chronicle Base Schema implementation
+* Final Certification Event-Type Profile
+* Final Validation Procedure
+* Final Production Procedure
+* Final Publication Procedure
+* First canonical production Chronicle Entry
+* Production Review results
+* Populated public Entry Index
+* Production Timeline discovery
 * Production APIs or automated Chronicle services
 
 ---
 
-## September 2026 Operational Cycle
+# September 2026 Operational Development Cycle
 
-Chronicle is being prepared for its **September 2026 operational development cycle**.
+Chronicle is being prepared for its **September 2026 operational-development cycle**.
 
-September should be understood as the intended transition from architectural preparation into production implementation.
+September represents the intended transition from architectural preparation into production implementation and testing.
 
-It should **not** be treated as a guaranteed public launch date.
+It should not be treated as an automatic public-production launch date.
 
-Chronicle should not be considered production operational until the required structures, procedures, validation, publication process, and first production Entry are complete.
+Chronicle should remain classified as pre-operational until:
+
+* Final production structures exist
+* Validation is defined
+* Production procedure is complete
+* Publication procedure is complete
+* First production Entry is created
+* First production Entry is reviewed
+* Production operation is demonstrated
 
 ---
 
-## Remaining Before Production Operation
+# Remaining Before Production Operation
 
-The remaining work includes:
+The remaining dependency sequence is now substantially narrower.
 
-1. Finalize the Chronicle Entry Model
-2. Formalize Event Types
-3. Finalize Identifier Architecture
-4. Establish Controlled Values
-5. Finalize Relationship Rules
-6. Finalize Provenance Model
-7. Finalize Source and Evidence procedures
-8. Finalize Verification rules
-9. Finalize Lifecycle rules
-10. Finalize Versioning
-11. Finalize Corrections procedures
-12. Finalize Chronicle Base Schema
-13. Create the Certification Event-Type Profile
-14. Finalize Validation rules
-15. Finalize Production Procedure
-16. Create the first production Chronicle Entry
-17. Conduct Production Review
-18. Finalize Publication Procedure
-19. Publish the first validated production Entry
-20. Establish the public Entry Index
-21. Build Timeline discovery downstream of published Entries
-22. Establish maintenance procedures
+1. Finalize Chronicle Base Schema implementation
+2. Create Certification Event-Type Profile
+3. Finalize Validation Procedure
+4. Finalize Production Procedure
+5. Finalize Publication Procedure
+6. Create first production Chronicle Entry
+7. Perform Verification and Validation
+8. Conduct Production Review
+9. Publish first validated production Entry
+10. Establish public Entry Index
+11. Build Timeline discovery downstream of published Entries
+12. Establish long-term maintenance procedure
 
 This sequence may evolve where dependencies require adjustment.
 
 ---
 
-## Operational Readiness Standard
+# Operational Readiness Standard
 
-Chronicle should not be called operational merely because its documentation is published.
+Chronicle should not be called operational merely because its architecture is documented.
 
-Operational readiness requires demonstrating that a qualifying occurrence can move through the full institutional process.
+Operational readiness requires demonstrating that a qualifying Occurrence can move through the full institutional process.
 
 Conceptually:
 
@@ -321,7 +709,9 @@ Publication Approval
         ↓
 Publication
         ↓
-Maintenance / Versioning
+Maintenance
+        ↓
+Correction / Versioning when required
         ↓
 Historical Preservation
 ```
@@ -330,19 +720,27 @@ The first production Chronicle Entry should serve as the practical test of wheth
 
 ---
 
-## Initial Production Direction
+# Initial Production Direction
 
-The anticipated first production use should be based on a qualifying historical occurrence with strong authoritative references and clear historical significance.
+The anticipated first production use remains a Certification Event.
 
-Certification-related history is the natural first operational profile because the Suite already has a canonical Certification Package and Registry relationship architecture.
+Certification history is the natural first Event-Type Profile because the Suite already has:
+
+* A canonical Certification Package
+* Certifier authority
+* Registry relationship architecture
+* Existing authoritative identifiers
+* Strong Source and Provenance potential
 
 The first production Entry should test:
 
 * Preservation Eligibility
-* Event-Type Profile behavior
 * Identifier rules
+* Event Type
+* Certification Event-Type Profile behavior
 * Authoritative references
-* Source and Evidence relationships
+* Source relationships
+* Evidence
 * Provenance
 * Relationships
 * Verification
@@ -352,27 +750,28 @@ The first production Entry should test:
 * Versioning
 * Public discovery
 
-The specific final Entry identifier and production structure should not be frozen until those rules are approved.
-
 ---
 
-## Relationship to the Satoshium Suite
+# Relationship to the Satoshium Suite
 
 Chronicle is one independent institution within the Satoshium Suite.
 
-### Certifier
+---
+
+## Certifier
 
 Certifier remains authoritative for:
 
-* Certification evaluation
+* Certification Packages
 * Certification determinations
 * Certification lifecycle
 * Certification status
-* Certification Packages
 
-Chronicle may preserve qualifying certification occurrences by referencing the authoritative Certification Package.
+Chronicle may preserve qualifying certification Occurrences by referencing Certifier's authoritative objects.
 
-### Registry
+---
+
+## Registry
 
 Registry remains authoritative for:
 
@@ -380,90 +779,106 @@ Registry remains authoritative for:
 * Registration
 * Cataloging
 * Registry metadata
-* Registry relationships
+* Registry Relationships
 * Registry lifecycle
 
-Chronicle may preserve qualifying Registry occurrences or reference Registry records.
+Chronicle may preserve qualifying Registry Occurrences or reference Registry records.
 
-### Atlas
+---
 
-Atlas remains authoritative for its own source intelligence, jurisdiction data, evidence, metadata, and related records.
+## Atlas
 
-### Anchor
+Atlas remains authoritative for its own Source intelligence, jurisdiction data, Evidence, metadata, and related records.
 
-Anchor remains authoritative for Integrity References and anchoring functions.
+---
 
-### Beacon
+## Anchor
+
+Anchor remains authoritative for Integrity References.
+
+---
+
+## Beacon
 
 Beacon remains authoritative for Discovery Signals and Discovery Metadata.
 
-### Attestor
+---
+
+## Attestor
 
 Attestor remains authoritative for Trust Statements and attestations.
 
-### Navigator
+---
+
+## Navigator
 
 Navigator remains authoritative for Workflow Definitions and orchestration.
 
-### Chronicle
+---
+
+## Chronicle
 
 Chronicle remains authoritative for:
 
 * Chronicle Entry identity
-* Chronicle historical context
-* Chronicle provenance
-* Chronicle relationships
-* Chronicle verification state
-* Chronicle correction lineage
-* Chronicle version lineage
-* Chronicle publication state
-* Chronicle preservation state
+* Chronicle Historical Context
+* Chronicle Provenance
+* Chronicle Relationships
+* Chronicle Verification state
+* Chronicle Correction lineage
+* Chronicle Version lineage
+* Chronicle Publication state
+* Chronicle preservation lineage
 
 Reference does not transfer authority.
 
 ---
 
-## Development Priorities
+# Development Priorities
 
-Current development priorities are no longer merely conceptual.
+Current development priorities are now primarily production-oriented.
 
-They are operational.
+---
 
-### Immediate Priorities
+## Immediate Priorities
 
-* Complete reconciliation of foundational Chronicle documentation
-* Finalize the Entry Model
-* Define Event Types
-* Define identifiers
-* Establish Controlled Values
-* Define relationships
-* Define provenance
-* Finalize verification
-* Finalize validation
-* Finalize versioning and corrections
-* Complete the Base Schema
-* Create the first Event-Type Profile
-* Establish publication and production procedures
-* Create and validate the first production Chronicle Entry
+```text
+Finalize Base Schema
+        ↓
+Certification Event-Type Profile
+        ↓
+Validation
+        ↓
+Production Procedure
+        ↓
+Publication Procedure
+        ↓
+First Production Chronicle Entry
+        ↓
+Production Review
+```
 
-### Later Priorities
+---
 
-After production operation is established:
+## Later Priorities
+
+After production operation is demonstrated:
 
 * Public Entry Index
 * Timeline discovery
 * Additional Event-Type Profiles
 * Cross-Suite historical linking
 * Machine-readable public records
-* Automated validation
+* Automated Validation
 * Integrity anchoring where appropriate
 * Long-term archival mechanisms
+* Production APIs where useful
 
 ---
 
-## Roadmap
+# Current Roadmap
 
-Chronicle's current roadmap is better understood as an operational dependency sequence than as broad conceptual phases.
+Chronicle's roadmap is now an operational dependency sequence.
 
 ```text
 Reconciled Foundation
@@ -480,9 +895,13 @@ Relationships
         ↓
 Provenance
         ↓
-Verification
+Sources / Evidence / Verification
         ↓
-Lifecycle / Versioning / Corrections
+Lifecycle
+        ↓
+Versioning
+        ↓
+Corrections
         ↓
 Base Schema
         ↓
@@ -492,11 +911,11 @@ Validation
         ↓
 Production Procedure
         ↓
+Publication Procedure
+        ↓
 First Production Chronicle Entry
         ↓
 Production Review
-        ↓
-Publication
         ↓
 Public Entry Index
         ↓
@@ -505,39 +924,43 @@ Timeline
 Maintenance
 ```
 
-Timeline remains downstream of the canonical Chronicle Entry.
-
-It is a discovery mechanism, not a separate historical object layer.
+Most of the architectural stages through Corrections are now established.
 
 ---
 
-## Status Philosophy
+# Status Philosophy
 
-Chronicle status information should remain clear, honest, and current.
+Chronicle Status should communicate institutional reality without collapsing different concepts.
 
-Three states should not be confused:
+Three stages remain important.
 
-### Architectural Completeness
+---
+
+## Architectural Completeness
 
 The concepts and structures are defined.
 
-### Production Readiness
-
-The rules, schemas, identifiers, validation, and operating procedures are complete enough to run a real record through the system.
-
-### Production Operation
-
-Chronicle has successfully created, validated, published, and preserved canonical production Chronicle Entries through repeatable procedures.
-
-Chronicle currently has substantial **architectural completeness**.
-
-It has not yet reached full **production readiness** or **production operation**.
-
-The goal is transparent progress, not premature claims.
+Chronicle has substantial architectural completeness.
 
 ---
 
-## Long-Term Vision
+## Production Readiness
+
+Schemas, Validation, procedures, publication requirements, and implementation must be complete enough to process a real Entry.
+
+Chronicle has not yet reached full Production Readiness.
+
+---
+
+## Production Operation
+
+Chronicle has successfully created, verified, validated, published, maintained, and preserved canonical production Entries through repeatable procedures.
+
+Chronicle has not yet reached Production Operation.
+
+---
+
+# Long-Term Vision
 
 The long-term vision of Chronicle is a durable historical-preservation institution capable of maintaining Satoshium history across changing systems, technologies, organizations, and generations.
 
@@ -547,11 +970,11 @@ Future capabilities may include:
 * Machine-readable Chronicle Entries
 * Structured Event-Type Profiles
 * Public Timeline discovery
-* Cross-Suite historical relationships
-* Cryptographic integrity verification
+* Cross-Suite historical Relationships
+* Cryptographic integrity Verification
 * Version-aware archival preservation
-* Automated validation
-* Long-term provenance preservation
+* Automated Validation
+* Long-term Provenance preservation
 * Integrity anchoring where appropriate
 
 Specific technologies may evolve.
@@ -562,15 +985,23 @@ The institutional purpose should remain stable:
 
 ---
 
-## Guiding Principle
+# Guiding Principle
 
 Chronicle does not preserve every activity.
 
-It preserves qualifying historical occurrences through Chronicle Entries.
+It preserves qualifying historical Occurrences through Chronicle Entries.
 
 Chronicle does not replace the authority of the systems it references.
 
-It preserves the historical context of what happened, when it happened, which authority established it, which sources and evidence existed, and how Chronicle's own representation changed over time.
+It preserves the historical context of:
+
+* What happened
+* When it happened
+* Which authority established the underlying object
+* Which Sources and Evidence existed
+* How information entered Chronicle
+* How Chronicle verified its representation
+* How Chronicle's own record changed over time
 
 Conceptually:
 
@@ -579,16 +1010,17 @@ Conceptually:
 
 ---
 
-## Status Summary
+# Status Summary
 
 ```text
-Project: Satoshium Chronicle
+Project:
+Satoshium Chronicle
 
-Phase:
+System Status:
 Pre-Operational Architecture & Implementation Preparation
 
 Maturity:
-Architectural Foundation Established
+Institutional Architecture Substantially Established
 
 Canonical Object:
 Chronicle Entry
@@ -596,19 +1028,40 @@ Chronicle Entry
 Primary Function:
 Preservation of Qualifying Historical Occurrences
 
+Identifier Model:
+Established
+
+Controlled Values:
+Established
+
+Relationship Model:
+Established
+
+Provenance Model:
+Established
+
+Verification Procedure:
+Established
+
+Lifecycle Model:
+Established
+
+Versioning Policy:
+Established
+
+Correction Model:
+Established
+
 Operational Status:
 Not Yet Production Operational
-
-Public Availability:
-Foundational Documentation
 
 Production Records:
 Not Yet Established
 
 Immediate Next Focus:
-Complete architectural reconciliation and move into
-Entry Model → Event Types → Identifiers → Controlled Values
-→ Relationships → Provenance → Validation → Production
+Base Schema → Certification Event-Type Profile → Validation
+→ Production Procedure → Publication Procedure
+→ First Production Chronicle Entry
 ```
 
 ---
@@ -623,8 +1076,8 @@ August 16, 2026
 
 ## Status
 
-**Active pre-operational specification.**
+**Active pre-operational Chronicle Status specification.**
 
-This README has been reconciled with the current Chronicle Status page and with the Chronicle Purpose, Entries, Records, Sources, Evidence, Corrections, Schemas, Integration, Certification Events, and Historical Preservation architecture.
+Chronicle remains classified as pre-operational until the final Base Schema, Certification Event-Type Profile, Validation Procedure, Production Procedure, Publication Procedure, and first canonical production Chronicle Entry are completed and successfully exercised.
 
-Chronicle should remain classified as pre-operational until its identifier architecture, controlled values, validation rules, publication procedures, production procedures, and first canonical production Chronicle Entry are complete and successfully exercised.
+Chronicle System Status and individual Chronicle Entry state must remain separate throughout implementation.
