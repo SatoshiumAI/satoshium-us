@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Chronicle Identifiers</title>
+<meta name="description" content="Satoshium Chronicle Identifier Specification — defines the Chronicle Entry identifier namespace, year and sequence structure, permanence rules, reuse prohibition, correction and version behavior, and separation from Event Type semantics.">
+<link rel="canonical" href="https://satoshium.us/chronicle/identifiers/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.status{
+ display:inline-block;
+ margin-top:10px;
+ padding:4px 10px;
+ border-radius:999px;
+ border:1px solid rgba(214,163,74,.24);
+ color:var(--gold2);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.06em;
+ text-transform:uppercase;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+code{
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Identifiers</div>
+  <h1>Chronicle Identifier Specification</h1>
+
+  <p class="lead">
+    Chronicle identifiers provide stable, permanent identity for canonical Chronicle Entries.
+    The identifier should remain simple enough to endure changes in Event Type, schema,
+    relationships, publication state, and historical interpretation.
+  </p>
+
+  <p class="lead">
+    Identity belongs to the Entry. Classification and other changing semantics belong in
+    structured fields, not inside the identifier.
+  </p>
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Recommended Identifier Form</h2>
+
+  <div class="note">
+    <code>CHR-YYYY-NNNN</code>
+  </div>
+
+  <p style="margin-top:14px;">
+    Example:
+    <code>CHR-2026-0001</code>
+  </p>
+
+  <p>
+    This structure carries only the minimum durable semantics needed for human readability
+    and operational sequencing: Chronicle namespace, assignment year, and sequence number.
+  </p>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Identifier Namespace</h2>
+  <p>
+    <code>CHR</code> is the Chronicle Entry namespace. It distinguishes canonical
+    Chronicle Entry identifiers from identifiers issued by other Suite systems.
+  </p>
+  <span class="status">Required</span>
+</article>
+
+<article class="card">
+  <h2>Year Component</h2>
+  <p>
+    The four-digit year records the year the Chronicle identifier is assigned.
+    It does not represent Event Date unless assignment and occurrence happen in the same year.
+  </p>
+  <span class="status">Required</span>
+</article>
+
+<article class="card">
+  <h2>Sequence Structure</h2>
+  <p>
+    The sequence is numeric, zero-padded, and scoped to the identifier-assignment year.
+    The initial production form uses four digits beginning with <code>0001</code>.
+  </p>
+  <span class="status">Required</span>
+</article>
+
+<article class="card">
+  <h2>Semantic Restraint</h2>
+  <p>
+    Event Type, originating system, status, verification state, publication state,
+    jurisdiction, and other mutable meanings should not be encoded into the identifier.
+  </p>
+  <span class="status">Required</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Identifier Anatomy</h2>
+
+  <div class="note">
+    CHR → Chronicle Entry namespace<br>
+    2026 → Identifier assignment year<br>
+    0001 → Annual sequence
+  </div>
+
+  <p style="margin-top:14px;">
+    The identifier describes identity, not historical interpretation.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Permanence Rule</h2>
+
+  <p>
+    Once assigned, a Chronicle Entry identifier is permanent.
+  </p>
+
+  <p>
+    The same identifier remains attached to the Entry across corrections, new Versions,
+    changes in Event Type classification, additional Relationships, Verification updates,
+    publication changes, and preservation-state changes.
+  </p>
+
+  <div class="note">
+    Entry identity persists even when Entry content evolves.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Reuse Prohibition</h2>
+
+  <p>
+    A Chronicle identifier must never be reassigned to a different Entry.
+  </p>
+
+  <p>
+    If an Entry is withdrawn, superseded, corrected, unpublished, or later determined
+    to have been created in error, its identifier remains historically reserved.
+  </p>
+
+  <div class="note">
+    Assigned once → Reserved forever
+  </div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Corrections</h2>
+  <p>
+    A Correction does not create a new Chronicle Entry identifier when the underlying
+    canonical Entry remains the same historical record.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Versions</h2>
+  <p>
+    Record Version changes occur beneath the stable Entry identifier. Version should be
+    represented through explicit Version fields or related Version records, not by changing
+    the canonical identifier.
+  </p>
+</article>
+
+<article class="card">
+  <h2>New Occurrences</h2>
+  <p>
+    A genuinely distinct qualifying Occurrence receives a new Chronicle Entry and therefore
+    a new identifier, even when it concerns the same external authoritative object.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Duplicate Entry Resolution</h2>
+  <p>
+    If two Entries are later determined to represent the same Occurrence, identifiers should
+    not be recycled. Chronicle should preserve the identity history and resolve duplication
+    through status, relationships, correction, or supersession procedures.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Identifier and Event Type</h2>
+
+  <p>
+    Event Type is required Entry classification, but it is not part of the identifier.
+  </p>
+
+  <div class="note">
+    Identifier → Stable identity<br>
+    Event Type → Governed classification
+  </div>
+
+  <p style="margin-top:14px;">
+    An Entry may be reclassified without changing its identifier if Chronicle later corrects
+    or refines the Event Type.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Why Event Type Is Not Encoded</h2>
+
+  <p>
+    Encoding Event Type into identifiers would make identity dependent on taxonomy.
+    If classification later changed, Chronicle would face a choice between changing a
+    permanent identifier or preserving an inaccurate semantic code.
+  </p>
+
+  <div class="note">
+    Stable identity should survive changing classification.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Identifier Assignment Year</h2>
+
+  <p>
+    The year component refers to the year the Chronicle identifier is assigned,
+    not necessarily the year the historical Occurrence happened.
+  </p>
+
+  <p>
+    This is required for retrospective preservation.
+  </p>
+
+  <div class="note">
+    Event Date may be 2025.<br>
+    Chronicle Entry may be created in 2026.<br>
+    Identifier may therefore be <code>CHR-2026-0001</code>.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Sequence Rule</h2>
+
+  <p>
+    Sequence numbers should be issued monotonically within each assignment year.
+    Gaps are permitted when identifiers have been reserved or voided; gaps should not be
+    closed through reuse.
+  </p>
+
+  <div class="note">
+    Sequence continuity is desirable. Identifier permanence is mandatory.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Relationship to Other Suite Identifiers</h2>
+
+  <p>
+    Chronicle Entry identifiers remain independent from Certifier, Registry, Anchor,
+    Beacon, Attestor, Navigator, Atlas, or other Suite identifiers.
+  </p>
+
+  <p>
+    Connections should be expressed through Relationships and authoritative references,
+    not through identifier nesting.
+  </p>
+
+  <div class="note">
+    CHR identifier identifies the Chronicle Entry.<br>
+    External identifier identifies the external authoritative object.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Validation Expectations</h2>
+
+  <p>
+    Future Validation should confirm that a Chronicle Entry identifier:
+  </p>
+
+  <div class="note">
+    Uses the approved namespace · Uses a valid year · Uses the approved sequence format ·
+    Is unique · Has never been reused · Matches the record's assigned identity
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Identifier Principle</h2>
+
+  <p>
+    Chronicle identifiers should carry enough structure to identify and manage the Entry,
+    but not enough semantics to become fragile when Chronicle evolves.
+  </p>
+
+  <div class="note">
+    Identity should be permanent. Meaning should remain in the record.
+  </div>
+
+  <a class="btn" href="/chronicle/">
+    Back to Chronicle →
+  </a>
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    A durable identifier names the record without trying to tell its entire story.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
