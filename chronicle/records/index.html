@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Records</title>
-<meta name="description" content="Satoshium Chronicle Records — the foundational structures used to preserve entries, sources, evidence, verification activities, and corrections.">
+<meta name="description" content="Satoshium Chronicle Records — defines the record architecture surrounding canonical Chronicle Entries and their supporting sources, evidence, verification, corrections, provenance, relationships, and versions.">
 <link rel="canonical" href="https://satoshium.us/chronicle/records/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -151,68 +151,99 @@ h1{
   <h1>Satoshium Chronicle Records</h1>
 
   <p class="lead">
-    Records are the foundational units of preservation within
-    Chronicle. They provide the structure through which historical
-    information is organized, maintained, reviewed, and preserved.
+    Record is an umbrella term for structured information maintained within
+    Chronicle. The canonical historical-preservation object is the Chronicle Entry,
+    while supporting Chronicle records preserve evidence, verification, corrections,
+    provenance, relationships, and other operational context.
   </p>
 
   <p class="lead">
-    Every entry, source, evidence item, verification activity,
-    and correction ultimately exists as a record within the
-    Chronicle system.
+    Not every referenced object becomes a Chronicle-owned record. Chronicle may
+    maintain its own supporting records while referencing authoritative objects
+    owned by Certifier, Registry, Atlas, Anchor, Beacon, Attestor, Navigator, and
+    other Suite systems.
   </p>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Preservation</h2>
+  <h2>Canonical Entry</h2>
   <p>
-    Records exist to preserve information. They provide a durable
-    framework for maintaining historical knowledge across time.
+    The Chronicle Entry is the canonical record object through which Chronicle
+    preserves a qualifying historical occurrence. Supporting records exist to
+    strengthen, explain, validate, correct, relate, or preserve that Entry.
   </p>
 </article>
 
 <article class="card">
   <h2>Traceability</h2>
   <p>
-    Records establish relationships between events, sources,
-    evidence, corrections, and verification activities so
-    historical context remains visible.
+    Chronicle records should preserve traceable relationships among Entries,
+    sources, evidence, provenance, verification activities, corrections, versions,
+    and authoritative Suite references so historical context remains reconstructable.
   </p>
 </article>
 
 <article class="card">
   <h2>Transparency</h2>
   <p>
-    Records help ensure that historical information remains
-    reviewable, understandable, and accessible whenever practical.
+    Chronicle records should remain reviewable and understandable, including their
+    provenance, version lineage, correction history, relationship to authoritative
+    records, and applicable verification or validation state.
   </p>
 </article>
 
 <article class="card">
-  <h2>Accountability</h2>
+  <h2>Authority Boundaries</h2>
   <p>
-    Preserved records improve accountability by documenting
-    what information existed and how it evolved over time.
+    Chronicle records are authoritative only within Chronicle’s own institutional
+    scope. Referenced Certification Packages, SREGs, Integrity References, Trust
+    Statements, Discovery Signals, Workflow Definitions, Atlas records, and other
+    Suite objects remain authoritative within their originating systems.
   </p>
 </article>
 
 <article class="card">
   <h2>Relationships</h2>
   <p>
-    Chronicle records are designed to connect with one another,
-    creating a broader historical network that preserves context
-    and continuity.
+    Chronicle records may connect with one another and with authoritative external
+    Suite objects through stable references. Relationships preserve context without
+    transferring ownership or authority between institutions.
   </p>
 </article>
 
 <article class="card">
   <h2>Continuity</h2>
   <p>
-    Records help ensure that historical understanding remains
-    connected across entries, evidence, sources, and future reviews.
+    Chronicle records support historical continuity by preserving how Entries,
+    evidence, relationships, verification states, corrections, and versions evolved
+    over time.
   </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Suite Alignment</h2>
+
+  <p>
+    Chronicle Records follow Satoshium Suite standards for stable objects,
+    canonical terminology, structured schemas, durable identifiers, version
+    preservation, validation-ready records, and documented repeatable procedures.
+  </p>
+
+  <p>
+    Suite Interoperability requires reference-based design: Chronicle references
+    authoritative objects maintained by other Suite institutions rather than
+    duplicating, replacing, or reinterpreting them.
+  </p>
+
+  <div class="note">
+    One canonical Chronicle object · Supporting Chronicle records · Referenced external authoritative objects
+  </div>
 </article>
 
 </section>
@@ -223,13 +254,37 @@ h1{
   <h2>Record Categories</h2>
 
   <p>
-    Chronicle organizes historical information through several
-    record types that work together to preserve context and meaning.
+    Chronicle uses one canonical historical-preservation object together with
+    supporting record classes that perform distinct functions. These supporting
+    classes should not be confused with separate canonical Chronicle objects.
   </p>
 
   <div class="note">
-    Entries → Sources → Evidence → Verification → Corrections
+    Chronicle Entry · Supporting Source Records · Evidence Records · Verification Records · Correction Records · Relationship / Provenance / Version Records
   </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Chronicle-Owned vs. Referenced Records</h2>
+
+  <p>
+    Chronicle should distinguish records it creates and governs from records it
+    only references.
+  </p>
+
+  <div class="note">
+    Chronicle-Owned → Chronicle Entry, Chronicle correction, verification, provenance, relationship, version, or other Chronicle support records<br>
+    Referenced → Certification Package, SREG, Integrity Reference, Discovery Signal, Trust Statement, Workflow Definition, Atlas record, or other authoritative external object
+  </div>
+
+  <p style="margin-top:14px;">
+    A reference to an external record does not make that record part of Chronicle’s
+    authority or lifecycle.
+  </p>
 </article>
 
 </section>
@@ -240,13 +295,33 @@ h1{
   <h2>Record Lifecycle</h2>
 
   <p>
-    Records may evolve throughout their existence while maintaining
-    historical continuity and transparency.
+    Chronicle-owned records may evolve according to documented, repeatable
+    lifecycle, validation, correction, and versioning rules while preserving prior
+    substantive states where required.
   </p>
 
   <div class="note">
-    Created → Reviewed → Referenced → Updated → Preserved
+    Created → Structured → Related → Verified / Validated → Published or Applied → Maintained → Corrected / Versioned → Preserved
   </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>No Redundant Canonical Layer</h2>
+
+  <p>
+    Chronicle should not create a second canonical “Record” object above or beside
+    the Chronicle Entry. “Record” is an architectural umbrella term, not a competing
+    historical object.
+  </p>
+
+  <p>
+    Production historical preservation should remain centered on the Chronicle Entry.
+    Supporting records exist only where they provide a distinct operational function.
+  </p>
 </article>
 
 </section>
@@ -257,13 +332,15 @@ h1{
   <h2>Record Philosophy</h2>
 
   <p>
-    Chronicle favors preservation over deletion whenever practical.
-    Records provide value not only because they capture information,
-    but because they reveal how understanding changes over time.
+    Chronicle favors durable, version-aware preservation over silent deletion
+    whenever practical. Chronicle-owned records provide value not only because they
+    capture information, but because their provenance, relationships, correction
+    history, and lineage reveal how the historical record was maintained over time.
   </p>
 
   <p>
-    The goal is not merely storage. The goal is historical continuity.
+    The goal is not to accumulate records for their own sake. The goal is to
+    support coherent, reviewable Chronicle Entries and durable historical continuity.
   </p>
 
   <a class="btn" href="/chronicle/">
@@ -278,7 +355,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Records preserve information. Relationships preserve context. Chronicle preserves continuity.
+    Chronicle Entries preserve occurrences. Supporting records preserve context, traceability, and lineage.
   </div>
   <hr>
   <div id="footer-container"></div>
