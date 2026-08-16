@@ -2,135 +2,253 @@
 
 ## Purpose
 
-The Chronicle Correction Record Schema defines the structure used to document corrections to Chronicle-owned records.
+The Chronicle Correction Record Schema defines the Chronicle-owned supporting structure used to document Corrections to Chronicle-owned records.
 
-Corrections may address factual errors, metadata defects, incomplete references, provenance issues, relationship errors, evidence updates, or other documented problems within Chronicle's own historical-preservation record.
+A Correction Record explains:
 
-Chronicle corrections are intended to improve accuracy, transparency, traceability, and historical continuity while preserving prior substantive states.
+> Why did Chronicle change its own record?
 
-Chronicle does **not** use correction records to alter authoritative objects owned by Certifier, Registry, Atlas, Anchor, Beacon, Attestor, Navigator, or another Suite system.
+A Correction Record must preserve enough information for future reviewers to reconstruct:
 
-If an originating Suite system changes its own authoritative object, Chronicle may preserve that later occurrence and update its own references according to Chronicle rules.
+* what Chronicle originally recorded
+* what Chronicle corrected
+* why the Correction was necessary
+* when the Correction occurred
+* which fields were affected
+* which Version resulted
 
----
+Chronicle Corrections improve accuracy without erasing institutional history.
 
-## Suite Alignment
+The governing principle is:
 
-Chronicle Correction Records should align with the Satoshium Suite Standards, Methodology, Schemas Standard, Evidence Standard, and Interoperability principles.
-
-The schema should support:
-
-* Stable identifiers
-* Clear authority boundaries
-* Reference-based interoperability
-* Provenance and traceability
-* Evidence-aware review
-* Validation-ready structure
-* Version preservation
-* Durable correction lineage
-* Structured publication state
-* Repeatable correction procedures
+> Correct visibly. Version materially. Preserve every substantive state.
 
 ---
 
-## Canonical Role
+# Canonical Role
 
-A Correction Record is a **supporting Chronicle-owned record**.
+A Chronicle Correction Record is a **supporting Chronicle-owned record**.
 
 It is not the canonical historical-preservation object.
 
-The canonical Chronicle object remains the **Chronicle Entry**.
+The canonical Chronicle object remains:
 
-A Correction Record documents a change to a Chronicle Entry or another Chronicle-owned supporting record.
+```text
+Chronicle Entry
+```
+
+A Correction Record may affect:
+
+* Chronicle Entry
+* Source Record
+* Evidence Record
+* another Chronicle-owned supporting record
+
+It does not correct authoritative external Suite objects.
 
 Conceptually:
 
 ```text
-Chronicle Record
-      ↓
+Chronicle-Owned Record
+        ↓
 Issue Identified
-      ↓
-Correction Review
-      ↓
+        ↓
 Correction Record
-      ↓
-Versioned / Corrected Chronicle State
-      ↓
-Validation
-      ↓
-Publication / Preservation
+        ↓
+Corrected State
+        ↓
+New Version when Material
+        ↓
+Reverification / Revalidation where Required
 ```
 
 ---
 
-## Schema Overview
+# Correction and Versioning
 
-A Chronicle Correction Record should answer:
+Correction and Versioning are related but distinct.
 
-* Which Chronicle-owned record is affected?
-* What issue was identified?
-* What changed?
-* Why was the change necessary?
-* Which prior state or field value is affected?
-* What evidence or authoritative references support the correction?
-* Who or what initiated the correction?
-* Who or what reviewed it?
-* Was the correction validated?
-* Which corrected or versioned state resulted?
-* When was the correction created and published?
-* How can a reviewer reconstruct the prior and corrected states?
+## Correction
+
+Answers:
+
+> Why did Chronicle change the record?
+
+## Version
+
+Answers:
+
+> What is the resulting preserved state?
+
+Conceptually:
+
+```text
+Correction
+    ↓
+Explains change
+    ↓
+New Version where material
+    ↓
+Preserves resulting state
+```
+
+A Formal Correction and a new Version often occur together.
+
+They are not the same concept.
 
 ---
 
-# Field Architecture
+# No Silent Historical Rewriting
 
-The exact production identifier format, controlled values, and required/conditional designations remain subject to Chronicle Identifier Architecture, Controlled Values, Validation Rules, Versioning Policy, and Publication Standard.
+Chronicle must not silently rewrite substantive historical content.
 
-The structure below is an operational architectural draft.
+Material changes involving:
+
+* Event Date
+* Event Type
+* Historical Context
+* Source identity
+* Evidence
+* Provenance
+* Relationships
+* authoritative references
+* Verification limitations
+* publication-significant meaning
+
+must leave explicit Correction and/or Version lineage.
+
+The rule is:
+
+> A changed record must leave evidence that it changed.
 
 ---
 
-## Identity Fields
+# Production Status
 
-### `correction_id`
+This specification defines the Phase VII reconciled architecture for Chronicle Correction Records.
+
+The canonical human-readable file is:
+
+```text
+correction-record-schema.md
+```
+
+A future machine-readable implementation may be created as:
+
+```text
+correction-record-schema.json
+```
+
+after the specification is exercised against a real production Correction.
+
+---
+
+# Universal Required Fields
+
+Every formal Chronicle Correction Record should contain:
+
+```text
+correction_id
+schema_id
+schema_version
+correction_record_version
+
+title
+correction_type
+
+affected_record_reference
+affected_fields
+
+original_information
+corrected_information
+
+correction_date
+reason
+
+resulting_version_reference
+
+created_at
+```
+
+These are the minimum requirements for a formal Correction Record.
+
+---
+
+# Identity Fields
+
+## `correction_id`
 
 Stable unique identifier assigned to the Correction Record.
 
-**Status:** Required in production.
+**Requirement:** Required.
 
-The final identifier format is not yet settled.
+The final Correction Record identifier namespace remains to be formally established.
 
-Example placeholder:
+Until approved, implementation should not invent a permanent namespace casually.
 
-```text
-<CORRECTION-IDENTIFIER>
-```
+The identifier should remain:
 
-Legacy examples such as `COR-000001` should not be treated as canonical.
+* unique
+* stable
+* non-reusable
+* independent of Correction Type
+* independent of publication state
+* independent of Verification State
+* independent of Version
 
 ---
 
-### `schema_version`
+## `schema_id`
+
+Stable identifier for the Correction Record Schema.
+
+**Requirement:** Required.
+
+Initial value:
+
+```text
+chronicle-correction-record
+```
+
+---
+
+## `schema_version`
 
 Version of the Correction Record Schema governing the record.
 
-**Status:** Required.
+**Requirement:** Required.
 
-Example:
+Initial production convention:
 
 ```text
 1.0.0
 ```
 
-Schema version and correction-record version should remain distinct concepts.
+---
+
+## `correction_record_version`
+
+Sequential preserved Version of the Correction Record itself.
+
+**Requirement:** Required.
+
+Initial value:
+
+```text
+1
+```
+
+A Correction Record may itself require later Correction or Versioning if Chronicle discovers that the Correction Record contains a material defect.
 
 ---
 
-### `title`
+# Human-Readable Identity
 
-Concise human-readable title describing the correction.
+## `title`
 
-**Status:** Required.
+Concise human-readable title describing the Correction.
+
+**Requirement:** Required.
 
 Example:
 
@@ -140,15 +258,759 @@ Correction to Chronicle Event Date
 
 ---
 
-## Correction Classification Fields
+# Correction Type
 
-### `correction_type`
+## `correction_type`
 
-Controlled classification describing the nature of the correction.
+Controlled classification identifying the nature of the Correction.
 
-**Status:** Required.
+**Requirement:** Required.
 
-Potential working concepts may include:
+Approved Chronicle Correction Type values are:
+
+```text
+typographical
+metadata
+contextual
+relationship
+provenance
+evidence
+classification
+substantive
+```
+
+Human-readable labels:
+
+```text
+Typographical
+Metadata
+Contextual
+Relationship
+Provenance
+Evidence
+Classification
+Substantive
+```
+
+Rules:
+
+* Correction Type describes what kind of Correction occurred.
+* Correction Type does not by itself determine whether a new Version is required.
+* Materiality determines Versioning behavior.
+* `substantive` should be used when the Correction changes material historical meaning.
+
+---
+
+# Affected Record
+
+## `affected_record_reference`
+
+Stable reference to the Chronicle-owned record being corrected.
+
+**Requirement:** Required.
+
+Examples:
+
+```text
+CHR-2026-0001
+<SOURCE-RECORD-ID>
+<EVIDENCE-RECORD-ID>
+```
+
+This field must not imply Chronicle ownership of an external authoritative object.
+
+---
+
+## `affected_record_type`
+
+Classification of the affected Chronicle-owned record.
+
+**Requirement:** Conditional.
+
+Recommended values may include:
+
+```text
+chronicle_entry
+source_record
+evidence_record
+correction_record
+other_chronicle_record
+```
+
+These values should be treated as schema-level structural labels unless later formalized through Controlled Values.
+
+---
+
+## `affected_fields`
+
+Structured list of fields, Relationships, or record components changed by the Correction.
+
+**Requirement:** Required.
+
+Example:
+
+```yaml
+affected_fields:
+  - event_date
+  - historical_context
+```
+
+A Formal Correction should not be considered complete if reviewers cannot determine what part of the record changed.
+
+---
+
+# Original Information
+
+## `original_information`
+
+Structured representation or durable reference to the original information being corrected.
+
+**Requirement:** Required.
+
+This may contain:
+
+* prior field value
+* prior statement
+* prior Relationship
+* prior classification
+* prior Source reference
+* prior Provenance statement
+
+Where practical, Chronicle should preserve a durable reference to the prior Version instead of duplicating an entire prior record inside the Correction Record.
+
+---
+
+# Corrected Information
+
+## `corrected_information`
+
+Structured representation or durable reference to the corrected information.
+
+**Requirement:** Required.
+
+This should identify the new value, statement, Relationship, classification, reference, or state resulting from the Correction.
+
+---
+
+# Correction Date
+
+## `correction_date`
+
+Date or timestamp when Chronicle formally applied or approved the Correction.
+
+**Requirement:** Required.
+
+Correction Date must remain distinct from:
+
+* Event Date
+* Entry Creation Date
+* Source Publication Date
+* Source Retrieval Date
+* Version Effective Date
+* Publication Date
+
+---
+
+# Reason
+
+## `reason`
+
+Explanation of why the Correction was necessary.
+
+**Requirement:** Required.
+
+The reason should describe:
+
+* the issue identified
+* why the prior representation was incorrect, incomplete, or misleading
+* the basis for the corrected representation
+
+Material Corrections should not use vague reasons where a specific rationale can be preserved.
+
+---
+
+# Resulting Version
+
+## `resulting_version_reference`
+
+Reference to the corrected or newly Versioned Chronicle-owned record state.
+
+**Requirement:** Required for formal Corrections.
+
+For a material Entry Correction, this should identify the resulting Entry Version.
+
+Example:
+
+```text
+CHR-2026-0001 / Version 2
+```
+
+For a minor Correction that does not create a new Version, the field may reference the current record state while `version_effect` indicates no new Version.
+
+---
+
+# Prior Version
+
+## `prior_version_reference`
+
+Reference to the prior preserved state affected by the Correction.
+
+**Requirement:** Conditional.
+
+Required whenever the affected record has explicit Version lineage.
+
+For substantive Chronicle Entry Corrections, this should ordinarily be present.
+
+---
+
+# Version Effect
+
+## `version_effect`
+
+Describes the Correction's effect on Version lineage.
+
+**Requirement:** Conditional.
+
+Candidate values:
+
+```text
+no_new_version
+new_version
+```
+
+A separate `superseding_state` value is not recommended here.
+
+Supersession between distinct Entries belongs in the Relationship Model and Lifecycle architecture.
+
+These values may remain schema-local until production use demonstrates a need for formal Controlled Values.
+
+---
+
+# Materiality
+
+## `materiality`
+
+Indicates whether the Correction changes institutional or historical meaning.
+
+**Requirement:** Conditional.
+
+Recommended structural values:
+
+```text
+non_substantive
+substantive
+```
+
+This distinction supports the Versioning Policy.
+
+However, materiality should not become a substitute for Correction Type.
+
+Example:
+
+```text
+correction_type: metadata
+materiality: substantive
+```
+
+is possible if a metadata change alters historical meaning.
+
+---
+
+# Issue Summary
+
+## `issue_summary`
+
+Brief factual description of the problem Chronicle identified.
+
+**Requirement:** Conditional.
+
+Recommended for any Correction where the `reason` is lengthy or where a concise review label improves usability.
+
+---
+
+# Change Summary
+
+## `change_summary`
+
+Human-readable explanation of what changed.
+
+**Requirement:** Conditional.
+
+Recommended for substantive Corrections and public Correction presentation.
+
+---
+
+# Impact
+
+## `impact`
+
+Description of the Correction's effect on Chronicle's representation.
+
+**Requirement:** Conditional.
+
+May describe whether the Correction affects:
+
+* historical meaning
+* temporal ordering
+* classification
+* authoritative references
+* Provenance
+* Relationships
+* Evidence
+* Verification
+* publication
+
+---
+
+# Source References
+
+## `source_references`
+
+References to Sources relevant to the Correction.
+
+**Requirement:** Conditional.
+
+Required when Source material is part of the basis for the Correction.
+
+---
+
+# Evidence References
+
+## `evidence_references`
+
+References to Evidence relevant to the Correction.
+
+**Requirement:** Conditional.
+
+Required when Evidence supports, challenges, clarifies, or otherwise bears on the Correction.
+
+Evidence Type and Evidence Relationship remain governed by Chronicle Evidence architecture.
+
+---
+
+# Authoritative Record References
+
+## `authoritative_record_references`
+
+References to authoritative Suite or institutional objects relevant to the Correction.
+
+**Requirement:** Conditional.
+
+Required when the Correction depends materially on an authoritative external record.
+
+Examples:
+
+* Certification Package
+* SREG Registry Entry
+* Integrity Reference
+* Discovery Signal
+* Trust Statement
+* Workflow Definition
+* Atlas record
+
+Chronicle references these objects.
+
+Chronicle does not correct them.
+
+---
+
+# Provenance
+
+## `provenance`
+
+Structured information explaining how the issue, supporting Sources, Evidence, and authoritative references entered Chronicle.
+
+**Requirement:** Conditional.
+
+Required for substantive Corrections where Provenance materially affects reviewability.
+
+Minimum applicable Provenance should align with the Chronicle Provenance Model.
+
+---
+
+# Relationship Updates
+
+## `relationship_updates`
+
+Structured description of Relationships added, removed, or corrected.
+
+**Requirement:** Conditional.
+
+Required when the Correction changes Relationship semantics.
+
+Relevant Controlled Relationship Types include:
+
+```text
+references
+related_to
+derived_from
+supersedes
+superseded_by
+corrects
+corrected_by
+precedes
+follows
+```
+
+---
+
+# Related Entries
+
+## `related_entry_references`
+
+References to Chronicle Entries materially related to the Correction.
+
+**Requirement:** Conditional.
+
+---
+
+# Related Corrections
+
+## `related_correction_references`
+
+References to other Correction Records associated with the same issue, lineage, or later correction.
+
+**Requirement:** Conditional.
+
+---
+
+# Verification Impact
+
+## `verification_state`
+
+Chronicle Verification State associated with the corrected record where applicable.
+
+**Requirement:** Conditional.
+
+Approved values:
+
+```text
+not_reviewed
+in_review
+verified
+verified_with_limitations
+unresolved
+```
+
+A material Correction should ordinarily trigger Reverification.
+
+Example:
+
+```text
+Version 1
+verification_state: verified
+
+Correction
+    ↓
+
+Version 2
+verification_state: in_review
+```
+
+---
+
+## `verification_references`
+
+References to Verification activity or records associated with the Correction.
+
+**Requirement:** Conditional.
+
+---
+
+# Validation
+
+The Correction Record Schema is designed for Validation.
+
+It does not presently require a universal embedded:
+
+```text
+validation_state
+```
+
+The Validation Procedure should determine where Validation results are preserved.
+
+Validation may test:
+
+* Correction Record identifier integrity
+* schema conformance
+* Correction Type
+* affected record reference
+* affected fields
+* original information
+* corrected information
+* Correction Date
+* reason
+* Version linkage
+* Source / Evidence references
+* Provenance
+* publication prerequisites
+
+Conceptually:
+
+```text
+Schema ≠ Verification ≠ Validation
+```
+
+---
+
+# Publication
+
+## `publication_state`
+
+Publication State of the Correction Record when Chronicle independently publishes Correction Records.
+
+**Requirement:** Conditional.
+
+Approved values:
+
+```text
+not_published
+pending_publication
+published
+withdrawn_from_publication
+```
+
+Not every Correction Record must necessarily be exposed independently if the Correction is represented through Entry Version history.
+
+---
+
+## `published_record_at`
+
+Date and time Chronicle published the Correction Record.
+
+**Requirement:** Conditional.
+
+Required when:
+
+```text
+publication_state: published
+```
+
+---
+
+# Correction Record Lifecycle
+
+A separate `correction_status` field is not presently required.
+
+The Lifecycle State vocabulary established for Chronicle Entries should not automatically be applied to Correction Records.
+
+A Correction Record may conceptually move through:
+
+```text
+identified
+documented
+reviewed
+validated
+applied
+published where applicable
+preserved
+```
+
+These are process stages, not approved Correction Record Controlled Values.
+
+---
+
+# Actor Fields
+
+## `initiated_by`
+
+Entity, role, process, or system that initiated the Correction.
+
+**Requirement:** Conditional.
+
+---
+
+## `reviewed_by`
+
+Entity, role, process, or system responsible for Correction review.
+
+**Requirement:** Conditional.
+
+---
+
+## `approved_by`
+
+Entity, role, process, or system responsible for formal approval where procedure requires it.
+
+**Requirement:** Conditional.
+
+Actor roles should not be frozen into Controlled Values until operational procedure establishes stable role semantics.
+
+---
+
+# Additional Temporal Fields
+
+## `identified_at`
+
+Date and time the issue was identified.
+
+**Requirement:** Conditional.
+
+---
+
+## `reviewed_at`
+
+Date and time Correction review was completed.
+
+**Requirement:** Conditional.
+
+---
+
+## `created_at`
+
+Date and time Chronicle created the Correction Record.
+
+**Requirement:** Required.
+
+---
+
+# Correction Record Versioning
+
+## `correction_record_version`
+
+Sequential Version of the Correction Record.
+
+**Requirement:** Required.
+
+If Chronicle later discovers that a Correction Record itself contains a material defect, that Correction Record should be corrected and Versioned rather than silently overwritten.
+
+---
+
+## `prior_correction_version_reference`
+
+Reference to the immediately prior Correction Record Version.
+
+**Requirement:** Conditional.
+
+Required for Correction Record Version 2 and later where prior-Version linkage is represented directly.
+
+---
+
+# Required Correction Minimum
+
+Every formal Correction must preserve:
+
+```text
+Original information
+Corrected information
+Correction date
+Reason
+Affected fields
+Resulting Version
+```
+
+This is the institutional minimum.
+
+A Correction Record missing these elements should not be treated as a complete formal Correction.
+
+---
+
+# Editorial Update vs. Formal Correction
+
+Not every editorial change requires a Formal Correction Record.
+
+Potential Editorial Updates may include:
+
+* spelling
+* punctuation
+* formatting
+* accessibility text
+* technical markup repair
+* broken-link repair where Source identity does not change
+
+The governing test is:
+
+> Does the change alter historical or institutional meaning?
+
+If no:
+
+```text
+Editorial Update may be sufficient.
+```
+
+If yes:
+
+```text
+Formal Correction
++ New Version if material
+```
+
+---
+
+# Substantive Correction Requirements
+
+A substantive Correction should ordinarily require:
+
+```text
+Original state preserved
+        ↓
+Correction documented
+        ↓
+Sources / Evidence reviewed
+        ↓
+Corrected state prepared
+        ↓
+New Version created
+        ↓
+Reverification
+        ↓
+Revalidation where required
+        ↓
+Publication lineage updated
+```
+
+---
+
+# External Authoritative Changes
+
+If another Suite institution changes its own authoritative object, Chronicle must first ask:
+
+> Is Chronicle's existing record wrong, or did something new happen?
+
+If Chronicle's existing representation is wrong:
+
+```text
+Correction
+```
+
+If a distinct later Occurrence occurred:
+
+```text
+New Occurrence
+→ Preservation Eligibility
+→ New Chronicle Entry
+```
+
+Chronicle should not rewrite an earlier Entry merely because a later institutional event occurred.
+
+---
+
+# Superseding Entry vs. Correction
+
+A Correction changes Chronicle's own representation of the same canonical record.
+
+A superseding Entry is a separate canonical Entry.
+
+Conceptually:
+
+```text
+Same Entry identity + material change
+→ New Version
+
+Distinct qualifying Occurrence
+→ New Chronicle Entry
+
+Formal institutional replacement between Entries
+→ Supersedes / Superseded By
+```
+
+Supersession should not be modeled as a Correction Type.
+
+---
+
+# Deprecated Legacy Correction Types
+
+The following older draft taxonomy should not govern production Correction Records:
 
 ```text
 factual
@@ -163,469 +1025,64 @@ reclassification
 substantive
 ```
 
-These values are illustrative only until Chronicle Controlled Values are approved.
-
----
-
-### `correction_scope`
-
-Indicates whether the correction is:
-
-* Non-substantive
-* Substantive
-
-**Status:** Expected to become required.
-
-This distinction matters because substantive corrections should preserve a traceable versioned state.
-
----
-
-## Affected Record Fields
-
-### `affected_record_reference`
-
-Stable reference to the Chronicle-owned record being corrected.
-
-**Status:** Required.
-
-Example placeholder:
+Use the approved Controlled Values instead:
 
 ```text
-<CHRONICLE-ENTRY-OR-SUPPORTING-RECORD-ID>
-```
-
-A Correction Record should not use this field to imply that Chronicle owns an external Suite object.
-
----
-
-### `affected_record_type`
-
-Controlled classification of the affected Chronicle-owned record.
-
-**Status:** Required or conditional.
-
-Possible working values may include:
-
-* Chronicle Entry
-* Evidence Record
-* Verification Record
-* Provenance Record
-* Relationship Record
-* Other approved Chronicle support record
-
----
-
-### `affected_fields`
-
-Structured list of fields, relationships, or components affected by the correction.
-
-**Status:** Required for substantive corrections and recommended otherwise.
-
-Example:
-
-```yaml
-affected_fields:
-  - event_date
-  - historical_context
+typographical
+metadata
+contextual
+relationship
+provenance
+evidence
+classification
+substantive
 ```
 
 ---
 
-## Issue and Rationale Fields
+# Deprecated Legacy Fields
 
-### `issue_summary`
+## `previous_state`
 
-Brief description of the identified problem.
+Deprecated as the canonical field name.
 
-**Status:** Required.
-
-Example:
+Use:
 
 ```text
-The event date in the published Chronicle Entry did not match the authoritative source record.
+original_information
 ```
 
----
-
-### `reason`
-
-Detailed explanation of why the correction is necessary.
-
-**Status:** Required.
+or a durable prior-Version reference.
 
 ---
 
-### `impact`
+## `corrected_state`
 
-Description of the effect of the correction on Chronicle's historical representation.
+Deprecated as the canonical field name.
 
-**Status:** Recommended.
-
-The correction should indicate whether it:
-
-* Changes historical meaning
-* Changes temporal ordering
-* Changes authoritative references
-* Changes provenance
-* Changes relationships
-* Changes verification state
-* Is purely editorial or administrative
-
----
-
-## Change Documentation Fields
-
-### `previous_state`
-
-Structured representation or durable reference to the prior value or prior Chronicle state.
-
-**Status:** Required for substantive corrections.
-
-Example:
+Use:
 
 ```text
-2026-09-02
+corrected_information
 ```
 
-Where practical, Chronicle should prefer durable references to preserved prior versions rather than copying large prior records into the Correction Record.
+or a durable resulting-Version reference.
 
 ---
 
-### `corrected_state`
+## `affected_record`
 
-Structured representation or durable reference to the corrected value or new Chronicle state.
+Deprecated.
 
-**Status:** Required.
-
-Example:
-
-```text
-2026-09-01
-```
-
----
-
-### `change_summary`
-
-Human-readable explanation of the change.
-
-**Status:** Required.
-
-Example:
-
-```text
-Event date corrected to match the authoritative publication record.
-```
-
----
-
-## Version Lineage Fields
-
-### `prior_version_reference`
-
-Reference to the prior preserved Chronicle state affected by the correction.
-
-**Status:** Required for substantive corrections where versioning applies.
-
----
-
-### `resulting_version_reference`
-
-Reference to the corrected or newly versioned Chronicle state.
-
-**Status:** Required for substantive corrections where versioning applies.
-
----
-
-### `version_effect`
-
-Controlled value describing the correction's effect on version lineage.
-
-Possible working concepts:
-
-```text
-no_new_version
-new_version
-superseding_state
-```
-
-These values remain provisional.
-
----
-
-## Temporal Fields
-
-### `identified_at`
-
-Date and time the issue was identified.
-
-**Status:** Recommended.
-
----
-
-### `correction_created_at`
-
-Date and time the Correction Record was created.
-
-**Status:** Required.
-
----
-
-### `reviewed_at`
-
-Date and time correction review was completed.
-
-**Status:** Conditional.
-
----
-
-### `validated_at`
-
-Date and time correction validation was completed.
-
-**Status:** Conditional.
-
----
-
-### `published_at`
-
-Date and time the correction or corrected state was published.
-
-**Status:** Conditional until publication.
-
----
-
-## Initiation and Review Fields
-
-### `initiated_by`
-
-Entity, role, process, or system that initiated the correction.
-
-**Status:** Recommended.
-
-Chronicle should eventually distinguish actor roles through controlled values rather than using one generic `author` field.
-
----
-
-### `reviewed_by`
-
-Entity, role, process, or system responsible for correction review.
-
-**Status:** Conditional.
-
----
-
-### `approved_by`
-
-Entity, role, process, or system responsible for approval where Chronicle procedure requires approval.
-
-**Status:** Conditional.
-
----
-
-## Source and Evidence Fields
-
-### `source_references`
-
-References to sources relevant to the correction.
-
-**Status:** Conditional.
-
----
-
-### `evidence_references`
-
-References to evidence supporting, challenging, or contextualizing the correction.
-
-**Status:** Conditional.
-
-Evidence should align with the Suite Evidence Standard.
-
----
-
-### `authoritative_record_references`
-
-References to authoritative Suite objects that establish the external fact, action, or state relevant to the correction.
-
-**Status:** Required when the correction depends on an authoritative external record.
-
-Examples may include:
-
-* Certification Package
-* SREG Registry Entry
-* Integrity Reference
-* Discovery Signal
-* Trust Statement
-* Workflow Definition
-* Atlas record
-
-Chronicle references these objects but does not correct them.
-
----
-
-## Provenance Fields
-
-### `provenance`
-
-Structured information describing how the correction issue, evidence, sources, and authoritative references entered Chronicle.
-
-**Status:** Recommended and expected to become required for substantive corrections.
-
----
-
-## Relationship Fields
-
-### `related_entry_references`
-
-References to Chronicle Entries related to the correction.
-
-**Status:** Conditional.
-
----
-
-### `related_correction_references`
-
-References to other Correction Records connected to the same issue or lineage.
-
-**Status:** Conditional.
-
----
-
-### `relationship_updates`
-
-Structured relationships added, removed, or modified by the correction.
-
-**Status:** Conditional.
-
-Relationship changes should use Chronicle controlled relationship values.
-
----
-
-## Verification Fields
-
-### `verification_state`
-
-Chronicle verification state associated with the correction.
-
-**Status:** Conditional.
-
-The final values remain to be defined.
-
-Verification reviews the support, consistency, evidence, references, provenance, and historical representation involved in the correction.
-
----
-
-### `verification_references`
-
-References to Chronicle verification records or activities.
-
-**Status:** Conditional.
-
----
-
-## Validation Fields
-
-### `validation_state`
-
-State or result of Chronicle correction validation.
-
-**Status:** Required before publication of a substantive correction.
-
-Validation may include:
-
-* Identifier integrity
-* Schema conformance
-* Required fields
-* Controlled values
-* Affected-record reference integrity
-* Prior-version linkage
-* Resulting-version linkage
-* Authoritative-reference checks
-* Evidence and provenance requirements
-* Publication readiness
-
----
-
-### `validation_references`
-
-References to validation records or results where Chronicle preserves them separately.
-
-**Status:** Conditional.
-
----
-
-## Lifecycle and Publication Fields
-
-### `correction_status`
-
-Current Chronicle lifecycle state of the Correction Record.
-
-**Status:** Required.
-
-The final controlled values remain to be defined.
-
-Legacy values such as:
-
-```text
-draft
-active
-superseded
-archived
-```
-
-should not be treated as canonical.
-
----
-
-### `publication_state`
-
-Current publication state of the Correction Record.
-
-**Status:** Required for production use.
-
-Lifecycle state and publication state should remain distinct where they represent different concepts.
-
----
-
-## Deprecated Legacy Fields
-
-The following concepts from the original draft should not be carried forward unchanged:
-
-### `affected_record`
-
-Deprecated in favor of:
+Use:
 
 ```text
 affected_record_reference
 ```
 
-to make the reference nature explicit.
+---
 
-### `previous_value`
-
-Deprecated as the only prior-state model.
-
-Use:
-
-```text
-previous_state
-```
-
-or a durable prior-version reference where appropriate.
-
-### `corrected_value`
-
-Deprecated as the only corrected-state model.
-
-Use:
-
-```text
-corrected_state
-```
-
-or a durable resulting-version reference where appropriate.
-
-### `requested_by`
+## `requested_by`
 
 Deprecated as ambiguous.
 
@@ -635,128 +1092,120 @@ Use:
 initiated_by
 ```
 
-and distinguish review/approval roles separately.
+---
 
-### `author`
+## Universal `author`
 
-Deprecated as a universal actor field.
+Deprecated.
 
-Use explicit actor-role fields where necessary.
-
-### Generic `version`
-
-Deprecated as ambiguous.
-
-Use:
-
-* `schema_version`
-* prior-version references
-* resulting-version references
-* correction-record versioning if later required
+Use explicit actor-role fields only where needed.
 
 ---
 
-# Working Example
+## Generic `version`
 
-The following is conceptual only and does not establish final identifiers, controlled values, or production field names.
+Deprecated.
+
+Use:
+
+```text
+schema_version
+correction_record_version
+prior_version_reference
+resulting_version_reference
+```
+
+according to meaning.
+
+---
+
+# Production Example
+
+The following demonstrates the current Phase VII Correction Record architecture.
+
+The Correction Record identifier remains illustrative until its namespace is formally established.
 
 ```yaml
 correction_id: <CORRECTION-IDENTIFIER>
+schema_id: chronicle-correction-record
 schema_version: 1.0.0
+correction_record_version: 1
 
 title: Correction to Chronicle Event Date
 
-correction_type: factual
-correction_scope: substantive
+correction_type: metadata
+materiality: substantive
 
-affected_record_reference: <CHRONICLE-ENTRY-ID>
+affected_record_reference: CHR-2026-0001
 affected_record_type: chronicle_entry
 
 affected_fields:
   - event_date
 
-issue_summary: >
-  The published Chronicle Entry used an event date that did not
-  match the authoritative source record.
+original_information:
+  event_date: 2026-09-02
+
+corrected_information:
+  event_date: 2026-09-01
+
+correction_date: 2026-09-10
 
 reason: >
   The authoritative publication record establishes the correct
-  occurrence date as 2026-09-01.
+  Occurrence date as 2026-09-01.
 
-previous_state:
-  event_date: 2026-09-02
+prior_version_reference:
+  entry_id: CHR-2026-0001
+  entry_version: 1
 
-corrected_state:
-  event_date: 2026-09-01
+resulting_version_reference:
+  entry_id: CHR-2026-0001
+  entry_version: 2
 
-change_summary: >
-  Event date corrected to match the authoritative publication record.
-
-prior_version_reference: <PRIOR-ENTRY-VERSION>
-resulting_version_reference: <CORRECTED-ENTRY-VERSION>
+version_effect: new_version
 
 authoritative_record_references:
-  - <AUTHORITATIVE-SOURCE-ID>
+  - <AUTHORITATIVE-RECORD-ID>
 
-source_references: []
-evidence_references: []
+verification_state: in_review
 
-verification_state: <CONTROLLED-VALUE>
-validation_state: <CONTROLLED-VALUE>
-
-correction_status: <CONTROLLED-VALUE>
-publication_state: <CONTROLLED-VALUE>
-
-correction_created_at: <TIMESTAMP>
-published_at: <TIMESTAMP>
+created_at: 2026-09-10T16:00:00Z
 ```
 
-This example intentionally avoids inventing final values that have not yet been architecturally approved.
+This example does not establish a permanent Correction Record identifier format.
 
 ---
 
-## Correction Lifecycle
+# Correction Record Creation Test
 
-A substantive Chronicle correction should follow a documented and repeatable workflow.
+A formal Correction Record should ordinarily be created when:
 
-Working lifecycle:
+* Chronicle corrects a material historical field
+* Chronicle changes Event Type
+* Chronicle changes Event Date
+* Chronicle changes a material Source reference
+* Chronicle changes Evidence linkage
+* Chronicle changes Provenance
+* Chronicle changes a material Relationship
+* Chronicle changes material Historical Context
+* Chronicle needs to preserve Correction rationale
+* Versioning requires traceable lineage
 
-1. Issue identified
-2. Scope and authority reviewed
-3. Affected Chronicle record identified
-4. Sources and evidence reviewed
-5. Correction decision documented
-6. Prior state linked or preserved
-7. Corrected state prepared
-8. Verification performed where applicable
-9. Validation performed
-10. Resulting version established
-11. Correction published
-12. Prior and corrected states preserved
-13. Historical linkage maintained
-
-Not every administrative correction will require every step.
-
-The final workflow will be governed by Chronicle Corrections, Versioning, Validation, and Publication procedures.
+A simple Editorial Update may not require a separate Correction Record if historical meaning remains unchanged.
 
 ---
 
-## Authority Boundary
+# Authority Boundary
 
-Chronicle Correction Records apply only to Chronicle-owned records.
+Chronicle Correction Records may correct:
 
-Chronicle may correct:
+* Chronicle Entries
+* Chronicle Source Records
+* Chronicle Evidence Records
+* Chronicle Correction Records
+* other Chronicle-owned supporting records
 
-* Chronicle Entry fields
-* Chronicle metadata
-* Chronicle references
-* Chronicle provenance
-* Chronicle relationships
-* Chronicle verification state
-* Chronicle publication metadata
-* Chronicle supporting records
-
-Chronicle does **not** correct:
+They do **not** correct:
 
 * Certification Packages
 * SREG Registry Entries
@@ -765,75 +1214,113 @@ Chronicle does **not** correct:
 * Trust Statements
 * Workflow Definitions
 * Atlas records
-* Other externally authoritative Suite objects
+* other externally authoritative objects
 
-If one of those systems changes its own authoritative object, Chronicle may preserve the later occurrence and update its own references.
-
----
-
-## Preservation Principles
-
-Chronicle corrections should supplement and version the historical record rather than erase it.
-
-Whenever practical:
-
-* Prior substantive states remain preserved
-* Corrected states remain traceable
-* Correction rationale remains visible
-* Evidence and authoritative references remain reviewable
-* Version lineage remains intact
-* Publication history remains reconstructable
-* Historical relationships remain auditable
-
-The objective is not to hide mistakes.
-
-The objective is to preserve how Chronicle's own record changed.
+Authority remains with the originating institution.
 
 ---
 
-## Design Goals
+# Validation Expectations
 
-The Chronicle Correction Record Schema should:
+A production Correction Record should ultimately be validated against:
 
-* Preserve transparency
-* Improve Chronicle accuracy
-* Maintain authority boundaries
-* Preserve prior states
-* Support version lineage
-* Maintain provenance
-* Support evidence-aware review
-* Support verification
-* Support validation
-* Maintain traceability
-* Preserve historical continuity
-* Avoid silent rewriting
-* Remain machine-readable and durable
-
----
-
-## Future Development
-
-Future Chronicle Correction Schema work may include:
-
-* Final Correction Record identifier architecture
-* Controlled correction types
-* Controlled correction scope values
-* Structured field-level change operations
-* Formal version-lineage schema
+* Correction Record Schema
+* Correction Record identifier rules
+* Correction Type Controlled Values
+* affected-record integrity
+* affected-field presence
+* original-information presence
+* corrected-information presence
+* Correction Date
+* reason
+* prior-Version linkage where applicable
+* resulting-Version linkage
+* Source / Evidence reference integrity
 * Provenance requirements
-* Correction validation rules
-* Automated diff generation
-* Digital signatures
-* Integrity anchoring
-* Multi-party review where institutionally justified
-* Public correction discovery
+* publication prerequisites
+
+---
+
+# Schema Versioning and Compatibility
+
+Every production Correction Record should remain associated with the Correction Record Schema Version that governed it.
+
+Schema evolution should preserve:
+
+* Schema identity
+* Schema Version
+* compatibility classification
+* deprecation history
+* migration guidance
+* Validation behavior
+* historical interpretability
+
+Older Correction Records should remain understandable under the Schema Version that originally governed them.
+
+---
+
+# Design Principles
+
+## Correct Chronicle-Owned Records Only
+
+Authority boundaries remain explicit.
+
+## Preserve Before and After
+
+Original and corrected information both remain traceable.
+
+## Correction ≠ Version
+
+Correction explains the change; Version preserves the resulting state.
+
+## Material Changes Need Lineage
+
+No silent substantive rewrite.
+
+## Controlled Correction Types
+
+Production Correction Type values come from the Controlled Values Registry.
+
+## Reverification Follows Material Change
+
+Material Corrections ordinarily trigger Reverification.
+
+## Preserve Prior States
+
+Historical institutional states remain reviewable.
+
+---
+
+# Guiding Principle
+
+> Preserve what Chronicle said. Preserve why Chronicle changed it.
+
+And operationally:
+
+> Correct visibly. Version materially. Preserve every substantive state.
 
 ---
 
 ## Status
 
-**Architectural draft — not yet a frozen production schema.**
+**Phase VII reconciled Chronicle Correction Record Schema specification.**
 
-This document has been reconciled with the current Chronicle Corrections page, Chronicle Records architecture, Chronicle Base Schema direction, and Satoshium Suite Standards, Methodology, Schemas Standard, Evidence Standard, and Interoperability principles.
+The Correction Record Schema is now aligned with:
 
-The final identifier format, controlled values, required/conditional/optional designations, versioning conventions, actor roles, validation rules, and publication requirements must be settled through the remaining Chronicle operational-development steps before this schema becomes production authoritative.
+* Chronicle Base Schema
+* Corrections architecture
+* Controlled Values Registry
+* Versioning Policy
+* Lifecycle Model
+* Relationship Model
+* Provenance Model
+* Source architecture
+* Evidence architecture
+* Verification Procedure
+* authority boundaries
+
+The approved Correction Type vocabulary and mandatory Correction minimum are incorporated.
+
+Correction Record identifier namespace, actor-role vocabularies, Validation-result location, and any independent Correction Record publication requirements remain intentionally unresolved pending operational evidence.
+
+A machine-readable `correction-record-schema.json` should be created only after this specification is tested against the first production Correction Record.
