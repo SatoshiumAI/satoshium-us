@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Chronicle Provenance</title>
+<meta name="description" content="Satoshium Chronicle Provenance Model — defines how Chronicle records where information came from, how it entered the historical record, and the minimum provenance required for production Chronicle Entries.">
+<link rel="canonical" href="https://satoshium.us/chronicle/provenance/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.tag{
+ display:inline-block;
+ margin-top:6px;
+ margin-right:6px;
+ padding:4px 9px;
+ border-radius:999px;
+ border:1px solid rgba(214,163,74,.24);
+ color:var(--gold2);
+ font-size:12px;
+ font-weight:800;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+code{
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Provenance</div>
+  <h1>Chronicle Provenance Model</h1>
+
+  <p class="lead">
+    Provenance records how information, Sources, Evidence, and authoritative references
+    originated, were accessed or captured, moved through systems, and entered the
+    Chronicle historical record.
+  </p>
+
+  <p class="lead">
+    Provenance is required for production Chronicle Entries because a historical record
+    is more trustworthy when future reviewers can reconstruct not only what Chronicle
+    says, but how the underlying information reached Chronicle.
+  </p>
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Core Provenance Question</h2>
+
+  <div class="note">
+    How did this information get here?
+  </div>
+
+  <p style="margin-top:14px;">
+    Provenance documents the path into Chronicle. It complements Sources, Evidence,
+    Relationships, and Verification without replacing any of them.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Provenance Boundary</h2>
+
+  <div class="note">
+    Source = Where information came from.<br>
+    Evidence = What bears on the Entry or claim.<br>
+    Provenance = How the information originated, moved, and entered Chronicle.<br>
+    Verification = Chronicle's review of its own historical representation.
+  </div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Origin</h2>
+  <p>
+    Identifies the system, institution, repository, person, Source, or authoritative
+    record from which the information originated.
+  </p>
+  <span class="tag">Required</span>
+</article>
+
+<article class="card">
+  <h2>Acquisition / Access</h2>
+  <p>
+    Records how Chronicle obtained or accessed the information, such as direct system
+    reference, public webpage, repository access, archive retrieval, file receipt, or other method.
+  </p>
+  <span class="tag">Required</span>
+</article>
+
+<article class="card">
+  <h2>Capture or Retrieval Date</h2>
+  <p>
+    Records when Chronicle accessed, captured, retrieved, or otherwise obtained the
+    material used in the Entry.
+  </p>
+  <span class="tag">Required</span>
+</article>
+
+<article class="card">
+  <h2>Source / Record Reference</h2>
+  <p>
+    Connects the provenance path to the applicable Source Record, authoritative record,
+    repository object, archive reference, or other identifiable origin.
+  </p>
+  <span class="tag">Required when available</span>
+</article>
+
+<article class="card">
+  <h2>Transfer / Transformation</h2>
+  <p>
+    Records material movement or transformation that occurred before information entered
+    Chronicle, such as export, conversion, transcription, archival capture, or migration.
+  </p>
+  <span class="tag">Conditional</span>
+</article>
+
+<article class="card">
+  <h2>Preservation Path</h2>
+  <p>
+    Records how material was archived, retained, mirrored, migrated, or otherwise preserved
+    when those steps matter to traceability.
+  </p>
+  <span class="tag">Conditional</span>
+</article>
+
+<article class="card">
+  <h2>Integrity Metadata</h2>
+  <p>
+    May include hashes, checksums, signatures, timestamps, immutable references, or other
+    integrity indicators where available and operationally useful.
+  </p>
+  <span class="tag">Optional / Conditional</span>
+</article>
+
+<article class="card">
+  <h2>Provenance Limitations</h2>
+  <p>
+    Records missing links, uncertain origin, incomplete custody, unavailable originals,
+    or other limitations in the provenance chain.
+  </p>
+  <span class="tag">Required when applicable</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Minimum Production Provenance</h2>
+
+  <p>
+    Every production Chronicle Entry must preserve enough provenance to reconstruct
+    the origin and acquisition path of the information used to create the Entry.
+  </p>
+
+  <div class="note">
+    Origin · Acquisition / Access Method · Capture / Retrieval Date ·
+    Source or Authoritative Record Reference when available ·
+    Provenance Limitations when applicable
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Minimum Does Not Mean Complete Chain of Custody</h2>
+
+  <p>
+    Chronicle does not require forensic-grade custody documentation for every Entry.
+    Deeper provenance should be recorded when the history, Evidence, Source quality,
+    integrity risk, or Event-Type Profile makes it necessary.
+  </p>
+
+  <div class="note">
+    Minimum provenance for every Entry.<br>
+    Expanded provenance when risk or historical importance requires it.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Provenance and Sources</h2>
+
+  <p>
+    A Source identifies an origin object or publication. Provenance records the path
+    from that Source into Chronicle.
+  </p>
+
+  <div class="note">
+    Source: Certification Package<br>
+    Provenance: Referenced directly from Certifier repository on a recorded date
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Provenance and Evidence</h2>
+
+  <p>
+    Evidence describes what material bears on the Entry or claim. Provenance records
+    how that Evidence was obtained and preserved.
+  </p>
+
+  <div class="note">
+    Evidence may be strong while Provenance is incomplete.<br>
+    Provenance may be complete while Evidence has limited probative value.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Provenance and Verification</h2>
+
+  <p>
+    Verification consumes Provenance as part of Chronicle's review.
+    Verification does not create Provenance retroactively.
+  </p>
+
+  <div class="note">
+    Provenance provides traceability.<br>
+    Verification reviews whether that traceability supports Chronicle's representation.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Authoritative Object Provenance</h2>
+
+  <p>
+    When Chronicle references an authoritative Suite object, Provenance should identify
+    the originating system and the method by which Chronicle accessed the authoritative record.
+  </p>
+
+  <div class="note">
+    Originating System → Authoritative Object → Access / Retrieval → Chronicle Entry
+  </div>
+
+  <p style="margin-top:14px;">
+    The provenance path does not transfer authority from the originating system to Chronicle.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Derived and Transformed Material</h2>
+
+  <p>
+    If Chronicle uses exported, converted, summarized, transcribed, normalized,
+    or migrated material, the material transformation should be visible where it may
+    affect interpretation or authenticity.
+  </p>
+
+  <div class="note">
+    Original → Transformation → Chronicle-use representation
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Broken or Incomplete Provenance</h2>
+
+  <p>
+    Incomplete Provenance does not automatically make an Occurrence ineligible for preservation.
+    Chronicle should preserve the limitation explicitly and allow Verification to assess its impact.
+  </p>
+
+  <div class="note">
+    Unknown does not become known by omission.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Provenance and Relationships</h2>
+
+  <p>
+    Relationships may connect an Entry to Source Records, authoritative records, or other objects.
+    Provenance explains the information path associated with those connections.
+  </p>
+
+  <p>
+    Relationship semantics should not be overloaded to carry full provenance history.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Provenance and Versioning</h2>
+
+  <p>
+    Material provenance changes should be traceable through Entry Versions or supporting
+    record Versions when they change the historical representation or the confidence placed in it.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Provenance Validation</h2>
+
+  <p>
+    Future Validation should confirm that required provenance elements are present,
+    structurally valid, and consistent with the referenced Source, Evidence, or authoritative object.
+  </p>
+
+  <div class="note">
+    Required fields present · References resolvable · Dates valid ·
+    Origin identified · Limitations represented when known
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Provenance Principle</h2>
+
+  <p>
+    Chronicle should preserve enough of the information path that a future reviewer
+    can understand not only what the Entry says, but how Chronicle came to say it.
+  </p>
+
+  <div class="note">
+    Preserve origin. Preserve path. Preserve limitations.
+  </div>
+
+  <a class="btn" href="/chronicle/">
+    Back to Chronicle →
+  </a>
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Provenance turns information into traceable history.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
