@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Chronicle Preservation Eligibility</title>
+<meta name="description" content="Satoshium Chronicle Preservation Eligibility Model — defines how Chronicle determines whether an occurrence should be preserved, including eligibility criteria, exclusions, automatic preservation classes, discretionary consideration, historical significance, and duplicate or trivial occurrence handling.">
+<link rel="canonical" href="https://satoshium.us/chronicle/preservation-eligibility/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.status{
+ display:inline-block;
+ margin-top:10px;
+ padding:4px 10px;
+ border-radius:999px;
+ border:1px solid rgba(214,163,74,.24);
+ color:var(--gold2);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.06em;
+ text-transform:uppercase;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Preservation Eligibility</div>
+  <h1>Chronicle Preservation Eligibility Model</h1>
+
+  <p class="lead">
+    Preservation Eligibility is Chronicle's institutional admission rule.
+    It determines whether an Occurrence should become part of the Chronicle
+    historical record through a canonical Chronicle Entry.
+  </p>
+
+  <p class="lead">
+    Historical Significance is treated within this model as a principal rationale
+    for preservation rather than as a separate institutional system.
+  </p>
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Eligibility Question</h2>
+
+  <div class="note">
+    Should Chronicle preserve this Occurrence?
+  </div>
+
+  <p style="margin-top:14px;">
+    Preservation Eligibility is assessed before a production Chronicle Entry is created.
+    It prevents Chronicle from becoming a universal activity log while preserving room
+    for historically meaningful Occurrences that deserve institutional memory.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Canonical Sequence</h2>
+
+  <div class="note">
+    Occurrence → Preservation Eligibility → Chronicle Entry → Historical Preservation
+  </div>
+
+  <p style="margin-top:14px;">
+    The eligibility decision determines admission to Chronicle.
+    The Entry Model determines the structure of the record after admission.
+  </p>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Institutional Relevance</h2>
+  <p>
+    The Occurrence materially relates to Satoshium, a Suite institution,
+    an authoritative Suite object, governance, architecture, public operation,
+    or another recognized area of institutional history.
+  </p>
+  <span class="status">Eligibility Factor</span>
+</article>
+
+<article class="card">
+  <h2>Historical Significance</h2>
+  <p>
+    The Occurrence has enduring value for understanding how Satoshium developed,
+    changed, operated, or established institutional continuity.
+  </p>
+  <span class="status">Eligibility Factor</span>
+</article>
+
+<article class="card">
+  <h2>Lifecycle Significance</h2>
+  <p>
+    The Occurrence represents a meaningful creation, renewal, suspension,
+    revocation, expiration, transition, completion, or other historically relevant
+    lifecycle milestone.
+  </p>
+  <span class="status">Eligibility Factor</span>
+</article>
+
+<article class="card">
+  <h2>First, Last, or Milestone</h2>
+  <p>
+    The Occurrence is the first, last, largest, earliest, inaugural, terminal,
+    threshold-crossing, or otherwise historically distinctive milestone of its kind.
+  </p>
+  <span class="status">Eligibility Factor</span>
+</article>
+
+<article class="card">
+  <h2>Governance or Architectural Change</h2>
+  <p>
+    The Occurrence materially changes rules, standards, institutional responsibilities,
+    architecture, interoperability, policy, or another foundational element.
+  </p>
+  <span class="status">Eligibility Factor</span>
+</article>
+
+<article class="card">
+  <h2>Relationship Significance</h2>
+  <p>
+    The Occurrence establishes, changes, or terminates a historically meaningful
+    relationship among Suite institutions, records, systems, or authoritative objects.
+  </p>
+  <span class="status">Eligibility Factor</span>
+</article>
+
+<article class="card">
+  <h2>Evidentiary or Interpretive Importance</h2>
+  <p>
+    Preserving the Occurrence materially improves later understanding of another
+    historical Entry, institutional development, disputed interpretation, or major
+    historical sequence.
+  </p>
+  <span class="status">Eligibility Factor</span>
+</article>
+
+<article class="card">
+  <h2>Continuity Value</h2>
+  <p>
+    The Occurrence fills a meaningful gap needed to reconstruct Chronicle history
+    across time, even if the event appears less significant when viewed in isolation.
+  </p>
+  <span class="status">Eligibility Factor</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Eligibility Standard</h2>
+
+  <p>
+    Chronicle does not require every eligible Occurrence to satisfy every factor.
+    Eligibility should depend on an approved preservation basis appropriate to the
+    Event Type and historical circumstances.
+  </p>
+
+  <div class="note">
+    Eligibility is reasoned admission, not a numerical score.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Automatic Preservation Classes</h2>
+
+  <p>
+    Chronicle may approve limited classes of Occurrences for which preservation is
+    presumed or automatically required because their historical value is already
+    institutionally established.
+  </p>
+
+  <p>
+    Automatic classes should remain narrow and governed. They should be created only
+    after operational experience demonstrates that repeated individual eligibility
+    review would add little value.
+  </p>
+
+  <div class="note">
+    Approved Automatic Class → Preservation Eligible unless an exclusion rule applies
+  </div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Automatic Does Not Mean Unreviewed</h2>
+  <p>
+    Automatic preservation removes the need to re-decide historical importance,
+    but the resulting Chronicle Entry must still satisfy Entry Model, authority,
+    Provenance, Verification, Validation, publication, and other production rules.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Initial Automatic Classes</h2>
+  <p>
+    No broad automatic preservation catalog should be frozen yet. Certification
+    operational experience should determine whether specific certification milestones
+    warrant automatic treatment.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Discretionary Consideration</h2>
+
+  <p>
+    Occurrences outside an automatic class may still qualify through discretionary
+    Preservation Eligibility review.
+  </p>
+
+  <p>
+    Discretionary review should document the preservation rationale rather than relying
+    on intuition alone.
+  </p>
+
+  <div class="note">
+    Occurrence → Eligibility Factors → Historical-Significance Rationale → Eligibility Decision
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Historical-Significance Rationale</h2>
+
+  <p>
+    When Historical Significance supports preservation, Chronicle should preserve a
+    concise rationale explaining why the Occurrence has enduring historical value.
+  </p>
+
+  <p>
+    The rationale should identify the relevant significance basis without attempting
+    to create an artificial universal importance score.
+  </p>
+
+  <div class="note">
+    Historical Significance = Why this Occurrence is worth preserving
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Exclusion Criteria</h2>
+
+  <p>
+    An Occurrence should ordinarily be excluded when preservation would add little or
+    no durable historical value or would duplicate information already adequately
+    represented elsewhere.
+  </p>
+
+  <div class="note">
+    Routine Activity · Trivial Change · Exact Duplicate · Purely Administrative Noise ·
+    Failed Eligibility · Unsupported Speculation · Out-of-Scope Activity
+  </div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Routine Activity</h2>
+  <p>
+    Normal operational actions should not become Chronicle Entries merely because
+    they occurred or generated system records.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Trivial Occurrences</h2>
+  <p>
+    Minor changes with no meaningful historical, institutional, lifecycle,
+    relational, or continuity value should ordinarily remain outside Chronicle.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Exact Duplicates</h2>
+  <p>
+    Chronicle should not create multiple Entries for the same Occurrence merely
+    because multiple Sources, records, or references describe it.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Administrative Noise</h2>
+  <p>
+    Routine formatting changes, metadata maintenance, internal processing actions,
+    automated checks, and similar administrative events ordinarily belong in logs
+    or operational records rather than Chronicle.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Unsupported Speculation</h2>
+  <p>
+    Predictions, rumors, or imagined future developments should not become historical
+    Entries merely because they may later prove important.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Out-of-Scope Activity</h2>
+  <p>
+    An Occurrence outside Chronicle's institutional scope should not be admitted
+    unless a legitimate historical relationship to Satoshium brings it within Scope.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Duplicate Occurrence Handling</h2>
+
+  <p>
+    Multiple records, Sources, Evidence items, or Suite references may describe the
+    same underlying Occurrence. Chronicle should ordinarily preserve one canonical
+    Chronicle Entry for that Occurrence and attach the relevant supporting relationships.
+  </p>
+
+  <div class="note">
+    One Occurrence → One Canonical Chronicle Entry → Multiple Supporting References
+  </div>
+
+  <p style="margin-top:14px;">
+    A later development should receive a separate Entry only when it represents a
+    distinct qualifying Occurrence rather than additional information about the original one.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Trivial Occurrence Handling</h2>
+
+  <p>
+    Triviality should be assessed in historical context rather than by event size alone.
+    A small technical action may become historically important if it represents a first,
+    final transition, governance milestone, or necessary continuity point.
+  </p>
+
+  <div class="note">
+    Small does not always mean trivial. Routine does not always mean historical.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Eligibility and Event Type</h2>
+
+  <p>
+    Event Type classifies the Occurrence. Preservation Eligibility decides whether
+    Chronicle should preserve it.
+  </p>
+
+  <div class="note">
+    Event Type = What kind of Occurrence is this?<br>
+    Preservation Eligibility = Should Chronicle preserve it?
+  </div>
+
+  <p style="margin-top:14px;">
+    Matching an approved Event Type does not automatically guarantee preservation
+    unless Chronicle has explicitly designated that Event Type or class as automatic.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Eligibility and Evidence</h2>
+
+  <p>
+    Preservation Eligibility is distinct from Evidence sufficiency.
+    An Occurrence may be historically important even when Evidence is incomplete,
+    disputed, or limited.
+  </p>
+
+  <p>
+    Chronicle should preserve those limitations transparently rather than using
+    evidentiary uncertainty as an automatic substitute for the eligibility decision.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Retrospective Eligibility</h2>
+
+  <p>
+    An Occurrence may become eligible later when subsequent history reveals significance
+    that was not apparent at the time.
+  </p>
+
+  <div class="note">
+    Later Significance → Retrospective Eligibility → Chronicle Entry preserving original Event Date
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Eligibility Decision</h2>
+
+  <p>
+    The Preservation Eligibility decision should result in a clear institutional outcome.
+  </p>
+
+  <div class="note">
+    Eligible → Proceed to Chronicle Entry creation<br>
+    Not Eligible → Do not create a Chronicle Entry<br>
+    Deferred → Preserve review context until sufficient basis exists
+  </div>
+
+  <p style="margin-top:14px;">
+    Final decision-state terminology should be established through Chronicle Controlled Values.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Model Principle</h2>
+
+  <p>
+    Chronicle should preserve enough history to maintain institutional memory,
+    but not so much activity that history becomes indistinguishable from operational noise.
+  </p>
+
+  <div class="note">
+    Logs preserve activity. Chronicle preserves history.
+  </div>
+
+  <a class="btn" href="/chronicle/">
+    Back to Chronicle →
+  </a>
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Preservation begins with the decision that something is worth remembering.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
