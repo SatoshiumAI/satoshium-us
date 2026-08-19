@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Schemas</title>
-<meta name="description" content="Satoshium Chronicle Schemas — Suite-aligned machine-readable structures for canonical Chronicle Entries, supporting records, Event-Type Profiles, validation, and long-term schema evolution.">
+<meta name="description" content="Satoshium Chronicle Schemas — production machine-readable structures for canonical Chronicle Entries, Event-Type Profiles, supporting records, schema validation, institutional Validation, and long-term schema evolution.">
 <link rel="canonical" href="https://satoshium.us/chronicle/schemas/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -156,21 +156,24 @@ h1{
   </p>
 
   <p class="lead">
-    Phase VII establishes the production schema architecture: one universal Chronicle
-    Base Schema, specialized Event-Type Profiles, governed Controlled Values,
-    explicit Schema Versions, machine-readable Validation, and compatibility rules
-    that preserve older records without silent structural rewriting.
+    Phase VII completed Chronicle's production schema architecture: one universal
+    Chronicle Base Schema, specialized Event-Type Profiles, governed Controlled Values,
+    explicit Schema Versions, machine-readable schema validation, and compatibility
+    rules that preserve older records without silent structural rewriting. Phase VIII
+    now applies those contracts through Chronicle's institutional Validation and
+    Entry Production Procedure.
   </p>
 </section>
 
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Phase VII — Production Schemas</h2>
+  <h2>Phase VII — Production Schemas Complete</h2>
 
   <p>
-    Chronicle has moved beyond descriptive schema architecture. The first production
-    Base Schema now exists in both human-readable and machine-readable form.
+    Phase VII is complete. Chronicle now has a production Base Schema in both
+    human-readable and machine-readable form, a production Certification Event-Type
+    Profile, and a validated two-layer schema stack.
   </p>
 
   <div class="note">
@@ -225,11 +228,13 @@ h1{
 </article>
 
 <article class="card">
-  <h2>Validation</h2>
+  <h2>Schema Validation and Chronicle Validation</h2>
   <p>
-    Validation determines whether a Chronicle record conforms to the applicable schema,
-    profile, Controlled Values, identifier rules, Relationships, Provenance, Versioning,
-    and publication prerequisites.
+    Machine-readable schema validation tests structural conformance to the Base Schema
+    and applicable Event-Type Profile. Chronicle Validation is broader: it also tests
+    Controlled Values, identifier requirements, authoritative references, date / time
+    rules, Relationship integrity, Provenance, Correction / Version consistency,
+    Verification dependency, authority boundaries, and publication readiness.
   </p>
 </article>
 
@@ -269,10 +274,10 @@ h1{
   </div>
 
   <p style="margin-top:14px;">
-    Conditional fields support Event-Type Profiles, originating system,
-    authoritative references, Sources, Evidence, Relationships, Corrections,
-    prior-Version linkage, publication timestamps, maintenance timestamps, and
-    limitations where applicable.
+    Conditional fields support Event-Type Profiles, originating system where
+    required by a Profile, authoritative references, Sources, Evidence, Relationships,
+    Corrections, prior-Version linkage, publication timestamps, maintenance timestamps,
+    and limitations where applicable.
   </p>
 </article>
 
@@ -296,7 +301,9 @@ h1{
 
   <p style="margin-top:14px;">
     These concepts belong in procedure, Historical Context, Event-Type Profiles,
-    supporting records, or later schema evolution where operational need justifies them.
+    supporting records, Validation artifacts, or later schema evolution where
+    operational need justifies them. In particular, Validation State is not embedded
+    as a universal Base Schema field in Version 1.0.0.
   </p>
 </article>
 
@@ -319,7 +326,10 @@ h1{
 
   <p style="margin-top:14px;">
     The Certification Event-Type Profile is Chronicle's first production Event-Type Profile.
-    It specializes the Base Schema for qualifying certification-related Occurrences.
+    It specializes the Base Schema for qualifying certification-related Occurrences and
+    requires <code>event_type_profile</code>, <code>originating_system = certifier</code>,
+    non-null <code>event_date</code>, and authoritative certification references meeting
+    the Profile's structured authority requirement.
   </p>
 
   <a class="btn" href="/chronicle/schemas/certification-event-profile/">
@@ -358,8 +368,8 @@ h1{
 
   <p>
     The current schema family includes the production Chronicle Base Schema,
-    Chronicle's first production Event-Type Profile, and three reconciled supporting
-    schema specifications.
+    Chronicle's first production Event-Type Profile, its Phase VII profile-validation
+    report, and three reconciled supporting schema specifications.
   </p>
 
   <div class="note">
@@ -369,7 +379,8 @@ h1{
     certification-event-profile/<br>
     &nbsp;&nbsp;index.html<br>
     &nbsp;&nbsp;certification-event-profile.md<br>
-    &nbsp;&nbsp;certification-event-profile.json<br><br>
+    &nbsp;&nbsp;certification-event-profile.json<br>
+    &nbsp;&nbsp;chronicle-phase-vii-profile-validation-report.md<br><br>
 
     source-record-schema.md<br>
     evidence-record-schema.md<br>
@@ -421,8 +432,11 @@ h1{
 <article class="card">
   <h2>Future Supporting Schemas</h2>
   <p>
-    Verification, Validation, Publication, Provenance, Relationship, or Version Records
-    should receive separate schemas only when production requirements justify distinct records.
+    Verification, Validation, Publication, Provenance, Relationship, or Version artifacts
+    should receive separate schemas only when production requirements justify distinct,
+    independently governed records. Phase VIII intentionally keeps the first Validation
+    implementation lightweight and procedural rather than creating a new canonical
+    Validation object.
   </p>
 </article>
 
@@ -479,7 +493,7 @@ h1{
   <div class="note">
     Schema = Defines structure.<br>
     Verification = Reviews Chronicle's historical representation.<br>
-    Validation = Tests structural and procedural conformance.<br>
+    Validation = Tests conformance to governing institutional and machine-readable requirements.<br>
     Publication = Determines public-production state.
   </div>
 
@@ -493,14 +507,40 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Current Production Sequence</h2>
+  <h2>Current Production Position</h2>
+
+  <p>
+    The production schema stack is complete and now feeds directly into the Phase VIII
+    operational layer.
+  </p>
 
   <div class="note">
-    Chronicle Base Schema → Supporting Schema Reconciliation →
-    Certification Event-Type Profile → Profile Validation →
-    Validation Procedure → Production Procedure →
-    First Production Chronicle Entry
+    Chronicle Base Schema → Certification Event-Type Profile → Phase VII Schema Validation PASS →
+    Chronicle Validation Rules → Validation Sequence → Validation Behavior / Record →
+    Chronicle Entry Production Procedure → Operational Dry Run → First Production Chronicle Entry
   </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Two Validation Layers</h2>
+
+  <p>
+    Chronicle now uses two related but distinct validation layers.
+  </p>
+
+  <div class="note">
+    Machine-readable Schema Validation → Does the JSON representation satisfy the Base Schema and applicable Profile?<br><br>
+    Institutional Chronicle Validation → Does the current Entry Version satisfy the full CHR-VAL rule set and publication-readiness requirements?
+  </div>
+
+  <p style="margin-top:14px;">
+    A machine-readable schema PASS is necessary where the machine-readable Entry is
+    required, but it does not by itself establish overall Chronicle Validation PASS.
+  </p>
 </article>
 
 </section>
@@ -524,6 +564,14 @@ h1{
   <div class="note">
     One Entry. One Base Schema. Profiles specialize without multiplying canonical objects.
   </div>
+
+  <a class="btn" href="/chronicle/schemas/certification-event-profile/">
+    Open Certification Event-Type Profile →
+  </a>
+
+  <a class="btn" href="/chronicle/validation/">
+    Open Validation →
+  </a>
 
   <a class="btn" href="/chronicle/">
     Back to Chronicle →
