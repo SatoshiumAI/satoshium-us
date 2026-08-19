@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://satoshium.us/chronicle/schemas/certification-event-profile.json",
+  "title": "Satoshium Chronicle Certification Event-Type Profile",
+  "description": "Machine-readable Event-Type Profile for Chronicle Entries that preserve qualifying certification-related Occurrences. Composes with the Chronicle Base Schema and adds Certification-specific requirements without duplicating Certifier-owned Certification Package contents.",
+  "allOf": [
+    {
+      "$ref": "https://satoshium.us/chronicle/schemas/chronicle-base-schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "event_type_profile",
+        "originating_system",
+        "authoritative_record_references"
+      ],
+      "properties": {
+        "event_type_profile": {
+          "const": "certification-event-profile",
+          "description": "Identifies the Certification Event-Type Profile governing this Chronicle Entry."
+        },
+        "originating_system": {
+          "const": "certifier",
+          "description": "Certifier is the originating system for the authoritative certification action represented by the Occurrence."
+        },
+        "event_type": {
+          "type": "string",
+          "enum": [
+            "certification_created",
+            "certification_renewed",
+            "certification_suspended",
+            "certification_revoked",
+            "certification_expired"
+          ],
+          "description": "Approved certification-related Chronicle Event Type."
+        },
+        "event_date": {
+          "description": "Date or timestamp of the authoritative certification Occurrence. Null is not permitted by this Profile.",
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            }
+          ]
+        },
+        "authoritative_record_references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "reference"
+                ],
+                "properties": {
+                  "reference": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "system": {
+                    "const": "certifier"
+                  },
+                  "record_type": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              }
+            ]
+          },
+          "contains": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "object",
+                "required": [
+                  "reference"
+                ],
+                "properties": {
+                  "system": {
+                    "const": "certifier"
+                  }
+                }
+              }
+            ]
+          },
+          "minContains": 1,
+          "description": "At least one authoritative Certifier reference identifying the relevant Certification Package or authoritative certification record."
+        },
+        "historical_context": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Chronicle Historical Context for the certification Occurrence. Must remain distinct from Certifier-owned findings, evidence, and determination logic."
+        },
+        "provenance": {
+          "allOf": [
+            {
+              "$ref": "https://satoshium.us/chronicle/schemas/chronicle-base-schema.json#/$defs/provenance"
+            },
+            {
+              "type": "object",
+              "required": [
+                "authoritative_record_reference"
+              ],
+              "properties": {
+                "origin": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "authoritative_record_reference": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "reference"
+                      ],
+                      "properties": {
+                        "reference": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "system": {
+                          "const": "certifier"
+                        },
+                        "record_type": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "url": {
+                          "type": "string",
+                          "format": "uri"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "profile_version": {
+      "const": "1.0.0",
+      "description": "Initial Version of the Certification Event-Type Profile."
+    }
+  }
+}
