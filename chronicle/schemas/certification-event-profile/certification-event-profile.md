@@ -88,6 +88,21 @@ Initial Profile Version:
 1.0.0
 ```
 
+Canonical Profile directory:
+
+```text
+https://satoshium.us/chronicle/schemas/certification-event-profile/
+```
+
+Production artifact family:
+
+```text
+/chronicle/schemas/certification-event-profile/
+├── index.html
+├── certification-event-profile.md
+└── certification-event-profile.json
+```
+
 The Profile should be represented in production Chronicle Entries through:
 
 ```text
@@ -115,13 +130,13 @@ schema_version: 1.0.0
 The human-readable Base Schema is:
 
 ```text
-chronicle-base-schema.md
+/chronicle/schemas/chronicle-base-schema.md
 ```
 
 The machine-readable Base Schema is:
 
 ```text
-chronicle-base-schema.json
+/chronicle/schemas/chronicle-base-schema.json
 ```
 
 The Profile may strengthen or specialize Base Schema requirements.
@@ -728,28 +743,34 @@ An approved Event Type may support predictable admission rules, but Profile appl
 
 # Machine-Readable Profile
 
-The machine-readable implementation should be published as:
+The machine-readable production implementation is published as:
 
 ```text
-certification-event-profile.json
+/chronicle/schemas/certification-event-profile/certification-event-profile.json
 ```
 
-The JSON Profile should compose with:
+Canonical URI:
 
 ```text
-chronicle-base-schema.json
+https://satoshium.us/chronicle/schemas/certification-event-profile/certification-event-profile.json
 ```
 
-rather than duplicate the Base Schema.
+The JSON Profile composes with:
+
+```text
+/chronicle/schemas/chronicle-base-schema.json
+```
+
+rather than duplicating the Base Schema.
 
 Conceptually:
 
 ```text
-certification-event-profile.json
-        ↓
-references / composes with
-        ↓
 chronicle-base-schema.json
+        +
+certification-event-profile.json
+        =
+Certification-related Chronicle Entry Validation
 ```
 
 The machine-readable Profile must not introduce requirements that contradict this human-readable specification.
@@ -960,6 +981,20 @@ And operationally:
 
 This document defines the human-readable production requirements for Chronicle Entries representing qualifying certification-related Occurrences.
 
+It is published as part of:
+
+```text
+/chronicle/schemas/certification-event-profile/
+```
+
+with:
+
+```text
+index.html
+certification-event-profile.md
+certification-event-profile.json
+```
+
 It is aligned with:
 
 * Chronicle Base Schema
@@ -978,10 +1013,12 @@ It is aligned with:
 * Corrections
 * Suite authority boundaries
 
-The next implementation artifact is:
+The human-readable and machine-readable Profile artifacts are now both established.
+
+The next Phase VII closeout task is formal two-layer Profile Validation against:
 
 ```text
+chronicle-base-schema.json
+        +
 certification-event-profile.json
 ```
-
-which should machine-enforce this Profile through composition with `chronicle-base-schema.json`.
