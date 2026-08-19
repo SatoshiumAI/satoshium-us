@@ -529,6 +529,36 @@ It does not create a second canonical object.
 
 ---
 
+## `originating_system`
+
+System or institution that originated the authoritative action represented by the Occurrence when that distinction is required by an Event-Type Profile.
+
+**Requirement:** Conditional.
+
+This field is supported by the Base Schema but is not universally required.
+
+Example:
+
+```text
+certifier
+```
+
+For certification-related Chronicle Entries, the Certification Event-Type Profile may require:
+
+```text
+originating_system: certifier
+```
+
+Rules:
+
+* `originating_system` identifies the system responsible for the authoritative action represented by the Occurrence.
+* It does not transfer authority to Chronicle.
+* It should not be inferred when the originating institution cannot be established.
+* It becomes Required only when an applicable Event-Type Profile says so.
+* It does not appear inside `entry_id`.
+
+---
+
 ## `authoritative_record_references`
 
 Durable references to authoritative external or Suite-owned records associated with the represented Occurrence.
@@ -745,13 +775,21 @@ A Suite-originating system may be highly relevant for some Event Types.
 
 It is not universal to every possible Chronicle Entry.
 
+The Base Schema therefore supports:
+
+```text
+originating_system
+```
+
+as a **Conditional** field.
+
 Example:
 
 ```text
 originating_system: certifier
 ```
 
-belongs naturally in the Certification Event-Type Profile.
+is expected to be required by the Certification Event-Type Profile rather than by the universal Base Schema.
 
 ---
 
@@ -885,6 +923,7 @@ entry_created_at
 
 ```text
 event_type_profile
+originating_system
 authoritative_record_references
 source_references
 evidence_references
@@ -900,7 +939,7 @@ limitations
 
 # Machine-Readable Structure
 
-The production machine-readable implementation should be defined in:
+The production machine-readable implementation is published as:
 
 ```text
 chronicle-base-schema.json
@@ -1221,20 +1260,28 @@ Older Entries and Schema Versions must remain understandable.
 
 The Base Schema begins the Phase VII production schema family.
 
-Initial artifacts:
+Current Base Schema artifacts:
 
 ```text
 chronicle-base-schema.md
-chronicle-entry-schema.json
+chronicle-base-schema.json
 ```
 
-Next production schema artifact:
+Current supporting human-readable schema specifications:
+
+```text
+source-record-schema.md
+evidence-record-schema.md
+correction-record-schema.md
+```
+
+Current Event-Type Profile work:
 
 ```text
 Certification Event-Type Profile
 ```
 
-Supporting Source, Evidence, and Correction schemas should be reconciled to this Base Schema architecture before being treated as production-authoritative schemas.
+The Certification Event-Type Profile specializes this Base Schema without altering its universal boundary.
 
 ---
 
@@ -1256,10 +1303,10 @@ This document defines the human-readable production boundary for the Chronicle B
 
 The canonical identifier format, initial Controlled Values, Lifecycle State, Verification State, Publication State, Versioning rules, Correction rules, Relationship Model, Provenance Model, and authority boundaries are incorporated.
 
-The corresponding machine-readable implementation is to be defined in:
+The corresponding machine-readable implementation is published as:
 
 ```text
 chronicle-base-schema.json
 ```
 
-The Certification Event-Type Profile will supply Certification-specific requirements without altering the universal Base Schema boundary.
+The Certification Event-Type Profile supplies Certification-specific requirements without altering the universal Base Schema boundary. The Base Schema now explicitly permits `originating_system` as a conditional extension point so applicable Profiles may require and constrain it without making it universal.
