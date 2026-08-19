@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Certification Events</title>
-<meta name="description" content="Satoshium Chronicle Certification Events — defines the certification-related historical events preserved by Chronicle.">
+<meta name="description" content="Satoshium Chronicle Certification Events — public explanation of the Certification Event-Type Profile governing Chronicle Entries that preserve qualifying certification occurrences.">
 <link rel="canonical" href="https://satoshium.us/chronicle/certification-events/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -147,19 +147,21 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-  <div class="eyebrow">Chronicle · Certification Events</div>
+  <div class="eyebrow">Chronicle · Certification Event-Type Profile</div>
   <h1>Satoshium Chronicle Certification Events</h1>
 
   <p class="lead">
-    Certification Events define the certification-related historical occurrences
-    that Chronicle may preserve as part of the historical record.
+    The Certification Event-Type Profile defines the certification-specific
+    requirements applied to Chronicle Entries that preserve qualifying
+    certification-related Occurrences.
   </p>
 
   <p class="lead">
-    Chronicle does not create, replace, or reinterpret certifications. Certifier
-    remains authoritative for certification records and lifecycle actions. Chronicle
-    preserves the historical occurrence and context of certification activity by
-    referencing those authoritative records.
+    Certifier remains authoritative for certification determinations, Certification
+    Packages, lifecycle actions, and certification status. Chronicle owns the
+    historical-preservation record representing the qualifying certification
+    Occurrence and preserves that history by referencing the authoritative Certifier
+    record rather than duplicating it.
   </p>
 </section>
 
@@ -168,49 +170,57 @@ h1{
 <article class="card">
   <h2>Purpose</h2>
   <p>
-    Certification Events provide Chronicle with a clear historical model for
-    preserving qualifying moments in the life of a certification while maintaining
-    the authority boundaries established by the Satoshium Suite.
+    The Certification Event-Type Profile specializes the Chronicle Base Schema for
+    certification-related Occurrences. It adds only the requirements necessary to
+    preserve certification history while maintaining Suite authority boundaries.
   </p>
 </article>
 
 <article class="card">
   <h2>Core Distinction</h2>
   <p>
-    Certifier is authoritative for Certification Packages and certification
-    lifecycle actions. Registry is authoritative for SREG Registry Entries.
-    Chronicle is responsible for preserving qualifying historical occurrences and
-    their context without assuming the authority of either system.
+    Certifier owns the authoritative certification action and Certification Package.
+    Registry owns any related SREG Registry Entry. Chronicle owns the Chronicle Entry
+    that preserves the qualifying historical Occurrence and its historical context.
   </p>
 </article>
 
 <article class="card">
-  <h2>Suite Alignment</h2>
+  <h2>Base Schema Relationship</h2>
   <p>
-    Certification Events follow Satoshium Suite standards for stable terminology,
-    reference-based interoperability, clear institutional boundaries, structured
-    records, and repeatable procedures. Chronicle references authoritative Suite
-    objects rather than duplicating or replacing them.
+    Certification-related Chronicle Entries remain canonical Chronicle Entries.
+    The Certification Event-Type Profile specializes the Base Schema; it does not
+    create a separate canonical Certification Event object.
+  </p>
+  <div class="note">
+    Chronicle Base Schema + Certification Event-Type Profile = Certification-related Chronicle Entry
+  </div>
+</article>
+
+<article class="card">
+  <h2>Authority Boundary</h2>
+  <p>
+    The Profile may require references to authoritative Certifier records, but it
+    does not reproduce certification findings, evidence packages, status mechanics,
+    or other Certification Package contents owned by Certifier.
   </p>
 </article>
 
 <article class="card">
   <h2>Historical Meaning</h2>
   <p>
-    A preserved certification occurrence records what happened, when it happened,
-    the authoritative record that establishes the occurrence, and the historical
-    context needed to understand its place within the broader certification history.
+    A Chronicle Entry classified under this Profile preserves what happened, when it
+    happened, which Certifier record establishes the Occurrence, and the historical
+    context needed to understand the Occurrence over time.
   </p>
 </article>
 
 <article class="card">
-  <h2>Record References</h2>
+  <h2>Reference-Based Interoperability</h2>
   <p>
-    Certification Events reference the authoritative Certification Package produced
-    by Certifier and may also reference related public outputs, Registry Entries,
-    receipts, attestations, integrity references, public pages, or other supporting
-    Suite records. Referenced records remain authoritative within the systems that
-    created them.
+    Chronicle references Certification Packages, related Registry Entries, integrity
+    references, attestations, public records, or other Suite objects without
+    redefining their schemas or transferring their institutional authority.
   </p>
 </article>
 
@@ -222,9 +232,9 @@ h1{
   <h2>Certification Event Types</h2>
 
   <p>
-    Chronicle may preserve several certification-related event types when the
-    underlying occurrence satisfies Chronicle preservation rules and can be tied to
-    an authoritative certification record.
+    The Certification Event-Type Profile applies to the approved certification-related
+    Event Types when the represented Occurrence satisfies Chronicle Preservation
+    Eligibility and can be tied to an authoritative Certifier record.
   </p>
 
   <div class="note">
@@ -240,56 +250,53 @@ h1{
 <article class="card">
   <h2>Certification Created</h2>
   <p>
-    A Certification Created event records the historical occurrence in which
-    Certifier produced a new authoritative Certification Package. Chronicle
-    references that package; it does not recreate the certification determination.
+    A Chronicle Entry classified as Certification Created preserves the historical
+    Occurrence in which Certifier created a new authoritative Certification Package.
+    Chronicle references that Package; it does not recreate the certification determination.
   </p>
 </article>
 
 <article class="card">
   <h2>Certification Renewed</h2>
   <p>
-    A Certification Renewed event records the historical occurrence in which
-    Certifier authoritatively renewed a certification according to the applicable
-    certification rules and lifecycle model.
+    A Chronicle Entry classified as Certification Renewed preserves the historical
+    Occurrence in which Certifier authoritatively renewed a certification under the
+    applicable certification rules and lifecycle model.
   </p>
 </article>
 
 <article class="card">
   <h2>Certification Suspended</h2>
   <p>
-    A Certification Suspended event records the historical occurrence in which
-    Certifier authoritatively placed a certification into a suspended state according
-    to the applicable certification status model.
+    A Chronicle Entry classified as Certification Suspended preserves the historical
+    Occurrence in which Certifier authoritatively placed a certification into a
+    suspended state.
   </p>
 </article>
 
 <article class="card">
   <h2>Certification Revoked</h2>
   <p>
-    A Certification Revoked event records the historical occurrence in which
-    Certifier authoritatively revoked a certification according to the applicable
-    certification rules and lifecycle model.
+    A Chronicle Entry classified as Certification Revoked preserves the historical
+    Occurrence in which Certifier authoritatively revoked a certification.
   </p>
 </article>
 
 <article class="card">
   <h2>Certification Expired</h2>
   <p>
-    A Certification Expired event records the historical occurrence in which a
-    certification reached an expired state under the applicable Certifier rules and
-    certification lifecycle model.
+    A Chronicle Entry classified as Certification Expired preserves the historical
+    Occurrence in which a certification reached an expired state under the applicable
+    Certifier rules and lifecycle model.
   </p>
 </article>
 
 <article class="card">
   <h2>Future Event Types</h2>
   <p>
-    Additional certification event types may be defined only when they correspond
-    to authoritative certification lifecycle actions or states recognized by
-    Certifier. Anchor and Attestor activity should be preserved through their own
-    Chronicle event-type profiles rather than being reclassified as certification
-    authority.
+    Additional certification-related Event Types should be added only when they
+    correspond to authoritative Certifier actions or states and are approved through
+    Chronicle Event Type and Controlled Values governance.
   </p>
 </article>
 
@@ -298,17 +305,43 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>What an Event Preserves</h2>
+  <h2>What the Profile Requires</h2>
 
   <p>
-    A Certification Event should preserve enough context to make the historical
-    occurrence understandable without duplicating, replacing, or reinterpreting the
-    authoritative certification record.
+    The Certification Event-Type Profile uses the Chronicle Base Schema and adds or
+    strengthens only certification-specific requirements.
   </p>
 
   <div class="note">
-    Event Type · Event Date · Originating System · Authoritative Certification Package ·
-    Related Registry Entry · Public References · Historical Context · Supporting Records
+    Event-Type Profile Reference · Approved Certification Event Type ·
+    Event Date / Time · Certifier as Originating System ·
+    Authoritative Certification Identifier · Historical Context ·
+    Certification-Specific Provenance
+  </div>
+
+  <p style="margin-top:14px;">
+    A related Registry identifier is required when a corresponding SREG Registry Entry
+    exists and is materially relevant to the Chronicle Entry.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Inherited from the Chronicle Base Schema</h2>
+
+  <p>
+    Certification-related Chronicle Entries inherit the universal Base Schema fields
+    and structures governing Chronicle identity, Versions, historical representation,
+    Provenance, Verification, Lifecycle, Publication, and Entry creation.
+  </p>
+
+  <div class="note">
+    entry_id · schema_id · schema_version · entry_version · title · summary ·
+    event_type · event_date · historical_context · provenance · verification_state ·
+    lifecycle_state · publication_state · entry_created_at
   </div>
 </article>
 
@@ -317,18 +350,22 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>What an Event Does Not Do</h2>
+  <h2>What the Profile Does Not Duplicate</h2>
 
   <p>
-    A Certification Event does not certify, renew, suspend, revoke, expire, or
-    otherwise determine the state of a certification. Those actions and
-    determinations remain within Certifier’s authority and applicable certification
-    rules.
+    The Certification Event-Type Profile does not reproduce the internal contents of
+    the Certification Package.
   </p>
 
   <div class="note">
-    Chronicle preserves that the occurrence happened and references the authority that established it. Chronicle does not create, replace, or reinterpret that authority.
+    Certification findings · Certification evidence body · Certification Package schema ·
+    Certification determination logic · Certifier lifecycle mechanics
   </div>
+
+  <p style="margin-top:14px;">
+    Those remain within Certifier. Chronicle preserves durable references and the
+    historical meaning of the qualifying Occurrence.
+  </p>
 </article>
 
 </section>
@@ -339,14 +376,16 @@ h1{
   <h2>Relationship to Registry</h2>
 
   <p>
-    Registry creates and maintains independent SREG Registry Entries that catalog
-    certified records over time. Chronicle may reference those Registry Entries when
-    preserving certification-related occurrences, but Registry remains authoritative
-    for the SREG and its Registry lifecycle state.
+    Registry creates and maintains independent SREG Registry Entries. A
+    certification-related Chronicle Entry may reference the related SREG when one
+    exists, but Registry remains authoritative for the catalog record and Registry
+    lifecycle state.
   </p>
 
   <div class="note">
-    Registry owns the catalog record. Chronicle preserves the historical occurrence and its context.
+    Certifier owns the certification record.<br>
+    Registry owns the catalog record.<br>
+    Chronicle owns the historical-preservation record representing the qualifying Occurrence.
   </div>
 </article>
 
@@ -355,15 +394,55 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Event Philosophy</h2>
+  <h2>Verification</h2>
 
   <p>
-    Certification Events help Chronicle preserve how certifications changed over
-    time while honoring Suite-wide standards for stable objects, clear authority
-    boundaries, durable references, and repeatable workflows. Chronicle provides
-    historical continuity without replacing the systems that create, catalog,
-    anchor, discover, attest, or orchestrate authoritative Suite records.
+    Chronicle Verification reviews Chronicle's historical representation, including
+    the correctness of identifiers, authoritative references, Event Date, Registry
+    references where applicable, Relationships, Provenance, and material limitations.
   </p>
+
+  <p>
+    Verification does not re-adjudicate the certification determination made by Certifier.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Corrections and Versioning</h2>
+
+  <p>
+    If Chronicle later discovers that its own certification-related Entry is materially
+    wrong, Chronicle corrects and Versions its own record according to Chronicle
+    Correction and Versioning rules.
+  </p>
+
+  <p>
+    If Certifier later performs a distinct certification action, that later action may
+    constitute a new qualifying Occurrence and therefore a new Chronicle Entry rather
+    than a rewrite of the earlier historical record.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Profile Philosophy</h2>
+
+  <p>
+    The Certification Event-Type Profile gives Chronicle the minimum additional
+    structure necessary to preserve certification history without creating a competing
+    certification system or duplicating Certifier-owned records.
+  </p>
+
+  <div class="note">
+    Certifier establishes certification authority. Chronicle preserves the historical record of what occurred.
+  </div>
 
   <a class="btn" href="/chronicle/">
     Back to Chronicle →
