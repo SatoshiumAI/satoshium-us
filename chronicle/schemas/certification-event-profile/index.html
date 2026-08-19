@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Chronicle Certification Event-Type Profile</title>
+<meta name="description" content="Satoshium Chronicle Certification Event-Type Profile — production specialization of the Chronicle Base Schema for Entries that preserve qualifying certification-related occurrences.">
+<link rel="canonical" href="https://satoshium.us/chronicle/schemas/certification-event-profile/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Schemas · Event-Type Profile</div>
+  <h1>Certification Event-Type Profile</h1>
+
+  <p class="lead">
+    The Certification Event-Type Profile is Chronicle's first production Event-Type
+    Profile. It specializes the Chronicle Base Schema for Chronicle Entries that
+    preserve qualifying certification-related Occurrences.
+  </p>
+
+  <p class="lead">
+    Certifier remains authoritative for certification determinations, Certification
+    Packages, lifecycle actions, and certification status. Chronicle owns the
+    historical-preservation record representing the qualifying Occurrence.
+  </p>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Profile Role</h2>
+  <p>
+    The Profile adds only certification-specific requirements to the universal
+    Chronicle Entry structure. It does not create a separate canonical
+    Certification Event object.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Base Schema Relationship</h2>
+  <p>
+    Certification-related Entries remain governed by the Chronicle Base Schema and
+    inherit all universal Entry requirements.
+  </p>
+  <div class="note">
+    Chronicle Base Schema + Certification Event-Type Profile = Certification-related Chronicle Entry
+  </div>
+</article>
+
+<article class="card">
+  <h2>Authority Boundary</h2>
+  <p>
+    The Profile requires durable reference to the authoritative Certifier record,
+    but does not duplicate Certification Package findings, evidence, schema,
+    determination logic, or lifecycle mechanics.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Profile Version</h2>
+  <p>
+    The initial Certification Event-Type Profile version is:
+  </p>
+  <div class="note">
+    1.0.0
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Required Certification Constraints</h2>
+
+  <p>
+    In addition to the universal Chronicle Base Schema requirements, this Profile
+    requires or strengthens the following certification-specific fields and rules.
+  </p>
+
+  <div class="note">
+    event_type_profile = certification-event-profile<br>
+    originating_system = certifier<br>
+    event_type = approved Certification Event Type<br>
+    event_date = non-null certification Occurrence date or timestamp<br>
+    authoritative_record_references = minimum one authoritative Certifier reference<br>
+    provenance = includes authoritative certification reference
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Approved Certification Event Types</h2>
+
+  <div class="note">
+    Certification Created<br>
+    Certification Renewed<br>
+    Certification Suspended<br>
+    Certification Revoked<br>
+    Certification Expired
+  </div>
+
+  <p style="margin-top:14px;">
+    Machine-readable values are governed through Chronicle Controlled Values.
+  </p>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Authoritative Certification Reference</h2>
+  <p>
+    Every Entry governed by this Profile must identify the authoritative Certifier
+    record establishing the represented Occurrence.
+  </p>
+  <div class="note">
+    Chronicle Entry → references → Certification Package
+  </div>
+</article>
+
+<article class="card">
+  <h2>Originating System</h2>
+  <p>
+    This Profile requires:
+  </p>
+  <div class="note">
+    originating_system: certifier
+  </div>
+  <p>
+    The field is conditional in the Base Schema and required only because this
+    Profile establishes the operational need.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Related Registry Reference</h2>
+  <p>
+    A related SREG reference becomes required when a corresponding Registry Entry
+    exists and is materially relevant to the Chronicle Entry.
+  </p>
+  <p>
+    Registry remains authoritative for the SREG.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Historical Context</h2>
+  <p>
+    Historical Context explains the certification Occurrence within Satoshium
+    institutional history without restating Certifier-owned findings or determination
+    logic.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Provenance</h2>
+  <p>
+    Certification Provenance should preserve Certifier origin, acquisition or access
+    method, retrieval date, authoritative record reference, and material limitations
+    where applicable.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Verification</h2>
+  <p>
+    Chronicle verifies its own historical representation, including identifiers,
+    Event Date, Certifier origin, references, Relationships, Provenance, and
+    limitations. It does not re-adjudicate the certification determination.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>What the Profile Does Not Duplicate</h2>
+
+  <div class="note">
+    Certification findings · Certification evidence body · Certification Package schema ·
+    Certification determination logic · Certifier validation structures ·
+    Certification lifecycle mechanics
+  </div>
+
+  <p style="margin-top:14px;">
+    Chronicle preserves references and historical meaning rather than reproducing
+    authoritative Certifier structures.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Profile Artifacts</h2>
+
+  <p>
+    The Certification Event-Type Profile is published through a human-readable
+    specification and a machine-readable JSON Schema implementation.
+  </p>
+
+  <div class="note">
+    certification-event-profile.md → Human-readable production specification<br>
+    certification-event-profile.json → Machine-readable validation profile
+  </div>
+
+  <a class="btn" href="/chronicle/schemas/certification-event-profile/certification-event-profile.md">
+    Open Markdown Specification →
+  </a>
+
+  <a class="btn" href="/chronicle/schemas/certification-event-profile/certification-event-profile.json">
+    Open JSON Profile →
+  </a>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Validation Architecture</h2>
+
+  <p>
+    A production certification-related Chronicle Entry should be validated through
+    the two-layer schema model:
+  </p>
+
+  <div class="note">
+    chronicle-base-schema.json<br>
+    +<br>
+    certification-event-profile.json<br>
+    =<br>
+    Certification-related Chronicle Entry Validation
+  </div>
+
+  <p style="margin-top:14px;">
+    Validation confirms conformance. Verification remains a separate Chronicle review
+    of historical representation.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Profile Philosophy</h2>
+
+  <p>
+    Event-Type Profiles should add the minimum specialized structure necessary for
+    operational accuracy while preserving one canonical Chronicle Entry model.
+  </p>
+
+  <div class="note">
+    Base Schema defines the Chronicle Entry. The Certification Event-Type Profile supplies only the certification-specific requirements.
+  </div>
+
+  <a class="btn" href="/chronicle/schemas/">
+    Back to Chronicle Schemas →
+  </a>
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Certifier establishes certification authority. Chronicle preserves the historical record of what occurred.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
