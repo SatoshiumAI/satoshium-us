@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Chronicle Validation</title>
+<meta name="description" content="Satoshium Chronicle Validation — defines how Chronicle determines whether a Chronicle Entry conforms to governing institutional requirements, schemas, Event-Type Profiles, Controlled Values, references, provenance, relationships, and publication prerequisites.">
+<link rel="canonical" href="https://satoshium.us/chronicle/validation/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.code-block{
+ margin-top:16px;
+ padding:16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:#080b11;
+ color:var(--gold2);
+ font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace;
+ overflow:auto;
+ white-space:pre-wrap;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Validation</div>
+  <h1>Satoshium Chronicle Validation</h1>
+
+  <p class="lead">
+    Satoshium Chronicle Validation defines how Chronicle determines whether a
+    constructed Chronicle Entry conforms to the governing institutional and
+    machine-readable requirements applicable to that Entry.
+  </p>
+
+  <p class="lead">
+    Validation tests conformance. It does not decide whether an Occurrence should
+    be preserved, re-adjudicate an external authoritative determination, replace
+    Chronicle Verification, or itself publish the Entry.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Institutional Position</h2>
+
+  <p>
+    Validation occurs after Chronicle has assembled and Verified the current Entry
+    representation and before that Entry proceeds through the publication gate.
+  </p>
+
+  <div class="flow" aria-label="Chronicle validation position">
+    <strong>Occurrence Identified</strong>
+    <span>→</span>
+    <strong>Preservation Eligibility</strong>
+    <span>→</span>
+    <strong>Entry Created</strong>
+    <span>→</span>
+    <strong>Verification</strong>
+    <span>→</span>
+    <strong>Validation</strong>
+    <span>→</span>
+    <strong>Publication</strong>
+  </div>
+
+  <div class="note">
+    Preservation Eligibility asks whether Chronicle should preserve the Occurrence.
+    Verification reviews Chronicle's historical representation.
+    Validation determines whether the resulting Entry conforms to the requirements
+    governing that representation.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Why Validation Matters</h2>
+  <p>
+    A historically appropriate Entry may still be incomplete or structurally invalid
+    if identifiers, schema fields, Controlled Values, authoritative references,
+    dates, Relationships, Provenance, or publication prerequisites are wrong or missing.
+  </p>
+</article>
+
+<article class="card">
+  <h2>The Core Question</h2>
+  <p>Chronicle Validation asks:</p>
+  <div class="note">
+    Does this Chronicle Entry conform to the institutional and machine-readable
+    requirements that govern this Entry Version?
+  </div>
+</article>
+
+<article class="card">
+  <h2>Chronicle's Responsibility</h2>
+  <p>
+    Chronicle validates its own Entry structure, classifications, references,
+    Relationships, Provenance, Version state, and publication readiness.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Chronicle's Limitation</h2>
+  <p>
+    Validation does not create external authority, certify a subject, prove every
+    underlying claim, replace Verification, or determine the substantive correctness
+    of another Suite institution's authoritative action.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Canonical Validation Model</h2>
+
+  <div class="flow" aria-label="Canonical Chronicle validation model">
+    <strong>Chronicle Rules</strong>
+    <span>+</span>
+    <strong>Base Schema</strong>
+    <span>+</span>
+    <strong>Event-Type Profile</strong>
+    <span>+</span>
+    <strong>Controlled Values</strong>
+    <span>+</span>
+    <strong>Institutional Requirements</strong>
+    <span>→</span>
+    <strong>Validation Result</strong>
+  </div>
+
+  <p>
+    Validation applies the requirements governing one specific Chronicle Entry Version.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Schema ≠ Verification ≠ Validation ≠ Publication</h2>
+
+  <div class="note">
+    Schema = Defines structure.<br>
+    Verification = Reviews Chronicle's historical representation.<br>
+    Validation = Tests conformance to governing requirements.<br>
+    Publication = Determines whether the validated Entry enters public production use.
+  </div>
+
+  <p style="margin-top:14px;">
+    These functions support one another but remain institutionally distinct.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Domains</h2>
+
+  <ul>
+    <li>Chronicle Entry identifier validation;</li>
+    <li>Base Schema conformance;</li>
+    <li>applicable Event-Type Profile conformance;</li>
+    <li>Controlled Values validation;</li>
+    <li>Required and Conditional field validation;</li>
+    <li>authoritative reference validation;</li>
+    <li>date and time formatting validation;</li>
+    <li>Relationship integrity validation;</li>
+    <li>Provenance validation;</li>
+    <li>Correction and Version consistency where applicable;</li>
+    <li>publication readiness validation.</li>
+  </ul>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Identifier Validation</h2>
+  <p>
+    Confirms the Chronicle Entry identifier conforms to the approved
+    <strong>CHR-YYYY-NNNN</strong> architecture, remains stable, and does not conflict
+    with identifier rules.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Schema Validation</h2>
+  <p>
+    Confirms the Entry conforms to the Chronicle Base Schema and, where applicable,
+    the governing Event-Type Profile.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Controlled Values</h2>
+  <p>
+    Confirms governed values such as Event Type, Verification State, Lifecycle State,
+    Publication State, and Relationship Type use approved Chronicle vocabularies.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Required Fields</h2>
+  <p>
+    Confirms universal Base Schema fields are present and Conditional fields are
+    present whenever their governing condition applies.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Authoritative References</h2>
+  <p>
+    Confirms required authoritative records are identified through durable references
+    and that Chronicle does not misrepresent external authority as Chronicle authority.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Date and Time Validation</h2>
+  <p>
+    Confirms Event Dates, timestamps, publication dates, retrieval dates, and Version
+    dates use valid formats and remain semantically distinct.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Relationship Integrity</h2>
+  <p>
+    Confirms Relationship Types are approved, targets are identifiable, direction is
+    coherent, and Relationships do not imply unsupported causation or authority transfer.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Provenance Validation</h2>
+  <p>
+    Confirms the Entry preserves how information originated, was acquired or accessed,
+    when it was retrieved, and which Source or authoritative record supplied it.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Version and Correction Validation</h2>
+  <p>
+    Confirms Entry Version, prior-Version references, Corrections, and resulting states
+    preserve Chronicle's required historical lineage when a material change exists.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Publication Readiness</h2>
+  <p>
+    Confirms the Entry has satisfied the structural and institutional prerequisites
+    required before it may proceed into public production use.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Inputs</h2>
+
+  <p>
+    Chronicle Validation should identify the exact requirements being applied.
+  </p>
+
+  <ul>
+    <li>Chronicle Base Schema identity and Version;</li>
+    <li>applicable Event-Type Profile and Profile Version;</li>
+    <li>Chronicle Identifier rules;</li>
+    <li>Chronicle Controlled Values;</li>
+    <li>Chronicle Relationship rules;</li>
+    <li>Chronicle Provenance requirements;</li>
+    <li>Chronicle Versioning and Correction requirements where applicable;</li>
+    <li>Chronicle Publication prerequisites;</li>
+    <li>applicable Suite authority and interoperability requirements;</li>
+    <li>Validation procedure or checklist version.</li>
+  </ul>
+
+  <div class="note">
+    A Validation result is meaningful only when the governing requirements are identifiable.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Workflow</h2>
+
+  <div class="flow" aria-label="Chronicle validation workflow">
+    <strong>Receive Entry for Validation</strong>
+    <span>→</span>
+    <strong>Validate Identifier</strong>
+    <span>→</span>
+    <strong>Validate Base Schema</strong>
+    <span>→</span>
+    <strong>Validate Event-Type Profile</strong>
+    <span>→</span>
+    <strong>Validate Controlled Values</strong>
+    <span>→</span>
+    <strong>Validate References</strong>
+    <span>→</span>
+    <strong>Validate Relationships and Provenance</strong>
+    <span>→</span>
+    <strong>Validate Publication Readiness</strong>
+    <span>→</span>
+    <strong>Record Result</strong>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Outcomes</h2>
+
+  <p>
+    The initial Chronicle Validation model should remain simple.
+  </p>
+
+  <ul>
+    <li><strong>PASS</strong> — all blocking Validation requirements are satisfied.</li>
+    <li><strong>FAIL</strong> — one or more blocking Validation requirements are not satisfied.</li>
+  </ul>
+
+  <div class="note">
+    A FAIL result means the current Chronicle representation is not ready to proceed.
+    It does not establish that the historical Occurrence is false.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Failure</h2>
+
+  <p>
+    A failed Validation should identify the failed requirement and preserve enough
+    information to correct the Entry.
+  </p>
+
+  <p>Validation failure does not:</p>
+
+  <ul>
+    <li>delete the Chronicle Entry;</li>
+    <li>erase the historical Occurrence;</li>
+    <li>invalidate an external authoritative object;</li>
+    <li>convert Chronicle into the authority for another institution's determination;</li>
+    <li>permit silent substantive rewriting.</li>
+  </ul>
+
+  <div class="note">
+    Correct the representation. Preserve the history.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Revalidation</h2>
+
+  <p>Revalidation may be required after:</p>
+
+  <ul>
+    <li>material Entry correction;</li>
+    <li>new Entry Version;</li>
+    <li>Event Type correction;</li>
+    <li>authoritative-reference change;</li>
+    <li>Relationship change;</li>
+    <li>Provenance correction;</li>
+    <li>material Evidence change affecting the representation;</li>
+    <li>schema or Event-Type Profile migration;</li>
+    <li>publication-state change where requirements must be reevaluated;</li>
+    <li>discovery of a prior Validation defect.</li>
+  </ul>
+
+  <p>
+    Revalidation should determine whether targeted review is sufficient or the full
+    Validation sequence must be repeated.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Verification</h2>
+
+  <p>
+    Verification and Validation are separate Chronicle functions.
+  </p>
+
+  <div class="flow" aria-label="Chronicle Verification and Validation distinction">
+    <strong>Verification</strong>
+    <span>≠</span>
+    <strong>Validation</strong>
+  </div>
+
+  <p>
+    Verification asks whether Chronicle's historical representation is adequately
+    supported and internally reviewable.
+  </p>
+
+  <p>
+    Validation asks whether that representation conforms to the requirements governing
+    the current Entry Version.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to Publication</h2>
+
+  <p>
+    Validation is a publication gate, not publication itself.
+  </p>
+
+  <div class="flow" aria-label="Chronicle Validation and Publication distinction">
+    <strong>Validation PASS</strong>
+    <span>→</span>
+    <strong>Eligible to Proceed</strong>
+    <span>→</span>
+    <strong>Publication Decision</strong>
+  </div>
+
+  <p>
+    A Validation PASS confirms conformance. Chronicle Publication still determines
+    whether and how the Entry enters public production use.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Relationship to External Authority</h2>
+
+  <p>
+    Chronicle Validation does not validate another Suite institution's authoritative
+    determination as though Chronicle owned that authority.
+  </p>
+
+  <div class="note">
+    Certifier establishes a certification action.<br>
+    Chronicle verifies its historical representation.<br>
+    Chronicle validates the Chronicle Entry.<br>
+    Chronicle does not re-certify the subject.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Validation Does Not Establish</h2>
+
+  <ul>
+    <li>It does not determine Preservation Eligibility.</li>
+    <li>It does not replace Chronicle Verification.</li>
+    <li>It does not certify the subject of an external record.</li>
+    <li>It does not prove every historical claim independently.</li>
+    <li>It does not create external Source Authority.</li>
+    <li>It does not transfer authority from another Suite institution.</li>
+    <li>It does not itself publish the Chronicle Entry.</li>
+    <li>It does not authorize silent rewriting of prior states.</li>
+    <li>It does not eliminate future revalidation.</li>
+  </ul>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Current Production Foundation</h2>
+
+  <p>
+    Chronicle enters Phase VIII with a validated production schema stack:
+  </p>
+
+  <div class="code-block">chronicle-base-schema.json
+        +
+certification-event-profile.json
+        =
+validated certification-related Chronicle Entry structure</div>
+
+  <p style="margin-top:14px;">
+    The Phase VII two-layer validation work demonstrated that machine-readable
+    conformance can be tested without collapsing Validation into Verification or
+    institutional authority.
+  </p>
+
+  <a class="btn" href="/chronicle/schemas/">
+    Open Chronicle Schemas →
+  </a>
+
+  <a class="btn" href="/chronicle/schemas/certification-event-profile/">
+    Open Certification Event-Type Profile →
+  </a>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Validation Principle</h2>
+
+  <p>
+    Chronicle Validation should confirm that each Entry is structurally conformant,
+    institutionally coherent, traceable to its authoritative references and Provenance,
+    semantically consistent, and ready to proceed toward publication.
+  </p>
+
+  <div class="note">
+    Schema defines structure.<br>
+    Verification reviews the representation.<br>
+    Validation tests conformance.<br>
+    Publication determines public production state.
+  </div>
+
+  <a class="btn" href="/chronicle/">Back to Chronicle →</a>
+  <a class="btn" href="/chronicle/verification/">Open Verification →</a>
+  <a class="btn" href="/chronicle/provenance/">Open Provenance →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Validation tests whether Chronicle implemented its own requirements correctly.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
