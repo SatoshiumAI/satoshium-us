@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Verification</title>
-<meta name="description" content="Satoshium Chronicle Verification — evaluating confidence in historical records through evidence, sources, review, and transparent assessment.">
+<meta name="description" content="Satoshium Chronicle Verification — reviewing Chronicle historical representations through authoritative references, sources, evidence, provenance, relationships, temporal coherence, limitations, and explicit authority boundaries before Validation and publication.">
 <link rel="canonical" href="https://satoshium.us/chronicle/verification/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -152,9 +152,9 @@ h1{
 
   <p class="lead">
     Verification is Chronicle's structured review of its own historical representation.
-    It examines whether a Chronicle Entry is internally consistent, traceable to its
-    Sources and Evidence, temporally coherent, relationship-aware, and properly linked
-    to authoritative records.
+    It examines whether a Chronicle Entry is adequately supported, internally coherent,
+    traceable to authoritative references, Sources, Evidence, and Provenance, temporally
+    consistent, relationship-aware, and appropriately limited where uncertainty remains.
   </p>
 
   <p class="lead">
@@ -170,8 +170,9 @@ h1{
   <h2>Verification Question</h2>
 
   <div class="note">
-    Does Chronicle's historical representation accurately and traceably reflect
-    the information, records, relationships, dates, Evidence, and limitations available?
+    Is Chronicle's historical representation adequately supported, internally
+    coherent, traceable, and appropriately limited by the authoritative references,
+    Sources, Evidence, Provenance, Relationships, dates, and information available?
   </div>
 
   <p style="margin-top:14px;">
@@ -187,8 +188,10 @@ h1{
 <article class="card">
   <h2>Entry Identity</h2>
   <p>
-    Confirm that the Chronicle Entry identifier is present, correctly formatted,
-    unique, and consistent with Chronicle identifier rules.
+    Confirm that the Entry under review is clearly identified and that the reviewed
+    materials, Sources, Evidence, Relationships, and authoritative references belong
+    to the intended Chronicle Entry Version. Identifier syntax and formal conformance
+    are tested during Validation.
   </p>
 </article>
 
@@ -263,7 +266,8 @@ h1{
 
   <div class="note">
     Chronicle may verify: “This Entry correctly references SC-CERT-2026-0001.”<br>
-    Chronicle must not independently re-certify what Certifier already determined.
+    Chronicle must not independently re-certify what Certifier already determined.<br>
+    Reference does not transfer authority.
   </div>
 </article>
 
@@ -275,9 +279,10 @@ h1{
   <h2>Verification Sequence</h2>
 
   <div class="note">
-    Entry Identified → Identifier Checked → Sources Checked → Authoritative References Checked →
-    Dates Checked → Relationships Checked → Evidence Checked → Provenance Checked →
-    Limitations Reviewed → Verification State Assigned
+    Entry Version Identified → Authoritative References Reviewed → Sources Reviewed →
+    Evidence Reviewed → Dates Reviewed → Relationships Reviewed → Provenance Reviewed →
+    Historical Context Reviewed → Limitations Reviewed → Verification State Assigned →
+    Entry Proceeds to Validation
   </div>
 </article>
 
@@ -294,10 +299,11 @@ h1{
 </article>
 
 <article class="card">
-  <h2>2. Check Identity</h2>
+  <h2>2. Confirm Review Scope</h2>
   <p>
-    Review Chronicle identifier syntax, uniqueness, permanence expectations,
-    and consistency with the Entry being verified.
+    Confirm the exact Entry Version being reviewed and ensure that all materials
+    considered during Verification correspond to that Entry. Formal identifier
+    syntax, uniqueness, and schema conformance are handled by Validation.
   </p>
 </article>
 
@@ -350,7 +356,16 @@ h1{
 </article>
 
 <article class="card">
-  <h2>9. Review Limitations</h2>
+  <h2>9. Review Historical Context</h2>
+  <p>
+    Confirm that Chronicle's narrative and contextual representation does not
+    overstate what the authoritative references, Sources, Evidence, Relationships,
+    dates, or Provenance support.
+  </p>
+</article>
+
+<article class="card">
+  <h2>10. Review Limitations</h2>
   <p>
     Confirm that unresolved conflicts, missing Sources, incomplete Provenance,
     unavailable Evidence, uncertain dates, or other material limitations are disclosed.
@@ -358,7 +373,7 @@ h1{
 </article>
 
 <article class="card">
-  <h2>10. Assign Verification State</h2>
+  <h2>11. Assign Verification State</h2>
   <p>
     Assign the approved Verification State that accurately reflects the current
     result of Chronicle's review.
@@ -475,17 +490,51 @@ h1{
   <h2>Verification and Validation</h2>
 
   <p>
-    Verification and Validation remain separate institutional functions.
+    Verification and Validation are sequential but distinct institutional functions.
   </p>
 
   <div class="note">
-    Verification = Does Chronicle's representation hold together historically?<br>
-    Validation = Does the record conform structurally and procedurally?
+    Verification = Is Chronicle's historical representation adequately supported and reviewable?<br>
+    Validation = Does the current Entry Version conform to the institutional and machine-readable requirements that govern it?
   </div>
 
   <p style="margin-top:14px;">
-    A record may pass Verification and fail Validation, or pass Validation while
-    remaining Verified with Limitations or Unresolved.
+    Verification State is not a Validation result. Validation applies the
+    <strong>CHR-VAL-001 through CHR-VAL-014</strong> rule set and produces the
+    authoritative conformance outcome:
+  </p>
+
+  <div class="note">
+    PASS → Entry may proceed toward Publication.<br>
+    FAIL → Entry returns for correction, completion, or review.
+  </div>
+
+  <p style="margin-top:14px;">
+    Schema defines structure. Verification reviews the representation. Validation
+    tests conformance. Publication determines public production state.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Verification and the Publication Gate</h2>
+
+  <p>
+    Verification is a prerequisite to publication, but Verification alone does not
+    make an Entry publication-ready.
+  </p>
+
+  <div class="note">
+    Required Verification State + Validation PASS + Required Authoritative References + Publication Prerequisites = Eligible for Publication
+  </div>
+
+  <p style="margin-top:14px;">
+    The required Verification State may depend on Chronicle publication rules and
+    material limitations. Validation confirms whether that prerequisite has been
+    satisfied; Publication remains a separate institutional decision.
   </p>
 </article>
 
@@ -503,8 +552,15 @@ h1{
 
   <div class="note">
     New Evidence · New Source · Provenance Correction · Relationship Change ·
-    Event-Date Correction · Authoritative Record Change · Material Entry Version
+    Event-Date Correction · Authoritative Reference Change · Historical Context Change ·
+    Material Entry Version
   </div>
+
+  <p style="margin-top:14px;">
+    When a change affects requirements previously validated, Reverification should
+    be followed by targeted or full Revalidation as governed by the Chronicle
+    Validation Sequence.
+  </p>
 </article>
 
 </section>
@@ -512,17 +568,24 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Verification Record</h2>
+  <h2>Verification Traceability</h2>
 
   <p>
-    Verification results should remain traceable to the Entry Version reviewed,
-    the materials considered, the limitations identified, and the Verification State assigned.
+    Verification results should remain traceable to the exact Entry Version reviewed,
+    the authoritative references, Sources, Evidence, Provenance, Relationships,
+    limitations considered, and the Verification State assigned.
   </p>
 
   <p>
-    Whether Chronicle requires a distinct Verification Record for every Entry should
-    be determined during final schema and production-procedure development.
+    Chronicle does not presently require a separate canonical Verification Record for
+    every Entry merely for architectural symmetry. Verification information should be
+    preserved through the Entry, supporting operational artifacts, or other lightweight
+    institutional documentation sufficient to reconstruct the review.
   </p>
+
+  <div class="note">
+    Preserve the review. Do not create a new canonical object unless operations justify one.
+  </div>
 </article>
 
 </section>
@@ -541,6 +604,14 @@ h1{
     Verify the record. Respect the authority boundary.
   </div>
 
+  <a class="btn" href="/chronicle/evidence/">
+    Open Evidence →
+  </a>
+
+  <a class="btn" href="/chronicle/validation/">
+    Open Validation →
+  </a>
+
   <a class="btn" href="/chronicle/">
     Back to Chronicle →
   </a>
@@ -553,7 +624,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Verification measures confidence. Evidence informs confidence. History remains open to review.
+    Verification reviews Chronicle's representation. Validation tests conformance. Authority remains where it originated.
   </div>
   <hr>
   <div id="footer-container"></div>
