@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Sources</title>
-<meta name="description" content="Satoshium Chronicle Sources — defines how Chronicle identifies information origin, preserves source context and provenance, references authoritative records, and maintains traceable source relationships.">
+<meta name="description" content="Satoshium Chronicle Sources — defines how Chronicle identifies information origin, preserves source context and provenance, references authoritative records, supports verification and validation, and maintains traceable source relationships.">
 <link rel="canonical" href="https://satoshium.us/chronicle/sources/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -158,10 +158,11 @@ h1{
   </p>
 
   <p class="lead">
-    Source identity is distinct from Provenance, Evidence, Verification, and authority.
-    Chronicle records where information came from while Provenance records how it entered
-    Chronicle, Evidence records how material bears on an Entry or claim, and Verification
-    reviews Chronicle's own historical representation.
+    Source identity is distinct from Provenance, Evidence, Verification, Validation,
+    and authority. Chronicle records where information came from; Provenance records
+    how it entered Chronicle; Evidence records how material bears on an Entry or claim;
+    Verification reviews Chronicle's historical representation; and Validation tests
+    whether the resulting Entry conforms to governing requirements.
   </p>
 </section>
 
@@ -171,7 +172,8 @@ h1{
   <h2>Role Within Chronicle</h2>
 
   <p>
-    A Source Record is a supporting Chronicle-owned record. It is not the canonical
+    A Source Record is a supporting Chronicle-owned record used only when its
+    additional structure provides durable operational value. It is not the canonical
     historical-preservation object. The canonical Chronicle object remains the
     Chronicle Entry.
   </p>
@@ -294,7 +296,8 @@ h1{
     Source = Where information came from.<br>
     Evidence = What bears on the Entry or claim.<br>
     Provenance = How the information originated, moved, and entered Chronicle.<br>
-    Verification = Chronicle's review of its own historical representation.
+    Verification = Chronicle's review of its own historical representation.<br>
+    Validation = Chronicle's conformance test of the current Entry Version.
   </div>
 
   <p style="margin-top:14px;">
@@ -341,7 +344,7 @@ h1{
 
   <div class="note">
     Type → Authoritative Record · Institutional Document · Web Page · Repository Record · Dataset · Archive · Statement · Other<br>
-    Role → authoritative · supporting · contextual · archival · corroborating · other approved role
+    Role → provisional operational description only until Chronicle production demonstrates a stable controlled vocabulary
   </div>
 
   <p style="margin-top:14px;">
@@ -495,18 +498,54 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Source Validation Expectations</h2>
+  <h2>Sources Within Chronicle Validation</h2>
 
   <p>
-    Future Validation should confirm, where applicable:
+    Phase VIII establishes Chronicle Validation as an active production function.
+    Source-related requirements are evaluated through the applicable Chronicle
+    Validation Rules rather than through a separate Source-validation system.
+  </p>
+
+  <p>
+    Validation should confirm, where applicable:
   </p>
 
   <div class="note">
-    Source Type is approved · Required identity is present · Stable reference is valid ·
-    Required attribution is present · Relevant dates are structurally valid ·
-    Provenance requirements are satisfied · Known limitations are represented ·
-    Event-Type Profile requirements are met
+    Approved Source Type · Required source identity · Stable or durable reference ·
+    Required attribution · Valid temporal information · Provenance conformance ·
+    Known limitations preserved · Applicable Event-Type Profile requirements satisfied ·
+    Source authority not overstated
   </div>
+
+  <p style="margin-top:14px;">
+    A Source defect may cause the current Entry Version to fail Validation when the
+    affected Source information is required by the Base Schema, Event-Type Profile,
+    Provenance rules, authoritative-reference requirements, or publication prerequisites.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Sources in the Entry Production Procedure</h2>
+
+  <p>
+    Source handling occurs within the formal Chronicle Entry Production Procedure
+    after authoritative-reference collection and during assembly of Sources,
+    Evidence, Provenance, and Relationships.
+  </p>
+
+  <div class="note">
+    Collect Authoritative References → Create Entry → Establish Relationships → Record Sources / Evidence / Provenance → Verify → Validate
+  </div>
+
+  <p style="margin-top:14px;">
+    Chronicle should create a separate Source Record only when reusable identity,
+    attribution, archival context, limitations, integrity metadata, Provenance,
+    Version lineage, or independent discovery justify the additional record.
+  </p>
 </article>
 
 </section>
@@ -525,6 +564,14 @@ h1{
   <div class="note">
     Identify the Source. Preserve the reference. Trace the path. Keep authority visible.
   </div>
+
+  <a class="btn" href="/chronicle/provenance/">
+    Open Provenance →
+  </a>
+
+  <a class="btn" href="/chronicle/validation/">
+    Open Validation →
+  </a>
 
   <a class="btn" href="/chronicle/">
     Back to Chronicle →
