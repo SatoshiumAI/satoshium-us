@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Certification Events</title>
-<meta name="description" content="Satoshium Chronicle Certification Events — public explanation of the Certification Event-Type Profile governing Chronicle Entries that preserve qualifying certification occurrences.">
+<meta name="description" content="Satoshium Chronicle Certification Events — public explanation of the Certification Event-Type Profile governing Chronicle Entries that preserve qualifying certification occurrences through authoritative Certifier references, Verification, Validation, publication, and preservation.">
 <link rel="canonical" href="https://satoshium.us/chronicle/certification-events/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -153,7 +153,9 @@ h1{
   <p class="lead">
     The Certification Event-Type Profile defines the certification-specific
     requirements applied to Chronicle Entries that preserve qualifying
-    certification-related Occurrences.
+    certification-related Occurrences. The Profile specializes the Chronicle Base
+    Schema and participates directly in Chronicle Verification, Validation,
+    publication, and preservation.
   </p>
 
   <p class="lead">
@@ -218,9 +220,10 @@ h1{
 <article class="card">
   <h2>Reference-Based Interoperability</h2>
   <p>
-    Chronicle references Certification Packages, related Registry Entries, integrity
-    references, attestations, public records, or other Suite objects without
-    redefining their schemas or transferring their institutional authority.
+    Chronicle references Certification Packages, related Registry Entries where
+    materially relevant, Integrity References, Trust Statements, public records,
+    or other Suite objects without redefining their schemas or transferring their
+    institutional authority.
   </p>
 </article>
 
@@ -313,15 +316,18 @@ h1{
   </p>
 
   <div class="note">
-    Event-Type Profile Reference · Approved Certification Event Type ·
-    Event Date / Time · Certifier as Originating System ·
-    Authoritative Certification Identifier · Historical Context ·
+    event_type_profile = certification-event-profile ·
+    Approved Certification Event Type · Non-null Event Date / Time ·
+    originating_system = certifier ·
+    authoritative_record_references · Historical Context ·
     Certification-Specific Provenance
   </div>
 
   <p style="margin-top:14px;">
-    A related Registry identifier is required when a corresponding SREG Registry Entry
-    exists and is materially relevant to the Chronicle Entry.
+    At least one authoritative reference must be structured so that it identifies
+    both the referenced certification object and <strong>system: certifier</strong>.
+    A related Registry identifier is required only when a corresponding SREG Registry
+    Entry exists and is materially relevant to the Chronicle Entry.
   </p>
 </article>
 
@@ -385,7 +391,8 @@ h1{
   <div class="note">
     Certifier owns the certification record.<br>
     Registry owns the catalog record.<br>
-    Chronicle owns the historical-preservation record representing the qualifying Occurrence.
+    Chronicle owns the historical-preservation record representing the qualifying Occurrence.<br>
+    Reference does not transfer authority.
   </div>
 </article>
 
@@ -398,12 +405,45 @@ h1{
 
   <p>
     Chronicle Verification reviews Chronicle's historical representation, including
-    the correctness of identifiers, authoritative references, Event Date, Registry
-    references where applicable, Relationships, Provenance, and material limitations.
+    authoritative references, Event Date, Registry references where applicable,
+    Relationships, Provenance, Historical Context, Sources, Evidence, and material
+    limitations. Formal identifier, schema, and Profile conformance are tested by
+    Validation.
   </p>
 
   <p>
     Verification does not re-adjudicate the certification determination made by Certifier.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Validation</h2>
+
+  <p>
+    Certification-related Chronicle Entries are validated against both the Chronicle
+    Base Schema and the Certification Event-Type Profile, together with the applicable
+    institutional Chronicle Validation Rules.
+  </p>
+
+  <div class="note">
+    Base Schema PASS + Certification Event-Type Profile PASS + Applicable CHR-VAL Rules PASS = Chronicle Validation PASS
+  </div>
+
+  <p style="margin-top:14px;">
+    Validation confirms, among other requirements, the approved certification Event
+    Type, non-null Event Date, <strong>originating_system = certifier</strong>,
+    authoritative Certifier reference, Controlled Values, Provenance, Relationships,
+    Verification dependency, authority boundaries, and publication readiness.
+  </p>
+
+  <p>
+    Validation FAIL means Chronicle's current certification-related representation
+    does not yet conform. It does not invalidate the Certifier determination or
+    establish that the certification Occurrence is false.
   </p>
 </article>
 
@@ -417,13 +457,60 @@ h1{
   <p>
     If Chronicle later discovers that its own certification-related Entry is materially
     wrong, Chronicle corrects and Versions its own record according to Chronicle
-    Correction and Versioning rules.
+    Correction and Versioning rules, followed by Reverification and Revalidation
+    where required.
   </p>
 
   <p>
     If Certifier later performs a distinct certification action, that later action may
     constitute a new qualifying Occurrence and therefore a new Chronicle Entry rather
     than a rewrite of the earlier historical record.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Certification Entry Production Path</h2>
+
+  <p>
+    Certification-related Entries follow the same Chronicle Entry Production
+    Procedure as every other Chronicle Entry, with the Certification Event-Type
+    Profile adding its specialized requirements.
+  </p>
+
+  <div class="note">
+    Identify Certification Occurrence → Assess Preservation Eligibility → Collect Certifier Reference →
+    Classify Certification Event Type → Select Certification Event-Type Profile →
+    Assign Chronicle Identifier → Create Entry → Establish Relationships →
+    Record Sources / Evidence / Provenance → Verify → Validate → Approve for Publication →
+    Publish → Preserve
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Publication Gate</h2>
+
+  <p>
+    A certification-related Chronicle Entry may proceed toward publication only when
+    the required Verification State is satisfied, Chronicle Validation = PASS,
+    required authoritative Certifier references are present, and all applicable
+    publication prerequisites are satisfied.
+  </p>
+
+  <div class="note">
+    Required Verification State + Validation PASS + Required Certifier Reference + Publication Prerequisites = Eligible for Publication
+  </div>
+
+  <p style="margin-top:14px;">
+    Publication preserves Chronicle's historical Entry. It does not republish the
+    Certification Package as a Chronicle-owned object.
   </p>
 </article>
 
@@ -441,8 +528,17 @@ h1{
   </p>
 
   <div class="note">
-    Certifier establishes certification authority. Chronicle preserves the historical record of what occurred.
+    Certifier establishes certification authority. Chronicle preserves the historical record of what occurred.<br>
+    Schema defines structure. Verification reviews the representation. Validation tests conformance. Publication determines public production state.
   </div>
+
+  <a class="btn" href="/chronicle/schemas/certification-event-profile/">
+    Open Certification Event-Type Profile →
+  </a>
+
+  <a class="btn" href="/chronicle/validation/">
+    Open Validation →
+  </a>
 
   <a class="btn" href="/chronicle/">
     Back to Chronicle →
