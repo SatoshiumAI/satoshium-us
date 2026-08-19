@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Integration</title>
-<meta name="description" content="Satoshium Chronicle Integration — defines how Chronicle interoperates with the Satoshium Suite through stable references, clear authority boundaries, and historical preservation through Chronicle Entries.">
+<meta name="description" content="Satoshium Chronicle Integration — defines how Chronicle interoperates with the Satoshium Suite through stable authoritative references, clear institutional boundaries, Validation-aware production, and historical preservation through canonical Chronicle Entries.">
 <link rel="canonical" href="https://satoshium.us/chronicle/integration/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -157,10 +157,10 @@ h1{
   </p>
 
   <p class="lead">
-    Integration answers two questions: how does Chronicle reference authoritative
-    Suite objects without duplicating them, and how does Chronicle preserve the
-    historical occurrences associated with those objects through canonical
-    Chronicle Entries?
+    Integration answers three questions: how does Chronicle reference authoritative
+    Suite objects without duplicating them, how are those references carried through
+    Verification and Validation, and how does Chronicle preserve the historical
+    Occurrences associated with those objects through canonical Chronicle Entries?
   </p>
 </section>
 
@@ -171,9 +171,10 @@ h1{
   <p>
     Chronicle Integration establishes the boundary between authoritative
     operational objects and Chronicle’s historical-preservation responsibility.
-    Chronicle references authoritative Suite records and preserves qualifying
-    occurrences through Chronicle Entries rather than absorbing another system’s
-    operational record.
+    Chronicle collects and references authoritative Suite records during Entry
+    production, verifies its representation of them, validates required reference
+    requirements, and preserves qualifying Occurrences through Chronicle Entries
+    rather than absorbing another system’s operational record.
   </p>
 </article>
 
@@ -201,9 +202,10 @@ h1{
   <h2>Historical Layer</h2>
   <p>
     Chronicle serves as the historical-preservation layer that records qualifying
-    occurrences, their temporal context, relationships, provenance, and historical
-    significance across the Suite without replacing the operational systems that
-    produced the underlying records or actions.
+    Occurrences, their temporal context, Relationships, Provenance, Historical Context,
+    Verification, Validation context, publication lineage, and historical significance
+    across the Suite without replacing the operational systems that produced the
+    underlying records or actions.
   </p>
 </article>
 
@@ -222,7 +224,15 @@ h1{
   </p>
 
   <div class="note">
-    Stable Objects · Clear Boundaries · Durable References · Repeatable Workflows
+    Stable Objects · Clear Boundaries · Durable References · Explicit Validation · Repeatable Workflows
+  </div>
+
+  <p style="margin-top:14px;">
+    The governing interoperability rule is:
+  </p>
+
+  <div class="note">
+    Reference does not transfer authority.
   </div>
 </article>
 
@@ -236,9 +246,10 @@ h1{
   <p>
     Chronicle integrates through stable references to authoritative Suite objects.
     In the certification-centered Suite flow, Chronicle may preserve qualifying
-    certification occurrences by referencing the canonical Certification Package
-    and related SREG or supporting outputs. Chronicle preserves its own historical
-    Entry without assuming authority over those referenced objects.
+    certification Occurrences by referencing the canonical Certification Package
+    and, where a corresponding SREG exists and is materially relevant, the related
+    Registry Entry. Chronicle preserves its own historical Entry without assuming
+    authority over those referenced objects.
   </p>
 
   <div class="note">
@@ -350,6 +361,31 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
+  <h2>Integration in the Entry Production Procedure</h2>
+
+  <p>
+    Integration is applied throughout the formal Chronicle Entry Production Procedure,
+    not as a separate post-production step.
+  </p>
+
+  <div class="note">
+    Identify Occurrence → Assess Preservation Eligibility → Collect Authoritative References →
+    Classify Event Type → Select Event-Type Profile → Create Entry → Establish Relationships →
+    Record Sources / Evidence / Provenance → Verify → Validate → Publish → Preserve
+  </div>
+
+  <p style="margin-top:14px;">
+    The first explicit authority checkpoint occurs when authoritative references are
+    collected. Additional checkpoints occur during Relationship review, Verification,
+    Validation, and Publication.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
   <h2>Certification Events</h2>
 
   <p>
@@ -434,6 +470,36 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
+  <h2>Integration and Validation</h2>
+
+  <p>
+    Chronicle Validation tests whether required authoritative references and
+    institutional boundaries are correctly represented in the current Entry Version.
+  </p>
+
+  <div class="note">
+    Required authoritative reference present · Owning system identified ·
+    Reference structure valid · Relationship semantics coherent ·
+    Authority not transferred · Event-Type Profile requirements satisfied
+  </div>
+
+  <p style="margin-top:14px;">
+    For the Certification Event-Type Profile, at least one structured authoritative
+    reference must identify <strong>system: certifier</strong>. A related SREG is
+    conditional rather than a substitute for the Certifier reference.
+  </p>
+
+  <p>
+    A Validation failure establishes that Chronicle's current representation does
+    not yet conform. It does not invalidate the referenced authoritative object.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
   <h2>Authority Boundaries</h2>
 
   <p>
@@ -456,6 +522,29 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
+  <h2>Integration and the Publication Gate</h2>
+
+  <p>
+    Required authoritative references are part of Chronicle's publication-readiness
+    requirements.
+  </p>
+
+  <div class="note">
+    Required Verification State + Validation PASS + Required Authoritative References + Publication Prerequisites = Eligible for Publication
+  </div>
+
+  <p style="margin-top:14px;">
+    Publication does not convert referenced Suite objects into Chronicle-owned objects.
+    Chronicle publishes its own historical-preservation Entry while preserving the
+    authority of the referenced institution.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
   <h2>Integration Philosophy</h2>
 
   <p>
@@ -468,6 +557,14 @@ h1{
   <div class="note">
     Interoperability connects Chronicle to the Suite. It does not erase institutional boundaries.
   </div>
+
+  <a class="btn" href="/chronicle/certification-events/">
+    Open Certification Events →
+  </a>
+
+  <a class="btn" href="/chronicle/validation/">
+    Open Validation →
+  </a>
 
   <a class="btn" href="/chronicle/">
     Back to Chronicle →
