@@ -198,6 +198,7 @@ Current conditional fields include:
 
 ```text
 event_type_profile
+originating_system
 authoritative_record_references
 source_references
 evidence_references
@@ -290,22 +291,50 @@ An Event-Type Profile does not create a second canonical Chronicle object.
 
 # First Production Event-Type Profile
 
-The first production Event-Type Profile will be:
+The first production Event-Type Profile is:
 
 ```text
 Certification Event-Type Profile
 ```
 
-It may require:
+Production Profile directory:
 
-* Certification-specific Event Types
-* Certifier origin context
+```text
+/chronicle/schemas/certification-event-profile/
+```
+
+Profile package:
+
+```text
+certification-event-profile/
+├── index.html
+├── certification-event-profile.md
+└── certification-event-profile.json
+```
+
+The Profile requires or strengthens:
+
+* Approved Certification Event Types
+* `event_type_profile = certification-event-profile`
+* `originating_system = certifier`
+* Non-null certification Event Date / time
 * Authoritative Certification Package reference
-* Related SREG reference where applicable
-* Certification-specific Relationship rules
+* Certification-specific Provenance
+* Certification-specific Historical Context
+* Related SREG reference where a corresponding Registry Entry exists and is materially relevant
 * Certification-specific Validation requirements
 
-These requirements belong in the Profile rather than the Base Schema.
+These requirements belong in the Profile rather than the universal Base Schema.
+
+Conceptually:
+
+```text
+Chronicle Base Schema
+        +
+Certification Event-Type Profile
+        =
+Certification-related Chronicle Entry
+```
 
 ---
 
@@ -585,10 +614,10 @@ Supporting Chronicle-owned structure for documenting Source identity, attributio
 Status:
 
 ```text
-Architectural schema awaiting Phase VII reconciliation
+Phase VII reconciled supporting schema specification
 ```
 
-It must be aligned to the current Source architecture and approved Controlled Values before becoming production authoritative.
+The Source Record Schema is aligned to the current Source architecture, approved Source Types, Provenance Model, Versioning, Corrections, and authority boundaries.
 
 ---
 
@@ -607,10 +636,10 @@ Supporting Chronicle-owned structure for representing Evidence bearing on Chroni
 Status:
 
 ```text
-Architectural schema awaiting Phase VII reconciliation
+Phase VII reconciled supporting schema specification
 ```
 
-It must be aligned to the current Evidence Types, Provenance Model, Entry-linkage rules, and Evidence Relationship architecture before production use.
+The Evidence Record Schema is aligned to the approved Evidence Types, Provenance Model, Entry / claim linkage, Versioning, Corrections, limitations, and integrity architecture while Evidence Relationship values remain intentionally provisional.
 
 ---
 
@@ -629,10 +658,10 @@ Supporting Chronicle-owned structure for documenting Corrections to Chronicle-ow
 Status:
 
 ```text
-Architectural schema awaiting Phase VII reconciliation
+Phase VII reconciled supporting schema specification
 ```
 
-It must be aligned to the Versioning Policy, Controlled Correction Types, and mandatory Correction lineage fields before production use.
+The Correction Record Schema is aligned to the Versioning Policy, approved Correction Types, authority boundaries, and the mandatory Correction lineage minimum.
 
 ---
 
@@ -938,22 +967,36 @@ Validation should be machine-readable wherever practical.
 
 # Machine-Readable Specifications
 
-Chronicle Phase VII now includes a formal JSON Schema implementation for the Base Schema:
+Chronicle Phase VII now includes machine-readable production implementations for:
 
 ```text
 chronicle-base-schema.json
+
+certification-event-profile/
+└── certification-event-profile.json
 ```
 
-Future machine-readable schema artifacts may include:
+The Certification Event-Type Profile composes with the Chronicle Base Schema rather than duplicating it.
+
+Conceptually:
 
 ```text
+chronicle-base-schema.json
+        +
 certification-event-profile.json
+        =
+Certification-related Chronicle Entry Validation
+```
+
+Future machine-readable supporting schemas may include:
+
+```text
 source-record-schema.json
 evidence-record-schema.json
 correction-record-schema.json
 ```
 
-These should be created only when the corresponding human-readable specification is reconciled and ready for production implementation.
+Those supporting JSON schemas should be created only after their human-readable specifications are exercised against real production supporting records.
 
 ---
 
@@ -967,29 +1010,34 @@ index.html
 
 chronicle-base-schema.md
 chronicle-base-schema.json
+chronicle-entry-schema.md
+
+certification-event-profile/
+├── index.html
+├── certification-event-profile.md
+└── certification-event-profile.json
 
 source-record-schema.md
 evidence-record-schema.md
 correction-record-schema.md
 ```
 
-The former `chronicle-entry-schema.md` filename has been replaced by:
+The former `chronicle-entry-schema.md` filename is retained only as a historical compatibility pointer.
+
+The canonical Base Schema remains:
 
 ```text
 chronicle-base-schema.md
+chronicle-base-schema.json
 ```
 
-to make the architectural role explicit.
-
-A deprecated compatibility pointer may be retained under the old filename only if historical links require it.
-
-It should not contain a second competing Base Schema.
+The deprecated compatibility file must not contain a second competing Base Schema.
 
 ---
 
 # Phase VII Production Sequence
 
-The current recommended schema sequence is:
+The completed Phase VII schema sequence now includes:
 
 ```text
 Chronicle Base Schema
@@ -1003,11 +1051,21 @@ Correction Record Schema reconciliation
 Schemas public architecture update
         ↓
 Certification Event-Type Profile
-        ↓
-Validation Procedure
 ```
 
-This sequence keeps the supporting schemas aligned to the production Base Schema before they are treated as authoritative production artifacts.
+The next sequence is:
+
+```text
+Profile Validation
+        ↓
+Validation Procedure
+        ↓
+Production Procedure
+        ↓
+First Production Chronicle Entry
+```
+
+This preserves the layered architecture while moving from schema definition into executable production use.
 
 ---
 
@@ -1057,21 +1115,21 @@ Older Chronicle records must remain readable and understandable.
 
 # Next Production Work
 
-Immediate schema work now centers on reconciling:
+The Chronicle Base Schema, supporting Source / Evidence / Correction schema specifications, public Schemas architecture, and Certification Event-Type Profile are now established.
+
+Immediate production work now centers on:
 
 ```text
-source-record-schema.md
-evidence-record-schema.md
-correction-record-schema.md
+Profile Validation
+        ↓
+Validation Procedure
+        ↓
+Production Procedure
+        ↓
+First Production Chronicle Entry
 ```
 
-After those supporting specifications are aligned, the public `/chronicle/schemas/` page can describe the actual production schema family rather than transitional architecture.
-
-The next major new production schema artifact will then be the:
-
-```text
-Certification Event-Type Profile
-```
+Supporting JSON schemas for Source, Evidence, and Correction Records remain intentionally deferred until real production supporting records justify machine-readable implementations.
 
 ---
 
@@ -1089,13 +1147,24 @@ And operationally:
 
 **Active Phase VII Chronicle Schemas specification.**
 
-The Chronicle Base Schema now exists in both human-readable and machine-readable production forms:
+The Chronicle Base Schema exists in both human-readable and machine-readable production forms:
 
 ```text
 chronicle-base-schema.md
 chronicle-base-schema.json
 ```
 
-The Source Record Schema, Evidence Record Schema, and Correction Record Schema remain Chronicle-owned supporting schema specifications awaiting Phase VII reconciliation before production-authoritative use.
+Chronicle's first production Event-Type Profile is published through:
 
-The schema family should remain governed by explicit compatibility, Versioning, Validation, Controlled Values, authority boundaries, and preservation of prior states.
+```text
+/chronicle/schemas/certification-event-profile/
+├── index.html
+├── certification-event-profile.md
+└── certification-event-profile.json
+```
+
+The Source Record Schema, Evidence Record Schema, and Correction Record Schema are Phase VII reconciled Chronicle-owned supporting schema specifications.
+
+The next operational focus is two-layer Profile Validation followed by the Chronicle Validation Procedure, Production Procedure, and first production Chronicle Entry.
+
+The schema family remains governed by explicit compatibility, Versioning, Validation, Controlled Values, authority boundaries, and preservation of prior states.
