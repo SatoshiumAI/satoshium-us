@@ -83,26 +83,23 @@
             ]
           },
           "contains": {
-            "oneOf": [
-              {
+            "type": "object",
+            "required": [
+              "reference",
+              "system"
+            ],
+            "properties": {
+              "reference": {
                 "type": "string",
                 "minLength": 1
               },
-              {
-                "type": "object",
-                "required": [
-                  "reference"
-                ],
-                "properties": {
-                  "system": {
-                    "const": "certifier"
-                  }
-                }
+              "system": {
+                "const": "certifier"
               }
-            ]
+            }
           },
           "minContains": 1,
-          "description": "At least one authoritative Certifier reference identifying the relevant Certification Package or authoritative certification record."
+          "description": "At least one authoritative reference must be a structured object that explicitly identifies system: certifier and provides the relevant Certification Package or authoritative certification record reference."
         },
         "historical_context": {
           "type": "string",
