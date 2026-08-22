@@ -121,7 +121,7 @@ It should not create additional obligations merely for completeness or architect
 Chronicle Validation is:
 
 * a conformance review;
-* a publication gate;
+* a publication-readiness control feeding the separate Chronicle Publication Gate;
 * a machine-readable and institutional review process;
 * a check against the requirements governing one Entry Version;
 * a mechanism for identifying blocking implementation defects;
@@ -724,7 +724,11 @@ and:
 
 # 11. Publication Readiness Validation
 
-Validation is a publication gate.
+Publication Readiness is the final Validation-domain readiness test.
+
+It is not the separate Chronicle Publication Gate.
+
+`CHR-VAL-011` tests whether the Entry satisfies publication prerequisites from a Validation standpoint. The Publication Gate makes the separate institutional decision to approve or withhold Publication.
 
 Before an Entry can proceed toward publication, Validation should confirm:
 
@@ -747,7 +751,7 @@ Authority boundaries are represented correctly
 A Validation PASS means:
 
 ```text
-Eligible to proceed toward publication
+Eligible to proceed to the Publication Gate
 ```
 
 It does not mean:
@@ -805,9 +809,13 @@ Verification Complete
         ↓
 Validation PASS
         ↓
-Eligible for Publication Decision
+CHR-VAL-011 Publication Readiness PASS
         ↓
-Publication
+Publication Gate
+        ↓
+Approved for Publication / Publication Withheld
+        ↓
+Publication when approved
 ```
 
 Publication may still be withheld after Validation PASS for reasons governed by Chronicle Publication procedure.
@@ -1525,10 +1533,12 @@ This document establishes:
 * minimum Validation requirements;
 * the relationship among Schema, Verification, Validation, and Publication.
 
-The next Phase VIII artifact is the:
+The Phase VIII operational dry run using `SC-CERT-2026-0001` and simulated candidate `CHR-2026-0001` completed with an overall result of:
 
 ```text
-Chronicle Entry Production Procedure
+PASS
 ```
 
-which will define the repeatable operational path from identifying a qualifying Occurrence through publication and preservation.
+No Validation architecture redesign was required.
+
+The next operational use of this specification is the first production Chronicle Entry review and implementation.
