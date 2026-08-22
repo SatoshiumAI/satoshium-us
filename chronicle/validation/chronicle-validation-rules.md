@@ -638,7 +638,11 @@ This rule is Not Applicable to an initial Entry Version with no material Correct
 
 ## Rule
 
-A Chronicle Entry must not proceed through the publication gate while a known blocking Validation failure remains.
+`CHR-VAL-011` is the final Validation-domain readiness test.
+
+It determines whether the current Entry Version has satisfied the Validation prerequisites necessary to proceed to the separate Chronicle Publication Gate.
+
+It does not itself approve the Entry for Publication and does not change `publication_state`.
 
 Publication Readiness Validation must confirm:
 
@@ -661,7 +665,19 @@ no unresolved blocking failure remains
 
 ## PASS
 
-PASS when the current Entry Version is eligible to proceed to the Publication decision.
+PASS when the current Entry Version is eligible to proceed to the separate Chronicle Publication Gate.
+
+The distinction is:
+
+```text
+CHR-VAL-011 — Publication Readiness
+  tests readiness from a Validation standpoint.
+
+Publication Gate
+  makes the institutional approval decision.
+```
+
+A PASS under this rule does not itself mean `Approved for Publication` or `Published`.
 
 ## FAIL
 
@@ -1079,4 +1095,8 @@ Chronicle may preserve the result through an institutional validation artifact u
 
 **Chronicle Validation Rules established for Phase VIII.**
 
-These rules define the normative Validation requirements that will be applied by the Chronicle Entry Production Procedure and tested during Phase VIII operational dry-run work.
+These rules define the normative Validation requirements applied by the Chronicle Entry Production Procedure.
+
+The first end-to-end Phase VIII operational dry run using `SC-CERT-2026-0001` and simulated candidate `CHR-2026-0001` completed with an overall result of `PASS`.
+
+The dry run identified no rule-set redesign requirement and clarified that `CHR-VAL-011 — Publication Readiness` is distinct from the separate Chronicle Publication Gate.
