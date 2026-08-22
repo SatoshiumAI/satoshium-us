@@ -119,6 +119,10 @@ Overall Validation Result
 
 Publication Readiness is intentionally evaluated near the end because it depends on the preceding Validation domains.
 
+`CHR-VAL-011 — Publication Readiness` is not the Chronicle Publication Gate.
+
+`CHR-VAL-011` determines whether the Entry is ready, from a Validation standpoint, to proceed to the Publication Gate. The Publication Gate makes the separate institutional decision to approve or withhold Publication.
+
 ---
 
 # Step 0 — Entry Received for Validation
@@ -1103,7 +1107,7 @@ be reliably bounded
 
 ---
 
-# Publication Gate Rule
+# Transition to the Publication Gate
 
 No Entry may pass from Validation into publication preparation while:
 
@@ -1118,19 +1122,25 @@ any applicable rule remains NOT EVALUATED
 because of an unresolved prerequisite failure
 ```
 
-The gate is:
+The Validation transition is:
 
 ```text
 Overall Validation PASS
+        +
+CHR-VAL-011 Publication Readiness PASS
         ↓
-Eligible for Publication Decision
+Eligible to Proceed to Publication Gate
 ```
 
-not:
+The Publication Gate then separately determines whether Chronicle approves or withholds Publication.
+
+Therefore:
 
 ```text
-Overall Validation PASS
-        ↓
+Validation PASS
+        ≠
+Publication approval
+        ≠
 Automatically Published
 ```
 
@@ -1220,4 +1230,6 @@ Chronicle Validation Sequence
 Chronicle Entry Production Procedure
 ```
 
-The next Phase VIII work can therefore define explicit Validation outcome handling and then incorporate the complete Validation sequence into the Chronicle Entry Production Procedure.
+The first end-to-end operational dry run confirmed that this sequence can be applied to a real Suite case without Validation architecture redesign.
+
+The next operational use is the first production Chronicle Entry review and implementation.
