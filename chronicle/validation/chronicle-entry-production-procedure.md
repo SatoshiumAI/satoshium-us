@@ -958,6 +958,18 @@ material limitations
 
 ## Mandatory Publication Gate
 
+This is a separate institutional decision from `CHR-VAL-011 — Publication Readiness`.
+
+```text
+CHR-VAL-011
+  tests whether the Entry satisfies publication prerequisites
+  from a Validation standpoint.
+
+Publication Gate
+  determines whether Chronicle approves
+  the validated Entry to proceed to Publication.
+```
+
 An Entry must not proceed to publication unless:
 
 ```text
@@ -1577,7 +1589,11 @@ Chronicle Base Schema
 Certification Event-Type Profile
 ```
 
-The dry run and first production Entry should test this procedure before Chronicle creates additional procedural architecture.
+The first end-to-end operational dry run of this procedure completed with an overall result of `PASS`.
+
+No production identifier was assigned, no canonical Chronicle Entry was created, and nothing was published.
+
+The next application of this procedure is the real production review and implementation of the first Chronicle Entry. If approved during production review, `CHR-2026-0001` may be formally assigned at Step 6 after uniqueness is confirmed.
 
 ---
 
@@ -1689,6 +1705,10 @@ Chronicle Validation Record
 Chronicle Entry Production Procedure
         ↓
 Operational Dry Run
+        ↓
+PASS
+        ↓
+Production Review and Implementation
         ↓
 First Production Chronicle Entry
 ```
