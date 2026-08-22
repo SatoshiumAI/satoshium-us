@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>CHR-2026-0001 · Chronicle Entry</title>
+<meta name="description" content="Draft Satoshium Chronicle Entry CHR-2026-0001 preserving the July 5, 2026 creation of Certification Package SC-CERT-2026-0001, the inaugural Operational certification of the Satoshium Atlas Jurisdiction Record — El Salvador.">
+<link rel="canonical" href="https://satoshium.us/chronicle/entries/CHR-2026-0001/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+ --draft:#e6b86b;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:940px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.kicker{
+ display:block;
+ margin-bottom:8px;
+ color:var(--gold);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.meta{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:10px 18px;
+ margin-top:16px;
+}
+
+.meta div{
+ border-top:1px solid rgba(214,163,74,.12);
+ padding-top:10px;
+}
+
+.meta strong{
+ display:block;
+ margin-bottom:2px;
+ color:var(--gold2);
+ font-size:13px;
+}
+
+.meta span{color:var(--muted)}
+
+.status-row{
+ display:flex;
+ flex-wrap:wrap;
+ gap:10px;
+ margin-top:16px;
+}
+
+.status{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ padding:8px 12px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ background:rgba(214,163,74,.06);
+ color:var(--draft);
+ font-size:13px;
+ font-weight:800;
+}
+
+.status::before{
+ content:"";
+ width:8px;
+ height:8px;
+ border-radius:50%;
+ background:currentColor;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+code{
+ color:var(--gold2);
+ background:rgba(214,163,74,.06);
+ padding:2px 6px;
+ border-radius:6px;
+}
+
+@media (max-width:900px){
+ .grid,
+ .meta{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Entry · Certification</div>
+
+  <p class="muted" style="margin:14px 0 0;">
+    <a href="/chronicle/">Chronicle</a> /
+    <a href="/chronicle/entries/">Entries</a> /
+    CHR-2026-0001
+  </p>
+
+  <h1>CHR-2026-0001</h1>
+
+  <p class="lead">
+    <strong>Creation of SC-CERT-2026-0001</strong>
+  </p>
+
+  <p class="lead">
+    This Chronicle Entry preserves the July 5, 2026 issuance of
+    <strong>SC-CERT-2026-0001</strong> by Satoshium Certifier, representing the
+    inaugural Operational certification of the
+    <strong>Satoshium Atlas Jurisdiction Record — El Salvador</strong>.
+  </p>
+
+  <div class="status-row">
+    <span class="status">Lifecycle · Draft</span>
+    <span class="status">Verification · Not Reviewed</span>
+    <span class="status">Publication · Not Published</span>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Entry Identity</h2>
+
+  <div class="meta">
+    <div>
+      <strong>Chronicle Identifier</strong>
+      <span>CHR-2026-0001</span>
+    </div>
+    <div>
+      <strong>Entry Version</strong>
+      <span>1</span>
+    </div>
+    <div>
+      <strong>Schema ID</strong>
+      <span>chronicle-entry</span>
+    </div>
+    <div>
+      <strong>Schema Version</strong>
+      <span>1.0.0</span>
+    </div>
+    <div>
+      <strong>Event Type</strong>
+      <span>certification_created</span>
+    </div>
+    <div>
+      <strong>Event Date</strong>
+      <span>July 5, 2026</span>
+    </div>
+    <div>
+      <strong>Event-Type Profile</strong>
+      <span>certification-event-profile</span>
+    </div>
+    <div>
+      <strong>Originating System</strong>
+      <span>Satoshium Certifier</span>
+    </div>
+    <div>
+      <strong>Lifecycle State</strong>
+      <span>draft</span>
+    </div>
+    <div>
+      <strong>Verification State</strong>
+      <span>not_reviewed</span>
+    </div>
+    <div>
+      <strong>Publication State</strong>
+      <span>not_published</span>
+    </div>
+    <div>
+      <strong>Entry Created</strong>
+      <span>August 22, 2026 · 8:00 AM PDT</span>
+    </div>
+  </div>
+
+  <div class="note">
+    This is a real production Chronicle Entry in Draft state. The identifier
+    <strong>CHR-2026-0001</strong> is permanently assigned to this Entry and must not
+    be reused for another Occurrence.
+  </div>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Preserved Occurrence</span>
+  <h2>What Happened</h2>
+
+  <p>
+    On July 5, 2026, Satoshium Certifier issued
+    <strong>Certification Package SC-CERT-2026-0001</strong> for the
+    <strong>Satoshium Atlas Jurisdiction Record — El Salvador</strong>.
+  </p>
+
+  <p>
+    The certification was issued as an <strong>Operational</strong> certification
+    and is recorded by Certifier as <strong>Issued · Active</strong>.
+  </p>
+
+  <div class="note">
+    Chronicle classifies this historical Occurrence as
+    <strong>certification_created</strong>. Certifier remains authoritative for
+    the certification action, determination, package, lifecycle, and status.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Historical Context</span>
+  <h2>Why This Occurrence Matters</h2>
+
+  <p>
+    SC-CERT-2026-0001 marked the inaugural Operational certification issued by
+    Satoshium Certifier.
+  </p>
+
+  <p>
+    The certification concerned the Satoshium Atlas Jurisdiction Record —
+    El Salvador and established an early operational relationship among Atlas
+    source authority, Certifier certification authority, and subsequent Registry
+    registration.
+  </p>
+
+  <p>
+    Its issuance represents a milestone in the transition of the Satoshium Suite
+    from institutional architecture into cross-system operational use.
+  </p>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <span class="kicker">Primary Authority</span>
+  <h2>Authoritative Record</h2>
+
+  <p>
+    The authoritative record for the certification Occurrence represented by this
+    Chronicle Entry is maintained by Satoshium Certifier.
+  </p>
+
+  <div class="meta">
+    <div>
+      <strong>Reference</strong>
+      <span>SC-CERT-2026-0001</span>
+    </div>
+    <div>
+      <strong>System</strong>
+      <span>certifier</span>
+    </div>
+    <div>
+      <strong>Record Type</strong>
+      <span>Certification Package</span>
+    </div>
+    <div>
+      <strong>Authority</strong>
+      <span>Satoshium Certifier</span>
+    </div>
+  </div>
+
+  <a class="btn" href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/">
+    Open Certification Package →
+  </a>
+</article>
+
+<article class="card">
+  <span class="kicker">Subject Authority</span>
+  <h2>Atlas Subject</h2>
+
+  <p>
+    The Certification Subject is the Satoshium Atlas Jurisdiction Record —
+    El Salvador.
+  </p>
+
+  <div class="meta">
+    <div>
+      <strong>Subject</strong>
+      <span>Atlas Jurisdiction Record — El Salvador</span>
+    </div>
+    <div>
+      <strong>Subject System</strong>
+      <span>Satoshium Atlas</span>
+    </div>
+    <div>
+      <strong>Subject Type</strong>
+      <span>Jurisdiction Intelligence Engine Record</span>
+    </div>
+    <div>
+      <strong>Subject Authority</strong>
+      <span>Satoshium Atlas</span>
+    </div>
+  </div>
+
+  <a class="btn" href="https://satoshium.us/atlas/jurisdiction-intelligence-engine/global/countries/el-salvador/">
+    Open Atlas Subject →
+  </a>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Registry Relationship</span>
+  <h2>Related Registry Entry</h2>
+
+  <p>
+    Satoshium Registry later cataloged the certification through
+    <strong>SREG-2026-0001</strong>.
+  </p>
+
+  <div class="flow" aria-label="Chronicle relationship">
+    <strong>CHR-2026-0001</strong>
+    <span>→</span>
+    <strong>related_to</strong>
+    <span>→</span>
+    <strong>SREG-2026-0001</strong>
+  </div>
+
+  <div class="note">
+    Registry owns SREG-2026-0001 and its Registry-controlled representation.
+    Registry does not replace Certifier as the certification authority.
+  </div>
+
+  <a class="btn" href="https://satoshium.us/registry/registered-items/SREG-2026-0001/">
+    Open Registry Overview →
+  </a>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Sources</span>
+  <h2>Supporting Certifier Artifacts</h2>
+
+  <p>
+    The following Certifier artifacts support Chronicle review of the represented
+    Occurrence. They remain subordinate to the canonical Certification Package.
+  </p>
+
+  <ul>
+    <li>
+      <a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/reports/certification-process-report/">
+        Certification Process Report (SCPR)
+      </a>
+    </li>
+    <li>
+      <a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/receipts/certification-receipts/">
+        Certification Receipt (SCR)
+      </a>
+    </li>
+    <li>
+      <a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/records/certified-record/">
+        Satoshium Certified Record (SCRD HTML)
+      </a>
+    </li>
+    <li>
+      <a href="https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/records/certified-record/scrd_json.json">
+        Satoshium Certified Record (SCRD JSON)
+      </a>
+    </li>
+  </ul>
+
+  <div class="note">
+    Chronicle uses published identifiers where they exist and durable descriptive
+    references where a supporting artifact does not publish a separate formal identifier.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Provenance</span>
+  <h2>Information Path</h2>
+
+  <p>
+    Chronicle's current production representation is derived from review of the
+    authoritative Certification Package, the underlying Atlas subject, the related
+    Registry Entry, and supporting Certifier artifacts.
+  </p>
+
+  <div class="flow" aria-label="Provenance path">
+    <strong>Satoshium Atlas</strong>
+    <span>→</span>
+    <strong>Atlas Jurisdiction Record — El Salvador</strong>
+    <span>→</span>
+    <strong>Satoshium Certifier</strong>
+    <span>→</span>
+    <strong>SC-CERT-2026-0001</strong>
+    <span>→</span>
+    <strong>Satoshium Registry</strong>
+    <span>→</span>
+    <strong>SREG-2026-0001</strong>
+    <span>→</span>
+    <strong>Satoshium Chronicle</strong>
+    <span>→</span>
+    <strong>CHR-2026-0001</strong>
+  </div>
+
+  <div class="meta">
+    <div>
+      <strong>Origin</strong>
+      <span>Satoshium Certifier</span>
+    </div>
+    <div>
+      <strong>Acquisition Method</strong>
+      <span>Production review of authoritative and supporting Suite records</span>
+    </div>
+    <div>
+      <strong>Retrieval / Review Date</strong>
+      <span>August 22, 2026</span>
+    </div>
+    <div>
+      <strong>Material Provenance Limitation</strong>
+      <span>None identified at Entry creation</span>
+    </div>
+  </div>
+
+  <div class="note">
+    This path represents provenance and historical lineage. It does not transfer
+    institutional authority among Atlas, Certifier, Registry, and Chronicle.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <span class="kicker">Verification</span>
+  <h2>Current Verification State</h2>
+
+  <p>
+    Chronicle Verification has not yet been completed for this production Entry.
+  </p>
+
+  <div class="note">
+    <strong>verification_state:</strong> not_reviewed
+  </div>
+
+  <p style="margin-top:14px;">
+    Verification will review Chronicle's own historical representation, including
+    identity, Occurrence, Event Date, authoritative references, Sources,
+    Relationships, Provenance, Historical Context, temporal consistency, authority
+    boundaries, and material limitations.
+  </p>
+</article>
+
+<article class="card">
+  <span class="kicker">Validation</span>
+  <h2>Current Validation Position</h2>
+
+  <p>
+    Production Validation has not yet been performed against this Entry Version.
+  </p>
+
+  <div class="note">
+    No production PASS or FAIL result is asserted at this stage.
+  </div>
+
+  <p style="margin-top:14px;">
+    Validation will apply the governing Chronicle Base Schema,
+    Certification Event-Type Profile, Controlled Values, CHR-VAL Rules,
+    authority requirements, and Publication Readiness requirements to
+    Entry Version 1.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Publication</span>
+  <h2>Publication Position</h2>
+
+  <p>
+    This Entry is not published.
+  </p>
+
+  <div class="meta">
+    <div>
+      <strong>Publication State</strong>
+      <span>not_published</span>
+    </div>
+    <div>
+      <strong>Published At</strong>
+      <span>Not applicable</span>
+    </div>
+    <div>
+      <strong>CHR-VAL-011</strong>
+      <span>Not yet evaluated in production</span>
+    </div>
+    <div>
+      <strong>Publication Gate</strong>
+      <span>Not yet performed in production</span>
+    </div>
+  </div>
+
+  <div class="note">
+    CHR-VAL-011 tests Publication Readiness from a Validation standpoint.
+    The Chronicle Publication Gate remains the separate institutional decision
+    to approve or withhold Publication.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Authority Boundaries</span>
+  <h2>Institutional Ownership</h2>
+
+  <ul>
+    <li><strong>Satoshium Certifier</strong> owns the certification action, determination, Certification Package, lifecycle, and certification status.</li>
+    <li><strong>Satoshium Registry</strong> owns SREG-2026-0001, registration, cataloging, Registry metadata, and Registry lifecycle.</li>
+    <li><strong>Satoshium Atlas</strong> owns the underlying Atlas Jurisdiction Record — El Salvador and its jurisdiction intelligence.</li>
+    <li><strong>Satoshium Chronicle</strong> owns CHR-2026-0001 as Chronicle's historical-preservation representation of the qualifying certification Occurrence.</li>
+  </ul>
+
+  <div class="note">
+    Reference does not transfer authority.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Entry History</span>
+  <h2>Chronological Context</h2>
+
+  <div class="meta">
+    <div>
+      <strong>July 5, 2026</strong>
+      <span>SC-CERT-2026-0001 issued by Satoshium Certifier.</span>
+    </div>
+    <div>
+      <strong>July 17, 2026</strong>
+      <span>Certification Package architecture hardened and terminology reconciled.</span>
+    </div>
+    <div>
+      <strong>August 2, 2026</strong>
+      <span>SREG-2026-0001 established by Satoshium Registry.</span>
+    </div>
+    <div>
+      <strong>August 20, 2026</strong>
+      <span>Chronicle operational dry run completed using CHR-2026-0001 as a simulated candidate.</span>
+    </div>
+    <div>
+      <strong>August 22, 2026</strong>
+      <span>CHR-2026-0001 formally assigned and Entry Version 1 created in Draft state.</span>
+    </div>
+    <div>
+      <strong>Current Entry Version</strong>
+      <span>1</span>
+    </div>
+  </div>
+
+  <div class="note">
+    The August 20 dry run did not assign or reserve CHR-2026-0001. Formal Chronicle
+    identity begins with the August 22, 2026 production assignment.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Entry Package</span>
+  <h2>Production Artifacts</h2>
+
+  <p>
+    The canonical Chronicle Entry package uses the initial three-file production convention.
+  </p>
+
+  <ul>
+    <li><strong>index.html</strong> — official human-readable Chronicle Entry.</li>
+    <li><strong>record.json</strong> — official machine-readable Chronicle Entry.</li>
+    <li><strong>README.md</strong> — institutional and repository documentation.</li>
+  </ul>
+
+  <div class="note">
+    The companion <strong>record.json</strong> and <strong>README.md</strong> remain to be created.
+    Human / machine consistency cannot receive a production Validation result until the
+    machine-readable representation exists.
+  </div>
+
+  <a class="btn" href="/chronicle/entries/">Back to Chronicle Entries →</a>
+  <a class="btn" href="/chronicle/validation/">Open Chronicle Validation →</a>
+  <a class="btn" href="/chronicle/">Back to Chronicle →</a>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <span class="kicker">Chronicle Principle</span>
+  <h2>Historical Preservation Boundary</h2>
+
+  <p>
+    CHR-2026-0001 preserves the historical fact that the inaugural Operational
+    certification was issued and records how that Occurrence fits within the
+    developing Satoshium Suite.
+  </p>
+
+  <p>
+    It does not duplicate the Certification Package, re-certify the Atlas subject,
+    replace Registry cataloging, or transform another institution's determination
+    into a Chronicle determination.
+  </p>
+
+  <div class="note">
+    Events happen. Suite systems establish authority. Chronicle preserves qualifying historical memory.
+  </div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+    Chronicle preserves the Occurrence while authority remains with the institution that established it.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
