@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Entries</title>
-<meta name="description" content="Satoshium Chronicle Entries — canonical historical-preservation records representing qualifying occurrences through governed schemas, authoritative references, provenance, verification, validation, publication, correction, versioning, and preservation.">
+<meta name="description" content="Satoshium Chronicle Entries — the public production collection of canonical historical-preservation records representing qualifying occurrences through governed schemas, authoritative references, provenance, verification, validation, publication, correction, versioning, and preservation.">
 <link rel="canonical" href="https://satoshium.us/chronicle/entries/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -27,6 +27,7 @@
  --gold:#d6a34a;
  --gold2:#f4c36a;
  --line:rgba(214,163,74,.18);
+ --good:#8fd19e;
 }
 
 *{box-sizing:border-box}
@@ -103,6 +104,12 @@ h1{
  color:var(--gold2);
 }
 
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--text);
+}
+
 .card p{
  margin:0 0 14px;
  color:var(--muted);
@@ -117,9 +124,26 @@ h1{
  color:var(--muted);
 }
 
+.status{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ margin-top:8px;
+ padding:7px 11px;
+ border:1px solid rgba(143,209,158,.25);
+ border-radius:999px;
+ color:var(--good);
+ background:rgba(143,209,158,.06);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.04em;
+ text-transform:uppercase;
+}
+
 .btn{
  display:inline-block;
  margin-top:14px;
+ margin-right:8px;
  padding:12px 16px;
  border-radius:12px;
  border:1px solid rgba(214,163,74,.24);
@@ -129,6 +153,39 @@ h1{
 }
 
 .btn:hover{background:rgba(214,163,74,.12)}
+
+.entry-list{
+ display:grid;
+ gap:14px;
+ margin-top:16px;
+}
+
+.entry{
+ padding:18px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.035);
+}
+
+.entry strong{
+ color:var(--gold2);
+}
+
+.entry-meta{
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px 18px;
+ color:var(--muted);
+ font-size:14px;
+ margin-top:8px;
+}
+
+code{
+ color:var(--gold2);
+ background:rgba(214,163,74,.06);
+ padding:2px 6px;
+ border-radius:6px;
+}
 
 .muted{color:var(--muted)}
 
@@ -151,18 +208,45 @@ h1{
   <h1>Satoshium Chronicle Entries</h1>
 
   <p class="lead">
-    A Chronicle Entry is the canonical historical-preservation object of
-    Satoshium Chronicle. Each Entry represents a qualifying occurrence that
-    Chronicle has determined should be preserved as part of the historical record.
+    The Chronicle Entries collection is the public production surface for
+    Satoshium Chronicle’s canonical historical-preservation records.
+    Each published Entry represents one qualifying Occurrence that Chronicle
+    has determined should be preserved as part of the historical record.
   </p>
 
   <p class="lead">
-    A Chronicle Entry preserves the Occurrence, temporal context, Relationships,
-    Provenance, authoritative references, Verification, Validation context,
-    publication lineage, and Version history needed for future historical review
-    while leaving authoritative records under the control of the Suite systems
-    that created them.
+    Chronicle preserves the historical representation, context, Relationships,
+    Provenance, Verification, Validation context, publication lineage, Corrections,
+    and Entry Versions while leaving authoritative actions and records under the
+    control of the Suite institutions that created them.
   </p>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Production Status</h2>
+
+  <div class="status">Operational Dry Run · PASS</div>
+
+  <p style="margin-top:14px;">
+    Chronicle’s first end-to-end operational dry run successfully exercised the
+    production path from Occurrence identification through Preservation Eligibility,
+    authoritative-reference collection, Event Type classification, Event-Type Profile
+    selection, Entry construction, Relationships, Sources / Evidence / Provenance,
+    Verification, Validation, and the Publication Gate.
+  </p>
+
+  <p>
+    The dry run used <strong>SC-CERT-2026-0001</strong> as the underlying certification
+    case and <strong>CHR-2026-0001</strong> as a simulated candidate only. The dry run
+    did not assign or reserve the identifier, create a canonical Entry, or publish
+    anything.
+  </p>
+
+  <div class="note">
+    Dry-run result: PASS · Production Entry assignment and publication remain separate institutional acts.
+  </div>
+</article>
 </section>
 
 <section class="grid">
@@ -171,150 +255,121 @@ h1{
   <h2>Canonical Object</h2>
   <p>
     Chronicle Entry is the canonical record object created and maintained by
-    Chronicle. The Entry is not the event itself; it is Chronicle’s structured
-    preservation record representing a qualifying historical occurrence.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Suite Alignment</h2>
-  <p>
-    Chronicle Entries follow Satoshium Suite standards for stable objects,
-    structured schemas, durable identifiers, canonical terminology, Version
-    preservation, explicit Validation, publication gates, and repeatable production
-    procedures.
+    Chronicle. The Entry is not the Occurrence itself; it is Chronicle’s structured
+    historical-preservation record representing that qualifying Occurrence.
   </p>
 </article>
 
 <article class="card">
   <h2>Authority Boundary</h2>
   <p>
-    A Chronicle Entry is authoritative only as Chronicle’s preservation record.
-    Certifier, Registry, Anchor, Beacon, Attestor, Navigator, Atlas, and other Suite
-    systems remain authoritative for the objects and actions within their own
-    institutional responsibilities.
+    A Chronicle Entry is authoritative only as Chronicle’s historical-preservation
+    record. Certifier, Registry, Anchor, Beacon, Attestor, Navigator, Atlas, and
+    external institutions remain authoritative for the objects and actions within
+    their own responsibilities.
+  </p>
+  <div class="note">Reference does not transfer authority.</div>
+</article>
+
+<article class="card">
+  <h2>Production Contract</h2>
+  <p>
+    Every production Entry is governed by the Chronicle Base Schema and, where
+    applicable, an approved Event-Type Profile. Required, Conditional, and Optional
+    fields are determined by those governing machine-readable and institutional rules.
   </p>
 </article>
 
 <article class="card">
-  <h2>Temporal Context</h2>
+  <h2>Identity and Versioning</h2>
   <p>
-    Every Entry preserves when the represented occurrence happened and, where
-    necessary, distinguishes that event date from the date Chronicle created,
-    published, corrected, or versioned the Entry. This supports reliable historical
-    ordering without confusing occurrence time with record-maintenance time.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Evidence Connections</h2>
-  <p>
-    Entries may reference evidence that supports, challenges, or contextualizes
-    Chronicle’s representation of an occurrence. Evidence does not replace the
-    authoritative Suite object and should be handled according to applicable Suite
-    evidence standards and Chronicle procedures.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Sources and Provenance</h2>
-  <p>
-    Entries preserve the authoritative references, Sources, and Provenance needed
-    to understand where the preserved information came from. An originating system
-    is recorded when the governing Event-Type Profile requires it. Chronicle
-    references authoritative objects instead of duplicating, replacing, or
-    reinterpreting them.
+    Production Entries use permanent identifiers in the form
+    <code>CHR-YYYY-NNNN</code>. The identifier remains stable across material
+    Corrections and Entry Versions. Entry Version is distinct from Schema Version.
   </p>
 </article>
 
 <article class="card">
   <h2>Verification</h2>
   <p>
-    Entries undergo Chronicle Verification to review authoritative references,
-    Sources, Evidence, Event Dates, Relationships, Provenance, Historical Context,
-    and material limitations. Verification concerns Chronicle’s historical
-    representation; it does not re-adjudicate determinations owned by another
-    Suite system.
+    Verification reviews Chronicle’s own historical representation: whether it is
+    adequately supported, internally coherent, traceable, temporally consistent,
+    relationship-aware, and appropriately limited.
   </p>
 </article>
 
 <article class="card">
   <h2>Validation</h2>
   <p>
-    Validation tests whether the current Entry Version conforms to the governing
-    Base Schema, applicable Event-Type Profile, Controlled Values, Required and
-    Conditional fields, authoritative-reference rules, temporal rules,
-    Relationship integrity, Provenance requirements, Version / Correction rules,
-    and publication prerequisites.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Corrections and Versions</h2>
-  <p>
-    Chronicle may correct or Version its own Entries when errors, new Evidence,
-    improved sourcing, changed Relationships, corrected Provenance, or additional
-    context justify change. Material prior states remain traceable, and applicable
-    changes may require Reverification and Revalidation before republication.
+    Validation determines whether the current Entry Version conforms to the
+    governing Base Schema, applicable Event-Type Profile, Controlled Values,
+    authoritative-reference rules, temporal requirements, Relationships, Provenance,
+    Version / Correction rules, authority boundaries, and publication prerequisites.
   </p>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Preservation Eligibility</h2>
+  <h2>Production Entry Package</h2>
 
   <p>
-    An occurrence does not become a Chronicle Entry merely because it happened.
-    Chronicle first determines whether the occurrence qualifies for historical
-    preservation under its Preservation Eligibility rules.
-  </p>
-
-  <p>
-    Eligibility may be established through an approved preservation class or through
-    Historical Significance. Historical Significance explains why an occurrence
-    matters; Preservation Eligibility is the institutional decision that it belongs
-    in Chronicle.
+    Chronicle uses a deliberately minimal production package for each published
+    Entry. The initial production convention is:
   </p>
 
   <div class="note">
-    Occurrence → Preservation Eligibility → Chronicle Entry
+    <code>/chronicle/entries/CHR-YYYY-NNNN/</code><br>
+    ├── <code>index.html</code> — official human-readable Entry<br>
+    ├── <code>record.json</code> — official machine-readable Entry<br>
+    └── <code>README.md</code> — institutional / repository documentation
   </div>
-</article>
 
+  <p style="margin-top:14px;">
+    Supporting Verification, Validation, Source, Evidence, Provenance, or Correction
+    artifacts are created separately only when their additional structure provides
+    real institutional value. Chronicle does not create redundant files merely for
+    architectural symmetry.
+  </p>
+</article>
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Entry Lifecycle</h2>
+  <h2>Entry Production Path</h2>
 
   <p>
-    Chronicle Entries follow a documented and repeatable lifecycle that separates
-    the historical occurrence from Chronicle’s decision to preserve and publish it.
+    A production Chronicle Entry follows the documented Chronicle Entry Production
+    Procedure.
   </p>
 
   <div class="note">
-    Identify Occurrence → Assess Preservation Eligibility → Collect Authoritative References → Classify Event Type → Select Event-Type Profile → Assign Chronicle Identifier → Create Entry → Establish Relationships → Record Sources / Evidence / Provenance → Perform Verification → Perform Validation → Approve for Publication → Publish → Preserve
+    Identify Occurrence → Assess Preservation Eligibility → Collect Authoritative References → Classify Event Type → Select Event-Type Profile → Assign Chronicle Identifier → Create Entry → Establish Relationships → Record Sources / Evidence / Provenance → Perform Verification → Perform Validation → Publication Gate → Publish → Preserve
   </div>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Publication Gate</h2>
+  <h2>Publication Readiness and Publication Gate</h2>
 
   <p>
-    A Chronicle Entry does not become publication-ready merely because it has been
-    drafted or Verified.
+    Chronicle keeps Validation readiness and publication approval separate.
   </p>
 
-  <p>
-    Before publication, the current Entry Version must satisfy:
+  <div class="note">
+    <strong>CHR-VAL-011 — Publication Readiness</strong><br>
+    Tests whether publication prerequisites are satisfied from a Validation standpoint.
+  </div>
+
+  <div class="note">
+    <strong>Chronicle Publication Gate</strong><br>
+    Makes the separate institutional decision to approve or withhold Publication.
+  </div>
+
+  <p style="margin-top:14px;">
+    The formal Publication Gate requires:
   </p>
 
   <div class="note">
@@ -322,97 +377,66 @@ h1{
   </div>
 
   <p style="margin-top:14px;">
-    Validation PASS permits the Entry to proceed toward the Publication decision.
-    It does not itself publish the Entry.
+    Validation PASS does not itself approve or publish an Entry.
   </p>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Occurrence Classification</h2>
+  <h2>Published Entries</h2>
 
   <p>
-    Chronicle does not create separate canonical objects for events, publications,
-    observations, decisions, investigations, milestones, or other historical
-    subjects. Each preserved occurrence is represented through the same canonical
-    Chronicle Entry model.
+    Published Chronicle Entries will appear here after they complete the production
+    procedure and Publication Gate.
   </p>
 
-  <p>
-    Event Type and other controlled classifications describe what kind of occurrence
-    the Entry represents. Event-Type Profiles may add requirements for particular
-    occurrence classes without replacing the Chronicle Base Schema.
-  </p>
-
-  <div class="note">
-    One canonical object: Chronicle Entry · Classification: Event Type · Specialized requirements: Event-Type Profile
+  <div class="entry-list">
+    <div class="entry">
+      <strong>No production Chronicle Entry has been published yet.</strong>
+      <div class="entry-meta">
+        <span>First production review: pending</span>
+        <span>Candidate: CHR-2026-0001</span>
+      </div>
+    </div>
   </div>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Public Entry Collection</h2>
-
-  <p>
-    This Entries area is intended to serve as Chronicle’s public collection and
-    discovery surface for published Chronicle Entries. It should not be duplicated
-    by a parallel collection of “Preserved Events.” Individual published Entries
-    should remain addressable through stable Chronicle identifiers and canonical
-    public locations while preserving Entry Version and publication lineage.
-  </p>
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
 <article class="card">
   <h2>Maintenance After Publication</h2>
 
   <p>
-    Publication does not end the Chronicle Entry lifecycle. New Evidence, corrected
-    Provenance, Relationship changes, classification corrections, external authority
-    changes, schema migration, or other material developments may require maintenance.
+    Publication does not end Chronicle responsibility. New Evidence, corrected
+    Provenance, Relationship changes, classification corrections, authoritative
+    external changes, schema migration, or other material developments may require
+    maintenance.
   </p>
 
   <div class="note">
-    Published Entry → New Information / Defect → Materiality Review → Correction / New Entry Version / New Chronicle Entry as appropriate → Reverification → Revalidation → Republish / Maintain / Withdraw → Preserve Prior Material State
+    Published Entry → New Information / Defect → Materiality Review → Editorial Update / Formal Correction / New Entry Version / New Chronicle Entry → Reverification where required → Revalidation → Publication decision → Preserve prior material state
   </div>
 
   <p style="margin-top:14px;">
-    The governing principle is: <strong>Correct forward. Preserve backward.</strong>
+    <strong>Correct forward. Preserve backward.</strong>
   </p>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
   <h2>Entry Philosophy</h2>
 
   <p>
-    Chronicle Entries are not intended to dictate conclusions or assume authority
-    belonging to another Suite system. Their purpose is to preserve qualifying
-    occurrences, context, relationships, provenance, and historical continuity in
-    a reviewable form.
-  </p>
-
-  <p>
-    Chronicle preserves what happened and how the Occurrence can be understood
-    from durable references and documented context. Interpretation should remain
-    distinguishable from authoritative fact, Source material, Verification State,
-    and Validation result.
+    Chronicle preserves qualifying historical memory without assuming authority
+    belonging to another Suite institution. Historical Context may explain why an
+    Occurrence matters, but interpretation remains distinguishable from authoritative
+    fact, Source material, Evidence, Verification, and Validation.
   </p>
 
   <div class="note">
-    Reference does not transfer authority.
+    Events happen. Suite systems establish authority. Chronicle preserves qualifying historical memory.
   </div>
 
   <p style="margin-top:14px;">
@@ -420,19 +444,11 @@ h1{
     tests conformance. Publication determines public production state.
   </p>
 
-  <a class="btn" href="/chronicle/entry-model/">
-    Open Entry Model →
-  </a>
-
-  <a class="btn" href="/chronicle/validation/">
-    Open Validation →
-  </a>
-
-  <a class="btn" href="/chronicle/">
-    Back to Chronicle →
-  </a>
+  <a class="btn" href="/chronicle/entry-model/">Open Entry Model →</a>
+  <a class="btn" href="/chronicle/validation/">Open Validation →</a>
+  <a class="btn" href="/chronicle/identifiers/">Open Identifiers →</a>
+  <a class="btn" href="/chronicle/">Back to Chronicle →</a>
 </article>
-
 </section>
 
 </main>
