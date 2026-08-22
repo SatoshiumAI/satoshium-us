@@ -15,9 +15,10 @@
 Current production state:
 
 ```text
-Lifecycle State:    draft
+Lifecycle State:    active
 Verification State: verified
-Publication State:  not_published
+Publication State:  published
+Published At:       2026-08-22T08:38:00-07:00
 ```
 
 This directory contains the first production Satoshium Chronicle Entry package.
@@ -142,7 +143,9 @@ The canonical Entry package is:
 │
 ├── index.html
 ├── record.json
-└── README.md
+├── README.md
+├── CHR-2026-0001-v1-validation.md
+└── CHR-2026-0001-v1-publication-gate.md
 ```
 
 ### `index.html`
@@ -201,6 +204,28 @@ production state
 maintenance expectations
 Version and Correction behavior
 ```
+
+### `CHR-2026-0001-v1-validation.md`
+
+Durable procedural artifact preserving the formal production Validation result for Entry Version 1.
+
+```text
+Overall Validation Result: PASS
+CHR-VAL-011 Publication Readiness: PASS
+```
+
+This artifact is associated with Entry Version 1 but is not a separate Chronicle Entry and does not receive an independent Chronicle identifier.
+
+### `CHR-2026-0001-v1-publication-gate.md`
+
+Durable procedural artifact preserving the separate Chronicle Publication Gate decision for Entry Version 1.
+
+```text
+Publication Gate Decision: APPROVED FOR PUBLICATION
+Decision Date / Time: 2026-08-22T08:32:00-07:00
+```
+
+This artifact is associated with Entry Version 1 but is not a separate Chronicle Entry and does not receive an independent Chronicle identifier.
 
 ---
 
@@ -451,9 +476,9 @@ Verification concerns Chronicle's historical representation. It does not re-cert
 
 ## Validation
 
-Formal production Chronicle Validation has not yet been completed.
+Formal production Chronicle Validation of Entry Version 1 is complete.
 
-The Entry will be evaluated under:
+The Entry was evaluated under:
 
 ```text
 CHR-VAL-001
@@ -475,15 +500,40 @@ authority boundaries
 Publication Readiness requirements
 ```
 
-The overall institutional Validation result will be:
+Production results:
+
+```text
+CHR-VAL-001  PASS
+CHR-VAL-002  PASS
+CHR-VAL-003  PASS
+CHR-VAL-004  PASS
+CHR-VAL-005  PASS
+CHR-VAL-006  PASS
+CHR-VAL-007  PASS
+CHR-VAL-008  PASS
+CHR-VAL-009  PASS
+CHR-VAL-010  N/A
+CHR-VAL-012  PASS
+CHR-VAL-013  PASS
+CHR-VAL-014  PASS
+CHR-VAL-011  PASS
+```
+
+Overall institutional Validation result:
 
 ```text
 PASS
-or
-FAIL
 ```
 
-No production institutional Validation PASS is claimed by this README at the current Draft stage.
+`CHR-VAL-010` was Not Applicable because this is Entry Version 1 and no prior Chronicle Version or formal Correction exists.
+
+The durable Validation artifact is:
+
+```text
+CHR-2026-0001-v1-validation.md
+```
+
+Validation PASS established conformance and Publication Readiness. It did not itself approve or publish the Entry.
 
 ---
 
@@ -501,15 +551,16 @@ Certification Event-Type Profile:
 PASS
 ```
 
-This confirms machine-readable structural conformance of the current Draft representation.
+This confirms machine-readable structural conformance of Entry Version 1.
 
-It does not by itself establish:
+The later formal production process separately established:
 
 ```text
-Chronicle Verification
-full CHR-VAL institutional Validation
-Publication approval
-Publication
+Chronicle Verification: VERIFIED
+Formal CHR-VAL Validation: PASS
+CHR-VAL-011 Publication Readiness: PASS
+Publication Gate: APPROVED
+Publication: EXECUTED
 ```
 
 ---
@@ -552,28 +603,55 @@ Publication Prerequisites
 Eligible for Publication
 ```
 
+For Entry Version 1, the Gate prerequisites were satisfied and the separate Chronicle Publication Gate decision was:
+
+```text
+APPROVED FOR PUBLICATION
+Decision Date / Time:
+2026-08-22T08:32:00-07:00
+```
+
+The durable Gate artifact is:
+
+```text
+CHR-2026-0001-v1-publication-gate.md
+```
+
 ---
 
 ## Publication
 
-Current production Publication State:
+Entry Version 1 has been published.
+
+Current production state:
 
 ```text
-not_published
+Lifecycle State:
+active
+
+Verification State:
+verified
+
+Publication State:
+published
+
+Published At:
+2026-08-22T08:38:00-07:00
 ```
 
-No `published_at` timestamp exists.
-
-The Entry must not be represented as published until:
+Publication occurred only after:
 
 ```text
-formal production Verification is complete
+formal production Verification = VERIFIED
 formal production Validation = PASS
-required authoritative references remain satisfied
-Publication prerequisites are complete
-the Publication Gate approves Publication
-the production artifacts are materially consistent
+CHR-VAL-011 Publication Readiness = PASS
+required authoritative references remained satisfied
+Publication prerequisites were complete
+Publication Gate = APPROVED
+production artifacts were materially consistent
 ```
+
+Publication is the state-changing action that followed Validation and the separate Publication Gate decision.
 
 ---
 
@@ -664,6 +742,14 @@ August 22, 2026
   Certification Event-Type Profile validation passed.
   Formal production Verification completed.
   Verification State advanced to verified.
+  Formal CHR-VAL Validation completed.
+  Overall Validation Result: PASS.
+  CHR-VAL-011 Publication Readiness: PASS.
+  Chronicle Publication Gate approved Entry Version 1.
+  Publication Gate Decision: APPROVED FOR PUBLICATION.
+  Entry Version 1 published at 2026-08-22T08:38:00-07:00.
+  Lifecycle State advanced to active.
+  Publication State advanced to published.
 ```
 
 ---
@@ -752,7 +838,7 @@ A new Entry Version is used when Chronicle materially changes its representation
 
 `index.html` and `record.json` represent the same Chronicle Entry Version.
 
-Before publication, Chronicle must confirm material agreement across:
+Formal production Validation evaluated material agreement across:
 
 ```text
 Entry Identifier
@@ -771,19 +857,33 @@ Publication State
 publication date where applicable
 ```
 
-The current human-readable page contains a temporary display time of:
+Result:
 
 ```text
-8:06 AM PDT
+CHR-VAL-014 — PASS
 ```
 
-while the exact machine-readable production timestamp is:
+Following Publication, the human-readable and machine-readable representations were synchronized to:
+
+```text
+Lifecycle State:
+active
+
+Verification State:
+verified
+
+Publication State:
+published
+
+Published At:
+2026-08-22T08:38:00-07:00
+```
+
+The original Entry creation timestamp remains:
 
 ```text
 2026-08-22T08:06:00-07:00
 ```
-
-The human-readable page must be reconciled to the exact production timestamp before `CHR-VAL-014 — Human and Machine Consistency` is evaluated.
 
 ---
 
@@ -853,7 +953,7 @@ Preserve prior material state
 
 ## Current Status
 
-`CHR-2026-0001` is a real production Chronicle Entry.
+`CHR-2026-0001` is the first published production Satoshium Chronicle Entry.
 
 Current state:
 
@@ -865,13 +965,16 @@ Entry Version:
 1
 
 Lifecycle State:
-draft
+active
 
 Verification State:
-not_reviewed
+verified
 
 Publication State:
-not_published
+published
+
+Published At:
+2026-08-22T08:38:00-07:00
 
 Machine-Readable Base Schema:
 PASS
@@ -883,14 +986,25 @@ Formal Chronicle Verification:
 VERIFIED
 
 Formal CHR-VAL Validation:
-PENDING
+PASS
+
+CHR-VAL-011 Publication Readiness:
+PASS
 
 Publication Gate:
-PENDING
+APPROVED
 
 Published:
-NO
+YES
 ```
 
-The next production step is formal Chronicle Verification of Entry Version 1.
+Production review artifacts:
 
+```text
+CHR-2026-0001-v1-validation.md
+CHR-2026-0001-v1-publication-gate.md
+```
+
+Entry Version 1 is now in active published production state.
+
+Future changes must follow Chronicle maintenance, Correction, Versioning, reverification, revalidation, and publication procedures as applicable.
