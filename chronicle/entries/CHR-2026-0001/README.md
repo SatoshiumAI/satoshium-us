@@ -16,7 +16,7 @@ Current production state:
 
 ```text
 Lifecycle State:    draft
-Verification State: not_reviewed
+Verification State: verified
 Publication State:  not_published
 ```
 
@@ -414,20 +414,22 @@ It does not duplicate Certifier findings or re-adjudicate the certification deci
 Current production Verification State:
 
 ```text
-not_reviewed
+verified
 ```
 
-Formal production Verification has not yet been completed.
+Formal production Verification of Entry Version 1 is complete.
 
-Verification will review Chronicle's own historical representation, including:
+Chronicle reviewed:
 
 ```text
 Entry identity
 Occurrence
 Event Date
-authoritative references
-Sources
-Relationships
+Event Type
+authoritative Certifier reference
+Atlas subject
+Registry Relationship
+supporting Sources
 Provenance
 Historical Context
 temporal consistency
@@ -435,7 +437,15 @@ authority boundaries
 material limitations
 ```
 
-Verification does not re-certify the Atlas subject or re-adjudicate Certifier's determination.
+Result:
+
+```text
+VERIFIED
+```
+
+No material Verification limitation was identified.
+
+Verification concerns Chronicle's historical representation. It does not re-certify the Atlas subject or re-adjudicate Certifier's determination.
 
 ---
 
@@ -652,6 +662,8 @@ August 22, 2026
   Initial machine-readable record created.
   Base Schema validation passed.
   Certification Event-Type Profile validation passed.
+  Formal production Verification completed.
+  Verification State advanced to verified.
 ```
 
 ---
@@ -762,7 +774,7 @@ publication date where applicable
 The current human-readable page contains a temporary display time of:
 
 ```text
-8:00 AM PDT
+8:06 AM PDT
 ```
 
 while the exact machine-readable production timestamp is:
@@ -868,7 +880,7 @@ Certification Event-Type Profile:
 PASS
 
 Formal Chronicle Verification:
-PENDING
+VERIFIED
 
 Formal CHR-VAL Validation:
 PENDING
