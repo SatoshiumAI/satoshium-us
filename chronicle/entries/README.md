@@ -452,7 +452,9 @@ The initial production convention is:
 │
 ├── index.html
 ├── record.json
-└── README.md
+├── README.md
+├── CHR-YYYY-NNNN-vN-validation.md
+└── CHR-YYYY-NNNN-vN-publication-gate.md
 ```
 
 ### `index.html`
@@ -467,22 +469,30 @@ Official machine-readable Chronicle Entry governed by the applicable Chronicle s
 
 Institutional and repository documentation for the Entry package.
 
-This three-file model is the initial production convention.
-
-Chronicle does not automatically create:
+The canonical Chronicle Entry remains the coordinated:
 
 ```text
-verification.md
-validation.md
-sources.md
-evidence.md
-provenance.md
-history.md
+index.html
+record.json
+README.md
 ```
 
-inside every Entry directory.
+representation.
 
-Supporting artifacts are created separately only when their additional structure provides durable institutional value.
+The production convention now also preserves durable Entry-Version procedural artifacts:
+
+```text
+CHR-YYYY-NNNN-vN-validation.md
+CHR-YYYY-NNNN-vN-publication-gate.md
+```
+
+These procedural artifacts are associated with a specific Entry Version. They are not
+separate Chronicle Entries, do not receive independent Chronicle identifiers, and do
+not create independent lifecycles.
+
+Chronicle does not automatically create separate Verification, Source, Evidence,
+Provenance, Correction, or Version artifacts inside every Entry directory. Supporting
+artifacts are created only when their additional structure provides durable institutional value.
 
 The governing principle remains:
 
@@ -1035,47 +1045,91 @@ No architecture redesign was required.
 
 ## First Production Application
 
-The first production review and implementation is intended to evaluate the same qualifying certification Occurrence associated with:
-
-```text
-SC-CERT-2026-0001
-```
-
-and, where materially relevant:
-
-```text
-SREG-2026-0001
-```
-
-If approved during the production review and after uniqueness is confirmed, the first permanent Chronicle identifier may be:
+The first production Chronicle Entry is:
 
 ```text
 CHR-2026-0001
 ```
 
+It preserves the qualifying historical Occurrence associated with:
+
+```text
+SC-CERT-2026-0001
+```
+
+and the materially relevant Registry Entry:
+
+```text
+SREG-2026-0001
+```
+
 The governing specialization is:
 
 ```text
-Chronicle Base Schema
+Chronicle Base Schema v1.0.0
         +
-Certification Event-Type Profile
+Certification Event-Type Profile v1.0.0
+```
+
+Production review on August 22, 2026 completed:
+
+```text
+Preservation Eligibility:
+ELIGIBLE
+
+Formal Verification:
+VERIFIED
+
+Formal CHR-VAL Validation:
+PASS
+
+CHR-VAL-011 Publication Readiness:
+PASS
+
+Publication Gate:
+APPROVED
+
+Lifecycle State:
+active
+
+Publication State:
+published
+
+Published At:
+2026-08-22T08:38:00-07:00
+```
+
+The canonical Entry is published at:
+
+```text
+/chronicle/entries/CHR-2026-0001/
 ```
 
 ---
 
 ## Production Package Convention
 
-For the first production Entry, Chronicle will use:
+The first production Entry established the current reusable directory convention:
 
 ```text
 /chronicle/entries/CHR-2026-0001/
 │
 ├── index.html
 ├── record.json
-└── README.md
+├── README.md
+├── CHR-2026-0001-v1-validation.md
+└── CHR-2026-0001-v1-publication-gate.md
 ```
 
-This first implementation establishes the initial directory convention for later Chronicle Entries unless production experience demonstrates a genuine need for revision.
+The first three files form the coordinated canonical Entry representation.
+
+The Validation and Publication Gate files preserve the durable procedural review trail
+for Entry Version 1 without becoming separate Chronicle objects.
+
+Future production experience may justify additional supporting artifacts, but Chronicle
+continues to apply:
+
+> Minimum necessary structure first.
 
 ---
 
@@ -1097,11 +1151,14 @@ This first implementation establishes the initial directory convention for later
 
 ## Status
 
-**Production Entry architecture established.**
+**Chronicle Entries are operational in production.**
 
 The `/chronicle/entries/` area is Chronicle's canonical public production collection.
 
-The Chronicle Base Schema, Certification Event-Type Profile, Identifier architecture, Controlled Values, Relationship model, Provenance model, Verification architecture, Validation Rules, Validation Sequence, Publication Gate, Correction rules, Versioning model, and Entry Production Procedure are established.
+The Chronicle Base Schema, Certification Event-Type Profile, Identifier architecture,
+Controlled Values, Relationship model, Provenance model, Verification architecture,
+Validation Rules, Validation Sequence, Publication Gate, Correction rules, Versioning
+model, and Entry Production Procedure are established.
 
 The first end-to-end operational dry run completed with:
 
@@ -1109,6 +1166,39 @@ The first end-to-end operational dry run completed with:
 PASS
 ```
 
-The next operational milestone is the real production review and implementation of the first Chronicle Entry.
+The first canonical production Entry is:
 
-No production Chronicle Entry is represented as published until the applicable production procedure and Publication Gate are completed.
+```text
+CHR-2026-0001
+```
+
+Current production state:
+
+```text
+Entry Version:
+1
+
+Lifecycle State:
+active
+
+Verification State:
+verified
+
+Formal CHR-VAL Validation:
+PASS
+
+CHR-VAL-011 Publication Readiness:
+PASS
+
+Publication Gate:
+APPROVED
+
+Publication State:
+published
+
+Published At:
+2026-08-22T08:38:00-07:00
+```
+
+Chronicle's current work is post-publication maintenance, institutional-page reconciliation,
+reciprocal Suite interoperability, and continued production use.
