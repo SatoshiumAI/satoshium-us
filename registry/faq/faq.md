@@ -141,7 +141,7 @@ Examples include:
 - a Certification Package;
 - an SCRD;
 - an Atlas canonical jurisdiction record;
-- a Chronicle historical event;
+- a Chronicle Entry;
 - an Anchor integrity reference;
 - a Beacon discovery signal;
 - an Attestor trust statement;
@@ -221,9 +221,9 @@ Atlas remains authoritative for Atlas content.
 
 No.
 
-Chronicle creates and preserves historical events and institutional chronology.
+Chronicle preserves qualifying historical Occurrences through canonical Chronicle Entries and institutional chronology.
 
-Registry may catalog or cross-reference Chronicle records, but Chronicle remains authoritative for historical event records.
+Registry may catalog or cross-reference Chronicle Entries, but Chronicle remains authoritative for Chronicle-owned historical-preservation records.
 
 ---
 
@@ -760,6 +760,22 @@ Registry supports interoperability through:
 
 Interoperability connects institutions without merging their responsibilities.
 
+The first production interoperability chain demonstrates this principle:
+
+```text
+Atlas Jurisdiction Record — El Salvador
+  ↓ certified by
+SC-CERT-2026-0001
+  ↓ registered as
+SREG-2026-0001
+  ↓ historically preserved by
+CHR-2026-0001
+```
+
+Registry owns the SREG. Certifier owns the certification. Atlas owns the subject record. Chronicle owns the Chronicle Entry.
+
+Reference does not transfer authority.
+
 ---
 
 ### Is Registry decentralized?
@@ -774,35 +790,29 @@ The current architecture should not be described as decentralized unless such me
 
 ### Is Registry complete?
 
-Registry entered its August 2026 operational development cycle after completing constitutional reconciliation with Suite Standards, Suite Methodology, and Suite Interoperability.
+Yes. Registry is operational as a production Suite institution.
 
-The July foundation established the institutional architecture.
+The inaugural production Registry Entry, `SREG-2026-0001`, was established and published on August 2, 2026 for Certification Package `SC-CERT-2026-0001`.
 
-The August objective is to complete:
+A post-publication quality review completed on August 14, 2026 confirmed alignment among the human-readable Registry Entry, machine-readable record, Registry schema architecture, authority boundaries, provenance, relationships, Validation, and Publication.
 
-- the SREG specification;
-- Registry Record Types;
-- schemas;
-- policies;
-- procedures;
-- identifiers;
-- lifecycle transitions;
-- versioning;
-- corrections;
-- relationships;
-- interoperability;
-- public Registry artifacts;
-- initial operational SREG records.
-
-Registry is therefore under active operational implementation rather than early conceptual discovery.
+Registry remains subject to continued maintenance, new registrations, schema evolution, Corrections, Versioning, and interoperability hardening. Operational does not mean frozen.
 
 ---
 
 ### What is Registry's current development goal?
 
-The current goal is to transform the reconciled Registry foundation into a complete operational institution that stands beside Atlas and Certifier within the Satoshium Suite.
+Registry's current goal is continued production operation and institutional hardening.
 
-That includes publishing both human-readable and machine-readable Registry artifacts and creating the first operational public catalog.
+That includes:
+
+- registering additional authoritative records when justified;
+- maintaining SREG versions and lifecycle state;
+- preserving Corrections and historical continuity;
+- strengthening cross-Suite references;
+- evolving schemas and Record-Type Profiles through governance;
+- maintaining human-readable and machine-readable consistency;
+- preserving public discoverability and the path back to authority.
 
 ---
 
