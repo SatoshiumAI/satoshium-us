@@ -2,215 +2,451 @@
 
 ## Overview
 
-Anchor is the identity layer of the Satoshium ecosystem.
+Satoshium Anchor is the Suite institution responsible for preserving durable **Integrity References** for authoritative artifacts and records.
 
-Its purpose is to establish attribution, accountability, authorship, representation, and identity relationships across records, certifications, historical events, organizations, systems, and future digital infrastructure.
+Anchor records cryptographic, temporal, signature, and verification context so a later reviewer can evaluate whether a referenced artifact corresponds to the representation that was originally anchored.
 
-Information has value.
+Anchor does **not** assume authority over:
 
-Records have value.
+- the referenced artifact;
+- the meaning of the artifact;
+- certification decisions;
+- Registry cataloging;
+- Chronicle historical interpretation;
+- Attestor Trust Statements;
+- identity relationships;
+- reputation;
+- trust conclusions.
 
-History has value.
+The governing principle is:
 
-Yet each becomes more meaningful when it can be connected to the entities responsible for creating, maintaining, approving, witnessing, or preserving it.
-
-Anchor exists to explore that connection.
+> Reference does not transfer authority.
 
 ---
 
 ## Why Anchor Exists
 
-Modern systems increasingly depend upon the ability to answer fundamental questions:
+Digital artifacts can be:
 
-* Who created this?
-* Who approved this?
-* Who witnessed this?
-* Who owns this?
-* Who is responsible for this?
-* Who is acting on behalf of whom?
-* Who may be trusted to perform a particular action?
+- copied;
+- republished;
+- reformatted;
+- migrated;
+- mirrored;
+- exported;
+- separated from their originating systems;
+- altered without obvious visual evidence.
 
-As digital systems grow in complexity, questions of identity become increasingly important.
+An authoritative record may remain institutionally valid while still requiring durable integrity context that allows later reviewers to determine whether the artifact they are examining corresponds to the representation that was originally referenced.
 
-Without identity, attribution becomes difficult.
+Anchor exists to preserve that integrity context.
 
-Without attribution, accountability becomes difficult.
+The governing distinction is:
 
-Without accountability, trust becomes difficult.
+```text
+Authority
+  answers who owns the record.
 
-Anchor exists to provide a framework for addressing these challenges.
-
----
-
-## The Identity Problem
-
-Information can be copied.
-
-Records can be duplicated.
-
-Claims can be repeated.
-
-Content can be distributed globally within seconds.
-
-However, understanding where information originated and who stands behind it often remains far more difficult.
-
-The ability to associate actions, claims, records, and decisions with identifiable entities is foundational to transparency and accountability.
-
-Anchor explores mechanisms that help preserve those relationships.
+Integrity
+  answers whether the referenced representation
+  remains consistent with the anchored representation.
+```
 
 ---
 
-## Core Objectives
+## Canonical Anchor Object
 
-Anchor seeks to establish conceptual foundations for:
+Anchor's canonical operational object is:
 
-* Identity
-* Attribution
-* Accountability
-* Representation
-* Authority
-* Governance
-* Reputation
-* Trust relationships
+```text
+Integrity Reference
+```
 
-These concepts form the basis of many social, institutional, and technological systems.
+An Integrity Reference preserves governed integrity information associated with a defined artifact representation.
+
+Depending on the applicable Anchor architecture, an Integrity Reference may preserve:
+
+- referenced artifact identity;
+- canonical representation boundary;
+- cryptographic digest;
+- digest algorithm;
+- timestamp;
+- anchoring time;
+- observation time;
+- signature information;
+- verification metadata;
+- integrity state;
+- source-system reference;
+- Anchor identifier;
+- Anchor Version;
+- publication information;
+- lifecycle information;
+- Corrections;
+- later verification results.
+
+The Integrity Reference is Anchor-owned.
+
+The referenced artifact remains owned by its authoritative institution.
 
 ---
 
-## What Anchor Does
+## Institutional Purpose
 
-Anchor focuses on questions of identity and responsibility.
+Anchor's purpose is to make integrity independently reviewable over time.
 
-Examples include:
+Conceptually:
 
-* Associating claims with identities
-* Associating records with authors
-* Associating actions with responsible entities
-* Establishing representation relationships
-* Preserving attribution over time
-* Exploring governance and authority structures
-* Supporting future trust frameworks
+```text
+Authoritative Artifact
+        ↓
+Defined Canonical Representation
+        ↓
+Integrity Value Generated
+        ↓
+Integrity Reference Created
+        ↓
+Published / Preserved
+        ↓
+Later Integrity Verification
+```
 
-Anchor serves as the identity layer through which other systems may establish accountability.
+Anchor preserves the evidence needed to support that integrity evaluation.
+
+It does not redefine the referenced record.
+
+---
+
+## Canonical Representation
+
+Integrity is meaningful only when the representation being anchored is sufficiently defined.
+
+Anchor therefore distinguishes between:
+
+```text
+the authoritative object
+```
+
+and:
+
+```text
+the exact artifact representation
+used to generate the integrity value
+```
+
+Examples may include:
+
+- a canonical JSON representation;
+- a published HTML artifact;
+- a Markdown source record;
+- a Certification Package;
+- a Registry Entry;
+- a Chronicle Entry;
+- a Trust Statement;
+- another governed Suite artifact.
+
+Anchor should not use vague or changing representation boundaries where the resulting integrity value could not later be reproduced or interpreted.
+
+---
+
+## Cryptographic Integrity
+
+Anchor may preserve cryptographic integrity values such as:
+
+- hashes;
+- content digests;
+- signatures;
+- signature-verification material;
+- tamper-evident commitments;
+- future Bitcoin-based commitments;
+- other governed cryptographic references.
+
+The specific technology may evolve.
+
+The institutional role remains stable.
+
+---
+
+## Temporal Integrity Context
+
+Anchor may preserve temporal context such as:
+
+- creation time;
+- observation time;
+- anchoring time;
+- publication time;
+- verification time;
+- timestamp authority information where applicable.
+
+Temporal context supports later interpretation of when an Integrity Reference was generated or verified.
+
+---
+
+## Verification Context
+
+Anchor may preserve information required for later integrity verification.
+
+Verification asks whether the referenced representation is consistent with the Integrity Reference.
+
+It does **not** determine:
+
+- whether the underlying claim is true;
+- whether a certification is correct;
+- whether a Registry Entry is authoritative;
+- whether a Chronicle Entry is historically significant;
+- whether a Trust Statement should be believed;
+- whether an identity should be trusted.
+
+Integrity verification remains narrower than substantive institutional judgment.
+
+---
+
+## What Anchor Owns
+
+Anchor may own and govern:
+
+- Integrity References;
+- Anchor identifiers;
+- Anchor-controlled metadata;
+- integrity state;
+- verification records;
+- representation metadata;
+- Anchor Versions;
+- Corrections;
+- publication state;
+- lifecycle state;
+- Anchor-specific procedures;
+- Anchor-specific schemas;
+- Anchor-specific Controlled Values;
+- Anchor-specific governance.
+
+These are Anchor-controlled institutional concepts.
+
+---
+
+## What Anchor References
+
+Anchor may reference authoritative artifacts owned by:
+
+- Satoshium Atlas;
+- Satoshium Certifier;
+- Satoshium Registry;
+- Satoshium Chronicle;
+- Satoshium Beacon;
+- Satoshium Attestor;
+- Satoshium Navigator;
+- other authoritative systems.
+
+A reference permits integrity context to be associated with an external artifact.
+
+It does not transfer ownership or institutional authority.
+
+> Reference does not transfer authority.
 
 ---
 
 ## What Anchor Does Not Do
 
-Anchor does not currently:
+Anchor does not:
 
-* Verify claims
-* Certify records
-* Maintain historical archives
-* Provide reputation scores
-* Determine trustworthiness
-* Operate identity services
-* Issue credentials
-* Authenticate users
+- certify artifacts;
+- replace Certifier determinations;
+- catalog records on behalf of Registry;
+- preserve historical Occurrences on behalf of Chronicle;
+- issue Trust Statements on behalf of Attestor;
+- determine reputation;
+- establish identity infrastructure;
+- issue credentials;
+- authenticate users;
+- determine the substantive truth of a referenced record;
+- determine whether an institution should be trusted;
+- reinterpret another institution's lifecycle or status.
 
-These functions may involve other systems or future implementations.
-
-Anchor focuses on identity and attribution.
-
----
-
-## Foundational Principles
-
-### Identity Matters
-
-Understanding who is responsible for an action, claim, or record provides context that information alone cannot supply.
-
-### Attribution Matters
-
-The ability to associate information with its source improves transparency and accountability.
-
-### Accountability Matters
-
-Actions become more meaningful when responsibility can be established and preserved.
-
-### Representation Matters
-
-Individuals, organizations, institutions, systems, and agents may act on behalf of others.
-
-These relationships should be understandable and traceable.
-
-### Trust Requires Foundations
-
-Trust cannot exist in isolation.
-
-Identity, attribution, accountability, and transparency provide the foundations upon which trust may later emerge.
+Those functions remain with the institutions that own them.
 
 ---
 
-## Relationship to the Satoshium Ecosystem
+## Relationship to Suite Standards
 
-Anchor is one component of a broader ecosystem.
+Anchor operates beneath the shared:
 
-Each system serves a distinct purpose.
+```text
+Suite Standards
+```
+
+layer.
+
+Suite Standards define common institutional expectations.
+
+Anchor should not recreate a competing Suite-wide standards system.
+
+Anchor-specific rules may implement or specialize Suite Standards where integrity-preservation operations require narrower institutional requirements.
+
+---
+
+## Relationship to Suite Methodology
+
+Anchor operates beneath the shared:
+
+```text
+Suite Methodology
+```
+
+layer.
+
+Suite Methodology establishes repeatable institutional approaches.
+
+Anchor-specific procedures may define how an Integrity Reference is:
+
+```text
+identified
+constructed
+verified
+published
+maintained
+corrected
+versioned
+preserved
+```
+
+without redefining the shared Suite methodological layer.
+
+---
+
+## Relationship to Suite Interoperability
+
+Anchor participates in the Suite reference-first interoperability model.
+
+The current Suite object model is:
 
 ```text
 Atlas
-Maps information.
-
-Navigator
-Finds information.
+→ authoritative intelligence
 
 Certifier
-Evaluates authenticity.
+→ Certification Package
 
 Registry
-Preserves records.
+→ Satoshium Registry Entry
 
 Chronicle
-Preserves history.
+→ Chronicle Entry
 
 Anchor
-Establishes identity.
+→ Integrity Reference
 
 Beacon
-Enables discovery.
+→ Discovery Signal / Metadata
 
 Attestor
-Provides trust signals.
+→ Trust Statement
+
+Navigator
+→ Workflow Definition
 ```
 
-Together these systems explore the full lifecycle of information, records, attribution, and trust.
+Each institution retains authority over its own object.
+
+Anchor may preserve integrity context for any of these objects without taking ownership of them.
 
 ---
 
-## Long-Term Vision
+## Institutional Boundary
 
-Anchor seeks to explore how identities may participate within future digital systems.
+Anchor's authority begins with:
 
-This includes potential consideration of:
+```text
+the Anchor Integrity Reference
+```
 
-* Individuals
-* Organizations
-* Institutions
-* Communities
-* Systems
-* Agents
-* Artificial intelligence
+and ends before:
 
-The goal is not to determine who should be trusted.
+```text
+the substantive authority of the referenced artifact
+```
 
-The goal is to create structures that make trust, accountability, and attribution easier to evaluate.
+For example:
+
+```text
+SC-CERT-2026-0001
+```
+
+remains authoritative because Satoshium Certifier issued and maintains the Certification Package.
+
+An Anchor Integrity Reference associated with that package may preserve:
+
+```text
+what representation was anchored
+which digest was generated
+which algorithm was used
+when the reference was created
+how later verification may be performed
+```
+
+but Anchor does not become the certification authority.
+
+The same rule applies across Registry, Chronicle, Atlas, Beacon, Attestor, Navigator, and future Suite systems.
+
+---
+
+## Implementation Neutrality
+
+Anchor should remain institutionally stable even if its underlying implementation evolves.
+
+Potential mechanisms may include:
+
+- SHA-family hashes;
+- alternative cryptographic digests;
+- digital signatures;
+- timestamping services;
+- transparency logs;
+- Merkle structures;
+- Bitcoin commitments;
+- future integrity technologies.
+
+Anchor should define the institutional meaning of an Integrity Reference independently from one specific implementation.
+
+---
+
+## Purpose Principle
+
+The governing Anchor purpose can be summarized as:
+
+> Preserve durable integrity context without absorbing the authority of the referenced record.
 
 ---
 
 ## Status
 
-Anchor is currently an exploratory project under active development.
+Anchor's pre-Suite identity / claims / reputation / trust architecture is being reconciled with the current Satoshium Suite.
 
-Its concepts, terminology, standards, governance models, and implementation mechanisms remain works in progress.
+The current institutional direction is:
 
-Nothing in this document should be interpreted as a production specification, identity service, authentication system, or trust framework.
+```text
+Integrity Preservation
+        ↓
+Integrity Reference
+        ↓
+Cryptographic / Temporal Context
+        ↓
+Later Verification
+```
+
+rather than:
+
+```text
+Identity
+→ Claim
+→ Attestation
+→ Reputation
+→ Trust
+```
+
+This Purpose document establishes the constitutional baseline for the remaining Anchor reconciliation work.
 
 ---
 
-**Status:** Exploratory Concept
+**Status:** Foundation Reconciliation
 
-**Version:** Draft 0.1
+**Version:** 1.0-draft
 
 **Maintained By:** Satoshium
-
