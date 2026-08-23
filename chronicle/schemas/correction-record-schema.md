@@ -123,9 +123,10 @@ The rule is:
 
 ---
 
-# Production Status
+# Supporting Schema Status
 
-This specification defines the Phase VII reconciled architecture for Chronicle Correction Records.
+This specification defines Chronicle's human-readable supporting architecture for a
+formal Correction Record when Chronicle materially corrects one of its own records.
 
 The canonical human-readable file is:
 
@@ -133,13 +134,18 @@ The canonical human-readable file is:
 correction-record-schema.md
 ```
 
-A future machine-readable implementation may be created as:
+`CHR-2026-0001 Entry Version 1` established Chronicle's first production Correction
+baseline with no formal Correction lineage. `CHR-VAL-010 — Correction and Version
+Consistency` was therefore Not Applicable for that initial Entry Version.
+
+A machine-readable implementation:
 
 ```text
 correction-record-schema.json
 ```
 
-after the specification is exercised against a real production Correction.
+should remain deferred until Chronicle performs and preserves its first real production
+Correction Record.
 
 ---
 
@@ -727,7 +733,9 @@ It does not presently require a universal embedded:
 validation_state
 ```
 
-The Validation Procedure should determine where Validation results are preserved.
+Chronicle's production Validation architecture establishes Version-specific Validation
+for Chronicle Entries. Validation-result storage for an independently governed
+Correction Record remains undefined until a production Correction Record exists.
 
 Validation may test:
 
@@ -1119,11 +1127,13 @@ according to meaning.
 
 ---
 
-# Production Example
+# Illustrative Supporting-Record Example
 
-The following demonstrates the current Phase VII Correction Record architecture.
+The following demonstrates the current human-readable Correction Record architecture.
 
-The Correction Record identifier remains illustrative until its namespace is formally established.
+It is **not** a Correction that occurred to `CHR-2026-0001`, and the dates and values
+below remain illustrative. The example does not establish a permanent Correction Record
+identifier namespace.
 
 ```yaml
 correction_id: <CORRECTION-IDENTIFIER>
@@ -1176,6 +1186,30 @@ This example does not establish a permanent Correction Record identifier format.
 
 ---
 
+# First Production Baseline
+
+`CHR-2026-0001 Entry Version 1` entered production with:
+
+```text
+Formal Correction: None
+Prior Entry Version: None
+CHR-VAL-010 — Correction and Version Consistency: N/A
+```
+
+That is a production baseline, not evidence that the Correction architecture is
+unnecessary. When Chronicle later materially changes its own representation of the
+same canonical Entry, the governing rule remains:
+
+```text
+Correction explains why.
+Version preserves the resulting state.
+```
+
+A distinct later authoritative action is ordinarily assessed as a new Occurrence and
+new Chronicle Entry rather than rewritten into the original Entry as a Correction.
+
+---
+
 # Correction Record Creation Test
 
 A formal Correction Record should ordinarily be created when:
@@ -1222,7 +1256,7 @@ Authority remains with the originating institution.
 
 # Validation Expectations
 
-A production Correction Record should ultimately be validated against:
+When Chronicle creates a production Correction Record, it should be validated against:
 
 * Correction Record Schema
 * Correction Record identifier rules
@@ -1303,7 +1337,7 @@ And operationally:
 
 ## Status
 
-**Phase VII reconciled Chronicle Correction Record Schema specification.**
+**Chronicle supporting Correction Record Schema specification.**
 
 The Correction Record Schema is now aligned with:
 
@@ -1321,6 +1355,10 @@ The Correction Record Schema is now aligned with:
 
 The approved Correction Type vocabulary and mandatory Correction minimum are incorporated.
 
-Correction Record identifier namespace, actor-role vocabularies, Validation-result location, and any independent Correction Record publication requirements remain intentionally unresolved pending operational evidence.
+Correction Record identifier namespace, actor-role vocabularies, supporting-record
+Validation-result storage, and independent Correction Record publication requirements
+remain intentionally unresolved pending a real production Correction.
 
-A machine-readable `correction-record-schema.json` should be created only after this specification is tested against the first production Correction Record.
+No machine-readable `correction-record-schema.json` should be created merely for
+symmetry. It should be introduced only after the first production Correction Record
+demonstrates that the machine-readable contract is operationally necessary.
