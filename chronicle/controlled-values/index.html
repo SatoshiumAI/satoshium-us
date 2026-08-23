@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Chronicle Controlled Values</title>
-<meta name="description" content="Satoshium Chronicle Controlled Values Registry — canonical vocabularies for Event Type, Entry Status, Source Type, Evidence Type, Relationship Type, Verification State, Publication State, Lifecycle State, and Correction Type.">
+<meta name="description" content="Satoshium Chronicle Controlled Values Registry — canonical vocabularies for Event Type, Source Type, Evidence Type, Relationship Type, Verification State, Publication State, Lifecycle State, and Correction Type.">
 <link rel="canonical" href="https://satoshium.us/chronicle/controlled-values/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -182,6 +182,50 @@ code{
 <section style="margin-top:18px;">
 
 <article class="card">
+  <h2>No Generic Entry Status</h2>
+
+  <p>
+    Chronicle does not use a generic Entry Status as a canonical production state
+    system. Lifecycle State, Verification State, and Publication State answer distinct
+    institutional questions and must remain explicit.
+  </p>
+
+  <div class="note">
+    Avoid generic status when a defined state system already expresses the meaning.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>First Production Controlled Values</h2>
+
+  <p>
+    <strong>CHR-2026-0001 Entry Version 1</strong> demonstrates the Controlled Values
+    Registry in production.
+  </p>
+
+  <div class="note">
+    Event Type: <code>certification_created</code><br>
+    Verification State: <code>verified</code><br>
+    Lifecycle State: <code>active</code><br>
+    Publication State: <code>published</code><br>
+    Relationship Types: <code>related_to</code> · <code>references</code>
+  </div>
+
+  <p style="margin-top:14px;">
+    Validation confirmed that these governed values were consistent across the
+    human-readable and machine-readable production representations.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
   <h2>Registry Principle</h2>
 
   <div class="note">
@@ -212,24 +256,6 @@ code{
   <p style="margin-top:14px;">
     These are initial operational values and should remain narrow until production
     use justifies additional Event Types.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Entry Status</h2>
-  <p>
-    Provides a concise operational status for the Chronicle Entry where a summary
-    status is needed without collapsing distinct institutional state systems.
-  </p>
-  <span class="value-tag">Draft</span>
-  <span class="value-tag">Under Review</span>
-  <span class="value-tag">Approved</span>
-  <span class="value-tag">Published</span>
-  <span class="value-tag">Superseded</span>
-  <span class="value-tag">Withdrawn</span>
-  <p style="margin-top:14px;">
-    Entry Status must not replace Verification State, Validation State,
-    Publication State, Lifecycle State, or Preservation State.
   </p>
 </article>
 
@@ -427,8 +453,8 @@ code{
   <h2>Controlled Values and Validation</h2>
 
   <p>
-    Future Validation should confirm that fields governed by Controlled Values use
-    only approved terms and that the value is valid for the governing schema or
+    Chronicle Validation confirms that fields governed by Controlled Values use
+    only approved terms and that each value is valid for the governing schema or
     Event-Type Profile.
   </p>
 
@@ -468,12 +494,12 @@ code{
   <h2>Initial Registry Scope</h2>
 
   <p>
-    The first registry should remain limited to vocabularies needed for near-term
-    Chronicle operational development.
+    The registry remains limited to vocabularies demonstrated as necessary for
+    Chronicle production and maintenance.
   </p>
 
   <div class="note">
-    Event Type · Entry Status · Source Type · Evidence Type · Relationship Type ·
+    Event Type · Source Type · Evidence Type · Relationship Type ·
     Verification State · Publication State · Lifecycle State · Correction Type
   </div>
 
