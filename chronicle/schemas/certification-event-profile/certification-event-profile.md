@@ -247,7 +247,7 @@ Represents the date or timestamp of the authoritative certification Occurrence.
 
 **Requirement:** Required.
 
-For this Profile, `event_date` should not be `null` in ordinary production use.
+For this Profile, `event_date` must not be `null`.
 
 The Event Date should be determinable from an authoritative Certifier record or another sufficiently authoritative certification reference.
 
@@ -383,19 +383,15 @@ relationships
 
 or another approved Base Schema reference structure where appropriate.
 
-Recommended Relationship Type:
+Relationship Type must reflect the actual institutional relationship.
 
-```text
-references
-```
-
-or:
+For the first production Entry, the materially relevant Registry relationship is:
 
 ```text
 related_to
 ```
 
-depending on the actual institutional relationship.
+The primary Certifier authority is represented through `authoritative_record_references` and Provenance rather than duplicated as a Relationship.
 
 Rules:
 
@@ -579,7 +575,7 @@ Chronicle Verification reviews Chronicle's own certification-related historical 
 
 Verification should examine, where applicable:
 
-* Chronicle Entry identifier correctness
+* Chronicle Entry identity consistency
 * Event Type correctness
 * Event Date consistency
 * `originating_system` consistency
@@ -612,7 +608,7 @@ The governing principle is:
 
 # Validation Requirements
 
-A production Chronicle Entry governed by this Profile should be validated against:
+A production Chronicle Entry governed by this Profile is validated against:
 
 ```text
 Chronicle Base Schema
@@ -660,9 +656,9 @@ published
 withdrawn_from_publication
 ```
 
-Additional certification-specific publication prerequisites may be defined by Chronicle Publication Procedure where operationally necessary.
+Certification-related Entries follow Chronicle's established Publication Gate after Verification and Validation. CHR-VAL-011 tests Publication Readiness; the separate Publication Gate makes the institutional approval decision.
 
-The Profile should not duplicate Certifier publication rules.
+The Profile does not duplicate Certifier publication rules.
 
 ---
 
@@ -801,9 +797,15 @@ A Profile Version change does not automatically require a Chronicle Entry Versio
 
 ---
 
-# Production Example
+# First Production Application
 
-The following example illustrates a Chronicle Entry governed by the Certification Event-Type Profile.
+The Certification Event-Type Profile Version 1.0.0 has now been exercised through the first canonical production Chronicle Entry:
+
+```text
+CHR-2026-0001
+```
+
+Production application:
 
 ```yaml
 entry_id: CHR-2026-0001
@@ -814,8 +816,10 @@ entry_version: 1
 title: Creation of SC-CERT-2026-0001
 
 summary: >
-  Satoshium Certifier created the authoritative Certification
-  Package SC-CERT-2026-0001 on July 5, 2026.
+  Satoshium Certifier issued the authoritative Certification Package
+  SC-CERT-2026-0001 on July 5, 2026, establishing the inaugural
+  Operational certification of the Satoshium Atlas Jurisdiction Record
+  — El Salvador.
 
 event_type: certification_created
 event_date: 2026-07-05
@@ -823,40 +827,53 @@ event_date: 2026-07-05
 event_type_profile: certification-event-profile
 originating_system: certifier
 
-historical_context: >
-  Chronicle preserves this qualifying certification Occurrence as
-  part of the documented institutional history of the Satoshium Suite.
-
 authoritative_record_references:
   - reference: SC-CERT-2026-0001
     system: certifier
-    record_type: certification_package
+    record_type: Certification Package
+    url: https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/
 
 relationships:
-  - type: references
+  - type: related_to
     target: SREG-2026-0001
     target_system: registry
-    context: Related Registry Entry cataloging the Certification Package.
+    context: Registry Entry cataloging SC-CERT-2026-0001.
+
+  - type: references
+    target: Atlas Jurisdiction Record — El Salvador
+    target_system: atlas
+    context: Authoritative Atlas subject record evaluated by SC-CERT-2026-0001.
 
 provenance:
-  origin: satoshium_certifier
-  acquisition_method: direct_authoritative_record_reference
-  retrieved_at: <TIMESTAMP>
+  origin: Satoshium Certifier
+  acquisition_method: production_review_of_authoritative_and_supporting_suite_records
+  retrieved_at: 2026-08-22T08:06:00-07:00
   authoritative_record_reference:
     reference: SC-CERT-2026-0001
     system: certifier
-    record_type: certification_package
+    record_type: Certification Package
+    url: https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/
 
-verification_state: not_reviewed
-lifecycle_state: draft
-publication_state: not_published
+verification_state: verified
+lifecycle_state: active
+publication_state: published
 
-entry_created_at: <TIMESTAMP>
+entry_created_at: 2026-08-22T08:06:00-07:00
+published_at: 2026-08-22T08:38:00-07:00
 ```
 
-This example demonstrates the Profile architecture.
+Production review confirmed:
 
-It does not reproduce the Certification Package contents.
+```text
+Base Schema conformance: PASS
+Certification Event-Type Profile conformance: PASS
+Chronicle Validation: PASS
+CHR-VAL-011 Publication Readiness: PASS
+Publication Gate: APPROVED
+Publication: published
+```
+
+The Profile therefore has a production precedent, not merely an illustrative example.
 
 ---
 
@@ -1013,12 +1030,8 @@ It is aligned with:
 * Corrections
 * Suite authority boundaries
 
-The human-readable and machine-readable Profile artifacts are now both established.
+The human-readable and machine-readable Profile artifacts are established.
 
-The next Phase VII closeout task is formal two-layer Profile Validation against:
+Phase VII two-layer Profile Validation completed with PASS, and the same Base + Profile stack subsequently governed `CHR-2026-0001` in production on August 22, 2026.
 
-```text
-chronicle-base-schema.json
-        +
-certification-event-profile.json
-```
+Production application confirmed that no Profile schema change was required.
