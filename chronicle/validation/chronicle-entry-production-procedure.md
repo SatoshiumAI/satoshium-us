@@ -101,9 +101,13 @@ Perform Verification
         ↓
 Perform Validation
         ↓
-Approve for Publication
+CHR-VAL-011 Publication Readiness
         ↓
-Publish
+Publication Gate
+        ↓
+Approve / Withhold Publication
+        ↓
+Publish when approved
         ↓
 Preserve
 ```
@@ -1569,35 +1573,81 @@ It should not be expanded merely for symmetry.
 
 # First Production Application
 
-The first intended production application of this procedure is expected to use a qualifying certification-related Occurrence associated with:
+This procedure has now been exercised in production.
+
+The first production application used the qualifying certification Occurrence associated with:
 
 ```text
 SC-CERT-2026-0001
 ```
 
-and, where materially relevant:
+with materially relevant Registry Entry:
 
 ```text
 SREG-2026-0001
 ```
 
-The expected specialization is:
+and governing specialization:
 
 ```text
-Chronicle Base Schema
+Chronicle Base Schema v1.0.0
         +
-Certification Event-Type Profile
+Certification Event-Type Profile v1.0.0
 ```
 
-The first end-to-end operational dry run of this procedure completed with an overall result of `PASS`.
+On August 22, 2026, Chronicle formally assigned:
 
-No production identifier was assigned, no canonical Chronicle Entry was created, and nothing was published.
+```text
+CHR-2026-0001
+```
 
-The next application of this procedure is the real production review and implementation of the first Chronicle Entry. If approved during production review, `CHR-2026-0001` may be formally assigned at Step 6 after uniqueness is confirmed.
+and completed the production procedure through:
+
+```text
+Preservation Eligibility:
+ELIGIBLE
+
+Verification:
+VERIFIED
+
+Overall CHR-VAL Validation:
+PASS
+
+CHR-VAL-011 Publication Readiness:
+PASS
+
+Publication Gate:
+APPROVED FOR PUBLICATION
+
+Publication:
+EXECUTED
+
+Lifecycle State:
+active
+
+Publication State:
+published
+
+Published At:
+2026-08-22T08:38:00-07:00
+```
+
+The first production Entry also established the durable Entry-Version procedural artifacts:
+
+```text
+CHR-2026-0001-v1-validation.md
+CHR-2026-0001-v1-publication-gate.md
+```
+
+These artifacts are associated with Entry Version 1 but are not separate canonical Chronicle objects.
+
+The first production use confirmed that this procedure is operational and repeatable without requiring a broader `/chronicle/procedures/` architecture.
 
 ---
 
 # Operational Checklist
+
+For each future production Entry, use the following checklist. CHR-2026-0001 completed this sequence successfully on August 22, 2026.
 
 ```text
 [ ] Identify Occurrence
@@ -1687,7 +1737,7 @@ Maintenance / Correction / Versioning as needed
 
 # Phase VIII Role
 
-This artifact establishes the operational procedure connecting the completed Chronicle architecture to actual production use.
+This artifact establishes the operational procedure connecting the completed Chronicle architecture to actual production use. That connection has now been demonstrated through CHR-2026-0001.
 
 The Phase VIII sequence now becomes:
 
@@ -1711,6 +1761,10 @@ PASS
 Production Review and Implementation
         ↓
 First Production Chronicle Entry
+        ↓
+CHR-2026-0001 Published
+        ↓
+Operational Production / Maintenance
 ```
 
 The procedure should remain an institutional artifact until production experience demonstrates that a broader `/chronicle/procedures/` architecture is necessary.
