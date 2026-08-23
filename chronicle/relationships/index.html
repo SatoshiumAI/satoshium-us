@@ -246,8 +246,11 @@ code{
     Chronicle may identify the Suite system or external institution from which an
     authoritative object or historical action originated.
   </p>
-  <span class="relationship-tag">Originated In</span>
   <span class="relationship-tag">References</span>
+  <p style="margin-top:12px;">
+    Originating System is represented through governed Entry metadata where applicable;
+    it is not an additional Chronicle Relationship Type.
+  </p>
 </article>
 
 <article class="card">
@@ -312,9 +315,10 @@ code{
   <h2>Authority Boundary</h2>
 
   <div class="note">
-    CHR Entry → references → SC-CERT object<br>
-    CHR Entry → references → SREG Entry<br>
-    CHR Entry → relates to → another CHR Entry
+    CHR Entry → authoritative reference → SC-CERT object<br>
+    CHR Entry → related_to → SREG Entry where materially relevant<br>
+    CHR Entry → references → Atlas or other subject object where appropriate<br>
+    CHR Entry → approved Relationship → another CHR Entry
   </div>
 
   <p style="margin-top:14px;">
@@ -472,13 +476,48 @@ code{
   <h2>Relationship Validation</h2>
 
   <p>
-    Future Validation should confirm that:
+    Chronicle Validation confirms that:
   </p>
 
   <div class="note">
     Relationship Type is approved · Direction is valid · Target exists or is properly referenced ·
     Source and target are not improperly duplicated · Authority is not implied incorrectly ·
     Relationship is permitted by the applicable schema or Event-Type Profile
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>First Production Relationships</h2>
+
+  <p>
+    The Relationship Model has now been exercised in production through
+    <strong>CHR-2026-0001</strong>.
+  </p>
+
+  <div class="note">
+    CHR-2026-0001<br>
+    → <strong>related_to</strong> → SREG-2026-0001<br>
+    Registry Entry cataloging SC-CERT-2026-0001.<br><br>
+
+    CHR-2026-0001<br>
+    → <strong>references</strong> → Atlas Jurisdiction Record — El Salvador<br>
+    Authoritative Atlas subject evaluated by SC-CERT-2026-0001.
+  </div>
+
+  <p style="margin-top:14px;">
+    The primary Certifier authority was intentionally not duplicated as a Relationship.
+    <strong>SC-CERT-2026-0001</strong> is represented through Chronicle's structured
+    authoritative-record reference and Provenance. This preserves meaning without
+    creating redundant Relationship structure.
+  </p>
+
+  <div class="note">
+    Relationship adds meaning. Authoritative reference identifies authority.
+    The two should not be duplicated merely for symmetry.
   </div>
 </article>
 
