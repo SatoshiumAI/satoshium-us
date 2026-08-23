@@ -1091,6 +1091,43 @@ Chronicle may preserve the result through an institutional validation artifact u
 
 ---
 
+# First Production Rule Application
+
+The complete rule set has now been exercised in production against:
+
+```text
+CHR-2026-0001
+Entry Version 1
+```
+
+The production rule results were:
+
+```text
+CHR-VAL-001: PASS
+CHR-VAL-002: PASS
+CHR-VAL-003: PASS
+CHR-VAL-004: PASS
+CHR-VAL-005: PASS
+CHR-VAL-006: PASS
+CHR-VAL-007: PASS
+CHR-VAL-008: PASS
+CHR-VAL-009: PASS
+CHR-VAL-010: Not Applicable
+CHR-VAL-012: PASS
+CHR-VAL-013: PASS
+CHR-VAL-014: PASS
+CHR-VAL-011: PASS
+
+Overall Validation Result:
+PASS
+```
+
+`CHR-VAL-010` was Not Applicable because Entry Version 1 had no prior material Version or formal Chronicle Correction.
+
+The production application confirmed that the rule set did not require redesign before live use.
+
+---
+
 # Status
 
 **Chronicle Validation Rules established for Phase VIII.**
@@ -1099,4 +1136,6 @@ These rules define the normative Validation requirements applied by the Chronicl
 
 The first end-to-end Phase VIII operational dry run using `SC-CERT-2026-0001` and simulated candidate `CHR-2026-0001` completed with an overall result of `PASS`.
 
-The dry run identified no rule-set redesign requirement and clarified that `CHR-VAL-011 — Publication Readiness` is distinct from the separate Chronicle Publication Gate.
+The rule set was subsequently exercised in production on August 22, 2026 for formally assigned `CHR-2026-0001` Entry Version 1, again producing an overall result of `PASS`.
+
+The production use confirmed that `CHR-VAL-011 — Publication Readiness` remains distinct from the separate Chronicle Publication Gate and that neither Validation nor the Gate itself performs Publication.
