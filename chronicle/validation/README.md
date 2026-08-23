@@ -391,9 +391,17 @@ Provenance Validation
         ↓
 Version / Correction Consistency Validation
         ↓
+Verification Dependency Validation
+        ↓
+Authority Boundary Integrity Validation
+        ↓
+Human / Machine Consistency Validation
+        ↓
 Publication Readiness Validation
         ↓
 Validation Result Recorded
+        ↓
+Separate Publication Gate
 ```
 
 A Validation may stop early when a blocking failure makes later checks impossible.
@@ -1293,11 +1301,13 @@ The initial operational Validation workflow is:
 10. Validate Relationships.
 11. Validate Provenance.
 12. Validate Version / Correction consistency where applicable.
-13. Confirm Verification State meets publication prerequisites.
-14. Validate publication readiness.
-15. Record PASS or FAIL.
-16. Return FAIL Entries for correction.
-17. Permit PASS Entries to proceed toward publication decision.
+13. Confirm Verification Dependency.
+14. Validate Authority Boundary Integrity.
+15. Validate Human / Machine Consistency where applicable.
+16. Validate CHR-VAL-011 Publication Readiness.
+17. Record PASS or FAIL.
+18. Return FAIL Entries for correction.
+19. Permit PASS Entries to proceed to the separate Publication Gate.
 ```
 
 This sequence should remain repeatable.
@@ -1357,13 +1367,21 @@ Eligible for Publication Decision
 
 Chronicle should initially avoid creating unnecessary Validation object architecture.
 
-The first implementation may preserve Validation through:
+Production has now established a durable Markdown Validation artifact tied directly to the Entry Version.
 
-* an internal validation checklist;
-* a build / processing artifact;
-* a production report;
-* publication metadata;
-* or other lightweight institutional documentation.
+The first production naming convention is:
+
+```text
+CHR-YYYY-NNNN-vN-validation.md
+```
+
+For `CHR-2026-0001` Entry Version 1:
+
+```text
+CHR-2026-0001-v1-validation.md
+```
+
+The artifact may be published alongside the Entry when its durable review value justifies public preservation. It remains supporting procedural documentation rather than a separate canonical Chronicle object.
 
 A dedicated canonical Validation Record should be created only if production experience demonstrates that Validation needs durable independent identity and lifecycle.
 
@@ -1430,9 +1448,13 @@ Verify
         ↓
 Validate
         ↓
-Approve for Publication
+CHR-VAL-011 Publication Readiness
         ↓
-Publish
+Publication Gate
+        ↓
+Approve / Withhold Publication
+        ↓
+Publish when approved
         ↓
 Preserve
 ```
@@ -1541,4 +1563,17 @@ PASS
 
 No Validation architecture redesign was required.
 
-The next operational use of this specification is the first production Chronicle Entry review and implementation.
+This specification has now been exercised in production through `CHR-2026-0001` Entry Version 1.
+
+Production result:
+
+```text
+Verification: verified
+Validation: PASS
+CHR-VAL-011 Publication Readiness: PASS
+Publication Gate: APPROVED
+Publication State: published
+Published At: 2026-08-22T08:38:00-07:00
+```
+
+Chronicle Validation is therefore operational rather than awaiting first production use.
