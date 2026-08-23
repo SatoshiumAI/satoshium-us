@@ -141,10 +141,10 @@ Validation may occur before Publication, after Correction, or during maintenance
 
 # 3. Internal Validation Artifact
 
-The initial preferred location for the complete material Validation result is:
+The production-established location for the complete material Validation result is:
 
 ```text
-an internal Validation artifact
+a durable Entry-Version Validation artifact
 ```
 
 This may be:
@@ -167,7 +167,7 @@ This approach provides:
 * low schema overhead;
 * room to refine Validation before freezing another object model.
 
-This is the preferred initial implementation.
+This is the established initial production implementation.
 
 ---
 
@@ -441,19 +441,23 @@ If maintained in separate artifacts, the relationship should be traceable.
 
 During early production, a Validation artifact may use a descriptive filename tied to the Entry and Version.
 
-Example pattern:
+Production pattern:
+
+```text
+CHR-YYYY-NNNN-vN-validation.md
+```
+
+First production artifact:
 
 ```text
 CHR-2026-0001-v1-validation.md
 ```
 
-or another consistent operational naming convention adopted by the Production Procedure.
-
 This filename is not a canonical identifier.
 
-It is an artifact locator.
+It is an artifact locator tied to the exact Entry Version reviewed.
 
-The final naming convention should be confirmed when the first production Entry is created.
+The naming convention was confirmed by the first production Entry on August 22, 2026.
 
 ---
 
@@ -616,18 +620,29 @@ If those conditions emerge, Chronicle may conduct a dedicated architectural revi
 For the first production Chronicle Entry:
 
 ```text
-Validation result
+CHR-2026-0001
+Entry Version 1
         ↓
-preserved in an internal Validation artifact
+Formal CHR-VAL Validation
         ↓
-associated directly with the exact Entry Version
+CHR-2026-0001-v1-validation.md
         ↓
-referenced by Publication metadata when useful
+Overall PASS
+        ↓
+CHR-VAL-011 PASS
+        ↓
+Separate Publication Gate
+        ↓
+Publication
 ```
 
-No new canonical Validation object is created.
+The Validation artifact was preserved directly alongside the Entry package because it provides durable institutional review value.
 
-No Base Schema change is required at this stage.
+No new canonical Validation object was created.
+
+No separate Validation identifier or lifecycle was created.
+
+No Base Schema change was required.
 
 ---
 
@@ -661,4 +676,22 @@ Dedicated canonical Validation Record
   → deferred pending operational evidence
 ```
 
-This structure should be tested during the first Chronicle Entry dry run and first production Entry before any additional Validation object architecture is frozen.
+This structure has now been tested in both the August 20 dry run and the August 22 first production Entry.
+
+Production confirmed:
+
+```text
+Full Validation detail
+  → durable Entry-Version Validation artifact
+
+Public Entry linkage
+  → direct link where useful
+
+Full Validation embedded in Chronicle Entry
+  → not required
+
+Dedicated canonical Validation Record
+  → still deferred
+```
+
+No additional Validation object architecture is currently required.
