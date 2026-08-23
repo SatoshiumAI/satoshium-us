@@ -527,3 +527,53 @@ And for the completed Profile architecture:
 Final authority principle:
 
 > Reference does not transfer authority, but the schema must identify whose authority is being referenced.
+
+---
+
+# Production Follow-Up — August 22, 2026
+
+This section is a later production follow-up.
+
+It does **not** revise the historical Phase VII validation findings above.
+
+After Phase VII closed, Chronicle's Validation architecture and Entry Production Procedure were completed and the Base + Profile schema stack was exercised against the first canonical production Chronicle Entry:
+
+```text
+CHR-2026-0001
+```
+
+Production-shaped schema validation result:
+
+```text
+Chronicle Base Schema Version 1.0.0                 PASS
+Certification Event-Type Profile Version 1.0.0     PASS
+Base + Profile composition                          PASS
+Published-state conditional requirement             PASS
+Structured Certifier authority requirement          PASS
+Certification event_date requirement                PASS
+Production Relationship structure                   PASS
+Production Provenance structure                     PASS
+```
+
+The production Entry then completed the broader Chronicle institutional path:
+
+```text
+Verification: verified
+Chronicle Validation: PASS
+CHR-VAL-011 Publication Readiness: PASS
+Publication Gate: APPROVED
+Publication State: published
+```
+
+The first production application did not reveal a defect requiring a change to either machine-readable schema.
+
+Therefore:
+
+```text
+chronicle-base-schema.json
+certification-event-profile.json
+```
+
+remain at their established Version 1.0.0 validation semantics.
+
+This production follow-up confirms the Phase VII architectural claim under real Chronicle operation without rewriting the original Phase VII closeout record.
