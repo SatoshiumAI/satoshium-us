@@ -76,9 +76,11 @@ The operational path is:
 ```text
 Validation PASS
         ↓
-Entry Eligible to Proceed
+CHR-VAL-011 Publication Readiness PASS
         ↓
-Publication Decision
+Eligible to Proceed to Publication Gate
+        ↓
+Publication Gate Decision
 ```
 
 PASS means:
@@ -452,7 +454,7 @@ The governing publication behavior is:
 
 ```text
 PASS
-  → Entry may proceed toward Publication
+  → Entry may proceed to the separate Publication Gate
 
 FAIL
   → Entry returns for correction / completion / review
@@ -483,6 +485,52 @@ FAIL does not:
   transfer authority
   permit silent rewriting
 ```
+
+---
+
+# First Production Application
+
+This behavior model has now been exercised in production.
+
+For:
+
+```text
+CHR-2026-0001
+Entry Version 1
+```
+
+Chronicle recorded:
+
+```text
+Verification:
+verified
+
+Overall Validation:
+PASS
+
+CHR-VAL-011 — Publication Readiness:
+PASS
+
+Publication Gate:
+APPROVED FOR PUBLICATION
+
+Publication State after publication:
+published
+```
+
+The production case confirmed the intended behavior:
+
+```text
+Validation PASS
+        ↓
+Publication Readiness PASS
+        ↓
+Publication Gate approval
+        ↓
+separate Publication action
+```
+
+The Validation result itself did not publish the Entry or change `publication_state`.
 
 ---
 
