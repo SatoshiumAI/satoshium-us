@@ -117,9 +117,10 @@ Evidence ≠ Source ≠ Provenance ≠ Verification
 
 ---
 
-# Production Status
+# Supporting Schema Status
 
-This specification defines the Phase VII reconciled architecture for Chronicle Evidence Records.
+This specification defines Chronicle's human-readable supporting architecture for an
+Evidence Record when a separate Chronicle-owned Evidence Record is operationally justified.
 
 The canonical human-readable file is:
 
@@ -127,13 +128,18 @@ The canonical human-readable file is:
 evidence-record-schema.md
 ```
 
-A future machine-readable implementation may be created as:
+Chronicle's first production Entry, `CHR-2026-0001`, did **not** require a separate
+Evidence Record. Supporting Certifier materials had evidentiary value during review,
+but direct Source and authoritative references were sufficient.
+
+A machine-readable implementation:
 
 ```text
 evidence-record-schema.json
 ```
 
-after the specification is exercised against a real production Evidence Record.
+should remain deferred until Chronicle creates and exercises a real production
+Evidence Record whose independent structure adds durable institutional value.
 
 ---
 
@@ -702,7 +708,9 @@ It does not presently require a universal embedded:
 validation_state
 ```
 
-The Validation Procedure should determine where Validation results are stored.
+Chronicle's production Validation architecture establishes Version-specific Validation
+for Chronicle Entries. Validation-result storage for an independently governed Evidence
+Record remains undefined until a production Evidence Record implementation exists.
 
 Validation may test:
 
@@ -975,11 +983,12 @@ Use explicit role fields where operationally necessary.
 
 ---
 
-# Production Example
+# Illustrative Supporting-Record Example
 
-The following example demonstrates current Phase VII Evidence Record architecture.
+The following example demonstrates the current human-readable Evidence Record architecture.
 
-The Evidence Record identifier remains illustrative until its namespace is formally established.
+It is **not** an Evidence Record created for `CHR-2026-0001`, and it does not establish
+a permanent Evidence Record identifier namespace.
 
 ```yaml
 evidence_id: <EVIDENCE-IDENTIFIER>
@@ -1017,6 +1026,29 @@ created_at: 2026-09-01T09:20:00Z
 ```
 
 This example does not freeze `contextualizes` as an approved Evidence Relationship Controlled Value.
+
+---
+
+# First Production Lesson
+
+`CHR-2026-0001` established an important Evidence-model precedent:
+
+```text
+Separate Evidence Record required? No.
+```
+
+The Certification Process Report, Certification Receipt, and SCRD artifacts had
+evidentiary value during Chronicle review, but Chronicle did not create duplicate
+Evidence Records merely to repackage material already preserved through durable Source
+and authoritative references.
+
+This confirms:
+
+> A Source may have evidentiary value without requiring a duplicate Evidence object.
+
+and:
+
+> Minimum necessary structure first.
 
 ---
 
@@ -1129,7 +1161,7 @@ The rule remains:
 
 # Validation Expectations
 
-A production Evidence Record should ultimately be validated against:
+When Chronicle creates a production Evidence Record, it should be validated against:
 
 * Evidence Record Schema
 * Evidence Record identifier rules
@@ -1214,7 +1246,7 @@ And operationally:
 
 ## Status
 
-**Phase VII reconciled Chronicle Evidence Record Schema specification.**
+**Chronicle supporting Evidence Record Schema specification.**
 
 The Evidence Record Schema is now aligned with:
 
@@ -1231,6 +1263,10 @@ The Evidence Record Schema is now aligned with:
 
 The approved Evidence Type vocabulary is incorporated.
 
-Evidence Relationship Controlled Values, Evidence Record identifier namespace, Preservation State, and the location of Validation results remain intentionally unresolved pending production evidence.
+Evidence Relationship Controlled Values, Evidence Record identifier namespace,
+Preservation State, and supporting-record Validation-result storage remain intentionally
+unresolved pending a real production Evidence Record.
 
-A machine-readable `evidence-record-schema.json` should be created only after this specification is tested against the first production Evidence Record.
+No machine-readable `evidence-record-schema.json` should be created merely for symmetry.
+It should be introduced only after this specification is exercised against a production
+Evidence Record that Chronicle actually needs.
