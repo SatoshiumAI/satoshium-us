@@ -1227,9 +1227,35 @@ Chronicle Validation Rules
         ↓
 Chronicle Validation Sequence
         ↓
+Chronicle Validation Behavior
+        ↓
+Chronicle Validation Record
+        ↓
 Chronicle Entry Production Procedure
 ```
 
 The first end-to-end operational dry run confirmed that this sequence can be applied to a real Suite case without Validation architecture redesign.
 
-The next operational use is the first production Chronicle Entry review and implementation.
+The sequence has now been exercised in production through `CHR-2026-0001` Entry Version 1.
+
+Production results confirmed the sequence without architecture redesign:
+
+```text
+CHR-VAL-001: PASS
+CHR-VAL-002: PASS
+CHR-VAL-003: PASS
+CHR-VAL-004: PASS
+CHR-VAL-005: PASS
+CHR-VAL-006: PASS
+CHR-VAL-007: PASS
+CHR-VAL-008: PASS
+CHR-VAL-009: PASS
+CHR-VAL-010: Not Applicable
+CHR-VAL-012: PASS
+CHR-VAL-013: PASS
+CHR-VAL-014: PASS
+CHR-VAL-011: PASS
+Overall: PASS
+```
+
+The Entry then proceeded to the separate Publication Gate, which approved Publication before the distinct Publication action was executed.
