@@ -737,4 +737,55 @@ It has **not** yet become that Entry.
 
 ---
 
+## 22. Post-Dry-Run Production Outcome
+
+This report remains a historical record of the August 20, 2026 dry run and should not be rewritten to make the dry run appear to have been production.
+
+Two days later, on August 22, 2026, Chronicle applied the documented dry-run findings in the first real production cycle.
+
+The simulated candidate:
+
+```text
+CHR-2026-0001
+```
+
+was formally assigned in production and became Chronicle's first canonical published Entry.
+
+The production result was:
+
+```text
+Entry Version:
+1
+
+Preservation Eligibility:
+ELIGIBLE
+
+Verification:
+VERIFIED
+
+Overall CHR-VAL Validation:
+PASS
+
+CHR-VAL-011 Publication Readiness:
+PASS
+
+Publication Gate:
+APPROVED FOR PUBLICATION
+
+Lifecycle State:
+active
+
+Publication State:
+published
+
+Published At:
+2026-08-22T08:38:00-07:00
+```
+
+The production application confirmed the dry-run conclusion that no Base Schema, Certification Event-Type Profile, identifier, Controlled Values, Relationship, Provenance, Verification, Validation, or Publication architecture redesign was required before operational use.
+
+The dry-run statements elsewhere in this report remain intentionally historical and continue to describe the system state as of August 20, 2026.
+
+---
+
 > **Phase VIII Operational Dry-Run Result: PASS. The simulated candidate `CHR-2026-0001`, representing the July 5, 2026 issuance of `SC-CERT-2026-0001`, successfully completed Preservation Eligibility, authoritative-reference collection, Event Type classification, Certification Event-Type Profile selection, candidate Entry construction, Relationships, Sources and Provenance assembly, Verification, the complete CHR-VAL Validation sequence, and the Chronicle Publication Gate. No architecture defect requiring schema or institutional redesign was identified. Several procedural clarifications were preserved for future documentation. No production identifier was assigned, no production Chronicle Entry was created, and nothing was published.**
