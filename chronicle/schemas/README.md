@@ -25,13 +25,14 @@ They do not determine historical conclusions or absorb authority belonging to an
 
 ---
 
-# Phase VII — Production Schemas
+# Production Schema Architecture
 
-Chronicle has entered **Phase VII — Production Schemas**.
+Phase VII — Production Schemas is complete.
 
-The schema architecture is no longer only descriptive.
+Chronicle's Base Schema and first Event-Type Profile have now moved beyond schema
+definition and have been exercised through the first canonical production Entry.
 
-The first production schema artifacts now exist:
+The core production schema artifacts are:
 
 ```text
 chronicle-base-schema.md
@@ -442,49 +443,39 @@ Supporting schemas may use additional Controlled Value sets.
 
 ---
 
-# Entry Status
+# No Generic Entry Status
 
-Chronicle previously defined an Entry Status vocabulary:
+Chronicle does not use a generic `entry_status` as a canonical production field.
+
+The production architecture keeps these systems distinct:
 
 ```text
-Draft
-Under Review
-Approved
-Published
-Superseded
-Withdrawn
+Lifecycle State
+Verification State
+Publication State
 ```
 
-Entry Status remains under architectural review because of conceptual overlap with:
-
-* Lifecycle State
-* Verification State
-* Publication State
-
-The production Base Schema therefore does not presently require `entry_status`.
-
-If production use demonstrates a distinct need, it may be introduced later through controlled schema evolution.
+A generic Entry Status would duplicate or blur those defined meanings.
 
 ---
 
-# Validation State
+# Validation Result
 
-The Base Schema is designed to be Validated.
-
-It does not presently require a universal embedded:
+The Base Schema is designed to be Validated, but does not embed a universal:
 
 ```text
 validation_state
 ```
 
-The Validation Procedure should determine whether Validation results belong:
+or:
 
-* directly in the Entry
-* in publication metadata
-* in a Validation Record
-* in a build or processing artifact
+```text
+validation_result
+```
 
-This preserves the institutional distinction:
+Production Chronicle Validation produces `PASS / FAIL` for the exact Entry Version
+evaluated. Full Validation detail is preserved through a Version-specific Validation
+artifact rather than promoted into a universal Base Schema field.
 
 ```text
 Schema ≠ Verification ≠ Validation ≠ Publication
@@ -667,20 +658,23 @@ The Correction Record Schema is aligned to the Versioning Policy, approved Corre
 
 # Supporting Schema Categories
 
-Additional supporting schemas may be created only where distinct operational requirements justify them.
+The current human-readable supporting specifications are:
 
-Potential future categories include:
+```text
+source-record-schema.md
+evidence-record-schema.md
+correction-record-schema.md
+```
 
-* Verification Record Schema
-* Validation Record Schema
-* Publication Record Schema
-* Relationship Record Schema
-* Provenance Record Schema
-* Version Record Schema
+They define possible Chronicle-owned supporting records **only when independent
+structure is operationally justified**.
 
-These should not be created merely for architectural symmetry.
+`CHR-2026-0001` required none of those separate supporting records. Direct references,
+Entry-level Provenance, Relationships, and Version-specific procedural artifacts were
+sufficient.
 
-Schema proliferation should be avoided.
+Additional supporting schemas must not be created merely for architectural symmetry.
+Schema and object proliferation should be avoided.
 
 ---
 
@@ -948,7 +942,7 @@ A Schema may advance while older Entries remain preserved under an earlier Schem
 
 # Validation Expectations
 
-Production Chronicle Entries should ultimately be Validated against:
+Production Chronicle Entries are Validated against:
 
 * Chronicle Base Schema
 * Applicable Event-Type Profile
@@ -1035,37 +1029,32 @@ The deprecated compatibility file must not contain a second competing Base Schem
 
 ---
 
-# Phase VII Production Sequence
+# Production Sequence Proven
 
-The completed Phase VII schema sequence now includes:
+The schema architecture has now completed the transition from definition to production use:
 
 ```text
 Chronicle Base Schema
         ↓
-Source Record Schema reconciliation
-        ↓
-Evidence Record Schema reconciliation
-        ↓
-Correction Record Schema reconciliation
-        ↓
-Schemas public architecture update
-        ↓
 Certification Event-Type Profile
+        ↓
+Phase VII Two-Layer Validation PASS
+        ↓
+Chronicle Validation Architecture
+        ↓
+Operational Dry Run PASS
+        ↓
+CHR-2026-0001
+        ↓
+Production Validation PASS
+        ↓
+Publication Gate APPROVED
+        ↓
+Published
 ```
 
-The next sequence is:
-
-```text
-Profile Validation
-        ↓
-Validation Procedure
-        ↓
-Production Procedure
-        ↓
-First Production Chronicle Entry
-```
-
-This preserves the layered architecture while moving from schema definition into executable production use.
+The supporting Source, Evidence, and Correction specifications remain available for
+future use, but they are not mandatory layers in every Entry package.
 
 ---
 
@@ -1113,23 +1102,53 @@ Older Chronicle records must remain readable and understandable.
 
 ---
 
-# Next Production Work
+# Current Production Position
 
-The Chronicle Base Schema, supporting Source / Evidence / Correction schema specifications, public Schemas architecture, and Certification Event-Type Profile are now established.
+Chronicle's core schema stack is operational.
 
-Immediate production work now centers on:
+`CHR-2026-0001` demonstrated that the Base Schema and Certification Event-Type Profile
+can govern a real published Chronicle Entry without requiring separate Source, Evidence,
+or Correction objects.
+
+Supporting JSON schemas remain intentionally deferred:
 
 ```text
-Profile Validation
-        ↓
-Validation Procedure
-        ↓
-Production Procedure
-        ↓
-First Production Chronicle Entry
+source-record-schema.json
+evidence-record-schema.json
+correction-record-schema.json
 ```
 
-Supporting JSON schemas for Source, Evidence, and Correction Records remain intentionally deferred until real production supporting records justify machine-readable implementations.
+They should be created only after real production supporting records demonstrate a
+stable machine-readable need.
+
+---
+
+# First Production Schema Precedent
+
+The first canonical production Entry established the following schema precedent:
+
+```text
+CHR-2026-0001
+Base Schema 1.0.0
+Certification Event-Type Profile 1.0.0
+Verification: verified
+Validation: PASS
+Publication Gate: APPROVED
+Publication State: published
+```
+
+Its five-file production package used:
+
+```text
+index.html
+record.json
+README.md
+CHR-2026-0001-v1-validation.md
+CHR-2026-0001-v1-publication-gate.md
+```
+
+The Validation and Publication Gate files are durable Entry-Version procedural artifacts,
+not new canonical objects.
 
 ---
 
@@ -1145,7 +1164,7 @@ And operationally:
 
 ## Status
 
-**Active Phase VII Chronicle Schemas specification.**
+**Operational Chronicle Schemas specification.**
 
 The Chronicle Base Schema exists in both human-readable and machine-readable production forms:
 
@@ -1165,6 +1184,6 @@ Chronicle's first production Event-Type Profile is published through:
 
 The Source Record Schema, Evidence Record Schema, and Correction Record Schema are Phase VII reconciled Chronicle-owned supporting schema specifications.
 
-The next operational focus is two-layer Profile Validation followed by the Chronicle Validation Procedure, Production Procedure, and first production Chronicle Entry.
+Two-layer Profile Validation, Chronicle Validation, the Production Procedure, and the first production Chronicle Entry are complete.
 
 The schema family remains governed by explicit compatibility, Versioning, Validation, Controlled Values, authority boundaries, and preservation of prior states.
