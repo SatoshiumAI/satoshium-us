@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Chronicle Publication</title>
+<meta name="description" content="Satoshium Chronicle Publication — the institutional architecture governing publication readiness, Publication Gate decisions, Publication State, canonical public representations, withdrawal, version lineage, and public historical continuity.">
+<link rel="canonical" href="https://satoshium.us/chronicle/publication/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:940px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ color:var(--gold2);
+ font-size:18px;
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.meta{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:10px 18px;
+ margin-top:16px;
+}
+
+.meta div{
+ border-top:1px solid rgba(214,163,74,.12);
+ padding-top:10px;
+}
+
+.meta strong{
+ display:block;
+ margin-bottom:2px;
+ color:var(--gold2);
+ font-size:13px;
+}
+
+.meta span{color:var(--muted)}
+
+.kicker{
+ display:block;
+ margin-bottom:8px;
+ color:var(--gold);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid,
+ .meta{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Chronicle · Publication</div>
+  <h1>Publication</h1>
+
+  <p class="lead">
+    Chronicle Publication is the institutional act through which a reviewed Chronicle
+    Entry Version enters public production use through its canonical public representations.
+  </p>
+
+  <p class="lead">
+    Publication occurs only after Preservation Eligibility, Entry construction,
+    Verification, Validation, and a separate Publication Gate decision. Validation
+    determines conformance. The Publication Gate determines whether publication is
+    institutionally approved. Publication changes the Entry's public production state.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Publication Position</h2>
+
+  <div class="flow" aria-label="Chronicle publication position">
+    <strong>Verification</strong>
+    <span>→</span>
+    <strong>Validation</strong>
+    <span>→</span>
+    <strong>CHR-VAL-011 Publication Readiness</strong>
+    <span>→</span>
+    <strong>Publication Gate</strong>
+    <span>→</span>
+    <strong>Publication</strong>
+  </div>
+
+  <div class="note">
+    <strong>CHR-VAL-011 tests readiness. The Publication Gate makes the institutional decision.</strong>
+    A Validation PASS does not itself approve publication, and Publication Gate approval
+    does not mean publication has already occurred.
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <span class="kicker">Prerequisite</span>
+  <h2>Preservation Eligibility</h2>
+  <p>
+    Chronicle does not publish an Entry merely because an Occurrence happened.
+    The Occurrence must first qualify for Chronicle preservation under the approved
+    Preservation Eligibility model.
+  </p>
+</article>
+
+<article class="card">
+  <span class="kicker">Prerequisite</span>
+  <h2>Verification</h2>
+  <p>
+    Verification reviews Chronicle's own historical representation, including
+    identifiers, Event Date, authoritative references, Provenance, Relationships,
+    Historical Context, and material limitations.
+  </p>
+  <a class="btn" href="/chronicle/verification/">Open Verification →</a>
+</article>
+
+<article class="card">
+  <span class="kicker">Prerequisite</span>
+  <h2>Validation</h2>
+  <p>
+    Validation determines whether the exact Chronicle Entry Version under review
+    conforms to the applicable institutional and machine-readable requirements.
+  </p>
+  <a class="btn" href="/chronicle/validation/">Open Validation →</a>
+</article>
+
+<article class="card">
+  <span class="kicker">Decision</span>
+  <h2>Publication Gate</h2>
+  <p>
+    The Publication Gate is the separate institutional decision point that determines
+    whether a Validation-ready Entry Version is approved or withheld from publication.
+  </p>
+  <div class="note">
+    Gate outcomes are procedural decisions. The Publication Gate is not a separate
+    canonical Chronicle object and does not receive its own CHR identifier or lifecycle.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication States</h2>
+
+  <p>
+    Chronicle uses a dedicated Publication State system independent of Lifecycle State,
+    Verification State, and Validation result.
+  </p>
+
+  <div class="meta">
+    <div>
+      <strong>not_published</strong>
+      <span>The Entry Version has not entered public production use.</span>
+    </div>
+    <div>
+      <strong>pending_publication</strong>
+      <span>The Entry Version is awaiting or completing the publication process.</span>
+    </div>
+    <div>
+      <strong>published</strong>
+      <span>The Entry Version is publicly released through its canonical representations.</span>
+    </div>
+    <div>
+      <strong>withdrawn_from_publication</strong>
+      <span>The Entry Version is no longer presented as an active public production representation.</span>
+    </div>
+  </div>
+
+  <div class="note">
+    Publication State does not determine whether an Entry is historically valid,
+    Verified, active in Lifecycle, superseded, corrected, or preserved. Those questions
+    belong to their own Chronicle systems.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <span class="kicker">Public Representation</span>
+  <h2>Canonical Human-Readable Entry</h2>
+  <p>
+    A published Chronicle Entry should resolve through a stable canonical public URI
+    beneath the Entry collection and present the Entry's historical context, identity,
+    authoritative references, Relationships, Provenance, review state, and publication lineage.
+  </p>
+  <div class="note">
+    Canonical path pattern:<br>
+    <strong>/chronicle/entries/CHR-YYYY-NNNN/</strong>
+  </div>
+</article>
+
+<article class="card">
+  <span class="kicker">Machine Representation</span>
+  <h2>Machine-Readable Entry</h2>
+  <p>
+    Published production Entries should expose the corresponding machine-readable
+    representation where required by the governing schema and Entry package.
+  </p>
+  <div class="note">
+    Human-readable and machine-readable representations describe the same canonical
+    Chronicle Entry and must remain materially consistent.
+  </div>
+</article>
+
+<article class="card">
+  <span class="kicker">Publication Time</span>
+  <h2>published_at</h2>
+  <p>
+    When Publication State is <strong>published</strong>, Chronicle preserves the
+    publication timestamp through <strong>published_at</strong>.
+  </p>
+  <p>
+    Later editorial or cross-link updates do not silently reset the original publication
+    timestamp for the same Entry Version.
+  </p>
+</article>
+
+<article class="card">
+  <span class="kicker">Public Directory</span>
+  <h2>Entries Index</h2>
+  <p>
+    Published Chronicle Entries are discoverable through the public Entries collection.
+    The collection indexes canonical CHR identifiers rather than creating a separate
+    competing preserved-events namespace.
+  </p>
+  <a class="btn" href="/chronicle/entries/">Open Entries →</a>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Package</h2>
+
+  <p>
+    A published Chronicle Entry may be accompanied by durable procedural artifacts
+    where they add institutional review value.
+  </p>
+
+  <div class="note">
+    Canonical Entry representation:<br>
+    index.html<br>
+    record.json<br>
+    README.md<br><br>
+
+    Durable Entry-Version procedural artifacts where applicable:<br>
+    CHR-YYYY-NNNN-vN-validation.md<br>
+    CHR-YYYY-NNNN-vN-publication-gate.md
+  </div>
+
+  <p style="margin-top:14px;">
+    The Validation and Publication Gate artifacts document the review of an exact
+    Entry Version. They do not become separate canonical Chronicle objects and do
+    not receive independent CHR identifiers.
+  </p>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <span class="kicker">Change Control</span>
+  <h2>Corrections and Versions</h2>
+  <p>
+    Publication does not freeze Chronicle against later correction. Material changes
+    to Chronicle's own historical representation follow the Corrections and Versioning
+    architecture, preserve prior substantive states, and may require Reverification,
+    Revalidation, and a new Publication Gate decision.
+  </p>
+  <a class="btn" href="/chronicle/corrections/">Open Corrections →</a>
+  <a class="btn" href="/chronicle/versioning/">Open Versioning →</a>
+</article>
+
+<article class="card">
+  <span class="kicker">Withdrawal</span>
+  <h2>Withdrawal from Publication</h2>
+  <p>
+    Withdrawal removes an Entry Version from active public presentation without
+    erasing the fact that the Entry or prior publication state existed.
+  </p>
+  <p>
+    Withdrawal must remain historically traceable and must not silently delete
+    material institutional history.
+  </p>
+</article>
+
+<article class="card">
+  <span class="kicker">Authority Boundary</span>
+  <h2>Publication Does Not Transfer Authority</h2>
+  <p>
+    Chronicle Publication makes Chronicle's own historical-preservation record public.
+    It does not convert referenced Certification Packages, Registry Entries, Atlas records,
+    or other Suite objects into Chronicle-owned authority.
+  </p>
+  <div class="note">
+    Reference does not transfer authority.
+  </div>
+</article>
+
+<article class="card">
+  <span class="kicker">Historical Continuity</span>
+  <h2>Preserve Prior Public States</h2>
+  <p>
+    Material prior Entry states, Corrections, supersession relationships, and
+    publication lineage remain preservable so later reviewers can reconstruct
+    what Chronicle published, when, and why it changed.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>First Production Publication</h2>
+
+  <p>
+    Chronicle's first production publication occurred on August 22, 2026 through
+    <strong>CHR-2026-0001 Entry Version 1</strong>.
+  </p>
+
+  <div class="meta">
+    <div>
+      <strong>Chronicle Entry</strong>
+      <span>CHR-2026-0001</span>
+    </div>
+    <div>
+      <strong>Event Type</strong>
+      <span>certification_created</span>
+    </div>
+    <div>
+      <strong>Authoritative Record</strong>
+      <span>SC-CERT-2026-0001</span>
+    </div>
+    <div>
+      <strong>Related Registry Entry</strong>
+      <span>SREG-2026-0001</span>
+    </div>
+    <div>
+      <strong>Verification</strong>
+      <span>verified</span>
+    </div>
+    <div>
+      <strong>Validation</strong>
+      <span>PASS</span>
+    </div>
+    <div>
+      <strong>CHR-VAL-011</strong>
+      <span>PASS</span>
+    </div>
+    <div>
+      <strong>Publication Gate</strong>
+      <span>APPROVED</span>
+    </div>
+    <div>
+      <strong>Published At</strong>
+      <span>2026-08-22T08:38:00-07:00</span>
+    </div>
+    <div>
+      <strong>Publication State</strong>
+      <span>published</span>
+    </div>
+  </div>
+
+  <div class="note">
+    This production precedent confirms the sequence:
+    Validation PASS → CHR-VAL-011 PASS → Publication Gate APPROVED → Publication executed.
+  </div>
+
+  <a class="btn" href="/chronicle/entries/CHR-2026-0001/">Open CHR-2026-0001 →</a>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Method</h2>
+
+  <div class="flow" aria-label="Chronicle publication method">
+    <strong>Entry Ready for Review</strong>
+    <span>→</span>
+    <strong>Verification</strong>
+    <span>→</span>
+    <strong>Validation</strong>
+    <span>→</span>
+    <strong>CHR-VAL-011</strong>
+    <span>→</span>
+    <strong>Publication Gate</strong>
+    <span>→</span>
+    <strong>Approve / Withhold</strong>
+    <span>→</span>
+    <strong>Publish</strong>
+    <span>→</span>
+    <strong>Maintain / Correct / Version</strong>
+  </div>
+
+  <div class="note">
+    Validation answers whether the Entry Version conforms. The Publication Gate answers
+    whether Chronicle approves publication. Publication records that the approved Entry
+    Version has actually entered public production use.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Publication Principle</h2>
+
+  <div class="note">
+    Validate the representation. Approve the release. Publish the Entry. Preserve the lineage.
+  </div>
+
+  <a class="btn" href="/chronicle/">Back to Chronicle →</a>
+  <a class="btn" href="/chronicle/validation/">Open Validation →</a>
+  <a class="btn" href="/chronicle/entries/">Open Entries →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Publication makes history visible. Preservation keeps its path intact.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
