@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Certifier FAQ</title>
+<meta name="description" content="Frequently asked questions about Satoshium Certifier, certification architecture, evidence, Certification Packages, generated artifacts, authority boundaries, and Suite interoperability.">
+<link rel="canonical" href="https://satoshium.us/certifier/faq/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:22px;
+ color:var(--gold2);
+}
+
+.faq-body,
+.faq-body p,
+.faq-body li{
+ color:var(--muted);
+}
+
+.faq-body p{margin:0 0 12px}
+.faq-body ul{margin:8px 0 14px;padding-left:22px}
+.faq-body li{margin:5px 0}
+.faq-body strong{color:var(--text)}
+.faq-body blockquote{
+ margin:14px 0;
+ padding:10px 14px;
+ border-left:3px solid var(--gold);
+ background:rgba(214,163,74,.04);
+}
+.faq-body pre{
+ overflow-x:auto;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:12px;
+ background:#080b10;
+ color:var(--text);
+}
+.faq-body code{
+ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Certifier · Public Guidance</div>
+  <h1>Frequently Asked Questions</h1>
+  <div class="lead"></div>
+  <a class="btn" href="/certifier/">Back to Certifier →</a>
+</section>
+
+<section class="grid">
+<article class="card faq-card">
+  <h2>What is Satoshium Certifier?</h2>
+  <div class="faq-body"><p>Satoshium Certifier is the operational certification implementation of the Satoshium Suite. It reviews defined Certification Subjects against applicable Suite Standards and Suite Methodology, evaluates supporting Evidence, reaches certification determinations, and preserves the result through a canonical Certification Package.</p>
+<p>Certifier is authoritative for its own certification actions, Certification Packages, Certification Classes, lifecycle, and generated certification artifacts.</p>
+<p>Its purpose is not merely to record information, but to preserve how a subject was reviewed, what evidence was considered, what determination was reached, and how that result can be independently reviewed later.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What does Certifier certify?</h2>
+  <div class="faq-body"><p>Certifier supports certification of defined digital subjects such as:</p>
+<ul>
+<li>Pages</li>
+<li>Reports</li>
+<li>Services</li>
+<li>Workflows</li>
+<li>Datasets</li>
+<li>Tools</li>
+</ul>
+<p>Additional subject categories may be introduced through documented Certifier and Suite governance.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is a Certification Target?</h2>
+  <div class="faq-body"><p>A Certification Target is the item being reviewed.</p>
+<p>Examples include:</p>
+<ul>
+<li>A webpage</li>
+<li>A published report</li>
+<li>A software tool</li>
+<li>A workflow</li>
+<li>A dataset</li>
+<li>A service</li>
+</ul>
+<p>The target is the subject of the certification process.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is certification?</h2>
+  <div class="faq-body"><p>Certification is the process of reviewing a target against a documented standard, evaluating supporting evidence, and recording a determination.</p>
+<p>Certification is intended to create a transparent and reviewable record of that process.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is a Certification Package?</h2>
+  <div class="faq-body"><p>The Certification Package is Certifier's canonical operational record for a certification.</p>
+<p>It preserves the Certification Subject, certification boundary, governing Standards, applied Methodology, Evidence Inventory, evaluation, determination, Certification Class, lifecycle information, and generated artifact relationships.</p>
+<p>Reports, receipts, certified records, and downstream Suite references derive from the Certification Package.</p>
+<p>Reference does not transfer authority: the subject system retains authority over the subject it owns.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Does certification guarantee correctness?</h2>
+  <div class="faq-body"><p>No.</p>
+<p>Certification documents a review performed according to a defined standard and available evidence at a specific point in time.</p>
+<p>Certification does not guarantee:</p>
+<ul>
+<li>Accuracy</li>
+<li>Completeness</li>
+<li>Future performance</li>
+<li>Regulatory compliance</li>
+<li>Legal validity</li>
+</ul>
+<p>Certification records document review outcomes rather than absolute truth.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What standards are used?</h2>
+  <div class="faq-body"><p>Certifier uses documented Certification Standards.</p>
+<p>Standards define:</p>
+<ul>
+<li>Scope</li>
+<li>Requirements</li>
+<li>Evaluation criteria</li>
+<li>Evidence requirements</li>
+<li>Determination guidance</li>
+</ul>
+<p>All certification activities should be traceable to an applicable standard.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What evidence can be used?</h2>
+  <div class="faq-body"><p>Certifier may use evidence appropriate to the applicable Standard and Certification Subject, including:</p>
+<ul>
+<li>Canonical records</li>
+<li>Reports</li>
+<li>Structured data</li>
+<li>URLs and durable references</li>
+<li>Screenshots or captures</li>
+<li>Hashes and integrity metadata</li>
+<li>Notes and review observations</li>
+<li>Supporting institutional artifacts</li>
+</ul>
+<p>Evidence requirements are governed by the applicable Suite Standards and Certifier methodology rather than by a single universal evidence list.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What are Certification Classes?</h2>
+  <div class="faq-body"><p>Certification Classes communicate the level of certification granted.</p>
+<p>Version 1.0 defines:</p>
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Informational</h2>
+  <div class="faq-body"><p>The target exists and has been documented.</p>
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Operational</h2>
+  <div class="faq-body"><p>The target exists, is documented, and demonstrates operation.</p>
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Verified</h2>
+  <div class="faq-body"><p>The target has been reviewed against an established standard and is supported by documented evidence.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What are Certification Outcome, Certification Status, and Lifecycle State?</h2>
+  <div class="faq-body"><p>These concepts describe different parts of a certification record.</p>
+<p><strong>Certification Outcome</strong> records the determination reached by Certifier for the defined review.</p>
+<p>Example:</p>
+<pre><code class="language-text">Certified
+</code></pre>
+<p><strong>Certification Status</strong> communicates the current certification-domain condition of that issued certification.</p>
+<p>Example:</p>
+<pre><code class="language-text">Issued · Active
+</code></pre>
+<p><strong>Lifecycle State</strong> describes where the certification record exists in its broader institutional lifecycle.</p>
+<p>These concepts should not be collapsed into one generic status field.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is a Certification Report?</h2>
+  <div class="faq-body"><p>A Certification Report is the detailed review record supporting a certification event.</p>
+<p>Reports document:</p>
+<ul>
+<li>Evidence reviewed</li>
+<li>Findings</li>
+<li>Methodology</li>
+<li>Determinations</li>
+<li>Conditions</li>
+<li>Recommendations</li>
+</ul>
+<p>Reports provide the reasoning behind certification outcomes.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What are SCPR, SCR, and SCRD?</h2>
+  <div class="faq-body"><p>Certifier uses several generated artifact forms derived from the canonical Certification Package:</p>
+<pre><code class="language-text">SCPR
+Certification Process Report
+
+SCR
+Certification Receipt
+
+SCRD
+Satoshium Certified Record
+</code></pre>
+<p>The SCPR preserves the detailed review process and reasoning.</p>
+<p>The SCR provides a concise public-facing certification receipt.</p>
+<p>The SCRD provides the certified-record representation in human-readable and, where published, machine-readable form.</p>
+<p>These artifacts must remain traceable to and materially consistent with the canonical Certification Package.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is a Certification Receipt?</h2>
+  <div class="faq-body"><p>A Certification Receipt is a concise public-facing summary of a certification event.</p>
+<p>Receipts provide proof that certification occurred while referencing supporting reports and records.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is the difference between a Report and a Receipt?</h2>
+  <div class="faq-body"><p>A simple way to think about it:</p>
+<pre><code class="language-text">Evidence
+     ↓
+Report
+     ↓
+Receipt
+</code></pre>
+<p>Evidence supports the review.</p>
+<p>The Report explains the review.</p>
+<p>The Receipt summarizes the review.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Why are hashes used?</h2>
+  <div class="faq-body"><p>Hashes support integrity verification.</p>
+<p>They help answer a simple question:</p>
+<blockquote>
+<p>Is this the same artifact that was originally reviewed?</p>
+</blockquote>
+<p>Hashes do not prove correctness.</p>
+<p>They help verify consistency.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Why are notes considered evidence?</h2>
+  <div class="faq-body"><p>Notes preserve observations, assumptions, limitations, clarifications, and reviewer reasoning.</p>
+<p>They help explain how findings and determinations were reached.</p>
+<p>Notes preserve context that might otherwise be lost.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Does Certifier require human review?</h2>
+  <div class="faq-body"><p>Not necessarily.</p>
+<p>Version 1.0 supports:</p>
+<ul>
+<li>Human review</li>
+<li>AI-assisted review</li>
+<li>Human-AI-assisted review</li>
+<li>Automated review</li>
+</ul>
+<p>The applicable standard determines the review requirements.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Can AI perform certification?</h2>
+  <div class="faq-body"><p>AI may assist certification activities.</p>
+<p>Examples include:</p>
+<ul>
+<li>Evidence collection</li>
+<li>Analysis</li>
+<li>Documentation</li>
+<li>Review support</li>
+</ul>
+<p>However, AI-generated observations should not automatically be treated as authoritative conclusions.</p>
+<p>Certification should remain transparent and reviewable.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is Registry?</h2>
+  <div class="faq-body"><p>Satoshium Registry is the Suite institution responsible for canonical registration, durable SREG identity, classification, provenance, validation, publication, and public discovery of registered institutional records.</p>
+<p>Certifier creates and owns the certification record.</p>
+<p>Registry may create a SREG that catalogs that Certification Package while Certifier retains certification authority.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is Chronicle?</h2>
+  <div class="faq-body"><p>Satoshium Chronicle is the Suite institution responsible for preserving qualifying historical Occurrences through canonical Chronicle Entries.</p>
+<p>A qualifying certification Occurrence may be preserved by Chronicle, but Chronicle does not own or re-adjudicate the certification action. Certifier remains authoritative for the Certification Package and determination.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is Anchor?</h2>
+  <div class="faq-body"><p>Satoshium Anchor is the Suite institution designed to preserve integrity references, hashes, timestamps, signatures, and durable verification points.</p>
+<p>Anchor supports integrity without replacing Certifier's authority over certification records.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is Attestor?</h2>
+  <div class="faq-body"><p>Satoshium Attestor is the Suite institution designed to support attestations, trust statements, and independent verification of selected claims and relationships.</p>
+<p>Attestation does not replace Certifier's certification authority.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>How does Certifier fit into Satoshium?</h2>
+  <div class="faq-body"><p>At a high level:</p>
+<pre><code class="language-text">Atlas
+   ↓
+Certifier
+   ↓
+Registry
+   ↓
+Chronicle
+   ↓
+Anchor
+   ↓
+Beacon
+   ↓
+Attestor
+   ↓
+Navigator
+</code></pre>
+<p>Atlas creates information.</p>
+<p>Certifier reviews information.</p>
+<p>Registry catalogs authoritative records through SREGs.</p>
+<p>Chronicle preserves qualifying historical memory.</p>
+<p>Anchor preserves integrity references.</p>
+<p>Beacon supports discovery signals and metadata.</p>
+<p>Attestor supports attestations and trust statements.</p>
+<p>Navigator coordinates workflows and cross-system activity.</p>
+<p>Together they form a connected Suite while preserving independent institutional authority.</p>
+<p>A production example now exists:</p>
+<pre><code class="language-text">Atlas Jurisdiction Record — El Salvador
+        ↓
+SC-CERT-2026-0001
+        ↓
+SREG-2026-0001
+        ↓
+CHR-2026-0001
+</code></pre>
+<p>Each system owns its own object. Reference does not transfer authority.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Is Certifier open source?</h2>
+  <div class="faq-body"><p>Yes.</p>
+<p>Certifier is released under the MIT License unless otherwise specified.</p>
+<p>See:</p>
+<pre><code class="language-text">LICENSE
+</code></pre>
+<p>for the governing license terms.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>What is the long-term vision of Certifier?</h2>
+  <div class="faq-body"><p>The long-term vision of Certifier is to create a transparent and durable framework for documenting review, evidence, certification, and trust across digital systems.</p>
+<p>The objective is not simply to issue certifications.</p>
+<p>The objective is to create certification records that remain understandable, reviewable, and useful years into the future.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Where should I start?</h2>
+  <div class="faq-body"><p>New contributors are encouraged to begin with:</p>
+<pre><code class="language-text">README.md
+docs/certifier-overview.md
+docs/certification-philosophy.md
+docs/workflow-diagram.md
+</code></pre>
+<p>These documents provide the best introduction to the Certifier framework.</p>
+<hr />
+</div>
+</article>
+<article class="card faq-card">
+  <h2>Guiding Statement</h2>
+  <div class="faq-body"><blockquote>
+<p>Trust should not depend upon memory.</p>
+<p>Trust should not depend upon reputation.</p>
+<p>Trust should be supported by standards, evidence, and reviewable records.</p>
+<p>Satoshium Certifier exists to help preserve those records.</p>
+</blockquote>
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Clear questions preserve clear institutional boundaries.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
