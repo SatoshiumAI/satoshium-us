@@ -220,6 +220,8 @@ h1{
     <span>→</span>
     <strong>Validation</strong>
     <span>→</span>
+    <strong>Publication Gate</strong>
+    <span>→</span>
     <strong>Publication</strong>
   </div>
 
@@ -571,15 +573,17 @@ h1{
   <h2>Relationship to Publication</h2>
 
   <p>
-    Validation is a publication gate, not publication itself.
+    Validation feeds the Publication Gate; it is not the Publication Gate or Publication itself.
   </p>
 
   <div class="flow" aria-label="Chronicle Validation and Publication distinction">
     <strong>Validation PASS</strong>
     <span>→</span>
-    <strong>Eligible to Proceed</strong>
+    <strong>CHR-VAL-011 PASS</strong>
     <span>→</span>
-    <strong>Publication Decision</strong>
+    <strong>Publication Gate</strong>
+    <span>→</span>
+    <strong>Publication when Approved</strong>
   </div>
 
   <p>
@@ -627,30 +631,45 @@ h1{
 
 <section style="margin-top:18px;">
 <article class="card">
-  <h2>Current Production Foundation</h2>
+  <h2>Production Validation in Operation</h2>
 
   <p>
-    Chronicle enters Phase VIII with a validated production schema stack:
+    Chronicle's Validation architecture has now been exercised in live production.
+    Entry Version 1 of <strong>CHR-2026-0001</strong> completed the full CHR-VAL
+    sequence on August 22, 2026.
   </p>
 
-  <div class="code-block">chronicle-base-schema.json
+  <div class="code-block">Chronicle Base Schema v1.0.0
         +
-certification-event-profile.json
+Certification Event-Type Profile v1.0.0
+        +
+CHR-VAL-001 through CHR-VAL-014
         =
-validated certification-related Chronicle Entry structure</div>
+OVERALL VALIDATION: PASS</div>
+
+  <div class="note">
+    CHR-VAL-010: Not Applicable<br>
+    CHR-VAL-011 Publication Readiness: PASS<br>
+    Publication Gate: APPROVED FOR PUBLICATION<br>
+    Publication then executed as a separate institutional action.
+  </div>
 
   <p style="margin-top:14px;">
-    The Phase VII two-layer validation work demonstrated that machine-readable
-    conformance can be tested without collapsing Validation into Verification or
-    institutional authority.
+    The durable production Validation artifact is
+    <strong>CHR-2026-0001-v1-validation.md</strong>. It is associated with Entry
+    Version 1 and does not constitute a separate canonical Chronicle object.
   </p>
+
+  <a class="btn" href="/chronicle/entries/CHR-2026-0001/">
+    Open CHR-2026-0001 →
+  </a>
+
+  <a class="btn" href="/chronicle/entries/CHR-2026-0001/CHR-2026-0001-v1-validation.md">
+    Open Validation Artifact →
+  </a>
 
   <a class="btn" href="/chronicle/schemas/">
     Open Chronicle Schemas →
-  </a>
-
-  <a class="btn" href="/chronicle/schemas/certification-event-profile/">
-    Open Certification Event-Type Profile →
   </a>
 </article>
 </section>
