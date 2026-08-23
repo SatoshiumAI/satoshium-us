@@ -2,17 +2,17 @@
 
 ## What is Satoshium Certifier?
 
-Satoshium Certifier is a standards-based certification framework designed to review digital artifacts, evaluate evidence, and produce structured records documenting certification outcomes.
+Satoshium Certifier is the operational certification implementation of the Satoshium Suite. It reviews defined Certification Subjects against applicable Suite Standards and Suite Methodology, evaluates supporting Evidence, reaches certification determinations, and preserves the result through a canonical Certification Package.
 
-Certifier serves as the trust layer of the Satoshium ecosystem.
+Certifier is authoritative for its own certification actions, Certification Packages, Certification Classes, lifecycle, and generated certification artifacts.
 
-Its purpose is not merely to record information, but to document how information, services, workflows, and other targets were reviewed.
+Its purpose is not merely to record information, but to preserve how a subject was reviewed, what evidence was considered, what determination was reached, and how that result can be independently reviewed later.
 
 ---
 
 ## What does Certifier certify?
 
-Version 1.0 supports certification of:
+Certifier supports certification of defined digital subjects such as:
 
 * Pages
 * Reports
@@ -21,7 +21,7 @@ Version 1.0 supports certification of:
 * Datasets
 * Tools
 
-Future versions may support additional target categories.
+Additional subject categories may be introduced through documented Certifier and Suite governance.
 
 ---
 
@@ -47,6 +47,18 @@ The target is the subject of the certification process.
 Certification is the process of reviewing a target against a documented standard, evaluating supporting evidence, and recording a determination.
 
 Certification is intended to create a transparent and reviewable record of that process.
+
+---
+
+## What is a Certification Package?
+
+The Certification Package is Certifier's canonical operational record for a certification.
+
+It preserves the Certification Subject, certification boundary, governing Standards, applied Methodology, Evidence Inventory, evaluation, determination, Certification Class, lifecycle information, and generated artifact relationships.
+
+Reports, receipts, certified records, and downstream Suite references derive from the Certification Package.
+
+Reference does not transfer authority: the subject system retains authority over the subject it owns.
 
 ---
 
@@ -86,15 +98,18 @@ All certification activities should be traceable to an applicable standard.
 
 ## What evidence can be used?
 
-Version 1.0 recognizes several evidence types:
+Certifier may use evidence appropriate to the applicable Standard and Certification Subject, including:
 
-* Screenshots
+* Canonical records
 * Reports
-* URLs
-* Hashes
-* Notes
+* Structured data
+* URLs and durable references
+* Screenshots or captures
+* Hashes and integrity metadata
+* Notes and review observations
+* Supporting institutional artifacts
 
-Additional evidence categories may be introduced in future versions.
+Evidence requirements are governed by the applicable Suite Standards and Certifier methodology rather than by a single universal evidence list.
 
 ---
 
@@ -118,44 +133,29 @@ The target has been reviewed against an established standard and is supported by
 
 ---
 
-## What are Status Determinations?
+## What are Certification Outcome, Certification Status, and Lifecycle State?
 
-Status Determinations communicate the outcome of a review.
+These concepts describe different parts of a certification record.
 
-Version 1.0 defines:
+**Certification Outcome** records the determination reached by Certifier for the defined review.
 
-* Pass
-* Conditional Pass
-* Fail
-* Revoked
+Example:
 
-These values describe the certification outcome.
+```text
+Certified
+```
 
----
+**Certification Status** communicates the current certification-domain condition of that issued certification.
 
-## What is the difference between a Status and a Lifecycle State?
+Example:
 
-Status describes the determination reached during review.
+```text
+Issued · Active
+```
 
-Examples:
+**Lifecycle State** describes where the certification record exists in its broader institutional lifecycle.
 
-* Pass
-* Conditional Pass
-* Fail
-* Revoked
-
-Lifecycle State describes where the certification record exists within its lifecycle.
-
-Examples:
-
-* Created
-* Reviewed
-* Certified
-* Expired
-* Revoked
-* Archived
-
-The two concepts serve different purposes.
+These concepts should not be collapsed into one generic status field.
 
 ---
 
@@ -173,6 +173,31 @@ Reports document:
 * Recommendations
 
 Reports provide the reasoning behind certification outcomes.
+
+---
+
+## What are SCPR, SCR, and SCRD?
+
+Certifier uses several generated artifact forms derived from the canonical Certification Package:
+
+```text
+SCPR
+Certification Process Report
+
+SCR
+Certification Receipt
+
+SCRD
+Satoshium Certified Record
+```
+
+The SCPR preserves the detailed review process and reasoning.
+
+The SCR provides a concise public-facing certification receipt.
+
+The SCRD provides the certified-record representation in human-readable and, where published, machine-readable form.
+
+These artifacts must remain traceable to and materially consistent with the canonical Certification Package.
 
 ---
 
@@ -262,35 +287,35 @@ Certification should remain transparent and reviewable.
 
 ## What is Registry?
 
-Registry is a future Satoshium subsystem responsible for cataloging certification records and making them discoverable.
+Satoshium Registry is the Suite institution responsible for canonical registration, durable SREG identity, classification, provenance, validation, publication, and public discovery of registered institutional records.
 
-Certifier creates certification records.
+Certifier creates and owns the certification record.
 
-Registry organizes them.
+Registry may create a SREG that catalogs that Certification Package while Certifier retains certification authority.
 
 ---
 
 ## What is Chronicle?
 
-Chronicle is a future Satoshium subsystem focused on preserving historical records and milestones.
+Satoshium Chronicle is the Suite institution responsible for preserving qualifying historical Occurrences through canonical Chronicle Entries.
 
-Certification events may become Chronicle entries.
+A qualifying certification Occurrence may be preserved by Chronicle, but Chronicle does not own or re-adjudicate the certification action. Certifier remains authoritative for the Certification Package and determination.
 
 ---
 
 ## What is Anchor?
 
-Anchor is a future Satoshium subsystem intended to preserve hashes, proof references, and integrity records.
+Satoshium Anchor is the Suite institution designed to preserve integrity references, hashes, timestamps, signatures, and durable verification points.
 
-Anchor supports long-term preservation.
+Anchor supports integrity without replacing Certifier's authority over certification records.
 
 ---
 
 ## What is Attestor?
 
-Attestor is a future Satoshium subsystem intended to support independent verification and attestation activities.
+Satoshium Attestor is the Suite institution designed to support attestations, trust statements, and independent verification of selected claims and relationships.
 
-Attestor may provide additional trust through secondary review and confirmation.
+Attestation does not replace Certifier's certification authority.
 
 ---
 
@@ -309,22 +334,44 @@ Chronicle
    ↓
 Anchor
    ↓
+Beacon
+   ↓
 Attestor
+   ↓
+Navigator
 ```
 
 Atlas creates information.
 
 Certifier reviews information.
 
-Registry catalogs information.
+Registry catalogs authoritative records through SREGs.
 
-Chronicle records history.
+Chronicle preserves qualifying historical memory.
 
-Anchor preserves integrity.
+Anchor preserves integrity references.
 
-Attestor verifies claims.
+Beacon supports discovery signals and metadata.
 
-Together they form a connected ecosystem.
+Attestor supports attestations and trust statements.
+
+Navigator coordinates workflows and cross-system activity.
+
+Together they form a connected Suite while preserving independent institutional authority.
+
+A production example now exists:
+
+```text
+Atlas Jurisdiction Record — El Salvador
+        ↓
+SC-CERT-2026-0001
+        ↓
+SREG-2026-0001
+        ↓
+CHR-2026-0001
+```
+
+Each system owns its own object. Reference does not transfer authority.
 
 ---
 
