@@ -160,8 +160,8 @@ h1{
     Chronicle Base Schema, specialized Event-Type Profiles, governed Controlled Values,
     explicit Schema Versions, machine-readable schema validation, and compatibility
     rules that preserve older records without silent structural rewriting. Phase VIII
-    now applies those contracts through Chronicle's institutional Validation and
-    Entry Production Procedure.
+    applies those contracts through Chronicle's institutional Validation and Entry
+    Production Procedure, which have now been exercised in production.
   </p>
 </section>
 
@@ -510,14 +510,15 @@ h1{
   <h2>Current Production Position</h2>
 
   <p>
-    The production schema stack is complete and now feeds directly into the Phase VIII
-    operational layer.
+    The production schema stack is complete and has been exercised through Chronicle's
+    Phase VIII operational layer and first canonical production Entry.
   </p>
 
   <div class="note">
     Chronicle Base Schema → Certification Event-Type Profile → Phase VII Schema Validation PASS →
     Chronicle Validation Rules → Validation Sequence → Validation Behavior / Record →
-    Chronicle Entry Production Procedure → Operational Dry Run → First Production Chronicle Entry
+    Chronicle Entry Production Procedure → Operational Dry Run PASS →
+    CHR-2026-0001 Production Validation PASS → Publication Gate APPROVED → Published
   </div>
 </article>
 
@@ -540,6 +541,33 @@ h1{
   <p style="margin-top:14px;">
     A machine-readable schema PASS is necessary where the machine-readable Entry is
     required, but it does not by itself establish overall Chronicle Validation PASS.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>First Production Schema Application</h2>
+
+  <p>
+    The production schema stack has now governed a real Chronicle Entry:
+    <strong>CHR-2026-0001 Entry Version 1</strong>.
+  </p>
+
+  <div class="note">
+    schema_id: chronicle-entry<br>
+    schema_version: 1.0.0<br>
+    event_type_profile: certification-event-profile<br>
+    Profile Version: 1.0.0<br>
+    Machine / Institutional Validation: PASS
+  </div>
+
+  <p style="margin-top:14px;">
+    The production case confirmed the intended two-layer model: machine-readable
+    schema conformance is necessary where applicable, while overall Chronicle
+    Validation also evaluates institutional rules that schema alone cannot establish.
   </p>
 </article>
 
