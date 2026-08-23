@@ -287,9 +287,15 @@ Rules:
 
 Date or timestamp associated with the historical Occurrence.
 
-**Requirement:** Required when determinable.
+**Requirement:** Required field.
 
-If exact temporal precision cannot be established, the production schema may later support an approved structured uncertainty representation.
+The field must always be present. When the Event Date cannot be determined under current Chronicle rules, the Base Schema permits:
+
+```text
+null
+```
+
+An Event-Type Profile may strengthen this requirement and prohibit `null`. The Certification Event-Type Profile does so for certification-related Entries.
 
 Chronicle must preserve the distinction among:
 
@@ -465,9 +471,9 @@ It is distinct from:
 
 * Verification State
 * Publication State
-* Entry Status
+* Validation result
 
-`Preserved` remains subject to production review for long-term necessity.
+Chronicle does not use a generic Entry Status as a canonical production state system.
 
 ---
 
@@ -795,13 +801,15 @@ is expected to be required by the Certification Event-Type Profile rather than b
 
 ## Generic Entry Status
 
-The Base Schema does not presently require:
+The Base Schema does not use:
 
 ```text
 entry_status
 ```
 
-Chronicle already has:
+as a canonical production field.
+
+Chronicle already separates:
 
 ```text
 Lifecycle State
@@ -809,28 +817,34 @@ Verification State
 Publication State
 ```
 
-Entry Status remains under architectural review for redundancy.
-
-If production use demonstrates a distinct need, it may later be added through schema evolution.
+A generic Entry Status would duplicate or blur those defined state systems and is therefore not part of the Version 1.0.0 Base Schema.
 
 ---
 
-## Validation State
+## Validation Result
 
 The Base Schema is designed to be validated.
 
-It does not presently require a universal embedded:
+It does not require a universal embedded:
 
 ```text
 validation_state
 ```
 
-The Validation Procedure should determine whether Validation results live:
+or:
 
-* directly on the Entry,
-* in publication metadata,
-* in a Validation Record,
-* or in another production artifact.
+```text
+validation_result
+```
+
+Production Chronicle Validation produces an overall:
+
+```text
+PASS
+FAIL
+```
+
+result for the exact Entry Version evaluated. Full Validation detail is preserved in a lightweight Version-specific Validation artifact, with minimal publication-facing linkage where useful. Validation is not a universal Base Schema field and does not create a separate canonical Chronicle object.
 
 This preserves the distinction:
 
@@ -1082,7 +1096,7 @@ Breaking changes should require:
 
 # Validation Expectations
 
-A production Chronicle Entry should ultimately be validated against:
+A production Chronicle Entry is validated against:
 
 ```text
 Chronicle Base Schema
@@ -1161,11 +1175,15 @@ A distinct qualifying Occurrence receives a new Chronicle Entry rather than a ne
 
 ---
 
-# Production Example
+# First Production Application
 
-The following example demonstrates only universal Base Schema structure plus a small number of conditional references.
+The Version 1.0.0 Base Schema has now governed Chronicle's first canonical production Entry:
 
-It does not define the Certification Event-Type Profile.
+```text
+CHR-2026-0001
+```
+
+The following abbreviated representation reflects the published production state while illustrating Base Schema structure and conditional extension points:
 
 ```yaml
 entry_id: CHR-2026-0001
@@ -1176,35 +1194,47 @@ entry_version: 1
 title: Creation of SC-CERT-2026-0001
 
 summary: >
-  Satoshium Certifier created the authoritative Certification
-  Package identified as SC-CERT-2026-0001 on July 5, 2026.
+  Satoshium Certifier issued the authoritative Certification Package
+  SC-CERT-2026-0001 on July 5, 2026, establishing the inaugural
+  Operational certification of the Satoshium Atlas Jurisdiction Record
+  — El Salvador.
 
 event_type: certification_created
 event_date: 2026-07-05
 
 historical_context: >
-  Chronicle preserves this Occurrence as part of the documented
-  institutional history of the Satoshium Suite.
+  SC-CERT-2026-0001 marked the inaugural Operational certification
+  issued by Satoshium Certifier and an early cross-system Suite
+  interoperability milestone.
 
 provenance:
-  origin: satoshium_certifier
-  acquisition_method: direct_authoritative_record_reference
-  retrieved_at: <TIMESTAMP>
-  authoritative_record_reference: SC-CERT-2026-0001
+  origin: Satoshium Certifier
+  acquisition_method: production_review_of_authoritative_and_supporting_suite_records
+  retrieved_at: 2026-08-22T08:06:00-07:00
+  authoritative_record_reference:
+    reference: SC-CERT-2026-0001
+    system: certifier
+    record_type: Certification Package
 
-verification_state: not_reviewed
-lifecycle_state: draft
-publication_state: not_published
+verification_state: verified
+lifecycle_state: active
+publication_state: published
 
-entry_created_at: <TIMESTAMP>
+entry_created_at: 2026-08-22T08:06:00-07:00
+published_at: 2026-08-22T08:38:00-07:00
 
 event_type_profile: certification-event-profile
+originating_system: certifier
 
 authoritative_record_references:
-  - SC-CERT-2026-0001
+  - reference: SC-CERT-2026-0001
+    system: certifier
+    record_type: Certification Package
 ```
 
-Certification-specific requirements shown here must be governed by the Certification Event-Type Profile rather than by the Base Schema itself.
+Certification-specific constraints remain governed by the Certification Event-Type Profile rather than by the universal Base Schema itself.
+
+The production case confirms that the Base Schema can represent a verified, active, published Entry without embedding Preservation Eligibility, Validation result, Publication Gate decision, or a generic Entry Status.
 
 ---
 
@@ -1275,13 +1305,13 @@ evidence-record-schema.md
 correction-record-schema.md
 ```
 
-Current Event-Type Profile work:
+Current production Event-Type Profile:
 
 ```text
-Certification Event-Type Profile
+Certification Event-Type Profile · Version 1.0.0
 ```
 
-The Certification Event-Type Profile specializes this Base Schema without altering its universal boundary.
+The Certification Event-Type Profile specializes this Base Schema without altering its universal boundary and has now been exercised through CHR-2026-0001.
 
 ---
 
@@ -1310,3 +1340,24 @@ chronicle-base-schema.json
 ```
 
 The Certification Event-Type Profile supplies Certification-specific requirements without altering the universal Base Schema boundary. The Base Schema now explicitly permits `originating_system` as a conditional extension point so applicable Profiles may require and constrain it without making it universal.
+
+
+---
+
+# Production Reconciliation — August 22, 2026
+
+The Base Schema Version 1.0.0 was exercised against the first canonical production Chronicle Entry, `CHR-2026-0001`.
+
+Result:
+
+```text
+Base Schema conformance: PASS
+Certification Event-Type Profile conformance: PASS
+Institutional Chronicle Validation: PASS
+Publication Gate: APPROVED
+Publication State: published
+```
+
+No Base Schema field or validation-semantic change was required as a result of the first production application.
+
+The machine-readable `chronicle-base-schema.json` therefore remains unchanged in this reconciliation.
