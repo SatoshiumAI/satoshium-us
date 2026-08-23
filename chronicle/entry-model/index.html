@@ -165,7 +165,8 @@ h1{
 
   <p class="lead">
     The Chronicle Entry Model defines the canonical conceptual structure of a
-    Chronicle Entry before that structure is implemented in formal schemas.
+    Chronicle Entry and is implemented through the Chronicle Base Schema and,
+    where applicable, an Event-Type Profile.
   </p>
 
   <p class="lead">
@@ -191,8 +192,9 @@ h1{
 
   <p style="margin-top:14px;">
     The Entry Model defines the conceptual anatomy of that canonical object.
-    It does not yet freeze field names, identifier formats, controlled values,
-    machine-readable schema syntax, or final validation rules.
+    Formal field names, identifier syntax, Controlled Values, machine-readable
+    structure, and Validation requirements are governed by Chronicle's production
+    schemas and institutional specifications.
   </p>
 </article>
 
@@ -342,10 +344,11 @@ h1{
 </article>
 
 <article class="card">
-  <h2>Lifecycle / Status</h2>
+  <h2>Lifecycle State</h2>
   <p>
-    Represents the Entry's institutional state within Chronicle's own lifecycle,
-    independent of the lifecycle or status of the underlying object preserved by the Entry.
+    Represents the Entry's institutional lifecycle condition within Chronicle,
+    independent of Verification State, Publication State, Validation result, or the
+    lifecycle/status of the underlying object preserved by the Entry.
   </p>
   <span class="req">Required</span>
 </article>
@@ -367,7 +370,7 @@ h1{
   <div class="note">
     Identity · Event Representation · Temporal Information · Event Type ·
     Historical Context · Provenance · Verification · Version ·
-    Publication State · Lifecycle / Status
+    Publication State · Lifecycle State
   </div>
 </article>
 
@@ -464,15 +467,46 @@ h1{
   <h2>Entry Model and Schemas</h2>
 
   <p>
-    The Entry Model defines the logical structure first.
-    The Chronicle Base Schema will later translate that model into formal fields,
-    required properties, data types, controlled values, relationships, and
-    machine-readable validation rules.
+    The Entry Model defines the logical structure. The Chronicle Base Schema
+    translates that model into formal fields, required properties, data types,
+    Controlled Values, Relationships, and machine-readable Validation rules.
+    Event-Type Profiles specialize the Base Schema for governed Event Types.
   </p>
 
   <div class="note">
     Entry Model → Base Schema → Event-Type Profile → Production Chronicle Entry
   </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>First Production Entry Model Application</h2>
+
+  <p>
+    The Entry Model has now been exercised through
+    <strong>CHR-2026-0001 Entry Version 1</strong>.
+  </p>
+
+  <div class="note">
+    Identity: CHR-2026-0001<br>
+    Event Type: certification_created<br>
+    Event Date: 2026-07-05<br>
+    Historical Context: preserved<br>
+    Provenance: preserved<br>
+    Relationships: related_to SREG-2026-0001; references Atlas Jurisdiction Record — El Salvador<br>
+    Verification State: verified<br>
+    Lifecycle State: active<br>
+    Publication State: published
+  </div>
+
+  <p style="margin-top:14px;">
+    The production Entry confirmed that the same canonical Chronicle Entry can carry
+    the required historical, structural, traceability, review, and lifecycle components
+    without creating a competing canonical “Event” or generic Status object.
+  </p>
 </article>
 
 </section>
