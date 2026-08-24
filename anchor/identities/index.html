@@ -12,7 +12,7 @@
 
 <title>Satoshium Anchor · Identities</title>
 
-<meta name="description" content="Satoshium Anchor Identities — persistent entities capable of making claims, receiving attestations, building reputation, and participating within trust systems.">
+<meta name="description" content="Satoshium Anchor Identities — defines how Anchor records Source Institution, signer, key, system, and responsible-entity references needed for attribution and integrity verification without operating an identity system.">
 
 <link rel="canonical" href="https://satoshium.us/anchor/identities/">
 
@@ -187,70 +187,116 @@ h1{
 
   <div class="eyebrow">Anchor · Identities</div>
 
-  <h1>Identities</h1>
+  <h1>Identity and Attribution References</h1>
 
   <p class="lead">
-    Identities are persistent entities capable of making claims,
-    receiving attestations, building reputation, and participating
-    within trust systems.
+    Anchor does not establish a general-purpose identity system.
+    Within Anchor, identity information exists only where it is necessary
+    to attribute an Integrity Reference, signature, key, process,
+    Source Institution, or other integrity-related action.
   </p>
 
   <p class="lead">
-    Anchor explores how identities may be represented,
-    referenced, and understood across interoperable
-    digital environments.
+    The purpose of this section is therefore attribution:
+    preserving enough identity context to understand who or what produced,
+    signed, published, verified, or maintained Anchor integrity material.
   </p>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Identity Boundary</h2>
+
+  <p>
+    Anchor may reference identities.
+    Anchor does not become the authoritative identity provider merely by
+    preserving those references.
+  </p>
+
+  <div class="note">
+    Identity Reference ≠ Identity Authority
+  </div>
+
+  <div class="note">
+    Reference does not transfer authority.
+  </div>
+
+</article>
 
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Individual Identities</h2>
+  <h2>Source Institution</h2>
 
   <p>
-    Future identity systems may represent individual
-    participants while preserving transparency,
-    accountability, and portability.
+    Anchor should identify the institution or system that owns the
+    Authoritative Artifact being anchored.
   </p>
 
-  <span class="status">Future</span>
+  <span class="status">Foundation</span>
 </article>
 
 <article class="card">
-  <h2>Organizational Identities</h2>
+  <h2>Producing System</h2>
 
   <p>
-    Organizations, institutions, communities,
-    and other collective entities may also
-    participate within identity frameworks.
+    Where relevant, Anchor may record which technical system, service,
+    workflow, or process generated the Integrity Value or Integrity Reference.
   </p>
 
-  <span class="status">Future</span>
+  <span class="status">Foundation</span>
 </article>
 
 <article class="card">
-  <h2>Agent Identities</h2>
+  <h2>Signer Reference</h2>
 
   <p>
-    Future systems may support digital agents,
-    automated services, and intelligent systems
-    operating as identifiable participants.
+    Where digital signatures are used, Anchor may preserve a signer,
+    signing-system, or signing-authority reference sufficient for later
+    signature verification and attribution.
   </p>
 
-  <span class="status">Exploratory</span>
+  <span class="status">Developing</span>
 </article>
 
 <article class="card">
-  <h2>Identity Standards</h2>
+  <h2>Key Reference</h2>
 
   <p>
-    Standards may define how identities are
-    structured, referenced, linked, and
-    maintained over time.
+    Anchor may preserve the key identifier, certificate reference, public-key
+    reference, or other governed key metadata necessary to interpret a signature.
   </p>
 
-  <span class="status">Planned</span>
+  <span class="status">Developing</span>
+</article>
+
+<article class="card">
+  <h2>Reviewer Attribution</h2>
+
+  <p>
+    Where institutional review requires attribution, Anchor may record the
+    person, role, system, or process responsible for Verification,
+    Publication, Correction, or another material Anchor action.
+  </p>
+
+  <span class="status">Developing</span>
+</article>
+
+<article class="card">
+  <h2>External Identity Reference</h2>
+
+  <p>
+    Anchor may reference an externally governed identity or identifier when
+    needed for verification or accountability, but it should not duplicate
+    the identity record or redefine its authoritative meaning.
+  </p>
+
+  <span class="status">Foundation</span>
 </article>
 
 </section>
@@ -259,16 +305,108 @@ h1{
 
 <article class="card">
 
-  <h2>Identity Layer</h2>
+  <h2>Attribution Model</h2>
+
+  <div class="note">
+    Source Institution → Authoritative Artifact → Integrity Reference<br>
+    Producing System / Signer / Key → Integrity Material<br>
+    Reviewer / Process → Verification or Anchor Action
+  </div>
+
+  <p style="margin-top:14px;">
+    Attribution provides context for integrity operations.
+    It does not create reputation, trust, credentials, or identity authority.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>What Anchor Needs to Know</h2>
 
   <p>
-    Identity provides the foundation upon which
-    claims, attestations, reputation, and trust
-    systems are built.
+    Anchor should preserve only identity-related information necessary to
+    understand and later verify the integrity relationship.
   </p>
 
   <div class="note">
-    Identity → Claim → Attestation → Reputation → Trust
+    Who owns the Source Artifact?<br>
+    What system produced the Integrity Value?<br>
+    What signer or key was used?<br>
+    What process performed Verification?<br>
+    What authority or role approved a material Anchor action?
+  </div>
+
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Institution vs. Person</h2>
+
+  <p>
+    A Source Institution may be sufficient attribution for many Anchor records.
+    Anchor should not require personal identity where institutional or system
+    attribution provides the necessary accountability.
+  </p>
+</article>
+
+<article class="card">
+  <h2>System vs. Agent</h2>
+
+  <p>
+    Automated systems, services, software agents, or AI-assisted processes may
+    be referenced where relevant, but Anchor should record their operational
+    role rather than treating them as members of a general identity network.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Signer vs. Authority</h2>
+
+  <p>
+    A signer or signing key may demonstrate that a signature was produced by
+    a particular key or system. It does not automatically establish the
+    substantive authority of the Source Artifact.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Attribution vs. Trust</h2>
+
+  <p>
+    Attribution identifies who or what participated in an Anchor action.
+    It does not determine whether that participant is trustworthy or reputable.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Privacy and Minimum Necessary Identity Data</h2>
+
+  <p>
+    Anchor should preserve only the identity information necessary for
+    integrity review, accountability, or verification.
+  </p>
+
+  <p>
+    Personal data should not be collected merely because it could be useful.
+    Institutional, role-based, system-based, or key-based attribution may often
+    be sufficient.
+  </p>
+
+  <div class="note">
+    Preserve necessary attribution. Avoid unnecessary identity accumulation.
   </div>
 
 </article>
@@ -279,20 +417,121 @@ h1{
 
 <article class="card">
 
-  <h2>Identity Philosophy</h2>
+  <h2>Identity Persistence</h2>
 
   <p>
-    Trust systems require participants.
-    Before claims can be evaluated, there must
-    be a framework for understanding who or
-    what is making those claims.
+    A signer, key, institution, system, or reviewer reference may later change,
+    expire, rotate, be revoked, or become unavailable.
   </p>
 
   <p>
-    Anchor explores identity as a foundation
-    for accountability, transparency, and
-    long-term trust relationships.
+    Anchor should preserve the identity context that was valid for the historical
+    Integrity Reference rather than silently rewriting earlier attribution.
   </p>
+
+  <div class="note">
+    Historical attribution should remain reconstructable even when current identity state changes.
+  </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Key Rotation and Revocation</h2>
+
+  <p>
+    If signing keys or certificates are used, later rotation or revocation does
+    not automatically invalidate a historical Integrity Reference.
+  </p>
+
+  <p>
+    Anchor should preserve enough temporal and verification context to determine
+    which key applied when the signature or Integrity Reference was created.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>What Anchor Does Not Do</h2>
+
+  <div class="note">
+    issue personal identities<br>
+    authenticate users<br>
+    create decentralized identity networks<br>
+    issue credentials<br>
+    determine legal identity<br>
+    build reputation profiles<br>
+    score trustworthiness<br>
+    govern delegated identity relationships<br>
+    create identity hierarchies<br>
+    determine whether an identity should be trusted
+  </div>
+
+  <p style="margin-top:14px;">
+    Those functions are outside Anchor's integrity-preservation authority.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Relationship to Other Suite Institutions</h2>
+
+  <p>
+    Identity and attribution information should remain subordinate to the
+    canonical object and authority of the institution being referenced.
+  </p>
+
+  <div class="note">
+    Certifier identity context does not replace the Certification Package.<br>
+    Registry identity context does not replace the Satoshium Registry Entry.<br>
+    Chronicle identity context does not replace the Chronicle Entry.<br>
+    Attestor identity context does not replace the Trust Statement.
+  </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Identity and Attribution Principle</h2>
+
+  <p>
+    Anchor should preserve enough identity context to make integrity actions
+    attributable and reviewable without becoming a general identity institution.
+  </p>
+
+  <div class="note">
+    Attribute the integrity action. Do not absorb the identity authority.
+  </div>
+
+  <a class="btn" href="/anchor/purpose/">
+    Purpose →
+  </a>
+
+  <a class="btn" href="/anchor/definitions/">
+    Definitions →
+  </a>
+
+  <a class="btn" href="/anchor/governance/">
+    Governance →
+  </a>
 
   <a class="btn" href="/anchor/">
     Back to Anchor →
@@ -310,7 +549,7 @@ h1{
   <div id="random-saying"
        class="muted"
        style="margin-bottom:14px; max-width:760px;">
-    Identity establishes presence. Reputation emerges through participation.
+    Attribution explains who or what acted. Integrity preserves what that action produced.
   </div>
 
   <hr>
