@@ -1,686 +1,609 @@
-# Chronicle Trust Model
+# Trust
+
+## Overview
+
+Within the current Satoshium Anchor architecture, **Trust** is not an Anchor-owned institutional function.
+
+Anchor does not determine trustworthiness.
+
+Anchor does not issue Trust Statements.
+
+Anchor does not calculate trust scores or maintain trust relationships.
+
+Within the Satoshium Suite:
+
+```text
+Attestor
+→ Trust Statement
+
+Anchor
+→ Integrity Reference
+```
+
+Anchor's role is narrower:
+
+> Preserve the integrity of a defined Trust Statement or other trust-related artifact when that preservation has durable institutional value.
+
+The governing distinction is:
+
+```text
+Trust Judgment
+≠
+Trust Artifact Integrity
+```
+
+---
 
 ## Purpose
 
-The Chronicle Trust Model defines how Satoshium Chronicle establishes reviewable historical trust.
+The `/anchor/trust/` route is retained for continuity.
 
-Chronicle does not ask users to trust a historical record merely because Chronicle publishes it.
+Its current purpose is to define how Anchor handles trust-related artifacts without becoming the trust authority.
 
-Trust is constructed through transparent institutional structure, including:
+Potential trust-related artifacts include:
 
-* Preservation Eligibility
-* Stable Chronicle Entry identity
-* Authoritative references
-* Sources
-* Evidence
-* Provenance
-* Verification
-* Validation
-* Corrections
-* Version lineage
-* Publication controls
-* Long-term preservation
+- Trust Statements;
+- trust signals;
+- confidence statements;
+- trust assessments;
+- warnings;
+- recommendations;
+- trust scores;
+- trust methodology documents;
+- decision frameworks;
+- trust-related governance records.
 
-The objective is not blind trust.
+Anchor may preserve Integrity References for these artifacts.
 
-The objective is **reviewable trust**.
+Anchor does not adopt their conclusions.
 
 ---
 
-## Core Principle
+# Relationship to Attestor
 
-Chronicle trust should be inspectable.
+Satoshium Attestor remains authoritative for:
 
-A reviewer should be able to understand:
+- Trust Statements;
+- trust judgments;
+- Attestor identifiers;
+- Attestor-controlled metadata;
+- Attestor Versions;
+- Attestor Corrections;
+- Attestor lifecycle;
+- Attestor publication.
 
-* Why an Occurrence was preserved
-* Which authoritative system established the underlying action or state
-* Which Sources existed
-* Which Evidence was available
-* How information entered Chronicle
-* What Verification occurred
-* Whether the record passed Validation
-* What limitations were known
-* Whether Corrections occurred
-* How the record changed over time
-* Whether prior substantive states remain preserved
+Anchor may preserve an Integrity Reference for a defined Trust Statement representation.
 
 Conceptually:
 
 ```text
-Occurrence
-    ↓
-Preservation Eligibility
-    ↓
-Chronicle Entry
-    ↓
-Authoritative References
-Sources
-Evidence
-Provenance
-    ↓
-Verification
-    ↓
-Validation
-    ↓
-Publication
-    ↓
-Corrections / Versions
-    ↓
-Historical Preservation
+Attestor
+        ↓
+Trust Statement
+        ↓
+Canonical Representation
+        ↓
+Anchor Integrity Reference
 ```
 
----
-
-## Trust Boundary
-
-Chronicle is authoritative for its own historical-preservation records.
-
-It is not automatically authoritative for the underlying object, determination, action, or state being preserved.
-
-This distinction is fundamental.
-
-Examples:
-
-* Certifier remains authoritative for Certification Packages and certification determinations.
-* Registry remains authoritative for SREG Registry Entries and Registry lifecycle.
-* Anchor remains authoritative for Integrity References.
-* Beacon remains authoritative for Discovery Signals and Discovery Metadata.
-* Attestor remains authoritative for Trust Statements and attestations.
-* Navigator remains authoritative for Workflow Definitions and orchestration.
-* Atlas remains authoritative for its own source intelligence, jurisdiction data, evidence, metadata, and related records.
-* Chronicle remains authoritative for Chronicle Entries and Chronicle historical-preservation state.
-
-Conceptually:
+Anchor does not become the trust authority.
 
 > Reference does not transfer authority.
 
-Chronicle trust depends partly on preserving this boundary clearly.
+---
+
+# Trust Artifact
+
+A **Trust Artifact** is a statement, score, signal, warning, recommendation, assessment, methodology, or other governed representation containing trust-related information.
+
+Potential examples include:
+
+```text
+Trust Statement
+confidence assessment
+trust score
+warning
+recommendation
+risk judgment
+trust framework
+evaluation methodology
+decision rule
+```
+
+A Trust Artifact may become an Anchor candidate where later integrity verification provides durable value.
 
 ---
 
-## Canonical Object
+# Source Authority
 
-The canonical Chronicle object is the **Chronicle Entry**.
+The Source Institution remains authoritative for:
 
-The Occurrence is what happened.
+- trust meaning;
+- trust methodology;
+- trust conclusion;
+- publication;
+- lifecycle;
+- Correction;
+- Versioning;
+- withdrawal;
+- replacement.
 
-The Chronicle Entry is Chronicle's structured historical-preservation record representing that qualifying Occurrence.
-
-The Trust Model therefore applies primarily to the integrity, reviewability, traceability, and preservation of Chronicle Entries and their supporting records.
-
----
-
-## Preservation Eligibility and Trust
-
-Trust begins before record creation.
-
-Chronicle should not preserve every activity merely because it occurred.
-
-An Occurrence should first satisfy **Preservation Eligibility**.
-
-Preservation Eligibility asks:
-
-> Should Chronicle preserve this occurrence?
-
-This prevents Chronicle from becoming an indiscriminate activity log.
-
-A preservation decision should be traceable to an approved basis such as:
-
-* An approved Event Type
-* An approved preservation class
-* Historical Significance
-* Another approved Chronicle preservation rule
-
-Preservation Eligibility does not establish truth.
-
-It establishes institutional justification for preservation.
+Anchor owns only the Integrity Reference and Anchor-controlled integrity metadata.
 
 ---
 
-## Historical Significance
+# Canonical Representation
 
-Historical Significance may provide a principal basis for Preservation Eligibility.
+Before anchoring a trust-related artifact, Anchor must define:
 
-It asks:
+```text
+Canonical Representation
+Representation Boundary
+```
 
-> Why is this occurrence worth preserving?
+This may require distinguishing:
 
-Potential considerations may include:
+```text
+canonical Trust Statement
+```
 
-* Institutional change
-* Lifecycle significance
-* First or last occurrence
-* Major milestone
-* Governance change
-* Material architectural change
-* Relationship significance
-* Evidentiary or interpretive importance
-* Historical continuity value
+from:
 
-Historical Significance should remain explainable.
+```text
+dynamic user interface
+current dashboard state
+later comments
+derived presentation
+live scoring visualization
+unrelated surrounding content
+```
 
-Chronicle should avoid reducing historical importance to an opaque numerical score unless later architecture explicitly requires one.
+The Integrity Reference should identify the representation clearly enough for later review.
 
 ---
 
-## Authoritative References
+# Trust Artifact Integrity
 
-Chronicle should preserve authoritative references whenever another Suite system or external institution already owns the relevant record, action, or determination.
+Trust Artifact Integrity asks:
+
+> Does the reviewed trust-related representation remain consistent with the representation governed by the Integrity Reference?
+
+It does not ask:
+
+> Should this trust judgment be accepted?
+
+Therefore:
+
+```text
+Trust Artifact Integrity
+≠
+Trustworthiness
+```
+
+---
+
+# Integrity of a Trust Statement vs. Validity of the Trust Judgment
+
+A Trust Statement may retain perfect integrity while being:
+
+- disputed;
+- outdated;
+- context-specific;
+- incomplete;
+- based on weak methodology;
+- based on incorrect information;
+- superseded;
+- inappropriate for a later context.
+
+Anchor can verify the integrity relationship.
+
+Anchor cannot infer the correctness of the trust judgment merely from integrity.
+
+The governing distinction is:
+
+```text
+Integrity of a Trust Statement
+≠
+Validity of the Trust Judgment
+```
+
+---
+
+# Trust vs. Verification
+
+Anchor Integrity Verification asks whether an artifact representation remains consistent with its Integrity Reference.
+
+Attestor or another trust process may ask whether confidence should be placed in the artifact, subject, source, or conclusion.
+
+Therefore:
+
+```text
+Integrity Verification
+≠
+Trust Evaluation
+```
+
+A successful Anchor Verification does not mean:
+
+```text
+trusted
+approved
+recommended
+safe
+credible
+```
+
+unless the Source Institution separately states that conclusion.
+
+---
+
+# Trust vs. Certification
+
+Certifier may issue a certification determination.
+
+Certification may inform a later trust judgment.
+
+Anchor may preserve integrity for:
+
+- Certification Package;
+- Trust Statement;
+- both.
+
+Anchor does not convert certification into trust.
+
+---
+
+# Trust vs. Reputation
+
+Reputation may inform trust.
+
+Trust may incorporate reputation, history, certification, evidence, context, or other signals.
+
+Anchor calculates neither reputation nor trust.
+
+Anchor may preserve the integrity of artifacts produced by systems that do.
+
+Therefore:
+
+```text
+Integrity
+≠
+Reputation
+≠
+Trust
+```
+
+---
+
+# Trust vs. History
+
+Chronicle preserves qualifying historical memory through Chronicle Entries.
+
+Historical facts may influence a Trust Statement.
+
+Anchor may preserve:
+
+- Chronicle Entry integrity;
+- Trust Statement integrity;
+- both.
+
+It does not determine how history should affect trust.
+
+---
+
+# Trust vs. Evidence
+
+Evidence may influence trust.
+
+Anchor may preserve Integrity References for evidence artifacts.
+
+Anchor does not determine evidentiary weight simply by confirming artifact integrity.
+
+Therefore:
+
+```text
+Evidence Integrity
+≠
+Evidence Weight
+```
+
+---
+
+# Trust Methodology Artifacts
+
+A trust methodology may itself become an Anchor candidate.
 
 Examples may include:
 
-* Certification Package
-* SREG Registry Entry
-* Integrity Reference
-* Discovery Signal
-* Discovery Metadata
-* Trust Statement
-* Workflow Definition
-* Atlas record
-* External public or institutional record
+- evaluation rubric;
+- scoring methodology;
+- confidence model;
+- trust framework;
+- decision rule;
+- weighting model;
+- governance procedure;
+- risk-assessment specification.
 
-The authoritative reference helps answer:
+In that case, Anchor preserves the integrity of the methodology artifact.
 
-> Which system or institution established the underlying object or state?
-
-Chronicle should reference rather than duplicate where practical.
+Anchor does not endorse the methodology.
 
 ---
 
-## Sources
+# Trust Artifact Lifecycle
 
-Sources identify where information originated.
+A Trust Artifact may later be:
 
-A Source answers:
+- revised;
+- corrected;
+- superseded;
+- withdrawn;
+- revoked;
+- replaced;
+- reissued;
+- archived.
 
-> Where did the information come from?
-
-Source trust may depend on factors such as:
-
-* Attribution
-* Creator
-* Publisher
-* Source Type
-* Source Role
-* Creation date
-* Publication date
-* Access date
-* Capture date
-* Source location
-* Archive reference
-* Known limitations
-* Provenance
-* Preservation state
-
-A Source does not automatically establish truth.
-
-A Source also does not automatically become an authoritative record.
-
----
-
-## Evidence
-
-Evidence is material that bears on a Chronicle Entry, claim, or Occurrence.
-
-Evidence may:
-
-* Support
-* Challenge
-* Contradict
-* Clarify
-* Corroborate
-* Contextualize
-* Limit confidence
-
-Trust improves when the role of Evidence is explicit rather than implied.
-
-Chronicle should avoid treating all Evidence as equally strong, independent, complete, authentic, or authoritative.
-
-Evidence quality and limitations should remain visible.
-
----
-
-## Provenance
-
-Provenance documents how information, Sources, Evidence, or authoritative records originated, moved, were accessed, and entered Chronicle.
-
-Provenance may include:
-
-* Originating institution
-* Source path
-* Acquisition method
-* Access method
-* Capture method
-* Transfer history
-* Archive path
-* Preservation history
-* Related authoritative record
-* Custody information
-* Integrity metadata
-
-Provenance answers:
-
-> How did this information get here?
-
-Source identifies origin.
-
-Provenance documents the path.
-
----
-
-## Verification
-
-Verification reviews Chronicle's own historical representation.
-
-Verification may examine:
-
-* Authoritative-reference consistency
-* Source consistency
-* Evidence relationships
-* Provenance
-* Temporal consistency
-* Relationship integrity
-* Known limitations
-* Internal consistency
-* Corroboration
-* Apparent contradictions
-
-Verification does not re-adjudicate a determination owned by another Suite system.
-
-For example:
-
-A Chronicle reviewer may verify that a Chronicle Entry accurately references a Certifier record.
-
-Chronicle does not thereby replace Certifier's authority over the certification determination.
-
----
-
-## Validation
-
-Validation determines whether a Chronicle-owned record conforms to applicable structural and procedural requirements.
-
-Validation may include:
-
-* Identifier integrity
-* Schema conformance
-* Required fields
-* Controlled Values
-* Event-Type Profile requirements
-* Relationship rules
-* Provenance requirements
-* Authoritative-reference requirements
-* Version linkage
-* Correction linkage
-* Publication readiness
-
-Verification and Validation are distinct.
+A later Source change does not erase the earlier Integrity Reference.
 
 Conceptually:
 
 ```text
-Verification ≠ Validation
+Earlier Trust Representation
+        ↓
+Earlier Integrity Reference
+
+Later Trust Representation
+        ↓
+Later Anchor Version or New Integrity Reference
+where required
 ```
 
-A record may be structurally valid while still containing unresolved historical uncertainty.
-
-A historically well-supported Entry may still fail Validation if required structure is incomplete.
+The final Versioning rule remains unfrozen.
 
 ---
 
-## Corrections
-
-Trust requires visible correction history.
-
-Chronicle may correct its own records when errors, omissions, relationship defects, provenance issues, or other problems are identified.
-
-Corrections should remain traceable.
-
-Where substantive change occurs:
-
-* Prior state should remain preserved
-* Correction reason should remain visible
-* Supporting Evidence should be identifiable
-* Resulting version should remain linked
-* Publication history should remain reconstructable
-
-Chronicle should not silently rewrite material history.
-
----
-
-## Versioning
-
-Versioning preserves the lineage of Chronicle-owned records.
-
-Record Versioning is distinct from Schema Versioning.
-
-### Record Version
-
-Represents a preserved state of a Chronicle-owned record.
-
-### Schema Version
-
-Represents the version of the schema governing the structure of that record.
-
-Trust improves when reviewers can determine both:
-
-* Which record state they are viewing
-* Which schema governed that state
-
----
-
-## Publication
-
-Publication is not the beginning of trust.
-
-Publication is one controlled stage within the trust architecture.
-
-Before publication, applicable Chronicle records should satisfy required:
-
-* Identity rules
-* Schema rules
-* Controlled Values
-* Relationship requirements
-* Provenance requirements
-* Verification requirements
-* Validation requirements
-* Approval requirements
-
-Publication should not imply universal truth or transfer institutional authority.
-
----
-
-## Preservation
-
-Trust must survive time.
-
-Chronicle therefore seeks to preserve more than the latest visible state.
-
-Historical preservation may include:
-
-* Chronicle Entries
-* Prior substantive versions
-* Correction lineage
-* Source references
-* Evidence relationships
-* Provenance
-* Authoritative references
-* Verification history
-* Validation history
-* Publication history
-* Preservation state
-* Known limitations
-
-A record that cannot be reconstructed over time is less reviewable.
-
-Long-term trust depends on continuity.
-
----
-
-## Historical Limitations
-
-Chronicle may preserve incomplete, disputed, contradictory, unavailable, or retrospectively understood information.
-
-This does not necessarily weaken Chronicle.
-
-Trust may improve when uncertainty is documented honestly.
-
-Examples of limitations may include:
-
-* Missing Source material
-* Conflicting Sources
-* Incomplete Provenance
-* Evidence gaps
-* Broken external links
-* Archived-only material
-* Unknown authorship
-* Uncertain publication date
-* Later Corrections
-* Retrospective Entry creation
-
-Chronicle should preserve material limitations rather than conceal them.
-
----
-
-## Trust Is Not a Universal Score
-
-Chronicle should not reduce trust to a single universal number unless a later Suite standard explicitly requires one.
-
-Historical trust may involve multiple dimensions:
-
-* Authority
-* Evidence quality
-* Source independence
-* Provenance completeness
-* Authenticity
-* Temporal proximity
-* Corroboration
-* Structural Validation
-* Known limitations
-* Correction history
-* Preservation continuity
-
-Collapsing these into one score may conceal important distinctions.
-
-Chronicle should favor inspectable structure over opaque scoring.
-
----
-
-## Relationship to Attestor
-
-Attestor and Chronicle serve different institutional roles.
-
-Attestor is authoritative for:
-
-* Trust Statements
-* Attestations
-
-Chronicle is authoritative for:
-
-* Chronicle Entries
-* Chronicle historical context
-* Chronicle provenance
-* Chronicle relationships
-* Chronicle Verification state
-* Chronicle correction lineage
-* Chronicle version lineage
-* Chronicle publication state
-* Chronicle preservation state
-
-An Attestor Trust Statement may later relate to a Chronicle Entry.
-
-That relationship does not make Chronicle an attestation system.
-
-Likewise, Chronicle preservation does not itself create a Trust Statement.
-
----
-
-## Relationship to Certifier
-
-Certifier trust is centered on certification evaluation, standards, Evidence, methodology, findings, reports, receipts, and Certification Packages.
-
-Chronicle trust is different.
-
-Chronicle trust is centered on whether a historical Occurrence has been preserved:
-
-* Selectively
-* Transparently
-* With correct authority boundaries
-* With traceable Sources
-* With Evidence relationships
-* With Provenance
-* With Verification
-* With Validation
-* With correction lineage
-* With durable preservation
-
-The systems complement one another but should not share indistinguishable trust models.
-
----
-
-## Relationship to Registry
-
-Registry trust depends on stable registration, cataloging, identity, metadata, relationships, and Registry lifecycle.
-
-Chronicle may reference Registry records as authoritative Registry objects.
-
-Chronicle should not recreate Registry authority.
-
-Instead, Chronicle preserves the historical meaning of qualifying Registry-related Occurrences.
-
----
-
-## Trust Model and Interoperability
-
-Chronicle participates in Suite-wide interoperability through references.
-
-Conceptually:
+# Source Trust Change vs. Anchor Correction
+
+A **Source Trust Change** occurs when Attestor or another Source Institution changes:
+
+- the trust judgment;
+- Trust Statement;
+- trust score;
+- methodology;
+- warning;
+- recommendation;
+- lifecycle;
+- publication status.
+
+An **Anchor Correction** occurs when Anchor incorrectly recorded its own integrity information.
+
+Examples may include:
+
+- wrong Source Artifact;
+- wrong Source-System Identifier;
+- wrong Canonical Representation;
+- wrong Representation Boundary;
+- wrong digest;
+- wrong algorithm;
+- wrong timestamp;
+- wrong signer reference;
+- wrong Verification Material.
+
+Therefore:
 
 ```text
-Authoritative Suite Object
-        ↓
-Chronicle Reference
-        ↓
+Source Trust Change
+≠
+Anchor Correction
+```
+
+---
+
+# Trust Withdrawal or Revocation
+
+A Trust Statement may later be withdrawn or revoked.
+
+Withdrawal does not erase the historical existence of the earlier representation.
+
+Anchor should preserve enough context to identify:
+
+```text
+what was anchored
+when it was anchored
+which representation applied
+which Source Institution governed it
+what later Source change occurred
+```
+
+where materially relevant.
+
+Anchor should not silently rewrite the original Integrity Reference.
+
+---
+
+# Trust Disputes
+
+A trust judgment may be disputed.
+
+Anchor may preserve Integrity References for:
+
+- original Trust Statement;
+- challenge artifact;
+- supporting evidence;
+- rebuttal;
+- replacement Trust Statement;
+- later institutional finding.
+
+Anchor does not adjudicate the dispute.
+
+---
+
+# Privacy and Judgment Boundary
+
+Trust artifacts may contain sensitive evaluative information about:
+
+- individuals;
+- organizations;
+- systems;
+- communities;
+- agents;
+- institutions.
+
+Anchor should not amplify trust judgments merely because cryptographic anchoring is technically possible.
+
+The minimum-necessary-data principle remains active.
+
+Potentially preferable designs may preserve:
+
+- Source references rather than copied personal data;
+- institutional roles rather than unnecessary personal identifiers;
+- integrity material rather than complete evaluative profiles;
+- externally governed canonical locations rather than duplicated trust databases.
+
+The governing principle is:
+
+> Preserve necessary integrity context. Do not amplify unnecessary trust judgments.
+
+---
+
+# What Anchor Preserves
+
+For a trust-related Integrity Reference, Anchor may preserve:
+
+- Anchor Identifier;
+- Source Institution;
+- Source-System Identifier;
+- Trust Artifact Type;
+- Canonical Representation;
+- Representation Boundary;
+- Integrity Method;
+- Integrity Value;
+- algorithm metadata;
+- timestamps;
+- signer information;
+- key information;
+- Verification Material;
+- Anchor Version;
+- Integrity State;
+- Publication State;
+- Lifecycle State;
+- Correction lineage;
+- verification history.
+
+The final production schema remains unfrozen.
+
+---
+
+# What Anchor Does Not Do
+
+Anchor does not:
+
+- issue Trust Statements;
+- determine trustworthiness;
+- calculate trust scores;
+- rank trusted entities;
+- maintain trust relationships;
+- aggregate trust history;
+- adjudicate trust disputes;
+- determine credibility;
+- define universal trust semantics;
+- endorse trust methodologies;
+- replace Attestor authority.
+
+---
+
+# Relationship to Anchor Attestations
+
+The `/anchor/attestations/` section now concerns attestation artifact integrity.
+
+A Trust Statement may contain attestation-like content.
+
+Anchor may preserve the Trust Statement representation without creating a separate Anchor trust or attestation authority.
+
+---
+
+# Relationship to Anchor Reputation
+
+The `/anchor/reputation/` section now concerns reputation-related artifact integrity.
+
+A reputation artifact may influence trust.
+
+A Trust Statement may reference reputation.
+
+Anchor may preserve both artifacts without performing either calculation.
+
+---
+
+# Relationship to Anchor Claims
+
+Claim-related artifacts may influence trust.
+
+Anchor may preserve Integrity References for:
+
+```text
+Claim Artifact
+Trust Statement
+Evidence Artifact
+Certification Package
 Chronicle Entry
-        ↓
-Historical Context / Provenance / Relationships
 ```
 
-The Trust Model requires this relationship to remain explicit.
+where justified.
 
-A reference should identify authority.
-
-It should not blur authority.
+The presence of multiple Integrity References does not merge their institutional meanings.
 
 ---
 
-## Trust Model and the Chronicle Base Schema
+# Relationship to Anchor Integration
 
-The Chronicle Base Schema should contain universal fields necessary to support reviewable historical trust.
-
-Event-Type Profiles may add additional trust-related requirements such as:
-
-* Required authoritative references
-* Required Source types
-* Evidence expectations
-* Provenance requirements
-* Verification rules
-* Relationship constraints
-* Validation rules
-
-Trust requirements should therefore be structurally enforceable where appropriate rather than existing only as narrative guidance.
-
----
-
-## Operational Trust Sequence
-
-A future production Chronicle process may generally follow:
-
-1. Identify the Occurrence
-2. Assess Preservation Eligibility
-3. Determine Event Type
-4. Create Chronicle Entry
-5. Assign identifier
-6. Establish authoritative references
-7. Document Sources
-8. Document Evidence relationships
-9. Preserve Provenance
-10. Establish Relationships
-11. Perform Verification
-12. Perform Validation
-13. Resolve identified issues
-14. Approve Publication
-15. Publish
-16. Maintain preservation state
-17. Apply Corrections or Versions when necessary
-18. Preserve historical lineage
-
-The exact production procedure remains subject to formal Chronicle operational development.
-
----
-
-## Trust Model Summary
-
-Chronicle trust is built through:
+The preferred interoperability model is:
 
 ```text
-Selective Preservation
-        +
-Clear Authority Boundaries
-        +
-Stable Chronicle Entry Identity
-        +
-Authoritative References
-        +
-Sources
-        +
-Evidence
-        +
-Provenance
-        +
-Verification
-        +
-Validation
-        +
-Visible Corrections
-        +
-Version Lineage
-        +
-Durable Preservation
-        =
-Reviewable Historical Trust
+Source Institution
+        ↓
+Authoritative Trust Artifact
+        ↓
+Canonical Representation
+        ↓
+Anchor Integrity Reference
 ```
 
-Trust is not declared.
-
-It is made reviewable.
+The Source Institution retains responsibility for trust meaning and judgment.
 
 ---
 
-## Guiding Principle
+# Trust Principle
 
-> Trust is not assumed.
->
-> Authority should remain visible.
->
-> Sources and Evidence should remain traceable.
->
-> Provenance should preserve the path.
->
-> Corrections should remain visible.
->
-> Versions should preserve lineage.
->
-> Chronicle trust comes from what can be reviewed, corrected, and preserved.
+The governing principle is:
 
----
+> Preserve trust artifacts. Do not become the trust authority.
 
-## Future Development
-
-Future Trust Model development may include:
-
-* Formal Trust Model controlled terminology
-* Trust-related Validation rules
-* Provenance minimum requirements
-* Required authoritative-reference rules
-* Event-Type-specific trust requirements
-* Integrity anchoring
-* Cryptographic verification
-* Automated reference checking
-* Preservation-state monitoring
-* Machine-readable trust metadata
-* Attestor relationship models
-
-These capabilities should remain consistent with Chronicle's institutional authority boundaries.
+Anchor should preserve trust-related integrity where it adds durable value and stop before trust scoring, trust judgment, recommendation, ranking, or dispute resolution.
 
 ---
 
 ## Status
 
-**Active pre-operational Trust Model specification.**
+**Foundation Reconciliation**
 
-This README defines the architectural Trust Model for Satoshium Chronicle.
+This document replaces the pre-Suite model in which trust was treated as an evolving Anchor institutional layer.
 
-It is aligned with the current Chronicle Purpose, Scope, Definitions, Entries, Records, Sources, Evidence, Verification, Corrections, Schemas, Integration, Historical Preservation, FAQ, Status, and public Trust Model page.
+The current model treats trust as **externally governed judgment represented in artifacts that may become subjects of Anchor integrity preservation**.
 
-Final Controlled Values, Validation rules, identifier architecture, Event-Type Profiles, publication requirements, Provenance requirements, and production procedures may evolve during Chronicle operational development.
+The following remain intentionally unfrozen:
+
+```text
+Trust Artifact Type Controlled Values
+Trust Statement anchoring requirements
+trust-related privacy requirements
+methodology-artifact anchoring rules
+trust withdrawal / revocation handling
+trust-dispute reference patterns
+new Anchor Version vs. new Integrity Reference rule
+trust-specific schema conditions
+first production Trust Statement Integrity Reference
+```
+
+**Version:** 1.0-draft
+
+**Maintained By:** Satoshium
