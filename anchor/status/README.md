@@ -2,217 +2,492 @@
 
 ## Current Status
 
-Anchor is currently an exploratory project within the Satoshium ecosystem.
+**Satoshium Anchor is currently in Foundation Reconciliation.**
 
-The project is focused on defining the conceptual foundations of identity, attribution, accountability, governance, reputation, and trust relationships.
+The post-Suite institutional model is now substantially defined around:
 
-Anchor is not currently a production system.
+```text
+Anchor
+→ Integrity Reference
+```
 
-No operational identity services, authentication systems, credential frameworks, or trust infrastructures have been deployed.
+Anchor's purpose is integrity preservation.
 
----
+It preserves durable Integrity References for defined representations of authoritative artifacts while preserving the authority of the Source Institution.
 
-## Development Phase
+Anchor is not yet a production integrity-preservation system.
 
-Anchor is presently in the conceptual design phase.
-
-Current efforts focus on:
-
-* Establishing terminology
-* Defining foundational concepts
-* Developing governance principles
-* Exploring identity frameworks
-* Exploring attribution models
-* Examining trust-related relationships
-* Creating documentation and standards foundations
-
-The project remains focused on understanding the problem space before selecting implementation approaches.
+No production Integrity Reference has been issued.
 
 ---
 
-## Areas Under Development
+# Development Stage
 
-The following areas are currently being explored:
+The current development stage is:
 
-### Identity
+```text
+Foundation Reconciliation
+```
 
-Defining the entities capable of participating within the Satoshium ecosystem.
+This stage is reconciling the older pre-Suite Anchor concept into the current Suite architecture.
 
-Examples may include:
+The old model emphasized:
 
-* Individuals
-* Organizations
-* Institutions
-* Communities
-* Systems
-* Agents
-* Artificial intelligence
+```text
+Identity
+→ Claim
+→ Attestation
+→ Reputation
+→ Trust
+```
 
-### Claims
+The current model is:
 
-Exploring how assertions may be represented and attributed.
+```text
+Authoritative Artifact
+        ↓
+Canonical Representation
+        ↓
+Integrity Value
+        ↓
+Integrity Reference
+        ↓
+Later Integrity Verification
+```
 
-### Attestations
-
-Exploring how identities may associate themselves with claims.
-
-### Governance
-
-Exploring authority, delegation, accountability, and representation.
-
-### Reputation
-
-Exploring how historical participation may contribute to reputation-related information.
-
-### Standards
-
-Exploring structures that promote consistency and interoperability.
+The earlier pages are being retained where useful for route continuity, but their authority has been narrowed to integrity-preservation concerns.
 
 ---
 
-## Not Yet Implemented
+# Current Canonical Object
 
-Anchor does not currently provide:
+Anchor's canonical operational object is:
 
-* Identity issuance
-* Authentication services
-* Authorization services
-* Credential management
-* Trust scoring
-* Reputation scoring
-* Identity verification
-* Delegation mechanisms
-* Governance enforcement
-* Agent identity systems
-* AI identity systems
+```text
+Integrity Reference
+```
 
-These areas remain subjects of future exploration.
+An Integrity Reference belongs to Anchor.
+
+The referenced artifact remains authoritative within its Source Institution.
+
+> Reference does not transfer authority.
 
 ---
 
-## Technology Status
+# Foundation Status
 
-No implementation architecture has been selected.
+The current reconciled foundation includes:
 
-No commitment has been made regarding:
+```text
+Purpose
+Definitions
+Integrity Preservation
+Anchoring Process
+Integration
+Standards
+Governance
+Identities / Attribution
+Claims
+Attestations
+Reputation
+Trust
+Status
+```
 
-* Databases
-* Blockchain systems
-* Distributed ledgers
-* Decentralized identity frameworks
-* Authentication protocols
-* Cryptographic standards
-* Trust infrastructures
+These documents collectively define:
 
-Anchor remains technology-neutral at this stage.
+- Anchor's purpose;
+- canonical object;
+- authority boundary;
+- integrity-preservation model;
+- Anchoring Process;
+- Suite integration;
+- Anchor-specific Standards position;
+- Governance;
+- identity / attribution boundaries;
+- claim artifact boundaries;
+- attestation artifact boundaries;
+- reputation artifact boundaries;
+- trust artifact boundaries;
+- current development status.
 
 ---
 
-## Relationship to Other Satoshium Systems
+# Institutional Concepts Already Defined
 
-Anchor is one component of a broader ecosystem.
+The current foundation includes the following concepts:
 
-Current ecosystem components include:
+- Authoritative Artifact;
+- Source Institution;
+- Canonical Representation;
+- Representation Boundary;
+- Integrity Reference;
+- Integrity Value;
+- Cryptographic Digest;
+- Hash Algorithm;
+- Timestamp;
+- Temporal Context;
+- Signature;
+- Verification Material;
+- Anchoring;
+- Integrity Verification;
+- Verification Result;
+- Integrity State;
+- Anchor Identifier;
+- Anchor Version;
+- Source-System Identifier;
+- Publication State;
+- Lifecycle State;
+- Correction;
+- Maintenance;
+- Integrity Preservation.
+
+Some of these terms are defined conceptually while their production Controlled Values or implementation rules remain unfrozen.
+
+---
+
+# What Exists Today
+
+Anchor currently has:
+
+- a defined institutional purpose;
+- a defined canonical object;
+- a defined authority model;
+- a defined Integrity Preservation model;
+- a defined conceptual Anchoring Process;
+- a defined Integration model;
+- an Anchor-specific Standards position;
+- an Anchor Governance model;
+- attribution boundaries;
+- claim / attestation / reputation / trust boundary documents;
+- implementation-neutral cryptographic concepts;
+- a defined distinction between Source authority and Anchor authority.
+
+This is substantial institutional architecture.
+
+It is not yet production implementation.
+
+---
+
+# What Does Not Yet Exist
+
+Anchor does not yet have a finalized production implementation for:
+
+```text
+Anchor Identifier format
+Integrity Reference schema
+Integrity Method Controlled Values
+Integrity State values
+Verification Result values
+Publication State values
+Lifecycle State values
+approved digest algorithm policy
+signature policy
+timestamp policy
+formal Verification procedure
+formal Validation architecture
+Publication architecture
+Versioning rules
+Correction procedure
+Maintenance procedure
+Bitcoin commitment policy
+first production Integrity Reference
+```
+
+These should be created only after the foundation demonstrates a concrete need.
+
+---
+
+# Project Status vs. Integrity State
+
+This page describes:
+
+```text
+Anchor Project Development Status
+```
+
+That must remain distinct from record-level state.
+
+The following are separate concepts:
+
+```text
+Project Development Status
+≠
+Integrity State
+≠
+Verification Result
+≠
+Publication State
+≠
+Lifecycle State
+```
+
+For example:
+
+```text
+Foundation Reconciliation
+```
+
+is a development status for the Anchor institution.
+
+It is not an Integrity State for an individual Integrity Reference.
+
+---
+
+# Technology Status
+
+Anchor remains implementation-neutral.
+
+Potential implementation mechanisms include:
+
+- cryptographic hashing;
+- digital signatures;
+- timestamping;
+- transparency logs;
+- Merkle structures;
+- external commitments;
+- distributed systems;
+- Bitcoin commitments;
+- future cryptographic methods.
+
+No single mechanism defines Anchor.
+
+The governing principle remains:
+
+> Tools may change. Integrity preservation remains the purpose.
+
+---
+
+# Bitcoin Status
+
+Bitcoin has not yet been adopted as a production Anchor commitment mechanism.
+
+Potential future uses include:
+
+```text
+proof-of-existence
+timestamp anchoring
+Merkle-root commitments
+batch commitments
+long-term public integrity checkpoints
+```
+
+Before adopting Bitcoin, Anchor should first finalize:
+
+```text
+what is anchored
+how the Canonical Representation is defined
+how the Representation Boundary is defined
+which Integrity Value is generated
+how the Integrity Reference is structured
+how Verification works
+```
+
+Bitcoin may then be evaluated as a commitment layer.
+
+---
+
+# Production Architecture Still Required
+
+The expected production architecture may include:
+
+```text
+Identifiers
+Controlled Values
+Schema
+Verification
+Validation
+Publication
+Lifecycle
+Versioning
+Corrections
+Maintenance
+Production Procedure
+```
+
+The exact number of public pages or institutional artifacts should not be predetermined.
+
+The minimum-necessary-structure principle remains active.
+
+---
+
+# Production Readiness
+
+Anchor should not be considered production-ready merely because the documentation foundation is mature.
+
+Production readiness should require successful end-to-end execution of at least one real Integrity Reference.
+
+At minimum, that exercise should demonstrate:
+
+- authoritative Source Artifact identification;
+- Source Institution;
+- Source-System Identifier where available;
+- Canonical Representation;
+- Representation Boundary;
+- Integrity Method;
+- Integrity Value;
+- Verification Material;
+- reproducible Verification;
+- Anchor Identifier;
+- schema conformance;
+- applicable Validation;
+- Publication behavior;
+- Anchor Version handling;
+- Correction behavior;
+- Maintenance expectations;
+- preservation of lineage.
+
+The first production record should expose architectural weaknesses before the system is declared mature.
+
+---
+
+# Near-Term Objectives
+
+The current expected path is:
+
+```text
+Complete Foundation Reconciliation
+        ↓
+Define Identifier Architecture
+        ↓
+Define Controlled Values
+        ↓
+Define Integrity Reference Schema
+        ↓
+Define Verification / Validation
+        ↓
+Define Publication / Lifecycle
+        ↓
+Define Versioning / Corrections
+        ↓
+Define Maintenance
+        ↓
+Define Production Procedure
+        ↓
+Create First Production Integrity Reference
+        ↓
+Review and Refine Architecture
+```
+
+This path may change if production design reveals a better dependency order.
+
+---
+
+# Current Non-Goals
+
+Anchor is not currently building:
+
+- a general identity network;
+- authentication services;
+- credential infrastructure;
+- a claims registry;
+- an attestation network;
+- a reputation engine;
+- a trust-scoring system;
+- a trust network;
+- a general governance platform;
+- a decentralized identity platform.
+
+These were part of the older conceptual Anchor framing and are no longer Anchor's institutional purpose.
+
+---
+
+# Suite Relationship
+
+The current Suite object model is:
 
 ```text
 Atlas
-Navigator
+→ authoritative intelligence
+
 Certifier
+→ Certification Package
+
 Registry
+→ Satoshium Registry Entry
+
 Chronicle
+→ Chronicle Entry
+
 Anchor
+→ Integrity Reference
+
 Beacon
+→ Discovery Signal / Metadata
+
 Attestor
+→ Trust Statement
+
+Navigator
+→ Workflow Definition
 ```
 
-Anchor focuses specifically on identity and attribution.
+Anchor may preserve Integrity References for authoritative artifacts from these institutions.
 
-Other systems address discovery, verification, recordkeeping, historical preservation, and trust-related functions.
-
----
-
-## Current Objectives
-
-The current objectives of Anchor include:
-
-1. Establishing foundational terminology.
-2. Defining identity concepts.
-3. Defining attribution concepts.
-4. Defining governance concepts.
-5. Defining reputation concepts.
-6. Exploring trust-related relationships.
-7. Developing standards foundations.
-8. Preparing for future implementation discussions.
-
-The present goal is understanding before implementation.
+It does not take over their authority.
 
 ---
 
-## Guiding Philosophy
+# Current Project Classification
 
-Anchor is built upon several foundational ideas:
+```text
+Project Type:
+Integrity-Preservation Institution
 
-* Identity precedes attribution.
-* Attribution precedes accountability.
-* Accountability contributes to reputation.
-* Reputation may influence trust.
-* Trust requires transparency.
+Development Stage:
+Foundation Reconciliation
 
-The project seeks to explore these relationships in a structured and technology-neutral manner.
+Institutional Model:
+Defined
 
----
+Canonical Object:
+Integrity Reference
 
-## Future Development
+Production Schema:
+Not Finalized
 
-Future development may explore:
+Production Identifiers:
+Not Finalized
 
-* Identity frameworks
-* Attribution systems
-* Delegation models
-* Governance structures
-* Reputation models
-* Trust signals
-* Agent identities
-* AI identities
-* Interoperability standards
+Controlled Values:
+Not Finalized
 
-No implementation roadmap has been finalized.
+Production Verification:
+Not Finalized
 
----
+Production Publication:
+Not Finalized
 
-## Disclaimer
+Bitcoin Commitment:
+Not Adopted
 
-Anchor is an exploratory project.
+Production Integrity References:
+None Issued
 
-All documentation, concepts, terminology, standards discussions, and design materials are works in progress.
+Technology Position:
+Implementation-Neutral
 
-Nothing within Anchor should be interpreted as:
-
-* A production specification
-* An identity service
-* An authentication system
-* A governance platform
-* A trust framework
-* A commitment to any specific technology
-
-Concepts may evolve as development continues.
+Documentation Status:
+Active
+```
 
 ---
 
-## Project Classification
+# Status Principle
 
-**Project Type:** Exploratory Framework
+The governing principle is:
 
-**Development Stage:** Conceptual Design
+> Define the institution. Prove the process. Then declare production.
 
-**Implementation Status:** Not Implemented
+Anchor should move deliberately from institutional clarity to production architecture and from production architecture to tested operation.
 
-**Technology Status:** Undecided
+---
 
-**Governance Status:** Under Development
+## Status
 
-**Documentation Status:** Active
+**Status:** Foundation Reconciliation
 
-**Version:** Draft 0.1
+**Version:** 1.0-draft
 
 **Maintained By:** Satoshium
