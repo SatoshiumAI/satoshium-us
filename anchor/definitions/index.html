@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Anchor Definitions</title>
+
+<meta name="description" content="Canonical terminology for Satoshium Anchor, including Integrity References, authoritative artifacts, canonical representations, digests, timestamps, signatures, verification, anchoring, lifecycle, publication, and authority boundaries.">
+
+<link rel="canonical" href="https://satoshium.us/anchor/definitions/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+
+.card ul{
+ margin:8px 0 0 20px;
+ color:var(--muted);
+}
+
+.card li{
+ margin:7px 0;
+}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+.muted{
+ color:var(--muted);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+
+  <div class="eyebrow">Anchor · Definitions</div>
+
+  <h1>Satoshium Anchor Definitions</h1>
+
+  <p class="lead">
+    This page defines the core terminology used by Satoshium Anchor
+    as the Suite institution responsible for durable integrity preservation.
+  </p>
+
+  <p class="lead">
+    Definitions preserve consistent meaning across Anchor documentation,
+    schemas, procedures, Integrity References, verification, publication,
+    maintenance, and Suite interoperability.
+  </p>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Definition Principle</h2>
+
+  <p>
+    Anchor terminology should describe integrity precisely without absorbing
+    the authority, meaning, certification, historical interpretation, identity,
+    or trust conclusions of the referenced artifact.
+  </p>
+
+  <div class="note">
+    Reference does not transfer authority.
+  </div>
+
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Authoritative Artifact</h2>
+  <p>
+    A record, file, package, publication, statement, dataset, or other governed
+    object whose substantive authority remains with the institution or system
+    that created and maintains it.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source Institution</h2>
+  <p>
+    The institution or system that owns or maintains the authoritative artifact
+    referenced by Anchor.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Canonical Representation</h2>
+  <p>
+    The exact governed representation of an artifact used to generate or verify
+    an integrity value. It defines what bytes, fields, serialization, or published
+    form are actually being anchored.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Representation Boundary</h2>
+  <p>
+    The explicit scope identifying which artifact representation is covered by an
+    Integrity Reference and which surrounding content, metadata, interface elements,
+    or later changes fall outside that reference.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Integrity Reference</h2>
+  <p>
+    Anchor's canonical operational object. An Integrity Reference preserves the
+    governed integrity information needed to identify a defined artifact representation
+    and support later integrity verification.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Integrity Value</h2>
+  <p>
+    A machine-generated value derived from a defined artifact representation and used
+    to support later integrity comparison or verification.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Cryptographic Digest</h2>
+  <p>
+    A deterministic fixed-length value produced by applying a cryptographic hash
+    function to a defined representation.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Hash Algorithm</h2>
+  <p>
+    The cryptographic function used to generate a digest, together with any governed
+    algorithm identification or Version information required for reproducibility.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Timestamp</h2>
+  <p>
+    A recorded date and time associated with creation, observation, anchoring,
+    publication, verification, or another governed Anchor action.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Temporal Context</h2>
+  <p>
+    The set of governed time-related facts needed to interpret when an Integrity
+    Reference, artifact representation, or verification action existed or occurred.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Signature</h2>
+  <p>
+    Cryptographic signature material associated with a defined artifact representation
+    or Integrity Reference. A signature may support integrity or origin verification
+    but does not by itself transfer institutional authority.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Verification Material</h2>
+  <p>
+    Cryptographic, procedural, or descriptive information needed to reproduce,
+    compare, or validate an Integrity Reference.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Anchoring</h2>
+  <p>
+    The governed Anchor process of creating or recording an Integrity Reference for
+    a defined artifact representation.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Integrity Verification</h2>
+  <p>
+    The process of determining whether a reviewed artifact representation is consistent
+    with the Integrity Reference governing that representation.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Verification Result</h2>
+  <p>
+    The recorded outcome of an Anchor integrity-verification action. It describes
+    integrity comparison, not certification, historical truth, reputation, or trustworthiness.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Integrity State</h2>
+  <p>
+    A governed Anchor state describing the current integrity condition of an
+    Integrity Reference or its relationship to the artifact representation it covers.
+    Final production values should be established only after operational review.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Anchor Identifier</h2>
+  <p>
+    A stable identifier assigned by Anchor to an Anchor-owned Integrity Reference.
+    The final production identifier format remains to be established through the
+    Anchor identifier architecture.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Anchor Version</h2>
+  <p>
+    The preserved version of an Anchor-owned Integrity Reference or representation.
+    Anchor Version remains distinct from the Version of the external authoritative artifact.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Source-System Identifier</h2>
+  <p>
+    An identifier assigned by the external authoritative institution to the artifact
+    referenced by Anchor. It remains external authority and must not be replaced by
+    an Anchor identifier.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Publication State</h2>
+  <p>
+    The Anchor-controlled state describing whether an Integrity Reference has entered,
+    remains in, or has been withdrawn from public production. Final controlled values
+    should be established during production architecture.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Lifecycle State</h2>
+  <p>
+    The Anchor-controlled state describing the institutional condition of an
+    Integrity Reference over time. Lifecycle remains separate from verification,
+    publication, and the lifecycle of the referenced artifact.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Correction</h2>
+  <p>
+    A governed change made to Anchor's own record because Anchor's prior representation,
+    metadata, integrity context, or procedural record was incorrect or materially incomplete.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Maintenance</h2>
+  <p>
+    Post-publication review and upkeep of Anchor-owned records, references, verification
+    context, links, representations, Versions, Corrections, and long-term integrity continuity.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Integrity Preservation</h2>
+  <p>
+    Anchor's continuing institutional function of preserving durable integrity context
+    so a later reviewer can understand and verify the relationship between an Integrity
+    Reference and the artifact representation it covers.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Critical Distinctions</h2>
+
+  <div class="note">
+    Authoritative Artifact ≠ Integrity Reference<br>
+    Source-System Identifier ≠ Anchor Identifier<br>
+    Artifact Version ≠ Anchor Version<br>
+    Integrity Verification ≠ Certification<br>
+    Integrity Verification ≠ Chronicle Verification<br>
+    Integrity State ≠ Publication State ≠ Lifecycle State<br>
+    Signature ≠ Institutional Authority<br>
+    Integrity ≠ Truth ≠ Trust
+  </div>
+
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Integrity vs. Truth</h2>
+
+  <p>
+    Integrity asks whether the reviewed representation corresponds to the
+    representation governed by the Integrity Reference.
+  </p>
+
+  <p>
+    It does not determine whether the substantive content is true.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Integrity vs. Certification</h2>
+
+  <p>
+    Anchor verifies integrity relationships.
+    Certifier performs certification under Suite Standards and Suite Methodology.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Integrity vs. History</h2>
+
+  <p>
+    Anchor preserves integrity context.
+    Chronicle preserves qualifying historical Occurrences through Chronicle Entries.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Integrity vs. Trust</h2>
+
+  <p>
+    Anchor may supply integrity evidence useful to later trust evaluation,
+    but Attestor owns Trust Statements and Anchor does not determine trustworthiness.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Suite Object Context</h2>
+
+  <div class="note">
+    Atlas → authoritative intelligence<br>
+    Certifier → Certification Package<br>
+    Registry → Satoshium Registry Entry<br>
+    Chronicle → Chronicle Entry<br>
+    Anchor → Integrity Reference<br>
+    Beacon → Discovery Signal / Metadata<br>
+    Attestor → Trust Statement<br>
+    Navigator → Workflow Definition
+  </div>
+
+  <p style="margin-top:14px;">
+    Each institution retains authority over its own canonical object.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Unfrozen Terms</h2>
+
+  <p>
+    This Definitions page intentionally does not yet freeze final vocabularies for:
+  </p>
+
+  <div class="note">
+    Integrity State values<br>
+    Verification Result values<br>
+    Publication State values<br>
+    Lifecycle State values<br>
+    Anchor identifier format<br>
+    anchoring method categories<br>
+    algorithm policy<br>
+    signature policy<br>
+    Bitcoin commitment method<br>
+    maintenance cadence
+  </div>
+
+  <p style="margin-top:14px;">
+    Those terms should be finalized only after Anchor's identifier, process,
+    schema, Validation, Publication, and first production implementation are designed
+    and tested.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Definitions Principle</h2>
+
+  <p>
+    Anchor terminology exists to preserve precise integrity meaning across
+    implementations without expanding Anchor into certification, identity,
+    reputation, history, discovery, or trust authority.
+  </p>
+
+  <a class="btn" href="/anchor/purpose/">
+    Purpose →
+  </a>
+
+  <a class="btn" href="/anchor/">
+    Back to Anchor →
+  </a>
+
+</article>
+
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+
+  <div id="random-saying"
+       class="muted"
+       style="margin-bottom:14px; max-width:760px;">
+    Integrity begins with knowing exactly what was referenced.
+  </div>
+
+  <hr>
+
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'>
+</script>
+
+</body>
+</html>
