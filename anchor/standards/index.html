@@ -12,7 +12,7 @@
 
 <title>Satoshium Anchor · Standards</title>
 
-<meta name="description" content="Satoshium Anchor Standards — principles, specifications, and frameworks supporting identities, claims, attestations, reputation, and trust.">
+<meta name="description" content="Satoshium Anchor Standards — Anchor-specific integrity requirements implemented beneath Suite Standards for Integrity References, canonical representations, cryptographic material, verification, interoperability, versioning, and preservation.">
 
 <link rel="canonical" href="https://satoshium.us/anchor/standards/">
 
@@ -187,71 +187,146 @@ h1{
 
   <div class="eyebrow">Anchor · Standards</div>
 
-  <h1>Standards</h1>
+  <h1>Anchor Standards</h1>
 
   <p class="lead">
-    Standards provide shared frameworks that help
-    identities, claims, attestations, reputation,
-    and trust systems operate consistently across
-    interoperable environments.
+    Anchor Standards define the institution-specific requirements needed
+    to preserve durable, reproducible, and independently reviewable
+    Integrity References.
   </p>
 
   <p class="lead">
-    Anchor explores how open standards may improve
-    transparency, portability, accountability,
-    and long-term trust.
+    Anchor does not create a competing Suite-wide standards system.
+    Shared expectations remain governed by Suite Standards; Anchor
+    specializes those expectations only where integrity-preservation
+    operations require narrower requirements.
   </p>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Standards Position</h2>
+
+  <p>
+    The Satoshium Suite provides the shared Standards layer.
+    Anchor implements that layer for integrity preservation.
+  </p>
+
+  <div class="note">
+    Suite Standards → Anchor-specific integrity requirements → Integrity Reference production
+  </div>
+
+  <p style="margin-top:14px;">
+    Anchor Standards must remain subordinate to Suite Standards and should
+    not redefine Suite-wide terminology, governance, interoperability,
+    schema principles, versioning principles, evidence principles, or trust
+    boundaries unless Anchor requires a narrower integrity-specific rule.
+  </p>
+
+</article>
 
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Identity Standards</h2>
+  <h2>Integrity Reference Requirements</h2>
 
   <p>
-    Future standards may define how identities
-    are represented, referenced, linked,
-    and maintained across systems.
+    Anchor Standards should define the minimum institutional requirements
+    for a valid Integrity Reference, including identity, source attribution,
+    representation scope, integrity material, temporal context, and later
+    verification support.
   </p>
 
-  <span class="status">Planned</span>
+  <span class="status">Foundation</span>
 </article>
 
 <article class="card">
-  <h2>Claim Standards</h2>
+  <h2>Canonical Representation Requirements</h2>
 
   <p>
-    Standards may establish common structures
-    for creating, recording, referencing,
-    and evaluating claims.
+    Anchor must define what representation is actually anchored and preserve
+    sufficient information to make that representation reproducible or
+    reviewable later.
   </p>
 
-  <span class="status">Future</span>
+  <span class="status">Foundation</span>
 </article>
 
 <article class="card">
-  <h2>Attestation Standards</h2>
+  <h2>Representation Boundary Requirements</h2>
 
   <p>
-    Future specifications may define how
-    attestations are exchanged, preserved,
-    and interpreted between participants.
+    Anchor Standards should require clear boundaries identifying what content
+    is covered by an Integrity Reference and what surrounding or derived
+    material falls outside that reference.
   </p>
 
-  <span class="status">Future</span>
+  <span class="status">Foundation</span>
 </article>
 
 <article class="card">
-  <h2>Trust Frameworks</h2>
+  <h2>Cryptographic Requirements</h2>
 
   <p>
-    Standards may help establish consistent
-    approaches for understanding trust signals,
-    reputation indicators, and evidence models.
+    Anchor should preserve governed algorithm identity, Integrity Values,
+    signatures, verification material, and other cryptographic context
+    necessary for reproducibility and later verification.
   </p>
 
-  <span class="status">Exploratory</span>
+  <span class="status">Developing</span>
+</article>
+
+<article class="card">
+  <h2>Temporal Requirements</h2>
+
+  <p>
+    Anchor should distinguish anchoring time, observation time, publication
+    time, verification time, and other materially different timestamps rather
+    than collapsing them into one generic date.
+  </p>
+
+  <span class="status">Developing</span>
+</article>
+
+<article class="card">
+  <h2>Verification Requirements</h2>
+
+  <p>
+    Anchor Standards should define the minimum conditions required to
+    reproduce, validate, compare, and record integrity-verification results
+    without converting integrity review into certification or trust judgment.
+  </p>
+
+  <span class="status">Developing</span>
+</article>
+
+<article class="card">
+  <h2>Authority Boundary Requirements</h2>
+
+  <p>
+    Every Anchor standard must preserve the authority of the Source Institution
+    and distinguish external Source-System identifiers, statuses, Versions,
+    and lifecycle from Anchor-owned state.
+  </p>
+
+  <span class="status">Foundation</span>
+</article>
+
+<article class="card">
+  <h2>Interoperability Requirements</h2>
+
+  <p>
+    Anchor references should integrate cleanly with Atlas, Certifier, Registry,
+    Chronicle, Beacon, Attestor, Navigator, and future Suite institutions
+    without duplicating or absorbing their canonical objects.
+  </p>
+
+  <span class="status">Foundation</span>
 </article>
 
 </section>
@@ -260,21 +335,200 @@ h1{
 
 <article class="card">
 
-  <h2>Purpose of Standards</h2>
+  <h2>Core Standards Principles</h2>
+
+  <div class="note">
+    Define the representation before generating the integrity value.<br>
+    Preserve enough context to make verification reproducible.<br>
+    Keep Anchor identity separate from Source-System identity.<br>
+    Keep Anchor Version separate from Source Artifact Version.<br>
+    Keep Integrity State separate from Verification, Publication, and Lifecycle.<br>
+    Preserve prior material states.<br>
+    Reference does not transfer authority.
+  </div>
+
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Technology Neutrality</h2>
 
   <p>
-    Without standards, trust systems become difficult
-    to interpret across organizations, platforms,
-    and communities.
+    Standards should define institutional requirements independently from
+    any one hash algorithm, signature system, timestamping service,
+    distributed ledger, or Bitcoin commitment method.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Reproducibility</h2>
+
+  <p>
+    A later reviewer should have enough preserved context to understand
+    what was anchored and, where technically possible, reproduce or validate
+    the integrity result.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Minimum Necessary Structure</h2>
+
+  <p>
+    Anchor should not create separate records, identifiers, or integrity
+    artifacts merely for symmetry. Additional structure should exist only
+    where it provides durable institutional value.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Forward Compatibility</h2>
+
+  <p>
+    Anchor Standards should permit controlled evolution across algorithms,
+    schemas, signatures, external commitments, and future Bitcoin-based
+    mechanisms while preserving Version and verification lineage.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Relationship to Suite Standards</h2>
+
+  <p>
+    Suite Standards remain the shared institutional expectations layer for
+    the Satoshium Suite.
   </p>
 
   <p>
-    Shared standards improve interoperability,
-    portability, transparency, and understanding.
+    Anchor Standards should inherit and specialize shared areas such as:
   </p>
 
   <div class="note">
-    Standards support consistency. Consistency supports trust.
+    Terminology · Governance · Schemas · Versioning · Interoperability · Evidence · Trust Boundaries · Publication Consistency
+  </div>
+
+  <p style="margin-top:14px;">
+    Anchor-specific standards exist only where integrity preservation needs
+    requirements more precise than the shared Suite layer.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Relationship to Suite Methodology</h2>
+
+  <p>
+    Standards define what Anchor requires.
+    Methodology and procedures define how those requirements are applied.
+  </p>
+
+  <div class="note">
+    Standards define expectations.<br>
+    Methodology defines implementation principles.<br>
+    Procedures define repeatable operational steps.
+  </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Relationship to Suite Interoperability</h2>
+
+  <p>
+    Anchor implements the Suite reference-first model:
+  </p>
+
+  <div class="note">
+    Atlas → authoritative intelligence<br>
+    Certifier → Certification Package<br>
+    Registry → Satoshium Registry Entry<br>
+    Chronicle → Chronicle Entry<br>
+    Anchor → Integrity Reference<br>
+    Beacon → Discovery Signal / Metadata<br>
+    Attestor → Trust Statement<br>
+    Navigator → Workflow Definition
+  </div>
+
+  <p style="margin-top:14px;">
+    Anchor Standards must preserve these canonical-object and authority
+    boundaries throughout integrity processing.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>What Anchor Standards Do Not Govern</h2>
+
+  <p>
+    Anchor Standards do not define:
+  </p>
+
+  <div class="note">
+    identity systems<br>
+    claim semantics<br>
+    reputation systems<br>
+    trust scoring<br>
+    certification decisions<br>
+    Registry classification<br>
+    Chronicle historical significance<br>
+    Beacon discovery significance<br>
+    Attestor Trust Statement meaning<br>
+    Navigator workflow authority
+  </div>
+
+  <p style="margin-top:14px;">
+    Those remain outside Anchor's institutional authority.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Standards Still to Be Formalized</h2>
+
+  <p>
+    The foundation is now clear, but production evidence is still needed
+    before finalizing several Anchor-specific requirements.
+  </p>
+
+  <div class="note">
+    Anchor identifier specification<br>
+    Integrity Method Controlled Values<br>
+    approved algorithm policy<br>
+    signature policy<br>
+    timestamp policy<br>
+    Canonical Representation rules<br>
+    Integrity Reference schema<br>
+    Verification Result vocabulary<br>
+    Integrity State vocabulary<br>
+    Publication and Lifecycle requirements<br>
+    Versioning and Correction requirements<br>
+    Bitcoin commitment policy
   </div>
 
 </article>
@@ -288,16 +542,38 @@ h1{
   <h2>Standards Philosophy</h2>
 
   <p>
-    Anchor does not seek to create authority.
-    Instead, it explores how open standards may
-    help participants evaluate information using
-    common frameworks and shared expectations.
+    Anchor Standards should make integrity preservation precise enough to
+    be reproducible and interoperable while remaining narrow enough to
+    avoid redefining the authority of the records Anchor protects.
   </p>
 
-  <p>
-    Strong standards encourage collaboration while
-    preserving flexibility and independent judgment.
-  </p>
+  <div class="note">
+    Shared standards above. Integrity-specific requirements below. Authority preserved throughout.
+  </div>
+
+  <a class="btn" href="/suite/standards/">
+    Suite Standards →
+  </a>
+
+  <a class="btn" href="/anchor/purpose/">
+    Purpose →
+  </a>
+
+  <a class="btn" href="/anchor/definitions/">
+    Definitions →
+  </a>
+
+  <a class="btn" href="/anchor/integrity-preservation/">
+    Integrity Preservation →
+  </a>
+
+  <a class="btn" href="/anchor/anchoring-process/">
+    Anchoring Process →
+  </a>
+
+  <a class="btn" href="/anchor/integration/">
+    Integration →
+  </a>
 
   <a class="btn" href="/anchor/">
     Back to Anchor →
@@ -315,7 +591,7 @@ h1{
   <div id="random-saying"
        class="muted"
        style="margin-bottom:14px; max-width:760px;">
-    Standards create consistency. Consistency creates understanding.
+    Standards define expectations. Integrity preserves what those expectations protect.
   </div>
 
   <hr>
