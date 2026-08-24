@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Anchor Anchoring Process</title>
-<meta name="description" content="Satoshium Anchor Anchoring Process — defines the process by which artifacts are hashed, timestamped, signed, anchored, and preserved for integrity verification.">
+<meta name="description" content="Satoshium Anchor Anchoring Process — defines the institutional process for selecting an authoritative artifact, defining its canonical representation, generating integrity material, constructing an Integrity Reference, and preserving later verification.">
 <link rel="canonical" href="https://satoshium.us/anchor/anchoring-process/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -133,13 +133,15 @@ h1{
   <h1>Satoshium Anchor Anchoring Process</h1>
 
   <p class="lead">
-    Anchoring Process defines how important artifacts become integrity-preserved
-    within Anchor.
+    The Anchoring Process defines how an authoritative artifact becomes
+    associated with a durable Anchor Integrity Reference.
   </p>
 
   <p class="lead">
-    The process answers a simple question:
-    how does an artifact become anchored?
+    The process begins with source authority and representation definition,
+    not with hashing. Integrity is meaningful only when Anchor knows
+    exactly what is being referenced and why that representation is stable
+    enough to verify later.
   </p>
 </section>
 
@@ -148,33 +150,36 @@ h1{
 <article class="card">
   <h2>Purpose</h2>
   <p>
-    The Anchoring Process provides a structured lifecycle for transforming an
-    artifact into an integrity-preserved reference that can be verified later.
+    The Anchoring Process provides the repeatable institutional path for
+    creating an Integrity Reference without transferring authority away
+    from the system that owns the referenced artifact.
   </p>
 </article>
 
 <article class="card">
   <h2>Process Boundary</h2>
   <p>
-    Anchor does not create the artifact or define its meaning. Anchor begins
-    when an artifact is ready to receive an integrity reference.
+    Anchor does not create the substantive artifact or determine what it
+    means. Anchor begins when a candidate artifact is identified for
+    integrity preservation.
   </p>
 </article>
 
 <article class="card">
-  <h2>Artifact Focus</h2>
+  <h2>Authority First</h2>
   <p>
-    The process applies to artifacts whose integrity matters, including
-    Certification Packages, SCPRs, SCRs, SCRDs, Registry Entries, historical
-    events, attestations, or future Suite outputs.
+    Before integrity material is generated, Anchor must identify the
+    Source Institution and confirm which artifact is authoritative for the
+    representation being anchored.
   </p>
 </article>
 
 <article class="card">
   <h2>Verification Goal</h2>
   <p>
-    The goal of anchoring is to make future verification possible by preserving
-    references that can be compared against the artifact later.
+    The process exists so a future reviewer can reproduce or validate
+    integrity material and compare a reviewed representation with the
+    Integrity Reference.
   </p>
 </article>
 
@@ -186,13 +191,11 @@ h1{
   <h2>Anchoring Sequence</h2>
 
   <p>
-    The anchoring sequence describes the institutional path from artifact
-    creation to preserved integrity.
+    The production-oriented Anchoring Process follows this institutional path:
   </p>
 
   <div class="note">
-    Artifact Created → Hash Generated → Anchor Produced → Timestamp Recorded →
-    Signature Applied → Integrity Preserved
+    Identify Authoritative Artifact → Confirm Source Authority → Define Canonical Representation → Define Representation Boundary → Select Integrity Method → Generate Integrity Value → Record Temporal / Signature / Verification Material → Construct Integrity Reference → Verify Construction → Publish / Preserve → Maintain / Reverify when required
   </div>
 </article>
 
@@ -201,50 +204,108 @@ h1{
 <section class="grid">
 
 <article class="card">
-  <h2>Artifact Created</h2>
+  <h2>1. Identify Authoritative Artifact</h2>
   <p>
-    An artifact is created by its source system, such as Certifier, Registry,
-    Chronicle, Attestor, or another approved Suite component.
+    Identify the record, package, file, publication, statement, dataset,
+    or other governed object whose integrity should be preserved.
   </p>
 </article>
 
 <article class="card">
-  <h2>Hash Generated</h2>
+  <h2>2. Confirm Source Authority</h2>
   <p>
-    A cryptographic hash is generated from the artifact or from a defined
-    canonical representation of the artifact.
+    Confirm the Source Institution, Source-System Identifier where one
+    exists, artifact type, and authority boundary before Anchor creates
+    its own Integrity Reference.
   </p>
 </article>
 
 <article class="card">
-  <h2>Anchor Produced</h2>
+  <h2>3. Define Canonical Representation</h2>
   <p>
-    An anchor is produced from the integrity reference so the artifact can be
-    associated with a preserved verification point.
+    Determine the exact representation that will be processed for integrity,
+    such as canonical JSON, a defined file, a package artifact, or another
+    reproducible representation.
   </p>
 </article>
 
 <article class="card">
-  <h2>Timestamp Recorded</h2>
+  <h2>4. Define Representation Boundary</h2>
   <p>
-    A timestamp is recorded to establish when the integrity reference was
-    created, observed, published, or preserved.
+    Explicitly identify what content is covered by the Integrity Reference
+    and what surrounding presentation, generated interface, or later state
+    is outside that reference.
   </p>
 </article>
 
 <article class="card">
-  <h2>Signature Applied</h2>
+  <h2>5. Select Integrity Method</h2>
   <p>
-    A signature may be applied to identify the system, authority, process, or
-    identity responsible for producing or preserving the anchor.
+    Select the governed mechanism appropriate for the representation,
+    including the applicable digest algorithm, signature method, timestamp
+    method, external commitment method, or other integrity mechanism.
   </p>
 </article>
 
 <article class="card">
-  <h2>Integrity Preserved</h2>
+  <h2>6. Generate Integrity Value</h2>
   <p>
-    The artifact's integrity state is preserved so future reviewers can compare
-    the artifact against the anchored reference.
+    Generate the Integrity Value from the defined Canonical Representation.
+    A cryptographic digest is the most direct initial example.
+  </p>
+</article>
+
+<article class="card">
+  <h2>7. Record Verification Material</h2>
+  <p>
+    Record the metadata needed to reproduce or validate the integrity result,
+    including algorithm information, timestamps, signatures, representation
+    instructions, and external commitment references where applicable.
+  </p>
+</article>
+
+<article class="card">
+  <h2>8. Construct Integrity Reference</h2>
+  <p>
+    Assemble the Anchor-owned Integrity Reference linking the Source
+    Institution, Source-System Identifier, Canonical Representation,
+    Integrity Value, and required integrity metadata.
+  </p>
+</article>
+
+<article class="card">
+  <h2>9. Verify Construction</h2>
+  <p>
+    Confirm that the Integrity Reference corresponds to the intended artifact
+    representation and that its integrity material can be reproduced or
+    validated before public production use.
+  </p>
+</article>
+
+<article class="card">
+  <h2>10. Publish / Preserve</h2>
+  <p>
+    When the applicable production requirements are satisfied, publish or
+    preserve the Integrity Reference according to Anchor's later-defined
+    Publication and Lifecycle architecture.
+  </p>
+</article>
+
+<article class="card">
+  <h2>11. Maintain / Reverify</h2>
+  <p>
+    Review the Integrity Reference when the Source Artifact changes, a
+    reference breaks, an algorithm becomes unsuitable, verification fails,
+    or later integrity review is institutionally required.
+  </p>
+</article>
+
+<article class="card">
+  <h2>12. Preserve Lineage</h2>
+  <p>
+    Preserve prior material states, Corrections, Versions, verification
+    history, and later Integrity References so the integrity history remains
+    reconstructable over time.
   </p>
 </article>
 
@@ -256,13 +317,18 @@ h1{
   <h2>What the Process Produces</h2>
 
   <p>
-    The anchoring process produces integrity evidence that can be referenced by
-    other Suite systems without requiring Anchor to own the artifact itself.
+    The Anchoring Process produces an Anchor-owned
+    <strong>Integrity Reference</strong>.
   </p>
 
   <div class="note">
-    Anchor Reference · Artifact Identifier · Hash · Timestamp · Signature · Verification Metadata
+    Integrity Reference · Source-System Reference · Canonical Representation · Representation Boundary · Integrity Value · Algorithm Metadata · Temporal Context · Signature / Verification Material · Anchor Metadata
   </div>
+
+  <p style="margin-top:14px;">
+    The final production schema and required field set remain to be established
+    through Anchor's later schema architecture.
+  </p>
 </article>
 
 </section>
@@ -270,16 +336,94 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Canonical Representation</h2>
+  <h2>Canonical Representation Comes Before Hashing</h2>
 
   <p>
-    For anchoring to be useful, the artifact or its selected representation must
-    be clearly defined. Anchor may reference a file, record, package, public page,
-    structured object, or canonical export.
+    A hash is useful only when a later reviewer can determine exactly what
+    representation produced it.
+  </p>
+
+  <p>
+    Anchor therefore does not treat:
   </p>
 
   <div class="note">
-    A stable representation makes later verification repeatable.
+    "Hash this record"
+  </div>
+
+  <p style="margin-top:14px;">
+    as a sufficient institutional instruction.
+  </p>
+
+  <p>
+    The process must first establish:
+  </p>
+
+  <div class="note">
+    Which artifact? → Which authoritative source? → Which exact representation? → Which boundary? → Which governed method?
+  </div>
+</article>
+
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Hashes</h2>
+  <p>
+    Hashing may generate a deterministic Integrity Value for a defined
+    Canonical Representation. Hashing is a mechanism within the process,
+    not the process itself.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Timestamps</h2>
+  <p>
+    Timestamps preserve temporal context and should be labeled by meaning,
+    such as anchoring time, observation time, publication time, or
+    verification time.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Signatures</h2>
+  <p>
+    Signatures may support integrity or origin verification. They do not
+    automatically establish substantive authority, truth, certification,
+    reputation, or trust.
+  </p>
+</article>
+
+<article class="card">
+  <h2>External Commitments</h2>
+  <p>
+    External commitments, including possible future Bitcoin commitments,
+    may strengthen long-term independently reviewable integrity without
+    defining Anchor's institutional identity.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Source Artifact Changes</h2>
+
+  <p>
+    A Source Artifact may legitimately change after an Integrity Reference
+    is created.
+  </p>
+
+  <p>
+    A later Source Artifact Version, Correction, lifecycle change,
+    migration, or new canonical representation does not erase the earlier
+    integrity relationship.
+  </p>
+
+  <div class="note">
+    Preserve which representation was anchored, which Integrity Reference covered it, and how later representations relate to that state.
   </div>
 </article>
 
@@ -291,15 +435,44 @@ h1{
   <h2>Verification After Anchoring</h2>
 
   <p>
-    After anchoring, future verification compares the artifact against the
-    preserved integrity reference. If the values match, the artifact appears
-    consistent with the anchored state. If they do not match, the difference
-    indicates that the artifact, representation, or verification process must
-    be reviewed.
+    Later Integrity Verification begins with the preserved Integrity Reference
+    and the artifact representation under review.
   </p>
 
   <div class="note">
-    Anchor makes change detectable. Review explains what the change means.
+    Integrity Reference + Reviewed Representation → Reproduce / Validate Integrity Material → Compare → Verification Result
+  </div>
+
+  <p style="margin-top:14px;">
+    A match supports integrity consistency.
+    A mismatch requires investigation.
+  </p>
+
+  <p>
+    A mismatch does not automatically establish tampering, wrongdoing,
+    falsity, or loss of institutional authority.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Authority Boundary</h2>
+
+  <p>
+    Anchor owns the Integrity Reference.
+  </p>
+
+  <p>
+    The Source Institution continues to own the authoritative artifact and
+    its substantive status, meaning, certification, historical interpretation,
+    or trust context.
+  </p>
+
+  <div class="note">
+    Reference does not transfer authority.
   </div>
 </article>
 
@@ -311,15 +484,32 @@ h1{
   <h2>Process Philosophy</h2>
 
   <p>
-    Anchoring is not a declaration of truth. It is a preservation of integrity.
-    The process helps future reviewers determine whether an artifact remains
-    consistent with the preserved reference.
+    Anchoring is not a declaration of truth.
+    It is the governed creation of a durable integrity relationship between
+    an Anchor Integrity Reference and a defined artifact representation.
   </p>
 
   <p>
-    The goal is not to make every artifact permanent. The goal is to preserve
-    the ability to detect meaningful change.
+    The process should remain reproducible, reviewable, implementation-neutral,
+    and minimal enough to preserve integrity without duplicating the
+    authoritative record.
   </p>
+
+  <div class="note">
+    Define the representation. Generate the integrity evidence. Preserve the reference. Make later verification possible.
+  </div>
+
+  <a class="btn" href="/anchor/purpose/">
+    Purpose →
+  </a>
+
+  <a class="btn" href="/anchor/definitions/">
+    Definitions →
+  </a>
+
+  <a class="btn" href="/anchor/integrity-preservation/">
+    Integrity Preservation →
+  </a>
 
   <a class="btn" href="/anchor/">
     Back to Anchor →
