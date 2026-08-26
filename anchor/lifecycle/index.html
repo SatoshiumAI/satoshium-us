@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Anchor · Lifecycle</title>
+
+<meta name="description" content="Satoshium Anchor Lifecycle — defines the lifecycle of the Integrity Reference itself, separate from Source Artifact lifecycle, publication state, verification results, and integrity state.">
+
+<link rel="canonical" href="https://satoshium.us/anchor/lifecycle/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
+.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.status{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;border:1px solid rgba(214,163,74,.24);color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.btn{display:inline-block;margin-top:14px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,163,74,.24);background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700}
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Anchor · Lifecycle</div>
+  <h1>Satoshium Anchor · Lifecycle</h1>
+
+  <p class="lead">
+    Lifecycle defines the institutional progression of the Integrity Reference
+    itself—from construction through active use, supersession, withdrawal,
+    or archival preservation.
+  </p>
+
+  <p class="lead">
+    Anchor Lifecycle is independent from the lifecycle of the Source Artifact.
+    A Source Artifact may change, be withdrawn, superseded, or disappear while
+    the Integrity Reference remains historically valid and preserved.
+  </p>
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle Boundary</h2>
+  <div class="note">
+    Source Lifecycle ≠ Anchor Lifecycle
+  </div>
+  <p style="margin-top:14px;">
+    Anchor describes the lifecycle of its own Integrity Reference, not the
+    lifecycle state of the external Source Artifact.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle Model</h2>
+  <div class="note">
+    draft<br>
+    ↓<br>
+    active<br>
+    ↓<br>
+    superseded / withdrawn / archived
+  </div>
+  <p style="margin-top:14px;">
+    These states are now sufficiently supported by the architecture to serve as
+    the initial Anchor Lifecycle State set.
+  </p>
+</article></section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Draft</h2>
+  <p>
+    The Integrity Reference is under construction and has not yet entered
+    Anchor's active institutional record.
+  </p>
+  <span class="status">Lifecycle State</span>
+</article>
+
+<article class="card">
+  <h2>Active</h2>
+  <p>
+    The Integrity Reference is the current active Anchor record for the
+    integrity subject it governs.
+  </p>
+  <span class="status">Lifecycle State</span>
+</article>
+
+<article class="card">
+  <h2>Superseded</h2>
+  <p>
+    A later Integrity Reference has replaced this record for current use, while
+    the earlier record remains preserved for history and lineage.
+  </p>
+  <span class="status">Lifecycle State</span>
+</article>
+
+<article class="card">
+  <h2>Withdrawn</h2>
+  <p>
+    Anchor has removed the Integrity Reference from normal active use without
+    erasing its historical identity or prior publication history.
+  </p>
+  <span class="status">Lifecycle State</span>
+</article>
+
+<article class="card">
+  <h2>Archived</h2>
+  <p>
+    The Integrity Reference remains preserved primarily for historical,
+    evidentiary, or institutional continuity rather than active operational use.
+  </p>
+  <span class="status">Lifecycle State</span>
+</article>
+
+<article class="card">
+  <h2>Historical Persistence</h2>
+  <p>
+    Terminal or non-active states do not erase Anchor identity, prior Versions,
+    Verification history, Corrections, relationships, or provenance.
+  </p>
+  <span class="status">Principle</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Initial Frozen Lifecycle Values</h2>
+
+  <div class="note">
+    draft<br>
+    active<br>
+    superseded<br>
+    withdrawn<br>
+    archived
+  </div>
+
+  <p style="margin-top:14px;">
+    These five values form the initial Anchor Lifecycle State vocabulary.
+  </p>
+
+  <p>
+    Additional values should be added only when production demonstrates a
+    condition that cannot be represented accurately by this set.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle vs. Publication State</h2>
+
+  <p>
+    Lifecycle and Publication remain separate.
+  </p>
+
+  <div class="note">
+    Lifecycle State ≠ Publication State
+  </div>
+
+  <p style="margin-top:14px;">
+    An Integrity Reference may be active but not yet publicly published.
+    A superseded record may remain publicly accessible.
+    An archived record may remain resolvable indefinitely.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle vs. Integrity State</h2>
+
+  <div class="note">
+    Lifecycle State ≠ Integrity State
+  </div>
+
+  <p style="margin-top:14px;">
+    Lifecycle describes institutional use.
+    Integrity State describes the current integrity condition.
+  </p>
+
+  <p>
+    For example, an archived Integrity Reference may still have a fully
+    satisfactory integrity condition.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle vs. Verification Result</h2>
+
+  <div class="note">
+    Lifecycle State ≠ Verification Result
+  </div>
+
+  <p style="margin-top:14px;">
+    A Verification event may produce a mismatch or become unable to verify
+    without automatically determining the lifecycle of the Integrity Reference.
+  </p>
+
+  <p>
+    Maintenance, investigation, Correction, or Governance may determine what
+    lifecycle action follows.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Source Lifecycle Independence</h2>
+
+  <p>
+    The Source Artifact may have its own lifecycle states such as:
+  </p>
+
+  <div class="note">
+    current<br>
+    revised<br>
+    superseded<br>
+    revoked<br>
+    withdrawn<br>
+    archived<br>
+    deleted
+  </div>
+
+  <p style="margin-top:14px;">
+    These Source states do not automatically become Anchor lifecycle states.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Source Withdrawal</h2>
+
+  <p>
+    If a Source Artifact is withdrawn, Anchor may preserve the Integrity
+    Reference as evidence of the representation that existed at the time
+    it was anchored.
+  </p>
+
+  <div class="note">
+    Source withdrawn<br>
+    ≠<br>
+    Anchor record erased
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Source Supersession</h2>
+
+  <p>
+    If the Source Institution issues a new Source Version, the existing Anchor
+    record continues to govern the earlier representation.
+  </p>
+
+  <p>
+    A new Source Version may require:
+  </p>
+
+  <div class="note">
+    no Anchor action<br>
+    Reverification<br>
+    new Anchor Version<br>
+    new Integrity Reference
+  </div>
+
+  <p style="margin-top:14px;">
+    Versioning architecture will define the boundary.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Draft State</h2>
+
+  <p>
+    `draft` applies before the Integrity Reference enters active institutional use.
+  </p>
+
+  <p>
+    Draft records may change freely under production procedures because they
+    are not yet part of the preserved public lineage.
+  </p>
+
+  <p>
+    The exact point at which `draft` becomes `active` should be aligned with
+    Validation and Publication architecture.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Active State</h2>
+
+  <p>
+    `active` means Anchor recognizes the Integrity Reference as the current
+    institutional record for the integrity subject it governs.
+  </p>
+
+  <p>
+    Active does not mean:
+  </p>
+
+  <div class="note">
+    true<br>
+    trusted<br>
+    certified<br>
+    publicly visible<br>
+    permanently current
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Superseded State</h2>
+
+  <p>
+    `superseded` applies when a later Integrity Reference replaces the earlier
+    record for current institutional use.
+  </p>
+
+  <div class="note">
+    Earlier Integrity Reference<br>
+    ↓ superseded_by<br>
+    Later Integrity Reference
+  </div>
+
+  <p style="margin-top:14px;">
+    The earlier identifier, provenance, Verification history, and relationships
+    remain preserved.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Withdrawn State</h2>
+
+  <p>
+    `withdrawn` applies when Anchor intentionally removes an Integrity Reference
+    from normal active use without replacing it through ordinary supersession.
+  </p>
+
+  <p>
+    Potential reasons may include:
+  </p>
+
+  <div class="note">
+    governance decision<br>
+    invalid production basis<br>
+    unresolved material defect<br>
+    legal / policy constraint<br>
+    Source authority issue<br>
+    duplicate record
+  </div>
+
+  <p style="margin-top:14px;">
+    Exact withdrawal procedure remains to be defined.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Archived State</h2>
+
+  <p>
+    `archived` applies when an Integrity Reference is preserved primarily for
+    historical, evidentiary, or institutional continuity.
+  </p>
+
+  <p>
+    Archive does not mean deletion.
+  </p>
+
+  <div class="note">
+    Archived → preserved, resolvable, historically meaningful
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle Transitions</h2>
+
+  <p>
+    Initial allowed transitions should conceptually include:
+  </p>
+
+  <div class="note">
+    draft → active<br>
+    active → superseded<br>
+    active → withdrawn<br>
+    active → archived<br>
+    superseded → archived<br>
+    withdrawn → archived
+  </div>
+
+  <p style="margin-top:14px;">
+    Reverse transitions should not be assumed.
+    If production later requires restoration or reactivation, that behavior
+    should be explicitly governed rather than improvised.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>No Silent Lifecycle Reversal</h2>
+
+  <p>
+    Once a record becomes superseded, withdrawn, or archived, Anchor should not
+    silently return it to active use.
+  </p>
+
+  <p>
+    A reversal, if ever allowed, should require an explicit governed event and
+    preserved history.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle History</h2>
+
+  <p>
+    Lifecycle changes should preserve:
+  </p>
+
+  <div class="note">
+    prior lifecycle state<br>
+    new lifecycle state<br>
+    effective time<br>
+    governing reason<br>
+    related Version / Correction / superseding record<br>
+    responsible institutional process where required
+  </div>
+
+  <p style="margin-top:14px;">
+    Exact event structure remains to be finalized in Schema and Procedures.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle and Identifiers</h2>
+
+  <p>
+    Lifecycle change does not change Anchor identity.
+  </p>
+
+  <div class="note">
+    Anchor Identifier remains stable<br>
+    while Lifecycle State changes
+  </div>
+
+  <p style="margin-top:14px;">
+    This preserves durable citation and relationship resolution.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle and Versioning</h2>
+
+  <p>
+    Versioning changes the governed representation of an Integrity Reference.
+    Lifecycle describes its institutional position.
+  </p>
+
+  <div class="note">
+    Anchor Version ≠ Lifecycle State
+  </div>
+
+  <p style="margin-top:14px;">
+    A Version change does not necessarily change lifecycle.
+    A lifecycle change does not necessarily require a new Version.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle and Corrections</h2>
+
+  <p>
+    A Correction does not automatically change lifecycle.
+  </p>
+
+  <p>
+    Depending on severity, a Correction process may:
+  </p>
+
+  <div class="note">
+    preserve active state<br>
+    lead to withdrawal<br>
+    lead to supersession<br>
+    lead to archival
+  </div>
+
+  <p style="margin-top:14px;">
+    Corrections architecture will define the governing behavior.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle and Maintenance</h2>
+
+  <p>
+    Maintenance may detect conditions that require lifecycle review.
+  </p>
+
+  <div class="note">
+    repeated Verification failure<br>
+    unavailable Source<br>
+    deprecated method<br>
+    superseding Integrity Reference<br>
+    unresolved defect
+  </div>
+
+  <p style="margin-top:14px;">
+    Maintenance should recommend or trigger governed lifecycle action rather
+    than silently changing state.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle Controlled Values</h2>
+
+  <p>
+    This page now freezes the initial production Lifecycle State set:
+  </p>
+
+  <div class="note">
+    draft<br>
+    active<br>
+    superseded<br>
+    withdrawn<br>
+    archived
+  </div>
+
+  <p style="margin-top:14px;">
+    These tokens should remain machine-stable unless later governance formally
+    deprecates or replaces one.
+  </p>
+
+  <span class="status">Initial Enumeration Frozen</span>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Lifecycle Principle</h2>
+
+  <p>
+    Anchor should preserve the full institutional history of an Integrity
+    Reference even after it is no longer the active record.
+  </p>
+
+  <div class="note">
+    Preserve the record beyond its active life.
+  </div>
+
+  <a class="btn" href="/anchor/verification/">Verification →</a>
+  <a class="btn" href="/anchor/schemas/">Schemas →</a>
+  <a class="btn" href="/anchor/controlled-values/">Controlled Values →</a>
+  <a class="btn" href="/anchor/relationships/">Relationships →</a>
+  <a class="btn" href="/anchor/">Back to Anchor →</a>
+</article></section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    A durable record remains meaningful after active use ends.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
