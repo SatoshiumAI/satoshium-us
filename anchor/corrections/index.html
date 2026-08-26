@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Anchor · Corrections</title>
+
+<meta name="description" content="Satoshium Anchor Corrections — distinguishes Source Artifact changes from Anchor-owned errors, defines correction lineage, and formalizes the rule: Correct forward. Preserve backward.">
+
+<link rel="canonical" href="https://satoshium.us/anchor/corrections/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
+.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.status{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;border:1px solid rgba(214,163,74,.24);color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.btn{display:inline-block;margin-top:14px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,163,74,.24);background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700}
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Anchor · Corrections</div>
+  <h1>Satoshium Anchor · Corrections</h1>
+
+  <p class="lead">
+    Corrections define how Anchor repairs Anchor-owned errors while preserving
+    the historical record of what was previously published, stored, or relied upon.
+  </p>
+
+  <p class="lead">
+    A Source Artifact change is not an Anchor Correction. Anchor corrects only
+    information, provenance, integrity material, relationships, or metadata that
+    Anchor itself recorded incorrectly.
+  </p>
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Principle</h2>
+  <div class="note">
+    Correct forward. Preserve backward.
+  </div>
+  <p style="margin-top:14px;">
+    A Correction creates a new governed state without silently erasing the prior one.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Boundary</h2>
+  <div class="note">
+    Source Artifact Change ≠ Anchor Correction
+  </div>
+  <p style="margin-top:14px;">
+    Source Institutions correct their own artifacts.
+    Anchor corrects only Anchor-owned records and integrity metadata.
+  </p>
+</article></section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Source Artifact Change</h2>
+  <p>
+    A revision, Correction, withdrawal, revocation, or new Version performed by
+    the Source Institution under its own authority.
+  </p>
+  <span class="status">External Authority</span>
+</article>
+
+<article class="card">
+  <h2>Anchor Correction</h2>
+  <p>
+    A governed repair to incorrect Anchor-owned information while preserving
+    the prior production state.
+  </p>
+  <span class="status">Anchor Authority</span>
+</article>
+
+<article class="card">
+  <h2>Correction Lineage</h2>
+  <p>
+    Preserves what was wrong, what changed, which Version carried the error,
+    and which later Version or Integrity Reference resolves it.
+  </p>
+  <span class="status">Required</span>
+</article>
+
+<article class="card">
+  <h2>Subject Error</h2>
+  <p>
+    An error showing that the Integrity Reference was about the wrong integrity
+    subject may require a new Integrity Reference rather than ordinary Versioning.
+  </p>
+  <span class="status">Material Boundary</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Anchor-Owned Errors</h2>
+
+  <p>
+    Examples of Anchor-owned errors may include:
+  </p>
+
+  <div class="note">
+    wrong Source-System Identifier<br>
+    wrong Source Institution<br>
+    wrong Source location<br>
+    wrong Source Version metadata<br>
+    wrong Representation Boundary<br>
+    wrong canonicalization metadata<br>
+    wrong Integrity Method metadata<br>
+    wrong Integrity Value<br>
+    wrong algorithm metadata<br>
+    wrong timestamp<br>
+    wrong signer / key reference<br>
+    wrong external commitment reference<br>
+    wrong relationship<br>
+    wrong publication metadata<br>
+    wrong lifecycle metadata
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Source Changes Are Not Anchor Errors</h2>
+
+  <p>
+    The following do not become Anchor Corrections merely because they affect
+    what Anchor references:
+  </p>
+
+  <div class="note">
+    Source publishes a new Version<br>
+    Source corrects its own content<br>
+    Source withdraws a record<br>
+    Source revokes a statement<br>
+    Source changes lifecycle<br>
+    Source changes canonical location<br>
+    Source supersedes an artifact
+  </div>
+
+  <p style="margin-top:14px;">
+    Anchor may need Maintenance, Reverification, a new Anchor Version, or a new
+    Integrity Reference—but the Source event remains Source authority.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Decision Test</h2>
+
+  <div class="note">
+    1. Is the disputed information Anchor-owned?<br>
+    2. Was Anchor's recorded value incorrect at the time it was recorded?<br>
+    3. Does the integrity subject remain the same?<br>
+    4. Can the error be repaired through a new Anchor Version?<br>
+    5. Or does the error reveal that Anchor preserved the wrong integrity subject?
+  </div>
+
+  <p style="margin-top:14px;">
+    Same subject + Anchor-owned error → Correction + new Anchor Version.<br>
+    Wrong subject → new Integrity Reference, with lifecycle action on the flawed record.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction and Versioning</h2>
+
+  <div class="note">
+    Same integrity subject + Anchor error<br>
+    → Correction<br>
+    → new Anchor Version
+  </div>
+
+  <p style="margin-top:14px;">
+    The Anchor Identifier remains stable because the underlying integrity subject
+    remains the same.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Wrong Integrity Subject</h2>
+
+  <p>
+    Some errors cannot be repaired as an ordinary Version because they invalidate
+    the identity premise of the original Integrity Reference.
+  </p>
+
+  <div class="note">
+    wrong Source Artifact<br>
+    wrong Canonical Representation<br>
+    materially wrong Representation Boundary<br>
+    wrong artifact package<br>
+    wrong Source identity
+  </div>
+
+  <p style="margin-top:14px;">
+    Normal response:
+  </p>
+
+  <div class="note">
+    flawed Integrity Reference<br>
+    → withdraw or supersede<br><br>
+    correct integrity subject<br>
+    → new Integrity Reference<br>
+    → new Anchor Identifier
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Lineage</h2>
+
+  <p>
+    Every production Correction should preserve enough lineage to reconstruct:
+  </p>
+
+  <div class="note">
+    affected Anchor Identifier<br>
+    affected Anchor Version<br>
+    error discovered<br>
+    erroneous field / condition<br>
+    prior value<br>
+    corrected value<br>
+    correction reason<br>
+    corrected Anchor Version<br>
+    effective time<br>
+    related Verification / Maintenance event where applicable
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Record</h2>
+
+  <p>
+    Anchor may benefit from a separately identified Correction record if
+    Corrections need durable citation independent of Version history.
+  </p>
+
+  <div class="note">
+    Integrity Reference<br>
+    ↓ corrected_by<br>
+    Correction Record<br>
+    ↓ applied_in<br>
+    Later Anchor Version
+  </div>
+
+  <p style="margin-top:14px;">
+    Whether Correction Records receive their own permanent identifiers remains
+    intentionally unfrozen until Procedures and first production use prove the need.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Type</h2>
+
+  <p>
+    Correction Type is now proven to be a useful Controlled Value category.
+  </p>
+
+  <p>
+    Initial candidate categories include:
+  </p>
+
+  <div class="note">
+    source_reference_error<br>
+    representation_error<br>
+    integrity_material_error<br>
+    provenance_error<br>
+    relationship_error<br>
+    attribution_error<br>
+    publication_metadata_error<br>
+    lifecycle_metadata_error<br>
+    other_anchor_metadata_error
+  </div>
+
+  <p style="margin-top:14px;">
+    These remain provisional until the first real Corrections demonstrate which
+    distinctions materially affect procedure and reporting.
+  </p>
+
+  <span class="status">Enumeration Unfrozen</span>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Severity</h2>
+
+  <p>
+    Anchor should not assume every Correction has the same operational impact.
+  </p>
+
+  <p>
+    Potential severity distinctions may eventually include:
+  </p>
+
+  <div class="note">
+    clerical<br>
+    material<br>
+    integrity-affecting<br>
+    subject-invalidating
+  </div>
+
+  <p style="margin-top:14px;">
+    No severity Controlled Value set is frozen yet.
+    Production should prove whether severity adds durable value beyond Correction Type.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Clerical vs. Integrity-Affecting Error</h2>
+
+  <p>
+    A typo in non-material notes is not equivalent to an incorrect digest.
+  </p>
+
+  <div class="note">
+    clerical metadata issue<br>
+    ≠<br>
+    integrity material issue
+  </div>
+
+  <p style="margin-top:14px;">
+    Procedures may later allow different review thresholds while preserving the
+    same correction lineage standard.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Integrity Value Correction</h2>
+
+  <p>
+    If Anchor stored the wrong Integrity Value for the correct Canonical
+    Representation, the error is Anchor-owned.
+  </p>
+
+  <div class="note">
+    correct subject<br>
+    + wrong Integrity Value<br>
+    → Correction<br>
+    → new Anchor Version
+  </div>
+
+  <p style="margin-top:14px;">
+    The prior incorrect value must remain visible in preserved Version history.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Representation Error</h2>
+
+  <p>
+    Representation errors require the Versioning subject test.
+  </p>
+
+  <div class="note">
+    metadata describes boundary incorrectly<br>
+    but actual governed subject was correct<br>
+    → may be Correction + new Version<br><br>
+    wrong representation actually anchored<br>
+    → new integrity subject required
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationship Error</h2>
+
+  <p>
+    If Anchor links the Integrity Reference to the wrong Source identifier,
+    Correction, prior Version, superseding record, or commitment, that relationship
+    error belongs to Anchor.
+  </p>
+
+  <p>
+    Corrected relationship lineage should preserve both the prior incorrect link
+    and the corrected link through Version history or Correction records.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Provenance Error</h2>
+
+  <p>
+    If Anchor records provenance incorrectly, Anchor may correct:
+  </p>
+
+  <div class="note">
+    producing system<br>
+    generation timestamp<br>
+    canonicalization method<br>
+    signer reference<br>
+    key reference<br>
+    external commitment provenance
+  </div>
+
+  <p style="margin-top:14px;">
+    The Correction should distinguish inaccurate provenance from a later change
+    in the actual process.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification-Discovered Corrections</h2>
+
+  <p>
+    Verification may reveal an Anchor error.
+  </p>
+
+  <div class="note">
+    Verification mismatch<br>
+    ↓<br>
+    investigate cause<br>
+    ↓<br>
+    Anchor error confirmed?<br>
+    ↓<br>
+    Correction process
+  </div>
+
+  <p style="margin-top:14px;">
+    A mismatch itself is not automatically a Correction.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Maintenance-Discovered Corrections</h2>
+
+  <p>
+    Maintenance may identify:
+  </p>
+
+  <div class="note">
+    broken Source reference<br>
+    stale publication location<br>
+    missing commitment metadata<br>
+    wrong algorithm status metadata<br>
+    inconsistent relationship lineage
+  </div>
+
+  <p style="margin-top:14px;">
+    Maintenance should route genuine Anchor errors into Correction rather than
+    silently patching production records.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction and Lifecycle</h2>
+
+  <p>
+    Correction does not automatically determine Lifecycle State.
+  </p>
+
+  <div class="note">
+    Correction<br>
+    → active remains active<br>
+    or<br>
+    → withdrawal<br>
+    or<br>
+    → supersession<br>
+    or<br>
+    → archival
+  </div>
+
+  <p style="margin-top:14px;">
+    The appropriate lifecycle consequence depends on whether the integrity
+    subject remains valid and whether the defect is safely repairable.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction and Publication</h2>
+
+  <p>
+    Publication should make material Corrections visible.
+  </p>
+
+  <p>
+    A canonical public Integrity Reference should identify:
+  </p>
+
+  <div class="note">
+    current Anchor Version<br>
+    prior Version history<br>
+    Correction notice where applicable<br>
+    corrected fields or condition<br>
+    effective Correction time
+  </div>
+
+  <p style="margin-top:14px;">
+    Publication must not create the appearance that the corrected value was
+    always the value originally recorded.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>No Destructive Correction</h2>
+
+  <p>
+    Anchor should never repair a production error by deleting evidence of the
+    erroneous state from institutional history.
+  </p>
+
+  <div class="note">
+    Version N = preserved error state<br>
+    Version N+1 = corrected state
+  </div>
+
+  <p style="margin-top:14px;">
+    Public presentation may emphasize the current corrected state while preserving
+    access to historical Versions.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Validation</h2>
+
+  <p>
+    Later Validation architecture or Production Procedures should confirm:
+  </p>
+
+  <div class="note">
+    affected record exists<br>
+    affected Version exists<br>
+    error is Anchor-owned<br>
+    Correction reason provided<br>
+    prior value preserved<br>
+    corrected value provided<br>
+    Version increment valid where required<br>
+    lifecycle consequence valid<br>
+    relationship lineage coherent
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Procedure</h2>
+
+  <div class="note">
+    1. Detect potential error.<br>
+    2. Preserve current production state.<br>
+    3. Determine Source change vs. Anchor error.<br>
+    4. Determine whether integrity subject remains the same.<br>
+    5. Classify Correction where useful.<br>
+    6. Record prior and corrected values.<br>
+    7. Create new Anchor Version or new Integrity Reference as required.<br>
+    8. Preserve Correction lineage.<br>
+    9. Apply lifecycle consequence if required.<br>
+    10. Publish Correction notice / updated canonical state.<br>
+    11. Reverify corrected state where applicable.
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Principle</h2>
+
+  <p>
+    Corrections should repair Anchor's present record without falsifying Anchor's past.
+  </p>
+
+  <div class="note">
+    Correct forward. Preserve backward.
+  </div>
+
+  <a class="btn" href="/anchor/versioning/">Versioning →</a>
+  <a class="btn" href="/anchor/lifecycle/">Lifecycle →</a>
+  <a class="btn" href="/anchor/verification/">Verification →</a>
+  <a class="btn" href="/anchor/relationships/">Relationships →</a>
+  <a class="btn" href="/anchor/">Back to Anchor →</a>
+</article></section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    A trustworthy correction preserves evidence of what came before it.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
