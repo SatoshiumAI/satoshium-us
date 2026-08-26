@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Anchor · Versioning</title>
+
+<meta name="description" content="Satoshium Anchor Versioning — defines when a change creates a new Anchor Version versus a new Integrity Reference, and distinguishes Source Artifact, Anchor, Schema, Algorithm, and commitment-method Versions.">
+
+<link rel="canonical" href="https://satoshium.us/anchor/versioning/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
+.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.status{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;border:1px solid rgba(214,163,74,.24);color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.btn{display:inline-block;margin-top:14px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,163,74,.24);background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700}
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Anchor · Versioning</div>
+  <h1>Satoshium Anchor · Versioning</h1>
+
+  <p class="lead">
+    Versioning defines when change remains part of the same Integrity Reference
+    and when change is material enough to require a new Integrity Reference
+    with a new Anchor Identifier.
+  </p>
+
+  <p class="lead">
+    The central decision is not whether something changed. It is whether the
+    integrity subject remains the same.
+  </p>
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Versioning Question</h2>
+  <div class="note">
+    Same integrity subject + changed Anchor-owned representation<br>
+    → new Anchor Version<br><br>
+    New integrity subject<br>
+    → new Integrity Reference + new Anchor Identifier
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Core Rule</h2>
+
+  <div class="note">
+    Version when identity remains.<br>
+    Create a new Integrity Reference when the integrity subject changes.
+  </div>
+
+  <p style="margin-top:14px;">
+    This rule preserves stable identity without allowing materially different
+    integrity subjects to hide behind the same Anchor Identifier.
+  </p>
+</article></section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Source Artifact Version</h2>
+  <p>
+    Version assigned by the Source Institution to its own authoritative artifact.
+  </p>
+  <span class="status">External Authority</span>
+</article>
+
+<article class="card">
+  <h2>Anchor Version</h2>
+  <p>
+    Version of the Anchor-owned Integrity Reference while the underlying
+    integrity subject remains the same.
+  </p>
+  <span class="status">Anchor Authority</span>
+</article>
+
+<article class="card">
+  <h2>Schema Version</h2>
+  <p>
+    Version of the machine-readable schema used to structure and validate
+    the Integrity Reference.
+  </p>
+  <span class="status">Schema Authority</span>
+</article>
+
+<article class="card">
+  <h2>Algorithm Version</h2>
+  <p>
+    Version of a cryptographic algorithm or implementation where the Version
+    materially affects reproducibility or Verification.
+  </p>
+  <span class="status">Method Metadata</span>
+</article>
+
+<article class="card">
+  <h2>Commitment-Method Version</h2>
+  <p>
+    Version of an external or composite commitment procedure, such as a
+    timestamping, Merkle, transparency, or future Bitcoin commitment method.
+  </p>
+  <span class="status">Method Metadata</span>
+</article>
+
+<article class="card">
+  <h2>Canonicalization Version</h2>
+  <p>
+    Version of the transformation or serialization rules used to construct
+    the Canonical Representation where those rules are Versioned.
+  </p>
+  <span class="status">Representation Metadata</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Version Separation</h2>
+
+  <div class="note">
+    Source Artifact Version<br>
+    ≠ Anchor Version<br>
+    ≠ Schema Version<br>
+    ≠ Algorithm Version<br>
+    ≠ Commitment-Method Version<br>
+    ≠ Canonicalization Version
+  </div>
+
+  <p style="margin-top:14px;">
+    These Versions may change independently.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Integrity Subject</h2>
+
+  <p>
+    The <strong>integrity subject</strong> is the combination of Source identity
+    and governed representation that the Integrity Reference exists to preserve.
+  </p>
+
+  <div class="note">
+    Source Artifact identity<br>
+    +<br>
+    Canonical Representation<br>
+    +<br>
+    Representation Boundary<br>
+    =<br>
+    integrity subject
+  </div>
+
+  <p style="margin-top:14px;">
+    The Integrity Method supports preservation of the subject.
+    It does not define the subject by itself.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>New Anchor Version</h2>
+
+  <p>
+    A new Anchor Version is appropriate when the Integrity Reference remains
+    about the same integrity subject but Anchor-owned record content changes.
+  </p>
+
+  <p>
+    Likely examples include:
+  </p>
+
+  <div class="note">
+    Correction of Anchor-owned metadata<br>
+    addition of Verification history<br>
+    addition or repair of publication location<br>
+    Maintenance metadata update<br>
+    provenance clarification that does not alter the governed representation<br>
+    addition of external commitment evidence for the same integrity subject<br>
+    schema migration preserving equivalent meaning
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>New Integrity Reference</h2>
+
+  <p>
+    A new Integrity Reference is appropriate when the integrity subject itself changes.
+  </p>
+
+  <p>
+    Likely examples include:
+  </p>
+
+  <div class="note">
+    different Source Artifact<br>
+    materially different Source Version selected as the new subject<br>
+    different Canonical Representation<br>
+    different Representation Boundary<br>
+    changed canonical content<br>
+    different artifact package<br>
+    materially different governed serialization subject
+  </div>
+
+  <p style="margin-top:14px;">
+    A new Integrity Reference receives a new Anchor Identifier.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Source Artifact Version Change</h2>
+
+  <p>
+    A Source Version change does not automatically answer the Anchor Versioning question.
+  </p>
+
+  <div class="note">
+    Source Version changed<br>
+    ↓<br>
+    determine whether the governed integrity subject changed
+  </div>
+
+  <p style="margin-top:14px;">
+    If the Source Version is merely metadata and the Canonical Representation
+    remains identical, a new Integrity Reference may not be necessary.
+  </p>
+
+  <p>
+    If the Source Version changes the canonical content being preserved,
+    the normal outcome should be a new Integrity Reference.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Representation Boundary Change</h2>
+
+  <p>
+    A material Representation Boundary change normally creates a new integrity subject.
+  </p>
+
+  <div class="note">
+    Boundary A<br>
+    ≠<br>
+    Boundary B
+  </div>
+
+  <p style="margin-top:14px;">
+    Even if both boundaries come from the same Source Artifact, they may
+    represent different integrity claims and therefore require separate
+    Integrity References.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Canonicalization Rule Change</h2>
+
+  <p>
+    A canonicalization change requires careful analysis.
+  </p>
+
+  <div class="note">
+    Rule change + same semantic Canonical Representation<br>
+    → may be Anchor Version or schema/method migration<br><br>
+    Rule change + materially different Canonical Representation<br>
+    → new Integrity Reference
+  </div>
+
+  <p style="margin-top:14px;">
+    Production procedure should test whether the generated integrity subject
+    remains equivalent.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Integrity Method Change</h2>
+
+  <p>
+    Changing the Integrity Method does not automatically create a new integrity subject.
+  </p>
+
+  <p>
+    For the same Canonical Representation, Anchor may add:
+  </p>
+
+  <div class="note">
+    stronger digest<br>
+    new signature<br>
+    trusted timestamp<br>
+    external commitment<br>
+    future Bitcoin commitment
+  </div>
+
+  <p style="margin-top:14px;">
+    If the subject remains unchanged, this may be represented as a new Anchor
+    Version or additional method evidence.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Algorithm Change</h2>
+
+  <p>
+    A cryptographic algorithm may become deprecated while the integrity subject
+    remains the same.
+  </p>
+
+  <div class="note">
+    same integrity subject<br>
+    + new algorithm evidence<br>
+    → new Anchor Version or additional method evidence
+  </div>
+
+  <p style="margin-top:14px;">
+    Historical algorithm evidence must remain preserved.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Schema Version Change</h2>
+
+  <p>
+    Schema migration alone should not create a new Integrity Reference when the
+    underlying integrity subject and institutional meaning remain unchanged.
+  </p>
+
+  <div class="note">
+    schema representation changes<br>
+    ≠<br>
+    integrity subject changes
+  </div>
+
+  <p style="margin-top:14px;">
+    A schema migration may produce a new Anchor Version if it changes the
+    canonical Anchor record representation.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction and Versioning</h2>
+
+  <p>
+    Corrections usually operate through a new Anchor Version when the Integrity
+    Reference identity remains valid.
+  </p>
+
+  <div class="note">
+    same subject + Anchor error<br>
+    → Correction + new Anchor Version
+  </div>
+
+  <p style="margin-top:14px;">
+    If the error means the original record referenced the wrong integrity subject
+    entirely, a new Integrity Reference may be required.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Version History</h2>
+
+  <p>
+    Anchor should preserve every production Version.
+  </p>
+
+  <div class="note">
+    Version 1<br>
+    ↓<br>
+    Version 2<br>
+    ↓<br>
+    Version 3
+  </div>
+
+  <p style="margin-top:14px;">
+    Later Versions must not silently erase earlier production states.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Version Numbering</h2>
+
+  <p>
+    The Base Schema currently models:
+  </p>
+
+  <div class="note">
+    anchor_version → integer beginning at 1
+  </div>
+
+  <p style="margin-top:14px;">
+    Initial production architecture therefore adopts simple sequential integer
+    Anchor Versions:
+  </p>
+
+  <div class="note">
+    1 → 2 → 3 → 4
+  </div>
+
+  <p style="margin-top:14px;">
+    Semantic Versioning is not necessary for the Integrity Reference itself
+    unless later production proves otherwise.
+  </p>
+
+  <span class="status">Initial Version Model Frozen</span>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Version 1</h2>
+
+  <p>
+    The first production form of an Integrity Reference is:
+  </p>
+
+  <div class="note">
+    anchor_version = 1
+  </div>
+
+  <p style="margin-top:14px;">
+    Draft iterations before production assignment do not require permanent
+    production Version history unless production procedure later establishes otherwise.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Version Increment Rule</h2>
+
+  <p>
+    A production Anchor Version should increment only for a governed change
+    to the Anchor-owned Integrity Reference representation.
+  </p>
+
+  <div class="note">
+    prior production Version<br>
+    + governed Anchor change<br>
+    → next sequential Anchor Version
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Changes That May Not Require an Anchor Version</h2>
+
+  <p>
+    Purely external or derived changes may not require Versioning if they do not
+    alter the canonical Anchor record.
+  </p>
+
+  <div class="note">
+    website styling change<br>
+    navigation change<br>
+    regenerated non-canonical presentation<br>
+    mirrored URL<br>
+    unrelated Source metadata<br>
+    transient interface state
+  </div>
+
+  <p style="margin-top:14px;">
+    Publication architecture should define which representations are canonical.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Decision Test</h2>
+
+  <div class="note">
+    1. Did the Source Artifact identity change?<br>
+    2. Did the Canonical Representation materially change?<br>
+    3. Did the Representation Boundary materially change?<br>
+    4. Is Anchor still preserving the same integrity subject?<br>
+    5. Is the change only to Anchor-owned metadata, evidence, or structure?
+  </div>
+
+  <p style="margin-top:14px;">
+    If the answer to #4 is yes, use Versioning where appropriate.
+    If the answer to #4 is no, create a new Integrity Reference.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Versioning and Supersession</h2>
+
+  <p>
+    A new Anchor Version and a superseding Integrity Reference are different.
+  </p>
+
+  <div class="note">
+    same Anchor Identifier<br>
+    → new Anchor Version<br><br>
+    new Anchor Identifier<br>
+    → may supersede prior Integrity Reference
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Versioning and Lifecycle</h2>
+
+  <p>
+    Version and Lifecycle remain separate.
+  </p>
+
+  <div class="note">
+    Anchor Version ≠ Lifecycle State
+  </div>
+
+  <p style="margin-top:14px;">
+    A new Version may remain active.
+    A lifecycle change may occur without a new Version if the canonical record
+    is not Versioned by that event.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Versioning and Publication</h2>
+
+  <p>
+    Publication should expose which Anchor Version is currently canonical while
+    preserving access to prior Versions.
+  </p>
+
+  <div class="note">
+    current canonical Version<br>
+    + preserved historical Versions
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Versioning Principle</h2>
+
+  <p>
+    Versioning should preserve continuity without disguising a new integrity
+    subject as an update to an old one.
+  </p>
+
+  <div class="note">
+    Preserve identity when the subject remains. Create new identity when the subject changes.
+  </div>
+
+  <a class="btn" href="/anchor/lifecycle/">Lifecycle →</a>
+  <a class="btn" href="/anchor/identifiers/">Identifiers →</a>
+  <a class="btn" href="/anchor/relationships/">Relationships →</a>
+  <a class="btn" href="/anchor/schemas/">Schemas →</a>
+  <a class="btn" href="/anchor/">Back to Anchor →</a>
+</article></section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Continuity deserves a Version. A new subject deserves a new identity.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
