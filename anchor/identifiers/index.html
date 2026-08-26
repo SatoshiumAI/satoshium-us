@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Anchor · Identifiers</title>
+<meta name="description" content="Satoshium Anchor Identifier Architecture — defines what Anchor Identifiers identify, how they relate to Source-System Identifiers, and the rules governing stable identity for Integrity References.">
+<link rel="canonical" href="https://satoshium.us/anchor/identifiers/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
+.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.btn{display:inline-block;margin-top:14px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,163,74,.24);background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700}
+.btn:hover{background:rgba(214,163,74,.12)}
+.status{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;border:1px solid rgba(214,163,74,.24);color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.muted{color:var(--muted)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Anchor · Identifiers</div>
+  <h1>Satoshium Anchor · Identifiers</h1>
+  <p class="lead">Identifier Architecture defines how Anchor gives stable identity to its canonical object: the Integrity Reference.</p>
+  <p class="lead">An Anchor Identifier identifies the Anchor-owned Integrity Reference. It does not replace, reinterpret, or absorb the Source-System Identifier of the authoritative artifact being referenced.</p>
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Identifier Principle</h2>
+  <div class="note">Anchor Identifier → Integrity Reference<br>Source-System Identifier → Source Artifact</div>
+  <p style="margin-top:14px;">These identifiers describe different institutional objects and must remain independently meaningful.</p>
+  <div class="note">Source-System Identifier ≠ Anchor Identifier</div>
+</article></section>
+
+<section class="grid">
+<article class="card"><h2>Anchor Identifier</h2><p>The stable identifier assigned by Anchor to an Integrity Reference. It identifies the Anchor record itself across publication, Verification, Versioning, Corrections, relationships, and long-term preservation.</p><span class="status">Architecture Defined</span></article>
+<article class="card"><h2>Source-System Identifier</h2><p>The identifier assigned by the Source Institution to the authoritative artifact referenced by Anchor, such as a Certification Package, Registry Entry, or Chronicle Entry.</p><span class="status">External Authority</span></article>
+<article class="card"><h2>Source Institution</h2><p>The institution that governs the Source-System Identifier and the Authoritative Artifact associated with it.</p><span class="status">Required Context</span></article>
+<article class="card"><h2>Anchor Version</h2><p>A Version identifies a governed state of the Integrity Reference. Versioning must remain distinct from the identity of the Integrity Reference itself.</p><span class="status">Later Architecture</span></article>
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Cross-System Identity Model</h2>
+  <div class="note">Source Institution<br>↓<br>Source-System Identifier<br>↓<br>Authoritative Artifact<br>↓<br>Canonical Representation<br>↓<br>Anchor Integrity Reference<br>↓<br>Anchor Identifier</div>
+  <p style="margin-top:14px;">The Source-System Identifier identifies the external authoritative object. The Anchor Identifier identifies the integrity-preservation record created for a defined representation of that object.</p>
+</article></section>
+
+<section class="grid">
+<article class="card"><h2>Identifier Stability</h2><p>Once assigned to a production Integrity Reference, an Anchor Identifier should remain stable. Corrections, later Verification, maintenance, and other ordinary lifecycle events should not silently change its identity.</p></article>
+<article class="card"><h2>Identifier Uniqueness</h2><p>Every production Anchor Identifier must uniquely identify one Anchor-owned Integrity Reference within the Anchor namespace.</p></article>
+<article class="card"><h2>Identifier Immutability</h2><p>The identifier itself should not be repurposed to identify a different Integrity Reference after publication.</p></article>
+<article class="card"><h2>Identifier Persistence</h2><p>Anchor Identifiers should remain resolvable or reconstructable across long-term publication, archival, migration, and technology change.</p></article>
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Identifier vs. Version</h2>
+  <p>Identifier identity and Version identity are separate concerns.</p>
+  <div class="note">Anchor Identifier ≠ Anchor Version</div>
+  <p style="margin-top:14px;">A later Anchor Version may remain part of the same Integrity Reference, depending on the Versioning rules established later.</p>
+  <p>A materially different integrity subject may instead require a new Integrity Reference and therefore a new Anchor Identifier.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Identifier vs. Source Artifact Version</h2>
+  <div class="note">Source-System Identifier ≠ Source Artifact Version ≠ Anchor Identifier ≠ Anchor Version</div>
+  <p style="margin-top:14px;">A Source Institution may revise its artifact without changing the meaning of the original Anchor Identifier. Anchor must preserve which Source representation and Source Version, where applicable, the Integrity Reference actually covered.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Known Suite Examples</h2>
+  <p>Existing Suite identifiers demonstrate the need for explicit cross-system separation.</p>
+  <div class="note">SC-CERT-2026-0001 → Certifier-owned Certification Package<br>SREG-2026-0001 → Registry-owned Satoshium Registry Entry<br>CHR-2026-0001 → Chronicle-owned Chronicle Entry</div>
+  <p style="margin-top:14px;">If Anchor later preserves Integrity References for these artifacts, each Anchor record will receive its own Anchor Identifier.</p>
+  <p>The existing Source-System Identifier must remain present as the Source reference rather than being replaced by the Anchor Identifier.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Identifier Format</h2>
+  <p>The final Anchor Identifier syntax is intentionally not frozen on this page.</p>
+  <p>The eventual production format should be evaluated against:</p>
+  <div class="note">uniqueness · readability · namespace clarity · stable parsing · long-term durability · human recognition · machine interoperability · Version independence · correction safety</div>
+  <p style="margin-top:14px;">Possible syntax should be tested against the Integrity Reference schema and the first production record before adoption.</p>
+  <span class="status">Format Unfrozen</span>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>What the Identifier Must Not Encode Prematurely</h2>
+  <p>The identifier should avoid embedding mutable or interpretive information unless production architecture demonstrates that it is necessary.</p>
+  <div class="note">Integrity State<br>Verification Result<br>Publication State<br>Lifecycle State<br>Source Artifact status<br>trust judgment<br>certification result<br>mutable Version metadata</div>
+  <p style="margin-top:14px;">These concepts may change while the identity of the Integrity Reference remains stable.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Identifier Assignment</h2>
+  <p>Production architecture should eventually define the point at which an Anchor Identifier becomes permanently assigned.</p>
+  <p>Candidate stages include Integrity Reference construction, successful Validation, Publication approval, or another governed production boundary.</p>
+  <p>That assignment point remains intentionally unfrozen until the Validation and Publication architectures are defined.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Corrections and Identifiers</h2>
+  <p>A Correction should not automatically create a new Anchor Identifier. Later Corrections architecture must determine whether the correction modifies an existing Integrity Reference through Versioning or requires a new Integrity Reference.</p>
+  <div class="note">Correct forward. Preserve backward.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationships and Identifiers</h2>
+  <p>Stable identifiers will allow later Anchor architecture to express relationships precisely.</p>
+  <div class="note">Integrity Reference → Source Artifact<br>Integrity Reference → prior Anchor Version<br>Integrity Reference → Correction<br>Integrity Reference → superseding Integrity Reference<br>Integrity Reference → external commitment</div>
+  <p style="margin-top:14px;">This is why Identifier Architecture precedes Relationships, Provenance, Schemas, Versioning, Corrections, and Publication.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Identifier Authority</h2>
+  <p>Anchor governs only the Anchor Identifier namespace.</p>
+  <p>It does not reinterpret or reassign identifiers owned by Certifier, Registry, Chronicle, Atlas, Beacon, Attestor, Navigator, or external Source Institutions.</p>
+  <div class="note">Reference does not transfer authority.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Identifier Architecture Principle</h2>
+  <p>Anchor Identifiers should provide stable identity for Integrity References while preserving the independent identity and authority of every Source Artifact.</p>
+  <div class="note">Identify the Anchor record. Preserve the Source identifier. Never confuse the two.</div>
+  <a class="btn" href="/anchor/definitions/">Definitions →</a>
+  <a class="btn" href="/anchor/integration/">Integration →</a>
+  <a class="btn" href="/anchor/governance/">Governance →</a>
+  <a class="btn" href="/anchor/status/">Status →</a>
+  <a class="btn" href="/anchor/">Back to Anchor →</a>
+</article></section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">Stable identity preserves durable reference.</div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
