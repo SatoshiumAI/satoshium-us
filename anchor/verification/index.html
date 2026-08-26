@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Anchor · Integrity Verification</title>
+
+<meta name="description" content="Satoshium Anchor Integrity Verification — defines how an Integrity Reference and Reviewed Representation are used to reproduce, compare, and record verification outcomes.">
+
+<link rel="canonical" href="https://satoshium.us/anchor/verification/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
+.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.status{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;border:1px solid rgba(214,163,74,.24);color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.btn{display:inline-block;margin-top:14px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,163,74,.24);background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700}
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Anchor · Verification</div>
+  <h1>Satoshium Anchor · Integrity Verification</h1>
+
+  <p class="lead">
+    Integrity Verification defines how Anchor determines whether a Reviewed
+    Representation remains consistent with the Canonical Representation
+    governed by an Integrity Reference.
+  </p>
+
+  <p class="lead">
+    Verification evaluates integrity consistency. It does not establish truth,
+    certification, trustworthiness, historical meaning, or Source authority.
+  </p>
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification Model</h2>
+  <div class="note">
+    Integrity Reference<br>
+    +<br>
+    Reviewed Representation<br>
+    ↓<br>
+    Reproduce / Validate Integrity Material<br>
+    ↓<br>
+    Compare<br>
+    ↓<br>
+    Verification Result
+  </div>
+</article></section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Integrity Reference</h2>
+  <p>
+    Supplies the governed Source context, Representation Boundary, Integrity
+    Method, Integrity Value, provenance, and Verification Material.
+  </p>
+  <span class="status">Required Input</span>
+</article>
+
+<article class="card">
+  <h2>Reviewed Representation</h2>
+  <p>
+    The artifact representation being tested against the Integrity Reference.
+    It must be evaluated under the same representation and canonicalization rules.
+  </p>
+  <span class="status">Required Input</span>
+</article>
+
+<article class="card">
+  <h2>Reproduction / Validation</h2>
+  <p>
+    Reconstructs or validates the integrity material using the recorded method,
+    algorithm, parameters, and provenance.
+  </p>
+  <span class="status">Process</span>
+</article>
+
+<article class="card">
+  <h2>Comparison</h2>
+  <p>
+    Compares reproduced or validated integrity material with the value or proof
+    preserved by the Integrity Reference.
+  </p>
+  <span class="status">Process</span>
+</article>
+
+<article class="card">
+  <h2>Verification Result</h2>
+  <p>
+    Records the governed outcome of the Verification process.
+  </p>
+  <span class="status">Values Unfrozen</span>
+</article>
+
+<article class="card">
+  <h2>Verification Record</h2>
+  <p>
+    Records when Verification occurred, what was tested, which method applied,
+    what result occurred, and any material exception.
+  </p>
+  <span class="status">Architecture Defined</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>What Verification Proves</h2>
+
+  <p>
+    A successful Integrity Verification supports the conclusion that the
+    Reviewed Representation remains consistent with the representation governed
+    by the Integrity Reference under the recorded Verification method.
+  </p>
+
+  <div class="note">
+    Successful Verification → representation consistency
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>What Verification Does Not Prove</h2>
+
+  <div class="note">
+    Integrity Verification ≠ Truth<br>
+    Integrity Verification ≠ Certification<br>
+    Integrity Verification ≠ Trust<br>
+    Integrity Verification ≠ Reputation<br>
+    Integrity Verification ≠ Historical Interpretation<br>
+    Integrity Verification ≠ Source Authority
+  </div>
+
+  <p style="margin-top:14px;">
+    A perfectly preserved artifact may still contain incorrect, outdated,
+    disputed, or low-quality information.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification Input Requirements</h2>
+
+  <p>
+    Verification should begin only when the verifier can identify:
+  </p>
+
+  <div class="note">
+    Anchor Identifier<br>
+    Anchor Version<br>
+    Source Artifact reference<br>
+    Representation Type<br>
+    Representation Boundary<br>
+    Canonicalization method<br>
+    Integrity Method<br>
+    Integrity Value or proof material<br>
+    required provenance<br>
+    required Verification Material
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Reviewed Representation</h2>
+
+  <p>
+    The Reviewed Representation must be evaluated under the same governed
+    boundary used when the Integrity Reference was created.
+  </p>
+
+  <div class="note">
+    Different presentation ≠ automatically different representation<br>
+    Different governed representation = different verification subject
+  </div>
+
+  <p style="margin-top:14px;">
+    Dynamic interface elements, navigation, timestamps, ads, comments, or other
+    excluded material should not affect Verification if they were outside the
+    original Representation Boundary.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Canonical Reconstruction</h2>
+
+  <p>
+    Verification may require reconstructing the Canonical Representation from
+    the Reviewed Representation.
+  </p>
+
+  <div class="note">
+    Reviewed Representation<br>
+    ↓<br>
+    apply governed canonicalization rules<br>
+    ↓<br>
+    Reconstructed Canonical Representation
+  </div>
+
+  <p style="margin-top:14px;">
+    If the canonicalization rules cannot be reproduced, Verification should not
+    silently guess.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Single-Method Verification</h2>
+
+  <p>
+    For a single integrity method, Verification may be straightforward:
+  </p>
+
+  <div class="note">
+    Reconstructed Canonical Representation<br>
+    ↓<br>
+    apply recorded method / algorithm<br>
+    ↓<br>
+    Reproduced Integrity Value<br>
+    ↓<br>
+    compare with stored Integrity Value
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Composite Verification</h2>
+
+  <p>
+    Where multiple Integrity Methods were used, Verification may need to
+    validate each component and their dependency order.
+  </p>
+
+  <div class="note">
+    digest<br>
+    + signature<br>
+    + timestamp<br>
+    + external commitment
+  </div>
+
+  <p style="margin-top:14px;">
+    Composite Verification should not collapse all components into one opaque
+    result if one component can succeed while another fails or is unavailable.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>External Commitment Verification</h2>
+
+  <p>
+    External commitment methods may require validating historical proof
+    material against the external system.
+  </p>
+
+  <div class="note">
+    Integrity Value<br>
+    ↓<br>
+    external proof material<br>
+    ↓<br>
+    external system validation<br>
+    ↓<br>
+    external commitment result
+  </div>
+
+  <p style="margin-top:14px;">
+    Failure to reach an external service must remain distinguishable from a
+    cryptographic mismatch.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification Result Vocabulary</h2>
+
+  <p>
+    The architecture now proves that Verification needs more than a simple
+    boolean in some conditions.
+  </p>
+
+  <p>
+    Candidate result values include:
+  </p>
+
+  <div class="note">
+    match<br>
+    mismatch<br>
+    unable_to_verify<br>
+    incomplete_material<br>
+    method_unavailable
+  </div>
+
+  <p style="margin-top:14px;">
+    These remain provisional until Validation and production testing determine
+    whether any should be merged, renamed, or expanded.
+  </p>
+
+  <span class="status">Enumeration Unfrozen</span>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Match</h2>
+
+  <p>
+    Conceptually, a <strong>match</strong> means the reviewed representation
+    reproduced or validated the integrity material expected by the Integrity Reference.
+  </p>
+
+  <div class="note">
+    Match = integrity consistency under the verified method
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Mismatch</h2>
+
+  <p>
+    A <strong>mismatch</strong> means Verification completed but the reproduced
+    or validated integrity material did not agree with the expected material.
+  </p>
+
+  <p>
+    A mismatch should trigger investigation rather than automatic assumptions
+    about cause.
+  </p>
+
+  <div class="note">
+    Possible causes: Source change · wrong representation · corruption · incorrect canonicalization · wrong Source input · Anchor error
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Unable to Verify</h2>
+
+  <p>
+    Verification may be impossible even when no mismatch has been demonstrated.
+  </p>
+
+  <div class="note">
+    missing Source Artifact<br>
+    unavailable external service<br>
+    unsupported method<br>
+    missing historical proof<br>
+    unavailable key material<br>
+    incomplete provenance
+  </div>
+
+  <p style="margin-top:14px;">
+    These conditions should not be misreported as a mismatch.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification Result vs. Integrity State</h2>
+
+  <p>
+    A Verification Result records one Verification event.
+    Integrity State describes the broader current integrity condition of the
+    Integrity Reference.
+  </p>
+
+  <div class="note">
+    Verification Result ≠ Integrity State
+  </div>
+
+  <p style="margin-top:14px;">
+    Lifecycle and Maintenance architecture will determine how repeated results
+    influence Integrity State.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification Event Record</h2>
+
+  <p>
+    The current Base Schema already supports a lightweight Verification event
+    structure.
+  </p>
+
+  <div class="note">
+    verification_identifier, if later adopted<br>
+    verified_at<br>
+    verification_result<br>
+    method_id<br>
+    notes
+  </div>
+
+  <p style="margin-top:14px;">
+    This page now establishes the semantics behind those fields.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Separate Verification Record?</h2>
+
+  <p>
+    Anchor may later determine that significant Verification events deserve
+    separately identified records rather than only embedded history.
+  </p>
+
+  <div class="note">
+    Integrity Reference → verified_by → Verification Record
+  </div>
+
+  <p style="margin-top:14px;">
+    That object identity remains unfrozen. The first production workflow should
+    prove whether separate Verification records create durable value.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Initial Verification vs. Reverification</h2>
+
+  <p>
+    Anchor should distinguish the verification performed during production from
+    later Reverification events.
+  </p>
+
+  <div class="note">
+    Initial Verification → confirms production construction<br>
+    Reverification → tests continued integrity later
+  </div>
+
+  <p style="margin-top:14px;">
+    Whether these require different Controlled Values or procedure types remains
+    unfrozen.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification and Source Change</h2>
+
+  <p>
+    A Source Artifact may legitimately change after the original Integrity
+    Reference was created.
+  </p>
+
+  <p>
+    Verification must test the representation the Integrity Reference actually
+    governs—not silently substitute the newest Source Version.
+  </p>
+
+  <div class="note">
+    Original Integrity Reference → original governed representation<br>
+    Later Source Version → separate evaluation
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification and Corrections</h2>
+
+  <p>
+    A mismatch may reveal an Anchor error rather than a Source change.
+  </p>
+
+  <p>
+    If Anchor recorded the wrong digest, representation, method, timestamp, or
+    other Anchor-owned information, Corrections architecture should govern the response.
+  </p>
+
+  <div class="note">
+    Mismatch → investigate cause → do not silently rewrite
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification and Provenance</h2>
+
+  <p>
+    Provenance provides the reconstruction instructions Verification depends on.
+  </p>
+
+  <div class="note">
+    Provenance → how integrity material was produced<br>
+    Verification → whether that process can still be reproduced or validated
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification and Validation</h2>
+
+  <p>
+    Verification and Validation are separate operations.
+  </p>
+
+  <div class="note">
+    Verification → Does the representation match the preserved integrity evidence?<br>
+    Validation → Does the Integrity Reference satisfy Anchor's institutional and schema requirements?
+  </div>
+
+  <p style="margin-top:14px;">
+    A record may pass schema Validation but fail Integrity Verification, or
+    Verify successfully while still violating an institutional Validation rule.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification Procedure Sequence</h2>
+
+  <div class="note">
+    1. Identify Anchor Identifier and Anchor Version<br>
+    2. Load Integrity Reference<br>
+    3. Confirm Source / Representation context<br>
+    4. Obtain Reviewed Representation<br>
+    5. Reconstruct Canonical Representation<br>
+    6. Identify applicable Integrity Method(s)<br>
+    7. Reproduce / validate Integrity Material<br>
+    8. Compare expected and observed material<br>
+    9. Record method-level outcome(s)<br>
+    10. Determine Verification Result<br>
+    11. Preserve Verification event<br>
+    12. Trigger investigation / Maintenance where required
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Verification Principle</h2>
+
+  <p>
+    Verification should report what the evidence demonstrates and preserve
+    uncertainty where the process cannot reach a valid comparison.
+  </p>
+
+  <div class="note">
+    Reproduce faithfully. Compare precisely. Report only what the evidence proves.
+  </div>
+
+  <a class="btn" href="/anchor/schemas/">Schemas →</a>
+  <a class="btn" href="/anchor/provenance/">Provenance →</a>
+  <a class="btn" href="/anchor/relationships/">Relationships →</a>
+  <a class="btn" href="/anchor/controlled-values/">Controlled Values →</a>
+  <a class="btn" href="/anchor/">Back to Anchor →</a>
+</article></section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Verification should prove consistency without claiming more than the evidence allows.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
