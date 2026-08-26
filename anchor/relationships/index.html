@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Anchor · Relationships</title>
+
+<meta name="description" content="Satoshium Anchor Relationships — defines machine-readable relationships between Integrity References, Source Artifacts, Versions, Corrections, superseding records, verification artifacts, publication artifacts, and external commitments.">
+
+<link rel="canonical" href="https://satoshium.us/anchor/relationships/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
+.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.status{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;border:1px solid rgba(214,163,74,.24);color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.btn{display:inline-block;margin-top:14px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,163,74,.24);background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700}
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Anchor · Relationships</div>
+  <h1>Satoshium Anchor · Relationships</h1>
+
+  <p class="lead">
+    Relationships define how Anchor connects an Integrity Reference to the
+    Source Artifact it protects, to its own Versions and Corrections, and to
+    external integrity evidence such as signatures, timestamps, transparency
+    records, or future Bitcoin commitments.
+  </p>
+
+  <p class="lead">
+    Anchor is inherently reference-heavy. Those references must therefore be
+    explicit, directional, machine-readable, and authority-preserving.
+  </p>
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationship Principle</h2>
+  <div class="note">
+    Relationship expresses connection.<br>
+    Relationship does not transfer authority.
+  </div>
+  <p style="margin-top:14px;">
+    Every relationship should identify what is connected, why it is connected,
+    and which institution remains authoritative for each object.
+  </p>
+</article></section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Source Relationship</h2>
+  <p>
+    Connects an Integrity Reference to the Authoritative Artifact and
+    Source-System Identifier whose representation is being preserved.
+  </p>
+  <span class="status">Core</span>
+</article>
+
+<article class="card">
+  <h2>Version Relationship</h2>
+  <p>
+    Connects a later Anchor Version to a prior Version while preserving the
+    identity of the underlying Integrity Reference where applicable.
+  </p>
+  <span class="status">Core</span>
+</article>
+
+<article class="card">
+  <h2>Correction Relationship</h2>
+  <p>
+    Connects an Anchor Correction to the Integrity Reference or Version whose
+    Anchor-owned information is being corrected.
+  </p>
+  <span class="status">Core</span>
+</article>
+
+<article class="card">
+  <h2>Supersession Relationship</h2>
+  <p>
+    Connects an earlier Integrity Reference to a later Integrity Reference when
+    the later record replaces or succeeds the earlier one without erasing it.
+  </p>
+  <span class="status">Core</span>
+</article>
+
+<article class="card">
+  <h2>External Commitment Relationship</h2>
+  <p>
+    Connects an Integrity Reference to external integrity evidence such as a
+    timestamp record, transparency-log entry, Merkle commitment, or Bitcoin transaction.
+  </p>
+  <span class="status">Core</span>
+</article>
+
+<article class="card">
+  <h2>Verification / Publication Relationships</h2>
+  <p>
+    Later architecture may connect Integrity References to discrete Verification,
+    Validation, or Publication artifacts where those become separately governed objects.
+  </p>
+  <span class="status">Provisional</span>
+</article>
+
+</section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Core Relationship Model</h2>
+
+  <div class="note">
+    Integrity Reference → Source Artifact<br>
+    Integrity Reference → prior Anchor Version<br>
+    Integrity Reference → Correction<br>
+    Integrity Reference → superseding Integrity Reference<br>
+    Integrity Reference → external commitment
+  </div>
+
+  <p style="margin-top:14px;">
+    These relationships are architectural requirements. Exact machine tokens
+    remain controlled by later schema and production validation.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Directionality</h2>
+
+  <p>
+    Relationships should be directional whenever direction changes meaning.
+  </p>
+
+  <div class="note">
+    Integrity Reference → references Source Artifact<br>
+    Later Version → follows prior Version<br>
+    Correction → corrects prior Anchor state<br>
+    Later Integrity Reference → supersedes earlier Integrity Reference
+  </div>
+
+  <p style="margin-top:14px;">
+    Reciprocal relationships may also be published for navigation, but their
+    machine semantics must remain explicit.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Source Artifact Relationship</h2>
+
+  <p>
+    Every production Integrity Reference should preserve a direct relationship
+    to the Source Artifact it anchors.
+  </p>
+
+  <div class="note">
+    Anchor Identifier<br>
+    ↓<br>
+    Integrity Reference<br>
+    ↓<br>
+    Source Institution + Source-System Identifier<br>
+    ↓<br>
+    Authoritative Artifact
+  </div>
+
+  <p style="margin-top:14px;">
+    This is the primary relationship that explains what the Anchor record is about.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Version Relationships</h2>
+
+  <p>
+    Where multiple Anchor Versions remain the same Integrity Reference, Version
+    lineage should preserve the ordering between governed states.
+  </p>
+
+  <div class="note">
+    Anchor Version 1 → Anchor Version 2 → Anchor Version 3
+  </div>
+
+  <p style="margin-top:14px;">
+    The exact relationship tokens—such as <code>previous_version</code> or
+    <code>next_version</code>—remain unfrozen until Versioning architecture is complete.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Correction Relationships</h2>
+
+  <p>
+    Anchor Corrections must preserve which prior Anchor state or field was
+    corrected and which later state carries the correction.
+  </p>
+
+  <div class="note">
+    Prior Anchor State ← corrected_by → Correction / Later Anchor State
+  </div>
+
+  <p style="margin-top:14px;">
+    Correction lineage must remain reconstructable.
+  </p>
+
+  <div class="note">
+    Correct forward. Preserve backward.
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Supersession Relationships</h2>
+
+  <p>
+    Supersession applies when one Integrity Reference is replaced by another
+    without erasing the historical identity of the earlier record.
+  </p>
+
+  <div class="note">
+    Earlier Integrity Reference<br>
+    ↓ superseded_by<br>
+    Later Integrity Reference
+  </div>
+
+  <p style="margin-top:14px;">
+    Both Anchor Identifiers should remain persistent and independently resolvable.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>External Commitment Relationships</h2>
+
+  <p>
+    External commitment evidence remains external to Anchor identity.
+  </p>
+
+  <div class="note">
+    Anchor Identifier → Integrity Reference<br>
+    Integrity Reference → External Commitment Identifier
+  </div>
+
+  <p style="margin-top:14px;">
+    Potential external commitment identifiers may include:
+  </p>
+
+  <div class="note">
+    Bitcoin transaction identifier<br>
+    timestamp-service identifier<br>
+    transparency-log entry<br>
+    Merkle proof reference<br>
+    external signature / certificate reference
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Many-to-One and One-to-Many Relationships</h2>
+
+  <p>
+    Anchor should not assume all relationships are one-to-one.
+  </p>
+
+  <div class="note">
+    One Source Artifact → multiple Integrity References<br>
+    One Integrity Reference → multiple external commitments<br>
+    One Integrity Reference → multiple Verification records<br>
+    One later Integrity Reference → may supersede one or more prior records
+  </div>
+
+  <p style="margin-top:14px;">
+    Relationship architecture must therefore support multiplicity without
+    overloading the Anchor Identifier.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationship Authority</h2>
+
+  <p>
+    Anchor governs relationships stored inside Anchor-owned records.
+  </p>
+
+  <p>
+    Anchor does not gain authority over the objects merely because it records
+    their identifiers or relationships.
+  </p>
+
+  <div class="note">
+    Reference does not transfer authority.
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationship Type Vocabulary</h2>
+
+  <p>
+    A future machine-readable relationship vocabulary is likely required.
+  </p>
+
+  <p>
+    Candidate tokens may include:
+  </p>
+
+  <div class="note">
+    references_source<br>
+    previous_version<br>
+    next_version<br>
+    corrects<br>
+    corrected_by<br>
+    supersedes<br>
+    superseded_by<br>
+    commits_to<br>
+    verified_by<br>
+    published_as
+  </div>
+
+  <p style="margin-top:14px;">
+    These are candidate values only. The final enumeration should be frozen
+    after Provenance, Versioning, Corrections, Verification, and Publication
+    establish the real production relationships.
+  </p>
+
+  <span class="status">Vocabulary Unfrozen</span>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationship Record Structure</h2>
+
+  <p>
+    A machine-readable relationship may eventually require fields equivalent to:
+  </p>
+
+  <div class="note">
+    relationship_type<br>
+    source_identifier<br>
+    target_identifier<br>
+    target_system<br>
+    effective_at<br>
+    relationship_version<br>
+    notes / context where governed
+  </div>
+
+  <p style="margin-top:14px;">
+    Exact schema fields remain unfrozen until the Integrity Reference Schema is designed.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Reciprocal Relationships</h2>
+
+  <p>
+    Some relationships naturally have reciprocal forms.
+  </p>
+
+  <div class="note">
+    supersedes ↔ superseded_by<br>
+    corrects ↔ corrected_by<br>
+    previous_version ↔ next_version
+  </div>
+
+  <p style="margin-top:14px;">
+    Later schema design should determine whether both directions are stored,
+    one is stored and the other derived, or both are published for convenience.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationship Validation</h2>
+
+  <p>
+    Later Validation architecture should ensure that relationship targets are
+    well-formed and semantically allowed.
+  </p>
+
+  <div class="note">
+    valid identifier · allowed relationship type · valid direction · allowed target system · no prohibited self-reference · no broken required link
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Broken or Unresolvable Targets</h2>
+
+  <p>
+    A relationship may remain historically valid even if its target later becomes
+    unavailable online.
+  </p>
+
+  <p>
+    Anchor should distinguish:
+  </p>
+
+  <div class="note">
+    relationship invalid<br>
+    target unavailable<br>
+    target moved<br>
+    target superseded<br>
+    target historically preserved
+  </div>
+
+  <p style="margin-top:14px;">
+    Maintenance architecture should govern how these conditions are handled.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationship to Provenance</h2>
+
+  <p>
+    Relationships answer:
+  </p>
+
+  <div class="note">
+    What is connected to what?
+  </div>
+
+  <p style="margin-top:14px;">
+    Provenance will answer:
+  </p>
+
+  <div class="note">
+    Where did this integrity material come from, and through what chain was it produced?
+  </div>
+
+  <p style="margin-top:14px;">
+    The two architectures overlap, but they are not the same.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationship to Controlled Values</h2>
+
+  <p>
+    Relationship Type is a likely Controlled Value category.
+  </p>
+
+  <p>
+    The Relationships architecture defines the semantic need.
+    Controlled Values governance will later freeze only the tokens production proves necessary.
+  </p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationship to Schemas</h2>
+
+  <p>
+    The future Integrity Reference Schema must support relationships without
+    assuming that every relationship has the same target type or multiplicity.
+  </p>
+
+  <p>
+    Schema design should therefore support:
+  </p>
+
+  <div class="note">
+    internal Anchor targets<br>
+    external Suite targets<br>
+    external commitment targets<br>
+    one-to-one links<br>
+    one-to-many links<br>
+    ordered lineage
+  </div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+  <h2>Relationships Principle</h2>
+
+  <p>
+    Relationships should make Anchor lineage and external reference explicit
+    without confusing connection with ownership or authority.
+  </p>
+
+  <div class="note">
+    Connect records precisely. Preserve lineage completely. Transfer no authority.
+  </div>
+
+  <a class="btn" href="/anchor/identifiers/">Identifiers →</a>
+  <a class="btn" href="/anchor/controlled-values/">Controlled Values →</a>
+  <a class="btn" href="/anchor/integration/">Integration →</a>
+  <a class="btn" href="/anchor/governance/">Governance →</a>
+  <a class="btn" href="/anchor/">Back to Anchor →</a>
+</article></section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+    Durable records depend on durable relationships.
+  </div>
+  <hr>
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
