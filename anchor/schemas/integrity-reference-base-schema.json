@@ -1,0 +1,476 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://satoshium.us/anchor/schemas/integrity-reference-base-schema.json",
+  "title": "Satoshium Anchor Integrity Reference Base Schema",
+  "description": "Base structural schema for a Satoshium Anchor Integrity Reference. This schema establishes the production object shape while intentionally leaving identifier syntax, Controlled Value enumerations, and method-specific policy unfrozen.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "anchor_identifier",
+    "anchor_version",
+    "source",
+    "representation",
+    "integrity",
+    "provenance",
+    "relationships",
+    "record_state"
+  ],
+  "properties": {
+    "anchor_identifier": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable Anchor-owned identifier for the Integrity Reference. Final syntax is governed by Identifier Architecture and is not frozen by this schema."
+    },
+    "anchor_version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Governed Version number of this Integrity Reference representation. Versioning semantics are defined separately."
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Version of the Integrity Reference schema used to validate this record."
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "representation": {
+      "$ref": "#/$defs/representation"
+    },
+    "integrity": {
+      "$ref": "#/$defs/integrity"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "relationships": {
+      "type": "array",
+      "description": "Machine-readable relationships associated with this Integrity Reference.",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      },
+      "default": []
+    },
+    "record_state": {
+      "$ref": "#/$defs/recordState"
+    },
+    "verification_history": {
+      "type": "array",
+      "description": "Optional history of Integrity Verification outcomes. Final Verification record architecture remains separately governed.",
+      "items": {
+        "$ref": "#/$defs/verificationEvent"
+      },
+      "default": []
+    },
+    "corrections": {
+      "type": "array",
+      "description": "Optional references to Anchor Corrections affecting this Integrity Reference.",
+      "items": {
+        "$ref": "#/$defs/correctionReference"
+      },
+      "default": []
+    },
+    "publication": {
+      "$ref": "#/$defs/publication"
+    },
+    "maintenance": {
+      "$ref": "#/$defs/maintenance"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional governed human-readable context that does not replace structured fields."
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_institution",
+        "source_artifact_type",
+        "source_system_identifier"
+      ],
+      "properties": {
+        "source_institution": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Institution authoritative for the Source Artifact."
+        },
+        "source_artifact_type": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human- or machine-governed type of Source Artifact. Final Controlled Values remain unfrozen."
+        },
+        "source_system_identifier": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Identifier assigned by the Source Institution to the Source Artifact."
+        },
+        "source_version": {
+          "type": [
+            "string",
+            "integer"
+          ],
+          "description": "Source Artifact Version where applicable."
+        },
+        "source_location": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonical or authoritative Source location where applicable."
+        }
+      }
+    },
+    "representation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "representation_type",
+        "representation_boundary",
+        "canonicalization"
+      ],
+      "properties": {
+        "representation_type": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Controlled representation category. Final enumeration remains unfrozen."
+        },
+        "representation_boundary": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable or governed statement defining what content is included in the anchored representation."
+        },
+        "canonicalization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method"
+          ],
+          "properties": {
+            "method": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Canonicalization or serialization method used to create the Canonical Representation."
+            },
+            "version": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "description": "Version of the canonicalization method, where applicable."
+            },
+            "parameters": {
+              "type": "object",
+              "additionalProperties": true,
+              "description": "Method-specific canonicalization parameters required for reproducibility."
+            }
+          }
+        },
+        "canonical_representation_location": {
+          "type": "string",
+          "format": "uri",
+          "description": "Location of the Canonical Representation where it is separately published or preserved."
+        },
+        "media_type": {
+          "type": "string",
+          "description": "Media type of the Canonical Representation where applicable."
+        },
+        "encoding": {
+          "type": "string",
+          "description": "Character or binary encoding where materially relevant."
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "methods"
+      ],
+      "properties": {
+        "methods": {
+          "type": "array",
+          "minItems": 1,
+          "description": "One or more integrity-generation methods applied to the Canonical Representation.",
+          "items": {
+            "$ref": "#/$defs/integrityMethod"
+          }
+        },
+        "composite_order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Optional ordered method identifiers when sequence matters in a composite integrity process."
+        }
+      }
+    },
+    "integrityMethod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method_id",
+        "method_type"
+      ],
+      "properties": {
+        "method_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Record-local identifier for this integrity method instance."
+        },
+        "method_type": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Integrity Method Controlled Value. Enumeration remains unfrozen."
+        },
+        "algorithm": {
+          "type": "string",
+          "description": "Algorithm used by the method where applicable."
+        },
+        "algorithm_version": {
+          "type": [
+            "string",
+            "integer"
+          ],
+          "description": "Algorithm Version where materially relevant."
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Method-specific parameters."
+        },
+        "integrity_value": {
+          "type": "string",
+          "description": "Generated Integrity Value where the method produces a directly stored value."
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time the integrity material was generated, where applicable."
+        },
+        "signer_reference": {
+          "type": "string",
+          "description": "Signer or signing-role reference where applicable."
+        },
+        "key_reference": {
+          "type": "string",
+          "description": "Public key or certificate reference where applicable."
+        },
+        "verification_material": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Method-specific material needed for later verification."
+        },
+        "external_commitment": {
+          "$ref": "#/$defs/externalCommitment"
+        }
+      }
+    },
+    "externalCommitment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "system",
+        "external_identifier"
+      ],
+      "properties": {
+        "system": {
+          "type": "string",
+          "minLength": 1,
+          "description": "External commitment system, such as a timestamp service, transparency log, or future Bitcoin commitment system."
+        },
+        "external_identifier": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Identifier assigned by the external commitment system."
+        },
+        "committed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "proof_material": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "External proof material required for historical verification."
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_provenance",
+        "representation_provenance",
+        "generation_provenance"
+      ],
+      "properties": {
+        "source_provenance": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Structured provenance establishing the authoritative origin of the Source Artifact."
+        },
+        "representation_provenance": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Structured provenance describing representation selection, transformation, and canonicalization."
+        },
+        "generation_provenance": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Structured provenance describing integrity-generation processes and actors."
+        },
+        "anchor_record_provenance": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Optional provenance describing Anchor record construction, review, and preservation."
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relationship_type",
+        "target_identifier"
+      ],
+      "properties": {
+        "relationship_type": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Relationship Type Controlled Value. Enumeration remains unfrozen."
+        },
+        "target_identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_system": {
+          "type": "string",
+          "description": "System or institution governing the target identifier."
+        },
+        "target_location": {
+          "type": "string",
+          "format": "uri"
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "context": {
+          "type": "string"
+        }
+      }
+    },
+    "recordState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "integrity_state",
+        "publication_state",
+        "lifecycle_state"
+      ],
+      "properties": {
+        "integrity_state": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Integrity State Controlled Value. Enumeration remains unfrozen."
+        },
+        "publication_state": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Publication State Controlled Value. Enumeration remains unfrozen."
+        },
+        "lifecycle_state": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Lifecycle State Controlled Value. Enumeration remains unfrozen."
+        }
+      }
+    },
+    "verificationEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verified_at",
+        "verification_result"
+      ],
+      "properties": {
+        "verification_identifier": {
+          "type": "string",
+          "description": "Identifier of a separately governed Verification record if later architecture adopts one."
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "verification_result": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Verification Result Controlled Value. Enumeration remains unfrozen."
+        },
+        "method_id": {
+          "type": "string",
+          "description": "Integrity method instance verified."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "correctionReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "correction_identifier"
+      ],
+      "properties": {
+        "correction_identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "correction_type": {
+          "type": "string",
+          "description": "Correction Type Controlled Value if later adopted."
+        },
+        "applied_in_anchor_version": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "canonical_html": {
+          "type": "string",
+          "format": "uri"
+        },
+        "canonical_json": {
+          "type": "string",
+          "format": "uri"
+        },
+        "published_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "maintenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "last_reviewed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "next_review_due": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "maintenance_notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
