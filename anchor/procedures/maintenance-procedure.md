@@ -166,6 +166,8 @@ Use the Integrity Verification Procedure.
 
 Preserve the result.
 
+If Maintenance leads to a changed canonical Anchor Version, route that Version through the current Validation procedure before renewed Publication.
+
 ---
 
 ### 11. Record Maintenance Observations
@@ -192,8 +194,10 @@ Possible outcomes:
 ```text
 no action
 next review only
+Reverification
 Correction
 new Anchor Version
+Validation review
 Lifecycle review
 Publication repair
 new Integrity Reference
