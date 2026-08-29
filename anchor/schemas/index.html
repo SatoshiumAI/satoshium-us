@@ -79,11 +79,11 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
     provenance, relationships, state, Verification history, Corrections,
     Publication, and Maintenance.
   </p>
-<span class="status">1.0-draft</span>
+<span class="status">1.0-draft · Production Reconciled</span>
 </article>
 <article class="card">
 <h2>JSON Schema</h2>
-<p>Machine-readable schema using JSON Schema Draft 2020-12. Structural requirements are defined while most Controlled Value enumerations remain deliberately unfrozen. Lifecycle State is now the first frozen enumeration enforced by the Base Schema.</p>
+<p>Machine-readable schema using JSON Schema Draft 2020-12. The minimum Controlled Values proven necessary by the first production candidate are now schema-enforced.</p>
 <span class="status">Created</span>
 </article>
 <article class="card">
@@ -126,16 +126,17 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 <section style="margin-top:18px;"><article class="card">
 <h2>Required Structural Core</h2>
 <div class="note">
-    anchor_identifier<br/>
-    anchor_version<br/>
-    source<br/>
-    representation<br/>
-    integrity<br/>
-    provenance<br/>
-    relationships<br/>
-    record_state
-  </div>
-<p style="margin-top:14px;">Optional sections may become conditionally required as production evidence refines Verification, Validation, Publication, Versioning, Corrections, and Maintenance behavior.</p>
+anchor_identifier<br/>
+anchor_version<br/>
+schema_version<br/>
+source<br/>
+representation<br/>
+integrity<br/>
+provenance<br/>
+relationships<br/>
+record_state
+</div>
+<p style="margin-top:14px;">schema_version is now required because formal Anchor Validation must identify the applicable schema for every production candidate.</p>
 </article></section>
 <section class="grid">
 <article class="card">
@@ -179,36 +180,20 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 </article>
 </section>
 <section style="margin-top:18px;"><article class="card">
-<h2>Controlled Values — First Schema Enumeration Frozen</h2>
-<p>
-  The Base Schema creates structural locations for governed vocabulary while
-  leaving most production enumerations open until operational need proves them.
-</p>
+<h2>Controlled Values — Minimum Production Set Enforced</h2>
+<p>The first production candidate has now proven which Controlled Values must be enforced before IR #1 is constructed.</p>
 <div class="note">
-  method_type → unfrozen<br/>
-  representation_type → unfrozen<br/>
-  relationship_type → unfrozen<br/>
-  integrity_state → unfrozen<br/>
-  verification_result → unfrozen<br/>
-  publication_state → unfrozen<br/>
-  lifecycle_state → <strong>frozen and schema-enforced</strong><br/>
-  correction_type → unfrozen
+representation_type → <strong>canonical_json</strong><br/>
+method_type → <strong>cryptographic_digest</strong><br/>
+integrity_state → <strong>current</strong><br/>
+verification_result → <strong>match</strong><br/>
+publication_state → <strong>unpublished · published</strong><br/>
+lifecycle_state → <strong>draft · active · superseded · withdrawn · archived</strong><br/>
+relationship_type → <strong>references_source</strong>
 </div>
-<p style="margin-top:14px;">
-  The frozen Lifecycle State values are:
-</p>
-<div class="note">
-  draft<br/>
-  active<br/>
-  superseded<br/>
-  withdrawn<br/>
-  archived
-</div>
-<p style="margin-top:14px;">
-  This is the first downstream Controlled Value decision now reflected directly
-  in the machine-readable Integrity Reference Base Schema.
-</p>
-<span class="status">Lifecycle Enum Enforced</span>
+<p style="margin-top:14px;">The relationships array must contain at least one <strong>references_source</strong> relationship.</p>
+<p>Additional tokens remain unfrozen until production proves they are necessary.</p>
+<span class="status">Minimum Production Set Enforced</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Structural Strictness</h2>
@@ -252,31 +237,26 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
   </div>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
-<h2>Current Architecture Position</h2>
-<p>
-  The Base Schema is now reconciled with the downstream Anchor architecture
-  established through Verification, Validation, Lifecycle, Versioning,
-  Corrections, Publication, Maintenance, and Procedures.
-</p>
+<h2>First Production Schema Position</h2>
+<p>The Base Schema is now aligned with the selected first Source Artifact:</p>
 <div class="note">
-  Schema<br/>
-  ↓<br/>
-  Verification<br/>
-  ↓<br/>
-  Validation<br/>
-  ↓<br/>
-  Lifecycle / Versioning / Corrections<br/>
-  ↓<br/>
-  Publication<br/>
-  ↓<br/>
-  Maintenance / Procedures<br/>
-  ↓<br/>
-  First Production Integrity Reference
+SCRD-SC-CERT-2026-0001<br/>
+Satoshium Certified Record<br/>
+Version 1.1<br/>
+Representation Type → canonical_json
 </div>
-<p style="margin-top:14px;">
-  Further schema tightening should now be driven by the first real production
-  Integrity Reference rather than additional pre-production speculation.
-</p>
+<p style="margin-top:14px;">The next unresolved production dependency is the exact canonicalization / serialization method and digest algorithm that will produce the Canonical Representation and first Integrity Value.</p>
+<div class="note">
+Source JSON<br/>
+↓<br/>
+canonicalization / serialization rule<br/>
+↓<br/>
+Canonical Representation<br/>
+↓<br/>
+cryptographic_digest<br/>
+↓<br/>
+Integrity Value
+</div>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Schema Architecture Principle</h2>
