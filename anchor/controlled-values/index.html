@@ -1,25 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<meta name="theme-color" content="#d6a34a">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicon.ico" rel="alternate icon"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="#d6a34a" name="theme-color"/>
 <title>Satoshium Anchor · Controlled Values</title>
-
-<meta name="description" content="Satoshium Anchor Controlled Values — governed vocabularies for Integrity Methods, states, verification outcomes, publication, lifecycle, representation types, and related production architecture.">
-
-<link rel="canonical" href="https://satoshium.us/anchor/controlled-values/">
-
-<link rel="preconnect" href="https://satoshium.link" crossorigin>
-<link rel="dns-prefetch" href="https://satoshium.link">
-<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
-
+<meta content="Satoshium Anchor Controlled Values — governed vocabularies for Integrity Methods, states, verification outcomes, publication, lifecycle, representation types, and related production architecture." name="description"/>
+<link href="https://satoshium.us/anchor/controlled-values/" rel="canonical"/>
+<link crossorigin="" href="https://satoshium.link" rel="preconnect"/>
+<link href="https://satoshium.link" rel="dns-prefetch"/>
+<link href="https://static.cloudflareinsights.com" rel="dns-prefetch"/>
 <style>
 :root{
  --bg:#07090d;
@@ -55,458 +49,400 @@ code{color:var(--gold2)}
 @media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
 </style>
 </head>
-
 <body>
-
-<div id="topbar-slot" data-topbar="universe"></div>
+<div data-topbar="universe" id="topbar-slot"></div>
 <script src="/components/topbar-loader.js"></script>
-
 <main class="wrap content">
-
 <section class="hero">
-  <div class="eyebrow">Anchor · Controlled Values</div>
-  <h1>Satoshium Anchor · Controlled Values</h1>
-
-  <p class="lead">
+<div class="eyebrow">Anchor · Controlled Values</div>
+<h1>Satoshium Anchor · Controlled Values</h1>
+<p class="lead">
     Controlled Values define the governed vocabulary Anchor uses in production
     records so states, methods, outcomes, and classifications remain consistent
     across human-readable and machine-readable representations.
   </p>
-
-  <p class="lead">
+<p class="lead">
     Anchor should freeze only values that production architecture proves are
     necessary. Vocabulary should not become permanent merely because it was
     convenient during design.
   </p>
 </section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Current Freeze Decision</h2>
-  <p>
-    Controlled Value categories are now architecturally defined, but no
-    production enumeration is Production-frozen at this stage.
-  </p>
-  <div class="note">
-    Categories defined · Production values not yet frozen
-  </div>
+<h2>Current Freeze Decision</h2>
+<p>
+  Controlled Value categories are architecturally defined. The initial
+  <strong>Lifecycle State</strong> enumeration is now the first production-frozen
+  Anchor Controlled Value set.
+</p>
+<div class="note">
+  Lifecycle State → production-frozen<br/>
+  Other categories → remain unfrozen until production proves the required vocabulary
+</div>
+<p style="margin-top:14px;">
+  This downstream freeze was established by the completed Lifecycle architecture
+  and is now enforced by Anchor Validation.
+</p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Controlled Values Principle</h2>
-  <div class="note">
+<h2>Controlled Values Principle</h2>
+<div class="note">
     Define the category → prove the need → govern the values → freeze only when production requires stability
   </div>
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     Controlled Values exist to prevent ambiguous or ad hoc language inside
     production Integrity References.
   </p>
 </article></section>
-
 <section class="grid">
-
 <article class="card">
-  <h2>Integrity Method</h2>
-  <p>
+<h2>Integrity Method</h2>
+<p>
     Identifies the method used to generate or preserve integrity evidence for
     a Canonical Representation.
   </p>
-  <span class="status">Category Defined</span>
+<span class="status">Category Defined</span>
 </article>
-
 <article class="card">
-  <h2>Integrity State</h2>
-  <p>
+<h2>Integrity State</h2>
+<p>
     Describes the current integrity-related state of an Anchor Integrity
     Reference without replacing Verification Result, Publication State, or
     Lifecycle State.
   </p>
-  <span class="status">Values Unfrozen</span>
+<span class="status">Values Unfrozen</span>
 </article>
-
 <article class="card">
-  <h2>Verification Result</h2>
-  <p>
+<h2>Verification Result</h2>
+<p>
     Records the outcome of a defined Integrity Verification process.
   </p>
-  <span class="status">Values Unfrozen</span>
+<span class="status">Values Unfrozen</span>
 </article>
-
 <article class="card">
-  <h2>Publication State</h2>
-  <p>
+<h2>Publication State</h2>
+<p>
     Describes whether and how an Integrity Reference is available through
     Anchor's publication architecture.
   </p>
-  <span class="status">Values Unfrozen</span>
+<span class="status">Values Unfrozen</span>
 </article>
-
 <article class="card">
-  <h2>Lifecycle State</h2>
-  <p>
-    Describes the institutional lifecycle position of the Integrity Reference
-    itself, separate from the Source Artifact's lifecycle.
-  </p>
-  <span class="status">Values Unfrozen</span>
+<h2>Lifecycle State</h2>
+<p>Describes the institutional lifecycle position of the Integrity Reference itself, separate from the Source Artifact's lifecycle. The initial production enumeration is now frozen by the Lifecycle architecture.</p>
+<span class="status">Production Values Frozen</span>
 </article>
-
 <article class="card">
-  <h2>Representation Type</h2>
-  <p>
+<h2>Representation Type</h2>
+<p>
     Classifies the kind of Canonical Representation covered by the Integrity
     Reference, such as structured data, document, package, or other governed form.
   </p>
-  <span class="status">Category Defined</span>
+<span class="status">Category Defined</span>
 </article>
-
 </section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>State Separation</h2>
-
-  <p>
+<h2>State Separation</h2>
+<p>
     Anchor should never collapse distinct state dimensions into one ambiguous
     status field.
   </p>
-
-  <div class="note">
+<div class="note">
     Integrity State ≠ Verification Result ≠ Publication State ≠ Lifecycle State
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     A record may be validly published while awaiting Reverification.
     It may remain historically preserved after supersession.
     It may have a failed Verification Result without automatically changing
     every other state dimension.
   </p>
 </article></section>
-
 <section class="grid">
-
 <article class="card">
-  <h2>Method Status</h2>
-  <p>
+<h2>Method Status</h2>
+<p>
     Anchor may eventually need governed values describing whether an Integrity
     Method is approved for new production, deprecated, historical-only, or prohibited.
   </p>
-  <span class="status">Provisional Category</span>
+<span class="status">Provisional Category</span>
 </article>
-
 <article class="card">
-  <h2>Algorithm Status</h2>
-  <p>
+<h2>Algorithm Status</h2>
+<p>
     Cryptographic algorithms may require a separate governed status model so
     historical records remain interpretable after algorithms are deprecated.
   </p>
-  <span class="status">Provisional Category</span>
+<span class="status">Provisional Category</span>
 </article>
-
 <article class="card">
-  <h2>Correction Type</h2>
-  <p>
+<h2>Correction Type</h2>
+<p>
     Later Corrections architecture may require controlled categories for
     Anchor-owned errors, but those values should be defined only after the
     Correction model is complete.
   </p>
-  <span class="status">Deferred</span>
+<span class="status">Deferred</span>
 </article>
-
 <article class="card">
-  <h2>Relationship Type</h2>
-  <p>
+<h2>Relationship Type</h2>
+<p>
     Later Relationships architecture may require governed values such as
     source_of, supersedes, superseded_by, corrects, or commits_to.
   </p>
-  <span class="status">Deferred</span>
+<span class="status">Deferred</span>
 </article>
-
 </section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Integrity Method — Current Architecture</h2>
-
-  <p>
+<h2>Integrity Method — Current Architecture</h2>
+<p>
     The category is necessary now, but its final production vocabulary remains
     intentionally narrow and provisional.
   </p>
-
-  <div class="note">
-    cryptographic_digest<br>
-    digital_signature<br>
-    trusted_timestamp<br>
-    merkle_commitment<br>
-    transparency_commitment<br>
-    bitcoin_commitment<br>
+<div class="note">
+    cryptographic_digest<br/>
+    digital_signature<br/>
+    trusted_timestamp<br/>
+    merkle_commitment<br/>
+    transparency_commitment<br/>
+    bitcoin_commitment<br/>
     composite_integrity_method
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     These are architectural candidates, not yet a frozen production enumeration.
     The first schema and production Integrity Reference should determine which
     values are actually needed.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Representation Type — Current Architecture</h2>
-
-  <p>
+<h2>Representation Type — Current Architecture</h2>
+<p>
     Anchor may need to distinguish representation classes because reproducibility
     and canonicalization differ by artifact type.
   </p>
-
-  <div class="note">
-    structured_record<br>
-    document<br>
-    package<br>
-    binary_file<br>
-    canonical_json<br>
-    canonical_text<br>
-    published_web_representation<br>
+<div class="note">
+    structured_record<br/>
+    document<br/>
+    package<br/>
+    binary_file<br/>
+    canonical_json<br/>
+    canonical_text<br/>
+    published_web_representation<br/>
     other_governed_representation
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     These remain candidate values until the schema proves which distinctions
     materially affect integrity preservation.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Verification Result — Do Not Freeze Yet</h2>
-
-  <p>
+<h2>Verification Result — Do Not Freeze Yet</h2>
+<p>
     Verification Result should be designed from the actual Verification process,
     not from generic vocabulary.
   </p>
-
-  <p>
+<p>
     A later Verification page should determine whether Anchor needs distinctions
     such as:
   </p>
-
-  <div class="note">
+<div class="note">
     match · mismatch · unable_to_verify · incomplete_material · method_unavailable
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     No value in this set is production-frozen here.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Integrity State — Do Not Freeze Yet</h2>
-
-  <p>
+<h2>Integrity State — Do Not Freeze Yet</h2>
+<p>
     Integrity State must describe the condition of the Integrity Reference
     without duplicating Verification Result or Lifecycle State.
   </p>
-
-  <p>
+<p>
     Possible future distinctions may include:
   </p>
-
-  <div class="note">
+<div class="note">
     current · attention_required · compromised · historical
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     These are conceptual examples only. The later Lifecycle and Verification
     architectures may prove that a different model is cleaner.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Publication State — Do Not Freeze Yet</h2>
-
-  <p>
+<h2>Publication State — Do Not Freeze Yet</h2>
+<p>
     Publication State should be derived from Anchor's eventual Publication
     architecture.
   </p>
-
-  <div class="note">
+<div class="note">
     draft · approved · published · withdrawn
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     These examples illustrate the category only. Anchor should not adopt them
     until Publication behavior is formally defined.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Lifecycle State — Do Not Freeze Yet</h2>
-
-  <p>
-    Anchor Lifecycle must describe the Integrity Reference itself and remain
-    separate from the Source Artifact's lifecycle.
-  </p>
-
-  <div class="note">
-    Source Lifecycle ≠ Anchor Lifecycle
-  </div>
-
-  <p style="margin-top:14px;">
-    Candidate values should be derived only after Lifecycle, Versioning,
-    Corrections, Publication, and Maintenance are designed together.
-  </p>
+<h2>Lifecycle State — Initial Production Enumeration Frozen</h2>
+<p>
+  Anchor Lifecycle describes the institutional lifecycle position of the
+  Integrity Reference itself and remains separate from the Source Artifact's lifecycle.
+</p>
+<div class="note">
+  Source Lifecycle ≠ Anchor Lifecycle
+</div>
+<p style="margin-top:14px;">
+  The completed Lifecycle architecture has now frozen the initial production vocabulary as:
+</p>
+<div class="note">
+  draft<br/>
+  active<br/>
+  superseded<br/>
+  withdrawn<br/>
+  archived
+</div>
+<p style="margin-top:14px;">
+  These values are now governed production Controlled Values for Lifecycle State.
+  Future changes should occur through governed deprecation, replacement, or expansion
+  rather than silent reinterpretation.
+</p>
+<span class="status">Production Enumeration Frozen</span>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Controlled Value Governance</h2>
-
-  <p>
+<h2>Controlled Value Governance</h2>
+<p>
     Every production Controlled Value should eventually have:
   </p>
-
-  <div class="note">
+<div class="note">
     stable token · human-readable label · definition · governing category · allowed usage · introduction Version · deprecation status where applicable
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     Machine tokens should remain stable even if explanatory prose improves later.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Adding a New Value</h2>
-
-  <p>
+<h2>Adding a New Value</h2>
+<p>
     New production values should be added only when an existing value cannot
     accurately represent a real production condition.
   </p>
-
-  <div class="note">
+<div class="note">
     New production need → architectural review → value definition → governance approval → documentation / schema update
   </div>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Changing a Value</h2>
-
-  <p>
+<h2>Changing a Value</h2>
+<p>
     A production token should not be silently renamed or redefined after use.
   </p>
-
-  <p>
+<p>
     If meaning changes materially, Anchor should prefer deprecation and
     replacement over reinterpretation.
   </p>
-
-  <div class="note">
+<div class="note">
     Preserve historical meaning. Change vocabulary forward.
   </div>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Unknown and Other Values</h2>
-
-  <p>
+<h2>Unknown and Other Values</h2>
+<p>
     Anchor should avoid generic fallback values such as <code>unknown</code>,
     <code>other</code>, or <code>miscellaneous</code> unless production proves
     they are necessary and their semantics are clearly governed.
   </p>
-
-  <p>
+<p>
     Ambiguous fallback values can hide incomplete architecture.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Human Labels vs. Machine Tokens</h2>
-
-  <div class="note">
-    Machine Token → stable, schema-safe value<br>
+<h2>Human Labels vs. Machine Tokens</h2>
+<div class="note">
+    Machine Token → stable, schema-safe value<br/>
     Human Label → readable presentation
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     Human-facing wording may evolve without changing the machine token's
     underlying meaning.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Relationship to Identifiers</h2>
-
-  <p>
+<h2>Relationship to Identifiers</h2>
+<p>
     Identifiers answer which Integrity Reference is being discussed.
     Controlled Values describe governed properties of that record.
   </p>
-
-  <div class="note">
-    Anchor Identifier → identity<br>
+<div class="note">
+    Anchor Identifier → identity<br/>
     Controlled Value → governed classification or state
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     Mutable state should not be encoded into the Anchor Identifier.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Relationship to Schemas</h2>
-
-  <p>
-    The future Integrity Reference Schema will enforce whichever Controlled
-    Values become production-approved.
-  </p>
-
-  <p>
-    Controlled Values should therefore be defined conceptually before the
-    schema is frozen, but finalized only when schema behavior proves they are
-    necessary.
-  </p>
+<h2>Relationship to Schemas</h2>
+<p>
+  The Integrity Reference Base Schema provides the structural fields that
+  Controlled Values populate.
+</p>
+<p>
+  Where a Controlled Value enumeration becomes production-frozen, the schema
+  architecture should acknowledge and eventually enforce that governed vocabulary.
+</p>
+<div class="note">
+  Controlled Values → governed vocabulary<br/>
+  Schema → structural enforcement
+</div>
+<p style="margin-top:14px;">
+  Lifecycle State is now the first downstream-frozen enumeration. Other categories
+  remain intentionally open until production proves which values require schema-level enforcement.
+</p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Current Freeze Decision</h2>
-  <p>
-    Controlled Value categories are now architecturally defined, but no
-    production enumeration is Production-frozen at this stage.
-  </p>
-  <div class="note">
-    Categories defined · Production values not yet frozen
-  </div>
+<h2>Current Freeze Decision</h2>
+<p>
+  Controlled Value categories are architecturally defined. The initial
+  <strong>Lifecycle State</strong> enumeration is now the first production-frozen
+  Anchor Controlled Value set.
+</p>
+<div class="note">
+  Lifecycle State → production-frozen<br/>
+  Other categories → remain unfrozen until production proves the required vocabulary
+</div>
+<p style="margin-top:14px;">
+  This downstream freeze was established by the completed Lifecycle architecture
+  and is now enforced by Anchor Validation.
+</p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Controlled Values Principle</h2>
-
-  <p>
+<h2>Controlled Values Principle</h2>
+<p>
     Anchor should use controlled vocabulary only where stable vocabulary adds
     durable institutional value.
   </p>
-
-  <div class="note">
+<div class="note">
     Govern vocabulary. Avoid ambiguity. Freeze only what production proves necessary.
   </div>
-
-  <a class="btn" href="/anchor/identifiers/">Identifiers →</a>
-  <a class="btn" href="/anchor/standards/">Standards →</a>
-  <a class="btn" href="/anchor/governance/">Governance →</a>
-  <a class="btn" href="/anchor/definitions/">Definitions →</a>
-  <a class="btn" href="/anchor/">Back to Anchor →</a>
-
+<a class="btn" href="/anchor/identifiers/">Identifiers →</a>
+<a class="btn" href="/anchor/standards/">Standards →</a>
+<a class="btn" href="/anchor/governance/">Governance →</a>
+<a class="btn" href="/anchor/definitions/">Definitions →</a>
+<a class="btn" href="/anchor/">Back to Anchor →</a>
 </article></section>
-
 </main>
-
 <div class="wrap reflection">
-  <hr>
-  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+<hr/>
+<div class="muted" id="random-saying" style="margin-bottom:14px; max-width:760px;">
     Stable vocabulary makes durable records understandable.
   </div>
-  <hr>
-  <div id="footer-container"></div>
+<hr/>
+<div id="footer-container"></div>
 </div>
-
 <script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
   .then(response => response.text())
   .then(data => { document.getElementById("footer-container").innerHTML = data; });
 </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
-
+<script data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
 </body>
 </html>
