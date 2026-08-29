@@ -177,9 +177,21 @@ where governed.
 
 ---
 
-### 11. Reverify
+### 11. Revalidate and Reverify
 
-Integrity-affecting Corrections should normally be Reverified.
+For a same-subject Correction producing a new Anchor Version:
+
+```text
+new Anchor Version
+        ↓
+Stage A Validation
+        ↓
+Reverification
+        ↓
+Stage B Publication-Readiness Validation
+```
+
+Integrity-affecting Corrections must not bypass the current Validation and Verification procedures.
 
 ---
 
@@ -200,7 +212,7 @@ under Lifecycle rules.
 
 ### 13. Republish
 
-If the canonical public Anchor record changes:
+If the canonical public Anchor record changes and final Validation returns PASS:
 
 ```text
 run Publication Procedure
