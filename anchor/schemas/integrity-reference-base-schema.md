@@ -3,7 +3,7 @@
 ## Status
 
 **Architecture Stage:** Post-Foundational Schema Architecture  
-**Schema Status:** 1.0-draft  
+**Schema Status:** 1.0-draft · First-Production Reconciled  
 **Canonical Object:** Integrity Reference  
 **Maintained By:** Satoshium
 
@@ -54,16 +54,16 @@ The Base Schema therefore defines:
 without prematurely freezing:
 
 - Anchor Identifier syntax;
-- most Controlled Value enumerations;
-- final Verification Result values;
-- final Integrity State values;
-- final Publication State values;
-- final Relationship Type values;
-- final Integrity Method values;
+- Controlled Values not yet proven necessary by production;
+- additional Verification Result values;
+- additional Integrity State values;
+- additional Publication State values;
+- additional Relationship Type values;
+- additional Integrity Method values;
 - Bitcoin-specific policy;
 - other method-specific or production-specific policy not yet proven necessary.
 
-One downstream Controlled Value enumeration is now frozen and enforced:
+Production has now proven and frozen the following minimum vocabulary:
 
 ```text
 Lifecycle State
@@ -72,9 +72,28 @@ Lifecycle State
 → superseded
 → withdrawn
 → archived
+
+Representation Type
+→ canonical_json
+
+Integrity Method
+→ cryptographic_digest
+
+Integrity State
+→ current
+
+Verification Result
+→ match
+
+Publication State
+→ unpublished
+→ published
+
+Relationship Type
+→ references_source
 ```
 
-This freeze was established by the completed Lifecycle architecture and is now reflected in both Anchor Validation and the machine-readable Base Schema.
+These values are now reflected in the machine-readable Base Schema.
 
 ---
 
@@ -105,6 +124,7 @@ The required core is:
 ```text
 anchor_identifier
 anchor_version
+schema_version
 source
 representation
 integrity
@@ -161,11 +181,11 @@ The completed Versioning architecture defines when a change remains the same Int
 
 ## `schema_version`
 
-Optional in the 1.0-draft base structure.
+Required for production candidates.
 
 Records which schema Version validated the record.
 
-Anchor Validation now requires the applicable Schema Version to be identified for a production candidate, even though `schema_version` remains structurally optional in this 1.0-draft Base Schema pending a later schema-requirement decision.
+This requirement is now aligned directly with Anchor Validation.
 
 ---
 
@@ -282,19 +302,15 @@ encoding
 
 Classifies the representation.
 
-Candidate values may include:
+The first production-frozen value is:
 
 ```text
-structured_record
-document
-package
-binary_file
 canonical_json
-canonical_text
-published_web_representation
 ```
 
-No enumeration is frozen.
+The Base Schema now enforces this value for the first production campaign.
+
+Additional Representation Type values remain outside the current schema enumeration until later production records prove they are necessary.
 
 ---
 
@@ -385,9 +401,15 @@ Controlled Value category:
 Integrity Method
 ```
 
-Candidate values are not schema-enumerated yet.
+The first production-frozen value is:
 
-This allows the schema to support future methods without pretending that the method policy is already complete.
+```text
+cryptographic_digest
+```
+
+The Base Schema now enforces this value for the first production campaign.
+
+Additional Integrity Method values should be introduced only through a governed schema revision when production requires them.
 
 ---
 
@@ -481,22 +503,15 @@ effective_at
 context
 ```
 
-No Relationship Type enumeration is frozen.
-
-Potential later values may include:
+The first production-frozen Relationship Type is:
 
 ```text
 references_source
-previous_version
-next_version
-corrects
-corrected_by
-supersedes
-superseded_by
-commits_to
-verified_by
-published_as
 ```
+
+A production Integrity Reference must contain at least one `references_source` relationship.
+
+Additional Relationship Type values remain unfrozen until later production records require them.
 
 ---
 
@@ -530,7 +545,18 @@ withdrawn
 archived
 ```
 
-`integrity_state` and `publication_state` remain unfrozen.
+The first production-frozen `integrity_state` value is:
+
+```text
+current
+```
+
+The initial production-frozen `publication_state` values are:
+
+```text
+unpublished
+published
+```
 
 Verification Result remains separate and belongs to Verification history.
 
@@ -557,9 +583,13 @@ notes
 
 This is intentionally a lightweight embedded structure.
 
-The future `/anchor/verification/` architecture may determine that Verification becomes a separately identified object.
+The first production-frozen Verification Result is:
 
-If so, this schema can evolve without collapsing Verification identity into the Integrity Reference itself.
+```text
+match
+```
+
+A separately identified Verification Record remains unfrozen. The schema can evolve later without collapsing Verification identity into the Integrity Reference itself.
 
 ---
 
@@ -735,23 +765,19 @@ lifecycle_state
 correction_type
 ```
 
-The schema does not enumerate most of them yet.
-
-The first exception is:
+The Base Schema now enforces the minimum production vocabulary proven necessary by IR #1:
 
 ```text
-lifecycle_state
+method_type → cryptographic_digest
+representation_type → canonical_json
+relationship_type → references_source
+integrity_state → current
+verification_result → match
+publication_state → unpublished | published
+lifecycle_state → draft | active | superseded | withdrawn | archived
 ```
 
-which now enforces the frozen initial Lifecycle State vocabulary:
-
-```text
-draft
-active
-superseded
-withdrawn
-archived
-```
+Other Controlled Value categories and additional values remain outside the current enumeration until production proves they are necessary.
 
 ---
 
@@ -785,21 +811,25 @@ The internal field structure remains intentionally extensible pending production
 
 ---
 
-# Next Dependency: Verification
+# Current Production Position
 
-With the Base Schema established, Anchor can now define exactly how a conforming Integrity Reference is used during Verification.
-
-Verification architecture should answer:
+The Base Schema is now reconciled with the first production candidate:
 
 ```text
-What input is verified?
-Which schema fields are consumed?
-How is Canonical Representation reconstructed?
-How is Integrity Method selected?
-How is Verification Result recorded?
-What happens on mismatch?
-What happens when material is unavailable?
+SCRD-SC-CERT-2026-0001
 ```
+
+The next unresolved production dependency is not another structural field.
+
+It is the exact:
+
+```text
+canonicalization / serialization method
++
+Integrity Value algorithm
+```
+
+that will define the Canonical Representation and produce the first real integrity material.
 
 ---
 
@@ -821,35 +851,59 @@ Publication container
 Maintenance container
 ```
 
-### Production-Frozen Downstream Constraint
+### Production-Frozen and Schema-Enforced
 
 ```text
+schema_version → required
+
 Lifecycle State
 → draft
 → active
 → superseded
 → withdrawn
 → archived
+
+Representation Type
+→ canonical_json
+
+Integrity Method
+→ cryptographic_digest
+
+Integrity State
+→ current
+
+Verification Result
+→ match
+
+Publication State
+→ unpublished
+→ published
+
+Relationship Type
+→ references_source
 ```
 
-The machine-readable Base Schema now enforces this enumeration.
+A production Integrity Reference must include at least one:
+
+```text
+references_source
+```
+
+relationship.
 
 ### Still Unfrozen
 
 ```text
 Anchor Identifier syntax
-most Controlled Value enumerations
-Relationship Type tokens
-Integrity Method enumeration
+additional Controlled Value tokens
 Integrity Value encoding
-canonicalization method enumeration
-Verification Result enumeration
-Integrity State enumeration
-Publication State enumeration
-conditional method requirements
+canonicalization / serialization method
+digest algorithm
+conditional method requirements beyond current production need
 Bitcoin-specific schema
-Correction schema
-method-specific policy
+Correction Type enumeration
+separate Verification Record identity
+method-specific profiles
 ```
 
 ---
