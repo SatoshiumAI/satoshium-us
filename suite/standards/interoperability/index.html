@@ -1,22 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<meta name="theme-color" content="#d6a34a">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicon.ico" rel="alternate icon"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="#d6a34a" name="theme-color"/>
 <title>Satoshium Suite · Interoperability Standard</title>
-<meta name="description" content="The Satoshium Interoperability Standard defines how Suite tools, records, schemas, and external systems communicate consistently.">
-<link rel="canonical" href="https://satoshium.us/suite/standards/interoperability/">
-
-<link rel="preconnect" href="https://satoshium.link" crossorigin>
-<link rel="dns-prefetch" href="https://satoshium.link">
-<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<meta content="The Satoshium Interoperability Standard defines how Suite tools, records, schemas, and external systems communicate consistently." name="description"/>
+<link href="https://satoshium.us/suite/standards/interoperability/" rel="canonical"/>
+<link crossorigin="" href="https://satoshium.link" rel="preconnect"/>
+<link href="https://satoshium.link" rel="dns-prefetch"/>
+<link href="https://static.cloudflareinsights.com" rel="dns-prefetch"/>
 <style>
 :root{
  --bg:#07090d;
@@ -136,107 +133,118 @@ h1{
 }
 </style>
 </head>
-
 <body>
-
-<div id="topbar-slot" data-topbar="universe"></div>
+<div data-topbar="universe" id="topbar-slot"></div>
 <script src="/components/topbar-loader.js"></script>
-
 <main class="wrap content">
-
 <section class="hero">
-  <div class="eyebrow">Suite · Standards</div>
-  <h1>Interoperability Standard</h1>
-
-  <p class="lead">
+<div class="eyebrow">Suite · Standards</div>
+<h1>Interoperability Standard</h1>
+<p class="lead">
     The Interoperability Standard defines how Satoshium tools, records, schemas,
     and external systems communicate in a consistent and reliable manner.
   </p>
-
-  <p class="lead">
+<p class="lead">
     Interoperability allows certifications, attestations, registry records, discovery
     signals, and structured data to move across the Suite without losing meaning.
   </p>
 </section>
-
 <section class="grid">
-
 <article class="card">
-  <h2>Shared Interfaces</h2>
-
-  <p>
+<h2>Shared Interfaces</h2>
+<p>
     Defines the common interfaces used by Suite tools to exchange records,
     references, identifiers, and verification data.
   </p>
-
-  <span class="status">Planned</span>
+<span class="status">Architecture Active</span>
 </article>
-
 <article class="card">
-  <h2>Record Compatibility</h2>
-
-  <p>
+<h2>Record Compatibility</h2>
+<p>
     Establishes how records remain understandable across Certifier, Registry,
     Anchor, Attestor, Beacon, Navigator, Chronicle, and Atlas.
   </p>
-
-  <span class="status">Planned</span>
+<span class="status">Architecture Active</span>
 </article>
-
 <article class="card">
-  <h2>External Alignment</h2>
-
-  <p>
+<h2>External Alignment</h2>
+<p>
     Defines how Satoshium records may reference, consume, or interoperate with
     external sources, repositories, standards, and public systems.
   </p>
-
-  <span class="status">Planned</span>
+<span class="status">Architecture Active</span>
 </article>
-
 <article class="card">
-  <h2>Meaning Preservation</h2>
-
-  <p>
+<h2>Meaning Preservation</h2>
+<p>
     Ensures that data exchanged between systems preserves its original context,
     authority, evidence, status, and interpretive meaning.
   </p>
-
-  <span class="status">Planned</span>
+<span class="status">Architecture Active</span>
 </article>
-
 </section>
-
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Standard Role</h2>
-
-  <p>
+<h2>Standard Role</h2>
+<p>
     The Interoperability Standard provides the connective layer that allows the
     Satoshium Suite to function as an integrated ecosystem rather than a collection
     of isolated tools.
   </p>
-
-  <div class="note">
+<div class="note">
     Interoperability is not merely data exchange. It is the preservation of meaning
     across tools, records, and systems.
   </div>
 </article>
-
 </section>
-
-</main>
-
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Cryptographic Digest Interoperability</h2>
+<p>
+  When Suite institutions exchange or preserve cryptographic digest evidence,
+  the algorithm identity and encoded digest value must remain explicit and reproducible.
+</p>
+<div class="note">
+  Initial Suite-approved Digest Algorithm → SHA-256<br/>
+  Algorithm Identifier → SHA-256<br/>
+  Digest Encoding → lowercase hexadecimal<br/>
+  Expected SHA-256 Length → 64 hexadecimal characters
+</div>
+<p style="margin-top:14px;">
+  SHA-256 is the initial approved interoperable digest algorithm, not a permanent
+  definition of Satoshium integrity. Future governed algorithms may be introduced
+  without changing the institutional meaning of an integrity reference.
+</p>
+<span class="status">Initial Digest Profile Defined</span>
+</article>
+</section><section style="margin-top:18px;">
+<article class="card">
+<h2>Canonical Representation Interoperability</h2>
+<p>
+  Where Suite systems exchange a representation identified as
+  <strong>canonical_json</strong>, they must interpret it according to the Suite Schemas Standard.
+</p>
+<div class="note">
+  canonical_json<br/>
+  ↓<br/>
+  RFC 8785 JCS<br/>
+  ↓<br/>
+  UTF-8 canonical representation
+</div>
+<p style="margin-top:14px;">
+  Interoperability therefore depends on shared interpretation of both representation
+  rules and integrity metadata rather than on exchanging opaque digest strings alone.
+</p>
+</article>
+</section></main>
 <div class="wrap reflection">
-  <hr>
-  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+<hr/>
+<div class="muted" id="random-saying" style="margin-bottom:14px; max-width:760px;">
     Systems become stronger when their records can speak the same language.
   </div>
-  <hr>
-  <div id="footer-container"></div>
+<hr/>
+<div id="footer-container"></div>
 </div>
-
 <script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
@@ -245,9 +253,6 @@ fetch("https://satoshium.link/components/footer.html")
     document.getElementById("footer-container").innerHTML = data;
   });
 </script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
-
+<script data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
 </body>
 </html>
