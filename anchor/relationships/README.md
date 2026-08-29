@@ -47,7 +47,13 @@ Integrity Reference
 
 These are architectural requirements.
 
-The final machine-readable relationship tokens remain unfrozen.
+Production has now frozen the first machine-readable Relationship Type token:
+
+```text
+references_source
+```
+
+Additional relationship tokens remain unfrozen until production proves they are necessary.
 
 ---
 
@@ -79,7 +85,7 @@ Certifier remains authoritative for the Certification Package.
 
 # Primary Source Relationship
 
-Every production Integrity Reference should preserve a direct relationship to the Source Artifact whose representation is anchored.
+Every production Integrity Reference must preserve a direct relationship to the Source Artifact whose representation is anchored.
 
 Conceptually:
 
@@ -103,16 +109,31 @@ This relationship answers:
 
 # Source Relationship Requirements
 
-A Source relationship should eventually preserve enough information to identify:
+The Source relationship is represented through the Base Schema relationship structure:
 
 ```text
-Source Institution
-Source-System Identifier
-Source Artifact type
-canonical Source location, where applicable
-Source Version, where applicable
-Canonical Representation
-Representation Boundary
+relationship_type
+target_identifier
+target_system
+target_location
+effective_at
+context
+```
+
+For production IR #1, the required relationship is:
+
+```text
+relationship_type
+→ references_source
+
+target_identifier
+→ SCRD-SC-CERT-2026-0001
+
+target_system
+→ Satoshium Certifier
+
+target_location
+→ https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/records/certified-record/scrd_json.json
 ```
 
 The relationship must not replace the Source Artifact's own identity.
@@ -198,14 +219,7 @@ previous_version
 next_version
 ```
 
-These tokens are candidates only.
-
-The final Versioning architecture should determine:
-
-- whether Versions are separate addressable artifacts;
-- whether both forward and backward links are required;
-- whether Version relationships are embedded or external;
-- whether a new Integrity Reference is required for material changes.
+The Versioning architecture is now defined, but these tokens remain candidates only until a real multi-Version production case proves which direction and storage model are necessary.
 
 ---
 
@@ -474,12 +488,25 @@ Not all relationship categories will use the same cardinality.
 
 # Relationship Type
 
-**Relationship Type** is a likely Controlled Value category.
+**Relationship Type** is a governed Controlled Value category.
 
-Candidate machine tokens include:
+The first production-frozen token is:
 
 ```text
 references_source
+```
+
+Definition:
+
+```text
+connects an Anchor Integrity Reference
+to the Source Artifact whose governed representation
+the Integrity Reference preserves
+```
+
+Candidate future tokens remain:
+
+```text
 previous_version
 next_version
 corrects
@@ -491,38 +518,32 @@ verified_by
 published_as
 ```
 
-These are not production-frozen.
-
-The final vocabulary should be established only after:
-
-- Provenance;
-- Versioning;
-- Corrections;
-- Verification;
-- Validation;
-- Publication;
-
-define the relationships production actually requires.
+These remain unfrozen until production requires them.
 
 ---
 
 # Relationship Record Structure
 
-A machine-readable relationship may eventually require fields conceptually equivalent to:
+The Integrity Reference Base Schema now defines the machine-readable relationship structure:
 
 ```text
 relationship_type
-source_identifier
 target_identifier
 target_system
+target_location
 effective_at
-relationship_version
 context
 ```
 
-Exact schema names are not frozen.
+The `relationships` array is required.
 
-The schema should be designed after Provenance clarifies which relationship context belongs inside an Integrity Reference versus a separate supporting record.
+Production records must contain at least one:
+
+```text
+references_source
+```
+
+relationship.
 
 ---
 
@@ -573,23 +594,31 @@ The schema must distinguish target systems without conflating their authority.
 
 # Relationship Validation
 
-Later Validation architecture should check relationship structure.
+Formal Anchor Validation now checks relationship structure and required Source linkage.
 
-Potential checks may include:
+Relevant checks include:
 
 ```text
-relationship type allowed
-source identifier valid
-target identifier valid
-direction valid
-target system recognized
-required relationship present
+required Source relationship present
+Relationship Type allowed
+target identifier present
+direction semantically valid
+target system coherent where provided
 prohibited self-reference absent
-duplicate relationship absent
-relationship multiplicity valid
+contradictory duplicate relationship absent
 ```
 
-No Validation rule numbers are defined here.
+Production IR #1 must contain a valid:
+
+```text
+references_source
+```
+
+relationship to:
+
+```text
+SCRD-SC-CERT-2026-0001
+```
 
 ---
 
@@ -691,9 +720,13 @@ This dependency is why `/anchor/identifiers/` precedes `/anchor/relationships/`.
 
 Controlled Values provide the governed tokens used to express Relationship Type.
 
-The relationship architecture defines meaning first.
+The first production-frozen token is:
 
-Controlled Values later freeze only the tokens that production proves necessary.
+```text
+references_source
+```
+
+Additional tokens remain unfrozen until production proves they are necessary.
 
 ---
 
@@ -722,30 +755,39 @@ But:
 Source Artifact
 → Canonical Representation
 → digest generation
-→ timestamp
 → Integrity Reference construction
 ```
 
 is provenance.
 
-The next post-foundational page should formalize that chain.
+The Provenance architecture is now defined and uses the Source relationship as one component of the larger origin and generation chain.
 
 ---
 
 # Relationship to Schemas
 
-The Integrity Reference Schema must support:
+The Integrity Reference Base Schema now supports:
 
 - internal Anchor relationships;
 - external Suite relationships;
 - external commitment relationships;
 - one-to-one links;
 - one-to-many links;
-- ordered lineage;
-- reciprocal semantics;
 - target-system identification.
 
-The schema should not assume all relationships have the same structure.
+The schema provides:
+
+```text
+relationships[]
+relationship_type
+target_identifier
+target_system
+target_location
+effective_at
+context
+```
+
+and requires at least one `references_source` relationship for production.
 
 ---
 
@@ -786,6 +828,36 @@ turning every record into an unrestricted graph
 
 ---
 
+# First Production Relationship Set
+
+The first production Integrity Reference is:
+
+```text
+ANCH-2026-0001
+```
+
+Its initial relationship set contains exactly one required relationship:
+
+```text
+relationship_type
+→ references_source
+
+target_identifier
+→ SCRD-SC-CERT-2026-0001
+
+target_system
+→ Satoshium Certifier
+
+target_location
+→ https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/records/certified-record/scrd_json.json
+```
+
+No Version, Correction, Supersession, Verification, Publication, Maintenance, or external-commitment relationship is required for Anchor Version 1 at initial construction.
+
+This is intentional minimum-necessary structure.
+
+---
+
 # Current Freeze Decisions
 
 ### Architecturally Required Relationship Categories
@@ -807,13 +879,37 @@ Publication
 Maintenance
 ```
 
-### Production Relationship Tokens Frozen
+### Production-Frozen Relationship Token
 
 ```text
-None yet
+references_source
 ```
 
-This is intentional.
+### First Production Relationship
+
+```text
+ANCH-2026-0001
+→ references_source
+→ SCRD-SC-CERT-2026-0001
+```
+
+### Still Unfrozen
+
+```text
+previous_version
+next_version
+corrects
+corrected_by
+supersedes
+superseded_by
+commits_to
+verified_by
+published_as
+reciprocal storage rules
+relationship record identifiers
+additional cardinality rules
+Bitcoin-specific relationship tokens
+```
 
 ---
 
@@ -827,31 +923,25 @@ Anchor Relationships should make source reference, internal lineage, and externa
 
 ## Status
 
-**Post-Foundational Architecture**
+**Post-Foundational Architecture · First-Production Relationships Reconciled**
 
-Relationship categories and semantics are now defined.
+Relationship categories, the Base Schema relationship structure, formal Validation relationship checks, the first production Relationship Type token, and IR #1's initial Source relationship are now defined.
 
-The following remain intentionally unfrozen:
+Production-frozen:
 
 ```text
-final Relationship Type tokens
-relationship serialization
-reciprocal storage rules
-relationship record identifiers
-cardinality rules
-Version relationship rules
-Correction relationship rules
-supersession rules
-Verification relationship rules
-Validation relationship rules
-Publication relationship rules
-external commitment relationship rules
-Bitcoin relationship tokens
-broken-target handling
-first production relationship set
+Relationship Type → references_source
 ```
 
-These should be finalized progressively as Provenance, Schemas, Versioning, Corrections, Verification, Validation, Publication, and Maintenance define actual production behavior.
+First production relationship:
+
+```text
+ANCH-2026-0001
+→ references_source
+→ SCRD-SC-CERT-2026-0001
+```
+
+Additional relationship tokens remain intentionally unfrozen until later production cases require them.
 
 **Version:** 1.0-draft
 
