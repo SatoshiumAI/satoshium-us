@@ -54,15 +54,27 @@ The Base Schema therefore defines:
 without prematurely freezing:
 
 - Anchor Identifier syntax;
-- Controlled Value enumerations;
+- most Controlled Value enumerations;
 - final Verification Result values;
 - final Integrity State values;
 - final Publication State values;
-- final Lifecycle State values;
 - final Relationship Type values;
 - final Integrity Method values;
 - Bitcoin-specific policy;
-- final Versioning semantics.
+- other method-specific or production-specific policy not yet proven necessary.
+
+One downstream Controlled Value enumeration is now frozen and enforced:
+
+```text
+Lifecycle State
+→ draft
+→ active
+→ superseded
+→ withdrawn
+→ archived
+```
+
+This freeze was established by the completed Lifecycle architecture and is now reflected in both Anchor Validation and the machine-readable Base Schema.
 
 ---
 
@@ -143,7 +155,7 @@ Anchor Identifier
 Anchor Version
 ```
 
-The Versioning page will later define when a change remains the same Integrity Reference and when it requires a new Anchor Identifier.
+The completed Versioning architecture defines when a change remains the same Integrity Reference and when it requires a new Anchor Identifier.
 
 ---
 
@@ -153,7 +165,7 @@ Optional in the 1.0-draft base structure.
 
 Records which schema Version validated the record.
 
-This may become required before production publication.
+Anchor Validation now requires the applicable Schema Version to be identified for a production candidate, even though `schema_version` remains structurally optional in this 1.0-draft Base Schema pending a later schema-requirement decision.
 
 ---
 
@@ -508,7 +520,17 @@ Publication State
 Lifecycle State
 ```
 
-No enumeration is frozen.
+The initial `lifecycle_state` enumeration is now frozen as:
+
+```text
+draft
+active
+superseded
+withdrawn
+archived
+```
+
+`integrity_state` and `publication_state` remain unfrozen.
 
 Verification Result remains separate and belongs to Verification history.
 
@@ -713,7 +735,23 @@ lifecycle_state
 correction_type
 ```
 
-The schema deliberately does not enumerate them yet.
+The schema does not enumerate most of them yet.
+
+The first exception is:
+
+```text
+lifecycle_state
+```
+
+which now enforces the frozen initial Lifecycle State vocabulary:
+
+```text
+draft
+active
+superseded
+withdrawn
+archived
+```
 
 ---
 
@@ -783,11 +821,24 @@ Publication container
 Maintenance container
 ```
 
+### Production-Frozen Downstream Constraint
+
+```text
+Lifecycle State
+→ draft
+→ active
+→ superseded
+→ withdrawn
+→ archived
+```
+
+The machine-readable Base Schema now enforces this enumeration.
+
 ### Still Unfrozen
 
 ```text
 Anchor Identifier syntax
-Controlled Value enumerations
+most Controlled Value enumerations
 Relationship Type tokens
 Integrity Method enumeration
 Integrity Value encoding
@@ -795,13 +846,10 @@ canonicalization method enumeration
 Verification Result enumeration
 Integrity State enumeration
 Publication State enumeration
-Lifecycle State enumeration
 conditional method requirements
 Bitcoin-specific schema
 Correction schema
-Validation rules
-Publication Gate behavior
-Versioning semantics
+method-specific policy
 ```
 
 ---
