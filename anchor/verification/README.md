@@ -396,29 +396,36 @@ external proof / inclusion validation
 
 The architecture now demonstrates that a simple boolean may be insufficient.
 
-Current candidate values include:
+The first production-frozen value is:
 
 ```text
 match
+```
+
+Definition:
+
+```text
+comparison reached
++
+observed integrity material agrees with expected integrity material
+```
+
+The remaining candidate values stay unfrozen until a real production condition requires them:
+
+```text
 mismatch
 unable_to_verify
 incomplete_material
 method_unavailable
 ```
 
-These are not production-frozen.
-
 ---
 
 # Match
 
-Conceptually:
+`match` is now a production-frozen Verification Result.
 
-```text
-match
-```
-
-means that Verification completed successfully and the reviewed integrity material agreed with the expected material.
+It means that a valid comparison was reached and the Reviewed Representation, reconstructed under the governed Representation Boundary and canonicalization rules, reproduced the integrity material expected by the Integrity Reference.
 
 A match supports:
 
@@ -606,19 +613,23 @@ Production testing should determine whether separate records create enough value
 
 Its purpose is to demonstrate that the integrity material recorded by Anchor correctly corresponds to the intended Canonical Representation before publication.
 
-Conceptually:
+The production order is now explicitly staged:
 
 ```text
-construct Integrity Reference
+Integrity Reference constructed
+        ↓
+Stage A — Structural / Institutional Validation
         ↓
 Initial Verification
         ↓
-Validation
+Canonical HTML + Canonical JSON
         ↓
-Publication decision
+Stage B — Publication-Readiness Validation
+        ↓
+Publication Gate
 ```
 
-The exact order with Validation remains subject to the next architecture.
+Initial Verification therefore occurs after Stage A Validation and before Stage B Publication-Readiness Validation.
 
 ---
 
@@ -767,7 +778,7 @@ Verification Result
 
 category.
 
-The final production enumeration should be frozen only after Validation and first-production testing determine which failure distinctions actually matter.
+Production has now frozen `match` as the first Verification Result value. Failure and non-comparison values remain intentionally unfrozen until production demonstrates which distinctions are necessary.
 
 ---
 
@@ -797,31 +808,33 @@ Verify successfully
 but fail an institutional Validation rule
 ```
 
-The next architecture must define the Validation sequence.
+The Validation architecture and formal Procedures now define the staged production sequence.
 
 ---
 
 # Verification Procedure
 
-The current conceptual Verification procedure is:
+The formal Integrity Verification Procedure now operationalizes this architecture.
+
+The production sequence is:
 
 ```text
-1. Identify Anchor Identifier and Anchor Version.
-2. Load the Integrity Reference.
-3. Confirm Source context.
-4. Confirm Representation Boundary.
+1. Confirm Stage A Validation PASS.
+2. Identify Anchor Identifier and Anchor Version.
+3. Load the Integrity Reference.
+4. Confirm Source and Representation context.
 5. Obtain the Reviewed Representation.
-6. Reconstruct the Canonical Representation.
-7. Identify applicable Integrity Method(s).
+6. Reconstruct the Canonical Representation using the recorded canonicalization rule.
+7. Identify the applicable Integrity Method and algorithm.
 8. Reproduce or validate Integrity Material.
 9. Compare expected and observed material.
-10. Record method-level outcome(s).
-11. Determine Verification Result.
+10. Record the method-level outcome.
+11. Determine the Verification Result.
 12. Preserve the Verification event.
-13. Trigger investigation, Correction, or Maintenance where required.
+13. Proceed to Stage B only when the required Initial Verification condition is satisfied.
 ```
 
-This sequence may later become a formal Production Procedure.
+Mismatch or non-comparison conditions route to governed investigation, Correction, Maintenance, or other applicable handling rather than silent publication.
 
 ---
 
@@ -901,6 +914,61 @@ over unnecessary personal profile information.
 
 ---
 
+# First Production Application — SCRD JSON
+
+Anchor's first production candidate uses:
+
+```text
+Source Artifact
+→ SCRD-SC-CERT-2026-0001
+
+Representation Type
+→ canonical_json
+
+Representation Boundary
+→ complete SCRD JSON document
+
+Integrity Method
+→ cryptographic_digest
+
+Expected successful Verification Result
+→ match
+```
+
+Verification therefore requires a deterministic transformation from the reviewed JSON data to the exact Canonical Representation used for digest generation.
+
+Conceptually:
+
+```text
+Reviewed JSON
+        ↓
+governed deterministic JSON canonicalization / serialization
+        ↓
+Canonical Representation
+        ↓
+recorded digest algorithm
+        ↓
+Reproduced Integrity Value
+        ↓
+exact comparison
+```
+
+For this first production case, the canonical representation should be independent of:
+
+```text
+indentation
+insignificant whitespace
+object-member presentation order
+```
+
+provided the underlying JSON data is equivalent under the governed canonicalization rule.
+
+This avoids making cosmetic formatting changes look like substantive integrity changes.
+
+The exact named canonicalization standard and digest algorithm remain the next production decisions and must be recorded before integrity material is generated.
+
+---
+
 # Current Freeze Decisions
 
 ### Architecture Defined
@@ -915,32 +983,43 @@ Verification event
 Initial Verification
 Reverification
 Verification history
+staged Validation relationship
+formal Verification Procedure
 distinction between match, mismatch, and non-comparison conditions
 ```
 
-### Candidate Verification Results
+### Production-Frozen Verification Result
 
 ```text
 match
+```
+
+### Still Unfrozen
+
+```text
 mismatch
 unable_to_verify
 incomplete_material
 method_unavailable
+method-level result schema beyond current need
+overall composite-result logic
+Verification Record identifier
+Verification Record schema
+Initial Verification / Reverification type tokens
+required Verification evidence beyond current production need
+Verifier attribution requirements
+external-service failure handling
+Bitcoin-specific Verification procedure
+Verification-to-Integrity-State transition rules beyond current
 ```
 
-### Production Verification Result Enumeration Frozen
+### First-Production Representation Decision
 
 ```text
-No
+deterministic JSON canonicalization / serialization required
+exact named canonicalization standard → next decision
+digest algorithm → next decision
 ```
-
-### Separately Identified Verification Record Frozen
-
-```text
-No
-```
-
-This is intentional.
 
 ---
 
@@ -954,29 +1033,25 @@ Anchor Verification should preserve the distinction between demonstrated consist
 
 ## Status
 
-**Post-Foundational Architecture**
+**Post-Foundational Architecture · First-Production Verification Reconciled**
 
-Integrity Verification semantics and process are now defined.
+Integrity Verification semantics, staged Validation relationship, formal procedure relationship, and the first production SCRD JSON application are now defined.
 
-The following remain intentionally unfrozen:
+The first production-frozen Verification Result is:
 
 ```text
-final Verification Result values
-method-level result schema
-overall composite-result logic
-Verification Record identifier
-Verification Record schema
-initial Verification vs. Reverification Controlled Values
-required Verification evidence
-Verifier attribution requirements
-external-service failure handling
-Bitcoin-specific Verification procedure
-Verification-to-Integrity-State transition rules
-formal Verification procedure document
-first production Verification record
+match
 ```
 
-These should be finalized through Validation, Lifecycle, Maintenance, Procedures, and the first production Integrity Reference.
+The next production decisions are:
+
+```text
+exact named JSON canonicalization / serialization standard
+digest algorithm
+Integrity Value encoding
+```
+
+Failure-result vocabulary and more complex Verification structures remain intentionally unfrozen until production proves they are necessary.
 
 **Version:** 1.0-draft
 
