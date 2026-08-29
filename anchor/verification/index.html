@@ -1,922 +1,453 @@
-# Satoshium Anchor Integrity Reference Base Schema
-
-## Status
-
-**Architecture Stage:** Post-Foundational Schema Architecture  
-**Schema Status:** 1.0-draft · First-Production Reconciled  
-**Canonical Object:** Integrity Reference  
-**Maintained By:** Satoshium
-
----
-
-## Purpose
-
-The **Integrity Reference Base Schema** is the first formal machine-readable structure for Satoshium Anchor's canonical object:
-
-```text
-Integrity Reference
-```
-
-It converts Anchor's conceptual architecture into a structured production object while preserving the distinction between:
-
-```text
-structure that must exist
-```
-
-and:
-
-```text
-vocabulary or policy that is not yet frozen
-```
-
-The JSON Schema companion file is:
-
-```text
-integrity-reference-base-schema.json
-```
-
----
-
-## Governing Principle
-
-> Structure the record now. Freeze policy only when downstream architecture proves it necessary.
-
-The Base Schema therefore defines:
-
-- required object groups;
-- structural relationships;
-- data types;
-- repeatability;
-- nesting;
-- URI and date-time formats;
-- separation of Source authority and Anchor authority;
-
-without prematurely freezing:
-
-- Anchor Identifier syntax;
-- Controlled Values not yet proven necessary by production;
-- additional Verification Result values;
-- additional Integrity State values;
-- additional Publication State values;
-- additional Relationship Type values;
-- additional Integrity Method values;
-- Bitcoin-specific policy;
-- other method-specific or production-specific policy not yet proven necessary.
-
-Production has now proven and frozen the following minimum vocabulary:
-
-```text
-Lifecycle State
-→ draft
-→ active
-→ superseded
-→ withdrawn
-→ archived
-
-Representation Type
-→ canonical_json
-
-Integrity Method
-→ cryptographic_digest
-
-Integrity State
-→ current
-
-Verification Result
-→ match
-
-Publication State
-→ unpublished
-→ published
-
-Relationship Type
-→ references_source
-```
-
-These values are now reflected in the machine-readable Base Schema.
-
----
-
-# Top-Level Structure
-
-A conforming Integrity Reference has this conceptual structure:
-
-```text
-Integrity Reference
-├── anchor_identifier
-├── anchor_version
-├── schema_version
-├── source
-├── representation
-├── integrity
-├── provenance
-├── relationships
-├── record_state
-├── verification_history
-├── corrections
-├── publication
-├── maintenance
-└── notes
-```
-
-The required core is:
-
-```text
-anchor_identifier
-anchor_version
-schema_version
-source
-representation
-integrity
-provenance
-relationships
-record_state
-```
-
-Optional sections may become conditionally required by later architecture.
-
----
-
-# 1. Anchor Identity
-
-## `anchor_identifier`
-
-Identifies the Anchor-owned Integrity Reference.
-
-```text
-Anchor Identifier
-→ Integrity Reference
-```
-
-The final syntax remains governed by `/anchor/identifiers/`.
-
-This schema requires only a non-empty string.
-
-It deliberately does not impose:
-
-- namespace token;
-- year;
-- sequence width;
-- prefix;
-- checksum;
-- URL pattern.
-
----
-
-## `anchor_version`
-
-Integer beginning at `1`.
-
-This field identifies the governed Version of the Integrity Reference representation.
-
-```text
-Anchor Identifier
-≠
-Anchor Version
-```
-
-The completed Versioning architecture defines when a change remains the same Integrity Reference and when it requires a new Anchor Identifier.
-
----
-
-## `schema_version`
-
-Required for production candidates.
-
-Records which schema Version validated the record.
-
-This requirement is now aligned directly with Anchor Validation.
-
----
-
-# 2. Source Object
-
-The `source` object identifies the authoritative external object.
-
-Required:
-
-```text
-source_institution
-source_artifact_type
-source_system_identifier
-```
-
-Optional:
-
-```text
-source_version
-source_location
-```
-
-The governing distinction remains:
-
-```text
-Source-System Identifier
-≠
-Anchor Identifier
-```
-
----
-
-## `source_institution`
-
-Institution authoritative for the Source Artifact.
-
-Examples may include:
-
-```text
-Certifier
-Registry
-Chronicle
-Atlas
-Beacon
-Attestor
-Navigator
-external institution
-```
-
-No production enumeration is frozen.
-
----
-
-## `source_artifact_type`
-
-Describes the type of Source Artifact.
-
-Examples may include:
-
-```text
-Certification Package
-Satoshium Registry Entry
-Chronicle Entry
-Trust Statement
-Workflow Definition
-Atlas record
-```
-
-Final Controlled Values remain unfrozen.
-
----
-
-## `source_system_identifier`
-
-Identifier assigned by the Source Institution.
-
-Examples:
-
-```text
-SC-CERT-2026-0001
-SREG-2026-0001
-CHR-2026-0001
-```
-
-Anchor preserves this value.
-
-Anchor does not replace it.
-
----
-
-# 3. Representation Object
-
-The `representation` object defines exactly what was anchored.
-
-Required:
-
-```text
-representation_type
-representation_boundary
-canonicalization
-```
-
-Optional:
-
-```text
-canonical_representation_location
-media_type
-encoding
-```
-
----
-
-## `representation_type`
-
-Classifies the representation.
-
-The first production-frozen value is:
-
-```text
-canonical_json
-```
-
-The Base Schema now enforces this value for the first production campaign.
-
-Additional Representation Type values remain outside the current schema enumeration until later production records prove they are necessary.
-
----
-
-## `representation_boundary`
-
-Defines what content is included in the integrity-preserved representation.
-
-This is intentionally explicit because:
-
-```text
-Artifact
-≠
-every possible presentation of the Artifact
-```
-
----
-
-## `canonicalization`
-
-Required structured object containing:
-
-```text
-method
-version
-parameters
-```
-
-Only `method` is currently mandatory.
-
-This object exists so transformations affecting integrity are reproducible.
-
----
-
-# 4. Integrity Object
-
-The `integrity` object contains one or more Integrity Methods.
-
-Required:
-
-```text
-methods
-```
-
-Optional:
-
-```text
-composite_order
-```
-
-At least one Integrity Method is required.
-
----
-
-## Integrity Method Object
-
-Each method contains a required:
-
-```text
-method_id
-method_type
-```
-
-and may contain:
-
-```text
-algorithm
-algorithm_version
-parameters
-integrity_value
-generated_at
-signer_reference
-key_reference
-verification_material
-external_commitment
-```
-
-`method_id` is a record-local identifier.
-
-It allows multiple integrity mechanisms to coexist without requiring each method to become an Anchor-owned institutional record.
-
----
-
-## `method_type`
-
-Controlled Value category:
-
-```text
-Integrity Method
-```
-
-The first production-frozen value is:
-
-```text
-cryptographic_digest
-```
-
-The Base Schema now enforces this value for the first production campaign.
-
-Additional Integrity Method values should be introduced only through a governed schema revision when production requires them.
-
----
-
-## `integrity_value`
-
-Stores the generated value where the method produces one directly.
-
-Examples may eventually include:
-
-- cryptographic digest;
-- Merkle root;
-- signature-derived value;
-- other governed integrity value.
-
-The schema does not prescribe encoding yet.
-
----
-
-# 5. External Commitment
-
-An Integrity Method may contain an `external_commitment` object.
-
-Required if present:
-
-```text
-system
-external_identifier
-```
-
-Optional:
-
-```text
-committed_at
-proof_material
-```
-
-Potential systems include:
-
-- trusted timestamp service;
-- transparency log;
-- future Bitcoin commitment system;
-- other external commitment mechanism.
-
-The external identifier never becomes the Anchor Identifier.
-
----
-
-# 6. Provenance Object
-
-Required provenance layers:
-
-```text
-source_provenance
-representation_provenance
-generation_provenance
-```
-
-Optional:
-
-```text
-anchor_record_provenance
-```
-
-These objects are deliberately structurally open in 1.0-draft.
-
-That allows the next production design steps to determine which provenance fields must become rigidly typed.
-
-The schema formalizes the provenance layers without pretending the final provenance event model is known.
-
----
-
-# 7. Relationships
-
-`relationships` is a required array.
-
-It may be empty during drafting, but its existence is structurally required.
-
-Each relationship requires:
-
-```text
-relationship_type
-target_identifier
-```
-
-Optional:
-
-```text
-target_system
-target_location
-effective_at
-context
-```
-
-The first production-frozen Relationship Type is:
-
-```text
-references_source
-```
-
-A production Integrity Reference must contain at least one `references_source` relationship.
-
-Additional Relationship Type values remain unfrozen until later production records require them.
-
----
-
-# 8. Record State
-
-The required `record_state` object separates three different state dimensions:
-
-```text
-integrity_state
-publication_state
-lifecycle_state
-```
-
-The schema preserves the architectural rule:
-
-```text
-Integrity State
-≠
-Publication State
-≠
-Lifecycle State
-```
-
-The initial `lifecycle_state` enumeration is now frozen as:
-
-```text
-draft
-active
-superseded
-withdrawn
-archived
-```
-
-The first production-frozen `integrity_state` value is:
-
-```text
-current
-```
-
-The initial production-frozen `publication_state` values are:
-
-```text
-unpublished
-published
-```
-
-Verification Result remains separate and belongs to Verification history.
-
----
-
-# 9. Verification History
-
-`verification_history` is optional.
-
-Each event requires:
-
-```text
-verified_at
-verification_result
-```
-
-Optional:
-
-```text
-verification_identifier
-method_id
-notes
-```
-
-This is intentionally a lightweight embedded structure.
-
-The first production-frozen Verification Result is:
-
-```text
-match
-```
-
-A separately identified Verification Record remains unfrozen. The schema can evolve later without collapsing Verification identity into the Integrity Reference itself.
-
----
-
-# 10. Corrections
-
-`corrections` is an optional array.
-
-Each Correction reference requires:
-
-```text
-correction_identifier
-```
-
-Optional:
-
-```text
-correction_type
-applied_in_anchor_version
-```
-
-The schema does not yet define a Correction object.
-
-That belongs to `/anchor/corrections/`.
-
----
-
-# 11. Publication
-
-The optional `publication` object may contain:
-
-```text
-canonical_html
-canonical_json
-published_at
-```
-
-This is enough to support later publication architecture without prematurely defining a Publication Gate or Publication record.
-
----
-
-# 12. Maintenance
-
-The optional `maintenance` object may contain:
-
-```text
-last_reviewed_at
-next_review_due
-maintenance_notes
-```
-
-These are provisional structural fields.
-
-The future Maintenance architecture may revise this object.
-
----
-
-# Additional Properties
-
-At the top level and most governed sub-objects:
-
-```text
-additionalProperties: false
-```
-
-This prevents silent schema drift.
-
-However, method-specific structures such as:
-
-```text
-parameters
-verification_material
-proof_material
-provenance sub-objects
-```
-
-remain open where future method-specific extensions are expected.
-
-This balances:
-
-```text
-institutional rigidity
-```
-
-with:
-
-```text
-implementation extensibility
-```
-
----
-
-# Required vs. Optional
-
-The Base Schema intentionally requires only the structural minimum necessary to identify:
-
-1. the Anchor record;
-2. the Source Artifact;
-3. the Canonical Representation;
-4. the integrity-generation method;
-5. the provenance chain;
-6. the relationships container;
-7. the record's separate state dimensions.
-
-Later architecture may introduce conditional requirements.
-
-Examples:
-
-```text
-if method_type requires signature
-→ signer_reference may become required
-
-if external commitment is Bitcoin
-→ Bitcoin-specific proof fields may become required
-
-if record is published
-→ canonical publication location may become required
-
-if Correction exists
-→ Correction lineage may become required
-```
-
-Those conditions are not frozen in the Base Schema.
-
----
-
-# Schema Philosophy
-
-The Base Schema is intentionally not method-specific.
-
-It should remain valid if Anchor later uses:
-
-- SHA-family cryptographic digests;
-- digital signatures;
-- timestamp services;
-- transparency logs;
-- Merkle trees;
-- Bitcoin commitments;
-- composite methods;
-- future integrity technologies.
-
-The institution must outlive any single mechanism.
-
----
-
-# Relationship to Identifiers
-
-Identifiers established what Anchor identifies.
-
-The Base Schema now creates the field where that identity lives:
-
-```text
-anchor_identifier
-```
-
-The schema does not freeze its syntax.
-
----
-
-# Relationship to Controlled Values
-
-Controlled Values established governed categories.
-
-The Base Schema creates locations for those values:
-
-```text
-method_type
-representation_type
-relationship_type
-integrity_state
-verification_result
-publication_state
-lifecycle_state
-correction_type
-```
-
-The Base Schema now enforces the minimum production vocabulary proven necessary by IR #1:
-
-```text
-method_type → cryptographic_digest
-representation_type → canonical_json
-relationship_type → references_source
-integrity_state → current
-verification_result → match
-publication_state → unpublished | published
-lifecycle_state → draft | active | superseded | withdrawn | archived
-```
-
-Other Controlled Value categories and additional values remain outside the current enumeration until production proves they are necessary.
-
----
-
-# Relationship to Relationships
-
-Relationships established what kinds of connections Anchor must preserve.
-
-The Base Schema creates a repeatable `relationships` array capable of connecting:
-
-- internal Anchor records;
-- Source Artifacts;
-- external Suite records;
-- external commitment systems.
-
----
-
-# Relationship to Provenance
-
-Provenance established the integrity-origin chain.
-
-The Base Schema formalizes four provenance layers:
-
-```text
-source_provenance
-representation_provenance
-generation_provenance
-anchor_record_provenance
-```
-
-The internal field structure remains intentionally extensible pending production evidence.
-
----
-
-# Current Production Position
-
-The Base Schema is now reconciled with the first production candidate:
-
-```text
-SCRD-SC-CERT-2026-0001
-```
-
-The next unresolved production dependency is not another structural field.
-
-It is the exact:
-
-```text
-canonicalization / serialization method
-+
-Integrity Value algorithm
-```
-
-that will define the Canonical Representation and produce the first real integrity material.
-
----
-
-# Current Freeze Decisions
-
-### Production Structure Defined
-
-```text
-Anchor identity
-Source object
-Representation object
-Integrity methods
-Provenance layers
-Relationships
-Record state separation
-Verification history container
-Correction references
-Publication container
-Maintenance container
-```
-
-### Production-Frozen and Schema-Enforced
-
-```text
-schema_version → required
-
-Lifecycle State
-→ draft
-→ active
-→ superseded
-→ withdrawn
-→ archived
-
-Representation Type
-→ canonical_json
-
-Integrity Method
-→ cryptographic_digest
-
-Integrity State
-→ current
-
-Verification Result
-→ match
-
-Publication State
-→ unpublished
-→ published
-
-Relationship Type
-→ references_source
-```
-
-A production Integrity Reference must include at least one:
-
-```text
-references_source
-```
-
-relationship.
-
-### Still Unfrozen
-
-```text
-Anchor Identifier syntax
-additional Controlled Value tokens
-Integrity Value encoding
-canonicalization / serialization method
-digest algorithm
-conditional method requirements beyond current production need
-Bitcoin-specific schema
-Correction Type enumeration
-separate Verification Record identity
-method-specific profiles
-```
-
----
-
-# Schema Principle
-
-> Structure the record now. Freeze policy only when downstream architecture proves it necessary.
-
-The Integrity Reference Base Schema is the first formal production-oriented expression of Anchor's canonical object.
-
----
-
-## Version
-
-**Schema Version:** 1.0-draft  
-**Maintained By:** Satoshium
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="theme-color" content="#d6a34a">
+
+<title>Satoshium Anchor · Verification</title>
+<meta name="description" content="Satoshium Anchor Verification — defines how governed representations are reproduced, integrity evidence is compared, and Verification Results are recorded without becoming certification or trust judgments.">
+<link rel="canonical" href="https://satoshium.us/anchor/verification/">
+
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),
+ linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90));
+}
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+ overflow-wrap:anywhere;
+}
+.status{
+ display:inline-block;
+ margin-top:12px;
+ padding:6px 12px;
+ border-radius:999px;
+ border:1px solid rgba(214,163,74,.24);
+ color:var(--gold2);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:.06em;
+ text-transform:uppercase;
+}
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:8px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+.btn:hover{background:rgba(214,163,74,.12)}
+.muted{color:var(--muted)}
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+  <div class="eyebrow">Anchor · Verification</div>
+  <h1>Satoshium Anchor · Verification</h1>
+
+  <p class="lead">
+    Verification determines whether a reviewed representation reproduces the integrity
+    evidence preserved by an Anchor Integrity Reference.
+  </p>
+
+  <p class="lead">
+    Verification evaluates integrity consistency only. It does not determine substantive
+    truth, certification validity, historical meaning, reputation, or trust.
+  </p>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Verification Principle</h2>
+  <div class="note">
+    Reproduce faithfully. Compare precisely. Report only what the evidence proves.
+  </div>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Verification Inputs</h2>
+  <p>
+    Verification begins with the governed representation definition and the Integrity
+    Reference being tested.
+  </p>
+  <div class="note">
+    Source Artifact<br>
+    Canonical Representation<br>
+    Representation Boundary<br>
+    Canonicalization Method<br>
+    Integrity Method<br>
+    Algorithm<br>
+    Expected Integrity Value
+  </div>
+</article>
+
+<article class="card">
+  <h2>Verification Output</h2>
+  <p>
+    Verification records the observed integrity evidence and a governed Verification Result.
+  </p>
+  <div class="note">
+    Reviewed Representation<br>
+    Observed Integrity Value<br>
+    Comparison Outcome<br>
+    Verification Result
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Verification Sequence</h2>
+
+  <div class="note">
+    Retrieve / identify reviewed representation<br>
+    ↓<br>
+    Apply governed Representation Boundary<br>
+    ↓<br>
+    Reproduce Canonical Representation<br>
+    ↓<br>
+    Reproduce integrity material<br>
+    ↓<br>
+    Compare observed and expected values<br>
+    ↓<br>
+    Record Verification Result
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Verification Result</h2>
+
+  <p>
+    The first production-frozen Verification Result is:
+  </p>
+
+  <div class="note">
+    match
+  </div>
+
+  <p style="margin-top:14px;">
+    <strong>match</strong> means that comparison was successfully reached and the observed
+    integrity material agrees with the expected integrity material preserved by Anchor.
+  </p>
+
+  <span class="status">Production-Frozen</span>
+</article>
+</section>
+
+<section class="grid">
+
+<article class="card">
+  <h2>Initial Verification</h2>
+  <p>
+    Initial Verification confirms that a newly constructed Integrity Reference correctly
+    represents the intended Canonical Representation and Integrity Value before publication.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Reverification</h2>
+  <p>
+    Reverification tests later integrity consistency using the same governed representation,
+    boundary, canonicalization, method, and comparison semantics preserved by the record.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Verification vs. Validation</h2>
+
+  <div class="note">
+    Validation<br>
+    → does the Anchor record conform to institutional and schema requirements?<br><br>
+
+    Verification<br>
+    → does the reviewed representation reproduce the preserved integrity evidence?
+  </div>
+
+  <p style="margin-top:14px;">
+    These functions are related but not interchangeable.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Production Sequence</h2>
+
+  <div class="note">
+    Stage A — Structural / Institutional Validation<br>
+    ↓<br>
+    Initial Verification<br>
+    ↓<br>
+    Canonical HTML + Canonical JSON<br>
+    ↓<br>
+    Stage B — Publication-Readiness Validation<br>
+    ↓<br>
+    Publication Gate
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>First Production Verification</h2>
+
+  <p>
+    The first completed Anchor Initial Verification was performed for:
+  </p>
+
+  <div class="note">
+    Anchor Identifier → ANCH-2026-0001<br>
+    Source Artifact → SCRD-SC-CERT-2026-0001<br>
+    Representation Type → canonical_json<br>
+    Canonicalization → RFC 8785 JCS<br>
+    Encoding → UTF-8<br>
+    Integrity Method → cryptographic_digest<br>
+    Algorithm → SHA-256<br>
+    Verification Result → match
+  </div>
+
+  <a class="btn" href="/anchor/anchored-items/ANCH-2026-0001/">
+    Open ANCH-2026-0001 →
+  </a>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>What Verification Does Not Prove</h2>
+
+  <div class="note">
+    Verification Result ≠ Certification<br>
+    Verification Result ≠ Truth Determination<br>
+    Verification Result ≠ Reputation<br>
+    Verification Result ≠ Trust Judgment
+  </div>
+
+  <p style="margin-top:14px;">
+    A successful integrity comparison establishes consistency between the reviewed representation
+    and the integrity evidence Anchor preserves. It does not expand Anchor's institutional authority.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Mismatch and Non-Comparison Outcomes</h2>
+
+  <p>
+    A mismatch indicates that observed integrity material does not agree with the expected
+    integrity material. It does not, by itself, identify the cause.
+  </p>
+
+  <p>
+    Other non-comparison outcomes may eventually be governed where a valid comparison cannot
+    be reached. Those additional machine tokens remain intentionally unfrozen until production
+    requires them.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Verification History</h2>
+
+  <p>
+    Verification history should remain append-only so later reviewers can reconstruct how
+    an Integrity Reference was tested over time.
+  </p>
+
+  <div class="note">
+    verified_at<br>
+    verification_result<br>
+    method_id<br>
+    notes
+  </div>
+
+  <p style="margin-top:14px;">
+    Detailed Verification evidence may be preserved in supporting record files while the
+    Integrity Reference retains the governed event summary.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Authority Boundary</h2>
+
+  <p>
+    Verification does not transfer Source authority to Anchor.
+  </p>
+
+  <div class="note">
+    Source Institution<br>
+    → remains authoritative for the Source Artifact<br><br>
+
+    Anchor<br>
+    → remains authoritative for the Integrity Reference and recorded Verification Result
+  </div>
+
+  <p style="margin-top:14px;">
+    Reference does not transfer authority.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Verification Principle</h2>
+
+  <div class="note">
+    Reproduce faithfully. Compare precisely. Report only what the evidence proves.
+  </div>
+
+  <a class="btn" href="/anchor/validation/">Validation →</a>
+  <a class="btn" href="/anchor/anchoring-process/">Anchoring Process →</a>
+  <a class="btn" href="/anchor/maintenance/">Maintenance →</a>
+  <a class="btn" href="/anchor/anchored-items/">Anchored Items →</a>
+  <a class="btn" href="/anchor/">Back to Anchor →</a>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+  <hr>
+
+  <div id="random-saying"
+       class="muted"
+       style="margin-bottom:14px; max-width:760px;">
+    Verification should report what the evidence proves — no more and no less.
+  </div>
+
+  <hr>
+
+  <div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'>
+</script>
+
+</body>
+</html>
