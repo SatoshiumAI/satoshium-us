@@ -59,7 +59,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 <article class="card"><h2>Anchor Identifier</h2><p>The stable identifier assigned by Anchor to an Integrity Reference. It identifies the Anchor record itself across publication, Verification, Versioning, Corrections, relationships, and long-term preservation.</p><span class="status">Architecture Defined</span></article>
 <article class="card"><h2>Source-System Identifier</h2><p>The identifier assigned by the Source Institution to the authoritative artifact referenced by Anchor, such as a Certification Package, Registry Entry, or Chronicle Entry.</p><span class="status">External Authority</span></article>
 <article class="card"><h2>Source Institution</h2><p>The institution that governs the Source-System Identifier and the Authoritative Artifact associated with it.</p><span class="status">Required Context</span></article>
-<article class="card"><h2>Anchor Version</h2><p>A Version identifies a governed state of the Integrity Reference. Versioning must remain distinct from the identity of the Integrity Reference itself.</p><span class="status">Later Architecture</span></article>
+<article class="card"><h2>Anchor Version</h2><p>A Version identifies a governed state of the Integrity Reference. Anchor Versioning is now defined as sequential integers beginning at 1.</p><span class="status">Architecture Defined</span></article>
 </section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Cross-System Identity Model</h2>
@@ -76,8 +76,15 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 <h2>Identifier vs. Version</h2>
 <p>Identifier identity and Version identity are separate concerns.</p>
 <div class="note">Anchor Identifier ≠ Anchor Version</div>
-<p style="margin-top:14px;">A later Anchor Version may remain part of the same Integrity Reference, depending on the Versioning rules established later.</p>
-<p>A materially different integrity subject may instead require a new Integrity Reference and therefore a new Anchor Identifier.</p>
+<p style="margin-top:14px;">
+  Anchor Versioning is now defined as sequential integers beginning at <strong>1</strong>.
+  A governed change to the same integrity subject may create a new Anchor Version while
+  preserving the same Anchor Identifier.
+</p>
+<p>
+  A materially different integrity subject requires a new Integrity Reference and therefore
+  a new Anchor Identifier.
+</p>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Identifier vs. Source Artifact Version</h2>
@@ -93,11 +100,22 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Identifier Format</h2>
-<p>The final Anchor Identifier syntax is intentionally not frozen on this page.</p>
-<p>The eventual production format should be evaluated against:</p>
-<div class="note">uniqueness · readability · namespace clarity · stable parsing · long-term durability · human recognition · machine interoperability · Version independence · correction safety</div>
-<p style="margin-top:14px;">Possible syntax should be tested against the Integrity Reference schema and the first production record before adoption.</p>
-<span class="status">Format Unfrozen</span>
+<p>The first production Anchor Identifier syntax is now frozen as:</p>
+<div class="note"><strong>ANCH-YYYY-NNNN</strong></div>
+<p style="margin-top:14px;">
+  Components:
+</p>
+<div class="note">
+  ANCH → Satoshium Anchor namespace token<br/>
+  YYYY → four-digit year of production Identifier assignment<br/>
+  NNNN → zero-padded sequential production number within that year
+</div>
+<p style="margin-top:14px;">
+  The syntax is intentionally Version-independent and technology-neutral.
+  It does not encode Source identity, lifecycle, Verification Result, algorithm,
+  hash value, publication state, or external commitment data.
+</p>
+<span class="status">Production Syntax Frozen</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>What the Identifier Must Not Encode Prematurely</h2>
@@ -107,36 +125,69 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Identifier Assignment</h2>
-<p>A production Anchor Identifier is permanently assigned <strong>before formal Validation</strong>.</p>
-<p>This timing is required because formal Validation evaluates the actual production Integrity Reference, and the Integrity Reference Base Schema requires:</p>
-<div class="note">anchor_identifier</div>
-<p style="margin-top:14px;">The governed production sequence is:</p>
+<p>
+  A production Anchor Identifier is permanently assigned after the Integrity Reference
+  candidate is constructed sufficiently to establish its integrity subject and before
+  Stage A Validation.
+</p>
+<p>
+  This timing is required because formal Validation evaluates the actual production
+  Integrity Reference, and the Base Schema requires <strong>anchor_identifier</strong>.
+</p>
 <div class="note">
-Integrity Reference constructed<br/>
-↓<br/>
-Anchor Identifier assigned<br/>
-↓<br/>
-Anchor Version assigned<br/>
-↓<br/>
-Formal Validation<br/>
-↓<br/>
-Initial Verification<br/>
-↓<br/>
-Publication Gate
+  Integrity Reference candidate constructed<br/>
+  ↓<br/>
+  Anchor Identifier assigned<br/>
+  ↓<br/>
+  Anchor Version assigned<br/>
+  ↓<br/>
+  Stage A — Structural / Institutional Validation<br/>
+  ↓<br/>
+  Initial Verification<br/>
+  ↓<br/>
+  Canonical HTML + Canonical JSON<br/>
+  ↓<br/>
+  Stage B — Publication-Readiness Validation<br/>
+  ↓<br/>
+  Publication Gate
 </div>
-<p style="margin-top:14px;">Identifier assignment establishes stable Anchor identity. It does <strong>not</strong> make the record publicly authoritative.</p>
+<p style="margin-top:14px;">
+  Identifier assignment establishes stable Anchor identity. It does <strong>not</strong>
+  make the record publicly authoritative.
+</p>
 <div class="note">
-Anchor Identifier assigned<br/>
-≠<br/>
-Published<br/>
-≠<br/>
-Publication Gate APPROVED
+  Anchor Identifier assigned<br/>
+  ≠<br/>
+  Published<br/>
+  ≠<br/>
+  Publication Gate APPROVED
 </div>
-<p style="margin-top:14px;">Once assigned to a production Integrity Reference, the Anchor Identifier must not be recycled or reassigned to a different Integrity Reference, even if the candidate later fails Validation, is abandoned before publication, or never enters public production.</p>
-<p>The identifier remains part of the preserved production history of that attempted Anchor record.</p>
+<p style="margin-top:14px;">
+  Once assigned, an Anchor Identifier must not be recycled or reassigned even if the
+  candidate later fails Validation, is abandoned, or never reaches publication.
+</p>
 <span class="status">Assignment Rule Defined</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
+<h2>First Production Anchor Identifier</h2>
+<p>
+  The first production Integrity Reference candidate is now assigned:
+</p>
+<div class="note">
+  Anchor Identifier → <strong>ANCH-2026-0001</strong><br/>
+  Anchor Version → <strong>1</strong><br/>
+  Source Institution → Satoshium Certifier<br/>
+  Source-System Identifier → SCRD-SC-CERT-2026-0001<br/>
+  Source Version → 1.1<br/>
+  Representation Type → canonical_json
+</div>
+<p style="margin-top:14px;">
+  This assignment establishes Anchor identity only. The record must still pass Stage A
+  Validation, Initial Verification, Stage B Publication-Readiness Validation, and the
+  Publication Gate before becoming a published Anchor record.
+</p>
+<span class="status">First Identifier Assigned</span>
+</article></section><section style="margin-top:18px;"><article class="card">
 <h2>Corrections and Identifiers</h2>
 <p>A Correction should not automatically create a new Anchor Identifier. Later Corrections architecture must determine whether the correction modifies an existing Integrity Reference through Versioning or requires a new Integrity Reference.</p>
 <div class="note">Correct forward. Preserve backward.</div>
