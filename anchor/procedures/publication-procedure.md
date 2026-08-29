@@ -23,21 +23,30 @@ Anchor Version
 
 ---
 
-### 2. Confirm Structural Completeness
+### 2. Confirm Final Validation PASS
 
-Confirm the Integrity Reference satisfies the applicable schema and institutional requirements.
+Confirm that the Integrity Reference has completed the formal **Integrity Reference Validation Procedure** for the Version being proposed for publication.
 
-Where formal Validation exists, it must be completed.
+Required:
+
+```text
+Stage A Structural / Institutional Validation completed
+Initial Verification completed
+Stage B Publication-Readiness Validation completed
+Final Validation outcome = PASS
+```
+
+Validation PASS is required before the Publication Gate.
 
 ---
 
 ### 3. Confirm Initial Verification
 
-Confirm that Initial Verification has been completed for the Version being proposed for publication.
+Confirm that Initial Verification has been completed for the exact Anchor Version being proposed for publication and that no blocking Verification issue remains.
 
 ---
 
-### 4. Confirm No Blocking Condition
+### 4. Confirm Canonical Representations and No Blocking Condition
 
 Check for:
 
@@ -52,21 +61,21 @@ unresolved Verification issue
 
 ---
 
-### 5. Generate Canonical HTML
+### 5. Confirm Canonical HTML
 
-Generate the human-readable canonical representation.
+Confirm that the human-readable canonical representation has been generated.
 
 ---
 
-### 6. Generate Canonical JSON
+### 6. Confirm Canonical JSON
 
-Generate the machine-readable canonical representation under the applicable Schema Version.
+Confirm that the machine-readable canonical representation has been generated under the applicable Schema Version.
 
 ---
 
 ### 7. Confirm Human / Machine Consistency
 
-Confirm that HTML and JSON agree on all material institutional facts.
+Confirm that HTML and JSON agree on all material institutional facts and that this consistency was included in Publication-Readiness Validation.
 
 At minimum:
 
