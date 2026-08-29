@@ -64,7 +64,7 @@ Anchor begins when a candidate artifact has been identified for integrity preser
 
 # Anchoring Sequence
 
-The current institutional Anchoring Process is:
+The production Anchoring Process is:
 
 ```text
 Identify Authoritative Artifact
@@ -75,26 +75,30 @@ Define Canonical Representation
         ↓
 Define Representation Boundary
         ↓
-Select Integrity Method
+Select Integrity Method / Algorithm
         ↓
 Generate Integrity Value
         ↓
-Record Temporal / Signature / Verification Material
+Construct Integrity Reference Candidate
         ↓
-Construct Integrity Reference
+Assign Anchor Identifier + Anchor Version
         ↓
-Verify Construction
+Stage A — Structural / Institutional Validation
         ↓
-Publish / Preserve
+Initial Verification
         ↓
-Maintain / Reverify when required
+Canonical HTML + Canonical JSON
         ↓
-Preserve Lineage
+Stage B — Publication-Readiness Validation
+        ↓
+Publication Gate
+        ↓
+Publication / Preservation
+        ↓
+Maintenance / Reverification / Lineage
 ```
 
-This sequence establishes the conceptual process.
-
-Final production procedures may later add formal Validation, Publication Gate, identifier assignment, schema conformance, or other operational requirements where production demonstrates a need.
+This sequence is aligned with the completed Anchor Validation, Verification, Publication, Versioning, Procedures, and first-production architecture.
 
 ---
 
@@ -155,19 +159,25 @@ Anchor does not replace source authority.
 
 # Step 3 — Define Canonical Representation
 
-Determine the exact representation that will be used to generate the Integrity Value.
+Determine the exact representation used to generate the Integrity Value.
 
-Examples may include:
+For the first production candidate:
 
-- canonical JSON;
-- defined Markdown source;
-- a specific HTML artifact;
-- a serialized package;
-- a stable exported file;
-- a governed canonical byte sequence;
-- another reproducible representation.
+```text
+Source Artifact
+→ SCRD-SC-CERT-2026-0001
 
-The Canonical Representation should be clear enough that a later reviewer can understand what was processed.
+Representation Type
+→ canonical_json
+
+Canonicalization
+→ RFC 8785 — JSON Canonicalization Scheme (JCS)
+
+Encoding
+→ UTF-8
+```
+
+Later representation types may use different governed canonicalization rules.
 
 ---
 
@@ -207,49 +217,44 @@ A later reviewer should be able to determine what the Integrity Reference covers
 
 # Step 5 — Select Integrity Method
 
-Select the governed integrity method appropriate for the representation.
+Select the governed integrity method and algorithm appropriate for the representation.
 
-Potential mechanisms may include:
+For IR #1:
 
 ```text
-cryptographic digest
-digital signature
-timestamping method
-Merkle structure
-external commitment
-Bitcoin commitment
-other approved integrity mechanism
+Integrity Method
+→ cryptographic_digest
+
+Algorithm
+→ SHA-256
+
+Digest Encoding
+→ lowercase hexadecimal
 ```
 
-The final controlled vocabulary for Integrity Methods remains unfrozen.
-
-The method should be selected because it supports the integrity requirement, not because a particular technology is available.
+Other integrity methods remain available for future governed production where they add durable value.
 
 ---
 
 # Step 6 — Generate Integrity Value
 
-Generate the Integrity Value from the defined Canonical Representation.
+Generate the Integrity Value from the governed Canonical Representation.
 
-A common initial pattern is:
+For IR #1:
 
 ```text
-Canonical Representation
+SCRD JSON
         ↓
-Hash Algorithm
+RFC 8785 JCS
         ↓
-Cryptographic Digest
+UTF-8 canonical byte sequence
+        ↓
+SHA-256
+        ↓
+64-character lowercase hexadecimal Integrity Value
 ```
 
-The generated value should not be interpreted independently from:
-
-- the representation definition;
-- algorithm metadata;
-- source reference;
-- temporal context;
-- other required verification information.
-
-A hash without context is not a complete Integrity Reference.
+The value must remain interpretable together with its representation, algorithm, source, provenance, and Verification context.
 
 ---
 
@@ -276,70 +281,85 @@ Different timestamps should retain their distinct meanings.
 
 ---
 
-# Step 8 — Construct Integrity Reference
+# Step 8 — Construct Integrity Reference Candidate
 
-Construct the Anchor-owned **Integrity Reference**.
+Construct the Anchor-owned Integrity Reference candidate under the Base Schema.
 
-The Integrity Reference should connect:
+The first production candidate uses:
 
 ```text
-Anchor identity
-+
-Source Institution
-+
+Anchor Identifier
+→ ANCH-2026-0001
+
+Anchor Version
+→ 1
+
 Source-System Identifier
-+
-Canonical Representation
-+
-Representation Boundary
-+
-Integrity Value
-+
-Verification Material
-+
-Temporal Context
+→ SCRD-SC-CERT-2026-0001
+
+Relationship Type
+→ references_source
+
+Representation Type
+→ canonical_json
+
+Integrity Method
+→ cryptographic_digest
 ```
 
-The final required field set remains subject to later Anchor schema architecture.
+The Integrity Reference Base Schema defines the required production structure.
 
 ---
 
-# Step 9 — Verify Construction
+# Step 9 — Validate and Verify Construction
 
-Before public production use, confirm that the constructed Integrity Reference actually corresponds to the intended artifact representation.
-
-Verification may include:
-
-- regenerating the digest;
-- validating a signature;
-- checking Source-System Identifier consistency;
-- reviewing timestamps;
-- confirming representation instructions;
-- checking human / machine consistency;
-- verifying external commitment references;
-- confirming authority boundaries.
-
-The exact production Verification and Validation separation remains to be established through later Anchor architecture.
-
----
-
-# Step 10 — Publish / Preserve
-
-When production requirements are satisfied, the Integrity Reference may proceed into public or preserved institutional state.
-
-Later Anchor architecture should determine:
+Construction now uses the staged production model:
 
 ```text
-Publication State
-Lifecycle State
-Publication procedure
-Validation requirements
-Publication Gate, if required
-canonical public package
-machine-readable representation
+Stage A — Structural / Institutional Validation
+        ↓
+Initial Verification
+        ↓
+expected successful result → match
+        ↓
+Stage B — Publication-Readiness Validation
 ```
 
-This Anchoring Process intentionally does not prematurely freeze those mechanisms.
+Validation tests institutional and schema requirements.
+
+Verification tests whether the Reviewed Representation, reconstructed under the governed canonicalization rule, reproduces the stored Integrity Value.
+
+---
+
+# Step 10 — Publication Gate and Publish / Preserve
+
+A candidate proceeds to publication only after:
+
+```text
+Stage B Validation PASS
+        ↓
+Human / Machine consistency confirmed
+        ↓
+Publication Gate
+        ↓
+APPROVED
+        ↓
+Publication
+```
+
+Publication changes the Anchor Publication State from:
+
+```text
+unpublished
+```
+
+to:
+
+```text
+published
+```
+
+for the approved Anchor Version.
 
 ---
 
@@ -388,31 +408,26 @@ The Anchoring Process produces an Anchor-owned:
 Integrity Reference
 ```
 
-A production Integrity Reference may eventually include:
+The current Base Schema provides production structure for:
 
 ```text
 Anchor Identifier
-Source Institution
-Source-System Identifier
-Artifact Type
-Artifact Version
-Canonical Representation
-Representation Boundary
-Integrity Method
-Integrity Value
-Hash Algorithm
-Timestamp(s)
-Signature information
-Verification Material
-Integrity State
 Anchor Version
-Publication State
-Lifecycle State
-Correction lineage
-Verification history
+Schema Version
+Source
+Representation
+Integrity Methods
+Provenance
+Relationships
+Record State
+Verification History
+Corrections
+Publication
+Maintenance
+Notes
 ```
 
-This is an architectural inventory, not yet the final production schema.
+Production requirements are now governed through the Base Schema, Controlled Values, Validation Rules, and Procedures rather than remaining an architectural inventory.
 
 ---
 
@@ -596,11 +611,21 @@ or:
 new Integrity Reference
 ```
 
-The distinction is not yet frozen.
+The completed Versioning architecture now uses the integrity subject test:
 
-It should be established through later Anchor Versioning and production architecture.
+```text
+same Source Artifact identity
++
+same Canonical Representation
++
+same Representation Boundary
+→ same integrity subject
+→ governed Anchor change may create a new Anchor Version
 
-The governing question should be whether the same Anchor identity continues to represent the same integrity relationship or whether a distinct integrity object now exists.
+different integrity subject
+→ new Integrity Reference
+→ new Anchor Identifier
+```
 
 ---
 
@@ -737,6 +762,64 @@ Later Verification / Maintenance / Lineage
 
 ---
 
+# First Production Application — ANCH-2026-0001
+
+```text
+Source Institution
+→ Satoshium Certifier
+
+Source Artifact
+→ SCRD-SC-CERT-2026-0001
+
+Source Version
+→ 1.1
+
+Representation Boundary
+→ complete SCRD JSON document
+
+Representation Type
+→ canonical_json
+
+Canonicalization
+→ RFC 8785 JCS
+
+Encoding
+→ UTF-8
+
+Integrity Method
+→ cryptographic_digest
+
+Algorithm
+→ SHA-256
+
+Digest Encoding
+→ lowercase hexadecimal
+
+Relationship
+→ references_source
+
+Anchor Identifier
+→ ANCH-2026-0001
+
+Anchor Version
+→ 1
+```
+
+`ANCH-2026-0001` is assigned but not yet published.
+
+It must still complete:
+
+```text
+Stage A Validation
+Initial Verification
+Stage B Publication-Readiness Validation
+Publication Gate
+```
+
+before entering public Anchor authority.
+
+---
+
 # Process Principle
 
 The governing Anchoring Process principle is:
@@ -747,25 +830,37 @@ The governing Anchoring Process principle is:
 
 ## Status
 
-**Foundation Reconciliation**
+**Post-Foundational Architecture · First-Production Process Reconciled**
 
-This document establishes the current institutional Anchoring Process.
+The Anchoring Process is now aligned with the completed production architecture and the first assigned Integrity Reference candidate.
 
-The following remain intentionally unfrozen pending later architecture and production testing:
+Production-defined elements include:
 
 ```text
-Anchor identifier format
-Integrity Method Controlled Values
-Integrity State values
-Verification Result values
-required production field set
-machine-readable schema
-Validation architecture
-Publication architecture
-Lifecycle vocabulary
-Versioning rules
+Anchor Identifier → ANCH-2026-0001
+Anchor Version → 1
+Source Artifact → SCRD-SC-CERT-2026-0001
+Representation Type → canonical_json
+Canonicalization → RFC 8785 JCS
+Encoding → UTF-8
+Integrity Method → cryptographic_digest
+Algorithm → SHA-256
+Digest Encoding → lowercase hexadecimal
+Relationship Type → references_source
+Validation → Stage A + Stage B
+Initial Verification → required
+Publication Gate → required
+```
+
+The following remain intentionally future-facing:
+
+```text
+signature-specific procedure
+timestamp-specific procedure
+external commitment procedure
 Bitcoin commitment procedure
-first production Integrity Reference
+composite-method procedure
+later Integrity Reference production cases
 ```
 
 **Version:** 1.0-draft
