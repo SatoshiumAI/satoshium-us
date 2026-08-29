@@ -20,6 +20,7 @@ Individual procedures are maintained as governed Markdown artifacts rather than 
 
 ```text
 Integrity Reference Production Procedure
+Integrity Reference Validation Procedure
 Integrity Verification Procedure
 Correction Procedure
 Publication Procedure
@@ -30,6 +31,7 @@ Files:
 
 ```text
 integrity-reference-production-procedure.md
+integrity-reference-validation-procedure.md
 integrity-verification-procedure.md
 correction-procedure.md
 publication-procedure.md
@@ -45,7 +47,15 @@ The procedures form an operational sequence:
 ```text
 Integrity Reference Production
         ↓
+Stage A — Structural / Institutional Validation
+        ↓
 Initial Verification
+        ↓
+Canonical HTML + Canonical JSON
+        ↓
+Stage B — Publication-Readiness Validation
+        ↓
+Publication Gate
         ↓
 Publication
         ↓
@@ -61,7 +71,13 @@ Correction
         ↓
 new Anchor Version
         ↓
+Stage A Validation
+        ↓
 Reverification
+        ↓
+Stage B Publication-Readiness Validation
+        ↓
+Publication Gate
         ↓
 Publication
 ```
@@ -86,9 +102,9 @@ They do not transfer Source authority.
 
 ## Status
 
-**Post-Foundational Architecture**
+**Post-Foundational Architecture · Pre-Production Reconciled**
 
-The initial production procedure set is now defined.
+The initial production procedure set is now defined, including formal staged Validation.
 
 The following remain intentionally unfrozen:
 
@@ -96,7 +112,6 @@ The following remain intentionally unfrozen:
 operator roles
 approval roles
 automation permissions
-formal Validation procedure
 procedure identifiers
 procedure execution record identifiers
 procedure-specific forms
