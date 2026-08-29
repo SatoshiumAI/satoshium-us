@@ -261,23 +261,27 @@ Anchor Identifier
 Anchor Version
 ```
 
-A future Versioning model may allow:
+The completed Versioning architecture permits:
 
 ```text
 one Anchor Identifier
 → multiple preserved Anchor Versions
 ```
 
-where those Versions remain the same underlying Integrity Reference.
+where those Versions remain the same integrity subject.
 
-A materially different integrity subject may instead require:
+Anchor Version values are sequential integers beginning at:
+
+```text
+1
+```
+
+A materially different integrity subject requires:
 
 ```text
 new Integrity Reference
 → new Anchor Identifier
 ```
-
-The exact boundary remains intentionally unfrozen until Versioning architecture is developed.
 
 ---
 
@@ -310,44 +314,66 @@ depending on later production rules.
 
 ## Identifier Format
 
-The final production syntax for Anchor Identifiers is intentionally **not frozen** on this page.
-
-The architecture should define what the identifier means before defining how it is spelled.
-
-The eventual format should be evaluated against:
+The first production Anchor Identifier syntax is now frozen as:
 
 ```text
-uniqueness
-readability
-namespace clarity
-stable parsing
-long-term durability
-human recognition
-machine interoperability
-Version independence
-Correction safety
-publication stability
+ANCH-YYYY-NNNN
 ```
 
-The syntax should be tested against the Integrity Reference Schema and the first production Integrity Reference before adoption.
+Components:
+
+```text
+ANCH
+→ Satoshium Anchor namespace token
+
+YYYY
+→ four-digit year of production Identifier assignment
+
+NNNN
+→ zero-padded sequential production number within that year
+```
+
+The format satisfies the established requirements:
+
+```text
+Unique
+Stable
+Persistent
+Namespace-Clear
+Version-Independent
+Technology-Neutral
+Authority-Preserving
+Machine-Compatible
+Human-Usable
+```
+
+The syntax deliberately does not encode Source identity, lifecycle, Verification Result, algorithm, hash value, publication state, or external commitment data.
 
 ---
 
-## Why the Format Remains Unfrozen
+## Why This Format Is Now Frozen
 
-A premature identifier format could accidentally encode assumptions that later architecture disproves.
+The dependencies that previously justified deferral are now sufficiently resolved:
 
-Examples include:
+```text
+Controlled Values
+Relationships
+Provenance
+Schemas
+Verification
+Validation
+Lifecycle
+Versioning
+Corrections
+Publication
+Maintenance
+Procedures
+first production Source Artifact
+first production Representation Type
+first production Integrity Method
+```
 
-- assuming one Source Artifact can have only one Integrity Reference;
-- encoding mutable state;
-- encoding Version incorrectly;
-- tying identifiers to one cryptographic method;
-- tying identifiers to Bitcoin before Bitcoin policy exists;
-- tying identifiers to publication sequence before Publication architecture exists;
-- forcing one-to-one relationships that later become one-to-many.
-
-> Define identifier meaning first. Freeze identifier syntax only after production dependencies are understood.
+Production has therefore supplied enough evidence to adopt a durable namespace and sequence model without embedding mutable semantics.
 
 ---
 
@@ -376,20 +402,41 @@ These values may change while the identity of the Integrity Reference remains st
 
 ## Identifier Assignment
 
-A later Production Procedure must define exactly when an Anchor Identifier is permanently assigned.
+A production Anchor Identifier is permanently assigned after the Integrity Reference candidate is constructed sufficiently to establish its integrity subject and before Stage A Validation.
 
-Possible boundaries include:
+The production sequence is:
 
 ```text
-Integrity Reference construction
-successful Validation
-Publication approval
-first canonical persistence
+Integrity Reference candidate constructed
+        ↓
+Anchor Identifier assigned
+        ↓
+Anchor Version assigned
+        ↓
+Stage A — Structural / Institutional Validation
+        ↓
+Initial Verification
+        ↓
+Canonical HTML + Canonical JSON
+        ↓
+Stage B — Publication-Readiness Validation
+        ↓
+Publication Gate
 ```
 
-No assignment point is frozen yet.
+Identifier assignment establishes stable Anchor identity.
 
-This decision should be made after Validation, Publication, Lifecycle, and production procedure have been defined.
+It does not establish publication authority.
+
+```text
+Anchor Identifier assigned
+≠
+Published
+≠
+Publication Gate APPROVED
+```
+
+Once assigned, the Identifier must not be recycled or reassigned even if the candidate later fails Validation, is abandoned, or never reaches publication.
 
 ---
 
@@ -568,7 +615,7 @@ defined Canonical Representation
         ↓
 Integrity Reference
         ↓
-[future Anchor Identifier]
+ANCH-YYYY-NNNN
 ```
 
 Likewise:
@@ -582,7 +629,7 @@ defined Canonical Representation
         ↓
 Integrity Reference
         ↓
-[future Anchor Identifier]
+ANCH-YYYY-NNNN
 ```
 
 and:
@@ -596,7 +643,7 @@ defined Canonical Representation
         ↓
 Integrity Reference
         ↓
-[future Anchor Identifier]
+ANCH-YYYY-NNNN
 ```
 
 This demonstrates architecture without prematurely declaring syntax.
@@ -645,17 +692,17 @@ This separation allows state to change while identity remains stable.
 
 ## Relationship to Schemas
 
-The future Integrity Reference Schema will likely require conceptual fields equivalent to:
+The Integrity Reference Base Schema now implements the Identifier Architecture through fields including:
 
 ```text
-Anchor Identifier
-Source Institution
-Source-System Identifier
+anchor_identifier
+anchor_version
+source.source_institution
+source.source_system_identifier
+source.source_version
 ```
 
-Exact machine-readable field names are not frozen here.
-
-Identifier Architecture establishes their conceptual roles before schema syntax is defined.
+The Base Schema requires `anchor_identifier` and `anchor_version` for production candidates.
 
 ---
 
@@ -679,17 +726,58 @@ A canonical URL may contain an Anchor Identifier without the URL itself becoming
 
 Anchor Governance controls the Anchor identifier namespace.
 
-Governance should eventually define:
+Governance now recognizes the production namespace and assignment model defined here.
 
-- identifier assignment authority;
-- identifier syntax adoption;
+Future governance may still need to formalize:
+
 - identifier deprecation policy;
-- namespace changes;
-- collision handling;
+- namespace migration behavior;
+- collision remediation;
 - malformed identifier handling;
-- migration behavior.
+- exceptional sequence recovery.
 
-The operational rules remain intentionally unfrozen.
+These future cases do not block first production.
+
+---
+
+## First Production Anchor Identifier
+
+The first production Integrity Reference candidate is assigned:
+
+```text
+Anchor Identifier
+→ ANCH-2026-0001
+
+Anchor Version
+→ 1
+
+Source Institution
+→ Satoshium Certifier
+
+Source-System Identifier
+→ SCRD-SC-CERT-2026-0001
+
+Source Version
+→ 1.1
+
+Representation Type
+→ canonical_json
+```
+
+This assignment establishes stable Anchor identity only.
+
+`ANCH-2026-0001` is not yet a published Anchor record.
+
+It must still complete:
+
+```text
+Stage A Validation
+Initial Verification
+Stage B Publication-Readiness Validation
+Publication Gate
+```
+
+before entering public Anchor authority.
 
 ---
 
@@ -703,27 +791,33 @@ Anchor Identifiers should provide stable identity for Integrity References while
 
 ## Status
 
-**Post-Foundational Architecture**
+**Post-Foundational Architecture · First-Production Identifier Finalized**
 
-Identifier meaning is now defined.
+Identifier meaning, namespace, syntax, assignment timing, and the first production Identifier are now defined.
 
-The following remain intentionally unfrozen:
+### Production-Frozen
 
 ```text
-Anchor namespace token
-production identifier syntax
-year / sequence structure
-sequence width
-assignment point
-draft identifier behavior
-collision procedure
-canonical URL pattern
-identifier Controlled Values, if any
-same Identifier vs. new Identifier rules under Versioning
-first production Anchor Identifier
+Namespace Token → ANCH
+Syntax → ANCH-YYYY-NNNN
+Sequence Width → 4 digits
+Year Component → four-digit assignment year
+Anchor Version Model → sequential integers beginning at 1
+First Anchor Identifier → ANCH-2026-0001
+First Anchor Version → 1
 ```
 
-These should be finalized only after subsequent architecture—especially Controlled Values, Relationships, Schemas, Validation, Versioning, and Publication—provides enough production evidence.
+### Still Governed for Future Development
+
+```text
+collision remediation procedure
+namespace migration procedure
+malformed identifier handling
+sequence recovery after operational failure
+future namespace deprecation behavior
+```
+
+These future concerns do not block the first production Integrity Reference.
 
 **Version:** 1.0-draft
 
