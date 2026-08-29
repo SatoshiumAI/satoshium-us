@@ -217,7 +217,17 @@ new Integrity Reference
 
 ## Initial Verification
 
-During production, Initial Verification should occur before Publication Gate approval.
+During production, Initial Verification occurs after Stage A Structural / Institutional Validation has passed and before Stage B Publication-Readiness Validation and Publication Gate approval.
+
+```text
+Stage A Validation
+        ↓
+Initial Verification
+        ↓
+Stage B Publication-Readiness Validation
+        ↓
+Publication Gate
+```
 
 ---
 
