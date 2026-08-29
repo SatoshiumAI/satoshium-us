@@ -138,9 +138,13 @@ bitcoin_commitment
 composite_integrity_method
 ```
 
-These are **candidate values**, not a frozen production enumeration.
+The first production value is now frozen as:
 
-The first production schema should determine which are actually required.
+```text
+cryptographic_digest
+```
+
+The remaining candidate values stay unfrozen until production requires them.
 
 ---
 
@@ -179,18 +183,21 @@ published_web_representation
 other_governed_representation
 ```
 
-These are provisional.
+The first production value is now frozen as:
 
-The category is likely necessary because representation type may affect:
+```text
+canonical_json
+```
 
-- canonicalization;
-- serialization;
-- reproducibility;
-- Verification;
-- schema requirements;
-- publication.
+This value is required by the first production candidate:
 
-The final values should be proven through actual production artifacts.
+```text
+SCRD-SC-CERT-2026-0001
+```
+
+whose intended Representation Boundary is the complete SCRD JSON document.
+
+Other representation values remain provisional until later production artifacts prove their need.
 
 ---
 
@@ -198,31 +205,30 @@ The final values should be proven through actual production artifacts.
 
 **Verification Result** records the outcome of a defined Integrity Verification process.
 
-The category is necessary.
+The category is necessary, and the completed Verification architecture now supports the first production freeze.
 
-The values are not yet frozen.
-
-Possible future distinctions may include:
+The first frozen value is:
 
 ```text
 match
+```
+
+Definition:
+
+```text
+comparison reached
++
+observed integrity material agrees with expected integrity material
+```
+
+Other candidate results remain unfrozen until a real production condition requires them:
+
+```text
 mismatch
 unable_to_verify
 incomplete_material
 method_unavailable
 ```
-
-These are architectural examples only.
-
-The `/anchor/verification/` architecture should define:
-
-- Verification inputs;
-- process;
-- result semantics;
-- failure behavior;
-- recording requirements;
-
-before the production vocabulary is frozen.
 
 ---
 
@@ -232,18 +238,26 @@ before the production vocabulary is frozen.
 
 It should not duplicate Verification Result.
 
-Possible conceptual examples include:
+The first production value is now frozen as:
 
 ```text
 current
+```
+
+Definition:
+
+```text
+the Integrity Reference has no known integrity condition
+requiring escalation under the evidence presently available
+```
+
+Other conceptual values remain unfrozen until production proves their need:
+
+```text
 attention_required
 compromised
 historical
 ```
-
-These are not production values.
-
-The correct state model should emerge from later Verification, Lifecycle, Versioning, Corrections, and Maintenance architecture.
 
 ---
 
@@ -251,18 +265,33 @@ The correct state model should emerge from later Verification, Lifecycle, Versio
 
 **Publication State** describes the publication condition of the Integrity Reference.
 
-Potential conceptual examples include:
+The completed Publication architecture and first production workflow now require two initial production values:
 
 ```text
-draft
-approved
+unpublished
 published
-withdrawn
 ```
 
-These are not production-frozen.
+Definitions:
 
-The `/anchor/publication/` architecture should define publication behavior first.
+```text
+unpublished
+→ the Anchor Version has not entered public Anchor authority
+
+published
+→ the Anchor Version has entered public Anchor authority
+  following Publication Gate approval
+```
+
+Publication Gate decisions remain separate:
+
+```text
+APPROVED / NOT APPROVED
+≠
+Publication State
+```
+
+Additional Publication State values should be frozen only when production requires them.
 
 ---
 
@@ -278,18 +307,17 @@ Source Lifecycle
 Anchor Lifecycle
 ```
 
-A Source Artifact may be withdrawn while the Anchor Integrity Reference remains preserved.
+The initial production enumeration is frozen as:
 
-A Source Artifact may be superseded while the earlier Integrity Reference remains historically valid.
+```text
+draft
+active
+superseded
+withdrawn
+archived
+```
 
-Lifecycle values should therefore be developed only after:
-
-- Publication;
-- Versioning;
-- Corrections;
-- Maintenance;
-
-are architecturally defined.
+These values are governed by the completed Lifecycle architecture and are already enforced by the Integrity Reference Base Schema.
 
 ---
 
@@ -351,22 +379,23 @@ No controlled values should be created until `/anchor/corrections/` defines the 
 
 # Relationship Type
 
-A future **Relationship Type** category may describe relationships between Anchor records and external artifacts.
+**Relationship Type** governs machine-readable connections between Anchor records and related objects.
 
-Potential examples may include:
+The first production token is now frozen as:
 
 ```text
-source_of
-supersedes
-superseded_by
-corrects
-corrected_by
-commits_to
-verified_by
-published_as
+references_source
 ```
 
-These remain deferred to `/anchor/relationships/`.
+For IR #1, this relationship connects the Anchor Integrity Reference to:
+
+```text
+SCRD-SC-CERT-2026-0001
+```
+
+without transferring Certifier authority to Anchor.
+
+Additional relationship tokens remain unfrozen until production requires them.
 
 ---
 
@@ -558,17 +587,22 @@ Mutable state should not be embedded into the Anchor Identifier.
 
 # Controlled Values and Schemas
 
-The future Integrity Reference Schema will enforce production-approved Controlled Values.
+The Integrity Reference Base Schema provides the structural fields that Controlled Values populate.
 
-Schema architecture may define:
+Lifecycle State is already schema-enforced.
 
-- enum constraints;
-- conditional values;
-- required categories;
-- deprecated values;
-- compatibility behavior.
+The newly frozen minimum production values should now be reconciled into schema constraints before IR #1 is constructed:
 
-Controlled Values should therefore be conceptually designed before Schema freezing.
+```text
+representation_type → canonical_json
+method_type → cryptographic_digest
+integrity_state → current
+verification_result → match
+publication_state → unpublished | published
+relationship_type → references_source
+```
+
+Future schema changes should continue to follow production evidence rather than speculative vocabulary expansion.
 
 ---
 
@@ -629,65 +663,72 @@ maximum possible classification
 
 # Current Freeze Decisions
 
-At this stage:
+The first production candidate has now proven the minimum vocabulary Anchor needs to freeze.
 
-### Architecturally Defined Categories
+### Production-Frozen Values
 
 ```text
-Integrity Method
-Integrity State
-Verification Result
-Publication State
 Lifecycle State
+→ draft
+→ active
+→ superseded
+→ withdrawn
+→ archived
+
 Representation Type
-```
+→ canonical_json
 
-### Provisional / Likely Categories
+Integrity Method
+→ cryptographic_digest
 
-```text
-Method Status
-Algorithm Status
-Correction Type
+Integrity State
+→ current
+
+Verification Result
+→ match
+
+Publication State
+→ unpublished
+→ published
+
 Relationship Type
+→ references_source
 ```
 
-### Production Values Frozen
+### Still Unfrozen
 
 ```text
-None yet
+additional Integrity Method values
+additional Representation Type values
+additional Integrity State values
+additional Verification Result values
+additional Publication State values
+additional Relationship Type values
+Method Status values
+Algorithm Status values
+Correction Type values
+machine-token serialization rules beyond current adopted tokens
+Controlled Values versioning model
+deprecation procedure
 ```
-
-This is intentional.
 
 ---
 
-# Why No Values Are Frozen Yet
+# Why These Values Are Frozen Now
 
-The current architecture has established **which vocabulary categories are needed**, but later pages will determine their exact behavior.
+These values were not frozen merely because they appeared plausible during design.
 
-In particular:
+They are now required by the first production Integrity Reference candidate:
 
 ```text
-Verification
-→ should define Verification Result
-
-Lifecycle
-→ should define Lifecycle State
-
-Publication
-→ should define Publication State
-
-Corrections
-→ should define Correction Type
-
-Relationships
-→ should define Relationship Type
-
-Schema
-→ should prove which Representation Types and Integrity Methods are actually necessary
+SCRD-SC-CERT-2026-0001
 ```
 
-Freezing values before those dependencies are known would create avoidable technical debt.
+Production has therefore supplied the evidence needed to move them from architectural candidates into governed vocabulary.
+
+The rule remains:
+
+> Freeze only what production proves necessary.
 
 ---
 
@@ -701,32 +742,11 @@ Anchor should use Controlled Values where stable vocabulary creates durable inst
 
 ## Status
 
-**Post-Foundational Architecture**
+**Post-Foundational Architecture · First-Production Vocabulary Reconciled**
 
-Controlled Value categories are now defined.
+Controlled Value categories are defined, and the minimum production vocabulary required by the first SCRD JSON Integrity Reference candidate is now frozen.
 
-No production enumeration is yet frozen.
-
-The following remain intentionally unfrozen:
-
-```text
-Integrity Method values
-Integrity State values
-Verification Result values
-Publication State values
-Lifecycle State values
-Representation Type values
-Method Status values
-Algorithm Status values
-Correction Type values
-Relationship Type values
-machine-token serialization rules
-Controlled Values versioning model
-deprecation procedure
-first production Controlled Value set
-```
-
-These should be finalized progressively as the downstream architecture proves what is necessary.
+Additional values remain intentionally unfrozen until later production conditions prove they are necessary.
 
 **Version:** 1.0-draft
 
