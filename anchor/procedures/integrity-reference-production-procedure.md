@@ -292,21 +292,42 @@ record_state
 
 ---
 
-### 17. Perform Structural Review
+### 17. Perform Stage A — Structural / Institutional Validation
 
-Confirm:
+Run the **Integrity Reference Validation Procedure** against the constructed production candidate.
+
+Stage A must confirm that the record is sufficiently complete and institutionally coherent to proceed into Initial Verification.
+
+At minimum, confirm:
 
 ```text
 required fields present
 identifiers coherent
-relationships well-formed
-provenance sufficient
-representation boundary explicit
+Source authority coherent
+Representation Boundary explicit
+canonicalization defined
 integrity methods complete
-state dimensions separate
+provenance sufficient
+relationships valid
+record-state dimensions separate
+Lifecycle State valid
+Version / Correction lineage coherent where applicable
+Verification inputs available
 ```
 
-Formal Validation rules may supplement this step.
+If Stage A Validation produces:
+
+```text
+FAIL
+```
+
+then:
+
+```text
+STOP
+→ remediate
+→ repeat affected Validation rules
+```
 
 ---
 
@@ -314,11 +335,11 @@ Formal Validation rules may supplement this step.
 
 Run the **Integrity Verification Procedure** against the newly created Integrity Reference and its Canonical Representation.
 
-If Initial Verification does not produce an acceptable publication outcome:
+If Initial Verification reveals a blocking issue:
 
 ```text
 STOP
-→ investigate before Publication Gate
+→ investigate before publication preparation continues
 ```
 
 ---
@@ -336,9 +357,37 @@ Confirm that both represent the same Anchor Identifier, Version, Source identity
 
 ---
 
-### 20. Apply Publication Procedure
+### 20. Perform Stage B — Publication-Readiness Validation
 
-Submit the completed Integrity Reference to the **Publication Procedure**.
+Run the **Integrity Reference Validation Procedure** again for Publication readiness.
+
+Stage B must confirm:
+
+```text
+Initial Verification completed
+no blocking Verification issue
+Canonical HTML exists
+Canonical JSON exists
+schema conformance
+human / machine consistency
+no blocking Correction
+appropriate Lifecycle State
+Publication Gate inputs complete
+```
+
+Only final:
+
+```text
+Validation PASS
+```
+
+may proceed to the Publication Procedure.
+
+---
+
+### 21. Apply Publication Procedure
+
+Submit the completed, Validated, and Initially Verified Integrity Reference to the **Publication Procedure**.
 
 A production Integrity Reference does not become publicly authoritative merely because its files exist.
 
@@ -358,6 +407,8 @@ Anchor Version 1
 Canonical HTML
 +
 Canonical JSON
++
+Validation evidence
 +
 Initial Verification evidence
 +
