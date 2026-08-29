@@ -2,12 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://satoshium.us/anchor/schemas/integrity-reference-base-schema.json",
   "title": "Satoshium Anchor Integrity Reference Base Schema",
-  "description": "Base structural schema for a Satoshium Anchor Integrity Reference. This schema establishes the production object shape while leaving most identifier syntax, Controlled Value enumerations, and method-specific policy unfrozen. Lifecycle State is the first downstream-frozen Controlled Value enumeration enforced here.",
+  "description": "Base structural schema for a Satoshium Anchor Integrity Reference. This schema establishes the production object shape and enforces the minimum Controlled Values proven necessary by the first production candidate while leaving unproven vocabulary and method-specific policy open for later schema revision.",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "anchor_identifier",
     "anchor_version",
+    "schema_version",
     "source",
     "representation",
     "integrity",
@@ -29,7 +30,7 @@
     "schema_version": {
       "type": "string",
       "minLength": 1,
-      "description": "Version of the Integrity Reference schema used to validate this record."
+      "description": "Version of the Integrity Reference schema used to validate this record. Required for production candidates under Anchor Validation."
     },
     "source": {
       "$ref": "#/$defs/source"
@@ -45,11 +46,24 @@
     },
     "relationships": {
       "type": "array",
-      "description": "Machine-readable relationships associated with this Integrity Reference.",
+      "description": "Machine-readable relationships associated with this Integrity Reference. Production records must include at least one references_source relationship.",
       "items": {
         "$ref": "#/$defs/relationship"
       },
-      "default": []
+      "default": [],
+      "minItems": 1,
+      "contains": {
+        "type": "object",
+        "required": [
+          "relationship_type"
+        ],
+        "properties": {
+          "relationship_type": {
+            "const": "references_source"
+          }
+        }
+      },
+      "minContains": 1
     },
     "record_state": {
       "$ref": "#/$defs/recordState"
@@ -131,8 +145,10 @@
       "properties": {
         "representation_type": {
           "type": "string",
-          "minLength": 1,
-          "description": "Controlled representation category. Final enumeration remains unfrozen."
+          "enum": [
+            "canonical_json"
+          ],
+          "description": "Representation Type Controlled Value. The first production-frozen value is canonical_json, proven by the SCRD-SC-CERT-2026-0001 production candidate."
         },
         "representation_boundary": {
           "type": "string",
@@ -220,8 +236,10 @@
         },
         "method_type": {
           "type": "string",
-          "minLength": 1,
-          "description": "Integrity Method Controlled Value. Enumeration remains unfrozen."
+          "enum": [
+            "cryptographic_digest"
+          ],
+          "description": "Integrity Method Controlled Value. The first production-frozen value is cryptographic_digest."
         },
         "algorithm": {
           "type": "string",
@@ -336,8 +354,10 @@
       "properties": {
         "relationship_type": {
           "type": "string",
-          "minLength": 1,
-          "description": "Relationship Type Controlled Value. Enumeration remains unfrozen."
+          "enum": [
+            "references_source"
+          ],
+          "description": "Relationship Type Controlled Value. The first production-frozen value is references_source."
         },
         "target_identifier": {
           "type": "string",
@@ -371,13 +391,18 @@
       "properties": {
         "integrity_state": {
           "type": "string",
-          "minLength": 1,
-          "description": "Integrity State Controlled Value. Enumeration remains unfrozen."
+          "enum": [
+            "current"
+          ],
+          "description": "Integrity State Controlled Value. The first production-frozen value is current."
         },
         "publication_state": {
           "type": "string",
-          "minLength": 1,
-          "description": "Publication State Controlled Value. Enumeration remains unfrozen."
+          "enum": [
+            "unpublished",
+            "published"
+          ],
+          "description": "Publication State Controlled Value. Initial production-frozen values are unpublished and published. Publication Gate decisions remain separate."
         },
         "lifecycle_state": {
           "type": "string",
@@ -410,8 +435,10 @@
         },
         "verification_result": {
           "type": "string",
-          "minLength": 1,
-          "description": "Verification Result Controlled Value. Enumeration remains unfrozen."
+          "enum": [
+            "match"
+          ],
+          "description": "Verification Result Controlled Value. The first production-frozen value is match: comparison reached and observed integrity material agrees with expected integrity material."
         },
         "method_id": {
           "type": "string",
