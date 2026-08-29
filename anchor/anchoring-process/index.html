@@ -1,23 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<meta name="theme-color" content="#d6a34a">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicon.ico" rel="alternate icon"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="#d6a34a" name="theme-color"/>
 <title>Satoshium Anchor Anchoring Process</title>
-<meta name="description" content="Satoshium Anchor Anchoring Process — defines the institutional process for selecting an authoritative artifact, defining its canonical representation, generating integrity material, constructing an Integrity Reference, and preserving later verification.">
-<link rel="canonical" href="https://satoshium.us/anchor/anchoring-process/">
-
-<link rel="preconnect" href="https://satoshium.link" crossorigin>
-<link rel="dns-prefetch" href="https://satoshium.link">
-<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
-
+<meta content="Satoshium Anchor Anchoring Process — defines the institutional process for selecting an authoritative artifact, defining its canonical representation, generating integrity material, constructing an Integrity Reference, and preserving later verification." name="description"/>
+<link href="https://satoshium.us/anchor/anchoring-process/" rel="canonical"/>
+<link crossorigin="" href="https://satoshium.link" rel="preconnect"/>
+<link href="https://satoshium.link" rel="dns-prefetch"/>
+<link href="https://static.cloudflareinsights.com" rel="dns-prefetch"/>
 <style>
 :root{
  --bg:#07090d;
@@ -120,415 +116,448 @@ h1{
 }
 </style>
 </head>
-
 <body>
-
-<div id="topbar-slot" data-topbar="universe"></div>
+<div data-topbar="universe" id="topbar-slot"></div>
 <script src="/components/topbar-loader.js"></script>
-
 <main class="wrap content">
-
 <section class="hero">
-  <div class="eyebrow">Anchor · Anchoring Process</div>
-  <h1>Satoshium Anchor Anchoring Process</h1>
-
-  <p class="lead">
+<div class="eyebrow">Anchor · Anchoring Process</div>
+<h1>Satoshium Anchor Anchoring Process</h1>
+<p class="lead">
     The Anchoring Process defines how an authoritative artifact becomes
     associated with a durable Anchor Integrity Reference.
   </p>
-
-  <p class="lead">
+<p class="lead">
     The process begins with source authority and representation definition,
     not with hashing. Integrity is meaningful only when Anchor knows
     exactly what is being referenced and why that representation is stable
     enough to verify later.
   </p>
 </section>
-
 <section class="grid">
-
 <article class="card">
-  <h2>Purpose</h2>
-  <p>
+<h2>Purpose</h2>
+<p>
     The Anchoring Process provides the repeatable institutional path for
     creating an Integrity Reference without transferring authority away
     from the system that owns the referenced artifact.
   </p>
 </article>
-
 <article class="card">
-  <h2>Process Boundary</h2>
-  <p>
+<h2>Process Boundary</h2>
+<p>
     Anchor does not create the substantive artifact or determine what it
     means. Anchor begins when a candidate artifact is identified for
     integrity preservation.
   </p>
 </article>
-
 <article class="card">
-  <h2>Authority First</h2>
-  <p>
+<h2>Authority First</h2>
+<p>
     Before integrity material is generated, Anchor must identify the
     Source Institution and confirm which artifact is authoritative for the
     representation being anchored.
   </p>
 </article>
-
 <article class="card">
-  <h2>Verification Goal</h2>
-  <p>
+<h2>Verification Goal</h2>
+<p>
     The process exists so a future reviewer can reproduce or validate
     integrity material and compare a reviewed representation with the
     Integrity Reference.
   </p>
 </article>
-
 </section>
-
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Anchoring Sequence</h2>
-
-  <p>
-    The production-oriented Anchoring Process follows this institutional path:
-  </p>
-
-  <div class="note">
-    Identify Authoritative Artifact → Confirm Source Authority → Define Canonical Representation → Define Representation Boundary → Select Integrity Method → Generate Integrity Value → Record Temporal / Signature / Verification Material → Construct Integrity Reference → Verify Construction → Publish / Preserve → Maintain / Reverify when required
-  </div>
+<h2>Anchoring Sequence</h2>
+<p>The production Anchoring Process is now:</p>
+<div class="note">
+Identify Authoritative Artifact<br/>
+↓<br/>
+Confirm Source Authority<br/>
+↓<br/>
+Define Canonical Representation<br/>
+↓<br/>
+Define Representation Boundary<br/>
+↓<br/>
+Select Integrity Method / Algorithm<br/>
+↓<br/>
+Generate Integrity Value<br/>
+↓<br/>
+Construct Integrity Reference Candidate<br/>
+↓<br/>
+Assign Anchor Identifier + Anchor Version<br/>
+↓<br/>
+Stage A — Structural / Institutional Validation<br/>
+↓<br/>
+Initial Verification<br/>
+↓<br/>
+Canonical HTML + Canonical JSON<br/>
+↓<br/>
+Stage B — Publication-Readiness Validation<br/>
+↓<br/>
+Publication Gate<br/>
+↓<br/>
+Publication / Preservation<br/>
+↓<br/>
+Maintenance / Reverification / Lineage
+</div>
+<p style="margin-top:14px;">
+  This sequence is no longer conceptual only; it is aligned with Anchor's completed
+  Validation, Verification, Publication, Versioning, Procedures, and first-production architecture.
+</p>
 </article>
-
 </section>
-
 <section class="grid">
-
 <article class="card">
-  <h2>1. Identify Authoritative Artifact</h2>
-  <p>
+<h2>1. Identify Authoritative Artifact</h2>
+<p>
     Identify the record, package, file, publication, statement, dataset,
     or other governed object whose integrity should be preserved.
   </p>
 </article>
-
 <article class="card">
-  <h2>2. Confirm Source Authority</h2>
-  <p>
+<h2>2. Confirm Source Authority</h2>
+<p>
     Confirm the Source Institution, Source-System Identifier where one
     exists, artifact type, and authority boundary before Anchor creates
     its own Integrity Reference.
   </p>
 </article>
-
 <article class="card">
-  <h2>3. Define Canonical Representation</h2>
-  <p>
-    Determine the exact representation that will be processed for integrity,
-    such as canonical JSON, a defined file, a package artifact, or another
-    reproducible representation.
-  </p>
+<h2>3. Define Canonical Representation</h2>
+<p>
+  Determine the exact representation processed for integrity.
+  For the first production candidate:
+</p>
+<div class="note">
+Source Artifact → SCRD-SC-CERT-2026-0001<br/>
+Representation Type → canonical_json<br/>
+Canonicalization → RFC 8785 JCS<br/>
+Encoding → UTF-8
+</div>
 </article>
-
 <article class="card">
-  <h2>4. Define Representation Boundary</h2>
-  <p>
-    Explicitly identify what content is covered by the Integrity Reference
-    and what surrounding presentation, generated interface, or later state
-    is outside that reference.
-  </p>
+<h2>4. Define Representation Boundary</h2>
+<p>
+  Explicitly identify what content is covered by the Integrity Reference.
+  For IR #1, the boundary is:
+</p>
+<div class="note">
+complete SCRD JSON document
+</div>
+<p style="margin-top:14px;">
+  Linked Certification Package, SCPR, SCR, SCRD HTML, Atlas, Registry, and Chronicle
+  records remain outside this Representation Boundary unless separately anchored.
+</p>
 </article>
-
 <article class="card">
-  <h2>5. Select Integrity Method</h2>
-  <p>
-    Select the governed mechanism appropriate for the representation,
-    including the applicable digest algorithm, signature method, timestamp
-    method, external commitment method, or other integrity mechanism.
-  </p>
+<h2>5. Select Integrity Method</h2>
+<p>
+  Select the governed integrity mechanism and algorithm.
+  For IR #1:
+</p>
+<div class="note">
+Integrity Method → cryptographic_digest<br/>
+Digest Algorithm → SHA-256<br/>
+Digest Encoding → lowercase hexadecimal
+</div>
+<p style="margin-top:14px;">
+  SHA-256 is the Suite's initial approved interoperable digest algorithm, not a permanent definition of Anchor.
+</p>
 </article>
-
 <article class="card">
-  <h2>6. Generate Integrity Value</h2>
-  <p>
-    Generate the Integrity Value from the defined Canonical Representation.
-    A cryptographic digest is the most direct initial example.
-  </p>
+<h2>6. Generate Integrity Value</h2>
+<p>Generate the Integrity Value from the governed Canonical Representation.</p>
+<div class="note">
+SCRD JSON<br/>
+↓<br/>
+RFC 8785 JCS<br/>
+↓<br/>
+UTF-8 canonical byte sequence<br/>
+↓<br/>
+SHA-256<br/>
+↓<br/>
+64-character lowercase hexadecimal Integrity Value
+</div>
 </article>
-
 <article class="card">
-  <h2>7. Record Verification Material</h2>
-  <p>
+<h2>7. Record Verification Material</h2>
+<p>
     Record the metadata needed to reproduce or validate the integrity result,
     including algorithm information, timestamps, signatures, representation
     instructions, and external commitment references where applicable.
   </p>
 </article>
-
 <article class="card">
-  <h2>8. Construct Integrity Reference</h2>
-  <p>
-    Assemble the Anchor-owned Integrity Reference linking the Source
-    Institution, Source-System Identifier, Canonical Representation,
-    Integrity Value, and required integrity metadata.
-  </p>
+<h2>8. Construct Integrity Reference Candidate</h2>
+<p>
+  Assemble the Anchor-owned Integrity Reference candidate under the Base Schema.
+  For the first production record:
+</p>
+<div class="note">
+Anchor Identifier → ANCH-2026-0001<br/>
+Anchor Version → 1<br/>
+Source → SCRD-SC-CERT-2026-0001<br/>
+Relationship → references_source<br/>
+Representation Type → canonical_json<br/>
+Integrity Method → cryptographic_digest
+</div>
 </article>
-
 <article class="card">
-  <h2>9. Verify Construction</h2>
-  <p>
-    Confirm that the Integrity Reference corresponds to the intended artifact
-    representation and that its integrity material can be reproduced or
-    validated before public production use.
-  </p>
+<h2>9. Validate and Verify Construction</h2>
+<p>
+  Construction now uses the staged production model:
+</p>
+<div class="note">
+Stage A Validation<br/>
+↓<br/>
+Initial Verification<br/>
+↓<br/>
+expected successful Verification Result → match<br/>
+↓<br/>
+Stage B Publication-Readiness Validation
+</div>
+<p style="margin-top:14px;">
+  Validation evaluates institutional and schema conformance.
+  Verification tests whether the reconstructed Canonical Representation reproduces the preserved Integrity Value.
+</p>
 </article>
-
 <article class="card">
-  <h2>10. Publish / Preserve</h2>
-  <p>
-    When the applicable production requirements are satisfied, publish or
-    preserve the Integrity Reference according to Anchor's later-defined
-    Publication and Lifecycle architecture.
-  </p>
+<h2>10. Publication Gate and Publish / Preserve</h2>
+<p>
+  A candidate proceeds to publication only after final Validation PASS and Publication Gate approval.
+</p>
+<div class="note">
+Stage B Validation PASS<br/>
+↓<br/>
+Human / Machine consistency confirmed<br/>
+↓<br/>
+Publication Gate<br/>
+↓<br/>
+APPROVED<br/>
+↓<br/>
+Publication
+</div>
+<p style="margin-top:14px;">
+  Publication changes the Anchor Publication State from <strong>unpublished</strong>
+  to <strong>published</strong> and makes the approved Anchor Version publicly authoritative
+  for its own Integrity Reference metadata.
+</p>
 </article>
-
 <article class="card">
-  <h2>11. Maintain / Reverify</h2>
-  <p>
+<h2>11. Maintain / Reverify</h2>
+<p>
     Review the Integrity Reference when the Source Artifact changes, a
     reference breaks, an algorithm becomes unsuitable, verification fails,
     or later integrity review is institutionally required.
   </p>
 </article>
-
 <article class="card">
-  <h2>12. Preserve Lineage</h2>
-  <p>
+<h2>12. Preserve Lineage</h2>
+<p>
     Preserve prior material states, Corrections, Versions, verification
     history, and later Integrity References so the integrity history remains
     reconstructable over time.
   </p>
 </article>
-
 </section>
-
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>What the Process Produces</h2>
-
-  <p>
-    The Anchoring Process produces an Anchor-owned
-    <strong>Integrity Reference</strong>.
-  </p>
-
-  <div class="note">
-    Integrity Reference · Source-System Reference · Canonical Representation · Representation Boundary · Integrity Value · Algorithm Metadata · Temporal Context · Signature / Verification Material · Anchor Metadata
-  </div>
-
-  <p style="margin-top:14px;">
-    The final production schema and required field set remain to be established
-    through Anchor's later schema architecture.
-  </p>
+<h2>What the Process Produces</h2>
+<p>The Anchoring Process produces an Anchor-owned <strong>Integrity Reference</strong>.</p>
+<div class="note">
+Anchor Identifier<br/>
+Anchor Version<br/>
+Schema Version<br/>
+Source Object<br/>
+Canonical Representation<br/>
+Representation Boundary<br/>
+Integrity Method + Algorithm<br/>
+Integrity Value<br/>
+Provenance<br/>
+Relationships<br/>
+Record State<br/>
+Verification History<br/>
+Publication / Maintenance metadata where applicable
+</div>
+<p style="margin-top:14px;">
+  The Integrity Reference Base Schema now defines this production structure.
+</p>
 </article>
-
 </section>
-
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Canonical Representation Comes Before Hashing</h2>
-
-  <p>
+<h2>Canonical Representation Comes Before Hashing</h2>
+<p>
     A hash is useful only when a later reviewer can determine exactly what
     representation produced it.
   </p>
-
-  <p>
+<p>
     Anchor therefore does not treat:
   </p>
-
-  <div class="note">
+<div class="note">
     "Hash this record"
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     as a sufficient institutional instruction.
   </p>
-
-  <p>
+<p>
     The process must first establish:
   </p>
-
-  <div class="note">
+<div class="note">
     Which artifact? → Which authoritative source? → Which exact representation? → Which boundary? → Which governed method?
   </div>
 </article>
-
 </section>
-
 <section class="grid">
-
 <article class="card">
-  <h2>Hashes</h2>
-  <p>
+<h2>Hashes</h2>
+<p>
     Hashing may generate a deterministic Integrity Value for a defined
     Canonical Representation. Hashing is a mechanism within the process,
     not the process itself.
   </p>
 </article>
-
 <article class="card">
-  <h2>Timestamps</h2>
-  <p>
+<h2>Timestamps</h2>
+<p>
     Timestamps preserve temporal context and should be labeled by meaning,
     such as anchoring time, observation time, publication time, or
     verification time.
   </p>
 </article>
-
 <article class="card">
-  <h2>Signatures</h2>
-  <p>
+<h2>Signatures</h2>
+<p>
     Signatures may support integrity or origin verification. They do not
     automatically establish substantive authority, truth, certification,
     reputation, or trust.
   </p>
 </article>
-
 <article class="card">
-  <h2>External Commitments</h2>
-  <p>
+<h2>External Commitments</h2>
+<p>
     External commitments, including possible future Bitcoin commitments,
     may strengthen long-term independently reviewable integrity without
     defining Anchor's institutional identity.
   </p>
 </article>
-
 </section>
-
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Source Artifact Changes</h2>
-
-  <p>
+<h2>Source Artifact Changes</h2>
+<p>
     A Source Artifact may legitimately change after an Integrity Reference
     is created.
   </p>
-
-  <p>
+<p>
     A later Source Artifact Version, Correction, lifecycle change,
     migration, or new canonical representation does not erase the earlier
     integrity relationship.
   </p>
-
-  <div class="note">
+<div class="note">
     Preserve which representation was anchored, which Integrity Reference covered it, and how later representations relate to that state.
   </div>
 </article>
-
 </section>
-
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Verification After Anchoring</h2>
-
-  <p>
+<h2>Verification After Anchoring</h2>
+<p>
     Later Integrity Verification begins with the preserved Integrity Reference
     and the artifact representation under review.
   </p>
-
-  <div class="note">
+<div class="note">
     Integrity Reference + Reviewed Representation → Reproduce / Validate Integrity Material → Compare → Verification Result
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     A match supports integrity consistency.
     A mismatch requires investigation.
   </p>
-
-  <p>
+<p>
     A mismatch does not automatically establish tampering, wrongdoing,
     falsity, or loss of institutional authority.
   </p>
 </article>
-
 </section>
-
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Authority Boundary</h2>
-
-  <p>
+<h2>Authority Boundary</h2>
+<p>
     Anchor owns the Integrity Reference.
   </p>
-
-  <p>
+<p>
     The Source Institution continues to own the authoritative artifact and
     its substantive status, meaning, certification, historical interpretation,
     or trust context.
   </p>
-
-  <div class="note">
+<div class="note">
     Reference does not transfer authority.
   </div>
 </article>
-
 </section>
-
-<section style="margin-top:18px;">
-
+<section style="margin-top:18px;"><article class="card">
+<h2>First Production Application — ANCH-2026-0001</h2>
+<div class="note">
+Source Institution → Satoshium Certifier<br/>
+Source Artifact → SCRD-SC-CERT-2026-0001<br/>
+Source Version → 1.1<br/>
+Representation Boundary → complete SCRD JSON document<br/>
+Representation Type → canonical_json<br/>
+Canonicalization → RFC 8785 JCS<br/>
+Encoding → UTF-8<br/>
+Integrity Method → cryptographic_digest<br/>
+Algorithm → SHA-256<br/>
+Digest Encoding → lowercase hexadecimal<br/>
+Relationship → references_source<br/>
+Anchor Identifier → ANCH-2026-0001<br/>
+Anchor Version → 1
+</div>
+<p style="margin-top:14px;">
+  This candidate is assigned but not yet published. It must still complete Stage A Validation,
+  Initial Verification, Stage B Publication-Readiness Validation, and the Publication Gate.
+</p>
+</article></section><section style="margin-top:18px;">
 <article class="card">
-  <h2>Process Philosophy</h2>
-
-  <p>
+<h2>Process Philosophy</h2>
+<p>
     Anchoring is not a declaration of truth.
     It is the governed creation of a durable integrity relationship between
     an Anchor Integrity Reference and a defined artifact representation.
   </p>
-
-  <p>
+<p>
     The process should remain reproducible, reviewable, implementation-neutral,
     and minimal enough to preserve integrity without duplicating the
     authoritative record.
   </p>
-
-  <div class="note">
+<div class="note">
     Define the representation. Generate the integrity evidence. Preserve the reference. Make later verification possible.
   </div>
-
-  <a class="btn" href="/anchor/purpose/">
+<a class="btn" href="/anchor/purpose/">
     Purpose →
   </a>
-
-  <a class="btn" href="/anchor/definitions/">
+<a class="btn" href="/anchor/definitions/">
     Definitions →
   </a>
-
-  <a class="btn" href="/anchor/integrity-preservation/">
+<a class="btn" href="/anchor/integrity-preservation/">
     Integrity Preservation →
   </a>
-
-  <a class="btn" href="/anchor/">
+<a class="btn" href="/anchor/">
     Back to Anchor →
   </a>
 </article>
-
 </section>
-
 </main>
-
 <div class="wrap reflection">
-  <hr>
-  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+<hr/>
+<div class="muted" id="random-saying" style="margin-bottom:14px; max-width:760px;">
     An anchor does not explain meaning. It preserves the ability to verify form.
   </div>
-  <hr>
-  <div id="footer-container"></div>
+<hr/>
+<div id="footer-container"></div>
 </div>
-
 <script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
@@ -537,9 +566,6 @@ fetch("https://satoshium.link/components/footer.html")
     document.getElementById("footer-container").innerHTML = data;
   });
 </script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
-
+<script data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
 </body>
 </html>
