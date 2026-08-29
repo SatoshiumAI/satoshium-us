@@ -114,6 +114,7 @@ Required structural core:
 ```text
 anchor_identifier
 anchor_version
+schema_version
 source
 representation
 integrity
@@ -126,39 +127,29 @@ record_state
 
 ## Controlled Value Enforcement
 
-The schema structurally supports Controlled Value fields such as:
+The first production candidate has now proven the minimum vocabulary that must be machine-enforced.
+
+The Base Schema now enforces:
 
 ```text
-method_type
-representation_type
-relationship_type
-integrity_state
-verification_result
-publication_state
-lifecycle_state
-correction_type
+representation_type → canonical_json
+method_type → cryptographic_digest
+integrity_state → current
+verification_result → match
+publication_state → unpublished | published
+lifecycle_state → draft | active | superseded | withdrawn | archived
+relationship_type → references_source
 ```
 
-Most enumerations remain intentionally unfrozen until production proves which distinctions require permanent machine-level enforcement.
-
-The first downstream Controlled Value enumeration is now frozen:
+Production records must also contain at least one:
 
 ```text
-Lifecycle State
-→ draft
-→ active
-→ superseded
-→ withdrawn
-→ archived
+references_source
 ```
 
-The machine-readable Integrity Reference Base Schema now directly enforces those values for:
+relationship.
 
-```text
-record_state.lifecycle_state
-```
-
-The remaining Controlled Value categories continue to stay open until production evidence demonstrates the need to freeze them.
+Additional Controlled Value tokens remain outside the current schema enumeration until production proves they are necessary.
 
 ---
 
@@ -187,37 +178,47 @@ This preserves institutional structure while allowing implementation-specific de
 
 ## Status
 
-**Post-Foundational Architecture · Pre-Production Reconciled**
+**Post-Foundational Architecture · First-Production Schema Reconciled**
 
-The Integrity Reference now has a formal base data structure, including the first downstream-frozen Controlled Value enforcement for Lifecycle State.
+The Integrity Reference now has a formal base data structure aligned with the first production candidate.
 
-The first downstream production constraint now frozen and enforced is:
+The schema now machine-enforces the minimum vocabulary required for:
 
 ```text
-Lifecycle State
-→ draft
-→ active
-→ superseded
-→ withdrawn
-→ archived
+SCRD-SC-CERT-2026-0001
 ```
 
-The following remain intentionally unfrozen or pending production evidence:
+including:
+
+```text
+canonical_json
+cryptographic_digest
+current
+match
+unpublished
+published
+references_source
+draft
+active
+superseded
+withdrawn
+archived
+```
+
+`schema_version` is now required for production candidates.
+
+The following remain intentionally unfrozen or pending the next production decision:
 
 ```text
 Anchor Identifier syntax
-most Controlled Value enumerations
-Relationship Type tokens
-Integrity Method enumeration
+canonicalization / serialization method
+digest algorithm
 Integrity Value encoding
-canonicalization method enumeration
-Verification Result enumeration
-Integrity State enumeration
-Publication State enumeration
-conditional method requirements
+additional Controlled Value tokens
+method-specific conditional requirements
 Bitcoin-specific extension
-Correction schema
-method-specific schema/profile requirements
+Correction Type enumeration
+separate Verification Record identity
 first production Integrity Reference instance
 ```
 
