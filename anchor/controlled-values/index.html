@@ -70,18 +70,23 @@ code{color:var(--gold2)}
 <section style="margin-top:18px;"><article class="card">
 <h2>Current Freeze Decision</h2>
 <p>
-  Controlled Value categories are architecturally defined. The initial
-  <strong>Lifecycle State</strong> enumeration is now the first production-frozen
-  Anchor Controlled Value set.
+  Production has now proven the minimum vocabulary needed for Anchor's first
+  Integrity Reference candidate, <strong>SCRD-SC-CERT-2026-0001</strong>.
 </p>
 <div class="note">
   Lifecycle State → production-frozen<br/>
-  Other categories → remain unfrozen until production proves the required vocabulary
+  Representation Type → <strong>canonical_json</strong><br/>
+  Integrity Method → <strong>cryptographic_digest</strong><br/>
+  Integrity State → <strong>current</strong><br/>
+  Verification Result → <strong>match</strong><br/>
+  Publication State → <strong>unpublished · published</strong><br/>
+  Relationship Type → <strong>references_source</strong>
 </div>
 <p style="margin-top:14px;">
-  This downstream freeze was established by the completed Lifecycle architecture
-  and is now enforced by Anchor Validation.
+  These values are frozen only because the first production candidate requires
+  them. Other values and categories remain unfrozen until production proves a need.
 </p>
+<span class="status">Minimum Production Set Frozen</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Controlled Values Principle</h2>
@@ -96,35 +101,23 @@ code{color:var(--gold2)}
 <section class="grid">
 <article class="card">
 <h2>Integrity Method</h2>
-<p>
-    Identifies the method used to generate or preserve integrity evidence for
-    a Canonical Representation.
-  </p>
-<span class="status">Category Defined</span>
+<p>Identifies the method used to generate or preserve integrity evidence for a Canonical Representation. The first production value is now frozen as cryptographic_digest.</p>
+<span class="status">First Value Frozen</span>
 </article>
 <article class="card">
 <h2>Integrity State</h2>
-<p>
-    Describes the current integrity-related state of an Anchor Integrity
-    Reference without replacing Verification Result, Publication State, or
-    Lifecycle State.
-  </p>
-<span class="status">Values Unfrozen</span>
+<p>Describes the current integrity-related state of an Anchor Integrity Reference without replacing Verification Result, Publication State, or Lifecycle State. The first production value is now frozen as current.</p>
+<span class="status">First Value Frozen</span>
 </article>
 <article class="card">
 <h2>Verification Result</h2>
-<p>
-    Records the outcome of a defined Integrity Verification process.
-  </p>
-<span class="status">Values Unfrozen</span>
+<p>Records the outcome of a defined Integrity Verification process. The first production value required by the initial successful Verification path is now frozen as match.</p>
+<span class="status">First Value Frozen</span>
 </article>
 <article class="card">
 <h2>Publication State</h2>
-<p>
-    Describes whether and how an Integrity Reference is available through
-    Anchor's publication architecture.
-  </p>
-<span class="status">Values Unfrozen</span>
+<p>Describes whether and how an Integrity Reference is available through Anchor's publication architecture. The first production states are now frozen as unpublished and published.</p>
+<span class="status">Initial Values Frozen</span>
 </article>
 <article class="card">
 <h2>Lifecycle State</h2>
@@ -133,11 +126,8 @@ code{color:var(--gold2)}
 </article>
 <article class="card">
 <h2>Representation Type</h2>
-<p>
-    Classifies the kind of Canonical Representation covered by the Integrity
-    Reference, such as structured data, document, package, or other governed form.
-  </p>
-<span class="status">Category Defined</span>
+<p>Classifies the kind of Canonical Representation covered by the Integrity Reference. The first production value is now frozen as canonical_json for the SCRD JSON candidate.</p>
+<span class="status">First Value Frozen</span>
 </article>
 </section>
 <section style="margin-top:18px;"><article class="card">
@@ -184,102 +174,53 @@ code{color:var(--gold2)}
 </article>
 <article class="card">
 <h2>Relationship Type</h2>
-<p>
-    Later Relationships architecture may require governed values such as
-    source_of, supersedes, superseded_by, corrects, or commits_to.
-  </p>
-<span class="status">Deferred</span>
+<p>Relationships architecture requires a governed Source relationship for production. The first production token is now frozen as references_source; additional relationship tokens remain unfrozen.</p>
+<span class="status">First Value Frozen</span>
 </article>
 </section>
 <section style="margin-top:18px;"><article class="card">
-<h2>Integrity Method — Current Architecture</h2>
-<p>
-    The category is necessary now, but its final production vocabulary remains
-    intentionally narrow and provisional.
-  </p>
-<div class="note">
-    cryptographic_digest<br/>
-    digital_signature<br/>
-    trusted_timestamp<br/>
-    merkle_commitment<br/>
-    transparency_commitment<br/>
-    bitcoin_commitment<br/>
-    composite_integrity_method
-  </div>
-<p style="margin-top:14px;">
-    These are architectural candidates, not yet a frozen production enumeration.
-    The first schema and production Integrity Reference should determine which
-    values are actually needed.
-  </p>
+<h2>Integrity Method — First Production Value Frozen</h2>
+<p>The first production Integrity Reference uses a deterministic cryptographic digest over its Canonical Representation.</p>
+<div class="note"><strong>cryptographic_digest</strong></div>
+<p style="margin-top:14px;">This is now the first frozen Integrity Method token. Other candidate methods remain unfrozen until production requires them.</p>
+<div class="note">digital_signature · trusted_timestamp · merkle_commitment · transparency_commitment · bitcoin_commitment · composite_integrity_method → still unfrozen</div>
+<span class="status">cryptographic_digest Frozen</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
-<h2>Representation Type — Current Architecture</h2>
-<p>
-    Anchor may need to distinguish representation classes because reproducibility
-    and canonicalization differ by artifact type.
-  </p>
-<div class="note">
-    structured_record<br/>
-    document<br/>
-    package<br/>
-    binary_file<br/>
-    canonical_json<br/>
-    canonical_text<br/>
-    published_web_representation<br/>
-    other_governed_representation
-  </div>
-<p style="margin-top:14px;">
-    These remain candidate values until the schema proves which distinctions
-    materially affect integrity preservation.
-  </p>
+<h2>Representation Type — First Production Value Frozen</h2>
+<p>The first production Source Artifact is the complete machine-readable SCRD JSON document.</p>
+<div class="note"><strong>canonical_json</strong></div>
+<p style="margin-top:14px;">This token is now the first frozen Representation Type because it accurately describes the intended Canonical Representation for <strong>SCRD-SC-CERT-2026-0001</strong>.</p>
+<p>Other representation candidates remain unfrozen until tested by later Integrity References.</p>
+<span class="status">canonical_json Frozen</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
-<h2>Verification Result — Do Not Freeze Yet</h2>
-<p>
-    Verification Result should be designed from the actual Verification process,
-    not from generic vocabulary.
-  </p>
-<p>
-    A later Verification page should determine whether Anchor needs distinctions
-    such as:
-  </p>
-<div class="note">
-    match · mismatch · unable_to_verify · incomplete_material · method_unavailable
-  </div>
-<p style="margin-top:14px;">
-    No value in this set is production-frozen here.
-  </p>
+<h2>Verification Result — First Production Value Frozen</h2>
+<p>The Verification architecture is complete enough to freeze the first successful comparison outcome required by IR #1.</p>
+<div class="note"><strong>match</strong> → comparison reached and observed integrity material agrees with expected integrity material</div>
+<p style="margin-top:14px;">Other outcomes remain unfrozen until an actual production condition requires them.</p>
+<div class="note">mismatch · unable_to_verify · incomplete_material · method_unavailable → still unfrozen</div>
+<span class="status">match Frozen</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
-<h2>Integrity State — Do Not Freeze Yet</h2>
-<p>
-    Integrity State must describe the condition of the Integrity Reference
-    without duplicating Verification Result or Lifecycle State.
-  </p>
-<p>
-    Possible future distinctions may include:
-  </p>
-<div class="note">
-    current · attention_required · compromised · historical
-  </div>
-<p style="margin-top:14px;">
-    These are conceptual examples only. The later Lifecycle and Verification
-    architectures may prove that a different model is cleaner.
-  </p>
+<h2>Integrity State — First Production Value Frozen</h2>
+<p>The first production Integrity Reference requires a current integrity condition distinct from its Verification Result, Publication State, and Lifecycle State.</p>
+<div class="note"><strong>current</strong> → the Integrity Reference has no known integrity condition requiring escalation under the evidence presently available</div>
+<p style="margin-top:14px;">Other conceptual states remain unfrozen until production demonstrates their need.</p>
+<div class="note">attention_required · compromised · historical → still unfrozen</div>
+<span class="status">current Frozen</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
-<h2>Publication State — Do Not Freeze Yet</h2>
-<p>
-    Publication State should be derived from Anchor's eventual Publication
-    architecture.
-  </p>
+<h2>Publication State — Initial Production Values Frozen</h2>
+<p>The completed Publication architecture and first production workflow require a clear distinction between a candidate that has not yet entered public Anchor authority and a Version that has.</p>
 <div class="note">
-    draft · approved · published · withdrawn
-  </div>
-<p style="margin-top:14px;">
-    These examples illustrate the category only. Anchor should not adopt them
-    until Publication behavior is formally defined.
-  </p>
+<strong>unpublished</strong> → the Anchor Version has not entered public Anchor authority<br/>
+<strong>published</strong> → the Anchor Version has entered public Anchor authority following Publication Gate approval
+</div>
+<p style="margin-top:14px;">Publication Gate decisions remain separate:</p>
+<div class="note">APPROVED / NOT APPROVED ≠ Publication State</div>
+<p style="margin-top:14px;">Additional states, including withdrawal behavior, remain governed by Publication architecture and should be frozen only when production requires them.</p>
+<span class="status">Initial Values Frozen</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Lifecycle State — Initial Production Enumeration Frozen</h2>
@@ -308,6 +249,13 @@ code{color:var(--gold2)}
 <span class="status">Production Enumeration Frozen</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
+<h2>Relationship Type — First Production Value Frozen</h2>
+<p>The first Integrity Reference must preserve a machine-readable relationship to its Source Artifact.</p>
+<div class="note"><strong>references_source</strong></div>
+<p style="margin-top:14px;">For IR #1, this relationship connects the Anchor Integrity Reference to <strong>SCRD-SC-CERT-2026-0001</strong> without transferring Certifier authority to Anchor.</p>
+<p>Additional Relationship Type tokens remain unfrozen until later records require them.</p>
+<span class="status">references_source Frozen</span>
+</article></section><section style="margin-top:18px;"><article class="card">
 <h2>Controlled Value Governance</h2>
 <p>
     Every production Controlled Value should eventually have:
@@ -380,38 +328,38 @@ code{color:var(--gold2)}
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Relationship to Schemas</h2>
-<p>
-  The Integrity Reference Base Schema provides the structural fields that
-  Controlled Values populate.
-</p>
-<p>
-  Where a Controlled Value enumeration becomes production-frozen, the schema
-  architecture should acknowledge and eventually enforce that governed vocabulary.
-</p>
+<p>The Integrity Reference Base Schema provides the structural fields that Controlled Values populate.</p>
+<div class="note">Controlled Values → governed vocabulary<br/>Schema → structural enforcement</div>
+<p style="margin-top:14px;">The Base Schema already enforces Lifecycle State. The newly frozen minimum production values should now be reconciled into schema constraints before IR #1 is constructed.</p>
 <div class="note">
-  Controlled Values → governed vocabulary<br/>
-  Schema → structural enforcement
+representation_type → canonical_json<br/>
+method_type → cryptographic_digest<br/>
+integrity_state → current<br/>
+verification_result → match<br/>
+publication_state → unpublished · published<br/>
+relationship_type → references_source
 </div>
-<p style="margin-top:14px;">
-  Lifecycle State is now the first downstream-frozen enumeration. Other categories
-  remain intentionally open until production proves which values require schema-level enforcement.
-</p>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Current Freeze Decision</h2>
 <p>
-  Controlled Value categories are architecturally defined. The initial
-  <strong>Lifecycle State</strong> enumeration is now the first production-frozen
-  Anchor Controlled Value set.
+  Production has now proven the minimum vocabulary needed for Anchor's first
+  Integrity Reference candidate, <strong>SCRD-SC-CERT-2026-0001</strong>.
 </p>
 <div class="note">
   Lifecycle State → production-frozen<br/>
-  Other categories → remain unfrozen until production proves the required vocabulary
+  Representation Type → <strong>canonical_json</strong><br/>
+  Integrity Method → <strong>cryptographic_digest</strong><br/>
+  Integrity State → <strong>current</strong><br/>
+  Verification Result → <strong>match</strong><br/>
+  Publication State → <strong>unpublished · published</strong><br/>
+  Relationship Type → <strong>references_source</strong>
 </div>
 <p style="margin-top:14px;">
-  This downstream freeze was established by the completed Lifecycle architecture
-  and is now enforced by Anchor Validation.
+  These values are frozen only because the first production candidate requires
+  them. Other values and categories remain unfrozen until production proves a need.
 </p>
+<span class="status">Minimum Production Set Frozen</span>
 </article></section>
 <section style="margin-top:18px;"><article class="card">
 <h2>Controlled Values Principle</h2>
