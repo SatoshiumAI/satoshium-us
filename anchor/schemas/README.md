@@ -36,7 +36,7 @@ Relationships
 Provenance
 ```
 
-and creates the structure later required by:
+and is now reconciled with the downstream architecture established through:
 
 ```text
 Verification
@@ -124,7 +124,7 @@ record_state
 
 ---
 
-## Why Values Are Not Enumerated Yet
+## Controlled Value Enforcement
 
 The schema structurally supports Controlled Value fields such as:
 
@@ -139,11 +139,26 @@ lifecycle_state
 correction_type
 ```
 
-but does not freeze their enumerations.
+Most enumerations remain intentionally unfrozen until production proves which distinctions require permanent machine-level enforcement.
 
-That is intentional.
+The first downstream Controlled Value enumeration is now frozen:
 
-The downstream architecture must define the behavior before production vocabulary is locked.
+```text
+Lifecycle State
+→ draft
+→ active
+→ superseded
+→ withdrawn
+→ archived
+```
+
+The machine-readable Integrity Reference Base Schema now directly enforces those values for:
+
+```text
+record_state.lifecycle_state
+```
+
+The remaining Controlled Value categories continue to stay open until production evidence demonstrates the need to freeze them.
 
 ---
 
@@ -172,24 +187,37 @@ This preserves institutional structure while allowing implementation-specific de
 
 ## Status
 
-**Post-Foundational Architecture**
+**Post-Foundational Architecture · Pre-Production Reconciled**
 
-The Integrity Reference now has a formal base data structure.
+The Integrity Reference now has a formal base data structure, including the first downstream-frozen Controlled Value enforcement for Lifecycle State.
 
-The following remain intentionally unfrozen:
+The first downstream production constraint now frozen and enforced is:
 
 ```text
-identifier syntax
-Controlled Value enumerations
+Lifecycle State
+→ draft
+→ active
+→ superseded
+→ withdrawn
+→ archived
+```
+
+The following remain intentionally unfrozen or pending production evidence:
+
+```text
+Anchor Identifier syntax
+most Controlled Value enumerations
+Relationship Type tokens
+Integrity Method enumeration
+Integrity Value encoding
+canonicalization method enumeration
+Verification Result enumeration
+Integrity State enumeration
+Publication State enumeration
 conditional method requirements
-Verification schema/profile
-Validation rules
-Lifecycle values
-Versioning behavior
-Correction schema
-Publication schema/profile
-Maintenance schema/profile
 Bitcoin-specific extension
+Correction schema
+method-specific schema/profile requirements
 first production Integrity Reference instance
 ```
 
