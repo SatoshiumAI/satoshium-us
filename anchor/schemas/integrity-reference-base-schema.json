@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://satoshium.us/anchor/schemas/integrity-reference-base-schema.json",
   "title": "Satoshium Anchor Integrity Reference Base Schema",
-  "description": "Base structural schema for a Satoshium Anchor Integrity Reference. This schema establishes the production object shape while intentionally leaving identifier syntax, Controlled Value enumerations, and method-specific policy unfrozen.",
+  "description": "Base structural schema for a Satoshium Anchor Integrity Reference. This schema establishes the production object shape while leaving most identifier syntax, Controlled Value enumerations, and method-specific policy unfrozen. Lifecycle State is the first downstream-frozen Controlled Value enumeration enforced here.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -381,8 +381,14 @@
         },
         "lifecycle_state": {
           "type": "string",
-          "minLength": 1,
-          "description": "Lifecycle State Controlled Value. Enumeration remains unfrozen."
+          "enum": [
+            "draft",
+            "active",
+            "superseded",
+            "withdrawn",
+            "archived"
+          ],
+          "description": "Lifecycle State Controlled Value for the Integrity Reference itself. Initial production enumeration frozen by Anchor Lifecycle architecture."
         }
       }
     },
