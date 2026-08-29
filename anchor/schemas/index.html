@@ -1,25 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<meta name="theme-color" content="#d6a34a">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicon.ico" rel="alternate icon"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="#d6a34a" name="theme-color"/>
 <title>Satoshium Anchor · Schemas</title>
-
-<meta name="description" content="Satoshium Anchor Schema Architecture — machine-readable schemas for the Integrity Reference canonical object, beginning with the Integrity Reference Base Schema.">
-
-<link rel="canonical" href="https://satoshium.us/anchor/schemas/">
-
-<link rel="preconnect" href="https://satoshium.link" crossorigin>
-<link rel="dns-prefetch" href="https://satoshium.link">
-<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
-
+<meta content="Satoshium Anchor Schema Architecture — machine-readable schemas for the Integrity Reference canonical object, beginning with the Integrity Reference Base Schema." name="description"/>
+<link href="https://satoshium.us/anchor/schemas/" rel="canonical"/>
+<link crossorigin="" href="https://satoshium.link" rel="preconnect"/>
+<link href="https://satoshium.link" rel="dns-prefetch"/>
+<link href="https://static.cloudflareinsights.com" rel="dns-prefetch"/>
 <style>
 :root{
  --bg:#07090d;
@@ -53,294 +47,267 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 @media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
 </style>
 </head>
-
 <body>
-<div id="topbar-slot" data-topbar="universe"></div>
+<div data-topbar="universe" id="topbar-slot"></div>
 <script src="/components/topbar-loader.js"></script>
-
 <main class="wrap content">
-
 <section class="hero">
-  <div class="eyebrow">Anchor · Schemas</div>
-  <h1>Satoshium Anchor · Schemas</h1>
-
-  <p class="lead">
+<div class="eyebrow">Anchor · Schemas</div>
+<h1>Satoshium Anchor · Schemas</h1>
+<p class="lead">
     Schema Architecture converts Anchor's canonical object—the Integrity
     Reference—from institutional concept into a formal machine-readable
     production structure.
   </p>
-
-  <p class="lead">
+<p class="lead">
     The first schema is the Integrity Reference Base Schema, expressed in
     Markdown and JSON Schema Draft 2020-12.
   </p>
 </section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Schema Principle</h2>
-  <div class="note">
+<h2>Schema Principle</h2>
+<div class="note">
     Structure the record now. Freeze policy only when downstream architecture proves it necessary.
   </div>
 </article></section>
-
 <section class="grid">
-
 <article class="card">
-  <h2>Integrity Reference Base Schema</h2>
-  <p>
+<h2>Integrity Reference Base Schema</h2>
+<p>
     Defines the structural minimum for an Anchor Integrity Reference,
     including identity, Source, representation, integrity methods,
     provenance, relationships, state, Verification history, Corrections,
     Publication, and Maintenance.
   </p>
-  <span class="status">1.0-draft</span>
+<span class="status">1.0-draft</span>
 </article>
-
 <article class="card">
-  <h2>JSON Schema</h2>
-  <p>
-    Machine-readable schema using JSON Schema Draft 2020-12.
-    Structural requirements are defined while Controlled Value enumerations
-    remain deliberately unfrozen.
-  </p>
-  <span class="status">Created</span>
+<h2>JSON Schema</h2>
+<p>Machine-readable schema using JSON Schema Draft 2020-12. Structural requirements are defined while most Controlled Value enumerations remain deliberately unfrozen. Lifecycle State is now the first frozen enumeration enforced by the Base Schema.</p>
+<span class="status">Created</span>
 </article>
-
 <article class="card">
-  <h2>Markdown Specification</h2>
-  <p>
+<h2>Markdown Specification</h2>
+<p>
     Human-readable companion explaining the meaning, authority boundary,
     required structure, extensibility, and intentionally unfrozen policy.
   </p>
-  <span class="status">Created</span>
+<span class="status">Created</span>
 </article>
-
 <article class="card">
-  <h2>Future Profiles</h2>
-  <p>
+<h2>Future Profiles</h2>
+<p>
     Method-specific or artifact-specific profiles may later extend the Base
     Schema when production proves that additional constraints are necessary.
   </p>
-  <span class="status">Deferred</span>
+<span class="status">Deferred</span>
 </article>
-
 </section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Top-Level Structure</h2>
-
-  <div class="note">
-    Integrity Reference<br>
-    ├── anchor_identifier<br>
-    ├── anchor_version<br>
-    ├── schema_version<br>
-    ├── source<br>
-    ├── representation<br>
-    ├── integrity<br>
-    ├── provenance<br>
-    ├── relationships<br>
-    ├── record_state<br>
-    ├── verification_history<br>
-    ├── corrections<br>
-    ├── publication<br>
-    ├── maintenance<br>
+<h2>Top-Level Structure</h2>
+<div class="note">
+    Integrity Reference<br/>
+    ├── anchor_identifier<br/>
+    ├── anchor_version<br/>
+    ├── schema_version<br/>
+    ├── source<br/>
+    ├── representation<br/>
+    ├── integrity<br/>
+    ├── provenance<br/>
+    ├── relationships<br/>
+    ├── record_state<br/>
+    ├── verification_history<br/>
+    ├── corrections<br/>
+    ├── publication<br/>
+    ├── maintenance<br/>
     └── notes
   </div>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Required Structural Core</h2>
-
-  <div class="note">
-    anchor_identifier<br>
-    anchor_version<br>
-    source<br>
-    representation<br>
-    integrity<br>
-    provenance<br>
-    relationships<br>
+<h2>Required Structural Core</h2>
+<div class="note">
+    anchor_identifier<br/>
+    anchor_version<br/>
+    source<br/>
+    representation<br/>
+    integrity<br/>
+    provenance<br/>
+    relationships<br/>
     record_state
   </div>
-
-  <p style="margin-top:14px;">
-    Optional sections may become conditionally required after Verification,
-    Validation, Publication, Versioning, Corrections, and Maintenance are finalized.
-  </p>
+<p style="margin-top:14px;">Optional sections may become conditionally required as production evidence refines Verification, Validation, Publication, Versioning, Corrections, and Maintenance behavior.</p>
 </article></section>
-
 <section class="grid">
-
 <article class="card">
-  <h2>Source</h2>
-  <p>
+<h2>Source</h2>
+<p>
     Preserves Source Institution, Source Artifact type, Source-System Identifier,
     Source Version, and canonical Source location where applicable.
   </p>
 </article>
-
 <article class="card">
-  <h2>Representation</h2>
-  <p>
+<h2>Representation</h2>
+<p>
     Preserves Representation Type, Representation Boundary, canonicalization
     method, and representation metadata needed for reproducibility.
   </p>
 </article>
-
 <article class="card">
-  <h2>Integrity</h2>
-  <p>
+<h2>Integrity</h2>
+<p>
     Supports one or more Integrity Methods, algorithm metadata, Integrity
     Values, signatures, Verification Material, and external commitments.
   </p>
 </article>
-
 <article class="card">
-  <h2>Provenance</h2>
-  <p>
+<h2>Provenance</h2>
+<p>
     Formalizes Source, representation, generation, and optional Anchor-record
     provenance layers.
   </p>
 </article>
-
 <article class="card">
-  <h2>Relationships</h2>
-  <p>
+<h2>Relationships</h2>
+<p>
     Provides a repeatable machine-readable structure for internal Anchor,
     cross-Suite, and external commitment relationships.
   </p>
 </article>
-
 <article class="card">
-  <h2>Record State</h2>
-  <p>
-    Keeps Integrity State, Publication State, and Lifecycle State distinct
-    rather than collapsing them into a generic status.
-  </p>
+<h2>Record State</h2>
+<p>Keeps Integrity State, Publication State, and Lifecycle State distinct rather than collapsing them into a generic status. Lifecycle State now uses the frozen initial production vocabulary.</p>
 </article>
-
 </section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Controlled Values Remain Unfrozen</h2>
-
-  <p>
-    The Base Schema creates structural locations for governed vocabulary
-    without prematurely turning candidate values into production enums.
-  </p>
-
-  <div class="note">
-    method_type<br>
-    representation_type<br>
-    relationship_type<br>
-    integrity_state<br>
-    verification_result<br>
-    publication_state<br>
-    lifecycle_state<br>
-    correction_type
-  </div>
+<h2>Controlled Values — First Schema Enumeration Frozen</h2>
+<p>
+  The Base Schema creates structural locations for governed vocabulary while
+  leaving most production enumerations open until operational need proves them.
+</p>
+<div class="note">
+  method_type → unfrozen<br/>
+  representation_type → unfrozen<br/>
+  relationship_type → unfrozen<br/>
+  integrity_state → unfrozen<br/>
+  verification_result → unfrozen<br/>
+  publication_state → unfrozen<br/>
+  lifecycle_state → <strong>frozen and schema-enforced</strong><br/>
+  correction_type → unfrozen
+</div>
+<p style="margin-top:14px;">
+  The frozen Lifecycle State values are:
+</p>
+<div class="note">
+  draft<br/>
+  active<br/>
+  superseded<br/>
+  withdrawn<br/>
+  archived
+</div>
+<p style="margin-top:14px;">
+  This is the first downstream Controlled Value decision now reflected directly
+  in the machine-readable Integrity Reference Base Schema.
+</p>
+<span class="status">Lifecycle Enum Enforced</span>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Structural Strictness</h2>
-
-  <p>
+<h2>Structural Strictness</h2>
+<p>
     Governed objects reject unspecified fields where practical.
     Extension-oriented method data remains open where future technologies
     require method-specific information.
   </p>
-
-  <div class="note">
+<div class="note">
     Stable institutional structure + controlled implementation extensibility
   </div>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>External Commitments</h2>
-
-  <p>
+<h2>External Commitments</h2>
+<p>
     The Base Schema supports external commitment evidence without defining
     Anchor around any one technology.
   </p>
-
-  <div class="note">
-    Integrity Reference<br>
-    ↓<br>
-    Integrity Method<br>
-    ↓<br>
-    External Commitment<br>
-    ↓<br>
+<div class="note">
+    Integrity Reference<br/>
+    ↓<br/>
+    Integrity Method<br/>
+    ↓<br/>
+    External Commitment<br/>
+    ↓<br/>
     external system + external identifier + proof material
   </div>
-
-  <p style="margin-top:14px;">
+<p style="margin-top:14px;">
     Bitcoin-specific requirements remain deferred until Bitcoin commitment
     policy is formally adopted.
   </p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Schema Authority Boundary</h2>
-
-  <p>
+<h2>Schema Authority Boundary</h2>
+<p>
     The schema structures Anchor's Integrity Reference.
     It does not restructure or take ownership of the Source Artifact.
   </p>
-
-  <div class="note">
+<div class="note">
     Reference does not transfer authority.
   </div>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>What Comes Next</h2>
-
-  <p>
-    With the Base Schema established, the next architecture can define how an
-    Integrity Reference is actually verified.
-  </p>
-
-  <div class="note">
-    Schema → Verification → Validation → Lifecycle → Versioning → Corrections → Publication → Maintenance
-  </div>
+<h2>Current Architecture Position</h2>
+<p>
+  The Base Schema is now reconciled with the downstream Anchor architecture
+  established through Verification, Validation, Lifecycle, Versioning,
+  Corrections, Publication, Maintenance, and Procedures.
+</p>
+<div class="note">
+  Schema<br/>
+  ↓<br/>
+  Verification<br/>
+  ↓<br/>
+  Validation<br/>
+  ↓<br/>
+  Lifecycle / Versioning / Corrections<br/>
+  ↓<br/>
+  Publication<br/>
+  ↓<br/>
+  Maintenance / Procedures<br/>
+  ↓<br/>
+  First Production Integrity Reference
+</div>
+<p style="margin-top:14px;">
+  Further schema tightening should now be driven by the first real production
+  Integrity Reference rather than additional pre-production speculation.
+</p>
 </article></section>
-
 <section style="margin-top:18px;"><article class="card">
-  <h2>Schema Architecture Principle</h2>
-
-  <p>
+<h2>Schema Architecture Principle</h2>
+<p>
     The Base Schema should be stable enough to support real production design
     while flexible enough to absorb what the first Integrity Reference teaches us.
   </p>
-
-  <div class="note">
+<div class="note">
     Structure first. Test with reality. Tighten only where evidence demands it.
   </div>
-
-  <a class="btn" href="/anchor/identifiers/">Identifiers →</a>
-  <a class="btn" href="/anchor/controlled-values/">Controlled Values →</a>
-  <a class="btn" href="/anchor/relationships/">Relationships →</a>
-  <a class="btn" href="/anchor/provenance/">Provenance →</a>
-  <a class="btn" href="/anchor/">Back to Anchor →</a>
+<a class="btn" href="/anchor/identifiers/">Identifiers →</a>
+<a class="btn" href="/anchor/controlled-values/">Controlled Values →</a>
+<a class="btn" href="/anchor/relationships/">Relationships →</a>
+<a class="btn" href="/anchor/provenance/">Provenance →</a>
+<a class="btn" href="/anchor/">Back to Anchor →</a>
 </article></section>
-
 </main>
-
 <div class="wrap reflection">
-  <hr>
-  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+<hr/>
+<div class="muted" id="random-saying" style="margin-bottom:14px; max-width:760px;">
     A concept becomes operational when its structure can be tested.
   </div>
-  <hr>
-  <div id="footer-container"></div>
+<hr/>
+<div id="footer-container"></div>
 </div>
-
 <script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
   .then(response => response.text())
   .then(data => { document.getElementById("footer-container").innerHTML = data; });
 </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
-
+<script data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
 </body>
 </html>
