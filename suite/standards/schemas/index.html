@@ -1,23 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<meta name="theme-color" content="#d6a34a">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicon.ico" rel="alternate icon"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="#d6a34a" name="theme-color"/>
 <title>Satoshium Suite · Schemas Standard</title>
-<meta name="description" content="The Satoshium Schemas Standard defines how structured records, certification objects, evidence records, and Suite data models are organized and preserved.">
-<link rel="canonical" href="https://satoshium.us/suite/standards/schemas/">
-
-<link rel="preconnect" href="https://satoshium.link" crossorigin>
-<link rel="dns-prefetch" href="https://satoshium.link">
-<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
-
+<meta content="The Satoshium Schemas Standard defines how structured records, certification objects, evidence records, and Suite data models are organized and preserved." name="description"/>
+<link href="https://satoshium.us/suite/standards/schemas/" rel="canonical"/>
+<link crossorigin="" href="https://satoshium.link" rel="preconnect"/>
+<link href="https://satoshium.link" rel="dns-prefetch"/>
+<link href="https://static.cloudflareinsights.com" rel="dns-prefetch"/>
 <style>
 :root{
  --bg:#07090d;
@@ -137,108 +133,115 @@ h1{
 }
 </style>
 </head>
-
 <body>
-
-<div id="topbar-slot" data-topbar="universe"></div>
+<div data-topbar="universe" id="topbar-slot"></div>
 <script src="/components/topbar-loader.js"></script>
-
 <main class="wrap content">
-
 <section class="hero">
-  <div class="eyebrow">Suite · Standards</div>
-  <h1>Schemas Standard</h1>
-
-  <p class="lead">
+<div class="eyebrow">Suite · Standards</div>
+<h1>Schemas Standard</h1>
+<p class="lead">
     The Schemas Standard defines how Satoshium structured records, certification
     objects, evidence records, attestations, registry entries, and discovery data
     are organized across the Suite.
   </p>
-
-  <p class="lead">
+<p class="lead">
     Schemas make Satoshium records readable by both humans and machines while
     preserving meaning, consistency, and long-term interoperability.
   </p>
 </section>
-
 <section class="grid">
-
 <article class="card">
-  <h2>Record Models</h2>
-
-  <p>
-    Defines the common structures used for certifications, attestations, evidence,
-    registry records, references, and verification objects.
-  </p>
-
-  <span class="status">Planned</span>
+<h2>Record Models</h2>
+<p>Defines the common structures used for certifications, attestations, evidence, registry records, references, verification objects, and canonical machine-readable representations.</p>
+<span class="status">Architecture Active</span>
 </article>
-
 <article class="card">
-  <h2>Required Fields</h2>
-
-  <p>
+<h2>Required Fields</h2>
+<p>
     Establishes the minimum fields needed for each record type to remain valid,
     understandable, and verifiable across the Suite.
   </p>
-
-  <span class="status">Planned</span>
+<span class="status">Planned</span>
 </article>
-
 <article class="card">
-  <h2>Validation Rules</h2>
-
-  <p>
-    Defines how structured records are validated before publication, registry
-    inclusion, certification use, or external consumption.
-  </p>
-
-  <span class="status">Planned</span>
+<h2>Validation Rules</h2>
+<p>Defines how structured records are validated before publication, registry inclusion, certification use, integrity processing, or external consumption.</p>
+<span class="status">Architecture Active</span>
 </article>
-
 <article class="card">
-  <h2>Schema Evolution</h2>
-
-  <p>
+<h2>Schema Evolution</h2>
+<p>
     Provides a framework for versioning, extending, and preserving schemas as
     Suite tools and certification methods mature over time.
   </p>
-
-  <span class="status">Planned</span>
+<span class="status">Architecture Active</span>
 </article>
-
 </section>
-
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Standard Role</h2>
-
-  <p>
+<h2>Standard Role</h2>
+<p>
     The Schemas Standard provides the structural language that allows Satoshium
     records to be created, validated, exchanged, preserved, and interpreted
     consistently across every Suite subsystem.
   </p>
-
-  <div class="note">
+<div class="note">
     A record without structure may be readable. A record with a schema can become
     portable, verifiable, and durable.
   </div>
 </article>
-
 </section>
-
-</main>
-
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Canonical JSON Standard</h2>
+<p>
+  When a Satoshium Suite record declares or requires a <strong>canonical JSON</strong>
+  representation, the Suite-wide canonicalization rule is:
+</p>
+<div class="note">
+  Representation Type → canonical_json<br/>
+  Canonicalization Standard → RFC 8785 — JSON Canonicalization Scheme (JCS)<br/>
+  Character Encoding → UTF-8
+</div>
+<p style="margin-top:14px;">
+  JCS provides deterministic serialization so semantically equivalent JSON data is not
+  treated as different merely because of indentation, insignificant whitespace, or object-member presentation order.
+</p>
+<p>
+  A Suite institution may use another representation type where appropriate, but it must
+  not label a representation <strong>canonical_json</strong> while applying a conflicting local canonicalization rule.
+</p>
+<span class="status">Suite-Wide Rule Defined</span>
+</article>
+</section><section style="margin-top:18px;">
+<article class="card">
+<h2>Institutional Profiles</h2>
+<p>
+  Suite institutions may define narrower schema profiles when production requires additional
+  constraints, provided those profiles remain compatible with the Suite-wide schema rules.
+</p>
+<div class="note">
+  Suite Schema Standard<br/>
+  ↓<br/>
+  Institution-specific Schema / Profile<br/>
+  ↓<br/>
+  Production Record
+</div>
+<p style="margin-top:14px;">
+  Anchor's first production Integrity Reference therefore inherits the Suite definition of
+  <strong>canonical_json</strong> rather than inventing an Anchor-specific JSON normalization rule.
+</p>
+</article>
+</section></main>
 <div class="wrap reflection">
-  <hr>
-  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+<hr/>
+<div class="muted" id="random-saying" style="margin-bottom:14px; max-width:760px;">
     Durable records require durable structure.
   </div>
-  <hr>
-  <div id="footer-container"></div>
+<hr/>
+<div id="footer-container"></div>
 </div>
-
 <script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
@@ -247,9 +250,6 @@ fetch("https://satoshium.link/components/footer.html")
     document.getElementById("footer-container").innerHTML = data;
   });
 </script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}'></script>
-
+<script data-cf-beacon='{"token": "7f213230316f434c9ad7f0f958bfdfd1"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
 </body>
 </html>
