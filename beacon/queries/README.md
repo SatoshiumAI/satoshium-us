@@ -1,387 +1,245 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<meta name="theme-color" content="#d6a34a">
-
-<title>Satoshium Beacon Queries</title>
-
-<meta name="description" content="Satoshium Beacon Queries — the questions, requests, and discovery objectives that initiate exploration across the Satoshium ecosystem.">
-
-<link rel="canonical" href="https://satoshium.us/beacon/queries/">
-
-<link rel="preconnect" href="https://satoshium.link" crossorigin>
-<link rel="dns-prefetch" href="https://satoshium.link">
-<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
-
-<style>
-:root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
- --line:rgba(214,163,74,.18);
-}
-
-*{box-sizing:border-box}
-
-html,body{
- margin:0;
- padding:0;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
- line-height:1.6;
- scroll-behavior:smooth;
-}
-
-body{padding-top:80px}
-
-a{
- color:var(--gold2);
- text-decoration:none;
-}
-
-a:hover{
- color:var(--gold);
-}
-
-.wrap{
- max-width:1120px;
- margin:0 auto;
- padding:0 18px;
-}
-
-.content{
- padding:34px 18px 64px;
-}
-
-.hero{
- border:1px solid var(--line);
- border-radius:22px;
- padding:28px 24px;
- margin-bottom:18px;
- background:
- radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
- linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
-}
-
-.eyebrow{
- display:inline-flex;
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
-}
-
-h1{
- margin:10px 0 12px;
- font-size:44px;
- color:var(--gold2);
-}
-
-.lead{
- max-width:920px;
- color:var(--muted);
- font-size:20px;
-}
-
-.grid{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:18px;
- margin-top:18px;
-}
-
-.card{
- background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:22px;
-}
-
-.card h2{
- margin:0 0 10px;
- font-size:24px;
- color:var(--gold2);
-}
-
-.card p{
- margin:0 0 14px;
- color:var(--muted);
-}
-
-.note{
- margin-top:16px;
- padding:14px 16px;
- border:1px solid var(--line);
- border-radius:14px;
- background:rgba(214,163,74,.05);
- color:var(--muted);
-}
-
-.btn{
- display:inline-block;
- margin-top:14px;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
-}
-
-.btn:hover{
- background:rgba(214,163,74,.12);
-}
-
-.muted{
- color:var(--muted);
-}
-
-@media (max-width:900px){
- .grid{
-  grid-template-columns:1fr;
- }
-
- h1{
-  font-size:34px;
- }
-}
-</style>
-</head>
-
-<body>
-
-<div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
-
-<main class="wrap content">
-
-<section class="hero">
-
-  <div class="eyebrow">Beacon · Queries</div>
-
-  <h1>Queries</h1>
-
-  <p class="lead">
-    Queries represent questions, objectives, investigations,
-    and requests that provide intent and context for discovery.
-  </p>
-
-  <p class="lead">
-    Beacon may receive queries directly or participate in
-    Navigator-defined workflows. Queries guide discovery, while
-    Navigator retains Suite responsibility for workflow definition
-    and orchestration.
-  </p>
-
-</section>
-
-<section class="grid">
-
-<article class="card">
-  <h2>Search Queries</h2>
-
-  <p>
-    Search queries seek specific information,
-    records, jurisdictions, sources, events,
-    or other identifiable targets.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Research Queries</h2>
-
-  <p>
-    Research-oriented queries explore topics,
-    trends, comparisons, and areas requiring
-    deeper investigation.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Investigative Queries</h2>
-
-  <p>
-    Investigative queries seek relationships,
-    supporting information, patterns, or evidence
-    connected to a topic or objective.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Exploratory Queries</h2>
-
-  <p>
-    Exploratory queries focus on discovery itself,
-    allowing users to learn, browse, and uncover
-    information without a predetermined conclusion.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Intent</h2>
+# Queries
 
-  <p>
-    Queries communicate what a user or workflow is attempting
-    to discover and provide context for Beacon discovery activities.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Scope</h2>
-
-  <p>
-    Queries may define boundaries such as geography, topic,
-    timeframe, source type, canonical-object type, institution,
-    or other discovery constraints.
-  </p>
-</article>
+## Purpose
 
-</section>
+Queries represent requests for information.
 
-<section style="margin-top:18px;">
+They provide the starting point for discovery by expressing a question, objective, topic, investigation, or area of interest that may require additional information.
 
-<article class="card">
+Beacon uses queries to help locate relevant signals, sources, records, and relationships.
 
-  <h2>Query Components</h2>
+---
 
-  <div class="note">
-    Subject<br>
-    Context<br>
-    Scope<br>
-    Intent<br>
-    Constraints
-  </div>
+## What Is a Query?
 
-  <p>
-    Together these elements help guide discovery
-    toward relevant information.
-  </p>
+A query is an expression of intent.
 
-</article>
+It communicates what a user is attempting to discover.
 
-</section>
+Queries may range from simple searches to complex investigations involving multiple sources, records, jurisdictions, or systems.
 
-<section style="margin-top:18px;">
+---
 
-<article class="card">
+## Why Queries Matter
 
-  <h2>Relationship to Discovery</h2>
+Discovery begins with a question.
 
-  <p>
-    Queries provide discovery intent. Navigator may define or
-    orchestrate a workflow containing that intent. Beacon performs
-    discovery and may publish Discovery Signals, discovery metadata,
-    source references, and results for further review.
-  </p>
+Without a query, there is no direction for exploration.
 
-  <div class="note">
-    Workflow / Query → Beacon Discovery → Discovery Signal / Metadata → Result / Referenced Source
-  </div>
+Queries help Beacon:
 
-</article>
+* Identify relevant information
+* Locate potential sources
+* Surface meaningful signals
+* Reduce unnecessary noise
+* Improve information accessibility
 
-</section>
+---
 
-<section style="margin-top:18px;">
+## Types of Queries
 
-<article class="card">
+### Search Queries
 
-  <h2>Navigator & Beacon Boundary</h2>
+Requests intended to locate specific information.
 
-  <p>
-    Navigator owns workflow definition and orchestration within the
-    Satoshium Suite. Beacon owns the discovery function and the
-    Discovery Signals and discovery metadata it publishes.
-  </p>
+Examples may include:
 
-  <div class="note">
-    Navigator → Workflow Definition / Orchestration<br>
-    Beacon → Discovery Signal / Metadata
-  </div>
+* Jurisdictions
+* Records
+* Events
+* Sources
+* Organizations
 
-  <p>
-    A query may guide Beacon without transferring Navigator's
-    orchestration responsibility to Beacon.
-  </p>
+---
 
-</article>
+### Research Queries
 
-</section>
+Requests intended to explore a topic more deeply.
 
-<section style="margin-top:18px;">
+Research queries may involve:
 
-<article class="card">
+* Multiple sources
+* Historical context
+* Comparative analysis
+* Related records
 
-  <h2>Query Philosophy</h2>
+---
 
-  <p>
-    Discovery begins with intent.
-  </p>
+### Investigative Queries
 
-  <p>
-    The quality of discovery is influenced by the clarity of
-    the question, objective, scope, constraints, and workflow context
-    supplied to Beacon.
-  </p>
+Requests intended to uncover relationships, patterns, or supporting information.
 
-  <div class="note">
-    Clear intent supports better discovery.<br>
-    Orchestration remains with Navigator. Discovery remains with Beacon.
-  </div>
+These queries may require:
 
-  <a class="btn" href="/beacon/">
-    Back to Beacon →
-  </a>
+* Cross-referencing records
+* Identifying source connections
+* Reviewing historical information
+* Examining supporting evidence
 
-</article>
+---
 
-</section>
+### Exploratory Queries
 
-</main>
+Requests without a narrowly defined objective.
 
-<div class="wrap reflection">
-  <hr>
+Users may seek to:
 
-  <div id="random-saying"
-       class="muted"
-       style="margin-bottom:14px; max-width:760px;">
-    Intent directs discovery. Navigator orchestrates. Beacon discovers and signals.
-  </div>
+* Learn
+* Browse
+* Discover
+* Investigate emerging topics
 
-  <hr>
+---
 
-  <div id="footer-container"></div>
-</div>
+## Query Components
 
-<script src="https://satoshium.link/assets/sayings.js"></script>
+A query may contain one or more elements.
 
-<script>
-fetch("https://satoshium.link/components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer-container").innerHTML = data;
-  });
-</script>
+### Subject
 
-<script defer
-src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'>
-</script>
+The primary topic of interest.
 
-</body>
-</html>
+### Context
+
+Additional information that narrows scope.
+
+### Scope
+
+The boundaries of the request.
+
+### Intent
+
+The purpose behind the query.
+
+### Constraints
+
+Limitations such as time, geography, source type, or record type.
+
+---
+
+## Query Outcomes
+
+Queries may result in:
+
+* Signals
+* Sources
+* Records
+* Historical entries
+* Jurisdiction information
+* Identity references
+* Trust-related information
+* Related discoveries
+
+Not all queries will produce meaningful results.
+
+Discovery does not guarantee relevance or completeness.
+
+---
+
+## Query Neutrality
+
+Beacon seeks to process queries without predetermined conclusions.
+
+Queries should support exploration rather than predetermined outcomes.
+
+Discovery systems should assist users in finding information, not dictate what users should believe.
+
+---
+
+## Relationship to Discovery
+
+Queries initiate discovery.
+
+Discovery processes information relevant to the query.
+
+Results are generated from that process.
+
+A simplified flow may be represented as:
+
+Query → Discovery → Results
+
+---
+
+## Relationship to Navigator
+
+Navigator and Beacon are intended to operate as complementary systems.
+
+Navigator may help users formulate, refine, organize, and execute queries.
+
+Beacon may help locate information relevant to those queries.
+
+Navigator asks.
+
+Beacon discovers.
+
+---
+
+## Relationship to Signals
+
+Queries influence which signals become visible.
+
+Different queries may surface different signals from the same information environment.
+
+The quality of discovery is often influenced by the quality of the query.
+
+---
+
+## Relationship to Sources
+
+Queries may help identify:
+
+* Original sources
+* Supporting sources
+* Related sources
+* Historical sources
+
+Source discovery remains an important outcome of many Beacon queries.
+
+---
+
+## Query Principles
+
+### Clarity
+
+Clear queries improve discovery.
+
+### Transparency
+
+Users should understand how queries influence results.
+
+### Relevance
+
+Queries should prioritize useful information.
+
+### Exploration
+
+Queries should support learning and investigation.
+
+### Flexibility
+
+Discovery systems should support a wide variety of query types.
+
+---
+
+## Future Development
+
+Future Beacon query capabilities may include:
+
+* Structured queries
+* Advanced filtering
+* Jurisdiction-specific queries
+* Signal discovery queries
+* Historical queries
+* Relationship mapping
+* Cross-system queries
+
+Specific implementations may evolve over time.
+
+---
+
+## Status
+
+Beacon query standards are currently under development.
+
+This document defines conceptual principles rather than finalized technical specifications.
+
