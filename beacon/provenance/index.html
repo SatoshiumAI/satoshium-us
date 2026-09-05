@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Discovery Provenance</title>
+<meta name="description" content="Satoshium Beacon Discovery Provenance — institutional architecture for preserving the origin, observation, attribution, and supporting basis of Beacon Discovery Signals."/>
+<link rel="canonical" href="https://satoshium.us/beacon/provenance/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:940px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card h3{margin:18px 0 8px;font-size:18px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+.badge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.05);color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Discovery Provenance</h1>
+<p class="lead">
+  Discovery Provenance defines how Beacon preserves the evidentiary path behind a Discovery Signal:
+  where the information came from, what Beacon observed, when it was observed, how it was encountered,
+  and what source or authoritative object supports the discovery.
+</p>
+<p class="lead">
+  Provenance makes a Beacon signal reviewable without claiming ownership of the source or inheriting its authority.
+</p>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>Discovery Provenance answers four foundational questions:</p>
+<div class="note">
+  Where did this signal come from?<br/>
+  What exactly was observed?<br/>
+  When was it observed?<br/>
+  What source or authoritative object supports it?
+</div>
+</article>
+
+<article class="card">
+<h2>Institutional Principle</h2>
+<p>
+  Beacon should never require a reviewer to trust an unexplained discovery assertion.
+</p>
+<div class="note">
+  Signal → attributable observation<br/>
+  Observation → traceable source<br/>
+  Source → preserved identity<br/>
+  Supporting basis → reviewable
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Provenance Chain</h2>
+<div class="note">
+  Source / Authoritative Object<br/>
+  ↓<br/>
+  Observation<br/>
+  ↓<br/>
+  Discovery Context<br/>
+  ↓<br/>
+  Beacon Discovery Signal<br/>
+  ↓<br/>
+  Preserved Provenance
+</div>
+<p style="margin-top:14px">
+  The chain should allow a later reviewer to reconstruct the basis on which Beacon created the signal.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Required</div>
+<h2>1. Source Identity</h2>
+<p>Provenance begins with an attributable source.</p>
+<ul>
+<li>Source name</li>
+<li>Source kind</li>
+<li>Source institution when applicable</li>
+<li>Source-native identifier when available</li>
+<li>Source object type when relevant</li>
+<li>Reviewable source location when available</li>
+</ul>
+<div class="note">
+  Beacon preserves source identity. It does not replace it.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>2. Observed Information</h2>
+<p>
+  Provenance must preserve enough information to understand what Beacon actually observed.
+</p>
+<ul>
+<li>Observed fact, state, change, relationship, record, or information</li>
+<li>Relevant source context</li>
+<li>Observed source status when material</li>
+<li>Specific portion, object, event, or condition supporting the discovery when practical</li>
+</ul>
+<div class="note">
+  Provenance should document the observation, not silently expand it into a broader conclusion.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>3. Observation Time</h2>
+<p>
+  Beacon must preserve when the underlying information was observed.
+</p>
+<ul>
+<li><strong>observed_at</strong> records the observation time</li>
+<li>Observation time is distinct from canonical signal creation time</li>
+<li>Later re-observation may use <strong>last_observed_at</strong></li>
+<li>Source publication time should remain separately attributable when known</li>
+</ul>
+<div class="note">
+  Source time ≠ Observation time ≠ Creation time ≠ Publication time.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>4. Observation Method</h2>
+<p>Provenance should preserve how Beacon encountered the information.</p>
+<p>Potential architectural methods include:</p>
+<ul>
+<li>Manual Review</li>
+<li>Search</li>
+<li>Index Lookup</li>
+<li>Relationship Mapping</li>
+<li>Cross-System Discovery</li>
+<li>Navigator-Directed Workflow</li>
+<li>Other attributable discovery process</li>
+</ul>
+<div class="note">
+  Final controlled method vocabulary remains subject to Methodology and production proof.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>5. Observation Context</h2>
+<p>
+  Context explains why and under what discovery circumstances the source was observed.
+</p>
+<ul>
+<li>Discovery objective</li>
+<li>Search or review context</li>
+<li>Workflow context when material</li>
+<li>Jurisdiction or domain context</li>
+<li>Relevant query or investigation reference when retained</li>
+</ul>
+<div class="note">
+  Context should explain the discovery without turning operational history into a new canonical object.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>6. Supporting Basis</h2>
+<p>
+  Provenance must identify the reviewable basis supporting the Discovery Signal.
+</p>
+<ul>
+<li>Canonical source identifier when available</li>
+<li>Source reference</li>
+<li>Public or repository location when available</li>
+<li>Supporting canonical object</li>
+<li>Other attributable reference necessary to review the observation</li>
+</ul>
+<div class="note">
+  A supporting basis should make the signal independently reviewable to the extent the source permits.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Source vs. Provenance</h2>
+<p>Source and Provenance are related but not interchangeable.</p>
+<div class="note">
+  <strong>Source</strong><br/>
+  What information source or canonical object is being referenced?<br/><br/>
+  <strong>Provenance</strong><br/>
+  How did Beacon encounter, observe, attribute, and preserve the discovery from that source?
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Canonical Suite Sources</h2>
+<p>Beacon may preserve provenance to objects owned by other Suite institutions:</p>
+<ul>
+<li>Atlas → Authoritative Intelligence</li>
+<li>Certifier → Certification Package</li>
+<li>Registry → SREG</li>
+<li>Chronicle → Chronicle Entry</li>
+<li>Anchor → Integrity Reference</li>
+<li>Attestor → Trust Statement</li>
+<li>Navigator → Workflow Definition / Orchestration reference</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>External Sources</h2>
+<p>Beacon may also discover information from sources outside the Suite.</p>
+<ul>
+<li>Government records</li>
+<li>Research publications</li>
+<li>Public datasets</li>
+<li>Institutional publications</li>
+<li>Other attributable public sources</li>
+</ul>
+<div class="note">
+  External discovery does not convert an external source into a Suite institution or Suite-authoritative object.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Canonical Reference Preservation</h2>
+<p>
+  When provenance depends on a Suite canonical object, Beacon should preserve the object's native institutional identity.
+</p>
+<div class="note">
+  Beacon Signal → BEAC-2026-0001<br/>
+  Supporting Anchor Object → ANCH-2026-0001
+</div>
+<p style="margin-top:14px">
+  The Beacon identifier identifies the Discovery Signal. The Anchor identifier identifies the Integrity Reference.
+  Neither identifier absorbs the other.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Direct Provenance</h2>
+<p>
+  Direct provenance exists when Beacon observes the source or authoritative object itself.
+</p>
+<div class="note">
+  Source Object<br/>
+  ↓ directly observed by Beacon<br/>
+  Observation<br/>
+  ↓<br/>
+  Discovery Signal
+</div>
+<p style="margin-top:14px">
+  Direct provenance is preferable when the authoritative or original source is reasonably available.
+</p>
+</article>
+
+<article class="card">
+<h2>Indirect Provenance</h2>
+<p>
+  Beacon may sometimes encounter information through an intermediary source.
+</p>
+<div class="note">
+  Original / Authoritative Source<br/>
+  ↓ referenced by<br/>
+  Intermediary Source<br/>
+  ↓ observed by Beacon<br/>
+  Discovery Signal
+</div>
+<p style="margin-top:14px">
+  The intermediary must remain visible. Beacon should not represent indirect observation as direct observation.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Provenance Depth</h2>
+<p>
+  Beacon should preserve enough provenance depth to support meaningful review without pretending that every information lineage can be reconstructed indefinitely.
+</p>
+<div class="note">
+  Minimum goal → identify the source Beacon actually observed and, when materially available, the authoritative or original object that source relies upon.
+</div>
+<p style="margin-top:14px">
+  Exact provenance-depth requirements may vary by Signal Type and will be refined through Methodology and production use.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Discovery Actor</h2>
+<p>
+  When institutionally relevant, provenance may preserve the actor or process responsible for discovery.
+</p>
+<ul>
+<li>Human reviewer</li>
+<li>Beacon process</li>
+<li>Navigator-directed workflow</li>
+<li>Other governed process</li>
+</ul>
+<div class="note">
+  Actor identity should be preserved only to the degree required for accountability, privacy, and reproducibility.
+</div>
+</article>
+
+<article class="card">
+<h2>Workflow Provenance</h2>
+<p>
+  When Navigator orchestrates the workflow, Beacon may preserve a Navigator workflow reference.
+</p>
+<div class="note">
+  Navigator → workflow authority<br/>
+  Beacon → discovery observation and signal<br/>
+  Provenance → preserves the connection
+</div>
+<p style="margin-top:14px">
+  Beacon does not duplicate Navigator's workflow definition.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Temporal Provenance</h2>
+<p>Provenance must preserve distinct temporal meanings.</p>
+<div class="note">
+  <strong>source_published_at</strong> → when the source says the source was published<br/>
+  <strong>observed_at</strong> → when Beacon observed the information<br/>
+  <strong>created_at</strong> → when the canonical Discovery Signal was created<br/>
+  <strong>published_at</strong> → when the Beacon signal was publicly published<br/>
+  <strong>last_observed_at</strong> → most recent governed re-observation, when applicable
+</div>
+<p style="margin-top:14px">
+  These timestamps must not be silently substituted for one another.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Re-Observation</h2>
+<p>
+  A source may be observed again after the original Discovery Signal is created.
+</p>
+<ul>
+<li>Re-observation may confirm the source remains available</li>
+<li>It may reveal changed source information</li>
+<li>It may support an update</li>
+<li>It may support supersession or resolution</li>
+</ul>
+<div class="note">
+  Re-observation does not automatically rewrite the original observation.
+</div>
+</article>
+
+<article class="card">
+<h2>Preserve Historical Basis</h2>
+<p>
+  Later source changes should not erase the provenance basis on which the original signal was created.
+</p>
+<div class="note">
+  Preserve what Beacon observed then.<br/>
+  Preserve what Beacon observes later.<br/>
+  Preserve the relationship between them.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Provenance and Source Changes</h2>
+<p>
+  If a source changes, disappears, is superseded, or becomes unavailable, Beacon should preserve the original provenance record to the extent possible.
+</p>
+<ul>
+<li>Do not rewrite the original source state as though the later state existed earlier</li>
+<li>Record later observations separately</li>
+<li>Preserve source-native supersession when attributable</li>
+<li>Preserve unavailable-source status without deleting historical provenance</li>
+</ul>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Provenance Does Not Equal Verification</h2>
+<p>
+  Provenance demonstrates lineage and attribution.
+</p>
+<div class="note">
+  Provenance → where the assertion came from<br/>
+  Verification → whether a governed verification process establishes something about it
+</div>
+<p style="margin-top:14px">
+  A well-provenanced false statement remains false. Provenance makes its origin reviewable; it does not make it true.
+</p>
+</article>
+
+<article class="card">
+<h2>Provenance Does Not Equal Trust</h2>
+<p>
+  Beacon does not convert traceability into a Trust Statement.
+</p>
+<div class="note">
+  Beacon → preserves discovery lineage<br/>
+  Attestor → owns Trust Statements
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Minimum Provenance Gate</h2>
+<p>A Draft Discovery Signal should not pass Validation without a sufficient provenance basis.</p>
+<div class="note">
+  Source identified<br/>
+  + Observation described<br/>
+  + Observation time preserved<br/>
+  + Observation method preserved<br/>
+  + Observation context sufficient<br/>
+  + Supporting basis reviewable<br/>
+  = Minimum Provenance Conformance
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Provenance Structure</h2>
+<div class="note">
+  provenance:<br/>
+  &nbsp;&nbsp;observed_source<br/>
+  &nbsp;&nbsp;observed_information<br/>
+  &nbsp;&nbsp;observed_at<br/>
+  &nbsp;&nbsp;observation_method<br/>
+  &nbsp;&nbsp;observation_context<br/>
+  &nbsp;&nbsp;supporting_reference<br/>
+  &nbsp;&nbsp;discovery_actor<br/>
+  &nbsp;&nbsp;workflow_reference
+</div>
+<p style="margin-top:14px">
+  This is an architectural structure, not yet a frozen JSON property model.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Validation Relationship</h2>
+<p>
+  Provenance is a required Validation concern.
+</p>
+<div class="note">
+  Provenance Architecture → defines what lineage means<br/>
+  Validation → confirms required provenance is present and conformant
+</div>
+</article>
+
+<article class="card">
+<h2>Schema Relationship</h2>
+<p>
+  The Discovery Signal Schema contains the provenance component.
+</p>
+<div class="note">
+  Schema → represents provenance<br/>
+  Provenance Architecture → defines provenance meaning
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Is Now Established</h2>
+<ul>
+<li>Every production Discovery Signal requires a reviewable provenance basis</li>
+<li>Source identity must remain attributable</li>
+<li>Beacon must preserve what was actually observed</li>
+<li>Observation time is distinct from creation and publication time</li>
+<li>Observation method and context are provenance concerns</li>
+<li>Supporting source or authoritative-object references must remain reviewable</li>
+<li>Direct and indirect provenance must be distinguishable</li>
+<li>Later source changes must not erase historical provenance</li>
+<li>Provenance supports Validation but does not equal verification, trust, or truth</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<ul>
+<li>Exact machine-readable provenance property names</li>
+<li>Controlled observation-method vocabulary</li>
+<li>Minimum provenance depth by Signal Type</li>
+<li>Required citation/location formats</li>
+<li>Discovery-actor privacy rules</li>
+<li>Workflow-reference syntax</li>
+<li>Re-observation schema mechanics</li>
+<li>Unavailable-source preservation mechanics</li>
+<li>Whether cryptographic evidence becomes part of any provenance profile</li>
+<li>Automated provenance-capture requirements</li>
+</ul>
+<div class="note">
+  These should be resolved only where later architecture or production evidence demonstrates the need.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Authority Boundary</h2>
+<div class="note">
+  Beacon proves where its signal came from.<br/>
+  Beacon does not become the source.<br/>
+  Beacon preserves an authoritative object's identity.<br/>
+  Beacon does not inherit that object's authority.<br/><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal Types → Defined<br/>
+  Lifecycle → Defined<br/>
+  Identifier Standard → Defined<br/>
+  Schemas → Defined<br/>
+  Validation → Defined<br/>
+  Discovery Provenance → Defined<br/>
+  Production Provenance Capture → Pending<br/>
+  First Production Discovery Signal → Not yet created
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  A discovery becomes reviewable when its path back to the source remains visible.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
