@@ -2,275 +2,246 @@
 
 ## Purpose
 
-The Discovery Result Schema defines the structure used to represent information returned through Beacon discovery activities.
+The **Discovery Result Schema** defines an optional, noncanonical structure for information returned through a Beacon discovery activity.
 
-Discovery results are the outputs generated when Beacon processes a query, investigation, search, exploration, or signal discovery request.
-
-The schema promotes consistency, transparency, interoperability, and traceability across discovery operations.
-
----
-
-## Scope
-
-This schema may be used for:
-
-* Query results
-* Discovery outputs
-* Search results
-* Signal results
-* Source results
-* Relationship discoveries
-* Cross-system discoveries
-
-Implementations may evolve over time.
-
----
-
-## Core Principles
-
-### Transparency
-
-Users should understand why a result was returned.
-
-### Attribution
-
-Source information should remain visible.
-
-### Relevance
-
-Results should relate to the discovery objective.
-
-### Traceability
-
-Results should support verification and review.
-
-### Interoperability
-
-Results should support exchange between systems.
-
----
-
-## Result Structure
-
-### Result Identifier
-
-Unique identifier assigned to the discovery result.
-
-Example:
+A Discovery Result may represent information surfaced in response to:
 
 ```text
-DRS-2026-000001
+query
+search
+investigation
+exploration
+relationship lookup
+Navigator-directed workflow
+other discovery activity
+```
+
+A Discovery Result is not automatically a Beacon Discovery Signal.
+
+---
+
+## Schema Role
+
+```text
+Role → Optional Discovery Output
+Canonical Beacon Object → No
+Canonical Beacon Identifier → Not required
+```
+
+Beacon's canonical production object remains:
+
+```text
+Discovery Signal
+```
+
+identified as:
+
+```text
+BEAC-YYYY-NNNN
 ```
 
 ---
 
-### Result Type
-
-Classification of the result.
-
-Examples:
+# Core Distinction
 
 ```text
-Signal Result
-Source Result
-Record Result
+Discovery Result
+→ information returned by a discovery activity
+
+Discovery Signal
+→ governed Beacon-owned canonical object
+```
+
+A result may lead to a Discovery Signal.
+
+It does not become one merely because it was returned.
+
+Conceptually:
+
+```text
+Query / Discovery Activity
+        ↓
+Discovery Result
+        ↓
+Institutional evaluation
+        ↓
+Possible Discovery Signal
+```
+
+---
+
+# Result Structure
+
+Potential result information may include:
+
+```text
+result_type
+title
+summary
+associated_query
+primary_source
+supporting_sources
+canonical_references
+related_signals
+relationships
+relevance_context
+discovery_context
+timestamps
+```
+
+Exact production requirements are not frozen because this is a supporting operational structure.
+
+---
+
+## Result Type
+
+Result Type describes the form of returned information.
+
+Possible examples:
+
+```text
+Signal Reference
+Source Reference
+Canonical Record Reference
 Relationship Result
 Jurisdiction Result
 Historical Result
-Identity Result
+Information Result
 ```
+
+These are not Discovery Signal Types.
 
 ---
 
-### Result Title
+## Title
 
-Human-readable title describing the result.
-
-Example:
-
-```text
-Texas Digital Asset Jurisdiction Record
-```
+Human-readable result title.
 
 ---
 
-### Discovery Date
+## Summary
 
-Date the result was generated or surfaced.
-
-Example:
-
-```text
-2026-11-01
-```
+Brief explanation of why the result is relevant to the discovery activity.
 
 ---
 
-### Associated Query
+## Associated Query
 
-Reference to the originating query.
+When applicable, preserve a reference to the originating query or discovery request.
 
-Example:
-
-```text
-Find jurisdictions with favorable digital asset policies
-```
+The result should not duplicate an entire query record unless required.
 
 ---
 
-### Summary
+## Primary Source
 
-Brief description of the result.
-
-Example:
-
-```text
-Jurisdiction record identified as relevant to the submitted query.
-```
+A result should preserve an attributable primary source using the Source Reference architecture.
 
 ---
 
-### Result Category
+## Supporting Sources
 
-Category used to organize the result.
+Additional sources may be preserved when they materially support the result.
+
+---
+
+## Canonical References
+
+A result may point directly to institution-owned canonical objects.
 
 Examples:
 
 ```text
-Jurisdiction
-Media
-Historical
-Identity
-Registry
-Certification
-Trust
-Research
+SC-CERT-2026-0001
+SREG-2026-0001
+CHR-2026-0001
+ANCH-2026-0001
+BEAC-2026-0001
 ```
+
+Each remains owned by its institution.
 
 ---
 
-### Primary Source
+## Related Signals
 
-Primary source associated with the result.
+A result may reference one or more Beacon Discovery Signals.
 
 Example:
 
+```yaml
+related_signals:
+  - BEAC-2026-0001
+```
+
+The result does not absorb the signal's identity or lifecycle.
+
+---
+
+## Relationships
+
+A result may expose relationships discovered during a query or workflow.
+
+Relationship semantics should remain attributable and reviewable.
+
+---
+
+## Relevance Context
+
+The previous Discovery Result Schema included a generalized:
+
 ```text
-Atlas Jurisdiction Record
+Relevance Assessment
+```
+
+using High, Moderate, Low, and Unknown.
+
+That field is not retained as a canonical controlled assessment.
+
+If relevance is useful operationally, it may be preserved as:
+
+```text
+relevance_context
+```
+
+or another explicitly non-authoritative discovery aid.
+
+A relevance label must not be interpreted as:
+
+```text
+verification
+trust
+certification
+authority
 ```
 
 ---
 
-### Supporting Sources
+## Confidence Assessment
 
-Additional sources related to the result.
-
-Example:
+The previous schema included:
 
 ```text
-Registry Record
-Chronicle Entry
-Public Record
+Confidence Assessment
 ```
+
+This is removed from the core structure.
+
+Beacon should not create an undefined confidence scale that could be mistaken for:
+
+```text
+Attestor trust
+Certifier verification
+Anchor integrity
+```
+
+A future confidence or ranking system would require its own explicit methodology and governance.
 
 ---
 
-### Related Records
+## Result Status
 
-References to associated records.
-
-Examples:
-
-```text
-REG-2026-000041
-CHR-2026-000112
-ANC-2026-000019
-```
-
----
-
-### Signals Identified
-
-Signals associated with the result.
-
-Examples:
-
-```text
-Policy Change
-Regulatory Update
-Record Creation
-Historical Event
-```
-
----
-
-### Relationship Notes
-
-Description of relevant relationships.
-
-Example:
-
-```text
-Result connected to multiple historical and regulatory records.
-```
-
----
-
-### Relevance Assessment
-
-Optional assessment of relevance.
-
-Examples:
-
-```text
-High
-Moderate
-Low
-Unknown
-```
-
-Relevance should not be interpreted as verification or trust.
-
----
-
-### Confidence Assessment
-
-Optional assessment of discovery confidence.
-
-Examples:
-
-```text
-High
-Moderate
-Low
-Unknown
-```
-
-Confidence should not be interpreted as certification or validation.
-
----
-
-### Metadata
-
-Optional metadata associated with the result.
-
-Examples:
-
-```text
-Jurisdiction
-Date Range
-Topic
-Source Type
-Record Type
-```
-
----
-
-### Status
-
-Current status of the result.
-
-Examples:
+The previous schema included generic result states such as:
 
 ```text
 Active
@@ -279,126 +250,125 @@ Superseded
 Pending Review
 ```
 
----
+These are not adopted as canonical Discovery Result lifecycle values.
 
-### Created By
+If persistent Result records become operationally necessary, their lifecycle should be designed explicitly rather than borrowed from Discovery Signals.
 
-System or process responsible for generating the result.
-
-Example:
-
-```text
-Beacon
-```
+For now, Discovery Results are treated as outputs, not institutional canonical objects.
 
 ---
 
-### Last Updated
-
-Most recent modification date.
-
-Example:
-
-```text
-2026-11-01
-```
-
----
-
-## Example Record
+# Conceptual Example
 
 ```yaml
-result_id: DRS-2026-000001
-
-result_type: Jurisdiction Result
-
-title: Texas Digital Asset Jurisdiction Record
-
-discovery_date: 2026-11-01
-
-associated_query: >
-  Find jurisdictions with favorable digital asset policies
+result_type: Canonical Record Reference
+title: Anchor Integrity Reference Found
 
 summary: >
-  Jurisdiction record identified as relevant
-  to the submitted query.
+  Discovery surfaced a relevant Anchor Integrity Reference.
 
-result_category: Jurisdiction
+primary_source:
+  source_kind: Suite Institution
+  source_name: Satoshium Anchor
+  source_institution: Anchor
+  source_identifier: ANCH-2026-0001
+  source_object_type: Integrity Reference
 
-primary_source: Atlas Jurisdiction Record
+canonical_references:
+  - institution: Anchor
+    identifier: ANCH-2026-0001
+    object_type: Integrity Reference
 
-supporting_sources:
-  - Registry Record
-  - Chronicle Entry
+related_signals:
+  - BEAC-2026-0001
 
-related_records:
-  - REG-2026-000041
-  - CHR-2026-000112
+discovery_context:
+  method: Query
 
-signals_identified:
-  - Policy Change
-  - Regulatory Update
-
-relationship_notes: >
-  Connected to multiple related regulatory
-  and historical records.
-
-relevance_assessment: High
-
-confidence_assessment: Moderate
-
-status: Active
-
-created_by: Beacon
-
-last_updated: 2026-11-01
+timestamps:
+  returned_at: 2026-09-05T00:00:00Z
 ```
 
----
-
-## Relationship to Other Schemas
-
-This schema may reference:
-
-* Beacon Record Schema
-* Signal Record Schema
-* Source Reference Schema
-* Query Log Schema
-
-Additional schema relationships may be established as Beacon evolves.
+This example is conceptual only.
 
 ---
 
-## Relationship to Discovery
+# Relationship to Navigator
 
-Discovery activities generate results.
+Navigator owns workflow definition and orchestration.
 
-Results represent the information surfaced through the discovery process.
+Beacon may participate in a Navigator-directed workflow and return discovery results.
 
-A simplified workflow may be represented as:
+Conceptually:
 
 ```text
-Query → Discovery → Result
+Navigator
+→ workflow / orchestration
+→ Beacon discovery activity
+→ Discovery Result
+```
+
+Beacon does not redefine Navigator's workflow authority through this schema.
+
+---
+
+# Relationship to Discovery Signals
+
+A result may:
+
+```text
+reference an existing Discovery Signal
+support creation of a new Discovery Signal
+support review of a Draft Discovery Signal
+surface a source without creating a Discovery Signal
+```
+
+Creation of a canonical signal remains a separate institutional action.
+
+---
+
+# Authority Boundary
+
+A Discovery Result may surface an authoritative object.
+
+The result itself does not become authoritative merely because the referenced object is authoritative.
+
+> **Reference does not transfer authority.**
+
+---
+
+# Retention
+
+Retention rules for Discovery Results are not yet established.
+
+Future operational work may determine whether results are:
+
+```text
+ephemeral
+session-bound
+persisted
+auditable
+aggregated
+discarded after use
+```
+
+No retention assumption should be treated as canonical yet.
+
+---
+
+# Status
+
+```text
+Schema Role → Optional Noncanonical Discovery Output
+Canonical Object → No
+Architecture → Revised for Phase II
+Lifecycle → Not established
+Retention → Not established
+Machine Validation → Pending if retained
 ```
 
 ---
 
-## Future Development
+## Last Updated
 
-Future discovery result schemas may include:
-
-* Ranked results
-* Relationship graphs
-* Signal prioritization
-* Result clustering
-* Context-aware discovery
-* Multi-source aggregation
-* Cross-system discovery outputs
-
-Specific implementations may evolve over time.
-
----
-
-## Status
-
-This schema represents an initial conceptual structure for discovery results and may be expanded, revised, or refined as Beacon capabilities mature.
+September 5, 2026
