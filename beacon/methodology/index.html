@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Discovery Methodology</title>
+<meta name="description" content="The Satoshium Beacon Discovery Methodology — the repeatable institutional process by which candidate discoveries become governed Discovery Signals."/>
+<link rel="canonical" href="https://satoshium.us/beacon/methodology/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:950px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+.badge{display:inline-flex;padding:5px 9px;border-radius:999px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.05);color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{color:var(--gold2)}td{color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}.table-wrap{overflow-x:auto}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Beacon Discovery Methodology</h1>
+<p class="lead">
+  The Beacon Discovery Methodology defines the repeatable institutional process by which an observed candidate
+  may become a governed Discovery Signal, progress through review and publication, and remain maintained over time.
+</p>
+<div class="note"><strong>Discovery is not a single act. Beacon must preserve the path from observation to governed institutional representation.</strong></div>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Methodological Inquiry</h2>
+<p>
+  The preliminary sequence proposed for Beacon was:
+</p>
+<div class="note">
+  Observe → Identify → Source → Evaluate Relevance → Construct Metadata → Validate → Publish → Maintain
+</div>
+<p style="margin-top:14px">
+  Phase II does not adopt that wording automatically. The methodology must instead be derived from the architecture already established for Beacon's canonical object, provenance, authority, lifecycle, validation, publication, versioning, relationships, and Records.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Finding</h2>
+<p>
+  The proposed sequence captures the broad direction of Beacon's work, but it compresses several institutionally distinct acts.
+  In particular, a Discovery Signal must be canonically created and assigned its BEAC identifier before it can undergo object-level Validation.
+</p>
+<div class="note">
+  Candidate Observation<br/>
+  ↓<br/>
+  Candidate Identification<br/>
+  ↓<br/>
+  Source &amp; Provenance Establishment<br/>
+  ↓<br/>
+  Relevance Assessment<br/>
+  ↓<br/>
+  Discovery Signal Construction<br/>
+  ↓<br/>
+  Canonical Creation &amp; BEAC Assignment<br/>
+  ↓<br/>
+  Validation &amp; Institutional Review<br/>
+  ↓<br/>
+  Lifecycle Determination<br/>
+  ↓<br/>
+  Publication Decision<br/>
+  ↓<br/>
+  Public Representation<br/>
+  ↓<br/>
+  Maintenance &amp; Re-observation
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Why Observation Comes First</h2>
+<p>
+  Beacon cannot discover something institutionally before some information, condition, object, or relationship has first been encountered.
+</p>
+<div class="note">
+  Observation may produce a candidate.<br/>
+  Observation alone does not create a Discovery Signal.
+</div>
+</article>
+
+<article class="card">
+<h2>Why Creation Must Be Explicit</h2>
+<p>
+  Earlier Beacon architecture established that the canonical object comes into existence at Creation and receives its BEAC identifier at that point.
+</p>
+<div class="note">
+  Identified → pre-object condition<br/>
+  Created → canonical object exists
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Canonical Methodology</h2>
+<div class="note">
+  <strong>Observe → Identify → Establish Source &amp; Provenance → Assess Relevance → Construct → Create → Validate &amp; Review → Determine State → Decide Publication → Represent → Maintain</strong>
+</div>
+<p style="margin-top:14px">
+  This sequence preserves the useful intent of the preliminary proposal while aligning each step with the institutional architecture established during Phase II.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Methodology Stages</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Stage</th><th>Institutional Purpose</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>1. Observe</td><td>Encounter potentially relevant information, an object, condition, event, or relationship.</td><td>Candidate observation</td></tr>
+<tr><td>2. Identify</td><td>Determine whether the observation presents a distinct candidate discovery worth further consideration.</td><td>Identified candidate</td></tr>
+<tr><td>3. Establish Source &amp; Provenance</td><td>Identify what was observed and preserve how, when, where, and through what context it was encountered.</td><td>Reviewable evidentiary path</td></tr>
+<tr><td>4. Assess Relevance</td><td>Determine whether the candidate falls within Beacon's Discovery &amp; Signals institutional role.</td><td>Proceed or stop</td></tr>
+<tr><td>5. Construct</td><td>Assemble the Discovery Signal components required by the Entry Model, including classification, metadata, references, and relationships as applicable.</td><td>Candidate canonical representation</td></tr>
+<tr><td>6. Create</td><td>Create the canonical Discovery Signal, assign its permanent BEAC identifier, and enter Draft.</td><td>Beacon-owned canonical object</td></tr>
+<tr><td>7. Validate &amp; Review</td><td>Evaluate structural conformance, provenance sufficiency, authority boundaries, references, relationships, and other applicable rules.</td><td>Validation/review outcome</td></tr>
+<tr><td>8. Determine State</td><td>Apply the appropriate governed lifecycle state based on the review outcome and institutional action.</td><td>Governed lifecycle state</td></tr>
+<tr><td>9. Decide Publication</td><td>Determine whether the signal is eligible and approved for public representation.</td><td>Published or remains Unpublished</td></tr>
+<tr><td>10. Represent</td><td>When Published, expose the Discovery Signal through Beacon Records and its permanent individual Record page.</td><td>Public Beacon representation</td></tr>
+<tr><td>11. Maintain</td><td>Preserve history, re-observe when appropriate, correct presentation defects, version material changes, and govern supersession, resolution, or withdrawal.</td><td>Continuing institutional integrity</td></tr>
+</tbody>
+</table>
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Stage 1</div>
+<h2>Observe</h2>
+<p>
+  Beacon encounters potentially relevant information through a human review, Beacon process, Navigator-directed workflow, governed system interaction, or other permitted discovery context.
+</p>
+<div class="note">
+  Observation ≠ Discovery Signal
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Stage 2</div>
+<h2>Identify</h2>
+<p>
+  Beacon recognizes that an observation may represent a distinct discovery candidate.
+</p>
+<div class="note">
+  Identified remains a pre-object condition.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Stage 3</div>
+<h2>Establish Source</h2>
+<p>
+  Beacon identifies the source, source institution or publisher, native identifier, object type, and location when applicable.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Stage 3</div>
+<h2>Preserve Provenance</h2>
+<p>
+  Beacon preserves the observation time, method, context, supporting basis, and discovery actor or process needed for meaningful review.
+</p>
+<div class="note">
+  Source → what was observed<br/>
+  Provenance → how Beacon encountered it
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Stage 4 — Assess Relevance</h2>
+<p>
+  Beacon determines whether the candidate belongs within Beacon's institutional responsibility for Discovery &amp; Signals.
+</p>
+<div class="note">
+  Candidate is relevant to Beacon's discovery role<br/>
+  + sufficient basis exists to continue<br/>
+  = proceed to construction
+</div>
+<p style="margin-top:14px">
+  A candidate that does not satisfy Beacon's relevance threshold should stop here rather than being forced into a Discovery Signal.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relevance Is Not Truth</h2>
+<p>
+  Relevance assessment determines whether something is appropriate for Beacon to represent as discovery.
+  It does not establish that the underlying assertion is true, certified, registered, historically significant, integrity-verified, or trustworthy.
+</p>
+<div class="note">
+  Relevant to discovery<br/>
+  ≠ authoritative truth determination
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Stage 5 — Construct</h2>
+<p>
+  Beacon assembles the candidate representation according to the Discovery Signal Entry Model.
+</p>
+<div class="note">
+  Subject<br/>
+  + Signal Type<br/>
+  + Source<br/>
+  + Provenance<br/>
+  + Discovery Metadata<br/>
+  + Canonical References when applicable<br/>
+  + Relationships when applicable<br/>
+  + Timestamps / status / version context<br/>
+  = constructable Discovery Signal
+</div>
+<p style="margin-top:14px">
+  Construction prepares the institutional representation. It does not itself establish publication or source authority.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Stage 6 — Create</h2>
+<p>
+  Creation is the point at which Beacon's canonical institutional object comes into existence.
+</p>
+<div class="note">
+  Candidate representation<br/>
+  ↓ canonical creation<br/>
+  BEAC-YYYY-NNNN assigned<br/>
+  ↓<br/>
+  Lifecycle State → Draft<br/>
+  Publication State → Unpublished
+</div>
+<p style="margin-top:14px">
+  The BEAC identifier is permanent and is assigned before object-level Validation.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Stage 7 — Validate &amp; Review</h2>
+<p>
+  The created Draft Discovery Signal is evaluated against Beacon's established conformance requirements and institutional boundaries.
+</p>
+<ul>
+<li>Canonical identity and BEAC identifier conformance</li>
+<li>Required Entry Model components</li>
+<li>Permitted Signal Type</li>
+<li>Source identification</li>
+<li>Provenance sufficiency</li>
+<li>Canonical-reference integrity when applicable</li>
+<li>Discovery Metadata sufficiency</li>
+<li>Timestamp, status, and version conformance</li>
+<li>Relationship conformance when applicable</li>
+<li>Schema conformity</li>
+<li>Authority-boundary review</li>
+</ul>
+<div class="note">
+  Validation determines conformance.<br/>
+  Validation does not establish underlying truth.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Validation Outcome</h2>
+<p>
+  Existing Phase II architecture recognizes initial outcomes such as Valid, Invalid, and Review Required.
+</p>
+<div class="note">
+  Passing Validation establishes eligibility for institutional progression.
+</div>
+</article>
+
+<article class="card">
+<h2>Review Outcome</h2>
+<p>
+  Institutional review considers questions that schema conformance alone cannot resolve, including relevance, provenance sufficiency, authority boundaries, and publication suitability.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Stage 8 — Determine Lifecycle State</h2>
+<p>
+  A passing Validation result does not itself perform a lifecycle transition.
+  Beacon must apply the appropriate governed institutional state.
+</p>
+<div class="note">
+  Draft<br/>
+  ↓ governed transition<br/>
+  Active
+</div>
+<p style="margin-top:14px">
+  Later maintenance may result in Superseded, Resolved, or Withdrawn according to the Lifecycle and Versioning architecture.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Stage 9 — Decide Publication</h2>
+<p>
+  Publication is a separate governed decision after the Discovery Signal exists and has undergone applicable Validation and review.
+</p>
+<div class="note">
+  Canonical existence<br/>
+  ≠ Validation<br/>
+  ≠ Active lifecycle state<br/>
+  ≠ Publication
+</div>
+<p style="margin-top:14px">
+  A valid Active Discovery Signal may remain Unpublished when publication is restricted or not yet approved.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Publication Eligibility</h2>
+<div class="note">
+  Canonical identity exists<br/>
+  + BEAC identifier conforms<br/>
+  + Entry Model requirements satisfied<br/>
+  + Validation passed<br/>
+  + lifecycle permits publication<br/>
+  + public provenance is sufficient<br/>
+  + authority boundaries are preserved<br/>
+  + references and relationships are attributable<br/>
+  + no governing restriction prevents publication<br/>
+  = eligible for publication decision
+</div>
+<p style="margin-top:14px">
+  Eligibility does not itself publish the signal.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Stage 10 — Represent</h2>
+<p>
+  When publication is approved, Beacon exposes its Discovery Signal through its established Records architecture.
+</p>
+<div class="note">
+  Publication State → Published<br/>
+  ↓<br/>
+  /beacon/records/<br/>
+  → Beacon Records listing<br/><br/>
+  /beacon/records/BEAC-YYYY-NNNN/<br/>
+  → permanent individual Beacon Record
+</div>
+<p style="margin-top:14px">
+  The public HTML Record represents the Discovery Signal. It does not create a second canonical object.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Stage 11 — Maintain</h2>
+<p>
+  Beacon's responsibility continues after publication.
+</p>
+<ul>
+<li>Preserve the original observation and provenance</li>
+<li>Re-observe sources when appropriate</li>
+<li>Preserve source availability changes</li>
+<li>Correct presentation-only defects without unnecessary canonical change</li>
+<li>Create governed new versions for material changes to the same signal</li>
+<li>Create a new BEAC object when a discovery is institutionally distinct</li>
+<li>Preserve supersession relationships</li>
+<li>Apply Resolved or Withdrawn states when governed conditions require them</li>
+<li>Keep Beacon Records consistent with the canonical Discovery Signal</li>
+</ul>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Re-observation</h2>
+<p>
+  A later observation does not erase the earlier one.
+</p>
+<div class="note">
+  What Beacon observed then<br/>
+  ≠<br/>
+  What Beacon observes now
+</div>
+</article>
+
+<article class="card">
+<h2>Correction</h2>
+<p>
+  A presentation defect may be corrected without changing the canonical Discovery Signal when the underlying object remains correct.
+</p>
+</article>
+
+<article class="card">
+<h2>Version</h2>
+<p>
+  A material change to the representation of the same canonical Discovery Signal may require a governed new version.
+</p>
+</article>
+
+<article class="card">
+<h2>New Signal</h2>
+<p>
+  A distinct discovery subject, occurrence, relationship, or independently meaningful discovery should receive a new BEAC identifier rather than being forced into an existing object.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Stop Conditions</h2>
+<p>
+  Methodology must permit a candidate to stop without becoming a Discovery Signal.
+</p>
+<div class="note">
+  Insufficient relevance<br/>
+  OR source cannot be meaningfully identified<br/>
+  OR provenance is inadequate<br/>
+  OR candidate duplicates an existing discovery without new institutional meaning<br/>
+  OR Beacon lacks a legitimate basis to represent the discovery<br/>
+  = stop, defer, or require further review
+</div>
+<p style="margin-top:14px">
+  Not every observation deserves canonicalization.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Authority Throughout the Process</h2>
+<p>
+  Beacon's methodology must preserve authority boundaries from first observation through long-term maintenance.
+</p>
+<div class="note">
+  Observe a source<br/>
+  ≠ own the source<br/><br/>
+  Reference an object<br/>
+  ≠ inherit its authority<br/><br/>
+  Publish a Discovery Signal<br/>
+  ≠ certify the source assertion
+</div>
+<p style="margin-top:14px"><strong>Reference does not transfer authority.</strong></p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Human Judgment</h2>
+<p>
+  Some methodological decisions may require institutional judgment, especially relevance, provenance sufficiency, relationship meaning, restrictions, and publication suitability.
+</p>
+</article>
+
+<article class="card">
+<h2>Machine Assistance</h2>
+<p>
+  Future automation may assist observation, construction, schema validation, comparison, or monitoring without replacing Beacon's governed institutional rules.
+</p>
+<div class="note">
+  Automation may execute process.<br/>
+  Architecture governs process.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Navigator-Directed Workflows</h2>
+<p>
+  Beacon may participate in workflows defined or orchestrated by Navigator.
+</p>
+<div class="note">
+  Navigator → Workflow Definition / Orchestration<br/>
+  Beacon → Discovery Signal / Metadata
+</div>
+<p style="margin-top:14px">
+  Workflow participation does not transfer ownership of Beacon's Discovery Signal to Navigator, nor does Beacon assume Navigator's orchestration responsibility.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Methodology and Signal Types</h2>
+<p>
+  The core methodology should remain common across Beacon Signal Types while allowing specialized requirements where the discovery category demands them.
+</p>
+<div class="note">
+  Common institutional methodology<br/>
+  + Signal-Type-specific requirements when governed<br/>
+  = consistent but extensible Beacon production
+</div>
+<p style="margin-top:14px">
+  Certification Signals, for example, may require specialized reference expectations without becoming Certification Packages themselves.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Methodology and Schemas</h2>
+<p>
+  Schemas express structural requirements. Methodology determines how those structures are produced, reviewed, governed, published, and maintained.
+</p>
+<div class="note">
+  Schema → what the representation must contain<br/>
+  Methodology → how the institution produces and governs it
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Production Decision Record</h2>
+<p>
+  A production operation should preserve enough process evidence to reconstruct the major institutional decisions that led to publication.
+</p>
+<div class="note">
+  Candidate basis<br/>
+  + source/provenance basis<br/>
+  + relevance basis<br/>
+  + construction result<br/>
+  + Validation/review result<br/>
+  + lifecycle decision<br/>
+  + publication decision<br/>
+  = reviewable production path
+</div>
+<p style="margin-top:14px">
+  Exact machine fields or a separate decision-record artifact are not frozen here.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Is Now Established</h2>
+<ul>
+<li>The preliminary eight-step proposal is not adopted verbatim</li>
+<li>Beacon uses a repeatable institutional methodology derived from its Phase II architecture</li>
+<li>Observation and Identification occur before canonical object creation</li>
+<li>Source identity and provenance are established before canonicalization</li>
+<li>Relevance assessment determines whether the candidate belongs within Beacon's discovery role</li>
+<li>Construction follows the Discovery Signal Entry Model</li>
+<li>Creation is an explicit institutional event</li>
+<li>The BEAC identifier is assigned at canonical Creation</li>
+<li>A created signal enters Draft and remains Unpublished initially</li>
+<li>Validation occurs against an existing canonical Draft object</li>
+<li>Validation and institutional review are related but distinct concerns</li>
+<li>Passing Validation does not itself activate or publish a signal</li>
+<li>Lifecycle transition and publication are governed acts</li>
+<li>Publication creates public representation, not a second canonical object</li>
+<li>Maintenance is part of Beacon's methodology, not an afterthought</li>
+<li>Re-observation preserves temporal history</li>
+<li>Not every observation must become a Discovery Signal</li>
+<li>Authority boundaries apply throughout the entire process</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<ul>
+<li>Exact operational roles or approval authorities</li>
+<li>Formal relevance-scoring or relevance-threshold mechanics, if any</li>
+<li>Required review depth by Signal Type</li>
+<li>Whether Validation and institutional review are recorded as separate machine outcomes</li>
+<li>Exact publication approval mechanism</li>
+<li>Required re-observation cadence, if any</li>
+<li>Automated versus human review boundaries</li>
+<li>Formal duplicate-detection rules</li>
+<li>Escalation and exception procedures</li>
+<li>Exact production decision-record structure</li>
+<li>Signal-Type-specific methodological profiles beyond those already established</li>
+</ul>
+<div class="note">
+  These should be tested through the first production operation rather than frozen without institutional evidence.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Governing Rules</h2>
+<div class="note">
+  Observe before canonicalizing.<br/>
+  Identify the source.<br/>
+  Preserve provenance.<br/>
+  Assess relevance without claiming truth.<br/>
+  Construct according to the Entry Model.<br/>
+  Create the canonical object explicitly.<br/>
+  Assign the BEAC identifier at Creation.<br/>
+  Validate the created object.<br/>
+  Govern lifecycle transitions separately from Validation.<br/>
+  Govern publication separately from lifecycle state.<br/>
+  Preserve authority boundaries.<br/>
+  Publish a representation, not a second object.<br/>
+  Maintain history after publication.<br/>
+  Permit candidates to stop when Beacon lacks sufficient basis.<br/><br/>
+  <strong>Discovery becomes institutional only through a preserved and reviewable process.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Beacon Records → Defined<br/>
+  Individual Beacon Record → Defined<br/>
+  Beacon Discovery Methodology → Defined<br/>
+  Production Model / First Operation → Next<br/>
+  First Production Discovery Signal → Not yet created<br/>
+  Production Proof → Pending<br/>
+  Operational → No
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  Discovery becomes institutional only through a preserved and reviewable process.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
