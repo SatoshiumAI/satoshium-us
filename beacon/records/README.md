@@ -1,8 +1,8 @@
-# Satoshium Beacon — Discovery Signals Register
+# Satoshium Beacon — Records
 
 ## Overview
 
-The **Discovery Signals Register** is Satoshium Beacon's human-facing index of published canonical Discovery Signals.
+The **Beacon Records** page is Satoshium Beacon's human-facing records of published canonical Discovery Signals.
 
 It provides a stable public location where users can:
 
@@ -24,13 +24,13 @@ follow each entry to the individual Beacon record
 
 The governing principle is:
 
-> **The Register makes Beacon's published objects findable without becoming another object itself.**
+> **Beacon Records makes published Discovery Signals findable without becoming another canonical object.**
 
 ---
 
 # Purpose
 
-The Discovery Signals Register answers:
+Beacon Records answers:
 
 ```text
 What Discovery Signals has Beacon published?
@@ -52,7 +52,7 @@ Where is the individual canonical Beacon record?
 
 # Institutional Boundary
 
-The Discovery Signals Register is an index over Beacon-owned canonical objects.
+Beacon Records is an index over Beacon-owned canonical objects.
 
 Conceptually:
 
@@ -60,27 +60,27 @@ Conceptually:
 Discovery Signal
 → canonical Beacon object
 
-Register Entry
+Record Listing
 → human-facing index representation
 ```
 
 Therefore:
 
 ```text
-Register Entry
+Record Listing
 ≠
 second canonical object
 ```
 
-The Register catalogs Beacon Discovery Signals.
+Beacon Records catalogs Beacon Discovery Signals.
 
 It does not create, replace, duplicate, or independently govern them.
 
 ---
 
-# Register Scope
+# Records Scope
 
-The public Discovery Signals Register is intended to expose Discovery Signals whose Publication State is:
+Beacon Records is intended to expose Discovery Signals whose Publication State is:
 
 ```text
 Published
@@ -93,14 +93,14 @@ Published Beacon Discovery Signals
         ↓
 /beacon/records/
         ↓
-Human-Facing Discovery Index
+Human-Facing Beacon Records Index
 ```
 
-Draft, internal, restricted, or otherwise Unpublished signals should not appear in the public Register by default.
+Draft, internal, restricted, or otherwise Unpublished signals should not appear in Beacon Records by default.
 
 ---
 
-# Discovery Signal vs. Register Entry
+# Discovery Signal vs. Record Listing
 
 ## Discovery Signal
 
@@ -132,9 +132,9 @@ the provenance
 the Beacon-governed relationships
 ```
 
-## Register Entry
+## Record Listing
 
-The Register entry is a concise index representation of that canonical object.
+The Record Listing is a concise index representation of that canonical object.
 
 Its purpose is to help a user:
 
@@ -150,7 +150,7 @@ navigate to
 
 the Discovery Signal.
 
-The Register entry does not replace the Discovery Signal.
+The Record Listing does not replace the Discovery Signal.
 
 ---
 
@@ -168,11 +168,11 @@ The next Phase II architecture will define the individual Discovery Signal repre
 
 ---
 
-# Register-Level Fields
+# Records-Level Fields
 
-Each public Register entry should expose enough information to identify and distinguish the Discovery Signal without reproducing the entire canonical record.
+Each public Record Listing should expose enough information to identify and distinguish the Discovery Signal without reproducing the entire canonical record.
 
-Expected register-level information includes:
+Expected records-level information includes:
 
 ```text
 BEAC Identifier
@@ -200,7 +200,7 @@ Exact production labels remain subject to the first individual record and produc
 
 # BEAC Identifier
 
-The Register must preserve the canonical Beacon identifier exactly.
+Beacon Records must preserve the canonical Beacon identifier exactly.
 
 Example:
 
@@ -208,10 +208,10 @@ Example:
 BEAC-2026-0001
 ```
 
-The Register must not create:
+Beacon Records must not create:
 
 ```text
-a separate register identifier
+a separate records-page identifier
 
 a public-only identifier
 
@@ -224,7 +224,7 @@ The BEAC identifier remains the stable identity of the canonical Discovery Signa
 
 # Subject / Title
 
-The Register should provide a concise human-readable indication of what the Discovery Signal concerns.
+Beacon Records should provide a concise human-readable indication of what the Discovery Signal concerns.
 
 This is a discovery aid.
 
@@ -234,7 +234,7 @@ It does not replace the fuller subject representation contained within the indiv
 
 # Signal Type
 
-Register entries should expose the primary Beacon Signal Type.
+Record Listings should expose the primary Beacon Signal Type.
 
 The current architectural Signal Types are:
 
@@ -274,13 +274,13 @@ Source Object Type
 → Certification Package
 ```
 
-The Register must not collapse these classifications.
+Beacon Records must not collapse these classifications.
 
 ---
 
 # Lifecycle State
 
-The Register should expose the current lifecycle state of the Discovery Signal.
+Beacon Records should expose the current lifecycle state of the Discovery Signal.
 
 Canonical lifecycle states are:
 
@@ -292,7 +292,7 @@ Resolved
 Withdrawn
 ```
 
-Public Register entries will normally concern Published signals whose relevant public lifecycle state may be:
+Public Record Listings will normally concern Published signals whose relevant public lifecycle state may be:
 
 ```text
 Active
@@ -310,14 +310,14 @@ Draft signals should not ordinarily appear in the public Register.
 
 # Publication State
 
-Public Register inclusion normally requires:
+Public Records inclusion normally requires:
 
 ```text
 Publication State
 → Published
 ```
 
-The Register may expose Publication State explicitly when useful.
+Beacon Records may expose Publication State explicitly when useful.
 
 At minimum, inclusion itself should remain consistent with Beacon publication governance.
 
@@ -325,7 +325,7 @@ At minimum, inclusion itself should remain consistent with Beacon publication go
 
 # Current Version
 
-The Register should identify the current governed version of each listed Discovery Signal.
+Beacon Records should identify the current governed version of each listed Discovery Signal.
 
 Conceptually:
 
@@ -336,13 +336,13 @@ Current Version
 → 2
 ```
 
-Historical version detail belongs with the individual Discovery Signal representation rather than becoming separate canonical Register objects.
+Historical version detail belongs with the individual Discovery Signal representation rather than becoming separate canonical Beacon objects.
 
 ---
 
 # Source / Source Institution
 
-Register-level source information should provide concise attribution where appropriate.
+Registry-level source information should provide concise attribution where appropriate.
 
 Examples may include:
 
@@ -362,7 +362,7 @@ Attestor
 external source
 ```
 
-The Register should preserve source ownership.
+Beacon Records should preserve source ownership.
 
 It must not imply that Beacon owns the referenced source object.
 
@@ -370,7 +370,7 @@ It must not imply that Beacon owns the referenced source object.
 
 # Published At
 
-The Register may expose:
+Beacon Records may expose:
 
 ```text
 published_at
@@ -392,7 +392,7 @@ other source-native timestamps
 
 # Record Link
 
-Every Register entry should resolve to the individual canonical Beacon record.
+Every Record Listing should resolve to the individual canonical Beacon record.
 
 Example:
 
@@ -400,33 +400,33 @@ Example:
 /beacon/records/BEAC-2026-0001/
 ```
 
-The Register provides the discovery index.
+Beacon Records provides the discovery index.
 
 The individual record provides the fuller Beacon representation.
 
 ---
 
-# Register Summary
+# Record Summary
 
-A Register entry may provide concise discovery context.
+A Record Listing may provide concise discovery context.
 
 Conceptually:
 
 ```text
-Register Summary
+Record Summary
 → navigation and discovery aid
 
 Individual Record
 → fuller canonical Beacon representation
 ```
 
-Register summaries should remain concise enough that the Register does not become an uncontrolled duplicate of the canonical record.
+Record summaries should remain concise enough that Beacon Records does not become an uncontrolled duplicate of the canonical record.
 
 ---
 
 # No Canonical Duplication
 
-The Register should index enough information to make Discovery Signals understandable and findable.
+Beacon Records should index enough information to make Discovery Signals understandable and findable.
 
 It should then point to the individual Beacon record for canonical detail.
 
@@ -438,7 +438,7 @@ The governing approach is:
 
 # Current and Historical Signals
 
-The Register should distinguish current published signals from signals whose lifecycle state later changes.
+Beacon Records should distinguish current published signals from signals whose lifecycle state later changes.
 
 Examples:
 
@@ -478,7 +478,7 @@ Publication State
 
 A Superseded Published signal should remain traceable when governance permits.
 
-Where a replacement exists, the Register or individual record should make that relationship discoverable.
+Where a replacement exists, Beacon Records or the individual record should make that relationship discoverable.
 
 Conceptually:
 
@@ -516,7 +516,7 @@ Resolution does not erase prior publication.
 
 Previously published Withdrawn signals should preserve the historical fact of publication and governed withdrawal to the extent permitted.
 
-The Register must not silently treat a previously published signal as though it never existed.
+Beacon Records must not silently treat a previously published signal as though it never existed.
 
 Exact public display mechanics remain subject to Methodology and production use.
 
@@ -524,7 +524,7 @@ Exact public display mechanics remain subject to Methodology and production use.
 
 # Version Visibility
 
-The Register should expose the current version without treating every version as a separate canonical Register object.
+Beacon Records should expose the current version without treating every version as a separate canonical Beacon object.
 
 Conceptually:
 
@@ -547,7 +547,7 @@ Versioning remains governed by:
 
 # Authority Boundary
 
-The Register indexes Beacon Discovery Signals even when those signals reference canonical objects belonging to other Suite institutions.
+Beacon Records indexes Beacon Discovery Signals even when those signals reference canonical objects belonging to other Suite institutions.
 
 For example:
 
@@ -570,7 +570,7 @@ The governing principle remains:
 
 # Cross-Suite Example
 
-A future Register entry might conceptually expose:
+A future Record Listing might conceptually expose:
 
 ```text
 BEAC Identifier
@@ -613,7 +613,7 @@ BEAC-2026-0001
 
 # Discovery and Filtering
 
-As Beacon production volume grows, the Register may support human-facing filtering or organization by governed fields such as:
+As Beacon production volume grows, Beacon Records may support human-facing filtering or organization by governed fields such as:
 
 ```text
 Signal Type
@@ -645,7 +645,7 @@ authority
 
 ---
 
-# Register Ordering
+# Records Ordering
 
 Initial ordering may remain simple and deterministic.
 
@@ -663,7 +663,7 @@ Exact production ordering remains unfrozen until actual Beacon records exist.
 
 # Search
 
-Future Register search may help users locate published Discovery Signals by:
+Future Beacon Records search may help users locate published Discovery Signals by:
 
 ```text
 subject
@@ -691,9 +691,9 @@ authority
 
 ---
 
-# Register Inclusion Rule
+# Records Inclusion Rule
 
-The conceptual public Register inclusion rule is:
+The conceptual public Records inclusion rule is:
 
 ```text
 Canonical Discovery Signal exists
@@ -702,7 +702,7 @@ Publication State = Published
 +
 Public representation remains permitted
 =
-Eligible for public Register inclusion
+Eligible for public Records inclusion
 ```
 
 Lifecycle state affects how the signal is represented.
@@ -713,7 +713,7 @@ It does not necessarily erase the historical fact of publication.
 
 # Unpublished Signals
 
-Unpublished Discovery Signals should not appear in the public Register by default.
+Unpublished Discovery Signals should not appear in Beacon Records by default.
 
 For example:
 
@@ -725,13 +725,13 @@ Publication State
 → Unpublished
 ```
 
-does not create a public Register entry.
+does not create a public Records listing.
 
 ---
 
 # Restricted Signals
 
-A valid Discovery Signal may remain outside the public Register when publication or continuing public representation is restricted by governance.
+A valid Discovery Signal may remain outside Beacon Records when publication or continuing public representation is restricted by governance.
 
 Potential reasons may include:
 
@@ -751,16 +751,16 @@ other legitimate restrictions
 
 ---
 
-# No Register-Based Authority
+# No Records-Based Authority
 
-Register inclusion establishes:
+Records inclusion establishes:
 
 ```text
 Beacon has published this Discovery Signal
 under its governed architecture.
 ```
 
-Register inclusion does not independently establish:
+Records inclusion does not independently establish:
 
 ```text
 truth of the underlying source assertion
@@ -776,13 +776,13 @@ Integrity verification
 Trust
 ```
 
-The Register must not become a mechanism for authority laundering.
+Beacon Records must not become a mechanism for authority laundering.
 
 ---
 
-# Register Integrity
+# Records Integrity
 
-Register entries should remain consistent with the canonical Discovery Signals they index.
+Record Listings should remain consistent with the canonical Discovery Signals they index.
 
 Conceptually:
 
@@ -799,21 +799,21 @@ Publication State matches
 +
 Record Link resolves correctly
 =
-Register-Level Conformance
+Records-Level Conformance
 ```
 
-The Register should never silently contradict the canonical Beacon record.
+Beacon Records should never silently contradict the canonical Beacon record.
 
 ---
 
-# Register Correction
+# Records Correction
 
-If a Register summary is incorrect while the underlying canonical Discovery Signal is correct, the index representation may be corrected without unnecessarily versioning the Discovery Signal itself.
+If a Record Summary is incorrect while the underlying canonical Discovery Signal is correct, the index representation may be corrected without unnecessarily versioning the Discovery Signal itself.
 
 This distinguishes:
 
 ```text
-Register presentation error
+Records presentation error
 ```
 
 from:
@@ -835,18 +835,18 @@ Versioning & Supersession
 → governs the canonical change
 ```
 
-The Register then reflects the resulting current canonical state.
+Beacon Records then reflects the resulting current canonical state.
 
-The Register does not independently create that change.
+Beacon Records does not independently create that change.
 
 ---
 
-# Conceptual Register Entry
+# Conceptual Record Listing
 
-A conceptual Register representation is:
+A conceptual Records representation is:
 
 ```yaml
-register_entry:
+record_listing:
   beac_identifier: ""
   subject: ""
   signal_type: ""
@@ -860,7 +860,7 @@ register_entry:
 
 This is architectural only.
 
-The Register entry is:
+The Record Listing is:
 
 ```text
 an index representation
@@ -876,7 +876,7 @@ a frozen machine-readable schema
 
 ---
 
-# Production Register
+# Production Records
 
 As of September 5, 2026:
 
@@ -892,7 +892,7 @@ Continuing Development
 
 and its first production Discovery Signal has not yet been created.
 
-Therefore the production Register is:
+Therefore the production Records page is:
 
 ```text
 Empty by design
@@ -906,14 +906,14 @@ No placeholder `BEAC-2026-0001` should be presented as though it were an actual 
 
 # Relationship to Publication
 
-The Publication Model determines whether a Discovery Signal is eligible to appear in the public Register.
+The Publication Model determines whether a Discovery Signal is eligible to appear in Beacon Records.
 
 Conceptually:
 
 ```text
 Publication State = Published
         ↓
-eligible for public Register inclusion
+eligible for public Records inclusion
 ```
 
 subject to continuing governance and disclosure rules.
@@ -924,7 +924,7 @@ subject to continuing governance and disclosure rules.
 
 Versioning determines the current governed representation of the Discovery Signal.
 
-The Register reflects:
+Beacon Records reflects:
 
 ```text
 current version
@@ -936,37 +936,37 @@ while the individual record preserves fuller historical version context.
 
 # Relationship to Authority
 
-The Register catalogs Beacon-owned objects.
+Beacon Records catalogs Beacon-owned objects.
 
 It must preserve ownership of every referenced source or canonical object.
 
-The Register does not transfer source authority to Beacon.
+Beacon Records does not transfer source authority to Beacon.
 
 ---
 
 # Relationship to Validation
 
-The Register representation should remain consistent with the validated canonical Discovery Signal it summarizes.
+The Records representation should remain consistent with the validated canonical Discovery Signal it summarizes.
 
 Validation applies to the canonical Beacon object.
 
-Register-level conformance ensures the index accurately represents that object.
+Records-level conformance ensures the index accurately represents that object.
 
 ---
 
 # Relationship to Relationships
 
-The Register may expose concise relationship information when useful for discovery.
+Beacon Records may expose concise relationship information when useful for discovery.
 
 Full governed relationship context belongs with the individual Discovery Signal.
 
-Register presentation must preserve endpoint ownership and attribution.
+Records presentation must preserve endpoint ownership and attribution.
 
 ---
 
 # Relationship to Schemas
 
-Future machine-readable Register or index representations may expose fields such as:
+Future machine-readable Records or index representations may expose fields such as:
 
 ```text
 BEAC identifier
@@ -988,20 +988,20 @@ published_at
 record location
 ```
 
-No separate canonical Register object schema is established at this stage.
+No separate canonical Records object schema is established at this stage.
 
 ---
 
 # Relationship to Methodology
 
-The Discovery Signals Register defines how published Beacon objects are surfaced at the register level.
+Beacon Records defines how published Beacon objects are surfaced at the records-index level.
 
 Beacon Discovery Methodology will later define operational processes for:
 
 ```text
-register inclusion
+records inclusion
 
-register correction
+records correction
 
 historical-state presentation
 
@@ -1019,27 +1019,27 @@ quality review
 The following architectural decisions are established:
 
 ```text
-The Discovery Signals Register is Beacon's human-facing index of published canonical Discovery Signals.
+Beacon Records is Beacon's human-facing records of published canonical Discovery Signals.
 
-The Register catalogs Discovery Signals.
+Beacon Records catalogs Discovery Signals.
 
-The Register does not create Discovery Signals.
+Beacon Records does not create Discovery Signals.
 
-A Register entry is an index representation, not a second canonical object.
+A Record Listing is an index representation, not a second canonical object.
 
-Public Register inclusion normally requires Publication State = Published.
+Public Records inclusion normally requires Publication State = Published.
 
-Unpublished signals remain outside the public Register by default.
+Unpublished signals remain outside Beacon Records by default.
 
-Each Register entry preserves the canonical BEAC identifier.
+Each Record Listing preserves the canonical BEAC identifier.
 
-Register entries provide concise discovery context.
+Record Listings provide concise discovery context.
 
-Register entries point to individual canonical Beacon records.
+Record Listings point to individual canonical Beacon records.
 
-The Register should expose current Lifecycle State.
+Beacon Records should expose current Lifecycle State.
 
-The Register should expose current version.
+Beacon Records should expose current version.
 
 Published Superseded signals may remain historically discoverable where governance permits.
 
@@ -1053,13 +1053,13 @@ Source ownership remains preserved.
 
 Reference does not transfer authority.
 
-Register inclusion does not independently establish truth, Certification, Registry standing, Integrity, or Trust.
+Records inclusion does not independently establish truth, Certification, Registry standing, Integrity, or Trust.
 
-Register summaries must remain consistent with canonical Discovery Signals.
+Record summaries must remain consistent with canonical Discovery Signals.
 
-Register presentation errors and canonical object errors are distinct.
+Records presentation errors and canonical object errors are distinct.
 
-The initial production Register is intentionally empty.
+The initial production Records page is intentionally empty.
 ```
 
 ---
@@ -1069,7 +1069,7 @@ The initial production Register is intentionally empty.
 The following implementation details remain pending:
 
 ```text
-exact production Register field labels
+exact production Records field labels
 
 default ordering
 
@@ -1083,9 +1083,9 @@ historical-state display details
 
 Withdrawn-record visibility mechanics
 
-Register correction mechanics
+Records correction mechanics
 
-machine-readable Register/index representation
+machine-readable Records/index representation
 
 additional summary fields after production experience
 ```
@@ -1099,7 +1099,7 @@ Beacon Discovery Methodology
 
 first production Discovery Signal
 
-actual production Register use
+actual production Records use
 ```
 
 rather than frozen before evidence exists.
@@ -1108,7 +1108,7 @@ rather than frozen before evidence exists.
 
 # Governing Rules
 
-The Discovery Signals Register follows these rules:
+Beacon Records follows these rules:
 
 ```text
 Index only what publication governance permits.
@@ -1131,12 +1131,12 @@ Preserve historical discoverability where governance permits.
 
 Do not expose Unpublished signals by default.
 
-Do not treat Register inclusion as authority beyond Beacon's institutional role.
+Do not treat Records inclusion as authority beyond Beacon's institutional role.
 ```
 
 The governing principle is:
 
-> **The Register makes Beacon's published objects findable without becoming another object itself.**
+> **Beacon Records makes published Discovery Signals findable without becoming another canonical object.**
 
 ---
 
@@ -1162,12 +1162,12 @@ Authority & Reference Model → Defined
 Relationship Model → Defined
 Versioning & Supersession → Defined
 Publication Model → Defined
-Discovery Signals Register → Defined
+Beacon Records → Defined
 
 Individual Discovery Signal → Next
 
 First Production Discovery Signal → Not yet created
-Production Register → Empty by design
+Production Records → Empty by design
 Production Proof → Pending
 Operational → No
 ```
@@ -1210,7 +1210,7 @@ Operational → No
 11. Publication Model
     → COMPLETE
 
-12. Discovery Signals Register
+12. Beacon Records
     → COMPLETE
 
 13. Individual Discovery Signal
