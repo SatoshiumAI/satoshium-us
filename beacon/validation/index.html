@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Validation</title>
+<meta name="description" content="Satoshium Beacon Validation — production conformance requirements for Beacon Discovery Signals."/>
+<link rel="canonical" href="https://satoshium.us/beacon/validation/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
+.lead{max-width:930px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}
+.card h3{margin:18px 0 8px;font-size:18px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:8px 0 0 20px;padding:0}
+.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(214,163,74,.12);padding:2px 6px;border-radius:6px}
+.muted{color:var(--muted)}
+.badge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.05);color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Validation</h1>
+<p class="lead">
+  Beacon Validation defines what must be true before a Discovery Signal can be accepted as a valid Beacon production object.
+  It applies the institutional rules established by the Entry Model, Signal Types, Lifecycle, Identifier Standard, and Schemas.
+</p>
+<p class="lead">
+  Validation determines conformance. It does not create truth, certification, trust, source authority, or publication entitlement.
+</p>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>Validation answers:</p>
+<div class="note">
+  Does this candidate Discovery Signal satisfy the minimum structural and institutional requirements required to stand as a valid Beacon object?
+</div>
+</article>
+
+<article class="card">
+<h2>Validation Principle</h2>
+<div class="note">
+  Schema → defines structure<br/>
+  Validation → tests conformance<br/>
+  Methodology → governs process<br/>
+  Publication → governs public release
+</div>
+<p style="margin-top:14px">
+  Passing validation means the object conforms to Beacon requirements. It does not imply that the referenced source is correct or trustworthy.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Validation Gate</h2>
+<p>
+  A Discovery Signal begins canonical life when it is Created and enters <strong>Draft</strong>.
+  Validation is one of the institutional gates required before that Draft can become <strong>Active</strong>.
+</p>
+<div class="note">
+  Created → Draft → Review / Validation → Active
+</div>
+<p style="margin-top:14px">
+  Validation is therefore a production-conformance gate, not the object-creation event itself.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Required</div>
+<h2>1. Canonical Identity</h2>
+<p>A valid Discovery Signal must have:</p>
+<ul>
+<li>A Beacon identifier</li>
+<li>Identifier conforming to <strong>BEAC-YYYY-NNNN</strong></li>
+<li>Object Type = Discovery Signal</li>
+<li>Institution = Beacon</li>
+<li>A human-readable title or equivalent identifying label</li>
+</ul>
+<div class="note">
+  Identity must be stable, unique, and institutionally attributable.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>2. Identifier Conformance</h2>
+<p>The identifier must satisfy the Beacon Identifier Standard.</p>
+<ul>
+<li>Prefix = BEAC</li>
+<li>Four-digit creation year</li>
+<li>Four-digit zero-padded sequence</li>
+<li>Issued sequence not reused</li>
+<li>Identifier assigned at canonical creation</li>
+<li>No Signal Type embedded</li>
+<li>No lifecycle or publication status embedded</li>
+<li>No version suffix embedded</li>
+</ul>
+<div class="note">
+  Conceptual pattern → <code>^BEAC-[0-9]{4}-[0-9]{4}$</code>
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>3. Subject</h2>
+<p>The Discovery Signal must identify what it concerns.</p>
+<ul>
+<li>Subject name or equivalent identifier</li>
+<li>Subject type or classification where applicable</li>
+<li>Sufficient context to distinguish the subject</li>
+<li>Jurisdiction, domain, entity, record, event, artifact, or other relevant context when needed</li>
+</ul>
+<div class="note">
+  A vague signal without an identifiable subject cannot be meaningfully reviewed.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>4. Permitted Signal Type</h2>
+<p>The primary Signal Type must come from the governed architectural vocabulary:</p>
+<div class="note">
+  Information · Jurisdiction · Certification · Registry · Historical · Integrity · Trust · Relationship
+</div>
+<p style="margin-top:14px">
+  Ad hoc new types do not pass production validation unless formally governed.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>5. Source Reference</h2>
+<p>A valid Discovery Signal must preserve an attributable source.</p>
+<ul>
+<li>Source name</li>
+<li>Source kind or institution</li>
+<li>Source identifier when available</li>
+<li>Source object type when relevant</li>
+<li>Source location or reviewable reference when available</li>
+</ul>
+<div class="note">
+  Beacon should preserve the source's own identity rather than invent a replacement source identity.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>6. Provenance</h2>
+<p>Validation must confirm that the discovery has a reviewable provenance basis.</p>
+<ul>
+<li>How Beacon encountered the information</li>
+<li>What source was observed</li>
+<li>Observation or discovery method</li>
+<li>Supporting reference when applicable</li>
+<li>Discovery actor or process when appropriate</li>
+</ul>
+<div class="note">
+  Provenance explains how the discovery became known to Beacon.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Conditional</div>
+<h2>7. Canonical References</h2>
+<p>
+  When a Discovery Signal claims a relationship to a Suite-owned canonical object, the reference must be structurally valid and institutionally accurate.
+</p>
+<ul>
+<li>Correct source institution</li>
+<li>Correct canonical identifier format</li>
+<li>Correct object type when known</li>
+<li>No substitution of Beacon identity for source identity</li>
+</ul>
+<div class="note">
+  Reference does not transfer authority.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>8. Discovery Metadata</h2>
+<p>
+  The signal must contain enough Discovery Metadata to make the discovery understandable and reviewable.
+</p>
+<ul>
+<li>Discovery context</li>
+<li>Relevant topic or domain when applicable</li>
+<li>Jurisdiction or classification when applicable</li>
+<li>Observed source status when relevant and clearly attributed</li>
+<li>Workflow or search context when material</li>
+</ul>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>9. Timestamps</h2>
+<p>At minimum, a valid production object must preserve canonical creation time.</p>
+<ul>
+<li><code>created_at</code> required</li>
+<li>Creation year must match the identifier year</li>
+<li><code>observed_at</code> required when distinct from creation</li>
+<li><code>updated_at</code>, <code>published_at</code>, and <code>last_observed_at</code> used when applicable</li>
+<li>Timestamps must use a consistent machine-readable format</li>
+</ul>
+<div class="note">
+  Exact timestamp syntax will be enforced in the machine-readable implementation.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>10. Status</h2>
+<p>Lifecycle and publication status must remain separate.</p>
+<div class="note">
+  Lifecycle → Draft · Active · Superseded · Resolved · Withdrawn<br/><br/>
+  Publication → Unpublished · Published
+</div>
+<p style="margin-top:14px">
+  A signal must not pass validation if these concepts are collapsed into a single ambiguous status field.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Required</div>
+<h2>11. Version</h2>
+<p>A production object must preserve explicit version information.</p>
+<ul>
+<li>Initial version present</li>
+<li>Version separate from canonical identifier</li>
+<li>Previous-version or supersession reference when required</li>
+<li>No silent overwriting that destroys institutional history</li>
+</ul>
+<div class="note">
+  Exact version semantics remain governed by the later Versioning phase.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Conditional</div>
+<h2>12. Relationships</h2>
+<p>
+  Any represented relationship must have a valid basis and identifiable endpoints.
+</p>
+<ul>
+<li>Both endpoints identifiable</li>
+<li>Relationship meaning understandable</li>
+<li>Relationship supported by source or provenance</li>
+<li>No unsupported or inferred relationship represented as fact</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Schema Conformity</h2>
+<p>
+  A production Discovery Signal must conform to the canonical Discovery Signal schema.
+</p>
+<div class="note">
+  Canonical schema → /beacon/schemas/discovery-signal-schema.md
+</div>
+<p style="margin-top:14px">
+  Structural conformity includes correct field presence, permitted values, expected data shapes, and governed relationships between fields.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Required vs. Conditional</h2>
+<p>Validation distinguishes core requirements from context-dependent requirements.</p>
+<div class="note">
+  Required → every production Discovery Signal must satisfy<br/><br/>
+  Conditional → required when the represented condition exists
+</div>
+<p style="margin-top:14px">
+  Example: every signal requires a source, but not every signal necessarily requires a cross-Suite canonical-object reference.
+</p>
+</article>
+
+<article class="card">
+<h2>Validation Severity</h2>
+<p>Validation findings should eventually distinguish between:</p>
+<ul>
+<li><strong>Error</strong> → prevents production conformance</li>
+<li><strong>Warning</strong> → requires review but may not invalidate the object</li>
+<li><strong>Informational</strong> → useful observation without conformance effect</li>
+</ul>
+<div class="note">
+  Exact machine-readable severity values remain unfrozen.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Minimum Production Gate</h2>
+<p>A Draft should not become Active unless all required conditions are satisfied.</p>
+<div class="note">
+  Identifier valid<br/>
+  + Subject identifiable<br/>
+  + Signal Type permitted<br/>
+  + Source attributable<br/>
+  + Provenance reviewable<br/>
+  + Discovery Metadata sufficient<br/>
+  + Timestamps valid<br/>
+  + Status valid<br/>
+  + Version present<br/>
+  + Schema conformant<br/>
+  + Conditional references/relationships valid when used<br/>
+  = Eligible for Active consideration
+</div>
+<p style="margin-top:14px">
+  Passing Validation makes the signal eligible for lifecycle progression. It does not itself perform the lifecycle transition.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>What Validation Does Not Prove</h2>
+<p>Passing Beacon Validation does not establish:</p>
+<ul>
+<li>Truth of the underlying information</li>
+<li>Correctness of an external source</li>
+<li>Certification</li>
+<li>Registration</li>
+<li>Historical significance</li>
+<li>Integrity verification</li>
+<li>Trustworthiness</li>
+<li>Publication approval</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Authority Separation</h2>
+<p>
+  Validation evaluates the Beacon Discovery Signal against Beacon's production rules.
+</p>
+<div class="note">
+  Beacon Validation → conformance of Beacon object<br/>
+  Certifier → certification authority<br/>
+  Registry → registration authority<br/>
+  Chronicle → historical preservation<br/>
+  Anchor → integrity reference / verification process<br/>
+  Attestor → Trust Statements
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Source-State Validation</h2>
+<p>
+  If a Discovery Signal records a source-owned status, Validation must confirm that the status is clearly attributed to the source rather than represented as Beacon's own determination.
+</p>
+<div class="note">
+  Correct → Observed source status: Active, attributed to Registry<br/><br/>
+  Incorrect → Beacon declares Registry record Active without source attribution
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Validation Outcomes</h2>
+<p>The initial architectural outcomes are:</p>
+<div class="note">
+  Valid → required Beacon production requirements satisfied<br/><br/>
+  Invalid → one or more required requirements failed<br/><br/>
+  Review Required → structurally acceptable but unresolved warning or institutional issue remains
+</div>
+<p style="margin-top:14px">
+  Whether “Review Required” becomes a formal machine-readable outcome remains to be proven during production implementation.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Validation Record</h2>
+<p>
+  Validation should eventually preserve enough information to reconstruct what was checked and what the result was.
+</p>
+<ul>
+<li>Object identifier</li>
+<li>Schema/version evaluated</li>
+<li>Validation timestamp</li>
+<li>Rules evaluated</li>
+<li>Errors and warnings</li>
+<li>Outcome</li>
+</ul>
+<div class="note">
+  Whether this becomes a separate canonical record is not established.
+</div>
+</article>
+
+<article class="card">
+<h2>No New Canonical Object Yet</h2>
+<p>
+  Validation output should not automatically create another institution-owned object class.
+</p>
+<div class="note">
+  Production need first.<br/>
+  Separate canonical identifier only if institutional necessity is proven.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Validation Sequence</h2>
+<div class="note">
+  1. Parse Discovery Signal<br/>
+  2. Confirm canonical identity<br/>
+  3. Confirm schema structure<br/>
+  4. Confirm required fields<br/>
+  5. Confirm permitted Signal Type<br/>
+  6. Confirm source attribution<br/>
+  7. Confirm provenance basis<br/>
+  8. Confirm timestamps<br/>
+  9. Confirm lifecycle/publication values<br/>
+  10. Confirm version structure<br/>
+  11. Confirm references and relationships<br/>
+  12. Produce validation outcome
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Is Now Established</h2>
+<ul>
+<li>Validation is a production-conformance gate</li>
+<li>Validation occurs after canonical object creation and before Active standing</li>
+<li>Canonical identity must conform to BEAC-YYYY-NNNN</li>
+<li>Subject, permitted Signal Type, source, provenance, metadata, timestamps, version, and status are core validation concerns</li>
+<li>Canonical references and relationships are conditionally validated</li>
+<li>Lifecycle and publication state remain separate</li>
+<li>Source-owned authority must remain attributed</li>
+<li>Schema conformity is required</li>
+<li>Passing Validation does not equal truth, trust, certification, or publication approval</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<ul>
+<li>Exact machine-readable required-field list</li>
+<li>Exact JSON field names</li>
+<li>JSON Schema dialect</li>
+<li>Timestamp serialization rules</li>
+<li>Formal warning/error codes</li>
+<li>Validation severity enum</li>
+<li>Validation report format</li>
+<li>Who or what authorizes final validation acceptance</li>
+<li>Whether a validation result is persisted</li>
+<li>Whether “Review Required” becomes a formal outcome</li>
+<li>Automated vs. manual validation boundaries</li>
+</ul>
+<div class="note">
+  These should be finalized through production implementation and later Methodology work.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Authority Boundary</h2>
+<div class="note">
+  Validation confirms Beacon conformance.<br/>
+  It does not inherit the authority of the referenced source.<br/>
+  It does not certify the source.<br/>
+  It does not create a Trust Statement.<br/><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal Types → Defined<br/>
+  Lifecycle → Defined<br/>
+  Identifier Standard → Defined<br/>
+  Schema Architecture → Defined<br/>
+  Validation Architecture → Defined<br/>
+  Machine Validation → Pending<br/>
+  Production Validation Run → Pending<br/>
+  First Production Discovery Signal → Not yet created
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  A valid object is not one that merely exists, but one that can withstand review.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+
+</body>
+</html>
