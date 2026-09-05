@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Authority & Reference Model</title>
+<meta name="description" content="Satoshium Beacon Authority & Reference Model — defines institutional ownership, reference boundaries, and the principle that reference does not transfer authority."/>
+<link rel="canonical" href="https://satoshium.us/beacon/authority/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:950px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card h3{margin:18px 0 8px;font-size:18px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+.badge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.05);color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{color:var(--gold2)}td{color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}.table-wrap{overflow-x:auto}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Authority &amp; Reference Model</h1>
+<p class="lead">
+  The Authority &amp; Reference Model defines precisely what Beacon owns, what Beacon may reference,
+  what authority remains with other Suite institutions and external sources, and what Beacon must never
+  claim merely because it discovered or referenced information.
+</p>
+<div class="note"><strong>Reference does not transfer authority.</strong></div>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>The model answers:</p>
+<div class="note">
+  What does Beacon own?<br/>
+  What may Beacon reference?<br/>
+  Who continues to own the referenced object?<br/>
+  What authority, if any, does the reference carry into Beacon?
+</div>
+</article>
+
+<article class="card">
+<h2>Core Rule</h2>
+<p>
+  A Beacon Discovery Signal may point to an authoritative object without becoming that object
+  and without acquiring the originating institution's authority.
+</p>
+<div class="note">
+  Discovery → connection<br/>
+  Reference → attribution<br/>
+  Authority → remains with its institutional owner
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Beacon Ownership</h2>
+<p>Beacon owns the objects and institutional determinations that belong to its Discovery &amp; Signals responsibility.</p>
+<ul>
+<li>Beacon Discovery Signals</li>
+<li>Beacon-assigned <strong>BEAC-YYYY-NNNN</strong> identifiers</li>
+<li>Discovery Metadata attached to Beacon signals</li>
+<li>Beacon lifecycle state for Beacon signals</li>
+<li>Beacon publication state for Beacon signals</li>
+<li>Beacon version and supersession information for Beacon signals</li>
+<li>Beacon provenance describing Beacon's observation</li>
+<li>Beacon-governed relationships represented by its signals</li>
+</ul>
+<div class="note">
+  Beacon may authoritatively describe its own object and its own institutional actions.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Beacon Does Not Own</h2>
+<p>Beacon does not acquire ownership of:</p>
+<ul>
+<li>Atlas Authoritative Intelligence</li>
+<li>Certifier Certification Packages</li>
+<li>Registry SREG records</li>
+<li>Chronicle Entries</li>
+<li>Anchor Integrity References</li>
+<li>Attestor Trust Statements</li>
+<li>Navigator Workflow Definitions or orchestration authority</li>
+<li>External records, publications, datasets, or source assertions</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Reference Ownership</h2>
+<p>
+  Beacon owns the fact that its Discovery Signal contains a reference.
+  It does not own the referenced object.
+</p>
+<div class="note">
+  Beacon owns → the reference relationship as represented in BEAC-2026-0001<br/><br/>
+  Source institution owns → the canonical object identified by that reference
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Suite Authority Map</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Institution</th><th>Institution-Owned Responsibility / Object</th><th>Beacon May</th><th>Beacon May Not</th></tr>
+</thead>
+<tbody>
+<tr><td>Atlas</td><td>Authoritative Intelligence</td><td>Discover, reference, attribute, preserve discovery context</td><td>Replace or recreate Atlas authority</td></tr>
+<tr><td>Certifier</td><td>Certification Package</td><td>Reference certification information and identifiers</td><td>Certify merely by discovery</td></tr>
+<tr><td>Registry</td><td>SREG</td><td>Reference registered records and source-owned status</td><td>Register or alter Registry standing</td></tr>
+<tr><td>Chronicle</td><td>Chronicle Entry</td><td>Reference qualifying preserved historical objects</td><td>Determine Chronicle preservation authority</td></tr>
+<tr><td>Anchor</td><td>Integrity Reference</td><td>Reference integrity objects and attributable results</td><td>Perform or claim Anchor authority by reference</td></tr>
+<tr><td>Beacon</td><td>Discovery Signal / Metadata</td><td>Create, validate, version, publish, supersede, resolve, withdraw its own signals</td><td>Use discovery to absorb another institution's authority</td></tr>
+<tr><td>Attestor</td><td>Trust Statement</td><td>Reference a Trust Statement</td><td>Convert a Trust Signal into a Trust Statement</td></tr>
+<tr><td>Navigator</td><td>Workflow Definition / Orchestration</td><td>Participate in and reference Navigator-directed workflows</td><td>Redefine Navigator workflow authority</td></tr>
+</tbody>
+</table>
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Atlas</div>
+<h2>Authoritative Intelligence</h2>
+<p>
+  Beacon may create a Jurisdiction or Information Discovery Signal based on Atlas Authoritative Intelligence.
+</p>
+<div class="note">
+  Atlas owns → Authoritative Intelligence<br/>
+  Beacon owns → Discovery Signal describing the discovery
+</div>
+<p style="margin-top:14px">
+  Beacon does not make Atlas intelligence authoritative. Atlas supplies that authority within its own institutional role.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Certifier</div>
+<h2>Certification Authority</h2>
+<p>
+  Beacon may discover and reference a Certification Package, including through a Certification Signal.
+</p>
+<div class="note">
+  Certification Signal ≠ Certification Package
+</div>
+<p style="margin-top:14px">
+  The existence of a Beacon Certification Signal does not independently certify the subject.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Registry</div>
+<h2>Registration Authority</h2>
+<p>
+  Beacon may discover an SREG and preserve its identifier, relationship, and source-attributed status.
+</p>
+<div class="note">
+  Registry Signal ≠ SREG
+</div>
+<p style="margin-top:14px">
+  Beacon cannot create Registry standing or change an SREG lifecycle by referencing it.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Chronicle</div>
+<h2>Historical Authority</h2>
+<p>
+  Beacon may discover and reference a Chronicle Entry.
+</p>
+<div class="note">
+  Historical Signal ≠ Chronicle Entry
+</div>
+<p style="margin-top:14px">
+  Discovery does not itself establish Chronicle Preservation Eligibility or historical institutional standing.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Anchor</div>
+<h2>Integrity Authority</h2>
+<p>
+  Beacon may reference an Anchor Integrity Reference and preserve the provenance of that observation.
+</p>
+<div class="note">
+  Integrity Signal ≠ Integrity Reference
+</div>
+<p style="margin-top:14px">
+  Beacon does not perform Anchor's integrity function merely by discovering its output.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Attestor</div>
+<h2>Trust Authority</h2>
+<p>
+  Beacon may discover and reference an Attestor Trust Statement.
+</p>
+<div class="note">
+  Trust Signal ≠ Trust Statement
+</div>
+<p style="margin-top:14px">
+  Beacon's discovery classification must never be interpreted as a substitute trust determination.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Navigator</div>
+<h2>Workflow Authority</h2>
+<p>
+  Beacon may operate within a Navigator-directed workflow and preserve the workflow reference as context or provenance.
+</p>
+<div class="note">
+  Navigator owns → Workflow Definition / Orchestration<br/>
+  Beacon owns → its discovery output and Discovery Signals
+</div>
+</article>
+
+<article class="card">
+<div class="badge">External</div>
+<h2>External Source Authority</h2>
+<p>
+  External sources retain their own identity, provenance, authorship, status, and whatever authority they legitimately possess outside the Suite.
+</p>
+<div class="note">
+  External discovery ≠ Suite authority
+</div>
+<p style="margin-top:14px">
+  Beacon may attribute an external source. It must not imply that inclusion converts the source into a Suite-authoritative object.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Three-Layer Reference Model</h2>
+<div class="note">
+  <strong>Layer 1 — Referenced Object</strong><br/>
+  The source or canonical object retains its native identity and institutional authority.<br/><br/>
+  <strong>Layer 2 — Beacon Reference</strong><br/>
+  Beacon preserves the object's identifier, institution, object type, source location, and relationship where applicable.<br/><br/>
+  <strong>Layer 3 — Beacon Discovery Signal</strong><br/>
+  Beacon owns the signal that records why the referenced object is discoverably relevant.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Identity Preservation</h2>
+<p>Referenced objects retain their native identifiers.</p>
+<div class="note">
+  BEAC-2026-0001 → Beacon Discovery Signal<br/>
+  ANCH-2026-0001 → Anchor Integrity Reference
+</div>
+<p style="margin-top:14px">
+  A reference should never rename <strong>ANCH-2026-0001</strong> as though it were a Beacon object.
+</p>
+</article>
+
+<article class="card">
+<h2>Object-Type Preservation</h2>
+<p>
+  Beacon should preserve the source object's actual institutional type when known.
+</p>
+<div class="note">
+  Source Object Type → Integrity Reference<br/>
+  Beacon Signal Type → Integrity
+</div>
+<p style="margin-top:14px">
+  These fields are related, but they are not interchangeable.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Authority Attribution</h2>
+<p>
+  When Beacon repeats or exposes an institution-owned determination, the determination should remain attributable to that institution.
+</p>
+<div class="note">
+  Correct → Registry reports SREG-2026-0001 as [source-owned status].<br/><br/>
+  Incorrect → Beacon independently assigns Registry standing to SREG-2026-0001.
+</div>
+<p style="margin-top:14px">
+  Beacon may report what the source says. It must distinguish that from what Beacon itself determines.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Beacon-Owned Determinations</h2>
+<p>Beacon may determine matters within its own institutional domain, including:</p>
+<ul>
+<li>Whether a Beacon Discovery Signal exists</li>
+<li>Its Signal Type</li>
+<li>Its Beacon lifecycle state</li>
+<li>Its Beacon publication state</li>
+<li>Its Discovery Metadata</li>
+<li>Its provenance record</li>
+<li>Whether it conforms to Beacon Validation</li>
+<li>Its Beacon version/supersession relationships</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Source-Owned Determinations</h2>
+<p>Beacon must attribute determinations owned elsewhere, including:</p>
+<ul>
+<li>Atlas intelligence authority</li>
+<li>Certifier certification decisions</li>
+<li>Registry registration standing</li>
+<li>Chronicle preservation decisions</li>
+<li>Anchor integrity determinations</li>
+<li>Attestor trust determinations</li>
+<li>Navigator workflow definitions</li>
+<li>External source assertions and source-native status</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Reference Does Not Equal Endorsement</h2>
+<p>
+  A Beacon reference means that the source or object is relevant to the discovery represented by the signal.
+</p>
+<p>It does not automatically mean Beacon:</p>
+<ul>
+<li>endorses the source</li>
+<li>agrees with every source assertion</li>
+<li>certifies the source</li>
+<li>trusts the source</li>
+<li>guarantees source correctness</li>
+<li>adopts the source's institutional authority</li>
+</ul>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Reference Does Not Equal Truth</h2>
+<p>
+  Beacon can accurately record that a source made an assertion even if that assertion later proves incorrect.
+</p>
+<div class="note">
+  Beacon truth claim → “This is what was observed from this source at this time.”<br/><br/>
+  Not automatically → “The underlying assertion is universally true.”
+</div>
+</article>
+
+<article class="card">
+<h2>Reference Does Not Equal Validation</h2>
+<p>
+  Beacon Validation tests whether the Discovery Signal conforms to Beacon production rules.
+</p>
+<div class="note">
+  Valid Beacon signal ≠ validated truth of every referenced source claim
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Reference Integrity Requirements</h2>
+<p>A production reference should preserve, when applicable:</p>
+<ul>
+<li>Referenced institution or source</li>
+<li>Native identifier</li>
+<li>Native object type</li>
+<li>Source location</li>
+<li>Relationship to the Beacon signal</li>
+<li>Observation provenance</li>
+<li>Source-owned status only with attribution</li>
+</ul>
+<div class="note">
+  A reference should contain enough information to identify what is being referenced without reconstructing the referenced object inside Beacon.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>No Canonical Duplication</h2>
+<p>
+  Beacon should not copy another institution's canonical object into a Beacon structure and then treat the copy as independently authoritative.
+</p>
+<div class="note">
+  Reference the canonical object.<br/>
+  Preserve enough context for discovery.<br/>
+  Return to the source for source authority.
+</div>
+</article>
+
+<article class="card">
+<h2>No Authority Laundering</h2>
+<p>
+  Information must not gain an appearance of greater institutional authority merely because Beacon discovered, indexed, published, or linked to it.
+</p>
+<div class="note">
+  Discovery visibility must never be mistaken for institutional elevation.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>External Source Boundary</h2>
+<p>
+  Beacon may preserve external information as discovery evidence or context while clearly distinguishing it from Suite-owned canonical authority.
+</p>
+<div class="note">
+  External Source<br/>
+  ↓ observed and attributed<br/>
+  Beacon Discovery Signal<br/><br/>
+  External Source remains external.
+</div>
+<p style="margin-top:14px">
+  If later Suite institutions certify, register, chronicle, anchor, or attest something related to that source,
+  those are separate institutional actions producing separate institution-owned objects.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Source Changes</h2>
+<p>
+  If a referenced source changes status, content, location, or availability, Beacon may record the new observation.
+</p>
+<div class="note">
+  Beacon may update its understanding of the reference.<br/>
+  Beacon may not rewrite the source institution's authority.
+</div>
+</article>
+
+<article class="card">
+<h2>Broken or Unavailable References</h2>
+<p>
+  Loss of source availability does not automatically erase a Discovery Signal or its historical provenance.
+</p>
+<div class="note">
+  Preserve historical reference.<br/>
+  Record later availability condition.<br/>
+  Apply Beacon lifecycle/version rules when appropriate.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Reference Structure</h2>
+<div class="note">
+  canonical_reference:<br/>
+  &nbsp;&nbsp;institution<br/>
+  &nbsp;&nbsp;identifier<br/>
+  &nbsp;&nbsp;object_type<br/>
+  &nbsp;&nbsp;source_location<br/>
+  &nbsp;&nbsp;relationship<br/>
+  &nbsp;&nbsp;observed_status<br/>
+  &nbsp;&nbsp;attribution
+</div>
+<p style="margin-top:14px">
+  This is an architectural representation, not a frozen machine-readable property model.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Relationship to Provenance</h2>
+<p>
+  Authority tells Beacon whose determination it is. Provenance tells Beacon how the referenced information was observed.
+</p>
+<div class="note">
+  Authority → ownership of meaning / determination<br/>
+  Provenance → lineage of discovery
+</div>
+</article>
+
+<article class="card">
+<h2>Relationship to Relationships</h2>
+<p>
+  The Authority Model establishes who owns the endpoints.
+  The next Relationship Model will define how Beacon represents governed connections between them.
+</p>
+<div class="note">
+  Authority first → Relationship semantics second
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Is Now Established</h2>
+<ul>
+<li>Beacon owns Discovery Signals and Discovery Metadata</li>
+<li>Beacon owns Beacon lifecycle, publication, validation, provenance, and version determinations about its own signals</li>
+<li>Referenced canonical objects remain owned by their originating institutions</li>
+<li>External sources remain external</li>
+<li>Native source identifiers and object types must be preserved</li>
+<li>Source-owned status and determinations must remain attributed</li>
+<li>A Beacon reference does not equal endorsement</li>
+<li>A Beacon reference does not equal truth</li>
+<li>A Beacon reference does not equal certification, registration, integrity verification, or trust</li>
+<li>Beacon must not duplicate another institution's canonical authority</li>
+<li>Discovery visibility must not be used to launder or elevate authority</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<ul>
+<li>Exact machine-readable canonical-reference property names</li>
+<li>Formal authority-attribution field vocabulary</li>
+<li>Reference resolution behavior</li>
+<li>Rules for inaccessible or restricted canonical objects</li>
+<li>External-source authority classifications, if any become necessary</li>
+<li>Reference correction mechanics</li>
+<li>Reference-resolution automation</li>
+<li>Whether some specialized Signal Types require specific source institutions</li>
+</ul>
+<div class="note">
+  These should be resolved through later Relationship, Methodology, and production work rather than assumed prematurely.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Governing Rule</h2>
+<div class="note">
+  Beacon may discover.<br/>
+  Beacon may reference.<br/>
+  Beacon may attribute.<br/>
+  Beacon may preserve provenance.<br/>
+  Beacon may create its own Discovery Signal.<br/><br/>
+  Beacon may not acquire another institution's authority merely by doing so.<br/><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal Types → Defined<br/>
+  Lifecycle → Defined<br/>
+  Identifier Standard → Defined<br/>
+  Schemas → Defined<br/>
+  Validation → Defined<br/>
+  Discovery Provenance → Defined<br/>
+  Authority &amp; Reference Model → Defined<br/>
+  Relationship Model → Next<br/>
+  First Production Discovery Signal → Not yet created
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  A reference can carry meaning across institutions without carrying ownership with it.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
