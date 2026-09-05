@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Discovery Signal Types</title>
+<meta name="description" content="Satoshium Beacon Discovery Signal Types — governed classification architecture for Beacon-owned Discovery Signals."/>
+<link rel="canonical" href="https://satoshium.us/beacon/signal-types/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px} a{color:var(--gold2);text-decoration:none} a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card h3{margin:18px 0 8px;font-size:18px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Discovery Signal Types</h1>
+<p class="lead">
+  Discovery Signal Types establish the governed classification vocabulary used to describe
+  what kind of discovery a Beacon-owned Discovery Signal represents.
+</p>
+<p class="lead">
+  Signal Type classifies the signal. It does not transfer the authority, status, or institutional
+  meaning of the source object into Beacon.
+</p>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>
+  The Entry Model established <strong>Signal Type</strong> as a structural component of every
+  Discovery Signal. This page defines the initial classification architecture for that component.
+</p>
+<div class="note">
+  Entry Model → establishes that a signal has a type.<br/><br/>
+  Signal Types → establishes what those classifications mean.
+</div>
+</article>
+
+<article class="card">
+<h2>Classification Principle</h2>
+<p>
+  A Signal Type should describe the nature of the discovery, not duplicate the institutional
+  authority of the source.
+</p>
+<div class="note">
+  Signal Type → discovery classification<br/>
+  Source Object Type → source identity<br/>
+  Source Status → source authority<br/><br/>
+  These are related, but they are not interchangeable.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Initial Signal-Type Architecture</h2>
+<p>
+  Phase I established several recurring discovery categories. Phase II carries these forward
+  as the initial architectural vocabulary to be tested against later schema, validation, and production work.
+</p>
+<div class="note">
+  Information · Jurisdiction · Certification · Registry · Historical · Integrity · Trust · Relationship
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Information Signal</h2>
+<p>
+  Identifies information whose discovery is relevant enough to preserve as a Beacon signal
+  but whose primary discovery meaning is not better represented by a more specialized governed type.
+</p>
+<ul>
+<li>General information discovery</li>
+<li>Relevant update or observation</li>
+<li>Attributable source required</li>
+<li>May reference internal or external information</li>
+</ul>
+<div class="note">
+  Information should not become a catch-all substitute for a more precise signal type.
+</div>
+</article>
+
+<article class="card">
+<h2>Jurisdiction Signal</h2>
+<p>
+  Identifies discovery associated with a jurisdiction, jurisdictional condition, or relevant
+  jurisdiction intelligence.
+</p>
+<ul>
+<li>May reference Atlas Authoritative Intelligence</li>
+<li>May identify jurisdiction-related external information</li>
+<li>Preserves jurisdiction context</li>
+<li>Does not create or modify Atlas authority</li>
+</ul>
+<div class="note">
+  Beacon signals jurisdiction relevance. Atlas remains authoritative for Atlas-owned intelligence.
+</div>
+</article>
+
+<article class="card">
+<h2>Certification Signal</h2>
+<p>
+  Identifies certification-related information observed from an authoritative source.
+</p>
+<ul>
+<li>May reference a Certification Package</li>
+<li>May reference a related SREG</li>
+<li>May describe an observed certification state or change</li>
+<li>Uses the specialized Certification Signals architecture where applicable</li>
+</ul>
+<div class="note">
+  Certifier owns certification authority. Beacon owns the Discovery Signal.
+</div>
+</article>
+
+<article class="card">
+<h2>Registry Signal</h2>
+<p>
+  Identifies discovery associated with Registry-owned records, registration activity,
+  catalog state, or other relevant Registry information.
+</p>
+<ul>
+<li>May reference an SREG</li>
+<li>May identify registration or lifecycle relevance</li>
+<li>Preserves Registry as source institution</li>
+<li>Does not create or alter registration</li>
+</ul>
+<div class="note">
+  Beacon may signal Registry information. Registry remains authoritative for SREG.
+</div>
+</article>
+
+<article class="card">
+<h2>Historical Signal</h2>
+<p>
+  Identifies discovery associated with historically preserved material or a relevant
+  Chronicle Entry.
+</p>
+<ul>
+<li>May reference a Chronicle Entry</li>
+<li>May identify historical relevance</li>
+<li>May connect discovery to a preserved Occurrence</li>
+<li>Does not determine Preservation Eligibility</li>
+</ul>
+<div class="note">
+  Chronicle owns historical preservation. Beacon exposes discovery context around it.
+</div>
+</article>
+
+<article class="card">
+<h2>Integrity Signal</h2>
+<p>
+  Identifies discovery associated with integrity information or an Anchor-owned Integrity Reference.
+</p>
+<ul>
+<li>May reference an Integrity Reference</li>
+<li>May surface verification or integrity-related context</li>
+<li>Preserves Anchor as source authority</li>
+<li>Does not perform Anchor Verification</li>
+</ul>
+<div class="note">
+  Beacon discovers integrity information. Anchor owns the Integrity Reference and integrity-preservation process.
+</div>
+</article>
+
+<article class="card">
+<h2>Trust Signal</h2>
+<p>
+  Identifies discovery associated with trust-related information or an Attestor-owned Trust Statement.
+</p>
+<ul>
+<li>May reference a Trust Statement</li>
+<li>May surface trust-related context</li>
+<li>May identify a relevant trust-related change or observation</li>
+<li>Does not itself constitute trust assessment</li>
+</ul>
+<div class="note">
+  A Trust Signal is not a Trust Statement. Attestor retains trust-assessment authority.
+</div>
+</article>
+
+<article class="card">
+<h2>Relationship Signal</h2>
+<p>
+  Identifies a meaningful discovered relationship between objects, institutions, sources,
+  subjects, or other governed entities.
+</p>
+<ul>
+<li>Preserves both relationship endpoints</li>
+<li>Preserves relationship provenance</li>
+<li>May connect Suite and external references</li>
+<li>Does not manufacture relationships unsupported by evidence</li>
+</ul>
+<div class="note">
+  A relationship should be signaled only when its basis is attributable and reviewable.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Signal Type vs. Source Object Type</h2>
+<p>
+  Beacon must not assume that the type of a referenced source object automatically determines
+  the Discovery Signal Type.
+</p>
+<div class="note">
+  Source Object → what the referenced object is.<br/>
+  Signal Type → what kind of discovery Beacon is recording.<br/><br/>
+  One source object may support different discoveries in different contexts.
+</div>
+<p style="margin-top:14px">
+  For example, an Integrity Reference may be the source for an Integrity Signal, but it might also
+  participate in a Relationship Signal when the discovered fact concerns its governed relationship
+  to another object.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Specialized Signal Profiles</h2>
+<p>
+  A general Signal Type may support a specialized profile when a domain requires additional
+  controlled semantics.
+</p>
+<p>
+  The first established example is:
+</p>
+<div class="note">
+  Certification Signal<br/>
+  → specialized through <strong>/beacon/certification-signals/</strong>
+</div>
+<p style="margin-top:14px">
+  Specialized profiles may refine metadata or permitted values without changing Beacon's
+  institutional ownership of the Discovery Signal.
+</p>
+</article>
+
+<article class="card">
+<h2>Multiple Relevant Classifications</h2>
+<p>
+  A discovery may appear to touch more than one category. Production architecture should prefer
+  the type that best expresses the signal's primary discovery meaning.
+</p>
+<div class="note">
+  Prefer one primary governed Signal Type.<br/><br/>
+  Preserve secondary context through references, metadata, and relationships rather than uncontrolled multi-classification.
+</div>
+<p style="margin-top:14px">
+  Whether production will permit secondary classifications remains intentionally unfrozen.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Type Assignment Requirements</h2>
+<p>
+  A Signal Type should eventually be assignable only when the signal provides sufficient
+  evidence and context to support that classification.
+</p>
+<ul>
+<li>Type must come from governed vocabulary</li>
+<li>Source must be attributable</li>
+<li>Classification must match discovery context</li>
+<li>Specialized profiles must satisfy their own requirements</li>
+<li>Type must not imply unsupported authority</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>What Signal Type Does Not Establish</h2>
+<p>
+  Classification alone does not establish:</p>
+<ul>
+<li>truth</li>
+<li>certification</li>
+<li>registration</li>
+<li>historical significance</li>
+<li>integrity verification</li>
+<li>trust</li>
+<li>source authority</li>
+<li>publication eligibility</li>
+</ul>
+<div class="note">
+  Signal Type classifies discovery. Other institutions and later Beacon processes govern the rest.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Controlled Vocabulary Posture</h2>
+<p>
+  The eight initial types are established here as Beacon's Phase II architectural classification set.
+  Their final machine-readable values, schema constraints, aliases, extensibility rules, and validation
+  behavior remain subject to later production architecture.
+</p>
+<div class="note">
+  Architectural types → established<br/>
+  Machine-readable enum values → not yet frozen<br/>
+  Schema enforcement → pending<br/>
+  Validation enforcement → pending<br/>
+  Production proof → pending
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Authority Boundary</h2>
+<p>
+  A Discovery Signal Type describes Beacon's discovery object. It does not convert the source
+  institution's authority into Beacon authority.
+</p>
+<div class="note">
+  Certification Signal ≠ Certification Package<br/>
+  Registry Signal ≠ SREG<br/>
+  Historical Signal ≠ Chronicle Entry<br/>
+  Integrity Signal ≠ Integrity Reference<br/>
+  Trust Signal ≠ Trust Statement<br/><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationship to the Entry Model</h2>
+<p>
+  Signal Type now occupies a defined place inside the Discovery Signal Entry Model:
+</p>
+<div class="note">
+  Identity → Subject → <strong>Signal Type</strong> → Source → Provenance → Canonical References →
+  Discovery Metadata → Timestamps → Version → Status → Relationships
+</div>
+<p style="margin-top:14px">
+  The next Phase II task will define how a Discovery Signal moves through institutional states over time.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal-Type Architecture → Defined<br/>
+  Initial Architectural Types → 8<br/>
+  Machine-Readable Vocabulary → Not yet frozen<br/>
+  Production Validation → Pending<br/>
+  First Production Discovery Signal → Not yet created
+</div>
+</article>
+</section>
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  Classify the discovery without inheriting the authority.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
