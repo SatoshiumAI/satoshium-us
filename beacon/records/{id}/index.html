@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Record</title>
+<meta name="description" content="Satoshium Beacon Record — architecture for the canonical public HTML representation of an individual published Discovery Signal."/>
+<link rel="canonical" href="https://satoshium.us/beacon/records/{id}/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:950px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+.badge{display:inline-flex;padding:5px 9px;border-radius:999px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.05);color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{color:var(--gold2)}td{color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}.table-wrap{overflow-x:auto}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Beacon Record</h1>
+<p class="lead">
+  A Beacon Record page is the canonical public HTML representation of one published Discovery Signal.
+  Each production Discovery Signal receives its own permanent page beneath <strong>/beacon/records/</strong>,
+  identified by its canonical BEAC identifier.
+</p>
+<div class="note"><strong>Beacon Records is the index. A Beacon Record is the public representation of one canonical Discovery Signal.</strong></div>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>An individual Beacon Record answers:</p>
+<div class="note">
+  What is this Discovery Signal?<br/>
+  What is its canonical BEAC identity?<br/>
+  What did Beacon discover?<br/>
+  Where did the discovery come from?<br/>
+  What references and relationships support it?<br/>
+  What is its current institutional state?
+</div>
+</article>
+
+<article class="card">
+<h2>Records Hierarchy</h2>
+<div class="note">
+  /beacon/records/<br/>
+  → Beacon Records<br/>
+  → index of published Discovery Signals<br/><br/>
+  /beacon/records/BEAC-2026-0001/<br/>
+  → Beacon Record<br/>
+  → one published Discovery Signal
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Canonical Identity</h2>
+<p>
+  The permanent record path derives from the Discovery Signal's canonical BEAC identifier.
+</p>
+<div class="note">
+  Canonical Identifier → BEAC-2026-0001<br/>
+  Canonical Public Path → /beacon/records/BEAC-2026-0001/
+</div>
+<p style="margin-top:14px">
+  The page does not receive a separate public-record identifier. The BEAC identifier remains the identity of the underlying Discovery Signal.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Canonical Object</div>
+<h2>Discovery Signal</h2>
+<p>
+  The Discovery Signal is the Beacon-owned institutional object.
+</p>
+<div class="note">
+  Identity → BEAC-YYYY-NNNN
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Public Representation</div>
+<h2>Beacon Record</h2>
+<p>
+  The Beacon Record page exposes the governed public representation of that Discovery Signal.
+</p>
+<div class="note">
+  Beacon Record page<br/>
+  ≠ second canonical object
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Canonical Record Structure</h2>
+<p>
+  The individual public representation should follow the Discovery Signal Entry Model.
+</p>
+<div class="note">
+  Identity<br/>
+  ↓<br/>
+  Subject<br/>
+  ↓<br/>
+  Signal Type<br/>
+  ↓<br/>
+  Source<br/>
+  ↓<br/>
+  Provenance<br/>
+  ↓<br/>
+  Canonical References<br/>
+  ↓<br/>
+  Discovery Metadata<br/>
+  ↓<br/>
+  Timestamps<br/>
+  ↓<br/>
+  Version<br/>
+  ↓<br/>
+  Status<br/>
+  ↓<br/>
+  Relationships
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Public Record Fields</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Component</th><th>Public Purpose</th></tr></thead>
+<tbody>
+<tr><td>BEAC Identifier</td><td>Identifies the canonical Discovery Signal.</td></tr>
+<tr><td>Subject</td><td>Defines what the signal concerns.</td></tr>
+<tr><td>Signal Type</td><td>Identifies the primary Beacon discovery classification.</td></tr>
+<tr><td>Discovery Summary</td><td>Explains the discovered information or condition in human-readable form.</td></tr>
+<tr><td>Source</td><td>Identifies the source Beacon observed.</td></tr>
+<tr><td>Provenance</td><td>Preserves the reviewable discovery path.</td></tr>
+<tr><td>Canonical References</td><td>Identifies referenced Suite canonical objects when applicable.</td></tr>
+<tr><td>Discovery Metadata</td><td>Provides Beacon-owned descriptive context.</td></tr>
+<tr><td>Lifecycle State</td><td>Shows the signal's current institutional state.</td></tr>
+<tr><td>Publication State</td><td>Shows the public-release state.</td></tr>
+<tr><td>Version</td><td>Identifies the governed representation being shown.</td></tr>
+<tr><td>Timestamps</td><td>Distinguishes observation, creation, publication, and later events.</td></tr>
+<tr><td>Relationships</td><td>Represents governed connections to other objects when applicable.</td></tr>
+<tr><td>Historical Context</td><td>Shows supersession, resolution, withdrawal, or version history when applicable.</td></tr>
+</tbody>
+</table>
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Identity</h2>
+<p>
+  The BEAC identifier should be prominent and preserved exactly.
+</p>
+<div class="note">
+  BEAC-2026-0001
+</div>
+</article>
+
+<article class="card">
+<h2>Subject</h2>
+<p>
+  The subject should make clear what Beacon discovered without implying authority Beacon does not possess.
+</p>
+</article>
+
+<article class="card">
+<h2>Signal Type</h2>
+<p>
+  The page should expose one primary governed Signal Type.
+</p>
+<div class="note">
+  Information · Jurisdiction · Certification · Registry<br/>
+  Historical · Integrity · Trust · Relationship
+</div>
+</article>
+
+<article class="card">
+<h2>Discovery Summary</h2>
+<p>
+  A human-readable summary should explain the discovery while remaining faithful to the source and Beacon's institutional role.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Source</h2>
+<p>
+  The Record should identify what Beacon actually observed and preserve source attribution.
+</p>
+<div class="note">
+  Source Identity<br/>
+  + Source Institution / Publisher<br/>
+  + Native Identifier when applicable<br/>
+  + Source Location when publishable
+</div>
+<p style="margin-top:14px">
+  The source remains independently owned. Beacon owns the Discovery Signal and its representation of the discovery.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Provenance</h2>
+<p>
+  The public Record should preserve enough provenance for a reviewer to understand how the Discovery Signal arose.
+</p>
+<div class="note">
+  Source / Authoritative Object<br/>
+  ↓<br/>
+  Observation<br/>
+  ↓<br/>
+  Discovery Context<br/>
+  ↓<br/>
+  Beacon Discovery Signal<br/>
+  ↓<br/>
+  Public Provenance
+</div>
+<p style="margin-top:14px">
+  Public provenance may be a governed subset of Beacon's internal provenance when legitimate disclosure restrictions apply.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Canonical References</h2>
+<p>
+  Referenced Suite objects should retain their native identifiers and institutional ownership.
+</p>
+<div class="note">
+  Beacon → BEAC-2026-0001<br/>
+  Anchor → ANCH-2026-0001
+</div>
+</article>
+
+<article class="card">
+<h2>External References</h2>
+<p>
+  External sources remain external even when they are referenced by a published Beacon Record.
+</p>
+<div class="note">
+  External discovery<br/>
+  ≠ Suite authority
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Authority Boundary</h2>
+<p>
+  The Beacon Record is authoritative for Beacon's own Discovery Signal and Beacon-owned determinations.
+</p>
+<p>It does not become authoritative for source-owned determinations merely because those determinations are referenced.</p>
+<div class="note">
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Beacon-Owned Information</h2>
+<ul>
+<li>BEAC identifier</li>
+<li>Signal Type</li>
+<li>Discovery Metadata</li>
+<li>Beacon provenance</li>
+<li>Lifecycle State</li>
+<li>Publication State</li>
+<li>Version / supersession information</li>
+<li>Beacon-governed relationship representation</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Source-Owned Information</h2>
+<ul>
+<li>Source canonical identity</li>
+<li>Source-native object type</li>
+<li>Source-native status</li>
+<li>Source institutional determinations</li>
+<li>Source-native version information</li>
+<li>External assertions and authorship</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Lifecycle &amp; Publication</h2>
+<p>
+  The Record should display Lifecycle State and Publication State separately.
+</p>
+<div class="note">
+  Lifecycle → Active / Superseded / Resolved / Withdrawn<br/>
+  Publication → Published
+</div>
+<p style="margin-top:14px">
+  A historically published Record may remain publicly reviewable after its lifecycle changes.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Current Version</h2>
+<p>
+  The default canonical Record page should identify the current governed version.
+</p>
+<div class="note">
+  BEAC-2026-0001<br/>
+  Current Version → 2
+</div>
+</article>
+
+<article class="card">
+<h2>Historical Versions</h2>
+<p>
+  Materially superseded versions should remain traceable where governance permits.
+</p>
+<div class="note">
+  Current does not mean only.<br/>
+  Historical does not mean deleted.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Version Continuity</h2>
+<div class="note">
+  BEAC-2026-0001 v1<br/>
+  ↓ revised by<br/>
+  BEAC-2026-0001 v2<br/>
+  ↓ revised by<br/>
+  BEAC-2026-0001 v3
+</div>
+<p style="margin-top:14px">
+  The canonical BEAC identifier remains stable across governed versions of the same Discovery Signal.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Superseded Record</h2>
+<p>
+  If a Discovery Signal is Superseded, its page should clearly identify that state and the replacement when one exists.
+</p>
+</article>
+
+<article class="card">
+<h2>Resolved Record</h2>
+<p>
+  If a signal is Resolved, the Record should preserve the historical discovery and governed resolution context.
+</p>
+</article>
+
+<article class="card">
+<h2>Withdrawn Record</h2>
+<p>
+  If a previously published signal is Withdrawn, the public page should preserve appropriate historical notice where governance permits.
+</p>
+</article>
+
+<article class="card">
+<h2>Unavailable Source</h2>
+<p>
+  If a source later disappears or moves, the Record should preserve the original observation and later availability context rather than silently rewriting history.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationships</h2>
+<p>
+  The Record should expose governed relationships when they are relevant and publishable.
+</p>
+<div class="note">
+  Endpoint A<br/>
+  + explicit relationship meaning<br/>
+  + Endpoint B<br/>
+  + attribution<br/>
+  + provenance<br/>
+  = reviewable relationship
+</div>
+<p style="margin-top:14px">
+  Relationships connect independently owned objects. They do not merge them.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Cross-Suite Example</h2>
+<div class="note">
+  Beacon Record<br/>
+  BEAC-2026-0001<br/><br/>
+  Signal Type → Certification<br/>
+  Source Reference → SC-CERT-2026-0001<br/>
+  Related Registry Reference → SREG-2026-0001<br/>
+  Related Integrity Reference → ANCH-2026-0001
+</div>
+<p style="margin-top:14px">
+  These remain separate canonical objects owned by Beacon, Certifier, Registry, and Anchor respectively.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Timestamps</h2>
+<p>The Record should distinguish relevant temporal facts.</p>
+<div class="note">
+  observed_at<br/>
+  created_at<br/>
+  published_at<br/>
+  version-created time<br/>
+  supersession / resolution time when applicable
+</div>
+</article>
+
+<article class="card">
+<h2>Temporal Integrity</h2>
+<p>
+  Later observations must not silently rewrite what Beacon observed earlier.
+</p>
+<div class="note">
+  What Beacon observed then<br/>
+  ≠<br/>
+  What Beacon observes now
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Public Representation vs. Internal Record</h2>
+<p>
+  The canonical public HTML representation need not expose every internal Beacon field.
+</p>
+<div class="note">
+  Canonical Discovery Signal<br/>
+  ↓ governed publication<br/>
+  Public Beacon Record representation
+</div>
+<p style="margin-top:14px">
+  Privacy, security, access, source, or governance restrictions may limit what is publicly displayed without changing the identity of the underlying Discovery Signal.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Human-Readable First</h2>
+<p>
+  The Beacon Record page should make the institutional meaning of the Discovery Signal understandable to a human reviewer.
+</p>
+</article>
+
+<article class="card">
+<h2>Machine Alignment</h2>
+<p>
+  The HTML representation should remain consistent with Beacon schemas and future machine-readable representations.
+</p>
+<div class="note">
+  HTML presentation<br/>
+  ≠ separate institutional truth
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Record Conformance</h2>
+<div class="note">
+  Canonical BEAC identity matches<br/>
+  + Signal content matches governed version<br/>
+  + Lifecycle State matches<br/>
+  + Publication State matches<br/>
+  + Source attribution matches<br/>
+  + Provenance remains reviewable<br/>
+  + References preserve authority<br/>
+  + Relationships preserve endpoint identity<br/>
+  = Public Record Conformance
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Relationship to Beacon Records</h2>
+<p>
+  <strong>/beacon/records/</strong> helps users find published Discovery Signals.
+</p>
+<p>
+  <strong>/beacon/records/{id}/</strong> provides the individual canonical public representation.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Publication</h2>
+<p>
+  Publication determines whether the individual Beacon Record becomes publicly available.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Versioning</h2>
+<p>
+  Versioning determines which governed representation is current and preserves historical continuity.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Validation</h2>
+<p>
+  The public Record should represent a Discovery Signal that has passed applicable Beacon Validation and publication governance.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Public Record</h2>
+<div class="note">
+  beacon_record:<br/>
+  &nbsp;&nbsp;identifier<br/>
+  &nbsp;&nbsp;subject<br/>
+  &nbsp;&nbsp;signal_type<br/>
+  &nbsp;&nbsp;discovery_summary<br/>
+  &nbsp;&nbsp;source<br/>
+  &nbsp;&nbsp;provenance<br/>
+  &nbsp;&nbsp;canonical_references<br/>
+  &nbsp;&nbsp;discovery_metadata<br/>
+  &nbsp;&nbsp;lifecycle_state<br/>
+  &nbsp;&nbsp;publication_state<br/>
+  &nbsp;&nbsp;version<br/>
+  &nbsp;&nbsp;timestamps<br/>
+  &nbsp;&nbsp;relationships<br/>
+  &nbsp;&nbsp;historical_context
+</div>
+<p style="margin-top:14px">
+  Architectural only. The HTML page is a representation of the canonical Discovery Signal, not a newly defined canonical object named “Beacon Record.”
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>First Production Record</h2>
+<p>
+  No production Beacon Record exists yet.
+</p>
+<div class="note">
+  Future first canonical Discovery Signal → BEAC-2026-0001<br/>
+  Future permanent page → /beacon/records/BEAC-2026-0001/
+</div>
+<p style="margin-top:14px">
+  These remain architectural examples until Beacon completes its production methodology and performs its first governed institutional operation.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Is Now Established</h2>
+<ul>
+<li>Each published production Discovery Signal receives a permanent individual page beneath /beacon/records/</li>
+<li>The page path uses the canonical BEAC identifier</li>
+<li>The individual page is called a Beacon Record for human-facing navigation</li>
+<li>The Beacon Record page is a public representation, not a second canonical object</li>
+<li>The canonical institutional object remains the Discovery Signal</li>
+<li>The page follows the Discovery Signal Entry Model</li>
+<li>The BEAC identifier remains stable across governed versions of the same signal</li>
+<li>Source ownership and native identifiers remain preserved</li>
+<li>Public provenance must remain sufficient for meaningful review</li>
+<li>Lifecycle State and Publication State remain separate</li>
+<li>Historical versions, supersession, resolution, and withdrawal remain traceable where governance permits</li>
+<li>Relationships preserve endpoint identity and authority</li>
+<li>Public HTML and machine-readable representations should remain aligned</li>
+<li>No production BEAC record is claimed before the first governed Beacon operation occurs</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<ul>
+<li>Exact production page field labels and ordering</li>
+<li>Version-specific historical URL syntax</li>
+<li>Machine-readable companion format and link mechanics</li>
+<li>Public provenance depth by Signal Type</li>
+<li>Restricted-field presentation</li>
+<li>Correction-notice presentation</li>
+<li>Supersession and resolution banner format</li>
+<li>Withdrawn-record display mechanics</li>
+<li>Relationship presentation at production scale</li>
+<li>Exact first production Discovery Signal content</li>
+</ul>
+<div class="note">
+  These should be finalized through Beacon Discovery Methodology and the first production operation rather than through hypothetical records.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Governing Rules</h2>
+<div class="note">
+  One Discovery Signal → one canonical BEAC identity.<br/>
+  One published Discovery Signal → one permanent canonical record path.<br/>
+  Preserve source identity and attribution.<br/>
+  Preserve provenance.<br/>
+  Preserve authority boundaries.<br/>
+  Preserve lifecycle, publication, and version context.<br/>
+  Preserve historical continuity.<br/>
+  Do not silently rewrite earlier observations.<br/>
+  Do not create a second canonical object merely for HTML presentation.<br/><br/>
+  <strong>The Record represents the Discovery Signal. It does not replace it.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Beacon Records → Defined<br/>
+  Individual Beacon Record → Defined<br/>
+  Beacon Discovery Methodology → Next<br/>
+  First Production Discovery Signal → Not yet created<br/>
+  First Production Record → Not yet created<br/>
+  Production Proof → Pending<br/>
+  Operational → No
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  The Record represents the Discovery Signal. It does not replace it.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
