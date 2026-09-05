@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Versioning & Supersession</title>
+<meta name="description" content="Satoshium Beacon Versioning & Supersession — preserving canonical identity, temporal discovery state, revision history, and supersession."/>
+<link rel="canonical" href="https://satoshium.us/beacon/versioning/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:950px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+.badge{display:inline-flex;padding:5px 9px;border-radius:999px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.05);color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{color:var(--gold2)}td{color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}.table-wrap{overflow-x:auto}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Versioning &amp; Supersession</h1>
+<p class="lead">
+  Versioning &amp; Supersession defines how Beacon preserves canonical identity and historical discovery state
+  when a Discovery Signal changes, a source changes, an authoritative status changes, or an earlier signal
+  becomes obsolete. Discovery is temporal; Beacon must preserve what was known then without confusing it with what is known now.
+</p>
+<div class="note"><strong>Preserve the observation. Preserve the change. Preserve which representation is current.</strong></div>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>The model answers:</p>
+<div class="note">
+  When does a Discovery Signal need a new version?<br/>
+  When should a signal be superseded?<br/>
+  When should a new BEAC object be created instead?<br/>
+  What happens when the source changes?<br/>
+  How is historical state preserved?
+</div>
+</article>
+
+<article class="card">
+<h2>Temporal Principle</h2>
+<p>
+  Beacon records discovery at a point in time. A later observation may change Beacon's current understanding without invalidating the historical fact that the earlier observation occurred.
+</p>
+<div class="note">
+  What Beacon observed then<br/>
+  ≠<br/>
+  What Beacon observes now
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Identity and Version Are Separate</h2>
+<div class="note">
+  Canonical Identifier → BEAC-2026-0001<br/>
+  Version → governed revision of BEAC-2026-0001
+</div>
+<p style="margin-top:14px">
+  The BEAC identifier remains stable across revisions of the same Discovery Signal.
+  Version information must not be embedded into or replace the canonical identifier.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Same Object</div>
+<h2>New Version</h2>
+<p>
+  A new version is appropriate when the canonical Discovery Signal remains the same institutional object but its representation changes materially.
+</p>
+<ul>
+<li>Discovery Metadata materially corrected or expanded</li>
+<li>Provenance materially corrected or expanded</li>
+<li>A reference is corrected</li>
+<li>A relationship representation changes</li>
+<li>A later observation updates current context without creating a distinct discovery subject</li>
+</ul>
+</article>
+
+<article class="card">
+<div class="badge">New Object</div>
+<h2>New Discovery Signal</h2>
+<p>
+  A new BEAC identifier is appropriate when the later discovery is institutionally distinct rather than merely a revision of the earlier signal.
+</p>
+<ul>
+<li>New discovery subject</li>
+<li>New independent occurrence</li>
+<li>Materially different discovered relationship</li>
+<li>Distinct observation that should stand as its own canonical record</li>
+<li>Different institutional discovery requiring independent lifecycle</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Versioning Decision</h2>
+<div class="note">
+  Same canonical discovery subject?<br/>
+  ↓ yes<br/>
+  Does the change materially alter the Beacon representation?<br/>
+  ↓ yes<br/>
+  New Version<br/><br/>
+  Distinct discovery subject or independently meaningful discovery?<br/>
+  ↓ yes<br/>
+  New Discovery Signal / New BEAC Identifier
+</div>
+<p style="margin-top:14px">
+  The Beacon Discovery Methodology will later define the operational review used to make this determination.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Minor Change</h2>
+<p>
+  Not every editorial change should create a new institutional version.
+</p>
+<p>Examples may include:</p>
+<ul>
+<li>Non-substantive formatting</li>
+<li>Presentation-only changes</li>
+<li>Accessibility improvements that do not alter meaning</li>
+<li>Technical corrections outside canonical content</li>
+</ul>
+<div class="note">
+  Exact materiality thresholds remain subject to Methodology and production proof.
+</div>
+</article>
+
+<article class="card">
+<h2>Material Change</h2>
+<p>
+  A material change affects the institutional meaning, evidence, interpretation, or reviewability of the Discovery Signal.
+</p>
+<ul>
+<li>Changed discovery assertion</li>
+<li>Changed provenance basis</li>
+<li>Changed canonical reference</li>
+<li>Changed relationship meaning</li>
+<li>Changed current-source context</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Version Chain</h2>
+<div class="note">
+  BEAC-2026-0001 · Version 1<br/>
+  ↓ revised by<br/>
+  BEAC-2026-0001 · Version 2<br/>
+  ↓ revised by<br/>
+  BEAC-2026-0001 · Version 3
+</div>
+<p style="margin-top:14px">
+  Earlier versions remain part of the institutional history. Version 3 becoming current does not erase Versions 1 or 2.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Current Version</h2>
+<p>
+  Beacon should identify which version currently represents the canonical Discovery Signal.
+</p>
+<div class="note">
+  Canonical Identity → stable<br/>
+  Current Version → may change
+</div>
+</article>
+
+<article class="card">
+<h2>Historical Versions</h2>
+<p>
+  Earlier versions should remain traceable with their prior content, timestamps, provenance, and relationships to later versions.
+</p>
+<div class="note">
+  Current does not mean only.<br/>
+  Historical does not mean deleted.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Supersession</h2>
+<p>
+  Supersession is used when an earlier signal or version should no longer be treated as the current representation and a later object or version replaces it for current use.
+</p>
+<div class="note">
+  Earlier Signal / Version<br/>
+  ↓ superseded by<br/>
+  Later Signal / Version
+</div>
+<p style="margin-top:14px">
+  Supersession preserves the earlier institutional record while clearly directing current interpretation to the later representation.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Version Supersession</h2>
+<p>
+  A later version may supersede an earlier version under the same BEAC identifier.
+</p>
+<div class="note">
+  BEAC-2026-0001 v1<br/>
+  ↓ superseded by<br/>
+  BEAC-2026-0001 v2
+</div>
+</article>
+
+<article class="card">
+<h2>Signal Supersession</h2>
+<p>
+  A distinct Discovery Signal may supersede an earlier signal when the later discovery is institutionally separate but replaces the earlier signal for current discovery use.
+</p>
+<div class="note">
+  BEAC-2026-0001<br/>
+  ↓ superseded by<br/>
+  BEAC-2026-0002
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Lifecycle and Supersession</h2>
+<p>
+  Superseded is already a canonical Beacon lifecycle state.
+</p>
+<div class="note">
+  Draft → Active → Superseded
+</div>
+<p style="margin-top:14px">
+  A signal entering Superseded should identify the governed replacement when one exists.
+  The replacement remains a separate object or version according to the applicable versioning decision.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Resolved vs. Superseded</h2>
+<p>
+  These lifecycle outcomes have different meanings.
+</p>
+<div class="note">
+  Resolved → the discovery condition has reached a governed conclusion or no longer requires active discovery treatment.<br/><br/>
+  Superseded → a later representation replaces the earlier one for current use.
+</div>
+</article>
+
+<article class="card">
+<h2>Withdrawn vs. Superseded</h2>
+<p>
+  Withdrawal does not necessarily imply a replacement.
+</p>
+<div class="note">
+  Withdrawn → Beacon removes its own signal from active institutional standing for a governed reason.<br/><br/>
+  Superseded → another representation replaces it.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>When a Source Changes</h2>
+<p>
+  A source change is a new observation. It does not rewrite what Beacon observed earlier.
+</p>
+<div class="note">
+  Source State A<br/>
+  ↓ observed at Time 1<br/>
+  Beacon historical observation preserved<br/><br/>
+  Source State B<br/>
+  ↓ observed at Time 2<br/>
+  Beacon records later observation / appropriate revision
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Source Content Changes</h2>
+<p>
+  If source content materially changes, Beacon should preserve the original observation and determine whether the later observation requires:
+</p>
+<ul>
+<li>Re-observation metadata</li>
+<li>A new version</li>
+<li>A new Discovery Signal</li>
+<li>Supersession</li>
+<li>Resolution</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Source Availability Changes</h2>
+<p>
+  If a source moves or becomes unavailable, Beacon should not silently delete the original reference.
+</p>
+<ul>
+<li>Preserve original source identity</li>
+<li>Preserve original provenance</li>
+<li>Record later availability condition</li>
+<li>Update current representation when material</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>When Authoritative Status Changes</h2>
+<p>
+  A referenced Suite institution may change the lifecycle, status, version, or standing of its own canonical object.
+</p>
+<div class="note">
+  Source institution changes its object<br/>
+  ↓<br/>
+  Beacon observes the changed source-owned status<br/>
+  ↓<br/>
+  Beacon preserves attribution and determines what change is required to its own Discovery Signal
+</div>
+<p style="margin-top:14px">
+  Beacon does not perform the source institution's status change. It records its own later observation of that change.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Authority Boundary</h2>
+<p>
+  Versioning a Beacon signal never versions the referenced source object.
+</p>
+<div class="note">
+  Beacon versions → Beacon Discovery Signal<br/>
+  Source institution versions → source canonical object
+</div>
+</article>
+
+<article class="card">
+<h2>Reference Does Not Transfer Authority</h2>
+<p>
+  If a source object's status changes, Beacon may update the attributed source status it observed.
+</p>
+<div class="note">
+  Beacon reports the change.<br/>
+  Beacon does not own the change.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Obsolete Published Signals</h2>
+<p>
+  Publication does not freeze a Discovery Signal forever.
+  A published signal may later become obsolete.
+</p>
+<p>Beacon should preserve:</p>
+<ul>
+<li>The published historical representation</li>
+<li>The reason it is no longer current</li>
+<li>The later version or signal when applicable</li>
+<li>The supersession, resolution, or withdrawal relationship</li>
+<li>The relevant timestamps</li>
+</ul>
+<div class="note">
+  Obsolete does not mean erased.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Published + Superseded</h2>
+<p>
+  Publication State and Lifecycle State remain separate.
+</p>
+<div class="note">
+  Publication State → Published<br/>
+  Lifecycle State → Superseded
+</div>
+<p style="margin-top:14px">
+  A historically published signal may remain publicly reviewable while clearly marked as superseded.
+</p>
+</article>
+
+<article class="card">
+<h2>Published + Resolved</h2>
+<p>
+  A published signal may remain part of the public institutional record after resolution.
+</p>
+<div class="note">
+  Publication does not require perpetual Active status.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>No Silent Overwrite</h2>
+<p>
+  Material institutional content should not be silently replaced in place.
+</p>
+<div class="note">
+  Preserve prior representation<br/>
+  + record the change<br/>
+  + identify the current representation<br/>
+  = reviewable institutional history
+</div>
+<p style="margin-top:14px">
+  Silent overwrite destroys the temporal evidence Beacon exists to preserve.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Correction</h2>
+<p>
+  A correction addresses an error in Beacon's own representation.
+</p>
+<div class="note">
+  Error discovered<br/>
+  ↓<br/>
+  Correction documented<br/>
+  ↓<br/>
+  New version when material
+</div>
+</article>
+
+<article class="card">
+<h2>Update</h2>
+<p>
+  An update reflects later information or observation rather than merely correcting an earlier error.
+</p>
+<div class="note">
+  Earlier observation remains historically valid as an observation.<br/>
+  Later information changes current context.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Reason for Change</h2>
+<p>
+  Material revisions and supersession should preserve why the change occurred.
+</p>
+<p>Potential architectural reasons include:</p>
+<ul>
+<li>Correction</li>
+<li>Source Update</li>
+<li>Source Status Change</li>
+<li>New Observation</li>
+<li>Relationship Change</li>
+<li>Provenance Correction</li>
+<li>Superseding Discovery</li>
+<li>Resolution</li>
+<li>Withdrawal</li>
+</ul>
+<div class="note">
+  Final controlled change-reason vocabulary remains unfrozen.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Version Timestamps</h2>
+<p>Version history should preserve meaningful temporal distinctions.</p>
+<ul>
+<li>Version created time</li>
+<li>Observation time supporting the change</li>
+<li>Effective/current time when needed</li>
+<li>Publication time when published</li>
+<li>Supersession time when applicable</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Provenance Continuity</h2>
+<p>
+  A new version should preserve the provenance supporting the earlier representation and separately identify provenance supporting the change.
+</p>
+<div class="note">
+  Old basis remains reviewable.<br/>
+  New basis becomes reviewable.<br/>
+  The transition remains reviewable.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationship Continuity</h2>
+<p>
+  When relationships change, Beacon should preserve both the earlier relationship representation and the later governed state.
+</p>
+<div class="note">
+  Relationship at Time 1<br/>
+  ↓ changed observation<br/>
+  Relationship at Time 2<br/><br/>
+  Do not rewrite Time 1 as though Time 2 had always been true.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Version Validation</h2>
+<p>A material new version should pass applicable Beacon Validation before becoming the current Active representation.</p>
+<div class="note">
+  Revised Draft<br/>
+  ↓ Validation<br/>
+  Current Active Version
+</div>
+</article>
+
+<article class="card">
+<h2>Supersession Validation</h2>
+<p>
+  Supersession should identify the earlier object, the replacement, the reason, and the effective transition sufficiently for review.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Version Structure</h2>
+<div class="note">
+  version:<br/>
+  &nbsp;&nbsp;canonical_identifier<br/>
+  &nbsp;&nbsp;version<br/>
+  &nbsp;&nbsp;previous_version<br/>
+  &nbsp;&nbsp;change_reason<br/>
+  &nbsp;&nbsp;change_summary<br/>
+  &nbsp;&nbsp;supporting_provenance<br/>
+  &nbsp;&nbsp;created_at<br/>
+  &nbsp;&nbsp;current
+</div>
+<p style="margin-top:14px">
+  Architectural only. Exact machine-readable property names and version notation remain unfrozen.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Supersession Structure</h2>
+<div class="note">
+  supersession:<br/>
+  &nbsp;&nbsp;superseded_object<br/>
+  &nbsp;&nbsp;superseding_object<br/>
+  &nbsp;&nbsp;reason<br/>
+  &nbsp;&nbsp;effective_at<br/>
+  &nbsp;&nbsp;provenance
+</div>
+<p style="margin-top:14px">
+  Supersession may operate between versions of one BEAC identity or between distinct BEAC objects, depending on the institutional nature of the change.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Relationship to Lifecycle</h2>
+<p>
+  Versioning changes representation. Lifecycle describes institutional state.
+</p>
+<div class="note">
+  Version → which governed representation?<br/>
+  Lifecycle → what institutional state?
+</div>
+</article>
+
+<article class="card">
+<h2>Relationship to Publication</h2>
+<p>
+  Publication determines which representation is publicly released and how historical versions or superseded signals remain visible.
+</p>
+<div class="note">
+  Versioning preserves history.<br/>
+  Publication governs public exposure.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Relationship to Provenance</h2>
+<p>
+  Provenance explains the basis for the original observation and for later changes.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Authority</h2>
+<p>
+  Beacon versions only its own canonical Discovery Signals. Source institutions retain authority over changes to their own objects.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Is Now Established</h2>
+<ul>
+<li>Canonical BEAC identity and version are separate</li>
+<li>The BEAC identifier remains stable across revisions of the same signal</li>
+<li>Material changes require reviewable version treatment</li>
+<li>Distinct discoveries require new BEAC objects rather than identity reuse</li>
+<li>Earlier versions remain traceable</li>
+<li>Beacon should identify the current version</li>
+<li>Supersession preserves rather than erases earlier institutional state</li>
+<li>Supersession may occur between versions or distinct signals</li>
+<li>Source changes create later observations; they do not rewrite earlier observations</li>
+<li>Source-owned status changes remain source-owned and attributed</li>
+<li>Published signals may later become Superseded, Resolved, or Withdrawn</li>
+<li>Publication State and Lifecycle State remain separate</li>
+<li>Material institutional content must not be silently overwritten</li>
+<li>Corrections and later updates are conceptually distinct</li>
+<li>Material changes should preserve reason, timestamps, provenance, and continuity</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<ul>
+<li>Exact version notation</li>
+<li>Machine-readable version property names</li>
+<li>Materiality threshold for mandatory new versions</li>
+<li>Controlled change-reason vocabulary</li>
+<li>Whether minor editorial revisions receive separate technical revision tracking</li>
+<li>Formal current-version pointer mechanics</li>
+<li>Version publication rules</li>
+<li>Correction notice format</li>
+<li>Supersession effective-time rules</li>
+<li>Whether some changes mandate a new BEAC identifier by Signal Type</li>
+</ul>
+<div class="note">
+  These should be resolved through Publication, Methodology, and first production operation rather than frozen prematurely.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Governing Rules</h2>
+<div class="note">
+  Preserve canonical identity.<br/>
+  Preserve every material representation.<br/>
+  Preserve what Beacon observed at each relevant time.<br/>
+  Preserve why the representation changed.<br/>
+  Preserve provenance supporting the change.<br/>
+  Identify what is current.<br/>
+  Never silently rewrite institutional history.<br/><br/>
+  <strong>Discovery changes. History must not.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal Types → Defined<br/>
+  Lifecycle → Defined<br/>
+  Identifier Standard → Defined<br/>
+  Schemas → Defined<br/>
+  Validation → Defined<br/>
+  Discovery Provenance → Defined<br/>
+  Authority &amp; Reference Model → Defined<br/>
+  Relationship Model → Defined<br/>
+  Versioning &amp; Supersession → Defined<br/>
+  Publication Model → Next<br/>
+  First Production Discovery Signal → Not yet created
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  Discovery changes. History must not.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
