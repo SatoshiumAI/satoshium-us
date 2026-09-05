@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Discovery Signals Register</title>
+<meta name="description" content="The Satoshium Beacon Discovery Signals Register — the human-facing index of published canonical Beacon Discovery Signals."/>
+<link rel="canonical" href="https://satoshium.us/beacon/records/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:950px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+.badge{display:inline-flex;padding:5px 9px;border-radius:999px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.05);color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{color:var(--gold2)}td{color:var(--muted)}
+.empty{padding:28px;border:1px dashed rgba(214,163,74,.28);border-radius:16px;text-align:center;background:rgba(214,163,74,.03)}
+.empty strong{display:block;color:var(--gold2);font-size:20px;margin-bottom:6px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}.table-wrap{overflow-x:auto}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Discovery Signals Register</h1>
+<p class="lead">
+  The Discovery Signals Register is Beacon's human-facing index of published canonical Discovery Signals.
+  It provides a stable place to locate Beacon production objects, understand their current institutional state,
+  and follow each register entry to the authoritative Beacon record.
+</p>
+<div class="note"><strong>The Register catalogs Beacon objects. It does not create them, replace them, or become a second authority over them.</strong></div>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>The Register answers:</p>
+<div class="note">
+  What Discovery Signals has Beacon published?<br/>
+  What is each signal's BEAC identifier?<br/>
+  What type of discovery does it represent?<br/>
+  What is its current lifecycle state and version?<br/>
+  Where is the individual canonical record?
+</div>
+</article>
+
+<article class="card">
+<h2>Institutional Boundary</h2>
+<p>
+  The Register is a public index over Beacon-owned canonical objects.
+</p>
+<div class="note">
+  Discovery Signal → canonical Beacon object<br/>
+  Register entry → index representation of that object<br/><br/>
+  Register entry ≠ second canonical object
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Register Scope</h2>
+<p>
+  The public Discovery Signals Register is intended to expose Beacon Discovery Signals whose Publication State is Published.
+</p>
+<div class="note">
+  Published Beacon Discovery Signals<br/>
+  ↓<br/>
+  /beacon/records/<br/>
+  ↓<br/>
+  Human-facing discovery index
+</div>
+<p style="margin-top:14px">
+  Draft, internal, restricted, or otherwise Unpublished signals should not appear in the public Register by default.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Canonical Object</div>
+<h2>Discovery Signal</h2>
+<p>
+  The Discovery Signal is the institution-owned Beacon production object.
+</p>
+<div class="note">
+  Example canonical identity:<br/>
+  BEAC-2026-0001
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Index Representation</div>
+<h2>Register Entry</h2>
+<p>
+  A Register entry is the human-facing index representation used to locate and summarize a published Discovery Signal.
+</p>
+<div class="note">
+  Register entry points to the Discovery Signal.<br/>
+  It does not replace the Discovery Signal.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Canonical Record Path</h2>
+<p>
+  Published Discovery Signals are expected to resolve through stable record paths using their BEAC identifiers.
+</p>
+<div class="note">
+  /beacon/records/BEAC-2026-0001/
+</div>
+<p style="margin-top:14px">
+  The next Phase II architecture defines the individual Discovery Signal page represented at that path.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Register-Level Fields</h2>
+<p>
+  Each public Register entry should expose enough information to identify and distinguish the Discovery Signal without reproducing the entire canonical record.
+</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Field</th><th>Register Purpose</th></tr></thead>
+<tbody>
+<tr><td>BEAC Identifier</td><td>Stable canonical identity of the Discovery Signal.</td></tr>
+<tr><td>Subject / Title</td><td>Human-readable indication of what the signal concerns.</td></tr>
+<tr><td>Signal Type</td><td>Primary Beacon discovery classification.</td></tr>
+<tr><td>Lifecycle State</td><td>Current institutional state: Active, Superseded, Resolved, or Withdrawn as applicable.</td></tr>
+<tr><td>Publication State</td><td>Confirms that the public representation is Published.</td></tr>
+<tr><td>Current Version</td><td>Identifies the current governed representation.</td></tr>
+<tr><td>Source / Source Institution</td><td>Provides concise source attribution when appropriate.</td></tr>
+<tr><td>Published At</td><td>Identifies when the Beacon representation became public.</td></tr>
+<tr><td>Record Link</td><td>Resolves to the individual Discovery Signal representation.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+  Exact production field labels remain subject to the first individual record and production operation.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Register Summary</h2>
+<p>
+  The Register may provide concise discovery context to help users understand why a signal is relevant.
+</p>
+<div class="note">
+  Summary → navigation and discovery aid<br/>
+  Individual record → full Beacon representation
+</div>
+</article>
+
+<article class="card">
+<h2>No Canonical Duplication</h2>
+<p>
+  Register summaries should not become independent copies of the canonical Discovery Signal.
+</p>
+<div class="note">
+  Index enough to discover.<br/>
+  Link to the canonical record for authority and detail.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current and Historical Signals</h2>
+<p>
+  The Register should distinguish current published signals from published signals whose lifecycle has later changed.
+</p>
+<div class="note">
+  Active / Published → current institutional discovery<br/><br/>
+  Superseded / Published → historical, replaced for current use<br/><br/>
+  Resolved / Published → historical, governed conclusion reached<br/><br/>
+  Withdrawn / Published → historical publication with withdrawal state preserved where governance permits
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Active Signals</h2>
+<p>
+  Active Published signals should be readily discoverable as current Beacon objects.
+</p>
+</article>
+
+<article class="card">
+<h2>Superseded Signals</h2>
+<p>
+  Superseded Published signals should remain traceable and identify the current replacement when one exists.
+</p>
+</article>
+
+<article class="card">
+<h2>Resolved Signals</h2>
+<p>
+  Resolved Published signals may remain discoverable as part of Beacon's institutional history.
+</p>
+</article>
+
+<article class="card">
+<h2>Withdrawn Signals</h2>
+<p>
+  Previously published Withdrawn signals should preserve the historical fact of publication and governed withdrawal to the extent permitted.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Version Visibility</h2>
+<p>
+  The Register should identify the current version of each listed Discovery Signal without turning every historical version into a separate canonical Register object.
+</p>
+<div class="note">
+  BEAC-2026-0001<br/>
+  Current Version → 2<br/>
+  ↓<br/>
+  Individual record provides governed version history
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Source Identity</h2>
+<p>
+  Register-level source information should preserve attribution without implying that Beacon owns the source object.
+</p>
+</article>
+
+<article class="card">
+<h2>Authority Boundary</h2>
+<p>
+  The Register indexes Beacon Discovery Signals, even when those signals reference other Suite institutions.
+</p>
+<div class="note">
+  Reference does not transfer authority.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Cross-Suite Example</h2>
+<div class="note">
+  Register Entry<br/>
+  BEAC-2026-0001<br/>
+  Signal Type → Certification<br/>
+  Source Reference → SC-CERT-2026-0001<br/>
+  Related Reference → SREG-2026-0001<br/>
+  ↓<br/>
+  /beacon/records/BEAC-2026-0001/
+</div>
+<p style="margin-top:14px">
+  The Register catalogs the Beacon signal. Certifier continues to own the Certification Package, and Registry continues to own the SREG.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Signal Type</h2>
+<p>
+  Register entries should expose the primary Beacon Signal Type so users can distinguish discovery categories.
+</p>
+<div class="note">
+  Information · Jurisdiction · Certification · Registry<br/>
+  Historical · Integrity · Trust · Relationship
+</div>
+</article>
+
+<article class="card">
+<h2>Source Object Type</h2>
+<p>
+  Source Object Type remains distinct from Signal Type.
+</p>
+<div class="note">
+  Signal Type → Certification<br/>
+  Source Object Type → Certification Package
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Discovery and Filtering</h2>
+<p>
+  As production volume grows, the Register may support human-facing filtering or organization by governed fields such as:
+</p>
+<ul>
+<li>Signal Type</li>
+<li>Lifecycle State</li>
+<li>Source Institution</li>
+<li>Publication date</li>
+<li>Current vs. historical status</li>
+</ul>
+<div class="note">
+  Filtering is a presentation capability. It does not alter the canonical objects or their institutional state.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Register Ordering</h2>
+<p>
+  Initial ordering may be simple and deterministic, such as canonical identifier or publication chronology.
+</p>
+<div class="note">
+  Exact production ordering remains unfrozen until actual records exist.
+</div>
+</article>
+
+<article class="card">
+<h2>Search</h2>
+<p>
+  Future search may help locate published signals by subject, identifier, type, or source.
+</p>
+<div class="note">
+  Search improves discovery.<br/>
+  It does not change publication eligibility or authority.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Register Inclusion Rule</h2>
+<div class="note">
+  Canonical Discovery Signal exists<br/>
+  + Publication State = Published<br/>
+  + Public representation remains permitted<br/>
+  = Eligible for public Register inclusion
+</div>
+<p style="margin-top:14px">
+  Lifecycle state affects how the signal is represented, not necessarily whether its historical publication remains discoverable.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Unpublished Signals</h2>
+<p>
+  Unpublished Discovery Signals should not appear in the public Register by default.
+</p>
+<div class="note">
+  Active / Unpublished<br/>
+  ≠ public Register entry
+</div>
+</article>
+
+<article class="card">
+<h2>Restricted Signals</h2>
+<p>
+  A valid signal may remain outside the public Register when publication or continuing public representation is restricted by governance.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>No Register-Based Authority</h2>
+<p>
+  Inclusion in the Register establishes public discoverability within Beacon.
+</p>
+<p>It does not independently establish:</p>
+<ul>
+<li>Truth of an underlying source assertion</li>
+<li>Certification</li>
+<li>Registration standing</li>
+<li>Historical significance</li>
+<li>Integrity verification</li>
+<li>Trust</li>
+</ul>
+<div class="note">
+  Register inclusion means: Beacon has published this Discovery Signal under its own governed architecture.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Register Integrity</h2>
+<p>
+  Register entries should remain consistent with the canonical Discovery Signals they index.
+</p>
+<div class="note">
+  Identifier matches<br/>
+  + Signal Type matches<br/>
+  + Lifecycle state matches<br/>
+  + Current version matches<br/>
+  + Publication state matches<br/>
+  + Record link resolves correctly<br/>
+  = Register-level conformance
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Correction</h2>
+<p>
+  If a Register summary is incorrect while the underlying canonical record is correct, the index representation should be corrected without changing the Discovery Signal unnecessarily.
+</p>
+</article>
+
+<article class="card">
+<h2>Canonical Change</h2>
+<p>
+  If the Discovery Signal itself changes materially, Versioning &amp; Supersession governs the canonical change and the Register should reflect the resulting current state.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Register Entry</h2>
+<div class="note">
+  register_entry:<br/>
+  &nbsp;&nbsp;beac_identifier<br/>
+  &nbsp;&nbsp;subject<br/>
+  &nbsp;&nbsp;signal_type<br/>
+  &nbsp;&nbsp;lifecycle_state<br/>
+  &nbsp;&nbsp;publication_state<br/>
+  &nbsp;&nbsp;current_version<br/>
+  &nbsp;&nbsp;source_summary<br/>
+  &nbsp;&nbsp;published_at<br/>
+  &nbsp;&nbsp;record_location
+</div>
+<p style="margin-top:14px">
+  Architectural only. The Register entry is an index representation, not a new canonical object or frozen machine-readable schema.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Production Register</h2>
+<div class="empty">
+<strong>No production Discovery Signals have been published yet.</strong>
+<span class="muted">
+  Beacon remains in Continuing Development. The first production Discovery Signal will be created only after Phase II architecture and the production methodology are ready for institutional use.
+</span>
+</div>
+<div class="note">
+  This empty state is intentional. The Register architecture now exists before production evidence exists.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Relationship to Publication</h2>
+<p>
+  Publication determines whether a Discovery Signal is eligible to appear in the public Register.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Versioning</h2>
+<p>
+  The Register reflects the current version while preserving access to governed historical context through the individual record.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Authority</h2>
+<p>
+  The Register catalogs Beacon-owned objects and preserves the ownership of all referenced endpoints.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Validation</h2>
+<p>
+  Register representation should remain consistent with the validated canonical Discovery Signal it summarizes.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Is Now Established</h2>
+<ul>
+<li>The Discovery Signals Register is Beacon's human-facing index of published canonical Discovery Signals</li>
+<li>The Register catalogs Discovery Signals; it does not create them</li>
+<li>A Register entry is an index representation, not a second canonical object</li>
+<li>Public Register inclusion normally requires Publication State = Published</li>
+<li>Unpublished signals remain outside the public Register by default</li>
+<li>Each Register entry preserves the canonical BEAC identifier</li>
+<li>Register entries provide concise discovery context and point to individual canonical records</li>
+<li>The Register should expose current lifecycle state and current version</li>
+<li>Published Superseded, Resolved, and Withdrawn signals may remain historically discoverable where governance permits</li>
+<li>Signal Type and Source Object Type remain distinct</li>
+<li>Source ownership and authority remain preserved</li>
+<li>Register inclusion does not independently establish truth, certification, registration, integrity, or trust</li>
+<li>Register summaries must remain consistent with their canonical Discovery Signals</li>
+<li>The initial production Register is intentionally empty</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<ul>
+<li>Exact production Register field labels</li>
+<li>Default ordering</li>
+<li>Filtering controls</li>
+<li>Search behavior</li>
+<li>Pagination if production scale requires it</li>
+<li>Historical-state display details</li>
+<li>Withdrawn-record visibility mechanics</li>
+<li>Register correction mechanics</li>
+<li>Machine-readable register/index representation</li>
+<li>Whether additional summary fields are useful after first production use</li>
+</ul>
+<div class="note">
+  These should be informed by the Individual Discovery Signal architecture and actual production records rather than frozen before use.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Governing Rules</h2>
+<div class="note">
+  Index only what publication governance permits.<br/>
+  Preserve the canonical BEAC identifier.<br/>
+  Summarize without duplicating canonical authority.<br/>
+  Preserve lifecycle and version context.<br/>
+  Preserve source attribution.<br/>
+  Point users to the individual Beacon record.<br/>
+  Preserve historical discoverability where governance permits.<br/>
+  Never treat Register inclusion as authority beyond Beacon's own role.<br/><br/>
+  <strong>The Register makes Beacon's published objects findable without becoming another object itself.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal Types → Defined<br/>
+  Lifecycle → Defined<br/>
+  Identifier Standard → Defined<br/>
+  Schemas → Defined<br/>
+  Validation → Defined<br/>
+  Discovery Provenance → Defined<br/>
+  Authority &amp; Reference Model → Defined<br/>
+  Relationship Model → Defined<br/>
+  Versioning &amp; Supersession → Defined<br/>
+  Publication Model → Defined<br/>
+  Discovery Signals Register → Defined<br/>
+  Individual Discovery Signal → Next<br/>
+  First Production Discovery Signal → Not yet created<br/>
+  Production Register → Empty by design
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  A register is most useful when it helps you find the record without pretending to be the record.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
