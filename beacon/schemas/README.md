@@ -1,222 +1,471 @@
-# Schemas
+# Satoshium Beacon — Schemas
+
+## Overview
+
+The **Beacon Schemas** directory defines the public, human-readable schema architecture for machine-readable structures recognized and published by Satoshium Beacon.
+
+Beacon is the Satoshium Suite institution for:
+
+```text
+Discovery & Signals
+```
+
+Its canonical production object is:
+
+```text
+Discovery Signal
+```
+
+with the canonical identifier:
+
+```text
+BEAC-YYYY-NNNN
+```
+
+The schema layer translates Beacon's institutional architecture into predictable, interoperable, validation-ready structures.
+
+Schemas define structure.
+
+They do not independently establish:
+
+```text
+truth
+certification
+registration
+historical authority
+integrity verification
+trust
+source ownership
+publication eligibility
+```
+
+The Suite-wide governing principle remains:
+
+> **Reference does not transfer authority.**
+
+---
 
 ## Purpose
 
-Schemas provide structured definitions for information used within Beacon.
+Beacon schemas exist to provide stable structures for:
 
-They establish common formats, relationships, and expectations that help discovery systems organize, exchange, and interpret information consistently.
+```text
+Discovery Signals
+source attribution
+discovery provenance
+canonical-object references
+Discovery Metadata
+timestamps
+status
+version information
+relationships
+optional discovery outputs
+optional query history
+```
 
-Schemas improve interoperability, transparency, and long-term maintainability.
+The schema architecture follows the institutional architecture already established during Beacon Phase II.
 
----
+The dependency path is:
 
-## Why Schemas Matter
-
-Discovery systems often interact with information originating from multiple sources, systems, and formats.
-
-Without structure, information becomes more difficult to:
-
-* Discover
-* Organize
-* Compare
-* Exchange
-* Validate
-* Maintain
-
-Schemas help establish a common foundation for those activities.
-
----
-
-## Objectives
-
-Beacon schemas seek to:
-
-* Improve consistency
-* Support interoperability
-* Enable discovery workflows
-* Preserve source attribution
-* Improve traceability
-* Support future integrations
-
-Schemas provide structure without determining meaning.
+```text
+Entry Model
+→ Signal Types
+→ Lifecycle
+→ Identifier Standard
+→ Schemas
+→ Validation
+```
 
 ---
 
-## Discovery and Structure
+# Canonical Schema Architecture
 
-Beacon is a discovery system.
+## Canonical Production Schema
 
-Discovery becomes more effective when information follows predictable structures.
+The canonical Beacon production schema is:
 
-Schemas help define:
+```text
+discovery-signal-schema.md
+```
 
-* Signals
-* Sources
-* Queries
-* Results
-* Relationships
-* Discovery records
+It represents the Beacon-owned canonical object:
 
-These structures may evolve over time.
+```text
+Discovery Signal
+```
+
+Conceptually:
+
+```text
+Identity
+→ Subject
+→ Signal Type
+→ Source
+→ Provenance
+→ Canonical References
+→ Discovery Metadata
+→ Timestamps
+→ Version
+→ Status
+→ Relationships
+```
+
+The first production object will use:
+
+```text
+BEAC-2026-0001
+```
 
 ---
 
-## Current Schema Set
+## Supporting Schemas
 
-The Beacon project currently includes the following schema categories.
+Beacon may also use supporting structures that preserve discovery context without creating competing canonical institutional objects.
 
-### Beacon Record Schema
+Current supporting schemas are:
 
-Defines the structure of Beacon-related records and discovery activities.
+```text
+source-reference-schema.md
+discovery-result-schema.md
+query-log-schema.md
+```
 
-File:
+These structures do not become co-equal canonical Beacon objects merely because Beacon represents them.
+
+---
+
+## Legacy Schema
+
+The previous:
 
 ```text
 beacon-record-schema.md
 ```
 
+predated the Phase II canonical object model.
+
+It introduced a generic Beacon Record using:
+
+```text
+BEC-YYYY-NNNNNN
+```
+
+That model is now deprecated as a canonical production schema.
+
+Beacon's canonical object is the Discovery Signal.
+
+The legacy file is retained only to document the architectural transition and prevent accidental reuse of the old object model.
+
 ---
 
-### Signal Record Schema
+## Legacy Signal Record Schema
 
-Defines information associated with signals discovered by Beacon.
-
-File:
+The former:
 
 ```text
 signal-record-schema.md
 ```
 
----
-
-### Discovery Result Schema
-
-Defines the structure of information returned through discovery processes.
-
-File:
+used:
 
 ```text
-discovery-result-schema.md
+SIG-YYYY-NNNNNN
+```
+
+and an older signal vocabulary.
+
+It is now retained as a compatibility and migration note.
+
+The canonical replacement is:
+
+```text
+discovery-signal-schema.md
 ```
 
 ---
 
-### Source Reference Schema
-
-Defines how information sources may be represented and referenced.
-
-File:
+# Current Directory
 
 ```text
-source-reference-schema.md
+/beacon/schemas/
+├── README.md
+├── discovery-signal-schema.md
+├── signal-record-schema.md
+├── source-reference-schema.md
+├── discovery-result-schema.md
+├── query-log-schema.md
+└── beacon-record-schema.md
 ```
 
 ---
 
-### Query Log Schema
+# Schema Roles
 
-Defines information associated with discovery requests and query activities.
+## discovery-signal-schema.md
 
-File:
+**Role:** Canonical production schema.
+
+Defines the human-readable structure of Beacon-owned Discovery Signals.
+
+Canonical identifier:
 
 ```text
-query-log-schema.md
+BEAC-YYYY-NNNN
 ```
 
 ---
 
-## Design Principles
+## source-reference-schema.md
 
-### Consistency
+**Role:** Reusable supporting structure.
 
-Information should follow predictable structures.
+Defines how Beacon represents an attributable source or canonical source reference.
 
-### Transparency
-
-Schema definitions should be understandable and documented.
-
-### Flexibility
-
-Schemas should support future evolution.
-
-### Interoperability
-
-Schemas should support information exchange across systems.
-
-### Traceability
-
-Information should remain connected to its source whenever possible.
+A Source Reference does not replace the source institution's own identifier or schema.
 
 ---
 
-## Relationship to Discovery
+## discovery-result-schema.md
 
-Schemas support discovery by providing structure.
+**Role:** Optional noncanonical discovery-output structure.
 
-Queries may reference structured information.
+Defines a result returned through discovery activity.
 
-Discovery processes may operate on structured information.
+A Discovery Result may reference:
 
-Results may be generated from structured information.
+```text
+a Discovery Signal
+a Suite canonical object
+an external source
+another governed reference
+```
 
-Structure improves discoverability.
-
----
-
-## Relationship to Sources
-
-Schemas should preserve information about source origins whenever possible.
-
-Source attribution remains an important component of responsible discovery.
-
-Users should be able to understand where information originated.
+A Discovery Result is not automatically a Discovery Signal.
 
 ---
 
-## Relationship to Interoperability
+## query-log-schema.md
 
-Schemas serve as one of the foundations of interoperability.
+**Role:** Optional operational history structure.
 
-Shared structures improve communication between:
+Defines information associated with a discovery request or query activity when Beacon chooses to preserve that history.
 
-* Beacon
-* Atlas
-* Navigator
-* Certifier
-* Registry
-* Chronicle
-* Anchor
-* Attestor
-
-Future interoperability standards may build upon these schema definitions.
+It does not redefine Navigator's ownership of workflow definition or orchestration.
 
 ---
 
-## Future Development
+## signal-record-schema.md
 
-Future Beacon schemas may include:
+**Role:** Deprecated compatibility document.
 
-* Signal exchange schemas
-* Discovery protocol schemas
-* Relationship schemas
-* Index schemas
-* Metadata schemas
-* Cross-system interoperability schemas
+The older Signal Record architecture is replaced by:
 
-Specific implementations may evolve as Beacon matures.
+```text
+discovery-signal-schema.md
+```
 
 ---
 
-## Implementation Status
+## beacon-record-schema.md
 
-Current schema documents should be viewed as foundational definitions.
+**Role:** Deprecated legacy document.
 
-Schema structures may be revised, expanded, or refined as discovery requirements evolve.
+The former generic Beacon Record is no longer a canonical Beacon production object.
 
 ---
 
-## Status
+# Canonical Controlled Architecture
 
-Beacon schema standards are currently under development.
+## Discovery Signal Types
 
-This document defines the purpose and role of schemas within Beacon rather than finalized technical specifications.
+The initial architectural Signal Type vocabulary is:
+
+```text
+Information
+Jurisdiction
+Certification
+Registry
+Historical
+Integrity
+Trust
+Relationship
+```
+
+These describe the primary discovery meaning of a Beacon Discovery Signal.
+
+They do not inherit the authority of the source object.
+
+---
+
+## Lifecycle States
+
+Beacon Discovery Signals use the following architectural lifecycle states:
+
+```text
+Draft
+Active
+Superseded
+Resolved
+Withdrawn
+```
+
+---
+
+## Publication States
+
+Publication remains a separate dimension:
+
+```text
+Unpublished
+Published
+```
+
+---
+
+## Identifier Standard
+
+Canonical Discovery Signal identity is:
+
+```text
+BEAC-YYYY-NNNN
+```
+
+Example:
+
+```text
+BEAC-2026-0001
+```
+
+The identifier is assigned when the canonical Discovery Signal is created and enters Draft.
+
+It remains permanent.
+
+---
+
+# Authority Boundaries
+
+Beacon may reference canonical objects from other Suite institutions.
+
+Examples include:
+
+```text
+Atlas → Authoritative Intelligence
+Certifier → Certification Package
+Registry → SREG
+Chronicle → Chronicle Entry
+Anchor → Integrity Reference
+Attestor → Trust Statement
+Navigator → Workflow Definition / Orchestration
+```
+
+Beacon may represent those references.
+
+Beacon does not redefine their canonical schemas.
+
+Conceptually:
+
+```text
+BEAC-2026-0001
+        ↓ references
+ANCH-2026-0001
+```
+
+The two identifiers remain separate institution-owned objects.
+
+> **Reference does not transfer authority.**
+
+---
+
+# Schema vs. Validation
+
+Schema answers:
+
+```text
+What structure should this object have?
+```
+
+Validation answers:
+
+```text
+Does this particular object conform to the required rules?
+```
+
+Therefore:
+
+```text
+Schema → structure
+Validation → conformance
+```
+
+Formal enforcement belongs to:
+
+```text
+/beacon/validation/
+```
+
+---
+
+# Schema vs. Methodology
+
+Schema does not determine how Beacon decides that a Discovery Signal should exist.
+
+That belongs to Beacon Discovery Methodology.
+
+```text
+Schema → representation
+Methodology → process
+```
+
+---
+
+# Machine-Readable Implementation Posture
+
+This directory currently defines the public human-readable schema architecture.
+
+The following remain intentionally unfrozen until later implementation and Validation work:
+
+```text
+exact JSON property names
+JSON Schema dialect
+required vs. optional machine constraints
+schema URIs
+schema version identifiers
+machine enum spelling
+$ref structure
+public JSON Schema filenames
+API behavior
+```
+
+The machine-readable implementation must preserve the institutional meaning established here.
+
+---
+
+# Status
+
+As of September 5, 2026:
+
+```text
+Institution → Beacon
+Suite Role → Discovery & Signals
+Canonical Responsibility → Discovery Signal / Metadata
+Status → Continuing Development
+Phase → Phase II — Production Architecture
+
+Entry Model → Defined
+Signal Types → Defined
+Lifecycle → Defined
+Identifier Standard → Defined
+Schema Architecture → Defined
+
+Canonical Production Schema → discovery-signal-schema.md
+Machine-Readable Enforcement → Pending
+Validation Architecture → Next
+Production Proof → Pending
+Operational → No
+```
+
+---
+
+## Last Updated
+
+September 5, 2026
