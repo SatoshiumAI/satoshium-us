@@ -418,7 +418,9 @@ The source retains authority.
 
 ## Documentation Architecture
 
-Beacon documentation includes:
+Beacon documentation now includes both its foundational institutional architecture and its Phase II production architecture.
+
+### Phase I — Institutional Architecture & Alignment
 
 ```text
 /beacon/
@@ -438,9 +440,27 @@ Beacon documentation includes:
 /beacon/faq/
 ```
 
-Together these pages define Beacon's current institutional architecture and production-preparation model.
+### Phase II — Production Architecture
 
----
+```text
+/beacon/entry-model/
+/beacon/signal-types/
+/beacon/lifecycle/
+/beacon/identifiers/
+/beacon/schemas/
+/beacon/validation/
+/beacon/provenance/
+/beacon/authority/
+/beacon/relationships/
+/beacon/versioning/
+/beacon/publication/
+/beacon/records/
+/beacon/records/{id}/
+/beacon/methodology/
+/beacon/production/
+```
+
+Together these pages define what Beacon is, what it creates, how its canonical object is governed, how it becomes publicly represented, and how Beacon moves into actual institutional production.
 
 ## Interoperability Principles
 
@@ -480,33 +500,248 @@ Discovery does not transfer authority.
 
 ---
 
-## Production Preparation
+## Phase II — Production Architecture
 
-Beacon has moved beyond its initial foundational-definition phase and is currently in:
+Beacon has completed its Phase II production-architecture definition.
+
+Phase II answered:
+
+> **What exactly does Beacon create, under what rules, and how does that object become institutionally valid?**
+
+Beacon's canonical production object is the:
 
 ```text
-Continuing Development
-Suite Alignment & Production Preparation
+Discovery Signal
 ```
 
-This work is occurring ahead of Beacon's originally planned November 2026 development window.
+with supporting:
 
-Current production preparation includes:
+```text
+Discovery Metadata
+```
 
-* Canonical documentation alignment
-* Discovery Signal refinement
-* Discovery Metadata refinement
-* Source and provenance structures
-* Stable reference conventions
-* Index architecture
-* Query and result architecture
-* Certification Signal profiles
-* Authority boundaries
-* Schema preparation
-* Validation preparation
-* Navigator workflow interfaces
-* Production object planning
-* Preparation for first institutional use
+The Phase II architecture defines:
+
+* Discovery Signal Entry Model
+* Discovery Signal Types
+* Discovery Signal Lifecycle
+* Beacon Identifier Standard
+* Beacon Schemas
+* Validation
+* Discovery Provenance
+* Authority & Reference Model
+* Relationship Model
+* Versioning & Supersession
+* Publication Model
+* Beacon Records
+* Individual Beacon Record
+* Beacon Discovery Methodology
+* Production Model / First Operation
+
+The architecture required to attempt Beacon's first governed production operation is now defined.
+
+---
+
+## Canonical Discovery Signal
+
+The canonical Beacon production object is a **Discovery Signal**.
+
+Its conceptual structure is:
+
+```text
+Identity
+→ Subject
+→ Signal Type
+→ Source
+→ Provenance
+→ Canonical References
+→ Discovery Metadata
+→ Timestamps
+→ Version
+→ Status
+→ Relationships
+```
+
+Beacon owns the Discovery Signal and its discovery-layer representations.
+
+Referenced source objects retain their native institutional ownership and authority.
+
+---
+
+## Beacon Identifier Standard
+
+Canonical Beacon Discovery Signals use:
+
+```text
+BEAC-YYYY-NNNN
+```
+
+The expected first production identifier pattern is:
+
+```text
+BEAC-2026-0001
+```
+
+This identifier has **not yet been assigned**.
+
+It will be assigned only if and when the first production candidate reaches canonical Creation.
+
+The identifier is permanent and is not reused.
+
+Version, Signal Type, lifecycle state, and publication state are not embedded within the BEAC identifier.
+
+---
+
+## Discovery Signal Lifecycle
+
+Canonical lifecycle states are:
+
+```text
+Draft
+→ Active
+→ Superseded / Resolved / Withdrawn
+```
+
+Publication is governed separately:
+
+```text
+Unpublished / Published
+```
+
+At canonical Creation, a Discovery Signal begins:
+
+```text
+Lifecycle State → Draft
+Publication State → Unpublished
+```
+
+Creation, Validation, lifecycle transition, and publication remain distinct institutional acts.
+
+---
+
+## Beacon Discovery Methodology
+
+Beacon's repeatable institutional methodology is:
+
+```text
+Observe
+→ Identify
+→ Establish Source & Provenance
+→ Assess Relevance
+→ Construct
+→ Create
+→ Validate & Review
+→ Determine State
+→ Decide Publication
+→ Represent
+→ Maintain
+```
+
+The explicit **Create** stage is essential because the canonical Discovery Signal must exist before object-level Validation can occur.
+
+Not every observation must become a Discovery Signal.
+
+---
+
+## Beacon Records
+
+Published Discovery Signals are surfaced through:
+
+```text
+/beacon/records/
+```
+
+The Records page is the human-facing index of published canonical Beacon objects.
+
+A Records listing is an index representation.
+
+It is not a second canonical object.
+
+The permanent public representation of an individual published Discovery Signal follows:
+
+```text
+/beacon/records/{id}/
+```
+
+For example, the future first-production path would conceptually be:
+
+```text
+/beacon/records/BEAC-2026-0001/
+```
+
+That path does not yet represent an actual production signal.
+
+---
+
+## Production Model
+
+Beacon's Production Model defines the controlled path from architecture into actual institutional use.
+
+The first production sequence is:
+
+```text
+Select Real Candidate
+        ↓
+Observe
+        ↓
+Identify
+        ↓
+Establish Source & Provenance
+        ↓
+Assess Relevance
+        ↓
+Construct Discovery Signal
+        ↓
+Create Canonical Object
+        ↓
+Assign BEAC-2026-0001
+        ↓
+Validate & Review
+        ↓
+Determine Lifecycle State
+        ↓
+Decide Publication
+        ↓
+Publish Beacon Record when justified
+        ↓
+Add Beacon Records Listing when eligible
+        ↓
+Preserve Production Evidence
+        ↓
+Conduct Post-Operation Review
+```
+
+The first candidate has not yet been selected.
+
+The first production object has not yet been created.
+
+---
+
+## Production Readiness
+
+Phase II establishes that Beacon is architecturally ready to **attempt** its first controlled production operation.
+
+This does not mean Beacon is Operational.
+
+The distinction is:
+
+```text
+Phase II architecture complete
+→ ready to attempt production
+
+First production operation
+→ tests the architecture
+
+Post-operation review
+→ evaluates the evidence
+
+Operational review
+→ determines whether status progression is justified
+```
+
+The governing principle is:
+
+> **Production proves architecture through governed use, not through declaration.**
 
 ---
 
@@ -551,15 +786,30 @@ Beacon's first production use should prove Beacon's own canonical responsibility
 
 ## Future Development
 
-Future Beacon development may include:
+The immediate next work is no longer another Phase II architecture page.
 
-* Operational Discovery Signals
-* Production Discovery Metadata
-* Canonical Beacon identifiers
-* Validation-ready schemas
-* Source indexing
-* Signal publication
-* Relationship mapping
+Beacon's next institutional step is:
+
+```text
+Select first real discovery candidate
+        ↓
+Execute first governed production operation
+        ↓
+Create BEAC-2026-0001 only at canonical Creation
+        ↓
+Preserve production evidence
+        ↓
+Publish when institutionally justified
+        ↓
+Conduct post-operation review
+        ↓
+Consider Operational status
+```
+
+Later implementation may include:
+
+* Machine-readable production schemas
+* Expanded source indexing
 * Query interfaces
 * Result presentation
 * Metadata APIs
@@ -568,30 +818,42 @@ Future Beacon development may include:
 * Federated discovery
 * Machine discovery
 * Discovery analytics
-* Versioning and supersession mechanisms
+* Automation and monitoring
 
-Implementation details may evolve through production work.
+These capabilities should build upon the canonical production architecture rather than redefine it.
 
 ---
 
 ## Current Status
 
-As of September 2026:
+As of September 5, 2026:
 
 ```text
 Institution: Beacon
 Suite Role: Discovery & Signals
 Canonical Responsibility: Discovery Signal / Metadata
 Status: Continuing Development
-Phase: Suite Alignment & Production Preparation
+
+Phase I — Institutional Architecture & Alignment: COMPLETE
+Phase II — Production Architecture: COMPLETE
+
+First Production Candidate: Not yet selected
+BEAC-2026-0001: Not yet created
+First Production Operation: Pending
+Production Proof: Pending
+Operational Review: Pending
 Operational: No
 ```
 
-The institutional architecture is established.
+Beacon's institutional architecture is defined.
 
-The documentation alignment pass is complete.
+Beacon's production architecture is defined.
 
-Production proof remains ahead.
+The next question is no longer primarily architectural:
+
+> **Can Beacon execute this architecture successfully against a real discovery?**
+
+That question must be answered through production.
 
 ---
 
@@ -613,12 +875,14 @@ Canonical objects preserve institutional authority.
 
 Beacon remains an active development institution.
 
-Documentation, schemas, identifiers, terminology, workflows, interoperability mechanisms, production objects, and implementation details may evolve as Beacon advances through production preparation.
+Phase I institutional architecture and Phase II production architecture are defined, but Beacon has not yet completed its first production operation.
 
-Nothing within Beacon should be interpreted as proof of operational status unless supported by actual institutional use and formally recognized within the Satoshium Suite status architecture.
+Schemas, machine serialization, production procedures, implementation details, and architecture refinements may evolve as Beacon is exercised through actual institutional use.
+
+Nothing within Beacon should be interpreted as proof of Operational status unless supported by production evidence, post-operation review, and formal recognition within the Satoshium Suite status architecture.
 
 ---
 
 ## Last Updated
 
-September 2026
+September 5, 2026
