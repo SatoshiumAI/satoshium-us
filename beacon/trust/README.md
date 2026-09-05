@@ -4,40 +4,51 @@
 
 Trust influences how information is interpreted, evaluated, and acted upon.
 
-Beacon may help users discover trust-related information, but Beacon does not determine what should be trusted.
+Beacon may help users and Suite workflows discover trust-related information, but Beacon does not determine what should be trusted.
 
-Trust remains a separate function within the Satoshium ecosystem.
+Within the Satoshium Suite, Beacon owns Discovery Signals and discovery metadata.
+
+Attestor owns Trust Statements and the Suite's trust-assessment function.
+
+These responsibilities are related through governed references but remain institutionally distinct.
 
 ---
 
 ## Why Trust Matters
 
-Discovery alone does not answer whether information is accurate, reliable, complete, or trustworthy.
+Discovery alone does not establish whether information is accurate, verified, certified, reliable, complete, or trustworthy.
 
-Users often seek to understand:
+Users and systems may seek to understand:
 
-* Whether information can be verified
-* Whether sources are reliable
-* Whether records are authentic
-* Whether claims are supported
+* Whether information has been verified or certified
+* Whether supporting evidence exists
+* Whether an authoritative Trust Statement exists
+* Which sources support a trust-related assessment
+* Which institution maintains the relevant canonical object
+* Whether later information has changed the context
 
-These questions involve trust.
+These questions require clear separation between discovery, certification and verification, and trust assessment.
 
 ---
 
 ## Discovery and Trust
 
-Beacon helps users discover information.
+Beacon performs discovery.
 
-Beacon helps users discover sources.
+Beacon may discover:
 
-Beacon helps users discover signals.
+* Trust Statements
+* Trust-related Discovery Signals
+* Supporting sources
+* Certification Packages
+* SREG records
+* Chronicle Entries
+* Integrity References
+* External trust-related information
 
-Beacon helps users discover trust-related records.
+Beacon does not determine trust merely by surfacing this information.
 
-Beacon does not determine trust.
-
-Discovery and trust are separate activities.
+Discovery and trust remain separate institutional functions.
 
 ---
 
@@ -51,7 +62,11 @@ Verification should not be confused with trust.
 
 Trust should not be confused with truth.
 
-These concepts are related but distinct.
+These concepts may inform one another, but they are not interchangeable.
+
+A Beacon reference to a Trust Statement does not make Beacon the authority for that statement.
+
+**Reference does not transfer authority.**
 
 ---
 
@@ -59,14 +74,17 @@ These concepts are related but distinct.
 
 Beacon may:
 
-* Surface trust-related signals
-* Surface trust-related records
-* Locate attestations
+* Publish Trust Signals as Discovery Signals
+* Discover Attestor Trust Statements
+* Surface attestation context
 * Identify supporting sources
+* Reference Certification Packages and other canonical objects
 * Reveal relationships
-* Improve information visibility
+* Preserve discovery metadata
+* Preserve source attribution and provenance
+* Improve trust-related information visibility
 
-Beacon helps users discover information relevant to trust.
+Beacon helps users and workflows locate information relevant to trust.
 
 ---
 
@@ -74,135 +92,196 @@ Beacon helps users discover information relevant to trust.
 
 Beacon does not:
 
+* Issue Trust Statements
+* Independently determine trust
 * Verify claims
-* Certify records
-* Establish authority
-* Assign trust scores
-* Determine credibility
+* Issue Certification Packages
+* Register authoritative SREG records
+* Create Chronicle authority
+* Create Anchor Integrity References
+* Inherit authority from referenced objects
 * Endorse conclusions
 
-These responsibilities belong elsewhere.
+These responsibilities remain with the appropriate Suite institutions.
 
 ---
 
 ## Trust Signals
 
-Trust-related information may emerge through discovery.
+A Trust Signal is a Beacon-owned Discovery Signal associated with trust-related information.
 
-Examples may include:
+Examples may include discovery of:
 
-* Attestations
-* Validation records
-* Supporting evidence
-* Confidence assessments
-* Verification reports
-* Historical performance records
+* A Trust Statement
+* Attestation context
+* Supporting references
+* Trust-statement updates
+* Related Certification Packages
+* Related Integrity References
+* Relevant historical context
+* External trust-related developments
 
-Beacon may help users locate these signals.
+A Trust Signal indicates relevance.
+
+It is not itself a Trust Statement unless Attestor separately creates and owns such an object.
 
 ---
 
 ## Trust Sources
 
-Trust-related information may originate from:
+Trust-related discovery may reference information originating from:
 
 * Attestor
 * Certifier
 * Registry
 * Chronicle
 * Anchor
+* Atlas
 * External sources
 
-Beacon may help surface those sources for review.
+Beacon should preserve the source institution or provider, canonical identifier when available, provenance, discovery context, and relevant authority boundary.
+
+External discovery does not convert an external source into a Suite institution or Suite-authoritative object.
 
 ---
 
 ## Trust and Verification
 
-Verification and trust are not identical.
+Certification and verification are not identical to trust assessment.
 
-Verification may establish whether information can be supported by evidence.
+Certifier owns Certification Packages and certification/verification authority.
 
-Trust involves broader judgments that may include:
+Attestor owns Trust Statements.
 
-* Reliability
-* Consistency
-* Transparency
-* Historical performance
-* Context
+Beacon may discover and reference objects from both institutions without assuming either function.
 
-Certifier focuses on verification.
+A simplified distinction is:
 
-Attestor focuses on trust-related assessments.
+```text
+Certifier → Certification Package
+Beacon    → Discovery Signal / Metadata
+Attestor  → Trust Statement
+```
 
 ---
 
 ## Relationship to Attestor
 
-Attestor serves as the trust layer of the Satoshium Suite.
+Attestor is the Suite institution responsible for Trust Statements.
 
-A simplified distinction may be represented as:
+Beacon may discover, reference, and signal the relevance of an Attestor Trust Statement.
 
-```text
-Beacon → Discovery
-Attestor → Trust
-```
+Attestor remains authoritative for:
 
-Beacon may discover trust-related information.
+* The Trust Statement
+* Its trust-assessment context
+* Its lifecycle
+* Its supporting attestation structure
 
-Attestor may evaluate and document trust-related information.
+Beacon remains authoritative only for its own Discovery Signals and discovery metadata.
 
-The two systems are complementary.
+The two institutions interoperate without transferring authority.
 
 ---
 
 ## Relationship to Certifier
 
-Certifier focuses on verification.
+Certifier owns Certification Packages and certification/verification authority.
 
-Beacon may help users discover certification records and supporting evidence.
+Beacon may discover:
 
-Certifier remains responsible for verification activities.
+* Certification Packages
+* Certification status
+* Evidence references
+* Verification metadata
+* Relationships between certification and trust information
+
+Beacon does not certify results or independently determine certification status.
+
+Certifier remains authoritative for certification.
 
 ---
 
 ## Relationship to Sources
 
-Trust often depends upon source evaluation.
-
-Beacon seeks to preserve:
+Trust-related discovery should preserve:
 
 * Source attribution
 * Source visibility
-* Source traceability
+* Provenance
+* Traceability
+* Stable identifiers
+* Discovery context
+* Institutional authority
 
-Users should be able to understand where information originated.
+Users and systems should be able to understand where information originated and how to review the authoritative source or canonical object.
 
 ---
 
 ## Relationship to Signals
 
-Signals may indicate that information deserves additional review.
+Discovery Signals may indicate that trust-related information deserves attention.
 
-A signal may:
+A Trust Signal may:
 
-* Trigger investigation
-* Reveal new information
-* Surface supporting evidence
+* Direct attention to a Trust Statement
+* Trigger further investigation or workflow activity
+* Reveal new supporting information
+* Surface a relationship to another canonical object
+* Indicate that relevant trust context has changed
 
 Signals do not determine trust.
 
-They help users identify information that may warrant attention.
+They identify information that may warrant review.
+
+---
+
+## Relationship to Navigator
+
+Navigator owns workflow definition and orchestration.
+
+A Navigator-defined workflow may require Beacon to discover trust-related information or locate a Trust Statement.
+
+Beacon may return Discovery Signals, discovery metadata, source references, and results to that workflow.
+
+Navigator orchestrates.
+
+Beacon discovers and signals.
+
+Attestor owns the Trust Statement.
+
+---
+
+## Trust Authority Boundary
+
+Beacon owns the Discovery Signals and discovery metadata it publishes.
+
+When Beacon references a Trust Statement, Attestor remains authoritative for that Trust Statement and its lifecycle.
+
+The Suite institutional model remains:
+
+* **Atlas → Authoritative Intelligence**
+* **Navigator → Workflow Definition / Orchestration**
+* **Beacon → Discovery Signal / Metadata**
+* **Certifier → Certification Package**
+* **Registry → SREG**
+* **Chronicle → Chronicle Entry**
+* **Anchor → Integrity Reference**
+* **Attestor → Trust Statement**
+
+Discovery does not become trust.
+
+**Reference does not transfer authority.**
 
 ---
 
 ## Trust and User Judgment
 
-Beacon is intended to support informed exploration.
+Beacon supports informed exploration and review.
 
-Users remain responsible for their own conclusions, interpretations, and decisions.
+Human judgment may remain relevant to interpretation and decision-making, but Beacon's institutional boundary does not depend on individual judgment: Beacon performs discovery rather than trust assessment.
 
-Discovery systems should assist judgment rather than replace it.
+Where a governed Suite trust determination is required, Attestor is the institution responsible for the Trust Statement.
 
 ---
 
@@ -210,42 +289,59 @@ Discovery systems should assist judgment rather than replace it.
 
 ### Transparency
 
-Trust-related information should remain visible.
+Trust-related information and discovery context should remain visible.
 
 ### Attribution
 
-Sources should remain identifiable.
+Sources and originating institutions should remain identifiable.
+
+### Provenance
+
+Origin and relevant context should be preserved for review.
 
 ### Traceability
 
-Information should support review and investigation.
+Trust-related discovery should support navigation back to sources and canonical objects.
+
+### Stable References
+
+Canonical identifiers and durable references should be preserved when available.
 
 ### Separation of Responsibilities
 
-Discovery, verification, and trust should remain distinct functions.
+Discovery, certification and verification, and trust assessment remain distinct institutional functions.
 
 ### Neutrality
 
-Discovery should not impose conclusions.
+Discovery should not impose trust conclusions.
+
+### Authority Preservation
+
+Beacon does not inherit the authority of Trust Statements or other canonical objects it references.
 
 ---
 
 ## Long-Term Vision
 
-As the Satoshium ecosystem evolves, Beacon may become an important mechanism for helping users locate trust-related information while preserving clear boundaries between discovery, verification, and trust assessment.
+As Beacon evolves, it may become an important discovery mechanism for locating Trust Statements and other trust-related information across Suite institutions and external environments.
 
-Its role remains unchanged:
+Its role remains focused:
 
 ```text
-Help users find information.
+Discover the information.
+Publish the signal.
+Preserve the source.
+Reference the Trust Statement.
 ```
 
-Trust-related conclusions remain the responsibility of users and systems specifically designed for trust evaluation.
+Attestor remains responsible for the Trust Statement.
+
+Beacon remains responsible for discovery.
 
 ---
 
 ## Status
 
-Beacon trust standards are currently under development.
+Beacon trust architecture is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
 
-This document defines conceptual principles and system boundaries rather than finalized operational specifications.
+This document establishes the governing conceptual boundary between Beacon discovery, Certifier certification and verification, and Attestor trust assessment. Operational Trust Signal schemas, metadata requirements, workflow interfaces, and interoperability mechanisms may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
