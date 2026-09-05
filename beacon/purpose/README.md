@@ -2,11 +2,11 @@
 
 ## Mission
 
-Beacon exists to help users discover relevant information.
+Beacon exists as the Satoshium Suite institution for discovery and signals.
 
-Its purpose is to surface signals, sources, records, and relationships that may otherwise remain difficult to locate, navigate, or understand.
+Its purpose is to publish Discovery Signals and discovery metadata that help users and Suite workflows locate relevant sources, canonical objects, and relationships while preserving attribution, provenance, traceability, context, and institutional authority.
 
-Beacon serves as the discovery layer of the Satoshium Suite.
+Beacon helps make information discoverable without assuming authority over the information it references.
 
 ---
 
@@ -14,31 +14,52 @@ Beacon serves as the discovery layer of the Satoshium Suite.
 
 Modern information environments contain an overwhelming amount of data.
 
-The challenge is often not the absence of information, but the difficulty of finding meaningful information among competing signals, sources, and records.
+The challenge is often not the absence of information, but the difficulty of finding meaningful information among competing signals, sources, records, and relationships.
 
 Beacon exists to reduce that friction.
 
-Its role is to help users locate information that may be relevant to a question, investigation, decision, observation, or area of interest.
+Its role is to help users and Suite workflows locate information relevant to a question, investigation, decision, observation, workflow, or area of interest.
 
 ---
 
 ## Core Function
 
-Beacon helps users discover.
+Beacon discovers and signals.
 
-Discovery may include:
+Discovery may include references to:
 
-* Signals
+* Authoritative intelligence
 * Sources
-* Records
-* Historical events
-* Jurisdictions
-* Media references
-* Identity information
-* Trust-related information
-* Related connections and relationships
+* Certification Packages
+* SREG records
+* Chronicle Entries
+* Integrity References
+* Trust Statements
+* External information
+* Related canonical objects and relationships
 
-Beacon helps bring information into view.
+Beacon may publish Discovery Signals and discovery metadata describing what was found, where it originated, and how it relates to other information.
+
+Beacon helps bring information into view while preserving the authority of its source.
+
+---
+
+## Beacon-Owned Objects
+
+Beacon is responsible for the Discovery Signals and discovery metadata it publishes.
+
+Beacon-owned objects may include:
+
+* Discovery Signals
+* Discovery metadata
+* Source references
+* Discovery context
+* Relationships between discovered objects
+* Relevant status or provenance information
+
+When a Beacon object references a canonical object maintained by another Suite institution, that institution retains authority over the referenced object.
+
+**Reference does not transfer authority.**
 
 ---
 
@@ -46,13 +67,13 @@ Beacon helps bring information into view.
 
 Beacon is:
 
-* A discovery system
-* A navigation aid
-* A signal identification framework
-* An information visibility layer
-* A bridge between users and information
+* The Suite discovery and signals institution
+* A Discovery Signal framework
+* A discovery metadata layer
+* A source and canonical-object visibility layer
+* A participant in interoperable Suite workflows
 
-Beacon helps users find information.
+Beacon helps users and systems find relevant information while preserving institutional boundaries.
 
 ---
 
@@ -62,14 +83,15 @@ Beacon is not:
 
 * A certification authority
 * A registry
-* A historical archive
-* An identity provider
-* A trust authority
+* A historical authority
+* An integrity authority
+* A trust-statement authority
+* A workflow-orchestration authority
 * A replacement for human judgment
 
-Beacon assists discovery.
+Beacon does not inherit the authority of an object merely because it discovers or references it.
 
-It does not determine truth, trust, authority, or legitimacy.
+It does not certify, register, chronicle, anchor, attest, or orchestrate authoritative objects owned by other Suite institutions.
 
 ---
 
@@ -79,9 +101,11 @@ Information cannot be evaluated if it cannot be found.
 
 Discovery is a prerequisite for understanding.
 
-Visibility is a prerequisite for evaluation.
+Visibility is a prerequisite for review.
 
-Beacon exists to improve visibility while preserving transparency and source attribution.
+Beacon exists to improve visibility while preserving transparency, attribution, provenance, traceability, and institutional authority.
+
+Discovery should connect information to its source rather than separate it from that source.
 
 ---
 
@@ -89,15 +113,23 @@ Beacon exists to improve visibility while preserving transparency and source att
 
 ### Discoverability
 
-Relevant information should be easier to locate.
+Relevant information and authoritative objects should be easier to locate.
 
 ### Transparency
 
-Users should understand where information originated.
+Users should understand where information originated and how it was discovered.
 
 ### Attribution
 
-Sources should remain identifiable.
+Sources and originating institutions should remain identifiable.
+
+### Provenance
+
+Discovery context and origin should be preserved sufficiently for review.
+
+### Traceability
+
+Users and systems should be able to follow discovered information back to its authoritative source.
 
 ### Relevance
 
@@ -105,32 +137,36 @@ Discovery should prioritize usefulness over volume.
 
 ### Accessibility
 
-Information should be easier to navigate.
+Information should be easier to navigate through reviewable discovery structures.
 
 ### Neutrality
 
-Discovery systems should assist exploration without dictating conclusions.
+Discovery should assist exploration without dictating conclusions.
+
+### Institutional Authority
+
+Each Suite institution retains authority over the canonical objects it creates and maintains.
 
 ---
 
 ## Role Within the Satoshium Suite
 
-Beacon functions as the discovery layer within the Satoshium ecosystem.
+Beacon functions as the discovery and signals institution within the Satoshium Suite.
 
-A simplified view of the ecosystem may be represented as:
+The institutional model is:
 
-* Atlas provides data.
-* Navigator provides queries.
-* Certifier provides verification.
-* Registry provides records.
-* Chronicle provides history.
-* Anchor provides identity.
-* Beacon provides discovery.
-* Attestor provides trust.
+* **Atlas → Authoritative Intelligence**
+* **Navigator → Workflow Definition / Orchestration**
+* **Beacon → Discovery Signal / Metadata**
+* **Certifier → Certification Package**
+* **Registry → SREG**
+* **Chronicle → Chronicle Entry**
+* **Anchor → Integrity Reference**
+* **Attestor → Trust Statement**
 
-Each system serves a distinct purpose.
+Each institution serves a distinct purpose and retains authority over its own canonical objects.
 
-Beacon helps users locate information across those systems.
+Beacon connects information across these institutions through discovery, signals, metadata, and stable references.
 
 ---
 
@@ -142,25 +178,29 @@ Beacon seeks to improve:
 * Information accessibility
 * Signal discovery
 * Source awareness
-* Record navigation
-* Cross-system exploration
+* Canonical-object discovery
+* Cross-system navigation
+* Provenance visibility
+* Traceable Suite interoperability
 
-Success is measured not by the amount of information collected, but by the ability to help users find information that matters.
+Success is measured not by the amount of information collected, but by Beacon's ability to help users and workflows find relevant information while preserving its source, context, and authority.
 
 ---
 
 ## Long-Term Vision
 
-As the Satoshium ecosystem grows, Beacon may become a unified discovery layer capable of helping users navigate information across multiple domains, systems, jurisdictions, records, and historical contexts.
+As the Satoshium Suite grows, Beacon may become a unified discovery and signals institution capable of helping users and workflows navigate information across multiple domains, systems, jurisdictions, canonical objects, external sources, and historical contexts.
 
-Its purpose remains unchanged:
+Its purpose remains simple:
 
-To help users find the signal.
+**Help users find the signal.**
+
+That mission is implemented through transparent, attributable, traceable, and interoperable discovery structures.
 
 ---
 
 ## Status
 
-Beacon is currently under development.
+Beacon is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
 
-Its standards, schemas, discovery methods, interoperability capabilities, and operational features may evolve over time.
+Its standards, schemas, discovery methods, interoperability capabilities, and operational features may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
