@@ -177,14 +177,15 @@ h1{
   <h1>Queries</h1>
 
   <p class="lead">
-    Queries represent the questions, objectives,
-    investigations, and requests that initiate discovery.
+    Queries represent questions, objectives, investigations,
+    and requests that provide intent and context for discovery.
   </p>
 
   <p class="lead">
-    Every discovery process begins with intent.
-    Queries provide the direction that helps Beacon
-    locate relevant information.
+    Beacon may receive queries directly or participate in
+    Navigator-defined workflows. Queries guide discovery, while
+    Navigator retains Suite responsibility for workflow definition
+    and orchestration.
   </p>
 
 </section>
@@ -235,9 +236,8 @@ h1{
   <h2>Intent</h2>
 
   <p>
-    Queries communicate what a user is attempting
-    to discover and provide context for discovery
-    activities.
+    Queries communicate what a user or workflow is attempting
+    to discover and provide context for Beacon discovery activities.
   </p>
 </article>
 
@@ -245,9 +245,9 @@ h1{
   <h2>Scope</h2>
 
   <p>
-    Queries may define boundaries such as
-    geography, topic, timeframe, source type,
-    or record type.
+    Queries may define boundaries such as geography, topic,
+    timeframe, source type, canonical-object type, institution,
+    or other discovery constraints.
   </p>
 </article>
 
@@ -283,14 +283,41 @@ h1{
   <h2>Relationship to Discovery</h2>
 
   <p>
-    Queries initiate discovery. Discovery processes
-    information relevant to the query and generates
-    results for further exploration.
+    Queries provide discovery intent. Navigator may define or
+    orchestrate a workflow containing that intent. Beacon performs
+    discovery and may publish Discovery Signals, discovery metadata,
+    source references, and results for further review.
   </p>
 
   <div class="note">
-    Query → Discovery → Result
+    Workflow / Query → Beacon Discovery → Discovery Signal / Metadata → Result / Referenced Source
   </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Navigator & Beacon Boundary</h2>
+
+  <p>
+    Navigator owns workflow definition and orchestration within the
+    Satoshium Suite. Beacon owns the discovery function and the
+    Discovery Signals and discovery metadata it publishes.
+  </p>
+
+  <div class="note">
+    Navigator → Workflow Definition / Orchestration<br>
+    Beacon → Discovery Signal / Metadata
+  </div>
+
+  <p>
+    A query may guide Beacon without transferring Navigator's
+    orchestration responsibility to Beacon.
+  </p>
 
 </article>
 
@@ -303,17 +330,18 @@ h1{
   <h2>Query Philosophy</h2>
 
   <p>
-    Discovery begins with a question.
+    Discovery begins with intent.
   </p>
 
   <p>
-    The quality of a discovery process is often
-    influenced by the quality of the query that
-    initiated it.
+    The quality of discovery is influenced by the clarity of
+    the question, objective, scope, constraints, and workflow context
+    supplied to Beacon.
   </p>
 
   <div class="note">
-    Better questions often lead to better discoveries.
+    Clear intent supports better discovery.<br>
+    Orchestration remains with Navigator. Discovery remains with Beacon.
   </div>
 
   <a class="btn" href="/beacon/">
@@ -332,7 +360,7 @@ h1{
   <div id="random-saying"
        class="muted"
        style="margin-bottom:14px; max-width:760px;">
-    Every discovery begins with a question.
+    Intent directs discovery. Navigator orchestrates. Beacon discovers and signals.
   </div>
 
   <hr>
