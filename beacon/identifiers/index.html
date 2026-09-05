@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Beacon Identifier Standard</title>
+<meta name="description" content="Satoshium Beacon Identifier Standard — canonical identifier convention for Beacon-owned Discovery Signals."/>
+<link rel="canonical" href="https://satoshium.us/beacon/identifiers/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card h3{margin:18px 0 8px;font-size:18px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(214,163,74,.12);padding:2px 6px;border-radius:6px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Beacon Identifier Standard</h1>
+<p class="lead">
+  The Beacon Identifier Standard establishes the canonical identifier convention for Beacon-owned Discovery Signals.
+  It gives every production signal a stable, unique, human-readable institutional identity.
+</p>
+<p class="lead">
+  This standard defines Beacon's equivalent of <strong>SC-CERT-2026-0001</strong>,
+  <strong>SREG-2026-0001</strong>, <strong>CHR-2026-0001</strong>, and <strong>ANCH-2026-0001</strong>.
+</p>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>
+  A production Discovery Signal must be independently identifiable across public pages, schemas,
+  indexes, references, relationships, version history, and future machine-readable interfaces.
+</p>
+<div class="note">
+  Stable identity allows Beacon to preserve continuity even as metadata, status, publication state,
+  or related source information changes.
+</div>
+</article>
+
+<article class="card">
+<h2>Canonical Decision</h2>
+<p>
+  The canonical Beacon Discovery Signal identifier prefix is:
+</p>
+<div class="note">
+  <strong>BEAC</strong>
+</div>
+<p style="margin-top:14px">
+  The first production Discovery Signal will therefore use the pattern:
+</p>
+<div class="note">
+  <strong>BEAC-2026-0001</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Canonical Identifier Format</h2>
+<div class="note">
+  <strong>BEAC-YYYY-NNNN</strong>
+</div>
+<p style="margin-top:14px">
+  The identifier consists of three governed components:
+</p>
+<ul>
+<li><strong>BEAC</strong> → Satoshium Beacon institutional prefix</li>
+<li><strong>YYYY</strong> → four-digit year of canonical signal creation</li>
+<li><strong>NNNN</strong> → zero-padded sequential number within that year</li>
+</ul>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>1. Institutional Prefix</h2>
+<p>
+  <strong>BEAC</strong> identifies the object as institutionally owned by Satoshium Beacon.
+</p>
+<ul>
+<li>Short enough for human use</li>
+<li>Distinct from other Suite identifiers</li>
+<li>Clearly recognizable as Beacon</li>
+<li>Does not encode Signal Type</li>
+<li>Remains stable even if Beacon classifications evolve</li>
+</ul>
+<div class="note">
+  Identifier → institutional identity.<br/>
+  Signal Type → discovery classification.<br/><br/>
+  These concerns remain separate.
+</div>
+</article>
+
+<article class="card">
+<h2>2. Year Component</h2>
+<p>
+  <strong>YYYY</strong> records the calendar year in which the canonical Discovery Signal is created.
+</p>
+<ul>
+<li>Four digits</li>
+<li>Based on canonical creation year</li>
+<li>Does not change if the signal is later updated</li>
+<li>Does not change if the signal is superseded or resolved</li>
+</ul>
+<div class="note">
+  The year is part of identity, not a statement of current status.
+</div>
+</article>
+
+<article class="card">
+<h2>3. Sequence Component</h2>
+<p>
+  <strong>NNNN</strong> is a four-digit, zero-padded sequence assigned within the creation year.
+</p>
+<ul>
+<li>0001 is the first canonical Discovery Signal of the year</li>
+<li>0002 is the second</li>
+<li>Sequence increases monotonically</li>
+<li>Assigned numbers are not reused</li>
+</ul>
+<div class="note">
+  Example → BEAC-2026-0001
+</div>
+</article>
+
+<article class="card">
+<h2>Why BEAC?</h2>
+<p>
+  The prefix was selected to preserve institutional clarity rather than abbreviate the object as though the object type alone were the institution.
+</p>
+<ul>
+<li>Beacon owns Discovery Signals</li>
+<li>Beacon may later own additional governed discovery structures</li>
+<li>Signal Type remains a separate field</li>
+<li>The prefix aligns with Suite precedent for institution-recognizable identifiers</li>
+</ul>
+<div class="note">
+  The identifier says <strong>who owns the object</strong>.<br/>
+  The Entry Model says <strong>what the object is</strong>.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Suite Identifier Context</h2>
+<p>
+  Beacon's identifier joins the existing production-proven Suite object conventions:
+</p>
+<div class="note">
+  Certifier → SC-CERT-2026-0001<br/>
+  Registry → SREG-2026-0001<br/>
+  Chronicle → CHR-2026-0001<br/>
+  Anchor → ANCH-2026-0001<br/>
+  Beacon → <strong>BEAC-2026-0001</strong>
+</div>
+<p style="margin-top:14px">
+  These identifiers remain institution-specific. They do not imply that a single object moves through the Suite.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Assignment Point</h2>
+<p>
+  The Entry Model and Lifecycle distinguish <strong>Identified</strong> from the creation of the canonical Beacon object.
+</p>
+<p>
+  The identifier should be assigned when the canonical Discovery Signal is <strong>Created</strong> and enters <strong>Draft</strong>.
+</p>
+<div class="note">
+  Identified → no permanent Beacon identifier required<br/>
+  Created → identifier assigned<br/>
+  Draft → canonical object exists
+</div>
+</article>
+
+<article class="card">
+<h2>Identifier Permanence</h2>
+<p>
+  Once assigned, a Beacon identifier is permanent.
+</p>
+<ul>
+<li>It is not changed by publication</li>
+<li>It is not changed by lifecycle transition</li>
+<li>It is not changed by resolution</li>
+<li>It is not reused after withdrawal</li>
+<li>It remains attached to the historical object after supersession</li>
+</ul>
+<div class="note">
+  Identity persists even when institutional standing changes.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Versioning</h2>
+<p>
+  Version information must not be embedded into the canonical Beacon identifier.
+</p>
+<div class="note">
+  Canonical Identifier → BEAC-2026-0001<br/>
+  Version → separate governed field
+</div>
+<p style="margin-top:14px">
+  This keeps the stable object identity distinct from later version mechanics.
+</p>
+</article>
+
+<article class="card">
+<h2>Signal Type</h2>
+<p>
+  Signal Type must not be encoded into the identifier.
+</p>
+<div class="note">
+  BEAC-2026-0001<br/>
+  Signal Type → Certification
+</div>
+<p style="margin-top:14px">
+  A signal's classification belongs in the Entry Model and controlled vocabulary, not in its permanent identity.
+</p>
+</article>
+
+<article class="card">
+<h2>Status</h2>
+<p>
+  Lifecycle and publication status must not be encoded into the identifier.
+</p>
+<div class="note">
+  Identifier → BEAC-2026-0001<br/>
+  Lifecycle State → Active<br/>
+  Publication State → Published
+</div>
+<p style="margin-top:14px">
+  Status may change. Identity must not.
+</p>
+</article>
+
+<article class="card">
+<h2>Source Identity</h2>
+<p>
+  Referenced source identifiers remain separate from the Beacon identifier.
+</p>
+<div class="note">
+  Beacon Signal → BEAC-2026-0001<br/>
+  Referenced Anchor Object → ANCH-2026-0001
+</div>
+<p style="margin-top:14px">
+  Beacon preserves the relationship between the identifiers without collapsing them into one object.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Identifier Grammar</h2>
+<div class="note">
+  BEAC-[four-digit year]-[four-digit sequence]
+</div>
+<p style="margin-top:14px">
+  Conceptual pattern:
+</p>
+<div class="note">
+  <code>^BEAC-[0-9]{4}-[0-9]{4}$</code>
+</div>
+<p style="margin-top:14px">
+  Formal machine validation will be established later through Beacon Schemas and Validation.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Examples</h2>
+<ul>
+<li><strong>BEAC-2026-0001</strong> → first Beacon Discovery Signal created in 2026</li>
+<li><strong>BEAC-2026-0002</strong> → second Beacon Discovery Signal created in 2026</li>
+<li><strong>BEAC-2027-0001</strong> → first Beacon Discovery Signal created in 2027</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Invalid Examples</h2>
+<ul>
+<li>BEAC-26-0001 → year too short</li>
+<li>BEAC-2026-1 → sequence not zero-padded</li>
+<li>BEAC-CERT-2026-0001 → Signal Type improperly embedded</li>
+<li>BEAC-2026-0001-v2 → version improperly embedded</li>
+<li>BEAC-ACTIVE-2026-0001 → status improperly embedded</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Sequence Governance</h2>
+<p>
+  Sequence assignment must preserve uniqueness and non-reuse.
+</p>
+<ul>
+<li>Each created canonical Discovery Signal receives one sequence number</li>
+<li>A withdrawn identifier remains consumed</li>
+<li>A superseded identifier remains consumed</li>
+<li>A resolved identifier remains consumed</li>
+<li>Numbers should not be reassigned to repair gaps</li>
+</ul>
+<div class="note">
+  Gaps are preferable to identity reuse.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Human-Readable Identity</h2>
+<p>
+  The Beacon identifier is intended to be stable enough for:
+</p>
+<ul>
+<li>public citation</li>
+<li>cross-Suite references</li>
+<li>URLs</li>
+<li>indexes</li>
+<li>schemas</li>
+<li>relationship mappings</li>
+<li>version history</li>
+<li>future APIs and machine discovery</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Canonical Public Path</h2>
+<p>
+  The eventual public representation of a production Discovery Signal should be addressable by its identifier.
+</p>
+<div class="note">
+  /beacon/records/BEAC-2026-0001/
+</div>
+<p style="margin-top:14px">
+  The Records and Individual Discovery Signal phases will determine the final public representation.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Authority Boundary</h2>
+<p>
+  A Beacon identifier establishes the identity of the Beacon-owned Discovery Signal only.
+</p>
+<div class="note">
+  BEAC-2026-0001 identifies a Beacon Discovery Signal.<br/>
+  It does not rename, replace, or absorb the identity of any referenced canonical object.<br/><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<p>
+  The canonical identifier convention is established, while downstream implementation details remain pending.
+</p>
+<ul>
+<li>Machine-readable schema enforcement</li>
+<li>Sequence-assignment mechanism</li>
+<li>Collision prevention implementation</li>
+<li>Registry or ledger mechanism for issued Beacon identifiers</li>
+<li>Public routing implementation</li>
+<li>API behavior</li>
+<li>Version-reference syntax outside the canonical identifier</li>
+</ul>
+<div class="note">
+  Identifier meaning is now frozen. Identifier implementation will be governed by later architecture.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal Types → Defined<br/>
+  Lifecycle → Defined<br/>
+  Identifier Standard → Defined<br/>
+  Canonical Prefix → BEAC<br/>
+  Canonical Pattern → BEAC-YYYY-NNNN<br/>
+  First Reserved Production Pattern → BEAC-2026-0001<br/>
+  Schema Enforcement → Pending<br/>
+  First Production Discovery Signal → Not yet created
+</div>
+</article>
+</section>
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  Identity should remain stable even when everything around it changes.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
