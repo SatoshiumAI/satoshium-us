@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Discovery Signal Lifecycle</title>
+<meta name="description" content="Satoshium Beacon Discovery Signal Lifecycle — governed institutional states and transitions for Beacon-owned Discovery Signals."/>
+<link rel="canonical" href="https://satoshium.us/beacon/lifecycle/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card h3{margin:18px 0 8px;font-size:18px;color:var(--gold2)}
+.card p{margin:0 0 14px;color:var(--muted)}.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Discovery Signal Lifecycle</h1>
+<p class="lead">
+  The Discovery Signal Lifecycle defines how a Beacon-owned Discovery Signal moves from an observed discovery condition
+  into a governed institutional object, through review and publication, and eventually through later change or closure.
+</p>
+<p class="lead">
+  The lifecycle must distinguish the discovery of a potential signal from creation of the canonical Beacon object,
+  and it must preserve later history without silently rewriting what Beacon previously published.
+</p>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>
+  The Entry Model established <strong>Status</strong> as a structural component of a Discovery Signal.
+  The Lifecycle architecture determines what institutional states that status must represent and which transitions are meaningful.
+</p>
+<div class="note">
+  Entry Model → establishes Status.<br/><br/>
+  Lifecycle → defines the governed progression of the Discovery Signal.
+</div>
+</article>
+
+<article class="card">
+<h2>Starting Candidate</h2>
+<p>
+  Phase II began with a provisional sequence:
+</p>
+<div class="note">
+  Identified → Created → Reviewed → Published → Updated / Superseded / Resolved
+</div>
+<p style="margin-top:14px">
+  That sequence is useful as an inquiry starting point, but it should not be frozen merely because it was proposed.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Lifecycle Inquiry</h2>
+<p>
+  Review of the candidate sequence reveals that it combines three different concepts:
+</p>
+<div class="note">
+  <strong>Pre-object condition</strong> → Identified<br/>
+  <strong>Lifecycle state</strong> → Draft, Active, Superseded, Resolved, Withdrawn<br/>
+  <strong>Publication state</strong> → Unpublished, Published
+</div>
+<p style="margin-top:14px">
+  Separating these concepts produces a cleaner institutional model and avoids treating every action as though it were the same kind of state.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Identified Is Pre-Object</h2>
+<p>
+  <strong>Identified</strong> describes a potential discovery that Beacon has recognized as a candidate for institutional treatment.
+</p>
+<ul>
+<li>No canonical Discovery Signal is required to exist yet</li>
+<li>No Beacon identifier need be assigned yet</li>
+<li>The observation may still be rejected or abandoned</li>
+<li>Identification belongs to discovery intake rather than the canonical object's lifecycle</li>
+</ul>
+<div class="note">
+  Identified → candidate discovery condition, not a frozen Discovery Signal lifecycle state.
+</div>
+</article>
+
+<article class="card">
+<h2>Created Is an Event</h2>
+<p>
+  <strong>Created</strong> is best understood as the event that brings the canonical Discovery Signal into existence.
+</p>
+<ul>
+<li>The Beacon-owned object now exists</li>
+<li>Its identity and initial content are established</li>
+<li>Creation time can be preserved</li>
+<li>The resulting lifecycle state becomes Draft</li>
+</ul>
+<div class="note">
+  Created → event<br/>
+  Draft → resulting lifecycle state
+</div>
+</article>
+
+<article class="card">
+<h2>Reviewed Is an Event</h2>
+<p>
+  <strong>Reviewed</strong> describes an institutional action performed on a Draft Discovery Signal.
+</p>
+<ul>
+<li>Review evaluates the candidate object</li>
+<li>Review may return the object for revision</li>
+<li>Review may support progression toward publication</li>
+<li>Review does not itself need to become a durable lifecycle state</li>
+</ul>
+<div class="note">
+  Reviewed → event or process outcome, not necessarily a persistent lifecycle state.
+</div>
+</article>
+
+<article class="card">
+<h2>Published Is a Publication State</h2>
+<p>
+  <strong>Published</strong> describes public availability rather than the entire institutional condition of the signal.
+</p>
+<ul>
+<li>A signal may be active and published</li>
+<li>A superseded signal may remain published for historical traceability</li>
+<li>A resolved signal may remain publicly discoverable</li>
+<li>Publication therefore should not replace Lifecycle State</li>
+</ul>
+<div class="note">
+  Lifecycle State and Publication State should remain separate dimensions.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Proposed Canonical Lifecycle States</h2>
+<p>
+  After separating candidate conditions, events, and publication state, the following lifecycle vocabulary is proposed
+  as the Beacon architectural model:
+</p>
+<div class="note">
+  Draft → Active → Superseded / Resolved / Withdrawn
+</div>
+<p style="margin-top:14px">
+  These states describe the institutional condition of the Discovery Signal itself.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Draft</h2>
+<p>
+  A <strong>Draft</strong> Discovery Signal exists as a Beacon-owned object but has not yet completed the institutional process required for active publication.
+</p>
+<ul>
+<li>Canonical object exists</li>
+<li>Identity may be assigned according to the later Identifier Standard</li>
+<li>Content may still be revised</li>
+<li>Review and Validation may still be pending</li>
+<li>Publication should not be assumed</li>
+</ul>
+<div class="note">
+  Draft begins the lifecycle of the canonical Beacon object.
+</div>
+</article>
+
+<article class="card">
+<h2>Active</h2>
+<p>
+  An <strong>Active</strong> Discovery Signal is the current institutionally accepted Beacon signal for the discovery it represents.
+</p>
+<ul>
+<li>Required production conditions have been satisfied</li>
+<li>The signal is institutionally current</li>
+<li>Publication may be associated with Active status</li>
+<li>Later observations may cause update, supersession, or resolution</li>
+</ul>
+<div class="note">
+  Active describes current institutional standing, not source authority.
+</div>
+</article>
+
+<article class="card">
+<h2>Superseded</h2>
+<p>
+  A <strong>Superseded</strong> Discovery Signal has been replaced by a later Beacon signal or governed version that now carries the current discovery context.
+</p>
+<ul>
+<li>Prior signal remains part of institutional history</li>
+<li>Superseding reference should be preserved</li>
+<li>Prior publication need not disappear</li>
+<li>Supersession does not mean the original signal was invalid when issued</li>
+</ul>
+<div class="note">
+  Supersession preserves history rather than silently rewriting it.
+</div>
+</article>
+
+<article class="card">
+<h2>Resolved</h2>
+<p>
+  A <strong>Resolved</strong> Discovery Signal no longer requires active discovery attention because the condition represented by the signal has reached a governed conclusion or closure.
+</p>
+<ul>
+<li>Resolution reason should be attributable</li>
+<li>Resolution may reference a later source state or object</li>
+<li>The original signal remains historically traceable</li>
+<li>Resolved does not mean deleted</li>
+</ul>
+<div class="note">
+  Resolution closes active discovery significance while preserving the record.
+</div>
+</article>
+
+<article class="card">
+<h2>Withdrawn</h2>
+<p>
+  A <strong>Withdrawn</strong> Discovery Signal has been intentionally removed from active institutional standing by Beacon.
+</p>
+<ul>
+<li>May reflect error, invalid basis, or institutional withdrawal</li>
+<li>Withdrawal reason should be preserved</li>
+<li>Withdrawal should not erase prior existence</li>
+<li>Withdrawal differs from supersession and resolution</li>
+</ul>
+<div class="note">
+  Withdrawn preserves accountability when Beacon itself determines the signal should no longer stand.
+</div>
+</article>
+
+<article class="card">
+<h2>Why No Archived State Yet?</h2>
+<p>
+  An <strong>Archived</strong> state is not currently necessary to describe the institutional meaning of a Discovery Signal.
+</p>
+<ul>
+<li>Superseded signals can remain preserved</li>
+<li>Resolved signals can remain preserved</li>
+<li>Withdrawn signals can remain preserved</li>
+<li>Storage or archival location is not automatically a lifecycle meaning</li>
+</ul>
+<div class="note">
+  Archived remains unfrozen unless production demonstrates a distinct institutional need.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Publication State</h2>
+<p>
+  Publication is modeled separately from Lifecycle State.
+</p>
+<div class="note">
+  Publication State → Unpublished / Published
+</div>
+<p style="margin-top:14px">
+  The dedicated Publication Model will determine exact publication requirements, authorization, timestamps, and public representation.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Update Is an Action</h2>
+<p>
+  <strong>Updated</strong> should not be treated as a permanent lifecycle state.
+</p>
+<p>
+  An update is an action that changes the governed Beacon object or results in a later version or signal.
+</p>
+<div class="note">
+  Update → action<br/>
+  Version / supersession → governed consequence
+</div>
+</article>
+
+<article class="card">
+<h2>Lifecycle vs. Source Status</h2>
+<p>
+  Beacon's lifecycle describes the Discovery Signal, not the lifecycle of the referenced source object.
+</p>
+<div class="note">
+  Beacon Lifecycle State → condition of the Discovery Signal<br/><br/>
+  Source Status → condition maintained by the source institution
+</div>
+<p style="margin-top:14px">
+  A source may change state and cause Beacon to create, update, supersede, or resolve a signal, but Beacon does not own the source state.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Lifecycle Flow</h2>
+<div class="note">
+  Candidate Discovery Identified<br/>
+  ↓<br/>
+  Discovery Signal Created<br/>
+  ↓<br/>
+  <strong>Draft</strong><br/>
+  ↓ Review / Validation / Publication Decision<br/>
+  <strong>Active</strong><br/>
+  ↓ Later Observation or Institutional Action<br/>
+  <strong>Superseded</strong> · <strong>Resolved</strong> · <strong>Withdrawn</strong>
+</div>
+<p style="margin-top:14px">
+  Publication runs alongside this lifecycle as a separate state dimension rather than replacing it.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Transition Discipline</h2>
+<p>
+  Lifecycle transitions should eventually require an attributable institutional basis.
+</p>
+<ul>
+<li>Draft → Active only after required production conditions</li>
+<li>Active → Superseded only when a governed replacement exists</li>
+<li>Active → Resolved only when a supported resolution exists</li>
+<li>Draft or Active → Withdrawn only with a preserved reason</li>
+<li>Prior states should remain traceable</li>
+</ul>
+<div class="note">
+  Exact transition gates belong to later Validation, Versioning, Publication, and Methodology architecture.
+</div>
+</article>
+
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<p>
+  This page establishes the lifecycle architecture without prematurely deciding every implementation rule.
+</p>
+<ul>
+<li>Machine-readable lifecycle values</li>
+<li>Exact transition validation rules</li>
+<li>Who or what authorizes transitions</li>
+<li>Whether Draft objects receive permanent identifiers immediately</li>
+<li>Update/version mechanics</li>
+<li>Supersession mechanics</li>
+<li>Resolution evidence requirements</li>
+<li>Publication Gate design</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Authority Boundary</h2>
+<p>
+  A Beacon lifecycle transition changes the institutional condition of the Discovery Signal only.
+</p>
+<div class="note">
+  Beacon lifecycle change ≠ source lifecycle change<br/>
+  Beacon resolution ≠ source resolution<br/>
+  Beacon withdrawal ≠ source withdrawal<br/><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationship to the Entry Model</h2>
+<p>
+  Lifecycle now gives architectural meaning to the <strong>Status</strong> component of the Discovery Signal Entry Model:
+</p>
+<div class="note">
+  Lifecycle State → Draft / Active / Superseded / Resolved / Withdrawn<br/>
+  Publication State → Unpublished / Published
+</div>
+<p style="margin-top:14px">
+  The later production schema will determine how these dimensions are represented machine-readably.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal Types → Defined<br/>
+  Lifecycle Architecture → Defined<br/>
+  Lifecycle States → Draft · Active · Superseded · Resolved · Withdrawn<br/>
+  Publication Dimension → Unpublished · Published<br/>
+  Transition Enforcement → Pending<br/>
+  Production Proof → Pending
+</div>
+</article>
+</section>
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  Preserve the state. Preserve the transition. Preserve the reason.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
