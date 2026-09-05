@@ -133,13 +133,14 @@ h1{
   <h1>Satoshium Beacon Certification Signals</h1>
 
   <p class="lead">
-    Certification Signals define the certification-related discovery signals
-    published by Beacon.
+    Certification Signals are Beacon-owned Discovery Signals that identify
+    certification-related information as potentially relevant for discovery.
   </p>
 
   <p class="lead">
-    Beacon does not certify. Beacon publishes signals that help the world
-    discover certification-related information.
+    Beacon does not certify. It publishes Discovery Signals and discovery
+    metadata that reference certification information while Certifier retains
+    certification and verification authority.
   </p>
 </section>
 
@@ -149,33 +150,36 @@ h1{
   <h2>Purpose</h2>
   <p>
     Certification Signals provide a common discovery model for surfacing
-    certification-related information without transferring authority away from
-    Certifier or Registry.
+    certification-related information while preserving the authority,
+    identifiers, provenance, and lifecycle of referenced canonical objects.
   </p>
 </article>
 
 <article class="card">
   <h2>Core Distinction</h2>
   <p>
-    Certification status belongs to Certifier. Registry status belongs to
-    Registry. Discovery signals belong to Beacon.
+    Certification Packages and certification status belong to Certifier.
+    SREG records and Registry lifecycle status belong to Registry.
+    Discovery Signals and discovery metadata belong to Beacon.
   </p>
 </article>
 
 <article class="card">
   <h2>Discovery Signal</h2>
   <p>
-    A discovery signal is a surfaced indicator that points users, tools, or
-    future systems toward certification-related records, events, or metadata.
+    A Discovery Signal is a Beacon-owned object that points users, tools, or
+    workflows toward potentially relevant Certification Packages, SREG records,
+    events, evidence references, or certification metadata.
   </p>
 </article>
 
 <article class="card">
   <h2>Not Authority</h2>
   <p>
-    A Beacon signal does not create certification authority, modify Registry
-    status, preserve history, or prove integrity. It points back to systems that
-    own those responsibilities.
+    A Beacon signal does not create certification authority, modify an SREG
+    record, create Chronicle authority, establish an Integrity Reference, or
+    issue a Trust Statement. It points back to the institution that owns the
+    referenced responsibility.
   </p>
 </article>
 
@@ -192,7 +196,7 @@ h1{
   </p>
 
   <div class="note">
-    Certified → Expired → Revoked → Updated → Pending
+    Certified · Expired · Revoked · Updated · Pending
   </div>
 </article>
 
@@ -203,53 +207,54 @@ h1{
 <article class="card">
   <h2>Certified</h2>
   <p>
-    A Certified signal indicates that Beacon has surfaced information pointing
-    to a certification outcome or certified record maintained by the responsible
-    authority.
+    A Certified signal indicates that Beacon has observed an authoritative
+    Certifier source showing the referenced subject or Certification Package in
+    a certified state.
   </p>
 </article>
 
 <article class="card">
   <h2>Expired</h2>
   <p>
-    An Expired signal indicates that Beacon has surfaced information suggesting
-    a certification may have reached the end of its active period according to
-    its authoritative source.
+    An Expired signal indicates that Beacon has observed an authoritative
+    Certifier source showing the referenced certification in an expired state.
   </p>
 </article>
 
 <article class="card">
   <h2>Revoked</h2>
   <p>
-    A Revoked signal indicates that Beacon has surfaced information pointing to
-    a certification revocation, withdrawal, or invalidation recorded by an
-    authoritative system.
+    A Revoked signal indicates that Beacon has observed an authoritative
+    Certifier source showing the referenced certification in a revoked,
+    withdrawn, or otherwise invalidated state.
   </p>
 </article>
 
 <article class="card">
   <h2>Updated</h2>
   <p>
-    An Updated signal indicates that Beacon has surfaced information showing
-    that certification-related records, metadata, references, or status values
-    may have changed.
+    An Updated signal indicates that Beacon has observed a change in
+    certification-related information, metadata, references, or authoritative
+    status that may warrant renewed attention.
   </p>
 </article>
 
 <article class="card">
   <h2>Pending</h2>
   <p>
-    A Pending signal indicates that Beacon has surfaced information related to
-    a certification process, registration process, review process, or record that
-    has not yet reached a final authoritative state.
+    A Pending signal indicates that Beacon has observed an authoritative
+    certification source showing a certification process or review that has
+    not yet reached a final certification state.
   </p>
 </article>
 
 <article class="card">
   <h2>Future Signals</h2>
   <p>
-    Future signals may include renewed, suspended, superseded, challenged,
-    verified, anchored, attested, corrected, or other discovery-relevant states.
+    Future certification-related signals may include renewed, suspended,
+    superseded, challenged, corrected, or other states supported by authoritative
+    Certifier lifecycle semantics. Integrity- and trust-related states remain
+    within Anchor and Attestor authority respectively.
   </p>
 </article>
 
@@ -267,8 +272,8 @@ h1{
   </p>
 
   <div class="note">
-    Signal Type · Source System · Related Certification · Related Registry Entry ·
-    Related Event · Public Reference · Signal Date · Last Observed
+    Discovery Signal ID · Signal Type · Source Institution · Certification Package ID ·
+    Related SREG ID · Provenance · Public Reference · Signal Date · Last Observed · Version
   </div>
 </article>
 
@@ -280,12 +285,12 @@ h1{
   <h2>Relationship to Certifier</h2>
 
   <p>
-    Certifier remains the authority for certification outcomes, certification
-    status, evidence review, scoring, and certification artifacts.
+    Certifier remains authoritative for Certification Packages, certification
+    outcomes, certification status, evidence review, scoring, and verification.
   </p>
 
   <div class="note">
-    Beacon may publish a Certified signal. Certifier determines whether something is certified.
+    Beacon may publish a Certified signal. Certifier determines and records the authoritative certification state.
   </div>
 </article>
 
@@ -297,13 +302,34 @@ h1{
   <h2>Relationship to Registry</h2>
 
   <p>
-    Registry remains the public catalog for certified records and SREG Registry
-    Entries. Beacon may surface Registry references to help users discover those
-    cataloged records.
+    Registry remains authoritative for SREG records and their lifecycle.
+    Beacon may reference an SREG record when it is relevant to certification
+    discovery without duplicating or modifying that record.
   </p>
 
   <div class="note">
-    Beacon may surface a Registry Entry. Registry owns the catalog.
+    Beacon may reference an SREG record. Registry retains authority for SREG.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Certification Signal Authority Boundary</h2>
+
+  <p>
+    Beacon owns the Certification Signal as a Discovery Signal and owns its
+    discovery metadata. Certifier remains authoritative for the Certification
+    Package and certification state being referenced. Registry remains
+    authoritative for any referenced SREG record.
+  </p>
+
+  <div class="note">
+    The signal may reflect an authoritative state.<br>
+    It does not independently create that state.<br>
+    Reference does not transfer authority.
   </div>
 </article>
 
@@ -315,13 +341,15 @@ h1{
   <h2>Signal Interpretation</h2>
 
   <p>
-    Signals are indicators, not conclusions. Users and systems should interpret
-    Beacon signals by following their references to the authoritative records,
-    events, anchors, attestations, or source systems that support them.
+    Signals are indicators, not independent certification conclusions. Users,
+    systems, and workflows should interpret a Certification Signal by following
+    its references to the authoritative Certification Package, SREG record,
+    supporting evidence, or other relevant canonical object.
   </p>
 
   <div class="note">
-    A signal helps something be found. It does not replace the thing it points to.
+    A signal helps something be found. It does not replace the canonical object it references.<br>
+    Reference does not transfer authority.
   </div>
 </article>
 
@@ -333,9 +361,9 @@ h1{
   <h2>Signal Philosophy</h2>
 
   <p>
-    Beacon helps the world discover certification-related information without
-    becoming the certification authority. Its role is to publish signals,
-    preserve references, and improve visibility.
+    Beacon makes certification-related information discoverable without
+    becoming the certification authority. Its role is to publish Discovery
+    Signals, preserve canonical references and provenance, and improve visibility.
   </p>
 
   <a class="btn" href="/beacon/">
@@ -350,7 +378,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    A signal does not decide. It points.
+    Beacon signals the certification state. Certifier remains authoritative for it.
   </div>
   <hr>
   <div id="footer-container"></div>
