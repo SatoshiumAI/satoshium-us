@@ -2,232 +2,283 @@
 
 ## Purpose
 
-The Query Log Schema defines the structure used to document discovery requests processed by Beacon.
+The **Query Log Schema** defines an optional operational structure for preserving information about discovery requests processed by or involving Beacon.
 
-Query logs provide a record of user intent, discovery activities, search parameters, and associated outcomes.
+Query history may support:
 
-The schema supports transparency, traceability, auditing, analytics, and future discovery improvements.
+```text
+traceability
+reproducibility
+review
+audit
+operational analysis
+discovery improvement
+```
+
+A Query Log is not Beacon's canonical production object.
+
+---
+
+## Schema Role
+
+```text
+Role → Optional Operational History
+Canonical Beacon Object → No
+Canonical Beacon Identifier → Not established
+```
+
+Beacon's canonical production object remains:
+
+```text
+Discovery Signal
+```
+
+with identifier:
+
+```text
+BEAC-YYYY-NNNN
+```
+
+---
+
+# Relationship to Navigator
+
+Navigator owns:
+
+```text
+Workflow Definition / Orchestration
+```
+
+Beacon may receive or process discovery activity within a Navigator-directed workflow.
+
+Conceptually:
+
+```text
+Navigator
+→ workflow / query context
+→ Beacon discovery
+```
+
+This schema must not redefine Navigator's orchestration authority.
+
+---
+
+# Query Structure
+
+Potential Query Log information may include:
+
+```text
+query_reference
+query_type
+title
+query_text
+objective
+scope
+parameters
+discovery_method
+sources_consulted
+related_results
+related_signals
+submitted_by
+workflow_reference
+timestamps
+processing_metadata
+status
+notes
+```
+
+Because Query Logs are operational rather than canonical objects, exact required fields remain unfrozen.
+
+---
+
+## Query Reference
+
+The previous schema assigned:
+
+```text
+QRY-YYYY-NNNNNN
+```
+
+as a permanent identifier.
+
+That convention is not frozen in the current architecture.
+
+Reason:
+
+```text
+persistent Query Logs have not yet been proven necessary as canonical institutional objects
+```
+
+If persistent query identity becomes operationally necessary, a separate identifier rule may later be established.
+
+For now, implementations may preserve a local or workflow reference without implying canonical Beacon identity.
+
+---
+
+## Query Type
+
+Possible descriptive query types may include:
+
+```text
+Search
+Research
+Investigative
+Exploratory
+Relationship
+Automated
+```
+
+These values are operational descriptors rather than frozen canonical vocabulary.
+
+---
+
+## Query Text
+
+Preserves the original request when retention policy permits.
+
+---
+
+## Objective
+
+Describes the intended discovery outcome.
 
 ---
 
 ## Scope
 
-This schema may be used for:
-
-* Discovery requests
-* Search activities
-* Research queries
-* Investigative queries
-* Exploratory queries
-* Automated discovery processes
-* Cross-system discovery operations
-
-Implementations may evolve over time.
-
----
-
-## Core Principles
-
-### Transparency
-
-Discovery requests should remain understandable.
-
-### Traceability
-
-Queries should support historical review.
-
-### Accountability
-
-Discovery activities should be documentable.
-
-### Consistency
-
-Query records should follow predictable structures.
-
-### Interoperability
-
-Query records should support exchange across systems.
-
----
-
-## Query Structure
-
-### Query Identifier
-
-Unique identifier assigned to the query.
-
-Example:
+Potential query scope may include:
 
 ```text
-QRY-2026-000001
+jurisdiction
+time range
+topic
+object type
+source type
+domain
+other discovery boundary
 ```
 
 ---
 
-### Query Type
+## Parameters
 
-Classification of the discovery request.
-
-Examples:
-
-```text
-Search Query
-Research Query
-Investigative Query
-Exploratory Query
-Automated Query
-Relationship Query
-```
+Optional structured parameters used to perform discovery.
 
 ---
 
-### Query Title
+## Discovery Method
 
-Human-readable title describing the request.
-
-Example:
-
-```text
-Digital Asset Friendly Jurisdictions
-```
-
----
-
-### Query Date
-
-Date the query was submitted.
-
-Example:
-
-```text
-2026-11-01
-```
-
----
-
-### Query Text
-
-Original query submitted to Beacon.
-
-Example:
-
-```text
-Find jurisdictions with favorable digital asset policies.
-```
-
----
-
-### Query Objective
-
-Description of the intended discovery outcome.
-
-Example:
-
-```text
-Identify jurisdictions relevant to digital asset businesses.
-```
-
----
-
-### Query Scope
-
-Boundaries associated with the request.
-
-Examples:
-
-```text
-Global
-National
-State
-Historical
-Media
-Identity
-Registry
-```
-
----
-
-### Query Parameters
-
-Optional parameters used during discovery.
-
-Examples:
-
-```text
-Date Range
-Jurisdiction
-Topic
-Record Type
-Source Type
-Confidence Threshold
-```
-
----
-
-### Discovery Method
-
-Method used to process the query.
-
-Examples:
+Potential methods may include:
 
 ```text
 Search
 Index Lookup
-Signal Discovery
 Relationship Mapping
 Cross-System Discovery
+Manual Review
 ```
+
+Future methodology may refine these terms.
 
 ---
 
-### Sources Consulted
+## Sources Consulted
 
-Sources examined during discovery.
+Preserve attributable source references where practical.
 
-Examples:
+Examples may include:
 
 ```text
 Atlas
+Certifier
 Registry
 Chronicle
 Anchor
 Attestor
-Public Sources
+external sources
 ```
+
+A source consultation does not transfer source authority to Beacon.
 
 ---
 
-### Results Generated
+## Related Results
 
-Number of results generated.
+If Discovery Results are persisted, the query may reference them.
+
+---
+
+## Related Signals
+
+A query may reference Discovery Signals that were surfaced, reviewed, or created in connection with the activity.
 
 Example:
 
-```text
-27
+```yaml
+related_signals:
+  - BEAC-2026-0001
 ```
+
+The query does not own those signals.
 
 ---
 
-### Related Result Records
+## Submitted By
 
-References to associated discovery results.
+When appropriate and permitted, preserve the actor, system, process, or workflow responsible for the request.
 
 Examples:
 
 ```text
-DRS-2026-000041
-DRS-2026-000042
-DRS-2026-000043
+User
+Navigator
+Beacon process
+Automated process
 ```
+
+This field requires privacy-aware implementation.
 
 ---
 
-### Query Status
+## Workflow Reference
 
-Current state of the query.
+When a query originates in Navigator, preserve the Navigator workflow reference rather than duplicating workflow authority inside Beacon.
 
-Examples:
+---
+
+## Timestamps
+
+Potential timestamps include:
+
+```text
+submitted_at
+started_at
+completed_at
+last_updated_at
+```
+
+Exact requirements remain operational.
+
+---
+
+## Processing Metadata
+
+Optional operational information may include:
+
+```text
+processing duration
+result count
+source count
+error information
+```
+
+This metadata should not be confused with Discovery Signal Metadata.
+
+---
+
+## Query Status
+
+The previous schema proposed:
 
 ```text
 Submitted
@@ -237,95 +288,58 @@ Archived
 Failed
 ```
 
+These remain useful candidate operational states but are not frozen as canonical Beacon lifecycle values.
+
+If Query Logs become persistent production artifacts, their state model should be governed separately.
+
 ---
 
-### Processing Duration
+# Privacy and Retention
 
-Optional measurement of discovery processing time.
-
-Example:
+Query Logs may contain:
 
 ```text
-3.4 seconds
+user intent
+search terms
+sensitive research topics
+workflow context
+identifiable actor information
 ```
 
----
+Therefore retention must not be assumed.
 
-### Notes
-
-Optional observations associated with the query.
-
-Example:
+A future operational implementation should explicitly determine:
 
 ```text
-Discovery produced multiple related jurisdiction records.
+whether query text is stored
+whether actors are identified
+whether data is anonymized
+retention period
+deletion policy
+access controls
+aggregate analytics policy
 ```
+
+Until those rules exist, Query Logs should be treated as optional and privacy-sensitive.
 
 ---
 
-### Submitted By
-
-Individual, organization, system, or process responsible for the query.
-
-Examples:
-
-```text
-User
-Navigator
-Beacon
-Automated Process
-```
-
----
-
-### Created Timestamp
-
-Timestamp associated with query creation.
-
-Example:
-
-```text
-2026-11-01T14:22:10Z
-```
-
----
-
-### Last Updated
-
-Most recent modification timestamp.
-
-Example:
-
-```text
-2026-11-01T14:22:14Z
-```
-
----
-
-## Example Record
+# Conceptual Example
 
 ```yaml
-query_id: QRY-2026-000001
-
-query_type: Research Query
-
+query_reference: navigator-workflow-step-004
+query_type: Research
 title: Digital Asset Friendly Jurisdictions
 
-query_date: 2026-11-01
-
 query_text: >
-  Find jurisdictions with favorable digital
-  asset policies.
+  Find jurisdictions with favorable digital asset policies.
 
-query_objective: >
-  Identify jurisdictions relevant to digital
-  asset businesses.
+objective: >
+  Identify jurisdiction information relevant to digital asset businesses.
 
-query_scope: Global
-
-query_parameters:
+scope:
+  geography: Global
   topic: Digital Assets
-  record_type: Jurisdiction
 
 discovery_method: Cross-System Discovery
 
@@ -334,120 +348,110 @@ sources_consulted:
   - Registry
   - Chronicle
 
-results_generated: 27
+related_signals:
+  - BEAC-2026-0001
 
-related_results:
-  - DRS-2026-000041
-  - DRS-2026-000042
-  - DRS-2026-000043
+submitted_by: Navigator
 
-query_status: Completed
+workflow_reference: NAV-WORKFLOW-EXAMPLE
 
-processing_duration: 3.4 seconds
+timestamps:
+  submitted_at: 2026-09-05T00:00:00Z
+  completed_at: 2026-09-05T00:00:03Z
 
-notes: >
-  Discovery produced multiple related
-  jurisdiction records.
-
-submitted_by: User
-
-created_timestamp: 2026-11-01T14:22:10Z
-
-last_updated: 2026-11-01T14:22:14Z
+processing_metadata:
+  result_count: 27
 ```
 
----
-
-## Relationship to Other Schemas
-
-This schema may reference:
-
-* Beacon Record Schema
-* Discovery Result Schema
-* Signal Record Schema
-* Source Reference Schema
-
-Additional schema relationships may be established over time.
+This example is conceptual only.
 
 ---
 
-## Relationship to Navigator
+# Relationship to Discovery Results
 
-Navigator may generate, refine, organize, or execute queries.
-
-Beacon may process those queries and produce discovery results.
-
-A simplified interaction may be represented as:
-
-```text
-Navigator → Query → Beacon
-```
-
----
-
-## Relationship to Discovery
-
-Queries initiate discovery.
-
-Discovery activities are performed in response to queries.
-
-Results are generated from those activities.
-
-A simplified workflow may be represented as:
+Conceptually:
 
 ```text
 Query
-  ↓
+→ Discovery Activity
+→ Discovery Result
+```
+
+A Discovery Result may later contribute to creation or review of a Discovery Signal.
+
+---
+
+# Relationship to Discovery Signals
+
+A query does not automatically create a canonical signal.
+
+Conceptually:
+
+```text
+Query
+        ↓
 Discovery
-  ↓
+        ↓
 Result
+        ↓
+Institutional evaluation
+        ↓
+Possible Discovery Signal
 ```
 
 ---
 
-## Query Analytics
+# Analytics
 
-Future implementations may use query logs to support:
+Future implementations may use privacy-governed query history for:
 
-* Discovery optimization
-* Signal analysis
-* Query trends
-* Relationship mapping
-* Search improvements
-* User experience improvements
+```text
+discovery optimization
+query trends
+search improvement
+relationship analysis
+workflow analysis
+user experience improvement
+```
 
-Specific implementations may evolve over time.
-
----
-
-## Privacy Considerations
-
-Implementations may choose to:
-
-* Store queries
-* Anonymize queries
-* Aggregate query statistics
-* Limit retention periods
-
-Privacy policies should be documented separately.
+Analytics must not silently convert private query history into public Beacon records.
 
 ---
 
-## Future Development
+# Authority Boundary
 
-Future query log schemas may include:
+A query may ask Beacon to discover authoritative information.
 
-* Query versioning
-* Query history
-* Query refinement tracking
-* Relationship analytics
-* Multi-system discovery tracking
-* Automated query orchestration
+The query itself carries no source authority.
 
-Specific implementations may evolve over time.
+Beacon should preserve the distinction between:
+
+```text
+request
+discovery activity
+result
+canonical signal
+source authority
+```
+
+> **Reference does not transfer authority.**
 
 ---
 
-## Status
+# Status
 
-This schema represents an initial conceptual structure for query logging and may be expanded, revised, or refined as Beacon capabilities mature.
+```text
+Schema Role → Optional Operational History
+Canonical Object → No
+Permanent Identifier → Not established
+Privacy Rules → Pending
+Retention Rules → Pending
+Lifecycle → Not frozen
+Machine Validation → Pending if retained
+```
+
+---
+
+## Last Updated
+
+September 5, 2026
