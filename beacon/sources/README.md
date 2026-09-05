@@ -2,61 +2,78 @@
 
 ## Purpose
 
-Sources provide the foundation for discovery.
+Sources provide the origin, authority, context, attribution, and provenance behind information surfaced through Beacon.
 
-They represent the origin of information surfaced through Beacon and help users understand where information comes from, how it was created, and how it relates to other records, signals, and discoveries.
+Beacon uses source references to help users and Suite workflows understand where information originated, which institution or external source maintains it, and how it relates to Discovery Signals, canonical objects, and other information.
 
-Beacon seeks to improve visibility while preserving source attribution.
+Beacon seeks to improve visibility while preserving source attribution, provenance, traceability, stable references, discovery context, and institutional authority.
 
 ---
 
 ## What Is a Source?
 
-A source is the origin of information.
+A source is the origin or authoritative location of information referenced through discovery.
 
 Sources may include:
 
-* Records
-* Documents
-* Publications
-* Datasets
-* Historical entries
-* Research materials
-* Government records
+* Atlas authoritative intelligence
+* Certifier Certification Packages
+* Registry SREG records
+* Chronicle Entries
+* Anchor Integrity References
+* Attestor Trust Statements
+* Documents and publications
+* Research materials and datasets
+* Government and public records
 * Media references
-* Identity records
-* Trust-related records
+* Open-source repositories
+* Other external information environments
 
-A source provides context for discovery.
+A source provides context and a review pathway for discovery.
+
+---
+
+## Source Authority Boundary
+
+Beacon owns the Discovery Signals and discovery metadata it publishes.
+
+Beacon does not become authoritative for a source or canonical object merely because it discovers, indexes, surfaces, or references it.
+
+The originating institution or external source remains responsible for the information it maintains.
+
+**Reference does not transfer authority.**
 
 ---
 
 ## Why Sources Matter
 
-Information without attribution is difficult to evaluate.
+Information without attribution or provenance is difficult to review.
 
-Sources help users understand:
+Sources help users and systems understand:
 
 * Origin
+* Source institution or external provider
+* Canonical identifier, when available
 * Context
-* Ownership
-* Authorship
-* Publication history
+* Ownership or institutional responsibility
+* Authorship or publication history
 * Supporting evidence
+* Relevant status
+* Relationships to other objects
 
-Discovery becomes more useful when source information remains visible.
+Discovery becomes more useful when source information remains visible and traceable.
 
 ---
 
 ## Source Philosophy
 
-Beacon does not seek to replace sources.
+Beacon does not seek to replace sources or assume their authority.
 
-Beacon helps users discover them.
+Beacon helps users and Suite workflows discover them.
 
-The purpose of discovery is not merely to surface information, but to preserve the ability to trace information back to its origin.
+The purpose of discovery is not merely to surface information, but to preserve the ability to trace information back to its origin or authoritative canonical object.
 
-Source visibility is a core Beacon principle.
+Source visibility and authority preservation are core Beacon principles.
 
 ---
 
@@ -64,14 +81,33 @@ Source visibility is a core Beacon principle.
 
 ### Atlas Sources
 
-Information originating from Atlas.
+Authoritative intelligence originating from Atlas.
 
 Examples:
 
-* Jurisdiction records
-* Media records
-* Jurisdiction intelligence pages
+* Jurisdiction intelligence
+* Media intelligence
+* Profiles
 * Supporting references
+* Related Atlas information
+
+Atlas retains authority over the intelligence it maintains.
+
+---
+
+### Certifier Sources
+
+Information originating from Certifier.
+
+Examples:
+
+* Certification Packages
+* Certification status
+* Evidence references
+* Verification metadata
+* Certification-related relationships
+
+Certifier retains certification and verification authority.
 
 ---
 
@@ -81,10 +117,14 @@ Information originating from Registry.
 
 Examples:
 
-* Registered records
+* SREG records
 * Record metadata
+* Stable identifiers
 * Record histories
+* Lifecycle information
 * Record relationships
+
+Registry retains authority over its registered records.
 
 ---
 
@@ -94,10 +134,13 @@ Information originating from Chronicle.
 
 Examples:
 
-* Historical entries
-* Historical evidence
-* Event records
-* Historical references
+* Chronicle Entries
+* Qualifying Occurrences
+* Historical source references
+* Timelines
+* Preserved historical context
+
+Chronicle retains authority over its historical record.
 
 ---
 
@@ -107,10 +150,12 @@ Information originating from Anchor.
 
 Examples:
 
-* Identity records
-* Claims
-* Reputation records
-* Governance references
+* Integrity References
+* Anchoring relationships
+* Integrity evidence
+* Integrity metadata
+
+Anchor retains authority over its Integrity References.
 
 ---
 
@@ -120,16 +165,18 @@ Information originating from Attestor.
 
 Examples:
 
-* Attestations
-* Validation records
-* Confidence assessments
-* Trust evaluations
+* Trust Statements
+* Attestation context
+* Supporting references
+* Trust metadata
+
+Attestor retains authority over its Trust Statements.
 
 ---
 
 ### External Sources
 
-Information originating outside the Satoshium ecosystem.
+Information originating outside the Satoshium Suite.
 
 Examples:
 
@@ -139,52 +186,71 @@ Examples:
 * Public records
 * News organizations
 * Open data repositories
+* Open-source repositories
+* Third-party systems
+
+External discovery does not make an external source a Suite institution or convert its information into a Suite-authoritative object.
 
 ---
 
 ## Source Attributes
 
-Sources may vary by:
+Source references may preserve attributes such as:
 
+* Source identity
+* Source institution or provider
+* Canonical identifier
 * Origin
 * Scope
 * Format
 * Accessibility
-* Reliability
-* Timeliness
-* Relevance
+* Publication or record date
+* Relevant status
+* Version
+* Provenance
+* Discovery context
+* Relationships
 
-Different sources may provide different perspectives on the same subject.
+Different sources may provide different perspectives or institutional functions concerning the same subject.
 
 ---
 
 ## Source Attribution
 
-Whenever possible, Beacon should preserve:
+Whenever practical, Beacon should preserve:
 
 * Source identity
 * Source origin
-* Publication information
+* Source institution or provider
+* Canonical identifier, when available
+* Publication or record information
 * Related references
+* Provenance
 * Discovery context
+* Relevant authority boundary
 
-Users should be able to determine where information originated.
+Users and systems should be able to determine where information originated and how to review it.
 
 ---
 
 ## Source Relationships
 
-Sources often connect to other sources.
+Sources and canonical objects may connect to other sources or objects.
 
 Examples may include:
 
 * Supporting sources
 * Contradicting sources
 * Historical sources
-* Related records
+* Related SREG records
+* Related Chronicle Entries
+* Related Certification Packages
+* Related Integrity References
+* Related Trust Statements
 * Derived publications
+* Cross-institution references
 
-Beacon may help surface those relationships.
+Beacon may surface these relationships while preserving the identifiers, provenance, and authority of the referenced information.
 
 ---
 
@@ -192,95 +258,112 @@ Beacon may help surface those relationships.
 
 Discovery should not obscure origin.
 
-Users should be able to understand:
+Users and systems should be able to understand:
 
-* Which source produced information
+* Which source produced or maintains information
+* Which institution retains authority
 * How the source was discovered
-* Which sources support a result
-* Which sources relate to a signal
+* Which sources support a Discovery Signal or result
+* Which sources relate to other canonical objects
+* How the source can be reviewed
 
-Transparency improves discoverability and understanding.
+Transparency improves discoverability, reviewability, and understanding.
 
 ---
 
 ## Source Accessibility
 
-Sources should be discoverable whenever possible.
+Sources should be discoverable whenever practical and permitted.
 
-Future Beacon implementations may support:
+Beacon implementations may support:
 
 * Source indexing
 * Source categorization
 * Source filtering
 * Source mapping
 * Source relationship discovery
+* Canonical-object linking
 
-Specific implementations may evolve over time.
+Specific implementations may evolve as Beacon advances toward production.
 
 ---
 
-## Relationship to Signals
+## Relationship to Discovery Signals
 
-Signals often originate from sources.
+Discovery Signals commonly reference sources or canonical objects.
 
-A signal without source context may provide limited value.
+A Discovery Signal without source context may provide limited review value.
 
-Source visibility helps users understand why a signal exists.
+Beacon should preserve enough source information to explain why a signal exists and where the referenced information can be examined.
 
 A simplified relationship may be represented as:
 
 ```text
-Source
-  ↓
-Signal
+Source / Canonical Object
+          ↓
+       Discovery
+          ↓
+Discovery Signal / Metadata
 ```
+
+The signal belongs to Beacon.
+
+Authority over the referenced information remains with its source.
 
 ---
 
 ## Relationship to Discovery
 
-Discovery frequently begins with a source or ends with a source.
+Discovery may begin with a source, identify a source, or produce a reference to a source.
 
-Beacon may help users:
+Beacon may help users and workflows:
 
 * Locate sources
 * Compare sources
-* Organize sources
+* Organize source references
 * Explore source relationships
+* Trace Discovery Signals to their origin
+* Navigate to authoritative canonical objects
 
-Sources remain one of the primary outputs of discovery.
+Beacon makes sources discoverable without replacing them.
 
 ---
 
 ## Relationship to Results
 
-Discovery results often contain one or more sources.
+Beacon results may contain references to one or more sources, canonical objects, or Discovery Signals.
 
-Users should be able to trace results back to supporting source material whenever possible.
+Users should be able to trace results back to supporting or authoritative source material whenever practical.
 
 This supports:
 
 * Investigation
-* Verification
+* Certification review
 * Historical review
+* Integrity review
+* Trust review
 * Future research
+
+A Beacon result does not become authoritative merely because it presents authoritative source information.
 
 ---
 
-## Relationship to Verification
+## Relationship to Suite Authority
 
-Sources are not verification.
+Sources may originate from multiple Suite institutions, each with a distinct canonical object:
 
-The existence of a source does not imply:
+* **Atlas → Authoritative Intelligence**
+* **Navigator → Workflow Definition / Orchestration**
+* **Beacon → Discovery Signal / Metadata**
+* **Certifier → Certification Package**
+* **Registry → SREG**
+* **Chronicle → Chronicle Entry**
+* **Anchor → Integrity Reference**
+* **Attestor → Trust Statement**
 
-* Accuracy
-* Certification
-* Trustworthiness
-* Legitimacy
+Navigator may orchestrate workflows that cause Beacon to discover or retrieve sources, but Navigator does not replace the authority of the source institution.
 
-Verification remains the responsibility of Certifier.
-
-Trust-related assessments remain the responsibility of Attestor.
+Beacon preserves the relationship between discovery and authority.
 
 ---
 
@@ -288,38 +371,52 @@ Trust-related assessments remain the responsibility of Attestor.
 
 ### Attribution
 
-Sources should remain identifiable.
+Sources and originating institutions should remain identifiable.
+
+### Provenance
+
+Origin and relevant context should be preserved for review.
 
 ### Transparency
 
-Origins should remain visible.
+Source relationships and authority boundaries should remain visible.
 
 ### Traceability
 
-Information should support review and investigation.
+Information should support navigation back to its source or canonical object.
+
+### Stable References
+
+Canonical identifiers and durable source references should be preserved when available.
 
 ### Accessibility
 
-Sources should be discoverable.
+Sources should be discoverable whenever practical and permitted.
 
 ### Neutrality
 
-Source documentation should not imply endorsement.
+Source documentation should not imply endorsement or authority beyond what the source actually holds.
+
+### Authority Preservation
+
+Discovery does not transfer authority from the institution or source responsible for the referenced information.
 
 ---
 
 ## Long-Term Vision
 
-As Beacon evolves, sources may become part of a broader discovery network connecting records, signals, identities, jurisdictions, historical events, attestations, and future information systems.
+As Beacon evolves, sources may form part of a broader discovery network connecting Discovery Signals, authoritative intelligence, Certification Packages, SREG records, Chronicle Entries, Integrity References, Trust Statements, external information, and cross-institution relationships.
 
-Beacon helps users find information.
+Beacon helps users and workflows find information.
 
-Sources help users understand where that information came from.
+Sources preserve where that information came from.
+
+Authority remains with the source.
 
 ---
 
 ## Status
 
-Beacon source standards are currently under development.
+Beacon source architecture is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
 
-This document defines conceptual principles rather than finalized operational specifications.
+This document establishes the governing conceptual model for Beacon source handling. Operational schemas, source-reference requirements, provenance rules, indexing methods, and interoperability mechanisms may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
