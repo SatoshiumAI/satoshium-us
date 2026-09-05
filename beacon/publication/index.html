@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Publication Model</title>
+<meta name="description" content="Satoshium Beacon Publication Model — defines when validated Discovery Signals become publicly discoverable and what their public representation contains."/>
+<link rel="canonical" href="https://satoshium.us/beacon/publication/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:950px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+.badge{display:inline-flex;padding:5px 9px;border-radius:999px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.05);color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{color:var(--gold2)}td{color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}.table-wrap{overflow-x:auto}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Publication Model</h1>
+<p class="lead">
+  The Publication Model defines when a Beacon Discovery Signal becomes publicly discoverable,
+  what its public representation contains, and how Beacon preserves the boundary between internal
+  identification and review, institutional validity, and public release.
+</p>
+<div class="note"><strong>Discovery can exist before publication. Validation can precede publication. Publication is a governed institutional act.</strong></div>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>The Publication Model answers:</p>
+<div class="note">
+  When may a Discovery Signal become public?<br/>
+  What must be true before publication?<br/>
+  What does the public representation contain?<br/>
+  What remains internal or restricted?<br/>
+  How are later changes shown publicly?
+</div>
+</article>
+
+<article class="card">
+<h2>Core Distinction</h2>
+<p>
+  Beacon must distinguish the existence of a Discovery Signal from the public release of that signal.
+</p>
+<div class="note">
+  Canonical existence<br/>
+  ≠ Validation<br/>
+  ≠ Active lifecycle state<br/>
+  ≠ Publication
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Publication State</h2>
+<p>The Beacon lifecycle architecture established a separate Publication State:</p>
+<div class="note">
+  Unpublished<br/>
+  Published
+</div>
+<p style="margin-top:14px">
+  Publication State is intentionally separate from Lifecycle State.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Lifecycle State</h2>
+<div class="note">
+  Draft<br/>
+  Active<br/>
+  Superseded<br/>
+  Resolved<br/>
+  Withdrawn
+</div>
+<p style="margin-top:14px">
+  Lifecycle describes institutional state.
+</p>
+</article>
+
+<article class="card">
+<h2>Publication State</h2>
+<div class="note">
+  Unpublished<br/>
+  Published
+</div>
+<p style="margin-top:14px">
+  Publication describes whether the governed Beacon representation has been publicly released.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Pre-Publication Sequence</h2>
+<div class="note">
+  Candidate Discovery Identified<br/>
+  ↓<br/>
+  Discovery Signal Created<br/>
+  ↓<br/>
+  BEAC Identifier Assigned<br/>
+  ↓<br/>
+  Draft / Unpublished<br/>
+  ↓<br/>
+  Review &amp; Validation<br/>
+  ↓<br/>
+  Active / Unpublished<br/>
+  ↓<br/>
+  Publication Decision<br/>
+  ↓<br/>
+  Active / Published
+</div>
+<p style="margin-top:14px">
+  Publication is not the act that creates the canonical Discovery Signal.
+  The signal already exists before public release.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Internal</div>
+<h2>Identification</h2>
+<p>
+  Beacon may identify potentially relevant information before a canonical Discovery Signal exists.
+</p>
+<div class="note">
+  Identified → pre-object condition
+</div>
+<p style="margin-top:14px">
+  Identification alone does not create a public Beacon record.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Canonical</div>
+<h2>Creation</h2>
+<p>
+  Canonical creation establishes the Discovery Signal and assigns its BEAC identifier.
+</p>
+<div class="note">
+  Created → canonical object exists<br/>
+  Publication State → Unpublished
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Review</div>
+<h2>Validation</h2>
+<p>
+  Validation determines whether the signal conforms to Beacon production architecture.
+</p>
+<div class="note">
+  Valid<br/>
+  ≠<br/>
+  automatically Published
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Public</div>
+<h2>Publication</h2>
+<p>
+  Publication is the governed act that makes an eligible Beacon representation publicly discoverable.
+</p>
+<div class="note">
+  Published → public Beacon representation released
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Publication Eligibility</h2>
+<p>A Discovery Signal should be eligible for publication only when:</p>
+<ul>
+<li>Canonical identity exists</li>
+<li>BEAC identifier conforms</li>
+<li>Required Entry Model components are present</li>
+<li>Applicable Validation has passed</li>
+<li>Lifecycle state permits publication</li>
+<li>Provenance is sufficient for public review</li>
+<li>Authority boundaries are preserved</li>
+<li>References and relationships are sufficiently attributable</li>
+<li>No governing restriction prevents public release</li>
+</ul>
+<div class="note">
+  Eligibility permits a publication decision. Eligibility does not itself publish the signal.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Publication Decision</h2>
+<p>
+  Beacon must make or record a governed publication decision before changing Publication State to Published.
+</p>
+<div class="note">
+  Eligible<br/>
+  ↓ publication decision<br/>
+  Published
+</div>
+</article>
+
+<article class="card">
+<h2>Publication Is Not Validation</h2>
+<p>
+  Validation answers whether the Beacon object conforms.
+  Publication answers whether an eligible representation is publicly released.
+</p>
+<div class="note">
+  Validation → conformance gate<br/>
+  Publication → public-release act
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Public Representation</h2>
+<p>
+  A published Discovery Signal should expose enough canonical information for a reviewer to identify, understand, attribute, and trace the discovery.
+</p>
+<p>The public representation should normally include:</p>
+<ul>
+<li>BEAC identifier</li>
+<li>Signal subject</li>
+<li>Signal Type</li>
+<li>Lifecycle state</li>
+<li>Publication state</li>
+<li>Current version</li>
+<li>Discovery summary or represented observation</li>
+<li>Source identity</li>
+<li>Reviewable provenance appropriate for publication</li>
+<li>Canonical references when applicable</li>
+<li>Relationships when applicable and publishable</li>
+<li>Relevant timestamps</li>
+<li>Supersession or resolution information when applicable</li>
+</ul>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Public Canonical Identity</h2>
+<p>
+  Publication must preserve the same canonical identity assigned at creation.
+</p>
+<div class="note">
+  Internal canonical object → BEAC-2026-0001<br/>
+  Public representation → BEAC-2026-0001
+</div>
+<p style="margin-top:14px">
+  Publication does not create a second public identifier.
+</p>
+</article>
+
+<article class="card">
+<h2>Public Record Path</h2>
+<p>
+  The Identifier Standard established the conceptual public record path:
+</p>
+<div class="note">
+  /beacon/records/BEAC-2026-0001/
+</div>
+<p style="margin-top:14px">
+  The later Individual Discovery Signal page will define the actual production record representation.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Public Representation Is Not the Source Object</h2>
+<p>
+  Beacon publishes its Discovery Signal, not a replacement copy of another institution's canonical object.
+</p>
+<div class="note">
+  Beacon publishes → BEAC Discovery Signal<br/>
+  Beacon references → source-owned canonical object<br/><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Source Attribution</h2>
+<p>
+  Public references should preserve source ownership and native identity.
+</p>
+<div class="note">
+  Source Institution → Certifier<br/>
+  Source Object → SC-CERT-2026-0001<br/>
+  Beacon Object → BEAC-2026-0001
+</div>
+</article>
+
+<article class="card">
+<h2>No Authority Elevation</h2>
+<p>
+  Publication must not make a source appear more authoritative merely because Beacon exposes it publicly.
+</p>
+<div class="note">
+  Public visibility<br/>
+  ≠ certification<br/>
+  ≠ registration<br/>
+  ≠ integrity verification<br/>
+  ≠ trust
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Public Provenance</h2>
+<p>
+  Published signals should preserve enough provenance for meaningful public review while respecting legitimate access, privacy, security, and source restrictions.
+</p>
+<div class="note">
+  Public provenance should explain where the signal came from without requiring Beacon to expose information that governance prohibits from release.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Internal Provenance</h2>
+<p>
+  Beacon may retain provenance information needed for institutional accountability that is not appropriate for public release.
+</p>
+</article>
+
+<article class="card">
+<h2>Public Provenance</h2>
+<p>
+  The public representation contains the portion of provenance necessary and permitted for public review.
+</p>
+<div class="note">
+  Internal completeness and public disclosure are related, but not necessarily identical.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Restricted or Non-Public Information</h2>
+<p>
+  A valid Discovery Signal may remain Unpublished when legitimate restrictions prevent public release.
+</p>
+<p>Potential restrictions may include:</p>
+<ul>
+<li>Privacy</li>
+<li>Security</li>
+<li>Access limitations</li>
+<li>Source restrictions</li>
+<li>Institutional governance</li>
+<li>Insufficient public-review basis</li>
+<li>Other lawful or governed limitations</li>
+</ul>
+<div class="note">
+  Valid does not mean public. Discoverable internally does not mean publishable externally.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Unpublished Active Signal</h2>
+<p>
+  Beacon may have an institutionally valid Active Discovery Signal that remains Unpublished.
+</p>
+<div class="note">
+  Lifecycle → Active<br/>
+  Publication → Unpublished
+</div>
+</article>
+
+<article class="card">
+<h2>Published Active Signal</h2>
+<p>
+  A signal becomes publicly discoverable only after the governed publication act.
+</p>
+<div class="note">
+  Lifecycle → Active<br/>
+  Publication → Published
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Publication of Versions</h2>
+<p>
+  Publication should identify the current published representation while preserving reviewable history for materially superseded published versions.
+</p>
+<div class="note">
+  BEAC-2026-0001 v1 → Published historically<br/>
+  ↓ superseded by<br/>
+  BEAC-2026-0001 v2 → Current published representation
+</div>
+<p style="margin-top:14px">
+  Exact public version-history presentation remains subject to production implementation.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Published + Superseded</h2>
+<p>
+  A published signal may later become Superseded and remain publicly reviewable as historical institutional evidence.
+</p>
+<div class="note">
+  Lifecycle → Superseded<br/>
+  Publication → Published
+</div>
+</article>
+
+<article class="card">
+<h2>Published + Resolved</h2>
+<p>
+  A published signal may remain publicly visible after resolution.
+</p>
+<div class="note">
+  Lifecycle → Resolved<br/>
+  Publication → Published
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Published + Withdrawn</h2>
+<p>
+  Withdrawal requires careful public handling because the historical fact of prior publication may itself be institutionally relevant.
+</p>
+<div class="note">
+  Do not silently erase prior publication.<br/>
+  Preserve governed withdrawal state and reason to the extent publication rules permit.
+</div>
+<p style="margin-top:14px">
+  Exact withdrawal-display rules remain unfrozen pending Methodology and production use.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>No Silent Unpublication</h2>
+<p>
+  Once a signal has been publicly released, later institutional change should not ordinarily make the historical publication disappear without explanation.
+</p>
+<div class="note">
+  Preserve public history where governance permits.
+</div>
+</article>
+
+<article class="card">
+<h2>Correction Notice</h2>
+<p>
+  Material corrections to a published signal should remain reviewable through version history, correction context, or another governed public mechanism.
+</p>
+<div class="note">
+  Correct the record without pretending the earlier record never existed.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Publication Timestamp</h2>
+<p>
+  Publication time must remain distinct from other Beacon timestamps.
+</p>
+<div class="note">
+  observed_at → when Beacon observed the source<br/>
+  created_at → when the Discovery Signal was created<br/>
+  published_at → when the Beacon representation became public
+</div>
+<p style="margin-top:14px">
+  These timestamps must not be silently substituted for one another.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Public Relationships</h2>
+<p>
+  Relationships may be published when their meaning, attribution, provenance, and disclosure are appropriate for public release.
+</p>
+</article>
+
+<article class="card">
+<h2>Restricted Relationships</h2>
+<p>
+  A relationship may remain internally represented even when public disclosure of the relationship or one endpoint is restricted.
+</p>
+<div class="note">
+  Relationship validity<br/>
+  ≠ automatic public disclosure
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Public Discovery Register</h2>
+<p>
+  Published Discovery Signals will ultimately be surfaced through the Beacon Discovery Signals Register.
+</p>
+<div class="note">
+  /beacon/records/<br/>
+  ↓ lists / exposes published Beacon signals<br/><br/>
+  /beacon/records/BEAC-2026-0001/<br/>
+  ↓ represents an individual published Discovery Signal
+</div>
+<p style="margin-top:14px">
+  The Register and individual-record architecture follow later in Phase II.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Publication and Search</h2>
+<p>
+  Public discoverability should operate on published Beacon representations rather than exposing internal Draft or restricted records by default.
+</p>
+</article>
+
+<article class="card">
+<h2>Publication and Indexes</h2>
+<p>
+  Beacon indexes may expose published Discovery Signals while preserving publication restrictions and current/historical status.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Publication Structure</h2>
+<div class="note">
+  publication:<br/>
+  &nbsp;&nbsp;state<br/>
+  &nbsp;&nbsp;published_at<br/>
+  &nbsp;&nbsp;published_version<br/>
+  &nbsp;&nbsp;public_record_location<br/>
+  &nbsp;&nbsp;publication_basis<br/>
+  &nbsp;&nbsp;restrictions<br/>
+  &nbsp;&nbsp;historical_notice
+</div>
+<p style="margin-top:14px">
+  Architectural only. Exact machine-readable property names and publication-decision mechanics remain unfrozen.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Minimum Publication Gate</h2>
+<div class="note">
+  Canonical Signal exists<br/>
+  + Validation passed<br/>
+  + Lifecycle permits publication<br/>
+  + Public provenance sufficient<br/>
+  + Authority boundaries preserved<br/>
+  + References / relationships publishable<br/>
+  + No governing restriction prevents release<br/>
+  + Publication decision made<br/>
+  = Eligible Published Discovery Signal
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Relationship to Validation</h2>
+<p>
+  Validation determines whether the signal conforms to Beacon rules.
+  Publication determines whether an eligible representation becomes public.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Versioning</h2>
+<p>
+  Versioning preserves changing representations.
+  Publication identifies which representation was publicly released and which is currently public.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Relationship to Authority</h2>
+<p>
+  Publication does not expand Beacon's institutional authority or transfer authority from referenced sources.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Provenance</h2>
+<p>
+  Public provenance must remain sufficient for review while respecting legitimate disclosure constraints.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Is Now Established</h2>
+<ul>
+<li>Canonical existence and publication are separate</li>
+<li>Identification is a pre-object condition and does not create a public record</li>
+<li>Creation assigns canonical identity before publication</li>
+<li>Validation does not automatically publish a signal</li>
+<li>Publication is a governed institutional act</li>
+<li>Publication State is separate from Lifecycle State</li>
+<li>Active Discovery Signals may remain Unpublished</li>
+<li>Published representations retain the canonical BEAC identifier</li>
+<li>Public representations expose Beacon objects, not replacement copies of source-owned objects</li>
+<li>Public source references preserve attribution and authority boundaries</li>
+<li>Valid or internally discoverable information may remain non-public</li>
+<li>Published historical versions and superseded signals should remain traceable where governance permits</li>
+<li>Prior publication should not be silently erased</li>
+<li>Publication timestamps remain distinct from observation and creation timestamps</li>
+<li>Public discoverability should default to published Beacon representations</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<ul>
+<li>Exact publication approval role or mechanism</li>
+<li>Machine-readable publication property names</li>
+<li>Formal publication-basis vocabulary</li>
+<li>Public provenance minimums by Signal Type</li>
+<li>Restriction classifications</li>
+<li>Withdrawal display mechanics</li>
+<li>Correction-notice format</li>
+<li>Historical-version public navigation</li>
+<li>Public indexing behavior for Superseded / Resolved / Withdrawn signals</li>
+<li>Whether any valid Signal Types are non-public by default</li>
+</ul>
+<div class="note">
+  These should be resolved through the Register, Individual Signal, Methodology, and first production operation.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Governing Rules</h2>
+<div class="note">
+  Identify before creation when necessary.<br/>
+  Create before publication.<br/>
+  Validate before publication eligibility.<br/>
+  Publish only through a governed decision.<br/>
+  Preserve canonical identity.<br/>
+  Preserve attribution and authority boundaries.<br/>
+  Expose enough provenance for review.<br/>
+  Respect legitimate disclosure restrictions.<br/>
+  Preserve public history when later state changes.<br/><br/>
+  <strong>Publication makes discovery public. It does not make discovery authoritative beyond Beacon's own institutional role.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal Types → Defined<br/>
+  Lifecycle → Defined<br/>
+  Identifier Standard → Defined<br/>
+  Schemas → Defined<br/>
+  Validation → Defined<br/>
+  Discovery Provenance → Defined<br/>
+  Authority &amp; Reference Model → Defined<br/>
+  Relationship Model → Defined<br/>
+  Versioning &amp; Supersession → Defined<br/>
+  Publication Model → Defined<br/>
+  Discovery Signals Register → Next<br/>
+  First Production Discovery Signal → Not yet created
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  Publication makes discovery visible; governance makes that visibility accountable.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
