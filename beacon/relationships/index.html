@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Relationship Model</title>
+<meta name="description" content="Satoshium Beacon Relationship Model — governed relationships between Discovery Signals, canonical Suite objects, sources, versions, and workflows."/>
+<link rel="canonical" href="https://satoshium.us/beacon/relationships/"/>
+<style>
+:root{--bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;--gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:950px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 10px;font-size:24px;color:var(--gold2)}.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:8px 0 0 20px;padding:0}.card li{color:var(--muted);margin:6px 0}
+.note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.muted{color:var(--muted)}
+.badge{display:inline-flex;padding:5px 9px;border-radius:999px;border:1px solid rgba(214,163,74,.18);background:rgba(214,163,74,.05);color:var(--gold2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{color:var(--gold2)}td{color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}.table-wrap{overflow-x:auto}}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Relationship Model</h1>
+<p class="lead">
+  The Relationship Model defines how Beacon represents governed connections between Discovery Signals,
+  canonical Suite objects, sources, versions, workflows, and other relevant endpoints without collapsing
+  independently owned objects into a single record.
+</p>
+<div class="note"><strong>Relationship connects objects. It does not merge them.</strong></div>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>The Relationship Model answers:</p>
+<div class="note">
+  What objects may a Discovery Signal relate to?<br/>
+  What does the relationship mean?<br/>
+  Which direction does it run?<br/>
+  What evidence supports it?<br/>
+  Who owns each endpoint?
+</div>
+</article>
+
+<article class="card">
+<h2>Governing Boundary</h2>
+<p>
+  Every relationship operates under the Authority &amp; Reference Model.
+</p>
+<div class="note">
+  Endpoint identity remains separate.<br/>
+  Institutional ownership remains separate.<br/>
+  Canonical authority remains separate.<br/><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Canonical Example</h2>
+<div class="note">
+  Certification Package<br/>
+  SC-CERT-2026-0001<br/>
+  ↓ referenced by / related to<br/><br/>
+  Beacon Discovery Signal<br/>
+  BEAC-2026-0001<br/>
+  ↓ also references / relates to<br/><br/>
+  Registry Record<br/>
+  SREG-2026-0001
+</div>
+<p style="margin-top:14px">
+  These remain three distinct canonical objects owned by three institutions.
+  The Beacon signal preserves their governed connection; it does not turn them into one object.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Core</div>
+<h2>Relationship Endpoints</h2>
+<p>Every governed relationship must identify its endpoints.</p>
+<ul>
+<li>Beacon Discovery Signal</li>
+<li>Another Beacon Discovery Signal</li>
+<li>Suite canonical object</li>
+<li>External source or external object</li>
+<li>Navigator workflow reference</li>
+<li>Version or supersession target</li>
+</ul>
+<div class="note">
+  An endpoint should preserve its native identifier and institutional owner when available.
+</div>
+</article>
+
+<article class="card">
+<div class="badge">Core</div>
+<h2>Relationship Meaning</h2>
+<p>
+  A relationship must state why the endpoints are connected.
+</p>
+<ul>
+<li>Meaning should be explicit</li>
+<li>Meaning should be reviewable</li>
+<li>Meaning should not imply unsupported authority</li>
+<li>Meaning should be supported by provenance</li>
+</ul>
+<div class="note">
+  A link without governed meaning is not yet an institutional relationship.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Initial Relationship Classes</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Class</th><th>Purpose</th><th>Typical Endpoint</th></tr></thead>
+<tbody>
+<tr><td>Source</td><td>Connects a Discovery Signal to the source actually observed.</td><td>Suite or external source</td></tr>
+<tr><td>Canonical Object</td><td>Connects a Discovery Signal to an institution-owned canonical object relevant to the discovery.</td><td>Atlas, Certifier, Registry, Chronicle, Anchor, Attestor</td></tr>
+<tr><td>Related Signal</td><td>Connects one Beacon Discovery Signal to another.</td><td>BEAC object</td></tr>
+<tr><td>Version</td><td>Connects governed versions of the same Beacon signal identity.</td><td>Beacon version reference</td></tr>
+<tr><td>Supersession</td><td>Connects a signal to a later signal or governed replacement.</td><td>BEAC object or version</td></tr>
+<tr><td>Workflow</td><td>Connects Beacon discovery activity to Navigator orchestration context.</td><td>Navigator workflow reference</td></tr>
+<tr><td>External</td><td>Connects a signal to a non-Suite object or source.</td><td>External source/object</td></tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+  These are architectural relationship classes. Final machine-readable relationship values remain subject to production proof.
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<div class="badge">Source</div>
+<h2>Source Relationship</h2>
+<p>
+  Connects the Discovery Signal to the source Beacon actually observed.
+</p>
+<div class="note">
+  Discovery Signal → observed from → Source
+</div>
+<p style="margin-top:14px">
+  This relationship is foundational to Discovery Provenance.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Canonical</div>
+<h2>Canonical-Object Relationship</h2>
+<p>
+  Connects a Discovery Signal to a Suite-owned canonical object relevant to the discovery.
+</p>
+<div class="note">
+  BEAC-2026-0001 → references → ANCH-2026-0001
+</div>
+<p style="margin-top:14px">
+  The Anchor object remains owned by Anchor.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Beacon</div>
+<h2>Related-Signal Relationship</h2>
+<p>
+  Connects independently valid Beacon Discovery Signals when their discovery contexts are materially related.
+</p>
+<div class="note">
+  BEAC-2026-0001 ↔ related to ↔ BEAC-2026-0002
+</div>
+<p style="margin-top:14px">
+  Related signals remain independent objects unless Versioning or Supersession rules explicitly establish a stronger relationship.
+</p>
+</article>
+
+<article class="card">
+<div class="badge">Workflow</div>
+<h2>Workflow Relationship</h2>
+<p>
+  Connects a Discovery Signal to the Navigator workflow under which the discovery occurred when that context is material.
+</p>
+<div class="note">
+  Navigator → owns workflow<br/>
+  Beacon → owns Discovery Signal<br/>
+  Relationship → preserves participation
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationship Direction</h2>
+<p>
+  Relationship direction matters when the meaning is asymmetric.
+</p>
+<div class="note">
+  Discovery Signal → observed from → Source<br/>
+  Discovery Signal → references → Canonical Object<br/>
+  Discovery Signal → superseded by → Later Signal
+</div>
+<p style="margin-top:14px">
+  A reverse relationship may be derivable for navigation, but it should not silently change the governed meaning of the original relationship.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Directional Relationships</h2>
+<p>Some relationships have a meaningful source and target.</p>
+<ul>
+<li>observed from</li>
+<li>references</li>
+<li>supersedes</li>
+<li>superseded by</li>
+<li>derived through workflow</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>Symmetric Relationships</h2>
+<p>
+  Some relationships may be conceptually mutual.
+</p>
+<div class="note">
+  related to
+</div>
+<p style="margin-top:14px">
+  Whether a relationship is formally symmetric must be defined by its governed relationship type rather than assumed by presentation.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationship Basis</h2>
+<p>
+  Every production relationship must have a reviewable basis.
+</p>
+<div class="note">
+  Endpoint A identified<br/>
+  + Endpoint B identified<br/>
+  + Relationship meaning stated<br/>
+  + Provenance or supporting basis present<br/>
+  + Authority boundary preserved<br/>
+  = Relationship eligible for validation
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Observed Relationship</h2>
+<p>
+  Beacon may preserve a relationship explicitly represented by a source.
+</p>
+<div class="note">
+  Source states A is related to B<br/>
+  ↓<br/>
+  Beacon records the observed relationship with attribution
+</div>
+</article>
+
+<article class="card">
+<h2>Beacon-Determined Relationship</h2>
+<p>
+  Beacon may represent a relationship it determines within its own discovery function when the basis is reviewable and the relationship does not claim authority belonging elsewhere.
+</p>
+<div class="note">
+  Beacon determination must remain identifiable as a Beacon determination.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationship Attribution</h2>
+<p>
+  The model must distinguish between a relationship asserted by a source and one established by Beacon's own discovery process.
+</p>
+<div class="note">
+  Source-attributed relationship → “Registry represents this connection.”<br/><br/>
+  Beacon relationship → “Beacon discovered and represents this connection based on the preserved supporting basis.”
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Multiple References</h2>
+<p>
+  One Discovery Signal may reference multiple independently owned objects when the discovery legitimately connects them.
+</p>
+<div class="note">
+  BEAC-2026-0001<br/>
+  ↙ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↘<br/>
+  SC-CERT-2026-0001 &nbsp;&nbsp; SREG-2026-0001
+</div>
+</article>
+
+<article class="card">
+<h2>No Object Collapse</h2>
+<p>
+  Multiple references do not create a composite canonical object unless Beacon later defines such an object explicitly.
+</p>
+<div class="note">
+  Certification Package<br/>
+  + SREG<br/>
+  + Discovery Signal<br/>
+  ≠ one canonical record
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Cross-Suite Relationship Example</h2>
+<div class="note">
+  Certifier<br/>
+  SC-CERT-2026-0001<br/>
+  ↓ certification represented by<br/><br/>
+  Registry<br/>
+  SREG-2026-0001<br/><br/>
+  Beacon observes both<br/>
+  ↓<br/>
+  BEAC-2026-0001<br/><br/>
+  Beacon preserves the relevant discovery relationship without changing either source object.
+</div>
+<p style="margin-top:14px">
+  The precise Certifier-to-Registry relationship remains governed by those institutions.
+  Beacon records only the relationship it can support and attribute.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Signal Type vs. Relationship Type</h2>
+<p>These are separate classifications.</p>
+<div class="note">
+  Signal Type → what kind of discovery the Beacon object represents<br/><br/>
+  Relationship Type → how two identified endpoints are connected
+</div>
+<p style="margin-top:14px">
+  A Certification Signal may contain several different relationship types.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship Signal</h2>
+<p>
+  A Relationship Signal is appropriate when the discovered relationship itself is the primary subject of the Beacon object.
+</p>
+<div class="note">
+  Relationship Signal ≠ every Discovery Signal containing a relationship
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationship Signal Example</h2>
+<p>
+  If Beacon's principal discovery is that two previously separate objects are materially connected,
+  the Discovery Signal may use the <strong>Relationship</strong> Signal Type.
+</p>
+<div class="note">
+  Subject → the discovered connection<br/>
+  Signal Type → Relationship<br/>
+  Endpoints → Object A + Object B<br/>
+  Provenance → basis for representing the connection
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Version Relationship</h2>
+<p>
+  Version relationships describe governed revisions under the same canonical Beacon identity.
+</p>
+<div class="note">
+  BEAC-2026-0001 · Version 1<br/>
+  ↓ followed by<br/>
+  BEAC-2026-0001 · Version 2
+</div>
+<p style="margin-top:14px">
+  Exact version semantics will be defined by the next Versioning &amp; Supersession architecture.
+</p>
+</article>
+
+<article class="card">
+<h2>Supersession Relationship</h2>
+<p>
+  Supersession identifies which later object or version carries the current discovery context when an earlier signal is replaced.
+</p>
+<div class="note">
+  Earlier Signal → superseded by → Later Signal / Version
+</div>
+<p style="margin-top:14px">
+  Supersession preserves history rather than deleting the earlier object.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationship Persistence</h2>
+<p>
+  A relationship should not silently disappear because a source changes, a signal is superseded, or a referenced object becomes unavailable.
+</p>
+<ul>
+<li>Preserve the historical relationship where it was validly represented</li>
+<li>Record later changes separately</li>
+<li>Use versioning or supersession when the Beacon representation changes materially</li>
+<li>Preserve provenance supporting the earlier relationship</li>
+</ul>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>External Relationships</h2>
+<p>
+  Beacon may relate a Discovery Signal to an external source or object.
+</p>
+<div class="note">
+  External endpoint remains external.<br/>
+  Beacon owns only its Discovery Signal and relationship representation.
+</div>
+</article>
+
+<article class="card">
+<h2>Restricted Relationships</h2>
+<p>
+  A relationship should not be published or represented beyond what its evidence, access rules, privacy requirements, or institutional authority support.
+</p>
+<div class="note">
+  Discovery capability does not eliminate publication or access boundaries.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Relationship Validation</h2>
+<p>A production relationship should be rejected or require review when:</p>
+<ul>
+<li>An endpoint cannot be identified</li>
+<li>The relationship meaning is ambiguous</li>
+<li>The supporting basis is absent</li>
+<li>The relationship exceeds Beacon's authority</li>
+<li>A source-attributed relationship is presented as Beacon-owned</li>
+<li>The relationship collapses separate canonical objects</li>
+<li>The direction contradicts the represented meaning</li>
+<li>The relationship conflicts with known source identity</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Conceptual Relationship Structure</h2>
+<div class="note">
+  relationship:<br/>
+  &nbsp;&nbsp;relationship_type<br/>
+  &nbsp;&nbsp;source_endpoint<br/>
+  &nbsp;&nbsp;target_endpoint<br/>
+  &nbsp;&nbsp;direction<br/>
+  &nbsp;&nbsp;attribution<br/>
+  &nbsp;&nbsp;supporting_reference<br/>
+  &nbsp;&nbsp;provenance<br/>
+  &nbsp;&nbsp;status
+</div>
+<p style="margin-top:14px">
+  This is an architectural representation, not a frozen machine-readable property model.
+</p>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Relationship to Authority</h2>
+<p>
+  The Authority Model determines who owns each endpoint and determination.
+</p>
+<div class="note">
+  Authority → ownership boundary<br/>
+  Relationship → governed connection
+</div>
+</article>
+
+<article class="card">
+<h2>Relationship to Provenance</h2>
+<p>
+  Provenance supplies the reviewable basis for why Beacon represents the relationship.
+</p>
+<div class="note">
+  Relationship says → how objects connect<br/>
+  Provenance says → why Beacon can support that connection
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Relationship to Validation</h2>
+<p>
+  Validation checks that relationship endpoints, meanings, attribution, authority boundaries, and supporting basis conform to Beacon rules.
+</p>
+</article>
+
+<article class="card">
+<h2>Relationship to Publication</h2>
+<p>
+  A valid relationship is not automatically publishable.
+  Publication rules may impose additional access, privacy, security, or institutional constraints.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Is Now Established</h2>
+<ul>
+<li>Relationships connect independently owned objects without merging them</li>
+<li>Every governed relationship requires identifiable endpoints</li>
+<li>Every relationship requires explicit meaning</li>
+<li>Direction must be preserved when semantically meaningful</li>
+<li>Relationships require a reviewable supporting basis</li>
+<li>Source-attributed and Beacon-determined relationships must remain distinguishable</li>
+<li>A Discovery Signal may reference multiple canonical objects</li>
+<li>Multiple references do not create a composite canonical object</li>
+<li>Signal Type and Relationship Type are separate concepts</li>
+<li>A Relationship Signal is used when the relationship itself is the primary discovery subject</li>
+<li>Historical relationships should remain traceable through later changes</li>
+</ul>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>What Remains Unfrozen</h2>
+<ul>
+<li>Exact machine-readable relationship property names</li>
+<li>Final controlled relationship-type vocabulary</li>
+<li>Formal inverse-relationship rules</li>
+<li>Cardinality constraints</li>
+<li>Relationship identifiers, if ever needed</li>
+<li>Relationship lifecycle/status vocabulary</li>
+<li>Rules for relationship correction</li>
+<li>Version-specific relationship mechanics</li>
+<li>Specialized relationship requirements by Signal Type</li>
+<li>Publication restrictions for sensitive relationships</li>
+</ul>
+<div class="note">
+  These should be frozen only where Versioning, Publication, Methodology, or production evidence requires them.
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Governing Rules</h2>
+<div class="note">
+  Preserve each endpoint.<br/>
+  Preserve each owner.<br/>
+  State the relationship.<br/>
+  Preserve its direction.<br/>
+  Preserve its supporting basis.<br/>
+  Preserve attribution.<br/>
+  Never collapse the objects merely because they are connected.<br/><br/>
+  <strong>Relationship connects objects. It does not merge them.</strong><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>Current Status</h2>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Phase II — Production Architecture<br/>
+  Entry Model → Defined<br/>
+  Signal Types → Defined<br/>
+  Lifecycle → Defined<br/>
+  Identifier Standard → Defined<br/>
+  Schemas → Defined<br/>
+  Validation → Defined<br/>
+  Discovery Provenance → Defined<br/>
+  Authority &amp; Reference Model → Defined<br/>
+  Relationship Model → Defined<br/>
+  Versioning &amp; Supersession → Next<br/>
+  First Production Discovery Signal → Not yet created
+</div>
+</article>
+</section>
+
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
+  Connection is strongest when the things being connected remain themselves.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response=>response.text())
+.then(data=>{document.getElementById("footer-container").innerHTML=data;});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
