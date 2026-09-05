@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/assets/favicon.ico"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<meta name="theme-color" content="#d6a34a"/>
+<title>Satoshium Beacon — Discovery Signal Entry Model</title>
+<meta name="description" content="Satoshium Beacon Discovery Signal Entry Model — canonical structure for Beacon-owned Discovery Signals, including identity, subject, signal type, source, provenance, references, metadata, timestamps, version, status, and relationships."/>
+<link rel="canonical" href="https://satoshium.us/beacon/entry-model/"/>
+<link rel="preconnect" href="https://satoshium.link" crossorigin/>
+<link rel="dns-prefetch" href="https://satoshium.link"/>
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com"/>
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+*{box-sizing:border-box}
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+body{padding-top:80px}
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
+.card ul{
+ margin:8px 0 0 20px;
+ padding:0;
+}
+.card li{
+ color:var(--muted);
+ margin:6px 0;
+}
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+.muted{color:var(--muted)}
+code{
+ color:var(--gold2);
+ background:rgba(214,163,74,.06);
+ border:1px solid rgba(214,163,74,.12);
+ padding:2px 6px;
+ border-radius:6px;
+}
+pre{
+ margin:14px 0 0;
+ padding:16px;
+ overflow:auto;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(0,0,0,.22);
+ color:var(--text);
+}
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+
+<main class="wrap content">
+<section class="hero">
+<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<h1>Discovery Signal Entry Model</h1>
+<p class="lead">
+  The Discovery Signal Entry Model defines the canonical structure of a Beacon-owned
+  Discovery Signal. It establishes the minimum institutional components required to
+  identify a signal, describe what was discovered, preserve its source and provenance,
+  reference related canonical objects, record discovery metadata, track time and version,
+  express status, and preserve relationships.
+</p>
+<p class="lead">
+  This page begins Beacon Phase II by defining the object that later work on signal types,
+  lifecycle, identifiers, schemas, validation, provenance, versioning, publication, and
+  production will govern.
+</p>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>
+  Beacon cannot define production rules until it defines what a production Discovery Signal is.
+  The Entry Model provides that canonical object boundary.
+</p>
+<div class="note">
+  Phase I answered: <strong>What is Beacon?</strong><br/><br/>
+  Phase II begins by answering: <strong>What exactly does Beacon create?</strong>
+</div>
+</article>
+
+<article class="card">
+<h2>Canonical Object</h2>
+<p>
+  Beacon's canonical production object is the <strong>Discovery Signal</strong>.
+  Discovery Metadata supports and describes that object.
+</p>
+<div class="note">
+  Beacon → Discovery Signal / Metadata
+</div>
+<p style="margin-top:14px;">
+  The Discovery Signal is institution-owned by Beacon. Referenced objects remain owned
+  by their originating institutions or external sources.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Canonical Entry Structure</h2>
+<p>
+  A production Discovery Signal should contain sufficient information to establish identity,
+  subject, discovery context, source authority, provenance, relationships, and lifecycle context
+  without assuming authority over the object or information it references.
+</p>
+<div class="note">
+  Identity → Subject → Signal Type → Source → Provenance → Canonical References →
+  Discovery Metadata → Timestamps → Version → Status → Relationships
+</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>1. Identity</h2>
+<p>Identity distinguishes one Beacon Discovery Signal from every other Beacon object.</p>
+<ul>
+<li>Beacon Discovery Signal Identifier</li>
+<li>Human-readable title or label</li>
+<li>Beacon institutional ownership</li>
+<li>Object type: Discovery Signal</li>
+</ul>
+<div class="note">The final identifier syntax is not frozen on this page. It will be governed by the later Beacon Identifier Standard.</div>
+</article>
+
+<article class="card">
+<h2>2. Subject</h2>
+<p>Subject identifies what the Discovery Signal is about.</p>
+<ul>
+<li>Subject name or description</li>
+<li>Subject type or classification</li>
+<li>Relevant jurisdiction, system, entity, record, event, or artifact</li>
+<li>Optional subject identifier when one exists</li>
+</ul>
+<div class="note">Subject identifies the focus of discovery. It does not establish authority over that subject.</div>
+</article>
+
+<article class="card">
+<h2>3. Signal Type</h2>
+<p>Signal Type classifies the nature of the discovery being recorded.</p>
+<ul>
+<li>General discovery category</li>
+<li>Specialized signal profile when applicable</li>
+<li>Controlled vocabulary value</li>
+</ul>
+<p>Candidate types may include information, jurisdiction, certification, registry, historical, integrity, trust, relationship, or other future governed categories.</p>
+<div class="note">Exact production signal types remain unfrozen until the dedicated Signal Types phase.</div>
+</article>
+
+<article class="card">
+<h2>4. Source</h2>
+<p>Source identifies where the discovered information originated.</p>
+<ul>
+<li>Source Institution or External Source</li>
+<li>Source name</li>
+<li>Source identifier when available</li>
+<li>Canonical or public source location</li>
+<li>Source object type when applicable</li>
+</ul>
+<div class="note">Source must remain visible because discovery does not transfer authority.</div>
+</article>
+
+<article class="card">
+<h2>5. Provenance</h2>
+<p>Provenance preserves the traceable path between the Discovery Signal and the information that caused it to exist.</p>
+<ul>
+<li>Observed source</li>
+<li>Observation context</li>
+<li>Observation method or mechanism</li>
+<li>Relevant supporting reference</li>
+<li>Discovery actor or process when appropriate</li>
+</ul>
+<div class="note">Provenance should make the signal reviewable rather than merely assertive.</div>
+</article>
+
+<article class="card">
+<h2>6. Canonical-Object References</h2>
+<p>Discovery Signals may reference canonical objects maintained by other Suite institutions.</p>
+<ul>
+<li>Atlas Authoritative Intelligence</li>
+<li>Certifier Certification Package</li>
+<li>Registry SREG</li>
+<li>Chronicle Entry</li>
+<li>Anchor Integrity Reference</li>
+<li>Attestor Trust Statement</li>
+<li>Navigator workflow reference when relevant</li>
+</ul>
+<div class="note">A reference establishes connection, not ownership.<br/><br/><strong>Reference does not transfer authority.</strong></div>
+</article>
+
+<article class="card">
+<h2>7. Discovery Metadata</h2>
+<p>Discovery Metadata preserves the context needed to interpret, filter, trace, and rediscover the signal.</p>
+<ul>
+<li>Discovery context</li>
+<li>Classification</li>
+<li>Relevant status observed at discovery</li>
+<li>Jurisdiction or domain context</li>
+<li>Search or workflow context</li>
+<li>Keywords, tags, or controlled values where governed</li>
+<li>Relationship metadata</li>
+</ul>
+<div class="note">Discovery Metadata supports the Discovery Signal. It does not replace the canonical source object.</div>
+</article>
+
+<article class="card">
+<h2>8. Timestamps</h2>
+<p>Time must distinguish when information was observed from when the Beacon object itself was created or changed.</p>
+<ul>
+<li>Discovered At / Observed At</li>
+<li>Created At</li>
+<li>Updated At</li>
+<li>Published At, if published</li>
+<li>Last Observed, when applicable</li>
+</ul>
+<div class="note">Exact timestamp requirements and semantics remain subject to lifecycle and publication design.</div>
+</article>
+
+<article class="card">
+<h2>9. Version</h2>
+<p>Version identifies the governed state of the Beacon Discovery Signal over time.</p>
+<ul>
+<li>Signal Version</li>
+<li>Previous Version reference when applicable</li>
+<li>Supersession information when applicable</li>
+</ul>
+<div class="note">Versioning rules will be finalized in the dedicated Versioning &amp; Supersession phase.</div>
+</article>
+
+<article class="card">
+<h2>10. Status</h2>
+<p>Status records the current institutional state of the Discovery Signal.</p>
+<ul>
+<li>Lifecycle state</li>
+<li>Publication state</li>
+<li>Resolution or supersession state when applicable</li>
+</ul>
+<div class="note">Status values are not frozen here. The Lifecycle and Publication phases will define the controlled production vocabulary.</div>
+</article>
+
+<article class="card">
+<h2>11. Relationships</h2>
+<p>Relationships connect a Discovery Signal to sources, canonical objects, other signals, workflow context, or later institutional activity.</p>
+<ul>
+<li>Source relationship</li>
+<li>Canonical-object relationship</li>
+<li>Related-signal relationship</li>
+<li>Version / supersession relationship</li>
+<li>Workflow relationship</li>
+<li>Other governed relationship types</li>
+</ul>
+<div class="note">Relationship vocabulary should remain minimal until production demonstrates what Beacon actually needs.</div>
+</article>
+
+<article class="card">
+<h2>12. Institutional Ownership</h2>
+<p>Every Discovery Signal must preserve the distinction between Beacon ownership and source authority.</p>
+<ul>
+<li>Beacon owns the Discovery Signal</li>
+<li>Beacon owns its discovery metadata</li>
+<li>The source institution owns its canonical object</li>
+<li>External sources remain external</li>
+</ul>
+<div class="note">Discovery connects responsibilities without collapsing them.</div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Conceptual Discovery Signal Skeleton</h2>
+<p>The Entry Model can be represented conceptually as the following object. This is an architectural skeleton, not yet the production schema.</p>
+<pre>{
+  "discovery_signal": {
+    "identity": {},
+    "subject": {},
+    "signal_type": "",
+    "source": {},
+    "provenance": {},
+    "canonical_references": [],
+    "discovery_metadata": {},
+    "timestamps": {},
+    "version": {},
+    "status": {},
+    "relationships": []
+  }
+}</pre>
+<div class="note">Field names, required properties, controlled values, validation rules, and schema constraints remain to be finalized in later Phase II work.</div>
+</article>
+</section>
+
+<section class="grid">
+<article class="card">
+<h2>Required vs. Conditional Components</h2>
+<p>The Entry Model establishes structural categories before finalizing which fields are mandatory in every production object.</p>
+<h3>Expected Core Components</h3>
+<ul>
+<li>Identity</li>
+<li>Subject</li>
+<li>Signal Type</li>
+<li>Source</li>
+<li>Provenance</li>
+<li>Discovery Metadata</li>
+<li>Timestamps</li>
+<li>Version</li>
+<li>Status</li>
+</ul>
+<h3>Potentially Conditional Components</h3>
+<ul>
+<li>Canonical-object references</li>
+<li>External references</li>
+<li>Relationships</li>
+<li>Supersession data</li>
+<li>Navigator workflow context</li>
+</ul>
+</article>
+
+<article class="card">
+<h2>What the Entry Model Does Not Decide Yet</h2>
+<p>This page deliberately does not freeze decisions that belong to later Phase II architecture.</p>
+<ul>
+<li>Final identifier syntax</li>
+<li>Final signal-type vocabulary</li>
+<li>Lifecycle states</li>
+<li>Publication states</li>
+<li>JSON schema constraints</li>
+<li>Validation rules</li>
+<li>Relationship vocabulary</li>
+<li>Versioning semantics</li>
+<li>Publication procedure</li>
+<li>First production signal</li>
+</ul>
+<div class="note">Define the object first. Freeze downstream rules only when their dedicated architecture is reviewed.</div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Authority Boundary</h2>
+<p>A Discovery Signal may describe or reference information with authority outside Beacon. Beacon's act of discovery does not alter that authority.</p>
+<div class="note">
+  Beacon owns the signal.<br/>
+  The source owns the source object.<br/>
+  Discovery preserves the connection.<br/><br/>
+  <strong>Reference does not transfer authority.</strong>
+</div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Relationship to Phase II</h2>
+<p>The Entry Model is the dependency foundation for the remaining Beacon production architecture.</p>
+<div class="note">
+  Entry Model → Signal Types → Lifecycle → Identifiers → Schemas → Validation → Provenance →
+  Authority → Relationships → Versioning → Publication → Discovery Signals Register →
+  Individual Signal → Methodology → Production
+</div>
+<p style="margin-top:14px;">Later pages may refine this model, but they should do so explicitly rather than silently redefine the canonical Beacon object.</p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Current Status</h2>
+<p>This Entry Model begins Beacon Phase II — Production Architecture.</p>
+<div class="note">
+  Beacon Status → Continuing Development<br/>
+  Phase → Production Architecture<br/>
+  Canonical Responsibility → Discovery Signal / Metadata<br/>
+  Entry Model → Defined at architectural level<br/>
+  Production Schema → Not yet frozen<br/>
+  First Production Discovery Signal → Not yet created
+</div>
+</article>
+</section>
+</main>
+
+<div class="wrap reflection">
+<hr/>
+<div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
+  Define the object before defining the machinery around it.
+</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+
+<script defer
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'>
+</script>
+</body>
+</html>
