@@ -1,469 +1,191 @@
-# Status
+# Satoshium Beacon — Status
 
-## Overview
-
-Beacon is a **Continuing Development** institution within the Satoshium Suite.
-
-Beacon serves as the Suite institution for **Discovery & Signals** and is currently undergoing **Suite Alignment & Production Preparation** ahead of its originally planned November 2026 development window.
-
-Its institutional architecture, core documentation, Discovery Signal model, discovery metadata model, source model, indexing model, query model, result model, interoperability boundaries, and certification-signal architecture have been established and aligned with the current Satoshium Suite.
-
-Beacon is **not yet operational**.
-
-Operational status requires the architecture to be proven through actual institutional use.
+**Path:** `/beacon/status/`  
+**Institution:** Satoshium Beacon  
+**Institutional Role:** Discovery & Signals  
+**Current Status:** Continuing Development  
+**Current Stage:** First Controlled Production Operation — Publication Complete  
+**Last Updated:** September 13, 2026
 
 ---
 
-## Mission Status
+## Status Overview
 
-### Mission
+Beacon's institutional architecture and Phase II production architecture are complete.
 
-Help users and workflows find the signal while preserving the path to the authoritative source.
+Beacon has now exercised that architecture through its first real controlled production operation and published its inaugural Discovery Signal:
 
-### Current State
+**`BEAC-2026-0001` — Active Operational Certification — Atlas Jurisdiction Record — El Salvador**
 
-```text
-Continuing Development
-Suite Alignment & Production Preparation
-```
+The signal is:
 
-Beacon has moved beyond its initial foundational and conceptual-definition phase.
+- **Signal Type:** Certification
+- **Lifecycle:** Active
+- **Publication:** Published
+- **Version:** 1.0
+- **Primary Source:** Satoshium Certifier · `SC-CERT-2026-0001`
+- **Published:** September 13, 2026
 
-Current work is focused on preparing the institution for production implementation and its first real institutional use.
+Public record:
 
----
-
-## Current Development Phase
-
-Beacon is currently operating in:
-
-### Suite Alignment & Production Preparation
-
-This phase focuses on:
-
-* Canonical Suite terminology
-* Institutional authority boundaries
-* Discovery Signal architecture
-* Discovery Metadata architecture
-* Stable identifiers and references
-* Provenance and traceability
-* Source attribution
-* Indexing structures
-* Query and result models
-* Certification Signals
-* Navigator workflow boundaries
-* Cross-institution interoperability
-* Production-ready object structures
-* Validation-ready schemas
-* Preparation for first institutional use
-
-Status:
-
-```text
-In Progress
-```
-
----
-
-## Documentation Status
-
-### Core Institutional Documentation
-
-| Document | Status |
-| --- | --- |
-| Purpose | Aligned |
-| Discovery | Aligned |
-| Signals | Aligned |
-| Sources | Aligned |
-| Indexes | Aligned |
-| Queries | Aligned |
-| Results | Aligned |
-| Trust | Aligned |
-| Interoperability | Aligned |
-| FAQ | Aligned |
-| Integration | Aligned |
-| Certification Signals | Aligned |
-| Discovery Metadata | Aligned |
-| Status | Aligned |
-
-The Beacon landing page remains part of the final alignment pass.
+https://satoshium.us/beacon/records/BEAC-2026-0001/
 
 ---
 
 ## Architecture Status
 
-### Discovery Framework
+### Phase I
 
-Status:
+**Institutional Architecture & Alignment → COMPLETE**
+
+Beacon's institutional role, canonical object, discovery boundaries, source relationships, interoperability, and authority model are established.
+
+### Phase II
+
+**Production Architecture → COMPLETE**
+
+Beacon's Entry Model, Signal Types, Lifecycle, Identifier Standard, Schemas, Validation, Provenance, Authority, Relationships, Versioning, Publication, Records, Individual Record, Methodology, and Production Model are defined.
+
+---
+
+## First Production Operation
+
+The first controlled production operation has completed the following stages:
 
 ```text
-Production Preparation
+Select Real Candidate → Complete
+Observe → Complete
+Identify → Complete
+Establish Source & Provenance → Complete
+Assess Relevance → Complete
+Construct Discovery Signal → Complete
+Create Canonical Object → Complete
+Assign BEAC-2026-0001 → Complete
+Validate & Review → Complete
+Determine Lifecycle State → Complete
+Decide Publication → Complete
+Publish Individual Beacon Record → Complete
+Publish Beacon Records Listing → Complete
 ```
 
-Beacon's discovery architecture and institutional authority boundaries have been established.
-
-Production implementation and proof through actual institutional use remain ahead.
-
----
-
-### Signal Framework
-
-Status:
+The remaining institutional work is:
 
 ```text
-Production Preparation
+Preserve Production Evidence → Pending completion
+Conduct Post-Operation Review → Pending
+Operational Status Review → Not yet reached
 ```
 
-Discovery Signals, Certification Signals, discovery metadata, provenance, canonical references, and authority boundaries have been architecturally established.
-
-Operational signal creation and publication remain to be proven in production.
-
 ---
 
-### Source Framework
-
-Status:
-
-```text
-Production Preparation
-```
-
-Source attribution, provenance, traceability, stable references, external-source treatment, and institutional authority boundaries have been defined.
-
-Production source indexing remains under development.
-
----
-
-### Index Framework
-
-Status:
-
-```text
-Production Preparation
-```
-
-Beacon indexes have been defined as Beacon-owned discovery structures that organize references without acquiring authority over referenced canonical objects.
-
-Production indexing mechanisms remain to be implemented and proven.
-
----
-
-### Query Framework
-
-Status:
-
-```text
-Production Preparation
-```
-
-Query intent and its boundary with Navigator workflow orchestration have been documented.
-
-Production query interfaces, filtering, and refinement capabilities remain under development.
-
----
-
-### Result Framework
-
-Status:
-
-```text
-Production Preparation
-```
-
-Beacon Results have been defined as presentations of information surfaced through discovery.
-
-Production result generation and presentation mechanisms remain to be implemented and proven.
-
----
-
-### Discovery Metadata Framework
-
-Status:
-
-```text
-Production Preparation
-```
-
-Discovery Metadata has been established as a Beacon-owned structured information layer preserving context, provenance, traceability, canonical references, relationships, and authority boundaries.
-
-Operational schemas and validation rules remain subject to production implementation.
-
----
-
-### Certification Signal Framework
-
-Status:
-
-```text
-Production Preparation
-```
-
-Certification Signals have been defined as Beacon-owned Discovery Signals reflecting certification-related information observed from authoritative sources.
-
-Certifier remains authoritative for Certification Packages and certification status.
-
-Operational signal lifecycle behavior remains to be proven.
-
----
-
-## Schema Status
-
-Beacon schema concepts and metadata structures have been established across the institutional documentation.
-
-Production preparation may require refinement or formalization of:
-
-* Discovery Signal schemas
-* Discovery Metadata schemas
-* Source Reference schemas
-* Index structures
-* Query structures
-* Result structures
-* Certification Signal profiles
-* Canonical reference conventions
-* Validation rules
-* Versioning and supersession behavior
-* Navigator workflow interfaces
-
-Documentation or conceptual schema completion alone does not establish operational status.
-
----
-
-## Canonical Suite Position
-
-Beacon operates within the current institutional model:
-
-```text
-Atlas       → Authoritative Intelligence
-Navigator   → Workflow Definition / Orchestration
-Beacon      → Discovery Signal / Metadata
-Certifier   → Certification Package
-Registry    → SREG
-Chronicle   → Chronicle Entry
-Anchor      → Integrity Reference
-Attestor    → Trust Statement
-```
-
-Each institution retains authority over its own canonical responsibilities and objects.
-
-**Reference does not transfer authority.**
-
----
-
-## Interoperability Status
-
-Beacon's institutional relationships have been aligned for:
-
-* Atlas
-* Navigator
-* Certifier
-* Registry
-* Chronicle
-* Anchor
-* Attestor
-* External sources
-
-Beacon may discover and reference canonical objects maintained by other institutions without duplicating them or assuming their authority.
-
-Production interoperability mechanisms remain under development.
-
----
-
-## Relationship to Navigator
-
-Navigator owns **Workflow Definition / Orchestration**.
-
-Beacon owns the discovery function and its **Discovery Signals / Metadata**.
-
-A generalized future workflow may resemble:
-
-```text
-User / System
-      ↓
-Navigator Workflow
-      ↓
-Beacon Discovery
-      ↓
-Discovery Signal / Metadata
-      ↓
-Referenced Source or Canonical Object
-      ↓
-Continued Review / Workflow Activity
-```
-
-Not every Beacon discovery must originate with Navigator.
-
-Beacon may also receive direct discovery queries or operate within other governed discovery contexts.
-
----
-
-## Authority Boundaries
-
-Beacon does not acquire the authority of information it discovers.
-
-Beacon does not:
-
-* Replace Atlas Authoritative Intelligence
-* Assume Navigator workflow orchestration
-* Issue Certifier Certification Packages
-* Create Registry SREG records on behalf of Registry
-* Create Chronicle Entries on behalf of Chronicle
-* Create Anchor Integrity References
-* Issue Attestor Trust Statements
-* Convert external information into Suite authority merely through discovery
-
-Beacon owns its Discovery Signals and discovery metadata.
-
-Referenced canonical objects remain under the authority of their originating institutions.
-
----
-
-## Planned Production Capabilities
-
-Beacon production development may include:
-
-* Operational Discovery Signals
-* Production Discovery Metadata
-* Canonical Signal Identifiers
-* Validation-ready schemas
-* Source indexing
-* Signal publication
-* Relationship mapping
-* Query interfaces
-* Result presentation
-* Navigator workflow interfaces
-* Cross-institution discovery
-* Metadata APIs
-* Machine discovery
-* Discovery analytics
-* Versioning and supersession mechanisms
-
-Specific implementations may evolve as production work proceeds.
-
----
-
-## Current Limitations
-
-Beacon is not yet an operational Suite institution.
-
-Production capabilities have not yet been validated through institutional use.
-
-Until that occurs, Beacon should not be represented as having proven:
-
-* Operational Discovery Signal publication
-* Production discovery execution
-* Production source indexing
-* Production query execution
-* Production result generation
-* Operational signal monitoring
-* Production metadata exchange
-* Production Navigator workflow integration
-
-Beacon also does not perform the institutional functions assigned to Certifier, Registry, Chronicle, Anchor, Attestor, Atlas, or Navigator.
+## Capability Posture
+
+Demonstrated through the first production operation:
+
+- canonical Discovery Signal creation;
+- canonical `BEAC-YYYY-NNNN` identifier assignment;
+- production Discovery Metadata;
+- direct source provenance;
+- authority-boundary preservation;
+- governed validation and review;
+- lifecycle transition from Draft to Active;
+- publication governance;
+- individual Beacon Record publication;
+- Beacon Records listing;
+- cross-institution reference to an authoritative Certifier object.
+
+Still under future development or intentionally deferred:
+
+- broader source indexing;
+- production query interfaces;
+- Navigator workflow interfaces;
+- large-scale relationship mapping;
+- machine-readable API surfaces;
+- machine discovery;
+- discovery analytics;
+- broader automation and federation.
+
+Exact machine serialization and a frozen machine-validation schema remain intentionally unfrozen.
 
 ---
 
 ## Operational Threshold
 
-The Satoshium Suite does not treat completed documentation as equivalent to an operational institution.
-
-Beacon's operational threshold is:
+Beacon follows the Suite threshold:
 
 ```text
 Architecture defined
-        ↓
-Production object implemented
-        ↓
-Institutional use completed
-        ↓
-Architecture validated
-        ↓
-Operational status considered
+→ Production object implemented
+→ Institutional use completed
+→ Architecture validated
+→ Operational status considered
 ```
 
-This follows the production principle already demonstrated elsewhere in the Suite: architecture must be proven through actual institutional use.
+`BEAC-2026-0001` demonstrates the production-object and real institutional-use portions of this threshold.
 
-Until that threshold is satisfied, Beacon remains **Continuing Development**.
+Beacon is **not yet Operational**.
 
----
+Production evidence must still be preserved, followed by a post-operation review that evaluates whether the architecture performed correctly under actual governed use.
 
-## Production Precedent
-
-The Suite's existing production objects demonstrate the distinction between architectural definition and institutional operation:
-
-* **Certifier → SC-CERT-2026-0001**
-* **Registry → SREG-2026-0001**
-* **Chronicle → CHR-2026-0001**
-* **Anchor → ANCH-2026-0001**
-
-These are separate institution-owned canonical objects connected through governed relationships and provenance.
-
-Beacon's production preparation should follow the same institutional discipline.
-
-Its first production use should prove Beacon's own canonical responsibility rather than duplicate the responsibility of another Suite institution.
+Only after that review should Operational status be considered.
 
 ---
 
-## Status Summary
+## Authority Boundary
 
-The institutional discovery architecture is established.
+`BEAC-2026-0001` does not transfer certification authority to Beacon.
 
-The Discovery Signal model is established.
+Satoshium Certifier remains authoritative for:
 
-The Discovery Metadata model is established.
+- `SC-CERT-2026-0001`;
+- the certification decision;
+- Certification Class;
+- certification lifecycle;
+- certification status.
 
-The authority boundaries are established.
+Satoshium Beacon owns:
 
-The Suite relationships are aligned.
+- `BEAC-2026-0001`;
+- Discovery Metadata;
+- discovery provenance;
+- Beacon lifecycle;
+- Beacon publication state;
+- Beacon-side relationships.
 
-Production preparation is underway.
+> **Reference does not transfer authority.**
+
+---
+
+## Current Status Summary
 
 ```text
-Current Status:
-Continuing Development
-Suite Alignment & Production Preparation
+Beacon Status → Continuing Development
+Phase I → Complete
+Phase II → Complete
+First Production Discovery Signal → BEAC-2026-0001
+Lifecycle → Active
+Publication → Published
+Version → 1.0
+Beacon Records → 1 published Discovery Signal
+Production Evidence Preservation → Pending completion
+Post-Operation Review → Pending
+Operational → No
 ```
 
-Beacon remains ahead of its originally planned November 2026 development window.
-
-Operational status comes only after successful institutional use proves the architecture.
-
 ---
 
-## Long-Term Vision
-
-Beacon seeks to become the Satoshium Suite's operational discovery and signaling institution: capable of helping users, applications, and workflows locate meaningful information while preserving attribution, provenance, traceability, stable references, institutional ownership, and authority boundaries.
-
-Its purpose remains simple:
+## Next Institutional Step
 
 ```text
-Help users find the signal.
-Preserve the path to the source.
+BEAC-2026-0001 Published
+→ Preserve production evidence
+→ Conduct post-operation review
+→ Validate architecture against actual use
+→ Consider Operational status only if supported
 ```
 
 ---
 
 ## Governing Principle
 
-```text
-Beacon discovers.
-Beacon signals.
-The source retains authority.
-```
-
-**Reference does not transfer authority.**
-
----
-
-## Disclaimer
-
-Beacon remains an active development institution.
-
-Documentation, schemas, terminology, workflows, interoperability mechanisms, production objects, and implementation details may continue to evolve as Beacon advances through production preparation.
-
-Nothing within Beacon should be interpreted as proof of operational status unless that status is supported by actual institutional use and formally recognized within the Satoshium Suite status architecture.
-
----
-
-## Last Updated
-
-September 2026
+**Architecture establishes the institution. Governed production tests it. Review determines whether the evidence supports Operational status.**
