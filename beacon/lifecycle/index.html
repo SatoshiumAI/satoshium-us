@@ -34,7 +34,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 
 <main class="wrap content">
 <section class="hero">
-<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<div class="eyebrow">Beacon · Discovery Signal Architecture</div>
 <h1>Discovery Signal Lifecycle</h1>
 <p class="lead">
   The Discovery Signal Lifecycle defines how a Beacon-owned Discovery Signal moves from an observed discovery condition
@@ -60,16 +60,19 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 </article>
 
 <article class="card">
-<h2>Starting Candidate</h2>
+<h2>Architectural Derivation</h2>
 <p>
-  Phase II began with a provisional sequence:
+  The lifecycle architecture was derived by separating an early candidate sequence into
+  pre-object conditions, creation and review events, lifecycle states, publication state,
+  and later institutional actions.
 </p>
 <div class="note">
-  Identified → Created → Reviewed → Published → Updated / Superseded / Resolved
+  Pre-object → Identified<br/>
+  Creation Event → Created<br/>
+  Review → Process / Event<br/>
+  Lifecycle → Draft → Active → Superseded / Resolved / Withdrawn<br/>
+  Publication → Unpublished / Published
 </div>
-<p style="margin-top:14px">
-  That sequence is useful as an inquiry starting point, but it should not be frozen merely because it was proposed.
-</p>
 </article>
 </section>
 
@@ -159,10 +162,9 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 
 <section style="margin-top:18px">
 <article class="card">
-<h2>Proposed Canonical Lifecycle States</h2>
+<h2>Canonical Lifecycle States</h2>
 <p>
-  After separating candidate conditions, events, and publication state, the following lifecycle vocabulary is proposed
-  as the Beacon architectural model:
+  After separating candidate conditions, events, and publication state, Beacon's governed lifecycle vocabulary is:
 </p>
 <div class="note">
   Draft → Active → Superseded / Resolved / Withdrawn
@@ -282,7 +284,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
   Publication State → Unpublished / Published
 </div>
 <p style="margin-top:14px">
-  The dedicated Publication Model will determine exact publication requirements, authorization, timestamps, and public representation.
+  The Publication Model governs publication requirements, authorization, timestamps, and public representation.
 </p>
 </article>
 </section>
@@ -341,7 +343,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <article class="card">
 <h2>Transition Discipline</h2>
 <p>
-  Lifecycle transitions should eventually require an attributable institutional basis.
+  Lifecycle transitions require an attributable institutional basis.
 </p>
 <ul>
 <li>Draft → Active only after required production conditions</li>
@@ -351,25 +353,26 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <li>Prior states should remain traceable</li>
 </ul>
 <div class="note">
-  Exact transition gates belong to later Validation, Versioning, Publication, and Methodology architecture.
+  Validation, Versioning, Publication, and Methodology architecture now govern the transition discipline around these states.
 </div>
 </article>
 
 <article class="card">
-<h2>What Remains Unfrozen</h2>
+<h2>What Remains Intentionally Open</h2>
 <p>
-  This page establishes the lifecycle architecture without prematurely deciding every implementation rule.
+  The institutional lifecycle architecture and production transition discipline are now defined.
+  Remaining openness belongs primarily to machine implementation and future operational refinement.
 </p>
 <ul>
-<li>Machine-readable lifecycle values</li>
-<li>Exact transition validation rules</li>
-<li>Who or what authorizes transitions</li>
-<li>Whether Draft objects receive permanent identifiers immediately</li>
-<li>Update/version mechanics</li>
-<li>Supersession mechanics</li>
-<li>Resolution evidence requirements</li>
-<li>Publication Gate design</li>
+<li>Exact machine-readable lifecycle serialization</li>
+<li>Frozen schema constraints for lifecycle values</li>
+<li>Exact machine transition predicates</li>
+<li>Future evidence refinements if later production demonstrates a need</li>
+<li>Whether a distinct Archived state is ever institutionally necessary</li>
 </ul>
+<div class="note">
+  Permanent BEAC identifiers are assigned at canonical Creation. Draft objects therefore receive their identifier when the canonical Discovery Signal is created.
+</div>
 </article>
 </section>
 
@@ -399,7 +402,35 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
   Publication State → Unpublished / Published
 </div>
 <p style="margin-top:14px">
-  The later production schema will determine how these dimensions are represented machine-readably.
+  These dimensions are governed institutionally; exact frozen machine serialization remains intentionally open.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>First Production Lifecycle</h2>
+<p>
+  Beacon's lifecycle architecture has now been exercised through
+  <strong>BEAC-2026-0001</strong>.
+</p>
+<div class="note">
+  Candidate Discovery → Identified<br/>
+  Canonical Creation → September 13, 2026 · 9:01:57 AM PDT<br/>
+  Identifier Assigned → BEAC-2026-0001<br/>
+  Initial Lifecycle → Draft<br/>
+  Initial Publication → Unpublished<br/>
+  Validation → Valid<br/>
+  Review → Approved to Proceed<br/>
+  Lifecycle Transition → Draft → Active<br/>
+  Publication Decision → Approved<br/>
+  Current Lifecycle → Active<br/>
+  Current Publication → Published<br/>
+  Version → 1.0
+</div>
+<p style="margin-top:14px">
+  This first production operation demonstrated that canonical Creation assigns the permanent
+  BEAC identifier before validation, activation, or publication.
 </p>
 </article>
 </section>
@@ -408,15 +439,13 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <article class="card">
 <h2>Current Status</h2>
 <div class="note">
-  Beacon Status → Continuing Development<br/>
-  Phase → Phase II — Production Architecture<br/>
-  Entry Model → Defined<br/>
-  Signal Types → Defined<br/>
-  Lifecycle Architecture → Defined<br/>
+  Beacon Status → Operational · September 2026<br/>
+  Lifecycle Architecture → Defined and production-exercised<br/>
   Lifecycle States → Draft · Active · Superseded · Resolved · Withdrawn<br/>
   Publication Dimension → Unpublished · Published<br/>
-  Transition Enforcement → Pending<br/>
-  Production Proof → Pending
+  Identifier Assignment → At canonical Creation<br/>
+  Production Transition → Draft → Active exercised<br/>
+  First Production Discovery Signal → BEAC-2026-0001 · Active · Published
 </div>
 </article>
 </section>
