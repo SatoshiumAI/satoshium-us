@@ -188,15 +188,18 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Signal Types</h2>
+  <h2>Certification Discovery States</h2>
 
   <p>
-    Beacon may publish several certification-related signal types so users and
-    systems can discover relevant certification states.
+    Beacon's governed primary Signal Type for certification discovery is
+    <strong>Certification</strong>. Within that signal, Beacon may preserve an
+    observed certification condition or state when it is supported by the
+    authoritative Certifier source.
   </p>
 
   <div class="note">
-    Certified · Expired · Revoked · Updated · Pending
+    Primary Signal Type → Certification<br/>
+    Observed certification conditions may include Certified · Active · Expired · Revoked · Updated · Pending
   </div>
 </article>
 
@@ -263,6 +266,43 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
+  <h2>First Production Certification Signal</h2>
+
+  <p>
+    <strong>BEAC-2026-0001</strong> is Beacon's first published production
+    Discovery Signal and the first real production implementation of certification discovery.
+  </p>
+
+  <div class="note">
+    Beacon ID → BEAC-2026-0001<br/>
+    Title → Active Operational Certification — Atlas Jurisdiction Record — El Salvador<br/>
+    Primary Signal Type → Certification<br/>
+    Primary Source → Satoshium Certifier · SC-CERT-2026-0001<br/>
+    Observed Condition → Issued · Active · Operational<br/>
+    Lifecycle → Active<br/>
+    Publication → Published<br/>
+    Version → 1.0<br/>
+    Published → September 13, 2026
+  </div>
+
+  <p>
+    Beacon directly observed the canonical Certifier record
+    <strong>SC-CERT-2026-0001</strong> and identified the discoverable condition
+    that an active Operational certification exists for the Atlas Jurisdiction
+    Record — El Salvador. Certifier remains authoritative for the certification
+    decision, class, lifecycle, and status.
+  </p>
+
+  <a class="btn" href="/beacon/records/BEAC-2026-0001/">
+    Open BEAC-2026-0001 →
+  </a>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
   <h2>What a Signal Contains</h2>
 
   <p>
@@ -272,8 +312,8 @@ h1{
   </p>
 
   <div class="note">
-    Discovery Signal ID · Signal Type · Source Institution · Certification Package ID ·
-    Related SREG ID · Provenance · Public Reference · Signal Date · Last Observed · Version
+    Beacon Identifier · Subject · Primary Signal Type · Source Reference · Provenance ·
+    Discovery Metadata · Canonical References · Timestamps · Version · Lifecycle State · Publication State · Relationships
   </div>
 </article>
 
@@ -290,7 +330,8 @@ h1{
   </p>
 
   <div class="note">
-    Beacon may publish a Certified signal. Certifier determines and records the authoritative certification state.
+    Production example: SC-CERT-2026-0001 → authoritative Certifier source for discovery → BEAC-2026-0001.<br/>
+    Beacon publishes the Discovery Signal. Certifier determines and records the authoritative certification state.
   </div>
 </article>
 
@@ -327,8 +368,8 @@ h1{
   </p>
 
   <div class="note">
-    The signal may reflect an authoritative state.<br>
-    It does not independently create that state.<br>
+    BEAC-2026-0001 reflects the authoritative certification condition observed in SC-CERT-2026-0001.<br>
+    Beacon does not independently create or adjudicate that certification state.<br>
     Reference does not transfer authority.
   </div>
 </article>
@@ -368,6 +409,9 @@ h1{
 
   <a class="btn" href="/beacon/">
     Back to Beacon →
+  </a>
+  <a class="btn" href="/beacon/records/">
+    Open Beacon Records →
   </a>
 </article>
 
