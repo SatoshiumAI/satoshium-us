@@ -35,7 +35,7 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 
 <main class="wrap content">
 <section class="hero">
-<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<div class="eyebrow">Beacon · Discovery Signal Architecture</div>
 <h1>Beacon Identifier Standard</h1>
 <p class="lead">
   The Beacon Identifier Standard establishes the canonical identifier convention for Beacon-owned Discovery Signals.
@@ -69,7 +69,7 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
   <strong>BEAC</strong>
 </div>
 <p style="margin-top:14px">
-  The first production Discovery Signal will therefore use the pattern:
+  The first production Discovery Signal uses:
 </p>
 <div class="note">
   <strong>BEAC-2026-0001</strong>
@@ -190,7 +190,7 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
   The Entry Model and Lifecycle distinguish <strong>Identified</strong> from the creation of the canonical Beacon object.
 </p>
 <p>
-  The identifier should be assigned when the canonical Discovery Signal is <strong>Created</strong> and enters <strong>Draft</strong>.
+  The identifier is assigned when the canonical Discovery Signal is <strong>Created</strong> and enters <strong>Draft</strong>.
 </p>
 <div class="note">
   Identified → no permanent Beacon identifier required<br/>
@@ -289,7 +289,7 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
   <code>^BEAC-[0-9]{4}-[0-9]{4}$</code>
 </div>
 <p style="margin-top:14px">
-  Formal machine validation will be established later through Beacon Schemas and Validation.
+  Beacon Schemas and Validation now govern identifier conformance at the institutional level. Exact frozen machine-schema enforcement remains intentionally open.
 </p>
 </article>
 </section>
@@ -356,13 +356,13 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 <article class="card">
 <h2>Canonical Public Path</h2>
 <p>
-  The eventual public representation of a production Discovery Signal should be addressable by its identifier.
+  A published production Discovery Signal is addressable through its Beacon Record using the permanent identifier.
 </p>
 <div class="note">
   /beacon/records/BEAC-2026-0001/
 </div>
 <p style="margin-top:14px">
-  The Records and Individual Discovery Signal phases will determine the final public representation.
+  <strong>Beacon Record</strong> is the public representation of the Discovery Signal; it is not a separate canonical object type.
 </p>
 </article>
 </section>
@@ -383,22 +383,46 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 
 <section style="margin-top:18px">
 <article class="card">
-<h2>What Remains Unfrozen</h2>
+<h2>What Remains Intentionally Open</h2>
 <p>
-  The canonical identifier convention is established, while downstream implementation details remain pending.
+  The canonical identifier convention, assignment point, permanence rules, and public routing pattern
+  are established and have been exercised in production. Remaining openness belongs to implementation.
 </p>
 <ul>
-<li>Machine-readable schema enforcement</li>
-<li>Sequence-assignment mechanism</li>
-<li>Collision prevention implementation</li>
-<li>Registry or ledger mechanism for issued Beacon identifiers</li>
-<li>Public routing implementation</li>
+<li>Frozen machine-schema enforcement</li>
+<li>Automated sequence-assignment mechanism</li>
+<li>Automated collision-prevention implementation</li>
+<li>Future ledger or service mechanism for issued Beacon identifiers</li>
 <li>API behavior</li>
-<li>Version-reference syntax outside the canonical identifier</li>
+<li>Exact machine version-reference syntax outside the canonical identifier</li>
 </ul>
 <div class="note">
-  Identifier meaning is now frozen. Identifier implementation will be governed by later architecture.
+  Identifier meaning and institutional use are established. Future software may automate the mechanics without changing the canonical identity model.
 </div>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
+<h2>First Production Identifier</h2>
+<p>
+  The Identifier Standard has now been exercised through Beacon's first canonical production Discovery Signal.
+</p>
+<div class="note">
+  Identifier → BEAC-2026-0001<br/>
+  Assigned At → Canonical Creation<br/>
+  Created → September 13, 2026 · 9:01:57 AM PDT<br/>
+  Initial Lifecycle → Draft<br/>
+  Initial Publication → Unpublished<br/>
+  Current Lifecycle → Active<br/>
+  Current Publication → Published<br/>
+  Version → 1.0<br/>
+  Public Record → /beacon/records/BEAC-2026-0001/
+</div>
+<p style="margin-top:14px">
+  The production operation confirms that the permanent identifier is assigned at Creation,
+  before validation, activation, or publication.
+</p>
 </article>
 </section>
 
@@ -406,17 +430,14 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 <article class="card">
 <h2>Current Status</h2>
 <div class="note">
-  Beacon Status → Continuing Development<br/>
-  Phase → Phase II — Production Architecture<br/>
-  Entry Model → Defined<br/>
-  Signal Types → Defined<br/>
-  Lifecycle → Defined<br/>
-  Identifier Standard → Defined<br/>
+  Beacon Status → Operational · September 2026<br/>
+  Identifier Standard → Defined and production-exercised<br/>
   Canonical Prefix → BEAC<br/>
   Canonical Pattern → BEAC-YYYY-NNNN<br/>
-  First Reserved Production Pattern → BEAC-2026-0001<br/>
-  Schema Enforcement → Pending<br/>
-  First Production Discovery Signal → Not yet created
+  Assignment Point → Canonical Creation<br/>
+  First Production Identifier → BEAC-2026-0001<br/>
+  Public Routing → Exercised<br/>
+  Frozen Machine-Schema Enforcement → Not yet adopted
 </div>
 </article>
 </section>
