@@ -35,12 +35,12 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 
 <main class="wrap content">
 <section class="hero">
-<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<div class="eyebrow">Beacon · Discovery Signal Architecture</div>
 <h1>Beacon Schemas</h1>
 <p class="lead">
-  Beacon Schemas define the public machine-readable structures Beacon recognizes and publishes.
-  They translate the institutional architecture of Discovery Signals into predictable, interoperable,
-  validation-ready representations without collapsing Beacon into the systems it references.
+  Beacon Schemas define the governed structural architecture Beacon uses for Discovery Signals
+  and supporting discovery structures. They translate Beacon's institutional model into predictable,
+  interoperable representations without collapsing Beacon into the systems it references.
 </p>
 <p class="lead">
   The schema layer must preserve Beacon ownership, source attribution, provenance, canonical references,
@@ -80,13 +80,13 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <div class="badge">Canonical Production Schema</div>
 <h2>Discovery Signal Schema</h2>
 <p>
-  The primary production schema for Beacon must represent the canonical Beacon-owned object:
+  The canonical Beacon schema architecture represents the Beacon-owned production object:
 </p>
 <div class="note">
   Discovery Signal → <strong>BEAC-YYYY-NNNN</strong>
 </div>
 <p style="margin-top:14px">
-  It should implement the Discovery Signal Entry Model already established during Phase II:
+  It implements the Discovery Signal Entry Model established for Beacon:
 </p>
 <div class="note">
   Identity → Subject → Signal Type → Source → Provenance → Canonical References → Discovery Metadata → Timestamps → Version → Status → Relationships
@@ -100,7 +100,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <section class="grid">
 <article class="card">
 <h2>Required Core Structure</h2>
-<p>The canonical Discovery Signal schema should support:</p>
+<p>The canonical Discovery Signal schema architecture supports:</p>
 <ul>
 <li>Beacon identifier using <strong>BEAC-YYYY-NNNN</strong></li>
 <li>Object type: Discovery Signal</li>
@@ -120,7 +120,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 
 <article class="card">
 <h2>Established Controlled Values</h2>
-<p>Current Phase II architecture already establishes:</p>
+<p>Beacon's governed architecture establishes:</p>
 <div class="note">
   Signal Types → Information · Jurisdiction · Certification · Registry · Historical · Integrity · Trust · Relationship
 </div>
@@ -131,7 +131,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
   Publication States → Unpublished · Published
 </div>
 <p style="margin-top:14px">
-  Exact machine-readable enum spelling will be formalized in the schema files and tested through Validation.
+  Exact frozen machine-readable enum serialization remains intentionally open. Institutional conformance is governed through Beacon Validation.
 </p>
 </article>
 </section>
@@ -140,7 +140,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <article class="card">
 <h2>Public Schema Directory</h2>
 <p>
-  Beacon's schema directory should distinguish canonical production structures from supporting or legacy conceptual structures.
+  Beacon's schema architecture distinguishes the canonical Discovery Signal structure from supporting and optional operational structures.
 </p>
 <div class="note">
   Canonical Object Schema<br/>
@@ -156,44 +156,43 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 
 <section class="grid">
 <article class="card">
-<div class="badge">Revise → Canonical</div>
-<h2>signal-record-schema.md</h2>
+<div class="badge">Canonical</div>
+<h2>discovery-signal-schema.md</h2>
 <p>
-  The existing Signal Record Schema is the closest predecessor to the canonical Discovery Signal schema, but it predates the Phase II Entry Model,
-  Signal Types, Lifecycle, and Identifier Standard.
+  <strong>discovery-signal-schema.md</strong> is the canonical human-readable schema document for Beacon's Discovery Signal architecture.
 </p>
 <ul>
-<li>Replace legacy <code>SIG-YYYY-NNNNNN</code> with <strong>BEAC-YYYY-NNNN</strong></li>
-<li>Replace legacy signal-type examples with the eight governed types</li>
-<li>Replace legacy status vocabulary with the canonical lifecycle model</li>
-<li>Add provenance and canonical references</li>
-<li>Separate Lifecycle State from Publication State</li>
-<li>Remove confidence as implied canonical signal semantics unless later architecture explicitly restores it</li>
+<li>Uses <strong>BEAC-YYYY-NNNN</strong></li>
+<li>Uses the eight governed Signal Types</li>
+<li>Preserves canonical lifecycle and separate publication state</li>
+<li>Includes source, provenance, canonical references, metadata, timestamps, version, status, and relationships</li>
+<li>Represents Beacon's canonical object without creating a competing record type</li>
 </ul>
 <div class="note">
-  Recommended role → canonical human-readable Discovery Signal production schema.
+  Canonical role → human-readable Discovery Signal schema architecture.
 </div>
 </article>
 
 <article class="card">
-<div class="badge">Retire or Reframe</div>
-<h2>beacon-record-schema.md</h2>
+<div class="badge">Deprecated</div>
+<h2>Legacy Generic Record Schemas</h2>
 <p>
-  The existing Beacon Record Schema introduces a second generic Beacon record object using <code>BEC-YYYY-NNNNNN</code>.
-  Phase II has now established the Discovery Signal as Beacon's canonical production object.
+  Earlier <code>signal-record-schema.md</code> and <code>beacon-record-schema.md</code> concepts are deprecated as canonical schemas.
+  Beacon's canonical object is the Discovery Signal.
 </p>
 <ul>
-<li>A parallel generic “Beacon Record” risks duplicating the canonical object</li>
-<li>The legacy identifier conflicts with the new Identifier Standard</li>
-<li>Discovery activity may belong in methodology, provenance, query, or audit structures rather than a second canonical object</li>
+<li>Legacy <code>SIG-YYYY-NNNNNN</code> and <code>BEC-YYYY-NNNNNN</code> identifier assumptions are obsolete</li>
+<li>A Beacon Record is a public representation of a Discovery Signal, not a second canonical object type</li>
+<li>Supporting discovery activity belongs in provenance, methodology, query, or other explicitly noncanonical structures when needed</li>
 </ul>
 <div class="note">
-  Recommended disposition → retire as canonical schema or explicitly reframe as a noncanonical supporting activity record only if production proves the need.
+  Canonical object → Discovery Signal.<br/>
+  Public representation → Beacon Record.
 </div>
 </article>
 
 <article class="card">
-<div class="badge">Supporting · Review</div>
+<div class="badge">Supporting</div>
 <h2>source-reference-schema.md</h2>
 <p>
   Source references remain important because every Discovery Signal should preserve attribution and traceability.
@@ -206,12 +205,12 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <li>Do not imply Beacon verification or endorsement</li>
 </ul>
 <div class="note">
-  Recommended role → embedded or reusable supporting source-reference structure.
+  Governed role → embedded or reusable supporting source-reference structure.
 </div>
 </article>
 
 <article class="card">
-<div class="badge">Supporting · Review</div>
+<div class="badge">Optional · Noncanonical</div>
 <h2>discovery-result-schema.md</h2>
 <p>
   Discovery results may remain useful as query or presentation outputs, but they must not compete with Discovery Signals as Beacon's canonical production object.
@@ -223,12 +222,12 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <li>Retain relevance only as discovery context, not authority</li>
 </ul>
 <div class="note">
-  Recommended role → noncanonical discovery-output structure, if retained.
+  Governed role → optional noncanonical discovery-output structure.
 </div>
 </article>
 
 <article class="card">
-<div class="badge">Supporting · Review</div>
+<div class="badge">Optional · Operational</div>
 <h2>query-log-schema.md</h2>
 <p>
   Query logging may support transparency and reproducibility, but it belongs to operational discovery history rather than Beacon's canonical object model.
@@ -241,7 +240,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <li>A permanent query identifier should not be frozen until operational need is proven</li>
 </ul>
 <div class="note">
-  Recommended role → optional supporting operational schema, not a canonical Discovery Signal schema.
+  Governed role → optional supporting operational schema, not a canonical Discovery Signal schema.
 </div>
 </article>
 
@@ -249,7 +248,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <div class="badge">Directory Governance</div>
 <h2>README.md</h2>
 <p>
-  The existing schema README should be revised to reflect the Phase II production architecture.
+  The schema README should document the current Discovery Signal architecture and distinguish canonical, supporting, optional, and deprecated structures.
 </p>
 <ul>
 <li>Discovery Signal becomes the canonical Beacon object</li>
@@ -348,10 +347,10 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 <article class="card">
 <h2>Machine-Readable Publication</h2>
 <p>
-  Production Beacon records should ultimately support a machine-readable representation that can be validated independently of the human-readable page.
+  Beacon's institutional schema architecture is machine-readable-ready, but no frozen <code>.schema.json</code> implementation has yet been adopted.
 </p>
 <p>
-  The exact file format, JSON Schema implementation, version URI, and public schema location should be determined without changing the institutional meaning established here.
+  A future machine-readable representation should remain independently validatable and must preserve the same institutional meaning as the human-readable architecture. Exact file format, JSON Schema dialect, version URI, and public machine-schema location remain intentionally open.
 </p>
 <div class="note">
   Human-readable architecture and machine-readable enforcement should describe the same object.
@@ -377,21 +376,19 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 
 <section style="margin-top:18px">
 <article class="card">
-<h2>What Remains Unfrozen</h2>
+<h2>What Remains Intentionally Open</h2>
 <ul>
-<li>Exact JSON property names</li>
-<li>Required vs. optional property rules</li>
-<li>Machine-readable enum spelling</li>
+<li>Exact machine property serialization</li>
+<li>Frozen required vs. optional machine-property constraints</li>
+<li>Machine-readable enum serialization</li>
 <li>JSON Schema version and dialect</li>
-<li>Schema version identifiers</li>
-<li>Reusable sub-schema boundaries</li>
-<li>Discovery-result retention</li>
+<li>Machine-schema version identifiers</li>
+<li>Reusable machine sub-schema boundaries</li>
+<li>Discovery-result retention rules</li>
 <li>Query-log retention and privacy rules</li>
-<li>Whether legacy Beacon Record Schema is retired or retained as noncanonical</li>
-<li>Formal validation behavior</li>
 </ul>
 <div class="note">
-  These should be finalized through the schema-file revision and the next Phase II step: Validation.
+  These are implementation questions, not unresolved institutional architecture. Validation is already defined at the governed conceptual level.
 </div>
 </article>
 </section>
@@ -410,20 +407,42 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;co
 
 <section style="margin-top:18px">
 <article class="card">
+<h2>Production Exercise</h2>
+<p>
+  Beacon's schema architecture has been exercised at the governed conceptual level through
+  <strong>BEAC-2026-0001</strong>.
+</p>
+<div class="note">
+  Canonical Object → Discovery Signal<br/>
+  Identifier → BEAC-2026-0001<br/>
+  Signal Type → Certification<br/>
+  Source → Satoshium Certifier · SC-CERT-2026-0001<br/>
+  Provenance → Direct<br/>
+  Lifecycle → Active<br/>
+  Publication → Published<br/>
+  Version → 1.0<br/>
+  Validation → Schema Conformity PASS at governed conceptual level
+</div>
+<p style="margin-top:14px">
+  No frozen <code>.schema.json</code> existed for the first operation, so machine-serialization validation was not applicable.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
 <h2>Current Status</h2>
 <div class="note">
-  Beacon Status → Continuing Development<br/>
-  Phase → Phase II — Production Architecture<br/>
-  Entry Model → Defined<br/>
-  Signal Types → Defined<br/>
-  Lifecycle → Defined<br/>
-  Identifier Standard → Defined<br/>
-  Schema Architecture → Defined<br/>
+  Beacon Status → Operational · September 2026<br/>
+  Schema Architecture → Defined and production-exercised<br/>
   Canonical Production Object → Discovery Signal<br/>
-  Canonical Identifier → BEAC-YYYY-NNNN<br/>
-  Existing Schema Documents → Require alignment review<br/>
-  Machine-Readable Enforcement → Pending<br/>
-  Validation Architecture → Next
+  Canonical Human-Readable Schema → discovery-signal-schema.md<br/>
+  Supporting Schema → source-reference-schema.md<br/>
+  Optional Noncanonical Schema → discovery-result-schema.md<br/>
+  Optional Operational Schema → query-log-schema.md<br/>
+  Legacy Generic Record Schemas → Deprecated<br/>
+  Validation Architecture → Defined<br/>
+  Frozen Machine Schema → Not yet adopted
 </div>
 </article>
 </section>
