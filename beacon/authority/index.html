@@ -37,7 +37,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<div class="eyebrow">Beacon · Discovery Signal Architecture</div>
 <h1>Authority &amp; Reference Model</h1>
 <p class="lead">
   The Authority &amp; Reference Model defines precisely what Beacon owns, what Beacon may reference,
@@ -278,10 +278,11 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <p>Referenced objects retain their native identifiers.</p>
 <div class="note">
   BEAC-2026-0001 → Beacon Discovery Signal<br/>
-  ANCH-2026-0001 → Anchor Integrity Reference
+  SC-CERT-2026-0001 → Certifier Certification Package
 </div>
 <p style="margin-top:14px">
-  A reference should never rename <strong>ANCH-2026-0001</strong> as though it were a Beacon object.
+  The first production signal preserves <strong>SC-CERT-2026-0001</strong> as a Certifier-owned object.
+  Beacon does not rename or absorb it as a Beacon object.
 </p>
 </article>
 
@@ -291,8 +292,8 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
   Beacon should preserve the source object's actual institutional type when known.
 </p>
 <div class="note">
-  Source Object Type → Integrity Reference<br/>
-  Beacon Signal Type → Integrity
+  Source Object Type → Canonical Certification Package<br/>
+  Beacon Signal Type → Certification
 </div>
 <p style="margin-top:14px">
   These fields are related, but they are not interchangeable.
@@ -511,10 +512,11 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <h2>Relationship to Relationships</h2>
 <p>
   The Authority Model establishes who owns the endpoints.
-  The next Relationship Model will define how Beacon represents governed connections between them.
+  The Relationship Model defines how Beacon represents governed connections between them.
 </p>
 <div class="note">
-  Authority first → Relationship semantics second
+  Authority → endpoint ownership<br/>
+  Relationships → governed connection semantics
 </div>
 </article>
 </section>
@@ -540,7 +542,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 
 <section style="margin-top:18px">
 <article class="card">
-<h2>What Remains Unfrozen</h2>
+<h2>What Remains Intentionally Open</h2>
 <ul>
 <li>Exact machine-readable canonical-reference property names</li>
 <li>Formal authority-attribution field vocabulary</li>
@@ -552,7 +554,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <li>Whether some specialized Signal Types require specific source institutions</li>
 </ul>
 <div class="note">
-  These should be resolved through later Relationship, Methodology, and production work rather than assumed prematurely.
+  The institutional authority boundary is defined and production-exercised. These remaining questions concern machine implementation or future specialized cases.
 </div>
 </article>
 </section>
@@ -574,20 +576,44 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 
 <section style="margin-top:18px">
 <article class="card">
+<h2>First Production Authority Exercise</h2>
+<p>
+  The Authority &amp; Reference Model has now been exercised through <strong>BEAC-2026-0001</strong>.
+</p>
+<div class="note">
+  Beacon-Owned Object → BEAC-2026-0001<br/>
+  Primary Referenced Object → SC-CERT-2026-0001<br/>
+  Referenced Institution → Satoshium Certifier<br/>
+  Referenced Object Type → Canonical Certification Package<br/>
+  Referenced Certification Condition → Issued · Active · Operational<br/>
+  Underlying Subject → Atlas Jurisdiction Record — El Salvador<br/>
+  Subject Authority → Satoshium Atlas<br/>
+  Related Registry Object → SREG-2026-0001<br/>
+  Related Chronicle Object → CHR-2026-0001<br/>
+  Related Integrity Object → ANCH-2026-0001
+</div>
+<p style="margin-top:14px">
+  Certifier retains authority over the certification decision, class, lifecycle, and status of
+  <strong>SC-CERT-2026-0001</strong>. Atlas retains authority over the underlying jurisdiction intelligence.
+  Beacon owns only its Discovery Signal, discovery metadata, provenance, lifecycle, publication state,
+  validation determinations, version information, and Beacon-side relationships and references.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
 <h2>Current Status</h2>
 <div class="note">
-  Beacon Status → Continuing Development<br/>
-  Phase → Phase II — Production Architecture<br/>
-  Entry Model → Defined<br/>
-  Signal Types → Defined<br/>
-  Lifecycle → Defined<br/>
-  Identifier Standard → Defined<br/>
-  Schemas → Defined<br/>
-  Validation → Defined<br/>
-  Discovery Provenance → Defined<br/>
-  Authority &amp; Reference Model → Defined<br/>
-  Relationship Model → Next<br/>
-  First Production Discovery Signal → Not yet created
+  Beacon Status → Operational · September 2026<br/>
+  Authority &amp; Reference Model → Defined and production-exercised<br/>
+  First Production Authority Review → PASS<br/>
+  Primary Referenced Object → SC-CERT-2026-0001<br/>
+  Certifier Authority → Preserved<br/>
+  Atlas Subject Authority → Preserved<br/>
+  Beacon Authority Boundary → Preserved<br/>
+  Relationship Model → Defined<br/>
+  First Production Discovery Signal → BEAC-2026-0001 · Active · Published
 </div>
 </article>
 </section>
