@@ -9,7 +9,7 @@
 
 ## Current Suite Posture
 
-The Suite landing page presents seven systems as active or Operational:
+The Suite landing page now presents eight systems within the **Operational Systems** layer:
 
 - Aegis
 - Atlas
@@ -18,8 +18,11 @@ The Suite landing page presents seven systems as active or Operational:
 - Registry
 - Chronicle
 - Anchor
+- Beacon
 
-Beacon is now in **real production use** but remains institutionally classified as **Continuing Development**.
+Beacon belongs in the Operational Systems layer because it has now entered real production use through `BEAC-2026-0001`.
+
+Its institutional status remains **Continuing Development** until production-evidence preservation and post-operation review are complete.
 
 Attestor remains in Continuing Development.
 
@@ -133,10 +136,15 @@ Status records institutional posture and development state.
 
 ---
 
-## Beacon Next Gate
+## Beacon Placement and Next Gate
+
+Beacon is now placed under **Operational Systems** on the Suite landing page because production use has begun.
+
+This placement does not, by itself, change Beacon's institutional status to Operational.
 
 ```text
 BEAC-2026-0001 Published
+→ Beacon appears under Operational Systems
 → Preserve complete production evidence
 → Conduct formal post-operation review
 → Validate architecture against actual use
