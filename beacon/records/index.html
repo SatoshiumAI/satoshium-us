@@ -29,7 +29,16 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:950px;co
 table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{color:var(--gold2)}td{color:var(--muted)}
 .empty{padding:28px;border:1px dashed rgba(214,163,74,.28);border-radius:16px;text-align:center;background:rgba(214,163,74,.03)}
 .empty strong{display:block;color:var(--gold2);font-size:20px;margin-bottom:6px}
-@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}.table-wrap{overflow-x:auto}}
+.record-entry{margin-top:14px;padding:20px;border:1px solid rgba(214,163,74,.24);border-radius:16px;background:linear-gradient(to bottom right,rgba(214,163,74,.07),rgba(12,16,24,.72))}
+.record-entry h3{margin:4px 0 8px;color:var(--gold2);font-size:22px}
+.record-id{font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--gold2)}
+.record-summary{color:var(--muted);margin:0 0 14px}
+.record-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px;margin:14px 0}
+.record-meta div{color:var(--muted)}
+.record-meta strong{color:var(--text)}
+.record-link{display:inline-block;margin-top:8px;padding:10px 14px;border:1px solid rgba(214,163,74,.28);border-radius:12px;background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700}
+.record-link:hover{background:rgba(214,163,74,.12)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.record-meta{grid-template-columns:1fr}h1{font-size:34px}.table-wrap{overflow-x:auto}}
 </style>
 </head>
 <body>
@@ -39,7 +48,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<div class="eyebrow">Beacon · Production Records</div>
 <h1>Beacon Records</h1>
 <p class="lead">
   Beacon Records is the human-facing register of published canonical Discovery Signals.
@@ -130,7 +139,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
   /beacon/records/BEAC-2026-0001/
 </div>
 <p style="margin-top:14px">
-  The next Phase II architecture defines the individual Discovery Signal page represented at that path.
+  The first production Discovery Signal now resolves at this stable path, establishing the initial public individual-record pattern for Beacon.
 </p>
 </article>
 </section>
@@ -158,7 +167,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 </table>
 </div>
 <div class="note">
-  Exact production field labels remain subject to the first individual record and production operation.
+  The first production operation established this initial human-facing field set. Future presentation refinements may occur without changing the canonical Discovery Signal or its institutional authority.
 </div>
 </article>
 </section>
@@ -240,9 +249,9 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 </p>
 <div class="note">
   BEAC-2026-0001<br/>
-  Current Version → 2<br/>
+  Current Version → 1.0<br/>
   ↓<br/>
-  Individual record provides governed version history
+  Individual record provides governed version and lifecycle context
 </div>
 </article>
 </section>
@@ -334,7 +343,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
   Initial ordering may be simple and deterministic, such as canonical identifier or publication chronology.
 </p>
 <div class="note">
-  Exact production ordering remains unfrozen until actual records exist.
+  Initial production ordering may use publication chronology or canonical identifier. The ordering rule remains a presentation decision and may evolve as record volume grows.
 </div>
 </article>
 
@@ -464,14 +473,37 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <section style="margin-top:18px">
 <article class="card">
 <h2>Production Records</h2>
-<div class="empty">
-<strong>No production Discovery Signals have been published yet.</strong>
-<span class="muted">
-  Beacon remains in Continuing Development. The first production Discovery Signal will be created only after Phase II architecture and the production methodology are ready for institutional use.
-</span>
+<p>
+  Beacon Records now contains its first published production Discovery Signal.
+</p>
+
+<div class="record-entry">
+  <div class="record-id">BEAC-2026-0001</div>
+  <h3>Active Operational Certification — Atlas Jurisdiction Record — El Salvador</h3>
+  <p class="record-summary">
+    Satoshium Beacon identified an active Operational certification for the Atlas Jurisdiction Record — El Salvador,
+    represented by Satoshium Certifier object <strong>SC-CERT-2026-0001</strong>.
+  </p>
+
+  <div class="record-meta">
+    <div><strong>Signal Type</strong> → Certification</div>
+    <div><strong>Lifecycle</strong> → Active</div>
+    <div><strong>Publication</strong> → Published</div>
+    <div><strong>Current Version</strong> → 1.0</div>
+    <div><strong>Source Institution</strong> → Satoshium Certifier</div>
+    <div><strong>Source Object</strong> → SC-CERT-2026-0001</div>
+    <div><strong>Published</strong> → September 13, 2026</div>
+    <div><strong>Record Path</strong> → /beacon/records/BEAC-2026-0001/</div>
+  </div>
+
+  <a class="record-link" href="/beacon/records/BEAC-2026-0001/">
+    View Beacon Record →
+  </a>
 </div>
+
 <div class="note">
-  This empty state is intentional. The Beacon Records architecture now exists before production evidence exists.
+  This listing is an index representation of the Beacon-owned Discovery Signal. It does not duplicate the canonical object,
+  replace the individual record, or assume authority over the referenced Certifier object.
 </div>
 </article>
 </section>
@@ -517,13 +549,15 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <li>Unpublished signals remain outside Beacon Records by default</li>
 <li>Each Record listing preserves the canonical BEAC identifier</li>
 <li>Record listings provide concise discovery context and point to individual canonical records</li>
-<li>Beacon Records should expose current lifecycle state and current version</li>
+<li>Production listings expose lifecycle state, publication state, current version, source attribution, publication date, and record location</li>
+<li>The first stable individual record path is /beacon/records/BEAC-2026-0001/</li>
+<li>BEAC-2026-0001 is Beacon's first published production Discovery Signal</li>
 <li>Published Superseded, Resolved, and Withdrawn signals may remain historically discoverable where governance permits</li>
 <li>Signal Type and Source Object Type remain distinct</li>
 <li>Source ownership and authority remain preserved</li>
 <li>Records inclusion does not independently establish truth, certification, registration, integrity, or trust</li>
 <li>Record summaries must remain consistent with their canonical Discovery Signals</li>
-<li>The initial production Records page is intentionally empty</li>
+<li>Beacon Records has now moved from architecture-only design into actual production use</li>
 </ul>
 </article>
 </section>
@@ -532,8 +566,8 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <article class="card">
 <h2>What Remains Unfrozen</h2>
 <ul>
-<li>Exact production Records field labels</li>
-<li>Default ordering</li>
+<li>Future refinements to human-facing Records field labels</li>
+<li>Default ordering as production volume grows</li>
 <li>Filtering controls</li>
 <li>Search behavior</li>
 <li>Pagination if production scale requires it</li>
@@ -541,10 +575,10 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <li>Withdrawn-record visibility mechanics</li>
 <li>Records correction mechanics</li>
 <li>Machine-readable records/index representation</li>
-<li>Whether additional summary fields are useful after first production use</li>
+<li>Whether additional summary fields become useful after broader production use</li>
 </ul>
 <div class="note">
-  These should be informed by the Individual Discovery Signal architecture and actual production records rather than frozen before use.
+  The first production record now provides real institutional evidence for future refinement. Remaining presentation and scale decisions should continue to be informed by actual use rather than frozen prematurely.
 </div>
 </article>
 </section>
@@ -571,7 +605,9 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <h2>Current Status</h2>
 <div class="note">
   Beacon Status → Continuing Development<br/>
-  Phase → Phase II — Production Architecture<br/>
+  Phase I — Institutional Architecture &amp; Alignment → Complete<br/>
+  Phase II — Production Architecture → Complete<br/>
+  Current Stage → First Controlled Production Operation<br/>
   Entry Model → Defined<br/>
   Signal Types → Defined<br/>
   Lifecycle → Defined<br/>
@@ -583,10 +619,14 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
   Relationship Model → Defined<br/>
   Versioning &amp; Supersession → Defined<br/>
   Publication Model → Defined<br/>
-  Beacon Records → Defined<br/>
-  Individual Discovery Signal → Next<br/>
-  First Production Discovery Signal → Not yet created<br/>
-  Production Records → Empty by design
+  Beacon Records → Defined and in production use<br/>
+  Individual Discovery Signal → Defined and production-tested<br/>
+  First Production Discovery Signal → BEAC-2026-0001<br/>
+  First Signal Lifecycle → Active<br/>
+  First Signal Publication → Published<br/>
+  Production Records → 1 published Discovery Signal<br/>
+  Production Evidence Preservation → Pending completion<br/>
+  Post-Operation Review → Pending
 </div>
 </article>
 </section>
@@ -596,7 +636,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <div class="wrap reflection">
 <hr/>
 <div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
-  Records should make canonical objects easier to find without becoming new canonical objects.
+  Beacon Records makes published Discovery Signals findable without becoming another canonical authority.
 </div>
 <hr/>
 <div id="footer-container"></div>
