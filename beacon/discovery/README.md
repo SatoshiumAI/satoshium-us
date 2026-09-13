@@ -1,204 +1,173 @@
-# Discovery
+# Satoshium Beacon — Discovery
+
+**Path:** `/beacon/discovery/`  
+**Institution:** Satoshium Beacon  
+**Role:** Discovery & Signals  
+**First Production Discovery Signal:** `BEAC-2026-0001`  
+**Last Updated:** September 13, 2026
+
+---
 
 ## Purpose
 
-Discovery is the process of locating, surfacing, organizing, and presenting relevant information through transparent, attributable, and traceable discovery structures.
+Discovery is the process through which Beacon locates, surfaces, organizes, and presents relevant information while preserving attribution, provenance, traceability, and institutional authority.
 
-Beacon is the Satoshium Suite institution for discovery and signals.
+Beacon discovery may surface:
 
-It helps users and Suite workflows find meaningful signals, sources, canonical objects, and relationships across Satoshium institutions and external information environments.
-
-Beacon may publish Discovery Signals and discovery metadata describing what was found and how it relates to other information.
-
-Beacon does not inherit authority from the information it discovers.
-
-**Reference does not transfer authority.**
-
----
-
-## What Discovery Does
-
-Discovery enables users and Suite workflows to:
-
-* Locate relevant sources and canonical objects
-* Surface meaningful Discovery Signals
-* Explore related information
-* Identify patterns and relationships
-* Navigate large information collections
-* Reduce information friction
-* Improve visibility of relevant information
-* Preserve discovery context and provenance
-* Maintain traceable references to authoritative sources
+- signals
+- sources
+- canonical Suite objects
+- relationships
+- historical context
+- integrity references
+- future trust statements
+- external information
 
 ---
 
-## What Discovery Does Not Do
+## Discovery Flow
 
-Discovery does not:
+```text
+Workflow / Query
+→ Discovery
+→ Discovery Signal / Metadata
+→ Referenced Source or Canonical Object
+```
 
-* Perform certification
-* Register authoritative records
-* Create Chronicle Entries
-* Establish integrity
-* Publish Trust Statements
-* Transfer institutional authority
-* Modify authoritative source objects
-* Replace human judgment
-
-Those responsibilities remain with the Suite institutions that own the corresponding canonical objects and functions.
-
-Beacon discovers and signals.
+Discovery does not itself establish the authority of the information discovered.
 
 ---
 
-## Discovery Layers
+## Production-Proven Record Discovery
 
-Beacon discovery may operate across multiple layers.
+Beacon has now exercised Record Discovery in production.
+
+The first production Discovery Signal is:
+
+**`BEAC-2026-0001`**
+
+Title:
+
+**Active Operational Certification — Atlas Jurisdiction Record — El Salvador**
+
+Production state:
+
+- **Primary Signal Type:** Certification
+- **Primary Source Institution:** Satoshium Certifier
+- **Primary Source Object:** `SC-CERT-2026-0001`
+- **Lifecycle:** Active
+- **Publication:** Published
+- **Version:** 1.0
+- **Published:** September 13, 2026
+
+Beacon directly observed the canonical Certifier source.
+
+```text
+SC-CERT-2026-0001
+→ direct Beacon observation
+→ BEAC-2026-0001
+```
+
+---
+
+## Related Discovery Context
+
+The first production signal preserves relationships to:
+
+- `SREG-2026-0001`
+- `CHR-2026-0001`
+- `ANCH-2026-0001`
+
+These objects provide related Suite context.
+
+They are not intermediate steps in Beacon's direct provenance.
+
+---
+
+## Discovery Capability Posture
 
 ### Signal Discovery
 
-Identification and publication of Discovery Signals describing noteworthy events, updates, records, changes, observations, relationships, or emerging developments.
+Core Beacon capability.
 
 ### Source Discovery
 
-Identification of original or relevant information sources while preserving attribution, provenance, and review pathways.
+Core Beacon capability.
 
-### Canonical-Object Discovery
+### Record Discovery
 
-Identification of authoritative Suite objects, including:
+**Production-Proven**
 
-* Atlas authoritative intelligence
-* Certifier Certification Packages
-* Registry SREG records
-* Chronicle Entries
-* Anchor Integrity References
-* Attestor Trust Statements
-
-Beacon may reference these objects but does not assume their institutional authority.
+Exercised through direct discovery of `SC-CERT-2026-0001`.
 
 ### Historical Discovery
 
-Identification of relevant Chronicle Entries, historical events, supporting sources, and preserved context while Chronicle remains authoritative for its historical record.
+**Relationship Exercised**
 
-### Integrity and Trust Discovery
+`CHR-2026-0001` is preserved as a related contextual Chronicle object for `BEAC-2026-0001`.
 
-Identification of relevant Anchor Integrity References and Attestor Trust Statements while preserving the authority and context of the institutions that maintain those objects.
+### Integrity Discovery
 
-### External Discovery
+**Relationship Exercised**
 
-Identification of relevant information originating outside the Satoshium Suite.
+`ANCH-2026-0001` is preserved as a related contextual Integrity Reference for `BEAC-2026-0001`.
 
-External discovery should preserve source attribution and should not imply that external information is a Suite-authoritative object.
+### Trust Discovery
 
-### Emerging Discovery
+Future-facing until Attestor production architecture and objects support governed discovery.
 
-Identification of emerging developments, trends, relationships, and signals that may warrant continued observation.
+### Future Discovery
 
----
-
-## Discovery Principles
-
-### Visibility Over Obscurity
-
-Relevant information and authoritative objects should be easier to find.
-
-### Signal Over Noise
-
-Important information should be distinguishable from background activity.
-
-### Transparency Over Black Boxes
-
-Users should understand where information originated and how it was discovered.
-
-### Provenance Over Detachment
-
-Discovery should preserve enough origin and context for information to remain reviewable.
-
-### Relevance Over Volume
-
-More information is not necessarily better information.
-
-### Navigation Over Control
-
-Discovery should help users and workflows navigate information without dictating conclusions.
-
-### Authority Preservation
-
-Discovery does not transfer authority from the institution or source responsible for the referenced object.
+Monitoring of emerging developments, trends, and signals remains exploratory.
 
 ---
 
-## Relationship to Beacon
+## Discovery Boundaries
 
-Discovery is a core operational function of Beacon.
+Beacon does not:
 
-Discovery Signals communicate what Beacon has identified.
+- certify
+- register
+- chronicle
+- create Integrity References
+- attest
+- replace authoritative Atlas intelligence
+- assume authority over referenced objects
 
-Sources provide origin.
+> **Reference does not transfer authority.**
 
-Indexes provide organization.
+Beacon owns its Discovery Signal and Beacon-side discovery representation.
 
-Queries and workflow context provide intent.
-
-Discovery metadata preserves context and relationships.
-
-Results present what was found.
-
-Together, these components form a reviewable discovery process.
-
-A simplified Beacon discovery flow may be represented as:
-
-**Workflow / Query → Discovery → Discovery Signal / Metadata → Referenced Source or Canonical Object**
+The source institution retains authority for the source object.
 
 ---
 
-## Relationship to Navigator
+## Authority in the First Production Signal
 
-Navigator owns workflow definition and orchestration within the Suite.
+### Certifier
 
-Navigator may initiate or coordinate workflows requiring discovery.
+Retains authority for:
 
-Beacon may participate by performing discovery and returning Discovery Signals, discovery metadata, source references, and related results.
+- `SC-CERT-2026-0001`
+- certification decision
+- Certification Class
+- certification lifecycle
+- certification status
 
-Navigator orchestrates.
+### Beacon
 
-Beacon discovers and signals.
+Owns:
 
----
-
-## Relationship to the Satoshium Suite
-
-Beacon discovery operates within the Suite institutional model:
-
-* **Atlas → Authoritative Intelligence**
-* **Navigator → Workflow Definition / Orchestration**
-* **Beacon → Discovery Signal / Metadata**
-* **Certifier → Certification Package**
-* **Registry → SREG**
-* **Chronicle → Chronicle Entry**
-* **Anchor → Integrity Reference**
-* **Attestor → Trust Statement**
-
-Each institution retains authority over the canonical objects it creates and maintains.
-
-Beacon connects information across these institutions through discovery, signals, metadata, and stable references.
+- `BEAC-2026-0001`
+- Discovery Signal
+- Discovery Metadata
+- Beacon provenance
+- Beacon lifecycle
+- publication state
+- Beacon-side relationships
 
 ---
 
-## Discovery Authority Boundary
+## Governing Principle
 
-Beacon owns the Discovery Signals and discovery metadata it publishes.
-
-Beacon does not become authoritative for a referenced object merely because it discovers, indexes, surfaces, or links to that object.
-
-The originating institution remains authoritative for its canonical object.
-
-This boundary allows Beacon to improve ecosystem-wide discoverability without collapsing institutional responsibilities.
-
----
-
-## Status
-
-Beacon Discovery is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
-
-Standards, schemas, discovery methods, metadata structures, and interoperability rules may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
+**Discovery reveals. Beacon signals. Authority remains with the source.**
