@@ -409,6 +409,23 @@ Certifier evaluates certification subjects by organizing evidence, applying Suit
 <a class="btn" href="/anchor/anchored-items/ANCH-2026-0001/">Open ANCH-2026-0001 →</a>
 </article>
 <article class="card">
+<span class="kicker">Discovery Signal</span>
+<h2>Beacon</h2>
+<p>
+  Connects the canonical Certification Package to Satoshium Beacon discovery without
+  transferring certification authority. Beacon has published <strong>BEAC-2026-0001</strong>
+  as a Discovery Signal identifying the active Operational certification represented by
+  <strong>SC-CERT-2026-0001</strong>.
+</p>
+<div class="note">
+  SC-CERT-2026-0001<br/>
+  ↓ authoritative source for discovery<br/>
+  BEAC-2026-0001
+</div>
+<a class="btn" href="/beacon/">Open Beacon →</a>
+<a class="btn" href="/beacon/records/BEAC-2026-0001/">Open BEAC-2026-0001 →</a>
+</article>
+<article class="card">
 <span class="kicker">Verification Support</span>
 <h2>Attestations</h2>
 <p>
@@ -462,6 +479,13 @@ Certifier evaluates certification subjects by organizing evidence, applying Suit
   This demonstrates the Suite boundary in production: Certifier owns the certification record;
   Anchor owns the Integrity Reference that preserves integrity context for its defined representation.
 </div>
+<div class="note">
+  The canonical Certification Package <strong>SC-CERT-2026-0001</strong> subsequently became the
+  primary authoritative source for <strong>BEAC-2026-0001</strong>, Satoshium Beacon's first published
+  production Discovery Signal. Beacon owns the discovery representation; Certifier continues to own
+  the certification decision, class, lifecycle, and status. Reference does not transfer authority.
+</div>
+<a class="btn" href="/beacon/records/BEAC-2026-0001/">Open BEAC-2026-0001 →</a>
 </article>
 </section>
 <section style="margin-top:18px;">
@@ -485,7 +509,7 @@ SCPR · SCR · SCRD HTML / JSON<br/>
 ↓<br/>
 Registry · Chronicle · Anchor · Beacon · Attestor · Navigator
 </div>
-<div class="note">Standards define expectations. Methodology defines the process. Certifier executes the certification workflow. Registry catalogs it. Chronicle preserves qualifying historical memory. Anchor preserves integrity through its own Integrity References. Beacon publishes discovery. Attestor supports verification. Navigator orchestrates use. Reference does not transfer authority.</div>
+<div class="note">Standards define expectations. Methodology defines the process. Certifier executes the certification workflow. Registry catalogs it. Chronicle preserves qualifying historical memory. Anchor preserves integrity through its own Integrity References. Beacon publishes Discovery Signals, including BEAC-2026-0001 sourced from SC-CERT-2026-0001. Attestor supports verification. Navigator orchestrates use. Reference does not transfer authority.</div>
 </article>
 </section>
 </main>
