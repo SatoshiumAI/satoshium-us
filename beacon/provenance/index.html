@@ -36,7 +36,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:940px;co
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<div class="eyebrow">Beacon · Discovery Signal Architecture</div>
 <h1>Discovery Provenance</h1>
 <p class="lead">
   Discovery Provenance defines how Beacon preserves the evidentiary path behind a Discovery Signal:
@@ -76,10 +76,10 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:940px;co
 
 <section style="margin-top:18px">
 <article class="card">
-<h2>Provenance Chain</h2>
+<h2>Beacon Provenance Chain</h2>
 <div class="note">
   Source / Authoritative Object<br/>
-  ↓<br/>
+  ↓ directly or indirectly observed by Beacon<br/>
   Observation<br/>
   ↓<br/>
   Discovery Context<br/>
@@ -161,7 +161,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:940px;co
 <li>Other attributable discovery process</li>
 </ul>
 <div class="note">
-  Final controlled method vocabulary remains subject to Methodology and production proof.
+  Exact controlled machine vocabulary for observation methods remains intentionally open. Methodology governs the institutional discovery process.
 </div>
 </article>
 
@@ -250,14 +250,15 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:940px;co
 <article class="card">
 <h2>Canonical Reference Preservation</h2>
 <p>
-  When provenance depends on a Suite canonical object, Beacon should preserve the object's native institutional identity.
+  When provenance depends on a Suite canonical object, Beacon preserves that object's native institutional identity.
 </p>
 <div class="note">
   Beacon Signal → BEAC-2026-0001<br/>
-  Supporting Anchor Object → ANCH-2026-0001
+  Directly Observed Source → SC-CERT-2026-0001<br/>
+  Source Institution → Satoshium Certifier
 </div>
 <p style="margin-top:14px">
-  The Beacon identifier identifies the Discovery Signal. The Anchor identifier identifies the Integrity Reference.
+  The Beacon identifier identifies the Discovery Signal. The Certifier identifier identifies the Certification Package.
   Neither identifier absorbs the other.
 </p>
 </article>
@@ -309,7 +310,8 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:940px;co
   Minimum goal → identify the source Beacon actually observed and, when materially available, the authoritative or original object that source relies upon.
 </div>
 <p style="margin-top:14px">
-  Exact provenance-depth requirements may vary by Signal Type and will be refined through Methodology and production use.
+  Provenance depth may vary by Signal Type. The first production operation demonstrates that supporting Suite context
+  should not be mislabeled as Beacon's direct provenance chain.
 </p>
 </article>
 </section>
@@ -467,7 +469,7 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:940px;co
   &nbsp;&nbsp;workflow_reference
 </div>
 <p style="margin-top:14px">
-  This is an architectural structure, not yet a frozen JSON property model.
+  This is the governed conceptual structure; exact frozen JSON property serialization remains intentionally open.
 </p>
 </article>
 </section>
@@ -515,21 +517,21 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:940px;co
 
 <section style="margin-top:18px">
 <article class="card">
-<h2>What Remains Unfrozen</h2>
+<h2>What Remains Intentionally Open</h2>
 <ul>
 <li>Exact machine-readable provenance property names</li>
-<li>Controlled observation-method vocabulary</li>
-<li>Minimum provenance depth by Signal Type</li>
-<li>Required citation/location formats</li>
+<li>Frozen observation-method enum serialization</li>
+<li>Minimum provenance-depth refinements by Signal Type</li>
+<li>Required machine citation/location formats</li>
 <li>Discovery-actor privacy rules</li>
 <li>Workflow-reference syntax</li>
-<li>Re-observation schema mechanics</li>
+<li>Re-observation machine-schema mechanics</li>
 <li>Unavailable-source preservation mechanics</li>
 <li>Whether cryptographic evidence becomes part of any provenance profile</li>
-<li>Automated provenance-capture requirements</li>
+<li>Future automated provenance-capture requirements</li>
 </ul>
 <div class="note">
-  These should be resolved only where later architecture or production evidence demonstrates the need.
+  The institutional provenance architecture is defined and production-exercised. Remaining questions concern implementation or future refinement.
 </div>
 </article>
 </section>
@@ -549,19 +551,38 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:940px;co
 
 <section style="margin-top:18px">
 <article class="card">
+<h2>First Production Provenance</h2>
+<p>
+  Beacon's provenance architecture has now been exercised through <strong>BEAC-2026-0001</strong>.
+</p>
+<div class="note">
+  Provenance Type → Direct<br/>
+  Observer → Satoshium Beacon<br/>
+  Observation Date → September 13, 2026<br/>
+  Observation Method → Direct review of published canonical source<br/>
+  Observed Source → Satoshium Certifier · SC-CERT-2026-0001<br/>
+  Source Object Type → Canonical Certification Package<br/>
+  Source Version → 1.1<br/>
+  Observed Condition → Issued · Active · Operational<br/>
+  Supporting Context → SREG-2026-0001 · CHR-2026-0001 · ANCH-2026-0001
+</div>
+<p style="margin-top:14px">
+  Beacon's direct provenance is <strong>SC-CERT-2026-0001 → observed by Beacon → BEAC-2026-0001</strong>.
+  The Registry, Chronicle, and Anchor objects are related supporting context; they are not additional links in Beacon's direct provenance chain.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
 <h2>Current Status</h2>
 <div class="note">
-  Beacon Status → Continuing Development<br/>
-  Phase → Phase II — Production Architecture<br/>
-  Entry Model → Defined<br/>
-  Signal Types → Defined<br/>
-  Lifecycle → Defined<br/>
-  Identifier Standard → Defined<br/>
-  Schemas → Defined<br/>
-  Validation → Defined<br/>
-  Discovery Provenance → Defined<br/>
-  Production Provenance Capture → Pending<br/>
-  First Production Discovery Signal → Not yet created
+  Beacon Status → Operational · September 2026<br/>
+  Discovery Provenance → Defined and production-exercised<br/>
+  First Production Provenance → Direct<br/>
+  Primary Observed Source → SC-CERT-2026-0001<br/>
+  Production Provenance Validation → PASS<br/>
+  First Production Discovery Signal → BEAC-2026-0001 · Active · Published
 </div>
 </article>
 </section>
