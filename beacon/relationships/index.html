@@ -37,7 +37,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<div class="eyebrow">Beacon · Discovery Signal Architecture</div>
 <h1>Relationship Model</h1>
 <p class="lead">
   The Relationship Model defines how Beacon represents governed connections between Discovery Signals,
@@ -76,20 +76,20 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 
 <section style="margin-top:18px">
 <article class="card">
-<h2>Canonical Example</h2>
+<h2>Canonical Production Example</h2>
 <div class="note">
-  Certification Package<br/>
-  SC-CERT-2026-0001<br/>
-  ↓ referenced by / related to<br/><br/>
+  Directly Observed Source<br/>
+  SC-CERT-2026-0001 · Certifier Certification Package<br/>
+  ↓ observed from / referenced by<br/><br/>
   Beacon Discovery Signal<br/>
   BEAC-2026-0001<br/>
-  ↓ also references / relates to<br/><br/>
-  Registry Record<br/>
-  SREG-2026-0001
+  ↓ related supporting references<br/><br/>
+  SREG-2026-0001 · CHR-2026-0001 · ANCH-2026-0001
 </div>
 <p style="margin-top:14px">
-  These remain three distinct canonical objects owned by three institutions.
-  The Beacon signal preserves their governed connection; it does not turn them into one object.
+  These remain distinct canonical objects owned by their respective institutions.
+  Beacon directly observed <strong>SC-CERT-2026-0001</strong>; the Registry, Chronicle, and Anchor objects are related supporting context.
+  The Beacon signal preserves governed connections without collapsing the objects or their authority.
 </p>
 </article>
 </section>
@@ -148,7 +148,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 </table>
 </div>
 <div class="note">
-  These are architectural relationship classes. Final machine-readable relationship values remain subject to production proof.
+  These are governed relationship classes. Exact frozen machine-readable relationship predicates remain intentionally open.
 </div>
 </article>
 </section>
@@ -175,10 +175,10 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
   Connects a Discovery Signal to a Suite-owned canonical object relevant to the discovery.
 </p>
 <div class="note">
-  BEAC-2026-0001 → references → ANCH-2026-0001
+  BEAC-2026-0001 → references → SC-CERT-2026-0001
 </div>
 <p style="margin-top:14px">
-  The Anchor object remains owned by Anchor.
+  The Certification Package remains owned by Satoshium Certifier.
 </p>
 </article>
 
@@ -339,19 +339,16 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <article class="card">
 <h2>Cross-Suite Relationship Example</h2>
 <div class="note">
-  Certifier<br/>
-  SC-CERT-2026-0001<br/>
-  ↓ certification represented by<br/><br/>
-  Registry<br/>
-  SREG-2026-0001<br/><br/>
-  Beacon observes both<br/>
-  ↓<br/>
-  BEAC-2026-0001<br/><br/>
-  Beacon preserves the relevant discovery relationship without changing either source object.
+  Primary Source Relationship<br/>
+  BEAC-2026-0001 → observed from / references → SC-CERT-2026-0001<br/><br/>
+  Supporting Canonical Relationships<br/>
+  BEAC-2026-0001 → related to → SREG-2026-0001<br/>
+  BEAC-2026-0001 → related to → CHR-2026-0001<br/>
+  BEAC-2026-0001 → related to → ANCH-2026-0001
 </div>
 <p style="margin-top:14px">
-  The precise Certifier-to-Registry relationship remains governed by those institutions.
-  Beacon records only the relationship it can support and attribute.
+  Beacon directly observed the Certifier object. The Registry, Chronicle, and Anchor objects were reviewed as supporting Suite context.
+  Their precise inter-institutional relationships remain governed by their owning institutions.
 </p>
 </article>
 </section>
@@ -408,7 +405,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
   BEAC-2026-0001 · Version 2
 </div>
 <p style="margin-top:14px">
-  Exact version semantics will be defined by the next Versioning &amp; Supersession architecture.
+  Version semantics are governed by Beacon Versioning &amp; Supersession architecture.
 </p>
 </article>
 
@@ -496,7 +493,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
   &nbsp;&nbsp;status
 </div>
 <p style="margin-top:14px">
-  This is an architectural representation, not a frozen machine-readable property model.
+  This is the governed conceptual structure; exact frozen machine-readable property serialization remains intentionally open.
 </p>
 </article>
 </section>
@@ -563,7 +560,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 
 <section style="margin-top:18px">
 <article class="card">
-<h2>What Remains Unfrozen</h2>
+<h2>What Remains Intentionally Open</h2>
 <ul>
 <li>Exact machine-readable relationship property names</li>
 <li>Final controlled relationship-type vocabulary</li>
@@ -577,7 +574,7 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 <li>Publication restrictions for sensitive relationships</li>
 </ul>
 <div class="note">
-  These should be frozen only where Versioning, Publication, Methodology, or production evidence requires them.
+  The institutional Relationship Model is defined and production-exercised. These remaining questions concern machine implementation or future specialized cases.
 </div>
 </article>
 </section>
@@ -601,21 +598,40 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 
 <section style="margin-top:18px">
 <article class="card">
+<h2>First Production Relationship Exercise</h2>
+<p>
+  The Relationship Model has now been exercised through <strong>BEAC-2026-0001</strong>.
+</p>
+<div class="note">
+  Primary Source Endpoint → SC-CERT-2026-0001<br/>
+  Beacon Endpoint → BEAC-2026-0001<br/>
+  Primary Relationship Class → Source / Canonical Object<br/>
+  Primary Relationship Meaning → directly observed from / references<br/>
+  Supporting Registry Reference → SREG-2026-0001<br/>
+  Supporting Chronicle Reference → CHR-2026-0001<br/>
+  Supporting Integrity Reference → ANCH-2026-0001<br/>
+  Authority Boundary → Preserved<br/>
+  Relationship Validation → PASS with implementation note
+</div>
+<p style="margin-top:14px">
+  The implementation note preserves one intentional open point: exact machine relationship predicates are not yet frozen.
+  This did not prevent institutional relationship validation.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
 <h2>Current Status</h2>
 <div class="note">
-  Beacon Status → Continuing Development<br/>
-  Phase → Phase II — Production Architecture<br/>
-  Entry Model → Defined<br/>
-  Signal Types → Defined<br/>
-  Lifecycle → Defined<br/>
-  Identifier Standard → Defined<br/>
-  Schemas → Defined<br/>
-  Validation → Defined<br/>
-  Discovery Provenance → Defined<br/>
-  Authority &amp; Reference Model → Defined<br/>
-  Relationship Model → Defined<br/>
-  Versioning &amp; Supersession → Next<br/>
-  First Production Discovery Signal → Not yet created
+  Beacon Status → Operational · September 2026<br/>
+  Relationship Model → Defined and production-exercised<br/>
+  First Production Relationship Review → PASS with implementation note<br/>
+  Primary Source Relationship → BEAC-2026-0001 ↔ SC-CERT-2026-0001<br/>
+  Supporting References → SREG-2026-0001 · CHR-2026-0001 · ANCH-2026-0001<br/>
+  Versioning &amp; Supersession → Defined<br/>
+  Exact Machine Relationship Predicates → Not yet frozen<br/>
+  First Production Discovery Signal → BEAC-2026-0001 · Active · Published
 </div>
 </article>
 </section>
