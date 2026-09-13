@@ -168,6 +168,16 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 </article>
 
 <article class="card">
+  <h2>Certification Signals</h2>
+  <p>
+    Discovery of certification-related information maintained by Certifier,
+    including the existence or current condition of canonical Certification
+    Packages. Certification is the primary Signal Type exercised by
+    <strong>BEAC-2026-0001</strong>. Certifier retains certification authority.
+  </p>
+</article>
+
+<article class="card">
   <h2>Historical Signals</h2>
   <p>
     Events, discoveries, source updates, or milestones associated
@@ -195,6 +205,16 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
 </article>
 
 <article class="card">
+  <h2>Relationship Signals</h2>
+  <p>
+    Discovery of meaningful relationships among Suite objects, Discovery Signals,
+    workflows, versions, or external sources. Beacon owns the relationship as
+    represented within its Discovery Signal without assuming authority over the
+    connected objects.
+  </p>
+</article>
+
+<article class="card">
   <h2>Trust Signals</h2>
   <p>
     Discovery of Trust Statements, attestation context, supporting
@@ -211,14 +231,74 @@ h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}
   <h2>Signal Lifecycle</h2>
 
   <div class="note">
-    Identification → Discovery Signal → Review → Follow-up → Supersession / Resolution
+    Pre-object identification → Creation → Draft → Active → Superseded / Resolved / Withdrawn
   </div>
 
   <p>
-    Discovery Signals may be reviewed, monitored, linked to authoritative
-    objects, superseded, or resolved over time. Their lifecycle should
-    preserve provenance and historical traceability.
+    Identification occurs before the canonical Discovery Signal exists. At Creation,
+    Beacon assigns the permanent BEAC identifier and the signal enters Draft.
+    Review and validation determine whether it is eligible to become Active.
+    Superseded, Resolved, and Withdrawn preserve distinct terminal meanings rather
+    than collapsing them into a generic follow-up state.
   </p>
+
+  <div class="note">
+    Publication is governed separately: Unpublished / Published.<br>
+    Lifecycle state does not by itself determine publication state.
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Governed Signal Types</h2>
+  <p>
+    Beacon's initial governed Signal Type vocabulary is:
+  </p>
+  <div class="note">
+    Information · Jurisdiction · Certification · Registry · Historical · Integrity · Trust · Relationship
+  </div>
+  <p style="margin-top:14px;">
+    These classifications describe the primary discovery character of a Beacon
+    Discovery Signal. They do not describe the type or status of the referenced
+    source object.
+  </p>
+  <div class="note">
+    Signal Type ≠ Source Object Type ≠ Source Status
+  </div>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>First Production Signal</h2>
+  <p>
+    <strong>BEAC-2026-0001</strong> is Beacon's first canonical production
+    Discovery Signal and the first production exercise of the
+    <strong>Certification</strong> Signal Type.
+  </p>
+  <div class="note">
+    BEAC-2026-0001<br>
+    Active Operational Certification — Atlas Jurisdiction Record — El Salvador<br>
+    Signal Type → Certification<br>
+    Primary Source → Satoshium Certifier · SC-CERT-2026-0001<br>
+    Lifecycle → Active<br>
+    Publication → Published<br>
+    Version → 1.0<br>
+    Published → September 13, 2026
+  </div>
+  <p style="margin-top:14px;">
+    Certifier retains authority for the certification decision, class, lifecycle,
+    and status. Beacon owns the Discovery Signal and its Beacon-side metadata,
+    provenance, lifecycle, publication state, and relationships.
+  </p>
+  <a class="btn" href="/beacon/records/BEAC-2026-0001/">
+    Open BEAC-2026-0001 →
+  </a>
 </article>
 
 </section>
