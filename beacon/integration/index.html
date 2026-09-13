@@ -246,10 +246,20 @@ Attestor → Trust Statement
 <h2>Relationship to Certifier</h2>
 
 <p>
-Beacon may publish Discovery Signals referencing Certification Packages,
-certification status, or related verification metadata while Certifier
-remains authoritative for certification and verification.
+Beacon now has a production-proven Certifier integration. In its first controlled
+production operation, Beacon directly observed the canonical Certification Package
+<strong>SC-CERT-2026-0001</strong> and published <strong>BEAC-2026-0001</strong>
+to identify the existence and current active Operational certification of the
+Atlas Jurisdiction Record — El Salvador.
 </p>
+<div class="note">
+SC-CERT-2026-0001<br>
+↓ primary authoritative source for discovery<br>
+BEAC-2026-0001<br><br>
+Certifier retains authority for the certification decision, class, lifecycle, and status.
+Beacon owns the Discovery Signal and its discovery representation.
+</div>
+<a class="btn" href="/beacon/records/BEAC-2026-0001/">Open BEAC-2026-0001 →</a>
 
 </article>
 
@@ -318,6 +328,41 @@ Suite's trust-assessment function.
 
 <article class="card">
 
+<h2>First Production Integration</h2>
+
+<p>
+The publication of <strong>BEAC-2026-0001</strong> establishes the first real
+production example of Beacon interoperability with another Suite institution.
+The integration demonstrates that Beacon can observe an authoritative canonical
+object, preserve direct provenance, create its own Discovery Signal, and publish
+that signal without reproducing or assuming the source institution's authority.
+</p>
+
+<div class="note">
+Source Institution → Satoshium Certifier<br>
+Source Object → SC-CERT-2026-0001<br>
+Beacon Object → BEAC-2026-0001<br>
+Signal Type → Certification<br>
+Lifecycle → Active<br>
+Publication → Published<br>
+Version → 1.0<br>
+Published → September 13, 2026
+</div>
+
+<p>
+Related Registry, Chronicle, and Anchor objects provide contextual Suite
+relationships, but Beacon's provenance for this Discovery Signal is direct:
+<strong>SC-CERT-2026-0001 → direct Beacon observation → BEAC-2026-0001</strong>.
+</p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
 <h2>Integration Authority Boundary</h2>
 
 <p>
@@ -365,17 +410,22 @@ Reference does not transfer authority.
 
 <article class="card">
 
-<h2>Future Interoperability</h2>
+<h2>Continuing Interoperability</h2>
 
 <p>
-Future Beacon implementations may publish machine-readable Discovery Signals,
-indexes, APIs, metadata feeds, search interfaces, notification services, and
-workflow interfaces while preserving canonical identifiers, provenance, and
-authoritative references back to originating institutions and external sources.
+Beacon has now demonstrated production interoperability with Certifier through
+BEAC-2026-0001. Future development may extend that production model through
+broader source indexing, machine-readable interfaces, metadata feeds, search
+interfaces, notification services, Navigator workflow interfaces, and additional
+Suite relationships while preserving canonical identifiers, provenance, and
+authoritative references.
 </p>
 
 <a class="btn" href="/beacon/">
 Back to Beacon →
+</a>
+<a class="btn" href="/beacon/records/">
+Beacon Records →
 </a>
 
 </article>
