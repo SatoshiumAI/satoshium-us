@@ -43,7 +43,7 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Beacon · Phase II · Production Architecture</div>
+<div class="eyebrow">Beacon · Discovery Signal Architecture</div>
 <h1>Validation</h1>
 <p class="lead">
   Beacon Validation defines what must be true before a Discovery Signal can be accepted as a valid Beacon production object.
@@ -229,10 +229,10 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 <li>Creation year must match the identifier year</li>
 <li><code>observed_at</code> required when distinct from creation</li>
 <li><code>updated_at</code>, <code>published_at</code>, and <code>last_observed_at</code> used when applicable</li>
-<li>Timestamps must use a consistent machine-readable format</li>
+<li>Timestamps must preserve consistent, unambiguous temporal meaning</li>
 </ul>
 <div class="note">
-  Exact timestamp syntax will be enforced in the machine-readable implementation.
+  Exact frozen timestamp serialization remains intentionally open for the machine-readable implementation.
 </div>
 </article>
 
@@ -309,7 +309,7 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 
 <article class="card">
 <h2>Validation Severity</h2>
-<p>Validation findings should eventually distinguish between:</p>
+<p>Validation findings distinguish between:</p>
 <ul>
 <li><strong>Error</strong> → prevents production conformance</li>
 <li><strong>Warning</strong> → requires review but may not invalidate the object</li>
@@ -393,14 +393,14 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 <section style="margin-top:18px">
 <article class="card">
 <h2>Validation Outcomes</h2>
-<p>The initial architectural outcomes are:</p>
+<p>The governed conceptual validation outcomes are:</p>
 <div class="note">
   Valid → required Beacon production requirements satisfied<br/><br/>
   Invalid → one or more required requirements failed<br/><br/>
   Review Required → structurally acceptable but unresolved warning or institutional issue remains
 </div>
 <p style="margin-top:14px">
-  Whether “Review Required” becomes a formal machine-readable outcome remains to be proven during production implementation.
+  Whether “Review Required” becomes a frozen machine-readable outcome remains intentionally open.
 </p>
 </article>
 </section>
@@ -409,7 +409,7 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 <article class="card">
 <h2>Validation Record</h2>
 <p>
-  Validation should eventually preserve enough information to reconstruct what was checked and what the result was.
+  Validation preserves enough information to reconstruct what was checked and what the result was.
 </p>
 <ul>
 <li>Object identifier</li>
@@ -425,13 +425,14 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 </article>
 
 <article class="card">
-<h2>No New Canonical Object Yet</h2>
+<h2>No Separate Validation Object</h2>
 <p>
-  Validation output should not automatically create another institution-owned object class.
+  Beacon's first production operation did not establish a separate canonical validation object.
+  Validation remains a governed determination applied to the Discovery Signal.
 </p>
 <div class="note">
-  Production need first.<br/>
-  Separate canonical identifier only if institutional necessity is proven.
+  Validation result → preserved production evidence<br/>
+  Separate canonical object → not established
 </div>
 </article>
 </section>
@@ -475,22 +476,20 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 
 <section style="margin-top:18px">
 <article class="card">
-<h2>What Remains Unfrozen</h2>
+<h2>What Remains Intentionally Open</h2>
 <ul>
-<li>Exact machine-readable required-field list</li>
+<li>Exact machine-readable required-field serialization</li>
 <li>Exact JSON field names</li>
 <li>JSON Schema dialect</li>
-<li>Timestamp serialization rules</li>
-<li>Formal warning/error codes</li>
-<li>Validation severity enum</li>
-<li>Validation report format</li>
-<li>Who or what authorizes final validation acceptance</li>
-<li>Whether a validation result is persisted</li>
-<li>Whether “Review Required” becomes a formal outcome</li>
-<li>Automated vs. manual validation boundaries</li>
+<li>Frozen timestamp serialization rules</li>
+<li>Formal machine warning/error codes</li>
+<li>Frozen validation severity enum</li>
+<li>Machine validation report format</li>
+<li>Whether “Review Required” becomes a frozen machine-readable outcome</li>
+<li>Future automated vs. manual validation boundaries</li>
 </ul>
 <div class="note">
-  These should be finalized through production implementation and later Methodology work.
+  These are implementation questions. The institutional Validation architecture and first governed production review are complete.
 </div>
 </article>
 </section>
@@ -510,19 +509,48 @@ code{color:var(--gold2);background:rgba(214,163,74,.06);border:1px solid rgba(21
 
 <section style="margin-top:18px">
 <article class="card">
+<h2>First Production Validation</h2>
+<p>
+  Beacon Validation has now been exercised through <strong>BEAC-2026-0001</strong>.
+</p>
+<div class="note">
+  Canonical Identity → PASS<br/>
+  Identifier Conformance → PASS<br/>
+  Subject → PASS<br/>
+  Signal Type → PASS<br/>
+  Source Reference → PASS<br/>
+  Provenance → PASS<br/>
+  Discovery Metadata → PASS<br/>
+  Timestamps → PASS<br/>
+  Status → PASS<br/>
+  Version → PASS<br/>
+  Authority Boundary → PASS<br/>
+  Canonical References → PASS<br/>
+  Relationships → PASS with implementation note<br/>
+  Schema Conformity → PASS at governed conceptual level
+</div>
+<p style="margin-top:14px">
+  Final Validation Outcome → <strong>VALID</strong><br/>
+  Review Outcome → <strong>APPROVED TO PROCEED</strong>
+</p>
+<p>
+  Exact machine relationship predicates and frozen <code>.schema.json</code> serialization were intentionally
+  unfrozen, so machine-serialization validation was not applicable to the first production operation.
+</p>
+</article>
+</section>
+
+<section style="margin-top:18px">
+<article class="card">
 <h2>Current Status</h2>
 <div class="note">
-  Beacon Status → Continuing Development<br/>
-  Phase → Phase II — Production Architecture<br/>
-  Entry Model → Defined<br/>
-  Signal Types → Defined<br/>
-  Lifecycle → Defined<br/>
-  Identifier Standard → Defined<br/>
-  Schema Architecture → Defined<br/>
-  Validation Architecture → Defined<br/>
-  Machine Validation → Pending<br/>
-  Production Validation Run → Pending<br/>
-  First Production Discovery Signal → Not yet created
+  Beacon Status → Operational · September 2026<br/>
+  Validation Architecture → Defined and production-exercised<br/>
+  First Production Validation → BEAC-2026-0001 · VALID<br/>
+  Review Outcome → APPROVED TO PROCEED<br/>
+  Lifecycle Result → Eligible for Draft → Active transition<br/>
+  Frozen Machine Validation → Not yet adopted<br/>
+  First Production Discovery Signal → BEAC-2026-0001 · Active · Published
 </div>
 </article>
 </section>
