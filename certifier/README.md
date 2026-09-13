@@ -1,241 +1,173 @@
 # Satoshium Certifier
 
-**Trust through evidence.**
-
-Satoshium Certifier is a standards-based certification framework designed to evaluate digital artifacts, services, workflows, datasets, reports, and tools against defined review criteria and produce structured records of certification.
-
-Certifier serves as the trust layer of the Satoshium ecosystem.
-
-While other subsystems create, organize, publish, preserve, or catalog information, Certifier evaluates whether those outputs satisfy established standards and documents the evidence supporting those determinations.
-
----
-
-## Purpose
-
-Digital systems increasingly generate large volumes of information through automation, artificial intelligence, software platforms, and collaborative contributors.
-
-The existence of information alone does not establish trust.
-
-Certifier exists to answer fundamental questions:
-
-* Was this reviewed?
-* Against what standard?
-* What evidence was considered?
-* What determination was reached?
-* Can the process be understood later?
-
-By creating structured certification records, reports, receipts, and evidence references, Certifier transforms review activities into durable and reviewable records.
+**Path:** `/certifier/`  
+**Institution:** Satoshium Certifier  
+**Institutional Role:** Operational Certification  
+**Canonical Operational Object:** Certification Package  
+**Status:** Operational  
+**Updated for Beacon integration:** September 13, 2026
 
 ---
 
-## Core Mission
+## Overview
 
-The mission of Satoshium Certifier is to establish a repeatable framework for evaluating digital artifacts and producing verifiable records of review, certification, and evidence.
+Satoshium Certifier is the operational certification implementation of the Satoshium Suite.
 
-Certifier seeks to increase transparency, consistency, accountability, and trust through documented review processes.
+Certifier applies Suite Standards and Suite Methodology to evidence-supported review, reaches certification determinations, and preserves those determinations through canonical Certification Packages and generated certification artifacts.
 
----
+The inaugural operational Certification Package is:
 
-## Certification Targets
-
-Version 1.0 supports certification of:
-
-* Pages
-* Reports
-* Services
-* Workflows
-* Datasets
-* Tools
-
-Future versions may support additional target categories.
+**`SC-CERT-2026-0001` — Atlas Jurisdiction Record — El Salvador**
 
 ---
 
-## Certification Classes
+## Canonical Authority
 
-Certifier uses three certification classes:
+Certifier owns:
 
-### Informational
+- the certification action;
+- the Certification Package;
+- the certification determination;
+- the Certification Class;
+- certification lifecycle and status;
+- generated Certifier certification artifacts.
 
-The target exists and has been documented.
+Referenced subject systems and downstream Suite institutions retain authority over their own objects.
 
-### Operational
-
-The target exists, is documented, and demonstrates functional operation.
-
-### Verified
-
-The target has been reviewed against an established standard and is supported by documented evidence.
-
----
-
-## Certification Workflow
-
-```text
-Input
-  ↓
-Review
-  ↓
-Evidence
-  ↓
-Certification
-  ↓
-Receipt
-  ↓
-Registry
-```
-
-This workflow transforms a target into a documented certification record supported by evidence and review.
+> **Reference does not transfer authority.**
 
 ---
 
-## Certification Outputs
+## Production Suite Lineage
 
-A certification event may produce:
-
-* Certification Record
-* Certification Report
-* Certification Receipt
-* Evidence Package
-* Registry Entry
-* Historical References
-
-These outputs provide both human-readable and machine-readable records of certification activities.
-
----
-
-## Relationship to the Satoshium Ecosystem
-
-Certifier operates as one subsystem within the broader Satoshium ecosystem.
-
-```text
-Atlas
-  ↓
-Certifier
-  ↓
-Registry
-  ↓
-Chronicle
-  ↓
-Anchor
-  ↓
-Attestor
-```
-
-### Atlas
-
-Creates and organizes jurisdiction intelligence and other information resources.
-
-### Certifier
-
-Reviews and certifies outputs against established standards.
+`SC-CERT-2026-0001` now participates in a multi-institution production lineage while remaining the authoritative Certifier object for the certification.
 
 ### Registry
 
-Catalogs certification records and certified targets.
+`SREG-2026-0001` catalogs the certification.
+
+Registry owns the Registry Entry. Certifier retains certification authority.
 
 ### Chronicle
 
-Records certification milestones and ecosystem history.
+`CHR-2026-0001` preserves the qualifying historical certification occurrence.
+
+Chronicle owns the historical-preservation representation. Certifier retains certification authority.
 
 ### Anchor
 
-Preserves hashes, evidence references, and integrity records.
+`ANCH-2026-0001` preserves integrity context for the defined SCRD JSON representation associated with `SC-CERT-2026-0001`.
 
-### Attestor
+Anchor owns the Integrity Reference. Certifier owns the source certification record.
 
-Supports future independent verification and attestation activities.
+### Beacon
+
+`BEAC-2026-0001` is Satoshium Beacon's first published production Discovery Signal.
+
+Beacon directly used the canonical Certification Package `SC-CERT-2026-0001` as its primary authoritative source to identify the existence and active Operational certification status of the Atlas Jurisdiction Record — El Salvador.
+
+Public Beacon record:
+
+https://satoshium.us/beacon/records/BEAC-2026-0001/
+
+Beacon owns:
+
+- `BEAC-2026-0001`;
+- its Discovery Metadata;
+- discovery provenance;
+- Beacon lifecycle and publication state;
+- Beacon-side relationships.
+
+Certifier continues to own:
+
+- `SC-CERT-2026-0001`;
+- the certification determination;
+- Certification Class;
+- certification lifecycle;
+- certification status.
+
+Beacon's discovery representation does not re-certify or replace the Certifier object.
 
 ---
 
-## Repository Structure
+## Production Relationship
 
 ```text
-certifier/
-├── docs/
-├── schemas/
-├── standards/
-├── reports/
-├── receipts/
-├── samples/
-├── evidence/
-├── registry/
-└── assets/
+Atlas Jurisdiction Record — El Salvador
+        ↓ certification subject
+
+SC-CERT-2026-0001
+Satoshium Certifier
+        ↓
+        ├── SREG-2026-0001  → Registry
+        ├── CHR-2026-0001   → Chronicle
+        ├── ANCH-2026-0001  → Anchor integrity context
+        └── BEAC-2026-0001  → Beacon discovery
 ```
+
+These relationships connect institution-owned objects without merging their identities or authority.
 
 ---
 
-## Documentation
-
-Core documentation is located in:
+## Certifier Workflow
 
 ```text
-docs/
+Certification Subject
+↓
+Evidence
+↓
+Certification Package
+↓
+Evaluation & Decision
+↓
+SCPR · SCR · SCRD HTML / JSON
+↓
+Registry · Chronicle · Anchor · Beacon · Attestor · Navigator
 ```
 
-Key documents include:
-
-* certifier-overview.md
-* certification-philosophy.md
-* certification-targets.md
-* certification-lifecycle.md
-* certification-classes.md
-* evidence-model.md
-* status-definitions.md
-* workflow-diagram.md
-* interoperability.md
+Standards define expectations. Methodology defines process. Certifier executes certification. Other Suite institutions may catalog, preserve, protect integrity, discover, attest, or orchestrate without assuming Certifier authority.
 
 ---
 
-## Current Status
+## Beacon Integration
 
-**Version:** 1.0 (Draft)
+The publication of `BEAC-2026-0001` provides the first real production evidence for Certifier-to-Beacon interoperability.
 
-Current focus areas include:
+The relationship is:
 
-* Certification standards
-* Evidence models
-* Certification reports
-* Certification receipts
-* Atlas certification
-* Registry interoperability
+```text
+SC-CERT-2026-0001
+        ↓
+primary authoritative source for discovery
+        ↓
+BEAC-2026-0001
+```
 
-The first major certification objective is the certification of the Atlas Initial Build Phase.
+This demonstrates a core Satoshium Suite principle:
 
----
-
-## Guiding Principles
-
-Certifier is built upon several foundational principles:
-
-* Transparency over opacity
-* Evidence over assumption
-* Process over reputation
-* Documentation over memory
-* Repeatability over inconsistency
-* Preservation over loss
-* Trust through verification
+**Discovery can make a certification easier to find without becoming certification authority.**
 
 ---
 
-## Disclaimer
+## Related Production Objects
 
-Satoshium Certifier is an informational certification framework.
+- Certifier — `SC-CERT-2026-0001`  
+  https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/
 
-Certification records represent documented review outcomes based on defined standards and available evidence at the time of certification.
+- Registry — `SREG-2026-0001`  
+  https://satoshium.us/registry/registered-items/SREG-2026-0001/registry-entry.html
 
-Certification does not constitute legal, financial, regulatory, medical, engineering, or professional advice and does not guarantee correctness, completeness, future performance, or suitability for any particular purpose.
+- Chronicle — `CHR-2026-0001`  
+  https://satoshium.us/chronicle/entries/CHR-2026-0001/
+
+- Anchor — `ANCH-2026-0001`  
+  https://satoshium.us/anchor/anchored-items/ANCH-2026-0001/
+
+- Beacon — `BEAC-2026-0001`  
+  https://satoshium.us/beacon/records/BEAC-2026-0001/
 
 ---
 
-## Guiding Statement
+## Governing Principle
 
-> Information can be created.
->
-> Evidence can be collected.
->
-> Certification can be documented.
->
-> Trust can be preserved.
->
-> Satoshium Certifier exists to make that process transparent.
+**Certifier certifies. Beacon discovers. Each institution retains authority over its own canonical object.**
