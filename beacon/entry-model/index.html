@@ -149,9 +149,10 @@ pre{
   express status, and preserve relationships.
 </p>
 <p class="lead">
-  This page begins Beacon Phase II by defining the object that later work on signal types,
-  lifecycle, identifiers, schemas, validation, provenance, versioning, publication, and
-  production will govern.
+  This page defines the object foundation established during Beacon Phase II. The later
+  production architecture for signal types, lifecycle, identifiers, schemas, validation,
+  provenance, authority, relationships, versioning, publication, records, methodology,
+  and production now governs that object.
 </p>
 </section>
 
@@ -209,7 +210,7 @@ pre{
 <li>Beacon institutional ownership</li>
 <li>Object type: Discovery Signal</li>
 </ul>
-<div class="note">The final identifier syntax is not frozen on this page. It will be governed by the later Beacon Identifier Standard.</div>
+<div class="note">The governed Beacon Identifier Standard now uses <code>BEAC-YYYY-NNNN</code>. The first production identifier is <code>BEAC-2026-0001</code>.</div>
 </article>
 
 <article class="card">
@@ -232,8 +233,8 @@ pre{
 <li>Specialized signal profile when applicable</li>
 <li>Controlled vocabulary value</li>
 </ul>
-<p>Candidate types may include information, jurisdiction, certification, registry, historical, integrity, trust, relationship, or other future governed categories.</p>
-<div class="note">Exact production signal types remain unfrozen until the dedicated Signal Types phase.</div>
+<p>The initial governed Signal Type vocabulary is Information, Jurisdiction, Certification, Registry, Historical, Integrity, Trust, and Relationship.</p>
+<div class="note">The first production Discovery Signal, <code>BEAC-2026-0001</code>, uses the primary Signal Type <strong>Certification</strong>.<br/><br/>Signal Type ≠ Source Object Type ≠ Source Status.</div>
 </article>
 
 <article class="card">
@@ -302,7 +303,7 @@ pre{
 <li>Published At, if published</li>
 <li>Last Observed, when applicable</li>
 </ul>
-<div class="note">Exact timestamp requirements and semantics remain subject to lifecycle and publication design.</div>
+<div class="note">Lifecycle and publication architecture now distinguish observation, creation, update, and publication time. Exact machine serialization remains subject to the eventual frozen schema.</div>
 </article>
 
 <article class="card">
@@ -313,7 +314,7 @@ pre{
 <li>Previous Version reference when applicable</li>
 <li>Supersession information when applicable</li>
 </ul>
-<div class="note">Versioning rules will be finalized in the dedicated Versioning &amp; Supersession phase.</div>
+<div class="note">Versioning &amp; Supersession architecture is now defined. The BEAC identifier remains stable across versions, and material changes require preserved version history rather than silent overwrite.</div>
 </article>
 
 <article class="card">
@@ -324,7 +325,7 @@ pre{
 <li>Publication state</li>
 <li>Resolution or supersession state when applicable</li>
 </ul>
-<div class="note">Status values are not frozen here. The Lifecycle and Publication phases will define the controlled production vocabulary.</div>
+<div class="note">Canonical lifecycle is <strong>Draft → Active → Superseded / Resolved / Withdrawn</strong>. Publication is governed separately as <strong>Unpublished / Published</strong>.</div>
 </article>
 
 <article class="card">
@@ -338,7 +339,7 @@ pre{
 <li>Workflow relationship</li>
 <li>Other governed relationship types</li>
 </ul>
-<div class="note">Relationship vocabulary should remain minimal until production demonstrates what Beacon actually needs.</div>
+<div class="note">The Relationship Model now governs Source, Canonical Object, Related Signal, Version, Supersession, Workflow, and External relationship classes. Exact machine predicates remain intentionally unfrozen.</div>
 </article>
 
 <article class="card">
@@ -357,7 +358,7 @@ pre{
 <section style="margin-top:18px;">
 <article class="card">
 <h2>Conceptual Discovery Signal Skeleton</h2>
-<p>The Entry Model can be represented conceptually as the following object. This is an architectural skeleton, not yet the production schema.</p>
+<p>The Entry Model can be represented conceptually as the following object. This remains an architectural skeleton rather than a frozen machine-serialization schema.</p>
 <pre>{
   "discovery_signal": {
     "identity": {},
@@ -373,7 +374,7 @@ pre{
     "relationships": []
   }
 }</pre>
-<div class="note">Field names, required properties, controlled values, validation rules, and schema constraints remain to be finalized in later Phase II work.</div>
+<div class="note">The conceptual production architecture is now defined. Exact machine field serialization, schema dialect, and frozen <code>.schema.json</code> constraints remain intentionally open.</div>
 </article>
 </section>
 
@@ -404,21 +405,16 @@ pre{
 </article>
 
 <article class="card">
-<h2>What the Entry Model Does Not Decide Yet</h2>
-<p>This page deliberately does not freeze decisions that belong to later Phase II architecture.</p>
+<h2>What Remains Intentionally Open</h2>
+<p>Phase II resolved the institutional rules surrounding the Entry Model. Only implementation details that were deliberately not frozen remain open.</p>
 <ul>
-<li>Final identifier syntax</li>
-<li>Final signal-type vocabulary</li>
-<li>Lifecycle states</li>
-<li>Publication states</li>
-<li>JSON schema constraints</li>
-<li>Validation rules</li>
-<li>Relationship vocabulary</li>
-<li>Versioning semantics</li>
-<li>Publication procedure</li>
-<li>First production signal</li>
+<li>Exact machine serialization</li>
+<li>Final <code>.schema.json</code> dialect and constraints</li>
+<li>Exact machine relationship predicates</li>
+<li>Future Signal Type extensions beyond the initial governed vocabulary</li>
+<li>Later software capabilities such as API, monitoring, analytics, automation, and federation</li>
 </ul>
-<div class="note">Define the object first. Freeze downstream rules only when their dedicated architecture is reviewed.</div>
+<div class="note">The canonical object and its institutional governance are defined. Remaining openness belongs to machine implementation and future capability expansion.</div>
 </article>
 </section>
 
@@ -438,27 +434,54 @@ pre{
 <section style="margin-top:18px;">
 <article class="card">
 <h2>Relationship to Phase II</h2>
-<p>The Entry Model is the dependency foundation for the remaining Beacon production architecture.</p>
+<p>The Entry Model served as the dependency foundation for Beacon's completed Phase II production architecture.</p>
 <div class="note">
   Entry Model → Signal Types → Lifecycle → Identifiers → Schemas → Validation → Provenance →
-  Authority → Relationships → Versioning → Publication → Discovery Signals Register →
-  Individual Signal → Methodology → Production
+  Authority → Relationships → Versioning → Publication → Beacon Records →
+  Individual Beacon Record → Methodology → Production
 </div>
-<p style="margin-top:14px;">Later pages may refine this model, but they should do so explicitly rather than silently redefine the canonical Beacon object.</p>
+<p style="margin-top:14px;">Those later architecture pages now govern the downstream rules while preserving the Discovery Signal as Beacon's canonical object.</p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Production Exercise</h2>
+<p>
+  The Entry Model has now been exercised through Beacon's first production Discovery Signal,
+  <strong>BEAC-2026-0001</strong>.
+</p>
+<div class="note">
+  Identifier → BEAC-2026-0001<br/>
+  Title → Active Operational Certification — Atlas Jurisdiction Record — El Salvador<br/>
+  Signal Type → Certification<br/>
+  Primary Source → Satoshium Certifier · SC-CERT-2026-0001<br/>
+  Lifecycle → Active<br/>
+  Publication → Published<br/>
+  Version → 1.0<br/>
+  Published → September 13, 2026
+</div>
+<p style="margin-top:14px;">
+  The production object demonstrates the Entry Model's identity, subject, signal type,
+  source, provenance, canonical references, discovery metadata, timestamps, version,
+  status, relationships, and authority boundary in governed institutional use.
+</p>
 </article>
 </section>
 
 <section style="margin-top:18px;">
 <article class="card">
 <h2>Current Status</h2>
-<p>This Entry Model begins Beacon Phase II — Production Architecture.</p>
+<p>The Discovery Signal Entry Model is now part of Beacon's production-proven institutional architecture.</p>
 <div class="note">
-  Beacon Status → Continuing Development<br/>
-  Phase → Production Architecture<br/>
+  Beacon Status → Operational · September 2026<br/>
+  Phase I → Complete<br/>
+  Phase II → Complete<br/>
   Canonical Responsibility → Discovery Signal / Metadata<br/>
-  Entry Model → Defined at architectural level<br/>
-  Production Schema → Not yet frozen<br/>
-  First Production Discovery Signal → Not yet created
+  Entry Model → Defined and production-exercised<br/>
+  Production Schema Architecture → Defined conceptually<br/>
+  Frozen Machine Schema → Not yet adopted<br/>
+  First Production Discovery Signal → BEAC-2026-0001 · Active · Published
 </div>
 </article>
 </section>
