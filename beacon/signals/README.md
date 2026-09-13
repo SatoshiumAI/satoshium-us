@@ -1,406 +1,163 @@
-# Signals
+# Satoshium Beacon — Signals
+
+**Path:** `/beacon/signals/`  
+**Institution:** Satoshium Beacon  
+**Canonical Object:** Discovery Signal  
+**First Production Signal:** `BEAC-2026-0001`  
+**Last Updated:** September 13, 2026
+
+---
 
 ## Purpose
 
-Discovery Signals are Beacon-owned objects that document observations, events, changes, indicators, updates, relationships, or other information identified through discovery and considered relevant for attention.
+Discovery Signals are Beacon-owned canonical objects used to preserve discoveries that are relevant enough to become governed institutional records.
 
-Beacon publishes Discovery Signals and related discovery metadata while preserving source visibility, attribution, provenance, traceability, stable references, context, and institutional authority.
+Beacon owns the Discovery Signal.
 
-A Discovery Signal may point to an authoritative Suite object or an external source.
+The referenced source or Suite institution retains authority over its own object.
 
-The signal belongs to Beacon.
-
-The referenced object remains under the authority of its originating institution or source.
-
-**Reference does not transfer authority.**
+> **Reference does not transfer authority.**
 
 ---
 
-## What Is a Discovery Signal?
+## Governed Signal Types
 
-A Discovery Signal is a Beacon-owned discovery object indicating that information may be relevant.
+Beacon's initial governed Signal Type vocabulary is:
 
-Signals may emerge from:
+- Information
+- Jurisdiction
+- Certification
+- Registry
+- Historical
+- Integrity
+- Trust
+- Relationship
 
-* Authoritative Atlas intelligence
-* Certification Packages
-* SREG records
-* Chronicle Entries
-* Integrity References
-* Trust Statements
-* Publications and research
-* Government and public sources
-* External information environments
-* Emerging developments and relationships
+One primary Signal Type is preferred for a Discovery Signal.
 
-A Discovery Signal is not a conclusion.
-
-It identifies information that may deserve review, investigation, or follow-up.
+Exact frozen machine enums remain subject to later machine-serialization decisions.
 
 ---
 
-## Why Signals Matter
+## Critical Classification Rule
 
-Modern information environments contain more information than any individual or workflow can reasonably process.
+```text
+Signal Type ≠ Source Object Type ≠ Source Status
+```
 
-Not all information is equally relevant.
+For example, the first production signal has:
 
-Discovery Signals provide a structured mechanism for directing attention toward information that may matter while maintaining a traceable connection to its source.
+- **Signal Type:** Certification
+- **Source Object Type:** Canonical Certification Package
+- **Observed Source Condition:** Issued · Active · Operational
 
----
-
-## Signal Philosophy
-
-A Discovery Signal is not certification.
-
-A Discovery Signal is not registration.
-
-A Discovery Signal is not historical authority.
-
-A Discovery Signal is not an Integrity Reference.
-
-A Discovery Signal is not a Trust Statement.
-
-A Discovery Signal does not inherit the authority of the object it references.
-
-It indicates that information may be relevant.
-
-Beacon seeks to improve visibility, not impose conclusions.
+These concepts must not be collapsed into one field.
 
 ---
 
-## Types of Discovery Signals
+## Canonical Lifecycle
 
-### Information Signals
+Pre-object identification occurs before a canonical Discovery Signal exists.
 
-New or updated information that may be relevant.
+At Creation:
 
-Examples:
+- the canonical Discovery Signal comes into existence;
+- the permanent BEAC identifier is assigned;
+- the object enters Draft;
+- publication begins as Unpublished.
 
-* Publications
-* Reports
-* Research
-* Announcements
-* External-source updates
+Canonical lifecycle:
 
----
+```text
+Draft
+→ Active
+→ Superseded / Resolved / Withdrawn
+```
 
-### Jurisdiction Signals
-
-Developments associated with jurisdictions or authoritative Atlas intelligence.
-
-Examples:
-
-* Regulatory changes
-* Policy updates
-* Legislative activity
-* Economic developments
+Review and validation are processes, not canonical lifecycle states.
 
 ---
 
-### Certification Signals
+## Publication State
 
-Discovery Signals associated with Certification Packages or certification status maintained by Certifier.
+Publication is governed separately from lifecycle:
 
-Examples may include discovery of:
+```text
+Unpublished / Published
+```
 
-* Certified status
-* Updated certification information
-* Expired certification status
-* Revoked certification status
-* Pending certification information
+A signal may therefore be:
 
-Certifier remains authoritative for certification status.
+```text
+Active · Unpublished
+```
 
-Beacon may signal the status but does not determine it.
+before a publication decision transitions it to:
 
----
-
-### Registry Signals
-
-Discovery Signals associated with SREG records.
-
-Examples:
-
-* Record creation
-* Record modification
-* Record correction
-* Lifecycle changes
-* Relationship activity
-
-Registry remains authoritative for the SREG record and its lifecycle state.
+```text
+Active · Published
+```
 
 ---
 
-### Historical Signals
+## First Production Signal
 
-Discovery Signals associated with Chronicle Entries or relevant historical context.
+**`BEAC-2026-0001`**
 
-Examples:
+Title:
 
-* New Chronicle Entries
-* Historical milestones
-* Source updates
-* Evidence-related developments
-* Relationships to preserved Occurrences
+**Active Operational Certification — Atlas Jurisdiction Record — El Salvador**
 
-Chronicle remains authoritative for its historical record.
+Production state:
 
----
+- **Signal Type:** Certification
+- **Primary Source:** `SC-CERT-2026-0001`
+- **Lifecycle:** Active
+- **Publication:** Published
+- **Version:** 1.0
+- **Published:** September 13, 2026
 
-### Integrity Signals
-
-Discovery Signals associated with Anchor Integrity References or integrity-related relationships.
-
-Examples:
-
-* Discovery of an Integrity Reference
-* Anchoring relationships
-* Integrity-reference updates
-* Related integrity evidence or metadata
-
-Anchor remains authoritative for its Integrity References.
+This is the first production exercise of the **Certification** Signal Type.
 
 ---
 
-### Trust Signals
+## Authority Boundary
 
-Discovery Signals associated with Attestor Trust Statements or trust-related context.
+Certifier retains authority for:
 
-Examples:
+- the certification decision
+- Certification Class
+- certification lifecycle
+- certification status
+- `SC-CERT-2026-0001`
 
-* Discovery of a Trust Statement
-* Attestation context
-* Supporting references
-* Trust-statement updates
+Beacon owns:
 
-Attestor remains authoritative for its Trust Statements.
-
-Beacon does not determine trust by surfacing them.
-
----
-
-### Relationship Signals
-
-Connections identified between sources, Discovery Signals, or canonical objects.
-
-Examples:
-
-* Shared sources
-* Cross-institution references
-* Historical relationships
-* Jurisdiction relationships
-* Canonical-object relationships
-
-Relationship discovery should preserve the identifiers, provenance, and authority of the referenced objects.
-
----
-
-## Signal Lifecycle
-
-Discovery Signals may move through several stages.
-
-### Identification
-
-Potentially relevant information becomes visible.
-
-### Discovery Signal
-
-Beacon represents the discovery as a Discovery Signal with appropriate metadata and source references.
-
-### Review
-
-A user, workflow, or relevant Suite institution may review the signal and its referenced information.
-
-### Follow-Up
-
-The signal may lead to additional discovery, investigation, certification review, registration activity, historical review, integrity review, trust review, or other appropriate action.
-
-### Supersession or Resolution
-
-A signal may be superseded, resolved, archived, or linked to later information.
-
-Its lifecycle should preserve provenance and historical traceability.
-
----
-
-## Signal Sources
-
-Discovery Signals may reference information originating from:
-
-* Atlas
-* Certifier
-* Registry
-* Chronicle
-* Anchor
-* Attestor
-* Navigator-directed workflows
-* Public sources
-* Research sources
-* Government sources
-* Other external information environments
-
-External discovery does not convert an external source into a Suite institution or a Suite-authoritative object.
-
----
-
-## Signal Attributes
-
-Discovery Signals may include or reference attributes such as:
-
-* Discovery identifier
-* Signal type
-* Subject
-* Source institution or external source
-* Canonical object identifier
-* Provenance
-* Discovery context
-* Relevant status
-* Relationships
-* Discovery time
-* Source time
-* Version or supersession information
-
-Specific schema requirements may be refined as Beacon advances toward production.
-
----
-
-## Signal Prioritization
-
-Not all Discovery Signals require equal attention.
-
-Beacon implementations may support:
-
-* Signal ranking
-* Signal grouping
-* Signal filtering
-* Signal categorization
-* Signal monitoring
-
-Prioritization should assist discovery without converting relevance into truth, certification, integrity, or trust authority.
+- `BEAC-2026-0001`
+- the Discovery Signal
+- Discovery Metadata
+- Beacon provenance
+- Beacon lifecycle
+- publication state
+- Beacon-side relationships
 
 ---
 
 ## Relationship to Discovery
 
-Discovery is the process through which Beacon identifies potentially relevant information.
-
-Discovery Signals are a primary Beacon-owned output of that process.
-
-A simplified flow may be represented as:
-
 ```text
 Workflow / Query
-      ↓
-   Discovery
-      ↓
-Discovery Signal / Metadata
-      ↓
-Referenced Source or Canonical Object
+→ Discovery
+→ Discovery Signal / Metadata
+→ Referenced Source or Canonical Object
 ```
 
-Navigator may define or orchestrate a workflow requiring discovery.
+Not every observation becomes a canonical Discovery Signal.
 
-Beacon performs discovery and publishes the corresponding signal or metadata.
-
----
-
-## Relationship to Sources
-
-Discovery Signals should remain connected to their sources.
-
-Users and systems should be able to determine:
-
-* Where the information originated
-* Which institution or external source maintains it
-* Which canonical identifier applies, when available
-* How the signal was identified
-* What discovery context was preserved
-* How the source may be reviewed
-
-Source visibility, attribution, provenance, and traceability are core Beacon principles.
+Creation is the institutional event that transforms a sufficiently relevant constructed discovery into a canonical Beacon object.
 
 ---
 
-## Relationship to Results
+## Governing Principle
 
-Discovery Signals may contribute to Beacon results.
-
-Multiple signals may appear within a single result.
-
-A single signal may contribute to multiple results or workflows.
-
-A result does not replace the Discovery Signal or the authoritative source it references.
-
----
-
-## Institutional Authority Boundary
-
-Beacon owns the Discovery Signals and discovery metadata it publishes.
-
-Other Suite institutions retain authority over their canonical objects:
-
-* **Atlas → Authoritative Intelligence**
-* **Navigator → Workflow Definition / Orchestration**
-* **Beacon → Discovery Signal / Metadata**
-* **Certifier → Certification Package**
-* **Registry → SREG**
-* **Chronicle → Chronicle Entry**
-* **Anchor → Integrity Reference**
-* **Attestor → Trust Statement**
-
-Beacon may discover, index, surface, or reference these objects.
-
-It does not duplicate their institutional authority.
-
----
-
-## Guiding Principles
-
-### Visibility
-
-Potentially relevant information should be easier to find.
-
-### Transparency
-
-Signal origins and discovery context should remain visible.
-
-### Attribution
-
-Sources and originating institutions should remain identifiable.
-
-### Provenance
-
-Signals should preserve sufficient origin and context for review.
-
-### Traceability
-
-Signals should support navigation back to their referenced sources and canonical objects.
-
-### Neutrality
-
-Signals should support exploration without imposing conclusions.
-
-### Authority Preservation
-
-Discovery does not transfer authority from the institution or source responsible for the referenced information.
-
----
-
-## Long-Term Vision
-
-As Beacon evolves, Discovery Signals may become a primary mechanism through which users and Suite workflows discover relevant developments across Satoshium institutions and external information environments.
-
-Signals direct attention.
-
-Discovery finds the signal.
-
-Authority remains with the source.
-
----
-
-## Status
-
-Beacon signal architecture is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
-
-This document establishes the governing conceptual model for Beacon-owned Discovery Signals. Operational schemas, lifecycle rules, prioritization methods, and exchange formats may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
+**Beacon discovers. Beacon signals. Authority remains with the source.**
