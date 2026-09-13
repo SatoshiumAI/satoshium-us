@@ -1,306 +1,172 @@
-# Interoperability
+# Satoshium Beacon — Interoperability
+
+**Path:** `/beacon/interoperability/`  
+**Institution:** Satoshium Beacon  
+**Institutional Role:** Discovery & Signals  
+**First Production Interoperability Object:** `BEAC-2026-0001`  
+**Last Updated:** September 13, 2026
+
+---
 
 ## Purpose
 
-Interoperability defines how Beacon interacts with other Satoshium Suite institutions, canonical objects, records, services, standards, and external sources.
+Beacon Interoperability defines how Beacon connects discovery across Satoshium Suite institutions while preserving institutional ownership, provenance, canonical identity, and authority.
 
-Beacon is the Suite institution for discovery and signals.
+Beacon may reference authoritative objects owned by other institutions.
 
-Its role is to help users and Suite workflows locate relevant information while preserving institutional authority, attribution, provenance, traceability, and context.
+It does not inherit their authority.
 
-Beacon may reference authoritative objects maintained by other Suite institutions, but reference does not transfer authority.
-
----
-
-## Core Principle
-
-Beacon does not replace other Suite institutions.
-
-Beacon discovers and signals.
-
-Each Suite institution retains responsibility and authority for the canonical objects it creates and maintains. Beacon may publish Discovery Signals and discovery metadata that reference those objects without duplicating, certifying, registering, chronicling, anchoring, or attesting them.
-
-**Reference does not transfer authority.**
+> **Reference does not transfer authority.**
 
 ---
 
-## Interoperability Goals
+## Suite Interoperability Model
 
-Beacon seeks to:
+```text
+Atlas      → Authoritative Intelligence
+Navigator  → Workflow Definition / Orchestration
+Beacon     → Discovery Signal / Metadata
+Certifier  → Certification Package
+Registry   → SREG
+Chronicle  → Chronicle Entry
+Anchor     → Integrity Reference
+Attestor   → Trust Statement
+```
 
-* Improve information discovery
-* Reduce information fragmentation
-* Increase visibility of relevant authoritative objects
-* Support navigation across Suite institutions
-* Preserve institutional ownership and source attribution
-* Maintain stable, traceable information pathways
-* Preserve provenance and discovery context
-* Support interoperable Suite workflows without collapsing institutional boundaries
-
----
-
-## Canonical Suite Relationships
-
-Beacon interoperability follows the institutional ownership model of the Satoshium Suite:
-
-* **Atlas → Authoritative Intelligence**
-* **Navigator → Workflow Definition / Orchestration**
-* **Beacon → Discovery Signal / Metadata**
-* **Certifier → Certification Package**
-* **Registry → SREG**
-* **Chronicle → Chronicle Entry**
-* **Anchor → Integrity Reference**
-* **Attestor → Trust Statement**
-
-Each institution remains authoritative for its own canonical objects.
-
-Beacon connects these objects through discovery, signals, metadata, and stable references.
+Each institution retains authority over its own canonical objects.
 
 ---
 
-## Relationship to Atlas
+## First Production Interoperability Path
 
-Atlas provides authoritative jurisdictional, media, and related intelligence.
+Beacon's first exercised production interoperability path is:
 
-Beacon may discover Atlas information and publish Discovery Signals or metadata referencing Atlas objects.
+```text
+Satoshium Certifier
+SC-CERT-2026-0001
+        ↓
+direct Beacon observation
+        ↓
+Satoshium Beacon
+BEAC-2026-0001
+```
 
-Beacon does not reproduce Atlas authority.
+`BEAC-2026-0001` identifies the existence and current active Operational certification of the Atlas Jurisdiction Record — El Salvador represented by `SC-CERT-2026-0001`.
 
-Atlas remains authoritative for the intelligence and records it publishes.
+### Production State
 
----
+- **Beacon Object:** `BEAC-2026-0001`
+- **Signal Type:** Certification
+- **Lifecycle:** Active
+- **Publication:** Published
+- **Version:** 1.0
+- **Published:** September 13, 2026
+- **Primary Source:** `SC-CERT-2026-0001`
 
-## Relationship to Navigator
+Public record:
 
-Navigator provides workflow definition and orchestration across the Suite.
-
-Navigator may initiate or coordinate workflows requiring discovery.
-
-Beacon may participate in those workflows by performing discovery and returning Discovery Signals, discovery metadata, source references, and related results.
-
-Navigator owns orchestration.
-
-Beacon owns its discovery outputs.
-
----
-
-## Relationship to Certifier
-
-Certifier provides verification and certification functions through Certification Packages and related authoritative records.
-
-Beacon may discover and reference:
-
-* Certification Packages
-* Certification status
-* Verification-related metadata
-* Evidence references associated with certification activity
-
-Beacon does not perform or inherit certification authority.
-
-Certifier remains authoritative for certification and verification outcomes.
+https://satoshium.us/beacon/records/BEAC-2026-0001/
 
 ---
 
-## Relationship to Registry
+## Direct Provenance
 
-Registry provides structured registration and record management through SREG records.
+For `BEAC-2026-0001`, Beacon's provenance is direct:
 
-Beacon may discover and reference:
+```text
+SC-CERT-2026-0001
+→ directly observed by Beacon
+→ BEAC-2026-0001
+```
 
-* SREG records
-* Registry metadata
-* Record relationships
-* Record lifecycle information
+The broader Suite lineage is not substituted for Beacon's provenance.
 
-Beacon does not become authoritative for a Registry record by surfacing it.
+Related Suite objects include:
 
-Registry remains authoritative for registered records and their lifecycle state.
+- Registry → `SREG-2026-0001`
+- Chronicle → `CHR-2026-0001`
+- Anchor → `ANCH-2026-0001`
 
----
-
-## Relationship to Chronicle
-
-Chronicle preserves historical events and records through Chronicle Entries.
-
-Beacon may discover and reference:
-
-* Chronicle Entries
-* Historical events
-* Supporting source references
-* Preserved historical context
-
-Beacon does not alter or reproduce Chronicle authority.
-
-Chronicle remains authoritative for its historical record.
+These are relationships and contextual references, not intermediate provenance steps.
 
 ---
 
-## Relationship to Anchor
+## Institutional Ownership
 
-Anchor provides integrity preservation through Integrity References and related anchoring evidence.
+### Certifier
 
-Beacon may discover and reference:
+Owns:
 
-* Integrity References
-* Anchoring relationships
-* Integrity evidence
-* Related metadata
+- `SC-CERT-2026-0001`
+- certification decision
+- Certification Class
+- certification lifecycle
+- certification status
 
-Beacon does not establish integrity merely by surfacing an Integrity Reference.
+### Beacon
 
-Anchor remains responsible for the integrity objects and anchoring relationships it maintains.
+Owns:
 
----
+- `BEAC-2026-0001`
+- Discovery Signal
+- Beacon identifier
+- Discovery Metadata
+- discovery provenance
+- Beacon lifecycle
+- publication state
+- Beacon-side relationships
 
-## Relationship to Attestor
+### Registry
 
-Attestor provides Trust Statements and related attestation context.
+Owns `SREG-2026-0001`.
 
-Beacon may discover and reference:
+### Chronicle
 
-* Trust Statements
-* Attestation context
-* Supporting evidence references
-* Trust-related metadata
+Owns `CHR-2026-0001`.
 
-Beacon does not determine trust and does not inherit Attestor authority.
+### Anchor
 
-Attestor remains authoritative for the Trust Statements it publishes.
+Owns `ANCH-2026-0001`.
 
----
-
-## Beacon-Owned Objects
-
-Beacon is responsible for the Discovery Signals and discovery metadata it publishes.
-
-A Beacon object may reference canonical objects maintained by other Suite institutions while preserving:
-
-* Stable identifiers
-* Source institution
-* Provenance
-* Discovery context
-* Relevant status
-* Relationships to other objects
-
-The referenced object remains under the authority of its originating institution.
+The existence of relationships among these objects does not merge their institutional authority.
 
 ---
 
-## Information Flow
+## Interoperability Principle
 
-Suite interoperability is not a single mandatory linear chain.
+The production operation demonstrates:
 
-A workflow may move among institutions according to purpose while preserving institutional ownership and stable references.
+```text
+Relationship connects objects.
+Relationship does not merge institutions.
+Reference does not transfer authority.
+```
 
-For example:
+Beacon owns the reference relationships represented within its Discovery Signal.
 
-**Navigator → Beacon → Certifier → Registry → Chronicle → Anchor → Attestor**
-
-Other workflows may use only a subset of institutions or a different sequence.
-
-Navigator may orchestrate the workflow.
-
-Beacon may perform discovery.
-
-Each participating institution remains authoritative for the canonical objects it contributes.
+It does not own the referenced canonical objects.
 
 ---
 
-## Source Integrity and Provenance
+## Production Significance
 
-Beacon should preserve source attribution and provenance whenever possible.
+`BEAC-2026-0001` demonstrates that Beacon can:
 
-Discovery should not obscure:
+- directly observe an authoritative Suite object;
+- preserve source identity and provenance;
+- construct its own canonical Discovery Signal;
+- reference related Suite objects;
+- preserve institutional authority boundaries;
+- validate and review the Discovery Signal;
+- activate and publish the signal;
+- make the result publicly discoverable through Beacon Records.
 
-* Origin
-* Source institution
-* Canonical identifier
-* Context
-* Ownership
-* Record history
-* Verification or certification status
-* Integrity status
-* Trust-statement context
+This is production evidence for Beacon interoperability.
 
-Users and downstream systems should be able to determine where information originated and which institution remains authoritative for it.
-
----
-
-## Open Integration
-
-Beacon may support future integrations with:
-
-* Public datasets
-* Government records
-* Research repositories
-* News archives
-* Open-source projects
-* Third-party information systems
-
-External discovery does not make an external source a Satoshium Suite institution or convert external information into a Suite-authoritative object.
-
-Future integrations should prioritize transparency, attribution, provenance, traceability, and clear authority boundaries.
+It does not by itself establish Beacon as Operational. Production evidence preservation and post-operation review remain required.
 
 ---
 
-## Interoperability Principles
+## Governing Principle
 
-### Institutional Authority
-
-Each institution retains authority over the canonical objects it creates and maintains.
-
-### Stable References
-
-Cross-system relationships should rely on stable identifiers and references rather than unnecessary duplication.
-
-### Transparency
-
-Information pathways and institutional relationships should remain visible.
-
-### Attribution
-
-Sources and originating institutions should remain identifiable.
-
-### Provenance
-
-Discovery context and origin should be preserved sufficiently for review.
-
-### Compatibility
-
-Systems should exchange information through documented structures and clearly defined boundaries.
-
-### Traceability
-
-Users and systems should be able to follow information back to its authoritative source.
-
-### Modularity
-
-Each institution should maintain independent responsibilities while participating in coordinated Suite workflows.
-
----
-
-## Future Development
-
-Future Beacon interoperability work may include:
-
-* Shared reference conventions
-* Discovery protocols
-* Discovery Signal exchange formats
-* Record-linking standards
-* Workflow interfaces with Navigator
-* Metadata standards
-* Cross-system identifier handling
-* Provenance requirements
-* Machine-readable interoperability schemas
-
-Specific implementations may evolve while preserving the Suite's institutional authority model and interoperability principles.
-
----
-
-## Status
-
-Beacon interoperability is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
-
-The institutional relationships, authority boundaries, and canonical-object model defined here provide the governing foundation for continued Beacon development.
-
-Technical implementations may continue to evolve, but they should remain aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
+**Authority remains with the institution. Beacon makes the relationship discoverable.**
