@@ -12,7 +12,7 @@
 
 <title>Satoshium Attestor · Evidence</title>
 
-<meta name="description" content="Satoshium Attestor Evidence — supporting information, source materials, context, and records connected to attestations and trust signals.">
+<meta name="description" content="Satoshium Attestor Evidence — governed supporting material and authoritative references used to evaluate Attestations and support attributable Trust Statements while preserving provenance and source authority.">
 
 <link rel="canonical" href="https://satoshium.us/attestor/evidence/">
 
@@ -190,66 +190,95 @@ h1{
   <h1>Evidence</h1>
 
   <p class="lead">
-    Evidence provides supporting information, records, sources,
-    and context connected to attestations, claims, trust signals,
-    and future trust evaluations.
+    Evidence is supporting material or an authoritative reference used by
+    Satoshium Attestor to evaluate an Attestation and support a Trust Statement.
   </p>
 
   <p class="lead">
-    Evidence helps explain why a statement may deserve attention,
-    but evidence does not automatically establish truth.
+    Evidence informs a conclusion; it does not become proof merely because it is
+    referenced. Its origin, provenance, status, relevance, and authority must remain
+    distinguishable from the Attestor assertion that relies upon it.
   </p>
+
+  <div class="note">
+    <strong>Governing principle:</strong> Reference does not transfer authority.
+  </div>
 
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Evidence Records</h2>
+  <h2>Supporting Material</h2>
 
   <p>
-    Future evidence records may document the materials,
-    sources, documents, media, datasets, or references
-    associated with an attestation.
+    Evidence may include documents, records, datasets, media, source material,
+    observations, or other information eligible under Attestor rules. The final
+    evidence classes and eligibility requirements remain to be established.
   </p>
 
-  <span class="status">Future</span>
+  <span class="status">Developing</span>
 </article>
 
 <article class="card">
-  <h2>Supporting Context</h2>
+  <h2>Authoritative References</h2>
 
   <p>
-    Evidence may provide context that supports,
-    challenges, clarifies, or complicates a claim,
-    record, event, or attestation.
+    Attestor may reference canonical Suite objects when they are relevant to an
+    Attestation, including certifications, registered records, Chronicle entries,
+    integrity references, discovery metadata, intelligence, or workflow context.
+    Those objects remain authoritative in their originating institutions.
   </p>
 
-  <span class="status">Conceptual</span>
+  <span class="status">Foundational</span>
 </article>
 
 <article class="card">
-  <h2>Evidence Attestations</h2>
+  <h2>Provenance</h2>
 
   <p>
-    Evidence attestations may document statements
-    about evidence, including whether it supports,
-    partially supports, contradicts, or contextualizes a subject.
+    Evidence should remain connected to sufficient source and provenance information
+    to allow a reviewer to understand where it came from, how it relates to the
+    Attestation, and whether its meaning or status has changed.
   </p>
 
-  <span class="status">Planned</span>
+  <span class="status">Required Principle</span>
 </article>
 
 <article class="card">
-  <h2>Source References</h2>
+  <h2>Relevance &amp; Scope</h2>
 
   <p>
-    Evidence should remain connected to its sources
-    whenever practical so origin, attribution, and
-    traceability remain visible.
+    Evidence should be evaluated in relation to the specific assertion and scope
+    under review. Evidence relevant to one bounded question should not silently
+    support a broader conclusion.
   </p>
 
-  <span class="status">Defined</span>
+  <span class="status">Required Principle</span>
+</article>
+
+<article class="card">
+  <h2>Supporting &amp; Conflicting Evidence</h2>
+
+  <p>
+    Attestor architecture must be capable of representing evidence that supports,
+    limits, qualifies, contextualizes, or conflicts with an assertion rather than
+    preserving only material favorable to a conclusion.
+  </p>
+
+  <span class="status">Architectural Requirement</span>
+</article>
+
+<article class="card">
+  <h2>Evidence Status</h2>
+
+  <p>
+    Evidence may change in availability, authority, validity, interpretation, or
+    relevance over time. Attestor must preserve enough context to distinguish the
+    evidence considered at the time of evaluation from later changes.
+  </p>
+
+  <span class="status">Lifecycle Concern</span>
 </article>
 
 </section>
@@ -258,16 +287,16 @@ h1{
 
 <article class="card">
 
-  <h2>Evidence Relationship</h2>
+  <h2>Evidence Is Not the Attestation</h2>
 
   <p>
-    Evidence supports interpretation. Attestations document statements.
-    Trust emerges only after context, evidence, history, and judgment
-    are considered together.
+    Evidence and Attestations are separate architectural concerns. Evidence supplies
+    support or context. An Attestation expresses the governed assertion that Attestor
+    evaluates.
   </p>
 
   <div class="note">
-    Evidence → Attestation → Trust Context
+    Evidence / Authoritative References → Attestation Evaluation → Trust Statement
   </div>
 
 </article>
@@ -278,17 +307,41 @@ h1{
 
 <article class="card">
 
-  <h2>Evidence Philosophy</h2>
+  <h2>Evidence Does Not Become Attestor Authority</h2>
 
   <p>
-    Evidence should remain transparent, attributable,
-    traceable, and reviewable whenever practical.
+    When Attestor references a Certifier Certification Package, Registry record,
+    Chronicle Entry, Anchor Integrity Reference, Beacon Discovery Signal or Discovery
+    Metadata, Atlas intelligence, Navigator workflow context, or another governed
+    source, Attestor does not redefine that source or become its authority.
+  </p>
+
+  <div class="note">
+    Source authority remains with the source. Attestor owns the Trust Statement it
+    produces from governed evaluation.
+  </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Evidence and Judgment</h2>
+
+  <p>
+    Evidence should be transparent, attributable, traceable, and reviewable to the
+    extent permitted by the applicable source and Attestor rules. Attestor should
+    preserve both the basis and the limitations of a conclusion rather than presenting
+    evidence as automatic proof.
   </p>
 
   <p>
-    Attestor does not treat evidence as automatic proof.
-    It treats evidence as information that helps users
-    understand why trust may or may not exist.
+    The advanced Attestor architecture will determine evidence eligibility,
+    classifications, required provenance, validation treatment, conflict handling,
+    and the rules governing how evidence contributes to Trust Statement generation.
   </p>
 
   <a class="btn" href="/attestor/">
@@ -307,7 +360,7 @@ h1{
   <div id="random-saying"
        class="muted"
        style="margin-bottom:14px; max-width:760px;">
-    Evidence informs trust. It does not replace judgment.
+    Evidence supports a conclusion only within the scope, provenance, authority, and limitations that make the evidence meaningful.
   </div>
 
   <hr>
