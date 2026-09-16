@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Attestor · Attestations</title>
-<meta name="description" content="Satoshium Attestor Attestations — documenting statements, evidence, context, attribution, and trust-related relationships across the Satoshium ecosystem.">
+<meta name="description" content="Satoshium Attestor Attestations — governed, attributable assertions that preserve subject, scope, provenance, evidence references, status, and authority boundaries in support of Trust Statements.">
 <link rel="canonical" href="https://satoshium.us/attestor/attestations/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -164,25 +164,31 @@ h1{
   <h1>Attestations</h1>
 
   <p class="lead">
-    Attestations are statements made regarding identities, claims,
-    records, events, qualifications, relationships, or other matters
-    of interest.
+    An Attestation is a governed, attributable assertion used by Satoshium Attestor
+    to express a bounded statement about a subject, record, relationship, condition,
+    event, or other trust-relevant matter.
   </p>
 
   <p class="lead">
-    Attestor preserves the context around those statements: who made
-    them, what was stated, when they were made, what evidence may support
-    them, and how they relate to trust.
+    An Attestation preserves what is being asserted, who or what is responsible for
+    the assertion, the scope in which it applies, the evidence and authoritative
+    references that support it, and the provenance necessary for review.
   </p>
+
+  <div class="note">
+    <strong>Boundary:</strong> An Attestation is an Attestor object. Referencing an
+    authoritative Suite object does not transfer that object's authority to Attestor.
+  </div>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Statements</h2>
+  <h2>Assertion</h2>
   <p>
-    An attestation documents that a statement was made by an attestor
-    regarding a subject, claim, event, identity, or record.
+    Every Attestation expresses a specific assertion. The assertion should be
+    sufficiently bounded to identify what is being stated without implying a broader
+    conclusion than the available authority and evidence support.
   </p>
   <span class="status">Core</span>
 </article>
@@ -190,69 +196,124 @@ h1{
 <article class="card">
   <h2>Attribution</h2>
   <p>
-    Attestations should preserve who made the statement whenever
-    practical, supporting accountability and transparency.
+    An Attestation must preserve the responsible attesting actor, system, or
+    institutional process so that the assertion remains attributable and reviewable.
   </p>
-  <span class="status">Foundational</span>
+  <span class="status">Required</span>
 </article>
 
 <article class="card">
-  <h2>Evidence</h2>
+  <h2>Subject &amp; Scope</h2>
   <p>
-    Attestations may reference supporting evidence, source materials,
-    records, certifications, or historical information.
+    The subject identifies what the Attestation concerns. Scope defines the boundary
+    within which the assertion is intended to apply and helps prevent a narrow
+    statement from being interpreted as a universal conclusion.
   </p>
-  <span class="status">Context</span>
+  <span class="status">Required</span>
 </article>
 
 <article class="card">
-  <h2>Trust Context</h2>
+  <h2>Evidence &amp; References</h2>
   <p>
-    Attestations contribute information relevant to trust, but the
-    existence of an attestation does not automatically establish truth.
+    An Attestation may reference evidence, certifications, registered records,
+    Chronicle entries, integrity references, discovery metadata, or other governed
+    sources. Those references retain their original authority and meaning.
   </p>
-  <span class="status">Boundary</span>
+  <span class="status">Provenance</span>
+</article>
+
+<article class="card">
+  <h2>Status &amp; Lifecycle</h2>
+  <p>
+    Attestations require governed status and lifecycle treatment so that a reviewer
+    can distinguish a current assertion from one that has been corrected, withdrawn,
+    superseded, expired, or otherwise changed under Attestor rules.
+  </p>
+  <span class="status">Governed</span>
+</article>
+
+<article class="card">
+  <h2>Trust Statement Relationship</h2>
+  <p>
+    An Attestation is not itself Attestor's final canonical output. Eligible
+    Attestations, evaluated with their evidence, provenance, status, and limitations,
+    support the production of Attestor Trust Statements.
+  </p>
+  <span class="status">Output Path</span>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Attestation Components</h2>
+  <h2>Attestation Structure</h2>
 
   <p>
-    Attestations may include the attestor, subject, statement,
-    evidence, sources, context, timestamp, status, and related records.
+    The exact machine schema will be governed by Attestor's advanced architecture.
+    At the conceptual level, an Attestation must preserve enough structure to make
+    the assertion identifiable, attributable, scoped, traceable, and reviewable.
   </p>
 
   <div class="note">
-    Attestor → Subject → Statement → Evidence → Trust Context
+    Attesting Authority → Subject → Assertion → Scope → Evidence / References → Provenance → Status
   </div>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Attestation Philosophy</h2>
+  <h2>Attestation and Evidence</h2>
 
   <p>
-    An attestation is evidence that a statement exists.
-    It is not proof that the statement is correct.
+    An Attestation and its supporting evidence are not the same object. The
+    Attestation expresses the assertion. Evidence and authoritative references
+    provide the basis against which that assertion may be evaluated.
   </p>
 
+  <div class="note">
+    Evidence supports an Attestation. It does not become true merely because it is
+    referenced, and the Attestation does not become the authority for the evidence.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Attestation and Trust Statement</h2>
+
   <p>
-    Attestor focuses on preserving the statement, attribution,
-    supporting context, and relationships needed for future review.
+    Attestations provide structured inputs to Attestor's trust-specific evaluation.
+    A Trust Statement is the canonical Attestor output produced when eligible inputs
+    have been evaluated under Attestor rules with appropriate provenance, scope,
+    status, and limitations preserved.
   </p>
+
+  <div class="note">
+    Authoritative Inputs → Attestation → Attestor Evaluation → Trust Statement
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Authority Boundary</h2>
+
+  <p>
+    Attestor may attest to matters involving objects governed elsewhere in the
+    Satoshium Suite, but an Attestation does not certify on behalf of Certifier,
+    register on behalf of Registry, preserve history on behalf of Chronicle,
+    establish integrity on behalf of Anchor, or create discovery authority on
+    behalf of Beacon.
+  </p>
+
+  <div class="note">
+    <strong>Reference does not transfer authority.</strong>
+  </div>
 
   <a class="btn" href="/attestor/">
     Back to Attestor →
   </a>
 </article>
-
 </section>
 
 </main>
@@ -260,7 +321,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Statements create records. Attribution creates accountability. Context makes trust reviewable.
+    An attestation should say what is asserted, who stands behind it, what supports it, and where its authority ends.
   </div>
   <hr>
   <div id="footer-container"></div>
