@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Attestor · Attestation Types</title>
-<meta name="description" content="Satoshium Attestor Attestation Types — categories of statements used to document identity, evidence, sources, corrections, verification, reputation, and trust-related context.">
+<meta name="description" content="Satoshium Attestor Attestation Types — the controlled classification framework for governed Attestor assertions used in the production of Trust Statements.">
 <link rel="canonical" href="https://satoshium.us/attestor/attestation-types/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -164,116 +164,166 @@ h1{
   <h1>Attestation Types</h1>
 
   <p class="lead">
-    Attestation types define the major categories of statements that may be
-    documented within Attestor.
+    Attestation Types classify governed assertions within Satoshium Attestor so
+    that each Attestation can be interpreted, validated, and evaluated according
+    to the kind of statement it expresses.
   </p>
 
   <p class="lead">
-    These categories help organize identity statements, evidence statements,
-    source statements, corrections, verification context, reputation signals,
-    and trust-related observations.
+    The pre-Suite categories previously published on this page are preserved as
+    historical design inputs, but they are not treated here as the final controlled
+    Attestation Type vocabulary. The authoritative type model will be established
+    through Attestor's advanced architecture.
   </p>
+
+  <div class="note">
+    <strong>Classification principle:</strong> An Attestation Type classifies the
+    Attestor assertion. It does not redefine the type or authority of a referenced
+    Suite object.
+  </div>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Identity Attestations</h2>
+  <h2>Identity-Related Assertions</h2>
   <p>
-    Statements regarding identity, continuity, participation,
-    organizational association, or identity-related context.
+    Attestor may need to express bounded assertions involving identity, continuity,
+    participation, association, or other identity-related relationships. Any such
+    Attestation must reference the applicable identity authority without becoming
+    that authority itself.
   </p>
-  <span class="status">Defined</span>
+  <span class="status">Candidate Family</span>
 </article>
 
 <article class="card">
-  <h2>Evidence Attestations</h2>
+  <h2>Evidence-Related Assertions</h2>
   <p>
-    Statements regarding evidence, supporting materials, documents,
-    records, datasets, media, or other information relevant to a subject.
+    Attestor may need to express assertions about the presence, relevance,
+    relationship, or evaluated use of evidence. The evidence remains distinct from
+    the Attestation and retains its own provenance.
   </p>
-  <span class="status">Defined</span>
+  <span class="status">Candidate Family</span>
 </article>
 
 <article class="card">
-  <h2>Source Attestations</h2>
+  <h2>Source &amp; Provenance Assertions</h2>
   <p>
-    Statements regarding sources, attribution, provenance, relevance,
-    origin, authorship, or source relationships.
+    Attestor may need to express bounded assertions concerning source relationships,
+    attribution, origin, authorship, provenance, or the connection between a source
+    and the subject of an Attestation.
   </p>
-  <span class="status">Defined</span>
+  <span class="status">Candidate Family</span>
 </article>
 
 <article class="card">
-  <h2>Verification Attestations</h2>
+  <h2>Verification-Related Assertions</h2>
   <p>
-    Statements referencing verification outcomes, certifications,
-    validation activities, or evidence review context.
+    Attestor may reference validation, verification, review, or certification
+    outcomes when those outcomes are relevant to a Trust Statement. The Attestation
+    must preserve the authority and meaning of the originating process rather than
+    reproduce it as Attestor authority.
   </p>
-  <span class="status">Conceptual</span>
+  <span class="status">Candidate Family</span>
 </article>
 
 <article class="card">
-  <h2>Reputation Attestations</h2>
+  <h2>Relationship &amp; Condition Assertions</h2>
   <p>
-    Statements related to accumulated trust signals, historical behavior,
-    participation, accountability, or reputation context.
+    Attestor may require assertions about a relationship, condition, status,
+    qualification, participation, or other bounded circumstance when supported by
+    eligible evidence and governed references.
   </p>
-  <span class="status">Conceptual</span>
+  <span class="status">Candidate Family</span>
 </article>
 
 <article class="card">
-  <h2>Correction Attestations</h2>
+  <h2>Correction &amp; Supersession Assertions</h2>
   <p>
-    Statements documenting corrections, amendments, clarifications,
-    evidence updates, attribution updates, or retractions.
+    Attestor requires a governed way to express corrections, clarifications,
+    withdrawals, supersession, or other changes affecting its own assertions.
+    The final treatment may be represented through lifecycle architecture rather
+    than as a standalone Attestation Type.
   </p>
-  <span class="status">Defined</span>
+  <span class="status">Requires Resolution</span>
 </article>
 
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Attestation Categories</h2>
+  <h2>Controlled Vocabulary</h2>
 
   <p>
-    Attestation types help distinguish what kind of statement is being made
-    and what kind of trust-related context it may provide.
+    Attestation Types should ultimately form a controlled vocabulary rather than
+    an open-ended collection of labels. Each adopted type should have a defined
+    meaning, eligibility criteria, applicable rules, required relationships, and
+    validation expectations.
   </p>
 
   <div class="note">
-    Identity → Evidence → Source → Verification → Reputation → Correction
+    Type → Meaning → Eligibility → Required Relationships → Validation
   </div>
 </article>
-
 </section>
 
 <section style="margin-top:18px;">
-
 <article class="card">
-  <h2>Attestation Philosophy</h2>
+  <h2>Type Does Not Transfer Authority</h2>
 
   <p>
-    Attestation types provide structure for statements. They do not determine
-    whether a statement is true, verified, or trustworthy.
-  </p>
-
-  <p>
-    Their value comes from preserving attribution, transparency, traceability,
-    and context.
+    A type name must not imply that Attestor owns the underlying authority. For
+    example, a verification-related Attestation does not make Attestor the Certifier;
+    an identity-related Attestation does not make Attestor the identity authority;
+    and an evidence-related Attestation does not make Attestor the source of the
+    evidence.
   </p>
 
   <div class="note">
-    An attestation records that a statement was made. Trust requires context.
+    <strong>Reference does not transfer authority.</strong>
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Reputation Is Not an Attestation Type</h2>
+
+  <p>
+    The pre-Suite model included Reputation Attestations. That category is not
+    carried forward as an established Attestor type. Reputation may eventually be
+    derived from accumulated evidence, behavior, history, or trust information, but
+    Attestor has not established reputation as a canonical object or institutional
+    responsibility.
+  </p>
+
+  <div class="note">
+    Attestor produces Trust Statements. It does not presently own or generate a
+    canonical reputation model.
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Advanced Architecture Required</h2>
+
+  <p>
+    This page establishes the purpose and boundaries of Attestation Type
+    classification without prematurely freezing the final taxonomy. The advanced
+    Attestor architecture should determine the adopted type identifiers, controlled
+    values, definitions, schemas, validation rules, lifecycle relationships, and
+    conformance requirements.
+  </p>
+
+  <div class="note">
+    Candidate Families → Review → Controlled Values → Schemas → Validation → Adoption
   </div>
 
   <a class="btn" href="/attestor/">
     Back to Attestor →
   </a>
 </article>
-
 </section>
 
 </main>
@@ -281,7 +331,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Statements become useful when their type, source, evidence, and context remain visible.
+    Classification adds meaning only when the type is governed, the assertion is bounded, and the source authority remains intact.
   </div>
   <hr>
   <div id="footer-container"></div>
