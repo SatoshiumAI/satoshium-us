@@ -1,270 +1,85 @@
-# Attestations
+# Satoshium Attestor — Purpose
+
+## Page
+
+`/attestor/purpose/`
 
 ## Purpose
 
-Attestations are statements made regarding identities, claims, records, events, qualifications, relationships, or other matters of interest.
+This page defines why **Satoshium Attestor** exists within the Satoshium Suite.
 
-Within Attestor, attestations serve as the primary mechanism through which observations, confirmations, validations, endorsements, and trust-related assertions may be documented.
+Attestor's canonical responsibility is the production and lifecycle of structured, attributable, evidence-linked **Trust Statements**.
 
-Attestations help create transparency around who made a statement, what was stated, when it was stated, and the context in which it was made.
+The page establishes that Attestor does not determine universal truth. Instead, it produces bounded trust conclusions from governed inputs while preserving provenance, scope, limitations, and the authority of referenced Suite objects.
 
----
+## Canonical Responsibility
 
-## What Is an Attestation?
+**Attestor → Trust Statement**
 
-An attestation is a statement made by one party regarding another party, claim, record, event, or condition.
+A Trust Statement is Attestor's own institutional output. Referenced evidence and Suite objects remain authoritative within their originating systems.
 
-Examples may include:
+## Governing Principle
 
-* Identity attestations
-* Qualification attestations
-* Ownership attestations
-* Participation attestations
-* Verification attestations
-* Relationship attestations
-* Record attestations
+> **Reference does not transfer authority.**
 
-An attestation represents a statement.
+Attestor may consume or reference information from other Suite institutions without inheriting their canonical responsibilities.
 
-It does not automatically establish truth.
+## Core Method
 
----
+The Purpose page expresses the working Attestor method as:
 
-## Why Attestations Matter
+`Authoritative Inputs → Attestation → Trust Statement`
 
-Many systems depend upon statements made by individuals, organizations, institutions, or automated processes.
+This is intentionally broader than the earlier pre-Suite sequence that implied certification was the necessary starting point for every Attestor output.
 
-Attestations help document:
+Detailed eligibility, validation, lifecycle, status, correction, versioning, and production rules belong in Attestor's dedicated foundational and advanced documentation.
 
-* Who made a statement
-* What was stated
-* When it was stated
-* Why it was stated
-* What evidence may support it
+## Institutional Boundaries
 
-This creates greater transparency and accountability.
+Attestor does not:
 
----
+- determine universal truth;
+- issue Certifier certifications;
+- redefine Registry records;
+- rewrite Chronicle history;
+- establish Anchor integrity references;
+- create Beacon Discovery Signals;
+- assume Atlas intelligence authority;
+- assume Navigator workflow authority;
+- inherit authority merely by referencing another institution's object.
 
-## Attestation Philosophy
+## Suite Relationships
 
-Attestations are evidence of a statement.
+The Purpose page recognizes the following institutional responsibilities:
 
-They are not proof of correctness.
+- **Atlas → Authoritative Intelligence**
+- **Navigator → Workflow Definition / Orchestration**
+- **Certifier → Certification Package**
+- **Registry → Satoshium Registry Record**
+- **Chronicle → Chronicle Entry**
+- **Anchor → Integrity Reference**
+- **Beacon → Discovery Signal / Discovery Metadata**
+- **Attestor → Trust Statement**
 
-Attestations help users understand:
+Aegis remains part of the broader Satoshium architecture and governance/security context; this page does not assign it a new Attestor-specific canonical object.
 
-* Who is speaking
-* What is being asserted
-* What support may exist
-* What context surrounds the statement
+## Reconciliation Notes
 
-Trust remains a separate evaluation.
+This revision updates the June-era pre-Suite Purpose page.
 
----
+Major changes include:
 
-## Components of an Attestation
+- replacing the generic “trust layer” framing with Attestor's bounded Suite-institution role;
+- making **Trust Statement** the explicit canonical output;
+- replacing the older purpose of broadly preserving “trust-related information” with production of governed Trust Statements;
+- preserving evidence and historical context as supporting inputs rather than Attestor-owned historical authority;
+- removing the old linear `Attestation → Evidence → Trust Signal → Reputation → Trust` model;
+- removing the implication that Attestor owns reputation or produces trust itself;
+- distinguishing Attestor from Certifier verification/certification, Registry records, Chronicle history, Anchor integrity, and Beacon discovery;
+- incorporating the Suite-wide principle **Reference does not transfer authority**;
+- preserving the existing Satoshium page shell and navigation conventions.
 
-### Attestor
+## Files
 
-The individual, organization, institution, or system making the attestation.
-
----
-
-### Subject
-
-The entity, claim, record, event, or condition being attested.
-
----
-
-### Statement
-
-The content of the attestation.
-
----
-
-### Evidence
-
-Supporting materials that may accompany the attestation.
-
----
-
-### Context
-
-Additional information that may assist interpretation.
-
----
-
-### Timestamp
-
-The date and time associated with the attestation.
-
----
-
-## Types of Attestations
-
-Attestor supports multiple attestation categories.
-
-Examples include:
-
-* Identity Attestations
-* Claim Attestations
-* Verification Attestations
-* Qualification Attestations
-* Reputation Attestations
-* Event Attestations
-* Relationship Attestations
-* Organizational Attestations
-
-Additional categories may emerge over time.
-
----
-
-## Attestation Lifecycle
-
-### Creation
-
-An attestation is issued.
-
-### Recording
-
-The attestation is documented.
-
-### Review
-
-Supporting evidence and context may be evaluated.
-
-### Use
-
-The attestation may be referenced by users or systems.
-
-### Archival
-
-The attestation may be preserved for historical purposes.
-
----
-
-## Attestation Relationships
-
-Attestations may reference:
-
-* Identities
-* Claims
-* Records
-* Events
-* Evidence
-* Sources
-* Organizations
-* Other Attestations
-
-These relationships help create richer trust contexts.
-
----
-
-## Relationship to Anchor
-
-Anchor focuses on identity.
-
-Attestor focuses on attestations.
-
-A simplified relationship may be represented as:
-
-```text
-Identity → Attestation
-```
-
-Anchor helps define who is involved.
-
-Attestor helps document what is being stated.
-
----
-
-## Relationship to Certifier
-
-Certifier evaluates evidence and verification.
-
-Attestor records attestations.
-
-A simplified distinction may be represented as:
-
-```text
-Certifier → Verification
-Attestor → Attestation
-```
-
-Verification and attestation are related but distinct activities.
-
----
-
-## Relationship to Registry
-
-Registry may store records associated with attestations.
-
-Attestor may create attestation records that can be referenced elsewhere within the ecosystem.
-
----
-
-## Relationship to Chronicle
-
-Chronicle preserves historical records.
-
-Attestations may become part of the historical record preserved by Chronicle.
-
----
-
-## Relationship to Beacon
-
-Beacon may discover attestations.
-
-Attestor creates and manages attestation structures.
-
-A simplified relationship may be represented as:
-
-```text
-Attestor → Attestation
-Beacon → Discovery
-```
-
----
-
-## Guiding Principles
-
-### Transparency
-
-Attestations should clearly identify the attestor.
-
-### Attribution
-
-Statements should remain attributable.
-
-### Traceability
-
-Attestations should support review and historical analysis.
-
-### Accountability
-
-Attestors should remain visible whenever possible.
-
-### Context
-
-Attestations should preserve sufficient context for interpretation.
-
----
-
-## Long-Term Vision
-
-As Attestor evolves, attestations may become a foundational mechanism for documenting trust-related information across identities, records, certifications, organizations, and future digital systems.
-
-Attestations help answer a simple question:
-
-```text
-Who made this statement?
-```
-
----
-
-## Status
-
-Attestation standards are currently under development.
-
-This document defines conceptual principles rather than finalized operational specifications.
+- `index.html` — public Purpose page.
+- `README.md` — repository documentation for the Purpose page.
