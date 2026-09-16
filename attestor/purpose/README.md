@@ -1,279 +1,85 @@
-# Purpose
+# Satoshium Attestor — Purpose
 
-## Mission
+## Page
 
-Attestor exists to help document, preserve, organize, and evaluate trust-related information.
+`/attestor/purpose/`
 
-Its purpose is to provide structures for attestations, evidence, reputation signals, trust relationships, corrections, and accountability while preserving transparency and historical context.
+## Purpose
 
-Attestor seeks to help users better understand why statements are made and what information may support them.
+This page defines why **Satoshium Attestor** exists within the Satoshium Suite.
 
----
+Attestor's canonical responsibility is the production and lifecycle of structured, attributable, evidence-linked **Trust Statements**.
 
-## Why Attestor Exists
+The page establishes that Attestor does not determine universal truth. Instead, it produces bounded trust conclusions from governed inputs while preserving provenance, scope, limitations, and the authority of referenced Suite objects.
 
-Information alone is often insufficient.
+## Canonical Responsibility
 
-Users frequently want to understand:
+**Attestor → Trust Statement**
 
-* Who made a statement
-* Why the statement exists
-* What evidence supports it
-* What history surrounds it
-* What trust signals may be relevant
+A Trust Statement is Attestor's own institutional output. Referenced evidence and Suite objects remain authoritative within their originating systems.
 
-These questions involve trust.
+## Governing Principle
 
-Attestor exists to help organize and preserve information relevant to those questions.
+> **Reference does not transfer authority.**
 
----
+Attestor may consume or reference information from other Suite institutions without inheriting their canonical responsibilities.
 
-## The Problem
+## Core Method
 
-Modern systems are capable of producing large amounts of information.
+The Purpose page expresses the working Attestor method as:
 
-However, information does not automatically create trust.
+`Authoritative Inputs → Attestation → Trust Statement`
 
-People often struggle to determine:
+This is intentionally broader than the earlier pre-Suite sequence that implied certification was the necessary starting point for every Attestor output.
 
-* Which statements deserve attention
-* Which sources appear reliable
-* Which claims have supporting evidence
-* Which relationships matter
-* Which historical factors are relevant
+Detailed eligibility, validation, lifecycle, status, correction, versioning, and production rules belong in Attestor's dedicated foundational and advanced documentation.
 
-Attestor seeks to create frameworks that help provide context for these evaluations.
+## Institutional Boundaries
 
----
+Attestor does not:
 
-## Core Purpose
+- determine universal truth;
+- issue Certifier certifications;
+- redefine Registry records;
+- rewrite Chronicle history;
+- establish Anchor integrity references;
+- create Beacon Discovery Signals;
+- assume Atlas intelligence authority;
+- assume Navigator workflow authority;
+- inherit authority merely by referencing another institution's object.
 
-The primary purpose of Attestor is to document trust-related information.
+## Suite Relationships
 
-This includes:
+The Purpose page recognizes the following institutional responsibilities:
 
-* Attestations
-* Evidence
-* Reputation signals
-* Trust relationships
-* Corrections
-* Accountability records
-* Supporting context
+- **Atlas → Authoritative Intelligence**
+- **Navigator → Workflow Definition / Orchestration**
+- **Certifier → Certification Package**
+- **Registry → Satoshium Registry Record**
+- **Chronicle → Chronicle Entry**
+- **Anchor → Integrity Reference**
+- **Beacon → Discovery Signal / Discovery Metadata**
+- **Attestor → Trust Statement**
 
-Attestor provides structure for trust-related records without claiming authority over truth.
+Aegis remains part of the broader Satoshium architecture and governance/security context; this page does not assign it a new Attestor-specific canonical object.
 
----
+## Reconciliation Notes
 
-## What Attestor Is
+This revision updates the June-era pre-Suite Purpose page.
 
-Attestor is:
+Major changes include:
 
-* An attestation framework
-* A trust information framework
-* A reputation context framework
-* An accountability framework
-* A transparency framework
+- replacing the generic “trust layer” framing with Attestor's bounded Suite-institution role;
+- making **Trust Statement** the explicit canonical output;
+- replacing the older purpose of broadly preserving “trust-related information” with production of governed Trust Statements;
+- preserving evidence and historical context as supporting inputs rather than Attestor-owned historical authority;
+- removing the old linear `Attestation → Evidence → Trust Signal → Reputation → Trust` model;
+- removing the implication that Attestor owns reputation or produces trust itself;
+- distinguishing Attestor from Certifier verification/certification, Registry records, Chronicle history, Anchor integrity, and Beacon discovery;
+- incorporating the Suite-wide principle **Reference does not transfer authority**;
+- preserving the existing Satoshium page shell and navigation conventions.
 
-Its focus is documenting trust-related information.
+## Files
 
----
-
-## What Attestor Is Not
-
-Attestor is not:
-
-* A source of absolute truth
-* A replacement for evidence
-* A replacement for verification
-* A replacement for human judgment
-* A guarantee of correctness
-
-Attestor helps organize trust-related information.
-
-It does not eliminate uncertainty.
-
----
-
-## Trust Philosophy
-
-Trust is complex.
-
-Trust often depends upon:
-
-* Evidence
-* Reputation
-* Transparency
-* Historical behavior
-* Verification outcomes
-* Context
-
-Attestor seeks to preserve information relevant to trust rather than impose conclusions.
-
----
-
-## Relationship to Attestations
-
-Attestations are central to Attestor.
-
-An attestation represents a statement made by a party regarding a subject.
-
-Attestor helps preserve:
-
-* Who made the statement
-* What was stated
-* When it was stated
-* Why it was stated
-* What support may exist
-
-Attestations create the foundation of trust-related records.
-
----
-
-## Relationship to Evidence
-
-Evidence provides supporting context.
-
-Evidence may:
-
-* Support a statement
-* Challenge a statement
-* Clarify a statement
-* Expand understanding
-
-Attestor helps preserve these relationships.
-
----
-
-## Relationship to Reputation
-
-Reputation represents accumulated trust-related signals over time.
-
-Attestor may help organize information associated with:
-
-* Historical activity
-* Prior attestations
-* Verification outcomes
-* Community observations
-* Corrections
-
-Reputation contributes context for future evaluations.
-
----
-
-## Relationship to Accountability
-
-Trust systems benefit from accountability.
-
-Attestor seeks to preserve visibility regarding:
-
-* Who made a statement
-* Who issued an attestation
-* Who provided evidence
-* Who performed corrections
-
-Accountability supports transparency.
-
----
-
-## Relationship to Verification
-
-Verification evaluates evidence.
-
-Verification is generally associated with Certifier.
-
-Attestor may reference verification outcomes but does not replace verification processes.
-
-A simplified distinction may be represented as:
-
-```text id="f4o8dy"
-Certifier → Verification
-Attestor → Trust Context
-```
-
----
-
-## Relationship to Identity
-
-Identity is generally associated with Anchor.
-
-Attestor may reference identities maintained by Anchor.
-
-A simplified relationship may be represented as:
-
-```text id="o1vm9r"
-Anchor → Identity
-Attestor → Trust
-```
-
-Identity helps establish who is involved.
-
-Attestor helps preserve information relevant to trust.
-
----
-
-## Relationship to the Satoshium Suite
-
-Attestor serves as the trust layer of the ecosystem.
-
-A simplified model may be represented as:
-
-```text id="y9cl4f"
-Atlas      → Data
-Navigator  → Query
-Beacon     → Discovery
-Certifier  → Verification
-Registry   → Records
-Chronicle  → History
-Anchor     → Identity
-Attestor   → Trust
-```
-
-Each system performs a distinct function.
-
-Attestor focuses on trust-related information.
-
----
-
-## Guiding Principles
-
-Attestor is guided by:
-
-* Transparency
-* Attribution
-* Accountability
-* Traceability
-* Context
-* Preservation
-* Interoperability
-
-These principles help support meaningful trust frameworks.
-
----
-
-## Long-Term Vision
-
-The long-term vision of Attestor is to create a transparent trust framework capable of documenting attestations, evidence, reputation signals, accountability records, and trust relationships across digital systems.
-
-Attestor does not seek to tell users what to believe.
-
-It seeks to provide information that helps users understand why trust may or may not exist.
-
----
-
-## Guiding Statement
-
-The purpose of Attestor may be summarized as:
-
-```text id="r7j2fa"
-Trust should not be assumed.
-
-Trust should be documented.
-```
-
----
-
-## Status
-
-Attestor is currently in its foundational development phase.
-
-This document defines conceptual goals and principles rather than finalized operational specifications.
+- `index.html` — public Purpose page.
+- `README.md` — repository documentation for the Purpose page.
