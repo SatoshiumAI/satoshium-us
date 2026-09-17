@@ -1,51 +1,68 @@
-# Source Attestation Template — Foundational Candidate
+# Source / Provenance Attestation Template — Advanced Profile
 
 ## Purpose
-This candidate template preserves the early idea of a specialized Attestation concerning a source, its provenance, relevance, origin, or relationship to a subject.
+Specialized authoring profile for the adopted Attestation Type:
 
-Advanced architecture must determine whether this becomes a formal Source / Provenance Attestation Type profile.
+`source-provenance`
 
-## Candidate Template
+It expresses a bounded assertion concerning source identity, origin, provenance, state, or relationship to a subject.
+
+## Template
 ```yaml
-attestation_identifier:
-attestation_type:
+attestation_identifier: ATT-YYYY-NNNN
+attestation_type: source-provenance
+lifecycle_state: draft
+publication_state: unpublished
 
 attesting_authority:
+  identifier:
+  authority_context:
+
 subject:
+  identifier:
+  type:
+
 assertion:
 scope:
 
 source_reference:
-source_relationship:
+source_authority_context:
+source_state_at_evaluation:
 
-evidence_references:
-governed_references:
+evidence_references: []
+governed_references: []
+
 provenance:
+  mode:
+  source_or_origin:
+  relevant_time_or_state:
+  acquisition_or_reference_context:
+  derivation_basis:
+  material_limitations:
 
-status:
+relationships: []
+
 created_at:
 updated_at:
+version_identity:
 
-limitations:
+limitations: []
+uncertainty: []
 notes:
 ```
 
-## Candidate Semantics
-The June template proposed relationships such as:
-- supports;
-- partially supports;
-- contradicts;
-- references;
-- documents;
-- mentions;
-- unclear.
+## Provenance Modes
+`direct` · `referenced` · `derived`
 
-These remain candidates only.
+## Authority Context
+`Attestor` · `Suite-source` · `external-source`
 
-## Source Boundary
-A source-related Attestation does not establish that a source is correct, trustworthy, authoritative, or eligible merely because it exists or is publicly accessible.
+## Boundary
+Source existence, publicity, accessibility, or authority does not automatically establish eligibility or evaluation outcome.
 
-> **Reference does not transfer authority.**
+`Availability ≠ Eligibility`
+
+**Reference does not transfer authority.**
 
 ## Status
-Foundational candidate template. Source eligibility, classifications, controlled values, validation, and final serialization remain Advanced Architecture.
+Advanced specialized Attestation profile.
