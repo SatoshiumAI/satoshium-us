@@ -1,313 +1,159 @@
-# Definitions
+# Satoshium Attestor — Definitions
+
+## Page
+
+`/attestor/definitions/`
 
 ## Purpose
 
-Definitions establish a shared vocabulary for Attestor.
+This page establishes the foundational vocabulary used throughout **Satoshium Attestor**.
 
-Trust systems depend upon clear language. Ambiguous terminology can create confusion regarding responsibilities, expectations, records, attestations, trust relationships, and system behavior.
+The definitions support consistent interpretation of Attestations, Evidence, Trust Statements, provenance, scope, correction, evaluation, and authority boundaries.
 
-This document provides foundational definitions used throughout Attestor.
+They apply within Attestor's institutional scope and do not redefine canonical terminology governed by other Satoshium Suite institutions.
 
-Additional definitions may be added as the project evolves.
+## Governing Principle
 
----
+> **Reference does not transfer authority.**
 
-## Attestation
+Attestor may reference objects and terminology from other Suite institutions, but their canonical definitions, identifiers, schemas, lifecycle rules, and authority remain with their originating institutions.
 
-A statement made by an individual, organization, institution, or system regarding an identity, claim, record, event, qualification, relationship, or condition.
+## Foundational Definitions
 
-An attestation represents a statement.
+### Attestation
 
-It does not automatically establish truth.
+A governed, attributable assertion used by Attestor to express a bounded statement about a subject, record, relationship, condition, event, or other trust-relevant matter.
 
----
+### Evidence
 
-## Attestor
+Supporting material or an authoritative reference used by Attestor to evaluate an Attestation and support a Trust Statement.
 
-The party making an attestation.
+Evidence retains its own source, provenance, status, relevance, and authority.
 
-An attestor may be:
+### Trust Statement
 
-* An individual
-* An organization
-* An institution
-* A system
-* An automated process
+Attestor's canonical institutional output: a governed, attributable, bounded conclusion produced through Attestor evaluation from eligible inputs while preserving provenance, scope, limitations, status, and authority boundaries.
 
-The attestor is responsible for the statement being made.
+**Attestor → Trust Statement**
 
----
+### Trust-Relevant Context
 
-## Subject
+Information or an indicator that may be relevant to evaluating an Attestation or supporting a Trust Statement.
 
-The entity, claim, record, event, or condition that is the focus of an attestation.
+The earlier term **Trust Signal** remains descriptive only. It is not presently established as a separate canonical Attestor object.
 
-A subject may be:
+This distinction also prevents collision with Beacon's canonical **Discovery Signal / Discovery Metadata** architecture.
 
-* A person
-* An organization
-* A record
-* An event
-* A qualification
-* A relationship
+### Correction
 
----
+A governed change addressing an identified error in an Attestor assertion or Trust Statement while preserving the relationship between the prior and corrected state.
 
-## Claim
+The implementation mechanism remains unresolved.
 
-An assertion regarding a fact, condition, event, qualification, ownership, participation, relationship, or other matter.
+### Provenance
 
-Claims may exist independently of attestations.
+Information sufficient to understand the origin, attribution, custody, relationship, or relevant history of an input, assertion, evaluation, or Attestor output.
 
-Attestations may support claims.
+Exact provenance fields remain to be established.
 
----
+### Scope
 
-## Evidence
+The defined boundary within which an assertion, evidence relationship, evaluation, or Trust Statement applies.
 
-Information that may support, challenge, clarify, or contextualize an attestation or claim.
+Scope prevents a bounded conclusion from silently becoming a universal one.
 
-Examples may include:
+### Authority Boundary
 
-* Documents
-* Records
-* Sources
-* Publications
-* Observations
-* Historical information
+The limit of Attestor's institutional authority in relation to an object, source, assertion, or conclusion.
 
-Evidence contributes context but may not be conclusive.
+Referenced objects remain governed by their originating authorities.
 
----
+## Supporting Terms
 
-## Verification
+Advanced Attestor architecture is expected to require additional terminology, potentially including:
 
-The process of evaluating whether information can be supported by available evidence.
+- subject;
+- attesting authority;
+- source;
+- status;
+- lifecycle;
+- clarification;
+- withdrawal;
+- supersession;
+- versioning;
+- eligibility;
+- validation;
+- evaluation.
 
-Verification and attestation are distinct activities.
+This page intentionally does not assign final machine semantics to those terms before their governing architecture is established.
 
-Verification is generally associated with Certifier.
+## Suite Vocabulary Boundary
 
----
+Attestor may reference governed objects such as:
 
-## Trust
+- Certifier Certification Packages;
+- Satoshium Registry records;
+- Chronicle Entries;
+- Anchor Integrity References;
+- Beacon Discovery Signals and Discovery Metadata;
+- Atlas intelligence;
+- Navigator workflow context;
+- other eligible governed sources.
 
-A judgment regarding confidence, reliability, credibility, or dependability.
+Attestor definitions explain how such references participate in Attestor evaluation.
 
-Trust may be influenced by:
+They do not replace the originating institution's definitions or authority.
 
-* Evidence
-* Verification
-* Reputation
-* Transparency
-* Historical performance
+## Definition Governance
 
-Trust remains separate from attestation.
-
----
-
-## Reputation
-
-Accumulated trust-related signals associated with an identity over time.
-
-Reputation may emerge from:
-
-* Attestations
-* Participation
-* Historical activity
-* Verification outcomes
-* Community observations
-
-Reputation influences trust but does not determine it.
-
----
-
-## Identity
-
-A persistent entity capable of participating in trust relationships.
-
-Examples may include:
-
-* Individuals
-* Organizations
-* Institutions
-* Systems
-
-Identity management is generally associated with Anchor.
-
----
-
-## Source
-
-The origin of information referenced by an attestation.
-
-Sources help establish:
-
-* Attribution
-* Context
-* Traceability
-
-Sources may be internal or external to the Satoshium ecosystem.
-
----
-
-## Attribution
-
-Identification of the party responsible for a statement, record, source, or attestation.
-
-Attribution helps support accountability and transparency.
-
----
-
-## Transparency
-
-The ability to understand:
-
-* Who made a statement
-* What was stated
-* Why it was stated
-* What support exists
-
-Transparency contributes to trust systems.
-
----
-
-## Accountability
-
-The principle that participants should remain responsible for the statements they make.
-
-Accountability helps support trust and credibility.
-
----
-
-## Traceability
-
-The ability to follow information through records, attestations, evidence, sources, and historical changes.
-
-Traceability supports review and investigation.
-
----
-
-## Correction
-
-A documented modification intended to address inaccuracies, omissions, ambiguities, or outdated information.
-
-Corrections should improve understanding while preserving transparency.
-
----
-
-## Retraction
-
-A withdrawal of support for a previous attestation.
-
-Retractions differ from corrections.
-
-A correction modifies understanding.
-
-A retraction withdraws a statement.
-
----
-
-## Confidence
-
-An assessment regarding the strength of support for a statement, claim, attestation, or conclusion.
-
-Confidence may vary over time as information changes.
-
-Confidence should not be interpreted as certainty.
-
----
-
-## Governance
-
-The principles, standards, responsibilities, and processes that help guide system behavior and participant conduct.
-
-Governance helps support consistency and accountability.
-
----
-
-## Interoperability
-
-The ability of systems, records, identities, attestations, and trust frameworks to interact across organizational or technical boundaries.
-
-Interoperability helps information remain portable and understandable.
-
----
-
-## Historical Record
-
-A preserved record documenting information, events, attestations, evidence, or corrections over time.
-
-Historical preservation is generally associated with Chronicle.
-
----
-
-## Registry Record
-
-A structured record maintained within Registry.
-
-Registry records may reference attestations, identities, evidence, sources, and related information.
-
----
-
-## Signal
-
-An observation, event, update, indicator, or discovery that may warrant attention.
-
-Signals are generally associated with Beacon.
-
-Signals may influence future attestations.
-
----
-
-## Certification
-
-A formal verification outcome documenting the results of a review process.
-
-Certification is generally associated with Certifier.
-
-Certification and attestation are distinct concepts.
-
----
-
-## Relationship
-
-A documented connection between entities, claims, records, attestations, organizations, or other subjects.
-
-Relationships may provide context for trust evaluations.
-
----
-
-## Guiding Principle
-
-Definitions should promote clarity rather than complexity.
-
-Whenever possible, Attestor terminology should remain:
-
-* Understandable
-* Transparent
-* Consistent
-* Traceable
-* Interoperable
-
----
-
-## Future Development
-
-Additional definitions may be introduced for:
-
-* Trust frameworks
-* Reputation systems
-* Confidence models
-* Governance structures
-* Interoperability standards
-* Attestation classes
-* Trust networks
-
-Specific terminology may evolve over time.
-
----
-
-## Status
-
-This glossary represents an initial conceptual vocabulary for Attestor and may be expanded, revised, or refined as the project matures.
+Foundational definitions should provide enough stability for coherent Attestor architecture while allowing refinement during advanced design.
+
+Controlled values, machine vocabulary, schema semantics, and normative validation meanings should be adopted only when the relevant architecture is established.
+
+Conceptually:
+
+`Concept → Definition → Governed Use → Validation`
+
+## Reconciliation Notes
+
+This revision updates the June-era pre-Suite Definitions page.
+
+Major changes include:
+
+- replacing the generic “trust layer” framing with Attestor's institutional role;
+- strengthening the definition of Attestation from a generic statement to a governed, attributable, bounded assertion;
+- strengthening Evidence to include authoritative references and preserved source authority;
+- adding **Trust Statement** as Attestor's canonical output;
+- replacing **Trust Signal** as a formally “Defined” term with **Trust-Relevant Context**, while preserving “trust signal” only as descriptive language;
+- tightening Correction to apply to governed Attestor changes;
+- adding Provenance;
+- adding Scope;
+- adding Authority Boundary;
+- removing the old `Language → Meaning → Understanding → Trust` progression;
+- adding explicit Suite vocabulary boundaries;
+- deferring advanced machine terminology until the underlying architecture is established.
+
+## Deferred to Advanced Architecture
+
+The following remain intentionally unresolved:
+
+- complete Attestor glossary;
+- normative versus informative definitions;
+- controlled-value definitions;
+- machine vocabulary;
+- term identifiers, if needed;
+- subject model;
+- attesting authority model;
+- source model;
+- lifecycle vocabulary;
+- status vocabulary;
+- validation terminology;
+- evaluation terminology;
+- versioning and supersession semantics;
+- schema-level definitions;
+- conformance terminology.
+
+## Files
+
+- `index.html` — public Definitions page.
+- `README.md` — repository documentation for the Definitions page.
