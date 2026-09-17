@@ -297,13 +297,13 @@ discovery objects and their lifecycle.
 <h2>External Interoperability</h2>
 
 <p>
-Attestor may eventually accept eligible governed information from external
-platforms, protocols, repositories, or authorities. Advanced rules must define
-eligibility, provenance, validation, scope, and authority requirements before
-such inputs are relied upon.
+Attestor may accept governed information from external platforms, protocols,
+repositories, or authorities when the applicable Eligibility, Provenance,
+Validation, Scope, relevant-state, and Authority requirements can be satisfied
+under established Attestor architecture.
 </p>
 
-<span class="status">Advanced Architecture</span>
+<span class="status">Governed Relationship</span>
 </article>
 
 </section>
@@ -326,8 +326,9 @@ Identifier + Source + Provenance + Type + Status + Scope + Relationship + Author
 </div>
 
 <p style="margin-top:16px;">
-The exact required fields and machine representation remain part of advanced
-Attestor architecture.
+These reference-context requirements are established by Attestor's Reference
+Profile, Authority, Provenance, Relationships, Eligibility, and state architecture.
+Exact machine serialization remains implementation work.
 </p>
 
 </article>
@@ -348,7 +349,7 @@ object remains authoritative in its source institution.
 </p>
 
 <div class="note">
-Source Object → Governed Reference → Attestor Evaluation → Trust Statement
+Source Object → Governed Reference → Eligibility Determination → Attestation / Evaluation Basis → Rule-Constrained Evaluation → Trust Statement
 </div>
 
 </article>
@@ -363,15 +364,21 @@ Source Object → Governed Reference → Attestor Evaluation → Trust Statement
 
 <p>
 Referenced objects may later change status, version, publication state, or other
-governed properties. Attestor must be able to distinguish the source state used
-during an evaluation from later source changes and determine whether its own
-Attestation or Trust Statement requires review, correction, withdrawal, or
-supersession.
+governed properties. Attestor preserves the relevant source state used during
+Evaluation and distinguishes it from later source changes. A material source-state
+change may trigger Review, but Review does not predetermine correction, withdrawal,
+supersession, or creation of a new canonical object.
 </p>
 
 <p>
 Attestor does not perform the source institution's lifecycle operation. It responds
 within its own authority to the consequences of that change.
+
+<div class="note">
+Source State at Evaluation ≠ Later Source State<br>
+Material Source-State Change → Review<br>
+Review ≠ Automatic Outcome
+</div>
 </p>
 
 </article>
