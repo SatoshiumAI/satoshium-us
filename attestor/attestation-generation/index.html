@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#d6a34a">
 
 <title>Satoshium Attestor Attestation Generation</title>
-<meta name="description" content="Satoshium Attestor Attestation Generation defines how attestations are produced from certifications, records, events, anchors, and supporting references.">
+<meta name="description" content="Satoshium Attestor Attestation Generation — foundational requirements for forming governed, attributable Attestations from eligible inputs while preserving scope, provenance, evidence relationships, and source authority.">
 <link rel="canonical" href="https://satoshium.us/attestor/attestation-generation/">
 
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
@@ -133,14 +133,20 @@ h1{
   <h1>Satoshium Attestor Attestation Generation</h1>
 
   <p class="lead">
-    Attestation Generation defines how Attestor produces attestations from
-    certifications, records, events, anchors, and supporting references.
+    Attestation Generation defines the foundational process by which Attestor
+    forms a governed, attributable assertion from eligible inputs while preserving
+    subject, scope, evidence relationships, provenance, status, and source authority.
   </p>
 
   <p class="lead">
-    Attestor does not duplicate Certifier. It transforms referenced authority
-    into accountable trust statements.
+    Attestor does not transform another institution's canonical object into an
+    Attestation. It references eligible governed inputs and forms its own
+    Attestor assertion under Attestor rules.
   </p>
+
+  <div class="note">
+    <strong>Governing principle:</strong> Reference does not transfer authority.
+  </div>
 </section>
 
 <section class="grid">
@@ -148,34 +154,36 @@ h1{
 <article class="card">
   <h2>Purpose</h2>
   <p>
-    Attestation Generation establishes the process by which authoritative
-    records become structured attestations without transferring authority away
-    from the originating system.
+    Attestation Generation establishes the requirements that should be satisfied
+    before an Attestor assertion is formed and made available for subsequent
+    evaluation.
   </p>
 </article>
 
 <article class="card">
-  <h2>Core Relationship</h2>
+  <h2>Attestation Is the Output</h2>
   <p>
-    Certification may support an attestation, but the attestation is not the
-    certification. It is a trust statement that references certification.
+    The output of this process is an Attestation: a governed, attributable,
+    bounded assertion. A Trust Statement is a later and distinct Attestor output
+    produced through evaluation.
   </p>
 </article>
 
 <article class="card">
   <h2>Reference-Based</h2>
   <p>
-    Attestations should reference Certification Packages, SCRDs, SREGs, events,
-    anchors, and public records rather than copying their contents.
+    Eligible source objects should be referenced rather than silently duplicated.
+    Their identifiers, provenance, status, scope, relationships, and authority
+    remain distinguishable from the Attestation that relies upon them.
   </p>
 </article>
 
 <article class="card">
-  <h2>Trust Statement Output</h2>
+  <h2>No Automatic Conversion</h2>
   <p>
-    The output of attestation generation is a structured trust statement that
-    identifies what is being attested, what supports it, and where authority
-    originates.
+    A Certification Package, Registry record, Chronicle Entry, Integrity Reference,
+    Discovery Signal, or other governed input does not automatically become an
+    Attestation merely because Attestor can access or reference it.
   </p>
 </article>
 
@@ -184,17 +192,22 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Generation Sequence</h2>
+  <h2>Conceptual Generation Sequence</h2>
 
   <p>
-    Attestor follows a structured process for producing attestations from
-    authoritative references.
+    The exact machine workflow remains advanced architecture. The foundational
+    generation relationship can be expressed as:
   </p>
 
   <div class="note">
-    Certification Referenced → Evidence Reviewed → Source Records Identified →
-    Trust Statement Drafted → Attestation Produced → Public Reference Preserved
+    Purpose Established → Subject Identified → Assertion Defined → Scope Bounded →
+    Eligible Inputs Referenced → Provenance Preserved → Attestation Formed
   </div>
+
+  <p style="margin-top:16px;">
+    This sequence describes architectural requirements, not yet a normative
+    validation order or production algorithm.
+  </p>
 </article>
 
 </section>
@@ -202,50 +215,70 @@ h1{
 <section class="grid">
 
 <article class="card">
-  <h2>Certification Referenced</h2>
+  <h2>Purpose Established</h2>
   <p>
-    Attestor may begin with a certification output such as a Certification
-    Package, SCPR, SCR, SCRD, or related public certification record.
+    The reason for forming the Attestation should be sufficiently clear to
+    determine what assertion is needed and which inputs may be relevant.
   </p>
 </article>
 
 <article class="card">
-  <h2>Evidence Reviewed</h2>
+  <h2>Subject Identified</h2>
   <p>
-    Supporting evidence, metadata, public references, Registry entries,
-    Chronicle events, and Anchor references may be reviewed for context.
+    The subject of the Attestation should be identifiable within the applicable
+    model so the assertion is not detached from the thing, record, relationship,
+    condition, or event to which it applies.
   </p>
 </article>
 
 <article class="card">
-  <h2>Source Records Identified</h2>
+  <h2>Assertion Defined</h2>
   <p>
-    Attestor identifies the source systems and records that support the
-    attestation so authority remains traceable.
+    The Attestation should state the bounded proposition being asserted rather
+    than merely restating or copying the contents of a source object.
   </p>
 </article>
 
 <article class="card">
-  <h2>Trust Statement Drafted</h2>
+  <h2>Scope Bounded</h2>
   <p>
-    A trust statement is drafted to express what is being attested and which
-    authoritative records support the statement.
+    The assertion should preserve the conditions and limitations within which it
+    applies. The exact scope fields remain part of advanced Attestor architecture.
   </p>
 </article>
 
 <article class="card">
-  <h2>Attestation Produced</h2>
+  <h2>Eligible Inputs Referenced</h2>
   <p>
-    The attestation is produced as an accountable statement referencing the
-    records, systems, identities, or artifacts that support it.
+    Evidence and authoritative references relevant to the assertion may be
+    associated only as permitted by Attestor eligibility rules. Technical
+    availability alone does not establish eligibility.
   </p>
 </article>
 
 <article class="card">
-  <h2>Public Reference Preserved</h2>
+  <h2>Provenance Preserved</h2>
   <p>
-    The generated attestation may be published, referenced, indexed, discovered,
-    anchored, or cataloged by other Suite systems.
+    The origin, attribution, source relationships, relevant state, and authority
+    of supporting inputs should remain traceable through the Attestation.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Attesting Authority Attributed</h2>
+  <p>
+    The Attestation should identify who or what stands behind the assertion under
+    the eventual Attestor authority model. The final attesting-authority model
+    remains unresolved.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Attestation Formed</h2>
+  <p>
+    Once the required assertion, scope, attribution, eligible references, and
+    provenance conditions are satisfied, an Attestation may be formed under the
+    rules and validation requirements established by advanced architecture.
   </p>
 </article>
 
@@ -254,15 +287,41 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>What Attestation Generation Uses</h2>
+  <h2>Potential Governed Inputs</h2>
 
   <p>
-    Attestation Generation may rely on multiple Suite objects and references
-    without taking ownership of them.
+    Attestation Generation may eventually accept eligible inputs from across the
+    Satoshium Suite and other governed sources. Their inclusion depends upon
+    relevance and future eligibility rules.
   </p>
 
   <div class="note">
-    Certification Package · SCPR · SCR · SCRD · SREG · Chronicle Event · Anchor Reference · Beacon Signal
+    Atlas Intelligence · Navigator Workflow Context · Certification Package ·
+    Satoshium Registry Record · Chronicle Entry · Integrity Reference ·
+    Discovery Signal / Discovery Metadata · Other Eligible Governed Sources
+  </div>
+
+  <p style="margin-top:16px;">
+    These are potential inputs, not mandatory ingredients and not an adopted
+    generation checklist.
+  </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Attestation Generation Is Not Trust Statement Generation</h2>
+
+  <p>
+    An Attestation expresses a governed assertion. A Trust Statement expresses
+    Attestor's bounded conclusion after applicable evaluation. The two objects
+    should not be collapsed into a single generation step.
+  </p>
+
+  <div class="note">
+    Eligible Inputs → Attestation → Attestor Evaluation → Trust Statement
   </div>
 </article>
 
@@ -274,13 +333,19 @@ h1{
   <h2>What Attestation Generation Does Not Do</h2>
 
   <p>
-    Attestation Generation does not certify a subject, issue a certification,
-    create Registry status, preserve historical events, anchor artifacts, or
-    publish discovery signals.
+    Attestation Generation does not issue a certification, register a record,
+    preserve a Chronicle Entry, establish an Anchor Integrity Reference, create a
+    Beacon Discovery Signal, or otherwise assume another institution's canonical
+    responsibility.
+  </p>
+
+  <p>
+    It also does not determine universal truth or automatically produce a Trust
+    Statement.
   </p>
 
   <div class="note">
-    Certifier certifies. Attestor attests.
+    Source authority remains with the source. Attestor owns the Attestation it forms.
   </div>
 </article>
 
@@ -289,17 +354,18 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Generation Philosophy</h2>
+  <h2>Advanced Generation Architecture</h2>
 
   <p>
-    A strong attestation is valuable because it is accountable, traceable, and
-    supported by references to authoritative records.
+    Advanced Attestor work should establish the exact generation trigger, required
+    fields, Attestation identifiers, attesting-authority model, type controls,
+    evidence eligibility, provenance requirements, validation sequence, lifecycle
+    state, publication behavior, correction relationships, and machine schemas.
   </p>
 
   <p>
-    The goal is not to recreate the certification. The goal is to produce a
-    clear trust statement that can be understood, reviewed, and connected to
-    its supporting authority.
+    This foundational page establishes the architectural boundary without
+    prematurely declaring those machine rules.
   </p>
 
   <a class="btn" href="/attestor/">
@@ -314,7 +380,7 @@ h1{
 <div class="wrap reflection">
   <hr>
   <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    Certification establishes authority. Attestation expresses accountable trust.
+    An Attestation should say what is asserted, who stands behind it, where it applies, and what governed inputs support it.
   </div>
   <hr>
   <div id="footer-container"></div>
