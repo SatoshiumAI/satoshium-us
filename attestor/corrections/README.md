@@ -1,276 +1,164 @@
-# Corrections
+# Satoshium Attestor — Corrections
+
+## Page
+
+`/attestor/corrections/`
 
 ## Purpose
 
-Corrections provide a structured mechanism for addressing inaccuracies, omissions, ambiguities, inconsistencies, or outdated information associated with attestations.
+This page establishes the foundational role of **Corrections** within Satoshium Attestor.
 
-The purpose of corrections is not to erase history, but to improve clarity, accuracy, transparency, and accountability while preserving an auditable record of change.
+Corrections provide governed mechanisms for addressing errors, clarifications, withdrawals, supersession, and other changes affecting Attestor's own Attestations and Trust Statements.
 
-Attestor recognizes that trust systems must be capable of correction if they are to remain credible over time.
+The correction architecture must preserve both the currently effective state and sufficient provenance to understand what previously existed and why it changed.
 
----
+## Authority Boundary
 
-## Why Corrections Matter
+> **Attestor corrects Attestor-owned objects.**
 
-Information evolves.
+Attestor does not correct or rewrite authoritative objects owned by other Suite institutions.
 
-Evidence may change.
+The Suite-wide principle applies:
 
-New information may emerge.
+> **Reference does not transfer authority.**
 
-Interpretations may improve.
+If a referenced source changes, Attestor may need to reconsider or update its own Attestation or Trust Statement. The originating institution remains responsible for the source object's correction and lifecycle.
 
-Mistakes may occur.
+## Required Correction Capabilities
 
-Trust systems that cannot acknowledge and document corrections risk becoming unreliable.
+The foundational page identifies several capabilities that advanced Attestor architecture must address:
 
-Corrections help preserve confidence in the integrity of the system.
+- correction;
+- clarification;
+- withdrawal;
+- supersession;
+- provenance of change;
+- historical traceability.
 
----
+These are architectural concerns, not yet final machine values or lifecycle states.
 
-## Correction Philosophy
+## No Separate Correction Record Yet
 
-Corrections should improve understanding without obscuring history.
+The pre-Suite page proposed future **Correction Records**.
 
-Whenever possible:
+This reconciliation does not establish a Correction Record as another canonical Attestor object.
 
-* Original attestations should remain visible.
-* Corrections should be documented.
-* Changes should be attributable.
-* Historical context should be preserved.
+Attestor's canonical responsibility remains:
 
-Transparency is generally preferable to silent modification.
+**Attestor → Trust Statement**
 
----
+Correction may ultimately be represented through:
 
-## What Can Be Corrected?
+- lifecycle state;
+- versioning;
+- explicit relationships;
+- replacement Attestations;
+- replacement Trust Statements;
+- another governed mechanism demonstrated to be necessary during advanced architecture.
 
-Corrections may apply to:
+No implementation is adopted here.
 
-* Attestations
-* Claims
-* Identity references
-* Supporting evidence
-* Source references
-* Metadata
-* Timestamps
-* Relationship records
+## Correction Attestations
 
-Additional correction categories may emerge over time.
+The pre-Suite page also proposed **Correction Attestations**.
 
----
+That mechanism is not adopted at this stage.
 
-## Types of Corrections
+The Attestation Types reconciliation already left open whether correction and supersession should be represented as an Attestation Type or through lifecycle/versioning architecture. This page preserves that question rather than resolving it prematurely.
 
-### Administrative Corrections
+## Current State vs Historical State
 
-Corrections addressing formatting, metadata, identifiers, or clerical issues.
+A correction system should distinguish:
 
-Examples:
+- the currently effective Attestor state; and
+- historically relevant prior states.
 
-* Typographical errors
-* Formatting issues
-* Incorrect identifiers
-* Metadata updates
+A prior Attestation or Trust Statement may remain traceable without remaining current or effective.
 
----
+Conceptually:
 
-### Evidence Corrections
+`Prior State → Governed Change → Current State`
 
-Corrections related to supporting evidence.
+Provenance and relationships should remain visible across the transition.
 
-Examples:
+## Provenance of Change
 
-* Missing evidence
-* Updated evidence
-* Incorrect references
-* Additional documentation
+Advanced architecture should preserve enough information to determine, as applicable:
 
----
+- what changed;
+- why it changed;
+- who or what authorized the change;
+- when the change occurred;
+- which Attestor object or version was affected;
+- what object or state replaced it;
+- the relationship between prior and current states.
 
-### Attribution Corrections
+The exact required fields remain unresolved.
 
-Corrections involving the identity of the attestor or referenced parties.
+## Changes in Referenced Sources
 
-Examples:
+If a referenced authoritative source changes, Attestor should not rewrite that source.
 
-* Incorrect attribution
-* Identity updates
-* Relationship clarification
+Depending on Attestor rules and the significance of the change, Attestor may instead:
 
----
+- leave the existing Attestation or Trust Statement unchanged if the change is immaterial;
+- clarify its own object;
+- correct its own object;
+- withdraw its own object;
+- supersede its own object with a new evaluation.
 
-### Attestation Corrections
+The exact decision rules are deferred to advanced architecture.
 
-Corrections affecting the substance of an attestation.
+## Historical Traceability
 
-Examples:
+The June-era principle that corrections should improve understanding without erasing history is preserved, but expressed more precisely.
 
-* Clarifications
-* Amendments
-* Retractions
-* Revisions
+Historical traceability should coexist with a clear current state. Preserving a superseded or withdrawn object does not mean presenting it as currently effective.
 
----
+Retention, public visibility, and publication behavior remain to be defined.
 
-### Historical Corrections
+## Reconciliation Notes
 
-Corrections involving dates, timelines, events, or historical context.
+This revision updates the June-era pre-Suite Corrections page.
 
-Examples:
+Major changes include:
 
-* Incorrect dates
-* Missing chronology
-* Updated historical information
+- replacing broad trust/accountability language with governed Attestor correction responsibilities;
+- limiting Attestor correction authority to Attestor-owned objects;
+- removing the assumption that a separate Correction Record will exist;
+- removing Correction Attestations as a planned mechanism;
+- distinguishing correction, clarification, withdrawal, and supersession as separate architectural concerns;
+- adding provenance-of-change requirements;
+- distinguishing current state from historical state;
+- establishing treatment for changes in referenced authoritative sources;
+- replacing `Original Record → Correction → Historical Context → Trust` with a lifecycle-oriented model;
+- preserving Attestor's canonical Trust Statement responsibility;
+- avoiding premature lifecycle values, version identifiers, schemas, and validation rules.
 
----
+## Deferred to Advanced Architecture
 
-## Correction Lifecycle
+The following remain intentionally unresolved:
 
-### Identification
+- correction triggers;
+- correction authorization;
+- whether correction is an Attestation Type;
+- whether corrections create replacement Attestations;
+- whether corrected Trust Statements are versioned or replaced;
+- lifecycle state vocabulary;
+- withdrawal semantics;
+- supersession semantics;
+- versioning model;
+- relationship identifiers;
+- correction validation rules;
+- publication behavior;
+- historical retention rules;
+- public visibility of prior states;
+- correction of unpublished objects;
+- handling changes in referenced sources;
+- schemas;
+- conformance tests and reference vectors.
 
-A potential issue is identified.
+## Files
 
-### Review
-
-The issue is evaluated.
-
-### Documentation
-
-The correction is recorded.
-
-### Publication
-
-The correction becomes visible.
-
-### Preservation
-
-Both the original record and correction history are preserved.
-
----
-
-## Retractions
-
-In some cases an attestation may be withdrawn.
-
-A retraction differs from a correction.
-
-A correction modifies understanding.
-
-A retraction withdraws support for a statement.
-
-Whenever possible:
-
-* Retractions should remain visible.
-* Historical context should be preserved.
-* Reasons should be documented.
-
----
-
-## Correction Records
-
-Correction records may include:
-
-* Original record reference
-* Correction identifier
-* Date of correction
-* Responsible party
-* Description of change
-* Supporting evidence
-* Correction status
-
-These records help support transparency and auditability.
-
----
-
-## Relationship to Attestations
-
-Corrections do not replace attestations.
-
-Corrections provide additional context regarding attestations.
-
-A simplified relationship may be represented as:
-
-```text
-Attestation → Correction
-```
-
-Attestations remain part of the historical record.
-
-Corrections help clarify understanding.
-
----
-
-## Relationship to Chronicle
-
-Chronicle preserves historical information.
-
-Corrections recorded within Attestor may also become part of the historical record maintained by Chronicle.
-
-This helps preserve the evolution of understanding over time.
-
----
-
-## Relationship to Registry
-
-Registry may maintain references to correction records.
-
-Attestor may create correction records that can be cataloged and referenced throughout the ecosystem.
-
----
-
-## Relationship to Trust
-
-Trust systems require accountability.
-
-The ability to acknowledge, document, and preserve corrections may contribute to trust.
-
-Corrections should not be viewed as failures.
-
-Responsible correction practices often strengthen credibility.
-
----
-
-## Guiding Principles
-
-### Transparency
-
-Corrections should remain visible.
-
-### Accountability
-
-Responsible parties should be identifiable whenever possible.
-
-### Traceability
-
-Changes should support historical review.
-
-### Preservation
-
-Original records should remain preserved whenever practical.
-
-### Integrity
-
-Corrections should seek to improve understanding rather than obscure information.
-
----
-
-## Long-Term Vision
-
-As Attestor evolves, corrections may become an important mechanism for maintaining trustworthy records, preserving historical transparency, and documenting the evolution of knowledge, evidence, and understanding.
-
-A healthy trust system should be capable of saying:
-
-```text
-We learned something new.
-```
-
-and preserving that fact openly.
-
----
-
-## Status
-
-Correction standards are currently under development.
-
-This document defines conceptual principles rather than finalized operational specifications.
+- `index.html` — public Corrections page.
+- `README.md` — repository documentation for the Corrections page.
