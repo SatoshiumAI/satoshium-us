@@ -1,49 +1,71 @@
-# Correction Attestation Template — Foundational Candidate
+# Governed Correction / Change Template — Advanced Architecture
 
 ## Purpose
-This candidate template preserves the June correction structure without prematurely establishing **Correction Attestation** as a separate canonical object class.
+Operational worksheet for documenting governed change to an Attestor-owned Attestation or Trust Statement.
 
-The foundational architecture has left open whether correction is an Attestation Type, lifecycle/versioning operation, governed-change profile, or some combination.
+**Correction is not established as a separate canonical Attestor object class.**
 
-## Foundational Boundary
-**Attestor corrects Attestor-owned objects.**
+Correction explains why a governed change occurs. Versioning determines how canonical identity behaves across that change.
 
-Attestor does not correct another institution's canonical object.
+`Correction ≠ Version`
 
-## Candidate Template
+## Template
 ```yaml
-change_identifier:
-change_type:
-status:
+target_object:
+  canonical_identifier:
+  object_type:
+  current_version_identity:
+  current_lifecycle_state:
 
-target_attestation:
-responsible_authority:
-subject:
+change:
+  reason:
+  summary:
+  requested_or_identified_at:
+  responsible_attestor_context:
 
-change_summary:
-prior_assertion:
-revised_assertion:
-reason:
+materiality_review:
+  essential_meaning_changed:
+  scope_materially_changed:
+  assertion_or_conclusion_materially_changed:
+  evaluation_basis_materially_changed:
+  determination:
 
-evidence_references:
-source_references:
-governed_references:
+prior_state_reference:
+proposed_state_reference:
+
 provenance:
+relationships: []
 
-change_date:
-effective_date:
+result:
+  action:
+  resulting_canonical_identifier:
+  resulting_version_identity:
+  resulting_lifecycle_state:
+  supersedes_reference:
+  corrects_reference:
 
-limitations:
+limitations: []
 notes:
 ```
+
+## Governing Decision
+Bounded/non-substantive correction may preserve canonical identity through a governed version.
+
+Material change to essential institutional meaning requires a new canonical object.
+
+For a Trust Statement, a materially different conclusion requires a new `TRST-YYYY-NNNN`.
+
+For an Attestation, a materially different assertion requires a new `ATT-YYYY-NNNN`.
 
 ## Historical Integrity
 `Prior State → Governed Change → Current State`
 
-The prior state should remain traceable rather than silently overwritten.
+No silent overwrite.
 
-## Candidate Semantics
-Administrative correction, clarification, amendment, evidence update, attribution update, historical update, and retraction remain candidate concepts only.
+## Authority Boundary
+Attestor corrects Attestor-owned objects only. Another Suite institution governs correction of its own canonical objects.
+
+**Reference does not transfer authority.**
 
 ## Status
-Foundational candidate template. The final correction/lifecycle architecture remains Advanced Architecture.
+Advanced governed-change worksheet; not an independent canonical object schema.
