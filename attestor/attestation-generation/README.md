@@ -1,274 +1,196 @@
 # Satoshium Attestor — Attestation Generation
 
 ## Page
-
 `/attestor/attestation-generation/`
 
 ## Purpose
-
-This page establishes the foundational architecture for **forming an Attestation** within Satoshium Attestor.
+This page defines the governed architecture for forming a canonical **Attestation** within Satoshium Attestor.
 
 An Attestation is a governed, attributable, bounded assertion.
 
-Attestation Generation therefore concerns how such an assertion is formed from eligible inputs while preserving:
-
+Attestation Generation concerns formation of that assertion from eligible governed inputs while preserving:
 - purpose;
 - subject;
 - assertion;
+- Attestation Type;
 - scope;
-- attribution;
-- evidence relationships;
+- Attesting Authority;
+- eligible governed references;
 - provenance;
-- source state;
+- relevant source state;
+- relationships;
+- lifecycle context;
 - source authority.
 
-It does **not** define Trust Statement generation.
+It does **not** collapse Attestation formation into Trust Statement generation.
 
 ## Governing Principle
-
 > **Reference does not transfer authority.**
 
-Attestor may reference authoritative objects produced by other institutions without transforming those objects into Attestor-owned authority.
-
-## Critical Object Distinction
-
-The June-era page blurred **Attestation** and **Trust Statement**.
-
-It stated both that the output of attestation generation was a structured Trust Statement and that an Attestation was itself a Trust Statement referencing certification.
-
-That distinction is not carried forward.
-
-The reconciled architecture is:
-
-`Eligible Inputs → Attestation → Attestor Evaluation → Trust Statement`
+## Canonical Model
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
 ### Attestation
-
-A governed, attributable, bounded assertion.
+A governed, attributable assertion.
 
 ### Trust Statement
+A governed, attributable, bounded Attestor conclusion.
 
-Attestor's canonical institutional output: a governed, attributable, bounded conclusion produced through Attestor evaluation.
+## Canonical Identifier
+A canonical Attestation uses:
 
-The Attestation participates in the evaluation.
+`ATT-YYYY-NNNN`
 
-It is not itself the final Trust Statement.
+The identifier is assigned at canonical creation and is not reused or reassigned.
 
-## No Automatic Source-to-Attestation Conversion
+Canonical identity and version identity remain distinct.
 
-The old page described authoritative records as becoming structured Attestations.
+## Adopted Attestation Types
+- `identity`
+- `evidence`
+- `source-provenance`
+- `verification-related`
+- `relationship-condition`
+- `correction-supersession`
 
-The reconciled model does not treat source objects this way.
+The Attestation Type classifies the assertion. It does not transfer source authority or predetermine an Evaluation Outcome.
 
-A source object remains its own canonical object.
+## Generation Sequence
+The established institutional formation sequence is:
 
-Examples include:
+`Purpose Established → Subject Identified → Assertion Defined → Scope Bounded → Eligible Inputs Referenced → Provenance Preserved → Attesting Authority Attributed → Attestation Formed`
 
-- Atlas intelligence;
-- Certification Package;
-- Satoshium Registry Record;
-- Chronicle Entry;
-- Anchor Integrity Reference;
-- Beacon Discovery Signal;
-- Beacon Discovery Metadata.
+This is the governed institutional path.
 
-An Attestation may reference an eligible source object.
+Exact executable validation order, machine serialization, duplicate-detection mechanics, and production procedures remain implementation work.
 
-The source object does not become the Attestation.
+## Purpose Established
+The purpose for forming the Attestation must be sufficiently clear to determine the assertion, scope, and relevant potential inputs.
 
-## Conceptual Generation Sequence
+## Subject Identified
+The subject must be identifiable within the applicable governed context.
 
-The foundational sequence is:
+## Assertion Defined
+The Attestation states the bounded proposition being asserted rather than silently copying a source object.
 
-`Purpose Established → Subject Identified → Assertion Defined → Scope Bounded → Eligible Inputs Referenced → Provenance Preserved → Attestation Formed`
+## Scope Bounded
+Scope preserves the conditions and limitations within which the assertion applies.
 
-The page also recognizes attribution of the **Attesting Authority** as a foundational requirement, while leaving the final authority model unresolved.
+## Eligible Inputs Referenced
+Potential inputs are admitted through the established Eligibility architecture.
 
-This sequence is conceptual.
+> **Availability ≠ Eligibility**
 
-It does not establish a normative validation order or production algorithm.
+> **Authority ≠ Eligibility**
 
-## Generation Requirements
+> **Reference ≠ Eligibility**
 
-### Purpose Established
+## Provenance Preserved
+Applicable provenance is preserved using the adopted modes:
+- `direct`
+- `referenced`
+- `derived`
 
-The reason for forming the Attestation should be sufficiently clear to determine the assertion and relevant inputs.
+The source or origin, derivation basis where applicable, relevant source state, and material limitations remain traceable.
 
-Whether “purpose” becomes a machine field remains unresolved.
+## Attesting Authority Attributed
+The Attestation identifies the **Attesting Authority** responsible for the governed assertion.
 
-### Subject Identified
+Attesting Authority remains distinct from:
+- Referenced Authority;
+- Attestor Authority.
 
-The subject should be identifiable within the applicable model.
+> **Attribution ≠ Adoption**
 
-The final subject model remains unresolved.
+## Attestation Formed
+Once applicable structural, type, scope, authority, provenance, eligibility, and relationship requirements are satisfied, an Attestation may be canonically created and assigned an `ATT-YYYY-NNNN`.
 
-### Assertion Defined
+Canonical creation does not itself establish:
+- `active` Lifecycle State;
+- `published` Publication State;
+- a favorable Evaluation Outcome;
+- a Trust Statement.
 
-The Attestation should state the proposition being asserted.
+## Lifecycle
+Adopted Lifecycle States:
+- `draft`
+- `active`
+- `superseded`
+- `withdrawn`
+- `retired`
 
-It should not merely copy the contents of a source object.
+A newly formed Attestation begins in governed `draft` state unless a production procedure explicitly governs a different valid transition.
 
-### Scope Bounded
+Review and correction are activities rather than lifecycle states.
 
-The assertion should preserve the conditions and limitations within which it applies.
+## Publication
+Publication is separate from Attestation formation.
 
-The final scope schema remains unresolved.
+Adopted Publication States:
+- `unpublished`
+- `published`
 
-### Eligible Inputs Referenced
-
-Evidence and authoritative references may be associated only where future Attestor eligibility rules permit them.
-
-Technical availability is not eligibility.
-
-### Provenance Preserved
-
-The origin, attribution, source relationships, relevant state, and authority of supporting inputs should remain traceable.
-
-### Attesting Authority Attributed
-
-An Attestation must ultimately identify who or what stands behind the assertion.
-
-The final Attesting Authority model remains an advanced-architecture question.
-
-### Attestation Formed
-
-An Attestation may be formed once applicable generation and validation requirements are satisfied.
-
-Those exact requirements remain to be established.
+> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
 
 ## Potential Governed Inputs
-
-Potential Attestor inputs may include:
-
+Potential source classes include:
 - Atlas Authoritative Intelligence;
-- Navigator workflow context;
+- Navigator Workflow Definition / Orchestration;
 - Certifier Certification Packages;
 - Satoshium Registry Records;
 - Chronicle Entries;
 - Anchor Integrity References;
-- Beacon Discovery Signals;
-- Beacon Discovery Metadata;
+- Beacon Discovery Signals / Discovery Metadata;
 - other eligible governed sources.
 
-These are **potential inputs**, not mandatory ingredients.
+No source class is universally required merely because Attestor can reference it.
 
-No source class is made universally required by this page.
+## Source-to-Attestation Boundary
+A source object remains its own canonical object.
 
-## Certification Artifacts
+Attestor does not transform a Certification Package, Registry Record, Chronicle Entry, Integrity Reference, Discovery Signal, or other source object into an Attestation.
 
-The June page specifically named:
+The Attestation is Attestor's own governed assertion.
 
-- Certification Package;
-- SCPR;
-- SCR;
-- SCRD.
+## Validation
+Formation and Validation are distinct.
 
-Those terms are preserved as historical/current Certifier-context possibilities where recognized by Certifier architecture.
+`Attestation + Applicable Normative Requirements → Validation → Governed Validation Result`
 
-This Attestor page does not independently redefine them or establish them as mandatory Attestation inputs.
+> **Machine-readable ≠ Valid**
 
-Where a canonical Certification Package already provides the appropriate governed reference, advanced Attestor architecture should avoid unnecessary duplication of subordinate certification artifacts unless a specific evaluation requirement justifies direct reference.
+> **Validation ≠ Evaluation**
+
+> **Validation ≠ Eligibility**
+
+Exact executable validation rules and final Validation Result vocabulary remain implementation work.
 
 ## Attestation Generation vs Trust Statement Generation
+Attestation Generation forms the assertion.
 
-This is the central reconciliation.
+Rule-Constrained Evaluation evaluates the Attestation and eligible governed inputs.
 
-### Attestation Generation
+Trust Statement generation forms the bounded Attestor conclusion when applicable methodology and evaluation requirements are satisfied.
 
-Forms the governed assertion that will participate in Attestor evaluation.
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
 
-### Attestor Evaluation
+## Correction and Material Change
+`correction-supersession` is an adopted Attestation Type, but Correction remains an activity rather than a separate canonical object class.
 
-Applies Attestor rules to eligible inputs, evidence, provenance, status, scope, limitations, and the Attestation.
+A bounded revision may preserve canonical identity when essential institutional meaning remains intact.
 
-### Trust Statement Generation
+A materially changed assertion requires a new `ATT-YYYY-NNNN`.
 
-Produces Attestor's canonical conclusion when applicable evaluation requirements are satisfied.
+## Status
+**Attestation Generation Architecture → Advanced Architecture established.**
 
-The next `/attestor/true-statements/` page should therefore be reconciled as the foundational **Trust Statements** page rather than as a claim that Attestor produces universally “true” statements.
-
-## What Attestation Generation Does Not Do
-
-Attestation Generation does not:
-
-- issue a Certifier Certification Package;
-- create or modify a Satoshium Registry Record;
-- preserve a Chronicle Entry;
-- establish an Anchor Integrity Reference;
-- create a Beacon Discovery Signal or Discovery Metadata;
-- assume Atlas authority;
-- assume Navigator workflow authority;
-- determine universal truth;
-- automatically produce a Trust Statement.
-
-## Publication
-
-The June page included “Public Reference Preserved” as the final generation step and stated that a generated Attestation might be published, indexed, discovered, anchored, or cataloged.
-
-This reconciliation does not make publication part of Attestation formation.
-
-Formation and publication should remain separate concerns until advanced architecture determines:
-
-- whether Attestations are public objects;
-- whether all Attestations are publishable;
-- publication states;
-- discovery eligibility;
-- Registry relationships;
-- Anchor relationships;
-- Trust Statement publication behavior.
-
-## Reconciliation Notes
-
-Major changes include:
-
-- separating Attestation Generation from Trust Statement generation;
-- defining the Attestation as the output of this page's process;
-- removing the claim that Attestor “transforms referenced authority”;
-- removing automatic conversion of certification or other source objects into Attestations;
-- replacing the certification-first generation sequence with a source-neutral sequence;
-- adding purpose;
-- adding subject;
-- adding assertion;
-- adding scope;
-- adding input eligibility;
-- adding provenance;
-- adding Attesting Authority attribution;
-- preserving reference-based design;
-- expanding possible governed inputs across the current Suite architecture;
-- removing publication as an assumed final generation step;
-- removing the implication that Certification Packages, SCRDs, SREGs, Chronicle events, Anchor references, and Beacon signals are all required;
-- preserving exact machine generation rules for advanced architecture.
-
-## Deferred to Advanced Architecture
-
-The following remain intentionally unresolved:
-
-- generation trigger;
-- Attestation identifier format;
-- Attestation schema;
-- required and optional fields;
-- subject model;
-- Attesting Authority model;
-- Attestation Type controls;
-- purpose representation;
-- scope fields;
-- evidence eligibility;
-- source eligibility;
-- provenance fields;
-- status vocabulary;
-- initial lifecycle state;
-- validation sequence;
-- PASS/FAIL rules;
-- duplicate-detection rules;
-- correction and supersession relationships;
-- publication eligibility;
-- publication states;
-- discovery relationships;
-- Trust Statement generation criteria;
-- conformance tests;
-- reference vectors.
+Remaining work is implementation and production proof:
+- exact machine serialization;
+- executable validation;
+- duplicate-detection mechanics if required;
+- production-specific generation procedures;
+- production evidence and first-operation proof.
 
 ## Files
-
 - `index.html` — public Attestation Generation page.
-- `README.md` — repository documentation for the Attestation Generation page.
+- `README.md` — repository documentation.
