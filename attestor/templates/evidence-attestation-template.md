@@ -1,50 +1,65 @@
-# Evidence Attestation Template — Foundational Candidate
+# Evidence Attestation Template — Advanced Profile
 
 ## Purpose
-This candidate template preserves the early idea of a specialized Attestation concerning Evidence.
+Specialized authoring profile for the adopted Attestation Type:
 
-Advanced architecture must determine whether this becomes a formal Evidence-Related Attestation Type profile.
+`evidence`
 
-## Candidate Template
+It expresses a bounded assertion concerning Evidence or its relationship to a subject, assertion, or evaluation context.
+
+## Template
 ```yaml
-attestation_identifier:
-attestation_type:
+attestation_identifier: ATT-YYYY-NNNN
+attestation_type: evidence
+lifecycle_state: draft
+publication_state: unpublished
 
 attesting_authority:
+  identifier:
+  authority_context:
+
 subject:
+  identifier:
+  type:
+
 assertion:
 scope:
 
 evidence_reference:
-evidence_relationship:
+source_references: []
+governed_references: []
 
-source_references:
-governed_references:
 provenance:
+  mode:
+  source_or_origin:
+  relevant_time_or_state:
+  acquisition_or_reference_context:
+  material_limitations:
 
-status:
+relationships: []
+
 created_at:
 updated_at:
+version_identity:
 
-limitations:
+limitations: []
+uncertainty: []
 notes:
 ```
 
-## Candidate Semantics
-The June template proposed relationships such as:
-- supports;
-- partially supports;
-- contradicts;
-- neutral;
-- unclear.
+## Relationship Rule
+Use adopted Attestor relationship vocabulary where applicable:
 
-These remain useful candidate semantics but are **not adopted controlled values**.
+`supports` · `references` · `derived-from` · `evaluates` · `results-in` · `supersedes` · `corrects` · `related-to`
 
-## Evidence Boundary
-Evidence informs evaluation. An evidence-related Attestation does not automatically establish truth, verification, certification, evidence sufficiency, or a Trust Statement.
+The June-only values `partially_supports`, `contradicts`, `neutral`, and `unclear` are not promoted here as canonical relationship types.
 
-## Governing Principle
-> **Reference does not transfer authority.**
+## Boundary
+Evidence informs evaluation. An Evidence Attestation does not automatically establish truth, sufficiency, certification, verification, or a favorable Trust Statement.
+
+`supports` as a relationship is not the same as `supported` as an Evaluation Outcome.
+
+**Reference does not transfer authority.**
 
 ## Status
-Foundational candidate template. Eligibility, controlled values, validation, and final serialization remain Advanced Architecture.
+Advanced specialized Attestation profile.
