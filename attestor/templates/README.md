@@ -1,39 +1,82 @@
 # Satoshium Attestor — Templates
 
-## Path
-`/attestor/templates/`
+**Path:** `/attestor/templates/`  
+**Architecture Stage:** Advanced Architecture / Implementation Layer  
+**Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
-This directory preserves and reconciles the early Attestor template work.
 
-Templates are practical authoring aids. They should reflect adopted architecture, but they do **not** independently establish canonical objects, identifiers, controlled values, lifecycle states, or validation rules.
+This directory provides governed authoring formats derived from adopted Attestor architecture and applicable schemas/profiles.
 
-## Canonical Responsibility
-**Attestor → Trust Statement**
+Templates implement architecture. They do not create it.
 
-## Governing Principle
-> **Reference does not transfer authority.**
-
-## Foundational Relationship
-`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
-
-## Current Files
-- `attestation-template.md`
-- `evidence-attestation-template.md`
-- `source-attestation-template.md`
-- `correction-attestation-template.md`
-- `trust-signal-template.md` — retained as a legacy, non-canonical template
-- `index.html`
-
-## Important Boundary
-The June Templates README proposed templates for Evidence Records, Trust Records, Correction Records, Retraction Records, Relationship Records, reputation systems, confidence models, and trust networks. Those are not carried forward as adopted Attestor objects.
-
-Templates must follow the architecture; they must not create it.
-
-## Relationship to Schemas
 `Architecture → Schema/Profile → Template → Governed Instance`
 
-At the present stage, the schema/profile layer is still foundational/candidate architecture. Therefore these templates are also **candidate authoring profiles**, not production templates.
+## Current Files
+
+- `attestation-template.md` — core Attestation authoring template.
+- `evidence-attestation-template.md` — profile for the adopted `evidence` Attestation Type.
+- `source-attestation-template.md` — profile for the adopted `source-provenance` Attestation Type.
+- `trust-statement-template.md` — authoring template for Attestor's canonical output.
+- `correction-attestation-template.md` — governed correction/change worksheet; not a separate canonical object class.
+- `trust-signal-template.md` — legacy historical artifact; not operational.
+- `index.html` — public Templates landing page.
+
+## Governing Architecture
+
+Canonical object identities:
+
+- Attestation → `ATT-YYYY-NNNN`
+- Trust Statement → `TRST-YYYY-NNNN`
+
+Canonical Attestation Types currently include:
+
+- `identity`
+- `evidence`
+- `source-provenance`
+- `verification-related`
+- `relationship-condition`
+- `correction-supersession`
+
+Lifecycle states:
+
+- `draft`
+- `active`
+- `superseded`
+- `withdrawn`
+- `retired`
+
+Publication states:
+
+- `unpublished`
+- `published`
+
+Evaluation Outcomes:
+
+- `supported`
+- `partially-supported`
+- `not-supported`
+- `contradicted`
+- `indeterminate`
+
+## Important Boundaries
+
+Evidence and Source / Provenance templates are now specialized Attestation profiles because the corresponding Attestation Types have been adopted.
+
+Correction is not established as an independent canonical object class. The correction file is a governed change worksheet implementing Lifecycle and Versioning decisions.
+
+Trust Signal remains non-canonical and non-operational.
+
+A Trust Statement template is required because Trust Statement is Attestor's canonical institutional output.
+
+## Authority
+
+**Reference does not transfer authority.**
+
+Source objects retain source authority. Attestor retains authority for its own Attestations, evaluations, and Trust Statements.
 
 ## Status
-**Foundational template reconciliation complete. Operational templates remain deferred until Advanced Architecture establishes the necessary normative structures.**
+
+**Templates → Advanced architecture reconciled.**
+
+Final machine serialization, exact schema cardinalities, executable validation, and production-specific forms must remain aligned with the normative Schemas and Validation specifications.
