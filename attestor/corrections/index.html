@@ -12,7 +12,7 @@
 
 <title>Satoshium Attestor · Corrections</title>
 
-<meta name="description" content="Satoshium Attestor Corrections — preserving transparency, accountability, amendments, revisions, and historical integrity.">
+<meta name="description" content="Satoshium Attestor Corrections — governed correction, clarification, withdrawal, and supersession of Attestor assertions and Trust Statements while preserving provenance and historical traceability.">
 
 <link rel="canonical" href="https://satoshium.us/attestor/corrections/">
 
@@ -190,64 +190,96 @@ h1{
   <h1>Corrections</h1>
 
   <p class="lead">
-    Corrections preserve accountability, transparency, and historical integrity
-    by documenting amendments, clarifications, revisions, and retractions.
+    Corrections provide governed mechanisms for addressing errors, clarifications,
+    withdrawals, supersession, and other changes affecting Attestor's own
+    Attestations and Trust Statements.
   </p>
 
   <p class="lead">
-    Trust is strengthened not by never making mistakes,
-    but by openly correcting them.
+    A correction should change the current interpretation or status of an Attestor
+    object without silently erasing what previously existed, why it changed, or who
+    authorized the change.
   </p>
+
+  <div class="note">
+    <strong>Authority boundary:</strong> Attestor corrects Attestor-owned objects.
+    It does not correct authoritative objects owned by other Suite institutions.
+  </div>
 
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>Correction Records</h2>
+  <h2>Correction</h2>
 
   <p>
-    Future correction records may document changes
-    to attestations, evidence references, trust signals,
-    source records, and related trust information.
+    A correction addresses an identified error in an Attestor assertion or Trust
+    Statement while preserving the relationship between the prior and corrected
+    state.
   </p>
 
-  <span class="status">Future</span>
+  <span class="status">Required Capability</span>
 </article>
 
 <article class="card">
-  <h2>Correction Attestations</h2>
+  <h2>Clarification</h2>
 
   <p>
-    Correction attestations may provide formal mechanisms
-    for revising, clarifying, or retracting previously issued statements.
+    A clarification may refine wording, scope, context, or interpretation without
+    necessarily reversing the underlying Attestor conclusion. The architecture must
+    distinguish clarification from substantive correction.
   </p>
 
-  <span class="status">Planned</span>
+  <span class="status">Lifecycle Concern</span>
 </article>
 
 <article class="card">
-  <h2>Revision History</h2>
+  <h2>Withdrawal</h2>
 
   <p>
-    Historical revisions may remain visible
-    to support transparency and preserve
-    the evolution of trust-related records.
+    An Attestation or Trust Statement may require withdrawal when Attestor can no
+    longer stand behind the assertion or conclusion under its governing rules.
+    Withdrawal should remain attributable and historically traceable.
   </p>
 
-  <span class="status">Conceptual</span>
+  <span class="status">Lifecycle Concern</span>
 </article>
 
 <article class="card">
-  <h2>Retractions</h2>
+  <h2>Supersession</h2>
 
   <p>
-    Formal retraction mechanisms may allow
-    statements to be withdrawn while preserving
-    their place within the historical record.
+    A later Attestor object may supersede an earlier one when new evidence, changed
+    conditions, corrected information, or a new evaluation produces a replacement
+    state. The relationship between versions must remain explicit.
   </p>
 
-  <span class="status">Exploratory</span>
+  <span class="status">Lifecycle Concern</span>
+</article>
+
+<article class="card">
+  <h2>Provenance of Change</h2>
+
+  <p>
+    Corrections and related changes should preserve who or what authorized the
+    change, what changed, why it changed, when it changed, and which Attestor object
+    or version was affected.
+  </p>
+
+  <span class="status">Required Principle</span>
+</article>
+
+<article class="card">
+  <h2>Historical Traceability</h2>
+
+  <p>
+    Prior states should remain traceable according to Attestor's eventual retention
+    and publication rules so reviewers can distinguish the historical record from
+    the currently effective state.
+  </p>
+
+  <span class="status">Required Principle</span>
 </article>
 
 </section>
@@ -256,21 +288,18 @@ h1{
 
 <article class="card">
 
-  <h2>Correction Philosophy</h2>
+  <h2>Correction Is Not a New Canonical Object</h2>
 
   <p>
-    Corrections should improve understanding
-    without erasing history.
-  </p>
-
-  <p>
-    Future Attestor systems may preserve both
-    original records and subsequent corrections
-    to support accountability and trust.
+    This reconciliation does not establish a separate “Correction Record” as an
+    additional Attestor canonical object. Correction may ultimately be implemented
+    through lifecycle state, versioning, relationships, replacement Attestations,
+    replacement Trust Statements, or another governed mechanism established during
+    advanced architecture.
   </p>
 
   <div class="note">
-    Original Record → Correction → Historical Context → Trust
+    Attestor's canonical responsibility remains: <strong>Trust Statement</strong>.
   </div>
 
 </article>
@@ -281,13 +310,62 @@ h1{
 
 <article class="card">
 
-  <h2>Transparency Layer</h2>
+  <h2>Correction Does Not Rewrite Source Authority</h2>
 
   <p>
-    Corrections are intended to provide a transparent
-    record of how information changes over time,
-    helping observers understand both the original
-    statement and subsequent revisions.
+    If a referenced Certification Package, Registry record, Chronicle Entry, Anchor
+    Integrity Reference, Beacon Discovery Signal or Discovery Metadata, or another
+    governed source changes, Attestor may update its own evaluation or issue a
+    correction, withdrawal, or superseding Trust Statement as appropriate.
+  </p>
+
+  <p>
+    Attestor does not alter the originating object. The source institution remains
+    responsible for its own correction and lifecycle rules.
+  </p>
+
+  <div class="note">
+    <strong>Reference does not transfer authority.</strong>
+  </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Current State and Historical State</h2>
+
+  <p>
+    Correction architecture should allow a reviewer to identify both the currently
+    effective Attestor state and the historically relevant prior state. Preserving
+    history does not require presenting a superseded or withdrawn conclusion as
+    current.
+  </p>
+
+  <div class="note">
+    Prior State → Governed Change → Current State<br>
+    Provenance and relationship remain visible across the transition.
+  </div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>Advanced Architecture Required</h2>
+
+  <p>
+    The exact correction model remains to be established. Advanced Attestor
+    architecture should determine correction triggers, lifecycle states, versioning,
+    supersession relationships, withdrawal treatment, authorization, validation,
+    publication behavior, and how corrected or superseded Trust Statements are
+    represented.
   </p>
 
   <a class="btn" href="/attestor/">
@@ -306,7 +384,7 @@ h1{
   <div id="random-saying"
        class="muted"
        style="margin-bottom:14px; max-width:760px;">
-    Trust grows when corrections remain visible.
+    A governed correction changes the current state without erasing the provenance of what came before.
   </div>
 
   <hr>
