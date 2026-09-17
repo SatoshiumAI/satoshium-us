@@ -12,7 +12,7 @@
 
 <title>Satoshium Attestor · FAQ</title>
 
-<meta name="description" content="Frequently asked questions about Satoshium Attestor, trust systems, attestations, evidence, and trust signals.">
+<meta name="description" content="Frequently asked questions about Satoshium Attestor, Attestations, Evidence, Trust Statements, authority boundaries, corrections, interoperability, and current development status.">
 
 <link rel="canonical" href="https://satoshium.us/attestor/faq/">
 
@@ -167,105 +167,185 @@ h1{
 <h1>Frequently Asked Questions</h1>
 
 <p class="lead">
-Common questions regarding Attestor, attestations,
-evidence, trust signals, reputation, corrections,
-and trust-related systems.
+Common questions about Satoshium Attestor, Attestations, Evidence,
+Trust Statements, authority boundaries, corrections, interoperability,
+and the current state of Attestor architecture.
 </p>
+
+<div class="note">
+<strong>Canonical responsibility:</strong> Attestor → Trust Statement<br>
+<strong>Governing principle:</strong> Reference does not transfer authority.
+</div>
 
 </section>
 
 <article class="card">
 <h2>What is Attestor?</h2>
 <p>
-Attestor is the trust layer of the Satoshium ecosystem.
-It explores how attestations, evidence, trust signals,
-reputation, accountability, and historical context
-may contribute to trust-related understanding.
+Attestor is the Satoshium Suite institution responsible for producing governed,
+attributable, bounded Trust Statements through evaluation of eligible inputs.
+It preserves the scope, provenance, limitations, relationships, and authority
+boundaries necessary to make those conclusions reviewable.
+</p>
+</article>
+
+<article class="card">
+<h2>What is a Trust Statement?</h2>
+<p>
+A Trust Statement is Attestor's canonical output: a governed, attributable,
+bounded conclusion produced through Attestor evaluation. It should preserve
+the basis and limits of its conclusion without replacing the authority of the
+objects it references.
 </p>
 </article>
 
 <article class="card">
 <h2>Does Attestor determine truth?</h2>
 <p>
-No. Attestor documents trust-related information.
-It preserves statements, evidence references,
-trust signals, and historical context.
-Truth remains subject to evidence, interpretation,
-and ongoing review.
+No. Attestor does not establish universal truth. It produces a bounded conclusion
+within a defined scope under Attestor rules. The conclusion should say no more
+than its eligible inputs, evidence, provenance, status, limitations, and applicable
+evaluation support.
 </p>
 </article>
 
 <article class="card">
-<h2>What is an attestation?</h2>
+<h2>What is an Attestation?</h2>
 <p>
-An attestation is a statement made by an individual,
-organization, institution, or system regarding a
-subject, claim, event, identity, or relationship.
+An Attestation is a governed, attributable, bounded assertion about a subject,
+record, relationship, condition, event, or other trust-relevant matter. An
+Attestation may participate in evaluation, but it is not itself the final
+Trust Statement.
 </p>
 </article>
 
 <article class="card">
-<h2>What is a trust signal?</h2>
+<h2>What is the difference between an Attestation and a Trust Statement?</h2>
 <p>
-A trust signal is information that may influence
-how observers evaluate credibility, reliability,
-accountability, or trust-related context.
-Trust signals inform judgment but do not determine it.
+An Attestation expresses an assertion. A Trust Statement expresses Attestor's
+conclusion after applicable rule-constrained evaluation. The two are related
+but distinct Attestor objects.
+</p>
+<div class="note">
+Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement
+</div>
+</article>
+
+<article class="card">
+<h2>What role does Evidence play?</h2>
+<p>
+Evidence provides supporting material or authoritative references used to
+evaluate an Attestation and support a Trust Statement. Evidence informs a
+conclusion; it does not become proof merely because Attestor references it.
+Its provenance, relevance, scope, status, limitations, and source authority
+should remain visible where applicable.
 </p>
 </article>
 
 <article class="card">
-<h2>What role does evidence play?</h2>
+<h2>What is a trust signal in Attestor?</h2>
 <p>
-Evidence provides supporting information that may
-contribute to attestations, verification activities,
-trust evaluations, and historical understanding.
+“Trust signal” remains descriptive language for trust-relevant evaluation
+context. It is not presently established as a separate canonical Attestor
+object, controlled record type, reputation score, or automatic trust indicator.
+It must not be confused with Beacon's canonical Discovery Signals.
 </p>
 </article>
 
 <article class="card">
 <h2>How does Attestor relate to Certifier?</h2>
 <p>
-Certifier focuses on verification.
-Attestor focuses on trust.
-Verification outcomes may contribute trust signals,
-but verification and trust remain separate concepts.
+Certifier owns the Certification Package and certification process. Attestor may
+reference a Certification Package as an authoritative input when relevant and
+eligible, but it does not certify or recertify the subject. Certifier retains
+authority over the certification; Attestor retains authority over its own
+Trust Statement.
 </p>
 </article>
 
 <article class="card">
 <h2>How does Attestor relate to Anchor?</h2>
 <p>
-Anchor manages identity.
-Attestor manages trust-related information associated
-with identities, claims, records, and relationships.
+Anchor owns the Integrity Reference. Attestor may reference an Anchor Integrity
+Reference when integrity context is relevant to an evaluation, but Attestor does
+not establish or redefine Anchor's integrity determination.
 </p>
 </article>
 
 <article class="card">
-<h2>Can records be corrected?</h2>
+<h2>How does Attestor relate to Beacon?</h2>
 <p>
-Yes. Transparency requires the ability to document
-corrections, clarifications, amendments, and retractions
-while preserving historical context whenever practical.
+Beacon owns Discovery Signals and Discovery Metadata. Attestor may reference
+those objects when discovery context is relevant, but it does not create or
+redefine Beacon's canonical discovery architecture.
 </p>
 </article>
 
 <article class="card">
-<h2>Will Attestor use reputation systems?</h2>
+<h2>Can Attestor reference Registry and Chronicle records?</h2>
 <p>
-Potentially. Reputation frameworks remain exploratory.
-Future implementations may document reputation-related
-signals while preserving transparency and accountability.
+Yes, when they are relevant and eligible. Registry retains authority over
+Satoshium Registry records, and Chronicle retains authority over Chronicle
+Entries. Attestor may use those objects as governed references without
+assuming their institutional authority.
+</p>
+</article>
+
+<article class="card">
+<h2>What does “Reference does not transfer authority” mean?</h2>
+<p>
+It means that Attestor may rely upon or reference an object governed elsewhere
+without becoming the authority for that object. The source institution remains
+authoritative for its canonical object; Attestor is responsible for how the
+eligible reference participates in its own evaluation and Trust Statement.
+</p>
+</article>
+
+<article class="card">
+<h2>Can Attestor-owned information be corrected?</h2>
+<p>
+Yes. Attestor requires governed mechanisms for addressing errors, clarifications,
+withdrawals, supersession, and other changes affecting its own Attestations and
+Trust Statements while preserving provenance and historical traceability. The
+exact lifecycle mechanics remain advanced architecture.
+</p>
+</article>
+
+<article class="card">
+<h2>Does Attestor maintain a reputation system or trust score?</h2>
+<p>
+Not under the current foundational architecture. Reputation is not established
+as an Attestor canonical object, and Attestor does not presently define an
+automatic trust score. Its canonical output is the bounded Trust Statement.
+</p>
+</article>
+
+<article class="card">
+<h2>Are Trust Statements automatically public?</h2>
+<p>
+Not yet determined. Traceability is foundational, but publication eligibility,
+visibility, publication states, Registry relationships, Beacon discovery
+relationships, and Anchor relationships remain matters for advanced architecture.
 </p>
 </article>
 
 <article class="card">
 <h2>Is Attestor operational?</h2>
 <p>
-Not yet. Attestor is currently in its foundational phase,
-focused on documentation, architecture, schemas,
-standards, and interoperability planning.
+Not yet. Attestor is completing foundational reconciliation. Advanced schemas,
+controlled values, evaluation rules, lifecycle architecture, validation,
+conformance, and a governed first production Trust Statement remain ahead.
+</p>
+</article>
+
+<article class="card">
+<h2>What remains to be designed?</h2>
+<p>
+Advanced Attestor architecture still needs to establish identifiers, schemas,
+controlled values, Attestation Types, subject and authority models, scope fields,
+evidence eligibility, evaluation and sufficiency rules, uncertainty representation,
+lifecycle states, validation behavior, publication rules, conformance tests,
+reference vectors, and production procedures.
 </p>
 </article>
 
@@ -273,16 +353,16 @@ standards, and interoperability planning.
 
 <article class="card">
 
-<h2>Frequently Asked Principle</h2>
+<h2>Foundational Principle</h2>
 
 <p>
-Trust is rarely created by a single statement.
-It emerges from evidence, transparency,
-accountability, history, and context.
+Attestor does not manufacture trust from a sequence of signals. It forms governed
+Attestations, evaluates eligible inputs under bounded rules, and produces Trust
+Statements whose basis, scope, limitations, provenance, and authority remain visible.
 </p>
 
 <div class="note">
-Attestation → Evidence → Trust Signals → Reputation → Trust
+Governed Inputs → Attestation → Evaluation → Trust Statement
 </div>
 
 <a class="btn" href="/attestor/">
@@ -301,7 +381,7 @@ Back to Attestor →
 <div id="random-saying"
      class="muted"
      style="margin-bottom:14px; max-width:760px;">
-Trust grows through transparency, not certainty.
+A Trust Statement should remain reviewable because its conclusion, basis, scope, limitations, provenance, and authority remain visible.
 </div>
 
 <hr>
