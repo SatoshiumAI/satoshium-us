@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Provenance</title>
+<meta name="description" content="The Satoshium Attestor Provenance architecture defining provenance requirements for Attestations, governed inputs, evaluation, and Trust Statements.">
+<link rel="canonical" href="https://satoshium.us/attestor/provenance/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Provenance</h1>
+<p class="lead">The Attestor Provenance architecture defines the information and lineage that must remain traceable across <strong>Attestations</strong>, <strong>eligible governed inputs</strong>, <strong>evaluation</strong>, and resulting <strong>Trust Statements</strong>.</p>
+<p class="lead">Provenance allows Attestor to show not merely what conclusion it produced, but where the material basis came from, how that basis entered the process, and how the conclusion remains connected to it over time.</p>
+<div class="note"><strong>Provenance chain:</strong> Source / Origin → Governed Input → Attestation → Rule-Constrained Evaluation → Trust Statement</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Attestation Provenance</h2><p>An Attestation must preserve enough provenance to identify where its assertion originated, who or what stands behind it, how it entered Attestor, and which governed references materially support it. Provenance remains distinct from the assertion itself.</p></article>
+<article class="card"><h2>Input Provenance</h2><p>Every material input used in evaluation must remain traceable to its source or derivation path. Attestor must preserve source identity, source identifier where available, provenance mode, relevant state or time, and the relationship between the input and the evaluation.</p></article>
+<article class="card"><h2>Evaluation Provenance</h2><p>Attestor must preserve the governed basis of an evaluation: which Attestation was evaluated, which eligible inputs were considered, which rules or methodology governed the assessment, and enough process context to make the resulting conclusion reviewable.</p></article>
+<article class="card"><h2>Trust Statement Provenance</h2><p>A Trust Statement must remain traceable to the Attestation, eligible governed inputs, evaluation basis, and Attestor process that produced it. Publication or later lifecycle change must not sever that provenance chain.</p></article>
+<article class="card"><h2>Direct Provenance</h2><p><strong>direct</strong> provenance applies when Attestor receives or resolves an input directly from the authoritative or originating source context being referenced. Direct provenance describes the path of acquisition; it does not make the content automatically sufficient or correct.</p></article>
+<article class="card"><h2>Referenced Provenance</h2><p><strong>referenced</strong> provenance applies when an Attestor object identifies and relies upon an existing governed source through an explicit reference rather than reproducing or taking ownership of that source object.</p></article>
+<article class="card"><h2>Derived Provenance</h2><p><strong>derived</strong> provenance applies when an input, assertion, or evaluation element is produced from one or more prior governed inputs. The derivation path must remain traceable enough to identify the material sources and transformation or reasoning context.</p></article>
+<article class="card"><h2>Provenance Preservation</h2><p>Corrections, supersession, withdrawal, retirement, version changes, and publication changes must preserve historical provenance. A current object may change state, but Attestor should remain able to show the governed basis and lineage of prior states where required.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Minimum Provenance Context</h2>
+<p>The exact machine fields are reserved for Schemas, but every material provenance relationship must be capable of preserving enough context to identify and interpret its origin and use. Not every field applies identically to every source, but omission must not make the lineage materially ambiguous.</p>
+<div class="note">Source / Origin Identity<br>Source Identifier or Stable Reference, when available<br>Provenance Mode<br>Attesting or Source Authority Context<br>Relevant Time / State<br>Acquisition or Reference Context<br>Relationship to Attestation / Evaluation<br>Derivation Basis, when applicable<br>Material Limitations<br>Historical Lineage, when applicable</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Controlled Provenance Modes</h2>
+<p>The Controlled Values architecture established three initial provenance modes. This page now defines their conceptual use while leaving exact serialization and validation requirements to later architecture.</p>
+<div class="note"><strong>direct</strong> → obtained or resolved directly from the authoritative/originating source context<br><br><strong>referenced</strong> → connected to an existing governed source through an explicit reference<br><br><strong>derived</strong> → produced from one or more prior governed inputs through a traceable derivation path</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Provenance Across Evaluation</h2>
+<p>Evaluation must not become a provenance break. The Trust Statement should remain connected backward through the Attestor evaluation to the Attestation and material eligible inputs considered. Where an input is excluded, conflicting, superseded, or otherwise materially affects interpretation, the evaluation record must preserve enough context for that treatment to be reviewable.</p>
+<div class="note">Trust Statement → traces to → Evaluation Basis<br>Evaluation Basis → traces to → Attestation + Material Eligible Inputs<br>Attestation / Inputs → trace to → Source / Origin<br><br>Evaluation transforms institutional meaning; it does not erase lineage.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Source State at Evaluation</h2>
+<p>Because governed source objects may change after evaluation, Attestor must preserve enough provenance to distinguish the source state evaluated from a later source state. A current source representation must not silently replace the historical basis on which an earlier Trust Statement was produced.</p>
+<div class="note">Source State at Evaluation → Preserved or resolvable<br>Later Source State → Distinguishable<br>Historical Trust Statement Basis → Remains traceable<br>Material source change → May trigger review under later Lifecycle / Methodology rules</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Provenance and Authority</h2>
+<p>Provenance identifies lineage; Authority identifies who legitimately stands behind an assertion, source object, process, or conclusion. The two reinforce accountability but are not interchangeable. A well-documented provenance path does not create authority that the source did not possess.</p>
+<div class="note">Provenance → Where it came from and how it reached Attestor<br>Authority → Who legitimately stands behind it and within what bounds<br><br>Provenance ≠ Authority<br><strong>Reference does not transfer authority.</strong></div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Provenance and Eligibility</h2>
+<p>Traceable provenance is necessary to evaluate whether many inputs are eligible, but provenance alone does not make an input admissible. Eligibility determines whether a governed input may enter a particular evaluation based on purpose, scope, authority context, source state, relationship, and applicable rules.</p>
+<div class="note">Traceable Provenance → Supports eligibility determination<br>Eligibility → Governs admission to evaluation<br>Evaluation → Produces Attestor conclusion<br><br>Provenance ≠ Eligibility ≠ Evaluation Outcome</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Provenance Does Not Establish Truth</h2>
+<p>A complete provenance chain demonstrates traceability, not correctness. Attestor may know exactly where an assertion came from and still determine that the assertion is partially supported, not supported, contradicted, or indeterminate under the applicable evaluation rules.</p>
+<div class="note">Traceable ≠ Correct<br>Authoritative Source ≠ Automatically Eligible<br>Eligible Input ≠ Automatically Sufficient<br>Complete Provenance ≠ Favorable Trust Statement</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>The Provenance architecture establishes the lineage requirements needed to determine Eligibility and conduct reviewable Evaluation. Later Schemas and Validation architecture will formalize how these requirements are represented and tested.</p>
+<div class="note"><strong>Provenance → Established</strong><br>Attestation provenance → Required<br>Material input provenance → Required<br>Evaluation provenance → Required<br>Trust Statement provenance → Required<br>Modes → direct · referenced · derived<br>Historical lineage → Preserved where material<br>Machine representation → Deferred to Schemas<br>Production proof → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">A conclusion becomes reviewable when its path back to source, assertion, evidence, and evaluation remains intact.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
