@@ -12,7 +12,7 @@
 
 <title>Satoshium Attestor · Scope</title>
 
-<meta name="description" content="Scope of Satoshium Attestor — defining the boundaries, responsibilities, and limitations of the trust layer.">
+<meta name="description" content="Scope of Satoshium Attestor — defining the institutional responsibilities, authority boundaries, limitations, and Suite relationships governing Attestations and Trust Statements.">
 
 <link rel="canonical" href="https://satoshium.us/attestor/scope/">
 
@@ -172,16 +172,21 @@ h1{
 <h1>Scope</h1>
 
 <p class="lead">
-The scope of Attestor defines the responsibilities,
-boundaries, and limitations of the trust layer
-within the Satoshium ecosystem.
+The scope of Attestor defines the institutional responsibility, authority
+boundaries, and limitations within which Attestations are evaluated and
+Trust Statements are produced.
 </p>
 
 <p class="lead">
-Attestor focuses on trust-related information.
-It does not replace identity, verification,
-records, discovery, or historical preservation systems.
+Attestor may reference governed information across the Satoshium Suite, but
+it does not absorb the canonical responsibilities of the institutions that
+produce or preserve those inputs.
 </p>
+
+<div class="note">
+<strong>Canonical responsibility:</strong> Attestor → Trust Statement<br>
+<strong>Governing principle:</strong> Reference does not transfer authority.
+</div>
 
 </section>
 
@@ -191,39 +196,40 @@ records, discovery, or historical preservation systems.
 <h2>Within Scope</h2>
 
 <p>
-Attestations, trust signals, evidence relationships,
-source relationships, accountability records,
-reputation context, corrections, and trust-related frameworks.
+Attestor's scope includes governed Attestations, evaluation of eligible evidence
+and authoritative references, preservation of provenance and scope, production of
+Trust Statements, and governed correction or lifecycle treatment of Attestor-owned
+objects.
 </p>
 </article>
 
 <article class="card">
-<h2>Identity Context</h2>
+<h2>Assertion Scope</h2>
 
 <p>
-Attestor may reference identities maintained by Anchor,
-but identity creation and management remain outside
-Attestor's primary responsibility.
+Attestor must preserve the boundary within which an Attestation applies. The
+subject, assertion, conditions, relevant time or context, and other applicable
+limitations should remain distinguishable wherever required by the governing model.
 </p>
 </article>
 
 <article class="card">
-<h2>Verification Context</h2>
+<h2>Evaluation Scope</h2>
 
 <p>
-Attestor may reference verification outcomes,
-but certification and verification remain the
-responsibility of Certifier.
+Attestor evaluates only the question supported by its eligible inputs and applicable
+rules. An evaluation should not silently expand beyond the evidence, provenance,
+authority, status, or conditions available to support it.
 </p>
 </article>
 
 <article class="card">
-<h2>Historical Context</h2>
+<h2>Trust Statement Scope</h2>
 
 <p>
-Attestor may use historical information,
-but historical preservation remains the
-responsibility of Chronicle.
+A Trust Statement is a bounded Attestor conclusion. Its scope and limitations must
+remain visible so that a conclusion about one subject, condition, period, or purpose
+is not interpreted as a universal judgment.
 </p>
 </article>
 
@@ -234,41 +240,82 @@ responsibility of Chronicle.
 <div class="grid">
 
 <article class="card">
-<h2>Discovery Context</h2>
+<h2>Certifier Context</h2>
 
 <p>
-Attestor may reference discovery information,
-but search and discovery functions remain
-the responsibility of Beacon.
+Attestor may reference a Certifier Certification Package as an authoritative input.
+Certifier retains authority over the certification and its canonical package.
+Attestor does not certify or recertify the subject.
 </p>
 </article>
 
 <article class="card">
-<h2>Record Context</h2>
+<h2>Registry Context</h2>
 
 <p>
-Attestor may reference structured records,
-but record management remains the responsibility
-of Registry.
+Attestor may reference a Satoshium Registry record. Registry retains authority over
+the registered record, its identifier, status, and lifecycle. Attestor does not
+register or redefine the record.
 </p>
 </article>
 
 <article class="card">
-<h2>Data Context</h2>
+<h2>Chronicle Context</h2>
 
 <p>
-Attestor may reference data and jurisdiction intelligence,
-but data collection remains the responsibility of Atlas.
+Attestor may reference a Chronicle Entry as historical or provenance-bearing
+context. Chronicle retains authority over the preserved event record. Attestor
+does not rewrite Chronicle history.
 </p>
 </article>
 
 <article class="card">
-<h2>Query Context</h2>
+<h2>Anchor Context</h2>
 
 <p>
-Attestor may benefit from future query systems,
-but query orchestration remains the responsibility
-of Navigator.
+Attestor may reference an Anchor Integrity Reference when integrity context is
+relevant. Anchor retains authority over that integrity reference. Attestor does
+not establish Anchor's integrity determination.
+</p>
+</article>
+
+<article class="card">
+<h2>Beacon Context</h2>
+
+<p>
+Attestor may reference Beacon Discovery Signals or Discovery Metadata when
+discovery context is relevant. Beacon retains authority over those discovery
+objects. Attestor does not create or redefine Beacon signals.
+</p>
+</article>
+
+<article class="card">
+<h2>Atlas Context</h2>
+
+<p>
+Attestor may reference authoritative Atlas intelligence when relevant to an
+evaluation. Atlas retains authority over its intelligence and structural record.
+Attestor does not become the originating intelligence authority.
+</p>
+</article>
+
+<article class="card">
+<h2>Navigator Context</h2>
+
+<p>
+Attestor may participate in workflows defined or orchestrated through Navigator.
+Navigator retains responsibility for workflow definition and orchestration;
+Attestor retains responsibility for its own governed evaluation and Trust Statement.
+</p>
+</article>
+
+<article class="card">
+<h2>Other Governed Sources</h2>
+
+<p>
+Attestor may eventually accept eligible external or otherwise governed sources
+when advanced rules permit them. Eligibility does not transfer source authority
+to Attestor.
 </p>
 </article>
 
@@ -280,20 +327,22 @@ of Navigator.
 
 <article class="card">
 
-<h2>What Attestor Does Not Do</h2>
+<h2>Outside Scope</h2>
 
 <p>
-Attestor does not determine objective truth,
-act as a legal authority, replace independent judgment,
-or provide final conclusions regarding trustworthiness.
+Attestor does not determine universal truth, issue another institution's canonical
+objects, alter authoritative source records, create a generic reputation system,
+produce an automatic trust score, or replace independent human or institutional
+judgment beyond the meaning of its own governed Trust Statement.
 </p>
 
 <div class="note">
-Identity ≠ Trust<br>
-Verification ≠ Trust<br>
-Records ≠ Trust<br>
-History ≠ Trust<br>
-Trust emerges from the relationships among them.
+Certification Package ≠ Trust Statement<br>
+Registry Record ≠ Trust Statement<br>
+Chronicle Entry ≠ Trust Statement<br>
+Integrity Reference ≠ Trust Statement<br>
+Discovery Signal ≠ Trust Statement<br>
+<strong style="color:var(--gold2);">Attestor evaluates governed inputs to produce its own bounded Trust Statement.</strong>
 </div>
 
 </article>
@@ -304,23 +353,27 @@ Trust emerges from the relationships among them.
 
 <article class="card">
 
-<h2>Ecosystem Position</h2>
+<h2>Institutional Position</h2>
 
 <p>
-Attestor occupies the trust layer of the
-Satoshium ecosystem:
+Attestor operates as a distinct Satoshium Suite institution with a bounded
+canonical responsibility:
 </p>
 
 <p style="margin-top:14px;color:#9aa7bd;">
-Atlas → Data<br>
-Navigator → Query<br>
-Beacon → Discovery<br>
-Certifier → Verification<br>
-Registry → Records<br>
-Chronicle → History<br>
-Anchor → Identity<br>
-<strong style="color:#f4c36a;">Attestor → Trust</strong>
+Atlas → Authoritative Intelligence<br>
+Navigator → Workflow Definition / Orchestration<br>
+Certifier → Certification Package<br>
+Registry → Satoshium Registry Record<br>
+Chronicle → Chronicle Entry<br>
+Anchor → Integrity Reference<br>
+Beacon → Discovery Signal / Discovery Metadata<br>
+<strong style="color:#f4c36a;">Attestor → Trust Statement</strong>
 </p>
+
+<div class="note">
+Interoperability connects institutional objects. It does not collapse their authority boundaries.
+</div>
 
 <a class="btn" href="/attestor/">
 Back to Attestor →
@@ -337,7 +390,7 @@ Back to Attestor →
 
 <div id="random-saying"
      style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">
-Trust is broader than any single system. Scope helps define where responsibility begins and ends.
+Scope defines what an Attestor conclusion means, where it applies, and where Attestor's authority ends.
 </div>
 
 <hr>
