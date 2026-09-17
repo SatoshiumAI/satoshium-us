@@ -1,168 +1,152 @@
 # Satoshium Attestor — Trust Statements
 
 ## Page
-
 `/attestor/trust-statements/`
 
 ## Canonical Responsibility
-
 **Attestor → Trust Statement**
 
-This page defines the foundational meaning and architectural requirements of Attestor's canonical institutional output.
-
 ## Definition
+A **Trust Statement** is a governed, attributable, bounded Attestor conclusion produced through Rule-Constrained Evaluation of an Attestation against eligible governed inputs.
 
-A **Trust Statement** is a governed, attributable, bounded conclusion produced by Satoshium Attestor through evaluation of eligible inputs.
+Canonical model:
 
-A Trust Statement should preserve the basis and limits of its conclusion without replacing the authority of the evidence, records, certifications, or other governed objects it references.
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
 ## Governing Principle
-
 > **Reference does not transfer authority.**
 
-Attestor owns the Trust Statement it produces.
-
-It does not inherit the canonical authority of referenced source objects.
+Attestor owns the Trust Statement and its bounded conclusion. Referenced institutions and external authorities retain authority over their own source objects.
 
 ## Trust Statement vs Attestation
+- **Attestation** → governed, attributable assertion.
+- **Trust Statement** → governed, attributable, bounded Attestor conclusion.
 
-This distinction is foundational.
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
 
-### Attestation
+## Canonical Identifier
+Trust Statements use:
 
-A governed, attributable, bounded **assertion**.
+`TRST-YYYY-NNNN`
 
-### Trust Statement
+The canonical identifier answers **which governed object**. Version identity answers **which governed state of that object**.
 
-A governed, attributable, bounded **conclusion** produced through Attestor evaluation.
+Identifiers are assigned at canonical creation and are not reused or reassigned.
 
-The relationship is:
-
-`Eligible Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
-
-The June-era page blurred these objects by describing the Trust Statement as “a structured attestation.”
-
-That wording is not carried forward.
-
-## Foundational Trust Statement Content
-
-A Trust Statement should preserve enough information to make its conclusion identifiable, attributable, scoped, reviewable, and traceable.
-
-Foundational information concerns include:
-
-- identity;
-- subject;
-- conclusion;
+## Structural Architecture
+The adopted Trust Statement schema preserves, as applicable:
+- canonical identity;
+- lifecycle state;
+- publication state;
+- subject identity/context;
+- bounded conclusion;
 - scope;
-- attribution;
-- supporting Attestations;
-- Evidence;
-- authoritative references;
+- Attestor attribution;
+- supporting Attestation reference(s);
+- Evaluation Outcome;
+- evaluation basis;
+- applicable rules/methodology;
+- relevant time/source state;
+- material conflicts and exclusions;
 - provenance;
-- status;
+- relationships;
+- creation/update information;
+- version identity;
 - limitations;
-- relevant time or source state;
-- relationships.
+- uncertainty.
 
-These are **not yet adopted machine fields**.
+Exact production serialization and executable validation remain governed by the implementation layer.
 
-The final schema belongs to advanced Attestor architecture.
+## Evaluation Outcomes
+Adopted values:
+- `supported`
+- `partially-supported`
+- `not-supported`
+- `contradicted`
+- `indeterminate`
 
-## Identity
+An Evaluation Outcome is not itself the bounded conclusion and is not the identity of the Trust Statement.
 
-A Trust Statement should be uniquely distinguishable so it can participate in governed relationships and lifecycle operations.
+## Authority
+Attestor is authoritative for the Trust Statement and its bounded Attestor conclusion.
 
-The final identifier format is not established by this page.
+Referenced authority remains with the originating source.
 
-## Subject
+> **Attribution ≠ Adoption**
 
-The Trust Statement must identify what its conclusion concerns.
+> **Authority ≠ Eligibility ≠ Evaluation Outcome**
 
-The final subject model and supported subject classes remain unresolved.
+## Provenance
+A Trust Statement is ordinarily a **derived** object.
 
-## Conclusion
+Its provenance should preserve:
+- supporting Attestations;
+- eligible governed inputs;
+- evaluation basis;
+- applicable rules;
+- relevant source state at evaluation;
+- derivation basis;
+- material limitations;
+- conflicts or exclusions.
 
-The Trust Statement should state the bounded conclusion reached by Attestor.
+## Relationships
+Adopted relationship vocabulary:
+- `supports`
+- `references`
+- `derived-from`
+- `evaluates`
+- `results-in`
+- `supersedes`
+- `corrects`
+- `related-to`
 
-Its language must not claim more than the evaluation supports.
+## Lifecycle
+Adopted lifecycle states:
+- `draft`
+- `active`
+- `superseded`
+- `withdrawn`
+- `retired`
 
-Advanced architecture must determine the conclusion model and whether controlled conclusion values are required.
+Review and correction are activities, not lifecycle states.
 
-## Scope
+## Publication
+Adopted publication states:
+- `unpublished`
+- `published`
 
-Scope defines the boundary within which the conclusion applies.
+> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
 
-A conclusion supported for one:
+Technically accessible does not necessarily mean Published.
 
-- subject;
-- condition;
-- period;
-- jurisdiction;
-- purpose;
-- relationship;
-- other bounded context
+## Versioning and Material Change
+A bounded correction may preserve canonical identity when the Trust Statement's essential institutional meaning remains intact.
 
-must not silently become a universal conclusion.
+A materially different conclusion requires a new canonical Trust Statement and therefore a new `TRST-YYYY-NNNN`.
 
-No final scope-field model is adopted here.
+> **A changed conclusion is a changed canonical statement.**
 
-## Attribution
+Prior governed states remain preserved rather than silently overwritten.
 
-The Trust Statement should preserve who or what is responsible for the Attestor conclusion under the eventual authority model.
+## Validation
+Conceptual validation model:
 
-The exact Attestor authority / producer model remains unresolved.
+`Trust Statement → Applicable Validation Rules → Validation Result`
 
-## Supporting Basis
+> **Validation ≠ Evaluation**
 
-The supporting basis may include:
+> **Valid ≠ Published**
 
-- Attestations;
-- Evidence;
-- authoritative references;
-- relevant source states;
-- material conflicting evidence;
-- qualifying information.
+Executable validation rules and final Validation Result vocabulary remain implementation work.
 
-No single input automatically determines the Trust Statement.
+## Conformance
+Validation supports conformance, but does not equal it.
 
-## Provenance and Source Authority
+> **Validation ≠ Conformance**
 
-The provenance and authority of supporting inputs must remain distinguishable from Attestor's authority over the Trust Statement.
-
-Conceptually:
-
-`Source Object → Retains Source Authority`
-
-`Trust Statement → Retains Attestor Authority`
-
-## Status and Relevant State
-
-A Trust Statement should support a governed lifecycle.
-
-It should preserve enough temporal and source-state context to understand the basis upon which the conclusion was produced.
-
-The exact status vocabulary remains unresolved.
-
-## Limitations and Uncertainty
-
-Material limitations and uncertainty should remain visible when they affect interpretation of the conclusion.
-
-This includes potentially:
-
-- incomplete information;
-- conflicting evidence;
-- qualified evidence;
-- unavailable sources;
-- unresolved status;
-- limited scope;
-- temporal limitations.
-
-The representation of uncertainty remains advanced architecture.
+Conformance mechanics, tests, and final result vocabulary remain implementation work.
 
 ## Relationship to the Suite
-
-Trust Statements may reference governed outputs across the Suite:
-
 - **Atlas → Authoritative Intelligence**
 - **Navigator → Workflow Definition / Orchestration**
 - **Certifier → Certification Package**
@@ -172,173 +156,36 @@ Trust Statements may reference governed outputs across the Suite:
 - **Beacon → Discovery Signal / Discovery Metadata**
 - **Attestor → Trust Statement**
 
-Attestor does not absorb the canonical authority of those institutions.
+Attestor may reference these outputs without absorbing their institutional authority.
 
-## What a Trust Statement Does Not Do
+## Trust Statement Boundaries
+A Trust Statement is not:
+- a declaration of universal truth;
+- a generic reputation record;
+- a trust score;
+- a confidence percentage;
+- a certification;
+- a verification result;
+- a Beacon Discovery Signal;
+- an automatic restatement of source authority;
+- a guarantee of permanent correctness.
 
-A Trust Statement does not:
+It is authoritative as an Attestor conclusion within its defined scope.
 
-- establish universal truth;
-- issue a Certifier Certification Package;
-- create or redefine a Satoshium Registry Record;
-- rewrite a Chronicle Entry;
-- establish an Anchor Integrity Reference;
-- create a Beacon Discovery Signal or Discovery Metadata;
-- assume Atlas authority;
-- assume Navigator workflow authority;
-- automatically establish reputation;
-- create a universal trust score;
-- declare a person, organization, record, or subject universally trustworthy.
+## Current Status
+**Trust Statement Architecture → Advanced Architecture established.**
 
-A Trust Statement is authoritative **as an Attestor conclusion within its defined scope**.
+The Trust Statement schema, identifier family, controlled evaluation outcomes, lifecycle, publication states, provenance model, relationships, validation architecture, conformance architecture, methodology, and production path are established.
 
-That authority does not extend beyond Attestor's institutional responsibility.
-
-## Certification Relationship
-
-The June page framed certification as establishing authority and the Trust Statement as expressing trust “about that authority.”
-
-The reconciled model is narrower.
-
-A Certification Package may be an authoritative input to Attestor.
-
-Certifier remains authoritative for the certification.
-
-Attestor remains authoritative for its own bounded Trust Statement.
-
-Certification is therefore neither automatically required nor automatically sufficient for a Trust Statement unless future Attestor rules establish such a requirement for a particular evaluation.
-
-## Trust Statement Type
-
-The June page proposed a `Statement Type` with examples such as:
-
-- certification-supported;
-- integrity-supported;
-- event-supported;
-- record-supported.
-
-Those values are **not adopted** as a controlled Trust Statement taxonomy.
-
-Advanced architecture should determine whether Trust Statements require:
-
-- types;
-- classes;
-- conclusion categories;
-- profiles;
-- another classification mechanism;
-- no separate type system.
-
-The decision should follow actual requirements.
-
-## Public References and Publication
-
-The June page assumed Public References as part of Trust Statement content and described Trust Statements as objects that could be cataloged, discovered, anchored, or corrected.
-
-This reconciliation preserves traceability as a foundational requirement but does not assume every Trust Statement is public.
-
-Advanced architecture should determine:
-
-- publication eligibility;
-- publication states;
-- public/private visibility;
-- public reference requirements;
-- Registry relationships;
-- Beacon discovery relationships;
-- Anchor relationships;
-- publication validation;
-- withdrawal from publication.
-
-## Lifecycle and Change
-
-A Trust Statement may require review when its supporting basis or material conditions change.
-
-Advanced architecture should determine lifecycle behavior for:
-
-- creation;
-- validation;
-- review;
-- approval, if any;
-- activation;
-- publication;
-- correction;
-- withdrawal;
-- supersession;
-- versioning;
-- archival or historical retention.
-
-The current state should remain distinguishable from historically relevant prior states.
-
-## Reconciliation Notes
-
-Major changes include:
-
-- making Trust Statement explicitly Attestor's canonical output;
-- defining a Trust Statement as a conclusion rather than an Attestation;
-- separating Attestation generation from Trust Statement generation;
-- replacing generic “accountable trust” language with bounded Attestor conclusion;
-- adding scope as a foundational requirement;
-- adding limitations and uncertainty;
-- adding status and source-state context;
-- adding provenance and authority separation;
-- replacing the June field list with foundational information concerns rather than premature machine fields;
-- removing the proposed Statement Type taxonomy from adopted architecture;
-- correcting all Suite institutional mappings;
-- removing the implication that certification is automatically required or sufficient;
-- removing universal trust/reputation implications;
-- separating traceability from mandatory public publication;
-- adding lifecycle and source-change concerns;
-- preserving exact schemas, identifiers, controlled values, validation, and publication mechanics for advanced architecture.
-
-## Path Note
-
-Earlier Attestor navigation used `/attestor/true-statements/` while this source page declares the canonical URL:
-
-`/attestor/trust-statements/`
-
-The reconciled content uses **Trust Statements** as the concept name.
-
-Before final Attestor reconciliation, the site should choose one canonical public route and update navigation, canonical tags, redirects, and internal links consistently.
-
-Given the established canonical object name **Trust Statement**, `/attestor/trust-statements/` is the semantically clearer route, but route migration should be handled deliberately rather than silently within this content reconciliation.
-
-## Deferred to Advanced Architecture
-
-The following remain intentionally unresolved:
-
-- Trust Statement identifier format;
-- machine schema;
-- required and optional fields;
-- subject model;
-- producer / Attestor authority model;
-- conclusion model;
-- controlled conclusion values;
-- Trust Statement type or profile model;
-- scope fields;
-- Evidence relationships;
-- Attestation relationships;
-- provenance fields;
-- source-state representation;
-- status vocabulary;
-- uncertainty representation;
-- sufficiency rules;
-- conflicting-evidence treatment;
-- validation sequence;
-- generation criteria;
-- lifecycle states;
-- versioning;
-- correction;
-- withdrawal;
-- supersession;
-- publication eligibility;
-- publication states;
-- public/private visibility;
-- Registry relationships;
-- Beacon discovery relationships;
-- Anchor relationships;
-- conformance tests;
-- reference vectors.
+Remaining work is implementation and production proof:
+- executable validation;
+- conformance mechanics;
+- production alignment;
+- Production Readiness Gate;
+- first real governed Trust Statement operation;
+- post-operation review;
+- operational proof determination.
 
 ## Files
-
 - `index.html` — public Trust Statements page.
 - `README.md` — repository documentation for the Trust Statements page.
