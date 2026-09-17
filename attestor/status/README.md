@@ -1,364 +1,255 @@
 # Satoshium Attestor — Status
 
 ## Page
-
 `/attestor/status/`
 
 ## Purpose
-
 This page records the **current architectural and development status** of Satoshium Attestor.
 
-It distinguishes:
-
-- established foundational architecture;
-- work currently under reconciliation;
-- unresolved advanced architecture;
-- validation and conformance work;
-- production proof.
-
-The page should not imply completion merely because documentation or early concepts exist.
+It distinguishes established architecture and implementation layers from the remaining work required to earn production proof.
 
 ## Canonical Responsibility
-
 **Attestor → Trust Statement**
 
-A Trust Statement is a governed, attributable, bounded conclusion produced through Attestor evaluation.
+A Trust Statement is a governed, attributable, bounded conclusion produced through Rule-Constrained Evaluation of an Attestation against eligible governed inputs.
 
 ## Governing Principle
-
 > **Reference does not transfer authority.**
-
-This principle is established at the foundational level and constrains later Attestor schemas, integration, evaluation, lifecycle, and production behavior.
 
 ## Current Development Posture
 
-Attestor is in **foundational reconciliation**.
-
-Its June-era foundation is being reconciled against the current Satoshium Suite architecture before advanced Attestor architecture is frozen.
+Attestor has completed its foundational reconciliation and Advanced Architecture.
 
 The current development path is:
 
-`Foundation → Reconciliation → Advanced Architecture → Validation & Conformance → Production Proof`
+`Foundation → Reconciliation → Advanced Architecture → Implementation & Validation → Production Readiness → Production Proof`
 
-This is a development sequence, not a fixed launch calendar.
+Current position:
 
-## Established Foundational Architecture
+**Implementation & Validation**
+
+Production proof has not yet been earned.
+
+## Established Architecture
 
 ### Institutional Responsibility
-
-Established:
-
 **Attestor → Trust Statement**
 
-Attestor does not own abstract “trust” as a canonical object.
-
-### Attestation / Trust Statement Distinction
-
-Established at the foundational level:
-
-- **Attestation** → governed, attributable, bounded assertion.
-- **Trust Statement** → governed, attributable, bounded conclusion produced through evaluation.
-
-Conceptually:
-
+### Canonical Object Chain
 `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-### Authority Boundary
+### Canonical Objects
+- **Attestation** — governed, attributable assertion.
+- **Trust Statement** — governed, attributable, bounded Attestor conclusion.
 
+### Identifiers
+- Attestation → `ATT-YYYY-NNNN`
+- Trust Statement → `TRST-YYYY-NNNN`
+
+### Controlled Values
+Established controlled vocabularies include:
+- Attestation Types;
+- Lifecycle States;
+- Publication States;
+- Evaluation Outcomes;
+- Relationship Types;
+- Provenance Modes;
+- Authority Contexts.
+
+Validation Result and Conformance Result vocabularies remain implementation work and must not be invented by this Status page.
+
+### Authority
 Established:
-
 > **Reference does not transfer authority.**
 
-Attestor may use governed source objects without inheriting or replacing their authority.
+Authority, attribution, eligibility, and evaluation outcome remain distinct.
 
-### Evidence and Provenance
+### Provenance
+Established provenance modes:
+- `direct`
+- `referenced`
+- `derived`
 
-Foundational requirements are established for:
+Evaluation must preserve traceability to the source/origin and relevant source state.
 
-- evidence context;
-- provenance;
-- source authority;
-- relevance;
-- scope;
-- relevant source state;
-- conflicting or qualifying information;
-- limitations.
+### Eligibility
+Established:
+> **Availability ≠ Eligibility**
 
-### Rules and Scope
+> **Authority ≠ Eligibility**
 
-Foundational rules now constrain:
+> **Reference ≠ Eligibility**
 
-- attribution;
-- provenance;
-- scope;
-- authority boundaries;
-- evidence context;
-- traceability;
-- governed change;
-- current vs historical state;
-- universal-truth claims;
-- automatic conversion of inputs into conclusions;
-- uncertainty;
-- interoperability.
+Eligibility is bounded to the particular Attestor evaluation.
 
-### Interoperability and Integration
+### Evaluation
+Established Evaluation Outcomes:
+- `supported`
+- `partially-supported`
+- `not-supported`
+- `contradicted`
+- `indeterminate`
 
-Foundational distinction established:
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
 
-- **Interoperability** → preserve meaning and authority across institutional boundaries.
-- **Integration** → operationally connect and exchange governed information.
+### Relationships
+Established relationship vocabulary:
+- `supports`
+- `references`
+- `derived-from`
+- `evaluates`
+- `results-in`
+- `supersedes`
+- `corrects`
+- `related-to`
 
-### Trust Statement Model
+### Lifecycle
+Established Lifecycle States:
+- `draft`
+- `active`
+- `superseded`
+- `withdrawn`
+- `retired`
 
-Foundational information requirements include:
+Review and correction are activities, not lifecycle states.
 
-- identity;
-- subject;
-- conclusion;
-- scope;
-- attribution;
-- supporting Attestations;
-- Evidence / authoritative references;
-- provenance;
-- status;
-- limitations;
-- relevant time or source state;
-- relationships.
+### Versioning
+Established:
+> **Revise the same object when its essential institutional meaning remains intact. Create a new canonical object when that meaning materially changes.**
 
-These are not yet final machine fields.
+A materially changed Attestation assertion requires a new Attestation.
 
-## Foundational Reconciliation Status
+A materially changed Trust Statement conclusion requires a new Trust Statement.
 
-At the time of this Status-page reconciliation, the foundational Attestor pages have been substantially reconciled, but the foundational-page review is not yet fully closed.
+Exact version syntax remains open.
 
-The remaining foundational review should be completed before Attestor advances into its formal advanced-architecture phase.
+### Validation
+The validation architecture is established conceptually:
 
-The Status page therefore uses **Reconciliation** rather than claiming the entire foundational layer is final.
+`Object + Applicable Normative Requirements → Validation → Governed Validation Result`
+
+Executable validation remains implementation work.
+
+### Conformance
+The conformance architecture is established conceptually:
+
+`Target + Declared Requirements Set + Required Validation / Evidence → Conformance Determination`
+
+Conformance mechanics and final result vocabulary remain implementation work.
+
+### Publication
+Established:
+- `unpublished`
+- `published`
+
+> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
+
+### Methodology
+The governed Attestor methodology is established from purpose and scope through Attestation formation, eligibility, evaluation, Trust Statement creation, validation/review, lifecycle/versioning, conformance, publication, preservation, and material-trigger review.
+
+### Production Architecture
+The Production Architecture and Production Readiness model are established.
+
+Production execution itself has not yet occurred.
 
 ## Schemas
 
-The June-era Status page stated:
+The schema layer has been reconciled to Advanced Architecture.
 
-> “Initial attestation, evidence, source, correction, trust signal, and trust statement schema concepts have been created.”
+Current schema/profile set includes:
+- Attestation Schema;
+- Trust Statement Schema;
+- Evidence Attestation Profile;
+- Source / Provenance Attestation Profile;
+- Correction / Change Profile;
+- legacy Trust Signal artifact.
 
-That may describe earlier exploratory work, but those concepts should **not** be presented as completed current Attestor schemas.
-
-The reconciliation has deliberately reopened several of those assumptions.
-
-Current status:
-
-**Advanced Architecture**
-
-Still unresolved:
-
-- Attestation schema;
-- Trust Statement schema;
-- evidence-reference representation;
-- identifiers;
-- required and optional fields;
-- controlled values;
-- Attestation Types;
-- Trust Statement classification, if any;
-- scope representation;
-- provenance representation;
-- authority representation;
-- relationship structures;
-- status vocabularies.
+Machine serialization and executable validation remain subordinate to the Validation and implementation layers.
 
 ## Templates
 
-The June page marked initial Attestation, correction, evidence-reference, source, Trust Signal, and future Trust Statement templates as complete.
+Templates have been reconciled to Advanced Architecture.
 
-This reconciliation does not carry that status forward.
+Current authoring set includes:
+- Attestation Template;
+- Trust Statement Template;
+- Evidence Attestation Profile;
+- Source / Provenance Attestation Profile;
+- Governed Correction / Change Template;
+- legacy Trust Signal artifact.
 
-Those templates were based on pre-reconciliation concepts, including constructs that are now unresolved or no longer canonical.
+`Architecture → Schema/Profile → Template → Governed Instance`
 
-Templates should be reconsidered **after** advanced schemas and lifecycle rules are established.
+## Records / Reference Profiles
 
-No separate “Templates Complete” status is asserted by the reconciled public page.
+The `/attestor/records/` route is retained, while its contents are governed **Reference Profiles** for:
+- Atlas;
+- Certifier;
+- Registry;
+- Chronicle;
+- Anchor;
+- Beacon;
+- external sources.
 
-## Trust Frameworks and Reputation
+Referenced source objects remain governed by their originating institutions or external authorities.
 
-The June page listed:
+## Trust Signal and Reputation Boundary
 
-- trust models;
-- trust statement structures;
-- reputation frameworks;
-- trust-signal methodologies
+Trust Signal is not a canonical Attestor object.
 
-under active architectural development.
+Attestor does not establish a generic reputation framework, trust score, confidence percentage, or universal truth mechanism.
 
-The reconciled architecture does not presently establish a generic Attestor trust framework or reputation system.
-
-Likewise, “Trust Signal” is not currently a separate canonical Attestor object.
-
-Trust-relevant context remains useful descriptive language pending advanced review.
-
-## Advanced Architecture
-
-The next major Attestor phase should establish the machine and normative architecture required to implement the foundational model.
-
-Major work includes:
-
-### Schemas and Controlled Values
-
-- Attestation schema;
-- Trust Statement schema;
-- identifiers;
-- controlled values;
-- types or profiles where required;
-- scope fields;
-- provenance fields;
-- authority fields;
-- relationship structures;
-- status vocabularies.
-
-### Evaluation Architecture
-
-- evaluation model;
-- eligibility rules;
-- evidence sufficiency;
-- conflicting-evidence treatment;
-- uncertainty representation;
-- conclusion model;
-- Trust Statement generation criteria.
-
-### Lifecycle
-
-- creation;
-- validation;
-- review;
-- correction;
-- withdrawal;
-- supersession;
-- versioning;
-- publication;
-- historical retention;
-- source-change response.
-
-### Validation and Conformance
-
-- normative requirements;
-- validation sequence;
-- PASS/FAIL rules;
-- conformance tests;
-- reference vectors.
+Beacon separately owns Discovery Signal / Discovery Metadata.
 
 ## Production Status
 
 Attestor has **not yet completed a governed production Trust Statement operation**.
 
-The public page therefore does not describe Attestor as operational.
+Therefore:
+- First real production operation → pending.
+- Operational proof → pending.
+- Attestor operational status → not yet claimed.
 
-Production status should be earned through:
+Documentation and architecture alone do not constitute production proof.
 
-1. advanced architecture;
-2. normative validation;
-3. conformance;
-4. governed production execution;
-5. successful production proof.
+## Remaining Work
 
-Documentation alone is not production proof.
+Before production proof, remaining work includes:
+1. complete executable validation rules and Validation Result vocabulary;
+2. complete conformance mechanics and Conformance Result vocabulary;
+3. align production forms and implementation artifacts to normative schemas;
+4. run the Production Readiness Gate;
+5. execute the first real governed Attestor production matter;
+6. preserve production evidence;
+7. conduct post-operation review;
+8. determine whether operational proof has been earned.
 
 ## Suite Position
 
-The reconciled canonical responsibility map is:
-
-`Atlas → Authoritative Intelligence`
-`Navigator → Workflow Definition / Orchestration`
-`Certifier → Certification Package`
-`Registry → Satoshium Registry Record`
-`Chronicle → Chronicle Entry`
-`Anchor → Integrity Reference`
-`Beacon → Discovery Signal / Discovery Metadata`
+`Atlas → Authoritative Intelligence`  
+`Navigator → Workflow Definition / Orchestration`  
+`Certifier → Certification Package`  
+`Registry → Satoshium Registry Record`  
+`Chronicle → Chronicle Entry`  
+`Anchor → Integrity Reference`  
+`Beacon → Discovery Signal / Discovery Metadata`  
 `Attestor → Trust Statement`
 
-This replaces the June-era broad labels:
+## Status Summary
 
-`Atlas → Data`
-`Navigator → Query`
-`Beacon → Discovery & Signals`
-`Certifier → Certification`
-`Registry → Records`
-`Chronicle → History`
-`Anchor → Integrity`
-`Attestor → Trust Statements`
-
-## Correction of the June Status Claims
-
-The June Status page marked several areas as **Initial Foundation Complete** or **Defined**.
-
-Those labels are not carried forward automatically.
-
-The current reconciliation has shown that several earlier concepts require revision, including:
-
-- Trust Signal status;
-- reputation frameworks;
-- correction architecture;
-- evidence-record assumptions;
-- schema assumptions;
-- template assumptions;
-- Attestation vs Trust Statement distinction;
-- institutional mappings;
-- integration semantics;
-- scope;
-- authority boundaries.
-
-The reconciled Status page therefore reports what is actually established now rather than preserving historical completion labels.
-
-## Reconciliation Notes
-
-Major changes include:
-
-- changing status from generic foundational architecture to **foundational reconciliation**;
-- making Trust Statement the explicit canonical Attestor output;
-- adding the Attestation / Trust Statement distinction;
-- adding the authority-boundary principle;
-- replacing “Schemas Complete” with Advanced Architecture;
-- removing “Templates Complete” as a current architectural claim;
-- removing generic Trust Frameworks and reputation development as assumed Attestor responsibilities;
-- updating interoperability and integration status;
-- adding Rules & Scope status;
-- adding Evidence & Provenance status;
-- adding Validation & Conformance as a distinct future phase;
-- adding Lifecycle & Publication as unresolved advanced architecture;
-- replacing “Future Operational Systems” with specific architectural work;
-- replacing “Not Yet Active” with **Production Proof Pending**;
-- correcting the Suite responsibility map;
-- replacing `Certification → Attestation → Trust Statement` with:
-  `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`;
-- removing the claim that “Authority establishes truth”;
-- establishing a development path without fixed dates.
-
-## Deferred to Advanced Architecture
-
-The Status page intentionally does not resolve:
-
-- final schemas;
-- identifiers;
-- controlled values;
-- Attestation Types;
-- Trust Statement classifications;
-- authority model;
-- subject model;
-- scope fields;
-- evidence eligibility;
-- provenance fields;
-- evaluation rules;
-- sufficiency rules;
-- conclusion values;
-- uncertainty representation;
-- validation sequence;
-- lifecycle states;
-- correction mechanics;
-- versioning;
-- publication states;
-- external integration;
-- conformance tests;
-- reference vectors;
-- first production Trust Statement.
+- Foundational Reconciliation → **Complete**
+- Advanced Architecture → **Complete**
+- Records / Reference Profiles → **Advanced architecture reconciled**
+- Schemas → **Advanced architecture reconciled**
+- Templates → **Advanced architecture reconciled**
+- Validation Architecture → **Established; executable implementation pending**
+- Conformance Architecture → **Established; implementation pending**
+- Publication Architecture → **Established**
+- Methodology → **Established**
+- Production Architecture → **Established**
+- First Production Operation → **Pending**
+- Operational Proof → **Pending**
 
 ## Files
-
 - `index.html` — public Status page.
-- `README.md` — repository documentation for the Status page.
+- `README.md` — repository documentation.
