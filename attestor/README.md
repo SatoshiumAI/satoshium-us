@@ -44,7 +44,7 @@ It does **not**:
 
 The landing page expresses the working Attestor sequence as:
 
-`Authoritative Inputs → Attestation → Trust Statement`
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
 The detailed eligibility, validation, lifecycle, status, versioning, correction, and production rules are expected to be defined through Attestor's foundational and advanced architecture pages.
 
@@ -53,6 +53,7 @@ The detailed eligibility, validation, lifecycle, status, versioning, correction,
 The landing page links to the current foundational Attestor documentation:
 
 - Purpose
+- Principles
 - Attestations
 - Attestation Types
 - Evidence
@@ -68,8 +69,13 @@ The landing page links to the current foundational Attestor documentation:
 - Trust Statements
 - Status
 - FAQ
+- Records / Reference Profiles
+- Schemas
+- Templates
 
-These pages are being reconciled from the pre-Suite Attestor material to the current Satoshium Suite architecture before advanced Attestor architecture and production proof are completed.
+These pages are being reconciled from the pre-Suite Attestor material to the current Satoshium Suite architecture before advanced Attestor architecture, validation/conformance, and production proof are completed.
+
+The landing page now also surfaces previously unlinked foundational areas that already exist in the repository: `/attestor/principles/`, `/attestor/records/`, `/attestor/schemas/`, and `/attestor/templates/`. Their inclusion makes the public landing page more accurately reflect the Attestor foundation already present.
 
 ## Suite References
 
@@ -95,7 +101,7 @@ The revision also:
 - reframes evidence as referenced support rather than Attestor-owned source truth;
 - clarifies correction as correction of Attestor statements;
 - adds direct links to Suite Standards, Methodology, Interoperability, and Status;
-- replaces the earlier `Certification → Attestation → Trust Statement` simplification with the broader `Authoritative Inputs → Attestation → Trust Statement` model so Attestor is not structurally limited to Certifier inputs;
+- replaces the earlier `Certification → Attestation → Trust Statement` simplification with the broader `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement` model so Attestor is not structurally limited to Certifier inputs;
 - preserves the existing Satoshium visual shell and public navigation structure.
 
 ## Current Development Posture
