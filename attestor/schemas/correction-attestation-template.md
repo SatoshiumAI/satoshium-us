@@ -1,362 +1,85 @@
-# Correction Attestation Template
+# Correction Attestation Template — Foundational Candidate Profile
 
 ## Purpose
+This document preserves the June concept for documenting a correction to an Attestor-owned Attestation while reconciling it with the current Corrections architecture.
 
-This template provides a standardized structure for documenting corrections to existing attestations.
+The foundational architecture has **not yet decided** whether correction is:
+- an Attestation Type;
+- a lifecycle/versioning operation;
+- a governed change profile/object;
+- or a combination of these.
 
-The purpose of a correction attestation is to improve clarity, accuracy, transparency, and accountability while preserving the historical record.
+Accordingly, this is a candidate structural profile, not an adopted object class.
 
-Corrections should supplement history rather than erase it whenever practical.
+## Foundational Principle
+**Attestor corrects Attestor-owned objects.**
 
----
+A correction must not be used to modify the canonical object of another Suite institution.
 
-## Template
-
+## Candidate Structural Concepts
 ```yaml
-correction_attestation_id:
-
-correction_type:
-
+change_identifier:
+change_type:
 status:
 
-original_attestation:
-  attestation_id:
-  reference_record:
-
-correcting_attestor:
-  id:
-  type:
-
+target_attestation:
+responsible_authority:
 subject:
-  id:
-  type:
 
-correction_summary:
+change_summary:
+prior_assertion:
+revised_assertion:
+reason:
 
-original_statement:
+evidence_references:
+source_references:
+governed_references:
+provenance:
 
-corrected_statement:
-
-reason_for_correction:
-
-supporting_evidence:
-  - 
-
-supporting_sources:
-  -
-
-related_records:
-  -
-
-correction_date:
-
+change_date:
 effective_date:
 
+limitations:
 notes:
 ```
 
----
-
-## Field Definitions
-
-### correction_attestation_id
-
-Unique identifier assigned to the correction attestation.
-
-Example:
-
-```text
-CAT-000001
-```
-
----
-
-### correction_type
-
-Classification of correction.
-
-Examples:
-
-```text
-administrative
-clarification
-amendment
-evidence_update
-attribution_update
-historical_update
-retraction
-```
-
----
-
-### status
-
-Current correction status.
-
-Examples:
-
-```text
-active
-pending
-superseded
-archived
-```
-
----
-
-### original_attestation
-
-Reference to the attestation being corrected.
-
-Example:
-
-```yaml
-original_attestation:
-  attestation_id: ATT-000101
-  reference_record: REG-000451
-```
-
----
-
-### correcting_attestor
-
-Identity responsible for issuing the correction.
-
-Example:
-
-```yaml
-correcting_attestor:
-  id: ANC-000021
-  type: organization
-```
-
----
-
-### subject
-
-The subject associated with the original attestation.
-
-Example:
-
-```yaml
-subject:
-  id: ANC-000044
-  type: individual
-```
-
----
-
-### correction_summary
-
-Short description of the correction.
-
-Example:
-
-```text
-Correction of participation date.
-```
-
----
-
-### original_statement
-
-Original attestation text.
-
-Example:
-
-```text
-The subject participated on January 5, 2026.
-```
-
----
-
-### corrected_statement
-
-Updated statement.
-
-Example:
-
-```text
-The subject participated on January 15, 2026.
-```
-
----
-
-### reason_for_correction
-
-Explanation for the correction.
-
-Example:
-
-```text
-Additional records confirmed the original date was incorrect.
-```
-
----
-
-### supporting_evidence
-
-Evidence supporting the correction.
-
-Example:
-
-```yaml
-supporting_evidence:
-  - EVD-000501
-  - EVD-000502
-```
-
----
-
-### supporting_sources
-
-Sources associated with the correction.
-
-Example:
-
-```yaml
-supporting_sources:
-  - SRC-000041
-```
-
----
-
-### related_records
-
-Associated records.
-
-Example:
-
-```yaml
-related_records:
-  - REG-000451
-  - CHR-000103
-```
-
----
-
-### correction_date
-
-Date the correction was issued.
-
-Example:
-
-```text
-2026-06-15T00:00:00Z
-```
-
----
-
-### effective_date
-
-Date the correction became effective.
-
-Example:
-
-```text
-2026-06-15T00:00:00Z
-```
-
----
-
-### notes
-
-Additional context.
-
-Example:
-
-```text
-Original attestation remains preserved for historical review.
-```
-
----
-
-## Example Record
-
-```yaml
-correction_attestation_id: CAT-000001
-
-correction_type: historical_update
-
-status: active
-
-original_attestation:
-  attestation_id: ATT-000101
-  reference_record: REG-000451
-
-correcting_attestor:
-  id: ANC-000021
-  type: organization
-
-subject:
-  id: ANC-000044
-  type: individual
-
-correction_summary: >
-  Correction of participation date.
-
-original_statement: >
-  The subject participated on January 5, 2026.
-
-corrected_statement: >
-  The subject participated on January 15, 2026.
-
-reason_for_correction: >
-  Additional documentation confirmed the original date was inaccurate.
-
-supporting_evidence:
-  - EVD-000501
-
-supporting_sources:
-  - SRC-000041
-
-related_records:
-  - REG-000451
-
-correction_date: 2026-06-15T00:00:00Z
-
-effective_date: 2026-06-15T00:00:00Z
-
-notes: >
-  Original attestation preserved for historical transparency.
-```
-
----
-
-## Guiding Principles
-
-### Transparency
-
-Corrections should remain visible.
-
-### Traceability
-
-Users should be able to connect corrections to original records.
-
-### Accountability
-
-Correcting parties should remain identifiable.
-
-### Preservation
-
-Original records should remain preserved whenever practical.
-
-### Historical Integrity
-
-Corrections should improve understanding without obscuring history.
-
----
-
-## Guiding Statement
-
-```text
-A correction changes understanding.
-
-It should not erase memory.
-```
-
----
+Exact field names are provisional.
+
+## Historical Preservation
+A governed correction should preserve enough information to distinguish:
+
+`Prior State → Governed Change → Current State`
+
+The prior state should remain traceable rather than silently overwritten.
+
+## Candidate Change Semantics
+The June template proposed concepts such as:
+- administrative correction;
+- clarification;
+- amendment;
+- evidence update;
+- attribution update;
+- historical update;
+- retraction.
+
+These remain candidate semantics, not adopted controlled values.
+
+## Authority Boundary
+If the underlying problem belongs to Registry, Chronicle, Certifier, Anchor, Beacon, Atlas, Navigator, or another source authority, that institution must govern its own correction.
+
+Attestor may subsequently review whether its own Attestation or Trust Statement requires governed change.
+
+## Deferred
+Advanced architecture must determine:
+- correction object model;
+- identifier model;
+- lifecycle states;
+- supersession;
+- withdrawal/retraction semantics;
+- effective-time rules;
+- provenance requirements;
+- validation;
+- Trust Statement correction relationships.
 
 ## Status
-
-This template represents an initial conceptual correction-attestation format and may evolve as Attestor standards mature.
+Foundational candidate profile only.
