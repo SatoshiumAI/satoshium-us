@@ -1,275 +1,298 @@
-# Frequently Asked Questions (FAQ)
+# Satoshium Attestor — FAQ
 
-## What is Attestor?
+## Page
 
-Attestor is the trust and attestation layer of the Satoshium ecosystem.
+`/attestor/faq/`
 
-It is designed to document, organize, manage, and preserve attestations, trust-related information, supporting evidence, reputation signals, and associated relationships.
+## Purpose
 
----
+This page provides concise answers to common questions about the reconciled foundational architecture of **Satoshium Attestor**.
 
-## What problem does Attestor solve?
+The FAQ is explanatory.
 
-Many systems can store information.
+It should reflect adopted or established foundational architecture without independently creating new canonical objects, controlled values, lifecycle states, or machine rules.
 
-Fewer systems help explain:
+## Canonical Responsibility
 
-* Who made a statement
-* Why the statement exists
-* What evidence supports it
-* What reputation signals may exist
-* How trust may be evaluated
+**Attestor → Trust Statement**
 
-Attestor provides structures for documenting these relationships.
+A Trust Statement is a governed, attributable, bounded conclusion produced through Attestor evaluation.
 
----
+## Governing Principle
 
-## What is an attestation?
+> **Reference does not transfer authority.**
 
-An attestation is a statement made regarding an identity, claim, record, event, qualification, relationship, or condition.
+A source institution remains authoritative for its canonical object even when Attestor references that object during evaluation.
 
-Examples may include:
+## Core FAQ Architecture
 
-* Identity attestations
-* Qualification attestations
-* Ownership attestations
-* Participation attestations
-* Verification attestations
+### What is Attestor?
 
-An attestation is a statement.
+Attestor is the Satoshium Suite institution responsible for producing governed, attributable, bounded Trust Statements through evaluation of eligible inputs.
 
-It is not automatically proof.
+The June-era description of Attestor as the generic “trust layer” is not carried forward.
 
----
+### What is a Trust Statement?
 
-## What is an attestor?
+A Trust Statement is Attestor's canonical output.
 
-An attestor is the individual, organization, institution, or system making an attestation.
+It is a bounded conclusion, not universal truth and not a generic trust score.
 
-The attestor is responsible for the statement being made.
-
----
-
-## Does an attestation establish truth?
+### Does Attestor determine truth?
 
 No.
 
-An attestation documents that a statement was made.
+Attestor produces a conclusion within a defined scope under Attestor rules.
 
-The existence of an attestation does not guarantee that the statement is correct.
+It does not establish universal truth.
 
----
+### What is an Attestation?
 
-## What role does evidence play?
+An Attestation is a governed, attributable, bounded assertion.
 
-Evidence provides information that may support, challenge, clarify, or contextualize an attestation.
+It is distinct from the Trust Statement.
 
-Evidence helps users understand why an attestation exists.
+### Attestation vs Trust Statement
 
-Evidence does not automatically establish truth.
+The foundational relationship is:
 
----
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-## Does Attestor perform verification?
+- **Attestation** → assertion.
+- **Trust Statement** → evaluated conclusion.
 
-No.
+### What role does Evidence play?
 
-Verification is generally associated with Certifier.
+Evidence provides supporting material or authoritative references used during evaluation.
 
-Attestor focuses on attestations, evidence, reputation, and trust-related information.
+Evidence does not become proof merely because Attestor references it.
 
-A simplified distinction may be represented as:
+Applicable provenance, relevance, scope, status, limitations, and source authority should remain visible.
 
-```text id="xq7vzj"
-Certifier → Verification
-Attestor → Attestation
-```
+### What is a trust signal?
 
----
+The term remains descriptive language for **trust-relevant evaluation context**.
 
-## Does Attestor determine trust?
+It is not presently established as:
 
-No.
+- a canonical Attestor object;
+- a controlled record type;
+- a reputation score;
+- an automatic trust indicator.
 
-Attestor helps document information relevant to trust.
+It must remain distinct from:
 
-Trust decisions remain the responsibility of users, organizations, communities, and future trust frameworks.
+**Beacon → Discovery Signal / Discovery Metadata**
 
----
+### Certifier relationship
 
-## What is the difference between trust and verification?
+**Certifier → Certification Package**
 
-Verification evaluates whether information can be supported by available evidence.
+Attestor may reference a Certification Package when relevant and eligible.
 
-Trust involves broader judgments that may include:
+Attestor does not certify or recertify the subject.
 
-* Reputation
-* Transparency
-* Historical performance
-* Evidence
-* Verification outcomes
+### Anchor relationship
 
-Verification and trust are related but distinct concepts.
+**Anchor → Integrity Reference**
 
----
+The June FAQ incorrectly stated:
 
-## What is reputation?
+> “Anchor manages identity.”
 
-Reputation represents accumulated trust-related signals associated with an identity over time.
+That mapping is not carried forward.
 
-Reputation may be influenced by:
+Attestor may reference an Anchor Integrity Reference without assuming Anchor authority.
 
-* Attestations
-* Participation
-* Historical activity
-* Verification outcomes
-* Community observations
+### Beacon relationship
 
-Reputation contributes to trust but does not determine it.
+**Beacon → Discovery Signal / Discovery Metadata**
 
----
+Attestor may reference Beacon discovery objects.
 
-## What is a trust signal?
+It does not create or redefine them.
 
-A trust signal is information that may influence trust-related judgments.
+### Registry and Chronicle
 
-Examples may include:
+**Registry → Satoshium Registry Record**
 
-* Attestations
-* Verification outcomes
-* Historical performance
-* Reputation indicators
-* Supporting evidence
+**Chronicle → Chronicle Entry**
 
-Trust signals provide context.
+Attestor may reference these objects while their source institutions retain authority.
 
-They do not guarantee conclusions.
+## Reference Does Not Transfer Authority
 
----
+The FAQ includes an explicit plain-language explanation of the governing principle.
 
-## Can attestations be corrected?
+Conceptually:
+
+`Source Object → Retains Source Authority`
+
+`Attestor Evaluation → Governs Attestor Use`
+
+`Trust Statement → Retains Attestor Authority`
+
+This distinction is central to Suite interoperability.
+
+## Corrections
+
+The June FAQ asked whether “records” can be corrected.
+
+That wording was too broad because Attestor does not own every referenced record.
+
+The reconciled question is:
+
+> **Can Attestor-owned information be corrected?**
 
 Yes.
 
-Attestor supports the concept of corrections.
+Attestor requires governed treatment for changes affecting its own Attestations and Trust Statements.
 
-Corrections help improve understanding while preserving transparency and historical context.
+The exact correction, withdrawal, supersession, and versioning mechanics remain advanced architecture.
 
-Whenever practical:
+## Reputation and Trust Scores
 
-* Original records remain visible.
-* Corrections are documented.
-* Changes remain traceable.
+The June FAQ described reputation frameworks as potentially part of future Attestor implementations.
 
----
+That assumption is not carried forward.
 
-## Can attestations be retracted?
+Under the current foundational architecture:
 
-Yes.
+- reputation is not an Attestor canonical object;
+- no Attestor reputation system is established;
+- no automatic trust score is established;
+- Attestor's canonical output is the Trust Statement.
 
-An attestation may be withdrawn by the attestor.
+A future requirement could be evaluated later, but it should not be inherited from the June model without architectural justification.
 
-Retractions differ from corrections.
+## Publication
 
-A correction modifies understanding.
+The FAQ explicitly states that Trust Statements are **not yet assumed to be automatically public**.
 
-A retraction withdraws support for a statement.
+Advanced architecture must determine:
 
----
+- publication eligibility;
+- visibility;
+- publication states;
+- public/private treatment;
+- Registry relationships;
+- Beacon discovery relationships;
+- Anchor relationships;
+- publication validation.
 
-## How does Attestor relate to Anchor?
+## Operational Status
 
-Anchor focuses on identity.
+Attestor is **not yet operational**.
 
-Attestor focuses on attestations and trust-related information.
+Current posture:
 
-A simplified relationship may be represented as:
+**Foundational Reconciliation**
 
-```text id="qk7m1q"
-Anchor → Identity
-Attestor → Trust
-```
+Remaining work includes:
 
-Anchor helps define who is involved.
+- advanced schemas;
+- controlled values;
+- evaluation rules;
+- lifecycle architecture;
+- validation;
+- conformance;
+- first governed production Trust Statement.
 
-Attestor helps document what is being stated.
+Production status should be earned through production proof.
 
----
+## What Remains Open
 
-## How does Attestor relate to Registry?
+The FAQ summarizes major unresolved advanced-architecture areas:
 
-Registry organizes and catalogs records.
+- identifiers;
+- schemas;
+- controlled values;
+- Attestation Types;
+- subject model;
+- Attesting Authority / producer model;
+- scope fields;
+- evidence eligibility;
+- evaluation rules;
+- sufficiency rules;
+- uncertainty representation;
+- lifecycle states;
+- validation;
+- publication;
+- conformance tests;
+- reference vectors;
+- production procedures.
 
-Attestor may create attestation-related records that can be referenced and maintained within Registry.
+This list is explanatory and does not itself define the future architecture.
 
----
+## Removal of the June Trust Progression
 
-## How does Attestor relate to Chronicle?
+The June FAQ ended with:
 
-Chronicle preserves history.
+`Attestation → Evidence → Trust Signals → Reputation → Trust`
 
-Attestations, evidence, corrections, and trust-related records may become part of the historical record preserved by Chronicle.
+That progression is not carried forward.
 
----
+It implied:
 
-## How does Attestor relate to Beacon?
+- a linear trust-production process;
+- canonical Trust Signals;
+- reputation as an Attestor architectural stage;
+- “Trust” as the final Attestor output.
 
-Beacon helps users discover information.
+The reconciled foundational relationship is:
 
-Attestor helps organize attestation and trust-related information.
+`Governed Inputs → Attestation → Evaluation → Trust Statement`
 
-A simplified relationship may be represented as:
+Attestor does not manufacture abstract trust.
 
-```text id="7n3kzy"
-Beacon → Discovery
-Attestor → Trust Context
-```
+It produces governed Trust Statements.
 
----
+## Reconciliation Notes
 
-## How does Attestor relate to the Satoshium Suite?
+Major changes include:
 
-Attestor occupies the trust layer of the ecosystem.
+- replacing “trust layer” with Attestor's canonical institutional responsibility;
+- adding a direct Trust Statement definition;
+- strengthening the universal-truth boundary;
+- updating the Attestation definition;
+- adding the Attestation vs Trust Statement distinction;
+- updating Evidence terminology;
+- demoting Trust Signal to descriptive trust-relevant context;
+- correcting Certifier from generic verification to Certification Package;
+- correcting Anchor from identity management to Integrity Reference;
+- adding Beacon's canonical Discovery Signal / Discovery Metadata boundary;
+- adding Registry and Chronicle authority boundaries;
+- explaining “Reference does not transfer authority” in plain language;
+- narrowing correction language to Attestor-owned objects;
+- removing reputation systems and trust scores as assumed future architecture;
+- adding publication uncertainty;
+- updating operational status to foundational reconciliation;
+- adding an explanation of unresolved advanced architecture;
+- replacing the old trust progression with the reconciled Attestor model;
+- updating the closing reflection to emphasize reviewability, scope, provenance, limitations, and authority.
 
-A simplified model may be represented as:
+## Foundational Review Note
 
-```text id="1j3cmk"
-Atlas      → Data
-Navigator  → Query
-Beacon     → Discovery
-Certifier  → Verification
-Registry   → Records
-Chronicle  → History
-Anchor     → Identity
-Attestor   → Trust
-```
+This FAQ is the final page in the current foundational Attestor page-by-page reconciliation sequence.
 
----
+Completion of this page should **not** automatically trigger advanced architecture.
 
-## Is Attestor complete?
+The recommended next step is a whole-foundation review across all reconciled Attestor pages to identify:
 
-No.
+- terminology collisions;
+- inconsistent definitions;
+- duplicated responsibilities;
+- missing concepts;
+- premature claims;
+- unresolved route issues;
+- stale navigation;
+- inconsistencies between public pages and READMEs;
+- concepts that have become foundational through repeated use;
+- questions that should be formally carried into advanced architecture.
 
-Attestor is currently in an early development phase.
+Only after that review should the Attestor foundation be treated as reconciled and the advanced architecture phase begin.
 
-Initial concepts, documentation, schemas, and interoperability standards are being established.
+## Files
 
-Future implementations may evolve significantly.
-
----
-
-## What is the long-term goal of Attestor?
-
-The long-term goal is to help create transparent, interoperable trust frameworks capable of documenting attestations, evidence, reputation, accountability, and trust-related relationships across digital systems.
-
-At its core, Attestor seeks to help answer a simple question:
-
-```text id="3nj1df"
-Why should this statement be trusted?
-```
-
----
-
-## Status
-
-This FAQ reflects the current conceptual understanding of Attestor and may evolve as standards, terminology, and implementations mature.
+- `index.html` — public FAQ page.
+- `README.md` — repository documentation for the FAQ page.
