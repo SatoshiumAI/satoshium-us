@@ -1,22 +1,33 @@
-# Anchor Reference Profile
+# Anchor Reference Profile — Advanced Architecture
 
 ## Purpose
-Describes how Attestor may reference an **Anchor Integrity Reference** when integrity context is relevant and eligible for evaluation.
+Defines how Attestor may reference an **Anchor Integrity Reference** when integrity context is relevant and eligible for evaluation.
 
 ## Canonical Boundary
 **Anchor → Integrity Reference**  
 **Attestor → Trust Statement**
 
-The June-era description of Anchor as Attestor's identity authority is not carried forward. Attestor does not redefine Anchor as an identity-management institution.
+Attestor does not redefine Anchor as an identity or trust-evaluation institution.
 
-## Reference Requirements
-An Anchor reference should preserve enough information to identify the Integrity Reference, relevant integrity state or determination, provenance, applicable scope, relationship to the Attestation/evaluation, and Anchor authority.
+## Governed Reference Context
+Preserve, as applicable:
+- Integrity Reference identifier/reference;
+- relevant integrity state/context;
+- provenance;
+- relevant time/state at evaluation;
+- scope and relevance;
+- relationship to the Attestation/evaluation;
+- material limitations; and
+- Anchor authority context (`Suite-source`).
 
 ## No Automatic Conclusion
-An Integrity Reference may support evaluation, but it does not automatically become an Attestation or determine a Trust Statement.
+An Integrity Reference may inform an evaluation but does not automatically establish an Attestation, eligibility, Evaluation Outcome, or Trust Statement.
+
+## Change
+Material integrity-context change may trigger Attestor review.
 
 ## Governing Principle
 > **Reference does not transfer authority.**
 
 ## Status
-Foundational reference profile. Exact eligibility, schemas, validation, and integrity-reference handling remain advanced architecture.
+Advanced governed Reference Profile.
