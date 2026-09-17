@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Relationships</title>
+<meta name="description" content="The Satoshium Attestor Relationships architecture defining governed relationships among Attestations, Trust Statements, evidence, source objects, prior statements, and Suite objects.">
+<link rel="canonical" href="https://satoshium.us/attestor/relationships/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Relationships</h1>
+<p class="lead">Relationships define the governed connections among <strong>Attestations</strong>, <strong>Trust Statements</strong>, evidence, source objects, prior statements, and canonical Suite objects.</p>
+<p class="lead">Attestor uses relationships to preserve traceability and meaning across institutional boundaries without collapsing distinct objects into one record or allowing reference to transfer ownership or authority.</p>
+<div class="note"><strong>Relationship principle:</strong> Connection does not imply identity. Reference does not transfer authority.</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Relationship Purpose</h2><p>Relationships express governed connections among Attestor-owned objects and referenced sources. A relationship states how two objects are connected; it does not merge their identity, provenance, lifecycle, authority, or institutional ownership.</p></article>
+<article class="card"><h2>Attestation Relationships</h2><p>An Attestation may reference source objects, be supported or challenged by eligible governed inputs, be evaluated by an Attestor evaluation, relate to other Attestations, and participate in correction or supersession. Its relationships must preserve the distinction between the assertion and the sources used to evaluate it.</p></article>
+<article class="card"><h2>Trust Statement Relationships</h2><p>A Trust Statement must remain connected to the evaluation that produced it and to the supporting Attestation or Attestations. It may also relate to prior Trust Statements, source objects, corrections, versions, or other governed objects without inheriting their authority.</p></article>
+<article class="card"><h2>Evidence Relationships</h2><p>Evidence is treated as governed supporting material or an authoritative reference, not automatically as a separate Attestor-owned canonical object. Relationships must therefore identify how evidence supports, limits, contradicts, or otherwise informs an Attestation or evaluation without converting evidence into a Trust Statement.</p></article>
+<article class="card"><h2>Source Object Relationships</h2><p>Source objects retain their source identifiers, provenance, meaning, lifecycle, and authority. Attestor relates to them through governed references rather than duplicating them as Attestor records.</p></article>
+<article class="card"><h2>Prior Statement Relationships</h2><p>A Trust Statement may have a governed relationship to an earlier Trust Statement when later review, correction, supersession, or changed conditions require continuity of history. The relationship must preserve both the prior object and the current governed state.</p></article>
+<article class="card"><h2>Suite Relationships</h2><p>Attestor may relate to canonical objects from Atlas, Navigator, Certifier, Registry, Chronicle, Anchor, and Beacon. Each relationship preserves the canonical responsibility of the source institution.</p></article>
+<article class="card"><h2>Relationship Reviewability</h2><p>A material relationship must be explicit enough to understand the source object, target object, relationship meaning, and direction where direction matters. Hidden or ambiguous connections must not carry normative meaning.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Canonical Relationship Vocabulary</h2>
+<p>The Controlled Values architecture established the initial relationship vocabulary. This page now defines the conceptual meaning and direction of those relationships. Exact field representation and cardinality remain Schema and Validation concerns.</p>
+<div class="note"><strong>supports</strong> → source object provides material support to target assertion, evaluation, or conclusion<br><br><strong>references</strong> → source object explicitly identifies or cites target object without implying derivation or support<br><br><strong>derived-from</strong> → source object was materially produced from target object or governed basis<br><br><strong>evaluates</strong> → source evaluation acts upon target Attestation / assertion<br><br><strong>results-in</strong> → source evaluation produces target Trust Statement<br><br><strong>supersedes</strong> → source object becomes the governed successor to target prior object<br><br><strong>corrects</strong> → source object or governed change addresses an error or material defect in target prior object<br><br><strong>related-to</strong> → bounded non-specific relationship used only when a more precise canonical relationship does not apply</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Relationship Direction</h2>
+<p>Normative relationships are interpreted from a source object toward a target object. Reversing the objects may change the meaning. Implementations must not assume every relationship is symmetric.</p>
+<div class="note">Evidence / Governed Input → supports → Attestation / Evaluation<br>Attestation → references → Source Object<br>Derived Object → derived-from → Source Basis<br>Evaluation → evaluates → Attestation<br>Evaluation → results-in → Trust Statement<br>New Object → supersedes → Prior Object<br>Corrective Object / Change → corrects → Prior Object<br><br>related-to ↔ may be non-directional only where architecture explicitly permits</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Core Attestor Relationship Chain</h2>
+<p>The central Attestor process can be expressed as a governed relationship chain. Each step preserves the identity and authority of the participating objects while making the institutional lineage explicit.</p>
+<div class="note">Attestation → references → Eligible Governed Inputs<br>Eligible Governed Inputs → support / limit / conflict within → Evaluation Basis<br>Evaluation → evaluates → Attestation<br>Evaluation → results-in → Trust Statement<br>Trust Statement → derived-from → Governed Evaluation Basis<br><br>Distinct objects → Explicit relationships → Preserved lineage</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Support Is Not Determination</h2>
+<p>The <strong>supports</strong> relationship records material support; it does not itself determine the evaluation outcome. Multiple supporting relationships do not automatically produce a supported Trust Statement, and a single conflicting or contradictory input may be material depending on scope, authority, provenance, and evaluation rules.</p>
+<div class="note">supports → Evidentiary / contextual relationship<br>supported → Evaluation outcome<br><br>supports ≠ supported<br>Relationship Count ≠ Evaluation Outcome<br>Relationship Presence ≠ Evidence Sufficiency</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Reference Is Not Derivation</h2>
+<p>A reference identifies another object. Derivation states that an object was materially produced from another governed basis. These relationships must remain distinct because they carry different provenance and review implications.</p>
+<div class="note">references → “This object identifies or cites that object.”<br>derived-from → “This object was materially produced from that governed basis.”<br><br>Reference ≠ Derivation<br>Reference ≠ Support<br>Reference ≠ Authority Transfer</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Supersession and Correction</h2>
+<p>Supersession and correction preserve governed continuity rather than erasing history. A superseding or corrective relationship must keep the prior object identifiable and distinguish the earlier state from the current governed state. Exact lifecycle effects are defined by Lifecycle and Versioning.</p>
+<div class="note">Prior Object → Remains historically identifiable<br>New / Corrective Object → Explicitly relates to prior object<br>Current State → Distinguishable from historical state<br><br>Correction ≠ Deletion<br>Supersession ≠ Historical Erasure</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Suite Relationship Boundaries</h2>
+<p>Relationships to Suite objects preserve each institution's canonical responsibility. Attestor may cite, derive context from, or evaluate eligible information associated with those objects, but the relationship never converts the source object into an Attestor-owned object.</p>
+<div class="note">Atlas → Authoritative Intelligence<br>Navigator → Workflow Definition / Orchestration<br>Certifier → Certification Package<br>Registry → Satoshium Registry Record<br>Chronicle → Chronicle Entry<br>Anchor → Integrity Reference<br>Beacon → Discovery Signal / Discovery Metadata<br>Attestor → Trust Statement<br><br><strong>Reference does not transfer authority.</strong></div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Relationship Constraints</h2>
+<p>Not every relationship is valid between every object class. The vocabulary established here provides semantic meaning, while later Schemas and Validation architecture will define permitted source/target combinations, required relationships, cardinality, inverse representation where useful, and machine validation.</p>
+<div class="note">Relationship Meaning → Established here<br>Permitted Source / Target Classes → Schemas / Validation<br>Required vs. Optional → Schemas<br>Cardinality → Schemas<br>Inverse Representation → Relationships / Schemas as needed<br>Machine Enforcement → Validation</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>What Relationships Do Not Establish</h2>
+<p>A relationship expresses a governed connection. It does not independently establish truth, authority transfer, eligibility, evidence sufficiency, lifecycle state, validation, conformance, or a favorable evaluation outcome.</p>
+<div class="note">Relationship ≠ Identity<br>Relationship ≠ Authority Transfer<br>Relationship ≠ Eligibility<br>Relationship ≠ Evidence Sufficiency<br>Relationship ≠ Validation<br>Relationship ≠ Conformance<br>Relationship ≠ Evaluation Outcome</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>The Relationships architecture now gives Attestor an explicit semantic graph connecting assertions, governed inputs, evaluations, conclusions, prior states, and external or Suite-owned source objects. Lifecycle and Versioning can now define how those relationships behave as governed objects change over time.</p>
+<div class="note"><strong>Relationships → Established</strong><br>Canonical relationship vocabulary → Defined<br>Directionality → Established conceptually<br>Attestation / Evaluation / Trust Statement chain → Established<br>Support vs. outcome → Distinguished<br>Reference vs. derivation → Distinguished<br>Correction / supersession continuity → Established conceptually<br>Source authority boundaries → Preserved<br>Cardinality / machine constraints → Deferred to Schemas / Validation<br>Production proof → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">A governed relationship should reveal how objects connect without obscuring where one object's identity and authority end and another's begin.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
