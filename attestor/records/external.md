@@ -1,26 +1,47 @@
-# External Source Reference Profile
+# External Source Reference Profile — Advanced Architecture
 
 ## Purpose
-Describes how Attestor may reference eligible information originating outside Satoshium while preserving source attribution, provenance, scope, status, limitations, and external authority.
+Defines how Attestor may reference eligible information originating outside Satoshium while preserving attribution, provenance, scope, state, limitations, and external authority.
 
 ## Authority Boundary
 External information remains external.
 
-Attestor may evaluate an eligible reference but does not absorb or recreate the originating source's authority.
+Attestor may evaluate an eligible external reference but does not absorb or recreate the originating authority.
 
-## Potential Sources
-Future eligibility rules may recognize governed information from governments and public authorities, academic institutions and publications, corporations and official disclosures, standards organizations, independent archives, and other external systems or authorities.
+## Authority Context
+External references use the established authority context:
 
-These categories do not establish automatic eligibility or credibility.
+`external-source`
 
-## Reference Requirements
-An external reference should preserve enough information to identify the originating source, source type where applicable, source identifier or resolvable reference, publication/effective date where relevant, provenance, status and relevant state, scope and relevance, material limitations, relationship to the Attestation/evaluation, and external authority.
+## Governed Reference Context
+Preserve, as applicable:
+- originating source;
+- source type where relevant;
+- source identifier or stable/resolvable reference;
+- publication/effective date where relevant;
+- provenance mode;
+- relevant time/state at evaluation;
+- scope and relevance;
+- material limitations;
+- relationship to the Attestation/evaluation; and
+- external authority context.
 
-## Eligibility Is Required
-Technical availability, public accessibility, or third-party publication does not make an external source eligible for Attestor evaluation.
+## Eligibility
+No source category receives automatic eligibility.
+
+`Technical Availability ≠ Eligibility`
+
+`Public Accessibility ≠ Eligibility`
+
+`External Authority ≠ Eligibility`
+
+Eligibility is bounded to the particular evaluation.
+
+## Source-State Change
+Later correction, withdrawal, replacement, or material source-state change may trigger Attestor review without silently rewriting the historical evaluation basis.
 
 ## Governing Principle
 > **Reference does not transfer authority.**
 
 ## Status
-Foundational reference profile. External-source eligibility, authority representation, validation, source classes, schemas, and change handling remain advanced architecture.
+Advanced governed Reference Profile.
