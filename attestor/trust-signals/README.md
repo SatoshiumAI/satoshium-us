@@ -1,146 +1,130 @@
 # Satoshium Attestor — Trust Signals
 
 ## Page
-
 `/attestor/trust-signals/`
 
 ## Purpose
+This page preserves the historical **Trust Signals** concept while recording its final place in the established Satoshium Attestor architecture.
 
-This page reconciles the pre-Suite **Trust Signals** concept with the current Satoshium Suite architecture.
+## Architectural Determination
+> **Trust Signal is legacy / descriptive Attestor terminology only.**
 
-Within Attestor, a **trust signal** is retained as a human-readable description for information or an indicator that may be relevant to evaluating an Attestation or supporting a Trust Statement.
+Attestor does **not** establish Trust Signal as:
+- a canonical object;
+- a controlled record type;
+- an Evaluation Outcome;
+- a reputation object;
+- a confidence percentage;
+- a score;
+- a weighting mechanism;
+- a directional machine vocabulary.
 
-This reconciliation does **not** establish a Trust Signal as a separate canonical Attestor object, controlled record type, score, or final conclusion.
+Trust-relevant considerations are represented through the architecture that already governs Attestations, eligible governed inputs, Evidence, Provenance, Relationships, Evaluation, limitations, uncertainty, Lifecycle, and Trust Statements.
+
+A parallel Trust Signal object model is not required.
 
 ## Critical Namespace Boundary
-
 > **Attestor trust signals are not Beacon Discovery Signals.**
-
-Beacon owns:
 
 **Beacon → Discovery Signal / Discovery Metadata**
 
-Attestor owns:
-
 **Attestor → Trust Statement**
 
-The shared word “signal” must not create institutional ambiguity.
+Beacon Discovery Signals are canonical Beacon outputs.
 
-Beacon Discovery Signals are canonical Beacon outputs used for discovery. Attestor trust signals, as presently understood, are descriptive trust-relevant evaluation context.
+Attestor “trust signal” is historical/descriptive language only.
 
-## Architectural Status
+## Canonical Attestor Model
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-The term **trust signal** remains useful for explaining that certain governed facts, evidence, relationships, outcomes, or historical conditions may matter during trust evaluation.
+Trust-relevant context may inform this process, but it is not an intervening canonical object.
 
-However, advanced Attestor architecture must still determine whether “trust signal” needs formal machine representation at all.
+## Historical / Descriptive Context
+The phrase “trust signal” may still be useful in historical material or explanatory prose to describe information relevant to evaluation.
 
-Possible future outcomes include:
-
-- retaining the term only as explanatory language;
-- representing trust-relevant factors inside Attestation evaluation;
-- defining a controlled evaluation-factor structure under another name;
-- establishing a formal Attestor construct if a genuine architectural requirement emerges.
-
-No option is adopted by this foundational reconciliation.
-
-## Trust-Relevant Context
-
-The page recognizes several conceptual sources of trust-relevant context:
-
+Examples may include:
 - Attestation context;
 - Evidence context;
-- Authoritative outcome context;
-- Historical and relationship context;
-- Accountability context;
-- Conflicting or uncertain context.
+- authoritative outcome context;
+- historical and relationship context;
+- accountability context;
+- conflicting or uncertain context.
 
-These are descriptive categories, not controlled machine values.
+These are descriptive categories, not controlled Attestor values.
 
-## No Reputation Model
+## Evidence Boundary
+Evidence remains distinct from any interpretation made during evaluation.
 
-The June-era page connected Trust Signals to reputation and included **Reputation Signals**.
+> **Evidence ≠ Trust Signal ≠ Evaluation Outcome**
 
-That framing is not carried forward as established Attestor architecture.
+Evidence preserves its source, provenance, relevant state, authority, relevance, scope, and limitations.
 
-Attestor currently owns Trust Statements, not a canonical reputation object, reputation score, or reputation system.
+## Relationship Boundary
+The adopted relationship vocabulary includes:
+- `supports`
+- `references`
+- `derived-from`
+- `evaluates`
+- `results-in`
+- `supersedes`
+- `corrects`
+- `related-to`
 
-## No Directional Signal Vocabulary
+These relationships provide governed semantic structure without requiring a separate Trust Signal layer.
 
-The earlier page described signals as:
+> **supports ≠ supported**
 
-- positive;
-- negative;
-- neutral;
-- mixed;
-- uncertain.
+## Evaluation Boundary
+Adopted Evaluation Outcomes are:
+- `supported`
+- `partially-supported`
+- `not-supported`
+- `contradicted`
+- `indeterminate`
 
-Those values are not adopted here.
+These outcomes replace any need to interpret historical positive / negative / neutral / mixed / uncertain signal direction as formal Attestor vocabulary.
 
-Attestor has not yet established a directional, scoring, weighting, or reputation model. Advanced architecture should not inherit those labels without first demonstrating that such a model is necessary and compatible with Attestor's bounded responsibility.
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
 
-## Relationship to Evidence
+## No Reputation or Scoring Model
+Attestor does not establish:
+- generic reputation;
+- a canonical reputation object;
+- reputation scoring;
+- trust scoring;
+- confidence percentages;
+- universal evidence weighting;
+- majority-source rules;
+- directional signal aggregation.
 
-A trust-relevant interpretation is not the same as the underlying evidence.
+The canonical institutional output remains the bounded **Trust Statement**.
 
-Evidence retains its own source, provenance, authority, relevance, and status.
+## Schema and Template Treatment
+Historical `trust-signal-schema.md` and `trust-signal-template.md` artifacts may be preserved for provenance and architectural history, but they are **legacy / historical only** and are not production Attestor schemas or templates.
 
-The interpretation of that evidence during Attestor evaluation must not overwrite or redefine the evidence itself.
-
-## Relationship to Trust Statements
-
-Conceptually:
-
-`Governed Inputs → Trust-Relevant Context → Attestor Evaluation → Trust Statement`
-
-Trust-relevant context does not independently produce a Trust Statement.
-
-The applicable Attestor rules, evidence, authoritative references, provenance, scope, status, limitations, and evaluation process govern the conclusion.
+They must not be interpreted as evidence that Trust Signal remains a canonical object.
 
 ## Governing Principle
-
 > **Reference does not transfer authority.**
 
-This applies both to authoritative Suite objects and to any trust-relevant meaning Attestor derives from them.
-
 ## Reconciliation Notes
+This Advanced Architecture reconciliation resolves the question that the foundational page deliberately left open.
 
-This revision makes a substantial change to the June-era page.
+The adopted determination is:
+- retain the route `/attestor/trust-signals/` as explanatory and historical documentation;
+- retain “trust signal” only as descriptive language where useful;
+- do not establish a Trust Signal canonical object;
+- do not establish Trust Signal identifiers, lifecycle states, schemas, controlled values, scoring, directionality, weighting, or aggregation;
+- use the established Evidence, Provenance, Relationships, Evaluation, uncertainty, limitations, and Trust Statement architecture instead;
+- preserve a strict namespace boundary from Beacon Discovery Signals.
 
-Major changes include:
+## Status
+**Trust Signals → Advanced Architecture reconciled.**
 
-- preserving “trust signal” only as a descriptive Attestor concept at this stage;
-- explicitly separating Attestor trust signals from Beacon Discovery Signals;
-- removing Attestation Signals, Evidence Signals, Verification Signals, Reputation Signals, Accountability Signals, and Correction Signals as implied formal categories;
-- replacing those categories with broader descriptive evaluation-context areas;
-- removing the pre-Suite `Signal → Context → Evaluation → Trust` model;
-- replacing “Trust” as the endpoint with Attestor's canonical **Trust Statement**;
-- removing the implied reputation architecture;
-- removing positive/negative/neutral/mixed/uncertain as established directional values;
-- adding conflicting and uncertain evidence treatment;
-- preserving institutional authority boundaries;
-- deferring the question of whether a formal trust-signal object should exist at all.
+No further Trust Signal architecture is required for Attestor production readiness.
 
-## Deferred to Advanced Architecture
-
-The following remain intentionally unresolved:
-
-- whether “Trust Signal” should remain a formal Attestor term;
-- whether a separate trust-signal object is necessary;
-- whether trust-relevant factors require controlled machine representation;
-- naming if a formal evaluation-factor structure is adopted;
-- controlled values;
-- directionality;
-- weighting;
-- scoring;
-- aggregation;
-- relationship to evidence sufficiency;
-- relationship to Attestation Types;
-- relationship to Trust Statement generation;
-- lifecycle and versioning treatment;
-- schemas and validation;
-- conformance tests and reference vectors.
+Remaining Attestor implementation work belongs to the canonical architecture, not to a separate Trust Signal system.
 
 ## Files
-
 - `index.html` — public Trust Signals page.
-- `README.md` — repository documentation for the Trust Signals page.
+- `README.md` — repository documentation.
