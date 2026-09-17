@@ -1,57 +1,48 @@
 # Satoshium Attestor — Purpose
 
 ## Page
-
 `/attestor/purpose/`
 
 ## Purpose
-
 This page defines why **Satoshium Attestor** exists within the Satoshium Suite.
 
-Attestor's canonical responsibility is the production and lifecycle of structured, attributable, evidence-linked **Trust Statements**.
-
-The page establishes that Attestor does not determine universal truth. Instead, it produces bounded trust conclusions from governed inputs while preserving provenance, scope, limitations, and the authority of referenced Suite objects.
-
 ## Canonical Responsibility
-
 **Attestor → Trust Statement**
 
-A Trust Statement is Attestor's own institutional output. Referenced evidence and Suite objects remain authoritative within their originating systems.
+A Trust Statement is a governed, attributable, bounded Attestor conclusion produced through Rule-Constrained Evaluation of an Attestation against eligible governed inputs.
+
+## Canonical Method
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
+
+This is the normalized Attestor institutional flow.
 
 ## Governing Principle
-
 > **Reference does not transfer authority.**
 
-Attestor may consume or reference information from other Suite institutions without inheriting their canonical responsibilities.
+## Institutional Purpose
+Attestor exists to:
+- form and govern Attestations;
+- determine which potential inputs are eligible for a particular evaluation;
+- preserve authority and provenance boundaries;
+- perform Rule-Constrained Evaluation;
+- preserve material conflicts, uncertainty, limitations, scope, and relevant state;
+- produce governed Trust Statements;
+- govern the lifecycle, versioning, validation, conformance, and publication of its own objects.
 
-## Core Method
-
-The Purpose page expresses the working Attestor method as:
-
-`Authoritative Inputs → Attestation → Trust Statement`
-
-This is intentionally broader than the earlier pre-Suite sequence that implied certification was the necessary starting point for every Attestor output.
-
-Detailed eligibility, validation, lifecycle, status, correction, versioning, and production rules belong in Attestor's dedicated foundational and advanced documentation.
+Attestor does not manufacture abstract trust or determine universal truth.
 
 ## Institutional Boundaries
-
 Attestor does not:
-
-- determine universal truth;
 - issue Certifier certifications;
 - redefine Registry records;
 - rewrite Chronicle history;
-- establish Anchor integrity references;
+- establish Anchor Integrity References;
 - create Beacon Discovery Signals;
 - assume Atlas intelligence authority;
 - assume Navigator workflow authority;
 - inherit authority merely by referencing another institution's object.
 
 ## Suite Relationships
-
-The Purpose page recognizes the following institutional responsibilities:
-
 - **Atlas → Authoritative Intelligence**
 - **Navigator → Workflow Definition / Orchestration**
 - **Certifier → Certification Package**
@@ -61,25 +52,28 @@ The Purpose page recognizes the following institutional responsibilities:
 - **Beacon → Discovery Signal / Discovery Metadata**
 - **Attestor → Trust Statement**
 
-Aegis remains part of the broader Satoshium architecture and governance/security context; this page does not assign it a new Attestor-specific canonical object.
+## Architectural Distinctions
+> **Availability ≠ Eligibility**
 
-## Reconciliation Notes
+> **Authority ≠ Eligibility**
 
-This revision updates the June-era pre-Suite Purpose page.
+> **Reference ≠ Eligibility**
 
-Major changes include:
+> **Attestation ≠ Trust Statement**
 
-- replacing the generic “trust layer” framing with Attestor's bounded Suite-institution role;
-- making **Trust Statement** the explicit canonical output;
-- replacing the older purpose of broadly preserving “trust-related information” with production of governed Trust Statements;
-- preserving evidence and historical context as supporting inputs rather than Attestor-owned historical authority;
-- removing the old linear `Attestation → Evidence → Trust Signal → Reputation → Trust` model;
-- removing the implication that Attestor owns reputation or produces trust itself;
-- distinguishing Attestor from Certifier verification/certification, Registry records, Chronicle history, Anchor integrity, and Beacon discovery;
-- incorporating the Suite-wide principle **Reference does not transfer authority**;
-- preserving the existing Satoshium page shell and navigation conventions.
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
+
+> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
+
+> **Validation ≠ Evaluation**
+
+> **Validation ≠ Conformance**
+
+## Status
+**Purpose → Advanced Architecture reconciled.**
+
+The Purpose page now reflects established Attestor architecture rather than the earlier abbreviated `Authoritative Inputs → Attestation → Trust Statement` model.
 
 ## Files
-
 - `index.html` — public Purpose page.
-- `README.md` — repository documentation for the Purpose page.
+- `README.md` — repository documentation.
