@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Authority</title>
+<meta name="description" content="The Satoshium Attestor Authority architecture defining Attesting Authority, Attestor authority, referenced authority, source authority, and the boundaries between them.">
+<link rel="canonical" href="https://satoshium.us/attestor/authority/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Authority</h1>
+<p class="lead">The Attestor Authority architecture defines <strong>Attesting Authority</strong>, <strong>Attestor authority</strong>, <strong>referenced authority</strong>, and the exact institutional boundaries that determine where each begins and ends.</p>
+<p class="lead">Authority is preserved, attributed, and bounded. Attestor may evaluate governed assertions and authoritative references, but evaluation does not cause the authority of a source object, institution, or external party to migrate into Attestor.</p>
+<div class="note"><strong>Governing principle:</strong> Reference does not transfer authority.</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Attesting Authority</h2><p>The Attesting Authority is the attributable party or governed source responsible for the assertion carried by an Attestation. Its authority applies only to the assertion, subject matter, jurisdiction, role, or source context it is legitimately positioned to address. Attribution identifies the authority; it does not enlarge it.</p></article>
+<article class="card"><h2>Attestor Authority</h2><p>Attestor is authoritative for its own governed evaluation process, Attestor-owned objects, and the Trust Statements it produces. A Trust Statement is authoritative as an Attestor conclusion within its defined scope, basis, limitations, status, and relevant time or state. Attestor does not thereby become universally authoritative over the underlying subject.</p></article>
+<article class="card"><h2>Referenced Authority</h2><p>A referenced authority remains authoritative according to its own institution, source system, jurisdiction, role, or governing framework. Attestor may preserve and evaluate information from that authority without adopting, replacing, or extending the source authority.</p></article>
+<article class="card"><h2>Source Authority</h2><p>Canonical Suite objects retain the authority of the institution that owns them. Certifier remains authoritative for Certification Packages, Registry for Satoshium Registry Records, Chronicle for Chronicle Entries, Anchor for Integrity References, Beacon for Discovery Signals and Discovery Metadata, Atlas for Authoritative Intelligence, and Navigator for Workflow Definition / Orchestration.</p></article>
+<article class="card"><h2>External Authority</h2><p>External authorities may be referenced where eligible, but their authority must be attributable and bounded to the role or source under which the referenced assertion or evidence was produced. External status alone does not make an input eligible or determinative.</p></article>
+<article class="card"><h2>Authority Scope</h2><p>Authority must be interpreted together with scope. An authority may be legitimate for one assertion, jurisdiction, role, period, or subject and not for another. Attestor must not infer broader authority from a narrower source.</p></article>
+<article class="card"><h2>Authority Preservation</h2><p>Attestor preserves the source identity, provenance, scope, status, and relevant limitations needed to understand what a referenced authority actually supports. Removing that context can create an authority claim the source itself never made.</p></article>
+<article class="card"><h2>Authority Conflict</h2><p>When authorities or governed sources conflict, Attestor preserves the conflict as evaluation context rather than silently selecting one source as universally controlling. Evaluation determines what bounded conclusion, if any, Attestor can responsibly produce.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Authority Layers</h2>
+<p>Attestor distinguishes the authority behind an assertion from the authority exercised by Attestor when producing its own conclusion. These layers may be connected through evaluation, but they are not interchangeable.</p>
+<div class="note"><strong>Attesting Authority</strong> → authority for the attributable assertion within its legitimate scope<br><br><strong>Referenced Authority</strong> → authority retained by a cited institution, source, or external party<br><br><strong>Attestor Authority</strong> → authority for Attestor's governed evaluation and resulting Trust Statement<br><br>Connection through evaluation → Does not merge authority</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Attesting Authority Requirements</h2>
+<p>An Attestation must identify enough authority context to make the assertion accountable and interpretable. The exact machine representation is reserved for Schemas, but the conceptual model requires the authority to be identifiable and its relationship to the assertion to be understandable.</p>
+<div class="note">Attesting Authority → Identifiable<br>Authority Context → Preserved<br>Relationship to Assertion → Understandable<br>Scope / Role / Jurisdiction when material → Preserved<br>Provenance → Traceable<br>Limitations → Visible when material</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Attestor's Authority Boundary</h2>
+<p>Attestor's authority begins with its governed institutional process: receiving or forming eligible Attestations, preserving their governed basis, applying Attestor rules, recording evaluation, and producing and maintaining Trust Statements. Its authority ends where another institution or source owns the underlying canonical fact, record, certification, history, integrity determination, discovery object, intelligence product, workflow, or external assertion.</p>
+<div class="note"><strong>Attestor may:</strong><br>govern Attestations · evaluate eligible inputs · produce Trust Statements · maintain Attestor lifecycle · correct Attestor-owned objects<br><br><strong>Attestor may not:</strong><br>reissue source authority · rewrite source objects · certify on behalf of Certifier · register on behalf of Registry · rewrite Chronicle history · establish Anchor integrity references · create Beacon Discovery Signals under Attestor authority · redefine Atlas intelligence · assume Navigator workflow authority</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Suite Authority Map</h2>
+<p>Each Suite institution retains its canonical responsibility. Attestor consumes or references governed information across these boundaries only as permitted by its own eligibility and evaluation architecture.</p>
+<div class="note">Atlas → Authoritative Intelligence<br>Navigator → Workflow Definition / Orchestration<br>Certifier → Certification Package<br>Registry → Satoshium Registry Record<br>Chronicle → Chronicle Entry<br>Anchor → Integrity Reference<br>Beacon → Discovery Signal / Discovery Metadata<br><strong>Attestor → Trust Statement</strong></div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Authority Does Not Equal Eligibility</h2>
+<p>A source may be authoritative for its own object or assertion and still not be eligible for a particular Attestor evaluation. Eligibility is a separate governed determination based on the evaluation purpose, scope, provenance, source state, relationship, and applicable Attestor rules.</p>
+<div class="note">Authority → Who legitimately stands behind the source assertion or object<br>Eligibility → Whether that input may enter a particular Attestor evaluation<br>Evaluation → What Attestor concludes from eligible governed inputs<br><br>Authority ≠ Eligibility ≠ Evaluation Outcome</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Authority Does Not Equal Agreement</h2>
+<p>Preserving an authority does not require Attestor to adopt that authority's assertion as its own conclusion. Attestor can accurately attribute a source, preserve its legitimate authority, and still produce a supported, partially-supported, not-supported, contradicted, or indeterminate evaluation outcome when the governing evaluation rules justify it.</p>
+<div class="note">Preserve Authority → Preserve who stands behind the assertion<br>Evaluate Assertion → Apply Attestor rules to eligible governed inputs<br>Produce Trust Statement → State Attestor's bounded conclusion<br><br>Attribution ≠ Adoption</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Authority Conflict and Multiple Authorities</h2>
+<p>An Attestation or evaluation may involve more than one authority. Where their assertions, records, or interpretations differ, Attestor must preserve attribution and material disagreement rather than erase the conflict. No generic hierarchy of authority is created by this page.</p>
+<div class="note">Multiple authorities → Preserve separately<br>Material conflict → Preserve as evaluation context<br>Automatic authority ranking → Not adopted<br>Universal controlling source → Not assumed<br>Bounded resolution → Evaluation architecture</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>What Authority Does Not Establish</h2>
+<p>Authority identifies the legitimate source or institutional basis for an assertion, object, process, or conclusion. It does not by itself establish that the content is correct, current, sufficient, eligible, validated, conformant, published, or favorable.</p>
+<div class="note">Authority ≠ Truth<br>Authority ≠ Evidence Sufficiency<br>Authority ≠ Eligibility<br>Authority ≠ Validation<br>Authority ≠ Conformance<br>Authority ≠ Publication<br>Authority ≠ Favorable Trust Statement</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>The Authority architecture establishes the boundary conditions needed for Provenance, Eligibility, Evaluation, Relationships, Schemas, Validation, and eventual production. Later architecture may formalize representation and rules, but it must preserve these authority boundaries.</p>
+<div class="note"><strong>Authority → Established</strong><br>Attesting Authority → Defined and bounded<br>Attestor Authority → Defined and bounded<br>Referenced / Source Authority → Preserved<br>External Authority → Attributable and bounded<br>Automatic authority ranking → Not adopted<br>Authority transfer by reference → Prohibited<br>Production proof → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">Authority remains trustworthy when its source, scope, provenance, and boundaries remain visible.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
