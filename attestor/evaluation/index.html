@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Evaluation</title>
+<meta name="description" content="The Satoshium Attestor Evaluation architecture defining Rule-Constrained Evaluation of Attestations and eligible governed inputs to produce bounded Trust Statements.">
+<link rel="canonical" href="https://satoshium.us/attestor/evaluation/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Evaluation</h1>
+<p class="lead">Evaluation defines the heart of Attestor: how <strong>Attestations</strong> and <strong>eligible governed inputs</strong> undergo <strong>Rule-Constrained Evaluation</strong> to produce a bounded <strong>Trust Statement</strong>.</p>
+<p class="lead">Attestor does not convert sources directly into conclusions. It evaluates a defined assertion against an eligible, attributable, provenance-preserving basis under governed rules and states only the conclusion that basis can responsibly support.</p>
+<div class="note"><strong>Canonical evaluation path:</strong> Attestation + Eligible Governed Inputs → Rule-Constrained Evaluation → Trust Statement</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Evaluation Purpose</h2><p>Rule-Constrained Evaluation is the governed process by which Attestor examines an Attestation against its eligible evaluation basis and determines what bounded conclusion Attestor can responsibly state. Evaluation is the institutional bridge between assertion and Trust Statement.</p></article>
+<article class="card"><h2>Evaluation Subject</h2><p>Every evaluation must identify the Attestation and assertion being evaluated. Attestor evaluates a defined assertion within a defined scope; it does not perform an unbounded search for whether a subject is generally trustworthy or true.</p></article>
+<article class="card"><h2>Evaluation Basis</h2><p>The evaluation basis consists only of eligible governed inputs admitted for the particular evaluation. Material supporting, limiting, conflicting, contradictory, and indeterminate information must remain available to the evaluation rather than being filtered according to the desired result.</p></article>
+<article class="card"><h2>Applicable Rules</h2><p>Evaluation must operate under identifiable Attestor rules and methodology. Rules constrain what may be considered, how scope and authority are preserved, how uncertainty is handled, and what conclusion the available basis permits.</p></article>
+<article class="card"><h2>Reasoned Treatment</h2><p>Attestor must preserve enough reasoning context to make the treatment of material inputs reviewable. Evaluation is not a mechanical vote among sources, an authority popularity contest, or a hidden confidence calculation.</p></article>
+<article class="card"><h2>Bounded Conclusion</h2><p>The evaluation conclusion must be no broader or stronger than the eligible basis, applicable scope, provenance, authority, relevant state, limitations, and uncertainty support. Where the basis cannot justify a stronger conclusion, Attestor must preserve that limitation.</p></article>
+<article class="card"><h2>Evaluation Outcome</h2><p>The controlled outcome classifies the evaluation result as <strong>supported</strong>, <strong>partially-supported</strong>, <strong>not-supported</strong>, <strong>contradicted</strong>, or <strong>indeterminate</strong>. The outcome summarizes the bounded evaluation; it does not replace the Trust Statement conclusion.</p></article>
+<article class="card"><h2>Trust Statement Production</h2><p>A completed evaluation provides the governed basis for a Trust Statement. The Trust Statement remains a distinct Attestor-owned canonical object with its own identity, scope, attribution, provenance, limitations, status, and relationships.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Evaluation Sequence</h2>
+<p>The evaluation process is conceptually ordered so that Attestor cannot reach a conclusion before the assertion, scope, admissible basis, and governing rules are known. Later Methodology and Validation architecture will formalize operational steps and machine-testable requirements.</p>
+<div class="note">1. Identify Attestation and Assertion<br>2. Confirm Evaluation Purpose and Scope<br>3. Establish Eligible Governed Inputs<br>4. Preserve Authority and Provenance Context<br>5. Apply Applicable Attestor Rules<br>6. Consider Supporting, Limiting, Conflicting, and Contradictory Material<br>7. Preserve Uncertainty and Material Limitations<br>8. Determine Evaluation Outcome<br>9. Form Bounded Attestor Conclusion<br>10. Produce or Update Governed Trust Statement</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Outcome Semantics</h2>
+<p>The Controlled Values architecture established five initial evaluation outcomes. This page defines their conceptual meaning. Exact validation thresholds and operational tests remain for Methodology and Validation.</p>
+<div class="note"><strong>supported</strong> → the eligible evaluation basis supports the assertion within the defined scope without a material unresolved conflict that prevents that conclusion<br><br><strong>partially-supported</strong> → the basis supports a bounded or material portion of the assertion, but not the assertion in full as presented<br><br><strong>not-supported</strong> → the eligible basis does not provide sufficient support for the assertion within the defined scope, without establishing the stronger conclusion that it is contradicted<br><br><strong>contradicted</strong> → the eligible basis materially supports a conclusion inconsistent with the assertion within the defined scope<br><br><strong>indeterminate</strong> → the eligible basis, conflict, uncertainty, provenance, state, or limitations do not permit Attestor to responsibly determine support or contradiction</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Outcome and Conclusion Are Distinct</h2>
+<p>The controlled outcome is a classification of the evaluation result. The Trust Statement conclusion is the bounded human- and machine-interpretable statement Attestor actually makes. Two evaluations may share an outcome class while requiring different conclusions because their subjects, scopes, evidence, limitations, or relevant states differ.</p>
+<div class="note">Evaluation Outcome → Controlled classification<br>Bounded Conclusion → Attestor's substantive conclusion<br>Trust Statement → Canonical object carrying conclusion + context<br><br>Outcome ≠ Conclusion ≠ Trust Statement Identity</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>No Automatic Source Conversion</h2>
+<p>No source object, certification, registry record, historical entry, integrity reference, discovery signal, intelligence product, workflow result, or external assertion automatically becomes an Attestor conclusion. Each remains within its source authority and may enter evaluation only when eligible.</p>
+<div class="note">Source Object → Preserve Source Authority<br>Eligible Reference / Input → Enter Evaluation Basis<br>Rule-Constrained Evaluation → Attestor Conclusion<br>Trust Statement → Attestor Authority<br><br><strong>Reference does not transfer authority.</strong></div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>No Hidden Weighting Model</h2>
+<p>This architecture does not adopt a universal numeric weighting system, confidence percentage, reputation score, majority-source rule, or automatic authority hierarchy. If future specialized methodology requires weighting for a defined evaluation type, that weighting must be explicitly governed, explainable, bounded to that methodology, and separately adopted.</p>
+<div class="note">Source Count ≠ Truth<br>Authority Count ≠ Outcome<br>Confidence Percentage → Not adopted<br>Reputation Score → Not adopted<br>Universal Weighting Formula → Not adopted<br>Hidden Ranking → Prohibited</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Conflict and Uncertainty</h2>
+<p>Material disagreement, incomplete evidence, unresolved provenance, temporal mismatch, source-state change, and other uncertainty must influence the conclusion when relevant. Attestor does not force every evaluation into a positive or negative answer. <strong>indeterminate</strong> is a legitimate governed outcome when the basis cannot responsibly support a stronger determination.</p>
+<div class="note">Material Conflict → Preserve and evaluate<br>Material Limitation → Bound conclusion<br>Insufficient Basis → Do not overstate<br>Unresolvable Determination → indeterminate<br><br>Uncertainty is governed context, not a defect to hide.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Evaluation-Time State</h2>
+<p>The evaluation must remain tied to the relevant state and time of its inputs. A later change to a source object does not retroactively rewrite what Attestor evaluated. Material later changes may instead trigger review, correction, supersession, or a new evaluation under Lifecycle and Versioning rules.</p>
+<div class="note">Evaluation Basis at Time T → Preserved<br>Trust Statement Conclusion at Time T → Traceable to that basis<br>Later Material Change → Review under governed lifecycle<br>Historical Evaluation → Not silently rewritten</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Evaluation Reviewability</h2>
+<p>A governed evaluation must preserve enough context for a later reviewer to understand what was evaluated, what basis was admitted, what material information was excluded and why when relevant, what rules applied, what limitations existed, and how the resulting conclusion remained within those bounds.</p>
+<div class="note">Assertion → Known<br>Scope → Known<br>Eligible Basis → Traceable<br>Material Exclusions → Reviewable when required<br>Rules / Methodology → Identifiable<br>Outcome → Recorded<br>Conclusion → Bounded<br>Provenance → Preserved</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>What Evaluation Does Not Do</h2>
+<p>Attestor Evaluation does not declare universal truth, inherit another institution's authority, certify on behalf of Certifier, create generic reputation, produce a trust score, guarantee future conditions, or erase uncertainty. Its responsibility is narrower and more defensible: produce an attributable, reviewable, bounded Attestor conclusion from an eligible governed basis.</p>
+<div class="note">Evaluation ≠ Universal Truth Determination<br>Evaluation ≠ Certification<br>Evaluation ≠ Source Authority Transfer<br>Evaluation ≠ Reputation<br>Evaluation ≠ Trust Score<br>Evaluation ≠ Guarantee<br><br>Evaluation → Governed basis for a bounded Trust Statement</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>The Evaluation architecture now establishes Attestor's central institutional act. Entry Model defined the objects; Identifiers gave them identity; Controlled Values supplied vocabulary; Authority bounded responsibility; Provenance preserved lineage; Eligibility governed admission. Evaluation now defines how those elements are brought together to produce Attestor's canonical conclusion.</p>
+<div class="note"><strong>Evaluation → Established</strong><br>Rule-Constrained Evaluation → Defined<br>Evaluation sequence → Established conceptually<br>Outcome semantics → Established conceptually<br>Outcome vs. conclusion → Distinguished<br>Conflict / uncertainty treatment → Required<br>Universal scoring / weighting → Not adopted<br>Detailed operational methodology → Deferred to Methodology<br>Machine validation → Deferred to Validation<br>Production proof → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">A trustworthy evaluation does not ask what conclusion is desired. It asks what conclusion the governed basis can actually support.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
