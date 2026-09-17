@@ -1,338 +1,247 @@
-# Scope
+# Satoshium Attestor — Scope
+
+## Page
+
+`/attestor/scope/`
 
 ## Purpose
 
-The scope of Attestor defines the boundaries of the system, clarifying what Attestor is intended to do, what information it manages, and which responsibilities belong to other systems within the Satoshium ecosystem.
+This page defines the institutional scope of **Satoshium Attestor**.
 
-A clearly defined scope helps maintain consistency, transparency, interoperability, and separation of responsibilities.
+It establishes:
 
----
+- what belongs within Attestor;
+- how scope constrains Attestations, evaluation, and Trust Statements;
+- what remains outside Attestor's authority;
+- how Attestor relates to other Satoshium Suite institutions;
+- how referenced authority is preserved.
 
-## Mission Scope
+## Canonical Responsibility
 
-Attestor focuses on trust-related information.
+**Attestor → Trust Statement**
 
-Its primary responsibilities include:
+Attestor's institutional scope exists to support this canonical responsibility.
 
-* Attestations
-* Evidence relationships
-* Reputation signals
-* Trust-related records
-* Corrections
-* Accountability information
-* Trust context preservation
+Attestor does not own “trust” as an abstract condition. It produces governed, attributable, bounded Trust Statements.
 
-Attestor exists to document trust-related information rather than determine objective truth.
+## Governing Principle
 
----
+> **Reference does not transfer authority.**
 
-## Core Scope Areas
+Attestor may use governed information produced elsewhere without inheriting the authority of the originating institution.
 
-### Attestations
+## Within Scope
 
-Attestor manages structures for documenting statements made regarding:
+Attestor's foundational scope includes:
 
-* Identities
-* Claims
-* Records
-* Events
-* Qualifications
-* Relationships
-* Organizations
+- governed Attestations;
+- evaluation of eligible Evidence;
+- evaluation of authoritative references;
+- preservation of provenance;
+- preservation of scope;
+- preservation of relevant status and limitations;
+- production of Trust Statements;
+- governed correction or lifecycle treatment of Attestor-owned objects.
 
-Attestations represent a foundational component of the system.
+The exact machine architecture remains to be established.
 
----
+## Three Uses of Scope
 
-### Evidence
+This reconciliation makes an important distinction between three related meanings of scope.
 
-Attestor manages references to evidence associated with attestations and trust-related records.
+### Assertion Scope
 
-Examples include:
+The boundary within which an Attestation applies.
 
-* Documents
-* Publications
-* Records
-* Certifications
-* Historical materials
-* Source references
+Depending upon advanced architecture, this may involve the subject, assertion, conditions, relevant time, purpose, jurisdiction, or other limitations.
 
-Evidence helps provide context for interpretation.
+No final field model is adopted here.
 
----
+### Evaluation Scope
 
-### Reputation
+The boundary of the question Attestor is actually evaluating.
 
-Attestor may maintain reputation-related records and signals.
+Attestor should not silently evaluate more than its eligible inputs and governing rules support.
 
-Examples include:
+### Trust Statement Scope
 
-* Historical participation
-* Prior attestations
-* Reputation indicators
-* Reputation events
-* Trust-related observations
+The boundary within which the resulting Trust Statement applies.
 
-Reputation contributes context to trust evaluations.
+A conclusion about one subject, condition, time, or purpose should not be interpreted as a universal judgment.
 
----
+## Suite Institutional Boundaries
 
-### Trust Signals
+### Atlas
 
-Attestor may document trust-related signals associated with identities, organizations, records, or claims.
+**Atlas → Authoritative Intelligence**
 
-Trust signals may help users better understand trust-related context.
+Attestor may reference authoritative Atlas intelligence when relevant.
 
----
+Atlas retains authority over that intelligence.
 
-### Corrections and Retractions
+### Navigator
 
-Attestor supports:
+**Navigator → Workflow Definition / Orchestration**
 
-* Corrections
-* Amendments
-* Revisions
-* Retractions
+Attestor may participate in Navigator-defined or Navigator-orchestrated workflows.
 
-Historical transparency remains an important objective.
+Navigator does not own Attestor's Trust Statement, and Attestor does not assume Navigator's workflow responsibility.
 
----
+### Certifier
 
-### Accountability Records
+**Certifier → Certification Package**
 
-Attestor may preserve information regarding:
+Attestor may reference a Certification Package as an authoritative input.
 
-* Attestors
-* Contributors
-* Correctors
-* Record creators
+Attestor does not certify or recertify the subject.
 
-Accountability supports transparency and reviewability.
+### Registry
 
----
+**Registry → Satoshium Registry Record**
 
-## Information Within Scope
+Attestor may reference Registry records.
 
-Examples of information generally within Attestor's scope include:
+Attestor does not register, redefine, or assume authority over those records.
 
-* Attestation records
-* Evidence references
-* Trust relationships
-* Reputation information
-* Source references
-* Correction records
-* Retraction records
-* Confidence indicators
-* Accountability records
+### Chronicle
 
-These categories may evolve over time.
+**Chronicle → Chronicle Entry**
 
----
+Attestor may reference Chronicle Entries for historical or provenance-bearing context.
 
-## Information Outside Scope
+Attestor does not rewrite Chronicle history.
 
-Certain responsibilities belong primarily to other systems.
+### Anchor
 
-Examples include:
+**Anchor → Integrity Reference**
 
-* Identity management
-* Verification operations
-* Historical preservation
-* Discovery services
-* Record registry management
-* Jurisdiction intelligence
+Attestor may reference Anchor Integrity References.
 
-Attestor may reference these systems but does not replace them.
+Attestor does not establish or redefine Anchor's integrity determination.
 
----
+### Beacon
 
-## Relationship to Anchor
+**Beacon → Discovery Signal / Discovery Metadata**
 
-Anchor serves as the identity layer.
+Attestor may reference Beacon Discovery Signals or Discovery Metadata.
 
-Anchor focuses on:
+Attestor does not create or redefine Beacon's canonical signal architecture.
 
-* Identity records
-* Identity structures
-* Identity governance
+### Attestor
 
-Attestor may reference identities maintained by Anchor.
+**Attestor → Trust Statement**
 
-A simplified distinction may be represented as:
+Attestor alone owns its governed Trust Statement within this institutional mapping.
 
-```text id="a9t4qp"
-Anchor → Identity
-Attestor → Trust
-```
+## Other Governed Sources
 
----
+Attestor may eventually accept eligible external or otherwise governed sources.
 
-## Relationship to Certifier
+This reconciliation does not define their eligibility.
 
-Certifier serves as the verification layer.
+Advanced architecture should establish requirements for:
 
-Certifier focuses on:
+- source authority;
+- provenance;
+- relevance;
+- status;
+- scope;
+- limitations;
+- validation;
+- permitted use.
 
-* Evidence evaluation
-* Verification processes
-* Certification outcomes
+Eligibility never transfers source authority to Attestor.
 
-Attestor may reference verification results.
+## Outside Scope
 
-A simplified distinction may be represented as:
+Attestor does not:
 
-```text id="b6r2kw"
-Certifier → Verification
-Attestor → Trust Context
-```
+- determine universal truth;
+- issue another institution's canonical objects;
+- alter authoritative source records;
+- assume authority merely by referencing a source;
+- create a generic reputation system under the current architecture;
+- produce an automatic trust score;
+- treat a single input as an automatic Trust Statement;
+- replace independent judgment beyond the defined meaning of its own governed output.
 
----
+## Correction of the Pre-Suite Identity Model
 
-## Relationship to Registry
+The June-era Scope page stated that Attestor could reference “identities maintained by Anchor” and described identity creation and management as outside Attestor.
 
-Registry serves as the record management layer.
+That specific mapping is **not carried forward**.
 
-Registry focuses on:
+Under the current Suite architecture used for this reconciliation:
 
-* Record organization
-* Record storage
-* Record classification
+**Anchor → Integrity Reference**
 
-Attestor may create trust-related records that Registry helps manage.
+This page therefore does not assign Anchor canonical identity-management responsibility.
 
----
+If a future identity architecture is required, it should be established explicitly rather than inherited from the pre-Suite model.
 
-## Relationship to Chronicle
+## Correction of the Pre-Suite Institutional Mapping
 
-Chronicle serves as the historical layer.
+The old page used:
 
-Chronicle focuses on:
+`Atlas → Data`
+`Navigator → Query`
+`Beacon → Discovery`
+`Certifier → Verification`
+`Registry → Records`
+`Chronicle → History`
+`Anchor → Identity`
+`Attestor → Trust`
 
-* Historical preservation
-* Event records
-* Historical timelines
+The reconciled mapping is:
 
-Attestor may contribute records that become part of the historical record.
+`Atlas → Authoritative Intelligence`
+`Navigator → Workflow Definition / Orchestration`
+`Certifier → Certification Package`
+`Registry → Satoshium Registry Record`
+`Chronicle → Chronicle Entry`
+`Anchor → Integrity Reference`
+`Beacon → Discovery Signal / Discovery Metadata`
+`Attestor → Trust Statement`
 
----
+This mapping preserves each institution's canonical responsibility rather than reducing institutions to broad functional labels.
 
-## Relationship to Beacon
+## Reconciliation Notes
 
-Beacon serves as the discovery layer.
+Major changes include:
 
-Beacon focuses on:
+- replacing generic “trust layer” framing with Attestor's bounded institutional scope;
+- establishing Trust Statement as Attestor's canonical responsibility;
+- distinguishing Assertion Scope, Evaluation Scope, and Trust Statement Scope;
+- removing trust signals, accountability records, reputation context, and trust frameworks as assumed Attestor-owned scope;
+- correcting the old Anchor identity mapping;
+- correcting the old Certifier verification mapping;
+- correcting the old Navigator query mapping;
+- correcting the old Atlas data mapping;
+- expressing Beacon's canonical Discovery Signal / Discovery Metadata responsibility;
+- adding explicit authority boundaries for every referenced Suite institution;
+- allowing future eligible external sources without transferring their authority;
+- removing the claim that Attestor produces or owns abstract “Trust”;
+- adding explicit out-of-scope constraints.
 
-* Discovery
-* Search
-* Information visibility
-* Signal identification
+## Deferred to Advanced Architecture
 
-Attestor focuses on trust-related information.
+The following remain intentionally unresolved:
 
-A simplified distinction may be represented as:
+- formal scope fields;
+- subject-scope representation;
+- temporal scope;
+- jurisdictional scope, if needed;
+- purpose or use scope;
+- evaluation-question representation;
+- limitation vocabulary;
+- external-source eligibility;
+- scope validation rules;
+- scope inheritance or non-inheritance rules;
+- Trust Statement scope schema;
+- machine-readable authority boundaries;
+- conformance tests and reference vectors.
 
-```text id="c3m8yu"
-Beacon → Discovery
-Attestor → Trust
-```
+## Files
 
----
-
-## Relationship to Atlas
-
-Atlas serves as the data layer.
-
-Atlas focuses on:
-
-* Jurisdiction intelligence
-* Media intelligence
-* Geographic information
-
-Attestor may reference information originating from Atlas but does not manage Atlas content.
-
----
-
-## Relationship to Navigator
-
-Navigator serves as the query layer.
-
-Navigator focuses on:
-
-* Questions
-* Exploration
-* Query workflows
-
-Attestor focuses on trust-related records and context.
-
----
-
-## Scope Boundaries
-
-Attestor seeks to answer questions such as:
-
-* Who made this statement?
-* What evidence may support it?
-* What trust-related context exists?
-* What reputation signals are available?
-* What corrections have occurred?
-
-Attestor generally does not seek to answer:
-
-* Is this absolutely true?
-* Which jurisdiction is best?
-* What information should be discovered?
-* What identity should exist?
-
-These responsibilities belong elsewhere.
-
----
-
-## Long-Term Scope
-
-Future Attestor development may expand to include:
-
-* Advanced trust frameworks
-* Reputation systems
-* Confidence models
-* Governance structures
-* Trust interoperability standards
-* Distributed attestation networks
-
-Specific implementations may evolve over time.
-
----
-
-## Relationship to the Satoshium Suite
-
-Attestor operates within a broader ecosystem:
-
-```text id="d7n5zr"
-Atlas      → Data
-Navigator  → Query
-Beacon     → Discovery
-Certifier  → Verification
-Registry   → Records
-Chronicle  → History
-Anchor     → Identity
-Attestor   → Trust
-```
-
-Scope boundaries help preserve clarity across these systems.
-
----
-
-## Guiding Statement
-
-The scope of Attestor may be summarized as:
-
-```text id="e4x1vk"
-Attestor documents trust.
-
-It does not define truth.
-```
-
----
-
-## Status
-
-This scope document represents an initial conceptual framework and may evolve as Attestor matures and additional standards are developed.
+- `index.html` — public Scope page.
+- `README.md` — repository documentation for the Scope page.
