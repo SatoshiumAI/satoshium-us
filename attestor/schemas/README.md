@@ -4,11 +4,11 @@
 `/attestor/schemas/`
 
 ## Purpose
-This directory preserves the early Attestor schema work while reconciling it with the current foundational architecture.
+This directory contains the structural schema layer through which adopted Attestor architecture is expressed for implementation, authoring, validation, and production use.
 
-The June files contained useful structural candidates, but they also prematurely treated several conceptual objects, identifiers, controlled values, lifecycle states, confidence indicators, and trust signals as though they were already adopted technical standards.
+`Architecture → Schema/Profile → Template → Governed Instance`
 
-They are therefore retained here as **foundational schema profiles / candidate structures**, not final normative schemas.
+Schemas implement adopted architecture. They do not independently create new canonical objects, authority, controlled values, or institutional responsibilities.
 
 ## Canonical Responsibility
 **Attestor → Trust Statement**
@@ -16,58 +16,120 @@ They are therefore retained here as **foundational schema profiles / candidate s
 ## Governing Principle
 > **Reference does not transfer authority.**
 
-## Foundational Relationship
+## Canonical Relationship
 `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
 ## Files
-- `attestation-schema.md` — candidate structural profile for an Attestation.
-- `evidence-attestation-schema.md` — candidate specialization for an evidence-related Attestation.
-- `source-attestation-schema.md` — candidate specialization for a source/provenance-related Attestation.
-- `correction-attestation-template.md` — candidate correction/change profile for Attestor-owned Attestations.
-- `trust-signal-schema.md` — historical June schema retained as a **non-canonical legacy candidate**; no Trust Signal object is adopted.
-- `index.html` — public landing page for this schema area.
+- `attestation-schema.md` — structural schema for a canonical Attestation (`ATT-YYYY-NNNN`).
+- `trust-statement-schema.md` — structural schema for a canonical Trust Statement (`TRST-YYYY-NNNN`).
+- `evidence-attestation-schema.md` — specialized profile for the adopted `evidence` Attestation Type.
+- `source-attestation-schema.md` — specialized profile for the adopted `source-provenance` Attestation Type.
+- `correction-attestation-template.md` — governed correction/change profile used with Lifecycle and Versioning; not a separate canonical object class.
+- `trust-signal-schema.md` — retained historical legacy artifact; Trust Signal is not a canonical Attestor object.
+- `index.html` — public landing page.
 
-## Important Architectural Boundary
-These files do not establish final:
-- identifier formats;
-- required/optional field sets;
-- controlled vocabularies;
-- status values;
-- confidence scales;
-- scoring;
-- lifecycle models;
-- validation sequences;
-- machine schemas;
-- conformance requirements.
+## Canonical Objects
 
-Those belong to advanced architecture.
+### Attestation
+A governed, attributable assertion.
 
-## Trust Signal Schema
-The June `trust-signal-schema.md` is architecturally problematic because the reconciled foundation does not recognize **Trust Signal** as Attestor's canonical object.
+Identifier: `ATT-YYYY-NNNN`
 
-It is retained rather than silently deleted because it is part of the historical design record. Its candidate fields may later inform evaluation-context architecture, but the object itself is **not adopted**.
+### Trust Statement
+A governed, attributable, bounded Attestor conclusion produced through Rule-Constrained Evaluation.
 
-Beacon's **Discovery Signal** remains a separate canonical Beacon object.
+Identifier: `TRST-YYYY-NNNN`
 
-## Correction Template
-The correction template is also not yet a final independent object model. The foundational Corrections work left open whether correction should be represented as:
-- an Attestation Type;
-- a lifecycle/versioning operation;
-- a governed change object/profile;
-- some combination determined by advanced architecture.
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
 
-Accordingly, the template is preserved as a candidate profile without canonizing `Correction Attestation` as a separate object class.
+## Adopted Attestation Types
+- `identity`
+- `evidence`
+- `source-provenance`
+- `verification-related`
+- `relationship-condition`
+- `correction-supersession`
 
-## Whole-Foundation Review
-The review should determine:
-1. which schema candidates remain architecturally useful;
-2. whether Evidence and Source profiles should be formal Attestation Type profiles;
-3. how Attesting Authority is represented;
-4. whether `statement` becomes `assertion` or another canonical field name;
-5. how Scope and Provenance become structurally mandatory;
-6. how evaluation relates to Trust Statement generation;
-7. whether any legacy Trust Signal fields belong in evaluation context;
-8. how corrections/versioning should actually be modeled.
+Evidence and Source / Provenance are formal specialized Attestation profiles.
+
+## Lifecycle and Publication
+Lifecycle State:
+- `draft`
+- `active`
+- `superseded`
+- `withdrawn`
+- `retired`
+
+Publication State:
+- `unpublished`
+- `published`
+
+> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
+
+## Evaluation Outcomes
+- `supported`
+- `partially-supported`
+- `not-supported`
+- `contradicted`
+- `indeterminate`
+
+## Provenance and Authority
+Provenance modes:
+- `direct`
+- `referenced`
+- `derived`
+
+Authority contexts:
+- `Attestor`
+- `Suite-source`
+- `external-source`
+
+> **Reference does not transfer authority.**
+
+## Relationships
+- `supports`
+- `references`
+- `derived-from`
+- `evaluates`
+- `results-in`
+- `supersedes`
+- `corrects`
+- `related-to`
+
+Relationship direction and semantics are governed by `/attestor/relationships/`.
+
+## Correction and Versioning
+Correction is not established as a separate canonical object class merely because a correction profile exists here.
+
+Lifecycle and Versioning govern change behavior.
+
+A bounded change may preserve canonical identity through governed versioning when essential institutional meaning remains intact.
+
+A materially changed Attestation assertion requires a new `ATT-YYYY-NNNN`.
+
+A materially changed Trust Statement conclusion requires a new `TRST-YYYY-NNNN`.
+
+Prior governed states remain traceable.
+
+## Trust Signal
+`trust-signal-schema.md` remains only as a historical design artifact.
+
+Trust Signal is not a canonical Attestor object, identifier family, score, reputation mechanism, or production schema.
+
+Beacon separately owns **Discovery Signal / Discovery Metadata**.
+
+## Validation and Conformance
+`Object + Applicable Normative Requirements → Validation → Validation Result`
+
+> **Validation ≠ Evaluation**
+
+> **Validation ≠ Conformance**
+
+> **Valid ≠ Published**
+
+Executable validation rules and final machine serialization must remain aligned with `/attestor/validation/` and `/attestor/conformance/`.
 
 ## Status
-**Foundational schema reconciliation complete; normative schema design deferred to Advanced Architecture.**
+**Schema Architecture → Advanced Architecture established.**
+
+The schema layer now reflects adopted Attestor architecture. Executable machine validation, serialization details, and production-instance requirements remain governed by the corresponding implementation and production specifications.
