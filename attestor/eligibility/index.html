@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Eligibility</title>
+<meta name="description" content="The Satoshium Attestor Eligibility architecture defining what may legitimately enter Attestor evaluation as an Eligible Governed Input.">
+<link rel="canonical" href="https://satoshium.us/attestor/eligibility/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Eligibility</h1>
+<p class="lead">Eligibility determines what may legitimately enter <strong>Attestor evaluation</strong>. It formalizes the word <strong>eligible</strong> in the governing relationship <strong>Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement</strong>.</p>
+<p class="lead">An input becomes eligible because it satisfies the requirements of a particular Attestor evaluation—not merely because it exists, is public, is authoritative, or can be technically retrieved.</p>
+<div class="note"><strong>Eligibility principle:</strong> Availability ≠ Eligibility. Authority ≠ Eligibility. Reference ≠ Eligibility.</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Eligibility Purpose</h2><p>Eligibility is Attestor's governed determination that a proposed input is permissible for use in a particular evaluation. It is contextual rather than universal: an input may be eligible for one evaluation and ineligible for another.</p></article>
+<article class="card"><h2>Governed Identity</h2><p>An input must be identifiable or otherwise distinguishable enough to be referenced, traced, and reviewed. Anonymous, ambiguous, or unresolvable material cannot be treated as eligible when its identity is material to the evaluation.</p></article>
+<article class="card"><h2>Relevant Relationship</h2><p>The input must have a material relationship to the subject, assertion, scope, or evaluation question. Mere availability, proximity, or mention does not make information eligible.</p></article>
+<article class="card"><h2>Traceable Provenance</h2><p>Material provenance must be sufficient to understand where the input came from and how it reached Attestor. Provenance may be direct, referenced, or derived, but must be adequate for the intended evaluation.</p></article>
+<article class="card"><h2>Authority Context</h2><p>Where authority is material, the source or Attesting Authority must be attributable and its legitimate scope understandable. Authority supports eligibility analysis but does not automatically establish eligibility.</p></article>
+<article class="card"><h2>Scope Compatibility</h2><p>The input must be usable within the scope of the evaluation. Information outside the relevant subject, jurisdiction, condition, time, state, or question may be excluded or bounded rather than treated as generally applicable.</p></article>
+<article class="card"><h2>State & Currency</h2><p>The source state and relevant time must be sufficiently known when they affect interpretation. Superseded, withdrawn, historical, or later-modified material may still be eligible for some purposes, but its state must not be concealed.</p></article>
+<article class="card"><h2>Integrity & Reviewability</h2><p>The input must be sufficiently intact, resolvable, or reviewable for the evaluation purpose. Eligibility does not require that every source be independently verified by Attestor, but Attestor must be able to understand what material it is actually evaluating.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Eligibility Requirements</h2>
+<p>A proposed input is eligible when Attestor can responsibly admit it to a defined evaluation under the applicable purpose, scope, provenance, authority, state, relationship, and reviewability requirements. Exact machine validation belongs to later architecture.</p>
+<div class="note">Identifiable / Distinguishable<br>Materially Relevant<br>Traceable Provenance<br>Authority Context Preserved, when material<br>Compatible with Evaluation Scope<br>Relevant Time / State Known, when material<br>Sufficiently Intact / Resolvable / Reviewable<br>Not Prohibited by Applicable Attestor Rules</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Eligibility Is Evaluation-Specific</h2>
+<p>Eligibility is not a permanent quality attached to a source. The same governed object may be eligible for one evaluation, ineligible for another, or eligible only for a limited historical or contextual purpose. Eligibility therefore belongs to the relationship between an input and a particular evaluation.</p>
+<div class="note">Input + Evaluation Purpose + Scope + Provenance + Authority Context + State + Relationship + Rules → Eligibility Determination<br><br>Eligible Here ≠ Eligible Everywhere</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Eligible Does Not Mean Favorable</h2>
+<p>Eligibility permits an input to be considered. It does not determine how much weight the input receives, whether it supports the assertion, or what evaluation outcome follows. Eligible inputs may support, weaken, contradict, complicate, or leave unresolved the assertion under review.</p>
+<div class="note">Eligible → May enter evaluation<br>Evaluation → Determines treatment and conclusion<br><br>Eligible ≠ Supporting<br>Eligible ≠ Sufficient<br>Eligible ≠ Correct<br>Eligible ≠ Favorable</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Ineligible Inputs</h2>
+<p>An input should not enter the governed evaluation basis when its identity or provenance is materially inadequate, its relationship to the evaluation is immaterial, its scope is incompatible, its state cannot be responsibly interpreted, it is materially unusable, or an applicable Attestor rule prohibits its use. Exclusion must not be used to hide material conflict or inconvenient evidence.</p>
+<div class="note">Material provenance failure → Ineligible<br>Material irrelevance → Ineligible<br>Unresolvable scope incompatibility → Ineligible<br>Materially uninterpretable state → Ineligible<br>Applicable rule prohibition → Ineligible<br><br>Unfavorable to assertion → <strong>Not</strong> a reason for ineligibility</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Excluded and Considered Inputs</h2>
+<p>Where an input is considered for eligibility but excluded and that exclusion is material to understanding the evaluation, Attestor should preserve enough context to make the decision reviewable. The later Evaluation and Methodology architecture will determine the exact record requirements.</p>
+<div class="note">Proposed Input → Eligibility Review<br>Eligible → May enter Evaluation Basis<br>Ineligible → Excluded from Evaluation Basis<br>Material Exclusion → Preserve reviewable reason/context</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Source Institutions and Eligibility</h2>
+<p>Canonical Suite objects are governed inputs, but their institutional authority does not grant automatic eligibility for every Attestor purpose. Attestor evaluates their relevance and admissibility while preserving the source institution's meaning and authority.</p>
+<div class="note">Atlas Intelligence → Potential governed input<br>Navigator Workflow Context → Potential governed input<br>Certification Package → Potential governed input<br>Registry Record → Potential governed input<br>Chronicle Entry → Potential governed input<br>Integrity Reference → Potential governed input<br>Beacon Discovery Signal / Metadata → Potential governed input<br><br>Source authority retained → Eligibility separately determined</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>External Inputs</h2>
+<p>External information may be eligible when it can be governed sufficiently for the evaluation purpose. External origin neither disqualifies nor privileges an input. Attestor must preserve attribution, provenance, authority context, scope, relevant state, and limitations to the degree required by the evaluation.</p>
+<div class="note">Suite Source ≠ Automatically Eligible<br>External Source ≠ Automatically Ineligible<br>Public Source ≠ Automatically Eligible<br>Private / Restricted Source ≠ Automatically Ineligible<br><br>Eligibility depends on governed evaluation requirements.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Eligibility and Attestations</h2>
+<p>An Attestation organizes the governed assertion presented for evaluation. The evidence, source references, and other governed inputs supporting or challenging that assertion must satisfy applicable eligibility requirements before they are treated as part of the evaluation basis. An Attestation's existence does not make all of its references eligible.</p>
+<div class="note">Attestation → Presents governed assertion<br>Referenced Inputs → Undergo eligibility determination<br>Eligible Inputs → Enter evaluation basis<br>Rule-Constrained Evaluation → Produces bounded conclusion</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>What Eligibility Does Not Establish</h2>
+<p>Eligibility is an admission decision, not an evaluation result. It does not establish truth, source superiority, evidence weight, structural validity, conformance, publication, or trustworthiness.</p>
+<div class="note">Eligibility ≠ Truth<br>Eligibility ≠ Authority Ranking<br>Eligibility ≠ Evidence Weight<br>Eligibility ≠ Validation<br>Eligibility ≠ Conformance<br>Eligibility ≠ Publication<br>Eligibility ≠ Trust Statement Outcome</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>Eligibility now gives formal meaning to “Eligible Governed Inputs.” It creates the governed admission boundary between available information and the material Attestor is permitted to use as an evaluation basis. The next Evaluation architecture can therefore define how admitted inputs are treated and how a bounded Trust Statement conclusion is reached.</p>
+<div class="note"><strong>Eligibility → Established</strong><br>Eligibility → Evaluation-specific governed admission<br>Availability → Insufficient by itself<br>Authority → Insufficient by itself<br>Provenance → Necessary where material, not sufficient by itself<br>Unfavorable evidence → Not excludable merely because unfavorable<br>Material exclusions → Reviewable where required<br>Machine eligibility rules → Deferred to Validation / Schemas<br>Production proof → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">Governed evaluation begins not with everything available, but with what can legitimately and transparently be admitted.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
