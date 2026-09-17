@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Publication</title>
+<meta name="description" content="The Satoshium Attestor Publication architecture separating canonical creation from governed public representation of Attestor objects.">
+<link rel="canonical" href="https://satoshium.us/attestor/publication/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Publication</h1>
+<p class="lead">Publication separates <strong>canonical creation</strong> from the governed decision to make an Attestor object <strong>publicly represented</strong>.</p>
+<p class="lead">An Attestation or Trust Statement may exist canonically before publication. Publication changes its public-representation state; it does not create the object, change its canonical identity, or independently establish its validity, conformance, or substantive conclusion.</p>
+<div class="note"><strong>Publication principle:</strong> Canonical Object + Governed Publication Decision → Authorized Public Representation</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Publication Purpose</h2><p>Publication governs whether and how a canonical Attestor object is represented publicly. It is a public-representation decision applied to an already governed object; it is not the act that creates the object.</p></article>
+<article class="card"><h2>Canonical Creation</h2><p>Canonical Creation establishes the Attestor object and its canonical identity. An object may exist institutionally without being publicly represented. Creation therefore precedes and remains conceptually independent from publication.</p></article>
+<article class="card"><h2>Publication State</h2><p>The initial controlled publication vocabulary remains <strong>unpublished</strong> and <strong>published</strong>. These values describe public representation, not lifecycle status, validation, conformance, or evaluation outcome.</p></article>
+<article class="card"><h2>Publication Authorization</h2><p>A transition to published requires an affirmative governed publication decision under applicable Attestor rules. Mere existence, activation, validation, or technical availability does not by itself authorize public representation.</p></article>
+<article class="card"><h2>Published Representation</h2><p>A published representation must resolve to the canonical Attestor object and the governed version being represented. Public presentation must not silently alter the assertion, conclusion, scope, provenance, limitations, lifecycle context, or institutional authority.</p></article>
+<article class="card"><h2>Historical Publication</h2><p>When a published object is revised, superseded, withdrawn, or retired, Attestor must preserve enough publication history to distinguish what was publicly represented from what is currently governed.</p></article>
+<article class="card"><h2>Withdrawal from Current Use</h2><p>A lifecycle transition does not automatically erase a historical publication. A previously published object may remain historically resolvable while clearly showing that it is no longer the current active representation.</p></article>
+<article class="card"><h2>Authority Boundary</h2><p>Publication does not enlarge Attestor authority or transfer source authority. A public Trust Statement remains an Attestor conclusion; referenced Suite and external objects retain their own institutional or source authority.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Creation, Activation, and Publication</h2>
+<p>Attestor keeps three institutional events distinct. Creation establishes canonical existence and identity. Activation establishes current lifecycle use. Publication authorizes public representation. They may occur in sequence but are not interchangeable.</p>
+<div class="note">Canonical Creation → Object exists / identifier assigned<br>Lifecycle Activation → Object becomes current governed representation within scope<br>Publication → Object is authorized for public representation<br><br>Creation ≠ Activation ≠ Publication</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Canonical Publication States</h2>
+<p>The Controlled Values architecture established two publication states. This binary vocabulary remains sufficient at the architectural level; workflow stages such as review, approval, or pending publication should not be silently converted into additional canonical publication states unless later governance requires them.</p>
+<div class="note"><strong>unpublished</strong> → canonical object is not currently authorized as a public representation<br><strong>published</strong> → governed public representation is authorized and exists<br><br>Review / Approval → workflow or governance activities<br>unpublished / published → canonical publication states</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Publication Eligibility</h2>
+<p>Publication should occur only after the requirements applicable to the object's publication context are satisfied. This may include lifecycle, validation, conformance, review, provenance, and representation requirements once those are formally specified. Publication does not itself substitute for any of them.</p>
+<div class="note">Applicable Requirements → Satisfied<br>Governed Review / Authorization → Completed<br>Representation → Resolvable to canonical object/version<br>Publication Decision → Approved<br>Public Representation → published<br><br>Technically accessible ≠ Published by governance</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Public Representation Integrity</h2>
+<p>A published representation must faithfully represent the governed canonical object and version. Presentation layers may improve readability or navigation, but they must not materially change institutional meaning.</p>
+<div class="note">Canonical Identifier → Preserved / resolvable<br>Governed Version → Identifiable<br>Object Type → Clear<br>Lifecycle State → Represented where material<br>Scope → Preserved<br>Provenance → Preserved or resolvable<br>Limitations / Uncertainty → Preserved where material<br>Relationships → Preserved or resolvable<br><br>Presentation ≠ Reinterpretation</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Version Publication</h2>
+<p>Where an object has multiple governed versions, publication must make the represented version distinguishable. A newer published version may become the current public representation while earlier versions remain part of the governed historical record.</p>
+<div class="note">Canonical Object → One stable canonical identity<br>Governed Versions → Distinguishable states<br>Published Representation → Resolves to specific governed version<br>Current Public Representation → Identifiable<br>Historical Governed Versions → Preserved<br><br>Publishing a new version ≠ erasing an old version</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Lifecycle Changes After Publication</h2>
+<p>Publication history must remain coherent when lifecycle state changes. Superseded, withdrawn, or retired objects must not continue to appear as current merely because they were once published.</p>
+<div class="note">Published + Active → Current public representation may be shown<br>Published + Superseded → Historical / superseded status must be clear<br>Published + Withdrawn → Withdrawal must be clear; current reliance ends<br>Published + Retired → Retirement must be clear<br><br>Published ≠ Active forever</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Unpublication and Historical Preservation</h2>
+<p>The initial publication vocabulary describes whether a governed public representation is authorized, but changing a current representation from published to unpublished must not be used to erase material publication history. Exact takedown, archival, exceptional removal, and historical-access rules remain Publication governance details to be formalized.</p>
+<div class="note">Current Publication Authorization → May change under governance<br>Historical Fact of Prior Publication → Preserved where material<br>Canonical Object → Remains governed according to Lifecycle<br><br>Unpublication ≠ Deletion<br>Removal from current public view ≠ Historical erasure</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Publication and Validation</h2>
+<p>Validation and publication remain separate determinations. Validation establishes satisfaction of applicable normative structural and rule requirements. Publication authorizes public representation.</p>
+<div class="note">Validation → Normative compliance determination<br>Publication → Public representation determination<br><br>Valid ≠ Published<br>Published ≠ Automatically Valid</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Publication and Conformance</h2>
+<p>Conformance may be a prerequisite for particular publication profiles once formal requirements are established, but the concepts remain distinct. A conformant object is not automatically public, and publication does not create a conformance claim.</p>
+<div class="note">Conformance → Satisfaction of declared specification / profile<br>Publication → Authorization for public representation<br><br>Conformant ≠ Published<br>Published ≠ Conformant</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Publication and Evaluation Outcome</h2>
+<p>Publication does not imply that a Trust Statement is favorable. Attestor may have legitimate governed reasons to publish a Trust Statement whose evaluation outcome is supported, partially-supported, not-supported, contradicted, or indeterminate.</p>
+<div class="note">Evaluation Outcome → Substantive Attestor determination<br>Publication State → Public representation determination<br><br>Published ≠ Supported<br>Unpublished ≠ Not-Supported<br>Publication must not become a hidden trust score.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Publication and Authority</h2>
+<p>Making an Attestor object public does not enlarge its authority. Source objects remain under their source institutions or external authorities, while the Trust Statement remains attributable to Attestor.</p>
+<div class="note">Published Source Reference → Source retains source authority<br>Published Attestation → Attribution remains bounded<br>Published Trust Statement → Attestor retains authority for its bounded conclusion<br><br><strong>Reference does not transfer authority.</strong><br>Publication does not transfer authority either.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Deferred Publication Mechanics</h2>
+<p>This page establishes publication architecture without prematurely fixing operational mechanics. Exact approval roles, publication manifests, timestamps, URI rules, archival/takedown procedures, publication logs, machine fields, and deployment workflow should be derived from normative Schemas, Validation, Conformance, Templates, and Methodology.</p>
+<div class="note">Publication Architecture → Established<br>Canonical States → unpublished / published<br>Approval Mechanics → To be formalized<br>Publication Metadata → To be formalized<br>URI / Manifest Rules → To be formalized<br>Archival / Takedown Procedure → To be formalized<br>Production Publication Workflow → Pending</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>What Publication Does Not Establish</h2>
+<p>Publication is a governed public-representation state. It does not independently establish canonical creation, lifecycle status, truth, evaluation outcome, validation, conformance, authority, or permanence of current status.</p>
+<div class="note">Published ≠ Created<br>Published ≠ Active<br>Published ≠ True<br>Published ≠ Supported<br>Published ≠ Valid<br>Published ≠ Conformant<br>Published ≠ More Authoritative<br>Published ≠ Permanently Current</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>The Publication architecture now separates canonical existence from public representation and establishes how publication must preserve object identity, version identity, lifecycle context, provenance, limitations, and authority. Operational publication mechanics remain downstream of normative object structures and methodology.</p>
+<div class="note"><strong>Publication → Established conceptually</strong><br>Creation vs. activation vs. publication → Distinguished<br>Publication states → unpublished / published<br>Affirmative publication authorization → Required<br>Public representation integrity → Required<br>Version-specific representation → Required<br>Historical publication preservation → Required<br>Lifecycle changes after publication → Governed<br>Validation / conformance / outcome → Kept distinct<br>Operational publication mechanics → Deferred<br>Production publication proof → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">Creation makes an object canonical. Publication makes its governed representation public. Neither should be mistaken for the other.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
