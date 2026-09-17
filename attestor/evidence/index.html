@@ -213,11 +213,12 @@ h1{
 
   <p>
     Evidence may include documents, records, datasets, media, source material,
-    observations, or other information eligible under Attestor rules. The final
-    evidence classes and eligibility requirements remain to be established.
+    observations, authoritative references, or other information admitted through
+    Attestor's governed Eligibility architecture. Evidence is not a separate
+    canonical Attestor object class merely because it participates in evaluation.
   </p>
 
-  <span class="status">Developing</span>
+  <span class="status">Established Role</span>
 </article>
 
 <article class="card">
@@ -230,19 +231,20 @@ h1{
     Those objects remain authoritative in their originating institutions.
   </p>
 
-  <span class="status">Foundational</span>
+  <span class="status">Established</span>
 </article>
 
 <article class="card">
   <h2>Provenance</h2>
 
   <p>
-    Evidence should remain connected to sufficient source and provenance information
-    to allow a reviewer to understand where it came from, how it relates to the
-    Attestation, and whether its meaning or status has changed.
+    Evidence preserves sufficient provenance to identify its source or origin,
+    attribution, relationship, relevant state, derivation where applicable, and
+    material limitations. Attestor uses the adopted provenance modes
+    <code>direct</code>, <code>referenced</code>, and <code>derived</code>.
   </p>
 
-  <span class="status">Required Principle</span>
+  <span class="status">Established Requirement</span>
 </article>
 
 <article class="card">
@@ -254,31 +256,31 @@ h1{
     support a broader conclusion.
   </p>
 
-  <span class="status">Required Principle</span>
+  <span class="status">Established Requirement</span>
 </article>
 
 <article class="card">
   <h2>Supporting &amp; Conflicting Evidence</h2>
 
   <p>
-    Attestor architecture must be capable of representing evidence that supports,
-    limits, qualifies, contextualizes, or conflicts with an assertion rather than
-    preserving only material favorable to a conclusion.
+    Attestor preserves material that supports, limits, qualifies, contextualizes,
+    or conflicts with an assertion. Conflict and uncertainty remain visible within
+    the Evaluation basis rather than being discarded to produce a favorable result.
   </p>
 
-  <span class="status">Architectural Requirement</span>
+  <span class="status">Established Requirement</span>
 </article>
 
 <article class="card">
   <h2>Evidence Status</h2>
 
   <p>
-    Evidence may change in availability, authority, validity, interpretation, or
-    relevance over time. Attestor must preserve enough context to distinguish the
-    evidence considered at the time of evaluation from later changes.
+    Evidence may change in availability, authority, interpretation, provenance, or
+    relevance over time. Attestor preserves the relevant source state at Evaluation
+    so later changes do not silently rewrite the basis of an earlier Trust Statement.
   </p>
 
-  <span class="status">Lifecycle Concern</span>
+  <span class="status">Established Context</span>
 </article>
 
 </section>
@@ -296,7 +298,7 @@ h1{
   </p>
 
   <div class="note">
-    Evidence / Authoritative References → Attestation Evaluation → Trust Statement
+    Eligible Governed Evidence / References → Attestation → Rule-Constrained Evaluation → Trust Statement
   </div>
 
 </article>
@@ -329,19 +331,31 @@ h1{
 
 <article class="card">
 
-  <h2>Evidence and Judgment</h2>
+  <h2>Established Evidence Architecture</h2>
 
   <p>
-    Evidence should be transparent, attributable, traceable, and reviewable to the
-    extent permitted by the applicable source and Attestor rules. Attestor should
-    preserve both the basis and the limitations of a conclusion rather than presenting
-    evidence as automatic proof.
+    Evidence participates in Attestor through Eligibility, Provenance,
+    Relationships, Evaluation, Validation, and the applicable schema/profile
+    architecture. Evidence does not independently determine an Evaluation Outcome
+    and is not converted into a Trust Statement.
+  </p>
+
+  <div class="note">
+    Availability ≠ Eligibility<br>
+    Authority ≠ Eligibility<br>
+    Reference ≠ Eligibility<br>
+    <strong>Evidence ≠ Attestation ≠ Trust Statement</strong>
+  </div>
+
+  <p style="margin-top:16px;">
+    Attestor does not establish a universal evidence weighting system, confidence
+    score, or majority-source rule. Sufficiency is governed by the applicable
+    evaluation purpose, rules, scope, conflicts, limitations, and eligible basis.
   </p>
 
   <p>
-    The advanced Attestor architecture will determine evidence eligibility,
-    classifications, required provenance, validation treatment, conflict handling,
-    and the rules governing how evidence contributes to Trust Statement generation.
+    Exact machine serialization, executable evidence-profile validation, retention
+    mechanics, and production-specific evidence handling remain implementation work.
   </p>
 
   <a class="btn" href="/attestor/">
