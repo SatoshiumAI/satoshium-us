@@ -1,38 +1,72 @@
-# Satoshium Attestor — Records
+# Satoshium Attestor — Records / Reference Profiles
 
-## Path
-`/attestor/records/`
+**Path:** `/attestor/records/`  
+**Architecture Stage:** Advanced Architecture / Implementation Layer  
+**Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
-This directory documents foundational **reference profiles** through which Attestor may relate governed source objects to Attestations, evaluation, and Trust Statements.
 
-It does **not** establish a second Attestor record system.
+This directory contains governed **Reference Profiles** describing how Attestor may use eligible source objects without creating a second Attestor record system.
 
-**Attestor → Trust Statement**
+The route `/attestor/records/` is retained. Architecturally, the contents are Reference Profiles.
 
 ## Governing Principle
+
 > **Reference does not transfer authority.**
 
-A referenced source object remains governed by its originating institution or external authority.
+A referenced object remains governed by its originating Suite institution or external authority.
 
-## Reference Profiles
+## Reference Model
+
+`Source Object → Governed Reference → Eligibility Determination → Attestation / Evaluation Basis → Rule-Constrained Evaluation → Trust Statement`
+
+Availability or reference alone does not establish eligibility.
+
+## Profiles
+
 - `atlas.md` — Atlas Authoritative Intelligence
 - `certifier.md` — Certifier Certification Package
 - `registry.md` — Satoshium Registry Record
 - `chronicle.md` — Chronicle Entry
 - `anchor.md` — Anchor Integrity Reference
 - `beacon.md` — Beacon Discovery Signal / Discovery Metadata
-- `external.md` — eligible external governed sources
+- `external.md` — eligible external sources
 
-## Foundational Model
-`Source Object → Governed Reference → Attestation / Evaluation → Trust Statement`
+## Common Reference Requirements
 
-The source object does not become an Attestor-owned record merely because Attestor references it.
+A governed reference should preserve, as applicable:
 
-## Architectural Status
-These documents are foundational reference profiles pending whole-foundation review and advanced architecture. They do not yet establish independent Attestor Record identifiers, record classes, machine schemas, publication states, lifecycle states, or automatic cross-institutional actions.
+- source object identifier or stable/resolvable reference;
+- source institution or originating authority;
+- source object/type context;
+- relevant version or state;
+- provenance;
+- relevant time/state at evaluation;
+- scope and relevance;
+- relationship to the Attestation/evaluation;
+- material limitations; and
+- authority context.
 
-## Reconciliation Note
-The June-era documents described Attestor as maintaining broad trust records, reputation records, trust signals, identity-linked records, and copies or derivatives of other institutions' records. Those assumptions are not carried forward.
+## Eligibility
 
-The whole-foundation review should decide whether the directory name **Records** remains appropriate or whether the architecture should ultimately call these **Reference Profiles**.
+`Availability ≠ Eligibility`
+
+`Authority ≠ Eligibility`
+
+`Reference ≠ Eligibility`
+
+Eligibility is determined for the particular Attestor evaluation under the adopted Eligibility architecture.
+
+## Source-State Change
+
+Material later change to a referenced source may trigger Attestor review.
+
+`Material Source-State Change → Review`
+
+A trigger does not automatically determine correction, supersession, withdrawal, or a new Trust Statement.
+
+## Status
+
+**Reference Profiles → Advanced architecture reconciled.**
+
+Exact machine serialization and profile-specific validation requirements remain subordinate to normative Schemas and Validation.
