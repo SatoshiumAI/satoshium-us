@@ -1,284 +1,177 @@
 # Satoshium Attestor — Interoperability
 
 ## Page
-
 `/attestor/interoperability/`
 
 ## Purpose
+This page defines the established interoperability architecture for **Satoshium Attestor**.
 
-This page establishes the foundational interoperability principles for **Satoshium Attestor**.
+Interoperability is **semantic and authority-preserving compatibility** across institutional boundaries.
 
-Attestor must be able to reference and exchange governed information across the Satoshium Suite while preserving the meaning, provenance, scope, identifiers, relationships, status, and authority of the objects involved.
-
-Interoperability does not collapse institutional boundaries.
+It allows governed information to participate in Attestor without losing the meaning, identity, provenance, scope, relevant state, relationships, limitations, or authority necessary to interpret that information correctly.
 
 ## Governing Principle
-
 > **Reference does not transfer authority.**
 
-A referenced object remains governed by the institution or authority that produced it.
-
-Attestor governs only its own use of that reference and the Attestation, evaluation, or Trust Statement it produces.
-
 ## Canonical Responsibility
-
 **Attestor → Trust Statement**
 
-Interoperability exists to support Attestor's ability to produce governed Trust Statements from eligible inputs without absorbing the canonical responsibilities of source institutions.
+Interoperability supports Attestor's ability to produce governed Trust Statements without absorbing the canonical responsibilities of source institutions.
 
-## Suite Relationships
+## Interoperability vs Integration
+> **Interoperability → Preserve Meaning and Authority**
 
-### Atlas
+> **Integration → Connect and Exchange**
 
-**Atlas → Authoritative Intelligence**
+Interoperability governs what must remain intact across a boundary.
 
-Attestor may reference authoritative Atlas intelligence.
+Integration governs the operational connection through which governed information is obtained or exchanged.
 
-Atlas remains authoritative for its intelligence and structural record.
-
-### Navigator
-
-**Navigator → Workflow Definition / Orchestration**
-
-Attestor may participate in workflows defined or orchestrated through Navigator.
-
-Navigator retains workflow responsibility. Attestor retains responsibility for its evaluation and Trust Statement.
-
-### Certifier
-
-**Certifier → Certification Package**
-
-Attestor may reference a Certification Package as an authoritative input.
-
-The certification remains governed by Certifier.
-
-### Registry
-
-**Registry → Satoshium Registry Record**
-
-Attestor may reference Registry records and governed relationships.
-
-Registry retains authority over its record identifiers, status, and lifecycle.
-
-### Chronicle
-
-**Chronicle → Chronicle Entry**
-
-Attestor may reference Chronicle Entries for historical, event, or provenance context.
-
-Chronicle retains authority over the preserved historical entry.
-
-### Anchor
-
-**Anchor → Integrity Reference**
-
-Attestor may reference Anchor Integrity References.
-
-Anchor retains authority over its integrity model and canonical reference.
-
-### Beacon
-
-**Beacon → Discovery Signal / Discovery Metadata**
-
-Attestor may reference Beacon Discovery Signals or Discovery Metadata.
-
-Beacon retains authority over its discovery objects and lifecycle.
-
-### Attestor
-
-**Attestor → Trust Statement**
-
-Attestor retains authority over its own Attestations, evaluations, lifecycle operations, and Trust Statements as defined by Attestor architecture.
-
-## What Must Travel With a Reference
-
-The June-era page correctly emphasized preserving context across systems.
-
-This reconciliation makes that requirement more precise.
-
-A usable interoperable reference may need to preserve, as applicable:
-
-- identifier;
-- source;
-- provenance;
-- object type;
-- status;
-- scope;
-- relationship to the Attestor evaluation;
-- source authority;
-- version or state;
-- relevant limitations.
-
-Conceptually:
+## Reference Context
+The established Attestor Reference Profile context is:
 
 `Identifier + Source + Provenance + Type + Status + Scope + Relationship + Authority`
 
-This is a foundational information requirement, not yet a final schema.
+Additional relevant state, version identity, limitations, and source-specific context are preserved where applicable.
+
+Exact machine serialization remains implementation work.
 
 ## Reference Rather Than Duplicate
+Where an authoritative source object already exists, Attestor should normally reference it rather than silently duplicate it as an Attestor-owned canonical object.
 
-Where a governed Suite object already exists, Attestor should normally reference the authoritative object rather than silently duplicate it as an Attestor-owned record.
+The governed relationship is:
 
-Attestor may preserve enough information to:
-
-- resolve the reference;
-- validate its eligibility;
-- understand its provenance;
-- evaluate its relevance;
-- preserve the state considered during evaluation;
-- trace the resulting Trust Statement.
+`Source Object → Governed Reference → Eligibility Determination → Attestation / Evaluation Basis → Rule-Constrained Evaluation → Trust Statement`
 
 The source object remains authoritative in its originating institution.
 
-Conceptually:
+## Eligibility
+Interoperability does not itself establish Eligibility.
 
-`Source Object → Governed Reference → Attestor Evaluation → Trust Statement`
+> **Availability ≠ Eligibility**
 
-## Source Changes
+> **Authority ≠ Eligibility**
 
-Interoperability must account for change.
+> **Reference ≠ Eligibility**
 
-A referenced source object may later:
+> **Eligible Here ≠ Eligible Everywhere**
 
-- change status;
-- be corrected;
-- be superseded;
-- change version;
-- change publication state;
-- be withdrawn;
-- otherwise change under its governing institution.
+## Authority
+Attestor preserves the distinction among:
+- Attesting Authority;
+- Referenced Authority;
+- Attestor Authority.
 
-Attestor should be able to distinguish the source state used during its original evaluation from later source changes.
+> **Attribution ≠ Adoption**
 
-Depending upon Attestor rules, a material source change may trigger review of Attestor's own object.
+A source's authority is not transferred merely because its object is interoperable with Attestor.
 
-Possible Attestor responses may eventually include:
+## Provenance
+Adopted provenance modes:
+- `direct`
+- `referenced`
+- `derived`
 
-- no change;
-- clarification;
+Interoperability must preserve enough provenance to prevent Evaluation from becoming a provenance break.
+
+## Relationships
+Adopted relationship values:
+- `supports`
+- `references`
+- `derived-from`
+- `evaluates`
+- `results-in`
+- `supersedes`
+- `corrects`
+- `related-to`
+
+> **Connection does not imply identity.**
+
+> **Reference ≠ Support**
+
+> **Reference ≠ Derivation**
+
+## Source State and Change
+Attestor preserves the relevant source state used during Evaluation.
+
+> **Source State at Evaluation ≠ Later Source State**
+
+A material source-state change may trigger Review:
+
+`Material Source-State Change → Review`
+
+Review does not automatically determine:
 - correction;
 - withdrawal;
 - supersession;
-- new evaluation.
+- lifecycle transition;
+- new Attestation;
+- new Trust Statement.
 
-The exact trigger and response rules remain unresolved.
+Attestor responds under its own Lifecycle, Versioning, Correction, and Evaluation architecture.
 
 ## External Interoperability
-
-Attestor may eventually accept eligible governed information from external systems, authorities, protocols, platforms, or repositories.
-
-This page does not adopt external interoperability standards.
-
-Advanced architecture must establish requirements for matters such as:
-
-- eligibility;
-- source authority;
+External governed information may participate when the applicable requirements can be established, including:
+- source identity;
+- authority;
 - provenance;
-- identity of the source;
-- object resolution;
-- status;
 - scope;
-- validation;
-- versioning;
-- persistence;
-- limitations;
-- permitted use.
+- relevant state;
+- permitted use;
+- Eligibility;
+- applicable Validation.
 
 External interoperability does not transfer external authority to Attestor.
 
-## Correction of Pre-Suite Architecture
+No particular external standard, protocol, API, or transport is required by the institutional architecture.
 
-The June page contained several mappings that are no longer carried forward:
+## Suite Relationships
+- **Atlas → Authoritative Intelligence**
+- **Navigator → Workflow Definition / Orchestration**
+- **Certifier → Certification Package**
+- **Registry → Satoshium Registry Record**
+- **Chronicle → Chronicle Entry**
+- **Anchor → Integrity Reference**
+- **Beacon → Discovery Signal / Discovery Metadata**
+- **Attestor → Trust Statement**
 
-- `Anchor → Identity`
-- `Certifier → Verification`
-- `Registry → Records`
-- `Chronicle → History`
-- `Beacon → Discovery`
-- `Atlas → Data`
-- `Navigator → Query`
-- `Attestor → Trust`
-
-The reconciled institutional mapping is:
-
-`Atlas → Authoritative Intelligence`
-`Navigator → Workflow Definition / Orchestration`
-`Certifier → Certification Package`
-`Registry → Satoshium Registry Record`
-`Chronicle → Chronicle Entry`
-`Anchor → Integrity Reference`
-`Beacon → Discovery Signal / Discovery Metadata`
-`Attestor → Trust Statement`
+Each institution retains authority for its canonical objects.
 
 ## Trust Signals and Reputation
+Attestor does not establish Trust Signal as a canonical Attestor object.
 
-The June page described verification records, Registry records, and Chronicle information as contributing to Trust Signals and reputation development.
+Attestor does not establish a generic reputation object, reputation score, confidence percentage, or trust score.
 
-Those claims are not carried forward as established architecture.
+Trust-relevant considerations are handled through the established Attestation, Evidence, Eligibility, Provenance, Relationships, Evaluation, limitations, uncertainty, and Trust Statement architecture.
 
-The reconciled Attestor model does not presently establish:
+## Validation and Conformance
+Interoperable references and resulting Attestor objects remain subject to applicable Validation and Conformance requirements.
 
-- Trust Signal as a separate canonical Attestor object;
-- reputation as an Attestor canonical object;
-- a reputation system;
-- automatic transformation of source objects into trust conclusions.
+> **Validation ≠ Eligibility**
 
-Governed inputs participate in Attestor evaluation according to Attestor rules.
+> **Validation ≠ Evaluation**
 
-## Interoperability vs Integration
+> **Validation ≠ Conformance**
 
-This page establishes **what must remain true when information crosses institutional boundaries**.
+Exact executable validation and conformance mechanics remain implementation work.
 
-The separate `/attestor/integration/` page should address **how Attestor participates operationally with those institutions and systems**.
-
-This distinction should be preserved during the next reconciliation:
-
-- **Interoperability** → semantic and authority-preserving compatibility.
-- **Integration** → operational connection and exchange.
-
-The exact technical protocols remain advanced architecture.
-
-## Reconciliation Notes
-
-Major changes include:
-
-- replacing generic “trust information portability” with authority-preserving interoperability;
-- correcting all pre-Suite institutional mappings;
-- adding Atlas and Navigator as explicit Attestor interoperability relationships;
-- replacing the old Anchor identity relationship with Anchor Integrity Reference;
-- replacing Certifier verification language with Certification Package;
-- replacing generic Beacon discovery language with Discovery Signal / Discovery Metadata;
-- removing reputation development as an assumed Attestor concern;
-- removing Trust Signals as an assumed interoperable Attestor object;
-- adding explicit reference requirements for provenance, scope, status, relationships, and authority;
-- establishing a reference-rather-than-duplicate principle;
-- adding treatment for changes to referenced source objects;
-- preserving external interoperability as possible but unresolved;
-- distinguishing interoperability from integration.
-
-## Deferred to Advanced Architecture
-
-The following remain intentionally unresolved:
-
-- interoperable reference schema;
-- required reference fields;
-- canonical relationship types;
-- object-resolution rules;
-- source-state snapshots or equivalent mechanism;
-- version handling;
-- status synchronization;
-- change-detection rules;
-- material-change triggers;
-- external-source eligibility;
-- external authority representation;
-- protocol formats;
-- API requirements;
-- transport mechanisms;
-- validation rules;
+## Implementation-Open Matters
+The following remain implementation or production concerns rather than unresolved Advanced Architecture:
+- exact machine serialization of references;
+- concrete object-resolution mechanisms;
+- source-change notification/detection mechanisms;
+- API and transport formats;
+- authentication and authorization where required;
+- external protocol adapters;
+- executable validation;
 - conformance tests;
 - reference vectors.
 
-## Files
+## Status
+**Interoperability → Advanced Architecture reconciled.**
 
+The former posture that reference fields, relationships, source-state handling, external Eligibility, Validation, and material-change treatment were wholly deferred to Advanced Architecture is no longer current.
+
+## Files
 - `index.html` — public Interoperability page.
-- `README.md` — repository documentation for the Interoperability page.
+- `README.md` — repository documentation.
