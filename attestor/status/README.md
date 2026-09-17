@@ -1,323 +1,364 @@
-# Status
+# Satoshium Attestor — Status
+
+## Page
+
+`/attestor/status/`
 
 ## Purpose
 
-The Status page provides an overview of the current state of Attestor, including development progress, completed foundational work, planned capabilities, and future objectives.
+This page records the **current architectural and development status** of Satoshium Attestor.
 
-Status information helps users understand what currently exists, what is under development, and what remains part of the long-term vision.
+It distinguishes:
 
----
+- established foundational architecture;
+- work currently under reconciliation;
+- unresolved advanced architecture;
+- validation and conformance work;
+- production proof.
 
-## Current Status
+The page should not imply completion merely because documentation or early concepts exist.
 
-Attestor is currently in its foundational development phase.
+## Canonical Responsibility
 
-Core concepts, documentation, organizational structures, and initial schema frameworks have been established.
+**Attestor → Trust Statement**
 
-Operational trust systems have not yet been implemented.
+A Trust Statement is a governed, attributable, bounded conclusion produced through Attestor evaluation.
 
----
+## Governing Principle
 
-## Development Phase
+> **Reference does not transfer authority.**
 
-### Phase 1 — Foundation
+This principle is established at the foundational level and constrains later Attestor schemas, integration, evaluation, lifecycle, and production behavior.
 
-Current focus includes:
+## Current Development Posture
 
-* Documentation
-* Governance concepts
-* Trust principles
-* Attestation structures
-* Evidence frameworks
-* Schema design
-* Interoperability planning
+Attestor is in **foundational reconciliation**.
 
-This phase establishes the conceptual foundation upon which future systems may be built.
+Its June-era foundation is being reconciled against the current Satoshium Suite architecture before advanced Attestor architecture is frozen.
 
----
+The current development path is:
 
-## Completed Components
+`Foundation → Reconciliation → Advanced Architecture → Validation & Conformance → Production Proof`
 
-The following foundational components currently exist:
+This is a development sequence, not a fixed launch calendar.
 
-### Core Documentation
+## Established Foundational Architecture
 
-* Purpose
-* Scope
-* Principles
-* Rules
-* Definitions
-* FAQ
-* Status
+### Institutional Responsibility
 
----
+Established:
 
-### Trust Framework Documentation
+**Attestor → Trust Statement**
 
-* Attestations
-* Attestation Types
-* Evidence
-* Records
-* Corrections
+Attestor does not own abstract “trust” as a canonical object.
 
----
+### Attestation / Trust Statement Distinction
 
-### Technical Foundations
+Established at the foundational level:
 
-* Schema framework
-* Interoperability framework
-* Repository structure
-* Initial website architecture
+- **Attestation** → governed, attributable, bounded assertion.
+- **Trust Statement** → governed, attributable, bounded conclusion produced through evaluation.
 
----
+Conceptually:
 
-### Ecosystem Integration Planning
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-Initial integration models have been defined for:
+### Authority Boundary
 
-* Atlas
-* Navigator
-* Beacon
-* Certifier
-* Registry
-* Chronicle
-* Anchor
+Established:
 
----
+> **Reference does not transfer authority.**
 
-## In Development
+Attestor may use governed source objects without inheriting or replacing their authority.
 
-Current areas of exploration include:
+### Evidence and Provenance
 
-### Trust Models
+Foundational requirements are established for:
 
-Frameworks for organizing trust-related information.
+- evidence context;
+- provenance;
+- source authority;
+- relevance;
+- scope;
+- relevant source state;
+- conflicting or qualifying information;
+- limitations.
 
----
+### Rules and Scope
 
-### Reputation Systems
+Foundational rules now constrain:
 
-Approaches for documenting reputation signals and historical trust context.
+- attribution;
+- provenance;
+- scope;
+- authority boundaries;
+- evidence context;
+- traceability;
+- governed change;
+- current vs historical state;
+- universal-truth claims;
+- automatic conversion of inputs into conclusions;
+- uncertainty;
+- interoperability.
 
----
+### Interoperability and Integration
 
-### Attestation Standards
+Foundational distinction established:
 
-Structures for creating interoperable attestation records.
+- **Interoperability** → preserve meaning and authority across institutional boundaries.
+- **Integration** → operationally connect and exchange governed information.
 
----
+### Trust Statement Model
 
-### Evidence Relationships
+Foundational information requirements include:
 
-Methods for connecting evidence, attestations, and supporting records.
+- identity;
+- subject;
+- conclusion;
+- scope;
+- attribution;
+- supporting Attestations;
+- Evidence / authoritative references;
+- provenance;
+- status;
+- limitations;
+- relevant time or source state;
+- relationships.
 
----
+These are not yet final machine fields.
 
-### Governance Concepts
+## Foundational Reconciliation Status
 
-Potential governance approaches for trust-related information.
+At the time of this Status-page reconciliation, the foundational Attestor pages have been substantially reconciled, but the foundational-page review is not yet fully closed.
 
----
+The remaining foundational review should be completed before Attestor advances into its formal advanced-architecture phase.
 
-## Planned Capabilities
+The Status page therefore uses **Reconciliation** rather than claiming the entire foundational layer is final.
 
-Future Attestor development may include:
+## Schemas
 
-### Attestation Management
+The June-era Status page stated:
 
-Creation, storage, and management of attestations.
+> “Initial attestation, evidence, source, correction, trust signal, and trust statement schema concepts have been created.”
 
----
+That may describe earlier exploratory work, but those concepts should **not** be presented as completed current Attestor schemas.
 
-### Reputation Frameworks
+The reconciliation has deliberately reopened several of those assumptions.
 
-Long-term reputation tracking and historical context systems.
+Current status:
 
----
+**Advanced Architecture**
 
-### Trust Relationship Mapping
+Still unresolved:
 
-Visualization and documentation of trust-related relationships.
+- Attestation schema;
+- Trust Statement schema;
+- evidence-reference representation;
+- identifiers;
+- required and optional fields;
+- controlled values;
+- Attestation Types;
+- Trust Statement classification, if any;
+- scope representation;
+- provenance representation;
+- authority representation;
+- relationship structures;
+- status vocabularies.
 
----
+## Templates
 
-### Confidence Models
+The June page marked initial Attestation, correction, evidence-reference, source, Trust Signal, and future Trust Statement templates as complete.
 
-Structured approaches for representing confidence and uncertainty.
+This reconciliation does not carry that status forward.
 
----
+Those templates were based on pre-reconciliation concepts, including constructs that are now unresolved or no longer canonical.
 
-### Evidence Networks
+Templates should be reconsidered **after** advanced schemas and lifecycle rules are established.
 
-Linking evidence across records and systems.
+No separate “Templates Complete” status is asserted by the reconciled public page.
 
----
+## Trust Frameworks and Reputation
 
-### Trust Analytics
+The June page listed:
 
-Analysis of trust-related information and historical activity.
+- trust models;
+- trust statement structures;
+- reputation frameworks;
+- trust-signal methodologies
 
----
+under active architectural development.
 
-### Interoperability Standards
+The reconciled architecture does not presently establish a generic Attestor trust framework or reputation system.
 
-Cross-system trust information exchange frameworks.
+Likewise, “Trust Signal” is not currently a separate canonical Attestor object.
 
----
+Trust-relevant context remains useful descriptive language pending advanced review.
 
-## Not Yet Implemented
+## Advanced Architecture
 
-The following capabilities remain conceptual:
+The next major Attestor phase should establish the machine and normative architecture required to implement the foundational model.
 
-* Reputation scoring
-* Trust calculations
-* Confidence engines
-* Automated trust evaluation
-* Distributed attestation networks
-* Governance systems
-* Advanced analytics
+Major work includes:
 
-These capabilities may evolve significantly before implementation.
+### Schemas and Controlled Values
 
----
+- Attestation schema;
+- Trust Statement schema;
+- identifiers;
+- controlled values;
+- types or profiles where required;
+- scope fields;
+- provenance fields;
+- authority fields;
+- relationship structures;
+- status vocabularies.
 
-## Relationship to the Satoshium Suite
+### Evaluation Architecture
 
-Attestor currently occupies the trust layer within the ecosystem:
+- evaluation model;
+- eligibility rules;
+- evidence sufficiency;
+- conflicting-evidence treatment;
+- uncertainty representation;
+- conclusion model;
+- Trust Statement generation criteria.
 
-```text
-Atlas      → Data
-Navigator  → Query
-Beacon     → Discovery
-Certifier  → Verification
-Registry   → Records
-Chronicle  → History
-Anchor     → Identity
-Attestor   → Trust
-```
+### Lifecycle
 
-The current phase focuses on defining this role clearly before implementation begins.
+- creation;
+- validation;
+- review;
+- correction;
+- withdrawal;
+- supersession;
+- versioning;
+- publication;
+- historical retention;
+- source-change response.
 
----
+### Validation and Conformance
 
-## Foundation Status
+- normative requirements;
+- validation sequence;
+- PASS/FAIL rules;
+- conformance tests;
+- reference vectors.
 
-### Documentation
+## Production Status
 
-Status: Complete
+Attestor has **not yet completed a governed production Trust Statement operation**.
 
-Initial documentation framework established.
+The public page therefore does not describe Attestor as operational.
 
----
+Production status should be earned through:
 
-### Repository Structure
+1. advanced architecture;
+2. normative validation;
+3. conformance;
+4. governed production execution;
+5. successful production proof.
 
-Status: Complete
+Documentation alone is not production proof.
 
-Core repository organization established.
+## Suite Position
 
----
+The reconciled canonical responsibility map is:
 
-### Website Structure
+`Atlas → Authoritative Intelligence`
+`Navigator → Workflow Definition / Orchestration`
+`Certifier → Certification Package`
+`Registry → Satoshium Registry Record`
+`Chronicle → Chronicle Entry`
+`Anchor → Integrity Reference`
+`Beacon → Discovery Signal / Discovery Metadata`
+`Attestor → Trust Statement`
 
-Status: Complete
+This replaces the June-era broad labels:
 
-Initial informational website architecture established.
+`Atlas → Data`
+`Navigator → Query`
+`Beacon → Discovery & Signals`
+`Certifier → Certification`
+`Registry → Records`
+`Chronicle → History`
+`Anchor → Integrity`
+`Attestor → Trust Statements`
 
----
+## Correction of the June Status Claims
 
-### Schema Framework
+The June Status page marked several areas as **Initial Foundation Complete** or **Defined**.
 
-Status: Initial Version Complete
+Those labels are not carried forward automatically.
 
-Foundational schema concepts documented.
+The current reconciliation has shown that several earlier concepts require revision, including:
 
----
+- Trust Signal status;
+- reputation frameworks;
+- correction architecture;
+- evidence-record assumptions;
+- schema assumptions;
+- template assumptions;
+- Attestation vs Trust Statement distinction;
+- institutional mappings;
+- integration semantics;
+- scope;
+- authority boundaries.
 
-### Trust Framework
+The reconciled Status page therefore reports what is actually established now rather than preserving historical completion labels.
 
-Status: Conceptual
+## Reconciliation Notes
 
-Trust models remain under development.
+Major changes include:
 
----
+- changing status from generic foundational architecture to **foundational reconciliation**;
+- making Trust Statement the explicit canonical Attestor output;
+- adding the Attestation / Trust Statement distinction;
+- adding the authority-boundary principle;
+- replacing “Schemas Complete” with Advanced Architecture;
+- removing “Templates Complete” as a current architectural claim;
+- removing generic Trust Frameworks and reputation development as assumed Attestor responsibilities;
+- updating interoperability and integration status;
+- adding Rules & Scope status;
+- adding Evidence & Provenance status;
+- adding Validation & Conformance as a distinct future phase;
+- adding Lifecycle & Publication as unresolved advanced architecture;
+- replacing “Future Operational Systems” with specific architectural work;
+- replacing “Not Yet Active” with **Production Proof Pending**;
+- correcting the Suite responsibility map;
+- replacing `Certification → Attestation → Trust Statement` with:
+  `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`;
+- removing the claim that “Authority establishes truth”;
+- establishing a development path without fixed dates.
 
-### Attestation Framework
+## Deferred to Advanced Architecture
 
-Status: Conceptual
+The Status page intentionally does not resolve:
 
-Attestation structures defined at a high level.
+- final schemas;
+- identifiers;
+- controlled values;
+- Attestation Types;
+- Trust Statement classifications;
+- authority model;
+- subject model;
+- scope fields;
+- evidence eligibility;
+- provenance fields;
+- evaluation rules;
+- sufficiency rules;
+- conclusion values;
+- uncertainty representation;
+- validation sequence;
+- lifecycle states;
+- correction mechanics;
+- versioning;
+- publication states;
+- external integration;
+- conformance tests;
+- reference vectors;
+- first production Trust Statement.
 
----
+## Files
 
-### Operational Systems
-
-Status: Not Implemented
-
-Operational trust infrastructure has not yet been deployed.
-
----
-
-## Long-Term Vision Status
-
-The long-term vision remains active.
-
-Future development may expand Attestor into a comprehensive framework for:
-
-* Attestations
-* Trust relationships
-* Reputation systems
-* Accountability structures
-* Evidence networks
-* Governance models
-* Interoperable trust systems
-
-The specific path toward that vision remains subject to future research and development.
-
----
-
-## Current Assessment
-
-At present:
-
-```text
-The concepts exist.
-The documentation exists.
-The structure exists.
-
-The trust framework comes later.
-```
-
-The current objective is to establish strong foundations before operational implementation begins.
-
----
-
-## Guiding Statement
-
-The current status of Attestor may be summarized as:
-
-```text
-Trust cannot be built without foundations.
-
-The foundations now exist.
-```
-
----
-
-## Status Classification
-
-Current Classification:
-
-```text
-Phase 1 — Foundation Complete
-Phase 2 — Framework Development Pending
-Phase 3 — Operational Implementation Future
-```
-
----
-
-## Revision Note
-
-This status reflects the current state of Attestor and may be updated as development progresses.
-
-Future versions may include implementation milestones, governance updates, interoperability standards, and operational trust capabilities.
+- `index.html` — public Status page.
+- `README.md` — repository documentation for the Status page.
