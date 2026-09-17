@@ -12,7 +12,7 @@
 
 <title>Satoshium Attestor · Verification</title>
 
-<meta name="description" content="Satoshium Attestor Verification — understanding the relationship between verification, attestations, evidence, trust signals, and trust evaluation.">
+<meta name="description" content="Satoshium Attestor Verification — how governed verification, validation, certification, and review outcomes may be referenced during Attestor evaluation without transferring source authority.">
 
 <link rel="canonical" href="https://satoshium.us/attestor/verification/">
 
@@ -190,15 +190,19 @@ h1{
   <h1>Verification</h1>
 
   <p class="lead">
-    Verification and trust are related but distinct concepts.
-    Verification evaluates information. Trust evaluates confidence
-    in information, people, organizations, identities, and records.
+    Verification is not Attestor's canonical responsibility. Attestor may reference
+    governed verification, validation, certification, or review outcomes when they
+    are relevant to evaluating an Attestation and producing a Trust Statement.
   </p>
 
   <p class="lead">
-    Verification may contribute trust signals,
-    but verification alone does not determine trust.
+    A referenced outcome retains the meaning, scope, status, provenance, and authority
+    established by the process or institution that produced it.
   </p>
+
+  <div class="note">
+    <strong>Governing principle:</strong> Reference does not transfer authority.
+  </div>
 
 </section>
 
@@ -208,47 +212,48 @@ h1{
   <h2>Verification Outcomes</h2>
 
   <p>
-    Verification activities may produce certifications,
-    findings, reports, validations, or other evidence
-    that contribute to trust-related understanding.
+    Attestor may consider verification or validation outcomes produced by governed
+    processes when those outcomes are eligible and relevant to the assertion under
+    evaluation. Attestor does not recreate the originating verification process.
   </p>
 
-  <span class="status">Planned</span>
+  <span class="status">Referenced Input</span>
 </article>
 
 <article class="card">
-  <h2>Trust Signals</h2>
+  <h2>Certification Outcomes</h2>
 
   <p>
-    Verification results may become trust signals
-    when incorporated into trust-related evaluations
-    and historical records.
+    Certifier Certification Packages may provide authoritative certification context
+    to Attestor. Attestor may evaluate their relevance to a Trust Statement while
+    preserving Certifier's authority over the certification itself.
   </p>
 
-  <span class="status">Planned</span>
+  <span class="status">Authority-Bounded</span>
 </article>
 
 <article class="card">
   <h2>Evidence Relationships</h2>
 
   <p>
-    Verification frequently depends upon evidence,
-    documentation, records, and source attribution.
+    Verification outcomes may depend on evidence, standards, procedures, records,
+    or source attribution. Attestor should preserve enough provenance to understand
+    what outcome was reached and the scope in which that outcome applies.
   </p>
 
-  <span class="status">Conceptual</span>
+  <span class="status">Provenance</span>
 </article>
 
 <article class="card">
-  <h2>Historical Context</h2>
+  <h2>Status &amp; Temporal Context</h2>
 
   <p>
-    Verification outcomes may gain or lose significance
-    depending upon future evidence, corrections,
-    and historical developments.
+    A verification or certification outcome may later be superseded, corrected,
+    expired, withdrawn, or affected by new information. Attestor must distinguish
+    the outcome considered during an evaluation from later changes to that outcome.
   </p>
 
-  <span class="status">Conceptual</span>
+  <span class="status">Lifecycle Concern</span>
 </article>
 
 </section>
@@ -257,22 +262,16 @@ h1{
 
 <article class="card">
 
-  <h2>Verification vs Trust</h2>
+  <h2>Verification Is Not a Trust Statement</h2>
 
   <p>
-    Verification seeks to evaluate information against
-    evidence and defined standards.
-  </p>
-
-  <p>
-    Trust incorporates verification but also considers
-    transparency, accountability, reputation,
-    consistency, and historical behavior.
+    Verification answers a question defined by the originating verification process.
+    An Attestor Trust Statement is a separate institutional conclusion produced under
+    Attestor rules from eligible, attributable, scoped, and provenance-preserving inputs.
   </p>
 
   <div class="note">
-    Verification → Evidence-Based Evaluation<br>
-    Trust → Broader Contextual Assessment
+    Verification / Certification Outcome → Attestor Evaluation → Trust Statement
   </div>
 
 </article>
@@ -286,14 +285,15 @@ h1{
   <h2>Relationship to Certifier</h2>
 
   <p>
-    Verification remains the primary responsibility
-    of Certifier. Attestor focuses on how verification
-    outcomes may contribute to trust-related context.
+    Certifier owns the Certification Package and the certification process that
+    produces it. Attestor may reference a Certification Package as an authoritative
+    input, but it does not certify, recertify, or reinterpret the certification
+    beyond the scope necessary for its own governed evaluation.
   </p>
 
   <div class="note">
-    Certifier → Verification<br>
-    Attestor → Trust
+    Certifier → Certification Package<br>
+    <strong style="color:var(--gold2);">Attestor → Trust Statement</strong>
   </div>
 
 </article>
@@ -304,14 +304,41 @@ h1{
 
 <article class="card">
 
-  <h2>Verification Philosophy</h2>
+  <h2>Verification Beyond Certifier</h2>
 
   <p>
-    Verified information may strengthen trust,
-    but trust ultimately depends upon a broader
-    collection of signals, evidence, behavior,
-    accountability, and historical context.
+    Not every verification, validation, or review outcome relevant to Attestor must
+    originate with Certifier. External or other governed processes may produce
+    relevant outcomes if Attestor rules later recognize them as eligible inputs.
   </p>
+
+  <p>
+    Their inclusion does not make Attestor the authority for those processes.
+    Eligibility, provenance, source authority, scope, status, and limitations must
+    remain visible.
+  </p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+  <h2>No Automatic Trust Effect</h2>
+
+  <p>
+    A successful verification or certification outcome does not automatically produce
+    a favorable Trust Statement, and the absence or failure of verification does not
+    automatically produce an unfavorable one. The significance of an outcome depends
+    on the specific assertion, scope, evidence, provenance, status, and applicable
+    Attestor rules.
+  </p>
+
+  <div class="note">
+    Verification is an input with defined meaning — not an automatic trust score.
+  </div>
 
   <a class="btn" href="/attestor/">
     Back to Attestor →
@@ -329,7 +356,7 @@ h1{
   <div id="random-saying"
        class="muted"
        style="margin-bottom:14px; max-width:760px;">
-    Verification evaluates information. Trust evaluates the larger story.
+    Verification retains the authority of its source. Attestor evaluates its relevance to a bounded Trust Statement.
   </div>
 
   <hr>
