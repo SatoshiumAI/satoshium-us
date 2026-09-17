@@ -12,7 +12,7 @@
 
 <title>Satoshium Attestor · Trust Signals</title>
 
-<meta name="description" content="Satoshium Attestor Trust Signals — information that may influence trust-related understanding, reputation, accountability, and evaluation.">
+<meta name="description" content="Satoshium Attestor Trust Signals — a reconciled treatment of trust-relevant indicators as evaluation inputs, distinct from Beacon Discovery Signals and from Attestor Trust Statements.">
 
 <link rel="canonical" href="https://satoshium.us/attestor/trust-signals/">
 
@@ -185,99 +185,97 @@ h1{
 <h1>Trust Signals</h1>
 
 <p class="lead">
-Trust signals are observations, records, indicators,
-events, or relationships that may influence how observers
-understand trust, reputation, accountability, and confidence.
+Within Attestor, a trust signal is a descriptive concept for information or an
+indicator that may be relevant to the evaluation of an Attestation or the support
+of a Trust Statement.
 </p>
 
 <p class="lead">
-Trust signals do not determine trust.
-They provide information that may help explain why trust may exist.
+A trust signal is not presently established as a separate canonical Attestor
+object, controlled record type, or final conclusion. It is evaluation context.
 </p>
+
+<div class="note">
+<strong>Namespace boundary:</strong> Attestor trust signals are not Beacon
+Discovery Signals. Beacon owns Discovery Signals and Discovery Metadata.
+</div>
 
 </section>
 
 <section class="grid">
 
 <article class="card">
-<h2>Attestation Signals</h2>
+<h2>Attestation Context</h2>
 
 <p>
-Statements made by identities, organizations,
-institutions, or systems may become signals
-that contribute trust-related context.
+The existence, attribution, status, scope, or relationship of an Attestation may
+provide information relevant to an Attestor evaluation. The Attestation remains
+the governed assertion; the signal is only the trust-relevant meaning considered
+in context.
 </p>
 
-<span class="status">Conceptual</span>
+<span class="status">Evaluation Context</span>
 </article>
 
 <article class="card">
-<h2>Evidence Signals</h2>
+<h2>Evidence Context</h2>
 
 <p>
-Supporting documents, records, sources,
-and evidence relationships may become signals
-that influence confidence and evaluation.
+Evidence may contribute trust-relevant information through its provenance,
+relevance, authority, consistency, limitations, or relationship to an assertion.
+The evidence itself remains distinct from any interpretation derived from it.
 </p>
 
-<span class="status">Conceptual</span>
+<span class="status">Evaluation Context</span>
 </article>
 
 <article class="card">
-<h2>Verification Signals</h2>
+<h2>Authoritative Outcome Context</h2>
 
 <p>
-Verification outcomes, certification records,
-and validation activity may create signals
-relevant to trust and reputation.
+Certification, validation, review, registration, integrity, history, discovery,
+or other governed outcomes may be relevant to Attestor evaluation when properly
+referenced. Their original institutional meaning and authority must remain intact.
 </p>
 
-<span class="status">Planned</span>
+<span class="status">Authority-Bounded</span>
 </article>
 
 <article class="card">
-<h2>Reputation Signals</h2>
+<h2>Historical &amp; Relationship Context</h2>
 
 <p>
-Historical activity, repeated behavior,
-community observations, and accumulated records
-may contribute to reputation over time.
+Historical events, repeated conditions, relationships, changes, and other
+preserved context may affect how an assertion is evaluated when those facts are
+supported by eligible evidence or authoritative records.
 </p>
 
-<span class="status">Exploratory</span>
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<div class="grid">
-
-<article class="card">
-<h2>Accountability Signals</h2>
-
-<p>
-Clear attribution, transparent corrections,
-visible responsibility, and reviewable records
-may strengthen trust-related understanding.
-</p>
-
-<span class="status">Conceptual</span>
+<span class="status">Evaluation Context</span>
 </article>
 
 <article class="card">
-<h2>Correction Signals</h2>
+<h2>Accountability Context</h2>
 
 <p>
-Corrections, amendments, clarifications,
-and retractions may themselves become signals
-of transparency and accountability.
+Attribution, transparent correction, supersession, withdrawal, responsibility,
+and reviewable provenance may be relevant to an Attestor evaluation without
+automatically establishing a favorable or unfavorable conclusion.
 </p>
 
-<span class="status">Conceptual</span>
+<span class="status">Evaluation Context</span>
 </article>
 
-</div>
+<article class="card">
+<h2>Conflicting or Uncertain Context</h2>
+
+<p>
+Trust-relevant information may support, limit, conflict with, or leave uncertainty
+around an assertion. Attestor should preserve ambiguity where the governed inputs
+do not justify a stronger conclusion.
+</p>
+
+<span class="status">Required Principle</span>
+</article>
 
 </section>
 
@@ -285,16 +283,18 @@ of transparency and accountability.
 
 <article class="card">
 
-<h2>Signal Direction</h2>
+<h2>Not a Beacon Discovery Signal</h2>
 
 <p>
-Trust signals may be positive, negative, neutral,
-mixed, or uncertain. Their meaning depends on context,
-evidence, history, and interpretation.
+Beacon and Attestor use information for different institutional purposes.
+Beacon produces Discovery Signals and Discovery Metadata so authoritative
+information can be discovered and navigated. Attestor evaluates trust-relevant
+inputs in support of Trust Statements.
 </p>
 
 <div class="note">
-Signal → Context → Evaluation → Trust
+Beacon → Discovery Signal / Discovery Metadata<br>
+<strong style="color:var(--gold2);">Attestor → Trust Statement</strong>
 </div>
 
 </article>
@@ -305,14 +305,61 @@ Signal → Context → Evaluation → Trust
 
 <article class="card">
 
-<h2>Trust Signal Philosophy</h2>
+<h2>No Automatic Direction or Score</h2>
 
 <p>
-Attestor does not use trust signals to impose conclusions.
-Instead, trust signals preserve information that may help
-observers evaluate statements, identities, evidence,
-records, and relationships more transparently.
+The earlier Attestor model described trust signals as positive, negative, neutral,
+mixed, or uncertain. Those directional labels are not carried forward as an
+established controlled vocabulary. Attestor has not yet adopted a scoring,
+reputation, weighting, or directional signal model.
 </p>
+
+<div class="note">
+Trust-relevant information must be evaluated in context; it does not become a
+score merely because Attestor considers it.
+</div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+<h2>Relationship to Trust Statements</h2>
+
+<p>
+Trust-relevant indicators may contribute to an Attestor evaluation only through
+governed evidence, authoritative references, provenance, scope, status, and
+applicable Attestor rules. They do not independently produce a Trust Statement.
+</p>
+
+<div class="note">
+Governed Inputs → Trust-Relevant Context → Attestor Evaluation → Trust Statement
+</div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+<h2>Architectural Status</h2>
+
+<p>
+“Trust signal” remains useful as a human-readable Attestor concept, but this
+reconciliation does not establish it as a canonical object or final machine
+vocabulary. Advanced Attestor architecture should determine whether the concept
+requires formal representation at all, and if so, how it can be represented
+without colliding with Beacon's canonical Discovery Signal architecture.
+</p>
+
+<div class="note">
+<strong>Reference does not transfer authority.</strong>
+</div>
 
 <a class="btn" href="/attestor/">
 Back to Attestor →
@@ -329,7 +376,7 @@ Back to Attestor →
 
 <div id="random-saying"
      style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">
-Trust signals do not create trust. They help explain why trust may emerge.
+Trust-relevant context informs evaluation. Attestor's governed conclusion is the Trust Statement.
 </div>
 
 <hr>
