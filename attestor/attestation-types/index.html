@@ -170,10 +170,10 @@ h1{
   </p>
 
   <p class="lead">
-    The pre-Suite categories previously published on this page are preserved as
-    historical design inputs, but they are not treated here as the final controlled
-    Attestation Type vocabulary. The authoritative type model will be established
-    through Attestor's advanced architecture.
+    Attestor's Advanced Architecture now establishes six controlled Attestation
+    Types. These values classify the governed assertion expressed by an Attestation;
+    they do not redefine the identity, type, or authority of any referenced Suite
+    or external source object.
   </p>
 
   <div class="note">
@@ -186,66 +186,60 @@ h1{
 <section class="grid">
 
 <article class="card">
-  <h2>Identity-Related Assertions</h2>
-  <p>
-    Attestor may need to express bounded assertions involving identity, continuity,
-    participation, association, or other identity-related relationships. Any such
-    Attestation must reference the applicable identity authority without becoming
-    that authority itself.
-  </p>
-  <span class="status">Candidate Family</span>
+  <h2>Identity</h2>
+  <p>Identity Attestations express bounded assertions involving identity, continuity,
+    participation, association, or another identity-related matter. The Attestation
+    preserves applicable source authority and does not become the underlying identity
+    authority.</p>
+  <div class="note"><strong>Controlled value:</strong> <code>identity</code></div>
+  <span class="status">Adopted</span>
 </article>
 
 <article class="card">
-  <h2>Evidence-Related Assertions</h2>
-  <p>
-    Attestor may need to express assertions about the presence, relevance,
-    relationship, or evaluated use of evidence. The evidence remains distinct from
-    the Attestation and retains its own provenance.
-  </p>
-  <span class="status">Candidate Family</span>
+  <h2>Evidence</h2>
+  <p>Evidence Attestations express bounded assertions concerning the presence,
+    relevance, relationship, or governed use of evidence. Evidence remains distinct
+    from the Attestation and retains its own provenance and authority context.</p>
+  <div class="note"><strong>Controlled value:</strong> <code>evidence</code></div>
+  <span class="status">Adopted</span>
 </article>
 
 <article class="card">
-  <h2>Source &amp; Provenance Assertions</h2>
-  <p>
-    Attestor may need to express bounded assertions concerning source relationships,
-    attribution, origin, authorship, provenance, or the connection between a source
-    and the subject of an Attestation.
-  </p>
-  <span class="status">Candidate Family</span>
+  <h2>Source &amp; Provenance</h2>
+  <p>Source / Provenance Attestations express bounded assertions concerning source
+    relationships, attribution, origin, authorship, provenance, or the connection
+    between a source and the subject of an Attestation.</p>
+  <div class="note"><strong>Controlled value:</strong> <code>source-provenance</code></div>
+  <span class="status">Adopted</span>
 </article>
 
 <article class="card">
-  <h2>Verification-Related Assertions</h2>
-  <p>
-    Attestor may reference validation, verification, review, or certification
-    outcomes when those outcomes are relevant to a Trust Statement. The Attestation
-    must preserve the authority and meaning of the originating process rather than
-    reproduce it as Attestor authority.
-  </p>
-  <span class="status">Candidate Family</span>
+  <h2>Verification-Related</h2>
+  <p>Verification-Related Attestations express bounded assertions that reference
+    validation, verification, review, or certification outcomes when relevant.
+    The originating process retains its authority; Attestor does not reproduce that
+    authority as its own.</p>
+  <div class="note"><strong>Controlled value:</strong> <code>verification-related</code></div>
+  <span class="status">Adopted</span>
 </article>
 
 <article class="card">
-  <h2>Relationship &amp; Condition Assertions</h2>
-  <p>
-    Attestor may require assertions about a relationship, condition, status,
-    qualification, participation, or other bounded circumstance when supported by
-    eligible evidence and governed references.
-  </p>
-  <span class="status">Candidate Family</span>
+  <h2>Relationship &amp; Condition</h2>
+  <p>Relationship / Condition Attestations express bounded assertions concerning a
+    relationship, condition, status, qualification, participation, or other governed
+    circumstance within the Attestation's defined scope.</p>
+  <div class="note"><strong>Controlled value:</strong> <code>relationship-condition</code></div>
+  <span class="status">Adopted</span>
 </article>
 
 <article class="card">
-  <h2>Correction &amp; Supersession Assertions</h2>
-  <p>
-    Attestor requires a governed way to express corrections, clarifications,
-    withdrawals, supersession, or other changes affecting its own assertions.
-    The final treatment may be represented through lifecycle architecture rather
-    than as a standalone Attestation Type.
-  </p>
-  <span class="status">Requires Resolution</span>
+  <h2>Correction &amp; Supersession</h2>
+  <p>Correction / Supersession Attestations express bounded assertions concerning
+    correction, supersession, or governed change where an Attestation is the
+    appropriate object. Correction itself remains a governed activity, and lifecycle
+    or versioning rules determine the effect on canonical identity and state.</p>
+  <div class="note"><strong>Controlled value:</strong> <code>correction-supersession</code></div>
+  <span class="status">Adopted</span>
 </article>
 
 </section>
@@ -255,10 +249,12 @@ h1{
   <h2>Controlled Vocabulary</h2>
 
   <p>
-    Attestation Types should ultimately form a controlled vocabulary rather than
-    an open-ended collection of labels. Each adopted type should have a defined
-    meaning, eligibility criteria, applicable rules, required relationships, and
-    validation expectations.
+    Attestation Types form a governed controlled vocabulary rather than an
+    open-ended collection of labels. The adopted values are <code>identity</code>,
+    <code>evidence</code>, <code>source-provenance</code>,
+    <code>verification-related</code>, <code>relationship-condition</code>, and
+    <code>correction-supersession</code>. Additional values require governed
+    architectural change rather than ad hoc creation.
   </p>
 
   <div class="note">
@@ -291,10 +287,8 @@ h1{
 
   <p>
     The pre-Suite model included Reputation Attestations. That category is not
-    carried forward as an established Attestor type. Reputation may eventually be
-    derived from accumulated evidence, behavior, history, or trust information, but
-    Attestor has not established reputation as a canonical object or institutional
-    responsibility.
+    part of the adopted Attestation Type vocabulary. Attestor does not establish a
+    generic reputation framework, reputation score, or canonical reputation object.
   </p>
 
   <div class="note">
@@ -306,23 +300,21 @@ h1{
 
 <section style="margin-top:18px;">
 <article class="card">
-  <h2>Advanced Architecture Required</h2>
-
+  <h2>Established Attestation Type Architecture</h2>
   <p>
-    This page establishes the purpose and boundaries of Attestation Type
-    classification without prematurely freezing the final taxonomy. The advanced
-    Attestor architecture should determine the adopted type identifiers, controlled
-    values, definitions, schemas, validation rules, lifecycle relationships, and
-    conformance requirements.
+    Advanced Architecture establishes the controlled Attestation Type vocabulary
+    and its relationship to Attestor schemas, controlled values, eligibility,
+    evaluation, validation, lifecycle, and conformance architecture.
   </p>
-
   <div class="note">
-    Candidate Families → Review → Controlled Values → Schemas → Validation → Adoption
+    identity · evidence · source-provenance · verification-related ·
+    relationship-condition · correction-supersession
   </div>
-
-  <a class="btn" href="/attestor/">
-    Back to Attestor →
-  </a>
+  <p style="margin-top:16px;">
+    Exact executable validation and production-specific profile requirements remain
+    implementation work. The six controlled values themselves are adopted.
+  </p>
+  <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article>
 </section>
 
