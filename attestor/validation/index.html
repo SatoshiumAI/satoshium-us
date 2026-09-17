@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Validation</title>
+<meta name="description" content="The Satoshium Attestor Validation architecture defining whether Attestor objects satisfy applicable normative structural and rule requirements.">
+<link rel="canonical" href="https://satoshium.us/attestor/validation/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Validation</h1>
+<p class="lead">Validation defines whether an <strong>Attestor object</strong> satisfies Attestor's applicable <strong>normative structural and rule requirements</strong>.</p>
+<p class="lead">Validation determines whether an object is correctly formed and governed according to Attestor architecture. It does <strong>not</strong> determine whether an Attestation is true, whether a Trust Statement is favorable, or whether the underlying evidence is sufficient.</p>
+<div class="note"><strong>Validation principle:</strong> Object + Applicable Normative Requirements → Validation → Governed Validation Result</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Validation Purpose</h2><p>Validation determines whether an Attestor object satisfies the normative structural and rule requirements applicable to that object. It answers whether the object is correctly formed and governed according to Attestor architecture—not whether its assertion or conclusion is true.</p></article>
+<article class="card"><h2>Validation Scope</h2><p>Validation applies to Attestor-owned objects and their governed representations. Different object classes may have different required structures, controlled values, relationships, provenance requirements, lifecycle constraints, and rule checks.</p></article>
+<article class="card"><h2>Structural Validation</h2><p>Structural validation tests whether required information is present, correctly represented, internally coherent, and compatible with the applicable object schema or profile.</p></article>
+<article class="card"><h2>Semantic Validation</h2><p>Semantic validation tests whether controlled values, identifiers, object roles, relationship meanings, authority context, provenance modes, lifecycle states, and other governed semantics are used consistently with Attestor architecture.</p></article>
+<article class="card"><h2>Rule Validation</h2><p>Rule validation tests applicable normative Attestor requirements derived from established principles, rules, and architecture. A structurally complete object can still fail validation when it violates a governing rule.</p></article>
+<article class="card"><h2>Relationship Validation</h2><p>Relationships must use permitted meanings and, once formalized in Schemas, permitted source/target combinations and cardinalities. A syntactically present relationship is not valid merely because it can be serialized.</p></article>
+<article class="card"><h2>Lifecycle & Version Validation</h2><p>Validation checks whether lifecycle and version information is internally consistent with the object's identity and governed history. It must not allow versioning or lifecycle metadata to conceal a new canonical object or erase a prior governed state.</p></article>
+<article class="card"><h2>Validation Result</h2><p>Validation produces a governed validation determination for the object or representation tested. Exact machine result vocabulary and report serialization remain to be finalized with normative Schemas rather than invented prematurely.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Validation Layers</h2>
+<p>Attestor validation is layered because correctness is more than file syntax. An object may be machine-readable yet still violate semantic, relationship, lifecycle, provenance, or institutional rules.</p>
+<div class="note">Representation / Syntax → Can the object be parsed?<br>Structure → Are required elements present and correctly formed?<br>Controlled Semantics → Are governed values used correctly?<br>Relationships → Are governed connections permissible and coherent?<br>Provenance / Authority → Is required context preserved?<br>Lifecycle / Versioning → Is state and identity behavior coherent?<br>Normative Rules → Does the object satisfy applicable Attestor requirements?<br><br>Machine-readable ≠ Valid</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Normative Requirement Chain</h2>
+<p>Validation must trace back to adopted Attestor architecture rather than inventing requirements inside a validator. Principles guide the institution; Rules constrain behavior; normative requirements formalize those constraints; validation tests them.</p>
+<div class="note">Principle → Rule → Normative Requirement → Validation Rule → Validation Result<br><br>Validator → Implements architecture<br>Validator → Does not create architecture</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Object-Class Validation</h2>
+<p>Attestations and Trust Statements are distinct canonical objects and therefore require distinct validation profiles. Shared foundational requirements may be reused, but each object class must be validated according to its own role and structure.</p>
+<div class="note"><strong>Attestation validation</strong> → identity · type · authority · subject · assertion · scope · provenance · governed references · lifecycle context · applicable relationships<br><br><strong>Trust Statement validation</strong> → identity · subject · bounded conclusion · Attestor attribution · supporting Attestation(s) · evaluation basis · provenance · limitations · relevant state · lifecycle context · applicable relationships<br><br>Shared rules → Reusable where architecture permits<br>Object-specific rules → Remain distinct</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Evaluation-Related Validation</h2>
+<p>Validation may test whether the required evaluation context is represented and internally coherent—for example, whether a Trust Statement is traceable to an evaluation basis and applicable Attestation. Validation does not rerun the substantive evaluation merely to decide whether the resulting conclusion should have been supported, contradicted, or indeterminate.</p>
+<div class="note">Validation → Was required evaluation context represented correctly?<br>Evaluation → What bounded conclusion does the eligible governed basis support?<br><br>Validation ≠ Evaluation<br>Validation Result ≠ Evaluation Outcome</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Eligibility-Related Validation</h2>
+<p>Validation may confirm that an object records required eligibility context and uses governed eligibility rules correctly. It does not convert every referenced input into an eligible input. Eligibility remains an evaluation-specific governed admission determination.</p>
+<div class="note">Referenced Input → Not automatically eligible<br>Eligibility Determination → Governed evaluation context<br>Validation → Tests required representation / rule compliance<br><br>Validation ≠ Eligibility</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Validation Failures</h2>
+<p>A validation failure identifies a failure to satisfy an applicable normative requirement. Failures must be attributable to identifiable requirements and sufficiently specific to support correction. Validation must not use vague failure states to conceal which rule was violated.</p>
+<div class="note">Requirement Identified → Test Applied → Failure Located → Reason Reported → Corrective Action Possible<br><br>Failure → Normative non-satisfaction<br>Failure ≠ Assertion proven false<br>Failure ≠ Trust Statement conclusion reversed</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Validation and Correction</h2>
+<p>An invalid Attestor object may require correction, but the correction path depends on materiality. A structural or bounded metadata defect may be corrected within the same canonical identity when Versioning permits. A correction that changes essential institutional meaning may require a new canonical object and supersession.</p>
+<div class="note">Validation Failure → Correction Review<br>Bounded Defect → Same-object revision may be permitted<br>Identity-changing Defect / Correction → New canonical object may be required<br><br>Validation does not override Versioning.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Validation vs. Conformance</h2>
+<p>Validation and Conformance are related but distinct. Validation asks whether a particular Attestor object satisfies its applicable normative requirements. Conformance asks whether an object, implementation, producer, or process meets the declared Attestor specification or profile requirements applicable to it.</p>
+<div class="note">Validation → Does this object satisfy its applicable normative checks?<br>Conformance → Does this object / implementation / process meet the declared Attestor specification or profile?<br><br>Validation supports Conformance<br>Validation ≠ Conformance</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Validation vs. Publication</h2>
+<p>A valid object is not automatically published. Publication is a separate governed decision about public representation. Likewise, publication must not be treated as proof that an object has passed every applicable validation requirement unless the publication rules explicitly require that condition.</p>
+<div class="note">Valid ≠ Published<br>Published ≠ Automatically Valid<br>Validation State → Normative compliance context<br>Publication State → Public representation context</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Deferred Machine Specification</h2>
+<p>This page establishes validation architecture, not yet the final machine validator. Exact schemas, required/optional fields, cardinalities, regex patterns, version syntax, machine result vocabulary, error codes, and executable validation sequence must be derived from the normative Schemas and later formal validation specification.</p>
+<div class="note">Architecture → Established<br>Normative Schemas → Required dependency for final machine rules<br>Executable Rules → To be formalized<br>Result Vocabulary → To be finalized<br>Error Codes / Reports → To be formalized<br><br>No machine rule should be invented ahead of its governing architecture.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>What Validation Does Not Establish</h2>
+<p>Validation is a normative compliance determination. It does not independently establish truth, authority, eligibility, evidence sufficiency, evaluation outcome, publication, or institutional conformance.</p>
+<div class="note">Valid ≠ True<br>Valid ≠ Authoritative<br>Valid ≠ Eligible<br>Valid ≠ Supported<br>Valid ≠ Published<br>Valid ≠ Conformant by itself<br><br>Validation → Satisfaction of applicable normative structural and rule requirements</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>The Validation architecture now defines what validation means and what it must test without prematurely freezing machine details that depend on normative Schemas. Once those Schemas are advanced, this architecture can be implemented as explicit validation rules and reports.</p>
+<div class="note"><strong>Validation → Established conceptually</strong><br>Structural validation → Required<br>Semantic validation → Required<br>Rule validation → Required<br>Relationship validation → Required<br>Lifecycle / version validation → Required<br>Validation vs. evaluation → Distinguished<br>Validation vs. conformance → Distinguished<br>Machine rule set → Dependent on normative Schemas<br>Production validation → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">Validation should prove that an object obeys its architecture—not quietly invent the architecture it is supposed to test.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
