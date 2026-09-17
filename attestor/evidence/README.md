@@ -1,158 +1,197 @@
 # Satoshium Attestor — Evidence
 
 ## Page
-
 `/attestor/evidence/`
 
 ## Purpose
+This page defines the governed role of **Evidence** within Satoshium Attestor.
 
-This page defines the role of **Evidence** within Satoshium Attestor.
+Evidence is supporting material or an authoritative reference used by Attestor to evaluate an Attestation and support formation of a **Trust Statement**.
 
-Evidence is supporting material or an authoritative reference used by Attestor to evaluate an Attestation and support a **Trust Statement**.
-
-Evidence remains distinct from the Attestation, the Trust Statement, and the authority of any referenced source.
+Evidence remains distinct from:
+- the Attestation;
+- the Trust Statement;
+- the canonical authority of any referenced source.
 
 ## Governing Principle
-
 > **Reference does not transfer authority.**
 
-Attestor may use or reference evidence without becoming the canonical authority for that evidence.
+## Canonical Context
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-A Suite object referenced as evidence remains authoritative within its originating institution.
+Evidence may participate among the eligible governed inputs used in that process.
 
-## Evidence Model
+> **Evidence ≠ Attestation ≠ Trust Statement**
 
-At the current foundational stage, evidence may conceptually include:
+## Evidence Is a Role, Not a New Canonical Object Class
+Attestor does not establish a generic canonical **Evidence Record** merely because information participates as evidence.
 
-- documents;
-- records;
-- datasets;
+Evidence may be:
+- source material;
+- a governed reference;
+- a document;
+- a record;
+- a dataset;
 - media;
-- source materials;
-- observations;
-- authoritative Suite objects;
-- other information later determined eligible under Attestor rules.
+- an observation;
+- an authoritative Suite object;
+- another eligible governed source.
 
-This list is descriptive, not a final controlled taxonomy.
+Where an Attestation specifically asserts something about evidence, the adopted Attestation Type `evidence` may be used.
 
-The advanced Attestor architecture must determine the actual evidence classes and eligibility rules.
+That does not transform the underlying evidence into the Attestation.
+
+## Eligibility
+Evidence participates in a particular evaluation only after the applicable governed Eligibility determination.
+
+> **Availability ≠ Eligibility**
+
+> **Authority ≠ Eligibility**
+
+> **Reference ≠ Eligibility**
+
+> **Eligible Here ≠ Eligible Everywhere**
+
+Eligibility does not mean that the evidence is sufficient, correct, favorable, or determinative.
 
 ## Authoritative Suite References
-
-Attestor may reference authoritative Suite objects when relevant to an Attestation or Trust Statement.
-
-Examples include:
-
+Potential governed references include:
+- Atlas Authoritative Intelligence;
+- Navigator Workflow Definition / Orchestration context;
 - Certifier Certification Packages;
-- Satoshium Registry records;
+- Satoshium Registry Records;
 - Chronicle Entries;
 - Anchor Integrity References;
-- Beacon Discovery Signals or Discovery Metadata;
-- Atlas intelligence;
-- Navigator workflow context;
-- other governed Suite inputs.
+- Beacon Discovery Signals / Discovery Metadata;
+- other eligible governed sources.
 
-Their use as evidence does not transfer their authority to Attestor.
+The originating institution retains canonical authority.
 
 ## Provenance
+Evidence preserves applicable provenance using the adopted modes:
+- `direct`
+- `referenced`
+- `derived`
 
-Evidence should preserve sufficient provenance for a reviewer to determine, as applicable:
-
+Relevant provenance may include:
 - source or origin;
 - attribution;
-- relationship to the subject;
-- relationship to the Attestation;
-- status when evaluated;
-- relevant changes;
-- limitations;
-- applicable source authority.
+- source relationship;
+- derivation basis;
+- relevant source state;
+- material limitations.
 
-The exact required provenance fields are deferred to advanced architecture.
+> **Evaluation cannot become a provenance break.**
 
 ## Relevance and Scope
+Evidence is evaluated relative to a particular assertion, purpose, and scope.
 
-Evidence is meaningful in relation to a specific assertion and scope.
+Evidence relevant to one bounded question does not silently establish a broader conclusion.
 
-Evidence that supports one bounded assertion should not automatically be treated as supporting a broader conclusion.
+Conceptually:
 
-Attestor should therefore preserve the relationship among:
+`Evidence → Assertion → Scope → Evaluation Basis`
 
-`Evidence → Assertion → Scope → Evaluation`
+## Relationships
+Evidence may participate through governed relationships such as:
+- `supports`
+- `references`
+- `derived-from`
+- `related-to`
 
-## Supporting and Conflicting Evidence
+Relationship vocabulary and Evaluation Outcome vocabulary are separate.
 
-The architecture should not preserve only evidence favorable to a conclusion.
+> **supports ≠ supported**
 
-Attestor must be capable of representing evidence that:
+> **Reference ≠ Support**
 
+> **Reference ≠ Derivation**
+
+## Supporting, Limiting, and Conflicting Evidence
+Attestor preserves material evidence that:
 - supports;
 - limits;
 - qualifies;
 - contextualizes;
 - conflicts with
 
-an assertion, subject to the eventual controlled evidence model and evaluation rules.
+the assertion under evaluation.
 
-## Evidence Status
+Material conflicts, exclusions, uncertainty, and limitations remain visible in the Evaluation basis and Trust Statement where applicable.
 
-Evidence may change over time.
+Attestor does not discard conflicting evidence merely to obtain a favorable outcome.
 
-Availability, authority, validity, interpretation, provenance, or relevance may later differ from what existed when an Attestation was evaluated.
+## Relevant Source State
+Evidence may change after an evaluation.
 
-Attestor should preserve enough context to explain what evidence was considered when a Trust Statement was produced without rewriting the original evaluation merely because later information changes.
+Attestor preserves the material source state relevant to the Evaluation so later changes do not silently rewrite the basis of an earlier Trust Statement.
 
-The exact lifecycle and historical treatment remain to be defined.
+> **Source State at Evaluation ≠ Later Source State**
 
-## Evidence Is Not an Attestation
+A material later source-state change may trigger review.
 
-The reconciled architecture explicitly separates evidence from Attestations.
+> **Material Source-State Change → Review**
 
-- **Evidence** supplies support or context.
-- **Attestation** expresses a governed Attestor assertion.
-- **Trust Statement** is Attestor's canonical institutional output.
+Review does not predetermine correction, withdrawal, supersession, or a new Trust Statement.
 
-Conceptually:
+## Evaluation
+Evidence contributes to Rule-Constrained Evaluation but does not independently determine the Evaluation Outcome.
 
-`Evidence / Authoritative References → Attestation Evaluation → Trust Statement`
+Adopted Evaluation Outcomes:
+- `supported`
+- `partially-supported`
+- `not-supported`
+- `contradicted`
+- `indeterminate`
 
-## Reconciliation Notes
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
 
-This revision updates the June-era pre-Suite Evidence page.
+Attestor does not establish a universal:
+- evidence weighting system;
+- confidence percentage;
+- reputation score;
+- majority-source rule;
+- automatic source hierarchy.
 
-Major changes include:
+Sufficiency is governed by the applicable purpose, rules, scope, eligible basis, conflicts, limitations, and methodology.
 
-- replacing the broad “trust context” framing with Attestor's Suite-specific Trust Statement function;
-- removing the assumption that Attestor will necessarily create independent “Evidence Records”;
-- removing “Evidence Attestations” as an already planned architectural object because the Attestation Types taxonomy remains under review;
-- strengthening source authority and provenance requirements;
-- distinguishing evidence from Attestations;
-- adding relevance and scope as explicit architectural concerns;
-- adding support for conflicting or qualifying evidence;
-- adding evidence status and temporal context as lifecycle concerns;
-- distinguishing authoritative Suite references from Attestor-owned objects;
-- preserving the principle that evidence does not automatically establish truth;
-- avoiding premature evidence schemas, controlled values, identifiers, or validation rules.
+## Validation
+Evidence-related Attestations and governed evidence/reference profiles remain subject to applicable Validation requirements.
 
-## Deferred to Advanced Architecture
+Validation determines structural/rule compliance.
 
-The following remain intentionally unresolved:
+Evaluation determines substantive outcome.
 
-- canonical evidence taxonomy;
-- evidence eligibility rules;
-- required and optional evidence fields;
-- evidence identifiers, if any;
-- whether Attestor creates evidence-reference objects;
-- provenance schema;
-- evidence status vocabulary;
-- evidence validation rules;
-- conflicting-evidence treatment;
-- weighting or sufficiency rules, if appropriate;
-- evidence retention and availability requirements;
-- evidence-to-Attestation relationship schema;
-- evidence-to-Trust-Statement generation rules;
-- conformance tests and reference vectors.
+> **Validation ≠ Evaluation**
+
+Exact executable validation and final Validation Result vocabulary remain implementation work.
+
+## Evidence Profile Architecture
+The Attestor schema/template architecture includes an **Evidence Attestation** profile using the adopted Attestation Type:
+
+`evidence`
+
+This profile governs an Attestation about evidence. It does not create a separate canonical Evidence object.
+
+## Retention and Publication
+Historical traceability and relevant evidence context should be preserved according to applicable Attestor and source rules.
+
+Publication is separately governed.
+
+Evidence availability or technical accessibility does not automatically make an Attestor object Published.
+
+## Status
+**Evidence Architecture → Advanced Architecture reconciled.**
+
+The former posture that evidence classes, eligibility, provenance, conflict treatment, and evaluation contribution were wholly deferred to Advanced Architecture is no longer current.
+
+Remaining work concerns:
+- exact machine serialization;
+- executable evidence-profile validation;
+- production-specific evidence handling;
+- retention mechanics where required;
+- production evidence and operational proof.
 
 ## Files
-
 - `index.html` — public Evidence page.
-- `README.md` — repository documentation for the Evidence page.
+- `README.md` — repository documentation.
