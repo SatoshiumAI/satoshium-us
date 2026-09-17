@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Versioning</title>
+<meta name="description" content="The Satoshium Attestor Versioning architecture defining revision, material change, supersession, historical preservation, and version identity.">
+<link rel="canonical" href="https://satoshium.us/attestor/versioning/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Versioning</h1>
+<p class="lead">Versioning defines governed <strong>change</strong>, <strong>revision</strong>, <strong>supersession</strong>, <strong>historical preservation</strong>, and <strong>version identity</strong> for Attestor-owned objects.</p>
+<p class="lead">Its central responsibility is to distinguish a new governed state of the <em>same</em> Attestation or Trust Statement from a change so substantive that Attestor must create a <em>new canonical object</em>.</p>
+<div class="note"><strong>Versioning principle:</strong> Revise the same object when its essential institutional meaning remains intact. Create a new canonical object when that meaning materially changes.</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Versioning Purpose</h2><p>Versioning governs change within an Attestor-owned canonical object while preserving its identity and history. It distinguishes revision of the same governed object from a substantive change that requires a new canonical object.</p></article>
+<article class="card"><h2>Object Identity</h2><p>An Attestation keeps its <strong>ATT-YYYY-NNNN</strong> identity across permitted revisions. A Trust Statement keeps its <strong>TRST-YYYY-NNNN</strong> identity across permitted revisions. A version identifies a governed state of that object; it does not replace the canonical identifier.</p></article>
+<article class="card"><h2>Version Identity</h2><p>Each preserved governed revision must be distinguishable from other revisions of the same canonical object. Exact machine syntax for version labels is reserved for Schemas; this page establishes the requirement for version identity without prematurely fixing its serialization.</p></article>
+<article class="card"><h2>Revision</h2><p>A revision may correct or clarify an existing object without changing its essential institutional meaning. Editorial corrections, metadata repair, reference repair, and other bounded changes may remain within the same canonical identity when the object's substantive assertion or conclusion is unchanged.</p></article>
+<article class="card"><h2>Material Change</h2><p>A change is potentially identity-changing when it materially alters what the object asserts or concludes, its subject, controlling scope, evaluation basis in a way that changes the conclusion, or the institutional meaning represented by the object.</p></article>
+<article class="card"><h2>Supersession</h2><p>When change exceeds the permitted bounds of revision, Attestor creates a new canonical object with a new identifier and explicitly relates it to the prior object through <strong>supersedes</strong>. The prior object remains historically resolvable.</p></article>
+<article class="card"><h2>Historical Preservation</h2><p>No governed version may silently overwrite material history. Prior versions, change context, provenance, relationships, and the distinction between historical and current state must remain reconstructable where material.</p></article>
+<article class="card"><h2>Correction</h2><p>Correction and versioning interact but are not identical. Correction describes why a governed change is made; versioning determines whether that change remains within the same canonical identity or requires a successor object.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Canonical Object vs. Version</h2>
+<p>Canonical identity and version identity operate at different levels. The canonical identifier answers <em>which governed object is this?</em> The version answers <em>which governed state of that object is this?</em></p>
+<div class="note">Canonical Object → ATT-YYYY-NNNN or TRST-YYYY-NNNN<br>Version → Distinguishable governed state of that canonical object<br><br>Canonical Identifier → Stable across permitted revisions<br>Version Identity → Changes when a preserved revision is created<br><br>Version ≠ New Canonical Object</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Revision Boundary</h2>
+<p>A change may remain within the same canonical identity when it preserves the object's essential meaning. The exact machine rules will be formalized later, but the governing test is substantive rather than cosmetic.</p>
+<div class="note"><strong>Generally compatible with same-object revision:</strong><br>Editorial correction<br>Formatting repair<br>Non-substantive metadata correction<br>Broken or improved reference resolution<br>Clarification that does not broaden or alter meaning<br>Provenance detail added without changing the underlying basis<br>Administrative lifecycle metadata<br><br>Same meaning → Same canonical identity may be preserved</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>New-Object Boundary</h2>
+<p>A new canonical object is required when the change would cause the prior identifier to represent materially different institutional meaning. This protects stable identity and prevents versioning from being used to rewrite a governed assertion or conclusion in place.</p>
+<div class="note"><strong>Normally requires new canonical identity:</strong><br>Materially different subject<br>Materially different assertion<br>Material expansion or contraction of controlling scope<br>Evaluation-basis change that materially changes the conclusion<br>Materially different Trust Statement conclusion<br>Change that would misrepresent what the prior object originally meant<br><br>Changed essential meaning → New canonical object → supersedes prior object</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Attestation Versioning</h2>
+<p>An Attestation may be revised within the same <strong>ATT</strong> identity when corrections or clarifications do not materially change the governed assertion. If the assertion itself materially changes, Attestor should create a new Attestation rather than mutate the prior assertion under the same identifier.</p>
+<div class="note">ATT Object + Bounded Revision → Same ATT identity / new governed version<br>ATT Object + Material Assertion Change → New ATT identity<br>New ATT → supersedes → Prior ATT, where applicable</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Trust Statement Versioning</h2>
+<p>A Trust Statement may be revised within the same <strong>TRST</strong> identity for bounded corrections that preserve its substantive conclusion and scope. A materially different conclusion must not be hidden as a routine version update; it requires a new Trust Statement.</p>
+<div class="note">TRST Object + Bounded Revision → Same TRST identity / new governed version<br>TRST Object + Material Conclusion Change → New TRST identity<br>New TRST → supersedes → Prior TRST, where applicable<br><br>A changed conclusion is a changed canonical statement.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Evaluation Basis Changes</h2>
+<p>New evidence or a changed source state does not automatically create a new version or object. It first triggers governed review. If review leaves the substantive conclusion intact, Attestor may preserve the current object or issue a bounded revision as required. If the conclusion materially changes, a new Trust Statement is required.</p>
+<div class="note">Material New Input / Source Change → Review<br>Conclusion unchanged → Preserve or boundedly revise current TRST<br>Conclusion materially changed → New TRST<br>New TRST → supersedes → Prior TRST<br><br>Trigger ≠ Automatic version<br>Trigger ≠ Automatic supersession</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Version History</h2>
+<p>Where a governed revision is preserved, Attestor must maintain enough version history to identify the sequence of states and understand material changes. Later Schemas will define the exact representation.</p>
+<div class="note">Canonical Identifier<br>Version Identity<br>Prior Version Reference, where applicable<br>Change Time<br>Change Type / Reason, where material<br>Responsible Attestor Context<br>Provenance of Change<br>Material Change Summary<br>Lifecycle State<br>Current / Historical Distinction</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>No Silent Overwrite</h2>
+<p>Attestor must not silently replace a governed version when the change is material to interpretation, provenance, evaluation, or institutional history. Public presentation may emphasize the current version, but historical governed states must remain distinguishable and resolvable according to later Publication rules.</p>
+<div class="note">Prior Governed Version → Preserved<br>New Governed Version → Explicitly distinguishable<br>Current Version → Identifiable<br>Material Change → Reviewable<br><br>Update ≠ Erasure<br>Current ≠ Only state that ever existed</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Versioning and Lifecycle</h2>
+<p>Versioning and Lifecycle are complementary. Versioning governs states of the same canonical object; Lifecycle governs the object's institutional status. A new version does not automatically change lifecycle state, and a lifecycle transition does not necessarily require a new version unless the governed representation itself changes.</p>
+<div class="note">Version Identity → Which governed revision?<br>Lifecycle State → What is the object's institutional status?<br><br>New Version ≠ Automatic Lifecycle Transition<br>Lifecycle Transition ≠ Automatic New Canonical Object<br>Supersession → Connects new canonical object to prior object</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Versioning and Publication</h2>
+<p>Publication must identify which governed version is represented publicly. Publication of a newer version does not erase the existence of earlier governed versions. Exact rules for current-version presentation, historical access, and publication metadata belong to Publication architecture.</p>
+<div class="note">Canonical Object → May have multiple governed versions<br>Published Representation → Must resolve to governed version<br>Current Published Version → Distinguishable<br>Historical Versions → Preserved according to governance<br><br>Publication ≠ Version Identity</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>What Versioning Does Not Establish</h2>
+<p>Versioning records governed change. It does not independently establish lifecycle status, publication, evaluation outcome, truth, validation, conformance, or authority.</p>
+<div class="note">New Version ≠ Active<br>New Version ≠ Published<br>New Version ≠ Supported<br>Higher Version ≠ More Authoritative<br>Latest Version ≠ Universal Truth<br>Version Identity ≠ Canonical Object Identity</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>Versioning now establishes the identity boundary required before normative Schemas can be finalized. Attestor can distinguish bounded revision from canonical replacement without inventing a machine version syntax prematurely.</p>
+<div class="note"><strong>Versioning → Established</strong><br>Canonical object vs. version identity → Distinguished<br>Same-object revision boundary → Established conceptually<br>New-object boundary → Established conceptually<br>Material assertion change → New Attestation<br>Material conclusion change → New Trust Statement<br>Supersession → Preserves predecessor relationship<br>No silent overwrite → Required<br>Exact version syntax → Deferred to Schemas<br>Machine materiality tests → Deferred to Validation / Methodology<br>Production proof → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">Versioning preserves change without allowing change to disguise a different object as the same one.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
