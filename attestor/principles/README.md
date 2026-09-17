@@ -1,264 +1,358 @@
-# Principles
+# Satoshium Attestor — Principles
+
+## Page
+
+`/attestor/principles/`
 
 ## Purpose
 
-The principles of Attestor establish the foundational ideas that guide the creation, management, interpretation, and preservation of attestations, trust-related information, evidence, reputation signals, and associated records.
+This page defines the foundational principles that guide Satoshium Attestor.
 
-These principles help define how Attestor approaches trust without assuming authority over truth.
+The principles constrain how Attestor should:
 
----
+- form Attestations;
+- use Evidence and authoritative references;
+- preserve provenance;
+- establish scope;
+- evaluate eligible inputs;
+- preserve uncertainty;
+- govern change;
+- respect institutional authority;
+- produce Trust Statements.
 
-## Why Principles Matter
+They are architectural commitments, not yet a complete machine-validation specification.
 
-Trust systems influence decisions.
+## Canonical Responsibility
 
-They affect how people interpret information, evaluate claims, and assess relationships.
+**Attestor → Trust Statement**
 
-Without guiding principles, trust systems risk becoming inconsistent, opaque, or difficult to understand.
+## Governing Principle
 
-Principles provide a stable foundation for future development.
+> **Reference does not transfer authority.**
 
----
+This principle is central to Attestor and the wider Satoshium Suite.
 
-## Principle 1: Transparency
+Attestor may reference a governed object without becoming the canonical authority for that object.
 
-Trust-related information should remain visible whenever practical.
+## Why This Page Was Reconciled Separately
 
-Users should be able to understand:
+The earlier foundational page inventory omitted `/attestor/principles/`.
 
-* Who made a statement
-* What was stated
-* When it was stated
-* Why it was stated
-* What evidence may support it
+The June-era Principles page nevertheless contains material that overlaps directly with the reconciled Attestor Rules, Scope, Evidence, Corrections, Interoperability, and Trust Statement architecture.
 
-Transparency supports accountability and informed decision-making.
+It therefore requires reconciliation before the whole-foundation review can accurately treat the Attestor foundation as complete.
 
----
+## Foundational Principles
 
-## Principle 2: Attribution
+### Bounded Conclusions
 
-Statements should remain attributable.
+A Trust Statement should say no more than the applicable:
 
-Attestations should identify the party responsible for making the statement whenever practical.
+- Attestation;
+- eligible inputs;
+- Evidence;
+- provenance;
+- scope;
+- status;
+- limitations;
+- evaluation
 
-Trust becomes difficult to evaluate when origins are unclear.
+support.
 
-Attribution helps preserve accountability.
+This replaces generic language about “trust” emerging from broad context.
 
----
+### Attribution
 
-## Principle 3: Traceability
+Attestor-governed assertions, conclusions, and changes should remain attributable.
 
-Information should support review and investigation.
+The final Attesting Authority / producer model remains advanced architecture.
 
-Users should be able to trace relationships among:
+### Provenance
 
-* Attestations
-* Evidence
-* Sources
-* Claims
-* Identities
-* Records
+The origin, attribution, source relationships, relevant state, and history necessary to understand an input, assertion, evaluation, or output should remain traceable.
 
-Traceability helps preserve context over time.
+### Scope
 
----
+Assertions and conclusions must preserve the boundaries within which they apply.
 
-## Principle 4: Context Matters
+A bounded conclusion must not silently become universal.
 
-Statements rarely exist in isolation.
+### Traceability
 
-Attestations should preserve sufficient context to support interpretation.
+Relationships among:
 
-Context may include:
+- Attestations;
+- Evidence;
+- authoritative references;
+- evaluations;
+- Trust Statements;
+- governed changes
 
-* Evidence
-* Historical information
-* Source references
-* Related records
-* Corrections
+should support review and reconstruction of the relevant basis.
 
-Context improves understanding.
+### Evidence Context
 
----
+Evidence should remain connected to its:
 
-## Principle 5: Trust Is Not Truth
+- relevance;
+- provenance;
+- status;
+- scope;
+- limitations;
+- source authority.
 
-Trust and truth are distinct concepts.
+Evidence does not become proof merely because it is referenced.
 
-An attestation may be trustworthy and still be incorrect.
+### Preserve Uncertainty
 
-An attestation may be correct and still lack trust.
+Incomplete, conflicting, qualified, or insufficient information should remain visible where material.
 
-Attestor documents trust-related information.
+Attestor should not manufacture certainty.
 
-It does not determine truth.
+### Governed Change
 
----
+Changes to Attestor-owned objects should preserve provenance and historical traceability while allowing the current state to remain identifiable.
 
-## Principle 6: Evidence Improves Understanding
+This includes architectural concerns such as:
 
-Evidence provides context for interpretation.
+- correction;
+- clarification;
+- withdrawal;
+- supersession.
 
-Evidence may support, challenge, clarify, or complicate an attestation.
+Exact lifecycle mechanics remain unresolved.
 
-Evidence should be preserved whenever practical.
+### Authority Boundaries
 
-Users benefit from seeing the information that supports a statement.
+Attestor may reference governed objects from other institutions without assuming their canonical responsibilities.
 
----
+Conceptually:
 
-## Principle 7: Corrections Strengthen Credibility
+`Source Object → Retains Source Authority`
 
-Trust systems should be capable of correction.
+`Attestor → Governs Its Own Assertion, Evaluation, and Trust Statement`
 
-Mistakes occur.
+### Interoperability
 
-Information changes.
+Information crossing institutional boundaries should preserve the meaning and context required for correct interpretation.
 
-New evidence emerges.
+This includes, as applicable:
 
-The ability to document corrections openly often improves credibility rather than diminishing it.
+- provenance;
+- scope;
+- status;
+- relationships;
+- limitations;
+- authority.
 
----
+### No Automatic Conversion
 
-## Principle 8: Historical Preservation Matters
+No source object or evidence item automatically becomes an Attestation or determines a Trust Statement.
 
-Trust-related information often gains meaning over time.
+This includes:
 
-Historical records help users understand:
+- Certification Packages;
+- Satoshium Registry records;
+- Chronicle Entries;
+- Anchor Integrity References;
+- Beacon Discovery Signals;
+- Evidence;
+- other eligible governed inputs.
 
-* Prior attestations
-* Changes in understanding
-* Corrections
-* Reputation development
-* Evidence evolution
+### Reviewability
 
-History provides important context.
+A Trust Statement should preserve enough information to understand:
 
----
+- what was concluded;
+- what supported the conclusion;
+- where the conclusion applies;
+- what limits the conclusion;
+- who or what is responsible;
+- where Attestor's authority ends.
 
-## Principle 9: Trust Should Be Reviewable
+## Principles in Operation
 
-Trust-related information should support independent review.
+The foundational Attestor relationship is:
 
-Users should be able to examine:
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-* Evidence
-* Sources
-* Attestations
-* Corrections
-* Relationships
+The principles constrain every stage.
 
-Trust systems should support investigation rather than discourage it.
+The sequence does **not** mean:
 
----
+- every available input is eligible;
+- every eligible input must be used;
+- every Attestation warrants a Trust Statement;
+- every Trust Statement is favorable;
+- every Trust Statement is public;
+- a Trust Statement is universal.
 
-## Principle 10: Separation of Responsibilities
+## Principles vs Rules
 
-Different systems serve different purposes.
+The Principles and Rules pages should remain distinct.
 
-Within the Satoshium ecosystem:
+### Principles
 
-```text id="a7u2kp"
-Atlas      → Data
-Navigator  → Query
-Beacon     → Discovery
-Certifier  → Verification
-Registry   → Records
-Chronicle  → History
-Anchor     → Identity
-Attestor   → Trust
-```
+Express foundational architectural commitments.
 
-Attestor should focus on trust-related information while respecting the responsibilities of other systems.
+### Rules
 
----
+Translate those commitments into institutional constraints.
 
-## Principle 11: Interoperability
+### Advanced Architecture
 
-Trust-related information becomes more valuable when it remains understandable across systems.
+Should translate applicable rules into:
 
-Attestations, evidence, sources, and reputation records should support interoperability whenever practical.
+- normative requirements;
+- validation rules;
+- schemas;
+- controlled values;
+- conformance tests;
+- reference vectors.
 
-Interoperability improves long-term usefulness.
+Conceptually:
 
----
+`Principle → Rule → Normative Requirement → Validation → Conformance`
 
-## Principle 12: Accountability
+This relationship should be checked during the whole-foundation review to remove unnecessary duplication between `/attestor/principles/` and `/attestor/rules/`.
 
-Participants should remain responsible for the statements they make.
+## Removal of the June Principle Chain
 
-Accountability encourages transparency and strengthens trust frameworks.
+The June page used:
 
-Attestations should not become detached from the parties who issued them.
+`Transparency → Accountability → Reputation → Trust`
 
----
+That chain is not carried forward.
 
-## Principle 13: Neutral Documentation
+It implied:
 
-Attestor seeks to document information rather than impose conclusions.
+- reputation as an Attestor architectural stage;
+- abstract Trust as the final Attestor output;
+- a linear progression not supported by the reconciled architecture.
 
-The existence of an attestation should not be interpreted as endorsement.
+The reconciled operational relationship is:
 
-The existence of evidence should not be interpreted as certainty.
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-Documentation and judgment remain distinct activities.
+## Transparency
 
----
+The June page treated Transparency as a standalone foundational principle.
 
-## Principle 14: Trust Evolves
+Transparency remains valuable, but the reconciled architecture expresses the enforceable substance more precisely through:
 
-Trust is dynamic.
+- attribution;
+- provenance;
+- traceability;
+- scope;
+- evidence context;
+- uncertainty;
+- reviewability;
+- governed change.
 
-New information may strengthen trust.
+The whole-foundation review may determine whether **Transparency** should remain an explicit named principle in addition to those more precise requirements.
 
-New information may weaken trust.
+This page does not prematurely settle that editorial question.
 
-Trust systems should remain capable of adapting to changing information.
+## Accountability
 
----
+The June page also treated Accountability as a standalone principle.
 
-## Principle 15: Open Review
+The reconciled architecture preserves its substance through:
 
-Healthy trust systems support scrutiny.
+- attribution;
+- authority;
+- traceability;
+- governed change;
+- reviewability.
 
-Users should be able to:
+The whole-foundation review should determine whether Accountability remains useful as a named umbrella principle or whether it is better expressed through these specific requirements.
 
-* Examine records
-* Review evidence
-* Evaluate sources
-* Consider corrections
-* Form independent conclusions
+## Historical Preservation
 
-Trust improves when review is possible.
+The June principle of Historical Preservation is preserved more precisely as **Governed Change** plus the distinction between current and historical state.
 
----
+Attestor should preserve the provenance of what came before without presenting a superseded or withdrawn state as current.
 
-## Long-Term Vision
+## Context Matters
 
-The long-term vision of Attestor is not merely to store attestations.
+The June principle “Context Matters” is preserved through more specific concepts:
 
-The goal is to create transparent trust frameworks capable of preserving accountability, context, evidence, history, and relationships across digital systems.
+- Evidence Context;
+- Scope;
+- Provenance;
+- Relevant State;
+- Limitations;
+- Relationships.
 
-These principles provide a foundation for that future.
+## Humility
 
----
+The June principle “Humility” is preserved architecturally as **Preserve Uncertainty** and **Bounded Conclusions**.
 
-## Guiding Statement
+Those terms are more directly testable and can later support normative rules.
 
-The central philosophy of Attestor may be summarized as:
+## Guiding Philosophy
 
-```text id="t5n9cw"
-Trust should be visible,
-understandable,
-traceable,
-and reviewable.
-```
+Attestor does not seek to establish:
 
----
+- universal truth;
+- generic reputation;
+- an automatic trust score.
 
-## Status
+Its canonical output is the **Trust Statement**.
 
-These principles represent an initial conceptual framework and may evolve as Attestor matures and additional standards are developed.
+A Trust Statement should remain bounded by what its evidence, provenance, scope, limitations, status, and authority support.
+
+## Reconciliation Notes
+
+Major changes include:
+
+- replacing generic trust-system framing with Attestor's canonical responsibility;
+- adding the governing authority principle;
+- adding Bounded Conclusions;
+- retaining Attribution with stronger authority language;
+- adding Provenance;
+- adding Scope;
+- strengthening Traceability;
+- replacing generic context with Evidence Context;
+- replacing Humility with Preserve Uncertainty;
+- replacing Historical Preservation with Governed Change;
+- adding Authority Boundaries;
+- strengthening Interoperability;
+- adding No Automatic Conversion;
+- adding Reviewability;
+- replacing the reputation/trust principle chain;
+- distinguishing Principles from Rules;
+- preserving Transparency and Accountability as whole-foundation editorial questions rather than silently discarding their substance;
+- aligning the page with the reconciled Attestation / Evaluation / Trust Statement model.
+
+## Whole-Foundation Review Questions
+
+This page introduces several questions that should now be resolved during the whole-foundation review:
+
+1. Should **Transparency** remain an explicit named Attestor principle, or is its substance sufficiently represented by provenance, traceability, scope, uncertainty, and reviewability?
+2. Should **Accountability** remain an umbrella principle, or be represented through attribution, authority, traceability, governed change, and reviewability?
+3. Is there unnecessary duplication between the Principles and Rules pages?
+4. Which principles should become normative requirements in advanced architecture?
+5. Should every foundational rule map explicitly to one or more principles?
+6. Should the foundational architecture establish a formal principle identifier system, or defer identifiers until normative rules?
+7. Are **Bounded Conclusions**, **Preserve Uncertainty**, and **Reviewability** sufficiently distinct to remain separate?
+8. Does **Evidence Context** belong at principle level, or should it remain primarily a Rules/Evidence concern?
+
+## Deferred to Advanced Architecture
+
+This page does not establish:
+
+- principle identifiers;
+- normative MUST/SHOULD/MAY language;
+- validation rule identifiers;
+- machine schemas;
+- controlled values;
+- evaluation algorithms;
+- sufficiency thresholds;
+- conformance tests;
+- reference vectors.
+
+## Files
+
+- `index.html` — public Principles page.
+- `README.md` — repository documentation for the Principles page.
