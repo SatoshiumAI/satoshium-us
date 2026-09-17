@@ -1,85 +1,132 @@
-# Satoshium Attestor — Purpose
+# Satoshium Attestor — Attestations
 
 ## Page
-
-`/attestor/purpose/`
+`/attestor/attestations/`
 
 ## Purpose
+This page defines the canonical **Attestation** object within Satoshium Attestor.
 
-This page defines why **Satoshium Attestor** exists within the Satoshium Suite.
+## Definition
+An **Attestation** is a governed, attributable assertion used by Satoshium Attestor to express a bounded statement about a subject, record, relationship, condition, event, or other trust-relevant matter.
 
-Attestor's canonical responsibility is the production and lifecycle of structured, attributable, evidence-linked **Trust Statements**.
+## Canonical Identifier
+`ATT-YYYY-NNNN`
 
-The page establishes that Attestor does not determine universal truth. Instead, it produces bounded trust conclusions from governed inputs while preserving provenance, scope, limitations, and the authority of referenced Suite objects.
+The identifier is assigned at canonical creation and is not reused or reassigned.
 
-## Canonical Responsibility
+## Canonical Model
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-**Attestor → Trust Statement**
+> **Attestation → governed, attributable assertion**
 
-A Trust Statement is Attestor's own institutional output. Referenced evidence and Suite objects remain authoritative within their originating systems.
+> **Trust Statement → governed, attributable, bounded Attestor conclusion**
 
-## Governing Principle
+## Adopted Attestation Types
+- `identity`
+- `evidence`
+- `source-provenance`
+- `verification-related`
+- `relationship-condition`
+- `correction-supersession`
+
+> **Type ≠ Eligibility**
+
+> **Attestation Type ≠ Evaluation Outcome**
+
+> **Type does not transfer authority.**
+
+## Core Structure
+An Attestation preserves, as applicable:
+- canonical identifier;
+- Attestation Type;
+- Attesting Authority;
+- subject;
+- assertion;
+- scope;
+- eligible governed references;
+- provenance;
+- relationships;
+- Lifecycle State;
+- Publication State;
+- timestamps;
+- version identity;
+- limitations / notes.
+
+Exact machine serialization remains implementation work.
+
+## Authority
+The Attestation identifies its **Attesting Authority**.
+
+Referenced Authority remains distinct.
 
 > **Reference does not transfer authority.**
 
-Attestor may consume or reference information from other Suite institutions without inheriting their canonical responsibilities.
+> **Attribution ≠ Adoption**
 
-## Core Method
+## Evidence
+Evidence and authoritative references may participate as eligible governed inputs.
 
-The Purpose page expresses the working Attestor method as:
+Evidence is not the Attestation.
 
-`Authoritative Inputs → Attestation → Trust Statement`
+> **Availability ≠ Eligibility**
 
-This is intentionally broader than the earlier pre-Suite sequence that implied certification was the necessary starting point for every Attestor output.
+> **Authority ≠ Eligibility**
 
-Detailed eligibility, validation, lifecycle, status, correction, versioning, and production rules belong in Attestor's dedicated foundational and advanced documentation.
+> **Reference ≠ Eligibility**
 
-## Institutional Boundaries
+## Provenance
+Adopted provenance modes:
+- `direct`
+- `referenced`
+- `derived`
 
-Attestor does not:
+## Relationships
+Adopted relationships:
+- `supports`
+- `references`
+- `derived-from`
+- `evaluates`
+- `results-in`
+- `supersedes`
+- `corrects`
+- `related-to`
 
-- determine universal truth;
-- issue Certifier certifications;
-- redefine Registry records;
-- rewrite Chronicle history;
-- establish Anchor integrity references;
-- create Beacon Discovery Signals;
-- assume Atlas intelligence authority;
-- assume Navigator workflow authority;
-- inherit authority merely by referencing another institution's object.
+> **supports ≠ supported**
 
-## Suite Relationships
+## Lifecycle
+Adopted Lifecycle States:
+- `draft`
+- `active`
+- `superseded`
+- `withdrawn`
+- `retired`
 
-The Purpose page recognizes the following institutional responsibilities:
+Correction and review are activities rather than lifecycle states.
 
-- **Atlas → Authoritative Intelligence**
-- **Navigator → Workflow Definition / Orchestration**
-- **Certifier → Certification Package**
-- **Registry → Satoshium Registry Record**
-- **Chronicle → Chronicle Entry**
-- **Anchor → Integrity Reference**
-- **Beacon → Discovery Signal / Discovery Metadata**
-- **Attestor → Trust Statement**
+## Publication
+Adopted Publication States:
+- `unpublished`
+- `published`
 
-Aegis remains part of the broader Satoshium architecture and governance/security context; this page does not assign it a new Attestor-specific canonical object.
+> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
 
-## Reconciliation Notes
+## Versioning and Material Change
+A bounded revision may preserve canonical identity when essential institutional meaning remains intact.
 
-This revision updates the June-era pre-Suite Purpose page.
+A materially changed assertion requires a new `ATT-YYYY-NNNN`.
 
-Major changes include:
+## Trust Statement Relationship
+An Attestation is not the final Attestor conclusion.
 
-- replacing the generic “trust layer” framing with Attestor's bounded Suite-institution role;
-- making **Trust Statement** the explicit canonical output;
-- replacing the older purpose of broadly preserving “trust-related information” with production of governed Trust Statements;
-- preserving evidence and historical context as supporting inputs rather than Attestor-owned historical authority;
-- removing the old linear `Attestation → Evidence → Trust Signal → Reputation → Trust` model;
-- removing the implication that Attestor owns reputation or produces trust itself;
-- distinguishing Attestor from Certifier verification/certification, Registry records, Chronicle history, Anchor integrity, and Beacon discovery;
-- incorporating the Suite-wide principle **Reference does not transfer authority**;
-- preserving the existing Satoshium page shell and navigation conventions.
+It participates in Rule-Constrained Evaluation. A resulting bounded conclusion, when canonically formed, is represented by a separate `TRST-YYYY-NNNN`.
+
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
+
+## Status
+**Attestations → Advanced Architecture reconciled.**
+
+Remaining work concerns exact machine serialization, executable validation, production-specific profiles, and operational proof.
 
 ## Files
-
-- `index.html` — public Purpose page.
-- `README.md` — repository documentation for the Purpose page.
+- `index.html` — public Attestations page.
+- `README.md` — repository documentation.
