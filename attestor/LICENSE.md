@@ -16,17 +16,35 @@ The MIT License is a permissive open-source license that allows individuals and 
 
 The official legal license governing this repository is contained in the repository's `LICENSE` file.
 
-This document exists to provide additional context regarding licensing philosophy and intended usage.
+This document provides additional context regarding Attestor's licensing philosophy, architectural purpose, documentation, and intended usage. It does not replace or modify the legal terms contained in `LICENSE`.
 
 ---
 
 # Licensing Philosophy
 
-Satoshium is founded upon principles of transparency, accountability, trust, and open participation.
+Satoshium is founded upon principles including transparency, accountability, traceability, interoperability, and long-term stewardship.
 
-Attestor is intended to serve as a framework for evaluating trust signals, reputation indicators, confidence assessments, and related mechanisms that assist participants in understanding information, identities, records, systems, and relationships.
+Satoshium Attestor is the Satoshium Suite institution responsible for producing governed, attributable, bounded Trust Statements through evaluation of eligible inputs.
 
-The decision to release Attestor under the MIT License reflects the belief that trust frameworks, reputation methodologies, confidence models, and supporting tools should remain broadly accessible for study, implementation, adaptation, and improvement.
+Its canonical responsibility is:
+
+```text
+Attestor → Trust Statement
+```
+
+Its foundational relationship may be summarized as:
+
+```text
+Eligible Governed Inputs
+        ↓
+    Attestation
+        ↓
+Rule-Constrained Evaluation
+        ↓
+   Trust Statement
+```
+
+The decision to release Attestor under the MIT License reflects the belief that open technical and documentary foundations can support study, implementation, adaptation, interoperability, review, and improvement.
 
 Open licensing encourages:
 
@@ -34,7 +52,8 @@ Open licensing encourages:
 * Collaboration
 * Accountability
 * Research
-* Trust exploration
+* Interoperability
+* Reviewability
 * Innovation
 * Long-term stewardship
 
@@ -53,27 +72,66 @@ Subject to the terms of the MIT License, users may:
 * Distribute modified versions.
 * Use Attestor commercially.
 
+The legally controlling permissions and conditions are those stated in the repository's `LICENSE` file.
+
 ---
 
 # Attribution
 
-The MIT License requires preservation of the copyright notice and license text.
+The MIT License requires preservation of the applicable copyright notice and license text.
 
-Users should retain appropriate attribution when redistributing licensed materials.
+Users should retain the required notice and license terms when redistributing licensed materials.
 
 ---
 
-# Trust and Reputation Frameworks
+# Attestor Architecture and Documentation
 
-Attestor contains concepts, methodologies, trust models, reputation structures, confidence indicators, assessment frameworks, and related materials intended to support the evaluation of trust-related information.
+Attestor contains software, documentation, architectural concepts, schemas or schema candidates, templates, reference profiles, rules, and related materials supporting the formation of Attestations, evaluation of eligible governed inputs, and production of Trust Statements.
 
-Trust signals, reputation indicators, confidence assessments, references, and related materials may reference external entities, organizations, institutions, technologies, systems, or records.
+Attestor's canonical output is the **Trust Statement**.
 
-Ownership of referenced materials remains with their respective owners unless explicitly transferred.
+A Trust Statement is a governed, attributable, bounded conclusion produced through Attestor evaluation. It should preserve the basis, scope, provenance, limitations, relevant state, relationships, and authority necessary for appropriate interpretation and review.
 
-The repository license does not override copyrights, licenses, or usage restrictions associated with external materials.
+An Attestation is a governed, attributable assertion used within Attestor architecture. An Attestation is distinct from the Trust Statement produced through evaluation.
 
-Users remain responsible for complying with applicable intellectual property laws and licensing requirements.
+Attestor does not establish universal truth, generic reputation, or an automatic trust score.
+
+---
+
+# Authority and Referenced Materials
+
+Attestor may reference information governed by other Satoshium institutions or by external authorities.
+
+The governing principle is:
+
+> **Reference does not transfer authority.**
+
+A source object remains governed by its originating institution or external authority merely because Attestor references it.
+
+The repository license does not transfer ownership of, supersede, or override copyrights, licenses, contractual restrictions, or other rights associated with third-party materials.
+
+Users remain responsible for complying with applicable intellectual-property laws and licensing requirements governing external materials.
+
+---
+
+# Satoshium Suite Boundaries
+
+Attestor participates in the wider Satoshium architecture without assuming the canonical responsibilities of other institutions.
+
+Relevant institutional boundaries include:
+
+```text
+Atlas      → Authoritative Intelligence
+Navigator  → Workflow Definition / Orchestration
+Certifier  → Certification Package
+Registry   → Satoshium Registry Record
+Chronicle  → Chronicle Entry
+Anchor     → Integrity Reference
+Beacon     → Discovery Signal / Discovery Metadata
+Attestor   → Trust Statement
+```
+
+Interoperability does not transfer institutional authority.
 
 ---
 
@@ -81,16 +139,22 @@ Users remain responsible for complying with applicable intellectual property law
 
 Documentation contained within this repository is released under the same licensing framework as the repository unless otherwise stated.
 
-This includes, but is not limited to:
+This may include:
 
-* Trust frameworks
-* Reputation models
-* Confidence methodologies
-* Assessment structures
-* Trust signal standards
-* Documentation
+* Architectural documentation
+* Attestation models
+* Evidence and source-reference models
+* Trust Statement models
+* Rules and principles
+* Scope and provenance models
+* Interoperability documentation
+* Reference profiles
+* Schema candidates
 * Templates
-* Sample records
+* Validation and conformance materials
+* Sample or reference records
+
+Some materials may represent foundational, candidate, provisional, historical, or advanced-architecture work rather than finalized operational standards. Their presence in the repository does not by itself make them normative.
 
 ---
 
@@ -107,30 +171,52 @@ No representation is made regarding:
 * Reliability
 * Fitness for a particular purpose
 * Future suitability
+* Correctness of an Attestation
+* Correctness of a Trust Statement
+* Sufficiency of referenced Evidence or sources
+* Verification, certification, or authentication outcomes
 * Trustworthiness determinations
-* Assessment outcomes
 
-Users are responsible for evaluating the suitability of Attestor for their specific needs.
+Users are responsible for evaluating the suitability of Attestor and its outputs for their specific needs.
+
+The complete warranty disclaimer and limitation-of-liability terms are contained in the repository's legally controlling `LICENSE` file.
 
 ---
 
-# Trust Assessment Disclaimer
+# Attestation and Trust Statement Disclaimer
 
-Attestor is intended to explore trust, reputation, confidence, and assessment methodologies.
+An Attestation records a governed assertion.
 
-The inclusion of a trust signal, reputation indicator, confidence assessment, or related information should not be interpreted as:
+A Trust Statement records a governed, bounded Attestor conclusion produced through evaluation.
 
+Neither should be interpreted, solely by virtue of its existence in Attestor, as:
+
+* Universal truth
 * Verification
 * Certification
 * Authentication
 * Endorsement
 * Approval
+* Guarantee
+* Automatic evidence sufficiency
+* Reputation score
 * Guarantee of trustworthiness
-* Determination of truth
 
-Attestor provides frameworks for evaluating information.
+The meaning of an Attestation or Trust Statement depends upon its applicable scope, provenance, evidence or authoritative references, limitations, relevant state, status, relationships, and authority.
 
-Trust decisions remain the responsibility of participants.
+Attestor's conclusion remains bounded by the information and rules that support it.
+
+---
+
+# Evidence and Sources
+
+Evidence and authoritative references may inform Attestor evaluation.
+
+Their inclusion does not automatically make them proof, establish their correctness, or determine a Trust Statement.
+
+Where Attestor references governed information, relevant source attribution, provenance, scope, status, limitations, and authority should remain identifiable.
+
+Technical availability or public accessibility does not by itself establish eligibility for Attestor evaluation.
 
 ---
 
@@ -138,40 +224,99 @@ Trust decisions remain the responsibility of participants.
 
 Attestor may reference external organizations, governments, institutions, publications, technologies, services, systems, records, or other third-party materials.
 
-Ownership of referenced content remains with its respective owners.
+Ownership and authority associated with referenced content remain with their respective owners or governing authorities unless explicitly transferred under applicable terms.
 
-Inclusion within Attestor does not imply:
+Inclusion within Attestor does not by itself imply:
 
 * Ownership
 * Endorsement
 * Sponsorship
 * Affiliation
+* Certification
+* Approval
 
-Attestor exists to explore trust-related concepts, not to claim ownership of referenced materials.
+Attestor may evaluate eligible information without claiming ownership or authority over its source.
+
+---
+
+# Trust Signals and Reputation
+
+Earlier Attestor design materials explored concepts such as Trust Signals, reputation indicators, confidence assessments, and reputation frameworks.
+
+Those concepts should not be interpreted as current canonical Attestor outputs merely because historical or candidate materials remain in the repository.
+
+Under the reconciled foundational architecture:
+
+```text
+Attestor → Trust Statement
+```
+
+The phrase **trust signal**, where retained in historical or candidate documentation, does not establish a canonical Attestor object.
+
+Beacon's canonical **Discovery Signal** is a separate Beacon-governed object and should not be conflated with historical Attestor terminology.
+
+No generic reputation system, automatic trust score, or confidence-scoring architecture is established by this license document.
+
+---
+
+# Corrections and Historical Integrity
+
+Attestor may support governed correction, clarification, withdrawal, supersession, or other change to Attestor-owned objects.
+
+Such change should preserve provenance and historical traceability while allowing current state to remain identifiable.
+
+Conceptually:
+
+```text
+Prior State → Governed Change → Current State
+```
+
+The exact correction and lifecycle architecture may evolve independently of this licensing document.
+
+Attestor does not use its correction mechanisms to modify canonical objects governed by other institutions.
 
 ---
 
 # Future Versions
 
-Future versions of Attestor may introduce:
+Future versions of Attestor may introduce or refine:
 
-* Enhanced trust frameworks
-* Reputation methodologies
-* Confidence assessment models
-* Trust signal standards
-* AI-assisted evaluations
-* Interoperability frameworks
-* Advanced trust analytics
+* Normative Attestation schemas
+* Controlled values
+* Evidence and source eligibility rules
+* Evaluation rules
+* Uncertainty and limitation models
+* Trust Statement schemas
+* Lifecycle and publication models
+* Validation and conformance systems
+* Reference vectors
+* Interoperability mechanisms
+* Production procedures
+* AI-assisted evaluation capabilities
 
 Unless otherwise specified, such additions are expected to remain subject to the repository license.
+
+Their inclusion in this list describes potential architectural development and does not establish them as current operational capabilities.
 
 ---
 
 # Long-Term Vision
 
-The long-term vision of Satoshium Attestor is to create an open and durable framework for understanding trust, evaluating confidence, interpreting reputation, and supporting informed decision-making across interoperable digital systems.
+The long-term purpose of Satoshium Attestor is to provide an open and durable institutional framework for producing reviewable Trust Statements from governed, attributable, traceable, and appropriately scoped information.
 
-Open licensing supports that objective by allowing future developers, researchers, organizations, institutions, and communities to build upon the framework while preserving transparency and accountability.
+Attestor should preserve enough context for participants and interoperating systems to understand:
+
+* What was asserted
+* What was evaluated
+* What conclusion was reached
+* What supported the conclusion
+* Where the conclusion applies
+* What limitations or uncertainty remain
+* What provenance supports the relevant information
+* Which authority governs each referenced object
+* Where Attestor's own authority begins and ends
+
+Open licensing supports this objective by allowing developers, researchers, organizations, institutions, and communities to study, implement, adapt, test, and improve the framework.
 
 ---
 
@@ -185,14 +330,14 @@ LICENSE
 
 located at the root of the repository.
 
+If this explanatory document conflicts with the repository's `LICENSE` file, the legal license text governs.
+
 ---
 
 # Guiding Statement
 
-> Trust is strengthened through transparency.
+> A governed conclusion should remain no stronger than the evidence, scope, provenance, limitations, and authority that support it.
 >
-> Transparency provides context.
->
-> Context helps participants make informed decisions.
+> Reference does not transfer authority.
 >
 > Satoshium Attestor is released in that spirit.
