@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#d6a34a">
 <title>Satoshium Attestor · Schemas</title>
-<meta name="description" content="Satoshium Attestor Schemas — foundational candidate structural profiles for Attestations, Evidence, Sources, governed corrections, and legacy trust-signal concepts.">
+<meta name="description" content="Satoshium Attestor Schemas — structural schemas and profiles for canonical Attestations, Trust Statements, governed evaluation inputs, and Attestor implementation.">
 <link rel="canonical" href="https://satoshium.us/attestor/schemas/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
@@ -24,23 +24,32 @@
 <section class="hero">
 <div class="eyebrow">Attestor · Schemas</div>
 <h1>Schemas</h1>
-<p class="lead">This area preserves foundational candidate structures for representing Attestations and related Attestor concepts without prematurely treating June-era field sets, identifiers, statuses, or controlled values as adopted technical standards.</p>
-<div class="note"><strong>Canonical responsibility:</strong> Attestor → Trust Statement<br><strong>Governing principle:</strong> Reference does not transfer authority.</div>
+<p class="lead">This area defines the structural schema layer through which adopted Attestor architecture is expressed for implementation, authoring, validation, and production use.</p>
+<div class="note"><strong>Canonical responsibility:</strong> Attestor → Trust Statement<br><strong>Schema hierarchy:</strong> Architecture → Schema/Profile → Template → Governed Instance<br><strong>Governing principle:</strong> Reference does not transfer authority.</div>
 </section>
 <section class="grid">
-<article class="card"><h2>Attestation Schema</h2><p>Candidate structural profile for a governed, attributable Attestation. Scope, provenance, authority, and traceability are now explicit architectural requirements.</p></article>
-<article class="card"><h2>Evidence Attestation</h2><p>Candidate specialization for bounded assertions concerning Evidence and its relationship to a subject or assertion.</p></article>
-<article class="card"><h2>Source Attestation</h2><p>Candidate specialization for source, provenance, relevance, and source-relationship assertions.</p></article>
-<article class="card"><h2>Correction Profile</h2><p>Candidate structure for governed change to Attestor-owned Attestations. The final correction/lifecycle object model remains unresolved.</p></article>
-<article class="card"><h2>Trust Signal — Legacy</h2><p>The June Trust Signal schema is retained for architectural history, but Trust Signal is not a canonical Attestor object. Useful fields may later inform evaluation context.</p></article>
-<article class="card"><h2>Normative Schemas — Deferred</h2><p>Identifiers, exact required fields, controlled values, lifecycle states, validation rules, machine serialization, and conformance belong to Advanced Architecture.</p></article>
+<article class="card"><h2>Attestation Schema</h2><p>Structural schema for a canonical governed, attributable Attestation using the <code>ATT-YYYY-NNNN</code> identifier family.</p></article>
+<article class="card"><h2>Trust Statement Schema</h2><p>Structural schema for Attestor's canonical institutional output: a governed, attributable, bounded conclusion using the <code>TRST-YYYY-NNNN</code> identifier family.</p></article>
+<article class="card"><h2>Evidence Attestation Profile</h2><p>Specialized schema profile for the adopted <code>evidence</code> Attestation Type. Evidence informs evaluation but does not automatically establish proof or a Trust Statement.</p></article>
+<article class="card"><h2>Source / Provenance Attestation Profile</h2><p>Specialized schema profile for the adopted <code>source-provenance</code> Attestation Type, preserving provenance, relevant source state, and authority context.</p></article>
+<article class="card"><h2>Correction / Change Profile</h2><p>Governed change structure used with Lifecycle and Versioning. Correction does not become a separate canonical object class merely because a change profile exists.</p></article>
+<article class="card"><h2>Trust Signal — Legacy</h2><p>Historical design artifact only. Trust Signal is not a canonical Attestor object, identifier family, score, reputation mechanism, or production schema.</p></article>
 </section>
 <section style="margin-top:18px"><article class="card">
-<h2>Foundational Relationship</h2>
+<h2>Canonical Schema Relationship</h2>
 <div class="note">Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement</div>
-<p>The purpose of this directory at the foundational stage is to preserve useful structural thinking while preventing conceptual drafts from becoming accidental technical canon.</p>
+<p>The schema layer implements architecture already established by Attestor. Canonical identity, controlled values, authority, provenance, eligibility, evaluation, relationships, lifecycle, versioning, validation, conformance, publication, and methodology remain governed by their respective Attestor specifications.</p>
 <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article></section>
 </main>
+<div class="wrap reflection">
+<hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">Schemas implement architecture. They do not create it.</div>
+<hr>
+<div id="footer-container"></div>
+</div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>fetch("https://satoshium.link/components/footer.html").then(r=>r.text()).then(data=>{document.getElementById("footer-container").innerHTML=data;});</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
