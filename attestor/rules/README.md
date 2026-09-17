@@ -1,342 +1,195 @@
-# Rules
+# Satoshium Attestor — Rules
+
+## Page
+
+`/attestor/rules/`
 
 ## Purpose
 
-The rules of Attestor establish the foundational standards governing the creation, management, preservation, correction, and interpretation of attestations and trust-related records.
+This page establishes the foundational operating rules of **Satoshium Attestor**.
 
-These rules are intended to promote transparency, accountability, consistency, and traceability throughout the Attestor ecosystem.
+The rules constrain how Attestor handles:
 
-Rules may evolve as the system matures.
+- Attestations;
+- Evidence;
+- authoritative references;
+- evaluation;
+- corrections and governed change;
+- provenance;
+- scope;
+- institutional authority;
+- Trust Statements.
 
----
+They are foundational architectural rules, not yet the complete machine-validation specification.
 
-## Why Rules Exist
+## Governing Principle
 
-Trust systems require consistency.
+> **Reference does not transfer authority.**
 
-Without rules:
+Attestor may reference authoritative objects governed by other Satoshium Suite institutions without inheriting, replacing, or redefining their authority.
 
-* Information may become difficult to interpret.
-* Accountability may become unclear.
-* Records may become inconsistent.
-* Historical review may become difficult.
+## Foundational Rules
 
-Rules help establish predictable expectations for participants and systems.
+### Rule 1: Preserve Attribution
 
----
+An Attestation, evidence source, authoritative reference, evaluation, correction, or Trust Statement should preserve sufficient attribution to identify who or what is responsible for the relevant assertion, source, or action.
 
-## Rule 1: Attestations Must Be Attributable
+### Rule 2: Preserve Provenance
 
-Whenever practical, attestations should identify the party responsible for making the statement.
+Attestor should preserve sufficient provenance to explain the origin, relationship, status, and relevant history of inputs and Attestor objects used during evaluation.
 
-Users should be able to determine:
+### Rule 3: Preserve Scope
 
-* Who made the attestation
-* When it was made
-* What was stated
+Assertions, evidence relationships, evaluations, and Trust Statements must remain bounded by the scope in which they are supported.
 
-Anonymous attestations may exist in limited circumstances, but attribution is generally preferred.
+A narrow conclusion must not silently become a universal one.
 
----
+### Rule 4: Preserve Authority Boundaries
 
-## Rule 2: Attestations Are Statements, Not Truth
+Attestor may reference authoritative objects governed elsewhere, but it does not inherit, replace, or redefine their authority.
 
-An attestation documents that a statement was made.
+### Rule 5: Preserve Evidence Context
 
-The existence of an attestation does not establish:
+Evidence should remain connected to the assertion and evaluation for which it is relevant, including material limitations, conflicting information, and source status where applicable.
 
-* Accuracy
-* Correctness
-* Truth
-* Trustworthiness
+### Rule 6: Preserve Traceability
 
-Attestations and truth should remain distinct concepts.
+Relationships among Attestations, Evidence, authoritative references, evaluations, corrections, and Trust Statements should remain sufficiently traceable for review and validation.
 
----
+### Rule 7: Preserve Governed Change
 
-## Rule 3: Evidence Should Be Preserved
+Corrections, clarifications, withdrawals, supersession, and other changes to Attestor-owned objects must not silently erase the prior state or provenance of the change.
 
-Supporting evidence should remain associated with attestations whenever practical.
+### Rule 8: Distinguish Current and Historical State
 
-Evidence may include:
+Historically relevant prior states should remain traceable while being clearly distinguished from the currently effective state.
 
-* Documents
-* Records
-* Publications
-* Source references
-* Historical information
+### Rule 9: Do Not Claim Universal Truth
 
-Evidence improves transparency and reviewability.
+A Trust Statement is a bounded Attestor conclusion produced under Attestor rules.
 
----
+It does not establish universal truth.
 
-## Rule 4: Sources Should Remain Visible
+### Rule 10: Do Not Convert Inputs into Conclusions
 
-Information should remain connected to its sources whenever possible.
+No single evidence item, verification result, Certification Package, Discovery Signal, historical event, or other input automatically determines a Trust Statement.
 
-Users should be able to understand:
+Attestor must perform its own governed evaluation.
 
-* Where information originated
-* Who provided it
-* How it relates to an attestation
+### Rule 11: Preserve Uncertainty
 
-Source attribution supports accountability.
+Incomplete, conflicting, qualified, or insufficient inputs should result in preserved uncertainty rather than an unsupported stronger conclusion.
 
----
+### Rule 12: Support Interoperability Without Authority Transfer
 
-## Rule 5: Corrections Must Be Documented
+Attestor should exchange and reference governed information across the Suite without changing the canonical ownership, meaning, identifiers, lifecycle, or authority of referenced objects.
 
-Corrections should be recorded rather than silently applied.
+## Rule Application
 
-Whenever practical:
+The June-era page expressed the rule chain as:
 
-* Original information should remain visible.
-* Corrections should be identifiable.
-* Reasons should be documented.
+`Attribution → Transparency → Accountability → Trust`
 
-Transparency is generally preferable to silent modification.
+That progression is not carried forward as Attestor's operating model because Attestor does not produce “trust” as an institutional object.
 
----
+The reconciled model is:
 
-## Rule 6: Retractions Must Remain Visible
+`Governed Inputs → Rule-Constrained Evaluation → Trust Statement`
 
-When an attestation is withdrawn, the retraction should remain part of the historical record.
+The foundational rules operate together as constraints on evaluation rather than as steps that mechanically manufacture trust.
 
-Retractions should include:
+## Foundational Rules vs Validation Rules
 
-* Date of retraction
-* Responsible party
-* Reason when available
+This distinction is important.
 
-Historical context should remain preserved.
+The rules on this page express architectural requirements and institutional constraints.
 
----
+Advanced Attestor architecture should later determine which requirements become normative machine-validation rules.
 
-## Rule 7: Historical Records Should Be Preserved
+Conceptually:
 
-Attestations, evidence, corrections, and related records should support historical review.
+`Foundational Rule → Normative Requirement → Validation Rule → Conformance`
 
-Historical preservation helps users understand:
+This page therefore does not prematurely assign PASS/FAIL behavior, schemas, controlled values, or validation sequences.
 
-* Prior statements
-* Reputation evolution
-* Evidence changes
-* Trust developments
+## Governance Boundary
 
-History provides important context.
+The pre-Suite page anticipated future:
 
----
+- trust frameworks;
+- dispute processes;
+- reputation guidance;
+- governance-related procedures.
 
-## Rule 8: Relationships Should Be Traceable
+Those concepts are not adopted as a future Attestor roadmap by this reconciliation.
 
-Relationships among records should remain reviewable whenever practical.
+Attestor may ultimately require institutional procedures for matters such as:
 
-Examples include:
+- review;
+- dispute handling;
+- correction authorization;
+- publication;
+- lifecycle operations.
 
-* Identity relationships
-* Evidence relationships
-* Attestation relationships
-* Source relationships
+Such procedures should be added only when required by Attestor's canonical responsibility.
 
-Traceability improves understanding.
+Attestor should not silently become the owner of:
 
----
+- a generic Suite-wide trust framework;
+- a reputation system;
+- Suite-wide governance authority.
 
-## Rule 9: Trust Information Should Remain Reviewable
+## Relationship to Other Suite Institutions
 
-Trust-related information should support independent evaluation.
+Attestor may reference governed objects from other institutions, including Certification Packages, Satoshium Registry records, Chronicle Entries, Anchor Integrity References, Beacon Discovery Signals or Discovery Metadata, Atlas intelligence, Navigator workflow context, and other eligible sources.
 
-Users should be able to examine:
+The Rules page governs **Attestor's use of those references**, not the source institutions themselves.
 
-* Attestations
-* Evidence
-* Sources
-* Corrections
-* Related records
+## Reconciliation Notes
 
-Reviewability supports accountability.
+This revision updates the June-era pre-Suite Rules page.
 
----
+Major changes include:
 
-## Rule 10: Identity References Should Remain Consistent
+- replacing generic “trust-related recordkeeping” with Attestor-specific institutional constraints;
+- expanding the original eight broad principles into twelve foundational rules;
+- adding provenance as distinct from attribution;
+- adding scope;
+- adding authority boundaries;
+- adding evidence-context preservation;
+- adding governed change;
+- distinguishing current from historical state;
+- replacing “Separate Trust and Truth” with the more precise “Do Not Claim Universal Truth”;
+- establishing that inputs do not automatically become conclusions;
+- adding preservation of uncertainty;
+- strengthening interoperability with an explicit no-authority-transfer rule;
+- replacing `Attribution → Transparency → Accountability → Trust` with `Governed Inputs → Rule-Constrained Evaluation → Trust Statement`;
+- distinguishing foundational rules from future machine-validation rules;
+- removing generic trust frameworks and reputation guidance as assumed future Attestor responsibilities.
 
-Attestations should reference identities consistently whenever practical.
+## Deferred to Advanced Architecture
 
-Identity management is generally associated with Anchor.
+The following remain intentionally unresolved:
 
-Consistent identity references improve interoperability.
+- normative rule identifiers;
+- MUST / SHOULD / MAY classification;
+- validation rule numbering;
+- PASS/FAIL conditions;
+- validation sequence;
+- evidence sufficiency requirements;
+- uncertainty representation;
+- conflict-resolution rules;
+- correction authorization;
+- dispute procedures;
+- publication rules;
+- lifecycle constraints;
+- Trust Statement generation criteria;
+- schemas;
+- controlled values;
+- conformance tests;
+- reference vectors.
 
----
+## Files
 
-## Rule 11: Verification and Trust Must Remain Distinct
-
-Verification and trust serve different purposes.
-
-Verification evaluates evidence.
-
-Trust evaluates broader context.
-
-A simplified distinction may be represented as:
-
-```text id="n4y2zb"
-Certifier → Verification
-Attestor → Trust
-```
-
-The two functions should remain distinguishable.
-
----
-
-## Rule 12: Discovery Does Not Establish Trust
-
-Discovery may reveal information.
-
-Discovery does not establish:
-
-* Accuracy
-* Verification
-* Trustworthiness
-
-Beacon may surface information.
-
-Attestor may document trust-related context.
-
-These responsibilities remain separate.
-
----
-
-## Rule 13: Records Must Support Accountability
-
-Trust-related records should preserve information regarding:
-
-* Creators
-* Attestors
-* Contributors
-* Correctors
-
-Accountability helps strengthen trust frameworks.
-
----
-
-## Rule 14: Context Should Be Preserved
-
-Attestations should include sufficient context whenever practical.
-
-Context may include:
-
-* Supporting evidence
-* Related records
-* Historical references
-* Source information
-
-Context improves interpretation.
-
----
-
-## Rule 15: Trust Signals Are Informational
-
-Trust signals provide information.
-
-Trust signals do not automatically determine trust outcomes.
-
-Trust-related judgments remain the responsibility of users and future trust frameworks.
-
----
-
-## Rule 16: Interoperability Should Be Encouraged
-
-Trust-related information should remain understandable across systems whenever practical.
-
-Interoperability improves:
-
-* Portability
-* Traceability
-* Long-term usefulness
-
-Attestations should not become isolated from related systems.
-
----
-
-## Rule 17: Neutral Documentation Is Preferred
-
-Attestor seeks to document information rather than impose conclusions.
-
-Records should strive to preserve information without unnecessary interpretation.
-
-Documentation and judgment should remain distinct activities.
-
----
-
-## Rule 18: Transparency Takes Priority
-
-When conflicts arise between convenience and transparency, transparency should generally be preferred.
-
-Trust systems benefit from visibility.
-
-Opaque systems often reduce accountability.
-
----
-
-## Rule 19: Preservation Is Preferred to Deletion
-
-Whenever practical:
-
-* Records should be archived rather than deleted.
-* Corrections should supplement rather than replace.
-* History should remain available.
-
-Preservation supports trust and accountability.
-
----
-
-## Rule 20: Rules May Evolve
-
-Attestor is an evolving system.
-
-Rules may be refined as:
-
-* New use cases emerge
-* New interoperability standards develop
-* New governance structures are established
-* New trust frameworks are created
-
-Future revisions should preserve transparency regarding changes.
-
----
-
-## Relationship to the Satoshium Suite
-
-Attestor operates within a broader ecosystem:
-
-```text id="v8m6tk"
-Atlas      → Data
-Navigator  → Query
-Beacon     → Discovery
-Certifier  → Verification
-Registry   → Records
-Chronicle  → History
-Anchor     → Identity
-Attestor   → Trust
-```
-
-These rules help define Attestor's role within that structure.
-
----
-
-## Guiding Statement
-
-The rules of Attestor may be summarized as:
-
-```text id="g5u1wd"
-Trust should be documented,
-reviewable,
-traceable,
-and accountable.
-```
-
----
-
-## Status
-
-These rules represent an initial conceptual framework and may evolve as Attestor matures and additional standards are developed.
-
+- `index.html` — public Rules page.
+- `README.md` — repository documentation for the Rules page.
