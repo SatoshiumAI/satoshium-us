@@ -1,214 +1,126 @@
-# Attestation Types
+# Satoshium Attestor — Attestation Types
+
+## Page
+`/attestor/attestation-types/`
 
 ## Purpose
+Attestation Types provide the governed classification vocabulary for canonical Attestations.
 
-Attestation types define the categories of statements, confirmations, validations, observations, and trust-related assertions that may be used within Attestor.
+An Attestation Type classifies the **assertion expressed by the Attestation**. It does not redefine the type, identity, or authority of a referenced Suite or external source object.
 
-Attestor exists to help document why information, records, identities, claims, sources, or systems may deserve confidence.
+## Canonical Context
+**Attestor → Trust Statement**
 
-Attestation types provide structure for that process.
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
----
+An Attestation is a governed, attributable assertion. Its Attestation Type identifies the controlled family to which that assertion belongs.
 
-## What Is an Attestation?
+## Adopted Controlled Vocabulary
 
-An attestation is a documented statement made about something.
+The adopted Attestation Types are:
 
-An attestation may address:
+| Controlled value | Meaning |
+|---|---|
+| `identity` | Bounded assertion involving identity, continuity, participation, association, or related identity context. |
+| `evidence` | Bounded assertion concerning evidence, its relevance, relationship, or governed use. |
+| `source-provenance` | Bounded assertion concerning source origin, attribution, authorship, provenance, or source relationship. |
+| `verification-related` | Bounded assertion referencing verification, validation, review, certification, or comparable governed outcome. |
+| `relationship-condition` | Bounded assertion concerning a relationship, condition, status, qualification, participation, or other scoped circumstance. |
+| `correction-supersession` | Bounded assertion concerning correction, supersession, or governed change where an Attestation is the appropriate object. |
 
-- A claim
-- A record
-- A source
-- An identity
-- A certification
-- A historical event
-- A discovery result
-- A trust relationship
+These values are established by Attestor Advanced Architecture and are also represented in `/attestor/controlled-values/`.
 
-Attestations do not automatically prove truth.
+## Classification Principle
+> **Type classifies the Attestation assertion. It does not transfer source authority.**
 
-They provide documented support, context, validation, challenge, or confidence signals.
+A verification-related Attestation does not make Attestor the Certifier.
 
----
+An identity Attestation does not make Attestor the identity authority.
 
-## Why Attestation Types Matter
+An evidence Attestation does not make Attestor the source of the evidence.
 
-Different kinds of trust require different kinds of statements.
+> **Reference does not transfer authority.**
 
-A source attestation is not the same as an identity attestation.
+## Type and Eligibility
+Attestation Type and input eligibility are separate concepts.
 
-A validation attestation is not the same as a reputation attestation.
+- **Attestation Type** classifies the governed assertion.
+- **Eligibility** determines whether a potential governed input is admissible for a particular evaluation.
 
-Attestation types help distinguish what kind of statement is being made and what role it plays within the broader trust process.
+> **Type ≠ Eligibility**
 
----
+## Type and Evaluation
+Attestation Type does not predetermine an Evaluation Outcome.
 
-## Core Attestation Types
+The controlled Evaluation Outcomes are:
+- `supported`
+- `partially-supported`
+- `not-supported`
+- `contradicted`
+- `indeterminate`
 
-### Identity Attestations
+> **Attestation Type ≠ Evaluation Outcome**
 
-Statements concerning an identity, entity, organization, account, contributor, or participant.
+## Type and Relationships
+Attestation Type is also distinct from the relationship vocabulary:
+- `supports`
+- `references`
+- `derived-from`
+- `evaluates`
+- `results-in`
+- `supersedes`
+- `corrects`
+- `related-to`
 
-Identity attestations may help establish who is associated with a record, claim, action, or system.
+For example, an `evidence` Attestation may participate in a `supports` relationship, but those values describe different architectural dimensions.
 
----
+## Correction / Supersession Boundary
+`correction-supersession` is an adopted Attestation Type.
 
-### Claim Attestations
+This does **not** make Correction a separate canonical Attestor object class.
 
-Statements concerning a claim made by an identity, record, source, or system.
+Correction is a governed activity. Lifecycle and Versioning determine how canonical identity and state behave across change.
 
-Claim attestations may support, challenge, clarify, or contextualize a specific assertion.
+A materially changed Attestation assertion requires a new `ATT-YYYY-NNNN`.
 
----
+A materially changed Trust Statement conclusion requires a new `TRST-YYYY-NNNN`.
 
-### Source Attestations
+## Reputation
+Reputation is **not** an adopted Attestation Type.
 
-Statements concerning the origin, reliability, availability, authorship, or relevance of a source.
+Attestor does not establish:
+- a generic reputation framework;
+- a canonical reputation object;
+- a reputation score;
+- a universal trust score.
 
-Source attestations help preserve attribution and provenance.
+Attestor produces bounded Trust Statements.
 
----
+## Historical Pre-Suite Categories
+Earlier Attestor material explored categories such as:
+- Claim Attestations;
+- Record Attestations;
+- Confidence Attestations;
+- Reputation Attestations;
+- Dispute Attestations;
+- positive/negative/neutral/contextual “direction.”
 
-### Record Attestations
+These concepts are historical design inputs only. They are not part of the adopted controlled Attestation Type vocabulary unless separately represented through current Attestor architecture.
 
-Statements concerning a registered record, historical record, certification record, discovery result, or other structured entry.
+Support, contradiction, uncertainty, correction, and relationships are now handled through the appropriate Evaluation, Relationship, Lifecycle, Versioning, or other governed layers rather than an open-ended type system.
 
-Record attestations may help document confidence, status, completeness, or relationship to other records.
+## Validation and Conformance
+The controlled Attestation Type value must conform to the applicable schema/profile and controlled-value requirements.
 
----
-
-### Evidence Attestations
-
-Statements concerning evidence used to support, challenge, verify, or contextualize a claim, record, source, or result.
-
-Evidence attestations help clarify how evidence relates to trust.
-
----
-
-### Verification Attestations
-
-Statements concerning whether information has been reviewed, checked, supported, or verified by a process, person, system, or authority.
-
-Verification attestations may reference Certifier outputs or other verification workflows.
-
----
-
-### Confidence Attestations
-
-Statements expressing a degree of confidence associated with information, claims, sources, records, or relationships.
-
-Confidence attestations should not be confused with certainty.
-
----
-
-### Reputation Attestations
-
-Statements concerning the historical reliability, conduct, performance, or credibility of an identity, source, system, or record.
-
-Reputation attestations may accumulate over time.
-
----
-
-### Relationship Attestations
-
-Statements concerning relationships between identities, records, sources, claims, systems, or events.
-
-Relationship attestations may help users understand how information elements connect.
-
----
-
-### Dispute Attestations
-
-Statements that challenge, question, contradict, or dispute a claim, record, source, or prior attestation.
-
-Dispute attestations are important because trust systems should preserve disagreement and review.
-
----
-
-## Attestation Direction
-
-Attestations may be positive, negative, neutral, or contextual.
-
-Examples include:
-
-- Support
-- Challenge
-- Confirmation
-- Clarification
-- Warning
-- Dispute
-- Observation
-- Limitation
-
-Attestation type identifies the category.
-
-Attestation direction helps describe the posture of the statement.
-
----
-
-## Relationship to the Satoshium Suite
-
-Attestation types may reference information from other Satoshium systems.
-
-- Atlas may provide data for attestation.
-- Navigator may help formulate trust-related questions.
-- Certifier may provide verification outputs.
-- Registry may provide records.
-- Chronicle may provide historical context.
-- Anchor may provide identities and claims.
-- Beacon may provide discovered signals and sources.
-- Attestor provides trust-related attestations.
-
----
-
-## Attestation Principles
-
-### Transparency
-
-Attestations should be understandable and reviewable.
-
-### Attribution
-
-The source or maker of an attestation should remain identifiable whenever possible.
-
-### Traceability
-
-Attestations should remain connected to the records, claims, sources, or evidence they address.
-
-### Context
-
-Attestations should preserve enough context to avoid misleading interpretation.
-
-### Accountability
-
-Attestations should support responsible trust evaluation.
-
----
-
-## What Attestation Types Do Not Do
-
-Attestation types do not automatically determine truth.
-
-They do not guarantee accuracy.
-
-They do not replace evidence.
-
-They do not eliminate uncertainty.
-
-They provide structure for documented trust-related statements.
-
----
-
-## Future Development
-
-Future Attestor development may refine attestation types into formal schemas, scoring models, confidence frameworks, dispute workflows, and interoperability standards.
-
-Specific implementations may evolve over time.
-
----
+Executable validation rules and final conformance mechanics remain implementation work.
 
 ## Status
+**Attestation Type Architecture → Advanced Architecture established.**
 
-Attestation type standards are currently under development.
+The six controlled values are adopted.
 
-This document defines initial conceptual categories rather than finalized operational specifications.
+Remaining work concerns executable validation, production profile requirements, and production proof—not selection of the Attestation Type vocabulary.
+
+## Files
+- `index.html` — public Attestation Types page.
+- `README.md` — repository documentation.
