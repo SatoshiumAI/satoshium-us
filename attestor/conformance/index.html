@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Conformance</title>
+<meta name="description" content="The Satoshium Attestor Conformance architecture defining what it means for an object, implementation, or governed process to conform to applicable Attestor specifications and profiles.">
+<link rel="canonical" href="https://satoshium.us/attestor/conformance/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Conformance</h1>
+<p class="lead">Conformance defines what it means for an <strong>Attestor object</strong>, <strong>implementation</strong>, or governed <strong>process</strong> to conform to the Attestor architecture, specification, or profile applicable to it.</p>
+<p class="lead">A conformance claim is always bounded: it identifies the target being assessed, the requirements set being claimed, and the evidence supporting that determination.</p>
+<div class="note"><strong>Conformance principle:</strong> Target + Declared Requirements Set + Required Validation / Evidence → Conformance Determination</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Conformance Purpose</h2><p>Conformance defines what it means for an Attestor object or implementation to satisfy the declared Attestor specification or profile applicable to it. Conformance is a governed claim against an identified requirements set, not a general statement of quality or trustworthiness.</p></article>
+<article class="card"><h2>Conformance Target</h2><p>Every conformance determination must identify what is being assessed. A target may be an Attestor object, an implementation that produces or processes Attestor objects, or a governed process where a specification explicitly defines process requirements.</p></article>
+<article class="card"><h2>Conformance Basis</h2><p>A conformance claim must identify the applicable Attestor architecture, normative schema or profile, validation requirements, and any other declared requirements against which the target is assessed.</p></article>
+<article class="card"><h2>Object Conformance</h2><p>An Attestation or Trust Statement conforms only when it satisfies the complete applicable normative requirements for its declared object class/profile. Passing a subset of structural checks is not sufficient for a broader conformance claim.</p></article>
+<article class="card"><h2>Implementation Conformance</h2><p>An implementation conforms only within the capabilities and profiles actually tested. Producing one valid example does not establish that an implementation correctly handles every Attestor object, lifecycle state, relationship, version, or evaluation context.</p></article>
+<article class="card"><h2>Process Conformance</h2><p>Where Attestor defines a normative process profile, conformance may assess whether required governed steps, authority boundaries, provenance preservation, reviewability, and outputs are followed. Process conformance must not be inferred merely from a valid final file.</p></article>
+<article class="card"><h2>Profile Conformance</h2><p>Specialized profiles may impose requirements beyond a shared base specification. A target conforming to a base profile must not be represented as conforming to a stricter specialized profile unless those additional requirements are satisfied.</p></article>
+<article class="card"><h2>Conformance Evidence</h2><p>A conformance determination must be supported by traceable validation results and other required evidence. The evidence must identify the target, applicable requirements, tested representation/version, and result context sufficiently for review.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Conformance Dimensions</h2>
+<p>Attestor conformance may operate at several levels. These dimensions must remain explicit because conformance at one level does not automatically establish conformance at another.</p>
+<div class="note"><strong>Object Conformance</strong> → Does this Attestor object satisfy its applicable specification/profile?<br><br><strong>Implementation Conformance</strong> → Does this implementation correctly produce, consume, preserve, or process the declared Attestor capabilities?<br><br><strong>Process Conformance</strong> → Does this governed process follow an applicable normative Attestor process profile?<br><br>Object Conformance ≠ Implementation Conformance ≠ Process Conformance</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Declared Conformance Scope</h2>
+<p>No target is simply “Attestor conformant” without qualification when multiple object classes, profiles, versions, or capabilities exist. A conformance claim must be scoped to the requirements actually assessed.</p>
+<div class="note">Conformance Target<br>Applicable Specification / Profile<br>Specification / Profile Version<br>Object Class or Capability<br>Representation / Serialization, where applicable<br>Validation / Test Basis<br>Result<br>Relevant Limitations<br><br>Conformance Claim → No broader than assessed scope</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Validation Supports Conformance</h2>
+<p>Validation supplies evidence that a particular object or representation satisfies applicable normative checks. Conformance uses those results, together with any additional profile or implementation requirements, to determine whether the declared target meets its claimed specification.</p>
+<div class="note">Normative Requirements → Validation Rules → Validation Results → Conformance Evidence → Conformance Determination<br><br>Validation supports Conformance<br>Validation ≠ Conformance</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Complete Applicable Requirements</h2>
+<p>A conformance claim requires satisfaction of all requirements designated as mandatory for the declared target and profile. Implementations must not select only passing requirements while omitting applicable failures or untested mandatory requirements.</p>
+<div class="note">Mandatory Applicable Requirement → Must be satisfied<br>Optional Requirement → Governed according to profile<br>Not Applicable → Must be legitimately outside declared scope<br>Untested Mandatory Requirement → Cannot support complete conformance claim<br><br>Partial testing ≠ Full conformance</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Conformance Profiles</h2>
+<p>Attestor may define a shared base specification and specialized profiles for particular Attestation types, Trust Statement contexts, representations, or implementation capabilities. Specialized profiles may add constraints but must not silently weaken foundational Attestor requirements unless the governing architecture explicitly permits variation.</p>
+<div class="note">Base Attestor Requirements → Common foundation<br>Specialized Profile → Additional / bounded requirements<br>Declared Profile → Determines applicable conformance set<br><br>Base Conformance ≠ Specialized Profile Conformance</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Version-Bound Conformance</h2>
+<p>Conformance is assessed against an identifiable version of the applicable specification, profile, schema, or implementation capability. A later architectural or schema revision does not retroactively change what an earlier conformance determination meant.</p>
+<div class="note">Target at Time T + Requirements Version at Time T → Conformance Determination at Time T<br><br>Later Specification Change → May require reassessment<br>Historical Conformance → Remains interpretable against original requirements basis</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Conformance Failure</h2>
+<p>A target is non-conformant to the declared scope when one or more applicable mandatory requirements are not satisfied. Where testing is incomplete, the result should not be overstated as either full conformance or definitive non-conformance unless the tested failure itself is sufficient to establish non-conformance.</p>
+<div class="note">Mandatory Failure → Declared conformance not satisfied<br>Incomplete Mandatory Testing → Complete conformance not established<br>Known Passing Subset → May be reported as tested scope only<br><br>Unknown ≠ Pass<br>Partial Pass ≠ Full Conformance</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Conformance and Interoperability</h2>
+<p>Conformance can support interoperability by giving producers and consumers a common requirements basis. It does not guarantee that every conformant implementation will interoperate in every operational environment unless the relevant interoperability profile and exchange requirements are also satisfied.</p>
+<div class="note">Conformance → Common governed requirements basis<br>Interoperability → Compatible exchange while preserving meaning and authority<br><br>Conformance supports Interoperability<br>Conformance ≠ Universal Interoperability Guarantee</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Conformance and Authority</h2>
+<p>Conformance does not transfer or elevate institutional authority. A conformant representation of a Registry Record remains a reference to a Registry-owned object; a conformant reference to a Beacon Discovery Signal remains within Beacon authority; and a conformant Trust Statement remains an Attestor-owned conclusion.</p>
+<div class="note">Conformant Reference → Correctly governed representation / use<br>Source Object → Retains source authority<br>Attestor Object → Retains Attestor authority<br><br><strong>Reference does not transfer authority.</strong></div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Conformance and Publication</h2>
+<p>A conformant object or implementation is not automatically authorized for publication, and publication does not itself prove conformance. Publication remains a separate governed dimension that determines public representation.</p>
+<div class="note">Conformant ≠ Published<br>Published ≠ Conformant<br>Conformance → Requirements satisfaction<br>Publication → Public representation authorization</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Deferred Conformance Specification</h2>
+<p>This page establishes the architecture of conformance without prematurely fixing the final machine conformance suite. Exact conformance classes, required test suites, assertion format, result vocabulary, report schema, profile declarations, and implementation certification mechanics depend on normative Schemas and finalized Validation rules.</p>
+<div class="note">Conformance Architecture → Established<br>Normative Schemas → Required dependency<br>Validation Rules → Required dependency<br>Formal Test Suites → To be defined<br>Conformance Report Schema → To be defined<br>Implementation Claim Format → To be defined<br><br>Conformance claims must follow architecture; they must not define it.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>What Conformance Does Not Establish</h2>
+<p>Conformance is a bounded requirements determination. It does not independently establish truth, evaluation outcome, authority, publication, universal interoperability, security, quality, or trustworthiness.</p>
+<div class="note">Conformant ≠ True<br>Conformant ≠ Supported<br>Conformant ≠ More Authoritative<br>Conformant ≠ Published<br>Conformant ≠ Universally Interoperable<br>Conformant ≠ Secure by definition<br>Conformant ≠ Trustworthy by definition</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>The Conformance architecture now establishes the boundary between individual validation results and a broader, explicitly scoped claim that an object, implementation, or governed process meets Attestor requirements. Final executable conformance remains downstream of normative Schemas and formal Validation rules.</p>
+<div class="note"><strong>Conformance → Established conceptually</strong><br>Conformance target → Required<br>Declared requirements scope → Required<br>Object / implementation / process dimensions → Distinguished<br>Profile-bounded claims → Required<br>Version-bounded claims → Required<br>Mandatory requirement completeness → Required<br>Validation as conformance evidence → Established<br>Formal test suites / report schemas → Deferred<br>Production conformance proof → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">Conformance means meeting a declared set of requirements—not borrowing certainty from a label broader than what was actually tested.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
