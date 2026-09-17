@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Lifecycle</title>
+<meta name="description" content="The Satoshium Attestor Lifecycle architecture defining creation, review, active status, correction, withdrawal, supersession, and retirement for Attestor-owned objects.">
+<link rel="canonical" href="https://satoshium.us/attestor/lifecycle/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
+
+a:hover{
+ color:var(--gold);
+}
+
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
+
+.content{
+ padding:34px 18px 64px;
+}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card p{
+ margin:0;
+ color:var(--muted);
+}
+
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
+
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
+
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+
+<section class="hero">
+<div class="eyebrow">Attestor · Advanced Architecture</div>
+<h1>Lifecycle</h1>
+<p class="lead">Lifecycle defines how <strong>Attestor-owned objects</strong> move through governed existence: preparation, canonical Creation, review, active use, correction, supersession, withdrawal, and retirement.</p>
+<p class="lead">Lifecycle preserves continuity without confusing current state with historical state. An Attestation or Trust Statement may cease to be current while remaining permanently identifiable, attributable, and traceable.</p>
+<div class="note"><strong>Lifecycle principle:</strong> State may change. Canonical identity and governed history remain traceable.</div>
+</section>
+
+<section class="grid"><article class="card"><h2>Lifecycle Purpose</h2><p>Lifecycle governs the institutional existence of Attestor-owned objects from preparation through canonical use and eventual historical disposition. It keeps current state distinguishable from prior state without destroying identity, provenance, or lineage.</p></article>
+<article class="card"><h2>Draft</h2><p><strong>draft</strong> is the pre-active governed state used while an Attestation or Trust Statement is being prepared, reviewed, or completed. A draft is not yet an active Attestor representation and must not be presented as though it were.</p></article>
+<article class="card"><h2>Active</h2><p><strong>active</strong> means the Attestor-owned object is the current governed representation within its scope. Active does not mean published, favorable, permanently correct, or immune from later review.</p></article>
+<article class="card"><h2>Superseded</h2><p><strong>superseded</strong> means a newer governed object or version has replaced the prior object as the current representation for the applicable scope. The superseded object remains historically identifiable and traceable.</p></article>
+<article class="card"><h2>Withdrawn</h2><p><strong>withdrawn</strong> means Attestor has affirmatively removed the object from current institutional reliance because it should no longer function as an active representation. Withdrawal preserves the historical object and the reason/context for the change where material.</p></article>
+<article class="card"><h2>Retired</h2><p><strong>retired</strong> means the object has reached a terminal non-current state through normal institutional disposition rather than necessarily because it was erroneous. Retirement preserves history while signaling that the object is no longer maintained as current.</p></article>
+<article class="card"><h2>Correction</h2><p>Correction is a governed change process, not a lifecycle state. A correction may amend a version, create a successor, or trigger supersession depending on materiality and Versioning rules. The prior state must remain traceable.</p></article>
+<article class="card"><h2>Review</h2><p>Review is a governed lifecycle activity, not a permanent state in the initial controlled vocabulary. Review may confirm continued active status or lead to correction, supersession, withdrawal, retirement, or a new evaluation.</p></article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Canonical Lifecycle States</h2>
+<p>The Controlled Values architecture established five lifecycle states. This page now defines their institutional meaning. Review and correction are governed activities that may cause state transitions; they are not additional lifecycle states in the initial vocabulary.</p>
+<div class="note"><strong>draft</strong> → governed preparation / pre-active state<br><strong>active</strong> → current governed representation within scope<br><strong>superseded</strong> → replaced by a newer governed representation<br><strong>withdrawn</strong> → affirmatively removed from current institutional reliance<br><strong>retired</strong> → terminal non-current disposition<br><br>Review → lifecycle activity<br>Correction → governed change activity</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Creation</h2>
+<p>Canonical Creation is the point at which an Attestor object becomes institutionally recognized and receives its canonical identity. Creation does not require immediate activation or publication. An object may be created in <strong>draft</strong> state and proceed through governed review before becoming <strong>active</strong>.</p>
+<div class="note">Preparation → No canonical object<br>Canonical Creation → Identifier assigned<br>Created Object → draft<br>Governed Review / Completion → active when requirements are satisfied<br><br>Creation ≠ Activation ≠ Publication</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Review</h2>
+<p>Review determines whether an Attestor-owned object remains suitable for its current lifecycle position. Review may be initial, periodic, event-driven, or triggered by material changes to source state, provenance, authority, scope, evidence, evaluation basis, or related objects.</p>
+<div class="note">Review → Confirm current state<br>or → Correct<br>or → Supersede<br>or → Withdraw<br>or → Retire<br>or → Initiate new evaluation<br><br>Review itself does not silently change the object.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Active and Inactive</h2>
+<p><strong>active</strong> is the only initial lifecycle state representing current institutional use. “Inactive” is retained as a descriptive umbrella, not a canonical state value. Superseded, withdrawn, and retired objects are all non-active for different governed reasons and must remain distinguishable.</p>
+<div class="note">Active → canonical lifecycle state<br>Inactive → descriptive category only<br><br>Non-active objects:<br>superseded · withdrawn · retired<br><br>Different reasons → Different canonical states</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Correction and Materiality</h2>
+<p>A correction addresses an error, omission, ambiguity, or other material defect in an Attestor-owned object. Minor changes may be handled through versioned correction while preserving the canonical object identity. A change that alters the substantive assertion, evaluation basis, scope, or conclusion may require a successor object and supersession. Exact thresholds belong to Versioning.</p>
+<div class="note">Correction Need → Assess Materiality<br>Non-substantive / bounded correction → Versioned governed change may preserve object identity<br>Substantive change to object meaning → New canonical object may be required<br>Successor Object → supersedes → Prior Object<br><br>Correction ≠ Deletion</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Withdrawal vs. Retirement</h2>
+<p>Withdrawal and retirement are both non-current states but communicate different institutional meanings. Withdrawal is an affirmative decision that the object should no longer be relied upon as current. Retirement is normal terminal disposition when an object no longer needs to remain current or maintained.</p>
+<div class="note"><strong>withdrawn</strong> → removed from current reliance because continued active use is no longer appropriate<br><strong>retired</strong> → ended through normal lifecycle disposition<br><br>Neither state erases the historical object.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Supersession</h2>
+<p>Supersession preserves continuity when a newer governed object replaces an earlier one as the current representation. The successor must explicitly relate to the prior object, and the prior object remains resolvable as historical state.</p>
+<div class="note">New Object → supersedes → Prior Object<br>New Object → may become active<br>Prior Object → superseded<br>Prior Identity / Provenance / History → Preserved<br><br>Supersession ≠ Mutation of history</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Lifecycle Triggers</h2>
+<p>Lifecycle review may be triggered when information material to an Attestation or Trust Statement changes. The trigger does not predetermine the resulting state; it requires governed review under applicable rules.</p>
+<div class="note">Material Source-State Change<br>Material New Eligible Input<br>Authority Change<br>Provenance Defect or Clarification<br>Scope Change<br>Correction Request<br>Conflicting / Contradictory Information<br>Evaluation Basis Change<br>Methodology / Rule Change, when applicable<br><br>Trigger → Review, not automatic outcome</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Lifecycle and Publication</h2>
+<p>Lifecycle state and publication state remain independent dimensions. An active object may be unpublished, and a previously published object may later become superseded, withdrawn, or retired while its historical public representation remains governed according to Publication architecture.</p>
+<div class="note">Lifecycle State → draft · active · superseded · withdrawn · retired<br>Publication State → unpublished · published<br><br>Active ≠ Published<br>Published ≠ Active forever<br>Lifecycle transition ≠ Automatic deletion of publication history</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Historical Preservation</h2>
+<p>Lifecycle changes must preserve enough history to reconstruct the governed sequence of material states. Attestor should be able to distinguish what was current, what changed, why the change occurred where material, and which object or version became current afterward.</p>
+<div class="note">Prior State → Governed Change → Current State<br>Canonical Identifier → Preserved according to object/version rules<br>Relationships → Preserved<br>Provenance → Preserved<br>Material Reason / Trigger → Reviewable<br>Historical State → Distinguishable from Current State</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>What Lifecycle Does Not Establish</h2>
+<p>Lifecycle state describes institutional status over time. It does not independently establish truth, evidence sufficiency, evaluation outcome, publication, validation, conformance, or authority.</p>
+<div class="note">Active ≠ True<br>Active ≠ Supported<br>Active ≠ Published<br>Active ≠ Validated<br>Superseded ≠ False<br>Withdrawn ≠ Historical Erasure<br>Retired ≠ Invalid</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Advanced Architecture Position</h2>
+<p>The Lifecycle architecture now defines how Attestor-owned objects become current, remain reviewable, and leave current use without losing historical identity. Versioning can now determine how changes within an object differ from changes that require a new canonical object.</p>
+<div class="note"><strong>Lifecycle → Established</strong><br>States → draft · active · superseded · withdrawn · retired<br>Creation → Canonical identity assignment<br>Review → Governed lifecycle activity<br>Correction → Governed change activity, not state<br>Inactive → Descriptive umbrella, not canonical value<br>Supersession / withdrawal / retirement → Distinguished<br>Historical preservation → Required<br>Publication state → Independent<br>Detailed version thresholds → Deferred to Versioning<br>Production proof → Pending</div>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
+
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">A governed object can stop being current without ceasing to be part of the institutional record.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
