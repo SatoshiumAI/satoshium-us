@@ -1,42 +1,35 @@
-# Trust Signal Template — Legacy Candidate (Not Canonical)
+# Trust Signal Template — Legacy Historical Artifact
 
 ## Architectural Notice
-This June-era template is retained as part of Attestor's design history.
+This file is retained only as part of Attestor's design history.
 
-**Trust Signal is not currently adopted as a canonical Attestor object.**
+**Trust Signal is not a canonical Attestor object and this is not an operational template.**
 
-**Attestor → Trust Statement**
+Canonical responsibility:
+
+`Attestor → Trust Statement`
 
 Beacon separately owns:
 
-**Beacon → Discovery Signal / Discovery Metadata**
+`Beacon → Discovery Signal / Discovery Metadata`
 
-## Historical Candidate Structure
-The June template proposed fields for:
-- Trust Signal identifier;
-- signal type;
-- subject;
-- signal source;
-- direction;
-- strength;
-- Evidence/source references;
-- status;
-- confidence;
-- notes.
+## Historical Interpretation
+The useful concept beneath the June-era Trust Signal proposal is **trust-relevant evaluation context**.
 
-It also proposed reputation as an accumulation of Trust Signals.
-
-Those structures are **not adopted**.
-
-## Reconciled Interpretation
-The useful concept is **trust-relevant evaluation context**:
-
-`Governed Inputs → Trust-Relevant Context → Rule-Constrained Evaluation → Trust Statement`
-
-Advanced architecture may determine whether any legacy fields are useful for evaluation context, Evidence/source relationships, uncertainty, limitations, or Trust Statement support metadata.
+That context is now handled through governed inputs, Evidence/Source relationships, evaluation basis, provenance, limitations, uncertainty, and Trust Statement support metadata.
 
 ## Not Adopted
-No `TS-*` identifier family, direction scale, strength scale, confidence scale, Reputation accumulation model, or automatic Trust Signal generation is established.
+No:
+- `TS-*` identifier family;
+- Trust Signal object;
+- direction scale;
+- strength scale;
+- confidence scale;
+- Reputation accumulation model; or
+- automatic Trust Signal generation.
+
+## Governing Model
+`Attestation + Eligible Governed Inputs → Rule-Constrained Evaluation → Trust Statement`
 
 ## Status
-Legacy candidate retained for architectural review; not an operational template.
+**Legacy / historical only. Do not use for production authoring.**
