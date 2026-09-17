@@ -174,9 +174,10 @@ h1{
 <article class="card">
   <h2>Attribution</h2>
   <p>
-    A Trust Statement should identify the Attestor authority, process, or other
-    responsible actor recognized by the eventual Attestor authority model so the
-    conclusion remains accountable and reviewable.
+    A Trust Statement preserves Attestor attribution so responsibility for the
+    conclusion remains explicit and reviewable. Referenced authorities retain
+    authority over their own source objects; Attestor retains authority over its
+    bounded Trust Statement conclusion.
   </p>
 </article>
 
@@ -209,8 +210,9 @@ h1{
   </div>
 
   <p style="margin-top:16px;">
-    These are foundational information requirements, not yet an adopted machine
-    schema or final controlled field set.
+    These requirements are now expressed through the adopted Trust Statement
+    schema and related Attestor architecture. Exact production serialization and
+    executable validation remain governed by the implementation layer.
   </p>
 </article>
 
@@ -221,17 +223,18 @@ h1{
 <article class="card">
   <h2>Identity</h2>
   <p>
-    A Trust Statement should be uniquely distinguishable so it can be referenced,
-    reviewed, related, corrected, withdrawn, superseded, or otherwise governed
-    through its lifecycle. The identifier format remains advanced architecture.
+    A Trust Statement is uniquely identified by the canonical identifier family
+    <strong>TRST-YYYY-NNNN</strong>. The identifier distinguishes the governed object;
+    version identity distinguishes a governed state of that object.
   </p>
 </article>
 
 <article class="card">
   <h2>Subject</h2>
   <p>
-    The subject identifies what the Trust Statement is about. The final subject
-    model and supported subject classes remain unresolved.
+    The subject identifies what the Trust Statement is about and preserves the
+    identifier and type/context necessary to bound the conclusion. Exact production
+    serialization remains governed by the schema and implementation layer.
   </p>
 </article>
 
@@ -301,13 +304,31 @@ h1{
   </p>
 
   <div class="note">
-    Eligible Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement
+    Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement
   </div>
 
   <p style="margin-top:16px;">
-    Exact evaluation criteria, sufficiency rules, validation sequence, and
-    generation conditions remain part of advanced Attestor architecture.
+    Evaluation follows Attestor's established eligibility, provenance, authority,
+    Evaluation Outcome, methodology, and validation architecture. Executable
+    validation and production-specific mechanics remain implementation work.
   </p>
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+  <h2>Evaluation Outcome</h2>
+  <p>
+    Attestor records a controlled Evaluation Outcome as part of the governed basis
+    for the Trust Statement. The adopted outcomes are <strong>supported</strong>,
+    <strong>partially-supported</strong>, <strong>not-supported</strong>,
+    <strong>contradicted</strong>, and <strong>indeterminate</strong>.
+  </p>
+  <div class="note">
+    Outcome ≠ Conclusion ≠ Trust Statement Identity
+  </div>
 </article>
 
 </section>
@@ -387,14 +408,18 @@ h1{
 
   <p>
     A Trust Statement may require review when its supporting basis, source state,
-    scope, or other material conditions change. Advanced architecture should define
-    creation, review, correction, withdrawal, supersession, versioning, publication,
-    and other lifecycle behavior.
+    scope, or other material conditions change. Its governed lifecycle states are
+    <strong>draft</strong>, <strong>active</strong>, <strong>superseded</strong>,
+    <strong>withdrawn</strong>, and <strong>retired</strong>. Publication remains
+    separately governed as <strong>unpublished</strong> or <strong>published</strong>.
   </p>
 
   <p>
-    Historical traceability should remain compatible with a clearly identifiable
-    current state.
+    Review and correction are activities rather than lifecycle states. A bounded
+    correction may preserve canonical identity when essential institutional meaning
+    remains intact; a materially changed conclusion requires a new
+    <strong>TRST-YYYY-NNNN</strong>. Historical states remain preserved rather than
+    silently overwritten.
   </p>
 </article>
 
@@ -403,19 +428,27 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Trust Statement Architecture Ahead</h2>
+  <h2>Established Trust Statement Architecture</h2>
 
   <p>
-    Advanced Attestor architecture should establish the Trust Statement identifier,
-    schema, controlled values, conclusion model, scope representation, authority
-    model, evidence and Attestation relationships, status vocabulary, lifecycle,
-    validation, generation criteria, correction model, publication behavior, and
-    conformance requirements.
+    Advanced Attestor architecture now establishes the Trust Statement identifier,
+    structural schema, controlled values, authority and provenance model,
+    relationships, lifecycle, versioning, publication model, evaluation architecture,
+    validation architecture, conformance architecture, methodology, and production path.
   </p>
 
-  <p>
-    This foundational page establishes what a Trust Statement is and what it must
-    preserve without prematurely declaring those machine rules.
+  <div class="note">
+    Trust Statement Identifier → TRST-YYYY-NNNN<br>
+    Evaluation Outcomes → supported · partially-supported · not-supported · contradicted · indeterminate<br>
+    Lifecycle → draft · active · superseded · withdrawn · retired<br>
+    Publication → unpublished · published<br>
+    Provenance → ordinarily derived
+  </div>
+
+  <p style="margin-top:16px;">
+    The remaining threshold is implementation and proof: executable validation and
+    conformance mechanics, production alignment, the Production Readiness Gate,
+    and the first real governed Trust Statement operation.
   </p>
 
   <a class="btn" href="/attestor/">
