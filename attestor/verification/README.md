@@ -1,352 +1,152 @@
-# Verification
+# Satoshium Attestor — Verification
+
+## Page
+
+`/attestor/verification/`
 
 ## Purpose
 
-Verification is the process of evaluating whether information can be supported by available evidence.
+This page defines how **verification, validation, certification, and review outcomes** relate to Satoshium Attestor.
 
-Within Attestor, verification is important because trust-related information often references verification outcomes, certifications, evidence reviews, and supporting records.
+Verification is not Attestor's canonical responsibility.
 
-However, verification and trust are distinct concepts.
+Attestor may reference governed verification-related outcomes when they are relevant to evaluating an Attestation and producing a **Trust Statement**.
 
-Attestor documents trust-related information while recognizing the role verification plays in trust formation.
+## Canonical Boundary
 
----
+The reconciled page replaces the pre-Suite shorthand:
 
-## Why Verification Matters
+`Certifier → Verification`
+`Attestor → Trust`
 
-People often want to understand:
+with the current canonical responsibilities:
 
-* Is there supporting evidence?
-* Has the information been reviewed?
-* Has anyone evaluated the claim?
-* What level of support exists?
+**Certifier → Certification Package**
 
-Verification helps answer these questions.
+**Attestor → Trust Statement**
 
-Verification provides context that may contribute to trust-related decisions.
+This distinction matters because “verification” is an activity or outcome that may exist in multiple governed contexts. It should not be treated as Attestor's object, nor should Certifier's canonical responsibility be reduced to a generic verification label.
 
----
+## Governing Principle
 
-## Verification Philosophy
+> **Reference does not transfer authority.**
 
-Verification evaluates information.
-
-Verification does not create truth.
-
-Verification may increase confidence.
-
-Verification may decrease confidence.
-
-Verification may reveal uncertainty.
-
-Verification helps improve understanding but does not eliminate ambiguity.
-
----
-
-## What Is Verification?
-
-Verification is the process of examining information against available evidence.
-
-Examples include:
-
-* Evidence review
-* Record validation
-* Source confirmation
-* Identity validation
-* Certification processes
-* Historical review
-
-Verification seeks to determine whether support exists for a claim or statement.
-
----
-
-## What Verification Is Not
-
-Verification is not:
-
-* Absolute proof
-* Certainty
-* Trust
-* Reputation
-* Belief
-
-Verification provides information relevant to those concepts but does not replace them.
-
----
-
-## Verification Outcomes
-
-Verification activities may produce outcomes such as:
-
-### Supported
-
-Available evidence supports the claim.
-
----
-
-### Partially Supported
-
-Some evidence exists, but limitations remain.
-
----
-
-### Unsupported
-
-Available evidence does not support the claim.
-
----
-
-### Inconclusive
-
-Insufficient information exists to reach a conclusion.
-
----
-
-### Disputed
-
-Conflicting evidence exists.
-
----
-
-These outcomes provide context rather than certainty.
-
----
-
-## Verification and Evidence
-
-Evidence is central to verification.
-
-A simplified relationship may be represented as:
-
-```text id="j5k2tf"
-Evidence → Verification
-```
-
-Verification depends upon available information.
-
-The quality of verification is often influenced by the quality of evidence.
-
----
-
-## Verification and Trust
-
-Verification contributes information relevant to trust.
-
-Trust involves broader considerations such as:
-
-* Reputation
-* Historical behavior
-* Transparency
-* Accountability
-* Context
-
-A simplified relationship may be represented as:
-
-```text id="n8v4pa"
-Verification → Trust Context
-```
-
-Verification influences trust but does not determine it.
-
----
-
-## Verification and Attestations
-
-Attestations are statements.
-
-Verification evaluates support for statements.
-
-A simplified distinction may be represented as:
-
-```text id="q3z7rk"
-Attestation → Statement
-Verification → Evaluation
-```
-
-These functions should remain distinct.
-
----
+When Attestor references a verification, validation, certification, or review outcome, that outcome retains the meaning, scope, provenance, status, and authority established by its originating process.
 
 ## Relationship to Certifier
 
-Certifier serves as the verification layer of the Satoshium ecosystem.
+Certifier owns its Certification Packages and the certification process that produces them.
 
-Certifier focuses on:
+Attestor may use a Certification Package as an authoritative input when relevant, but Attestor does not:
 
-* Evidence evaluation
-* Verification workflows
-* Certification outcomes
-* Review processes
+- issue the Certification Package;
+- recertify the subject;
+- redefine the certification;
+- inherit Certifier's authority;
+- convert certification automatically into a Trust Statement.
 
-A simplified relationship may be represented as:
+Conceptually:
 
-```text id="c7m1yu"
-Certifier → Verification
-Attestor → Trust
-```
+`Certification Package → Attestor Evaluation → Trust Statement`
 
-Attestor may reference verification outcomes but does not replace Certifier.
+## Verification Beyond Certifier
 
----
+The page intentionally does not claim that every verification-related input must originate with Certifier.
 
-## Relationship to Evidence
+External or other governed processes may eventually provide eligible verification, validation, or review outcomes.
 
-Verification relies upon evidence.
+Advanced Attestor architecture must determine the eligibility requirements for such sources.
 
-Examples include:
+Their inclusion does not transfer their authority to Attestor.
 
-* Documents
-* Records
-* Source references
-* Historical materials
-* Certifications
+## Evidence and Provenance
 
-Evidence provides the foundation for verification activities.
+A verification-related outcome may depend upon:
 
----
+- evidence;
+- standards;
+- procedures;
+- records;
+- source attribution;
+- defined scope;
+- an originating authority.
 
-## Relationship to Reputation
+Attestor should preserve enough provenance to understand the outcome being referenced and the boundary in which it applies.
 
-Verification outcomes may influence reputation.
+The exact required fields remain deferred.
 
-Examples:
+## Status and Temporal Context
 
-* Repeated successful verification
-* Consistent documentation
-* Demonstrated reliability
+Verification and certification outcomes can change over time.
 
-Verification contributes trust-related signals over time.
+An outcome may later be:
 
----
+- superseded;
+- corrected;
+- expired;
+- withdrawn;
+- otherwise changed or affected by new information.
+
+Attestor should preserve the outcome considered at the time of its evaluation and distinguish it from later changes.
+
+The exact lifecycle mechanics remain part of advanced architecture.
+
+## No Automatic Trust Effect
+
+A successful verification or certification does not automatically produce a favorable Trust Statement.
+
+Likewise, the absence or failure of verification does not automatically produce an unfavorable Trust Statement.
+
+The significance of an outcome depends upon the specific assertion, scope, evidence, provenance, status, limitations, and applicable Attestor rules.
+
+Attestor therefore does not treat verification as an automatic trust score.
 
 ## Relationship to Trust Signals
 
-Verification outcomes may become trust signals.
+The pre-Suite page stated that verification outcomes may become Trust Signals.
 
-Examples:
+That claim is not carried forward as established architecture.
 
-* Certifications
-* Validation records
-* Review findings
-* Independent confirmations
+The reconciled Trust Signals page treats “trust signal” only as descriptive trust-relevant evaluation context pending advanced architectural review. A verification outcome may therefore be relevant context without requiring creation of a separate Trust Signal object.
 
-Trust signals help provide context for future evaluations.
+## Reconciliation Notes
 
----
+This revision updates the June-era pre-Suite Verification page.
 
-## Relationship to Beacon
+Major changes include:
 
-Beacon may help users discover verification-related information.
+- removing the broad comparison of “verification” versus “trust” as two parallel evaluation systems;
+- establishing verification-related outcomes as possible **inputs** to Attestor rather than Attestor-owned outputs;
+- replacing `Certifier → Verification` with the canonical `Certifier → Certification Package`;
+- replacing `Attestor → Trust` with `Attestor → Trust Statement`;
+- removing the claim that verification outcomes become Trust Signals;
+- removing reputation as part of Attestor's established verification architecture;
+- adding explicit source-authority boundaries;
+- adding scope, provenance, status, and temporal context;
+- allowing for eligible verification-related outcomes outside Certifier without assigning their authority to Attestor;
+- establishing that verification has no automatic favorable or unfavorable effect on a Trust Statement;
+- avoiding premature verification scoring, weighting, eligibility rules, or machine vocabulary.
 
-Attestor may preserve trust context associated with verification outcomes.
+## Deferred to Advanced Architecture
 
-A simplified relationship may be represented as:
+The following remain intentionally unresolved:
 
-```text id="f6r8xe"
-Beacon → Discovery
-Certifier → Verification
-Attestor → Trust Context
-```
+- eligibility rules for external verification outcomes;
+- recognized verification or validation source classes;
+- required provenance fields;
+- source-authority representation;
+- status vocabulary;
+- expiration and supersession treatment;
+- relationship between verification outcomes and Attestation Types;
+- sufficiency rules;
+- weighting, if any;
+- conflicting verification outcomes;
+- validation of referenced outcomes;
+- Trust Statement generation rules;
+- schemas;
+- conformance tests and reference vectors.
 
----
+## Files
 
-## Relationship to Registry
-
-Verification outcomes may be recorded within Registry.
-
-Structured records improve traceability and historical review.
-
----
-
-## Relationship to Chronicle
-
-Verification activities may become part of the historical record.
-
-Chronicle helps preserve verification history and supporting context.
-
----
-
-## Verification Limitations
-
-Verification is constrained by available information.
-
-Limitations may include:
-
-* Missing evidence
-* Incomplete records
-* Conflicting information
-* Historical uncertainty
-* Limited visibility
-
-Verification outcomes should be interpreted within context.
-
----
-
-## Guiding Principles
-
-### Transparency
-
-Verification processes should remain understandable.
-
-### Evidence-Based Review
-
-Verification should rely upon available evidence.
-
-### Traceability
-
-Verification outcomes should support review.
-
-### Accountability
-
-Verification activities should remain attributable whenever practical.
-
-### Context
-
-Verification results should be interpreted alongside broader trust information.
-
----
-
-## Long-Term Vision
-
-As Attestor evolves, verification-related information may become increasingly integrated with attestations, evidence records, trust signals, reputation systems, and interoperability frameworks.
-
-The goal is not to replace verification.
-
-The goal is to preserve verification context within trust-related records.
-
----
-
-## Guiding Statement
-
-The relationship between verification and trust may be summarized as:
-
-```text id="u4d9kw"
-Verification helps explain why trust may exist.
-
-Trust remains a separate judgment.
-```
-
----
-
-## Relationship to the Satoshium Suite
-
-Verification exists within a broader ecosystem:
-
-```text id="x2p7vc"
-Atlas      → Data
-Navigator  → Query
-Beacon     → Discovery
-Certifier  → Verification
-Registry   → Records
-Chronicle  → History
-Anchor     → Identity
-Attestor   → Trust
-```
-
-Verification and trust are distinct but complementary functions.
-
----
-
-## Status
-
-Verification standards referenced by Attestor are currently conceptual and may evolve as Certifier and Attestor continue to mature.
+- `index.html` — public Verification page.
+- `README.md` — repository documentation for the Verification page.
