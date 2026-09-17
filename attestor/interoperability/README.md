@@ -1,317 +1,284 @@
-# Interoperability
+# Satoshium Attestor — Interoperability
+
+## Page
+
+`/attestor/interoperability/`
 
 ## Purpose
 
-Interoperability enables Attestor to interact with identities, records, evidence, certifications, historical information, discovery systems, and trust-related frameworks across the broader Satoshium ecosystem.
+This page establishes the foundational interoperability principles for **Satoshium Attestor**.
 
-The goal of interoperability is to allow trust-related information to remain understandable, portable, traceable, and useful across organizational and technical boundaries.
+Attestor must be able to reference and exchange governed information across the Satoshium Suite while preserving the meaning, provenance, scope, identifiers, relationships, status, and authority of the objects involved.
 
-Attestations become more valuable when they can be understood beyond a single system.
+Interoperability does not collapse institutional boundaries.
 
----
+## Governing Principle
 
-## Why Interoperability Matters
+> **Reference does not transfer authority.**
 
-Trust rarely exists in isolation.
+A referenced object remains governed by the institution or authority that produced it.
 
-Attestations often depend upon:
+Attestor governs only its own use of that reference and the Attestation, evaluation, or Trust Statement it produces.
 
-* Identities
-* Evidence
-* Records
-* Certifications
-* Historical context
-* Discovery systems
+## Canonical Responsibility
 
-Interoperability helps these components work together while preserving context and attribution.
+**Attestor → Trust Statement**
 
----
+Interoperability exists to support Attestor's ability to produce governed Trust Statements from eligible inputs without absorbing the canonical responsibilities of source institutions.
 
-## Interoperability Philosophy
+## Suite Relationships
 
-Information should remain connected.
+### Atlas
 
-Trust should remain traceable.
+**Atlas → Authoritative Intelligence**
 
-Evidence should remain attributable.
+Attestor may reference authoritative Atlas intelligence.
 
-Systems should remain understandable.
+Atlas remains authoritative for its intelligence and structural record.
 
-Interoperability seeks to improve communication between systems without sacrificing transparency.
+### Navigator
 
----
+**Navigator → Workflow Definition / Orchestration**
 
-## Core Objectives
+Attestor may participate in workflows defined or orchestrated through Navigator.
 
-### Portability
+Navigator retains workflow responsibility. Attestor retains responsibility for its evaluation and Trust Statement.
 
-Trust-related information should remain usable across systems.
+### Certifier
 
-### Traceability
+**Certifier → Certification Package**
 
-Relationships should remain visible and reviewable.
+Attestor may reference a Certification Package as an authoritative input.
 
-### Attribution
+The certification remains governed by Certifier.
 
-Attestors and sources should remain identifiable.
+### Registry
 
-### Transparency
+**Registry → Satoshium Registry Record**
 
-Users should understand how information relates to other records.
+Attestor may reference Registry records and governed relationships.
 
-### Compatibility
+Registry retains authority over its record identifiers, status, and lifecycle.
 
-Systems should support meaningful information exchange whenever practical.
+### Chronicle
 
----
+**Chronicle → Chronicle Entry**
 
-## Interoperable Components
+Attestor may reference Chronicle Entries for historical, event, or provenance context.
 
-Attestor may interact with:
+Chronicle retains authority over the preserved historical entry.
 
-* Identities
-* Attestations
-* Claims
-* Evidence
-* Sources
-* Certifications
-* Registry records
-* Historical records
-* Discovery systems
+### Anchor
 
-Additional interoperability targets may emerge over time.
+**Anchor → Integrity Reference**
 
----
+Attestor may reference Anchor Integrity References.
 
-## Relationship to Anchor
+Anchor retains authority over its integrity model and canonical reference.
 
-Anchor serves as the identity layer of the ecosystem.
+### Beacon
 
-Attestor may reference identities maintained by Anchor.
+**Beacon → Discovery Signal / Discovery Metadata**
 
-A simplified relationship may be represented as:
+Attestor may reference Beacon Discovery Signals or Discovery Metadata.
 
-```text id="i5ot2r"
-Anchor → Identity
-Attestor → Trust
-```
+Beacon retains authority over its discovery objects and lifecycle.
 
-Anchor helps answer:
+### Attestor
 
-```text id="q67s2m"
-Who is involved?
-```
+**Attestor → Trust Statement**
 
-Attestor helps answer:
+Attestor retains authority over its own Attestations, evaluations, lifecycle operations, and Trust Statements as defined by Attestor architecture.
 
-```text id="r0ik83"
-What is being stated?
-```
+## What Must Travel With a Reference
 
----
+The June-era page correctly emphasized preserving context across systems.
 
-## Relationship to Certifier
+This reconciliation makes that requirement more precise.
 
-Certifier focuses on verification.
+A usable interoperable reference may need to preserve, as applicable:
 
-Attestor focuses on attestations and trust-related information.
+- identifier;
+- source;
+- provenance;
+- object type;
+- status;
+- scope;
+- relationship to the Attestor evaluation;
+- source authority;
+- version or state;
+- relevant limitations.
 
-A simplified relationship may be represented as:
+Conceptually:
 
-```text id="c39v5w"
-Certifier → Verification
-Attestor → Attestation
-```
+`Identifier + Source + Provenance + Type + Status + Scope + Relationship + Authority`
 
-Verification outcomes may influence future attestations.
+This is a foundational information requirement, not yet a final schema.
 
-Attestations may reference certifications.
+## Reference Rather Than Duplicate
 
----
+Where a governed Suite object already exists, Attestor should normally reference the authoritative object rather than silently duplicate it as an Attestor-owned record.
 
-## Relationship to Registry
+Attestor may preserve enough information to:
 
-Registry provides structured record management.
+- resolve the reference;
+- validate its eligibility;
+- understand its provenance;
+- evaluate its relevance;
+- preserve the state considered during evaluation;
+- trace the resulting Trust Statement.
 
-Attestor may create attestation records that can be cataloged, referenced, and maintained within Registry.
+The source object remains authoritative in its originating institution.
 
-A simplified relationship may be represented as:
+Conceptually:
 
-```text id="v3u5c1"
-Attestation → Registry Record
-```
+`Source Object → Governed Reference → Attestor Evaluation → Trust Statement`
 
----
+## Source Changes
 
-## Relationship to Chronicle
+Interoperability must account for change.
 
-Chronicle preserves historical information.
+A referenced source object may later:
 
-Attestations, evidence, corrections, and reputation-related events may become part of the historical record maintained by Chronicle.
+- change status;
+- be corrected;
+- be superseded;
+- change version;
+- change publication state;
+- be withdrawn;
+- otherwise change under its governing institution.
 
-A simplified relationship may be represented as:
+Attestor should be able to distinguish the source state used during its original evaluation from later source changes.
 
-```text id="u6qf4a"
-Attestation → Historical Record
-```
+Depending upon Attestor rules, a material source change may trigger review of Attestor's own object.
 
----
+Possible Attestor responses may eventually include:
 
-## Relationship to Beacon
+- no change;
+- clarification;
+- correction;
+- withdrawal;
+- supersession;
+- new evaluation.
 
-Beacon focuses on discovery.
+The exact trigger and response rules remain unresolved.
 
-Beacon may help users discover attestations, evidence, trust signals, and related information.
+## External Interoperability
 
-A simplified relationship may be represented as:
+Attestor may eventually accept eligible governed information from external systems, authorities, protocols, platforms, or repositories.
 
-```text id="t9n4kb"
-Beacon → Discovery
-Attestor → Trust Context
-```
+This page does not adopt external interoperability standards.
 
----
+Advanced architecture must establish requirements for matters such as:
 
-## Relationship to Atlas
+- eligibility;
+- source authority;
+- provenance;
+- identity of the source;
+- object resolution;
+- status;
+- scope;
+- validation;
+- versioning;
+- persistence;
+- limitations;
+- permitted use.
 
-Atlas provides jurisdiction and media intelligence.
+External interoperability does not transfer external authority to Attestor.
 
-Attestations may reference information originating from Atlas.
+## Correction of Pre-Suite Architecture
 
-Atlas may provide context relevant to trust evaluations and attestations.
+The June page contained several mappings that are no longer carried forward:
 
----
+- `Anchor → Identity`
+- `Certifier → Verification`
+- `Registry → Records`
+- `Chronicle → History`
+- `Beacon → Discovery`
+- `Atlas → Data`
+- `Navigator → Query`
+- `Attestor → Trust`
 
-## Relationship to Navigator
+The reconciled institutional mapping is:
 
-Navigator focuses on query and exploration.
+`Atlas → Authoritative Intelligence`
+`Navigator → Workflow Definition / Orchestration`
+`Certifier → Certification Package`
+`Registry → Satoshium Registry Record`
+`Chronicle → Chronicle Entry`
+`Anchor → Integrity Reference`
+`Beacon → Discovery Signal / Discovery Metadata`
+`Attestor → Trust Statement`
 
-Navigator may help users locate attestation-related information through Beacon and related systems.
+## Trust Signals and Reputation
 
-A simplified relationship may be represented as:
+The June page described verification records, Registry records, and Chronicle information as contributing to Trust Signals and reputation development.
 
-```text id="j2z8dx"
-Navigator → Query
-Beacon → Discovery
-Attestor → Trust Information
-```
+Those claims are not carried forward as established architecture.
 
----
+The reconciled Attestor model does not presently establish:
 
-## Trust Relationships
+- Trust Signal as a separate canonical Attestor object;
+- reputation as an Attestor canonical object;
+- a reputation system;
+- automatic transformation of source objects into trust conclusions.
 
-Attestations may create relationships among:
+Governed inputs participate in Attestor evaluation according to Attestor rules.
 
-* Individuals
-* Organizations
-* Records
-* Claims
-* Certifications
-* Evidence
-* Historical events
+## Interoperability vs Integration
 
-Interoperability helps preserve those relationships.
+This page establishes **what must remain true when information crosses institutional boundaries**.
 
----
+The separate `/attestor/integration/` page should address **how Attestor participates operationally with those institutions and systems**.
 
-## Evidence Relationships
+This distinction should be preserved during the next reconciliation:
 
-Evidence may originate from multiple systems.
+- **Interoperability** → semantic and authority-preserving compatibility.
+- **Integration** → operational connection and exchange.
 
-Interoperability helps preserve:
+The exact technical protocols remain advanced architecture.
 
-* Source attribution
-* Evidence references
-* Supporting relationships
-* Historical context
+## Reconciliation Notes
 
-Evidence becomes more useful when it remains connected to its origins.
+Major changes include:
 
----
+- replacing generic “trust information portability” with authority-preserving interoperability;
+- correcting all pre-Suite institutional mappings;
+- adding Atlas and Navigator as explicit Attestor interoperability relationships;
+- replacing the old Anchor identity relationship with Anchor Integrity Reference;
+- replacing Certifier verification language with Certification Package;
+- replacing generic Beacon discovery language with Discovery Signal / Discovery Metadata;
+- removing reputation development as an assumed Attestor concern;
+- removing Trust Signals as an assumed interoperable Attestor object;
+- adding explicit reference requirements for provenance, scope, status, relationships, and authority;
+- establishing a reference-rather-than-duplicate principle;
+- adding treatment for changes to referenced source objects;
+- preserving external interoperability as possible but unresolved;
+- distinguishing interoperability from integration.
 
-## Source Relationships
+## Deferred to Advanced Architecture
 
-Attestations should remain connected to supporting sources whenever practical.
+The following remain intentionally unresolved:
 
-Users should be able to understand:
+- interoperable reference schema;
+- required reference fields;
+- canonical relationship types;
+- object-resolution rules;
+- source-state snapshots or equivalent mechanism;
+- version handling;
+- status synchronization;
+- change-detection rules;
+- material-change triggers;
+- external-source eligibility;
+- external authority representation;
+- protocol formats;
+- API requirements;
+- transport mechanisms;
+- validation rules;
+- conformance tests;
+- reference vectors.
 
-* Where information originated
-* Who provided it
-* How it relates to trust assessments
+## Files
 
-Source transparency remains important.
-
----
-
-## Record Relationships
-
-Attestations may reference:
-
-* Registry records
-* Chronicle records
-* Certification records
-* Identity records
-* External records
-
-Interoperability helps maintain those references over time.
-
----
-
-## Guiding Principles
-
-### Transparency
-
-Relationships should remain visible.
-
-### Attribution
-
-Participants should remain identifiable whenever practical.
-
-### Traceability
-
-Information should support investigation and review.
-
-### Portability
-
-Trust-related information should remain usable across systems.
-
-### Preservation
-
-Historical context should remain available.
-
----
-
-## Long-Term Vision
-
-As Attestor evolves, interoperability may enable trust-related information to move seamlessly across records, certifications, identities, discovery systems, historical archives, and future digital ecosystems.
-
-The long-term goal is not merely information exchange.
-
-The goal is preserving trust context wherever information travels.
-
----
-
-## Relationship to the Satoshium Suite
-
-Attestor participates within a broader ecosystem:
-
-```text id="z7l3rf"
-Atlas      → Data
-Navigator  → Query
-Beacon     → Discovery
-Certifier  → Verification
-Registry   → Records
-Chronicle  → History
-Anchor     → Identity
-Attestor   → Trust
-```
-
-Interoperability helps connect these functions while preserving clear responsibilities.
-
----
-
-## Status
-
-Interoperability standards are currently under development.
-
-This document defines conceptual principles rather than finalized technical specifications.
+- `index.html` — public Interoperability page.
+- `README.md` — repository documentation for the Interoperability page.
