@@ -1,19 +1,20 @@
-# Attestation Template — Foundational Candidate
+# Attestation Template — Advanced Architecture
 
 ## Purpose
-This candidate template shows the information a future Attestor Attestation may need to capture while preserving attribution, scope, provenance, evidence/source relationships, limitations, and traceability.
+Authoring template for a canonical Satoshium Attestor **Attestation**: a governed, attributable assertion.
 
-An Attestation is a governed, attributable assertion. It is not the final Trust Statement.
+Canonical identifier family: `ATT-YYYY-NNNN`
 
-## Candidate Template
+## Template
 ```yaml
-attestation_identifier:
+attestation_identifier: ATT-YYYY-NNNN
 attestation_type:
-status:
+lifecycle_state: draft
+publication_state: unpublished
 
 attesting_authority:
   identifier:
-  type:
+  authority_context:
 
 subject:
   identifier:
@@ -22,34 +23,46 @@ subject:
 assertion:
 scope:
 
-evidence_references:
-  -
-
-source_references:
-  -
-
-governed_references:
-  -
+evidence_references: []
+source_references: []
+governed_references: []
 
 provenance:
+  mode:
+  source_or_origin:
+  relevant_time_or_state:
+  acquisition_or_reference_context:
+  derivation_basis:
+  material_limitations:
+
+relationships: []
 
 created_at:
 updated_at:
+version_identity:
 
-limitations:
+limitations: []
+uncertainty: []
 notes:
 ```
 
-## Architectural Notes
-The exact field names, identifiers, required/optional status, controlled Attestation Types, authority types, timestamp requirements, and lifecycle states are not yet adopted.
+## Controlled Attestation Types
+- `identity`
+- `evidence`
+- `source-provenance`
+- `verification-related`
+- `relationship-condition`
+- `correction-supersession`
 
-The June template used `ATT-*`, fixed status values, a confidence indicator, and identity/qualification/ownership/participation/verification/reputation categories. Those remain historical candidates rather than current normative values.
+## Lifecycle
+`draft` · `active` · `superseded` · `withdrawn` · `retired`
 
-## Foundational Relationship
-`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
+Publication is separately represented as `unpublished` or `published`.
 
-## Governing Principle
-> **Reference does not transfer authority.**
+## Boundary
+An Attestation is not a Trust Statement and does not itself establish an Evaluation Outcome.
+
+**Reference does not transfer authority.**
 
 ## Status
-Foundational candidate template. Final operational format remains Advanced Architecture.
+Advanced authoring template. Exact machine-required fields/cardinality remain governed by the normative Attestation schema and Validation specification.
