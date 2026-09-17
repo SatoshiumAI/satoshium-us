@@ -12,7 +12,7 @@
 
 <title>Satoshium Attestor Integration</title>
 
-<meta name="description" content="Satoshium Attestor Integration defines how Attestor integrates with Certifier, Registry, Chronicle, Anchor, Beacon, and the broader Satoshium Suite by producing trust statements from authoritative records.">
+<meta name="description" content="Satoshium Attestor Integration — defining how Attestor operationally receives, resolves, evaluates, and relates governed inputs across the Satoshium Suite while producing Trust Statements without transferring source authority.">
 
 <link rel="canonical" href="https://satoshium.us/attestor/integration/">
 
@@ -140,15 +140,21 @@ ATTESTOR · INTEGRATION
 <h1>Satoshium Attestor Integration</h1>
 
 <p class="lead">
-Attestor Integration defines how Attestor connects to the Satoshium
-ecosystem by producing trust statements from authoritative records,
-without replacing the systems that created them.
+Attestor Integration defines how Attestor operationally participates in the
+Satoshium Suite by receiving, resolving, referencing, and evaluating governed
+inputs while producing its own canonical Trust Statements.
 </p>
 
 <p class="lead">
-Integration answers one fundamental question:
-how does certification become an attestation?
+Integration answers a practical question: how do governed inputs enter an
+Attestor evaluation without losing their source identity, provenance, scope,
+status, relationships, or authority?
 </p>
+
+<div class="note">
+<strong>Canonical responsibility:</strong> Attestor → Trust Statement<br>
+<strong>Governing principle:</strong> Reference does not transfer authority.
+</div>
 
 </section>
 
@@ -159,50 +165,44 @@ how does certification become an attestation?
 <h2>Purpose</h2>
 
 <p>
-Attestor Integration establishes the institutional boundary between
-authoritative records and trust statements derived from those records.
+Attestor Integration establishes the operational relationships through which
+eligible governed information can participate in Attestations, evaluation, and
+Trust Statement production.
 </p>
 
 </article>
 
 <article class="card">
 
-<h2>Core Distinction</h2>
+<h2>Integration Boundary</h2>
 
 <p>
-Certifier certifies.
-
-Registry catalogs.
-
-Chronicle preserves history.
-
-Anchor preserves integrity.
-
-Beacon publishes discovery.
-
-Attestor produces trust statements.
+Integration connects systems and institutional objects. It does not merge their
+canonical responsibilities. Attestor governs its own processing and outputs while
+the source institution remains authoritative for the referenced object.
 </p>
 
 </article>
 
 <article class="card">
 
-<h2>Integration Philosophy</h2>
+<h2>Reference-Based Operation</h2>
 
 <p>
-Attestor does not replace authoritative records. It references them while
-creating structured attestations that support future trust evaluation.
+Where an authoritative object already exists, Attestor should resolve and reference
+that object rather than silently recreate it as an Attestor-owned record.
 </p>
 
 </article>
 
 <article class="card">
 
-<h2>Reference-Based Design</h2>
+<h2>Evaluation Boundary</h2>
 
 <p>
-Attestations should reference authoritative records instead of duplicating
-their contents. Authority remains with the originating system.
+Receiving an input does not determine the Attestor conclusion. Eligible inputs
+must participate in Attestor's own rule-constrained evaluation before a Trust
+Statement is produced.
 </p>
 
 </article>
@@ -213,24 +213,21 @@ their contents. Authority remains with the originating system.
 
 <article class="card">
 
-<h2>Relationship Within the Suite</h2>
+<h2>Conceptual Integration Flow</h2>
 
 <p>
-Attestor integrates with every major operational component by consuming
-their outputs rather than recreating them.
+The exact production workflow remains advanced architecture, but the foundational
+integration relationship can be expressed as:
 </p>
 
 <div class="note">
-
-Atlas creates intelligence.<br>
-Certifier creates certification.<br>
-Registry creates registry entries.<br>
-Chronicle creates historical events.<br>
-Anchor creates integrity references.<br>
-Beacon creates discovery signals.<br>
-Attestor creates trust statements.
-
+Source Object → Resolve Reference → Preserve Context → Establish Eligibility → Attestor Evaluation → Trust Statement
 </div>
+
+<p style="margin-top:16px;">
+This flow is conceptual. It does not yet establish machine steps, validation
+sequence, required fields, or implementation protocol.
+</p>
 
 </article>
 
@@ -240,44 +237,96 @@ Attestor creates trust statements.
 
 <article class="card">
 
-<h2>Relationship to Certifier</h2>
+<h2>Atlas Integration</h2>
 
 <p>
-Attestor may reference Certification Packages, SCPRs, SCRs, SCRDs, and
-future certification artifacts when producing attestations.
+Attestor may receive or resolve references to authoritative Atlas intelligence
+when relevant to an evaluation. Atlas retains authority over the intelligence;
+Attestor governs only its use within Attestor.
 </p>
 
 </article>
 
 <article class="card">
 
-<h2>Relationship to Registry</h2>
+<h2>Navigator Integration</h2>
 
 <p>
-Attestor may reference SREG Registry Entries to identify the public
-cataloged records supporting an attestation.
+Navigator may define or orchestrate workflows in which Attestor participates.
+Navigator governs workflow definition and orchestration; Attestor governs its own
+evaluation and Trust Statement.
 </p>
 
 </article>
 
 <article class="card">
 
-<h2>Relationship to Chronicle</h2>
+<h2>Certifier Integration</h2>
 
 <p>
-Attestor may reference Chronicle events to provide historical context
-supporting trust statements.
+Attestor may resolve and reference Certifier Certification Packages and governed
+certification artifacts when eligible. Certification authority remains with
+Certifier.
 </p>
 
 </article>
 
 <article class="card">
 
-<h2>Relationship to Anchor</h2>
+<h2>Registry Integration</h2>
 
 <p>
-Attestor may reference integrity records preserved by Anchor while leaving
-integrity preservation and verification to Anchor itself.
+Attestor may resolve and reference Satoshium Registry records and their governed
+relationships. Registry retains authority over the registered record, identifier,
+status, and lifecycle.
+</p>
+
+</article>
+
+<article class="card">
+
+<h2>Chronicle Integration</h2>
+
+<p>
+Attestor may resolve and reference Chronicle Entries when historical, event, or
+provenance context is relevant. Chronicle retains authority over the preserved
+historical entry.
+</p>
+
+</article>
+
+<article class="card">
+
+<h2>Anchor Integration</h2>
+
+<p>
+Attestor may resolve and reference Anchor Integrity References when integrity
+context is relevant. Anchor retains authority over the Integrity Reference and
+its governing integrity model.
+</p>
+
+</article>
+
+<article class="card">
+
+<h2>Beacon Integration</h2>
+
+<p>
+Attestor may resolve and reference Beacon Discovery Signals or Discovery Metadata
+when discovery context is relevant. Beacon retains authority over its discovery
+objects and lifecycle.
+</p>
+
+</article>
+
+<article class="card">
+
+<h2>External Integration</h2>
+
+<p>
+Future Attestor implementations may accept eligible governed inputs from external
+systems when source authority, provenance, scope, status, validation, and permitted
+use can be established under Attestor rules.
 </p>
 
 </article>
@@ -288,20 +337,22 @@ integrity preservation and verification to Anchor itself.
 
 <article class="card">
 
-<h2>Relationship to Beacon</h2>
+<h2>Integration Does Not Imply Automatic Conversion</h2>
 
 <p>
-Beacon may publish discovery signals that help users locate attestations,
-while Attestor remains responsible for producing the trust statements those
-signals reference.
+A Certification Package does not automatically become an Attestation. A Registry
+record, Chronicle Entry, Integrity Reference, Discovery Signal, or other governed
+object does not automatically become a Trust Statement.
+</p>
+
+<p>
+Integration makes eligible information available to Attestor. Attestor architecture
+must separately define how an Attestation is formed, how inputs are evaluated, and
+when a Trust Statement may be produced.
 </p>
 
 <div class="note">
-
-Beacon helps people discover.
-
-Attestor helps people evaluate.
-
+Availability ≠ Eligibility ≠ Attestation ≠ Trust Statement
 </div>
 
 </article>
@@ -312,13 +363,41 @@ Attestor helps people evaluate.
 
 <article class="card">
 
-<h2>Future Interoperability</h2>
+<h2>Interoperability and Integration</h2>
 
 <p>
-Future Attestor implementations may support interoperable trust statements,
-attestation schemas, machine-readable attestations, APIs, digital
-signatures, policy frameworks, and verification ecosystems while preserving
-references to the originating authoritative records.
+Interoperability defines what meaning, provenance, scope, relationships, status,
+and authority must remain intact when information crosses institutional boundaries.
+Integration defines the operational connection through which Attestor obtains and
+uses that governed information.
+</p>
+
+<div class="note">
+Interoperability → Preserve Meaning and Authority<br>
+Integration → Connect and Exchange<br>
+Attestor Evaluation → Produce the Trust Statement
+</div>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
+<h2>Integration Architecture Ahead</h2>
+
+<p>
+Advanced Attestor architecture should determine reference resolution, input
+eligibility, validation, workflow entry points, state handling, change detection,
+failure behavior, publication dependencies, APIs or other interfaces where needed,
+and the relationship between integration events and Trust Statement generation.
+</p>
+
+<p>
+No API, transport mechanism, digital-signature requirement, policy framework, or
+external verification ecosystem is adopted by this foundational page.
 </p>
 
 <a class="btn" href="/attestor/">
@@ -339,7 +418,7 @@ Back to Attestor →
 
 <div id="random-saying" class="muted" style="margin-bottom:14px;max-width:760px;">
 
-Authority establishes truth. Attestations express accountable trust.
+Integration connects governed systems. Authority remains with the source; Attestor remains responsible for its conclusion.
 
 </div>
 
