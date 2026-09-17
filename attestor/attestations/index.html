@@ -225,9 +225,10 @@ h1{
 <article class="card">
   <h2>Status &amp; Lifecycle</h2>
   <p>
-    Attestations require governed status and lifecycle treatment so that a reviewer
-    can distinguish a current assertion from one that has been corrected, withdrawn,
-    superseded, expired, or otherwise changed under Attestor rules.
+    Attestations use the adopted Lifecycle States <strong>draft</strong>,
+    <strong>active</strong>, <strong>superseded</strong>,
+    <strong>withdrawn</strong>, and <strong>retired</strong>. Correction and review
+    are governed activities rather than lifecycle states.
   </p>
   <span class="status">Governed</span>
 </article>
@@ -249,13 +250,30 @@ h1{
   <h2>Attestation Structure</h2>
 
   <p>
-    The exact machine schema will be governed by Attestor's advanced architecture.
-    At the conceptual level, an Attestation must preserve enough structure to make
-    the assertion identifiable, attributable, scoped, traceable, and reviewable.
+    Advanced Architecture establishes the normative Attestation structure and
+    canonical identifier <strong>ATT-YYYY-NNNN</strong>. Exact executable
+    serialization and production validation remain implementation work.
   </p>
 
   <div class="note">
-    Attesting Authority → Subject → Assertion → Scope → Evidence / References → Provenance → Status
+    ATT-YYYY-NNNN → Type → Attesting Authority → Subject → Assertion → Scope → Eligible References → Provenance → Relationships → Lifecycle / Publication State
+  </div>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Adopted Attestation Types</h2>
+  <p>
+    Attestor uses six controlled Attestation Types:
+    <strong>identity</strong>, <strong>evidence</strong>,
+    <strong>source-provenance</strong>, <strong>verification-related</strong>,
+    <strong>relationship-condition</strong>, and
+    <strong>correction-supersession</strong>.
+  </p>
+  <div class="note">
+    Type classifies the assertion. Type does not establish Eligibility,
+    transfer authority, or predetermine an Evaluation Outcome.
   </div>
 </article>
 </section>
@@ -289,7 +307,7 @@ h1{
   </p>
 
   <div class="note">
-    Authoritative Inputs → Attestation → Attestor Evaluation → Trust Statement
+    Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement
   </div>
 </article>
 </section>
