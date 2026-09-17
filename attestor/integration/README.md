@@ -1,291 +1,202 @@
 # Satoshium Attestor — Integration
 
 ## Page
-
 `/attestor/integration/`
 
 ## Purpose
+This page defines the established institutional integration model for **Satoshium Attestor**.
 
-This page defines the foundational operational integration model for **Satoshium Attestor**.
-
-Integration concerns how Attestor receives, resolves, references, and uses governed information from the Satoshium Suite and potentially other eligible sources.
-
-It does not transfer the authority of those sources to Attestor.
+Integration concerns how Attestor receives, resolves, references, and uses governed information from the Satoshium Suite and eligible external sources without transferring source authority.
 
 ## Canonical Responsibility
-
 **Attestor → Trust Statement**
 
-Attestor Integration exists to make eligible governed inputs available for Attestor's own evaluation and Trust Statement production.
-
 ## Governing Principle
-
 > **Reference does not transfer authority.**
 
 The source institution remains authoritative for its canonical object.
 
-Attestor remains authoritative for its own Attestations, evaluation, lifecycle operations, and Trust Statements as defined by Attestor architecture.
+Attestor remains authoritative for its own Attestations, Rule-Constrained Evaluation, lifecycle/versioning decisions, and Trust Statements.
 
 ## Integration vs Interoperability
-
-The two concepts are related but distinct.
-
 ### Interoperability
+Interoperability preserves semantic and authority context across institutional boundaries.
 
-Interoperability defines what must remain intact when information crosses institutional boundaries.
-
-This includes, as applicable:
-
-- meaning;
+Applicable context includes:
 - identifier;
 - source;
 - provenance;
 - type;
-- status;
+- relevant state;
 - scope;
 - relationships;
 - authority;
 - limitations.
 
 ### Integration
+Integration provides the operational connection and exchange through which Attestor obtains or resolves governed information.
 
-Integration defines the operational connection through which Attestor obtains and uses governed information.
+> **Interoperability → Preserve Meaning and Authority**
 
-Conceptually:
+> **Integration → Connect and Exchange**
 
-`Interoperability → Preserve Meaning and Authority`
+## Established Integration Flow
+`Source Object → Resolve Reference → Preserve Context → Establish Eligibility → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-`Integration → Connect and Exchange`
+This is the governed institutional sequence.
 
-`Attestor Evaluation → Produce the Trust Statement`
+Exact APIs, transports, authentication, authorization, retry behavior, notification mechanisms, and serialization remain implementation choices unless separately adopted by a production specification.
 
-## Conceptual Integration Flow
+## Core Distinctions
+> **Availability ≠ Eligibility**
 
-The foundational relationship is:
+> **Authority ≠ Eligibility**
 
-`Source Object → Resolve Reference → Preserve Context → Establish Eligibility → Attestor Evaluation → Trust Statement`
+> **Reference ≠ Eligibility**
 
-This is intentionally conceptual.
+> **Eligibility ≠ Attestation**
 
-It does **not** yet establish:
+> **Attestation ≠ Trust Statement**
 
-- required machine steps;
-- validation sequence;
-- API calls;
-- transport protocols;
-- schemas;
-- workflow identifiers;
-- lifecycle transitions;
-- PASS/FAIL outcomes.
+> **Integration ≠ Authority Transfer**
 
-## Availability Is Not Eligibility
+## Reference Resolution
+Where a canonical source object already exists, Attestor should normally resolve and reference it rather than silently duplicate it.
 
-A source object being technically available to Attestor does not make it eligible for use.
+A governed reference preserves sufficient context to identify and interpret the source while maintaining authority boundaries.
 
-Likewise, an eligible source object does not automatically become an Attestation or determine a Trust Statement.
+The established Reference Profile context is:
 
-The foundational distinction is:
+`Identifier + Source + Provenance + Type + Status + Scope + Relationship + Authority`
 
-`Availability ≠ Eligibility ≠ Attestation ≠ Trust Statement`
+Exact network-resolution mechanisms remain implementation work.
 
-Advanced architecture must define the rules separating these states and concepts.
+## Eligibility
+Integration makes a potential input available for governed Eligibility determination.
+
+Technical availability does not establish Eligibility.
+
+Eligibility is evaluation-specific:
+
+> **Eligible Here ≠ Eligible Everywhere**
 
 ## Suite Integration Relationships
+- **Atlas → Authoritative Intelligence**
+- **Navigator → Workflow Definition / Orchestration**
+- **Certifier → Certification Package**
+- **Registry → Satoshium Registry Record**
+- **Chronicle → Chronicle Entry**
+- **Anchor → Integrity Reference**
+- **Beacon → Discovery Signal / Discovery Metadata**
+- **Attestor → Trust Statement**
 
-### Atlas
+Attestor may reference eligible governed objects from these institutions while preserving the originating institution's authority.
 
-**Atlas → Authoritative Intelligence**
+## No Automatic Conversion
+A source object does not become an Attestation merely because Attestor integrates with or references it.
 
-Attestor may receive or resolve references to authoritative Atlas intelligence when relevant.
+A Certification Package does not automatically become an Attestation.
 
-Atlas retains authority over that intelligence.
+A Registry Record, Chronicle Entry, Integrity Reference, Discovery Signal, or other governed source object does not automatically become a Trust Statement.
 
-### Navigator
+## Provenance and Authority
+Integrated information remains subject to the established Authority and Provenance architecture.
 
-**Navigator → Workflow Definition / Orchestration**
+Adopted provenance modes:
+- `direct`
+- `referenced`
+- `derived`
 
-Navigator may define or orchestrate workflows in which Attestor participates.
+Authority contexts:
+- `Attestor`
+- `Suite-source`
+- `external-source`
 
-Navigator governs workflow definition and orchestration. Attestor governs its own evaluation and Trust Statement.
+> **Attribution ≠ Adoption**
 
-### Certifier
+## Source State and Change
+Attestor preserves relevant source state at Evaluation.
 
-**Certifier → Certification Package**
+> **Source State at Evaluation ≠ Later Source State**
 
-Attestor may resolve and reference Certification Packages and governed certification artifacts when eligible.
+A material source-state change may trigger review:
 
-Certification authority remains with Certifier.
+`Material Source-State Change → Review`
 
-The June page specifically named SCPRs, SCRs, and SCRDs. Those remain possible certification artifacts where current Certifier architecture recognizes them, but this page does not independently redefine their role or make them mandatory Attestor inputs.
+The trigger does not automatically determine:
+- correction;
+- withdrawal;
+- supersession;
+- lifecycle transition;
+- a new Attestation;
+- a new Trust Statement.
 
-### Registry
-
-**Registry → Satoshium Registry Record**
-
-Attestor may resolve and reference Registry records and their governed relationships.
-
-Registry retains authority over its identifiers, status, and lifecycle.
-
-### Chronicle
-
-**Chronicle → Chronicle Entry**
-
-Attestor may resolve and reference Chronicle Entries when historical, event, or provenance context is relevant.
-
-Chronicle retains authority over the preserved historical entry.
-
-### Anchor
-
-**Anchor → Integrity Reference**
-
-Attestor may resolve and reference Anchor Integrity References.
-
-Anchor retains authority over its integrity model and canonical object.
-
-### Beacon
-
-**Beacon → Discovery Signal / Discovery Metadata**
-
-Attestor may resolve and reference Beacon Discovery Signals or Discovery Metadata.
-
-Beacon retains authority over its discovery objects and lifecycle.
-
-### Attestor
-
-**Attestor → Trust Statement**
-
-Attestor evaluates eligible inputs under its own rules and remains responsible for the resulting Trust Statement.
-
-## No Automatic Certification-to-Attestation Conversion
-
-The June page framed the central integration question as:
-
-> “how does certification become an attestation?”
-
-That question is not carried forward literally.
-
-A certification does not necessarily **become** an Attestation.
-
-A Certification Package may instead be an authoritative input referenced by an Attestation or evaluated by Attestor under rules that remain to be established.
-
-The distinction prevents transformation of a Certifier-owned canonical object into an Attestor-owned object merely through integration.
-
-## Reference-Based Operation
-
-Where an authoritative object already exists, Attestor should normally reference that object rather than silently duplicate it.
-
-Attestor may preserve enough information to:
-
-- resolve the source;
-- validate eligibility;
-- preserve the state considered;
-- establish provenance;
-- understand scope;
-- evaluate relevance;
-- trace relationships;
-- support later review.
-
-The authoritative source remains authoritative.
-
-## Source Change and Integration
-
-Integrated source objects may change after an Attestor evaluation.
-
-Advanced integration architecture should determine how Attestor detects or receives relevant changes and what happens when a material source change affects an Attestation or Trust Statement.
-
-Potential concerns include:
-
-- source status change;
-- source correction;
-- source supersession;
-- source withdrawal;
-- version change;
-- publication-state change;
-- failed resolution;
-- unavailable source;
-- changed provenance.
-
-The resulting Attestor response remains governed by Attestor's own lifecycle and correction rules.
+Those outcomes remain governed by the applicable Attestor architecture.
 
 ## External Integration
-
-External integration remains possible but unresolved.
-
-Attestor should not accept an external input merely because it can technically connect to the source.
-
-Advanced rules must establish:
-
-- source eligibility;
+External governed sources may participate when Attestor can establish applicable:
+- source identity;
 - authority;
 - provenance;
 - scope;
-- status;
-- validation;
-- persistence;
+- relevant state;
 - permitted use;
-- failure handling.
+- Eligibility.
+
+External availability alone is insufficient.
+
+External reference does not transfer external authority to Attestor.
+
+## Validation
+Integrated references and resulting Attestor objects remain subject to applicable Validation requirements.
+
+> **Validation ≠ Eligibility**
+
+> **Validation ≠ Evaluation**
+
+> **Validation ≠ Conformance**
+
+Exact executable validation remains implementation work.
+
+## Publication
+Integration does not itself authorize publication.
+
+> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
+
+A source being publicly accessible also does not make an Attestor object Published.
 
 ## Technology Neutrality
+The institutional integration architecture does not require a specific:
+- API;
+- transport protocol;
+- authentication mechanism;
+- authorization mechanism;
+- digital-signature system;
+- external verification ecosystem.
 
-The June page anticipated:
+Such mechanisms may be adopted where production requirements justify them.
 
-- machine-readable attestations;
-- APIs;
-- digital signatures;
-- policy frameworks;
-- verification ecosystems.
-
-Those technologies and frameworks are not adopted by this foundational reconciliation.
-
-They may later be selected where demonstrated requirements justify them.
-
-The architecture should establish institutional and semantic requirements before selecting transport or implementation mechanisms.
-
-## Reconciliation Notes
-
-Major changes include:
-
-- redefining Integration as operational connection and exchange rather than generic ecosystem participation;
-- distinguishing Integration from Interoperability;
-- replacing “how does certification become an attestation?” with a broader governed-input model;
-- establishing that Certification Packages do not automatically become Attestations;
-- adding Atlas and Navigator integration relationships;
-- updating all institutional relationships to current canonical responsibilities;
-- replacing broad record duplication with reference-based operation;
-- adding reference resolution and eligibility as separate concepts;
-- establishing `Availability ≠ Eligibility ≠ Attestation ≠ Trust Statement`;
-- adding a conceptual integration flow;
-- preserving source authority throughout integration;
-- adding source-change concerns;
-- retaining external integration as possible but unresolved;
-- removing premature adoption of APIs, digital signatures, policy frameworks, and external verification ecosystems.
-
-## Deferred to Advanced Architecture
-
-The following remain intentionally unresolved:
-
-- reference-resolution mechanism;
-- input eligibility rules;
+## Implementation-Open Matters
+The following remain legitimate implementation or production concerns rather than unresolved Advanced Architecture:
+- concrete reference-resolution mechanism;
 - workflow entry points;
-- integration event model;
-- validation sequence;
-- source-state preservation;
-- change-detection mechanism;
+- integration event transport;
+- change-notification mechanism;
 - retry and failure behavior;
 - unavailable-source handling;
-- publication dependencies;
-- API requirements;
-- transport protocols;
-- authentication;
-- authorization;
-- digital signatures, if required;
-- external-source integration;
-- machine schemas;
-- integration validation rules;
-- conformance tests;
+- API/interface requirements;
+- authentication and authorization;
+- digital signatures if required;
+- machine serialization;
+- executable integration validation;
+- conformance test implementation;
 - reference vectors.
 
-## Files
+## Status
+**Integration → Advanced Architecture reconciled.**
 
+The former posture that Eligibility, Validation, source-state handling, Publication dependencies, and the relationship between integration and Trust Statement generation were wholly deferred is no longer current.
+
+## Files
 - `index.html` — public Integration page.
-- `README.md` — repository documentation for the Integration page.
+- `README.md` — repository documentation.
