@@ -214,12 +214,12 @@ h1{
   <h2>Correction</h2>
 
   <p>
-    A correction addresses an identified error in an Attestor assertion or Trust
-    Statement while preserving the relationship between the prior and corrected
-    state.
+    A correction is a governed activity addressing an identified error or required
+    change in an Attestor-owned object while preserving prior state, traceability,
+    and the applicable Lifecycle and Versioning rules.
   </p>
 
-  <span class="status">Required Capability</span>
+  <span class="status">Established Activity</span>
 </article>
 
 <article class="card">
@@ -227,59 +227,60 @@ h1{
 
   <p>
     A clarification may refine wording, scope, context, or interpretation without
-    necessarily reversing the underlying Attestor conclusion. The architecture must
-    distinguish clarification from substantive correction.
+    materially changing the underlying institutional meaning. Materiality determines
+    whether the same canonical object may continue or a new object is required.
   </p>
 
-  <span class="status">Lifecycle Concern</span>
+  <span class="status">Governed Change</span>
 </article>
 
 <article class="card">
   <h2>Withdrawal</h2>
 
   <p>
-    An Attestation or Trust Statement may require withdrawal when Attestor can no
-    longer stand behind the assertion or conclusion under its governing rules.
-    Withdrawal should remain attributable and historically traceable.
+    Withdrawal is an adopted Lifecycle State used when an Attestor object should
+    no longer remain active under applicable rules. Withdrawal remains attributable,
+    preserved, and historically traceable.
   </p>
 
-  <span class="status">Lifecycle Concern</span>
+  <span class="status">Lifecycle State</span>
 </article>
 
 <article class="card">
   <h2>Supersession</h2>
 
   <p>
-    A later Attestor object may supersede an earlier one when new evidence, changed
-    conditions, corrected information, or a new evaluation produces a replacement
-    state. The relationship between versions must remain explicit.
+    Superseded is an adopted Lifecycle State. Supersession may also be expressed
+    through the <code>supersedes</code> relationship when a later governed object
+    replaces an earlier object's institutional role. Prior state remains preserved.
   </p>
 
-  <span class="status">Lifecycle Concern</span>
+  <span class="status">Lifecycle State</span>
 </article>
 
 <article class="card">
   <h2>Provenance of Change</h2>
 
   <p>
-    Corrections and related changes should preserve who or what authorized the
-    change, what changed, why it changed, when it changed, and which Attestor object
-    or version was affected.
+    Corrections and related changes preserve, as applicable, what changed, why it
+    changed, who or what authorized the change, when it changed, which canonical
+    object or governed state was affected, and the relationship between prior and
+    resulting states.
   </p>
 
-  <span class="status">Required Principle</span>
+  <span class="status">Established Requirement</span>
 </article>
 
 <article class="card">
   <h2>Historical Traceability</h2>
 
   <p>
-    Prior states should remain traceable according to Attestor's eventual retention
-    and publication rules so reviewers can distinguish the historical record from
-    the currently effective state.
+    Prior governed states remain traceable so reviewers can distinguish historical
+    state from current state. Supersession, withdrawal, retirement, or unpublication
+    does not silently erase the prior governed record.
   </p>
 
-  <span class="status">Required Principle</span>
+  <span class="status">Established Requirement</span>
 </article>
 
 </section>
@@ -291,11 +292,10 @@ h1{
   <h2>Correction Is Not a New Canonical Object</h2>
 
   <p>
-    This reconciliation does not establish a separate “Correction Record” as an
-    additional Attestor canonical object. Correction may ultimately be implemented
-    through lifecycle state, versioning, relationships, replacement Attestations,
-    replacement Trust Statements, or another governed mechanism established during
-    advanced architecture.
+    Attestor does not establish a separate “Correction Record” as an additional
+    canonical object class. Correction is a governed activity expressed through the
+    applicable Lifecycle, Versioning, Relationship, Attestation, and Trust Statement
+    architecture.
   </p>
 
   <div class="note">
@@ -339,10 +339,9 @@ h1{
   <h2>Current State and Historical State</h2>
 
   <p>
-    Correction architecture should allow a reviewer to identify both the currently
-    effective Attestor state and the historically relevant prior state. Preserving
-    history does not require presenting a superseded or withdrawn conclusion as
-    current.
+    Correction architecture preserves both the currently effective Attestor state
+    and historically relevant prior states. Preserving history does not present a
+    superseded, withdrawn, retired, or otherwise non-current object as current.
   </p>
 
   <div class="note">
@@ -358,14 +357,25 @@ h1{
 
 <article class="card">
 
-  <h2>Advanced Architecture Required</h2>
+  <h2>Established Correction Architecture</h2>
 
   <p>
-    The exact correction model remains to be established. Advanced Attestor
-    architecture should determine correction triggers, lifecycle states, versioning,
-    supersession relationships, withdrawal treatment, authorization, validation,
-    publication behavior, and how corrected or superseded Trust Statements are
-    represented.
+    Advanced Architecture now governs correction through Lifecycle, Versioning,
+    Relationships, Provenance, Validation, and Publication. Correction is an
+    activity rather than a lifecycle state or separate canonical object class.
+  </p>
+
+  <div class="note">
+    Correction explains why governed change occurs.<br>
+    Versioning determines how canonical identity behaves across that change.<br>
+    <strong>Correction ≠ Version</strong>
+  </div>
+
+  <p style="margin-top:16px;">
+    A materially changed Attestation assertion requires a new
+    <strong>ATT-YYYY-NNNN</strong>. A materially changed Trust Statement conclusion
+    requires a new <strong>TRST-YYYY-NNNN</strong>. A bounded correction may preserve
+    canonical identity when essential institutional meaning remains intact.
   </p>
 
   <a class="btn" href="/attestor/">
