@@ -183,7 +183,8 @@ and the current state of Attestor architecture.
 <h2>What is Attestor?</h2>
 <p>
 Attestor is the Satoshium Suite institution responsible for producing governed,
-attributable, bounded Trust Statements through evaluation of eligible inputs.
+attributable, bounded Trust Statements through Rule-Constrained Evaluation of
+Attestations against eligible governed inputs.
 It preserves the scope, provenance, limitations, relationships, and authority
 boundaries necessary to make those conclusions reviewable.
 </p>
@@ -193,7 +194,8 @@ boundaries necessary to make those conclusions reviewable.
 <h2>What is a Trust Statement?</h2>
 <p>
 A Trust Statement is Attestor's canonical output: a governed, attributable,
-bounded conclusion produced through Attestor evaluation. It should preserve
+bounded conclusion produced through Rule-Constrained Evaluation of an Attestation
+against eligible governed inputs. It should preserve
 the basis and limits of its conclusion without replacing the authority of the
 objects it references.
 </p>
@@ -304,49 +306,95 @@ eligible reference participates in its own evaluation and Trust Statement.
 <article class="card">
 <h2>Can Attestor-owned information be corrected?</h2>
 <p>
-Yes. Attestor requires governed mechanisms for addressing errors, clarifications,
-withdrawals, supersession, and other changes affecting its own Attestations and
-Trust Statements while preserving provenance and historical traceability. The
-exact lifecycle mechanics remain advanced architecture.
+Yes. Attestor governs changes affecting its own Attestations and Trust Statements
+through Correction, Lifecycle, and Versioning architecture while preserving prior
+state, provenance, and historical traceability. Review and correction are activities,
+not lifecycle states. A materially changed assertion or conclusion requires a new
+canonical object.
 </p>
 </article>
 
 <article class="card">
 <h2>Does Attestor maintain a reputation system or trust score?</h2>
 <p>
-Not under the current foundational architecture. Reputation is not established
-as an Attestor canonical object, and Attestor does not presently define an
-automatic trust score. Its canonical output is the bounded Trust Statement.
+No. Reputation is not an Attestor canonical object, and Attestor does not
+establish a generic reputation framework, reputation score, confidence percentage,
+or universal trust score. Its canonical output is the bounded Trust Statement.
 </p>
 </article>
 
 <article class="card">
 <h2>Are Trust Statements automatically public?</h2>
 <p>
-Not yet determined. Traceability is foundational, but publication eligibility,
-visibility, publication states, Registry relationships, Beacon discovery
-relationships, and Anchor relationships remain matters for advanced architecture.
+No. Canonical creation does not automatically authorize publication. Attestor
+separately governs Publication State as <strong>unpublished</strong> or
+<strong>published</strong>. Publication requires a governed publication decision;
+technical accessibility alone does not establish Published state.
 </p>
 </article>
 
 <article class="card">
 <h2>Is Attestor operational?</h2>
 <p>
-Not yet. Attestor is completing foundational reconciliation. Advanced schemas,
-controlled values, evaluation rules, lifecycle architecture, validation,
-conformance, and a governed first production Trust Statement remain ahead.
+Not yet. Foundational reconciliation and Advanced Architecture are complete.
+Attestor is now in Implementation &amp; Validation. Executable validation,
+conformance mechanics, production alignment, the Production Readiness Gate, and
+the first real governed Trust Statement operation remain before operational proof
+can be claimed.
 </p>
 </article>
 
 <article class="card">
 <h2>What remains to be designed?</h2>
 <p>
-Advanced Attestor architecture still needs to establish identifiers, schemas,
-controlled values, Attestation Types, subject and authority models, scope fields,
-evidence eligibility, evaluation and sufficiency rules, uncertainty representation,
-lifecycle states, validation behavior, publication rules, conformance tests,
-reference vectors, and production procedures.
+The institutional architecture is established. Remaining work is implementation
+and proof: executable validation rules and Validation Result vocabulary,
+conformance mechanics and Conformance Result vocabulary, production-specific
+alignment, the Production Readiness Gate, the first real governed Trust Statement
+operation, preserved production evidence, and post-operation review.
 </p>
+</article>
+
+<article class="card">
+<h2>What identifiers does Attestor use?</h2>
+<p>
+Canonical Attestations use <strong>ATT-YYYY-NNNN</strong>. Canonical Trust
+Statements use <strong>TRST-YYYY-NNNN</strong>. Canonical identity answers which
+governed object; version identity answers which governed state of that object.
+</p>
+</article>
+
+<article class="card">
+<h2>What Evaluation Outcomes can Attestor record?</h2>
+<p>
+The adopted Evaluation Outcomes are <strong>supported</strong>,
+<strong>partially-supported</strong>, <strong>not-supported</strong>,
+<strong>contradicted</strong>, and <strong>indeterminate</strong>. An Evaluation
+Outcome is not itself the bounded conclusion or the identity of a Trust Statement.
+</p>
+</article>
+
+<article class="card">
+<h2>What lifecycle states does Attestor use?</h2>
+<p>
+The adopted Lifecycle States are <strong>draft</strong>, <strong>active</strong>,
+<strong>superseded</strong>, <strong>withdrawn</strong>, and
+<strong>retired</strong>. Review and correction are governed activities rather
+than lifecycle states.
+</p>
+</article>
+
+<article class="card">
+<h2>Are Validation, Evaluation, and Conformance the same thing?</h2>
+<p>
+No. Evaluation determines a substantive Evaluation Outcome and supports formation
+of a bounded conclusion. Validation determines whether an Attestor object satisfies
+applicable normative requirements. Conformance determines whether a declared target
+satisfies an applicable requirements set using required validation and evidence.
+</p>
+<div class="note">
+Validation ≠ Evaluation · Validation ≠ Conformance · Valid ≠ Published
+</div>
 </article>
 
 <section>
@@ -362,7 +410,7 @@ Statements whose basis, scope, limitations, provenance, and authority remain vis
 </p>
 
 <div class="note">
-Governed Inputs → Attestation → Evaluation → Trust Statement
+Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement
 </div>
 
 <a class="btn" href="/attestor/">
