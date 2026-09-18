@@ -6,7 +6,7 @@
 
 ## Purpose
 
-This directory contains the public landing page for **Satoshium Attestor**, the Satoshium Suite institution responsible for producing structured, attributable, evidence-linked **Trust Statements**.
+This directory contains the public landing page for **Satoshium Attestor**, the Satoshium Suite institution responsible for producing governed, attributable, bounded **Trust Statements** through Rule-Constrained Evaluation of eligible governed inputs.
 
 The landing page establishes Attestor's institutional identity, canonical responsibility, authority boundary, foundational documentation, Suite relationships, and current development posture.
 
@@ -14,7 +14,7 @@ The landing page establishes Attestor's institutional identity, canonical respon
 
 **Attestor → Trust Statement**
 
-A Trust Statement is Attestor's canonical institutional output. It is a scoped and attributable statement supported by governed inputs and preserved provenance.
+A Trust Statement is Attestor's canonical institutional output: a governed, attributable, bounded conclusion produced through Rule-Constrained Evaluation of eligible governed inputs.
 
 Attestor may reference authoritative objects produced elsewhere in the Satoshium Suite, but reference does not transfer authority.
 
@@ -46,7 +46,7 @@ The landing page expresses the working Attestor sequence as:
 
 `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-The detailed eligibility, validation, lifecycle, status, versioning, correction, and production rules are expected to be defined through Attestor's foundational and advanced architecture pages.
+The detailed Eligibility, Evaluation, Lifecycle, Versioning, Validation, Conformance, Publication, Methodology, and Production architecture is established through Attestor's dedicated pages. Exact executable validation, conformance mechanics, production alignment, and operational proof remain implementation and production work.
 
 ## Foundational Documentation
 
@@ -73,9 +73,29 @@ The landing page links to the current foundational Attestor documentation:
 - Schemas
 - Templates
 
-These pages are being reconciled from the pre-Suite Attestor material to the current Satoshium Suite architecture before advanced Attestor architecture, validation/conformance, and production proof are completed.
+These foundational pages have been reconciled to the current Satoshium Suite and Attestor architecture.
 
-The landing page now also surfaces previously unlinked foundational areas that already exist in the repository: `/attestor/principles/`, `/attestor/records/`, `/attestor/schemas/`, and `/attestor/templates/`. Their inclusion makes the public landing page more accurately reflect the Attestor foundation already present.
+The landing page also surfaces `/attestor/principles/`, `/attestor/records/`, `/attestor/schemas/`, and `/attestor/templates/` so the public institutional map reflects the complete governed foundation.
+
+## Advanced Architecture
+
+The landing page exposes the established Advanced Architecture:
+
+- Entry Model
+- Identifiers
+- Controlled Values
+- Authority
+- Provenance
+- Eligibility
+- Evaluation
+- Relationships
+- Lifecycle
+- Versioning
+- Validation
+- Conformance
+- Publication
+- Methodology
+- Production
 
 ## Suite References
 
@@ -106,9 +126,13 @@ The revision also:
 
 ## Current Development Posture
 
-This page represents the **foundational reconciliation stage** for Attestor.
+Attestor is in **Implementation & Validation**.
 
-Advanced architecture and production proof should follow only after the foundational Attestor pages have been reconciled and reviewed together.
+Foundational reconciliation and Advanced Architecture are complete. The remaining institutional path is:
+
+`Executable Validation → Conformance Mechanics → Production Alignment → Production Readiness Gate → First Production Operation → Post-Operation Review → Operational Proof`
+
+The landing page must not imply that foundational reconciliation or Advanced Architecture remains pending.
 
 ## Files
 
