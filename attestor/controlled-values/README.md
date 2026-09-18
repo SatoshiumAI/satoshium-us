@@ -22,7 +22,7 @@ A controlled value classifies meaning within a defined Attestor context. It does
 - `relationship-condition`
 - `correction-supersession`
 
-These establish initial normative families. Exact profile requirements and applicability remain governed by later schema, relationship, and lifecycle architecture.
+These are the established Attestation Type families. Exact profile requirements and applicability are governed by the applicable Schemas / Profiles and related Attestor architecture.
 
 ### Lifecycle State
 
@@ -107,14 +107,14 @@ The canonical Attestor output remains the **Trust Statement**.
 
 ## Reserved Vocabularies
 
-The final controlled result vocabularies for **Validation** and **Conformance** are deliberately not established here. They will be adopted only after those governing architectures define their normative meaning.
+The exact executable result vocabularies for **Validation** and **Conformance** are deliberately not established here. Their governing architectures are established; result vocabularies remain reserved until implementation can define stable machine outcomes consistent with those architectures.
 
-Likewise:
+Related normative responsibility is already assigned:
 
-- schema constraints → Schemas;
+- schema constraints → Schemas / Profiles;
 - transition rules → Lifecycle;
-- relationship directionality/cardinality → Relationships;
-- detailed evaluation conditions → Evaluation.
+- relationship behavior → Relationships;
+- evaluation conditions → Evaluation.
 
 ## Extensibility
 
@@ -138,6 +138,6 @@ Attestor Controlled Values govern Attestor meaning only. Source-institution voca
 
 **Controlled Values → Established**
 
-Initial normative vocabularies are established for Attestation Types, lifecycle, publication, evaluation outcomes, relationships, provenance modes, and authority contexts.
+Normative vocabularies are established for Attestation Types, lifecycle, publication, evaluation outcomes, relationships, provenance modes, and authority contexts.
 
-Confidence/reputation scoring is not adopted. Validation and Conformance result vocabularies remain deferred to their governing architecture.
+Confidence/reputation scoring is not adopted. Validation and Conformance result vocabularies remain reserved for implementation.
