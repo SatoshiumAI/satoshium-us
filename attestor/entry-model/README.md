@@ -9,7 +9,7 @@
 
 The Entry Model defines the complete conceptual structure of an Attestation and a Trust Statement and establishes the governed relationship between them.
 
-It is the first dependency in Attestor Advanced Architecture. It defines the conceptual object boundary before identifiers, controlled values, schemas, lifecycle rules, validation, conformance, publication, or production behavior are finalized.
+It is the first dependency in Attestor Advanced Architecture. It defines the conceptual object boundary that the established Identifiers, Controlled Values, Authority, Provenance, Eligibility, Evaluation, Relationships, Lifecycle, Versioning, Schemas, Validation, Conformance, Publication, Methodology, and Production architecture subsequently formalizes.
 
 ## Governing Relationship
 
@@ -80,11 +80,29 @@ An Attestation is not automatically a Trust Statement, and evidence or authorita
 - Beacon → Discovery Signal / Discovery Metadata
 - Attestor → Trust Statement
 
-## What This Page Does Not Yet Establish
+## Entry Model Boundary
 
-The Entry Model does not yet establish exact identifier syntax, normative machine field names, required/optional cardinality, final controlled values, final Attestation Types, lifecycle states, versioning rules, validation rules, conformance requirements, publication states, or serialization formats.
+The Entry Model establishes conceptual object structure. It does not duplicate the normative detail governed by Attestor's dedicated architecture.
 
-Those are resolved through the remaining Advanced Architecture pages.
+The following are established by their respective architecture pages:
+
+- canonical identifier architecture;
+- controlled vocabularies;
+- formal Attestation Types;
+- Authority;
+- Provenance;
+- Eligibility;
+- Evaluation;
+- Relationships;
+- Lifecycle;
+- Versioning;
+- Validation;
+- Conformance;
+- Publication;
+- Methodology;
+- Production.
+
+Schemas and profiles govern machine structure. Exact executable serialization and implementation-specific machine mechanics remain implementation work.
 
 ## Dependency Position
 
@@ -94,4 +112,4 @@ Those are resolved through the remaining Advanced Architecture pages.
 
 **Entry Model → Established**
 
-The conceptual distinction and relationship between Attestation and Trust Statement are established. Normative machine architecture and production proof remain pending.
+The conceptual distinction and relationship between Attestation and Trust Statement are established and are formalized by the completed Advanced Architecture. Exact executable serialization and production proof remain pending.
