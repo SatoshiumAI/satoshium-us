@@ -1,0 +1,89 @@
+{
+  "validator_version": "0.2",
+  "cases": [
+    {
+      "fixture": "valid-attestation.yaml",
+      "report": "valid-attestation-report.json",
+      "purpose": "Positive ATT with registry context",
+      "expected": "valid",
+      "actual": "valid",
+      "passed": true,
+      "summary": {
+        "passed": 27,
+        "failed": 0,
+        "not_applicable": 1,
+        "not_tested": 6
+      }
+    },
+    {
+      "fixture": "valid-trust-statement.yaml",
+      "report": "valid-trust-statement-report.json",
+      "purpose": "Positive TRST with registry context",
+      "expected": "valid",
+      "actual": "valid",
+      "passed": true,
+      "summary": {
+        "passed": 40,
+        "failed": 0,
+        "not_applicable": 0,
+        "not_tested": 9
+      }
+    },
+    {
+      "fixture": "invalid-attestation.yaml",
+      "report": "invalid-attestation-report.json",
+      "purpose": "Bad identifier + prohibited lifecycle state",
+      "expected": "invalid",
+      "actual": "invalid",
+      "passed": true,
+      "summary": {
+        "passed": 22,
+        "failed": 5,
+        "not_applicable": 1,
+        "not_tested": 6
+      }
+    },
+    {
+      "fixture": "invalid-trust-statement.yaml",
+      "report": "invalid-trust-statement-report.json",
+      "purpose": "Bad authority context/outcome/provenance",
+      "expected": "invalid",
+      "actual": "invalid",
+      "passed": true,
+      "summary": {
+        "passed": 36,
+        "failed": 4,
+        "not_applicable": 0,
+        "not_tested": 9
+      }
+    },
+    {
+      "fixture": "incomplete-attestation.yaml",
+      "report": "incomplete-attestation-report.json",
+      "purpose": "Valid ATT without required registry context",
+      "expected": "incomplete",
+      "actual": "incomplete",
+      "passed": true,
+      "summary": {
+        "passed": 26,
+        "failed": 0,
+        "not_applicable": 1,
+        "not_tested": 7
+      }
+    },
+    {
+      "fixture": "error-object.yaml",
+      "report": "error-object-report.json",
+      "purpose": "Root representation is not an object",
+      "expected": "error",
+      "actual": "error",
+      "passed": true,
+      "summary": {
+        "passed": 0,
+        "failed": 0,
+        "not_applicable": 0,
+        "not_tested": 0
+      }
+    }
+  ]
+}

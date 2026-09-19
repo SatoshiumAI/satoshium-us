@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://satoshium.us/attestor/validation/schemas/trust-statement.schema.json",
+  "title": "Satoshium Attestor \u2014 Base Trust Statement",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trust_statement_identifier",
+    "lifecycle_state",
+    "publication_state",
+    "subject",
+    "bounded_conclusion",
+    "scope",
+    "attestor_attribution",
+    "supporting_attestations",
+    "evaluation",
+    "provenance",
+    "created_at",
+    "updated_at",
+    "version_identity"
+  ],
+  "properties": {
+    "trust_statement_identifier": {
+      "type": "string",
+      "pattern": "^TRST-[0-9]{4}-[0-9]{4}$"
+    },
+    "lifecycle_state": {
+      "enum": [
+        "draft",
+        "active",
+        "superseded",
+        "withdrawn",
+        "retired"
+      ]
+    },
+    "publication_state": {
+      "enum": [
+        "unpublished",
+        "published"
+      ]
+    },
+    "subject": {
+      "$ref": "#/$defs/subject"
+    },
+    "bounded_conclusion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "minProperties": 1
+        }
+      ]
+    },
+    "attestor_attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "authority_context"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_context": {
+          "const": "Attestor"
+        }
+      }
+    },
+    "supporting_attestations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^ATT-[0-9]{4}-[0-9]{4}$"
+      }
+    },
+    "evaluation": {
+      "$ref": "#/$defs/evaluation"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version_identity": {
+      "type": "string",
+      "pattern": "^V[0-9]+\\.[0-9]+$"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "type"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "target_identifier"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "supports",
+            "references",
+            "derived-from",
+            "evaluates",
+            "results-in",
+            "supersedes",
+            "corrects",
+            "related-to"
+          ]
+        },
+        "target_identifier": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome",
+        "basis_references",
+        "applicable_rules",
+        "material_conflicts",
+        "material_exclusions"
+      ],
+      "properties": {
+        "outcome": {
+          "enum": [
+            "supported",
+            "partially-supported",
+            "not-supported",
+            "contradicted",
+            "indeterminate"
+          ]
+        },
+        "basis_references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {}
+        },
+        "applicable_rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "relevant_time_or_state": {},
+        "material_conflicts": {
+          "type": "array",
+          "items": {}
+        },
+        "material_exclusions": {
+          "type": "array",
+          "items": {}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "source_or_origin",
+        "derivation_basis"
+      ],
+      "properties": {
+        "mode": {
+          "const": "derived"
+        },
+        "source_or_origin": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "object",
+              "minProperties": 1
+            }
+          ]
+        },
+        "derivation_basis": {
+          "not": {
+            "type": "null"
+          }
+        },
+        "relevant_time_or_state": {},
+        "material_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

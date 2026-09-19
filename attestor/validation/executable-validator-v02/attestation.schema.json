@@ -1,0 +1,279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://satoshium.us/attestor/validation/schemas/attestation.schema.json",
+  "title": "Satoshium Attestor \u2014 Base Attestation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "attestation_identifier",
+    "attestation_type",
+    "lifecycle_state",
+    "publication_state",
+    "attesting_authority",
+    "subject",
+    "assertion",
+    "scope",
+    "provenance",
+    "created_at",
+    "updated_at",
+    "version_identity"
+  ],
+  "properties": {
+    "attestation_identifier": {
+      "type": "string",
+      "pattern": "^ATT-[0-9]{4}-[0-9]{4}$"
+    },
+    "attestation_type": {
+      "enum": [
+        "identity",
+        "evidence",
+        "source-provenance",
+        "verification-related",
+        "relationship-condition",
+        "correction-supersession"
+      ]
+    },
+    "lifecycle_state": {
+      "enum": [
+        "draft",
+        "active",
+        "superseded",
+        "withdrawn",
+        "retired"
+      ]
+    },
+    "publication_state": {
+      "enum": [
+        "unpublished",
+        "published"
+      ]
+    },
+    "attesting_authority": {
+      "$ref": "#/$defs/authority"
+    },
+    "subject": {
+      "$ref": "#/$defs/subject"
+    },
+    "assertion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "minProperties": 1
+        }
+      ]
+    },
+    "evidence_references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      }
+    },
+    "source_references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      }
+    },
+    "governed_references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      }
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version_identity": {
+      "type": "string",
+      "pattern": "^V[0-9]+\\.[0-9]+$"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "authority_context"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_context": {
+          "enum": [
+            "Attestor",
+            "Suite-source",
+            "external-source"
+          ]
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "type"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "identifier",
+        "source"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "target_identifier"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "supports",
+            "references",
+            "derived-from",
+            "evaluates",
+            "results-in",
+            "supersedes",
+            "corrects",
+            "related-to"
+          ]
+        },
+        "target_identifier": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "source_or_origin"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "direct",
+            "referenced",
+            "derived"
+          ]
+        },
+        "source_or_origin": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "object",
+              "minProperties": 1
+            }
+          ]
+        },
+        "relevant_time_or_state": {},
+        "derivation_basis": {},
+        "material_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "derived"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "required": [
+              "derivation_basis"
+            ],
+            "properties": {
+              "derivation_basis": {
+                "not": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
