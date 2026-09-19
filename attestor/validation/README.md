@@ -167,6 +167,37 @@ The Machine Contract v0.1 establishes the initial implementation choices for:
 
 These are implementation specifications subordinate to established Attestor architecture. They do not redefine institutional meaning.
 
+## Executable Validator v0.1
+
+The first executable implementation is maintained separately from the durable Validation specifications:
+
+`/attestor/validation/executable-validator-v01/`
+
+It contains:
+
+- `README.md` — implementation notes, runtime boundary, and current test status;
+- `attestation.schema.json` — executable JSON Schema representation of `attestor.attestation.base`;
+- `trust-statement.schema.json` — executable JSON Schema representation of `attestor.trust-statement.base`;
+- `attestor_validator.py` — validator implementation v0.1;
+- `valid-attestation.yaml` — non-production positive ATT fixture;
+- `valid-trust-statement.yaml` — non-production positive TRST fixture;
+- `invalid-attestation.yaml` — deliberate negative ATT fixture;
+- `attestation-validation-report.json` — successful ATT fixture validation report;
+- `trust-statement-validation-report.json` — successful TRST fixture validation report; and
+- `invalid-attestation-validation-report.json` — negative ATT validation report demonstrating failure detection.
+
+Initial execution established:
+
+- positive ATT fixture → `valid`;
+- positive TRST fixture → `valid`; and
+- deliberate invalid ATT fixture → `invalid`, with the intended identifier-family and lifecycle-state failures detected.
+
+These results establish **implementation proof only**.
+
+They are not canonical production objects, do not constitute the first Attestor production operation, and do not establish production proof or production readiness by themselves.
+
+The versioned implementation directory is intentionally subordinate to the stable specifications in `/attestor/validation/`.
+
 ## What Validation Does Not Establish
 
 `Valid ≠ True`
@@ -191,7 +222,9 @@ Architectural dependency remains:
 
 The conceptual Validation architecture is established. The canonical base Attestation and Trust Statement schemas now support the first machine contract and numbered validation-rule implementation.
 
-Executable schema artifacts, validator software, validation fixtures, and production validation evidence remain implementation work.
+Executable schema artifacts, validator software, and initial validation fixtures now exist in `executable-validator-v01/`.
+
+Rule-coverage reconciliation, broader negative/boundary testing, representative-object validation, and production validation evidence remain implementation work.
 
 ## Status
 
@@ -213,8 +246,13 @@ Executable schema artifacts, validator software, validation fixtures, and produc
 - ATT/TRST Machine Contract v0.1 → established
 - Validation Result vocabulary → established for initial implementation
 - Validation Report contract → established for initial implementation
-- executable ATT/TRST schema artifacts → next
-- validator implementation → next
-- positive/negative validation fixtures → pending
+- executable ATT/TRST schema artifacts → created in `executable-validator-v01/`
+- validator implementation v0.1 → created
+- positive ATT fixture → executed; `valid`
+- positive TRST fixture → executed; `valid`
+- deliberate invalid ATT fixture → executed; `invalid` as intended
+- initial Validation Report generation → demonstrated
+- complete `VAL-*` rule-coverage reconciliation → next
+- broader negative/boundary validation fixtures → next
 - representative ATT/TRST validation → pending
 - production validation → pending
