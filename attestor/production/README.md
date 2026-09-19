@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/production/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Architecture Stage:** Implementation & Validation — Production Readiness  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -44,7 +44,49 @@ As applicable:
 - production templates/forms; and
 - Methodology.
 
+Production Readiness preparation and the formal Gate record are maintained under:
+
+`/attestor/production/readiness/`
+
+The readiness area preserves:
+
+- the durable Production Readiness Gate Preparation record;
+- the versioned Gate Preparation instrument;
+- the Gate Preparation assessment; and
+- the formal Production Readiness Gate artifacts when created.
+
+Production Readiness Gate Preparation is complete. The formal Production Readiness Gate is ready for evaluation but has not yet been decided.
+
+`Gate Preparation Complete → Formal Gate Evaluation → PASS / NOT PASS`
+
 `Readiness Gate → PASS before controlled production execution`
+
+A Gate Preparation result does not allocate, reserve, or create a production Attestation or Trust Statement.
+
+## Production Repository Structure
+
+The production area separates durable production architecture from readiness and Gate records.
+
+```text
+/attestor/production/
+├── index.html
+├── README.md
+├── attestor-production-alignment.md
+├── production-alignment-checklist-v0.1.json
+└── readiness/
+    ├── README.md
+    ├── attestor-production-readiness-gate-preparation.md
+    ├── production-readiness-gate-preparation-v0.1.json
+    └── production-readiness-gate-preparation-assessment.json
+```
+
+Reusable production-support artifacts belong under `/attestor/templates/`, including the Production Run Manifest, Eligibility Record, Evaluation Basis, Evaluation Record, Production Execution Context, Lifecycle Event Record, and Publication Decision Record structures.
+
+`Production → governs execution`
+
+`Production / Readiness → governs readiness and Gate evidence`
+
+`Templates → reusable controlled structures instantiated by production`
 
 ## Selecting the First Production Matter
 
@@ -111,7 +153,7 @@ It should exercise core Attestor architecture without artificially maximizing co
 
 Operational proof should preserve:
 
-- readiness decision;
+- readiness preparation and formal Gate decision;
 - production matter/scope;
 - canonical identifiers;
 - Attestation;
@@ -248,7 +290,14 @@ Production establishes controlled institutional execution and reviewable proof.
 
 **Production Architecture → Established**
 
-- production readiness gate → established
+- Production Alignment v0.1 → established
+- executable Validation → demonstrated
+- executable Conformance → demonstrated
+- production readiness gate architecture → established
+- Production Readiness Gate Preparation → complete
+- identified pre-gate artifact blockers → closed
+- formal Production Readiness Gate → ready for evaluation, not yet decided
+- production-support templates/contracts → prepared
 - first-case selection principles → established
 - canonical production object chain → established
 - controlled execution sequence → established
@@ -257,5 +306,9 @@ Production establishes controlled institutional execution and reviewable proof.
 - failure/correction/re-run path → established
 - post-operation institutional review → required
 - operational status threshold → established
+- `ATT-2026-0001` → unallocated
+- `TRST-2026-0001` → unallocated
 - **first real Attestor production operation → not yet performed**
 - **operational proof → pending**
+
+No production identifier is allocated before a formal Production Readiness Gate `PASS`.
