@@ -1,0 +1,135 @@
+{
+  "validation_report": {
+    "report_version": "V1.0",
+    "target_identifier": "ATT-2026-0001",
+    "target_profile": "attestor.attestation.base",
+    "target_version": "V1.0",
+    "requirements_set": "Satoshium Attestor Executable Validation Requirements",
+    "requirements_version": "0.1",
+    "validator_identifier": "satoshium-attestor-validator",
+    "validator_version": "0.1",
+    "run_at": "2026-09-19T01:16:11.854061+00:00",
+    "aggregate_result": "valid",
+    "results": [
+      {
+        "rule_id": "VAL-STR-001",
+        "layer": "structure",
+        "result": "pass",
+        "location": "attestation_identifier",
+        "message": "Valid ATT identifier."
+      },
+      {
+        "rule_id": "VAL-SEM-001",
+        "layer": "controlled-semantics",
+        "result": "pass",
+        "location": "attestation_type",
+        "message": "Controlled Attestation Type."
+      },
+      {
+        "rule_id": "VAL-ATT-002",
+        "layer": "authority",
+        "result": "pass",
+        "location": "attesting_authority.identifier",
+        "message": "Attesting Authority identified."
+      },
+      {
+        "rule_id": "VAL-PA-006",
+        "layer": "authority",
+        "result": "pass",
+        "location": "attesting_authority.authority_context",
+        "message": "Controlled authority context."
+      },
+      {
+        "rule_id": "VAL-ATT-SUBJECT-001",
+        "layer": "structure",
+        "result": "pass",
+        "location": "subject",
+        "message": "Subject identifier and type required."
+      },
+      {
+        "rule_id": "VAL-ATT-ASSERT-001",
+        "layer": "structure",
+        "result": "pass",
+        "location": "assertion",
+        "message": "Assertion present."
+      },
+      {
+        "rule_id": "VAL-ATT-004",
+        "layer": "structure",
+        "result": "pass",
+        "location": "scope",
+        "message": "Scope present."
+      },
+      {
+        "rule_id": "VAL-SEM-005",
+        "layer": "provenance-authority",
+        "result": "pass",
+        "location": "provenance.mode",
+        "message": "Controlled provenance mode."
+      },
+      {
+        "rule_id": "VAL-ATT-005",
+        "layer": "provenance-authority",
+        "result": "pass",
+        "location": "provenance.source_or_origin",
+        "message": "Provenance source/origin present."
+      },
+      {
+        "rule_id": "VAL-SEM-002",
+        "layer": "controlled-semantics",
+        "result": "pass",
+        "location": "lifecycle_state",
+        "message": "Lifecycle state is controlled."
+      },
+      {
+        "rule_id": "VAL-SEM-003",
+        "layer": "controlled-semantics",
+        "result": "pass",
+        "location": "publication_state",
+        "message": "Publication state is controlled."
+      },
+      {
+        "rule_id": "VAL-LV-011",
+        "layer": "lifecycle-versioning",
+        "result": "pass",
+        "location": "version_identity",
+        "message": "Version identity matches initial implementation profile."
+      },
+      {
+        "rule_id": "VAL-STR-TIME-001",
+        "layer": "structure",
+        "result": "pass",
+        "location": "created_at",
+        "message": "Valid RFC 3339 timestamp."
+      },
+      {
+        "rule_id": "VAL-STR-TIME-002",
+        "layer": "structure",
+        "result": "pass",
+        "location": "updated_at",
+        "message": "Valid RFC 3339 timestamp."
+      },
+      {
+        "rule_id": "VAL-STR-TIME-003",
+        "layer": "structure",
+        "result": "pass",
+        "location": "updated_at",
+        "message": "updated_at does not precede created_at."
+      },
+      {
+        "rule_id": "VAL-ATT-001",
+        "layer": "structure",
+        "result": "pass",
+        "location": "trust_statement_identifier",
+        "message": "ATT/TRST identity remains distinct."
+      }
+    ],
+    "summary": {
+      "passed": 16,
+      "failed": 0,
+      "not_applicable": 0,
+      "not_tested": 0
+    },
+    "notes": []
+  }
+}
