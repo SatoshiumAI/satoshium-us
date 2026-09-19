@@ -55,7 +55,7 @@ The adopted Trust Statement schema preserves, as applicable:
 - limitations;
 - uncertainty.
 
-Exact production serialization and executable validation remain governed by the implementation layer.
+Canonical machine-readable serialization, executable validation, governed review, conformance evaluation, lifecycle control, and publication have been exercised in production.
 
 ## Evaluation Outcomes
 Adopted values:
@@ -137,14 +137,14 @@ Conceptual validation model:
 
 > **Valid ≠ Published**
 
-Executable validation rules and final Validation Result vocabulary remain implementation work.
+Executable validation is implemented and has been exercised against the first production Trust Statement. Validation remains distinct from Evaluation, lifecycle state, publication state, and source authority.
 
 ## Conformance
 Validation supports conformance, but does not equal it.
 
 > **Validation ≠ Conformance**
 
-Conformance mechanics, tests, and final result vocabulary remain implementation work.
+Conformance mechanics have been exercised in production. `TRST-2026-0001` completed applicable production Conformance with a conformant determination.
 
 ## Relationship to the Suite
 - **Atlas → Authoritative Intelligence**
@@ -172,19 +172,26 @@ A Trust Statement is not:
 
 It is authoritative as an Attestor conclusion within its defined scope.
 
+## Published Trust Statements
+### TRST-2026-0001
+**Active · Published · V1.0**
+
+First canonical production Trust Statement of Satoshium Attestor.
+
+Supporting Attestation: `ATT-2026-0001`
+
+Evaluation Outcome: `supported`
+
+Canonical public record:
+
+`/attestor/trust-statements/TRST-2026-0001/`
+
 ## Current Status
-**Trust Statement Architecture → Advanced Architecture established.**
+**Trust Statements → Operational production capability demonstrated.**
 
-The Trust Statement schema, identifier family, controlled evaluation outcomes, lifecycle, publication states, provenance model, relationships, validation architecture, conformance architecture, methodology, and production path are established.
+Satoshium Attestor has produced, validated, reviewed, conformance-tested, activated, published, and final-state revalidated its first canonical production Trust Statement.
 
-Remaining work is implementation and production proof:
-- executable validation;
-- conformance mechanics;
-- production alignment;
-- Production Readiness Gate;
-- first real governed Trust Statement operation;
-- post-operation review;
-- operational proof determination.
+The completed first controlled production operation and post-operation institutional review support Attestor's Operational status. This does not make future Trust Statements automatically valid, conformant, active, published, supported, or correct. Each future object remains independently subject to applicable Attestor governance.
 
 ## Files
 - `index.html` — public Trust Statements page.
