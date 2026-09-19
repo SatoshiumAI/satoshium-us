@@ -1,140 +1,198 @@
-# Satoshium Attestor
+# Satoshium Attestor — Trust Statements
 
 ## Page
-
-`/attestor/`
-
-## Purpose
-
-This directory contains the public landing page for **Satoshium Attestor**, the Satoshium Suite institution responsible for producing governed, attributable, bounded **Trust Statements** through Rule-Constrained Evaluation of eligible governed inputs.
-
-The landing page establishes Attestor's institutional identity, canonical responsibility, authority boundary, foundational documentation, Suite relationships, and current development posture.
+`/attestor/trust-statements/`
 
 ## Canonical Responsibility
-
 **Attestor → Trust Statement**
 
-A Trust Statement is Attestor's canonical institutional output: a governed, attributable, bounded conclusion produced through Rule-Constrained Evaluation of eligible governed inputs.
+## Definition
+A **Trust Statement** is a governed, attributable, bounded Attestor conclusion produced through Rule-Constrained Evaluation of an Attestation against eligible governed inputs.
 
-Attestor may reference authoritative objects produced elsewhere in the Satoshium Suite, but reference does not transfer authority.
-
-## Governing Principle
-
-> **Reference does not transfer authority.**
-
-Attestor does not become the authority for a certification, registered record, historical event, integrity reference, discovery signal, Atlas intelligence object, or workflow merely because that object is referenced by an attestation or Trust Statement.
-
-## Institutional Boundary
-
-Attestor is responsible for its own attestations and Trust Statements.
-
-It does **not**:
-
-- replace Certifier certification authority;
-- redefine Registry record identity or state;
-- rewrite Chronicle event history;
-- replace Anchor integrity references;
-- duplicate Beacon discovery signals or discovery metadata;
-- assume Atlas intelligence authority;
-- assume Navigator workflow authority;
-- determine universal truth;
-- convert referenced evidence into Attestor-owned source truth.
-
-## Suite Method
-
-The landing page expresses the working Attestor sequence as:
+Canonical model:
 
 `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-The detailed Eligibility, Evaluation, Lifecycle, Versioning, Validation, Conformance, Publication, Methodology, and Production architecture is established through Attestor's dedicated pages. Exact executable validation, conformance mechanics, production alignment, and operational proof remain implementation and production work.
+## Governing Principle
+> **Reference does not transfer authority.**
 
-## Foundational Documentation
+Attestor owns the Trust Statement and its bounded conclusion. Referenced institutions and external authorities retain authority over their own source objects.
 
-The landing page links to the current foundational Attestor documentation:
+## Trust Statement vs Attestation
+- **Attestation** → governed, attributable assertion.
+- **Trust Statement** → governed, attributable, bounded Attestor conclusion.
 
-- Purpose
-- Principles
-- Attestations
-- Attestation Types
-- Evidence
-- Trust Signals
-- Verification
-- Corrections
-- Definitions
-- Rules
-- Scope
-- Interoperability
-- Integration
-- Attestation Generation
-- Trust Statements
-- Status
-- FAQ
-- Records / Reference Profiles
-- Schemas
-- Templates
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
 
-These foundational pages have been reconciled to the current Satoshium Suite and Attestor architecture.
+## Canonical Identifier
+Trust Statements use:
 
-The landing page also surfaces `/attestor/principles/`, `/attestor/records/`, `/attestor/schemas/`, and `/attestor/templates/` so the public institutional map reflects the complete governed foundation.
+`TRST-YYYY-NNNN`
 
-## Advanced Architecture
+The canonical identifier answers **which governed object**. Version identity answers **which governed state of that object**.
 
-The landing page exposes the established Advanced Architecture:
+Identifiers are assigned at canonical creation and are not reused or reassigned.
 
-- Entry Model
-- Identifiers
-- Controlled Values
-- Authority
-- Provenance
-- Eligibility
-- Evaluation
-- Relationships
-- Lifecycle
-- Versioning
-- Validation
-- Conformance
-- Publication
-- Methodology
-- Production
+## Structural Architecture
+The adopted Trust Statement schema preserves, as applicable:
+- canonical identity;
+- lifecycle state;
+- publication state;
+- subject identity/context;
+- bounded conclusion;
+- scope;
+- Attestor attribution;
+- supporting Attestation reference(s);
+- Evaluation Outcome;
+- evaluation basis;
+- applicable rules/methodology;
+- relevant time/source state;
+- material conflicts and exclusions;
+- provenance;
+- relationships;
+- creation/update information;
+- version identity;
+- limitations;
+- uncertainty.
 
-## Suite References
+Canonical machine-readable serialization, executable validation, governed review, conformance evaluation, lifecycle control, and publication have been exercised in production.
 
-Attestor should remain aligned with:
+## Evaluation Outcomes
+Adopted values:
+- `supported`
+- `partially-supported`
+- `not-supported`
+- `contradicted`
+- `indeterminate`
 
-- `/suite/standards/`
-- `/suite/methodology/`
-- `/suite/interoperability/`
-- `/suite/status/`
+An Evaluation Outcome is not itself the bounded conclusion and is not the identity of the Trust Statement.
 
-Those Suite documents govern shared architectural expectations. Attestor-specific documentation governs Attestor's own canonical object, rules, lifecycle, and authority boundary.
+## Authority
+Attestor is authoritative for the Trust Statement and its bounded Attestor conclusion.
 
-## Reconciliation Notes
+Referenced authority remains with the originating source.
 
-This revision replaces the older framing of Attestor as a broad generic “trust layer” with a more precise Suite-institution model centered on **Trust Statements**.
+> **Attribution ≠ Adoption**
 
-The revision also:
+> **Authority ≠ Eligibility ≠ Evaluation Outcome**
 
-- makes the Attestor canonical output explicit;
-- introduces the Suite-wide authority principle;
-- removes language implying that Attestor broadly owns truth, records, history, discovery, or verification;
-- distinguishes Attestor trust signals from Beacon Discovery Signals;
-- reframes evidence as referenced support rather than Attestor-owned source truth;
-- clarifies correction as correction of Attestor statements;
-- adds direct links to Suite Standards, Methodology, Interoperability, and Status;
-- replaces the earlier `Certification → Attestation → Trust Statement` simplification with the broader `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement` model so Attestor is not structurally limited to Certifier inputs;
-- preserves the existing Satoshium visual shell and public navigation structure.
+## Provenance
+A Trust Statement is ordinarily a **derived** object.
 
-## Current Development Posture
+Its provenance should preserve:
+- supporting Attestations;
+- eligible governed inputs;
+- evaluation basis;
+- applicable rules;
+- relevant source state at evaluation;
+- derivation basis;
+- material limitations;
+- conflicts or exclusions.
 
-Attestor is in **Implementation & Validation**.
+## Relationships
+Adopted relationship vocabulary:
+- `supports`
+- `references`
+- `derived-from`
+- `evaluates`
+- `results-in`
+- `supersedes`
+- `corrects`
+- `related-to`
 
-Foundational reconciliation and Advanced Architecture are complete. The remaining institutional path is:
+## Lifecycle
+Adopted lifecycle states:
+- `draft`
+- `active`
+- `superseded`
+- `withdrawn`
+- `retired`
 
-`Executable Validation → Conformance Mechanics → Production Alignment → Production Readiness Gate → First Production Operation → Post-Operation Review → Operational Proof`
+Review and correction are activities, not lifecycle states.
 
-The landing page must not imply that foundational reconciliation or Advanced Architecture remains pending.
+## Publication
+Adopted publication states:
+- `unpublished`
+- `published`
+
+> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
+
+Technically accessible does not necessarily mean Published.
+
+## Versioning and Material Change
+A bounded correction may preserve canonical identity when the Trust Statement's essential institutional meaning remains intact.
+
+A materially different conclusion requires a new canonical Trust Statement and therefore a new `TRST-YYYY-NNNN`.
+
+> **A changed conclusion is a changed canonical statement.**
+
+Prior governed states remain preserved rather than silently overwritten.
+
+## Validation
+Conceptual validation model:
+
+`Trust Statement → Applicable Validation Rules → Validation Result`
+
+> **Validation ≠ Evaluation**
+
+> **Valid ≠ Published**
+
+Executable validation is implemented and has been exercised against the first production Trust Statement. Validation remains distinct from Evaluation, lifecycle state, publication state, and source authority.
+
+## Conformance
+Validation supports conformance, but does not equal it.
+
+> **Validation ≠ Conformance**
+
+Conformance mechanics have been exercised in production. `TRST-2026-0001` completed applicable production Conformance with a conformant determination.
+
+## Relationship to the Suite
+- **Atlas → Authoritative Intelligence**
+- **Navigator → Workflow Definition / Orchestration**
+- **Certifier → Certification Package**
+- **Registry → Satoshium Registry Record**
+- **Chronicle → Chronicle Entry**
+- **Anchor → Integrity Reference**
+- **Beacon → Discovery Signal / Discovery Metadata**
+- **Attestor → Trust Statement**
+
+Attestor may reference these outputs without absorbing their institutional authority.
+
+## Trust Statement Boundaries
+A Trust Statement is not:
+- a declaration of universal truth;
+- a generic reputation record;
+- a trust score;
+- a confidence percentage;
+- a certification;
+- a verification result;
+- a Beacon Discovery Signal;
+- an automatic restatement of source authority;
+- a guarantee of permanent correctness.
+
+It is authoritative as an Attestor conclusion within its defined scope.
+
+## Published Trust Statements
+### TRST-2026-0001
+**Active · Published · V1.0**
+
+First canonical production Trust Statement of Satoshium Attestor.
+
+Supporting Attestation: `ATT-2026-0001`
+
+Evaluation Outcome: `supported`
+
+Canonical public record:
+
+`/attestor/trust-statements/TRST-2026-0001/`
+
+## Current Status
+**Trust Statements → Operational production capability demonstrated.**
+
+Satoshium Attestor has produced, validated, reviewed, conformance-tested, activated, published, and final-state revalidated its first canonical production Trust Statement.
+
+The completed first controlled production operation and post-operation institutional review support Attestor's Operational status. This does not make future Trust Statements automatically valid, conformant, active, published, supported, or correct. Each future object remains independently subject to applicable Attestor governance.
 
 ## Files
-
-- `index.html` — public Attestor landing page.
-- `README.md` — repository documentation for the landing page and its institutional role.
+- `index.html` — public Trust Statements page.
+- `README.md` — repository documentation for the Trust Statements page.
