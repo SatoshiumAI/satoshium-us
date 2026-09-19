@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/validation/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Implementation & Validation  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -143,20 +143,29 @@ Conformance asks whether an object, implementation, producer, or process meets i
 
 Publication is a separate governed public-representation decision.
 
-## Deferred Machine Specification
+## Implementation Specifications
 
-This architecture intentionally does not yet freeze:
+The conceptual Validation architecture is now supplemented by implementation specifications maintained in this directory:
 
-- final required/optional fields;
-- field cardinalities;
-- regex patterns;
-- exact version syntax;
-- final validation-result vocabulary;
-- error codes;
-- executable validation sequence; or
-- validator report serialization.
+- `attestor-validation-requirements.md` — normative bridge from established Attestor architecture to executable validation requirements.
+- `attestor-validation-rules.md` — stable numbered `VAL-*` rule catalog separating deterministic machine checks, conditional checks, review-dependent requirements, and deferred implementation requirements.
+- `attestor-machine-contract.md` — initial ATT/TRST machine contract defining serialization, base field requirements, deterministic invariants, Validation Result vocabulary, report structure, and base validation profiles.
 
-Those details depend on normative Attestor Schemas and the later formal validation specification.
+The Machine Contract v0.1 establishes the initial implementation choices for:
+
+- YAML 1.2-compatible canonical validation serialization;
+- UTF-8 encoding;
+- ATT/TRST identifier expressions;
+- RFC 3339 timestamps;
+- initial `V<major>.<minor>` version representation;
+- base required and optional/conditional ATT/TRST fields;
+- reusable subject, authority, reference, relationship, and provenance structures;
+- deterministic ATT/TRST invariants;
+- per-rule Validation Results: `pass`, `fail`, `not-applicable`, `not-tested`;
+- aggregate Validation Results: `valid`, `invalid`, `incomplete`, `error`; and
+- base profiles `attestor.attestation.base` and `attestor.trust-statement.base`.
+
+These are implementation specifications subordinate to established Attestor architecture. They do not redefine institutional meaning.
 
 ## What Validation Does Not Establish
 
@@ -180,18 +189,32 @@ Architectural dependency remains:
 
 `Entry Model → Identifiers → Controlled Values → Authority → Provenance → Eligibility → Evaluation → Relationships → Lifecycle → Versioning → Schemas → Validation → Conformance → Publication → Templates → Methodology → Production`
 
-This page establishes the **conceptual Validation architecture**. Final machine validation remains dependent on advancement of the normative Schemas.
+The conceptual Validation architecture is established. The canonical base Attestation and Trust Statement schemas now support the first machine contract and numbered validation-rule implementation.
+
+Executable schema artifacts, validator software, validation fixtures, and production validation evidence remain implementation work.
 
 ## Status
 
-**Validation → Established conceptually**
+**Validation Architecture → Established**
 
-- structural validation → required
-- semantic validation → required
-- rule validation → required
-- relationship validation → required
-- lifecycle/version validation → required
+**Executable Validation → In implementation**
+
+- structural validation architecture → established
+- semantic validation architecture → established
+- rule validation architecture → established
+- relationship validation architecture → established
+- lifecycle/version validation architecture → established
 - validation vs. evaluation → distinguished
+- validation vs. eligibility → distinguished
 - validation vs. conformance → distinguished
-- machine rule set → dependent on normative Schemas
+- canonical ATT/TRST base schemas → established
+- Validation Requirements → established
+- numbered `VAL-*` Rule Catalog → established
+- ATT/TRST Machine Contract v0.1 → established
+- Validation Result vocabulary → established for initial implementation
+- Validation Report contract → established for initial implementation
+- executable ATT/TRST schema artifacts → next
+- validator implementation → next
+- positive/negative validation fixtures → pending
+- representative ATT/TRST validation → pending
 - production validation → pending
