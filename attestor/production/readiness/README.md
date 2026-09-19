@@ -1,26 +1,25 @@
-# Satoshium Attestor — Step 16: Production Readiness Gate Preparation
+# Satoshium Attestor — Production Readiness
 
-Step 16 converts Production Alignment into an evidence-backed Gate Preparation instrument and closes the concrete pre-gate artifact gaps identified during review.
+This directory preserves Production Readiness preparation and the formal Production Readiness Gate.
 
-## New pre-production artifacts
+## Preparation
 
-- `eligibility-record-template.json`
-- `evaluation-basis-template.json`
-- `evaluation-record-template.json`
-- `production-execution-context-contract.json`
-- `lifecycle-event-record-template.json`
-- `publication-decision-record-template.json`
-
-## Gate preparation artifacts
-
+- `attestor-production-readiness-gate-preparation.md`
 - `production-readiness-gate-preparation-v0.1.json`
 - `production-readiness-gate-preparation-assessment.json`
-- `attestor-production-readiness-gate-preparation.md`
 
-## Determination
+## Formal Gate
 
-**Gate Preparation: COMPLETE**
+- `attestor-production-readiness-gate.md`
+- `production-readiness-gate-decision-v1.0.json`
+- `production-readiness-gate-summary.json`
 
-**Formal Gate: READY FOR EVALUATION, NOT YET DECIDED**
+## Current Status
 
-`ATT-2026-0001` and `TRST-2026-0001` remain unallocated.
+**Production Readiness Gate → PASS**
+
+The first controlled production operation is authorized to begin.
+
+`ATT-2026-0001` and `TRST-2026-0001` remain unallocated until the corresponding canonical objects are created during the governed operation.
+
+**Operational Proof → Pending**
