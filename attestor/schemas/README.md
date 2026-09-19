@@ -20,7 +20,7 @@ Schemas implement adopted architecture. They do not independently create new can
 `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
 ## Files
-- `attestation-schema.md` — structural schema for a canonical Attestation (`ATT-YYYY-NNNN`).
+- `attestation-schema.md` — Advanced Architecture structural schema for a canonical Attestation (`ATT-YYYY-NNNN`), including authority, provenance, lifecycle, publication, relationships, versioning, and validation boundaries.
 - `trust-statement-schema.md` — structural schema for a canonical Trust Statement (`TRST-YYYY-NNNN`).
 - `evidence-attestation-schema.md` — specialized profile for the adopted `evidence` Attestation Type.
 - `source-attestation-schema.md` — specialized profile for the adopted `source-provenance` Attestation Type.
@@ -50,7 +50,7 @@ Identifier: `TRST-YYYY-NNNN`
 - `relationship-condition`
 - `correction-supersession`
 
-Evidence and Source / Provenance are formal specialized Attestation profiles.
+Evidence and Source / Provenance are adopted Attestation Types. Their existing June-era schema documents remain candidate profiles and must be reconciled to the Advanced Architecture base Attestation schema before they are used for executable validation.
 
 ## Lifecycle and Publication
 Lifecycle State:
@@ -129,7 +129,33 @@ Beacon separately owns **Discovery Signal / Discovery Metadata**.
 
 Executable validation rules and final machine serialization must remain aligned with `/attestor/validation/` and `/attestor/conformance/`.
 
+Current Validation implementation artifacts include:
+
+- `/attestor/validation/attestor-validation-requirements.md` — implementation bridge from established architecture to executable validation requirements.
+- `/attestor/validation/attestor-validation-rules.md` — numbered `VAL-*` rule catalog separating machine, conditional, review-dependent, and deferred validation requirements.
+
+The base Attestation and Trust Statement schemas now provide the canonical object contracts from which exact machine serialization and field cardinalities can be defined.
+
+## Implementation Boundary
+The following remain implementation-level decisions rather than unresolved architecture:
+
+- selected machine serialization;
+- exact required/optional field cardinalities;
+- timestamp syntax;
+- exact executable identifier expressions;
+- identifier allocation and collision mechanics;
+- canonical reference and relationship serialization;
+- Validation Result vocabulary and report serialization;
+- specialized profile deltas; and
+- production-instance requirements.
+
+These decisions must remain subordinate to the established Attestor architecture and the canonical base schemas.
+
 ## Status
 **Schema Architecture → Advanced Architecture established.**
 
-The schema layer now reflects adopted Attestor architecture. Executable machine validation, serialization details, and production-instance requirements remain governed by the corresponding implementation and production specifications.
+**Base Attestation Schema → Advanced Architecture normalized.**
+
+**Base Trust Statement Schema → Advanced Architecture established.**
+
+The schema layer now reflects the canonical ATT/TRST object model. The next implementation work is exact machine-contract definition and executable validation behavior; the Evidence and Source / Provenance candidate profiles still require reconciliation before specialized executable validation.
