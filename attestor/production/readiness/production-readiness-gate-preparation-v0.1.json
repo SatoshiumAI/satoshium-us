@@ -1,0 +1,165 @@
+{
+  "instrument": "Satoshium Attestor Production Readiness Gate Preparation",
+  "version": "0.1",
+  "gate_question": "Is Attestor sufficiently implemented, internally consistent, validated, and operationally controlled to create its first real canonical Attestation and Trust Statement?",
+  "current_gate_decision": "NOT_EVALUATED",
+  "principles": [
+    "Preparation is not the Gate decision.",
+    "Unknown is not pass.",
+    "Representative proof is not production proof.",
+    "No production ATT/TRST identifier is allocated during Gate Preparation.",
+    "A Gate item may be ready only when its required evidence artifact exists or the control is demonstrably executable before production identity allocation."
+  ],
+  "items": [
+    {
+      "id": "PRG-01",
+      "control": "Canonical ATT/TRST schemas and executable validation rules are established.",
+      "preparation_status": "READY",
+      "basis": [
+        "Steps 3-12",
+        "Representative ATT and TRST both reached VALID"
+      ],
+      "remaining_action": null
+    },
+    {
+      "id": "PRG-02",
+      "control": "Machine-testable validation and governed Review are explicitly separated.",
+      "preparation_status": "READY",
+      "basis": [
+        "Steps 11-14",
+        "Governed Review Record Contract"
+      ],
+      "remaining_action": null
+    },
+    {
+      "id": "PRG-03",
+      "control": "Conformance mechanics are executable without collapsing Validation into Conformance.",
+      "preparation_status": "READY",
+      "basis": [
+        "Steps 13-14",
+        "VALID + missing Review -> UNDETERMINED; VALID + satisfied Review -> CONFORMANT"
+      ],
+      "remaining_action": null
+    },
+    {
+      "id": "PRG-04",
+      "control": "Representative artifacts are barred from promotion/relabeling as production proof.",
+      "preparation_status": "READY",
+      "basis": [
+        "Step 15 Production Alignment"
+      ],
+      "remaining_action": null
+    },
+    {
+      "id": "PRG-05",
+      "control": "Production identifier allocation is controlled and occurs only after Gate PASS and operation start.",
+      "preparation_status": "READY_FOR_GATE",
+      "basis": [
+        "Canonical identifier architecture",
+        "Step 15 production identifier boundary"
+      ],
+      "remaining_action": "At Gate, affirm allocation procedure and that ATT-2026-0001 / TRST-2026-0001 remain unallocated."
+    },
+    {
+      "id": "PRG-06",
+      "control": "A real governed matter can be selected and bounded without pre-allocating ATT/TRST identity.",
+      "preparation_status": "READY_FOR_GATE",
+      "basis": [
+        "Production methodology and manifest model"
+      ],
+      "remaining_action": "Select the actual governed matter only after Gate PASS or as a non-allocating gate candidate, preserving source authority."
+    },
+    {
+      "id": "PRG-07",
+      "control": "Production Eligibility can be recorded separately from Validation and Evaluation.",
+      "preparation_status": "NEEDS_ARTIFACT",
+      "basis": [
+        "Eligibility architecture established"
+      ],
+      "remaining_action": "Create a production Eligibility Record template/contract before Gate evaluation."
+    },
+    {
+      "id": "PRG-08",
+      "control": "Evaluation Basis can be recorded separately and traced to eligible governed inputs.",
+      "preparation_status": "NEEDS_ARTIFACT",
+      "basis": [
+        "Evaluation architecture established"
+      ],
+      "remaining_action": "Create an Evaluation Basis template/contract before Gate evaluation."
+    },
+    {
+      "id": "PRG-09",
+      "control": "Rule-constrained Evaluation can be preserved as a governed record distinct from the resulting TRST.",
+      "preparation_status": "NEEDS_ARTIFACT",
+      "basis": [
+        "Evaluation architecture established"
+      ],
+      "remaining_action": "Create an Evaluation Record template/contract before Gate evaluation."
+    },
+    {
+      "id": "PRG-10",
+      "control": "Source state at evaluation can be preserved in production evidence.",
+      "preparation_status": "READY_FOR_GATE",
+      "basis": [
+        "Provenance architecture",
+        "Execution Context Contract"
+      ],
+      "remaining_action": "At production, bind the actual source-state evidence; Gate verifies the mechanism exists."
+    },
+    {
+      "id": "PRG-11",
+      "control": "Production execution-context assertions require attributable evidence rather than bare booleans.",
+      "preparation_status": "NEEDS_ARTIFACT",
+      "basis": [
+        "Step 15 identified this production hardening requirement"
+      ],
+      "remaining_action": "Create production execution-context evidence contract linking each asserted fact to evidence references."
+    },
+    {
+      "id": "PRG-12",
+      "control": "Lifecycle events can be recorded distinctly from object content.",
+      "preparation_status": "NEEDS_ARTIFACT",
+      "basis": [
+        "Lifecycle architecture established"
+      ],
+      "remaining_action": "Create a Lifecycle Event Record template/contract before Gate evaluation."
+    },
+    {
+      "id": "PRG-13",
+      "control": "Publication remains a separate authorized decision.",
+      "preparation_status": "NEEDS_ARTIFACT",
+      "basis": [
+        "Publication architecture established"
+      ],
+      "remaining_action": "Create a Publication Decision Record template/contract before Gate evaluation."
+    },
+    {
+      "id": "PRG-14",
+      "control": "A production operation can be reconstructed from one evidence package/manifest.",
+      "preparation_status": "READY_FOR_GATE",
+      "basis": [
+        "Step 15 Production Run Manifest Template"
+      ],
+      "remaining_action": "Gate verifies all required artifact references can be represented; actual records are populated during production."
+    },
+    {
+      "id": "PRG-15",
+      "control": "Failure/undetermined paths stop advancement rather than being treated as success.",
+      "preparation_status": "READY",
+      "basis": [
+        "Executable Validation aggregate behavior",
+        "Executable Conformance UNDETERMINED behavior"
+      ],
+      "remaining_action": null
+    },
+    {
+      "id": "PRG-16",
+      "control": "No architecture-critical unresolved implementation gap remains before first production identity allocation.",
+      "preparation_status": "BLOCKED_PENDING_PREPARATION",
+      "basis": [
+        "PRG-07, PRG-08, PRG-09, PRG-11, PRG-12, PRG-13 require concrete contracts"
+      ],
+      "remaining_action": "Complete the six pre-gate artifacts, then evaluate the formal Gate."
+    }
+  ]
+}
