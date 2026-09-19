@@ -1,0 +1,811 @@
+{
+  "validation_report": {
+    "report_version": "V1.0",
+    "target_identifier": "ATT-2026-0001",
+    "target_profile": "attestor.attestation.base",
+    "target_version": "V1.0",
+    "requirements_set": "Satoshium Attestor Executable Validation Requirements",
+    "requirements_version": "0.1",
+    "validator_identifier": "satoshium-attestor-validator",
+    "validator_version": "0.3",
+    "run_at": "2026-09-19T16:37:31.963356+00:00",
+    "aggregate_result": "invalid",
+    "results": [
+      {
+        "rule_id": "VAL-STR-001",
+        "layer": "structure",
+        "result": "pass",
+        "location": "attestation_identifier",
+        "message": "Valid ATT identifier family.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-STR-003",
+        "layer": "structure",
+        "result": "pass",
+        "location": "attestation_identifier",
+        "message": "Four-digit creation year represented.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-STR-004",
+        "layer": "structure",
+        "result": "pass",
+        "location": "attestation_identifier",
+        "message": "Four-digit sequence represented.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-STR-005",
+        "layer": "structure",
+        "result": "pass",
+        "location": "attestation_identifier",
+        "message": "Object class and identifier prefix are coherent.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-STR-006",
+        "layer": "structure",
+        "result": "not-tested",
+        "location": "attestation_identifier",
+        "message": "Authoritative identifier register not supplied; uniqueness not tested.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-SEM-001",
+        "layer": "controlled-semantics",
+        "result": "pass",
+        "location": "attestation_type",
+        "message": "Controlled Attestation Type.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-SEM-007",
+        "layer": "controlled-semantics",
+        "result": "pass",
+        "location": "$",
+        "message": "No legacy trust/confidence vocabulary used.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-ATT-002",
+        "layer": "provenance-authority",
+        "result": "pass",
+        "location": "attesting_authority.identifier",
+        "message": "Attesting Authority identifiable.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-ATT-003",
+        "layer": "provenance-authority",
+        "result": "pass",
+        "location": "attesting_authority.authority_context",
+        "message": "Authority-to-assertion context represented.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-ATT-004",
+        "layer": "structure",
+        "result": "pass",
+        "location": "scope",
+        "message": "Attestation scope preserved.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-SEM-005",
+        "layer": "controlled-semantics",
+        "result": "pass",
+        "location": "provenance.mode",
+        "message": "Controlled provenance mode.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-ATT-005",
+        "layer": "provenance-authority",
+        "result": "pass",
+        "location": "provenance.source_or_origin",
+        "message": "Attestation provenance preserved.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-PA-002",
+        "layer": "provenance-authority",
+        "result": "pass",
+        "location": "provenance.derivation_basis",
+        "message": "Derived provenance basis preserved.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-NRM-001",
+        "layer": "normative",
+        "result": "pass",
+        "location": "attesting_authority.identifier",
+        "message": "Attribution preserved.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-NRM-002",
+        "layer": "normative",
+        "result": "pass",
+        "location": "provenance",
+        "message": "Provenance preserved.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-NRM-003",
+        "layer": "normative",
+        "result": "pass",
+        "location": "scope",
+        "message": "Scope representation preserved.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-NRM-006",
+        "layer": "normative",
+        "result": "pass",
+        "location": "$",
+        "message": "Minimum machine traceability present.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-SEM-002",
+        "layer": "controlled-semantics",
+        "result": "pass",
+        "location": "lifecycle_state",
+        "message": "Controlled lifecycle state.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-SEM-003",
+        "layer": "controlled-semantics",
+        "result": "pass",
+        "location": "publication_state",
+        "message": "Controlled publication state.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-003",
+        "layer": "lifecycle-versioning",
+        "result": "pass",
+        "location": "lifecycle_state/publication_state",
+        "message": "Lifecycle and publication are separately represented.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-006",
+        "layer": "lifecycle-versioning",
+        "result": "pass",
+        "location": "lifecycle_state",
+        "message": "Non-active states remain controlled and distinct.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-007",
+        "layer": "lifecycle-versioning",
+        "result": "pass",
+        "location": "lifecycle_state",
+        "message": "Review is not represented as lifecycle state.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-008",
+        "layer": "lifecycle-versioning",
+        "result": "pass",
+        "location": "lifecycle_state",
+        "message": "Correction is not represented as lifecycle state.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-011",
+        "layer": "lifecycle-versioning",
+        "result": "pass",
+        "location": "version_identity",
+        "message": "Canonical identity/version identity are separately represented.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-013",
+        "layer": "lifecycle-versioning",
+        "result": "pass",
+        "location": "version_identity",
+        "message": "Version identity distinguishes governed revision.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "TEST-STR-STRUCTURE",
+        "layer": "structure",
+        "result": "fail",
+        "location": "created_at",
+        "message": "created_at must be RFC3339.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "TEST-STR-STRUCTURE",
+        "layer": "structure",
+        "result": "fail",
+        "location": "updated_at",
+        "message": "updated_at must be RFC3339.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "TEST-STR-STRUCTURE",
+        "layer": "structure",
+        "result": "fail",
+        "location": "updated_at",
+        "message": "updated_at must not precede created_at.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-REL-001",
+        "layer": "relationships",
+        "result": "fail",
+        "location": "relationships[0]",
+        "message": "Relationship requires controlled type and target_identifier.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-001",
+        "layer": "relationships",
+        "result": "fail",
+        "location": "relationships[1]",
+        "message": "Relationship requires controlled type and target_identifier.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-001",
+        "layer": "relationships",
+        "result": "fail",
+        "location": "relationships[2]",
+        "message": "Relationship requires controlled type and target_identifier.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-001",
+        "layer": "relationships",
+        "result": "fail",
+        "location": "relationships[3]",
+        "message": "Relationship requires controlled type and target_identifier.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-001",
+        "layer": "relationships",
+        "result": "fail",
+        "location": "relationships[4]",
+        "message": "Relationship requires controlled type and target_identifier.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-PA-007",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Whether references transfer authority requires governed review.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-PA-008",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Attestor authority boundary requires governed review.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-LV-015",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Material assertion change/new ATT identity requires governed review.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-NRM-004",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Substantive authority-boundary preservation requires governed review.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-NRM-009",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Universal-truth characterization requires governed review.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-NRM-010",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Automatic input-to-conclusion conversion requires governed review.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-REP-001",
+        "layer": "machine-context",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Parseable Representation: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REP-002",
+        "layer": "machine-context",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Declared Object Profile: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REP-003",
+        "layer": "machine-context",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Legacy Trust Signal Exclusion: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-STR-002",
+        "layer": "implementation",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Trust Statement Identifier Family: expected executable mapping was not emitted.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-STR-007",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Pre-Creation Identifier Boundary: Applicable but requires authoritative registry/history/process context.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-STR-008",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Source Identifier Preservation: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-SEM-004",
+        "layer": "implementation",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Evaluation Outcome Vocabulary: expected executable mapping was not emitted.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-SEM-006",
+        "layer": "implementation",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Relationship Vocabulary: expected executable mapping was not emitted.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-ATT-001",
+        "layer": "machine-context",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Distinct Attestation Identity: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-ATT-006",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Material Limitations Preserved: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-ATT-007",
+        "layer": "machine-context",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Attestation Is Not Trust Statement: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-001",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-002",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-003",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-004",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-005",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-006",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-007",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-008",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-009",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-010",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-011",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-012",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-013",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-014",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-TRST-015",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "Trust-Statement-specific rule does not apply to Attestation.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-PA-001",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Material Input Traceability: Applicable provenance rule; external/source-state context may be required.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-PA-003",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Evaluation Provenance: Applicable provenance rule; external/source-state context may be required.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-PA-004",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Provenance Continuity: Applicable provenance rule; external/source-state context may be required.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-PA-005",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Source-State Preservation: Applicable provenance rule; external/source-state context may be required.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-PA-006",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Authority Context Preservation: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-PA-009",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Authority Conflict Preservation: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-002",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Direction Preserved: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-003",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "No supports relationship serialized.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-004",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "No references relationship serialized.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-005",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "No derived-from relationship serialized.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-006",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "No evaluates relationship serialized.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-007",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "No results-in relationship serialized.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-008",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "No supersedes relationship serialized.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-009",
+        "layer": "catalog-coverage",
+        "result": "not-applicable",
+        "location": "$",
+        "message": "No corrects relationship serialized.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-REL-010",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Connection Does Not Merge Identity: machine-visible context accounted for; substantive portion requires governed Review.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-REL-011",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Relationship Does Not Establish Eligibility: governed Review required; not machine-adjudicated.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-REL-012",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Relationship Does Not Transfer Authority: governed Review required; not machine-adjudicated.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-LV-001",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Created Object Begins Draft: Applicable but requires authoritative registry/history/process context.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-002",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Creation / Activation Separation: Applicable but requires authoritative registry/history/process context.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-004",
+        "layer": "machine-context",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Draft Is Not Active: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-005",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Active Meaning: governed Review required; not machine-adjudicated.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-LV-009",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Review Does Not Silently Change State: Applicable but requires authoritative registry/history/process context.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-010",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Historical Identity Preservation: Applicable but requires authoritative registry/history/process context.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-012",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Same-Object Revision Preserves Canonical Identifier: Applicable but requires authoritative registry/history/process context.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-014",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "No Silent Historical Overwrite: Applicable but requires authoritative registry/history/process context.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-016",
+        "layer": "implementation",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Material Trust Statement Conclusion Requires New TRST: expected executable mapping was not emitted.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-017",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Material Successor Relationship: Applicable but requires authoritative registry/history/process context.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-LV-018",
+        "layer": "review",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Correction Reason / Versioning Decision Separation: governed Review required; not machine-adjudicated.",
+        "mandatory": false
+      },
+      {
+        "rule_id": "VAL-NRM-005",
+        "layer": "implementation",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Preserve Evidence Context: expected executable mapping was not emitted.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-NRM-007",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Preserve Governed Change: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-NRM-008",
+        "layer": "conditional",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Distinguish Current / Historical State: Applicable to base profile.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-NRM-011",
+        "layer": "implementation",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Preserve Uncertainty: expected executable mapping was not emitted.",
+        "mandatory": true
+      },
+      {
+        "rule_id": "VAL-NRM-012",
+        "layer": "implementation",
+        "result": "not-tested",
+        "location": "$",
+        "message": "Interoperate Without Authority Transfer: expected executable mapping was not emitted.",
+        "mandatory": true
+      }
+    ],
+    "summary": {
+      "passed": 24,
+      "failed": 8,
+      "not_applicable": 22,
+      "not_tested": 44
+    },
+    "notes": [
+      "All 91 canonical VAL-* rules are explicitly accounted for by the v0.3 coverage layer.",
+      "Review-dependent rules are never silently machine-passed.",
+      "Context-dependent machine rules remain not-tested when authoritative context is absent."
+    ]
+  }
+}
