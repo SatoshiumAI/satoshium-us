@@ -69,10 +69,30 @@ Attestor does not:
 
 > **Validation ≠ Conformance**
 
-## Status
-**Purpose → Advanced Architecture reconciled.**
+## Production Confirmation
 
-The Purpose page now reflects established Attestor architecture rather than the earlier abbreviated `Authoritative Inputs → Attestation → Trust Statement` model.
+The first controlled production operation confirmed this institutional purpose and canonical method in practice.
+
+The operation demonstrated that Attestor can:
+
+- determine Eligibility for governed source inputs;
+- form a canonical Attestation;
+- establish an Evaluation Basis;
+- perform Rule-Constrained Evaluation;
+- produce a bounded canonical Trust Statement;
+- preserve source provenance and institutional authority boundaries; and
+- govern its own resulting objects without absorbing the canonical authority of referenced Suite institutions.
+
+The production operation did not alter Attestor's purpose. It demonstrated that the established purpose can be exercised operationally.
+
+## Status
+**Purpose → Established and Production-Confirmed.**
+
+The Purpose page reflects the mature canonical model:
+
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
+
+The earlier abbreviated `Authoritative Inputs → Attestation → Trust Statement` model is obsolete.
 
 ## Files
 - `index.html` — public Purpose page.
