@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/relationships/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Relationships  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -147,18 +147,88 @@ Attestor may relate to canonical Suite objects while preserving source responsib
 
 Relationships do not convert source objects into Attestor-owned objects.
 
-## Deferred Structural Constraints
+## Structural Constraints
 
-This page establishes relationship semantics and conceptual direction.
+This page establishes relationship semantics and direction.
 
-Later architecture will define:
+Canonical structured relationship representation is now exercised in production.
+
+Schemas and Validation govern applicable:
 
 - permitted source/target object combinations;
 - required vs. optional relationships;
 - cardinality;
-- inverse representations where useful;
+- inverse representations where defined;
 - schema fields; and
-- machine validation.
+- machine enforcement.
+
+Production use of a relationship type does not make that relationship valid for every object pair.
+
+## First Production Relationship Demonstration
+
+The first controlled production operation exercised structured relationships across the canonical Attestation and Trust Statement.
+
+`ATT-2026-0001` preserved explicit `references` relationships to:
+
+- `SC-CERT-2026-0001`
+- `SREG-2026-0001`
+- `CHR-2026-0001`
+- `ANCH-2026-0001`
+- `BEAC-2026-0001`
+
+`TRST-2026-0001` preserved:
+
+- `derived-from` → `ATT-2026-0001`
+- `references` → `SC-CERT-2026-0001`
+- `references` → `SREG-2026-0001`
+- `references` → `CHR-2026-0001`
+- `references` → `ANCH-2026-0001`
+- `references` → `BEAC-2026-0001`
+
+**Production relationship representation → DEMONSTRATED**
+
+The operation confirmed:
+
+`Reference ≠ Derivation`
+
+`Reference ≠ Support`
+
+`Relationship ≠ Eligibility`
+
+`Connection ≠ Identity`
+
+`Reference ≠ Authority Transfer`
+
+## Production Relationship Correction
+
+The first production operation also exercised governed relationship remediation.
+
+Early production representations used descriptive relationship strings. Those representations were corrected to structured relationship blocks containing explicit relationship types and target identifiers.
+
+The correction preserved:
+
+- canonical ATT and TRST identifiers;
+- the Attestation assertion;
+- the Trust Statement conclusion;
+- scope;
+- provenance;
+- limitations;
+- production history; and
+- version `V1.0`.
+
+The earlier representations were preserved as history rather than silently overwritten.
+
+For this bounded operation, the relationship correction was determined to be a serialization-only correction rather than a material change to the canonical assertion or conclusion.
+
+Therefore:
+
+`Correction ≠ Deletion`
+
+`Correction ≠ Silent Historical Overwrite`
+
+`Serialization Correction ≠ Automatic New Canonical Object`
+
+The V1.0 treatment is not a universal rule for all future relationship corrections. Materiality must be determined under the applicable Lifecycle, Versioning, and Correction rules.
 
 ## What Relationships Do Not Establish
 
@@ -182,14 +252,47 @@ Later architecture will define:
 
 ## Status
 
-**Relationships → Established**
+**Relationships → Established and Production-Proven**
 
 - canonical relationship vocabulary → defined
-- directionality → established conceptually
-- Attestation/Evaluation/Trust Statement chain → established
+- directionality → established
+- structured relationship representation → exercised
+- Attestation / Evaluation / Trust Statement lineage → demonstrated
+- `references` → exercised in production
+- `derived-from` → exercised in production
 - support vs. outcome → distinguished
-- reference vs. derivation → distinguished
-- correction/supersession continuity → established conceptually
+- reference vs. derivation → distinguished and demonstrated
+- connection vs. identity → preserved
+- relationship vs. eligibility → preserved
 - source authority boundaries → preserved
-- cardinality/machine constraints → deferred to Schemas / Validation
-- production proof → pending
+- relationship correction continuity → exercised
+- historical representations → preserved
+- applicable structural / machine constraints → governed through Schemas / Validation
+- production proof → **ESTABLISHED**
+
+## Continuing Relationship Governance
+
+The first production operation proves that governed relationships can preserve lineage and institutional boundaries across real Attestor objects.
+
+It does not establish that every relationship type is valid between every object class.
+
+Future relationship creation or correction must continue to preserve:
+
+- source and target identity;
+- relationship type and direction;
+- provenance;
+- authority boundaries;
+- lifecycle context;
+- versioning consequences;
+- correction history; and
+- materiality.
+
+`Connection ≠ Identity`
+
+`Reference ≠ Derivation`
+
+`Reference ≠ Support`
+
+`Relationship ≠ Eligibility`
+
+**Reference does not transfer authority.**
