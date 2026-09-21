@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/eligibility/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Eligibility  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -40,7 +40,7 @@ Conceptually, the input must be:
 - sufficiently intact, resolvable, or reviewable; and
 - not prohibited by applicable Attestor rules.
 
-Exact machine validation is deferred to Schemas and Validation.
+Eligibility requirements are represented through governed production Eligibility records and remain subject to applicable Schema and Validation controls.
 
 ## Evaluation-Specific Eligibility
 
@@ -87,7 +87,7 @@ An input must **not** be excluded merely because it is unfavorable to the assert
 
 Where Attestor considers an input for eligibility but excludes it, and that exclusion is material to understanding the evaluation, enough context should be preserved to make the eligibility decision reviewable.
 
-Detailed recording requirements belong to Evaluation and Methodology.
+Evaluation and Methodology govern how material eligibility treatment is carried forward into the evaluation basis and later review.
 
 ## Suite Sources
 
@@ -125,6 +125,35 @@ Its referenced evidence, source objects, and other inputs must satisfy applicabl
 
 The existence of an Attestation does not make all references eligible.
 
+## First Production Eligibility Demonstration
+
+The first controlled production operation exercised Eligibility as a distinct governed admission decision before Rule-Constrained Evaluation.
+
+Six source objects were separately assessed and admitted as eligible governed inputs for the bounded evaluation concerning `SC-CERT-2026-0001`:
+
+- `SC-CERT-2026-0001` → eligible
+- Atlas El Salvador source → eligible
+- `SREG-2026-0001` → eligible
+- `CHR-2026-0001` → eligible
+- `ANCH-2026-0001` → eligible
+- `BEAC-2026-0001` → eligible
+
+A separate Eligibility record was preserved for each determination.
+
+No independent Eligibility identifier family was required; the production records intentionally preserved `record_identifier: null`.
+
+The operation demonstrated:
+
+- Eligibility before Rule-Constrained Evaluation;
+- evaluation-specific admission rather than source-wide status;
+- preservation of source identity, provenance, authority context, relevant state, and relationships;
+- no automatic eligibility merely because an object belonged to the Suite;
+- no transfer of source authority;
+- no conversion of Eligibility into evidence weight; and
+- no predetermination of the later Evaluation Outcome.
+
+The later Evaluation Outcome of `supported` was reached through Rule-Constrained Evaluation, not through the Eligibility decisions themselves.
+
 ## What Eligibility Does Not Establish
 
 `Eligibility ≠ Truth`
@@ -147,13 +176,28 @@ The existence of an Attestation does not make all references eligible.
 
 ## Status
 
-**Eligibility → Established**
+**Eligibility → Established and Production-Proven**
 
-- eligibility → evaluation-specific governed admission
+- evaluation-specific governed admission → established
 - availability → insufficient by itself
 - authority → insufficient by itself
-- provenance → necessary where material, not sufficient by itself
+- reference → insufficient by itself
+- provenance → required where material, not sufficient by itself
 - unfavorable evidence → not excludable merely because unfavorable
 - material exclusions → reviewable where required
-- machine eligibility rules → deferred to Validation / Schemas
-- production proof → pending
+- governed Eligibility records → exercised in production
+- six first-production source determinations → **eligible**
+- Eligibility / Evaluation Outcome separation → demonstrated
+- source authority preservation → demonstrated
+- independent Eligibility identifier family → not required
+- production proof → **ESTABLISHED**
+
+## Continuing Eligibility Governance
+
+The first production operation establishes that Eligibility can function as a real governed admission boundary.
+
+It does not make any source automatically eligible for a future evaluation.
+
+Eligibility remains evaluation-specific. A source must be assessed again where the purpose, scope, provenance, authority context, relevant state, relationship, reviewability, or applicable rules materially differ.
+
+`Eligible Here ≠ Eligible Everywhere`
