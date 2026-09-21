@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/evaluation/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Evaluation  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -17,7 +17,7 @@ Attestor does not convert source objects directly into conclusions.
 
 ## Evaluation Sequence
 
-Conceptually:
+The standing governed sequence is:
 
 1. Identify Attestation and Assertion.
 2. Confirm Evaluation Purpose and Scope.
@@ -30,7 +30,7 @@ Conceptually:
 9. Form Bounded Attestor Conclusion.
 10. Produce or Update Governed Trust Statement.
 
-Detailed operational procedure belongs to Methodology. Machine-testable requirements belong to Validation.
+Methodology defines the standing operational procedure. Validation supplies machine-testable controls for the governed objects and execution context without replacing Evaluation.
 
 ## Evaluation Basis
 
@@ -43,6 +43,28 @@ Material information must not be excluded merely because it:
 - introduces uncertainty;
 - supports contradiction; or
 - prevents a preferred conclusion.
+
+## First Production Evaluation Demonstration
+
+The first controlled production operation exercised Rule-Constrained Evaluation against `ATT-2026-0001`.
+
+A separate Evaluation Basis was assembled from the six eligible governed source inputs admitted through Eligibility.
+
+The production evaluation established:
+
+- Attestation → `ATT-2026-0001`
+- Evaluation Basis → established
+- Eligible Governed Inputs → six governed source inputs
+- methodology version → no separate version assigned
+- material conflicts → none preventing the bounded determination
+- evaluation components A–H → `SUPPORTED`
+- overall Evaluation Outcome → `supported`
+- bounded Attestor conclusion → formed
+- resulting Trust Statement → `TRST-2026-0001`
+
+The `supported` outcome belonged only to the bounded assertion, evidence basis, scope, authority context, relevant state, and applicable rules of that operation.
+
+It does not establish a default or expected outcome for future Attestations.
 
 ## Evaluation Outcomes
 
@@ -68,7 +90,7 @@ The eligible basis materially supports a conclusion inconsistent with the assert
 
 The eligible basis, conflict, uncertainty, provenance, state, or limitations do not permit Attestor to responsibly determine support or contradiction.
 
-Exact operational thresholds and validation conditions remain for Methodology and Validation.
+These controlled outcomes govern production Evaluation. Methodology governs their application; Validation tests applicable structural and normative requirements without substituting for the Evaluation Outcome.
 
 ## Outcome vs. Conclusion
 
@@ -153,6 +175,18 @@ A governed evaluation must preserve enough context to understand:
 - provenance; and
 - material limitations.
 
+## First Production Bounded Conclusion
+
+The first production evaluation concluded:
+
+> The eligible governed evidence supports the asserted canonical identity and attributable Satoshium Certifier origin of `SC-CERT-2026-0001`, its representation by the canonical Certifier source as `Issued · Active` within the evaluated state and scope, and its traceable governed relationships to `SREG-2026-0001`, `CHR-2026-0001`, `ANCH-2026-0001`, and `BEAC-2026-0001`. These relationships preserve the authority of each referenced Suite institution over its own canonical object and institutional domain. This conclusion is bounded to the evaluated proposition and evidence and does not establish the substantive truth of the underlying Atlas jurisdiction intelligence, independently re-certify the Certifier decision, extend Anchor integrity beyond its defined SCRD representation, establish unchanged state beyond the evidence reviewed, or constitute a generalized determination of trustworthiness.
+
+This production conclusion demonstrates the difference between:
+
+- controlled outcome → `supported`;
+- bounded substantive conclusion → the statement above; and
+- canonical Trust Statement → `TRST-2026-0001`.
+
 ## What Evaluation Does Not Establish
 
 `Evaluation ≠ Universal Truth Determination`
@@ -175,14 +209,32 @@ Evaluation produces the governed basis for a bounded Attestor Trust Statement.
 
 ## Status
 
-**Evaluation → Established**
+**Evaluation → Established and Production-Proven**
 
-- Rule-Constrained Evaluation → defined
-- conceptual sequence → established
-- outcome semantics → established conceptually
-- outcome vs. conclusion → distinguished
-- conflict/uncertainty treatment → required
-- universal scoring/weighting → not adopted
-- operational methodology → deferred to Methodology
-- machine validation → deferred to Validation
-- production proof → pending
+- Rule-Constrained Evaluation → established and exercised
+- evaluation sequence → established and exercised
+- Evaluation Basis → established and exercised
+- outcome semantics → established and exercised
+- first production outcome → `supported`
+- evaluation components A–H → `SUPPORTED`
+- outcome vs. conclusion → distinguished and demonstrated
+- conflict / uncertainty treatment → required
+- universal scoring / weighting → not adopted
+- Methodology → established and exercised
+- Validation → executable and exercised
+- source authority preservation → demonstrated
+- bounded conclusion → demonstrated
+- resulting canonical Trust Statement → `TRST-2026-0001`
+- production proof → **ESTABLISHED**
+
+## Continuing Evaluation Governance
+
+The first production operation establishes that Rule-Constrained Evaluation can govern a real Attestor determination.
+
+It does not predetermine future outcomes.
+
+Each future evaluation must independently establish its Attestation, purpose, scope, eligible basis, provenance, authority context, relevant state, applicable rules, material conflicts, uncertainty, limitations, outcome, and bounded conclusion.
+
+`Prior supported outcome ≠ Future supported outcome`
+
+A production-proven method preserves disciplined determination; it does not guarantee a particular conclusion.
