@@ -23,7 +23,7 @@
 <script src="/components/topbar-loader.js"></script>
 <main class="wrap content">
 <section class="hero">
-<div class="eyebrow">Attestor · Records</div>
+<div class="eyebrow">Attestor · Operational Reference Profiles</div>
 <h1>Records</h1>
 <p class="lead">This area documents governed reference profiles through which Attestor may relate eligible source objects to Attestations, Rule-Constrained Evaluation, and Trust Statements.</p>
 <p class="lead">These profiles do not create a second Attestor record system. Source objects remain governed by their originating institutions or external authorities.</p>
@@ -37,12 +37,54 @@
 <article class="card"><h2>Anchor</h2><p>Anchor Integrity Reference relationships when integrity context is relevant.</p></article>
 <article class="card"><h2>Beacon</h2><p>Beacon Discovery Signal and Discovery Metadata references without confusing discovery with trust evaluation.</p></article>
 <article class="card"><h2>External Sources</h2><p>Eligible governed information originating outside Satoshium, with external authority and provenance preserved.</p></article>
-<article class="card"><h2>Architectural Status</h2><p>Reference-profile architecture is established. Eligibility, authority, provenance, relationships, source-state handling, lifecycle triggers, and validation now follow the adopted Attestor Advanced Architecture.</p></article>
+<article class="card"><h2>Operational Status</h2><p>Reference-profile architecture is established and was exercised in the first controlled production operation. Eligibility, authority, provenance, relationships, source-state handling, lifecycle triggers, and validation follow the adopted Attestor architecture.</p></article>
 </section>
+<section style="margin-top:18px"><article class="card">
+<h2>First Production Reference-Profile Demonstration</h2>
+<p>The first controlled production operation exercised governed references to six source objects or source contexts while preserving their originating institutional authority. Those sources were evaluated for eligibility before use and remained distinct from the Attestor-owned Attestation and Trust Statement.</p>
+<div class="note">
+SC-CERT-2026-0001 → Certifier authority preserved<br>
+Atlas Jurisdiction Record — El Salvador → Atlas authority preserved<br>
+SREG-2026-0001 → Registry authority preserved<br>
+CHR-2026-0001 → Chronicle authority preserved<br>
+ANCH-2026-0001 → Anchor authority preserved within its defined SCRD integrity scope<br>
+BEAC-2026-0001 → Beacon authority preserved<br><br>
+Six governed source inputs → Eligibility determined<br>
+ATT-2026-0001 → Attestor-owned canonical Attestation<br>
+TRST-2026-0001 → Attestor-owned canonical Trust Statement<br><br>
+<strong>Reference-profile architecture → DEMONSTRATED IN PRODUCTION</strong>
+</div>
+<p style="margin-top:16px;">The production operation did not convert any referenced Suite object into an Attestor record, merge institutional identities, or transfer source authority to Attestor.</p>
+</article></section>
+
+<section style="margin-top:18px"><article class="card">
+<h2>Records Namespace Boundary</h2>
+<p>The route <code>/attestor/records/</code> remains a documentation namespace for governed Reference Profiles. It is not the canonical publication namespace for Attestor's canonical ATT and TRST objects.</p>
+<div class="note">
+/attestor/records/ → Reference-profile documentation<br>
+/attestor/attestations/ATT-YYYY-NNNN/ → Canonical Attestation publication<br>
+/attestor/trust-statements/TRST-YYYY-NNNN/ → Canonical Trust Statement publication<br><br>
+Records Route ≠ Canonical ATT/TRST Object Namespace<br>
+Reference Profile ≠ Source Object Copy<br>
+Reference ≠ Authority Transfer
+</div>
+</article></section>
+
 <section style="margin-top:18px"><article class="card">
 <h2>Reference Model</h2>
 <div class="note">Source Object → Governed Reference → Attestation / Evaluation → Trust Statement</div>
 <p style="margin-top:16px">A source object does not become an Attestor-owned record merely because Attestor references it. The route <code>/attestor/records/</code> is retained, while the documents within it are governed <strong>Reference Profiles</strong>.</p>
+<div class="note"><strong>Reference Profiles → Established and Production-Proven</strong><br>
+Suite-source reference model → Production-exercised<br>
+Eligibility-before-use → Production-exercised<br>
+Source authority preservation → Demonstrated<br>
+Source provenance / state context → Demonstrated<br>
+Cross-institution relationships → Demonstrated<br>
+Records namespace boundary → Explicit<br>
+External-source profile → Established; not exercised by first production operation<br>
+Canonical ATT/TRST publication → Separate object-class namespaces<br>
+<strong>Production proof → ESTABLISHED for Suite-source reference profiles exercised</strong></div>
+<p style="margin-top:16px;">Production proof is bounded to the source classes and relationships actually used. It does not establish that every future source is eligible, that every external source profile has been production-tested, or that reference itself constitutes support for a final conclusion.</p>
 <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article></section>
 </main>
