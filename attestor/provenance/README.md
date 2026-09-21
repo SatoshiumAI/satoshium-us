@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/provenance/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Provenance  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -52,7 +52,7 @@ Conceptually, provenance must be capable of preserving:
 - material limitations; and
 - historical lineage, when applicable.
 
-Exact machine fields remain a Schema concern.
+Canonical structured representations now preserve provenance context in production, while Schemas and Validation govern the applicable machine requirements.
 
 ## Controlled Provenance Modes
 
@@ -126,6 +126,46 @@ Traceable provenance supports eligibility determination but does not itself esta
 
 Eligibility governs whether an input may enter a particular evaluation.
 
+## First Production Provenance Demonstration
+
+The first controlled production operation preserved an end-to-end provenance chain:
+
+`SC-CERT-2026-0001 + Atlas source + SREG-2026-0001 + CHR-2026-0001 + ANCH-2026-0001 + BEAC-2026-0001`
+
+`→ Governed Eligibility Records`
+
+`→ ATT-2026-0001`
+
+`→ Evaluation Basis`
+
+`→ Rule-Constrained Evaluation`
+
+`→ TRST-2026-0001`
+
+`→ Active · Published · V1.0 canonical representations`
+
+**Production provenance chain → PRESERVED**
+
+The operation demonstrated:
+
+- source identities remained traceable;
+- relevant source state and temporal context remained bounded where material;
+- source authority remained with the originating institution;
+- Eligibility records preserved the admission path into Evaluation;
+- `ATT-2026-0001` remained traceable to its governed references;
+- the Evaluation Basis preserved the inputs used for the determination;
+- `TRST-2026-0001` remained traceable to `ATT-2026-0001` and the governed Evaluation;
+- publication and lifecycle activation did not sever provenance; and
+- final-state validation preserved the same canonical lineage.
+
+The production relationship model also preserved an important distinction:
+
+`references ≠ derived-from ≠ support`
+
+`TRST-2026-0001` is `derived-from` `ATT-2026-0001`.
+
+Its governed references to Suite source objects preserve traceability and authority context without asserting that every referenced object independently supports the final conclusion.
+
 ## Provenance vs. Truth
 
 A complete provenance chain establishes traceability, not correctness.
@@ -148,13 +188,33 @@ Detailed transition behavior belongs to Lifecycle and Versioning.
 
 ## Status
 
-**Provenance → Established**
+**Provenance → Established and Production-Proven**
 
-- Attestation provenance → required
-- material input provenance → required
-- evaluation provenance → required
-- Trust Statement provenance → required
+- Attestation provenance → required and exercised
+- material input provenance → required and exercised
+- evaluation provenance → required and exercised
+- Trust Statement provenance → required and exercised
 - provenance modes → `direct`, `referenced`, `derived`
-- historical lineage → preserved where material
-- machine representation → deferred to Schemas
-- production proof → pending
+- canonical structured representation → exercised
+- source state / temporal context → preserved where material
+- historical lineage → preserved
+- Reference / Support distinction → preserved
+- Authority / Provenance distinction → preserved
+- lifecycle and Publication changes → did not sever lineage
+- production proof → **ESTABLISHED**
+
+## Continuing Provenance Governance
+
+The first production operation establishes that Attestor can preserve end-to-end lineage through a real governed evaluation and published Trust Statement.
+
+It does not establish universal correctness or make future provenance automatic.
+
+Every future Attestation, Evaluation, and Trust Statement must preserve its own material source identity, provenance mode, authority context, relevant state, relationships, derivation basis where applicable, limitations, and historical lineage.
+
+`Traceability ≠ Truth`
+
+`Provenance ≠ Authority`
+
+`Reference ≠ Support`
+
+**Reference does not transfer authority.**
