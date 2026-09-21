@@ -43,7 +43,7 @@ Integration provides the operational connection and exchange through which Attes
 ## Established Integration Flow
 `Source Object → Resolve Reference → Preserve Context → Establish Eligibility → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-This is the governed institutional sequence.
+This is the established governed institutional sequence. The first controlled production operation exercised this path against real Suite-owned objects.
 
 Exact APIs, transports, authentication, authorization, retry behavior, notification mechanisms, and serialization remain implementation choices unless separately adopted by a production specification.
 
@@ -91,6 +91,44 @@ Eligibility is evaluation-specific:
 - **Attestor → Trust Statement**
 
 Attestor may reference eligible governed objects from these institutions while preserving the originating institution's authority.
+
+## First Production Integration Baseline
+
+The first controlled production operation demonstrated a real **Certifier → Attestor** integration case centered on `SC-CERT-2026-0001`.
+
+The governed path was:
+
+`SC-CERT-2026-0001`
+
+`→ Eligibility under Attestor rules`
+
+`→ ATT-2026-0001`
+
+`→ Rule-Constrained Evaluation`
+
+`→ Evaluation Outcome: supported`
+
+`→ TRST-2026-0001`
+
+The operation also preserved traceable governed relationships to:
+
+- `SREG-2026-0001`
+- `CHR-2026-0001`
+- `ANCH-2026-0001`
+- `BEAC-2026-0001`
+
+Authority remained institution-specific:
+
+- Certifier retained authority over `SC-CERT-2026-0001`;
+- Registry retained authority over `SREG-2026-0001`;
+- Chronicle retained authority over `CHR-2026-0001`;
+- Anchor retained authority over `ANCH-2026-0001`;
+- Beacon retained authority over `BEAC-2026-0001`; and
+- Attestor governed only its own Attestation, Rule-Constrained Evaluation, and Trust Statement.
+
+> **Reference does not transfer authority.**
+
+The production operation therefore demonstrated integration by reference without canonical-object duplication or institutional authority transfer.
 
 ## No Automatic Conversion
 A source object does not become an Attestation merely because Attestor integrates with or references it.
@@ -156,7 +194,7 @@ Integrated references and resulting Attestor objects remain subject to applicabl
 
 > **Validation ≠ Conformance**
 
-Exact executable validation remains implementation work.
+Executable Validation is established and was exercised in the first production operation through Validator v0.5. Integrated references and resulting Attestor objects remain independently subject to applicable Validation requirements.
 
 ## Publication
 Integration does not itself authorize publication.
@@ -176,8 +214,8 @@ The institutional integration architecture does not require a specific:
 
 Such mechanisms may be adopted where production requirements justify them.
 
-## Implementation-Open Matters
-The following remain legitimate implementation or production concerns rather than unresolved Advanced Architecture:
+## Technology-Specific Implementation Matters
+The institutional Integration architecture is established and has been exercised in production. The following remain legitimate technology-specific or future-profile implementation concerns rather than unresolved institutional architecture:
 - concrete reference-resolution mechanism;
 - workflow entry points;
 - integration event transport;
@@ -193,9 +231,28 @@ The following remain legitimate implementation or production concerns rather tha
 - reference vectors.
 
 ## Status
-**Integration → Advanced Architecture reconciled.**
 
-The former posture that Eligibility, Validation, source-state handling, Publication dependencies, and the relationship between integration and Trust Statement generation were wholly deferred is no longer current.
+**Integration Architecture → Established**
+
+**Production Integration → Operationally Demonstrated**
+
+- governed integration flow → established
+- Reference Profile context → established
+- Eligibility boundary → established
+- Authority / Provenance preservation → established
+- source-state handling → established
+- no automatic source-object conversion → established
+- Validation dependency → established and exercised
+- Publication separation → established and exercised
+- Certifier → Attestor production integration → **demonstrated**
+- `SC-CERT-2026-0001` source authority → **preserved**
+- `ATT-2026-0001` → **Active · Published · V1.0**
+- `TRST-2026-0001` → **Active · Published · V1.0**
+- cross-Suite governed relationships → **demonstrated**
+- authority transfer → **none**
+- institutional Integration capability → **operationally demonstrated**
+
+The first-production integration baseline does not imply that every future source, transport, profile, or external integration is automatically supported or conformant. Each future integration remains governed by applicable Authority, Provenance, Eligibility, Evaluation, Validation, Conformance, Lifecycle, Publication, and Production requirements.
 
 ## Files
 - `index.html` — public Integration page.
