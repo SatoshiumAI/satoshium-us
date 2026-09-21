@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/versioning/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Versioning  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -43,7 +43,7 @@ A permitted revision preserves the canonical identifier while creating a disting
 
 `Version ≠ New Canonical Object`
 
-Exact machine syntax for version labels remains deferred to Schemas.
+Canonical production objects now exercise explicit version identity, including `V1.0` for the first production Attestation and Trust Statement. Schemas govern the applicable machine representation.
 
 ## Same-Object Revision
 
@@ -138,7 +138,7 @@ Governed version history must be capable of preserving:
 - lifecycle state; and
 - current/historical distinction.
 
-Exact representation belongs to Schemas.
+Canonical production representations now exercise explicit version identity, while Schemas govern the applicable representation requirements.
 
 ## No Silent Overwrite
 
@@ -172,6 +172,63 @@ Publishing a newer version does not erase earlier governed versions.
 
 Detailed current/historical publication behavior belongs to Publication architecture.
 
+## First Production Versioning Demonstration
+
+The first controlled production operation exercised version identity and the same-object materiality boundary.
+
+Both canonical objects were created as `V1.0`:
+
+- `ATT-2026-0001` → `V1.0`
+- `TRST-2026-0001` → `V1.0`
+
+During the operation, early descriptive relationship serialization was corrected to structured relationship blocks with explicit relationship types and target identifiers.
+
+The governed determination found that the correction did not materially change:
+
+- the Attestation assertion;
+- the Trust Statement conclusion;
+- controlling scope;
+- provenance;
+- limitations; or
+- canonical institutional meaning.
+
+Accordingly:
+
+- canonical ATT identity → preserved;
+- canonical TRST identity → preserved;
+- version → remained `V1.0`;
+- historical representations → preserved;
+- new ATT → not required;
+- new TRST → not required.
+
+**Same-object versioning boundary → DEMONSTRATED IN PRODUCTION**
+
+This is a bounded production precedent, not a universal rule that every correction may retain the same version.
+
+## Production Versioning Boundary
+
+The first operation demonstrated that correction reason and versioning consequence are separate governed questions.
+
+`Correction Reason → Why change is required`
+
+`Versioning Decision → How canonical identity and version behave`
+
+For the first production operation:
+
+`Serialization-only defect → Corrected within V1.0`
+
+The standing material-change boundaries remain:
+
+`Material Attestation Assertion Change → New ATT`
+
+`Material Trust Statement Conclusion Change → New TRST`
+
+**A changed conclusion is a changed canonical statement.**
+
+Where a new canonical successor replaces a prior object as current, the successor relationship preserves continuity through `supersedes`.
+
+`Correction ≠ Versioning Decision`
+
 ## What Versioning Does Not Establish
 
 `New Version ≠ Active`
@@ -192,15 +249,47 @@ Detailed current/historical publication behavior belongs to Publication architec
 
 ## Status
 
-**Versioning → Established**
+**Versioning → Established and Production-Proven**
 
-- canonical object vs. version identity → distinguished
-- same-object revision boundary → established conceptually
-- new-object boundary → established conceptually
-- material assertion change → new Attestation
-- material conclusion change → new Trust Statement
-- supersession → preserves predecessor relationship
-- no silent overwrite → required
-- exact version syntax → deferred to Schemas
-- machine materiality tests → deferred to Validation / Methodology
-- production proof → pending
+- canonical object vs. version identity → distinguished and exercised
+- production version identity → `V1.0` exercised
+- same-object revision boundary → demonstrated
+- new-object boundary → established
+- material Attestation assertion change → new ATT required
+- material Trust Statement conclusion change → new TRST required
+- correction reason / versioning decision → distinguished and demonstrated
+- historical preservation → demonstrated
+- no silent overwrite → demonstrated
+- supersession → established but not required by first production operation
+- machine representation → exercised through canonical production objects
+- materiality → governed; not reduced to a universal automatic test
+- production proof → **ESTABLISHED**
+
+## Continuing Versioning Governance
+
+The first production operation establishes a real same-object versioning precedent.
+
+It does not establish that:
+
+- every correction remains within the same version;
+- every correction preserves canonical identity;
+- every metadata or relationship change is non-material;
+- `V1.0` may be reused to conceal later governed change; or
+- supersession is unnecessary when essential institutional meaning changes.
+
+Each future change must independently determine:
+
+- materiality;
+- canonical identity consequences;
+- version consequences;
+- lifecycle effects;
+- historical preservation requirements; and
+- whether a successor and `supersedes` relationship are required.
+
+`Version ≠ Canonical Object Identity`
+
+`Correction ≠ Versioning Decision`
+
+`Update ≠ Erasure`
+
+**Changed Conclusion = Changed Canonical Statement**
