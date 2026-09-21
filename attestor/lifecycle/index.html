@@ -157,7 +157,7 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Attestor · Advanced Architecture</div>
+<div class="eyebrow">Attestor · Operational Lifecycle</div>
 <h1>Lifecycle</h1>
 <p class="lead">Lifecycle defines how <strong>Attestor-owned objects</strong> move through governed existence: preparation, canonical Creation, review, active use, correction, supersession, withdrawal, and retirement.</p>
 <p class="lead">Lifecycle preserves continuity without confusing current state with historical state. An Attestation or Trust Statement may cease to be current while remaining permanently identifiable, attributable, and traceable.</p>
@@ -199,8 +199,8 @@ h1{
 
 <section style="margin-top:18px;"><article class="card">
 <h2>Correction and Materiality</h2>
-<p>A correction addresses an error, omission, ambiguity, or other material defect in an Attestor-owned object. Minor changes may be handled through versioned correction while preserving the canonical object identity. A change that alters the substantive assertion, evaluation basis, scope, or conclusion may require a successor object and supersession. Exact thresholds belong to Versioning.</p>
-<div class="note">Correction Need → Assess Materiality<br>Non-substantive / bounded correction → Versioned governed change may preserve object identity<br>Substantive change to object meaning → New canonical object may be required<br>Successor Object → supersedes → Prior Object<br><br>Correction ≠ Deletion</div>
+<p>A correction addresses an error, omission, ambiguity, serialization defect, or other governed defect in an Attestor-owned object. Bounded non-material correction may preserve canonical object identity and version when the applicable Versioning determination permits it. A material change to the Attestation assertion or Trust Statement conclusion requires treatment under the applicable new-object and supersession rules. Materiality and version consequences must be explicitly governed rather than inferred from the existence of a correction alone.</p>
+<div class="note">Correction Need → Assess Materiality<br>Bounded non-material correction → Canonical identity may be preserved<br>Serialization-only correction → May preserve version when governed determination permits<br>Material Attestation assertion change → New ATT required<br>Material Trust Statement conclusion change → New TRST required<br>Successor Object → supersedes → Prior Object, where applicable<br><br>Correction ≠ Deletion<br>Correction ≠ Silent Overwrite</div>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
@@ -234,15 +234,65 @@ h1{
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
+<h2>First Production Lifecycle Demonstration</h2>
+<p>The first controlled production operation exercised canonical Creation and lifecycle activation as separate governed acts for both <strong>ATT-2026-0001</strong> and <strong>TRST-2026-0001</strong>. Each object was canonically created as <strong>Draft · Unpublished · V1.0</strong>, completed governed Validation, Review, and Conformance, and was then separately authorized to transition from <strong>draft</strong> to <strong>active</strong>.</p>
+<div class="note">
+ATT-2026-0001 → Canonical Creation → Draft · Unpublished · V1.0<br>
+TRST-2026-0001 → Canonical Creation → Draft · Unpublished · V1.0<br><br>
+Governed Validation / Review / Conformance → Completed<br><br>
+ATT-2026-0001 → draft → active<br>
+TRST-2026-0001 → draft → active<br><br>
+Publication at activation → Remained unpublished<br>
+Canonical identity → Unchanged<br>
+Version → Unchanged<br>
+Assertion / conclusion → Unchanged<br><br>
+<strong>Lifecycle Activation → DEMONSTRATED IN PRODUCTION</strong>
+</div>
+<p style="margin-top:16px;">Publication was authorized only after lifecycle activation through separate publication decisions. The production sequence therefore demonstrated the standing distinction: <strong>Canonical Creation ≠ Lifecycle Activation ≠ Publication</strong>.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Production Correction and Historical Preservation</h2>
+<p>The first production operation also exercised governed correction before final publication. Relationship serialization was corrected while preserving the canonical ATT and TRST identities, substantive assertion and conclusion, and historical representations. The correction was determined to be non-material to canonical meaning and therefore remained <strong>V1.0</strong> for this bounded operation.</p>
+<div class="note">
+Relationship serialization defect → Corrected<br>
+Historical representation → Preserved<br>
+Canonical identifier → Preserved<br>
+Material assertion change → None<br>
+Material conclusion change → None<br>
+Version → V1.0 retained by governed determination<br><br>
+Correction ≠ Deletion<br>
+Correction ≠ Historical Erasure<br>
+Correction ≠ Silent Mutation
+</div>
+<p style="margin-top:16px;">This production decision does not establish that every correction preserves version or identity. Future corrections remain subject to materiality, Versioning, correction, and supersession rules.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
 <h2>What Lifecycle Does Not Establish</h2>
 <p>Lifecycle state describes institutional status over time. It does not independently establish truth, evidence sufficiency, evaluation outcome, publication, validation, conformance, or authority.</p>
 <div class="note">Active ≠ True<br>Active ≠ Supported<br>Active ≠ Published<br>Active ≠ Validated<br>Superseded ≠ False<br>Withdrawn ≠ Historical Erasure<br>Retired ≠ Invalid</div>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
-<h2>Advanced Architecture Position</h2>
-<p>The Lifecycle architecture now defines how Attestor-owned objects become current, remain reviewable, and leave current use without losing historical identity. Versioning can now determine how changes within an object differ from changes that require a new canonical object.</p>
-<div class="note"><strong>Lifecycle → Established</strong><br>States → draft · active · superseded · withdrawn · retired<br>Creation → Canonical identity assignment<br>Review → Governed lifecycle activity<br>Correction → Governed change activity, not state<br>Inactive → Descriptive umbrella, not canonical value<br>Supersession / withdrawal / retirement → Distinguished<br>Historical preservation → Required<br>Publication state → Independent<br>Detailed version thresholds → Deferred to Versioning<br>Production proof → Pending</div>
+<h2>Current Lifecycle Position</h2>
+<p>The Lifecycle architecture is established and has been exercised in production. The first controlled operation demonstrated canonical Creation in <strong>draft</strong>, governed lifecycle activation to <strong>active</strong>, independence from Publication, preservation of canonical identity and version through activation, and governed correction with historical preservation.</p>
+<div class="note"><strong>Lifecycle → Established and Production-Proven</strong><br>
+States → draft · active · superseded · withdrawn · retired<br>
+Canonical Creation → Exercised<br>
+Draft initial lifecycle state → Exercised<br>
+Lifecycle Activation → Exercised<br>
+Review → Governed activity, not lifecycle state<br>
+Correction → Governed change activity, not lifecycle state<br>
+Creation / Activation separation → Demonstrated<br>
+Lifecycle / Publication separation → Demonstrated<br>
+Canonical identity preservation → Demonstrated<br>
+Historical preservation → Demonstrated<br>
+Bounded non-material correction → Exercised<br>
+Supersession / withdrawal / retirement → Established but not yet required by first production operation<br>
+Version consequences → Governed through Versioning<br>
+<strong>Production proof → ESTABLISHED</strong></div>
+<p style="margin-top:16px;">Production proof demonstrates lifecycle capability; it does not imply that every future object will become active, that every correction is non-material, or that supersession, withdrawal, and retirement have already been exercised. Each future transition remains a separate governed institutional act.</p>
 <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article></section>
 
