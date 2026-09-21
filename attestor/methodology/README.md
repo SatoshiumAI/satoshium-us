@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/methodology/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Methodology  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -13,7 +13,7 @@ It assembles the established Attestor architecture into an end-to-end governed s
 
 ## Governing Model
 
-`Governed Purpose → Attestation → Eligible Governed Inputs → Rule-Constrained Evaluation → Trust Statement → Governed Continuation`
+`Governed Purpose → Governed Inputs / Eligibility → Attestation → Evaluation Basis → Rule-Constrained Evaluation → Trust Statement → Governed Continuation`
 
 ## Canonical Institutional Sequence
 
@@ -133,6 +133,10 @@ Review determines whether the object/process is ready for the next governed acti
 
 `Validation ≠ Evaluation`
 
+`Validation ≠ Review`
+
+`NOT-TESTED ≠ PASS`
+
 `Review ≠ Automatic Approval`
 
 ## Stage 8 — Lifecycle, Versioning, and Conformance
@@ -145,6 +149,8 @@ Attestor establishes:
 - conformance where applicable.
 
 Material meaning changes require new canonical identity where Versioning requires it.
+
+Lifecycle activation remains distinct from Publication.
 
 ## Stage 9 — Publication
 
@@ -169,6 +175,34 @@ Possible governed responses include:
 - retire.
 
 `Later State ≠ Silent Rewrite of Earlier State`
+
+## First Production Method Demonstration
+
+The first controlled production operation exercised the standing methodology against a real governed matter concerning `SC-CERT-2026-0001`.
+
+The production path demonstrated:
+
+1. purpose and scope established;
+2. potential governed inputs identified;
+3. Eligibility determined;
+4. `ATT-2026-0001` created as the canonical Attestation;
+5. Evaluation Basis established;
+6. Rule-Constrained Evaluation completed;
+7. Evaluation Outcome determined as `supported`;
+8. `TRST-2026-0001` created as the canonical Trust Statement;
+9. production Validation completed with both objects `VALID`;
+10. governed Review completed with **25 / 25 SATISFIED**;
+11. Object Conformance completed with both objects **CONFORMANT**;
+12. lifecycle activation separately governed;
+13. Publication separately authorized;
+14. final Active · Published representations revalidated as `VALID`;
+15. production evidence preserved;
+16. Post-Operation Institutional Review completed at **11 PASS · 0 FAIL · 0 UNRESOLVED**; and
+17. Operational Proof established.
+
+The production run therefore demonstrated that the standing Methodology and the actual governed operation agree in substance.
+
+The twenty-step Canonical Institutional Sequence remains the durable methodological model. Production may express that model through more granular records and control points without changing its institutional meaning.
 
 ## Reviewability
 
@@ -229,17 +263,34 @@ Methodology establishes a repeatable governed institutional process.
 
 ## Status
 
-**Methodology → Established**
+**Methodology → Established and Production-Proven**
 
 - end-to-end institutional sequence → established
-- purpose/scope before conclusion → required
-- Attestation formation → integrated
-- Eligibility → integrated
-- Evaluation Basis → integrated
-- Rule-Constrained Evaluation → integrated
-- Trust Statement formation → integrated
-- Validation/review/lifecycle/versioning → integrated
-- Conformance/publication → integrated where applicable
+- purpose/scope before conclusion → required and exercised
+- potential governed inputs / Eligibility → integrated and exercised
+- Attestation formation → integrated and exercised
+- Evaluation Basis → integrated and exercised
+- Rule-Constrained Evaluation → integrated and exercised
+- Trust Statement formation → integrated and exercised
+- Validation → integrated and exercised
+- governed Review → integrated and exercised
+- lifecycle activation / versioning → integrated and exercised
+- Conformance → integrated and exercised
+- Publication → integrated and exercised as a separate governed act
+- final published-state revalidation → exercised
+- evidence preservation → exercised
+- Post-Operation Institutional Review → exercised
 - continuing governance → required
 - authority boundaries → preserved
-- production proof → pending
+- first-production method demonstration → **complete**
+- production proof → **ESTABLISHED**
+
+## Continuing Methodological Governance
+
+The first-production operation establishes that Attestor's standing methodology can govern a real end-to-end operation.
+
+It does not guarantee a particular future Evaluation Outcome and does not pre-satisfy future Eligibility, Validation, Review, Conformance, lifecycle, Publication, or evidence-preservation requirements.
+
+Each future governed matter must traverse the applicable methodological controls on its own evidence, scope, authority context, and state.
+
+> **A repeatable method preserves the decision path; it does not predetermine the decision.**
