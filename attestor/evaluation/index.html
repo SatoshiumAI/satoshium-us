@@ -157,7 +157,7 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Attestor · Advanced Architecture</div>
+<div class="eyebrow">Attestor · Operational Evaluation</div>
 <h1>Evaluation</h1>
 <p class="lead">Evaluation defines the heart of Attestor: how <strong>Attestations</strong> and <strong>eligible governed inputs</strong> undergo <strong>Rule-Constrained Evaluation</strong> to produce a bounded <strong>Trust Statement</strong>.</p>
 <p class="lead">Attestor does not convert sources directly into conclusions. It evaluates a defined assertion against an eligible, attributable, provenance-preserving basis under governed rules and states only the conclusion that basis can responsibly support.</p>
@@ -175,13 +175,31 @@ h1{
 
 <section style="margin-top:18px;"><article class="card">
 <h2>Evaluation Sequence</h2>
-<p>The evaluation process is conceptually ordered so that Attestor cannot reach a conclusion before the assertion, scope, admissible basis, and governing rules are known. Later Methodology and Validation architecture will formalize operational steps and machine-testable requirements.</p>
+<p>The evaluation process is governed so that Attestor cannot reach a conclusion before the assertion, scope, eligible basis, authority and provenance context, and applicable rules are known. Methodology now defines the standing operational sequence, while Validation supplies machine-testable controls for the governed objects and context used in production.</p>
 <div class="note">1. Identify Attestation and Assertion<br>2. Confirm Evaluation Purpose and Scope<br>3. Establish Eligible Governed Inputs<br>4. Preserve Authority and Provenance Context<br>5. Apply Applicable Attestor Rules<br>6. Consider Supporting, Limiting, Conflicting, and Contradictory Material<br>7. Preserve Uncertainty and Material Limitations<br>8. Determine Evaluation Outcome<br>9. Form Bounded Attestor Conclusion<br>10. Produce or Update Governed Trust Statement</div>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
+<h2>First Production Evaluation Demonstration</h2>
+<p>The first controlled production operation exercised Rule-Constrained Evaluation against <strong>ATT-2026-0001</strong> using a separately assembled Evaluation Basis composed of eligible governed inputs. The evaluation treated the asserted identity, origin, relevant certification state, and Suite relationships as bounded components rather than collapsing them into a generalized trust judgment.</p>
+<div class="note">
+Attestation → ATT-2026-0001<br>
+Evaluation Basis → Established<br>
+Eligible Governed Inputs → Six governed source inputs<br>
+Methodology Version → No separate version assigned<br>
+Conflicts → None material to the bounded determination<br>
+Evaluation Components A–H → SUPPORTED<br>
+Overall Evaluation Outcome → supported<br>
+Bounded Conclusion → Formed<br>
+Resulting Trust Statement → TRST-2026-0001<br><br>
+<strong>Rule-Constrained Evaluation → DEMONSTRATED IN PRODUCTION</strong>
+</div>
+<p style="margin-top:16px;">The production result demonstrates the evaluation method; it does not establish that future Attestations will receive the same outcome. The <strong>supported</strong> result belonged only to this bounded assertion, evidence basis, scope, authority context, relevant state, and applicable rules.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
 <h2>Outcome Semantics</h2>
-<p>The Controlled Values architecture established five initial evaluation outcomes. This page defines their conceptual meaning. Exact validation thresholds and operational tests remain for Methodology and Validation.</p>
+<p>The Controlled Values architecture establishes five evaluation outcomes. Their semantics govern production Evaluation. Methodology defines how the evaluation is conducted, while Validation tests applicable structural and normative requirements without replacing the Evaluation itself.</p>
 <div class="note"><strong>supported</strong> → the eligible evaluation basis supports the assertion within the defined scope without a material unresolved conflict that prevents that conclusion<br><br><strong>partially-supported</strong> → the basis supports a bounded or material portion of the assertion, but not the assertion in full as presented<br><br><strong>not-supported</strong> → the eligible basis does not provide sufficient support for the assertion within the defined scope, without establishing the stronger conclusion that it is contradicted<br><br><strong>contradicted</strong> → the eligible basis materially supports a conclusion inconsistent with the assertion within the defined scope<br><br><strong>indeterminate</strong> → the eligible basis, conflict, uncertainty, provenance, state, or limitations do not permit Attestor to responsibly determine support or contradiction</div>
 </article></section>
 
@@ -222,15 +240,41 @@ h1{
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
+<h2>First Production Bounded Conclusion</h2>
+<p>The first production evaluation concluded that the eligible governed evidence supports the asserted canonical identity and attributable Satoshium Certifier origin of <strong>SC-CERT-2026-0001</strong>, its representation by the canonical Certifier source as <strong>Issued · Active</strong> within the evaluated state and scope, and its traceable governed relationships to <strong>SREG-2026-0001</strong>, <strong>CHR-2026-0001</strong>, <strong>ANCH-2026-0001</strong>, and <strong>BEAC-2026-0001</strong>.</p>
+<p style="margin-top:14px;">The conclusion expressly preserved the authority of each referenced Suite institution and did not establish the substantive truth of the underlying Atlas jurisdiction intelligence, independently re-certify the Certifier decision, extend Anchor integrity beyond its defined SCRD representation, establish unchanged state beyond the evidence reviewed, or create a generalized determination of trustworthiness.</p>
+<div class="note">Outcome → supported<br>
+Conclusion → Bounded to evaluated proposition and evidence<br>
+Universal truth claim → None<br>
+Independent re-certification → None<br>
+Source authority transfer → None<br>
+Generalized trustworthiness determination → None</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
 <h2>What Evaluation Does Not Do</h2>
 <p>Attestor Evaluation does not declare universal truth, inherit another institution's authority, certify on behalf of Certifier, create generic reputation, produce a trust score, guarantee future conditions, or erase uncertainty. Its responsibility is narrower and more defensible: produce an attributable, reviewable, bounded Attestor conclusion from an eligible governed basis.</p>
 <div class="note">Evaluation ≠ Universal Truth Determination<br>Evaluation ≠ Certification<br>Evaluation ≠ Source Authority Transfer<br>Evaluation ≠ Reputation<br>Evaluation ≠ Trust Score<br>Evaluation ≠ Guarantee<br><br>Evaluation → Governed basis for a bounded Trust Statement</div>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
-<h2>Advanced Architecture Position</h2>
-<p>The Evaluation architecture now establishes Attestor's central institutional act. Entry Model defined the objects; Identifiers gave them identity; Controlled Values supplied vocabulary; Authority bounded responsibility; Provenance preserved lineage; Eligibility governed admission. Evaluation now defines how those elements are brought together to produce Attestor's canonical conclusion.</p>
-<div class="note"><strong>Evaluation → Established</strong><br>Rule-Constrained Evaluation → Defined<br>Evaluation sequence → Established conceptually<br>Outcome semantics → Established conceptually<br>Outcome vs. conclusion → Distinguished<br>Conflict / uncertainty treatment → Required<br>Universal scoring / weighting → Not adopted<br>Detailed operational methodology → Deferred to Methodology<br>Machine validation → Deferred to Validation<br>Production proof → Pending</div>
+<h2>Current Evaluation Position</h2>
+<p>Evaluation is Attestor's central institutional act and is now established both architecturally and operationally. The first controlled production operation demonstrated that an Attestation can be evaluated against a separately governed eligible basis under applicable rules to produce a controlled outcome and bounded Trust Statement conclusion without converting source authority into Attestor authority.</p>
+<div class="note"><strong>Evaluation → Established and Production-Proven</strong><br>
+Rule-Constrained Evaluation → Established and exercised<br>
+Evaluation sequence → Established and exercised<br>
+Evaluation Basis → Established and exercised<br>
+Outcome semantics → Established and exercised<br>
+First production outcome → supported<br>
+Outcome vs. conclusion → Distinguished and demonstrated<br>
+Conflict / uncertainty treatment → Required<br>
+Universal scoring / weighting → Not adopted<br>
+Methodology → Established and exercised<br>
+Validation → Executable and exercised<br>
+Source authority preservation → Demonstrated<br>
+Bounded conclusion → Demonstrated<br>
+<strong>Production proof → ESTABLISHED</strong></div>
+<p style="margin-top:16px;">Production proof establishes that the evaluation architecture can govern a real Attestor determination. It does not predetermine any future Evaluation Outcome, evidence treatment, conclusion, Validation result, Conformance determination, lifecycle state, or Publication decision.</p>
 <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article></section>
 
