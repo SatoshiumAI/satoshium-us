@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/conformance/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Conformance  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -136,19 +136,47 @@ Conformance concerns requirements satisfaction.
 
 Publication concerns authorization for public representation.
 
-## Deferred Formal Specification
+## Executable Conformance
 
-This architecture intentionally does not yet freeze:
+The Conformance architecture is implemented for governed object-level determinations.
 
-- final conformance classes;
-- executable test suites;
-- conformance assertion format;
-- final result vocabulary;
-- conformance report schema;
-- profile declaration syntax; or
-- implementation certification mechanics.
+`Target + Declared Requirements Set + Required Validation / Review Evidence → Conformance Determination`
 
-Those depend on normative Schemas and finalized Validation rules.
+Requirement dispositions:
+- `satisfied`
+- `not-satisfied`
+- `not-applicable`
+- `not-demonstrated`
+
+Conformance outcomes:
+- `conformant`
+- `nonconformant`
+- `undetermined`
+- `error`
+
+The determination remains bounded to the declared target, requirements set, tested scope, and evidence. Implementation Conformance and Process Conformance remain distinct from Object Conformance.
+
+## Production Conformance Baseline
+
+The first controlled production operation exercised Object Conformance for both first-production canonical objects.
+
+### ATT-2026-0001
+- Outcome → **CONFORMANT**
+- Applicable requirements satisfied → 14
+- Not Satisfied → 0
+- Not Demonstrated → 0
+
+### TRST-2026-0001
+- Outcome → **CONFORMANT**
+- Applicable requirements satisfied → 17
+- Not Satisfied → 0
+- Not Demonstrated → 0
+
+These determinations were supported by production Validation and governed Review evidence and establish production Conformance proof for the assessed object-level scope only.
+
+`Object Conformance ≠ Implementation Conformance ≠ Process Conformance`
+
+`First-Production Conformance ≠ Future Object Conformance`
 
 ## What Conformance Does Not Establish
 
@@ -170,11 +198,15 @@ Those depend on normative Schemas and finalized Validation rules.
 
 `Entry Model → Identifiers → Controlled Values → Authority → Provenance → Eligibility → Evaluation → Relationships → Lifecycle → Versioning → Schemas → Validation → Conformance → Publication → Templates → Methodology → Production`
 
-This page establishes conceptual Conformance architecture. Final executable conformance remains downstream of normative Schemas and formal Validation rules.
+The Conformance architecture is established and executable at the object level. Normative Schemas, Validation results, governed Review evidence, and declared requirements now support real production Conformance determinations.
+
+The first-production baseline does not establish universal implementation or process conformance, and future objects remain independently subject to applicable Conformance requirements.
 
 ## Status
 
-**Conformance → Established conceptually**
+**Conformance Architecture → Established**
+
+**Executable Object Conformance → Operational and Exercised in Production**
 
 - conformance target → required
 - declared requirements scope → required
@@ -182,6 +214,24 @@ This page establishes conceptual Conformance architecture. Final executable conf
 - profile-bounded claims → required
 - version-bounded claims → required
 - mandatory requirement completeness → required
-- Validation as conformance evidence → established
-- formal test suites / report schemas → deferred
-- production conformance proof → pending
+- Validation as conformance evidence → established and exercised
+- governed Review as separate evidence → established and exercised
+- requirement dispositions → established
+- Conformance Outcome vocabulary → established
+- `ATT-2026-0001` → **CONFORMANT**
+- ATT applicable requirements satisfied → **14**
+- ATT not-satisfied → **0**
+- ATT not-demonstrated → **0**
+- `TRST-2026-0001` → **CONFORMANT**
+- TRST applicable requirements satisfied → **17**
+- TRST not-satisfied → **0**
+- TRST not-demonstrated → **0**
+- production object-conformance proof → **established**
+
+## Continuing Conformance Governance
+
+The first-production determinations establish a bounded production baseline for the two assessed canonical objects. They do not establish universal implementation conformance, universal process conformance, or automatic conformance for future objects.
+
+Each future conformance claim must independently identify and assess its target, requirements set, version/profile, evidence basis, tested scope, and limitations.
+
+> **Conformance means meeting the declared requirements actually assessed—not borrowing certainty from a broader label.**
