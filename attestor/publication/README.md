@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/publication/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Publication  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -34,6 +34,16 @@ Establishes the object as the current governed representation within its scope.
 Authorizes public representation.
 
 `Creation ≠ Activation ≠ Publication`
+
+The first controlled production operation demonstrated this distinction directly:
+
+`Canonical Creation → Draft · Unpublished`
+
+`Lifecycle Activation → Active · Unpublished`
+
+`Publication Authorization → Active · Published`
+
+The lifecycle and publication decisions were separately governed and recorded.
 
 ## Canonical Publication States
 
@@ -167,20 +177,46 @@ Publication does not transfer authority either.
 
 A published Trust Statement remains an Attestor-owned bounded conclusion.
 
-## Deferred Publication Mechanics
+## Operational Publication Mechanics
 
-This architecture intentionally does not yet freeze:
+The first production operation exercised the core Publication mechanics required for canonical Attestor objects.
 
-- exact approval roles;
-- publication manifests;
-- publication timestamp requirements;
-- URI rules;
-- archival/takedown procedures;
-- publication logs;
-- machine publication fields; or
-- deployment workflow.
+The production workflow demonstrated:
 
-These should be derived from normative Schemas, Validation, Conformance, Templates, and Methodology.
+- canonical creation before publication;
+- lifecycle activation as a separate governed event;
+- affirmative publication authorization;
+- separate publication decision records;
+- preservation of canonical identity and version;
+- preservation of lifecycle state, provenance, relationships, limitations, and authority context;
+- canonical human-readable and machine-readable public representations; and
+- final-state Validation after publication.
+
+`Production Publication Workflow → Established and Exercised`
+
+Specialized archival, takedown, exceptional-removal, and future deployment mechanics may continue to mature without reopening the established creation / activation / publication distinction.
+
+## Production Publication Baseline
+
+### ATT-2026-0001
+
+- Creation → **Draft · Unpublished · V1.0**
+- Lifecycle Activation → **Active · Unpublished · V1.0**
+- Publication → **Active · Published · V1.0**
+- Final Published-State Validation → **VALID**
+- Canonical public path → `/attestor/attestations/ATT-2026-0001/`
+
+### TRST-2026-0001
+
+- Creation → **Draft · Unpublished · V1.0**
+- Lifecycle Activation → **Active · Unpublished · V1.0**
+- Publication → **Active · Published · V1.0**
+- Final Published-State Validation → **VALID**
+- Canonical public path → `/attestor/trust-statements/TRST-2026-0001/`
+
+**Production Publication Proof → ESTABLISHED**
+
+The first-production baseline demonstrates governed Publication capability. It does not make future objects automatically publishable.
 
 ## What Publication Does Not Establish
 
@@ -206,15 +242,32 @@ These should be derived from normative Schemas, Validation, Conformance, Templat
 
 ## Status
 
-**Publication → Established conceptually**
+**Publication Architecture → Established**
 
-- creation vs. activation vs. publication → distinguished
+**Operational Publication → Exercised in Production**
+
+- creation vs. activation vs. publication → distinguished and exercised
 - publication states → `unpublished`, `published`
-- affirmative publication authorization → required
-- public representation integrity → required
-- version-specific representation → required
+- affirmative publication authorization → established and exercised
+- public representation integrity → established and exercised
+- version-specific representation → established and exercised
 - historical publication preservation → required
 - lifecycle changes after publication → governed
-- validation / conformance / evaluation outcome → kept distinct
-- operational publication mechanics → deferred
-- production publication proof → pending
+- Validation / Conformance / Evaluation Outcome → kept distinct
+- publication decision records → exercised
+- canonical public representation → exercised
+- `ATT-2026-0001` → **Active · Published · V1.0**
+- `TRST-2026-0001` → **Active · Published · V1.0**
+- final published-state Validation → **VALID for both**
+- production publication workflow → **established and exercised**
+- production publication proof → **ESTABLISHED**
+
+## Continuing Publication Governance
+
+Publication remains an affirmative governed act for every future canonical object.
+
+Canonical creation does not authorize publication. Lifecycle activation does not authorize publication. Validation and Conformance do not themselves authorize publication.
+
+Each future publication decision must preserve the governed object's canonical identity, version, lifecycle context, provenance, scope, limitations, relationships, and authority boundaries.
+
+> **Creation ≠ Activation ≠ Publication.**
