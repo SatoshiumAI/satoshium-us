@@ -2,12 +2,12 @@
 
 **Path:** `/attestor/production/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Implementation & Validation — Production Readiness  
+**Institutional Stage:** Operational Production  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
 
-Production defines the controlled path to Attestor's first real production operation and operational proof.
+Production defines Attestor's standing controlled production architecture and records the established first-production baseline through which Operational Proof was earned.
 
 Production is not:
 
@@ -17,7 +17,7 @@ Production is not:
 - a schema example; or
 - a manually composed narrative presented as proof.
 
-Production applies Attestor's governed architecture to a real bounded matter and produces a canonical Trust Statement through the established institutional process.
+Production applies Attestor's governed architecture to real bounded matter and produces canonical Attestations and Trust Statements through the established institutional process. The first controlled production operation completed in September 2026.
 
 ## Governing Model
 
@@ -55,13 +55,17 @@ The readiness area preserves:
 - the Gate Preparation assessment; and
 - the formal Production Readiness Gate artifacts when created.
 
-Production Readiness Gate Preparation is complete. The formal Production Readiness Gate is ready for evaluation but has not yet been decided.
+Production Readiness Gate Preparation completed before the first controlled production operation. The formal Gate then evaluated sixteen criteria and returned:
 
-`Gate Preparation Complete → Formal Gate Evaluation → PASS / NOT PASS`
+- PASS → 16
+- Not passed → 0
+- Remaining blockers → 0
+
+`Gate Preparation Complete → Formal Gate Evaluation → PASS → Controlled Production Execution`
 
 `Readiness Gate → PASS before controlled production execution`
 
-A Gate Preparation result does not allocate, reserve, or create a production Attestation or Trust Statement.
+The Gate did not itself allocate, reserve, or create a production Attestation or Trust Statement. Canonical identifiers were assigned only when their corresponding governed objects were created.
 
 ## Production Repository Structure
 
@@ -87,6 +91,32 @@ Reusable production-support artifacts belong under `/attestor/templates/`, inclu
 `Production / Readiness → governs readiness and Gate evidence`
 
 `Templates → reusable controlled structures instantiated by production`
+
+## Established First-Production Baseline
+
+The first controlled production operation concerned `SC-CERT-2026-0001`, the canonical Certifier Certification Package concerning the **Satoshium Atlas Jurisdiction Record — El Salvador**.
+
+The bounded evaluation addressed:
+
+- canonical identity;
+- attributable Certifier origin;
+- relevant certification state; and
+- traceable governed Suite relationships.
+
+The first-production baseline is:
+
+- Production Readiness Gate → **PASS**
+- `ATT-2026-0001` → **Active · Published · V1.0**
+- Evaluation Outcome → **supported**
+- `TRST-2026-0001` → **Active · Published · V1.0**
+- Validator v0.5 → **VALID** for both final published objects
+- Governed Review → **25 / 25 SATISFIED**
+- Production Conformance → **ATT and TRST CONFORMANT**
+- Post-Operation Institutional Review → **11 PASS · 0 FAIL · 0 UNRESOLVED**
+- Operational Proof → **ESTABLISHED**
+- Institutional Status → **Operational · Released September 2026**
+
+This baseline demonstrates one governed institutional path. It does not pre-approve or pre-determine any future production operation.
 
 ## Selecting the First Production Matter
 
@@ -180,6 +210,12 @@ Production validation must test the actual canonical production objects.
 
 `Example Validates ≠ Production Object Validates`
 
+First-production result:
+
+- `ATT-2026-0001` → **VALID**
+- `TRST-2026-0001` → **VALID**
+- mandatory not-tested → **0** for both
+
 ## Conformance in Production
 
 Production status does not itself establish conformance.
@@ -187,6 +223,11 @@ Production status does not itself establish conformance.
 `Production Object / Process + Declared Requirements + Validation / Evidence → Conformance Determination`
 
 A conformance claim must remain no broader than its tested scope.
+
+First-production result:
+
+- `ATT-2026-0001` → **CONFORMANT**
+- `TRST-2026-0001` → **CONFORMANT**
 
 ## Publication in Production
 
@@ -197,6 +238,8 @@ Publication remains a separate governed decision.
 `Production ≠ Automatically Published`
 
 If publication is performed, the representation must resolve to the correct canonical object/version and preserve material context.
+
+In the first production operation, lifecycle activation and publication were separately governed. Both final objects are **Active · Published · V1.0** and their final published representations were revalidated successfully.
 
 ## Operational Proof Standard
 
@@ -239,11 +282,13 @@ Review should address:
 - repeatability; and
 - required corrections.
 
-Post-operation review is required before declaring the production baseline established.
+Post-operation review is required before declaring a production baseline established.
+
+The first Post-Operation Institutional Review returned **11 PASS · 0 FAIL · 0 UNRESOLVED**.
 
 ## Operational Threshold
 
-A successful first production operation demonstrates the core Attestor institutional path.
+The successful first production operation demonstrated the core Attestor institutional path and established Operational Proof.
 
 It does not establish universal coverage of every profile or edge case.
 
@@ -288,27 +333,31 @@ Production establishes controlled institutional execution and reviewable proof.
 
 ## Status
 
-**Production Architecture → Established**
+**Production Architecture → Established and Exercised**
 
-- Production Alignment v0.1 → established
-- executable Validation → demonstrated
-- executable Conformance → demonstrated
-- production readiness gate architecture → established
-- Production Readiness Gate Preparation → complete
-- identified pre-gate artifact blockers → closed
-- formal Production Readiness Gate → ready for evaluation, not yet decided
-- production-support templates/contracts → prepared
-- first-case selection principles → established
-- canonical production object chain → established
-- controlled execution sequence → established
-- production evidence requirements → established
-- operational proof standard → established
+- Production Alignment → complete
+- executable Validation → established and exercised
+- executable Conformance → established and exercised
+- Production Readiness Gate → **PASS**
+- production-support templates/contracts → established
+- first-case selection principles → established and exercised
+- canonical production object chain → established and exercised
+- controlled execution sequence → established and exercised
+- production evidence requirements → established and exercised
 - failure/correction/re-run path → established
-- post-operation institutional review → required
-- operational status threshold → established
-- `ATT-2026-0001` → unallocated
-- `TRST-2026-0001` → unallocated
-- **first real Attestor production operation → not yet performed**
-- **operational proof → pending**
+- `ATT-2026-0001` → **Active · Published · V1.0**
+- `TRST-2026-0001` → **Active · Published · V1.0**
+- governed Review → **25 / 25 SATISFIED**
+- production Conformance → **ATT and TRST CONFORMANT**
+- production evidence package → preserved
+- post-operation institutional review → **11 PASS · 0 FAIL · 0 UNRESOLVED**
+- operational proof → **ESTABLISHED**
+- institutional status → **Operational · Released September 2026**
 
-No production identifier is allocated before a formal Production Readiness Gate `PASS`.
+## Continuing Production Governance
+
+The first-production baseline does not pre-approve any future operation.
+
+Each future governed matter must independently satisfy the applicable requirements for readiness, authority, provenance, eligibility, evaluation, Validation, Review, Conformance, lifecycle, publication, correction/versioning, and evidence preservation.
+
+> **Operational status demonstrates capability. It does not pre-authorize the next governed act.**
