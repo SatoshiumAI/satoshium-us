@@ -157,7 +157,7 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Attestor · Advanced Architecture</div>
+<div class="eyebrow">Attestor · Operational Versioning</div>
 <h1>Versioning</h1>
 <p class="lead">Versioning defines governed <strong>change</strong>, <strong>revision</strong>, <strong>supersession</strong>, <strong>historical preservation</strong>, and <strong>version identity</strong> for Attestor-owned objects.</p>
 <p class="lead">Its central responsibility is to distinguish a new governed state of the <em>same</em> Attestation or Trust Statement from a change so substantive that Attestor must create a <em>new canonical object</em>.</p>
@@ -166,7 +166,7 @@ h1{
 
 <section class="grid"><article class="card"><h2>Versioning Purpose</h2><p>Versioning governs change within an Attestor-owned canonical object while preserving its identity and history. It distinguishes revision of the same governed object from a substantive change that requires a new canonical object.</p></article>
 <article class="card"><h2>Object Identity</h2><p>An Attestation keeps its <strong>ATT-YYYY-NNNN</strong> identity across permitted revisions. A Trust Statement keeps its <strong>TRST-YYYY-NNNN</strong> identity across permitted revisions. A version identifies a governed state of that object; it does not replace the canonical identifier.</p></article>
-<article class="card"><h2>Version Identity</h2><p>Each preserved governed revision must be distinguishable from other revisions of the same canonical object. Exact machine syntax for version labels is reserved for Schemas; this page establishes the requirement for version identity without prematurely fixing its serialization.</p></article>
+<article class="card"><h2>Version Identity</h2><p>Each preserved governed revision must be distinguishable from other revisions of the same canonical object. Production canonical objects now carry explicit version identity, including <strong>V1.0</strong> for the first production Attestation and Trust Statement. Schemas govern the applicable machine representation without changing the distinction between canonical identity and version identity.</p></article>
 <article class="card"><h2>Revision</h2><p>A revision may correct or clarify an existing object without changing its essential institutional meaning. Editorial corrections, metadata repair, reference repair, and other bounded changes may remain within the same canonical identity when the object's substantive assertion or conclusion is unchanged.</p></article>
 <article class="card"><h2>Material Change</h2><p>A change is potentially identity-changing when it materially alters what the object asserts or concludes, its subject, controlling scope, evaluation basis in a way that changes the conclusion, or the institutional meaning represented by the object.</p></article>
 <article class="card"><h2>Supersession</h2><p>When change exceeds the permitted bounds of revision, Attestor creates a new canonical object with a new identifier and explicitly relates it to the prior object through <strong>supersedes</strong>. The prior object remains historically resolvable.</p></article>
@@ -181,7 +181,7 @@ h1{
 
 <section style="margin-top:18px;"><article class="card">
 <h2>Revision Boundary</h2>
-<p>A change may remain within the same canonical identity when it preserves the object's essential meaning. The exact machine rules will be formalized later, but the governing test is substantive rather than cosmetic.</p>
+<p>A change may remain within the same canonical identity when it preserves the object's essential meaning. The governing test is substantive rather than cosmetic and must be applied through the applicable Versioning, Validation, Methodology, and correction controls rather than inferred from formatting alone.</p>
 <div class="note"><strong>Generally compatible with same-object revision:</strong><br>Editorial correction<br>Formatting repair<br>Non-substantive metadata correction<br>Broken or improved reference resolution<br>Clarification that does not broaden or alter meaning<br>Provenance detail added without changing the underlying basis<br>Administrative lifecycle metadata<br><br>Same meaning → Same canonical identity may be preserved</div>
 </article></section>
 
@@ -211,7 +211,7 @@ h1{
 
 <section style="margin-top:18px;"><article class="card">
 <h2>Version History</h2>
-<p>Where a governed revision is preserved, Attestor must maintain enough version history to identify the sequence of states and understand material changes. Later Schemas will define the exact representation.</p>
+<p>Where a governed revision is preserved, Attestor must maintain enough version history to identify the sequence of states and understand material changes. Canonical production representations now exercise explicit version identity, while Schemas govern the applicable representation requirements.</p>
 <div class="note">Canonical Identifier<br>Version Identity<br>Prior Version Reference, where applicable<br>Change Time<br>Change Type / Reason, where material<br>Responsible Attestor Context<br>Provenance of Change<br>Material Change Summary<br>Lifecycle State<br>Current / Historical Distinction</div>
 </article></section>
 
@@ -234,15 +234,63 @@ h1{
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
+<h2>First Production Versioning Demonstration</h2>
+<p>The first controlled production operation exercised version identity and the same-object materiality boundary for both <strong>ATT-2026-0001</strong> and <strong>TRST-2026-0001</strong>. Each canonical object was created as <strong>V1.0</strong>. During the operation, early descriptive relationship serialization was corrected to structured relationship blocks with explicit relationship types and target identifiers.</p>
+<div class="note">
+ATT-2026-0001 → Canonical identity preserved → V1.0<br>
+TRST-2026-0001 → Canonical identity preserved → V1.0<br><br>
+Relationship serialization correction → Governed materiality review<br>
+Attestation assertion → Unchanged<br>
+Trust Statement conclusion → Unchanged<br>
+Scope / provenance / limitations → Unchanged<br>
+Historical representations → Preserved<br>
+New ATT required → No<br>
+New TRST required → No<br>
+New version required → No, for this bounded correction<br><br>
+<strong>Same-object versioning boundary → DEMONSTRATED IN PRODUCTION</strong>
+</div>
+<p style="margin-top:16px;">The V1.0 determination was specific to this serialization-only correction. It does not establish that every correction may retain the same version. A material Attestation assertion change requires a new ATT; a material Trust Statement conclusion change requires a new TRST.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Production Versioning Boundary</h2>
+<p>The first operation demonstrated that correction reason and versioning consequence are separate governed questions. A defect can require correction without necessarily requiring a new version or canonical object. Conversely, a change that alters essential institutional meaning cannot be hidden as a routine correction or version update.</p>
+<div class="note">
+Correction Reason → Why change is required<br>
+Versioning Decision → How identity / version behaves<br><br>
+Serialization-only defect in first operation → Corrected within V1.0<br>
+Material ATT assertion change → New ATT<br>
+Material TRST conclusion change → New TRST<br>
+Successor replacing prior canonical object → supersedes relationship<br><br>
+Correction ≠ Versioning Decision<br>
+Changed Conclusion = Changed Canonical Statement
+</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
 <h2>What Versioning Does Not Establish</h2>
 <p>Versioning records governed change. It does not independently establish lifecycle status, publication, evaluation outcome, truth, validation, conformance, or authority.</p>
 <div class="note">New Version ≠ Active<br>New Version ≠ Published<br>New Version ≠ Supported<br>Higher Version ≠ More Authoritative<br>Latest Version ≠ Universal Truth<br>Version Identity ≠ Canonical Object Identity</div>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
-<h2>Advanced Architecture Position</h2>
-<p>Versioning now establishes the identity boundary required before normative Schemas can be finalized. Attestor can distinguish bounded revision from canonical replacement without inventing a machine version syntax prematurely.</p>
-<div class="note"><strong>Versioning → Established</strong><br>Canonical object vs. version identity → Distinguished<br>Same-object revision boundary → Established conceptually<br>New-object boundary → Established conceptually<br>Material assertion change → New Attestation<br>Material conclusion change → New Trust Statement<br>Supersession → Preserves predecessor relationship<br>No silent overwrite → Required<br>Exact version syntax → Deferred to Schemas<br>Machine materiality tests → Deferred to Validation / Methodology<br>Production proof → Pending</div>
+<h2>Current Versioning Position</h2>
+<p>The Versioning architecture is established and has been exercised in production. The first controlled operation demonstrated explicit version identity, preservation of canonical identity through a bounded serialization correction, historical preservation, and a governed determination that the correction did not materially change the Attestation assertion or Trust Statement conclusion.</p>
+<div class="note"><strong>Versioning → Established and Production-Proven</strong><br>
+Canonical object vs. version identity → Distinguished and exercised<br>
+Production version identity → V1.0 exercised<br>
+Same-object revision boundary → Demonstrated<br>
+New-object boundary → Established<br>
+Material Attestation assertion change → New ATT required<br>
+Material Trust Statement conclusion change → New TRST required<br>
+Correction reason / versioning decision → Distinguished and demonstrated<br>
+Historical preservation → Demonstrated<br>
+No silent overwrite → Demonstrated<br>
+Supersession → Established; not required by first production operation<br>
+Machine representation → Exercised through canonical production objects<br>
+Materiality → Governed; not reduced to a universal automatic test<br>
+<strong>Production proof → ESTABLISHED</strong></div>
+<p style="margin-top:16px;">Production proof establishes a real same-object versioning precedent without converting that precedent into a universal rule. Future changes must independently determine materiality, canonical identity consequences, version consequences, lifecycle effects, and any required supersession.</p>
 <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article></section>
 
