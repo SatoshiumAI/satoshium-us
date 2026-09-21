@@ -24,47 +24,45 @@ The Suite-wide principle applies:
 
 If a referenced source changes, Attestor may need to reconsider or update its own Attestation or Trust Statement. The originating institution remains responsible for the source object's correction and lifecycle.
 
-## Required Correction Capabilities
+## Established Correction Capabilities
 
-The foundational page identifies several capabilities that advanced Attestor architecture must address:
+Attestor now governs:
 
 - correction;
 - clarification;
 - withdrawal;
 - supersession;
-- provenance of change;
+- provenance of change; and
 - historical traceability.
 
-These are architectural concerns, not yet final machine values or lifecycle states.
+Correction and clarification are governed change activities. `withdrawn` and `superseded` are established Lifecycle states. Their use remains subject to Lifecycle, Versioning, Relationships, Provenance, Validation, and Publication.
 
-## No Separate Correction Record Yet
+## No Separate Correction Record
 
-The pre-Suite page proposed future **Correction Records**.
-
-This reconciliation does not establish a Correction Record as another canonical Attestor object.
+Attestor does not establish a separate **Correction Record** as another canonical Attestor object class.
 
 Attestor's canonical responsibility remains:
 
 **Attestor → Trust Statement**
 
-Correction may ultimately be represented through:
+Correction is represented through the applicable governed combination of:
 
-- lifecycle state;
-- versioning;
-- explicit relationships;
-- replacement Attestations;
-- replacement Trust Statements;
-- another governed mechanism demonstrated to be necessary during advanced architecture.
+- Lifecycle;
+- Versioning;
+- Relationships;
+- Provenance;
+- Validation;
+- Publication;
+- replacement Attestations where material assertion change requires one; and
+- replacement Trust Statements where material conclusion change requires one.
 
-No implementation is adopted here.
+The first production correction was completed without creating a separate canonical Correction Record.
 
 ## Correction Attestations
 
-The pre-Suite page also proposed **Correction Attestations**.
+A dedicated **Correction Attestation** mechanism is not adopted by this page and was not required by the first production operation.
 
-That mechanism is not adopted at this stage.
-
-The Attestation Types reconciliation already left open whether correction and supersession should be represented as an Attestation Type or through lifecycle/versioning architecture. This page preserves that question rather than resolving it prematurely.
+Correction remains a governed activity. If a future correction itself requires a new Attestation, that determination must arise from the applicable Attestation Type, materiality, Lifecycle, Versioning, and Methodology rules rather than from an automatic assumption that every correction creates a Correction Attestation.
 
 ## Current State vs Historical State
 
@@ -83,7 +81,7 @@ Provenance and relationships should remain visible across the transition.
 
 ## Provenance of Change
 
-Advanced architecture should preserve enough information to determine, as applicable:
+Correction governance preserves enough information to determine, as applicable:
 
 - what changed;
 - why it changed;
@@ -93,7 +91,7 @@ Advanced architecture should preserve enough information to determine, as applic
 - what object or state replaced it;
 - the relationship between prior and current states.
 
-The exact required fields remain unresolved.
+Canonical production artifacts have now demonstrated preservation of correction reason, affected objects, historical representations, and the separate versioning determination. Applicable exact fields remain governed by the relevant Schemas and records.
 
 ## Changes in Referenced Sources
 
@@ -107,7 +105,7 @@ Depending on Attestor rules and the significance of the change, Attestor may ins
 - withdraw its own object;
 - supersede its own object with a new evaluation.
 
-The exact decision rules are deferred to advanced architecture.
+The applicable decision is governed by materiality, Lifecycle, Versioning, Eligibility/Evaluation where relevant, and Publication. A source change triggers governed review; it does not predetermine the Attestor response.
 
 ## Historical Traceability
 
@@ -115,48 +113,118 @@ The June-era principle that corrections should improve understanding without era
 
 Historical traceability should coexist with a clear current state. Preserving a superseded or withdrawn object does not mean presenting it as currently effective.
 
-Retention, public visibility, and publication behavior remain to be defined.
+Retention, public visibility, and publication behavior are governed through the established Lifecycle, Versioning, and Publication architecture.
 
-## Reconciliation Notes
+## First Production Correction Demonstration
 
-This revision updates the June-era pre-Suite Corrections page.
+The first controlled production operation identified a relationship-serialization defect in the early representations of:
 
-Major changes include:
+- `ATT-2026-0001`; and
+- `TRST-2026-0001`.
 
-- replacing broad trust/accountability language with governed Attestor correction responsibilities;
-- limiting Attestor correction authority to Attestor-owned objects;
-- removing the assumption that a separate Correction Record will exist;
-- removing Correction Attestations as a planned mechanism;
-- distinguishing correction, clarification, withdrawal, and supersession as separate architectural concerns;
-- adding provenance-of-change requirements;
-- distinguishing current state from historical state;
-- establishing treatment for changes in referenced authoritative sources;
-- replacing `Original Record → Correction → Historical Context → Trust` with a lifecycle-oriented model;
-- preserving Attestor's canonical Trust Statement responsibility;
-- avoiding premature lifecycle values, version identifiers, schemas, and validation rules.
+The early representations used descriptive relationship strings. The governed correction replaced those with structured relationship blocks containing explicit relationship types and target identifiers.
 
-## Deferred to Advanced Architecture
+The correction preserved:
 
-The following remain intentionally unresolved:
+- canonical ATT identity;
+- canonical TRST identity;
+- the Attestation assertion;
+- the Trust Statement conclusion;
+- scope;
+- provenance;
+- limitations;
+- production history; and
+- historical representations.
 
-- correction triggers;
-- correction authorization;
-- whether correction is an Attestation Type;
-- whether corrections create replacement Attestations;
-- whether corrected Trust Statements are versioned or replaced;
-- lifecycle state vocabulary;
-- withdrawal semantics;
-- supersession semantics;
-- versioning model;
-- relationship identifiers;
-- correction validation rules;
-- publication behavior;
-- historical retention rules;
-- public visibility of prior states;
-- correction of unpublished objects;
-- handling changes in referenced sources;
-- schemas;
-- conformance tests and reference vectors.
+The governed materiality determination concluded that the correction was serialization-only and did not materially alter canonical institutional meaning.
+
+Accordingly:
+
+- `ATT-2026-0001` remained `V1.0`;
+- `TRST-2026-0001` remained `V1.0`;
+- no new ATT was required;
+- no new TRST was required; and
+- no separate canonical Correction Record was created.
+
+**Correction architecture → DEMONSTRATED IN PRODUCTION**
+
+## Correction and Versioning
+
+The production operation demonstrated that correction reason and versioning consequence are separate governed decisions.
+
+`Correction Reason → Why change is required`
+
+`Versioning Decision → How canonical identity and version behave`
+
+For the first production operation:
+
+`Relationship serialization defect → Corrected within V1.0`
+
+This does not establish a universal rule that every correction remains within the same version.
+
+Standing boundaries remain:
+
+`Material Attestation Assertion Change → New ATT`
+
+`Material Trust Statement Conclusion Change → New TRST`
+
+`Correction ≠ Versioning Decision`
+
+## Historical Integrity
+
+The earlier relationship representations were preserved rather than silently overwritten.
+
+The production correction therefore demonstrated:
+
+`Correction ≠ Deletion`
+
+`Correction ≠ Historical Erasure`
+
+`Correction ≠ Silent Overwrite`
+
+`Correction ≠ Automatic New Canonical Object`
+
+Historical preservation does not make an earlier representation current. It preserves the institutional record of what existed and how it changed.
+
+## Status
+
+**Corrections → Established and Production-Proven**
+
+- correction as governed activity → established and exercised
+- clarification → established governed change
+- separate Correction Record → not adopted
+- dedicated Correction Attestation mechanism → not required by first production operation
+- provenance of change → exercised
+- historical traceability → exercised
+- no silent overwrite → demonstrated
+- Correction / Versioning distinction → demonstrated
+- bounded serialization correction → exercised
+- canonical identity preservation → demonstrated
+- `V1.0` retention → governed and demonstrated for the bounded production correction
+- withdrawal / supersession correction paths → established but not exercised in first production
+- production proof → **ESTABLISHED**
+
+## Continuing Correction Governance
+
+Production proof does not make every future correction non-material.
+
+Each correction must independently determine:
+
+- Attestor authority to correct the affected object;
+- correction reason;
+- materiality;
+- canonical identity consequences;
+- version consequences;
+- lifecycle effects;
+- relationship effects;
+- provenance requirements;
+- publication consequences;
+- historical preservation requirements; and
+- whether a new canonical object is required.
+
+Attestor continues to correct only Attestor-owned objects.
+
+**Reference does not transfer authority.**
 
 ## Files
 
