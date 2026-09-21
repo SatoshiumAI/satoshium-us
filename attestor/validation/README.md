@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/validation/`  
 **Institution:** Satoshium Attestor  
-**Current Stage:** Implementation & Validation  
+**Current Stage:** Operational Validation  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -167,36 +167,86 @@ The Machine Contract v0.1 establishes the initial implementation choices for:
 
 These are implementation specifications subordinate to established Attestor architecture. They do not redefine institutional meaning.
 
-## Executable Validator v0.1
+## Executable Validator
 
-The first executable implementation is maintained separately from the durable Validation specifications:
+Executable Validation is maintained separately from the durable Validation specifications. The implementation began with Validator v0.1 and progressed through iterative rule-coverage, execution-context, and production-validation work.
 
-`/attestor/validation/executable-validator-v01/`
+The operative production endpoint is **Validator v0.5**.
 
-It contains:
+Validator v0.5 supports:
 
-- `README.md` — implementation notes, runtime boundary, and current test status;
-- `attestation.schema.json` — executable JSON Schema representation of `attestor.attestation.base`;
-- `trust-statement.schema.json` — executable JSON Schema representation of `attestor.trust-statement.base`;
-- `attestor_validator.py` — validator implementation v0.1;
-- `valid-attestation.yaml` — non-production positive ATT fixture;
-- `valid-trust-statement.yaml` — non-production positive TRST fixture;
-- `invalid-attestation.yaml` — deliberate negative ATT fixture;
-- `attestation-validation-report.json` — successful ATT fixture validation report;
-- `trust-statement-validation-report.json` — successful TRST fixture validation report; and
-- `invalid-attestation-validation-report.json` — negative ATT validation report demonstrating failure detection.
+- target-object validation;
+- governed Validation Result reporting;
+- registry-aware validation where required;
+- execution-context input;
+- separation of contextual results from object-local results;
+- deterministic and conditional rule execution;
+- explicit preservation of genuinely Review-bound requirements; and
+- aggregate result determination without treating `not-tested` as `pass`.
 
-Initial execution established:
+Per-rule Validation Results:
 
-- positive ATT fixture → `valid`;
-- positive TRST fixture → `valid`; and
-- deliberate invalid ATT fixture → `invalid`, with the intended identifier-family and lifecycle-state failures detected.
+- `pass`
+- `fail`
+- `not-applicable`
+- `not-tested`
 
-These results establish **implementation proof only**.
+Aggregate Validation Results:
 
-They are not canonical production objects, do not constitute the first Attestor production operation, and do not establish production proof or production readiness by themselves.
+- `valid`
+- `invalid`
+- `incomplete`
+- `error`
 
-The versioned implementation directory is intentionally subordinate to the stable specifications in `/attestor/validation/`.
+> **NOT-TESTED NEVER EQUALS PASS.**
+
+Review-bound rules may remain `not-tested` when genuinely nonmandatory for the aggregate machine result. Mandatory requirements may not be silently treated as passed when they have not been tested.
+
+Earlier validator versions and fixture executions remain implementation history. Validator v0.5 is the operative production validation path.
+
+## Production Validation Baseline
+
+Validator v0.5 was exercised against the first canonical production Attestation and Trust Statement and their final published representations.
+
+### ATT-2026-0001
+
+Final **Active · Published · V1.0** representation:
+
+- Aggregate Result → **VALID**
+- Pass → 68
+- Fail → 0
+- Not Applicable → 24
+- Review-bound Not Tested → 11
+- Mandatory Not Tested → 0
+
+### TRST-2026-0001
+
+Final **Active · Published · V1.0** representation:
+
+- Aggregate Result → **VALID**
+- Pass → 78
+- Fail → 0
+- Not Applicable → 16
+- Review-bound Not Tested → 14
+- Mandatory Not Tested → 0
+
+Both production objects were validated before activation/publication and revalidated after reaching their final **Active · Published · V1.0** state.
+
+## Governed Review Boundary
+
+Machine Validation and governed Review remain distinct.
+
+The first production operation separately completed all Review-bound requirements:
+
+- ATT governed Review → 11 / 11 SATISFIED
+- TRST governed Review → 14 / 14 SATISFIED
+- Combined → **25 / 25 SATISFIED**
+
+`Validation ≠ Review`
+
+`Not Tested ≠ Pass`
+
+`Valid ≠ Review Automatically Satisfied`
 
 ## What Validation Does Not Establish
 
@@ -220,17 +270,17 @@ Architectural dependency remains:
 
 `Entry Model → Identifiers → Controlled Values → Authority → Provenance → Eligibility → Evaluation → Relationships → Lifecycle → Versioning → Schemas → Validation → Conformance → Publication → Templates → Methodology → Production`
 
-The conceptual Validation architecture is established. The canonical base Attestation and Trust Statement schemas now support the first machine contract and numbered validation-rule implementation.
+The Validation architecture is established and implemented. Canonical Attestation and Trust Statement schemas, Validation Requirements, the numbered `VAL-*` Rule Catalog, machine contracts, executable validator software, execution-context support, and production Validation evidence now exist.
 
-Executable schema artifacts, validator software, and initial validation fixtures now exist in `executable-validator-v01/`.
+Validator v0.5 has validated the first canonical production Attestation and Trust Statement and their final published representations.
 
-Rule-coverage reconciliation, broader negative/boundary testing, representative-object validation, and production validation evidence remain implementation work.
+Future objects remain independently subject to the applicable Validation requirements.
 
 ## Status
 
 **Validation Architecture → Established**
 
-**Executable Validation → In implementation**
+**Executable Validation → Operational and Exercised in Production**
 
 - structural validation architecture → established
 - semantic validation architecture → established
@@ -243,16 +293,23 @@ Rule-coverage reconciliation, broader negative/boundary testing, representative-
 - canonical ATT/TRST base schemas → established
 - Validation Requirements → established
 - numbered `VAL-*` Rule Catalog → established
-- ATT/TRST Machine Contract v0.1 → established
-- Validation Result vocabulary → established for initial implementation
-- Validation Report contract → established for initial implementation
-- executable ATT/TRST schema artifacts → created in `executable-validator-v01/`
-- validator implementation v0.1 → created
-- positive ATT fixture → executed; `valid`
-- positive TRST fixture → executed; `valid`
-- deliberate invalid ATT fixture → executed; `invalid` as intended
-- initial Validation Report generation → demonstrated
-- complete `VAL-*` rule-coverage reconciliation → next
-- broader negative/boundary validation fixtures → next
-- representative ATT/TRST validation → pending
-- production validation → pending
+- machine result vocabulary → established
+- Validation Report semantics → established
+- executable validator → **v0.5 operative production endpoint**
+- execution-context support → established
+- contextual vs. object-local result separation → established
+- Review-bound `not-tested` handling → established
+- `NOT-TESTED ≠ PASS` → enforced
+- `ATT-2026-0001` final validation → **VALID**
+- `TRST-2026-0001` final validation → **VALID**
+- mandatory not-tested → **0 for both final production objects**
+- production governed Review → **25 / 25 SATISFIED**
+- production Validation evidence → **established**
+
+## Continuing Validation Governance
+
+The first-production Validation baseline demonstrates executable institutional capability.
+
+It does not make future Attestations or Trust Statements automatically valid. Each future object and governed representation must independently satisfy the normative requirements applicable to its object class, profile, state, and context.
+
+> **Validator → implements architecture. Validator → does not create architecture.**
