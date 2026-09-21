@@ -157,7 +157,7 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Attestor · Advanced Architecture</div>
+<div class="eyebrow">Attestor · Operational Conformance</div>
 <h1>Conformance</h1>
 <p class="lead">Conformance defines what it means for an <strong>Attestor object</strong>, <strong>implementation</strong>, or governed <strong>process</strong> to conform to the Attestor architecture, specification, or profile applicable to it.</p>
 <p class="lead">A conformance claim is always bounded: it identifies the target being assessed, the requirements set being claimed, and the evidence supporting that determination.</p>
@@ -234,9 +234,21 @@ h1{
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
-<h2>Deferred Conformance Specification</h2>
-<p>This page establishes the architecture of conformance without prematurely fixing the final machine conformance suite. Exact conformance classes, required test suites, assertion format, result vocabulary, report schema, profile declarations, and implementation certification mechanics depend on normative Schemas and finalized Validation rules.</p>
-<div class="note">Conformance Architecture → Established<br>Normative Schemas → Required dependency<br>Validation Rules → Required dependency<br>Formal Test Suites → To be defined<br>Conformance Report Schema → To be defined<br>Implementation Claim Format → To be defined<br><br>Conformance claims must follow architecture; they must not define it.</div>
+<h2>Executable Conformance</h2>
+<p>The Conformance architecture is implemented for governed object-level determinations. Production Conformance uses a declared target and requirements set together with Validation evidence, governed Review evidence, and applicable conformance mechanics to produce a bounded determination.</p>
+<div class="note">Conformance Architecture → Established<br>Target Classes → Object · Implementation · Process<br>Requirement Dispositions → satisfied · not-satisfied · not-applicable · not-demonstrated<br>Outcomes → conformant · nonconformant · undetermined · error<br>Production Object Conformance → Exercised<br><br>Conformance claims remain no broader than the target and requirements actually assessed.</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Production Conformance Baseline</h2>
+<p>The first controlled production operation exercised object-level Conformance for both canonical production objects. Each determination used the applicable declared requirements together with production Validation and governed Review evidence.</p>
+<div class="note">ATT-2026-0001 → CONFORMANT<br>Applicable requirements satisfied → 14<br>Not Satisfied → 0<br>Not Demonstrated → 0<br><br>TRST-2026-0001 → CONFORMANT<br>Applicable requirements satisfied → 17<br>Not Satisfied → 0<br>Not Demonstrated → 0<br><br>Production Conformance Proof → ESTABLISHED for the assessed object-level scope</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Production Evidence Boundary</h2>
+<p>The first-production determinations establish conformance only for the assessed canonical objects and their declared requirements sets. They do not establish universal Attestor implementation conformance, process conformance, or automatic conformance for future objects.</p>
+<div class="note">ATT Object Conformance → Established for ATT-2026-0001<br>TRST Object Conformance → Established for TRST-2026-0001<br>Implementation Conformance → Not inferred<br>Process Conformance → Not inferred<br>Future Object Conformance → Must be independently determined</div>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
@@ -246,9 +258,10 @@ h1{
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
-<h2>Advanced Architecture Position</h2>
-<p>The Conformance architecture now establishes the boundary between individual validation results and a broader, explicitly scoped claim that an object, implementation, or governed process meets Attestor requirements. Final executable conformance remains downstream of normative Schemas and formal Validation rules.</p>
-<div class="note"><strong>Conformance → Established conceptually</strong><br>Conformance target → Required<br>Declared requirements scope → Required<br>Object / implementation / process dimensions → Distinguished<br>Profile-bounded claims → Required<br>Version-bounded claims → Required<br>Mandatory requirement completeness → Required<br>Validation as conformance evidence → Established<br>Formal test suites / report schemas → Deferred<br>Production conformance proof → Pending</div>
+<h2>Current Conformance Position</h2>
+<p>Conformance is no longer only conceptual or downstream of Validation implementation. The architecture has been exercised through real object-level production determinations for the first canonical Attestation and Trust Statement.</p>
+<div class="note"><strong>Conformance Architecture → Established</strong><br>Conformance target → Required<br>Declared requirements scope → Required<br>Object / implementation / process dimensions → Distinguished<br>Requirement dispositions → Established<br>Conformance outcome vocabulary → Established<br>Validation as conformance evidence → Exercised<br>Governed Review as separate evidence → Exercised<br>ATT-2026-0001 → CONFORMANT<br>TRST-2026-0001 → CONFORMANT<br><strong>Executable Object Conformance → Operational and exercised in production</strong></div>
+<p style="margin-top:16px">The first-production determinations establish a bounded object-conformance baseline. They do not pre-authorize a conformance claim for any future object, implementation, or process.</p>
 <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article></section>
 
