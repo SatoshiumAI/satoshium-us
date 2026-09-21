@@ -157,7 +157,7 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Attestor · Advanced Architecture</div>
+<div class="eyebrow">Attestor · Operational Validation</div>
 <h1>Validation</h1>
 <p class="lead">Validation defines whether an <strong>Attestor object</strong> satisfies Attestor's applicable <strong>normative structural and rule requirements</strong>.</p>
 <p class="lead">Validation determines whether an object is correctly formed and governed according to Attestor architecture. It does <strong>not</strong> determine whether an Attestation is true, whether a Trust Statement is favorable, or whether the underlying evidence is sufficient.</p>
@@ -171,7 +171,7 @@ h1{
 <article class="card"><h2>Rule Validation</h2><p>Rule validation tests applicable normative Attestor requirements derived from established principles, rules, and architecture. A structurally complete object can still fail validation when it violates a governing rule.</p></article>
 <article class="card"><h2>Relationship Validation</h2><p>Relationships must use permitted meanings and, once formalized in Schemas, permitted source/target combinations and cardinalities. A syntactically present relationship is not valid merely because it can be serialized.</p></article>
 <article class="card"><h2>Lifecycle & Version Validation</h2><p>Validation checks whether lifecycle and version information is internally consistent with the object's identity and governed history. It must not allow versioning or lifecycle metadata to conceal a new canonical object or erase a prior governed state.</p></article>
-<article class="card"><h2>Validation Result</h2><p>Validation produces a governed validation determination for the object or representation tested. Exact machine result vocabulary and report serialization remain to be finalized with normative Schemas rather than invented prematurely.</p></article></section>
+<article class="card"><h2>Validation Result</h2><p>Validation produces a governed validation determination for the object or representation tested. Per-rule results are <code>pass</code>, <code>fail</code>, <code>not-applicable</code>, and <code>not-tested</code>; aggregate results are <code>valid</code>, <code>invalid</code>, <code>incomplete</code>, and <code>error</code>. <strong>NOT-TESTED never equals PASS.</strong></p></article></section>
 
 <section style="margin-top:18px;"><article class="card">
 <h2>Validation Layers</h2>
@@ -228,9 +228,21 @@ h1{
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
-<h2>Deferred Machine Specification</h2>
-<p>This page establishes validation architecture, not yet the final machine validator. Exact schemas, required/optional fields, cardinalities, regex patterns, version syntax, machine result vocabulary, error codes, and executable validation sequence must be derived from the normative Schemas and later formal validation specification.</p>
-<div class="note">Architecture → Established<br>Normative Schemas → Required dependency for final machine rules<br>Executable Rules → To be formalized<br>Result Vocabulary → To be finalized<br>Error Codes / Reports → To be formalized<br><br>No machine rule should be invented ahead of its governing architecture.</div>
+<h2>Executable Validation</h2>
+<p>The Validation architecture is implemented through normative Validation Requirements, the numbered <code>VAL-*</code> Rule Catalog, machine contracts, executable schemas, and versioned validator software. Validator v0.5 is the operative production validation endpoint.</p>
+<div class="note">Architecture → Established<br>Normative Validation Requirements → Established<br>Numbered VAL-* Rule Catalog → Established<br>Per-rule Results → pass · fail · not-applicable · not-tested<br>Aggregate Results → valid · invalid · incomplete · error<br>Validator → v0.5 operative production path<br>Execution Context → Contextual and object-local validation supported<br>Review-bound rules → May remain not-tested when genuinely nonmandatory<br>Mandatory not-tested → Prevents a complete valid determination<br><br><strong>NOT-TESTED NEVER EQUALS PASS.</strong></div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Production Validation Baseline</h2>
+<p>Validator v0.5 was exercised against the first canonical production Attestation and Trust Statement and again against their final Active · Published representations. Both final production objects returned <strong>VALID</strong> with zero mandatory requirements left not-tested.</p>
+<div class="note">ATT-2026-0001 → VALID<br>Pass → 68 · Fail → 0 · Not Applicable → 24<br>Review-bound Not Tested → 11 · Mandatory Not Tested → 0<br><br>TRST-2026-0001 → VALID<br>Pass → 78 · Fail → 0 · Not Applicable → 16<br>Review-bound Not Tested → 14 · Mandatory Not Tested → 0<br><br>Final State → Active · Published · V1.0<br>Final-State Revalidation → VALID for both objects</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Governed Review Boundary</h2>
+<p>Validator v0.5 preserves the distinction between deterministic validation and genuinely review-dependent requirements. A Review-bound rule may remain <code>not-tested</code> in machine execution when nonmandatory for the aggregate result; that status is not silently converted into a pass. The first production operation separately completed governed Review with <strong>25 / 25 requirements SATISFIED</strong>.</p>
+<div class="note">Machine Validation ≠ Governed Review<br>Not Tested ≠ Pass<br>Review Evidence → Preserved separately<br>Production Governed Review → 25 / 25 SATISFIED</div>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
@@ -240,9 +252,10 @@ h1{
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
-<h2>Advanced Architecture Position</h2>
-<p>The Validation architecture now defines what validation means and what it must test without prematurely freezing machine details that depend on normative Schemas. Once those Schemas are advanced, this architecture can be implemented as explicit validation rules and reports.</p>
-<div class="note"><strong>Validation → Established conceptually</strong><br>Structural validation → Required<br>Semantic validation → Required<br>Rule validation → Required<br>Relationship validation → Required<br>Lifecycle / version validation → Required<br>Validation vs. evaluation → Distinguished<br>Validation vs. conformance → Distinguished<br>Machine rule set → Dependent on normative Schemas<br>Production validation → Pending</div>
+<h2>Current Validation Position</h2>
+<p>Validation is no longer only conceptual or pre-production. The architecture has been translated into executable rules and report semantics, exercised through Validator v0.5, and proven against the first canonical production Attestation and Trust Statement.</p>
+<div class="note"><strong>Validation Architecture → Established</strong><br>Validation Requirements → Established<br>Numbered VAL-* Rule Catalog → Established<br>Machine result vocabulary → Established<br>Executable validator → v0.5<br>Production ATT validation → VALID<br>Production TRST validation → VALID<br>Final Active · Published ATT revalidation → VALID<br>Final Active · Published TRST revalidation → VALID<br>Mandatory not-tested → 0 for both final objects<br>Governed Review boundary → Preserved<br><strong>Executable Validation → Operational and exercised in production</strong></div>
+<p style="margin-top:16px">Production validation of ATT-2026-0001 and TRST-2026-0001 establishes a first-production baseline. It does not make future objects automatically valid; each future object must independently satisfy its applicable normative requirements.</p>
 <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article></section>
 
