@@ -20,8 +20,8 @@ Schemas implement adopted architecture. They do not independently create new can
 `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
 ## Files
-- `attestation-schema.md` — Advanced Architecture structural schema for a canonical Attestation (`ATT-YYYY-NNNN`), including authority, provenance, lifecycle, publication, relationships, versioning, and validation boundaries.
-- `trust-statement-schema.md` — structural schema for a canonical Trust Statement (`TRST-YYYY-NNNN`).
+- `attestation-schema.md` — canonical structural schema for a governed Attestation (`ATT-YYYY-NNNN`), including authority, provenance, lifecycle, publication, relationships, versioning, and validation boundaries; exercised by `ATT-2026-0001`.
+- `trust-statement-schema.md` — canonical structural schema for a Trust Statement (`TRST-YYYY-NNNN`); exercised by `TRST-2026-0001`.
 - `evidence-attestation-schema.md` — specialized profile for the adopted `evidence` Attestation Type.
 - `source-attestation-schema.md` — specialized profile for the adopted `source-provenance` Attestation Type.
 - `correction-attestation-template.md` — governed correction/change profile used with Lifecycle and Versioning; not a separate canonical object class.
@@ -50,7 +50,7 @@ Identifier: `TRST-YYYY-NNNN`
 - `relationship-condition`
 - `correction-supersession`
 
-Evidence and Source / Provenance are adopted Attestation Types. Their existing June-era schema documents remain candidate profiles and must be reconciled to the Advanced Architecture base Attestation schema before they are used for executable validation.
+Evidence and Source / Provenance are adopted Attestation Types. Their specialized profile documents remain profile-specific contracts and must remain aligned with the canonical base Attestation schema before specialized executable validation or production use. The first production operation proves the base ATT/TRST contracts; it does not by itself prove every specialized profile.
 
 ## Lifecycle and Publication
 Lifecycle State:
@@ -134,28 +134,104 @@ Current Validation implementation artifacts include:
 - `/attestor/validation/attestor-validation-requirements.md` — implementation bridge from established architecture to executable validation requirements.
 - `/attestor/validation/attestor-validation-rules.md` — numbered `VAL-*` rule catalog separating machine, conditional, review-dependent, and deferred validation requirements.
 
-The base Attestation and Trust Statement schemas now provide the canonical object contracts from which exact machine serialization and field cardinalities can be defined.
+The base Attestation and Trust Statement schemas provide the canonical object contracts used by production instances. Their applicable machine representation and validation requirements are now exercised through the production objects and Validator v0.5, while profile-specific and future optional combinations remain subject to their governing schemas and rules.
+
+## First Production Schema Demonstration
+
+The first controlled production operation exercised the canonical base Attestation and Trust Statement contracts through:
+
+- `ATT-2026-0001`; and
+- `TRST-2026-0001`.
+
+The final canonical representations exercised, as applicable:
+
+- canonical identifier;
+- object class;
+- version `V1.0`;
+- lifecycle state `active`;
+- publication state `published`;
+- authority/provenance context;
+- scope;
+- limitations;
+- structured relationships;
+- Attestation assertion; and
+- Trust Statement conclusion and Evaluation Outcome.
+
+Both final active/published representations passed Validator v0.5 with no mandatory failure or mandatory `not-tested` result.
+
+The production operation also exercised relationship-serialization remediation. Early descriptive relationship strings were corrected to structured relationship blocks with explicit relationship type and target identifier while canonical identity and substantive meaning remained unchanged.
+
+**Base ATT / TRST Schema Architecture → DEMONSTRATED IN PRODUCTION**
+
+## Schema and Validation Boundary
+
+Schemas define structural contracts. Validation tests applicable normative requirements against an object and its execution context.
+
+The first production operation demonstrated both without collapsing them.
+
+`Schema → Structural Contract`
+
+`Validation → Applicable Rule Testing`
+
+`Conformance → Separate Determination`
+
+`Evaluation → Separate Institutional Act`
+
+Therefore:
+
+`Validation ≠ Evaluation`
+
+`Validation ≠ Conformance`
+
+`Valid ≠ Published`
+
+`Schema Representation ≠ Universal Truth`
 
 ## Implementation Boundary
-The following remain implementation-level decisions rather than unresolved architecture:
 
-- selected machine serialization;
-- exact required/optional field cardinalities;
-- timestamp syntax;
-- exact executable identifier expressions;
+Production has exercised a concrete canonical representation for the first ATT/TRST objects, including version, lifecycle, publication, and structured relationships. That implementation does not freeze every future serialization or optional profile choice.
+
+Implementation-level decisions remain subordinate to established Attestor architecture and the canonical base schemas, including where applicable:
+
+- serialization choices not already fixed by a governing contract;
+- profile-specific required/optional cardinalities;
 - identifier allocation and collision mechanics;
-- canonical reference and relationship serialization;
-- Validation Result vocabulary and report serialization;
-- specialized profile deltas; and
-- production-instance requirements.
+- specialized profile deltas;
+- optional or future relationship combinations;
+- Validation Result/report representation changes; and
+- future production-instance requirements.
 
-These decisions must remain subordinate to the established Attestor architecture and the canonical base schemas.
+A production-exercised representation is evidence of operational capability, not permission for implementations to redefine canonical architecture.
 
 ## Status
-**Schema Architecture → Advanced Architecture established.**
 
-**Base Attestation Schema → Advanced Architecture normalized.**
+**Schema Architecture → Established and Production-Proven**
 
-**Base Trust Statement Schema → Advanced Architecture established.**
+- Base Attestation Schema → established and production-exercised
+- Base Trust Statement Schema → established and production-exercised
+- canonical ATT/TRST structured representation → exercised
+- production version identity → exercised
+- lifecycle / publication representation → exercised
+- structured relationships → exercised
+- relationship serialization correction → exercised
+- executable validation alignment → demonstrated with Validator v0.5
+- Evidence / Source-Provenance specialized profiles → remain profile-specific reconciliation work unless separately completed
+- Correction / Change profile → governed change structure; not separate canonical object class
+- Trust Signal schema → legacy / noncanonical
+- production proof → **ESTABLISHED for base ATT/TRST contracts**
 
-The schema layer now reflects the canonical ATT/TRST object model. The next implementation work is exact machine-contract definition and executable validation behavior; the Evidence and Source / Provenance candidate profiles still require reconciliation before specialized executable validation.
+## Continuing Schema Governance
+
+Production proof is bounded to the canonical base object contracts and structures actually exercised.
+
+It does not establish that:
+
+- every specialized Attestation profile has been production-tested;
+- every optional field combination is proven;
+- every future serialization is automatically valid;
+- every relationship type is valid for every source/target pair; or
+- schema validity determines Evaluation Outcome, Conformance, Publication, or truth.
+
+`Architecture → Schema/Profile → Template → Governed Instance`
+
+**Schemas implement architecture. They do not create it.**
