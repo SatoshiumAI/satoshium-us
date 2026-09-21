@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/authority/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Authority  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -37,7 +37,7 @@ Conceptually, an Attestation must preserve enough information for the Attesting 
 - traceable through provenance; and
 - bounded by relevant limitations.
 
-Exact machine representation remains a Schema concern.
+Canonical structured representations now preserve authority context in production, while Schemas and Validation govern the applicable machine requirements.
 
 ## Attestor Authority
 
@@ -122,6 +122,36 @@ When multiple authorities materially disagree:
 
 This page does not create a universal hierarchy of authorities.
 
+## First Production Authority Demonstration
+
+The first controlled production operation exercised the Authority architecture across a real multi-institution evaluation.
+
+`ATT-2026-0001` and `TRST-2026-0001` referenced governed Suite objects while preserving the authority of each source institution:
+
+- `SC-CERT-2026-0001` → Certifier authority preserved
+- Atlas El Salvador jurisdiction intelligence → Atlas authority preserved
+- `SREG-2026-0001` → Registry authority preserved
+- `CHR-2026-0001` → Chronicle authority preserved
+- `ANCH-2026-0001` → Anchor authority preserved within its defined SCRD integrity scope
+- `BEAC-2026-0001` → Beacon authority preserved
+- `ATT-2026-0001` → Attestor authority over the canonical Attestation
+- `TRST-2026-0001` → Attestor authority over the bounded Trust Statement
+
+**Authority transfer by reference → NONE**
+
+The production evaluation did not:
+
+- re-certify the Certifier decision;
+- redefine the underlying Atlas jurisdiction intelligence;
+- extend Anchor integrity beyond its defined representation;
+- rewrite Registry or Chronicle records;
+- convert Beacon discovery into Attestor-owned source authority; or
+- create universal Attestor authority over the underlying subject.
+
+The operation therefore demonstrated the governing principle in practice:
+
+**Reference does not transfer authority.**
+
 ## What Authority Does Not Establish
 
 Authority does not independently establish:
@@ -141,12 +171,32 @@ Authority does not independently establish:
 
 ## Status
 
-**Authority → Established**
+**Authority → Established and Production-Proven**
 
-- Attesting Authority → defined and bounded
-- Attestor authority → defined and bounded
-- referenced/source authority → preserved
-- external authority → attributable and bounded
+- Attesting Authority → defined, bounded, and exercised
+- Attestor authority → defined, bounded, and exercised
+- referenced/source authority → preserved in production
+- external authority → attributable and bounded where applicable
 - automatic authority ranking → not adopted
-- authority transfer by reference → prohibited
-- production proof → pending
+- Authority / Eligibility distinction → preserved
+- Authority / Evaluation Outcome distinction → preserved
+- Attribution / Adoption distinction → preserved
+- authority transfer by reference → prohibited and avoided
+- canonical structured authority context → exercised
+- production proof → **ESTABLISHED**
+
+## Continuing Authority Governance
+
+Production proof does not enlarge Attestor's authority.
+
+Future Attestor operations remain governed by the same institutional boundary:
+
+**Attestor is authoritative for its own governed Attestations, Evaluation, and Trust Statements. It does not acquire the canonical authority of referenced institutions or external sources.**
+
+Each referenced source retains only the authority legitimately belonging to its own object, assertion, role, jurisdiction, scope, and relevant state.
+
+`Connection ≠ Identity`
+
+`Reference ≠ Authority Transfer`
+
+`Attribution ≠ Adoption`
