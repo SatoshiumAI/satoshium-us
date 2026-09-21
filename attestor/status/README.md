@@ -4,9 +4,9 @@
 `/attestor/status/`
 
 ## Purpose
-This page records the **current architectural and development status** of Satoshium Attestor.
+This page records the **current institutional and operational status** of Satoshium Attestor.
 
-It distinguishes established architecture and implementation layers from the remaining work required to earn production proof.
+It distinguishes established architecture, demonstrated production capability, and the governance that remains applicable to every future Attestor operation.
 
 ## Canonical Responsibility
 **Attestor → Trust Statement**
@@ -16,213 +16,201 @@ A Trust Statement is a governed, attributable, bounded conclusion produced throu
 ## Governing Principle
 > **Reference does not transfer authority.**
 
-## Current Development Posture
+## Current Institutional Status
+**Operational · Released September 2026**
 
-Attestor has completed its foundational reconciliation and Advanced Architecture.
+Attestor has completed:
 
-The current development path is:
+`Foundation → Reconciliation → Advanced Architecture → Executable Validation & Conformance → Production Readiness Gate → First Production Operation → Post-Operation Institutional Review → Operational Proof`
 
-`Foundation → Reconciliation → Advanced Architecture → Implementation & Validation → Production Readiness → Production Proof`
+**Operational Proof → ESTABLISHED**
 
-Current position:
+Operational status demonstrates institutional capability. It does not make future objects, determinations, lifecycle actions, publication decisions, or conclusions automatically valid, conformant, published, supported, correct, or authorized.
 
-**Implementation & Validation**
+## Canonical Institutional Model
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
-Production proof has not yet been earned.
+- **Attestation** — governed, attributable assertion.
+- **Trust Statement** — governed, attributable, bounded Attestor conclusion.
+- Attestation identifier → `ATT-YYYY-NNNN`
+- Trust Statement identifier → `TRST-YYYY-NNNN`
+
+Identifiers are assigned only at canonical creation.
+
+## Executable Validation
+
+The Validation model is operational:
+
+`Object + Applicable Normative Requirements → Validation → Governed Validation Result`
+
+Per-rule results:
+- `pass`
+- `fail`
+- `not-applicable`
+- `not-tested`
+
+Aggregate results:
+- `valid`
+- `invalid`
+- `incomplete`
+- `error`
+
+> **not-tested never equals pass.**
+
+Validator v0.5 has been exercised against the first production Attestation and Trust Statement and their final Active · Published representations.
+
+## Executable Conformance
+
+The Conformance model is operational:
+
+`Target + Declared Requirements Set + Required Validation / Evidence → Conformance Determination`
+
+Requirement dispositions:
+- `satisfied`
+- `not-satisfied`
+- `not-applicable`
+- `not-demonstrated`
+
+Outcomes:
+- `conformant`
+- `nonconformant`
+- `undetermined`
+- `error`
+
+> **Validation supports Conformance. Validation is not Conformance.**
+
+## First Production Operation
+
+The first controlled production matter concerned `SC-CERT-2026-0001`, the Certifier-owned Operational Certification Package concerning the **Satoshium Atlas Jurisdiction Record — El Salvador**.
+
+The bounded evaluation concerned:
+- canonical identity;
+- attributable Certifier origin;
+- relevant certification state;
+- traceable governed Suite relationships.
+
+It did not independently re-certify the Certifier decision or establish universal truth concerning the underlying Atlas intelligence.
+
+### ATT-2026-0001
+First canonical production Attestation.
+
+- Type → `verification-related`
+- Lifecycle → `active`
+- Publication → `published`
+- Version → `V1.0`
+
+### TRST-2026-0001
+First canonical production Trust Statement.
+
+- Evaluation Outcome → `supported`
+- Lifecycle → `active`
+- Publication → `published`
+- Version → `V1.0`
+
+The conclusion is bounded to the evaluated proposition and evidence.
+
+## Production Validation & Governed Review
+
+Validator v0.5 returned **VALID** for both production objects.
+
+- `ATT-2026-0001` → VALID; 0 mandatory not-tested.
+- `TRST-2026-0001` → VALID; 0 mandatory not-tested.
+- ATT governed Review → 11 / 11 SATISFIED.
+- TRST governed Review → 14 / 14 SATISFIED.
+- Combined governed Review → **25 / 25 SATISFIED**.
+
+## Production Conformance
+
+- `ATT-2026-0001` → **CONFORMANT**
+- `TRST-2026-0001` → **CONFORMANT**
+
+Conformance remained a separate governed determination supported by Validation and Review evidence.
+
+## Lifecycle & Publication
+
+Both objects were created as:
+
+`Draft · Unpublished · V1.0`
+
+Separate lifecycle decisions advanced:
+
+`Draft → Active`
+
+Separate publication decisions advanced:
+
+`Unpublished → Published`
+
+Final state:
+
+- `ATT-2026-0001` → **Active · Published · V1.0**
+- `TRST-2026-0001` → **Active · Published · V1.0**
+
+Final published-state representations were revalidated successfully.
+
+## Production Evidence & Post-Operation Review
+
+The first operation preserved an auditable evidence package covering source evidence, Eligibility, Attestation, Evaluation Basis, Evaluation Record, Trust Statement, execution context, Validation, governed Review, Conformance, lifecycle, publication, and final-state Validation.
+
+Post-Operation Institutional Review:
+
+- Domains reviewed → 11
+- PASS → 11
+- FAIL → 0
+- UNRESOLVED → 0
+
+## Operational Proof
+
+**Operational Proof → ESTABLISHED**
+
+The first controlled production operation demonstrated:
+
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement → Validation → Governed Review → Conformance → Lifecycle → Publication → Final-State Validation → Preserved Evidence`
+
+Institutional effect:
+
+- Attestor status supported → **Operational**
+- Retroactive effect → **No**
+- Architecture redefined → **No**
+- Source authority transferred → **No**
+- Universal truth claimed → **No**
 
 ## Established Architecture
 
-### Institutional Responsibility
-**Attestor → Trust Statement**
+Attestor retains the established architecture for:
+- Controlled Values;
+- Authority;
+- Provenance;
+- Eligibility;
+- Evaluation;
+- Relationships;
+- Lifecycle;
+- Versioning;
+- Validation;
+- Conformance;
+- Publication;
+- Methodology;
+- Production.
 
-### Canonical Object Chain
-`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
+Key distinctions remain:
 
-### Canonical Objects
-- **Attestation** — governed, attributable assertion.
-- **Trust Statement** — governed, attributable, bounded Attestor conclusion.
-
-### Identifiers
-- Attestation → `ATT-YYYY-NNNN`
-- Trust Statement → `TRST-YYYY-NNNN`
-
-### Controlled Values
-Established controlled vocabularies include:
-- Attestation Types;
-- Lifecycle States;
-- Publication States;
-- Evaluation Outcomes;
-- Relationship Types;
-- Provenance Modes;
-- Authority Contexts.
-
-Validation Result and Conformance Result vocabularies remain implementation work and must not be invented by this Status page.
-
-### Authority
-Established:
-> **Reference does not transfer authority.**
-
-Authority, attribution, eligibility, and evaluation outcome remain distinct.
-
-### Provenance
-Established provenance modes:
-- `direct`
-- `referenced`
-- `derived`
-
-Evaluation must preserve traceability to the source/origin and relevant source state.
-
-### Eligibility
-Established:
-> **Availability ≠ Eligibility**
-
-> **Authority ≠ Eligibility**
-
-> **Reference ≠ Eligibility**
-
-Eligibility is bounded to the particular Attestor evaluation.
-
-### Evaluation
-Established Evaluation Outcomes:
-- `supported`
-- `partially-supported`
-- `not-supported`
-- `contradicted`
-- `indeterminate`
-
-> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
-
-### Relationships
-Established relationship vocabulary:
-- `supports`
-- `references`
-- `derived-from`
-- `evaluates`
-- `results-in`
-- `supersedes`
-- `corrects`
-- `related-to`
-
-### Lifecycle
-Established Lifecycle States:
-- `draft`
-- `active`
-- `superseded`
-- `withdrawn`
-- `retired`
-
-Review and correction are activities, not lifecycle states.
-
-### Versioning
-Established:
-> **Revise the same object when its essential institutional meaning remains intact. Create a new canonical object when that meaning materially changes.**
+`Authority ≠ Eligibility`  
+`Eligibility ≠ Evaluation Outcome`  
+`Evaluation Outcome ≠ Trust Statement`  
+`Validation ≠ Evaluation`  
+`Validation ≠ Conformance`  
+`Canonical Creation ≠ Lifecycle Activation ≠ Publication`
 
 A materially changed Attestation assertion requires a new Attestation.
 
 A materially changed Trust Statement conclusion requires a new Trust Statement.
 
-Exact version syntax remains open.
+## Records / Schemas / Templates
 
-### Validation
-The validation architecture is established conceptually:
+The Records route remains a governed Reference Profile layer for Suite and external source objects.
 
-`Object + Applicable Normative Requirements → Validation → Governed Validation Result`
+Schemas and Templates implement adopted Attestor architecture and production-support requirements. They do not create independent institutional authority.
 
-Executable validation remains implementation work.
-
-### Conformance
-The conformance architecture is established conceptually:
-
-`Target + Declared Requirements Set + Required Validation / Evidence → Conformance Determination`
-
-Conformance mechanics and final result vocabulary remain implementation work.
-
-### Publication
-Established:
-- `unpublished`
-- `published`
-
-> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
-
-### Methodology
-The governed Attestor methodology is established from purpose and scope through Attestation formation, eligibility, evaluation, Trust Statement creation, validation/review, lifecycle/versioning, conformance, publication, preservation, and material-trigger review.
-
-### Production Architecture
-The Production Architecture and Production Readiness model are established.
-
-Production execution itself has not yet occurred.
-
-## Schemas
-
-The schema layer has been reconciled to Advanced Architecture.
-
-Current schema/profile set includes:
-- Attestation Schema;
-- Trust Statement Schema;
-- Evidence Attestation Profile;
-- Source / Provenance Attestation Profile;
-- Correction / Change Profile;
-- legacy Trust Signal artifact.
-
-Machine serialization and executable validation remain subordinate to the Validation and implementation layers.
-
-## Templates
-
-Templates have been reconciled to Advanced Architecture.
-
-Current authoring set includes:
-- Attestation Template;
-- Trust Statement Template;
-- Evidence Attestation Profile;
-- Source / Provenance Attestation Profile;
-- Governed Correction / Change Template;
-- legacy Trust Signal artifact.
-
-`Architecture → Schema/Profile → Template → Governed Instance`
-
-## Records / Reference Profiles
-
-The `/attestor/records/` route is retained, while its contents are governed **Reference Profiles** for:
-- Atlas;
-- Certifier;
-- Registry;
-- Chronicle;
-- Anchor;
-- Beacon;
-- external sources.
-
-Referenced source objects remain governed by their originating institutions or external authorities.
-
-## Trust Signal and Reputation Boundary
-
-Trust Signal is not a canonical Attestor object.
-
-Attestor does not establish a generic reputation framework, trust score, confidence percentage, or universal truth mechanism.
-
-Beacon separately owns Discovery Signal / Discovery Metadata.
-
-## Production Status
-
-Attestor has **not yet completed a governed production Trust Statement operation**.
-
-Therefore:
-- First real production operation → pending.
-- Operational proof → pending.
-- Attestor operational status → not yet claimed.
-
-Documentation and architecture alone do not constitute production proof.
-
-## Remaining Work
-
-Before production proof, remaining work includes:
-1. complete executable validation rules and Validation Result vocabulary;
-2. complete conformance mechanics and Conformance Result vocabulary;
-3. align production forms and implementation artifacts to normative schemas;
-4. run the Production Readiness Gate;
-5. execute the first real governed Attestor production matter;
-6. preserve production evidence;
-7. conduct post-operation review;
-8. determine whether operational proof has been earned.
+Trust Signal remains a legacy/noncanonical artifact. It is not a canonical Attestor object and does not establish a generic reputation or trust-score system.
 
 ## Suite Position
 
@@ -239,16 +227,24 @@ Before production proof, remaining work includes:
 
 - Foundational Reconciliation → **Complete**
 - Advanced Architecture → **Complete**
-- Records / Reference Profiles → **Advanced architecture reconciled**
-- Schemas → **Advanced architecture reconciled**
-- Templates → **Advanced architecture reconciled**
-- Validation Architecture → **Established; executable implementation pending**
-- Conformance Architecture → **Established; implementation pending**
-- Publication Architecture → **Established**
-- Methodology → **Established**
-- Production Architecture → **Established**
-- First Production Operation → **Pending**
-- Operational Proof → **Pending**
+- Executable Validation → **Established and exercised in production**
+- Executable Conformance → **Established and exercised in production**
+- Production Alignment → **Complete**
+- Production Readiness Gate → **PASS**
+- First Production Operation → **Complete**
+- `ATT-2026-0001` → **Active · Published · V1.0**
+- `TRST-2026-0001` → **Active · Published · V1.0**
+- Governed Review → **25 / 25 SATISFIED**
+- Production Conformance → **CONFORMANT**
+- Post-Operation Institutional Review → **11 PASS · 0 FAIL · 0 UNRESOLVED**
+- Operational Proof → **ESTABLISHED**
+- Institutional Status → **Operational · Released September 2026**
+
+## Current Operational Posture
+
+Attestor now enters governed use, maintenance, refinement, and future production operations.
+
+Operational release does not waive or pre-satisfy any requirement for a future governed matter.
 
 ## Files
 - `index.html` — public Status page.
