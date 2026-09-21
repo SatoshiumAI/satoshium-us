@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/lifecycle/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Lifecycle  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -107,13 +107,15 @@ Correction is a governed change process, not a lifecycle state.
 
 `Prior State → Governed Change → Current State`
 
-A bounded/non-substantive correction may be handled through versioning while preserving canonical object identity.
+A bounded non-material correction may preserve canonical object identity and version when the applicable Versioning determination permits it.
 
-A substantive change to assertion, evaluation basis, scope, or conclusion may require a new canonical object that `supersedes` the prior object.
+A material change to an Attestation assertion requires a new `ATT` object. A material change to a Trust Statement conclusion requires a new `TRST` object. Where a successor replaces a prior object as current, the applicable supersession relationship preserves continuity.
 
-Exact materiality thresholds belong to Versioning.
+Materiality and version consequences must be explicitly governed rather than inferred from the existence of a correction alone.
 
 `Correction ≠ Deletion`
+
+`Correction ≠ Silent Overwrite`
 
 ## Supersession
 
@@ -185,6 +187,60 @@ Attestor preserves, as applicable:
 - material reason/trigger; and
 - successor relationship.
 
+## First Production Lifecycle Demonstration
+
+The first controlled production operation exercised canonical Creation and lifecycle activation as separate governed acts.
+
+Both canonical objects began as:
+
+- `ATT-2026-0001` → `Draft · Unpublished · V1.0`
+- `TRST-2026-0001` → `Draft · Unpublished · V1.0`
+
+After governed Validation, Review, and Conformance, separate lifecycle activation decisions authorized:
+
+- `ATT-2026-0001` → `draft` → `active`
+- `TRST-2026-0001` → `draft` → `active`
+
+At lifecycle activation:
+
+- publication state remained `unpublished`;
+- canonical identifiers remained unchanged;
+- version remained `V1.0`;
+- the Attestation assertion remained unchanged; and
+- the Trust Statement conclusion remained unchanged.
+
+Publication was authorized only afterward through separate publication decisions.
+
+The production sequence therefore demonstrated:
+
+`Canonical Creation ≠ Lifecycle Activation ≠ Publication`
+
+**Lifecycle Activation → DEMONSTRATED IN PRODUCTION**
+
+## Production Correction and Historical Preservation
+
+The first production operation also exercised governed correction before final publication.
+
+Early relationship serialization was corrected to structured relationship representation while preserving:
+
+- canonical ATT and TRST identifiers;
+- the substantive Attestation assertion;
+- the substantive Trust Statement conclusion;
+- production history; and
+- historical representations.
+
+For this bounded operation, the correction was determined to be non-material to canonical meaning and remained `V1.0`.
+
+Therefore:
+
+`Correction ≠ Deletion`
+
+`Correction ≠ Historical Erasure`
+
+`Correction ≠ Silent Mutation`
+
+This result is not a universal rule that every correction preserves identity or version. Future corrections remain subject to explicit materiality, Versioning, correction, and supersession rules.
+
 ## What Lifecycle Does Not Establish
 
 `Active ≠ True`
@@ -207,15 +263,43 @@ Attestor preserves, as applicable:
 
 ## Status
 
-**Lifecycle → Established**
+**Lifecycle → Established and Production-Proven**
 
 - states → `draft`, `active`, `superseded`, `withdrawn`, `retired`
-- Creation → canonical identity assignment
-- Review → governed lifecycle activity
+- Canonical Creation → exercised
+- initial `draft` state → exercised
+- Lifecycle Activation → exercised
+- Review → governed lifecycle activity, not state
 - Correction → governed change activity, not state
 - inactive → descriptive umbrella, not canonical value
-- supersession / withdrawal / retirement → distinguished
-- historical preservation → required
-- publication state → independent
-- detailed version thresholds → deferred to Versioning
-- production proof → pending
+- Creation / Activation separation → demonstrated
+- Lifecycle / Publication separation → demonstrated
+- canonical identity preservation → demonstrated
+- historical preservation → demonstrated
+- bounded non-material correction → exercised
+- supersession / withdrawal / retirement → established but not required by first production operation
+- version consequences → governed through Versioning
+- production proof → **ESTABLISHED**
+
+## Continuing Lifecycle Governance
+
+The first production operation demonstrates real lifecycle capability without collapsing distinct institutional acts.
+
+It does not establish that:
+
+- every created object will become active;
+- every active object will be published;
+- every correction is non-material;
+- every correction preserves version;
+- every correction preserves canonical identity; or
+- supersession, withdrawal, and retirement have already been exercised.
+
+Each future lifecycle transition remains a separate governed decision.
+
+`Creation ≠ Activation ≠ Publication`
+
+`Review ≠ Lifecycle State`
+
+`Correction ≠ Lifecycle State`
+
+`State Change ≠ Historical Erasure`
