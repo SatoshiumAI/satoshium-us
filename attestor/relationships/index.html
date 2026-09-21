@@ -157,7 +157,7 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Attestor · Advanced Architecture</div>
+<div class="eyebrow">Attestor · Operational Relationships</div>
 <h1>Relationships</h1>
 <p class="lead">Relationships define the governed connections among <strong>Attestations</strong>, <strong>Trust Statements</strong>, evidence, source objects, prior statements, and canonical Suite objects.</p>
 <p class="lead">Attestor uses relationships to preserve traceability and meaning across institutional boundaries without collapsing distinct objects into one record or allowing reference to transfer ownership or authority.</p>
@@ -175,7 +175,7 @@ h1{
 
 <section style="margin-top:18px;"><article class="card">
 <h2>Canonical Relationship Vocabulary</h2>
-<p>The Controlled Values architecture established the initial relationship vocabulary. This page now defines the conceptual meaning and direction of those relationships. Exact field representation and cardinality remain Schema and Validation concerns.</p>
+<p>The Controlled Values architecture establishes the relationship vocabulary and its governed meaning and direction. Canonical structured relationship fields are now exercised in production. Schemas and Validation govern applicable structural constraints, while relationship semantics remain defined here.</p>
 <div class="note"><strong>supports</strong> → source object provides material support to target assertion, evaluation, or conclusion<br><br><strong>references</strong> → source object explicitly identifies or cites target object without implying derivation or support<br><br><strong>derived-from</strong> → source object was materially produced from target object or governed basis<br><br><strong>evaluates</strong> → source evaluation acts upon target Attestation / assertion<br><br><strong>results-in</strong> → source evaluation produces target Trust Statement<br><br><strong>supersedes</strong> → source object becomes the governed successor to target prior object<br><br><strong>corrects</strong> → source object or governed change addresses an error or material defect in target prior object<br><br><strong>related-to</strong> → bounded non-specific relationship used only when a more precise canonical relationship does not apply</div>
 </article></section>
 
@@ -217,8 +217,46 @@ h1{
 
 <section style="margin-top:18px;"><article class="card">
 <h2>Relationship Constraints</h2>
-<p>Not every relationship is valid between every object class. The vocabulary established here provides semantic meaning, while later Schemas and Validation architecture will define permitted source/target combinations, required relationships, cardinality, inverse representation where useful, and machine validation.</p>
-<div class="note">Relationship Meaning → Established here<br>Permitted Source / Target Classes → Schemas / Validation<br>Required vs. Optional → Schemas<br>Cardinality → Schemas<br>Inverse Representation → Relationships / Schemas as needed<br>Machine Enforcement → Validation</div>
+<p>Not every relationship is valid between every object class. Relationship meaning is established here, while Schemas and Validation govern applicable source/target constraints, required relationships, cardinality, inverse representation where defined, and machine enforcement. Production objects have exercised structured <strong>references</strong> and <strong>derived-from</strong> relationships without collapsing these distinctions.</p>
+<div class="note">Relationship Meaning → Established here<br>Structured Relationship Representation → Exercised in production<br>Permitted Source / Target Constraints → Schemas / Validation<br>Required vs. Optional → Schemas<br>Cardinality → Schemas<br>Inverse Representation → Relationships / Schemas where defined<br>Machine Enforcement → Validation</div>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>First Production Relationship Demonstration</h2>
+<p>The first controlled production operation exercised structured relationships across the canonical Attestation and Trust Statement. The final production representations use explicit relationship types and target identifiers rather than descriptive relationship strings.</p>
+<div class="note">
+ATT-2026-0001 → references → SC-CERT-2026-0001<br>
+ATT-2026-0001 → references → SREG-2026-0001<br>
+ATT-2026-0001 → references → CHR-2026-0001<br>
+ATT-2026-0001 → references → ANCH-2026-0001<br>
+ATT-2026-0001 → references → BEAC-2026-0001<br><br>
+TRST-2026-0001 → derived-from → ATT-2026-0001<br>
+TRST-2026-0001 → references → SC-CERT-2026-0001<br>
+TRST-2026-0001 → references → SREG-2026-0001<br>
+TRST-2026-0001 → references → CHR-2026-0001<br>
+TRST-2026-0001 → references → ANCH-2026-0001<br>
+TRST-2026-0001 → references → BEAC-2026-0001<br><br>
+<strong>Production relationship representation → DEMONSTRATED</strong>
+</div>
+<p style="margin-top:16px;">The operation confirmed that <strong>references</strong> and <strong>derived-from</strong> carry different meanings. A reference preserves connection and traceability; derivation preserves lineage. Neither relationship transfers source authority, and neither automatically establishes Eligibility, support, evidence sufficiency, or Evaluation Outcome.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
+<h2>Production Relationship Correction</h2>
+<p>The first operation also exercised governed correction of relationship representation. Early production representations used descriptive relationship strings. Those representations were corrected to structured relationship blocks with explicit relationship types and target identifiers while preserving the canonical identities, substantive assertion and conclusion, and production history.</p>
+<div class="note">
+Descriptive relationship representation → Corrected<br>
+Structured type + target identifier → Adopted<br>
+Canonical ATT / TRST identities → Preserved<br>
+Substantive assertion / conclusion → Unchanged<br>
+Historical representations → Preserved<br>
+Material canonical change → None<br>
+Version → Remained V1.0 for this bounded serialization-only correction<br><br>
+Correction ≠ Deletion<br>
+Correction ≠ Silent Overwrite<br>
+Serialization Correction ≠ Automatic New Canonical Object
+</div>
+<p style="margin-top:16px;">The V1.0 treatment was a governed determination for this operation because the correction changed serialization rather than the material Attestation assertion or Trust Statement conclusion. It is not a universal rule that every relationship correction is non-material.</p>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
@@ -228,9 +266,25 @@ h1{
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
-<h2>Advanced Architecture Position</h2>
-<p>The Relationships architecture now gives Attestor an explicit semantic graph connecting assertions, governed inputs, evaluations, conclusions, prior states, and external or Suite-owned source objects. Lifecycle and Versioning can now define how those relationships behave as governed objects change over time.</p>
-<div class="note"><strong>Relationships → Established</strong><br>Canonical relationship vocabulary → Defined<br>Directionality → Established conceptually<br>Attestation / Evaluation / Trust Statement chain → Established<br>Support vs. outcome → Distinguished<br>Reference vs. derivation → Distinguished<br>Correction / supersession continuity → Established conceptually<br>Source authority boundaries → Preserved<br>Cardinality / machine constraints → Deferred to Schemas / Validation<br>Production proof → Pending</div>
+<h2>Current Relationships Position</h2>
+<p>The Relationships architecture is established and has been exercised in production. The first controlled operation demonstrated structured cross-object and cross-institution relationships, preserved the distinction between reference and derivation, and exercised governed correction when early relationship serialization required remediation.</p>
+<div class="note"><strong>Relationships → Established and Production-Proven</strong><br>
+Canonical relationship vocabulary → Defined<br>
+Directionality → Established<br>
+Structured relationship representation → Exercised<br>
+Attestation / Evaluation / Trust Statement lineage → Demonstrated<br>
+references → Exercised in production<br>
+derived-from → Exercised in production<br>
+Support vs. outcome → Distinguished<br>
+Reference vs. derivation → Distinguished and demonstrated<br>
+Connection vs. identity → Preserved<br>
+Relationship vs. eligibility → Preserved<br>
+Relationship vs. authority transfer → Preserved<br>
+Correction continuity → Exercised<br>
+Historical relationship representations → Preserved<br>
+Applicable structural / machine constraints → Governed through Schemas / Validation<br>
+<strong>Production proof → ESTABLISHED</strong></div>
+<p style="margin-top:16px;">Production proof does not make every relationship type valid for every object pair and does not make future relationship changes non-material by default. Source/target compatibility, materiality, lifecycle effect, versioning, and correction treatment remain governed by the applicable architecture and rules.</p>
 <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article></section>
 
