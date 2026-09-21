@@ -185,7 +185,7 @@ h1{
 
 <section class="hero">
 
-<div class="eyebrow">Attestor · Interoperability</div>
+<div class="eyebrow">Attestor · Operational Interoperability</div>
 
 <h1>Interoperability</h1>
 
@@ -237,9 +237,11 @@ Attestor retains responsibility for its evaluation and Trust Statement.
 <h2>Certifier Interoperability</h2>
 
 <p>
-Attestor may reference a Certifier Certification Package as an authoritative input.
-The certification, its identifier, status, and governing meaning remain under
-Certifier authority.
+Attestor may reference a Certifier Certification Package as a governed source input.
+The first production operation did so with <strong>SC-CERT-2026-0001</strong>.
+Its certification, identifier, state, and governing meaning remained under Certifier
+authority while Attestor governed its own Eligibility, Attestation, Evaluation, and
+Trust Statement.
 </p>
 
 <span class="status">Suite Relationship</span>
@@ -328,7 +330,10 @@ Identifier + Source + Provenance + Type + Status + Scope + Relationship + Author
 <p style="margin-top:16px;">
 These reference-context requirements are established by Attestor's Reference
 Profile, Authority, Provenance, Relationships, Eligibility, and state architecture.
-Exact machine serialization remains implementation work.
+The first production operation exercised structured governed references in canonical
+ATT/TRST representations and demonstrated that this context can be preserved across
+institutional boundaries. Future transport-specific or external exchange formats may
+continue to evolve without reopening the established institutional requirements.
 </p>
 
 </article>
@@ -389,6 +394,46 @@ Review ≠ Automatic Outcome
 
 <article class="card">
 
+<h2>First Production Interoperability Demonstration</h2>
+
+<p>
+The first controlled production operation demonstrated interoperability across
+multiple Suite institutions while preserving canonical identity, provenance,
+relationship meaning, relevant state, and institutional authority.
+</p>
+
+<div class="note">
+SC-CERT-2026-0001 → Certifier Certification Package<br>
+SREG-2026-0001 → Registry Record<br>
+CHR-2026-0001 → Chronicle Entry<br>
+ANCH-2026-0001 → Anchor Integrity Reference<br>
+BEAC-2026-0001 → Beacon Discovery Signal<br>
+ATT-2026-0001 → Attestor Attestation<br>
+TRST-2026-0001 → Attestor Trust Statement<br><br>
+Cross-institution references → Preserved<br>
+Canonical identities → Preserved<br>
+Source provenance / relevant state → Preserved<br>
+Relationship meaning → Preserved<br>
+Source authority → Preserved<br>
+Attestor conclusion authority → Bounded to Attestor<br><br>
+<strong>Connection did not merge identity.</strong><br>
+<strong>Reference did not transfer authority.</strong>
+</div>
+
+<p style="margin-top:16px;">
+The production case therefore establishes a concrete Suite interoperability baseline.
+It does not imply that every future external protocol, representation, profile, or
+integration is automatically interoperable.
+</p>
+
+</article>
+
+</section>
+
+<section style="margin-top:18px;">
+
+<article class="card">
+
 <h2>Suite Interoperability</h2>
 
 <p>
@@ -414,6 +459,41 @@ Interoperability connects canonical objects while preserving canonical ownership
 <a class="btn" href="/attestor/">
 Back to Attestor →
 </a>
+
+</article>
+
+</section>
+<section style="margin-top:18px;">
+
+<article class="card">
+
+<h2>Current Interoperability Position</h2>
+
+<p>
+Interoperability is established as both institutional architecture and demonstrated
+production capability. Required reference context is governed through the Reference
+Profile and related Authority, Provenance, Eligibility, Relationships, state,
+Validation, and Conformance architecture; the first production operation demonstrated
+that those boundaries can survive real cross-Suite use.
+</p>
+
+<div class="note">
+Reference Context → Established<br>
+Structured governed references → Exercised in production<br>
+Certifier / Registry / Chronicle / Anchor / Beacon → Cross-Suite participation demonstrated<br>
+Attestor ATT / TRST → Canonical outputs demonstrated<br>
+Validation → Executable and exercised<br>
+Conformance → Object-level determinations exercised<br>
+Authority preservation → Demonstrated<br>
+<strong>Interoperability → Operationally demonstrated</strong>
+</div>
+
+<p style="margin-top:16px;">
+Concrete APIs, transports, external adapters, authentication mechanisms, and
+source-change notification mechanisms remain technology-specific implementation
+choices unless separately adopted. Their continued openness does not make the
+institutional interoperability model incomplete.
+</p>
 
 </article>
 
