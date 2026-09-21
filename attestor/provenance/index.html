@@ -157,7 +157,7 @@ h1{
 <main class="wrap content">
 
 <section class="hero">
-<div class="eyebrow">Attestor · Advanced Architecture</div>
+<div class="eyebrow">Attestor · Operational Provenance</div>
 <h1>Provenance</h1>
 <p class="lead">The Attestor Provenance architecture defines the information and lineage that must remain traceable across <strong>Attestations</strong>, <strong>eligible governed inputs</strong>, <strong>evaluation</strong>, and resulting <strong>Trust Statements</strong>.</p>
 <p class="lead">Provenance allows Attestor to show not merely what conclusion it produced, but where the material basis came from, how that basis entered the process, and how the conclusion remains connected to it over time.</p>
@@ -175,13 +175,13 @@ h1{
 
 <section style="margin-top:18px;"><article class="card">
 <h2>Minimum Provenance Context</h2>
-<p>The exact machine fields are reserved for Schemas, but every material provenance relationship must be capable of preserving enough context to identify and interpret its origin and use. Not every field applies identically to every source, but omission must not make the lineage materially ambiguous.</p>
+<p>Canonical structured representations now preserve material provenance context in production, while Schemas and Validation govern applicable machine requirements. Every material provenance relationship must preserve enough context to identify and interpret its origin and use. Not every field applies identically to every source, but omission must not make the lineage materially ambiguous.</p>
 <div class="note">Source / Origin Identity<br>Source Identifier or Stable Reference, when available<br>Provenance Mode<br>Attesting or Source Authority Context<br>Relevant Time / State<br>Acquisition or Reference Context<br>Relationship to Attestation / Evaluation<br>Derivation Basis, when applicable<br>Material Limitations<br>Historical Lineage, when applicable</div>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
 <h2>Controlled Provenance Modes</h2>
-<p>The Controlled Values architecture established three initial provenance modes. This page now defines their conceptual use while leaving exact serialization and validation requirements to later architecture.</p>
+<p>The Controlled Values architecture establishes three provenance modes. Their governed use is now represented in canonical Attestor objects and exercised in production, while Schemas and Validation govern applicable serialization and validation requirements.</p>
 <div class="note"><strong>direct</strong> → obtained or resolved directly from the authoritative/originating source context<br><br><strong>referenced</strong> → connected to an existing governed source through an explicit reference<br><br><strong>derived</strong> → produced from one or more prior governed inputs through a traceable derivation path</div>
 </article></section>
 
@@ -210,15 +210,50 @@ h1{
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
+<h2>First Production Provenance Demonstration</h2>
+<p>The first controlled production operation preserved an end-to-end provenance chain from governed source objects through Eligibility, <strong>ATT-2026-0001</strong>, the Evaluation Basis, Rule-Constrained Evaluation, and <strong>TRST-2026-0001</strong>. Publication and final-state validation preserved that lineage rather than replacing it.</p>
+<div class="note">
+SC-CERT-2026-0001 + Atlas source + SREG-2026-0001 + CHR-2026-0001 + ANCH-2026-0001 + BEAC-2026-0001<br>
+↓<br>
+Governed Eligibility Records<br>
+↓<br>
+ATT-2026-0001<br>
+↓<br>
+Evaluation Basis<br>
+↓<br>
+Rule-Constrained Evaluation<br>
+↓<br>
+TRST-2026-0001<br>
+↓<br>
+Active · Published · V1.0 canonical representations<br><br>
+<strong>Production provenance chain → PRESERVED</strong>
+</div>
+<p style="margin-top:16px;">The operation also demonstrated that provenance and relationship meaning remain distinct. References to source objects preserved their source identity and authority; the Trust Statement's <strong>derived-from</strong> relationship to the Attestation preserved Attestor lineage without implying that every referenced source independently supported the final conclusion.</p>
+</article></section>
+
+<section style="margin-top:18px;"><article class="card">
 <h2>Provenance Does Not Establish Truth</h2>
 <p>A complete provenance chain demonstrates traceability, not correctness. Attestor may know exactly where an assertion came from and still determine that the assertion is partially supported, not supported, contradicted, or indeterminate under the applicable evaluation rules.</p>
 <div class="note">Traceable ≠ Correct<br>Authoritative Source ≠ Automatically Eligible<br>Eligible Input ≠ Automatically Sufficient<br>Complete Provenance ≠ Favorable Trust Statement</div>
 </article></section>
 
 <section style="margin-top:18px;"><article class="card">
-<h2>Advanced Architecture Position</h2>
-<p>The Provenance architecture establishes the lineage requirements needed to determine Eligibility and conduct reviewable Evaluation. Later Schemas and Validation architecture will formalize how these requirements are represented and tested.</p>
-<div class="note"><strong>Provenance → Established</strong><br>Attestation provenance → Required<br>Material input provenance → Required<br>Evaluation provenance → Required<br>Trust Statement provenance → Required<br>Modes → direct · referenced · derived<br>Historical lineage → Preserved where material<br>Machine representation → Deferred to Schemas<br>Production proof → Pending</div>
+<h2>Current Provenance Position</h2>
+<p>The Provenance architecture is established and has been exercised in production. The first controlled production operation demonstrated traceable lineage across governed source objects, Eligibility, the canonical Attestation, Evaluation Basis, Rule-Constrained Evaluation, the canonical Trust Statement, lifecycle activation, Publication, and final-state validation.</p>
+<div class="note"><strong>Provenance → Established and Production-Proven</strong><br>
+Attestation provenance → Required and exercised<br>
+Material input provenance → Required and exercised<br>
+Evaluation provenance → Required and exercised<br>
+Trust Statement provenance → Required and exercised<br>
+Modes → direct · referenced · derived<br>
+Canonical structured representation → Exercised<br>
+Source state / temporal context → Preserved where material<br>
+Historical lineage → Preserved<br>
+Reference / support distinction → Preserved<br>
+Authority / provenance distinction → Preserved<br>
+Publication / lifecycle changes → Did not sever lineage<br>
+<strong>Production proof → ESTABLISHED</strong></div>
+<p style="margin-top:16px;">Production proof establishes traceability of the first governed operation; it does not establish universal correctness, future eligibility, future support, or source authority beyond the bounds of the referenced source. Every future operation must preserve its own provenance chain.</p>
 <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article></section>
 
