@@ -143,3 +143,4 @@ Changes that would redefine institutional authority, governance ownership, appro
 ## Governing Principle
 
 **Governance protects the integrity of standards by ensuring that change is documented, reviewable, versioned, and historically preserved.**
+
