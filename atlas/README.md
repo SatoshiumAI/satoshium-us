@@ -1,351 +1,352 @@
-# 🧭 Satoshium Atlas
-## The Jurisdiction Intelligence Engine for AI, Bitcoin, and Trust Infrastructure
+# Satoshium Atlas
 
-**Satoshium Atlas** is a structured jurisdictional intelligence framework designed to map how infrastructure, governance, research ecosystems, and compute environments interact across regions.
+**Path:** `/atlas/`  
+**Institution:** Satoshium Atlas  
+**Role:** Authoritative Intelligence  
+**Status:** Operational  
+**Foundation:** Version 1.0 Complete
 
-Atlas is not a ranking system.
+## Overview
 
-Atlas is not a policy commentary layer.
+Satoshium Atlas is the jurisdiction intelligence institution of the Satoshium Suite.
 
-Atlas is a **structured inference framework** that enables consistent interpretation of jurisdictional trust topology.
+Atlas organizes and preserves structured jurisdiction intelligence across United States state packages, global country packages, evidence layers, signals, trust dimensions, metadata, historical context, media, framework resources, certification surfaces, corridors, and machine-readable records.
 
----
+Atlas serves as the primary intelligence repository supporting Navigator and other Satoshium Suite institutions.
 
-## 🎯 Purpose
+## Institutional Responsibility
 
-Atlas exists to:
+Atlas is authoritative for Atlas-governed jurisdiction intelligence.
 
-- normalize jurisdictional infrastructure signals
-- preserve evidence-derived interpretation discipline
-- support agent routing awareness (future)
-- enable cross-state structural comparability
-- provide upstream jurisdiction context for Aegis
-- prepare global trust-layer mapping infrastructure
+Its responsibility is to organize, preserve, and publish structured intelligence while maintaining evidence discipline, provenance, comparability, and clear institutional boundaries.
 
-Atlas converts geography into **machine-tractable structural environments**.
+Atlas does not transfer its authority merely because another Suite institution references, certifies, registers, preserves, discovers, attests to, or orchestrates around an Atlas record.
 
----
+**REFERENCE DOES NOT TRANSFER AUTHORITY.**
 
-## 🧱 Atlas Document Model
+## Atlas & Navigator
 
-Each jurisdiction package follows a strict derivation chain:
+Atlas and Navigator are closely related but institutionally distinct.
 
+```text
+Atlas
+→ Authoritative Intelligence
 
-evidence → signals → trust-dimensions → profile → builder-mode → change-log
+Navigator
+→ Workflow Definition / Orchestration and structured exploration
+```
 
+Atlas stores and organizes jurisdiction intelligence.
 
-Each layer derives only from the layer above it.
+Navigator provides structured access, navigation, comparison, filtering, workflow, and exploration across that intelligence.
 
-This preserves inference integrity across all jurisdictions.
+Navigator does not become the authority for Atlas records merely by presenting or orchestrating them.
 
----
+## Current Atlas Foundation
 
-## 📂 Repository Structure
+Atlas has completed its initial jurisdiction intelligence foundation.
 
-atlas/
-│
-├── README.md
-├── signals-update-protocol.md
-│
-├── jurisdictions/
-│ └── us/
-│ └── states/
-│ └── <state>/
-│ ├── evidence.md
-│ ├── signals.md
-│ ├── trust-dimensions.md
-│ ├── metadata.md
-│ ├── profile.md
-│ ├── builder-mode.md
-│ └── change-log.md
-│
-├── corridors/
-│
-├── compare/
-│
-└── exports/
+Current published coverage includes:
 
----
+- 50 United States state packages;
+- 52 global country packages;
+- 102 canonical jurisdiction JSON records;
+- 102 matched generation manifests;
+- 204 machine-readable JSON files overall;
+- Atlas media libraries;
+- evidence layers;
+- signals;
+- trust dimensions;
+- metadata;
+- historical references;
+- framework resources;
+- jurisdiction navigation surfaces;
+- corridors;
+- certification documentation.
 
-## 📊 Jurisdiction Package Components
+## Human-Readable and Machine-Readable Records
 
-Each state package contains seven canonical documents:
+Atlas maintains authoritative human-readable source records and matched machine-readable representations.
 
-### evidence.md
+The current model is:
 
-Records documented structural characteristics of a jurisdiction:
+```text
+Canonical Markdown Layers
+→ authoritative human-readable source records
 
-- infrastructure topology
-- governance posture
-- research ecosystem presence
-- compute-energy geography
-- municipal experimentation signals
+Canonical JSON
+→ consolidated machine-readable representation
 
-No interpretation occurs here.
+Generation Manifest
+→ generation, validation, source-file, output-size,
+  and warning metadata
+```
 
----
+Machine-readable publication supports future and current interoperability without replacing the authority of the underlying Atlas source records.
 
-### signals.md
+## Jurisdiction Intelligence Engine
 
-Derived from evidence only.
+The Jurisdiction Intelligence Engine provides structured navigation into Atlas jurisdiction content.
 
-Signals represent:
+Current principal surfaces include:
 
-- infrastructure continuity
-- corridor clustering
-- statutory frameworks
-- research alignment
-- interconnection presence
+```text
+/atlas/jurisdiction-intelligence-engine/
+```
 
-Signals must never originate independently.
+### United States
 
----
+```text
+/atlas/jurisdiction-intelligence-engine/us/
+```
 
-### trust-dimensions.md
+Includes all 50 canonical United States state packages.
 
-Evaluates stability characteristics only.
+### Global
 
-Examples:
+```text
+/atlas/jurisdiction-intelligence-engine/global/
+```
 
-- coordination stability
-- governance visibility
-- corridor continuity
-- experimentation consistency
-- research persistence
+Includes the current 52 canonical global country packages.
 
-Trust-dimensions never rank jurisdictions.
+## Jurisdiction Package Model
 
----
+Atlas jurisdiction packages organize intelligence into structured layers.
 
-### metadata.md
+Current layers may include:
 
-Provides structured descriptors supporting:
+- evidence;
+- signals;
+- trust dimensions;
+- metadata;
+- jurisdiction profiles;
+- historical context;
+- media;
+- framework-defined supporting records;
+- canonical machine-readable output.
 
-- machine-readable exports
-- corridor indexing
-- governance classification markers
-- infrastructure tagging
+The exact package structure may vary by governed Atlas surface, but the authority of Atlas records remains bounded to Atlas.
 
-Metadata enables future agent interoperability.
+## Evidence Discipline
 
----
+Atlas is designed around evidence-derived interpretation.
 
-### profile.md
+The standing discipline remains:
 
-Describes jurisdiction structure.
+```text
+Evidence
+→ derived signals
+→ structured interpretation
+→ governed Atlas intelligence
+```
 
-Profiles characterize:
+Atlas should not invent unsupported conclusions or allow downstream interpretation to silently become upstream evidence.
 
-- topology
-- environment
-- adjacency relationships
-- governance posture
-- research structure
+## Comparability Without Ranking
 
-Profiles do not prescribe deployment decisions.
+Atlas supports structured jurisdiction comparison.
 
----
+It is not intended to become a ranking system.
 
-### builder-mode.md
+Atlas may organize comparable attributes, signals, conditions, infrastructure, legal or institutional context, and structural characteristics without converting those records into prescriptive rankings.
 
-Interpretive layer describing how infrastructure *interacts* with jurisdiction conditions.
+Atlas records should distinguish:
 
-Builder-mode:
+- description from recommendation;
+- evidence from interpretation;
+- comparison from ranking;
+- structure from prescription.
 
-- explains compatibility surfaces
-- describes experimentation environments
-- identifies corridor adjacency effects
+## Atlas Resources
 
-Builder-mode never recommends siting decisions.
+The landing page currently exposes the following major Atlas resources:
 
----
+- Jurisdiction Intelligence Engine;
+- United States Package;
+- Global Package;
+- Atlas Media Library;
+- U.S. State Index;
+- Global Country Index;
+- Corridors Index;
+- Framework Library;
+- Atlas Certification Library.
 
-### change-log.md
+These are Atlas surfaces, not separate institutional authorities.
 
-Records normalization activity and structural updates.
+## Corridors
 
-Includes:
+The Corridors Index supports cross-jurisdiction interpretation and navigation.
 
-- evidence gaps
-- structural exclusions
-- signal corrections
-- lens-alignment adjustments
+Corridor structures may represent:
 
-Change-log preserves auditability across revisions.
+- infrastructure continuity;
+- membership groupings;
+- alignment surfaces;
+- geographic or institutional relationships;
+- cross-jurisdiction navigation pathways.
 
----
+Corridor interpretation should remain evidence-supported and should not silently become jurisdiction ranking or deployment prescription.
 
-## 🧭 Atlas Normalization Contract
+## Atlas Media
 
-Atlas enforces the following constraints:
+The Atlas Media Library supports:
 
-Signals derive only from evidence
+- jurisdiction familiarity;
+- geographic awareness;
+- cultural context;
+- institutional literacy;
+- orientation across U.S. and global packages.
 
-Trust-dimensions evaluate stability only
+Media supports understanding.
 
-Profiles perform structural characterization only
+It does not replace Atlas source intelligence.
 
-Builder-mode remains interpretive only
+## Atlas Certification
 
-Change-logs record normalization procedure only
+The Atlas Certification Library documents how Atlas intelligence participates in the Satoshium Suite certification architecture.
 
-Atlas never introduces:
+Atlas remains authoritative for its own records.
 
-- rankings
-- optimization guidance
-- deployment prescriptions
-- corridor leadership claims
-- national positioning language
+Certifier remains authoritative for certification.
 
----
+A certification relationship does not transfer Atlas authority to Certifier or certification authority to Atlas.
 
-## 🗺 Current Coverage
+## Relationship to the Satoshium Suite
 
-Atlas Phase 1 includes:
+Atlas participates in governed relationships across the Suite.
 
-All 50 U.S. states normalized under a consistent instruction-layer framework.
+Current institutional responsibilities include:
 
-Each jurisdiction package:
+```text
+Atlas
+→ Authoritative Intelligence
 
-- preserves inference discipline
-- documents exclusions explicitly
-- records evidence gaps transparently
-- maintains cross-state comparability
-- supports future machine-readable export surfaces
+Navigator
+→ Workflow Definition / Orchestration
 
-Public rendering available at:
+Certifier
+→ Certification Package
 
-satoshium.us/atlas/jurisdiction-intelligence-engine/us/states/<state>/
+Registry
+→ Satoshium Registry Record
 
----
+Chronicle
+→ Chronicle Entry
 
-## 🔄 Signal Update Model
+Anchor
+→ Integrity Reference
 
-Signals evolve only when structural evidence changes.
+Beacon
+→ Discovery Signal / Discovery Metadata
 
-See:
+Attestor
+→ Attestation + Rule-Constrained Evaluation + Trust Statement
+```
 
-signals-update-protocol.md
+Each institution remains authoritative for its own canonical objects and institutional responsibilities.
 
-for lifecycle rules governing:
+## Authority Boundary
 
-- update triggers
-- observational vs structural changes
-- metadata synchronization
-- exclusion preservation
-- corridor emergence handling
+Atlas intelligence may be:
 
----
+- explored by Navigator;
+- certified by Certifier;
+- registered by Registry;
+- historically preserved by Chronicle;
+- integrity-preserved by Anchor;
+- made discoverable by Beacon;
+- referenced or evaluated by Attestor.
 
-## 🧠 Relationship to Aegis
+None of those relationships transfers ownership or institutional authority over the Atlas source record.
 
-Atlas provides jurisdiction-awareness context for:
+**Connection ≠ Identity.**  
+**Reference ≠ Derivation.**  
+**Reference ≠ Support.**  
+**Reference ≠ Authority Transfer.**
 
-🛡 Aegis — The Agent Firewall
+## Current Status
 
-Future integrations include:
+Atlas is operational.
 
-- routing compatibility interpretation
-- registry admission awareness
-- lifecycle surface alignment
-- trust-topology export compatibility
+Current posture:
 
-Atlas supplies structure.
+```text
+Institutional Status:
+Operational
 
-Aegis supplies evaluation.
+Institutional Role:
+Authoritative Intelligence
 
----
+Foundation:
+Version 1.0 Complete
 
-## 🌐 Future Expansion Layers
+United States Coverage:
+50 State Packages
 
-Planned Atlas extensions include:
+Global Coverage:
+52 Country Packages
 
-### Corridor Index Layer
+Machine-Readable Foundation:
+Published · Complete
 
-Maps multi-state infrastructure continuity surfaces:
+Canonical Jurisdiction JSON:
+102 Records
 
-atlas/corridors/
+Generation Manifests:
+102
 
-Examples:
+Navigator Integration:
+Active
 
-- Ashburn interconnection corridor
-- ERCOT compute-energy corridor
-- Mountain research corridor
-- Silicon Valley innovation corridor
+Media Libraries:
+Established
 
----
+Suite Interoperability:
+Active
+```
 
-### Cross-Jurisdiction Comparison Surfaces
+## Expansion
 
-Structure-only comparability views:
+Atlas remains a long-horizon intelligence institution.
 
-atlas/compare/
+Future development may include:
 
-Examples:
+- additional jurisdiction coverage;
+- richer comparison surfaces;
+- new signal systems;
+- refinement of trust-dimension frameworks;
+- expanded historical context;
+- additional media;
+- stronger machine-readable interoperability;
+- new governed production relationships with other Suite institutions.
 
-- compute-readiness structures
-- custody-regime presence
-- DAO statutory environments
-- interconnection density patterns
+Future expansion should extend the established architecture rather than redefine Atlas authority casually.
 
-No rankings introduced.
+## Guiding Principles
 
----
+Atlas should continue to emphasize:
 
-### Machine-Readable Export Layer
+- evidence over assumption;
+- context over isolation;
+- transparency over opacity;
+- structure over disorder;
+- comparability without ranking;
+- accessibility of intelligence;
+- clear provenance;
+- durable institutional boundaries.
 
-Planned structured outputs:
+## Repository Maintenance
 
-signals.json
-trust-dimensions.json
-metadata.json
+Atlas repository documentation should:
 
-Enables:
+- reflect Atlas as operational;
+- preserve Atlas as the authoritative intelligence institution;
+- maintain U.S. and global coverage accurately;
+- keep machine-readable counts synchronized with published datasets;
+- distinguish Atlas from Navigator;
+- distinguish Atlas source authority from Certifier, Registry, Chronicle, Anchor, Beacon, and Attestor authority;
+- avoid reviving obsolete pre-Suite descriptions such as Atlas existing primarily to support Aegis or a generalized trust stack;
+- preserve historical documentation as history rather than current architecture.
 
-agent routing awareness  
-registry interoperability  
-trust-layer automation surfaces  
-
----
-
-### Global Jurisdiction Expansion
-
-Future structure:
-
-atlas/jurisdictions/global/
-
-Planned early targets:
-
-- European Union member states
-- United Kingdom
-- Canada
-- Switzerland
-- Singapore
-- United Arab Emirates
-
-Expansion follows the same normalization contract as U.S. states.
-
----
-
-## 🧱 Atlas Phase Status
-
-Phase 0 — Framework Layer ✅
-Phase 1 — U.S. Jurisdiction Normalization ✅
-Phase 1.5 — Public Rendering Layer ✅
-Phase 2 — Signal-Layer Activation 🔄
-
-Atlas is now transitioning from static normalization to dynamic jurisdictional signal tracking.
-
----
-
-## 🚀 Role Inside the Satoshium Platform
-
-Atlas serves as the jurisdictional intelligence layer supporting:
-
-- Aegis lifecycle evaluation
-- registry routing awareness
-- infrastructure topology interpretation
-- trust-layer coordination mapping
-- future decentralized agent deployment surfaces
-
-Atlas is the operating map beneath the Satoshium trust stack.
+README reconciliation documents the architecture that exists. It does not redesign it.
