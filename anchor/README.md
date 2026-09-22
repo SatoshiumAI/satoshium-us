@@ -1,279 +1,252 @@
-# Anchor
+# Satoshium Anchor
+
+**Path:** `/anchor/`  
+**Institution:** Satoshium Anchor  
+**Canonical Object:** Integrity Reference  
+**Status:** Operational
 
 ## Overview
 
-Anchor is the identity layer of the Satoshium ecosystem.
+Satoshium Anchor is the Satoshium Suite institution responsible for preserving durable **Integrity References** for authoritative artifacts and records.
 
-Its purpose is to establish attribution, accountability, authorship, representation, governance relationships, reputation context, and trust foundations across records, certifications, historical events, organizations, systems, agents, and future digital infrastructure.
+Anchor records cryptographic, temporal, representation, and verification context without assuming authority over the artifact it references, its meaning, its certification, its historical interpretation, or any trust conclusion derived from it.
 
-Anchor explores a fundamental question:
+Anchor is operational and has completed its first end-to-end production cycle.
 
-> Who is responsible?
+First published Integrity Reference:
 
-As information systems become increasingly digital, distributed, automated, and autonomous, the ability to associate actions, claims, records, and decisions with identifiable entities becomes increasingly important.
+`ANCH-2026-0001`
 
-Anchor exists to explore that relationship.
+## Institutional Purpose
 
----
+Anchor exists to answer a bounded integrity question:
 
-## Purpose
+> Does the referenced representation remain consistent with the representation that Anchor preserved?
 
-Identity is foundational.
+Anchor does **not** answer:
 
-Before a claim can be evaluated, there must be an entity making the claim.
+- who owns the source record;
+- whether the source record is true;
+- whether the source record is certified;
+- what the source record means historically;
+- whether a trust conclusion should be drawn from it.
 
-Before a record can be preserved, there must be an entity associated with the record.
+Those responsibilities remain with the appropriate source or Suite institution.
 
-Before accountability can exist, responsibility must be attributable.
-
-Anchor seeks to provide conceptual foundations for:
-
-* Identity
-* Attribution
-* Accountability
-* Representation
-* Authority
-* Governance
-* Reputation
-* Trust
-
-Together, these concepts form the basis of many social, institutional, and technological systems.
-
----
-
-## Core Concepts
-
-Anchor currently explores several foundational concepts.
-
-### Identities
-
-The entities capable of participating within systems.
-
-Examples may include:
-
-* Individuals
-* Organizations
-* Institutions
-* Communities
-* Systems
-* Agents
-* Artificial Intelligence
-
-### Claims
-
-Assertions made by identities regarding facts, events, ownership, authority, or relationships.
-
-### Attestations
-
-Claims associated with identifiable entities.
-
-Attestations connect assertions to identities.
-
-### Governance
-
-The structures through which authority, delegation, accountability, and representation are managed.
-
-### Reputation
-
-The historical context associated with an identity through actions, participation, and records.
-
-### Trust
-
-The confidence placed in identities, claims, systems, or processes.
-
----
-
-## Foundational Principles
-
-### Identity Precedes Attribution
-
-Before actions can be attributed, identities must exist.
-
-### Attribution Precedes Accountability
-
-Responsibility depends upon the ability to associate actions with identifiable entities.
-
-### Accountability Influences Reputation
-
-Historical actions contribute to how identities are perceived over time.
-
-### Reputation Influences Trust
-
-Trust decisions often incorporate historical experience and reputation.
-
-### Transparency Strengthens Trust
-
-Visibility into identities, actions, records, and governance improves accountability.
-
----
-
-## Conceptual Framework
-
-Anchor currently explores the following progression:
+## Anchor Model
 
 ```text
-Identity
-   ↓
-Claim
-   ↓
-Attestation
-   ↓
-Attribution
-   ↓
-Accountability
-   ↓
-Reputation
-   ↓
-Trust
+Authoritative Artifact
+↓
+Defined Canonical Representation
+↓
+Integrity Value Generated
+↓
+Integrity Reference Created
+↓
+Published / Preserved
+↓
+Later Integrity Verification
 ```
 
-This framework serves as a conceptual model rather than a formal specification.
+Authority answers who owns the record.
 
----
+Integrity answers whether the referenced representation remains consistent with the anchored representation.
 
-## Repository Structure
+**REFERENCE DOES NOT TRANSFER AUTHORITY.**
+
+## Canonical Object
+
+Anchor's canonical object is the:
+
+**Integrity Reference**
+
+An Integrity Reference preserves the context required to independently review the integrity relationship between an authoritative source artifact and a defined canonical representation.
+
+## Current Operational Status
+
+Anchor is operational.
+
+Current production evidence includes:
+
+- First Published Integrity Reference: `ANCH-2026-0001`
+- Source Artifact: `SCRD-SC-CERT-2026-0001`
+- Stage A Validation: PASS
+- Initial Verification: match
+- Stage B Validation: PASS
+- Publication Gate: APPROVED
+- Publication State: published
+- Lifecycle State: active
+
+Anchor now has:
+
+- a production package structure;
+- governed Validation records;
+- governed Verification records;
+- a formal Publication Gate;
+- canonical HTML and JSON publication;
+- lifecycle evidence;
+- a published Integrity Reference index.
+
+## Foundation Documentation
+
+The Anchor foundation includes:
+
+- `/anchor/purpose/`
+- `/anchor/definitions/`
+- `/anchor/integrity-preservation/`
+- `/anchor/anchoring-process/`
+- `/anchor/integration/`
+- `/anchor/standards/`
+- `/anchor/governance/`
+- `/anchor/identities/`
+- `/anchor/claims/`
+- `/anchor/attestations/`
+- `/anchor/reputation/`
+- `/anchor/trust/`
+- `/anchor/status/`
+- `/anchor/faq/`
+
+Identity-, claim-, attestation-, reputation-, and trust-related pages are bounded integrity-preservation surfaces.
+
+They do not make Anchor the authority for identity, claims, attestations, reputation, or trust.
+
+## Production Records
+
+Anchor exposes two distinct operational record surfaces:
 
 ```text
-anchor/
+/anchor/anchored-items/
+→ production packages, including unpublished candidates
 
-├── README.md
-│
-├── purpose/
-├── identities/
-├── claims/
-├── attestations/
-├── governance/
-├── reputation/
-├── trust/
-├── standards/
-├── status/
-└── faq/
+/anchor/integrity-references/
+→ published Integrity References only
 ```
 
----
+The first published production package is:
 
-## Documentation
+`/anchor/anchored-items/ANCH-2026-0001/`
 
-### Purpose
+The published-only index is:
 
-Explains why Anchor exists and the problems it seeks to explore.
+`/anchor/integrity-references/`
 
-### Identities
+## Production Architecture
 
-Defines identity concepts and participating entities.
+Anchor's production architecture includes:
 
-### Claims
+- Identifiers
+- Controlled Values
+- Relationships
+- Provenance
+- Schemas
+- Integrity Verification
+- Validation
+- Lifecycle
+- Versioning
+- Corrections
+- Publication
+- Maintenance
+- Production Procedures
 
-Explores assertions made by identities.
+These surfaces govern the creation, validation, verification, publication, Versioning, correction, and maintenance of real Integrity References.
 
-### Attestations
+## Authority Boundary
 
-Explores the relationship between identities and claims.
+Anchor is authoritative for:
 
-### Governance
+- Anchor Identifiers;
+- Integrity References;
+- Anchor-owned metadata;
+- Anchor Validation;
+- Anchor Verification results;
+- Anchor lifecycle state;
+- Anchor publication state;
+- Anchor Corrections and Versions.
 
-Explores authority, delegation, accountability, and representation.
+Anchor is **not** authoritative for the referenced Source Artifact.
 
-### Reputation
-
-Explores historical context and perception.
-
-### Trust
-
-Explores confidence, reliance, and trust relationships.
-
-### Standards
-
-Explores future identity and attribution standards.
-
-### Status
-
-Provides current project status and development information.
-
-### FAQ
-
-Answers common questions regarding Anchor and its objectives.
-
----
-
-## Relationship to Other Satoshium Systems
-
-Anchor is one component of the broader Satoshium ecosystem.
+The Source Institution retains authority over its own canonical object.
 
 ```text
-Atlas
-Maps information.
+Anchor Identifier
+→ Anchor authority
 
-Navigator
-Finds information.
-
-Certifier
-Evaluates authenticity.
-
-Registry
-Preserves records.
-
-Chronicle
-Preserves history.
-
-Anchor
-Establishes identity.
-
-Beacon
-Enables discovery.
-
-Attestor
-Provides trust signals.
+Source-System Identifier
+→ Source Institution authority
 ```
 
-Together these systems explore the lifecycle of information, attribution, verification, preservation, discovery, and trust.
+**Connection ≠ Identity.**  
+**Reference ≠ Derivation.**  
+**Reference ≠ Support.**  
+**Reference ≠ Authority Transfer.**
 
----
+## Relationship to Other Suite Institutions
 
-## Future Areas of Exploration
+Anchor may preserve integrity context for artifacts originating from Atlas, Certifier, Registry, Chronicle, Beacon, Attestor, Navigator, or external sources.
 
-Future development may explore:
+That relationship remains reciprocal and bounded.
 
-* Identity frameworks
-* Attribution systems
-* Governance structures
-* Delegation models
-* Reputation models
-* Trust signals
-* Organizational identities
-* Agent identities
-* AI identities
-* Interoperability standards
+Anchor does not absorb the institutional authority of the source system.
 
-No implementation decisions have been made.
+## Technology Position
 
----
+Anchor is implementation-neutral at the institutional level.
 
-## Status
+Its first production Integrity Reference currently uses:
 
-Anchor is currently an exploratory project under active development.
+- canonical JSON;
+- RFC 8785 JSON Canonicalization Scheme (JCS);
+- SHA-256 cryptographic digest.
 
-The project remains focused on defining concepts, terminology, governance considerations, and standards foundations before implementation decisions are made.
+Those implementation choices describe the current production record and do not require Anchor to become dependent on a single technology forever.
 
-Nothing in this repository should be interpreted as:
+## Production Path
 
-* A production identity system
-* An authentication platform
-* A governance platform
-* A reputation system
-* A trust framework
-* A commitment to any specific technology
+```text
+Foundation
+↓
+Production Architecture
+↓
+ANCH-2026-0001 constructed
+↓
+Stage A Validation — PASS
+↓
+Initial Verification — match
+↓
+Stage B Validation — PASS
+↓
+Publication Gate — APPROVED
+↓
+Publication — COMPLETE
+↓
+Published Integrity Reference Index — ACTIVE
+↓
+Maintenance / Reverification / Future Records
+```
 
----
+The first full production cycle is complete.
 
-**Project Type:** Identity Framework
+Future Integrity References follow the governed production path established through `ANCH-2026-0001`.
 
-**Development Stage:** Conceptual Design
+## Anchor Principle
 
-**Implementation Status:** Not Implemented
+> **Preserve the reference. Preserve the boundary. Preserve the authority.**
 
-**Technology Status:** Undecided
+Production validates architecture.
 
-**Version:** Draft 0.1
+Architecture does not validate itself.
 
-**Maintained By:** Satoshium
+## Repository Maintenance
+
+Anchor documentation should:
+
+- preserve the Integrity Reference as Anchor's canonical object;
+- maintain separation between Source authority and Anchor authority;
+- distinguish Validation from Verification;
+- distinguish candidate production packages from published Integrity References;
+- preserve lifecycle, Versioning, Correction, Publication, and Maintenance history;
+- avoid reintroducing the superseded identity-layer model as Anchor's primary institutional role;
+- preserve older identity/trust materials only where they remain useful as bounded integrity-preservation contexts.
+
+README reconciliation documents the architecture that exists. It does not redesign it.
