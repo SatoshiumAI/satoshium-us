@@ -180,61 +180,59 @@ h1{
   <h1>Attestations</h1>
 
   <p class="lead">
-  Attestations support independent verification of Satoshium certification decisions, Certified Records,
-  receipts, evidence references, integrity references, Registry entries, and other Suite-ready outputs
-  generated from a canonical Certification Package.
-</p>
+    This Certifier surface documents how certification outputs may participate in the broader
+    Satoshium Suite attestation architecture after certification has been completed.
+  </p>
 
-<p class="lead">
-  Within the Suite architecture, Certifier issues certification artifacts while Attestor may later
-  produce Attestation Records that verify selected claims, references, hashes, Registry entries,
-  preserved outputs, and relationships among certification records.
-</p>
+  <p class="lead">
+    Certifier remains the certification authority. Satoshium Attestor independently produces
+    governed Attestations and, where applicable, rule-constrained Trust Statements from eligible
+    governed inputs. Attestor does not replace, reopen, or redefine the Certification Package.
+  </p>
 </section>
 
 <section class="grid">
 
 <article class="card">
-  <h2>SATR-2026-000001</h2>
-  <span class="status">Attestation Reference</span>
-
-<p>
-  Attestation reference associated with SC-CERT-2026-0001 for the Atlas Jurisdiction Record —
-  El Salvador. The reference supports future verification of the Certification Package,
-  Certification Receipt, Certified Record, evidence references, integrity references,
-  Registry Entry, and related certification outputs.
-</p>
-</article>
-
-<article class="card">
-  <h2>Attestation Record Template</h2>
-  <span class="status">Defined Structure</span>
-
- <p>
-  The Attestation Record template defines how future verification records may identify the referenced
-  certification, selected claims, related artifacts, evidence links, integrity references,
-  Registry entries, verification status, and reviewer or system statements.
-</p>
-</article>
-
-<article class="card">
-  <h2>Verification Scope</h2>
-  <span class="status">Bounded</span>
-
-<p>
-  Attestations verify specific certification claims, facts, references, or artifact relationships.
-  They do not replace the Certification Package, reopen or alter the certification decision,
-  or independently redefine Suite Standards or Suite Methodology.
-</p>
-</article>
-
-<article class="card">
-  <h2>Suite Integration</h2>
-  <span class="status">Downstream Support</span>
+  <h2>Certification Inputs to Attestor</h2>
+  <span class="status">Governed Relationship</span>
 
   <p>
-    Attestation records may reference SCR receipts, SCRD certified records, SREG Registry entries,
-    ANCH integrity references, SCHR historical records, and supporting SEV evidence records.
+    A Certification Package or related governed certification artifact may be referenced by
+    Attestor as an eligible governed input when the applicable Attestor rules permit it.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Attestation</h2>
+  <span class="status">Attestor Object</span>
+
+  <p>
+    An Attestation is a governed, attributable assertion produced by Satoshium Attestor.
+    It remains distinct from the Certifier Certification Package and from the underlying
+    Atlas, Registry, Chronicle, Anchor, Beacon, or other referenced records.
+  </p>
+</article>
+
+<article class="card">
+  <h2>Trust Statement</h2>
+  <span class="status">Attestor Conclusion</span>
+
+  <p>
+    A Trust Statement is a governed, attributable, bounded Attestor conclusion produced
+    through rule-constrained evaluation. It is not a certification decision and does not
+    transfer authority from Certifier or any referenced institution.
+  </p>
+</article>
+
+<article class="card">
+  <h2>First Production Operation</h2>
+  <span class="status">Published · V1.0</span>
+
+  <p>
+    The first production Attestor operation produced ATT-2026-0001 and TRST-2026-0001.
+    Those records reference SC-CERT-2026-0001 together with governed Suite records from
+    Registry, Chronicle, Anchor, and Beacon while preserving the authority of each source.
   </p>
 </article>
 
@@ -243,23 +241,22 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Attestation Flow</h2>
+  <h2>Attestor Flow</h2>
 
-<p>
-  Certifier issues the certification and its generated artifacts. Registry catalogs the Certified Record.
-  Chronicle preserves certification history. Anchor preserves integrity references. Attestor may then
-  verify selected claims, evidence references, record relationships, and preserved outputs.
-</p>
- 
-<div class="flow">
-  Certification Package<br>
-  ↓<br>
-  SCPR · SCR · SCRD<br>
-  ↓<br>
-  SREG · SCHR · ANCH<br>
-  ↓<br>
-  SATR — Attestation Record
-</div>
+  <p>
+    Attestor operates through a governed sequence beginning with eligible inputs and ending,
+    where applicable, in a bounded Trust Statement.
+  </p>
+
+  <div class="flow">
+    Eligible Governed Inputs<br>
+    ↓<br>
+    Attestation<br>
+    ↓<br>
+    Rule-Constrained Evaluation<br>
+    ↓<br>
+    Trust Statement
+  </div>
 </article>
 
 </section>
@@ -267,19 +264,20 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Attestation Role</h2>
+  <h2>Institutional Boundary</h2>
 
-<p>
-  Attestation Records are not certification decisions and Attestor is not the certification authority.
-  They preserve verifiable statements about selected claims, references, hashes, evidence,
-  certified records, Registry entries, and other artifacts connected to an issued certification.
-</p>
+  <p>
+    Certifier performs certification and owns the resulting Certification Package.
+    Attestor owns Attestations, rule-constrained evaluation, and Trust Statements.
+    References between those records preserve provenance and interoperability without
+    transferring institutional authority.
+  </p>
 
-<div class="note">
-  Standards define expectations. Methodology defines the process. Certifier issues the certification.
-  Registry catalogs it. Chronicle preserves its history. Anchor preserves its integrity references.
-  Attestor verifies selected claims and relationships without replacing the original certification authority.
-</div>
+  <div class="note">
+    Standards define expectations. Methodology defines implementation. Certifier performs
+    certification. Attestor produces governed Attestations and Trust Statements from eligible
+    governed inputs. <strong>REFERENCE DOES NOT TRANSFER AUTHORITY.</strong>
+  </div>
 
   <a class="btn" href="/certifier/receipts/">Open Receipts →</a>
   <a class="btn" href="/certifier/schema/">Open Schema →</a>
