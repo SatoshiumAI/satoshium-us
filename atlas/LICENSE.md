@@ -1,196 +1,193 @@
 # License
 
-**Subsystem:** Satoshium Atlas
-
-**License:** MIT License
-
-Copyright Holder: Christopher D. Burris — Satoshium™ Intelligence Systems
+**Institution:** Satoshium Atlas  
+**License:** MIT License  
+**Copyright Holder:** Christopher D. Burris — Satoshium™ Intelligence Systems
 
 ---
 
-# Overview
+## Governing License
 
 Satoshium Atlas is released under the MIT License.
 
-The MIT License is a permissive open-source license that allows individuals and organizations to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software, subject to the conditions contained within the license.
+The legally binding license terms governing this repository are contained in the repository's governing MIT license file.
 
-The official legal license governing this repository is contained in the repository's `LICENSE` file.
+This Markdown document provides Atlas-specific licensing context and does not replace or modify the controlling MIT License text.
 
-This document exists to provide additional context regarding licensing philosophy and intended usage.
+## Licensing Philosophy
 
----
+Atlas is an open jurisdiction intelligence framework built around transparency, evidence discipline, interoperability, accessibility, education, research, and long-term stewardship.
 
-# Licensing Philosophy
+Open licensing supports independent study, implementation, adaptation, validation, and improvement of Atlas software and documentation.
 
-Satoshium is founded upon principles of transparency, interoperability, education, and open participation.
+## Current Atlas Scope
 
-Atlas is intended to serve as a framework for geographic exploration, jurisdictional research, information organization, and structured knowledge discovery.
+Atlas is the Satoshium Suite institution responsible for authoritative jurisdiction intelligence.
 
-The decision to release Atlas under the MIT License reflects the belief that geographic information frameworks, research structures, educational resources, and supporting tools should remain broadly accessible for study, adaptation, implementation, and improvement.
+Current Atlas coverage includes:
 
-Open licensing encourages:
+- 50 United States state packages;
+- 52 global country packages;
+- canonical Markdown intelligence records;
+- canonical machine-readable JSON representations;
+- matched generation manifests;
+- media libraries;
+- evidence layers;
+- signals;
+- trust dimensions;
+- metadata;
+- historical references;
+- corridors;
+- framework documentation;
+- certification-related documentation.
 
-* Transparency
-* Collaboration
-* Education
-* Research
-* Discovery
-* Innovation
-* Long-term preservation
+## Permitted Uses
 
----
+Subject to the MIT License, covered Atlas materials may be:
 
-# Permitted Uses
+- used;
+- copied;
+- modified;
+- merged;
+- published;
+- distributed;
+- sublicensed;
+- incorporated into other software;
+- used commercially.
 
-Subject to the terms of the MIT License, users may:
+The controlling terms remain those of the applicable MIT License.
 
-* Use Atlas for personal projects.
-* Use Atlas within organizations.
-* Modify Atlas.
-* Extend Atlas.
-* Incorporate Atlas into other software.
-* Create derivative works.
-* Distribute modified versions.
-* Use Atlas commercially.
+## Attribution
 
----
+The MIT License requires preservation of the applicable copyright notice and permission notice in copies or substantial portions of the covered Software.
 
-# Attribution
+Users redistributing Atlas materials should preserve required attribution and license text.
 
-The MIT License requires preservation of the copyright notice and license text.
+## Trademark and Brand Rights
 
-Users should retain appropriate attribution when redistributing licensed materials.
+The MIT License does not grant permission to use Satoshium trademarks, Atlas branding, logos, seals, or other brand identifiers in a manner that implies official status, endorsement, sponsorship, or affiliation.
 
----
+Licensing permission does not transfer institutional identity.
 
-# Geographic Information
+## Jurisdiction Intelligence and External Sources
 
-Atlas contains geographic, jurisdictional, educational, and informational materials intended to support exploration and understanding.
+Atlas contains jurisdictional, geographic, regulatory, historical, institutional, economic, infrastructure, cultural, media, and related intelligence derived from or supported by external sources.
 
-Country profiles, regional references, legal summaries, economic information, historical references, demographic information, media references, and related materials may rely upon third-party sources.
+Third-party materials remain subject to their own:
 
-Ownership of external materials remains with their respective owners unless explicitly transferred.
+- copyright;
+- license;
+- terms of use;
+- database rights;
+- attribution requirements;
+- other applicable restrictions.
 
-The repository license does not override copyrights, licenses, or usage restrictions associated with external materials.
+The Atlas repository license does not override third-party rights.
 
-Users remain responsible for complying with applicable intellectual property laws and licensing requirements.
+## Atlas Authority Boundary
 
----
+Atlas is authoritative for Atlas-governed records.
 
-# Standards and Documentation
+Licensing permission does not transfer Atlas institutional authority.
 
-Documentation contained within this repository is released under the same licensing framework as the repository unless otherwise stated.
+Likewise, Atlas reference to an external source does not make Atlas the owner of that source.
 
-This includes, but is not limited to:
+> **Reference does not transfer authority.**
 
-* Country profiles
-* State profiles
-* Geographic references
-* Jurisdictional documentation
-* Metadata structures
-* Research frameworks
-* Educational materials
-* Sample datasets
+## Human-Readable and Machine-Readable Records
 
----
+Atlas publishes both human-readable and machine-readable representations.
 
-# No Warranty
+Canonical Markdown layers serve as authoritative human-readable Atlas source records.
 
-Consistent with the MIT License, Atlas is provided:
+Canonical JSON records and matched generation manifests support machine-readable interoperability.
 
-> "AS IS", WITHOUT WARRANTY OF ANY KIND.
+The existence of a machine-readable representation does not independently expand the scope of the repository license or transfer authority over third-party source material.
 
-No representation is made regarding:
+## Research and Informational Disclaimer
 
-* Accuracy
-* Completeness
-* Timeliness
-* Reliability
-* Fitness for a particular purpose
-* Future suitability
-* Regulatory compliance
-
-Users are responsible for evaluating the suitability of Atlas for their specific needs.
-
----
-
-# Research Disclaimer
-
-Information contained within Atlas is intended for research, educational, informational, and exploratory purposes.
+Atlas content is intended for research, educational, informational, structural, and exploratory purposes.
 
 Atlas should not be interpreted as:
 
-* Legal advice
-* Financial advice
-* Tax advice
-* Investment advice
-* Government guidance
-* Professional consultation
-* Regulatory approval
+- legal advice;
+- financial advice;
+- tax advice;
+- investment advice;
+- government guidance;
+- professional consultation;
+- regulatory approval;
+- deployment recommendation;
+- jurisdiction ranking.
 
-Users should independently verify information before making decisions based upon Atlas content.
+Users remain responsible for independently evaluating information before making decisions.
 
----
+## No Warranty
 
-# Third-Party Content
+Consistent with the MIT License, Atlas is provided:
 
-Atlas may reference countries, governments, institutions, organizations, businesses, datasets, publications, media assets, and other third-party materials.
+> **"AS IS", WITHOUT WARRANTY OF ANY KIND.**
 
-Ownership of referenced content remains with its respective owners.
+No independent representation is made regarding:
 
-Inclusion within Atlas does not imply:
+- accuracy;
+- completeness;
+- timeliness;
+- reliability;
+- fitness for a particular purpose;
+- future suitability;
+- regulatory compliance;
+- operational outcomes.
 
-* Ownership
-* Endorsement
-* Sponsorship
-* Affiliation
+## Interoperability
 
-Atlas exists to organize and explore information, not to claim ownership of it.
+Atlas may participate in governed relationships with other Satoshium Suite institutions.
 
----
+Those relationships may include:
 
-# Future Versions
+- Navigator exploration and workflow;
+- Certifier certification;
+- Registry registration;
+- Chronicle historical preservation;
+- Anchor integrity preservation;
+- Beacon discovery;
+- Attestor attestation or evaluation.
 
-Future versions of Atlas may introduce:
+Interoperability does not merge institutional authority.
 
-* Additional jurisdictions
-* Enhanced metadata frameworks
-* Expanded research capabilities
-* Discovery tools
-* Geographic classifications
-* AI-assisted analysis
-* Interoperability features
+## Future Development
 
-Unless otherwise specified, such additions are expected to remain subject to the repository license.
+Atlas remains under active long-horizon development even though its initial foundation is complete and the institution is operational.
 
----
+Future work may include:
 
-# Long-Term Vision
+- additional jurisdictions;
+- richer comparison capabilities;
+- expanded signal systems;
+- historical analysis;
+- new media resources;
+- additional machine-readable outputs;
+- further Suite interoperability;
+- new research and intelligence surfaces.
 
-The long-term vision of Satoshium Atlas is to create an open and durable framework for geographic exploration, jurisdictional understanding, information discovery, and structured knowledge preservation.
+Unless otherwise stated, future covered repository additions remain subject to the applicable repository license.
 
-Open licensing supports that objective by allowing future developers, researchers, educators, organizations, and communities to build upon the framework while preserving transparency and interoperability.
+## Third-Party Content
 
----
+Atlas may reference governments, institutions, organizations, businesses, datasets, publications, media, standards, technologies, and other external materials.
 
-# Reference
+Inclusion does not imply:
 
-For the legally binding license terms governing this repository, see:
+- ownership;
+- endorsement;
+- sponsorship;
+- affiliation.
 
-```text
-LICENSE
-```
+Ownership and licensing remain with the applicable third party.
 
-located at the root of the repository.
+## Guiding Statement
 
----
-
-# Guiding Statement
-
-> Understanding begins with exploration.
->
-> Exploration leads to discovery.
->
-> Discovery expands knowledge.
->
-> Satoshium Atlas is released in that spirit.
+> Evidence supports understanding.  
+> Structure makes intelligence reviewable.  
+> Interoperability should preserve authority.  
+> Atlas is released in that spirit.
