@@ -2,8 +2,8 @@
 
 **Path:** `/suite/`  
 **Purpose:** Operational systems layer of the Satoshium ecosystem  
-**Beacon Production Object:** `BEAC-2026-0001`  
-**Last Updated:** September 13, 2026
+**Production Objects:** `BEAC-2026-0001` · `ATT-2026-0001` · `TRST-2026-0001`  
+**Last Updated:** September 2026
 
 ---
 
@@ -92,6 +92,24 @@ SC-CERT-2026-0001
 
 Registry, Chronicle, and Anchor are related Suite objects and contextual references rather than intermediate Beacon provenance.
 
+For Attestor:
+
+```text
+Eligible Governed Inputs
+→ ATT-2026-0001
+→ Rule-Constrained Evaluation
+→ supported
+→ TRST-2026-0001
+```
+
+`TRST-2026-0001` is `derived-from` `ATT-2026-0001`. Both canonical Attestor objects preserve governed references to the relevant Suite-source objects.
+
+> **Connection ≠ Identity**
+
+> **Reference ≠ Derivation**
+
+> **Reference ≠ Support**
+
 > **Reference does not transfer authority.**
 
 ---
@@ -109,6 +127,8 @@ Anchor     → Integrity Reference
 Beacon     → Discovery Signal
 Attestor   → Trust Statement
 ```
+
+Attestor canonical objects include the **Attestation** and **Trust Statement**. The Trust Statement is produced through Rule-Constrained Evaluation of eligible governed inputs.
 
 Discovery Metadata is a supporting Beacon layer.
 
