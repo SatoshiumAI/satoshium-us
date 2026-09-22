@@ -8,7 +8,7 @@ This directory is the production package for:
 ANCH-2026-0001
 ```
 
-the first assigned Satoshium Anchor Integrity Reference candidate.
+the first published Satoshium Anchor Integrity Reference.
 
 The Integrity Reference preserves durable integrity context for the complete JSON representation of:
 
@@ -58,13 +58,13 @@ README.md
 
 Human-readable package page.
 
-During pre-publication it documents the assigned candidate and its production state.
+It is the canonical human-readable representation of the published Integrity Reference.
 
-It does not itself establish Publication Gate approval or public Anchor authority.
+Publication Gate approval and public Anchor authority are preserved through the governed production record and current published state.
 
 ### `integrity-reference.json`
 
-Machine-readable Integrity Reference candidate governed by the Anchor Integrity Reference Base Schema.
+Canonical machine-readable Integrity Reference governed by the Anchor Integrity Reference Base Schema.
 
 ### `source-rfc8785-jcs.json`
 
@@ -208,23 +208,26 @@ target_location
 → https://satoshium.us/certifier/certifications/SC-CERT-2026-0001/records/certified-record/scrd_json.json
 ```
 
-No Version, Correction, Supersession, Verification, Publication, Maintenance, or external-commitment relationship is required for the initial Version 1 candidate.
+The initial Version 1 source relationship remains `references_source`. Later Verification, Publication, and downstream Suite references do not change the Source Artifact relationship or transfer source authority.
 
 ---
 
 # Record State
 
-Current pre-publication state:
+Current production state:
 
 ```text
 Integrity State
 → current
 
 Publication State
-→ unpublished
+→ published
 
 Lifecycle State
-→ draft
+→ active
+
+Published At
+→ 2026-08-29T15:40:14-07:00
 ```
 
 These dimensions remain distinct.
@@ -241,7 +244,7 @@ Lifecycle State
 
 # Current Production Position
 
-The following have been completed:
+The Version 1 production sequence is complete:
 
 ```text
 Source Artifact selected
@@ -253,72 +256,63 @@ Integrity Value generated
 Anchor Identifier assigned
 Anchor Version assigned
 Source relationship defined
-Integrity Reference candidate constructed
+Integrity Reference constructed
 Base Schema conformance check passed
-```
-
-The following have not yet been completed:
-
-```text
-Stage A — Structural / Institutional Validation
-Initial Verification
-Canonical publication representations
-Stage B — Publication-Readiness Validation
-Publication Gate
-Publication
-Integrity References Index entry
+Stage A — Structural / Institutional Validation PASS
+Initial Verification match
+Canonical HTML prepared
+Canonical JSON prepared
+Stage B — Publication-Readiness Validation completed
+Publication Gate APPROVED
+Publication COMPLETE
 ```
 
 ---
 
 # Validation Status
 
-The candidate has successfully passed a machine schema-conformance check against the reconciled Integrity Reference Base Schema.
-
-This does not equal formal Anchor Validation.
+Formal Stage A Validation is complete.
 
 ```text
-Schema conformance PASS
-≠
-Stage A Validation PASS
+Outcome → PASS
+Rule Set → VAL-001 through VAL-042
+PASS → 28
+FAIL → 0
+NOT APPLICABLE → 14
 ```
 
-Formal Anchor Validation remains the next production step.
+Schema conformance remains distinct from formal Anchor Validation.
 
 ---
 
 # Verification Status
 
-Initial Verification has not yet been formally recorded.
-
-The expected successful Verification Result is:
+Initial Verification is complete.
 
 ```text
-match
+Verified At → 2026-08-29T14:31:00-07:00
+Verification Result → match
+Method ID → digest-1
 ```
 
-A `match` may be recorded only after the governed Verification process reproduces the Canonical Representation and confirms exact agreement with the expected SHA-256 Integrity Value.
+Detailed digest-comparison evidence is preserved in:
+
+```text
+initial-verification.json
+```
 
 ---
 
 # Publication Status
 
 ```text
-Publication State
-→ unpublished
+Publication State → published
+Lifecycle State → active
+Published At → 2026-08-29T15:40:14-07:00
+Publication Gate → APPROVED
 ```
 
-The assigned candidate has not yet:
-
-```text
-passed Stage A Validation
-completed Initial Verification
-passed Stage B Publication-Readiness Validation
-received Publication Gate approval
-entered public Anchor authority
-```
-
-It must not yet be listed in the published Integrity Reference index.
+Anchor Version 1 has entered public Anchor authority for its own Integrity Reference metadata.
 
 ---
 
@@ -343,6 +337,34 @@ Publication
         ↓
 Maintenance / Reverification
 ```
+
+---
+
+# Later Suite Relationships
+
+`ANCH-2026-0001` later became an eligible governed Suite-source input in Attestor's first controlled production operation.
+
+```text
+ATT-2026-0001
+        ↓
+references
+        ↓
+ANCH-2026-0001
+```
+
+```text
+TRST-2026-0001
+        ↓
+references
+        ↓
+ANCH-2026-0001
+```
+
+`TRST-2026-0001` remains `derived-from` `ATT-2026-0001`.
+
+These references do **not** extend Anchor integrity beyond the defined canonical SCRD JSON representation. They do not make Anchor authoritative for the Certification Package as a whole, the Atlas subject, Beacon discovery, Attestor evaluation, or the Trust Statement.
+
+> Reference does not transfer authority.
 
 ---
 
@@ -374,16 +396,21 @@ Anchor does not become authoritative for the Source Artifact's certification mea
 
 ## Status
 
-**Production Candidate · Assigned · Unpublished**
+**Published · Active · Version 1**
 
 ```text
 Anchor Identifier → ANCH-2026-0001
 Anchor Version → 1
 Integrity State → current
-Publication State → unpublished
-Lifecycle State → draft
+Publication State → published
+Lifecycle State → active
+Published At → 2026-08-29T15:40:14-07:00
+Stage A Validation → PASS
+Initial Verification → match
+Publication Gate → APPROVED
+Publication → COMPLETE
 ```
 
-**Next Required Step:** Stage A — Structural / Institutional Validation
+Future changes must follow Anchor maintenance, reverification, Validation, Versioning, Correction, and Publication procedures as applicable.
 
 **Maintained By:** Satoshium
