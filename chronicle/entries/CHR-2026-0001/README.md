@@ -344,6 +344,36 @@ It does not transfer Atlas authority to Chronicle.
 
 ---
 
+## Later Suite Relationships
+
+Later Suite institutions may reference `CHR-2026-0001` without changing the preserved July 5, 2026 Occurrence or Chronicle's authority over this Entry.
+
+Current governed relationships include:
+
+```text
+ATT-2026-0001
+        ↓
+references
+        ↓
+CHR-2026-0001
+```
+
+```text
+TRST-2026-0001
+        ↓
+references
+        ↓
+CHR-2026-0001
+```
+
+`TRST-2026-0001` remains `derived-from` `ATT-2026-0001`; its reference to Chronicle does not make the Trust Statement derived from `CHR-2026-0001`.
+
+Attestor used `CHR-2026-0001` as an eligible governed Suite-source input in its first controlled production operation. Attestor owns its Attestation, Rule-Constrained Evaluation, Evaluation Outcome, and bounded Trust Statement. Chronicle remains authoritative for `CHR-2026-0001` and its historical-preservation representation.
+
+> **Reference does not transfer authority.**
+
+---
+
 ## Supporting Sources
 
 The production Entry currently references the following supporting Certifier artifacts:
@@ -711,6 +741,18 @@ Chronicle Entry Versions
 Chronicle Publication / preservation state
 ```
 
+### Satoshium Anchor
+
+Authoritative for `ANCH-2026-0001` and its integrity context for the defined SCRD JSON representation.
+
+### Satoshium Beacon
+
+Authoritative for `BEAC-2026-0001`, its Discovery Signal, discovery metadata, provenance, lifecycle, and publication state.
+
+### Satoshium Attestor
+
+Authoritative for `ATT-2026-0001`, `TRST-2026-0001`, Rule-Constrained Evaluation, the Evaluation Outcome, and Attestor-controlled lifecycle and publication state.
+
 The governing rule is:
 
 > Reference does not transfer authority.
@@ -750,7 +792,24 @@ August 22, 2026
   Entry Version 1 published at 2026-08-22T08:38:00-07:00.
   Lifecycle State advanced to active.
   Publication State advanced to published.
+
+August 29, 2026
+  Anchor established ANCH-2026-0001 for the defined
+  SCRD JSON representation associated with the certification.
+
+September 13, 2026
+  Beacon published BEAC-2026-0001 concerning the active
+  Operational certification.
+
+September 19, 2026
+  Attestor used CHR-2026-0001 as an eligible governed
+  Suite-source input in its first controlled production operation.
+  ATT-2026-0001 and TRST-2026-0001 reference CHR-2026-0001.
 ```
+
+---
+
+The August 29, September 13, and September 19 items are later Suite context. They do not alter the preserved July 5 Occurrence or, by themselves, require a new Chronicle Entry Version.
 
 ---
 
