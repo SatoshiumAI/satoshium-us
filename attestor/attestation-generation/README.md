@@ -1,196 +1,208 @@
 # Satoshium Attestor — Attestation Generation
 
-## Page
-`/attestor/attestation-generation/`
+**Path:** `/attestor/generation/`  
+**Institution:** Satoshium Attestor  
+**Current Stage:** Operational Architecture  
+**Canonical Output:** `ATT-YYYY-NNNN` Attestation  
+**Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
-This page defines the governed architecture for forming a canonical **Attestation** within Satoshium Attestor.
 
-An Attestation is a governed, attributable, bounded assertion.
+Attestation Generation defines the governed process by which a bounded trust-relevant matter and attributable assertion become a canonical Attestation.
 
-Attestation Generation concerns formation of that assertion from eligible governed inputs while preserving:
-- purpose;
+Generation preserves:
+
 - subject;
 - assertion;
-- Attestation Type;
 - scope;
-- Attesting Authority;
+- Attesting Authority / attribution;
 - eligible governed references;
 - provenance;
-- relevant source state;
+- relevant state;
 - relationships;
-- lifecycle context;
-- source authority.
+- limitations and uncertainty where material; and
+- institutional authority boundaries.
 
-It does **not** collapse Attestation formation into Trust Statement generation.
+Generation does not determine whether the assertion is supported.
 
-## Governing Principle
-> **Reference does not transfer authority.**
+## Governing Model
 
-## Canonical Model
-`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
+`Bounded Matter + Attributable Assertion + Eligible Governed Inputs + Preserved Authority / Provenance → Canonical Attestation`
 
-### Attestation
-A governed, attributable assertion.
+The resulting Attestation may then participate in:
 
-### Trust Statement
-A governed, attributable, bounded Attestor conclusion.
+`Attestation + Evaluation Basis + Applicable Rules → Rule-Constrained Evaluation`
 
-## Canonical Identifier
-A canonical Attestation uses:
+## Canonical Generation Sequence
+
+1. Establish bounded purpose and subject.
+2. Define the assertion and scope.
+3. Establish Attesting Authority / attribution.
+4. Identify potential governed inputs.
+5. Preserve source identity, provenance, relevant state, and authority context.
+6. Determine Eligibility for the specific evaluation.
+7. Associate eligible governed references with the assertion.
+8. Preserve material limitations and uncertainty.
+9. Create the canonical Attestation.
+10. Assign the `ATT-YYYY-NNNN` identifier at canonical creation.
+11. Preserve lifecycle, publication, version, provenance, and relationship metadata.
+12. Pass the Attestation forward to Evaluation Basis / Rule-Constrained Evaluation.
+
+## Identifier Assignment
+
+The canonical Attestation identifier family is:
 
 `ATT-YYYY-NNNN`
 
-The identifier is assigned at canonical creation and is not reused or reassigned.
+Identifiers are assigned only at canonical creation.
 
-Canonical identity and version identity remain distinct.
+They are not:
 
-## Adopted Attestation Types
-- `identity`
-- `evidence`
-- `source-provenance`
-- `verification-related`
-- `relationship-condition`
-- `correction-supersession`
+- preallocated as production identity;
+- assigned to tests or representative fixtures;
+- reused;
+- transferred from source objects; or
+- retroactively substituted for another object's identity.
 
-The Attestation Type classifies the assertion. It does not transfer source authority or predetermine an Evaluation Outcome.
+## Core Distinctions
 
-## Generation Sequence
-The established institutional formation sequence is:
+`Source Object ≠ Attestation`
 
-`Purpose Established → Subject Identified → Assertion Defined → Scope Bounded → Eligible Inputs Referenced → Provenance Preserved → Attesting Authority Attributed → Attestation Formed`
+`Availability ≠ Eligibility`
 
-This is the governed institutional path.
+`Authority ≠ Eligibility`
 
-Exact executable validation order, machine serialization, duplicate-detection mechanics, and production procedures remain implementation work.
+`Reference ≠ Eligibility`
 
-## Purpose Established
-The purpose for forming the Attestation must be sufficiently clear to determine the assertion, scope, and relevant potential inputs.
+`Eligibility ≠ Evaluation Outcome`
 
-## Subject Identified
-The subject must be identifiable within the applicable governed context.
+`Attestation ≠ Trust Statement`
 
-## Assertion Defined
-The Attestation states the bounded proposition being asserted rather than silently copying a source object.
+`Canonical Creation ≠ Lifecycle Activation ≠ Publication`
 
-## Scope Bounded
-Scope preserves the conditions and limitations within which the assertion applies.
+`Reference ≠ Support`
 
-## Eligible Inputs Referenced
-Potential inputs are admitted through the established Eligibility architecture.
+**Reference does not transfer authority.**
 
-> **Availability ≠ Eligibility**
+## Source Authority
 
-> **Authority ≠ Eligibility**
+Generation may use eligible governed references to existing Suite or external objects without duplicating their canonical authority.
 
-> **Reference ≠ Eligibility**
+The source institution remains authoritative for its own object.
 
-## Provenance Preserved
-Applicable provenance is preserved using the adopted modes:
-- `direct`
-- `referenced`
-- `derived`
+Attestor is authoritative for the Attestation it canonically creates.
 
-The source or origin, derivation basis where applicable, relevant source state, and material limitations remain traceable.
+## First Production Generation Demonstration
 
-## Attesting Authority Attributed
-The Attestation identifies the **Attesting Authority** responsible for the governed assertion.
+The first controlled production operation exercised Attestation Generation through `ATT-2026-0001`.
 
-Attesting Authority remains distinct from:
-- Referenced Authority;
-- Attestor Authority.
+The governed matter concerned:
 
-> **Attribution ≠ Adoption**
+> The canonical identity, attributable Certifier origin, relevant certification state, and traceable Suite relationships of `SC-CERT-2026-0001`, the Operational Certification Package concerning the Satoshium Atlas Jurisdiction Record — El Salvador.
 
-## Attestation Formed
-Once applicable structural, type, scope, authority, provenance, eligibility, and relationship requirements are satisfied, an Attestation may be canonically created and assigned an `ATT-YYYY-NNNN`.
+The production generation process established:
 
-Canonical creation does not itself establish:
-- `active` Lifecycle State;
-- `published` Publication State;
-- a favorable Evaluation Outcome;
-- a Trust Statement.
+- bounded purpose and scope;
+- potential governed inputs;
+- completed Eligibility determinations;
+- Attesting Authority / attribution;
+- a bounded governed assertion;
+- source provenance and authority context;
+- traceable governed relationships;
+- canonical creation of `ATT-2026-0001`; and
+- initial state `Draft · Unpublished · V1.0`.
 
-## Lifecycle
-Adopted Lifecycle States:
-- `draft`
-- `active`
-- `superseded`
-- `withdrawn`
-- `retired`
+The Evaluation Outcome was **not predetermined at canonical creation**.
 
-A newly formed Attestation begins in governed `draft` state unless a production procedure explicitly governs a different valid transition.
+Rule-Constrained Evaluation occurred afterward and ultimately determined the outcome `supported`.
 
-Review and correction are activities rather than lifecycle states.
+## Production Assertion
 
-## Publication
-Publication is separate from Attestation formation.
+`ATT-2026-0001` asserted:
 
-Adopted Publication States:
-- `unpublished`
-- `published`
+> SC-CERT-2026-0001 is the canonical Satoshium Certifier Certification Package for the Operational certification of the Satoshium Atlas Jurisdiction Record — El Salvador; it is attributable to Satoshium Certifier, is represented by its canonical Certifier source as Issued · Active, and has traceable governed relationships to SREG-2026-0001, CHR-2026-0001, ANCH-2026-0001, and BEAC-2026-0001, while each referenced Suite institution retains authority over its own object and institutional domain.
 
-> **Canonical Creation ≠ Lifecycle Activation ≠ Publication**
+Canonical creation of this assertion did not establish that the assertion was supported.
 
-## Potential Governed Inputs
-Potential source classes include:
-- Atlas Authoritative Intelligence;
-- Navigator Workflow Definition / Orchestration;
-- Certifier Certification Packages;
-- Satoshium Registry Records;
-- Chronicle Entries;
-- Anchor Integrity References;
-- Beacon Discovery Signals / Discovery Metadata;
-- other eligible governed sources.
+Support was determined only through subsequent Rule-Constrained Evaluation.
 
-No source class is universally required merely because Attestor can reference it.
+## Production Authority Preservation
 
-## Source-to-Attestation Boundary
-A source object remains its own canonical object.
+The first production generation preserved institutional boundaries:
 
-Attestor does not transform a Certification Package, Registry Record, Chronicle Entry, Integrity Reference, Discovery Signal, or other source object into an Attestation.
+- `SC-CERT-2026-0001` → Certifier authority
+- `SREG-2026-0001` → Registry authority
+- `CHR-2026-0001` → Chronicle authority
+- `ANCH-2026-0001` → Anchor authority
+- `BEAC-2026-0001` → Beacon authority
+- `ATT-2026-0001` → Attestor authority
 
-The Attestation is Attestor's own governed assertion.
+No source object became an Attestor-owned source record merely because it participated in Attestation Generation.
 
-## Validation
-Formation and Validation are distinct.
+## Generation and Evaluation
 
-`Attestation + Applicable Normative Requirements → Validation → Governed Validation Result`
+Attestation Generation and Evaluation are distinct institutional acts.
 
-> **Machine-readable ≠ Valid**
+`Generation → Creates the governed assertion`
 
-> **Validation ≠ Evaluation**
+`Evaluation → Determines what the eligible governed evidence supports`
 
-> **Validation ≠ Eligibility**
+Generation must not encode a desired Evaluation Outcome.
 
-Exact executable validation rules and final Validation Result vocabulary remain implementation work.
+## Generation and Later Governance
 
-## Attestation Generation vs Trust Statement Generation
-Attestation Generation forms the assertion.
+Canonical creation begins the governed history of an Attestation.
 
-Rule-Constrained Evaluation evaluates the Attestation and eligible governed inputs.
+Later actions remain separate:
 
-Trust Statement generation forms the bounded Attestor conclusion when applicable methodology and evaluation requirements are satisfied.
+- Validation;
+- governed Review;
+- Conformance;
+- lifecycle activation;
+- Publication;
+- correction;
+- supersession; and
+- material-trigger review.
 
-> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
-
-## Correction and Material Change
-`correction-supersession` is an adopted Attestation Type, but Correction remains an activity rather than a separate canonical object class.
-
-A bounded revision may preserve canonical identity when essential institutional meaning remains intact.
-
-A materially changed assertion requires a new `ATT-YYYY-NNNN`.
+`Creation ≠ Activation ≠ Publication`
 
 ## Status
-**Attestation Generation Architecture → Advanced Architecture established.**
 
-Remaining work is implementation and production proof:
-- exact machine serialization;
-- executable validation;
-- duplicate-detection mechanics if required;
-- production-specific generation procedures;
-- production evidence and first-operation proof.
+**Attestation Generation Architecture → Established**
+
+**Production Attestation Generation → Operationally Demonstrated**
+
+- canonical generation sequence → established
+- Eligibility boundary → established and demonstrated
+- attribution → established and demonstrated
+- source provenance → preserved
+- authority boundaries → preserved
+- governed relationships → preserved
+- canonical identifier assignment → demonstrated
+- creation / Evaluation separation → demonstrated
+- creation / activation / Publication separation → demonstrated
+- `ATT-2026-0001` → first canonical production Attestation generated
+- production generation proof → **ESTABLISHED**
+
+## Continuing Generation Governance
+
+The first production operation establishes a baseline for governed Attestation Generation.
+
+It does not make future Attestations automatically eligible, valid, conformant, active, published, or supported.
+
+Each future Attestation must be generated and governed according to its own purpose, scope, inputs, attribution, provenance, authority context, and applicable requirements.
+
+## Landing-Page Integration
+
+The Attestor landing page should include this page in its architecture/navigation surface:
+
+`/attestor/generation/`
+
+Recommended label:
+
+**Attestation Generation**
 
 ## Files
+
 - `index.html` — public Attestation Generation page.
 - `README.md` — repository documentation.
