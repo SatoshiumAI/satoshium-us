@@ -378,6 +378,22 @@ Atlas owns:
 - Atlas generation manifests;
 - Atlas source-domain methodology.
 
+### Satoshium Chronicle
+
+Chronicle owns `CHR-2026-0001`, the historical-preservation record of the qualifying certification Occurrence.
+
+### Satoshium Anchor
+
+Anchor owns `ANCH-2026-0001` and its integrity context for the defined SCRD JSON representation.
+
+### Satoshium Beacon
+
+Beacon owns `BEAC-2026-0001`, its Discovery Signal, discovery metadata, provenance, lifecycle, and publication state.
+
+### Satoshium Attestor
+
+Attestor owns `ATT-2026-0001` and `TRST-2026-0001`, including its governed Attestation, Rule-Constrained Evaluation, and bounded Trust Statement.
+
 ### Suite Standards
 
 Suite Standards defines the governing expectations.
@@ -433,6 +449,30 @@ Certified Record HTML and JSON
   derive from
 Certification Package SC-CERT-2026-0001
 ```
+
+Later governed Suite relationships include:
+
+```text
+CHR-2026-0001
+  references SREG-2026-0001
+  for Registry context
+```
+
+```text
+ATT-2026-0001
+  references
+SREG-2026-0001
+```
+
+```text
+TRST-2026-0001
+  derived-from ATT-2026-0001
+  and references SREG-2026-0001
+```
+
+These later relationships do not modify the SREG or transfer Registry authority.
+
+> **Reference does not transfer authority.**
 
 ---
 
@@ -597,6 +637,26 @@ The Certification Package architecture was hardened and terminology reconciled a
 
 SREG-2026-0001 was established as the inaugural operational Satoshium Registry Entry.
 
+### August 14, 2026
+
+Registry completed its post-publication quality review of SREG-2026-0001.
+
+### August 22, 2026
+
+Chronicle published `CHR-2026-0001` as the historical-preservation record of the qualifying certification Occurrence.
+
+### August 29, 2026
+
+Anchor established `ANCH-2026-0001` for the defined SCRD JSON representation associated with the certification.
+
+### September 13, 2026
+
+Beacon published `BEAC-2026-0001`, identifying the active Operational certification through its own governed Discovery Signal.
+
+### September 19, 2026
+
+Attestor used `SREG-2026-0001` as an eligible governed Suite-source input in its first controlled production operation, producing `ATT-2026-0001` and `TRST-2026-0001`.
+
 ### Current Registry Entry Version
 
 ```text
@@ -629,6 +689,28 @@ https://satoshium.us/certifier/registry/
 ```
 
 This SREG directory preserves the reciprocal Registry-side correlation.
+
+---
+
+## Cross-Institution References
+
+SREG-2026-0001 remains the Registry-owned canonical registration object while participating in later governed Suite relationships:
+
+- `CHR-2026-0001` — Chronicle-owned historical-preservation record;
+- `ANCH-2026-0001` — Anchor-owned Integrity Reference for the defined SCRD JSON representation;
+- `BEAC-2026-0001` — Beacon-owned Discovery Signal concerning the active Operational certification;
+- `ATT-2026-0001` — Attestor-owned canonical Attestation referencing SREG-2026-0001 as governed Suite-source evidence;
+- `TRST-2026-0001` — Attestor-owned bounded Trust Statement derived from `ATT-2026-0001` and referencing SREG-2026-0001.
+
+These relationships do not change Registry identity, Registry Status, Registry Lifecycle, Source Authority, or the Certifier determination.
+
+**Connection ≠ Identity.**
+
+**Reference ≠ Derivation.**
+
+**Reference ≠ Support.**
+
+**Reference does not transfer authority.**
 
 ---
 
@@ -738,4 +820,12 @@ Those remain controlled by the applicable Source Institution, Certifier, Atlas, 
 > Registry registers.
 >
 > Atlas retains subject authority.
+>
+> Chronicle preserves qualifying historical memory.
+>
+> Anchor preserves integrity context for defined representations.
+>
+> Beacon publishes governed discovery.
+>
+> Attestor evaluates eligible governed inputs and produces bounded Trust Statements.
 
