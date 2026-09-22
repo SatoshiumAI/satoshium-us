@@ -112,14 +112,74 @@ Support, contradiction, uncertainty, correction, and relationships are now handl
 ## Validation and Conformance
 The controlled Attestation Type value must conform to the applicable schema/profile and controlled-value requirements.
 
-Executable validation rules and final conformance mechanics remain implementation work.
+Executable Validation and Conformance are now operational. The first production Attestation used the controlled value `verification-related`; its final production representation passed Validator v0.5 and the production Attestation received a `conformant` Conformance outcome.
+
+Validation and Conformance do not determine the Attestation Type and do not replace Evaluation.
+
+## First Production Attestation-Type Demonstration
+
+The first controlled production operation exercised the adopted Attestation Type vocabulary through:
+
+`ATT-2026-0001 → verification-related`
+
+The classification was appropriate because the bounded assertion concerned the canonical identity, attributable Certifier origin, relevant certification state, and traceable Suite relationships of `SC-CERT-2026-0001`.
+
+The classification did **not** transfer Certifier authority to Attestor and did not convert the Attestation into a new certification.
+
+The production operation preserved the following distinctions:
+
+`Attestation Type ≠ Source Object Type`
+
+`Attestation Type ≠ Eligibility`
+
+`Attestation Type ≠ Evaluation Outcome`
+
+`Attestation Type ≠ Relationship Type`
+
+`verification-related ≠ Attestor Certification Authority`
+
+The operation subsequently produced the Evaluation Outcome `supported`, demonstrating that classification and outcome remained separate governed dimensions.
+
+**Attestation Type Architecture → DEMONSTRATED IN PRODUCTION**
+
+Production proof is value-specific. The first operation exercised `verification-related`; it did not independently production-test the other five adopted Attestation Types.
 
 ## Status
-**Attestation Type Architecture → Advanced Architecture established.**
+**Attestation Type Architecture → Established and Production-Proven**
 
-The six controlled values are adopted.
+- controlled Attestation Type vocabulary → established
+- `verification-related` → production-exercised through `ATT-2026-0001`
+- classification / source-authority boundary → demonstrated
+- Type / Eligibility distinction → demonstrated
+- Type / Evaluation Outcome distinction → demonstrated
+- Type / Relationship distinction → preserved
+- executable Validation → exercised
+- Conformance → exercised
+- `identity` → established; not independently production-tested
+- `evidence` → established; not independently production-tested
+- `source-provenance` → established; not independently production-tested
+- `relationship-condition` → established; not independently production-tested
+- `correction-supersession` → established; not independently production-tested
+- reputation Attestation Type → not adopted
+- production proof → **ESTABLISHED for `verification-related`**
 
-Remaining work concerns executable validation, production profile requirements, and production proof—not selection of the Attestation Type vocabulary.
+## Continuing Attestation-Type Governance
+
+Production use of one controlled type does not imply that every Attestation Type has been production-tested.
+
+New Attestation Types still require governed architectural change.
+
+A type remains classification of the Attestation assertion only.
+
+`Type ≠ Eligibility`
+
+`Type ≠ Evaluation Outcome`
+
+`Type ≠ Relationship`
+
+`Type ≠ Source Authority`
+
+**Reference does not transfer authority.**
 
 ## Files
 - `index.html` — public Attestation Types page.
