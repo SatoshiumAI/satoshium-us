@@ -5,7 +5,7 @@
 **Institutional Role:** Operational Certification  
 **Canonical Operational Object:** Certification Package  
 **Status:** Operational  
-**Updated for Beacon integration:** September 13, 2026
+**Updated for Attestor integration:** September 2026
 
 ---
 
@@ -102,7 +102,9 @@ Satoshium Certifier
         ├── SREG-2026-0001  → Registry
         ├── CHR-2026-0001   → Chronicle
         ├── ANCH-2026-0001  → Anchor integrity context
-        └── BEAC-2026-0001  → Beacon discovery
+        ├── BEAC-2026-0001  → Beacon discovery
+        ├── ATT-2026-0001   → Attestor Attestation
+        └── TRST-2026-0001  → Attestor Trust Statement
 ```
 
 These relationships connect institution-owned objects without merging their identities or authority.
@@ -149,6 +151,43 @@ This demonstrates a core Satoshium Suite principle:
 
 ---
 
+## Attestor Integration
+
+The certification context represented by `SC-CERT-2026-0001` later participated in Satoshium Attestor's first controlled production operation.
+
+The governed production path was:
+
+```text
+SC-CERT-2026-0001
++ eligible governed Suite-source inputs
+        ↓
+ATT-2026-0001
+        ↓
+Rule-Constrained Evaluation
+        ↓
+supported
+        ↓
+TRST-2026-0001
+```
+
+`ATT-2026-0001` is Attestor's first canonical production Attestation.
+
+`TRST-2026-0001` is Attestor's first canonical production Trust Statement and is `derived-from` `ATT-2026-0001`.
+
+Both are:
+
+```text
+Active · Published · V1.0
+```
+
+Attestor owns its Attestation, Rule-Constrained Evaluation, Evaluation Outcome, Trust Statement, lifecycle, publication state, and Attestor-controlled relationships.
+
+Certifier continues to own `SC-CERT-2026-0001` and the certification decision, Certification Class, certification lifecycle, and certification status.
+
+The Attestor conclusion is bounded. It does not independently re-certify the Certifier decision, establish the substantive truth of the underlying Atlas jurisdiction intelligence, extend Anchor integrity beyond its defined representation, or establish generalized trustworthiness.
+
+---
+
 ## Related Production Objects
 
 - Certifier — `SC-CERT-2026-0001`  
@@ -166,8 +205,16 @@ This demonstrates a core Satoshium Suite principle:
 - Beacon — `BEAC-2026-0001`  
   https://satoshium.us/beacon/records/BEAC-2026-0001/
 
+- Attestor Attestation — `ATT-2026-0001`  
+  https://satoshium.us/attestor/attestations/ATT-2026-0001/
+
+- Attestor Trust Statement — `TRST-2026-0001`  
+  https://satoshium.us/attestor/trust-statements/TRST-2026-0001/
+
 ---
 
 ## Governing Principle
 
-**Certifier certifies. Beacon discovers. Each institution retains authority over its own canonical object.**
+**Certifier certifies. Registry catalogs. Chronicle preserves. Anchor preserves integrity references. Beacon discovers. Attestor evaluates governed attestations and produces bounded Trust Statements. Navigator defines and orchestrates workflows. Each institution retains authority over its own canonical object.**
+
+**Reference does not transfer authority.**
