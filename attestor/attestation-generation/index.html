@@ -3,411 +3,169 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="alternate icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
 <meta name="theme-color" content="#d6a34a">
-
-<title>Satoshium Attestor Attestation Generation</title>
-<meta name="description" content="Satoshium Attestor Attestation Generation — foundational requirements for forming governed, attributable Attestations from eligible inputs while preserving scope, provenance, evidence relationships, and source authority.">
-<link rel="canonical" href="https://satoshium.us/attestor/attestation-generation/">
-
+<title>Satoshium Attestor · Attestation Generation</title>
+<meta name="description" content="Satoshium Attestor Attestation Generation — the governed process by which a bounded attributable assertion becomes a canonical Attestation without converting source objects into Attestor-owned authority.">
+<link rel="canonical" href="https://satoshium.us/attestor/generation/">
 <link rel="preconnect" href="https://satoshium.link" crossorigin>
 <link rel="dns-prefetch" href="https://satoshium.link">
 <link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
-
 <style>
 :root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
- --line:rgba(214,163,74,.18);
+ --bg:#07090d;--panel:#0c1018;--text:#e8edf7;--muted:#9aa7bd;
+ --gold:#d6a34a;--gold2:#f4c36a;--line:rgba(214,163,74,.18);
 }
 *{box-sizing:border-box}
-html,body{
- margin:0;
- padding:0;
- background:var(--bg);
- color:var(--text);
- font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
- line-height:1.6;
- scroll-behavior:smooth;
-}
-body{padding-top:80px}
-a{color:var(--gold2);text-decoration:none}
-a:hover{color:var(--gold)}
-.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
-.content{padding:34px 18px 64px}
-.hero{
- border:1px solid var(--line);
- border-radius:22px;
- padding:28px 24px;
- margin-bottom:18px;
- background:
- radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
- linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
-}
-.eyebrow{
- display:inline-flex;
- padding:8px 14px;
- border:1px solid rgba(214,163,74,.24);
- border-radius:999px;
- color:var(--gold2);
- font-size:13px;
- font-weight:700;
- letter-spacing:.08em;
- text-transform:uppercase;
-}
-h1{
- margin:10px 0 12px;
- font-size:44px;
- color:var(--gold2);
-}
-.lead{
- max-width:920px;
- color:var(--muted);
- font-size:20px;
-}
-.grid{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:18px;
- margin-top:18px;
-}
-.card{
- background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
- border:1px solid rgba(214,163,74,.15);
- border-radius:18px;
- padding:22px;
-}
-.card h2{
- margin:0 0 10px;
- font-size:24px;
- color:var(--gold2);
-}
-.card p{
- margin:0 0 14px;
- color:var(--muted);
-}
-.note{
- margin-top:16px;
- padding:14px 16px;
- border:1px solid var(--line);
- border-radius:14px;
- background:rgba(214,163,74,.05);
- color:var(--muted);
-}
-.btn{
- display:inline-block;
- margin-top:14px;
- padding:12px 16px;
- border-radius:12px;
- border:1px solid rgba(214,163,74,.24);
- background:rgba(214,163,74,.06);
- color:var(--gold2);
- font-weight:700;
-}
-.btn:hover{background:rgba(214,163,74,.12)}
-.muted{color:var(--muted)}
-@media (max-width:900px){
- .grid{grid-template-columns:1fr}
- h1{font-size:34px}
-}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;scroll-behavior:smooth}
+body{padding-top:80px}a{color:var(--gold2);text-decoration:none}a:hover{color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}.content{padding:34px 18px 64px}
+.hero{border:1px solid var(--line);border-radius:22px;padding:28px 24px;margin-bottom:18px;background:radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),linear-gradient(to bottom right,rgba(12,16,24,.97),rgba(12,16,24,.90))}
+.eyebrow{display:inline-flex;padding:8px 14px;border:1px solid rgba(214,163,74,.24);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:10px 0 12px;font-size:44px;color:var(--gold2)}.lead{max-width:920px;color:var(--muted);font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));border:1px solid rgba(214,163,74,.15);border-radius:18px;padding:22px}
+.card h2{margin:0 0 12px;font-size:24px;color:var(--gold2)}.card p{margin:0 0 14px;color:var(--muted)}
+.note{margin-top:18px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(214,163,74,.05);color:var(--muted)}
+.btn{display:inline-block;margin-top:16px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,163,74,.24);background:rgba(214,163,74,.06);color:var(--gold2);font-weight:700}.btn:hover{background:rgba(214,163,74,.12)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
 </style>
 </head>
-
 <body>
-
 <div id="topbar-slot" data-topbar="universe"></div>
 <script src="/components/topbar-loader.js"></script>
-
 <main class="wrap content">
 
 <section class="hero">
-  <div class="eyebrow">ATTESTOR · ATTESTATION GENERATION</div>
-  <h1>Satoshium Attestor Attestation Generation</h1>
-
-  <p class="lead">
-    Attestation Generation defines the governed process by which Attestor forms
-    a canonical, attributable, bounded assertion from eligible governed inputs while
-    preserving subject, scope, Attesting Authority, provenance, relationships,
-    lifecycle context, and source authority.
-  </p>
-
-  <p class="lead">
-    Attestor does not transform another institution's canonical object into an
-    Attestation. It references eligible governed inputs and forms its own
-    Attestor assertion under Attestor rules.
-  </p>
-
-  <div class="note">
-    <strong>Governing principle:</strong> Reference does not transfer authority.
-  </div>
+<div class="eyebrow">Attestor · Operational Architecture</div>
+<h1>Attestation Generation</h1>
+<p class="lead">Attestation Generation defines how a bounded trust-relevant matter, attributable assertion, eligible governed inputs, provenance, scope, and authority context are assembled into a canonical <strong>Attestation</strong>.</p>
+<p class="lead">Generation does not convert a source object into an Attestation. It creates a new Attestor-governed assertion whose references remain traceable to their originating authorities.</p>
+<div class="note"><strong>Generation principle:</strong> Bounded Matter + Attributable Assertion + Eligible Governed Inputs + Preserved Authority / Provenance → Canonical Attestation</div>
 </section>
 
 <section class="grid">
-
-<article class="card">
-  <h2>Purpose</h2>
-  <p>
-    Attestation Generation establishes the requirements that should be satisfied
-    before an Attestor assertion is formed and made available for subsequent
-    evaluation.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Attestation Is the Output</h2>
-  <p>
-    The output of this process is an Attestation: a governed, attributable,
-    bounded assertion. A Trust Statement is a later and distinct Attestor output
-    produced through evaluation.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Reference-Based</h2>
-  <p>
-    Eligible source objects should be referenced rather than silently duplicated.
-    Their identifiers, provenance, status, scope, relationships, and authority
-    remain distinguishable from the Attestation that relies upon them.
-  </p>
-</article>
-
-<article class="card">
-  <h2>No Automatic Conversion</h2>
-  <p>
-    A Certification Package, Registry record, Chronicle Entry, Integrity Reference,
-    Discovery Signal, or other governed input does not automatically become an
-    Attestation merely because Attestor can access or reference it.
-  </p>
-</article>
-
+<article class="card"><h2>Purpose</h2><p>Generation establishes the governed path from an evaluation purpose and bounded assertion to a canonical Attestation ready to participate in Rule-Constrained Evaluation.</p></article>
+<article class="card"><h2>Canonical Output</h2><p>The output of Attestation Generation is an Attestor-owned Attestation identified by the <strong>ATT-YYYY-NNNN</strong> identifier family. Identifier assignment occurs only at canonical creation.</p></article>
+<article class="card"><h2>Input Boundary</h2><p>Potential source material must first satisfy the applicable Eligibility requirements. Availability, authority, technical accessibility, or reference alone does not make an input eligible.</p></article>
+<article class="card"><h2>Authority Boundary</h2><p>Source authority remains with the source institution. Generation preserves attribution and authority context rather than absorbing source authority into Attestor.</p></article>
+<article class="card"><h2>Assertion Boundary</h2><p>The Attestation carries a governed attributable assertion. It is not the source object, not the Evaluation Outcome, and not the eventual Trust Statement.</p></article>
+<article class="card"><h2>Evaluation Boundary</h2><p>Generation does not determine whether the assertion is supported. That determination belongs to Rule-Constrained Evaluation after the Attestation and Evaluation Basis have been established.</p></article>
 </section>
 
-<section style="margin-top:18px;">
+<section style="margin-top:18px;"><article class="card">
+<h2>Canonical Generation Sequence</h2>
+<p>The standing generation process preserves the distinction between source material, Eligibility, assertion formation, canonical creation, and later Evaluation.</p>
+<div class="note">
+<strong>1.</strong> Establish bounded purpose and subject<br>
+<strong>2.</strong> Define assertion and scope<br>
+<strong>3.</strong> Establish Attesting Authority / attribution<br>
+<strong>4.</strong> Identify potential governed inputs<br>
+<strong>5.</strong> Preserve source identity, provenance, relevant state, and authority context<br>
+<strong>6.</strong> Determine Eligibility for the specific evaluation<br>
+<strong>7.</strong> Associate eligible governed references with the assertion<br>
+<strong>8.</strong> Preserve material limitations and uncertainty<br>
+<strong>9.</strong> Create the canonical Attestation<br>
+<strong>10.</strong> Assign ATT identifier at canonical creation<br>
+<strong>11.</strong> Preserve lifecycle, publication, version, provenance, and relationship metadata<br>
+<strong>12.</strong> Pass the Attestation forward to Evaluation Basis / Rule-Constrained Evaluation
+</div>
+</article></section>
 
-<article class="card">
-  <h2>Conceptual Generation Sequence</h2>
+<section style="margin-top:18px;"><article class="card">
+<h2>What Generation Does Not Do</h2>
+<p>Attestation Generation is a formation and canonical-creation process. It does not certify the subject, validate universal truth, establish an Evaluation Outcome, create a Trust Statement, authorize publication, or transfer authority from referenced sources.</p>
+<div class="note">
+Source Object ≠ Attestation<br>
+Eligibility ≠ Evaluation Outcome<br>
+Attestation ≠ Trust Statement<br>
+Canonical Creation ≠ Lifecycle Activation ≠ Publication<br>
+Reference ≠ Support<br>
+Reference does not transfer authority.
+</div>
+</article></section>
 
-  <p>
-    Advanced Architecture establishes the governing generation relationship:
-  </p>
+<section style="margin-top:18px;"><article class="card">
+<h2>First Production Generation Demonstration</h2>
+<p>The first controlled production operation exercised this process through <strong>ATT-2026-0001</strong>. The governed matter concerned the canonical identity, attributable Certifier origin, relevant certification state, and traceable Suite relationships of <strong>SC-CERT-2026-0001</strong>.</p>
+<div class="note">
+Bounded Matter → Established<br>
+Potential Governed Inputs → Identified<br>
+Eligibility → Completed<br>
+Attesting Authority / Attribution → Established<br>
+Assertion → Defined and bounded<br>
+Source Authority / Provenance → Preserved<br>
+Governed References → Associated<br>
+Canonical Creation → ATT-2026-0001<br>
+Initial State → Draft · Unpublished · V1.0<br>
+Evaluation Outcome at Creation → Not predetermined<br>
+Subsequent Rule-Constrained Evaluation → supported<br><br>
+<strong>Production Attestation Generation → DEMONSTRATED</strong>
+</div>
+</article></section>
 
-  <div class="note">
-    Purpose Established → Subject Identified → Assertion Defined → Scope Bounded →
-    Eligible Inputs Referenced → Provenance Preserved → Attestation Formed
-  </div>
+<section style="margin-top:18px;"><article class="card">
+<h2>Production Assertion</h2>
+<p>The first canonical production Attestation asserted that <strong>SC-CERT-2026-0001</strong> is the canonical Satoshium Certifier Certification Package for the Operational certification of the Satoshium Atlas Jurisdiction Record — El Salvador; that it is attributable to Satoshium Certifier; that the canonical Certifier source represents it as <strong>Issued · Active</strong>; and that it has traceable governed relationships to <strong>SREG-2026-0001</strong>, <strong>CHR-2026-0001</strong>, <strong>ANCH-2026-0001</strong>, and <strong>BEAC-2026-0001</strong>, while each referenced Suite institution retains authority over its own object and institutional domain.</p>
+<div class="note">The assertion was the object of later evaluation. Its canonical creation did not establish that the assertion was supported.</div>
+</article></section>
 
-  <p style="margin-top:16px;">
-    This sequence defines the institutional formation path. Exact executable
-    validation order, production serialization, and implementation mechanics remain
-    subordinate implementation work.
-  </p>
-</article>
+<section style="margin-top:18px;"><article class="card">
+<h2>Generation and Source Authority</h2>
+<p>The first production operation demonstrated that Attestor can create a new canonical Attestation from a governed matter involving existing Suite objects without recreating those source objects or taking over their authority.</p>
+<div class="note">
+SC-CERT-2026-0001 → Certifier authority preserved<br>
+SREG-2026-0001 → Registry authority preserved<br>
+CHR-2026-0001 → Chronicle authority preserved<br>
+ANCH-2026-0001 → Anchor authority preserved<br>
+BEAC-2026-0001 → Beacon authority preserved<br>
+ATT-2026-0001 → Attestor-governed Attestation
+</div>
+</article></section>
 
-</section>
+<section style="margin-top:18px;"><article class="card">
+<h2>Generation and Later Governance</h2>
+<p>Canonical creation begins the Attestation's governed history; it does not complete it. Validation, Review, Conformance, lifecycle activation, Publication, correction, supersession, and later review remain separate governed acts where applicable.</p>
+<div class="note">
+Canonical Creation → ATT exists<br>
+Validation / Review → Separate determinations<br>
+Conformance → Separate determination<br>
+Lifecycle Activation → Separate governed act<br>
+Publication → Separate governed act<br><br>
+<strong>Creation ≠ Activation ≠ Publication</strong>
+</div>
+</article></section>
 
-<section class="grid">
-
-<article class="card">
-  <h2>Purpose Established</h2>
-  <p>
-    The reason for forming the Attestation should be sufficiently clear to
-    determine what assertion is needed and which inputs may be relevant.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Subject Identified</h2>
-  <p>
-    The subject of the Attestation should be identifiable within the applicable
-    model so the assertion is not detached from the thing, record, relationship,
-    condition, or event to which it applies.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Assertion Defined</h2>
-  <p>
-    The Attestation should state the bounded proposition being asserted rather
-    than merely restating or copying the contents of a source object.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Scope Bounded</h2>
-  <p>
-    The assertion preserves the conditions and limitations within which it applies.
-    Scope is a governed structural requirement; exact production serialization
-    remains an implementation concern.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Eligible Inputs Referenced</h2>
-  <p>
-    Evidence and authoritative references relevant to the assertion may be
-    associated only as permitted by Attestor eligibility rules. Technical
-    availability alone does not establish eligibility.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Provenance Preserved</h2>
-  <p>
-    The origin, attribution, source relationships, relevant state, and authority
-    of supporting inputs should remain traceable through the Attestation.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Attesting Authority Attributed</h2>
-  <p>
-    The Attestation identifies the Attesting Authority responsible for the governed
-    assertion. Attesting Authority remains distinct from Referenced Authority and
-    Attestor Authority.
-  </p>
-</article>
-
-<article class="card">
-  <h2>Attestation Formed</h2>
-  <p>
-    Once the applicable assertion, type, scope, attribution, eligible-reference,
-    provenance, relationship, and structural requirements are satisfied, the
-    Attestation may be canonically created and assigned an
-    <strong>ATT-YYYY-NNNN</strong> identifier. Validation remains a distinct
-    governed determination.
-  </p>
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Potential Governed Inputs</h2>
-
-  <p>
-    Attestation Generation may use eligible governed inputs from across the
-    Satoshium Suite and external governed sources. Inclusion remains evaluation-
-    specific and depends upon the established Eligibility architecture.
-  </p>
-
-  <div class="note">
-    Atlas Intelligence · Navigator Workflow Context · Certification Package ·
-    Satoshium Registry Record · Chronicle Entry · Integrity Reference ·
-    Discovery Signal / Discovery Metadata · Other Eligible Governed Sources
-  </div>
-
-  <p style="margin-top:16px;">
-    These are potential source classes, not mandatory ingredients. Availability,
-    authority, or reference alone does not establish eligibility.
-  </p>
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Attestation Generation Is Not Trust Statement Generation</h2>
-
-  <p>
-    An Attestation expresses a governed assertion. A Trust Statement expresses
-    Attestor's bounded conclusion after applicable evaluation. The two objects
-    should not be collapsed into a single generation step.
-  </p>
-
-  <div class="note">
-    Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement
-  </div>
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>What Attestation Generation Does Not Do</h2>
-
-  <p>
-    Attestation Generation does not issue a certification, register a record,
-    preserve a Chronicle Entry, establish an Anchor Integrity Reference, create a
-    Beacon Discovery Signal, or otherwise assume another institution's canonical
-    responsibility.
-  </p>
-
-  <p>
-    It also does not determine universal truth or automatically produce a Trust
-    Statement.
-  </p>
-
-  <div class="note">
-    Source authority remains with the source. Attestor owns the Attestation it forms.
-  </div>
-</article>
-
-</section>
-
-<section style="margin-top:18px;">
-
-<article class="card">
-  <h2>Established Generation Architecture</h2>
-
-  <p>
-    Advanced Architecture now establishes canonical Attestation identifiers,
-    controlled Attestation Types, authority and provenance boundaries, Eligibility,
-    Relationships, Lifecycle, Versioning, Validation, Publication, and the schema /
-    template architecture used to govern Attestation formation.
-  </p>
-
-  <div class="note">
-    Canonical Attestation Identifier → ATT-YYYY-NNNN<br>
-    Initial governed state → draft<br>
-    Publication remains separately governed → unpublished / published
-  </div>
-
-  <p style="margin-top:16px;">
-    Exact machine serialization, executable validation sequence, duplicate-detection
-    mechanics, and production-specific generation procedures remain implementation
-    work rather than unresolved institutional architecture.
-  </p>
-
-  <a class="btn" href="/attestor/">
-    Back to Attestor →
-  </a>
-</article>
-
-</section>
+<section style="margin-top:18px;"><article class="card">
+<h2>Current Generation Position</h2>
+<p>Attestation Generation is established as institutional architecture and has been exercised in production. The first operation confirms that a bounded attributable assertion can be canonically created while preserving Eligibility, provenance, relationships, scope, limitations, source authority, and the separation between creation and Evaluation.</p>
+<div class="note">
+Generation Architecture → Established<br>
+Canonical Generation Sequence → Established<br>
+ATT identifier assignment → Established<br>
+Authority / Provenance preservation → Established and demonstrated<br>
+Eligibility boundary → Established and demonstrated<br>
+Canonical creation boundary → Established and demonstrated<br>
+Evaluation separation → Established and demonstrated<br>
+ATT-2026-0001 → First production generation demonstrated<br>
+<strong>Attestation Generation → Operationally Demonstrated</strong>
+</div>
+<p style="margin-top:16px;">This production baseline does not make future Attestations automatically eligible, valid, conformant, active, published, or supported. Each future Attestation must satisfy its own applicable governed requirements.</p>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
 
 </main>
-
-<div class="wrap reflection">
-  <hr>
-  <div id="random-saying" class="muted" style="margin-bottom:14px; max-width:760px;">
-    An Attestation should say what is asserted, who stands behind it, where it applies, and what governed inputs support it.
-  </div>
-  <hr>
-  <div id="footer-container"></div>
-</div>
-
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">An Attestation begins with an attributable assertion. Evaluation determines what the governed evidence supports.</div>
+<hr><div id="footer-container"></div></div>
 <script src="https://satoshium.link/assets/sayings.js"></script>
 <script>
 fetch("https://satoshium.link/components/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer-container").innerHTML = data;
-  });
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
 </script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
-
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
 </body>
 </html>
