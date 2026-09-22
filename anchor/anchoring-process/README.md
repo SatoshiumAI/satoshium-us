@@ -805,18 +805,20 @@ Anchor Version
 → 1
 ```
 
-`ANCH-2026-0001` is assigned but not yet published.
+`ANCH-2026-0001` has completed the governed first-production sequence and is published.
 
-It must still complete:
+Its completed production state includes:
 
 ```text
-Stage A Validation
-Initial Verification
-Stage B Publication-Readiness Validation
-Publication Gate
+Stage A Validation → PASS
+Initial Verification → match
+Stage B Publication-Readiness Validation → COMPLETE
+Publication Gate → APPROVED
+Publication State → published
+Lifecycle State → active
 ```
 
-before entering public Anchor authority.
+`ANCH-2026-0001` is the first published Satoshium Anchor Integrity Reference.
 
 ---
 
@@ -830,9 +832,9 @@ The governing Anchoring Process principle is:
 
 ## Status
 
-**Post-Foundational Architecture · First-Production Process Reconciled**
+**Operational · First-Production Process Proven**
 
-The Anchoring Process is now aligned with the completed production architecture and the first assigned Integrity Reference candidate.
+The Anchoring Process is aligned with the completed production architecture and the first published Integrity Reference.
 
 Production-defined elements include:
 
@@ -847,9 +849,11 @@ Integrity Method → cryptographic_digest
 Algorithm → SHA-256
 Digest Encoding → lowercase hexadecimal
 Relationship Type → references_source
-Validation → Stage A + Stage B
-Initial Verification → required
-Publication Gate → required
+Validation → Stage A PASS + Stage B COMPLETE
+Initial Verification → match
+Publication Gate → APPROVED
+Publication State → published
+Lifecycle State → active
 ```
 
 The following remain intentionally future-facing:
@@ -863,6 +867,6 @@ composite-method procedure
 later Integrity Reference production cases
 ```
 
-**Version:** 1.0-draft
+**Version:** 1.0
 
 **Maintained By:** Satoshium
