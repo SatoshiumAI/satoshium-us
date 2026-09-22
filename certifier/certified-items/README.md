@@ -3,7 +3,7 @@
 **Path:** `/certifier/certified-items/`  
 **Institution:** Satoshium Certifier  
 **Purpose:** Public directory of certification subjects and their canonical Certification Packages  
-**Updated for Beacon integration:** September 13, 2026
+**Updated for Attestor integration:** September 2026
 
 ---
 
@@ -58,7 +58,9 @@ SC-CERT-2026-0001
         ├── SREG-2026-0001  → Satoshium Registry
         ├── CHR-2026-0001   → Satoshium Chronicle
         ├── ANCH-2026-0001  → Satoshium Anchor
-        └── BEAC-2026-0001  → Satoshium Beacon
+        ├── BEAC-2026-0001  → Satoshium Beacon
+        ├── ATT-2026-0001   → Satoshium Attestor
+        └── TRST-2026-0001  → Satoshium Attestor
 ```
 
 Each downstream institution owns its own canonical object.
@@ -85,6 +87,30 @@ Public Beacon record:
 
 https://satoshium.us/beacon/records/BEAC-2026-0001/
 
+### Attestor
+
+`ATT-2026-0001` is Attestor's first canonical production Attestation and `TRST-2026-0001` is its first canonical production Trust Statement.
+
+The certification context participated in Attestor's first controlled production operation as governed Suite-source evidence:
+
+```text
+SC-CERT-2026-0001
+        ↓
+eligible governed input
+        ↓
+ATT-2026-0001
+        ↓
+Rule-Constrained Evaluation
+        ↓
+supported
+        ↓
+TRST-2026-0001
+```
+
+`TRST-2026-0001` is `derived-from` `ATT-2026-0001`. Both Attestor objects preserve governed references to the relevant Suite-source objects.
+
+Attestor's conclusion is bounded. It does not independently re-certify the Certifier decision, establish the substantive truth of the underlying Atlas jurisdiction intelligence, extend Anchor integrity beyond its defined representation, or establish generalized trustworthiness.
+
 ---
 
 ## Authority Boundary
@@ -98,7 +124,7 @@ Satoshium Certifier remains authoritative for:
 - certification status;
 - generated Certifier certification artifacts.
 
-Satoshium Registry, Chronicle, Anchor, and Beacon remain authoritative for their own respective objects and institutional representations.
+Satoshium Registry, Chronicle, Anchor, Beacon, and Attestor remain authoritative for their own respective objects and institutional representations.
 
 Beacon discovery does not re-certify the subject.
 
@@ -107,6 +133,8 @@ Anchor integrity preservation does not become certification.
 Registry cataloging does not become certification.
 
 Chronicle historical preservation does not become certification.
+
+Attestor evaluation and a bounded Trust Statement do not become certification.
 
 > **Reference does not transfer authority.**
 
@@ -123,10 +151,8 @@ SCPR · SCR · SCRD HTML / JSON
 ↓
 Registry · Chronicle · Anchor · Beacon · Attestor
 ↓
-SREG-2026-0001 · CHR-2026-0001 · ANCH-2026-0001 · BEAC-2026-0001
+SREG-2026-0001 · CHR-2026-0001 · ANCH-2026-0001 · BEAC-2026-0001 · ATT-2026-0001 · TRST-2026-0001
 ```
-
-Attestor remains part of the institutional architecture but no production Attestor object is asserted here.
 
 ---
 
@@ -146,6 +172,12 @@ Attestor remains part of the institutional architecture but no production Attest
 
 - Beacon — `BEAC-2026-0001`  
   https://satoshium.us/beacon/records/BEAC-2026-0001/
+
+- Attestor Attestation — `ATT-2026-0001`  
+  https://satoshium.us/attestor/attestations/ATT-2026-0001/
+
+- Attestor Trust Statement — `TRST-2026-0001`  
+  https://satoshium.us/attestor/trust-statements/TRST-2026-0001/
 
 ---
 
