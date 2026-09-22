@@ -43,7 +43,7 @@ Attestor's foundational scope includes:
 - production of Trust Statements;
 - governed correction or lifecycle treatment of Attestor-owned objects.
 
-The exact machine architecture remains to be established.
+The machine and governance architecture supporting this scope is now established through Eligibility, Authority, Provenance, Evaluation, Relationships, Schemas, Validation, Conformance, Lifecycle, Versioning, Corrections, Publication, and Methodology.
 
 ## Three Uses of Scope
 
@@ -53,9 +53,7 @@ This reconciliation makes an important distinction between three related meaning
 
 The boundary within which an Attestation applies.
 
-Depending upon advanced architecture, this may involve the subject, assertion, conditions, relevant time, purpose, jurisdiction, or other limitations.
-
-No final field model is adopted here.
+Assertion scope may include the subject, assertion, conditions, relevant time, purpose, jurisdiction, or other material limitations as applicable to the governed object and evaluation. Applicable machine representation is governed by the canonical object schemas and validation requirements rather than by a separate universal scope-field model.
 
 ### Evaluation Scope
 
@@ -135,20 +133,9 @@ Attestor alone owns its governed Trust Statement within this institutional mappi
 
 ## Other Governed Sources
 
-Attestor may eventually accept eligible external or otherwise governed sources.
+Attestor may accept eligible external or otherwise governed sources when they satisfy applicable Attestor Eligibility, Authority, Provenance, scope, status, limitation, Validation, and reference-profile requirements.
 
-This reconciliation does not define their eligibility.
-
-Advanced architecture should establish requirements for:
-
-- source authority;
-- provenance;
-- relevance;
-- status;
-- scope;
-- limitations;
-- validation;
-- permitted use.
+The first controlled production operation exercised Suite-source inputs rather than an external-source path, so external-source handling is established architecturally but not independently production-proven by that operation.
 
 Eligibility never transfers source authority to Attestor.
 
@@ -223,23 +210,89 @@ Major changes include:
 - removing the claim that Attestor produces or owns abstract “Trust”;
 - adding explicit out-of-scope constraints.
 
-## Deferred to Advanced Architecture
+## Operational Resolution of Former Deferrals
 
-The following remain intentionally unresolved:
+The former Advanced Architecture deferrals have now been substantially resolved:
 
-- formal scope fields;
-- subject-scope representation;
-- temporal scope;
-- jurisdictional scope, if needed;
-- purpose or use scope;
-- evaluation-question representation;
-- limitation vocabulary;
-- external-source eligibility;
-- scope validation rules;
-- scope inheritance or non-inheritance rules;
-- Trust Statement scope schema;
-- machine-readable authority boundaries;
-- conformance tests and reference vectors.
+- assertion / evaluation / Trust Statement scope → governed as distinct bounded contexts;
+- temporal and relevant-state handling → established and production-exercised;
+- purpose and limitation handling → established through Methodology, Evaluation, Evidence, and canonical object representation;
+- evaluation-question boundary → established through the governed matter, Attestation assertion, Evaluation Basis, and Rule-Constrained Evaluation;
+- external-source eligibility → architecturally governed by Eligibility and reference-profile requirements, but not independently production-tested by the first operation;
+- scope validation → operational through applicable Validator v0.5 rules plus governed Review where judgment is required;
+- scope non-inheritance → established by authority, reference, and bounded-conclusion rules;
+- Trust Statement scope → exercised by `TRST-2026-0001`;
+- machine-readable authority context → represented in production context and governed by applicable schemas;
+- Conformance → operational and production-exercised.
+
+No universal jurisdiction field or universal scope-field bundle is imposed where the governed matter does not require one.
+
+## First Production Scope Demonstration
+
+The first controlled production operation exercised all three scope layers.
+
+### Assertion Scope
+
+`ATT-2026-0001` asserted a bounded proposition concerning the canonical identity, attributable Certifier origin, relevant certification state, and traceable Suite relationships of `SC-CERT-2026-0001`.
+
+It did not assert the substantive truth of the underlying Atlas jurisdiction intelligence.
+
+### Evaluation Scope
+
+Rule-Constrained Evaluation considered only the governed proposition and eligible evidence basis. Components A–H were supported and the overall Evaluation Outcome was `supported`.
+
+The Evaluation did not independently repeat the Certifier certification decision or enlarge the governed matter into a general assessment of El Salvador, Atlas, Certifier, or Suite trustworthiness.
+
+### Trust Statement Scope
+
+`TRST-2026-0001` preserved the bounded conclusion and expressly excluded:
+
+- substantive truth of the underlying Atlas jurisdiction intelligence;
+- independent recertification of the Certifier decision;
+- extension of Anchor integrity beyond its defined SCRD representation;
+- unchanged source state beyond the evidence reviewed; and
+- generalized trustworthiness.
+
+The production operation also preserved the distinct authority of Certifier, Atlas, Registry, Chronicle, Anchor, and Beacon while allowing their governed objects to participate in one Attestor evaluation.
+
+**Scope Architecture → DEMONSTRATED IN PRODUCTION**
+
+## Status
+
+**Scope → Established and Production-Proven**
+
+- institutional scope → established
+- Assertion Scope → production-demonstrated
+- Evaluation Scope → production-demonstrated
+- Trust Statement Scope → production-demonstrated
+- bounded conclusion → production-demonstrated
+- temporal / relevant-state boundary → production-demonstrated
+- limitation preservation → production-demonstrated
+- source-authority preservation → production-demonstrated
+- Suite institutional boundaries → production-demonstrated
+- scope non-inheritance by reference → production-demonstrated
+- universal-truth boundary → preserved
+- automatic trust / reputation scoring → outside scope
+- external-source path → established architecturally; not independently production-tested
+- production proof → **ESTABLISHED**
+
+## Continuing Scope Governance
+
+A production-proven scope model does not make every future matter eligible, every source usable, every limitation identical, or every Trust Statement equally broad.
+
+Each operation must establish and preserve its own bounded matter.
+
+`Assertion Scope ≠ Evaluation Scope ≠ Trust Statement Scope`
+
+`Eligibility ≠ Scope`
+
+`Reference ≠ Scope Inheritance`
+
+`Reference ≠ Authority Transfer`
+
+`Supported ≠ Universal Truth`
+
+**Reference does not transfer authority.**
 
 ## Files
 
