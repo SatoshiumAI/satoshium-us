@@ -188,7 +188,7 @@ The Package preserves the Certification Subject, certification boundary, governi
 applied Suite Methodology, Evidence Inventory, evaluation, certification decision, assigned
 Certification Class, generated artifacts, lifecycle state, and downstream Suite references.
 </p><a class="btn" href="/certifier/certified-items/">Certified Item →</a><a class="btn" href="/certifier/certifications/SC-CERT-2026-0001/reports/certification-process-report/">SCPR →</a><a class="btn" href="/certifier/certifications/SC-CERT-2026-0001/receipts/certification-receipts/">SCR →</a><a class="btn" href="/certifier/certifications/SC-CERT-2026-0001/records/certified-record/">SCRD →</a>
-<a class="btn" href="https://satoshium.us/registry/registered-items/">Registered Items →</a><a class="btn" href="https://satoshium.us/registry/registered-items/SREG-2026-0001/registry-entry.html">SREG →</a><a class="btn" href="https://satoshium.us/chronicle/entries/CHR-2026-0001/">CHR →</a><a class="btn" href="/anchor/anchored-items/ANCH-2026-0001/">ANCH →</a><a class="btn" href="/beacon/records/BEAC-2026-0001/">BEAC →</a></section>
+<a class="btn" href="https://satoshium.us/registry/registered-items/">Registered Items →</a><a class="btn" href="https://satoshium.us/registry/registered-items/SREG-2026-0001/registry-entry.html">SREG →</a><a class="btn" href="https://satoshium.us/chronicle/entries/CHR-2026-0001/">CHR →</a><a class="btn" href="/anchor/anchored-items/ANCH-2026-0001/">ANCH →</a><a class="btn" href="/beacon/records/BEAC-2026-0001/">BEAC →</a><a class="btn" href="/attestor/attestations/ATT-2026-0001/">ATT →</a><a class="btn" href="/attestor/trust-statements/TRST-2026-0001/">TRST →</a></section>
 <section class="grid three">
 <article class="card">
 <h2>Certification Status</h2>
@@ -241,8 +241,8 @@ The certification applies only to the defined subject state and evidence sources
 Package. Future modifications may require renewed review or recertification.
 </p>
 <div class="note">
-Registry Entries, Chronicle Records, Anchor references, Beacon metadata, Attestation Records, and
-Navigator workflows are downstream Suite objects and remain outside the Certification Subject.
+Registry Entries, Chronicle Records, Anchor references, Beacon metadata, Attestor Attestations and
+Trust Statements, and Navigator workflows are separate Suite objects or processes and remain outside the Certification Subject.
 </div>
 </article>
 </section>
@@ -494,13 +494,22 @@ remain internally consistent with it.
   Discovery Signal. Beacon owns the discovery representation; Certifier retains authority for
   the certification decision, class, lifecycle, and status.
 </div>
+<div class="note">
+  This canonical Certification Package also participated as a governed Suite-source input in
+  Satoshium Attestor's first controlled production operation. Attestor created
+  <strong>ATT-2026-0001</strong>, performed Rule-Constrained Evaluation with the outcome
+  <strong>supported</strong>, and produced <strong>TRST-2026-0001</strong>. Attestor's bounded
+  conclusion does not recertify this Package or transfer Certifier authority.
+</div>
 <a class="btn" href="/beacon/records/BEAC-2026-0001/">Open BEAC-2026-0001 →</a>
+<a class="btn" href="/attestor/attestations/ATT-2026-0001/">Open ATT-2026-0001 →</a>
+<a class="btn" href="/attestor/trust-statements/TRST-2026-0001/">Open TRST-2026-0001 →</a>
 </article>
 </section>
 <section style="margin-top:18px;">
 <article class="card">
 <h2>Downstream Suite References</h2>
-<p>This Certification Package now has four published downstream Suite references. None of these references changes Certifier's authority over the certification action or Package.</p>
+<p>This Certification Package now has six published downstream Attestor/Suite references. None of these references changes Certifier's authority over the certification action or Package.</p>
 <div class="table-wrap">
 <table>
 <thead>
@@ -533,10 +542,20 @@ Beacon-owned Discovery Signal identifying the existence and current active Opera
 represented by this canonical Certification Package.
 </td>
 </tr>
+<tr>
+<td>Satoshium Attestor</td>
+<td><a href="/attestor/attestations/ATT-2026-0001/">ATT-2026-0001</a></td>
+<td>Attestor-owned canonical Attestation referencing this Certification Package within the first controlled production evaluation.</td>
+</tr>
+<tr>
+<td>Satoshium Attestor</td>
+<td><a href="/attestor/trust-statements/TRST-2026-0001/">TRST-2026-0001</a></td>
+<td>Attestor-owned canonical Trust Statement derived from ATT-2026-0001 after Rule-Constrained Evaluation.</td>
+</tr>
 </tbody>
 </table>
 </div>
-<div class="note">Reference does not transfer authority. Certifier remains authoritative for SC-CERT-2026-0001 and the certification decision. Registry owns SREG-2026-0001. Chronicle owns CHR-2026-0001. Anchor owns ANCH-2026-0001. Beacon owns BEAC-2026-0001.</div>
+<div class="note">Reference does not transfer authority. Certifier remains authoritative for SC-CERT-2026-0001 and the certification decision. Registry owns SREG-2026-0001. Chronicle owns CHR-2026-0001. Anchor owns ANCH-2026-0001. Beacon owns BEAC-2026-0001. Attestor owns ATT-2026-0001 and TRST-2026-0001.</div>
 </article>
 </section>
 <section class="grid">
@@ -551,11 +570,11 @@ represented by this canonical Certification Package.
 <li><strong>Subject Authority:</strong> Satoshium Atlas</li>
 <li><strong>Canonical URL:</strong> /certifier/certifications/SC-CERT-2026-0001/</li>
 <li><strong>Registry Identifier:</strong> <a href="https://satoshium.us/registry/registered-items/SREG-2026-0001/registry-entry.html">SREG-2026-0001</a></li>
-<li><strong>Related Chronicle Entry:</strong> <a href="https://satoshium.us/chronicle/entries/CHR-2026-0001/">CHR-2026-0001</a></li><li><strong>Related Anchor Integrity Reference:</strong> <a href="/anchor/anchored-items/ANCH-2026-0001/">ANCH-2026-0001</a></li><li><strong>Related Beacon Discovery Signal:</strong> <a href="/beacon/records/BEAC-2026-0001/">BEAC-2026-0001</a></li></ul>
+<li><strong>Related Chronicle Entry:</strong> <a href="https://satoshium.us/chronicle/entries/CHR-2026-0001/">CHR-2026-0001</a></li><li><strong>Related Anchor Integrity Reference:</strong> <a href="/anchor/anchored-items/ANCH-2026-0001/">ANCH-2026-0001</a></li><li><strong>Related Beacon Discovery Signal:</strong> <a href="/beacon/records/BEAC-2026-0001/">BEAC-2026-0001</a></li><li><strong>Related Attestor Attestation:</strong> <a href="/attestor/attestations/ATT-2026-0001/">ATT-2026-0001</a></li><li><strong>Related Attestor Trust Statement:</strong> <a href="/attestor/trust-statements/TRST-2026-0001/">TRST-2026-0001</a></li></ul>
 </article>
 <article class="card">
 <h2>Canonical Record Principle</h2>
-<p>This Certification Package is Certifier’s canonical operational record for SC-CERT-2026-0001. Every public artifact, machine-readable representation, Registry reference, Chronicle record, Anchor Integrity Reference, Beacon Discovery Signal, and future Attestation Record must remain traceable to this Package.</p>
+<p>This Certification Package is Certifier’s canonical operational record for SC-CERT-2026-0001. Every public Certifier artifact and any Registry, Chronicle, Anchor, Beacon, or Attestor relationship that depends upon this certification must remain traceable to this Package without transferring Certifier authority.</p>
 <div class="note">
 A discrepancy between a generated artifact and this Package should be resolved by correcting the
 affected representation to match the finalized Certification Package.
