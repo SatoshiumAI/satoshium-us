@@ -4,7 +4,7 @@
 `/attestor/trust-signals/`
 
 ## Purpose
-This page preserves the historical **Trust Signals** concept while recording its final place in the established Satoshium Attestor architecture.
+This page preserves the historical **Trust Signals** concept while recording its final place in the operational Satoshium Attestor architecture.
 
 ## Architectural Determination
 > **Trust Signal is legacy / descriptive Attestor terminology only.**
@@ -107,8 +107,31 @@ They must not be interpreted as evidence that Trust Signal remains a canonical o
 ## Governing Principle
 > **Reference does not transfer authority.**
 
+## Production Confirmation
+The first controlled production operation confirms the architectural determination that a separate Trust Signal layer is unnecessary.
+
+The production path was:
+
+`Eligible Governed Inputs → ATT-2026-0001 → Rule-Constrained Evaluation → supported → TRST-2026-0001`
+
+No canonical Trust Signal object was created between the governed inputs, Attestation, Evaluation, and Trust Statement.
+
+No Trust Signal identifier was assigned.
+
+No Trust Signal lifecycle or publication state was required.
+
+No Trust Signal schema or production template was invoked.
+
+No confidence percentage, reputation score, directional signal, weighting mechanism, or signal aggregation was used.
+
+Trust-relevant context was represented through the canonical architecture already governing Eligibility, Evidence, Provenance, Authority, Relationships, Evaluation, limitations, and the bounded Trust Statement.
+
+**Trust Signal noncanonical boundary → CONFIRMED IN PRODUCTION**
+
+The production operation also used `BEAC-2026-0001` as a governed reference while preserving Beacon's ownership of its Discovery Signal / Discovery Metadata. This operationally demonstrated that an Attestor historical “trust signal” concept is not a Beacon Discovery Signal and that reference does not transfer authority.
+
 ## Reconciliation Notes
-This Advanced Architecture reconciliation resolves the question that the foundational page deliberately left open.
+The architecture resolves the question that the foundational page deliberately left open.
 
 The adopted determination is:
 - retain the route `/attestor/trust-signals/` as explanatory and historical documentation;
@@ -119,11 +142,39 @@ The adopted determination is:
 - preserve a strict namespace boundary from Beacon Discovery Signals.
 
 ## Status
-**Trust Signals → Advanced Architecture reconciled.**
+**Trust Signals → Legacy / Descriptive Boundary Established and Production-Confirmed**
 
-No further Trust Signal architecture is required for Attestor production readiness.
+- canonical Attestor Trust Signal object → not adopted
+- Trust Signal identifier family → not adopted
+- Trust Signal lifecycle / publication state → not adopted
+- Trust Signal controlled machine vocabulary → not adopted
+- Trust Signal production schema / template → not adopted
+- confidence / reputation scoring → not adopted
+- directional positive / negative / neutral / mixed / uncertain vocabulary → not adopted
+- weighting / aggregation model → not adopted
+- canonical Attestor output → Trust Statement
+- Beacon Discovery Signal namespace → preserved as Beacon-owned
+- `BEAC-2026-0001` reference boundary → production-demonstrated
+- first production operation → completed without a Trust Signal object layer
+- production confirmation → **ESTABLISHED**
 
-Remaining Attestor implementation work belongs to the canonical architecture, not to a separate Trust Signal system.
+No further Trust Signal architecture is required for Attestor production.
+
+Historical `trust-signal-schema.md` and `trust-signal-template.md` artifacts may remain for provenance, but they are legacy/non-operational and must not be presented as current production contracts.
+
+## Continuing Governance
+
+`Trust Signal ≠ Trust Statement`
+
+`Trust Signal ≠ Evaluation Outcome`
+
+`Trust Signal ≠ Beacon Discovery Signal`
+
+`Evidence ≠ Trust Signal ≠ Evaluation Outcome`
+
+`supports ≠ supported`
+
+**Reference does not transfer authority.**
 
 ## Files
 - `index.html` — public Trust Signals page.
