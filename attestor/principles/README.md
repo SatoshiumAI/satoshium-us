@@ -20,7 +20,7 @@ The principles constrain how Attestor should:
 - respect institutional authority;
 - produce Trust Statements.
 
-They are architectural commitments, not yet a complete machine-validation specification.
+They are foundational architectural commitments. Applicable commitments are now carried through Rules, normative requirements, Validation, governed Review, and Conformance without requiring every principle to become a standalone machine rule.
 
 ## Canonical Responsibility
 
@@ -65,7 +65,7 @@ This replaces generic language about “trust” emerging from broad context.
 
 Attestor-governed assertions, conclusions, and changes should remain attributable.
 
-The final Attesting Authority / producer model remains advanced architecture.
+Attesting Authority, Referenced Authority, and Attestor Authority are now distinguished by the established Authority architecture.
 
 ### Provenance
 
@@ -120,7 +120,7 @@ This includes architectural concerns such as:
 - withdrawal;
 - supersession.
 
-Exact lifecycle mechanics remain unresolved.
+Lifecycle, Versioning, Corrections, and Publication now govern the applicable change mechanics.
 
 ### Authority Boundaries
 
@@ -199,22 +199,22 @@ Express foundational architectural commitments.
 
 Translate those commitments into institutional constraints.
 
-### Advanced Architecture
+### Operational Architecture
 
-Should translate applicable rules into:
+Applicable Rules are now carried into:
 
 - normative requirements;
-- validation rules;
-- schemas;
-- controlled values;
-- conformance tests;
-- reference vectors.
+- executable Validation where machine-testable;
+- governed Review where institutional judgment is required;
+- schemas and controlled values;
+- Conformance;
+- representative/reference testing where appropriate.
 
 Conceptually:
 
-`Principle → Rule → Normative Requirement → Validation → Conformance`
+`Principle → Rule → Normative Requirement → Validation / Governed Review → Conformance`
 
-This relationship should be checked during the whole-foundation review to remove unnecessary duplication between `/attestor/principles/` and `/attestor/rules/`.
+Principles and Rules remain intentionally distinct: Principles state enduring institutional commitments; Rules translate those commitments into governing constraints. Exact one-to-one mapping is not required.
 
 ## Removal of the June Principle Chain
 
@@ -236,10 +236,9 @@ The reconciled operational relationship is:
 
 ## Transparency
 
-The June page treated Transparency as a standalone foundational principle.
+Transparency remains an important institutional value, but it is **not retained as a separate named foundational principle**.
 
-Transparency remains valuable, but the reconciled architecture expresses the enforceable substance more precisely through:
-
+Its enforceable substance is more precisely represented through:
 - attribution;
 - provenance;
 - traceability;
@@ -249,23 +248,20 @@ Transparency remains valuable, but the reconciled architecture expresses the enf
 - reviewability;
 - governed change.
 
-The whole-foundation review may determine whether **Transparency** should remain an explicit named principle in addition to those more precise requirements.
-
-This page does not prematurely settle that editorial question.
+This avoids a broad umbrella term duplicating more precise operational principles.
 
 ## Accountability
 
-The June page also treated Accountability as a standalone principle.
+Accountability likewise remains an institutional objective but is **not retained as a separate named foundational principle**.
 
-The reconciled architecture preserves its substance through:
-
+Its enforceable substance is represented through:
 - attribution;
-- authority;
+- authority boundaries;
 - traceability;
 - governed change;
 - reviewability.
 
-The whole-foundation review should determine whether Accountability remains useful as a named umbrella principle or whether it is better expressed through these specific requirements.
+This preserves accountability without creating a redundant principle layer.
 
 ## Historical Preservation
 
@@ -325,32 +321,73 @@ Major changes include:
 - preserving Transparency and Accountability as whole-foundation editorial questions rather than silently discarding their substance;
 - aligning the page with the reconciled Attestation / Evaluation / Trust Statement model.
 
-## Whole-Foundation Review Questions
+## Whole-Foundation Principle Determinations
 
-This page introduces several questions that should now be resolved during the whole-foundation review:
+The former whole-foundation questions are resolved as follows:
 
-1. Should **Transparency** remain an explicit named Attestor principle, or is its substance sufficiently represented by provenance, traceability, scope, uncertainty, and reviewability?
-2. Should **Accountability** remain an umbrella principle, or be represented through attribution, authority, traceability, governed change, and reviewability?
-3. Is there unnecessary duplication between the Principles and Rules pages?
-4. Which principles should become normative requirements in advanced architecture?
-5. Should every foundational rule map explicitly to one or more principles?
-6. Should the foundational architecture establish a formal principle identifier system, or defer identifiers until normative rules?
-7. Are **Bounded Conclusions**, **Preserve Uncertainty**, and **Reviewability** sufficiently distinct to remain separate?
-8. Does **Evidence Context** belong at principle level, or should it remain primarily a Rules/Evidence concern?
+1. **Transparency** → retained as an institutional value, not a separate named foundational principle; its substance is represented by more precise principles.
+2. **Accountability** → retained as an institutional objective, not a separate named foundational principle; its substance is represented by more precise principles.
+3. **Principles / Rules duplication** → intentional distinction preserved; Principles state commitments, Rules state constraints.
+4. **Normative translation** → applicable principles are translated through Rules and normative requirements rather than every principle becoming a standalone machine rule.
+5. **Formal one-to-one mapping** → not required.
+6. **Principle identifier system** → not adopted; no demonstrated institutional need.
+7. **Bounded Conclusions / Preserve Uncertainty / Reviewability** → remain distinct because they govern, respectively, conclusion strength, epistemic condition, and inspectability.
+8. **Evidence Context** → remains a principle because preserving evidentiary context is a cross-cutting commitment, while the Evidence and Rules pages provide the operational detail.
 
-## Deferred to Advanced Architecture
+## First Production Principles Demonstration
 
-This page does not establish:
+The first controlled production operation exercised the foundational principles across the complete Attestor path.
 
-- principle identifiers;
-- normative MUST/SHOULD/MAY language;
-- validation rule identifiers;
-- machine schemas;
-- controlled values;
-- evaluation algorithms;
-- sufficiency thresholds;
-- conformance tests;
-- reference vectors.
+The operation produced a bounded Attestation and Trust Statement; preserved attribution and provenance; maintained explicit scope and limitations; preserved traceable relationships; retained evidence context and relevant source state; avoided unsupported certainty; corrected relationship serialization without silent historical erasure; preserved source-institution authority; interoperated across Certifier, Atlas, Registry, Chronicle, Anchor, and Beacon without authority transfer; did not automatically convert any source object into an Attestation or conclusion; and preserved sufficient evidence for governed Review, Conformance, post-operation institutional review, and Operational Proof.
+
+`Eligible Governed Inputs → ATT-2026-0001 → Rule-Constrained Evaluation → TRST-2026-0001`
+
+The resulting Trust Statement remained explicitly bounded against:
+- universal truth claims;
+- independent recertification;
+- unsupported extension of Anchor integrity scope;
+- unsupported claims of unchanged source state; and
+- generalized trustworthiness.
+
+**Principles → DEMONSTRATED IN PRODUCTION**
+
+## Status
+
+**Principles → Established and Production-Proven**
+
+- Bounded Conclusions → production-demonstrated
+- Attribution → production-demonstrated
+- Provenance → production-demonstrated
+- Scope → production-demonstrated
+- Traceability → production-demonstrated
+- Evidence Context → production-demonstrated
+- Preserve Uncertainty → production-demonstrated
+- Governed Change → production-demonstrated
+- Authority Boundaries → production-demonstrated
+- Interoperability → production-demonstrated
+- No Automatic Conversion → production-demonstrated
+- Reviewability → production-demonstrated
+- Transparency → substance preserved; separate named principle not adopted
+- Accountability → substance preserved; separate named principle not adopted
+- formal principle identifier family → not adopted
+- one-to-one Principle / Rule mapping → not required
+- production proof → **ESTABLISHED**
+
+## Continuing Principle Governance
+
+Principles remain higher-order commitments rather than a duplicate machine-rule catalog.
+
+Future Attestor operations may exercise them through different rules, evidence, outcomes, corrections, and lifecycle decisions while preserving their institutional meaning.
+
+`Principle ≠ Rule`
+
+`Rule ≠ Validation Result`
+
+`Validation ≠ Evaluation`
+
+`Reference ≠ Support`
+
+**Reference does not transfer authority.**
 
 ## Files
 
