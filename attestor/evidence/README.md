@@ -164,7 +164,60 @@ Evaluation determines substantive outcome.
 
 > **Validation ≠ Evaluation**
 
-Exact executable validation and final Validation Result vocabulary remain implementation work.
+Executable Validation is operational. The first production Attestation and Trust Statement were validated with Validator v0.5, while governed Review handled requirements intentionally outside machine execution.
+
+`NOT-TESTED ≠ PASS`
+
+Validation remains distinct from substantive Evaluation.
+
+## First Production Evidence Demonstration
+
+The first controlled production operation exercised the Evidence architecture using six governed source inputs:
+
+- `SC-CERT-2026-0001`;
+- the canonical Atlas Jurisdiction Record — El Salvador;
+- `SREG-2026-0001`;
+- `CHR-2026-0001`;
+- `ANCH-2026-0001`; and
+- `BEAC-2026-0001`.
+
+Each source received a governed Eligibility determination before entering the Evaluation Basis.
+
+The production operation preserved source identity, institutional authority, provenance, relevant source state, scope, relationships, and material limitations. No referenced source became an Attestor-owned Evidence object.
+
+The Evaluation Basis recorded no material conflicts for the bounded proposition evaluated. That production result does not establish that future evaluations will be conflict-free.
+
+The evidence/reference basis contributed to Rule-Constrained Evaluation, which produced the controlled Evaluation Outcome `supported` and the bounded Trust Statement `TRST-2026-0001`.
+
+The operation preserved these boundaries:
+
+`Evidence / Governed Reference ≠ Attestation`
+
+`Evidence / Governed Reference ≠ Trust Statement`
+
+`Eligibility ≠ Evaluation Outcome`
+
+`Reference ≠ Support`
+
+`Reference ≠ Derivation`
+
+`Source Authority ≠ Attestor Authority`
+
+**Evidence Architecture → DEMONSTRATED IN PRODUCTION**
+
+## Production Evidence-Package Boundary
+
+The production operation also created an evidence package containing the governed artifacts necessary for post-operation review and Operational Proof.
+
+That **production evidence package** is an audit/evidence-preservation construct. It does not create a new canonical `Evidence Record` object class or identifier family.
+
+The package preserved historical and final representations, Validation reports, governed Review records, Conformance determinations, lifecycle/publication records, execution contexts, and related operation artifacts.
+
+`Production Evidence Package ≠ Canonical Evidence Object`
+
+`Evidence Artifact ≠ Canonical Attestation`
+
+`Evidence Artifact ≠ Canonical Trust Statement`
 
 ## Evidence Profile Architecture
 The Attestor schema/template architecture includes an **Evidence Attestation** profile using the adopted Attestation Type:
@@ -181,16 +234,42 @@ Publication is separately governed.
 Evidence availability or technical accessibility does not automatically make an Attestor object Published.
 
 ## Status
-**Evidence Architecture → Advanced Architecture reconciled.**
+**Evidence Architecture → Established and Production-Proven**
 
-The former posture that evidence classes, eligibility, provenance, conflict treatment, and evaluation contribution were wholly deferred to Advanced Architecture is no longer current.
+- Evidence as governed role → established
+- generic canonical Evidence object class → not adopted
+- six Suite-source inputs → production-exercised
+- governed Eligibility before use → demonstrated
+- provenance preservation → demonstrated
+- source authority preservation → demonstrated
+- relevant source-state handling → demonstrated
+- scope / limitation preservation → demonstrated
+- material-conflict handling → exercised; no material conflicts found in first operation
+- Rule-Constrained Evaluation contribution → demonstrated
+- Evidence / Attestation / Trust Statement distinction → demonstrated
+- production evidence package → assembled and preserved
+- executable Validation → operational and exercised
+- Evidence Attestation specialized profile → established; not independently production-proven by this operation
+- external-source evidence handling → established architecturally; not exercised by this operation
+- production proof → **ESTABLISHED for the Suite-source evidence/reference architecture exercised**
 
-Remaining work concerns:
-- exact machine serialization;
-- executable evidence-profile validation;
-- production-specific evidence handling;
-- retention mechanics where required;
-- production evidence and operational proof.
+## Continuing Evidence Governance
+
+The first production operation does not establish a universal evidence hierarchy, weighting formula, confidence percentage, majority-source rule, or presumption that eligible evidence supports an assertion.
+
+Future evaluations may contain limiting, conflicting, contradictory, incomplete, or indeterminate evidence.
+
+`Availability ≠ Eligibility`
+
+`Eligible ≠ Sufficient`
+
+`Reference ≠ Support`
+
+`Validation ≠ Evaluation`
+
+`Evidence ≠ Attestation ≠ Trust Statement`
+
+**Reference does not transfer authority.**
 
 ## Files
 - `index.html` — public Evidence page.
