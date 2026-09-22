@@ -213,3 +213,4 @@ Changes that would redefine institutional roles, trust semantics, canonical obje
 ## Governing Principle
 
 **Standards define expectations. Methodology defines implementation. Certifier performs certification.**
+
