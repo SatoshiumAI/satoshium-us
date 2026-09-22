@@ -1,4 +1,20 @@
-# Frequently Asked Questions (FAQ)
+# Satoshium Certifier — Frequently Asked Questions
+
+**Path:** `/certifier/faq/`  
+**Institution:** Satoshium Certifier  
+**Canonical Page:** `index.html`  
+**Status:** Operationally Reconciled  
+**Updated:** September 2026
+
+---
+
+## Purpose
+
+This FAQ provides public guidance on Satoshium Certifier, its certification architecture, evidence model, Certification Packages, generated artifacts, authority boundaries, and production-proven Suite interoperability.
+
+Certifier is **Operational**. Its inaugural production Certification Package is `SC-CERT-2026-0001`.
+
+---
 
 ## What is Satoshium Certifier?
 
@@ -6,47 +22,27 @@ Satoshium Certifier is the operational certification implementation of the Satos
 
 Certifier is authoritative for its own certification actions, Certification Packages, Certification Classes, lifecycle, and generated certification artifacts.
 
-Its purpose is not merely to record information, but to preserve how a subject was reviewed, what evidence was considered, what determination was reached, and how that result can be independently reviewed later.
-
 ---
 
 ## What does Certifier certify?
 
-Certifier supports certification of defined digital subjects such as:
-
-* Pages
-* Reports
-* Services
-* Workflows
-* Datasets
-* Tools
-
-Additional subject categories may be introduced through documented Certifier and Suite governance.
+Certifier supports defined digital Certification Subjects such as pages, reports, services, workflows, datasets, and tools. Additional subject categories may be introduced through documented Certifier and Suite governance.
 
 ---
 
-## What is a Certification Target?
+## What is a Certification Subject?
 
-A Certification Target is the item being reviewed.
+A Certification Subject is the defined item, system, record, workflow, service, dataset, tool, or other governed subject being reviewed.
 
-Examples include:
-
-* A webpage
-* A published report
-* A software tool
-* A workflow
-* A dataset
-* A service
-
-The target is the subject of the certification process.
+The Certification Subject establishes what is inside the certification boundary.
 
 ---
 
 ## What is certification?
 
-Certification is the process of reviewing a target against a documented standard, evaluating supporting evidence, and recording a determination.
+Certification is the process of reviewing a defined Certification Subject against applicable standards and methodology, evaluating supporting evidence, and recording a governed determination.
 
-Certification is intended to create a transparent and reviewable record of that process.
+Certification creates a transparent and reviewable record of that process.
 
 ---
 
@@ -58,7 +54,7 @@ It preserves the Certification Subject, certification boundary, governing Standa
 
 Reports, receipts, certified records, and downstream Suite references derive from the Certification Package.
 
-Reference does not transfer authority: the subject system retains authority over the subject it owns.
+> **Reference does not transfer authority.**
 
 ---
 
@@ -66,362 +62,218 @@ Reference does not transfer authority: the subject system retains authority over
 
 No.
 
-Certification documents a review performed according to a defined standard and available evidence at a specific point in time.
+Certification documents a review performed according to defined standards, methodology, scope, and available evidence at a specific point in time.
 
-Certification does not guarantee:
-
-* Accuracy
-* Completeness
-* Future performance
-* Regulatory compliance
-* Legal validity
-
-Certification records document review outcomes rather than absolute truth.
+It does not guarantee absolute accuracy, completeness, future performance, regulatory compliance, legal validity, or universal truth.
 
 ---
 
 ## What standards are used?
 
-Certifier uses documented Certification Standards.
+Certifier applies documented Suite Standards and certification requirements. Standards define scope, requirements, evaluation criteria, evidence requirements, and determination guidance.
 
-Standards define:
-
-* Scope
-* Requirements
-* Evaluation criteria
-* Evidence requirements
-* Determination guidance
-
-All certification activities should be traceable to an applicable standard.
+Certification activity should remain traceable to its governing standards.
 
 ---
 
 ## What evidence can be used?
 
-Certifier may use evidence appropriate to the applicable Standard and Certification Subject, including:
+Evidence may include canonical records, reports, structured data, durable references, captures, hashes and integrity metadata, notes and review observations, and supporting institutional artifacts.
 
-* Canonical records
-* Reports
-* Structured data
-* URLs and durable references
-* Screenshots or captures
-* Hashes and integrity metadata
-* Notes and review observations
-* Supporting institutional artifacts
-
-Evidence requirements are governed by the applicable Suite Standards and Certifier methodology rather than by a single universal evidence list.
+Evidence requirements depend on the applicable Standards, Methodology, Certification Subject, and certification boundary.
 
 ---
 
 ## What are Certification Classes?
 
-Certification Classes communicate the level of certification granted.
+Version 1.0 defines three Certification Classes:
 
-Version 1.0 defines:
+- **Informational** — the subject exists and has been documented.
+- **Operational** — the subject exists, is documented, and demonstrates operation.
+- **Verified** — the subject has been reviewed against an established standard and is supported by documented evidence.
 
-### Informational
-
-The target exists and has been documented.
-
-### Operational
-
-The target exists, is documented, and demonstrates operation.
-
-### Verified
-
-The target has been reviewed against an established standard and is supported by documented evidence.
+The inaugural production certification is **Operational**.
 
 ---
 
 ## What are Certification Outcome, Certification Status, and Lifecycle State?
 
-These concepts describe different parts of a certification record.
+These are distinct concepts.
 
 **Certification Outcome** records the determination reached by Certifier for the defined review.
 
-Example:
-
-```text
-Certified
-```
-
-**Certification Status** communicates the current certification-domain condition of that issued certification.
-
-Example:
-
-```text
-Issued · Active
-```
+**Certification Status** communicates the current certification-domain condition of an issued certification, such as `Issued · Active`.
 
 **Lifecycle State** describes where the certification record exists in its broader institutional lifecycle.
 
-These concepts should not be collapsed into one generic status field.
-
----
-
-## What is a Certification Report?
-
-A Certification Report is the detailed review record supporting a certification event.
-
-Reports document:
-
-* Evidence reviewed
-* Findings
-* Methodology
-* Determinations
-* Conditions
-* Recommendations
-
-Reports provide the reasoning behind certification outcomes.
+They should not be collapsed into one generic status field.
 
 ---
 
 ## What are SCPR, SCR, and SCRD?
 
-Certifier uses several generated artifact forms derived from the canonical Certification Package:
+Certifier generates several artifact forms from the canonical Certification Package:
 
 ```text
-SCPR
-Certification Process Report
-
-SCR
-Certification Receipt
-
-SCRD
-Satoshium Certified Record
+SCPR — Certification Process Report
+SCR  — Certification Receipt
+SCRD — Satoshium Certified Record
 ```
 
-The SCPR preserves the detailed review process and reasoning.
+The SCPR preserves the detailed review process and reasoning. The SCR provides a concise public-facing certification receipt. The SCRD provides a certified-record representation in human-readable and, where published, machine-readable form.
 
-The SCR provides a concise public-facing certification receipt.
-
-The SCRD provides the certified-record representation in human-readable and, where published, machine-readable form.
-
-These artifacts must remain traceable to and materially consistent with the canonical Certification Package.
-
----
-
-## What is a Certification Receipt?
-
-A Certification Receipt is a concise public-facing summary of a certification event.
-
-Receipts provide proof that certification occurred while referencing supporting reports and records.
-
----
-
-## What is the difference between a Report and a Receipt?
-
-A simple way to think about it:
-
-```text
-Evidence
-     ↓
-Report
-     ↓
-Receipt
-```
-
-Evidence supports the review.
-
-The Report explains the review.
-
-The Receipt summarizes the review.
+These artifacts remain traceable to and materially consistent with the canonical Certification Package.
 
 ---
 
 ## Why are hashes used?
 
-Hashes support integrity verification.
+Hashes support integrity verification by helping determine whether a defined representation matches the representation whose digest was recorded.
 
-They help answer a simple question:
-
-> Is this the same artifact that was originally reviewed?
-
-Hashes do not prove correctness.
-
-They help verify consistency.
-
----
-
-## Why are notes considered evidence?
-
-Notes preserve observations, assumptions, limitations, clarifications, and reviewer reasoning.
-
-They help explain how findings and determinations were reached.
-
-Notes preserve context that might otherwise be lost.
+Hashes do not prove correctness or truth.
 
 ---
 
 ## Does Certifier require human review?
 
-Not necessarily.
+Not necessarily. The architecture can support human, AI-assisted, human-AI-assisted, or automated review where permitted by the applicable governing requirements.
 
-Version 1.0 supports:
-
-* Human review
-* AI-assisted review
-* Human-AI-assisted review
-* Automated review
-
-The applicable standard determines the review requirements.
-
----
-
-## Can AI perform certification?
-
-AI may assist certification activities.
-
-Examples include:
-
-* Evidence collection
-* Analysis
-* Documentation
-* Review support
-
-However, AI-generated observations should not automatically be treated as authoritative conclusions.
-
-Certification should remain transparent and reviewable.
+Automation does not eliminate the need for attributable, transparent, and reviewable institutional decisions.
 
 ---
 
 ## What is Registry?
 
-Satoshium Registry is the Suite institution responsible for canonical registration, durable SREG identity, classification, provenance, validation, publication, and public discovery of registered institutional records.
+Satoshium Registry is the Suite institution responsible for canonical registration and durable Registry records.
 
-Certifier creates and owns the certification record.
+The inaugural production relationship is:
 
-Registry may create a SREG that catalogs that Certification Package while Certifier retains certification authority.
+```text
+SC-CERT-2026-0001
+        ↓
+SREG-2026-0001
+```
+
+Registry owns `SREG-2026-0001`. Certifier retains certification authority.
 
 ---
 
 ## What is Chronicle?
 
-Satoshium Chronicle is the Suite institution responsible for preserving qualifying historical Occurrences through canonical Chronicle Entries.
+Satoshium Chronicle preserves qualifying historical Occurrences through canonical Chronicle Entries.
 
-A qualifying certification Occurrence may be preserved by Chronicle, but Chronicle does not own or re-adjudicate the certification action. Certifier remains authoritative for the Certification Package and determination.
+The inaugural production relationship includes `CHR-2026-0001`, which preserves the qualifying certification Occurrence while Certifier remains authoritative for the certification decision.
 
 ---
 
 ## What is Anchor?
 
-Satoshium Anchor is the Suite institution designed to preserve integrity references, hashes, timestamps, signatures, and durable verification points.
+Satoshium Anchor is the Operational Suite institution responsible for governed Integrity References and verification of defined representations.
 
-Anchor supports integrity without replacing Certifier's authority over certification records.
+`ANCH-2026-0001` preserves integrity context for the complete canonical SCRD JSON representation `SCRD-SC-CERT-2026-0001`.
+
+That integrity boundary does not extend to the entire Certification Package or linked artifacts unless separately anchored.
+
+---
+
+## What is Beacon?
+
+Satoshium Beacon is the Operational Suite institution responsible for governed Discovery Signals and discovery metadata.
+
+`BEAC-2026-0001` is Beacon's first published production Discovery Signal and directly observed `SC-CERT-2026-0001` as its primary authoritative source.
+
+Beacon discovery does not become certification authority. Its September 13, 2026 observation does not by itself establish unchanged source state on later dates.
 
 ---
 
 ## What is Attestor?
 
-Satoshium Attestor is the Suite institution designed to support attestations, trust statements, and independent verification of selected claims and relationships.
+Satoshium Attestor is the Operational Suite institution that creates governed Attestations and produces governed, attributable, bounded Trust Statements through Rule-Constrained Evaluation of eligible governed inputs.
 
-Attestation does not replace Certifier's certification authority.
+Its first production operation created:
+
+```text
+ATT-2026-0001
+        ↓
+Rule-Constrained Evaluation
+        ↓
+supported
+        ↓
+TRST-2026-0001
+```
+
+Both objects are `Active · Published · V1.0`.
+
+`TRST-2026-0001` is `derived-from` `ATT-2026-0001`.
+
+Attestor does not independently re-certify Certifier's decision, establish the substantive truth of the underlying Atlas intelligence, extend Anchor integrity beyond its defined representation, or establish generalized trustworthiness.
+
+---
+
+## What is Navigator?
+
+Satoshium Navigator is the Operational Suite institution for **Workflow Definition / Orchestration**.
+
+Navigator can coordinate Suite workflows without changing institutional ownership or authority.
 
 ---
 
 ## How does Certifier fit into Satoshium?
 
-At a high level:
+At a high level, the Suite preserves distinct institutional roles:
 
 ```text
-Atlas
-   ↓
-Certifier
-   ↓
-Registry
-   ↓
-Chronicle
-   ↓
-Anchor
-   ↓
-Beacon
-   ↓
-Attestor
-   ↓
-Navigator
+Atlas      → authoritative intelligence
+Certifier  → certification
+Registry   → registration and cataloging
+Chronicle  → historical preservation
+Anchor     → integrity references
+Beacon     → discovery signals
+Attestor   → governed Attestations and bounded Trust Statements
+Navigator  → workflow definition and orchestration
 ```
 
-Atlas creates information.
-
-Certifier reviews information.
-
-Registry catalogs authoritative records through SREGs.
-
-Chronicle preserves qualifying historical memory.
-
-Anchor preserves integrity references.
-
-Beacon supports discovery signals and metadata.
-
-Attestor supports attestations and trust statements.
-
-Navigator coordinates workflows and cross-system activity.
-
-Together they form a connected Suite while preserving independent institutional authority.
-
-A production example now exists:
+The inaugural production lineage includes:
 
 ```text
-Atlas Jurisdiction Record — El Salvador
-        ↓
 SC-CERT-2026-0001
-        ↓
-SREG-2026-0001
-        ↓
-CHR-2026-0001
+        ├── SREG-2026-0001
+        ├── CHR-2026-0001
+        ├── ANCH-2026-0001
+        ├── BEAC-2026-0001
+        ├── ATT-2026-0001
+        └── TRST-2026-0001
 ```
 
-Each system owns its own object. Reference does not transfer authority.
+These are institution-owned objects connected by governed relationships.
+
+`TRST-2026-0001` is specifically `derived-from` `ATT-2026-0001`.
+
+> **Connection ≠ Identity. Reference ≠ Derivation. Reference ≠ Support. Reference does not transfer authority.**
 
 ---
 
 ## Is Certifier open source?
 
-Yes.
-
-Certifier is released under the MIT License unless otherwise specified.
-
-See:
-
-```text
-LICENSE
-```
-
-for the governing license terms.
+Certifier is released under the MIT License unless otherwise specified by the governing repository or artifact.
 
 ---
 
 ## What is the long-term vision of Certifier?
 
-The long-term vision of Certifier is to create a transparent and durable framework for documenting review, evidence, certification, and trust across digital systems.
+The long-term objective is to preserve certification records that remain understandable, attributable, reviewable, and useful over time.
 
-The objective is not simply to issue certifications.
-
-The objective is to create certification records that remain understandable, reviewable, and useful years into the future.
-
----
-
-## Where should I start?
-
-New contributors are encouraged to begin with:
-
-```text
-README.md
-docs/certifier-overview.md
-docs/certification-philosophy.md
-docs/workflow-diagram.md
-```
-
-These documents provide the best introduction to the Certifier framework.
+The goal is not merely to issue certifications, but to preserve the evidence, reasoning, decision, boundaries, provenance, and institutional relationships needed to understand them later.
 
 ---
 
 ## Guiding Statement
 
-> Trust should not depend upon memory.
->
-> Trust should not depend upon reputation.
->
-> Trust should be supported by standards, evidence, and reviewable records.
->
+> Trust should not depend upon memory.  
+> Trust should not depend upon reputation.  
+> Trust should be supported by standards, evidence, and reviewable records.  
 > Satoshium Certifier exists to help preserve those records.
+
+---
+
+**Maintained By:** Satoshium
