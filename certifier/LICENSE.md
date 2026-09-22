@@ -14,19 +14,19 @@ Satoshium Certifier is released under the MIT License.
 
 The MIT License is a permissive open-source license that allows individuals and organizations to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software, subject to the conditions contained within the license.
 
-The official legal license governing this repository is contained in the repository's `LICENSE` file.
+The legally binding MIT License governing licensed repository material is contained in the repository's root `LICENSE` file.
 
-This document exists to provide additional context regarding licensing philosophy and intended usage.
+This document provides additional context regarding licensing, repository use, institutional authority, and the relationship between open-source permissions and Satoshium Certifier records.
 
 ---
 
 # Licensing Philosophy
 
-Satoshium is founded upon principles of transparency, interoperability, and open participation.
+Satoshium is founded upon principles of transparency, interoperability, reviewability, and open participation.
 
-Certifier is intended to serve as a framework for review, certification, evidence preservation, and trust-building in digital environments.
+Certifier is intended to serve as the Suite's operational certification implementation for evidence-based review, certification, record preservation, and durable public documentation.
 
-The decision to release Certifier under the MIT License reflects the belief that certification frameworks, standards, and supporting tools should be broadly accessible for study, implementation, adaptation, and improvement.
+The decision to release Certifier under the MIT License reflects the belief that certification tooling, implementation patterns, documentation, schemas, templates, and supporting software should be broadly accessible for study, implementation, adaptation, and improvement.
 
 Open licensing encourages:
 
@@ -36,7 +36,34 @@ Open licensing encourages:
 * Educational use
 * Research
 * Innovation
+* Interoperability
 * Long-term preservation
+
+---
+
+# Open-Source Permission and Institutional Authority
+
+The MIT License grants permissions to use, copy, modify, distribute, and create derivative works from licensed material.
+
+Those permissions do **not** by themselves confer Satoshium institutional authority.
+
+In particular, use or modification of licensed Certifier code or documentation does not automatically create:
+
+* An official Satoshium Certification Package
+* An official Satoshium certification decision
+* An official Certification Process Report (SCPR)
+* An official Certification Receipt (SCR)
+* An official Satoshium Certified Record (SCRD)
+* A Satoshium Registry Entry (SREG)
+* A Chronicle Entry
+* An Anchor Integrity Reference
+* A Beacon Discovery Signal or Discovery Metadata record
+* An Attestor Attestation (ATT)
+* An Attestor Trust Statement (TRST)
+
+Official status depends upon the applicable Satoshium institutional process, repository provenance, governed record creation, and publication state.
+
+**Open-source permission does not transfer canonical authority.**
 
 ---
 
@@ -53,39 +80,69 @@ Subject to the terms of the MIT License, users may:
 * Distribute modified versions.
 * Use Certifier commercially.
 
+These permissions apply to licensed materials.
+
+They do not imply that a derivative implementation is an official Satoshium institution, official Satoshium certification service, or canonical Satoshium record source.
+
 ---
 
 # Attribution
 
 The MIT License requires preservation of the copyright notice and license text.
 
-Users should retain appropriate attribution when redistributing licensed materials.
+Users should retain the required copyright and license notices when redistributing licensed materials.
+
+Use of Satoshium names, marks, institutional identity, or official record identifiers may also be subject to separate trademark, branding, provenance, or repository-governance requirements.
 
 ---
 
 # Certification Records
 
-Certification records, reports, receipts, evidence packages, and related artifacts may contain their own licensing terms depending upon the nature of the content being certified.
+Certification records, reports, receipts, evidence packages, source materials, and related artifacts may contain or reference content with separate licensing or ownership terms.
 
-The repository license does not automatically override licensing restrictions associated with third-party materials referenced during certification activities.
+The repository license does not automatically override restrictions associated with third-party materials referenced during certification activities.
 
-Users remain responsible for complying with applicable intellectual property laws and licensing requirements.
+Users remain responsible for complying with applicable intellectual-property laws, licenses, contractual restrictions, and other requirements associated with third-party content.
+
+The Certification Package remains Certifier's canonical operational record for an official Satoshium certification.
+
+Copying, modifying, or redistributing a record format does not create a new official Satoshium certification.
 
 ---
 
-# Standards and Documentation
+# Standards and Methodology
 
-Documentation contained within this repository is released under the same licensing framework as the repository unless otherwise stated.
+Satoshium Certifier does not independently own the Suite-wide certification rule layer.
 
-This includes, but is not limited to:
+The current architectural relationship is:
 
-* Certification standards
-* Certification classes
-* Lifecycle definitions
+> **Standards define expectations. Methodology defines implementation. Certifier performs certification.**
+
+Suite Standards and Suite Methodology govern the certification framework at the Suite level.
+
+Certifier applies those governing layers operationally through evidence review, Certification Packages, certification decisions, and generated Certifier artifacts.
+
+Licensed copies or derivatives of standards-related or methodology-related documentation do not supersede the canonical Suite sources.
+
+---
+
+# Documentation
+
+Documentation contained within this repository is released under the repository licensing framework unless otherwise stated.
+
+This may include:
+
+* Certifier implementation documentation
+* Certification-class documentation
+* Lifecycle documentation
 * Evidence models
 * Workflow documentation
+* Schema documentation
 * Templates
 * Sample records
+* Interoperability documentation
+
+Where documentation describes Suite Standards, Suite Methodology, or another Suite institution, the governing institutional source remains authoritative for current canonical meaning.
 
 ---
 
@@ -110,7 +167,7 @@ Users are responsible for evaluating the suitability of Certifier for their spec
 
 # Certification Disclaimer
 
-Certification performed using Certifier represents a documented review process based upon defined standards and available evidence at the time of review.
+Certification performed through Satoshium Certifier represents a documented review process based upon defined Suite Standards, applied Suite Methodology, preserved evidence, and the certification boundary in effect at the time of review.
 
 Certification should not be interpreted as:
 
@@ -121,14 +178,38 @@ Certification should not be interpreted as:
 * Professional certification
 * Guarantee of correctness
 * Guarantee of future performance
+* Universal truth
+* An Attestor Trust Statement
 
-Certification records document review outcomes rather than absolute truth.
+Certification records document governed review outcomes within their stated scope and limitations.
+
+---
+
+# Attestor Boundary
+
+Satoshium Attestor is institutionally distinct from Satoshium Certifier.
+
+Its current canonical flow is:
+
+```text
+Eligible Governed Inputs
+        ↓
+Attestation
+        ↓
+Rule-Constrained Evaluation
+        ↓
+Trust Statement
+```
+
+A Certifier certification decision, Certification Class, confidence posture, Certification Receipt, or Certified Record is not automatically an Attestation or Trust Statement.
+
+Licensed use of Certifier materials does not confer Attestor authority.
 
 ---
 
 # Third-Party Content
 
-Certifier may evaluate artifacts, datasets, services, reports, or materials created by third parties.
+Certifier may evaluate artifacts, datasets, services, reports, records, or materials created by third parties.
 
 Ownership of reviewed content remains with its respective owners unless explicitly transferred.
 
@@ -136,7 +217,17 @@ Certification does not imply ownership.
 
 Certification does not imply endorsement.
 
-Certification does not modify underlying intellectual property rights.
+Certification does not modify underlying intellectual-property rights.
+
+---
+
+# Trademark and Institutional Identity
+
+The MIT License governs copyright permissions in licensed material.
+
+It does not grant ownership of Satoshium trademarks, service marks, branding, institutional identity, or official record authority.
+
+Use of Satoshium names or branding should not imply official affiliation, certification authority, endorsement, or canonical status where none exists.
 
 ---
 
@@ -144,27 +235,34 @@ Certification does not modify underlying intellectual property rights.
 
 Future versions of Certifier may introduce:
 
-* Additional standards
+* Additional implementation capabilities
 * New certification classes
 * Enhanced interoperability models
 * Automation capabilities
 * AI-assisted review functions
+* New schemas or artifact formats
 
-Unless otherwise specified, such additions are expected to remain subject to the repository license.
+Unless otherwise specified, licensed additions are expected to remain subject to the applicable repository license.
+
+Architectural evolution does not erase historical provenance or automatically redefine previously issued certification records.
 
 ---
 
 # Long-Term Vision
 
-The long-term vision of Satoshium Certifier is to create an open and durable framework for documenting trust, review, evidence, and verification in digital environments.
+The long-term vision of Satoshium Certifier is to provide an open and durable operational framework for evidence-based certification, reviewable reasoning, public certification artifacts, and historical preservation.
 
-Open licensing supports that objective by allowing future developers, researchers, organizations, and communities to build upon the framework while preserving transparency and interoperability.
+Open licensing supports that objective by allowing future developers, researchers, organizations, and communities to study and build upon the framework while preserving transparency and interoperability.
+
+Certifier supports confidence by making certification reviewable.
+
+It does not replace the distinct authority of Registry, Chronicle, Anchor, Beacon, Attestor, Navigator, or other Satoshium institutions.
 
 ---
 
 # Reference
 
-For the legally binding license terms governing this repository, see:
+For the legally binding MIT License terms governing licensed repository material, see:
 
 ```text
 LICENSE
@@ -172,14 +270,18 @@ LICENSE
 
 located at the root of the repository.
 
+Where this contextual document and the root MIT License differ regarding copyright permission, the root MIT License controls the license grant.
+
+This contextual document explains institutional and architectural boundaries that are separate from the MIT copyright permission itself.
+
 ---
 
 # Guiding Statement
 
-> Trust grows through transparency.
+> Transparency makes certification reviewable.
 >
-> Transparency grows through openness.
+> Openness allows the implementation to be studied and improved.
 >
-> Openness allows future generations to inspect, improve, and preserve the framework.
+> Preservation allows future reviewers to understand what existed and why.
 >
-> Satoshium Certifier is released in that spirit.
+> Open licensing permits reuse; it does not transfer canonical authority.
