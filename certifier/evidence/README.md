@@ -1,63 +1,114 @@
-# Evidence
+# Satoshium Certifier — Evidence
 
-This directory contains evidence used to support certification activities within the Satoshium Certifier framework.
+**Path:** `/certifier/evidence/`  
+**Institution:** Satoshium Certifier  
+**Surface:** Evidence  
+**Status:** Current repository documentation
 
-Evidence forms the factual foundation of certification.
+## Purpose
 
-Certification records, reports, receipts, and determinations should be supported by evidence sufficient to explain how conclusions were reached and to allow future reviewers to understand the basis of those conclusions.
+This directory contains evidence and evidence-support documentation used by **Satoshium Certifier**.
 
-The Evidence directory serves as the primary repository for evidence references and supporting materials associated with certification activities.
+Evidence is the factual foundation used when Certifier applies Suite Standards and Suite Methodology to a defined Certification Subject.
 
----
+The public page for this directory is:
 
-# Purpose
+- `index.html`
 
-The purpose of the Evidence directory is to:
+This README documents the current evidence model, repository categories, preservation expectations, certification relationships, and Suite boundaries.
 
-* Preserve supporting materials
-* Improve transparency
-* Support certification determinations
-* Enable future review
-* Facilitate auditing
-* Support historical preservation
-* Strengthen trust through documentation
+## Evidence Role
 
-Evidence helps answer questions such as:
+Evidence supports certification.
 
-* What was reviewed?
-* What condition was it in?
-* What observations were made?
-* What records were preserved?
-* What information supported the determination?
+It does not independently create certification authority or determine the certification outcome.
 
----
+The governing relationship is:
 
-# Evidence Philosophy
+```text
+Certification Subject
+        ↓
+Evidence Sources
+        ↓
+Evidence Records + Evidence Inventory
+        ↓
+Evidence Mapping
+        ↓
+Certification Package
+        ↓
+Evaluation + Certification Decision
+        ↓
+SCPR · SCR · SCRD
+        ↓
+Governed Suite References
+```
 
-Certifier follows a simple principle:
+The **Certification Package** remains Certifier's canonical operational record.
 
-> Certification should be supported by reviewable evidence.
+## Evidence Records
 
-Evidence does not guarantee correctness.
+An **Evidence Record (SEV)** preserves factual material considered during certification.
 
-Evidence provides visibility into the review process.
+Evidence Records may include:
 
-The objective is not perfection.
+- source references;
+- observed facts;
+- reviewer notes;
+- screenshots;
+- hashes;
+- reports;
+- metadata;
+- supporting documentation;
+- preserved URLs; and
+- other materials associated with the Certification Package.
 
-The objective is transparency.
+Evidence Records preserve what was available to Certifier during review.
 
-Future reviewers should be able to understand:
+## Evidence Inventory
 
-* What was examined
-* What evidence existed
-* What conclusions were reached
-* Why certification decisions were made
+The **Evidence Inventory** identifies and organizes the Evidence Records associated with a Certification Subject.
 
----
+It becomes part of the Certification Package and preserves the set of materials available for evaluation.
 
-# Evidence Categories
+The Evidence Inventory supports:
 
-Version 1.0 of Certifier defines four primary evidence categories:
+- completeness review;
+- traceability;
+- evidence enumeration;
+- scope control; and
+- reproducibility of the certification review.
+
+## Evidence Mapping
+
+**Evidence Mapping** connects Evidence Records to the certification context.
+
+Mappings may connect evidence to:
+
+- applicable Suite Standards;
+- Suite Methodology steps;
+- findings;
+- limitations;
+- confidence posture; and
+- the resulting certification decision.
+
+Evidence Mapping improves traceability without converting evidence itself into a certification conclusion.
+
+## Evidence Review
+
+**Evidence Review** records what Certifier:
+
+- examined;
+- accepted;
+- limited;
+- excluded;
+- could not verify; or
+- otherwise treated as relevant to the certification.
+
+The review should explain how the available evidence supported or constrained the evaluation and certification decision.
+
+## Repository Evidence Categories
+
+The repository may preserve evidence in practical supporting categories including:
 
 ```text
 evidence/
@@ -67,315 +118,241 @@ evidence/
 └── archived/
 ```
 
-Each category serves a distinct purpose.
+These categories remain useful implementation and preservation structures beneath the broader Evidence Record model.
 
----
+### Screenshots
 
-# Screenshots
+Screenshots preserve visual evidence of certification subjects, interfaces, workflows, reports, outputs, and other observed conditions.
 
-Location:
+They help answer:
 
-```text
-evidence/screenshots/
-```
+> What was visible at the time of review?
 
-Screenshots preserve visual evidence of certification targets and related activities.
+### Hashes
 
-Examples include:
+Hashes preserve integrity references for certification artifacts and evidence materials.
 
-* Public webpages
-* Interfaces
-* Workflows
-* Reports
-* Certification outputs
-* Milestone events
+Examples may include:
 
-Screenshots answer:
+- report hashes;
+- receipt hashes;
+- evidence-package hashes;
+- screenshot hashes; and
+- dataset hashes.
 
-> What did the target look like at the time of review?
+Hashes support later integrity comparison.
 
----
+They do not by themselves create an Anchor Integrity Reference.
 
-# Hashes
+### Notes
 
-Location:
+Notes preserve observations, assumptions, limitations, clarifications, scope issues, and reviewer reasoning.
 
-```text
-evidence/hashes/
-```
+They help future reviewers understand why evidence was interpreted in a particular way.
 
-Hashes provide integrity references for certification artifacts.
+### Archived Evidence
 
-Examples include:
+Archived evidence preserves superseded, expired, revoked, historical, or otherwise inactive materials that remain relevant to the certification record.
 
-* Report hashes
-* Receipt hashes
-* Evidence package hashes
-* Screenshot hashes
-* Dataset hashes
+Historical evidence should generally remain reviewable when practical.
 
-Hashes answer:
+## Evidence Lifecycle
 
-> Is this the same artifact that was originally reviewed?
-
----
-
-# Notes
-
-Location:
-
-```text
-evidence/notes/
-```
-
-Notes preserve observations, assumptions, limitations, clarifications, and reviewer reasoning.
-
-Examples include:
-
-* Review observations
-* Findings
-* Recommendations
-* Scope notes
-* Assumptions
-* Limitations
-
-Notes answer:
-
-> Why was the determination reached?
-
----
-
-# Archived Evidence
-
-Location:
-
-```text
-evidence/archived/
-```
-
-Archived evidence preserves historical materials that are no longer active but remain important for transparency and historical review.
-
-Examples include:
-
-* Superseded evidence
-* Expired certification evidence
-* Revoked certification evidence
-* Legacy records
-* Historical certification packages
-
-Archived evidence answers:
-
-> What existed in the past?
-
----
-
-# Evidence Relationships
-
-The evidence categories work together to create a complete certification record.
-
-Example:
-
-```text
-Screenshot
-     ↓
-Observation Note
-     ↓
-Certification Report
-     ↓
-Certification Receipt
-```
-
-Another example:
-
-```text
-Evidence Package
-     ↓
-Hash Record
-     ↓
-Anchor Preservation
-```
-
-Each evidence type contributes a different perspective.
-
----
-
-# Evidence Lifecycle
-
-Evidence may progress through several stages.
+Evidence may move through stages such as:
 
 ```text
 Collected
-     ↓
+        ↓
 Referenced
-     ↓
+        ↓
 Used in Review
-     ↓
+        ↓
 Preserved
-     ↓
+        ↓
 Archived
 ```
 
-Evidence should remain traceable throughout its lifecycle whenever practical.
+The exact implementation may vary by certification, but evidence should remain traceable throughout its lifecycle.
 
----
-
-# Evidence Quality Principles
+## Evidence Quality Principles
 
 Evidence should be:
 
-## Relevant
+### Relevant
 
-Directly related to the certification activity.
+Directly related to the Certification Subject or certification activity.
 
----
+### Traceable
 
-## Traceable
+Linked to identifiable records, sources, and certification context.
 
-Linked to identifiable targets and certification records.
+### Understandable
 
----
+Readable and interpretable by later reviewers.
 
-## Understandable
+### Preserved
 
-Readable and interpretable by future reviewers.
+Retained where practical to support historical review.
 
----
+### Verifiable
 
-## Preserved
+Capable of independent inspection or validation where possible.
 
-Retained whenever practical.
+### Proportionate
 
----
+Appropriate to the certification scope, class, and applicable requirements.
 
-## Verifiable
+## Evidence and Certification Classes
 
-Capable of independent review or validation.
+Evidence expectations may differ by Certification Class.
 
----
+The governing evidence requirements should come from the applicable Suite Standards and Suite Methodology rather than from this directory alone.
 
-## Proportionate
+Any class-specific evidence expectations documented here should remain synchronized with the governing certification architecture.
 
-Appropriate for the certification class and certification target.
+## Evidence and Certification Decisions
 
----
+Evidence informs evaluation.
 
-# Evidence and Certification Classes
-
-Evidence expectations generally increase as certification classes advance.
-
-| Certification Class | Typical Evidence Expectations                                                |
-| ------------------- | ---------------------------------------------------------------------------- |
-| Informational       | Basic documentation and references                                           |
-| Operational         | Documentation plus operational evidence                                      |
-| Verified            | Documentation, operational evidence, notes, and supporting integrity records |
-
-The applicable certification standard ultimately determines evidence requirements.
-
----
-
-# Evidence and Determinations
-
-Evidence supports certification determinations.
-
-Typical relationship:
+The basic relationship is:
 
 ```text
 Evidence
-     ↓
+        ↓
 Review
-     ↓
-Finding
-     ↓
-Determination
+        ↓
+Findings / Limitations
+        ↓
+Evaluation
+        ↓
+Certification Decision
 ```
 
-Evidence informs the determination but does not automatically dictate the outcome.
+Evidence does not automatically dictate the outcome.
 
-Review and judgment remain important components of the certification process.
+Certifier remains responsible for the certification decision within the governed certification process.
 
----
+## Integrity References
 
-# Evidence and Future Subsystems
+Hashes, timestamps, file references, and preserved URLs may provide source material for **Anchor Integrity References** where appropriate.
 
-The Evidence directory is designed to support future interoperability throughout the Satoshium ecosystem.
-
-Examples include:
-
-## Atlas
-
-Provides certification targets and supporting records.
-
-## Registry
-
-Catalogs certified records and evidence references.
-
-## Chronicle
-
-Records significant certification milestones.
-
-## Anchor
-
-Preserves hashes and integrity references.
-
-## Attestor
-
-Supports future independent verification.
-
----
-
-# Preservation Philosophy
-
-Whenever practical:
-
-* Preserve rather than delete.
-* Archive rather than discard.
-* Document rather than assume.
-
-Historical evidence may become valuable long after a certification event has concluded.
-
-Preservation supports trust.
-
----
-
-# Long-Term Vision
-
-The Evidence directory serves as the factual backbone of Certifier.
-
-Certification reports explain conclusions.
-
-Certification receipts summarize outcomes.
-
-Evidence preserves the materials that support those outcomes.
-
-As the Satoshium ecosystem evolves, evidence may become one of the most valuable long-term assets because it allows future reviewers to reconstruct certification activities long after they occurred.
-
-The goal is not merely certification.
-
-The goal is reviewable history.
-
----
-
-# Related Documentation
-
-For additional information, see:
+The boundary is:
 
 ```text
-docs/evidence-model.md
-docs/status-definitions.md
-docs/certification-lifecycle.md
-docs/workflow-diagram.md
+Evidence Integrity Material
+≠
+Anchor Integrity Reference
 ```
 
----
+Anchor remains authoritative for Integrity References.
 
-# Guiding Statement
+Certifier remains authoritative for the certification record.
 
-> Screenshots preserve what was seen.
->
-> Hashes preserve integrity.
->
-> Notes preserve reasoning.
->
-> Archives preserve history.
->
-> Together they form the evidence upon which certification is built.
+## Chronicle Relationship
+
+Evidence may retain historical importance after a certification changes, expires, is superseded, or is revoked.
+
+Chronicle may preserve governed chronology associated with significant certification events.
+
+Chronicle records when.
+
+The Evidence directory preserves the underlying factual material and review context.
+
+## Registry Relationship
+
+Registry may create a Satoshium Registry Entry / SREG referencing a governed certification or source record.
+
+Registry does not become the source authority for the evidence or Certification Package.
+
+## Attestor Relationship
+
+Attestor is operational and institutionally distinct from Certifier.
+
+Eligible governed Certifier outputs may participate in Attestor's canonical flow:
+
+```text
+Eligible Governed Inputs
+        ↓
+Attestation
+        ↓
+Rule-Constrained Evaluation
+        ↓
+Trust Statement
+```
+
+Evidence may be referenced by Attestor where permitted, but Certifier evidence does not itself become an Attestation or Trust Statement.
+
+## Navigator Relationship
+
+Navigator may define or orchestrate workflows that consume or route governed certification information.
+
+Navigator does not own Certifier evidence or certification decisions.
+
+## Beacon Relationship
+
+Beacon may publish Discovery Signals / Discovery Metadata that make governed certification records discoverable.
+
+Discovery does not alter evidence provenance or certification authority.
+
+## Preservation Philosophy
+
+Certifier favors preservation over deletion where practical.
+
+Preferred discipline:
+
+- preserve rather than delete;
+- archive rather than discard;
+- document rather than assume.
+
+Historical evidence may remain valuable long after the original certification event because it allows future reviewers to reconstruct what was known, reviewed, relied upon, limited, or excluded.
+
+## Authority Discipline
+
+This directory should preserve the following distinctions:
+
+- Evidence ≠ Certification Decision
+- Evidence Record ≠ Certification Package
+- Evidence Inventory ≠ Evaluation
+- Evidence Mapping ≠ Finding
+- Hash ≠ Anchor Integrity Reference
+- Validation ≠ Evaluation
+- Evaluation ≠ Attestation
+- Certification Decision ≠ Trust Statement
+- Reference ≠ Derivation
+- Reference ≠ Support
+- Connection ≠ Identity
+
+Most importantly:
+
+**REFERENCE DOES NOT TRANSFER AUTHORITY.**
+
+## Related Documentation
+
+Related Certifier documentation includes:
+
+```text
+/certifier/docs/evidence-model.md
+/certifier/docs/status-definitions.md
+/certifier/docs/certification-lifecycle.md
+/certifier/docs/workflow-diagram.md
+```
+
+These documents should remain synchronized with the current public Evidence surface and governing Suite architecture.
+
+## Repository Expectations
+
+Changes to this directory should preserve:
+
+1. evidence as factual support rather than certification authority;
+2. the Certification Package as Certifier's canonical operational record;
+3. Evidence Record, Inventory, Mapping, and Review distinctions;
+4. evidence provenance and traceability;
+5. preservation and archival discipline;
+6. separation between Certifier evidence and Anchor Integrity References;
+7. separation between Certifier evidence and Attestor objects;
+8. current Suite object terminology; and
+9. the rule that reference does not transfer authority.
+
+## Governing Principle
+
+**Evidence turns certification from assertion into a reviewable record while remaining distinct from the certification decision it supports.**
