@@ -1,148 +1,173 @@
-# 🪐 Satoshium — U.S.
+# 🗽 Satoshium — U.S. Layer
 
-Satoshium.us is the future U.S. operational layer of the Satoshium ecosystem. This domain is intended to provide a jurisdiction-aware surface for U.S.-specific context, public policy interpretation, regulatory framing, and infrastructure explanations as the broader platform matures.
+**Domain:** `satoshium.us`  
+**Primary role:** Public operational home of the Satoshium Suite + U.S. jurisdiction-aware surface  
+**Status:** Operational
 
-This repository is part of the **Satoshium platform**, an experimental system exploring how decentralized intelligence, AI agents, and cryptographic infrastructure can evolve together over long time horizons.
+Satoshium.us is the public operational home of the **Satoshium Suite** and the primary Satoshium surface for U.S.-specific jurisdiction, regulatory, policy, infrastructure, and deployment context.
 
----
-
-# 🌐 The Satoshium Universe
-
-Satoshium is expanding into a **layered domain ecosystem** where each domain serves a distinct role.
-
-| Domain | Role |
-|------|------|
-| **satoshium.ai** | Public platform layer |
-| **satoshium.info** | Knowledge & engineering layer |
-| **satoshium.xyz** | Experimental frontier |
-| **satoshium.net** | Infrastructure & network layer |
-| **satoshium.store** | Cultural & merchandise layer |
-| **satoshium.link** | Gateway & shared components |
-| **satoshium.dev** | Developer ecosystem (planned) |
-| **satoshium.us** | Jurisdictional / operational layer (planned) |
-
-Together these domains form the **Satoshium Universe**.
+The domain began as a planned jurisdiction-aware layer. As Satoshium matured, it became the principal public operational domain for the Suite while retaining that original U.S.-specific interpretive role.
 
 ---
 
-# 🧭 Role of This Repository
+## 🧭 Role of This Repository
 
-This repository supports the **[layer / system]** of the Satoshium platform.
+This repository supports the public operational architecture of `satoshium.us`.
 
-Its responsibilities may include:
+Its current responsibilities include:
 
-- [primary responsibility]
-- [secondary responsibility]
-- [supporting systems]
-- [documentation / infrastructure / experimentation]
+- hosting the public entry point for the Satoshium Suite;
+- presenting the Suite’s institutional architecture;
+- documenting U.S.-specific jurisdiction context;
+- exposing operational institutional surfaces;
+- preserving clear authority boundaries among Suite institutions;
+- connecting jurisdiction intelligence with certification, registration, preservation, integrity, discovery, attestation, and workflow orchestration.
 
-Each repository exists to support **structured growth of the ecosystem**, not isolated projects.
-
----
-
-# 🧠 Platform Layers
-
-Satoshium architecture generally follows several conceptual layers.
-
-| Layer | Purpose |
-|------|------|
-| **Trust Layer** | Verification, safety, and governance logic |
-| **Knowledge Layer** | Documentation, terminology, and structured knowledge |
-| **Intelligence Layer** | Agents, reasoning systems, and coordination |
-| **Simulation Layer** | Experimental modeling environments |
-| **Interface Layer** | Public platform and application surfaces |
-
-This repository primarily contributes to the:
-
-**➡ [Insert layer here]**
+This repository is not merely a future or planned domain. It is an active operational surface.
 
 ---
 
-# ⚙ Shared Platform Components
+## 🧰 Satoshium Suite
 
-Many Satoshium domains use shared components hosted through:
+The formal Satoshium Suite consists of distinct institutions with separate responsibilities and canonical objects.
 
-https://satoshium.link
+| Institution | Canonical Responsibility |
+|---|---|
+| **Atlas** | Authoritative Intelligence |
+| **Navigator** | Workflow Definition / Orchestration |
+| **Certifier** | Certification Package |
+| **Registry** | Satoshium Registry Record |
+| **Chronicle** | Chronicle Entry |
+| **Anchor** | Integrity Reference |
+| **Beacon** | Discovery Signal / Discovery Metadata |
+| **Attestor** | Attestation + Rule-Constrained Evaluation + Trust Statement |
 
-Shared UI infrastructure may include:
+All Suite institutions are operational.
 
-/components/topbar.html
-/components/footer.html
-/components/domain-layers.html
+Each institution retains its own authority boundary.
 
-
-These components help maintain consistent navigation and architecture visibility across the Satoshium ecosystem.
-
----
-
-# 🧩 Relationship to Other Repositories
-
-This repository interacts with several other Satoshium repositories.
-
-Examples may include:
-
-- **satoshium-core** — shared platform logic
-- **satoshium-specs** — architecture definitions
-- **satoshium-progress** — public build documentation
-- **satoshium-simulations** — experimental modeling environments
-- **satoshium-demos** — prototype demonstrations
-- **satoshium-registry** — system indexing and structure
-
-Repositories within the ecosystem function as **coordinated modules rather than isolated projects**.
+**Connection ≠ Identity.**  
+**Reference ≠ Derivation.**  
+**Reference ≠ Support.**  
+**Reference ≠ Authority Transfer.**
 
 ---
 
-# 🚧 Development Status
+## 🧠 Institutional Separation
 
-Satoshium repositories are under **active long-horizon development**.
+The Suite is designed so that institutions may reference, consume, validate, preserve, discover, or attest to governed objects without collapsing institutional identity.
 
-Some repositories may contain:
+A record produced by one institution does not become the record of another merely because it is referenced there.
 
-- working systems
-- experimental prototypes
-- early architectural structures
-- documentation in progress
-- conceptual groundwork
+This is a central architectural property of the Suite:
 
-Tools and modules may evolve significantly over time.
+**REFERENCE DOES NOT TRANSFER AUTHORITY.**
 
 ---
 
-# 📚 Philosophy
+## 🗺️ Jurisdiction Role
 
-Satoshium is being built:
+Satoshium.us retains its original jurisdiction-aware purpose.
 
-- slowly  
-- transparently  
-- with architectural discipline  
+The domain provides a public surface for U.S.-specific interpretation involving:
 
-The goal is not rapid hype-driven development, but **durable systems thinking over decades**.
+- regulatory context;
+- public policy;
+- infrastructure;
+- deployment conditions;
+- jurisdiction-aware documentation;
+- operational framing.
+
+Within that role, **Atlas** remains the authoritative intelligence institution for jurisdiction records.
+
+Other Suite institutions may certify, register, preserve, anchor, discover, attest to, or orchestrate around those governed objects without assuming Atlas authority.
 
 ---
 
-# 🔗 Explore the Ecosystem
+## 🧱 What This Domain Contains
 
-- https://satoshium.ai  
-- https://satoshium.info  
-- https://satoshium.xyz  
-- https://satoshium.net  
-- https://satoshium.store  
-- https://satoshium.link  
+Current public responsibilities may include:
+
+- Satoshium Suite institutional architecture and documentation;
+- Atlas jurisdiction intelligence and governed jurisdiction records;
+- Certifier Certification Packages and certification artifacts;
+- Registry records and durable institutional identity;
+- Chronicle historical-preservation records;
+- Anchor Integrity References and verification surfaces;
+- Beacon Discovery Signals and discovery metadata;
+- Attestor Attestations, Rule-Constrained Evaluation, and bounded Trust Statements;
+- Navigator workflow definition and orchestration;
+- U.S.-specific regulatory, policy, infrastructure, and deployment interpretation.
+
+---
+
+## 🌐 Relationship to the Satoshium Ecosystem
+
+Satoshium operates across multiple public domains and repository surfaces.
+
+`satoshium.us` should now be understood primarily as:
+
+**the public operational home of the Satoshium Suite, with a retained U.S.-jurisdiction role.**
+
+Other Satoshium domains support different implemented public functions, but those roles should be described from current deployed architecture rather than inherited from older planned-domain models.
+
+The earlier description of `satoshium.us` as merely a future “jurisdictional / operational layer” is therefore obsolete.
+
+---
+
+## 🛡️ Aegis Boundary
+
+Aegis remains a Satoshium system outside the formal Suite.
+
+Its historical relationship to Satoshium architecture does not make it a Suite institution.
+
+References to Aegis from Suite or U.S. surfaces do not transfer institutional identity or authority.
+
+---
+
+## 📚 Repository Documentation
+
+This README documents the current role of the `satoshium.us` repository.
+
+The public `index.html` serves as the primary public-facing entry point for the domain.
+
+Where older repository documentation describes:
+
+- the domain as planned;
+- generic placeholder responsibilities;
+- the old Trust / Knowledge / Intelligence / Simulation / Interface layer model;
+- future `satoshium.us` positioning;
+- generic multi-domain architecture;
+
+those descriptions should be treated as historical or superseded rather than current architecture.
+
+---
+
+## 🔧 Maintenance
+
+Repository documentation for `satoshium.us` should:
+
+- reflect the Suite as operational;
+- preserve the dual role of this domain as Suite operational home and U.S. jurisdiction surface;
+- maintain institutional authority boundaries;
+- avoid reverting to the pre-Suite conceptual layer model;
+- distinguish Atlas jurisdiction authority from surrounding Suite operations;
+- keep public HTML and repository documentation aligned;
+- avoid describing operational Suite institutions as planned or in development.
+
+README reconciliation documents the architecture that exists. It does not redesign it.
+
+---
+
+## 🔗 Public Entry Points
+
+- `https://satoshium.us/`
+- `https://satoshium.us/suite/`
 
 ---
 
 # 🧠 Satoshium
 
-**AI governed by Bitcoin.**
+**Built calmly. Built publicly. Built to last.**
 
-Satoshium explores how decentralized intelligence systems can be built using:
-
-- cryptographic rules
-- transparent architecture
-- open documentation
-- long-horizon design
-
----
-
-© Satoshium  
-Experimental platform under active development.
+© Christopher D. Burris — Satoshium™
