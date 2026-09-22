@@ -1,473 +1,346 @@
-# Certification Standards
+# Satoshium Certifier — Standards
 
-This directory contains certification standards used by the Satoshium Certifier framework.
+**Path:** `/certifier/standards/`  
+**Institution:** Satoshium Certifier  
+**Surface:** Standards  
+**Status:** Current repository documentation
 
-Certification Standards define the requirements, criteria, expectations, and evaluation methods used during certification activities.
+## Purpose
 
-Standards establish the basis upon which certification determinations are made.
+This directory documents how **Satoshium Certifier applies Satoshium Suite Standards** as the governing expectations for certification review.
 
-Without standards, certification becomes subjective.
+The public page for this directory is:
 
-Standards provide consistency.
+- `index.html`
 
----
+This README documents the relationship between Suite Standards and Certifier, the standards categories currently referenced by Certifier, versioning and preservation expectations, and the institutional boundaries that must remain intact.
 
-# Purpose
+## Governing Boundary
 
-The purpose of the standards directory is to define the rules used to evaluate Certification Targets.
+Suite Standards are Suite-level governing expectations.
 
-Standards help answer questions such as:
+Certifier does not independently own the certification rule layer.
 
-* What is being evaluated?
-* What criteria must be satisfied?
-* What evidence is required?
-* How is success determined?
-* What certification class may be granted?
-* What constitutes a Pass, Conditional Pass, or Fail?
+The enduring relationship is:
 
-Standards provide the framework for objective review.
-
----
-
-# Standards Philosophy
-
-Certifier does not certify targets based solely upon opinion.
-
-Certifier certifies targets against documented standards.
-
-The relationship is:
-
-```text id="0k1t7j"
-Target
-   ↓
-Standard
-   ↓
-Review
-   ↓
-Determination
-```
-
-A determination should always be traceable to an applicable standard.
-
----
-
-# What Is a Standard?
-
-A Certification Standard is a documented set of requirements used to evaluate a Certification Target.
-
-A standard may define:
-
-* Scope
-* Objectives
-* Evaluation criteria
-* Evidence requirements
-* Review procedures
-* Certification classes
-* Determination requirements
-
-Standards provide consistency across certification activities.
-
----
-
-# What Belongs Here
-
-Examples of standards include:
-
-## Atlas Standards
-
-Standards used to evaluate Atlas outputs.
-
-Examples:
-
-```text id="n2a8tf"
-atlas-initial-build-standard-v1.md
-atlas-page-standard-v1.md
-atlas-workflow-standard-v1.md
-```
-
----
-
-## Service Standards
-
-Standards used to evaluate operational services.
-
-Examples:
-
-```text id="u8d5rh"
-service-standard-v1.md
-```
-
----
-
-## Workflow Standards
-
-Standards used to evaluate documented workflows.
-
-Examples:
-
-```text id="f4x9sq"
-workflow-standard-v1.md
-```
-
----
-
-## Dataset Standards
-
-Standards used to evaluate datasets.
-
-Examples:
-
-```text id="m6r1yk"
-dataset-standard-v1.md
-```
-
----
-
-## Tool Standards
-
-Standards used to evaluate software tools.
-
-Examples:
-
-```text id="r9w3hc"
-tool-standard-v1.md
-```
-
----
-
-## Future Standards
-
-Future subsystems may introduce additional standards as operational needs evolve.
-
----
-
-# Suggested Structure
-
-```text id="c8v7zn"
-standards/
-├── atlas/
-├── services/
-├── workflows/
-├── datasets/
-├── tools/
-└── archive/
-```
-
-Additional categories may be introduced as Certifier expands.
-
----
-
-# Standard Components
-
-A Certification Standard should generally include:
-
-* Standard Identifier
-* Standard Name
-* Version
-* Purpose
-* Scope
-* Applicable Targets
-* Evaluation Criteria
-* Evidence Requirements
-* Review Procedures
-* Determination Guidance
-* Revision History
-
-These components promote consistency and repeatability.
-
----
-
-# Example Standard Lifecycle
-
-A standard may follow:
-
-```text id="x3j6wb"
-Draft
-   ↓
-Published
-   ↓
-Applied
-   ↓
-Revised
-   ↓
-Archived
-```
-
-Historical standards should generally be preserved rather than deleted.
-
----
-
-# Relationship to Certification Classes
-
-Certification Classes describe the level of certification achieved.
-
-Examples:
-
-* Informational
-* Operational
-* Verified
-
-Standards define how those classes are earned.
-
-Example:
-
-```text id="g1n4my"
-Certification Class
+```text
+Suite Standards
         ↓
-Requirements Defined By
+Suite Methodology
         ↓
-Certification Standard
+Satoshium Certifier
+        ↓
+Certification Package
+        ↓
+Generated Certifier Artifacts
 ```
 
-Classes communicate outcomes.
+The established rule remains:
 
-Standards define requirements.
+> **Standards define expectations. Methodology defines implementation. Certifier performs certification.**
 
----
+## Suite Standards
 
-# Relationship to Status Determinations
+Suite Standards define the expectations applied across certification activity.
 
-Status determinations are based upon standards.
+Current standards-related domains may include:
 
-Examples:
+- certification;
+- evidence;
+- governance;
+- interoperability;
+- schemas;
+- terminology;
+- scoring / evaluation;
+- versioning; and
+- trust-related certification context.
 
-* Pass
-* Conditional Pass
-* Fail
-* Revoked
+Certifier applies these standards.
 
-Relationship:
+It does not replace them.
 
-```text id="v5q8tr"
-Standard
-   ↓
-Review
-   ↓
-Determination
+## Certifier Implementation
+
+Certifier serves as the Suite's operational certification implementation.
+
+It applies Suite Standards and Suite Methodology to a defined Certification Subject and preserves the resulting certification record.
+
+The Certification Package remains Certifier's canonical operational record.
+
+## Certification Standard
+
+The Certification Standard defines the expectations applicable to a certification review.
+
+Those expectations may include:
+
+- scope;
+- applicable standards;
+- evidence sufficiency;
+- evaluation logic;
+- Certification Class;
+- certification decision; and
+- certification history.
+
+The standard defines expectations.
+
+The Certification Package records how those expectations were applied to a specific certification.
+
+## Evidence Standard
+
+The Evidence Standard defines expectations for factual materials supporting certification review.
+
+Evidence may include:
+
+- source references;
+- documentation;
+- reports;
+- screenshots;
+- inventories;
+- mappings;
+- hashes;
+- notes; and
+- preserved context.
+
+Evidence supports evaluation.
+
+Evidence does not independently create the certification decision.
+
+## Trust Standard
+
+The current Standards surface includes a **Trust Standard**.
+
+Within Certifier, that standard should remain bounded to trust-related certification context and reviewability.
+
+It must not be interpreted as replacing Satoshium Attestor's canonical trust architecture.
+
+Attestor remains responsible for:
+
+```text
+Attestation
+        ↓
+Rule-Constrained Evaluation
+        ↓
+Trust Statement
 ```
 
-A Pass should always be explainable through the applicable standard.
+A Certifier standard, certification outcome, confidence posture, or Certification Class is not an Attestor Trust Statement.
 
----
+## Interoperability Standards
 
-# Relationship to Evidence
+Interoperability Standards help ensure that Certifier outputs can participate in governed Suite relationships.
 
-Standards define what evidence is required.
+Current institutional roles include:
 
-Examples may include:
+- **Registry** — Satoshium Registry Entry / SREG
+- **Chronicle** — Chronicle Entry
+- **Anchor** — Integrity Reference
+- **Beacon** — Discovery Signal / Discovery Metadata
+- **Attestor** — Attestation / Trust Statement
+- **Navigator** — workflow definition / orchestration
 
-* Screenshots
-* Reports
-* Notes
-* Hashes
-* URLs
-* Supporting documentation
+Interoperability does not transfer source authority.
 
-Relationship:
+## Schema Standards
 
-```text id="s9k3fj"
-Standard
-   ↓
-Evidence Requirements
-   ↓
-Evidence Collection
+Schema Standards govern structured representation expectations for certification records and interoperability.
+
+They may apply to:
+
+- Certification Packages;
+- SCRD JSON;
+- evidence inventories;
+- generated artifacts; and
+- governed Suite references.
+
+Schema does not create certification authority.
+
+## Versioning Standards
+
+Standards should preserve the relationship among:
+
+- certification records;
+- standards versions;
+- methodology versions;
+- review dates;
+- generated artifacts;
+- revisions;
+- renewals;
+- revocations; and
+- archived states.
+
+Historical certifications should remain understandable in the context of the standards that governed them when issued.
+
+## Operational Standards Flow
+
+At a high level:
+
+```text
+Certification Subject
+        ↓
+Applicable Suite Standards
+        ↓
+Suite Methodology
+        ↓
+Evidence Review
+        ↓
+Certification Package
+        ↓
+Evaluation + Certification Decision
+        ↓
+SCPR · SCR · SCRD
+        ↓
+Governed Suite Relationships
 ```
 
-Evidence supports evaluation against the standard.
+The generated Certifier artifacts remain downstream from the Certification Package.
 
----
+## Relationship to Certification Classes
 
-# Relationship to Reports
+Certification Classes communicate the result of completed certification.
 
-Certification Reports document how a standard was applied.
+Standards define the expectations governing how a class may be assigned.
 
-Relationship:
+Certification Classes do not independently create certification authority.
 
-```text id="y4w7ph"
-Certification Standard
-          ↓
-Review
-          ↓
-Certification Report
-```
-
-The report explains the review.
-
-The standard defines the review.
-
----
-
-# Relationship to Receipts
-
-Certification Receipts summarize outcomes produced under a standard.
-
-Relationship:
-
-```text id="z8m2tv"
-Certification Standard
-          ↓
-Certification Report
-          ↓
-Certification Receipt
-```
-
-Receipts should reference the standard used during certification.
-
----
-
-# Relationship to Atlas
-
-Atlas is expected to become the first major source of Certifier standards.
-
-Examples include:
-
-* Atlas Initial Build Standard
-* Atlas Publishing Workflow Standard
-* Atlas Page Standard
-
-These standards may serve as foundational examples for future Certifier activities.
-
----
-
-# Relationship to Registry
-
-Future Registry implementations may catalog standards alongside certification records.
-
-Examples:
-
-```text id="a7p5nx"
-Standard ID
-Version
-Publication Date
-Associated Certifications
-```
-
-Registry support improves discoverability and traceability.
-
----
-
-# Relationship to Chronicle
-
-Significant standards activities may become historical milestones.
-
-Examples:
-
-* First published standard
-* Atlas Initial Build Standard adoption
-* Major standards revisions
-* Certification framework expansions
-
-Chronicle may preserve these events as part of ecosystem history.
-
----
-
-# Relationship to Anchor
-
-Future Anchor integrations may preserve hashes associated with standards.
-
-Example:
-
-```text id="e2v9gc"
-Certification Standard
-          ↓
-Hash
-          ↓
-Anchor Preservation
-```
-
-This may help preserve integrity and version history.
-
----
-
-# Relationship to Attestor
-
-Future Attestor activities may independently review or validate standards.
-
-Examples:
-
-* Standard integrity verification
-* Independent standard review
-* External attestation
-
-Shared standards improve consistency across reviewers.
-
----
-
-# Versioning Philosophy
-
-Standards should be versioned whenever substantive changes occur.
-
-Examples:
-
-```text id="k4u6yr"
-atlas-initial-build-standard-v1.md
-atlas-initial-build-standard-v2.md
-```
-
-Version history helps preserve certification context and historical traceability.
-
----
-
-# Preservation Philosophy
-
-Historical standards should generally be preserved.
-
-Past certifications may depend upon standards that are no longer active.
-
-Deleting standards can make historical certifications difficult to understand.
-
-Whenever practical:
-
-* Preserve standards.
-* Archive superseded versions.
-* Maintain revision history.
-
-Preservation strengthens transparency.
-
----
-
-# Long-Term Vision
-
-The standards directory serves as the rulebook of Certifier.
-
-Evidence provides facts.
-
-Reports provide reasoning.
-
-Receipts provide proof.
+## Relationship to Evaluation
 
 Standards define expectations.
 
-As the Satoshium ecosystem expands, standards will enable Certifier to evaluate increasingly diverse targets while maintaining consistency, transparency, and repeatability.
+Evaluation applies documented reasoning to the evidence under those expectations.
 
-The objective is not simply to certify.
+The distinction is:
 
-The objective is to certify according to documented and reviewable standards.
+```text
+Standard
+≠
+Evaluation
 
----
-
-# Related Documentation
-
-For additional information, see:
-
-```text id="b6r1mp"
-docs/certification-philosophy.md
-docs/certification-targets.md
-docs/certification-classes.md
-docs/status-definitions.md
-docs/report-template.md
+Evaluation
+≠
+Certification Decision
 ```
 
----
+## Relationship to Evidence
 
-# Guiding Statement
+Standards define evidence expectations.
 
-> Evidence supports conclusions.
->
-> Reports explain conclusions.
->
-> Receipts summarize conclusions.
->
-> Standards define the expectations behind those conclusions.
->
-> The standards directory exists to provide that foundation.
+Evidence provides factual support.
+
+Evidence should remain traceable to:
+
+- the Certification Subject;
+- applicable standards;
+- Suite Methodology;
+- findings;
+- limitations;
+- evaluation; and
+- certification decision.
+
+## Relationship to Reports and Receipts
+
+Generated Certifier artifacts communicate different aspects of the completed certification:
+
+- **SCPR** — explains the review process and reasoning;
+- **SCR** — provides concise public confirmation;
+- **SCRD** — preserves the durable Certified Record.
+
+All remain subordinate to the canonical Certification Package.
+
+## Relationship to Registry
+
+Registry may create a Satoshium Registry Entry / SREG referencing governed Certifier records.
+
+Registry does not become the source authority for the standard or certification merely by referencing it.
+
+## Relationship to Chronicle
+
+Chronicle may preserve governed chronology concerning standards adoption, revision, certification events, or related milestones.
+
+Chronicle records when.
+
+It does not become standards authority.
+
+## Relationship to Anchor
+
+Anchor may preserve Integrity References associated with standards or certification artifacts.
+
+Anchor preserves integrity.
+
+It does not define the standard.
+
+## Relationship to Beacon
+
+Beacon may publish Discovery Signals / Discovery Metadata associated with standards or certification records.
+
+Discovery does not alter standards authority.
+
+## Relationship to Attestor
+
+Attestor is operational and institutionally distinct from Certifier.
+
+Standards may support governed interoperability with Attestor, but Certifier Standards should not define Attestor's canonical Attestation or Trust Statement semantics.
+
+## Relationship to Navigator
+
+Navigator may define or orchestrate workflows involving standards-governed Certifier activity.
+
+Navigator does not become standards authority or certification authority through orchestration.
+
+## Authority Discipline
+
+This directory should preserve the following distinctions:
+
+- Suite Standards ≠ Certifier-owned rule layer
+- Standard ≠ Evaluation
+- Evaluation ≠ Certification Decision
+- Certification Decision ≠ Trust Statement
+- Certification Class ≠ Trust Statement
+- Schema ≠ Authority
+- Reference ≠ Derivation
+- Reference ≠ Support
+- Connection ≠ Identity
+
+Most importantly:
+
+**REFERENCE DOES NOT TRANSFER AUTHORITY.**
+
+## Historical and Version Discipline
+
+Earlier Certifier documentation may describe the standards directory as Certifier's own rulebook or may refer to future Suite integrations.
+
+Those descriptions may remain historically useful but should not govern current-state architecture.
+
+Current documentation should reflect that:
+
+- Suite Standards are Suite-level;
+- Certifier applies them;
+- Registry, Chronicle, Anchor, Beacon, Attestor, and Navigator are operational institutions; and
+- current object terminology should be used for present-state references.
+
+## Suite Reconciliation Considerations
+
+The following matters should be reviewed during Suite Reconciliation rather than redesigned in this README pass:
+
+1. the precise boundary of the **Trust Standard** relative to Attestor Trust Statements;
+2. whether `Pass`, `Conditional Pass`, `Fail`, `Revoked`, and related terms belong to evaluation, certification decision, status, or lifecycle;
+3. whether any Certifier-specific standards should remain separately named or be represented only as Suite Standards;
+4. how schema requirements should be governed across Certifier and the broader Suite; and
+5. how standards versioning should be represented consistently across historical certifications.
+
+## Repository Expectations
+
+Changes to this directory should preserve:
+
+1. Suite Standards as the governing expectations layer;
+2. Suite Methodology as the implementation layer;
+3. Certifier as the operational certification institution;
+4. the Certification Package as Certifier's canonical operational record;
+5. evidence/evaluation/decision distinctions;
+6. separation between Certifier trust-related terminology and Attestor Trust Statements;
+7. current Suite object terminology;
+8. standards versioning and historical traceability; and
+9. the rule that reference does not transfer authority.
+
+## Governing Principle
+
+**Suite Standards define the expectations; Certifier applies them and preserves their application in reviewable certification records.**
