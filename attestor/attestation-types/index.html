@@ -10,7 +10,7 @@
 
 <meta name="theme-color" content="#d6a34a">
 
-<title>Satoshium Attestor · Attestation Types</title>
+<title>Satoshium Attestor · Operational Attestation Types</title>
 <meta name="description" content="Satoshium Attestor Attestation Types — the controlled classification framework for governed Attestor assertions used in the production of Trust Statements.">
 <link rel="canonical" href="https://satoshium.us/attestor/attestation-types/">
 
@@ -170,7 +170,7 @@ h1{
   </p>
 
   <p class="lead">
-    Attestor's Advanced Architecture now establishes six controlled Attestation
+    Attestor's operational architecture establishes six controlled Attestation
     Types. These values classify the governed assertion expressed by an Attestation;
     they do not redefine the identity, type, or authority of any referenced Suite
     or external source object.
@@ -300,19 +300,59 @@ h1{
 
 <section style="margin-top:18px;">
 <article class="card">
-  <h2>Established Attestation Type Architecture</h2>
+  <h2>First Production Attestation-Type Demonstration</h2>
   <p>
-    Advanced Architecture establishes the controlled Attestation Type vocabulary
-    and its relationship to Attestor schemas, controlled values, eligibility,
-    evaluation, validation, lifecycle, and conformance architecture.
+    The first controlled production operation exercised the adopted vocabulary through
+    <strong>ATT-2026-0001</strong>, classified as
+    <code>verification-related</code>. The bounded assertion concerned the canonical
+    identity, attributable Certifier origin, relevant certification state, and
+    traceable Suite relationships of <strong>SC-CERT-2026-0001</strong>.
   </p>
   <div class="note">
-    identity · evidence · source-provenance · verification-related ·
-    relationship-condition · correction-supersession
+    ATT-2026-0001 → verification-related<br>
+    Evaluation Outcome → supported<br><br>
+    Attestation Type ≠ Source Object Type<br>
+    Attestation Type ≠ Eligibility<br>
+    Attestation Type ≠ Evaluation Outcome<br>
+    Attestation Type ≠ Relationship Type<br>
+    verification-related ≠ Attestor Certification Authority<br><br>
+    <strong>Attestation Type Architecture → DEMONSTRATED IN PRODUCTION</strong>
   </div>
   <p style="margin-top:16px;">
-    Exact executable validation and production-specific profile requirements remain
-    implementation work. The six controlled values themselves are adopted.
+    Production proof is value-specific. The first operation exercised
+    <code>verification-related</code>; it did not independently production-test the
+    other five adopted Attestation Types.
+  </p>
+</article>
+</section>
+
+<section style="margin-top:18px;">
+<article class="card">
+  <h2>Current Attestation Type Position</h2>
+  <p>
+    The Attestation Type architecture is established and production-proven for the
+    controlled value actually exercised by the first production operation. The full
+    six-value vocabulary remains adopted, while production proof is bounded to
+    <code>verification-related</code>.
+  </p>
+  <div class="note">
+    <strong>Attestation Type Architecture → Established and Production-Proven</strong><br>
+    Controlled vocabulary → Established<br>
+    verification-related → Production-exercised through ATT-2026-0001<br>
+    Classification / source-authority boundary → Demonstrated<br>
+    Type / Eligibility distinction → Demonstrated<br>
+    Type / Evaluation Outcome distinction → Demonstrated<br>
+    Type / Relationship distinction → Preserved<br>
+    Executable Validation → Exercised<br>
+    Conformance → Exercised<br>
+    identity · evidence · source-provenance · relationship-condition · correction-supersession → Established; not independently production-tested<br>
+    Reputation Attestation Type → Not adopted<br>
+    <strong>Production proof → ESTABLISHED for verification-related</strong>
+  </div>
+  <p style="margin-top:16px;">
+    Classification does not predetermine eligibility, evidentiary support, Evaluation
+    Outcome, relationship semantics, or source authority. New Attestation Types require
+    governed architectural change.
   </p>
   <a class="btn" href="/attestor/">Back to Attestor →</a>
 </article>
