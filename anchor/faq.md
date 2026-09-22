@@ -1,256 +1,314 @@
-# Frequently Asked Questions (FAQ)
+# Satoshium Anchor — Frequently Asked Questions
 
-# What is Satoshium Anchor?
+## What is Satoshium Anchor?
 
-Satoshium Anchor is the identity and trust layer of the Satoshium ecosystem.
+Satoshium Anchor is the Satoshium Suite institution responsible for preserving durable **Integrity References** for authoritative artifacts and records.
 
-Anchor explores how identities, claims, attestations, reputation systems, and trust relationships may be represented, verified, and maintained across interoperable digital environments.
+Anchor records cryptographic, temporal, representation, and verification context so the integrity of a referenced representation can be reviewed later.
 
-Anchor is intended to support accountability without requiring centralized ownership of identity.
+Anchor does not assume authority over the source artifact itself.
 
----
+## What is Anchor's canonical object?
 
-# What problem does Anchor attempt to solve?
+Anchor's canonical object is the:
 
-Digital systems often struggle to answer questions such as:
+**Integrity Reference**
 
-* Who made this claim?
-* Who verified this information?
-* What evidence supports it?
-* What reputation has been established?
-* Why should this source be trusted?
+An Integrity Reference preserves the information required to evaluate whether a later observed representation remains consistent with the representation Anchor preserved.
 
-Anchor exists to explore frameworks that help answer those questions in transparent and verifiable ways.
-
----
-
-# Is Anchor an identity provider?
+## Is Anchor an identity layer?
 
 No.
 
-Anchor is not intended to function as a centralized identity provider.
+Earlier Anchor development explored identity, claims, attestations, reputation, and trust as central concepts.
 
-Instead, Anchor explores standards, frameworks, and structures that may help identities, claims, and trust relationships become portable, verifiable, and interoperable.
+The operational Anchor institution is now specifically responsible for **integrity preservation**.
 
----
+Identity-, claim-, attestation-, reputation-, and trust-related artifacts may be anchored, but Anchor does not become the authority for those concepts.
 
-# Does Anchor create identities?
-
-No.
-
-Anchor does not create legal identities, government identities, or official credentials.
-
-Anchor explores mechanisms for representing and organizing identity-related information within digital systems.
-
----
-
-# What is an identity?
-
-Within Anchor, an identity represents a persistent entity capable of making claims, receiving attestations, building reputation, and participating within digital environments.
-
-Identities may represent:
-
-* individuals
-* organizations
-* systems
-* services
-* agents
-* institutions
-
-The exact implementation remains subject to future development.
-
----
-
-# What is a claim?
-
-A claim is an assertion made by an identity.
-
-Examples may include:
-
-* ownership claims
-* authorship claims
-* participation claims
-* credential claims
-* status claims
-* capability claims
-
-Anchor does not assume claims are true.
-
-Claims exist independently from verification.
-
----
-
-# What is an attestation?
-
-An attestation is a statement made by one identity regarding another identity, claim, event, or fact.
-
-Attestations may support, dispute, clarify, or contextualize information.
-
-Attestations help create verifiable trust relationships across systems.
-
----
-
-# What is reputation?
-
-Reputation represents accumulated historical trust signals associated with an identity.
-
-Reputation may be influenced by:
-
-* prior behavior
-* verification history
-* attestations
-* participation
-* reliability
-* transparency
-
-Anchor treats reputation as informational rather than authoritative.
-
----
-
-# What is trust?
-
-Trust is the willingness to rely upon information, identities, systems, or claims under conditions of uncertainty.
-
-Anchor explores how trust may be made more transparent, observable, and evidence-based.
-
-Trust remains a human judgment.
-
----
-
-# Does Anchor determine truth?
+## Does Anchor create identities?
 
 No.
 
-Anchor does not determine truth.
+Anchor may preserve the integrity of identity-related artifacts, but it does not create legal identities, government identities, official credentials, or identity authority.
 
-Anchor may help organize claims, attestations, evidence, and trust signals, but it does not function as a final authority.
+## Does Anchor determine truth?
 
-Verification and truth assessment remain separate processes.
+No.
 
----
+Anchor determines neither truth nor meaning.
 
-# How does Anchor relate to Certifier?
+It preserves integrity context for a defined representation.
 
-Certifier focuses on verification.
+A successful integrity Verification means the observed representation matches the expected integrity evidence under the governed Anchor process.
 
-Anchor focuses on identity and trust.
+It does not prove that the underlying source claim is true.
+
+## Does Anchor certify artifacts?
+
+No.
+
+Certification belongs to Certifier.
+
+Anchor may preserve the integrity of a certified artifact, but it does not inherit certification authority.
+
+For example:
+
+```text
+Certifier
+→ authoritative for the Certification Package / certified record
+
+Anchor
+→ authoritative for the Integrity Reference
+```
+
+Reference does not transfer authority.
+
+## What problem does Anchor solve?
+
+Digital records can change, disappear, be replaced, or become difficult to compare over time.
+
+Anchor creates a durable integrity relationship between:
+
+1. an authoritative source artifact;
+2. a defined canonical representation;
+3. integrity material derived from that representation;
+4. a governed Integrity Reference.
+
+That relationship supports later independent integrity review.
+
+## What is a Canonical Representation?
+
+A Canonical Representation is the specifically defined representation of a source artifact used for integrity generation.
+
+Anchor does not hash an undefined idea of a document.
+
+It preserves integrity against a defined representation boundary.
+
+## What is an Integrity Value?
+
+An Integrity Value is cryptographic or other governed integrity material generated from the defined Canonical Representation.
+
+For `ANCH-2026-0001`, the current implementation uses SHA-256 over RFC 8785 JCS canonical JSON.
+
+## What is Verification?
+
+Verification compares expected integrity evidence with observed or reconstructed evidence.
+
+Verification answers whether the integrity relationship still matches.
+
+Verification does not transfer source authority to Anchor.
+
+## What is Validation?
+
+Validation evaluates whether an Integrity Reference satisfies Anchor's governed institutional requirements.
+
+Anchor's production process currently uses formal PASS/FAIL Validation.
+
+Validation and Verification are related but distinct.
+
+## What is the difference between Validation and Verification?
 
 In simplified form:
 
 ```text
-Certifier → Was it verified?
+Validation
+→ Does the Anchor record satisfy institutional requirements?
 
-Anchor → Who made the claim?
+Verification
+→ Does the integrity evidence match?
 ```
 
-The two systems are complementary but distinct.
+Both are required parts of the governed production path.
 
----
+## What is ANCH-2026-0001?
 
-# How does Anchor relate to Registry?
+`ANCH-2026-0001` is the first published Satoshium Anchor Integrity Reference.
 
-Registry focuses on records.
+Its source artifact is:
 
-Anchor focuses on identities, claims, attestations, and reputation.
+`SCRD-SC-CERT-2026-0001`
 
-In simplified form:
+The record completed:
+
+- Stage A Validation — PASS
+- Initial Verification — match
+- Stage B Validation — PASS
+- Publication Gate — APPROVED
+- Publication — COMPLETE
+
+Its lifecycle state is active and its publication state is published.
+
+## What is the difference between Anchored Items and Integrity References?
+
+Anchor maintains two distinct operational indexes:
 
 ```text
-Registry → What record exists?
+/anchor/anchored-items/
+→ production packages, including unpublished candidates
 
-Anchor → Who is associated with it?
+/anchor/integrity-references/
+→ published Integrity References only
 ```
 
----
+The published Integrity References index is not a workspace or candidate queue.
 
-# How does Anchor relate to Chronicle?
-
-Chronicle preserves history.
-
-Anchor preserves identity relationships.
-
-In simplified form:
-
-```text
-Chronicle → What happened?
-
-Anchor → Who participated?
-```
-
----
-
-# How does Anchor relate to Attestor?
-
-Anchor manages identity and trust structures.
-
-Attestor explores attestation creation, validation, and exchange.
-
-In simplified form:
-
-```text
-Anchor → Identity and trust framework
-
-Attestor → Attestation framework
-```
-
----
-
-# Will Anchor use blockchain technology?
-
-Possibly.
-
-Anchor is blockchain-agnostic.
-
-No specific implementation technology has been selected.
-
-Future versions may support one or more underlying technologies.
-
----
-
-# Is Anchor a social network?
+## Does publication transfer authority over the Source Artifact?
 
 No.
 
-Anchor is not intended to function as a social media platform.
+Publication makes Anchor authoritative for the published Integrity Reference and Anchor-owned metadata.
 
-Its purpose is trust, identity, and attestation infrastructure rather than social interaction.
+The Source Institution remains authoritative for the referenced Source Artifact.
 
----
+## How does Anchor relate to Certifier?
 
-# Is Anchor active?
+Certifier performs certification.
 
-Anchor is currently under development.
+Anchor preserves integrity references.
 
-The concepts, structures, standards, and documentation contained within this repository represent exploratory work and should not be interpreted as production systems.
+A Certifier artifact may become the source artifact for an Anchor Integrity Reference, but the institutions retain separate authority.
 
----
+## How does Anchor relate to Registry?
 
-# What is the long-term vision?
+Registry owns Satoshium Registry Records.
 
-The long-term vision of Anchor is to support transparent, portable, verifiable, and interoperable identity and trust frameworks that can operate across diverse digital environments while preserving accountability, transparency, and individual sovereignty.
+Anchor may preserve integrity context for Registry-owned records.
 
----
+Anchor does not become the Registry authority.
 
-# Where can I learn more?
+## How does Anchor relate to Chronicle?
 
-Additional documentation may be found within:
+Chronicle owns Chronicle Entries and historical preservation.
 
-* `/purpose`
-* `/identities`
-* `/claims`
-* `/attestations`
-* `/reputation`
-* `/trust`
-* `/governance`
-* `/standards`
-* `/status`
+Anchor may preserve the integrity of Chronicle artifacts.
 
-as the project evolves.
+Anchor does not determine historical interpretation.
 
----
+## How does Anchor relate to Attestor?
 
-# Guiding Question
+Attestor owns Attestations, Rule-Constrained Evaluation, and Trust Statements.
 
-> In a world of information, how do we know who stands behind a claim?
->
-> Anchor exists to explore that question.
+Anchor may preserve integrity context for attestation or trust artifacts.
+
+Anchor does not make the attestation or trust determination.
+
+## How does Anchor relate to Beacon?
+
+Beacon owns Discovery Signals and Discovery Metadata.
+
+Anchor may preserve integrity context for Beacon artifacts.
+
+Anchor does not become the discovery authority.
+
+## How does Anchor relate to Atlas?
+
+Atlas owns authoritative intelligence within its institutional domain.
+
+Anchor may preserve integrity references for Atlas artifacts.
+
+Anchor does not inherit Atlas authority.
+
+## How does Anchor relate to Navigator?
+
+Navigator defines and orchestrates workflows.
+
+Anchor may participate in a Navigator-defined workflow or preserve workflow-related artifacts.
+
+Navigator orchestration does not transfer Anchor authority, and Anchor integrity operations do not transfer Navigator authority.
+
+## Does Anchor use blockchain technology?
+
+Anchor is institutionally implementation-neutral.
+
+No blockchain is required by the current Anchor architecture.
+
+The present production implementation uses canonical JSON, RFC 8785 JCS, and SHA-256.
+
+Future commitment mechanisms may be added through governed architecture without changing Anchor's core authority boundary.
+
+## Does Anchor manage reputation?
+
+No.
+
+Anchor may preserve the integrity of reputation-related artifacts.
+
+It does not calculate reputation, assign reputation authority, or determine reputation truth.
+
+## Does Anchor determine trust?
+
+No.
+
+Trust judgments and Trust Statements remain outside Anchor's authority.
+
+Anchor may preserve the integrity of trust-related artifacts without becoming a trust authority.
+
+## Is Anchor operational?
+
+Yes.
+
+Anchor is operational.
+
+Its first full end-to-end production cycle is complete and its first Integrity Reference, `ANCH-2026-0001`, is published and active.
+
+## What happens after publication?
+
+Published Integrity References enter maintenance.
+
+Post-publication operations may include:
+
+- Source-link health review;
+- Reverification;
+- algorithm or key-health review;
+- external commitment review;
+- Corrections;
+- new Versions;
+- long-term preservation.
+
+## Can an Anchor record be corrected?
+
+Yes.
+
+Anchor distinguishes:
+
+- Source changes;
+- Anchor-owned errors;
+- Corrections;
+- Versions;
+- superseding records.
+
+The governing principle is:
+
+> **Correct forward. Preserve backward.**
+
+## Where can I learn more?
+
+See:
+
+- `/anchor/purpose/`
+- `/anchor/definitions/`
+- `/anchor/integrity-preservation/`
+- `/anchor/anchoring-process/`
+- `/anchor/integration/`
+- `/anchor/standards/`
+- `/anchor/governance/`
+- `/anchor/identifiers/`
+- `/anchor/controlled-values/`
+- `/anchor/relationships/`
+- `/anchor/provenance/`
+- `/anchor/schemas/`
+- `/anchor/verification/`
+- `/anchor/validation/`
+- `/anchor/lifecycle/`
+- `/anchor/versioning/`
+- `/anchor/corrections/`
+- `/anchor/publication/`
+- `/anchor/maintenance/`
+- `/anchor/procedures/`
+- `/anchor/anchored-items/`
+- `/anchor/integrity-references/`
+- `/anchor/status/`
+
+## Guiding Principle
+
+> **Preserve the reference. Preserve the boundary. Preserve the authority.**
