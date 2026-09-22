@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/entry-model/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Entry Model  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -19,7 +19,7 @@ It is the first dependency in Attestor Advanced Architecture. It defines the con
 
 **Reference does not transfer authority.**
 
-Referenced objects retain the authority of their source institutions. Attestor owns its governed Attestor objects and the Trust Statements it produces; it does not acquire source authority merely by referencing or evaluating source material.
+Referenced objects retain the authority of their source institutions. Attestor is authoritative for its own governed Attestations, its institutional evaluation process and resulting conclusions, and the Trust Statements it produces; it does not acquire source authority merely by referencing or evaluating source material.
 
 ## Core Distinction
 
@@ -102,7 +102,53 @@ The following are established by their respective architecture pages:
 - Methodology;
 - Production.
 
-Schemas and profiles govern machine structure. Exact executable serialization and implementation-specific machine mechanics remain implementation work.
+Schemas and profiles govern machine structure. Applicable executable representation and machine requirements are governed through Schemas and Validation; implementation-specific mechanics remain subordinate to those contracts.
+
+## First Production Entry-Model Demonstration
+
+The first controlled production operation exercised the Entry Model end to end.
+
+Six governed source inputs received Eligibility determinations and formed the governed basis for the production matter.
+
+`Eligible Governed Inputs → ATT-2026-0001 → Evaluation Basis → Rule-Constrained Evaluation → supported → TRST-2026-0001`
+
+`ATT-2026-0001` was the canonical production Attestation: a governed, attributable assertion.
+
+`TRST-2026-0001` was the canonical production Trust Statement: a governed, attributable, bounded Attestor conclusion.
+
+The operation demonstrated that:
+
+- an Attestation is not a Trust Statement;
+- references are not automatically support;
+- an Evaluation Outcome is not itself the Trust Statement;
+- evaluation is the institutional act between assertion and conclusion;
+- source authority remains with the originating institution;
+- Attestor authority remains bounded to its own governed objects and institutional conclusion;
+- scope, limitations, relevant state, provenance, and relationships remain material to interpretation; and
+- the Trust Statement remains traceable to its Attestation and governed evaluation basis.
+
+**Entry Model → DEMONSTRATED END TO END IN PRODUCTION**
+
+## Production Object Boundary
+
+The production operation exercised two distinct canonical object classes:
+
+- `ATT-2026-0001` → canonical Attestation;
+- `TRST-2026-0001` → canonical Trust Statement.
+
+Their relationship was preserved as:
+
+`TRST-2026-0001 → derived-from → ATT-2026-0001`
+
+`Attestation ≠ Trust Statement`
+
+`Evaluation Outcome ≠ Trust Statement`
+
+`Reference ≠ Derivation`
+
+`Reference ≠ Support`
+
+`Reference ≠ Authority Transfer`
 
 ## Dependency Position
 
@@ -110,6 +156,41 @@ Schemas and profiles govern machine structure. Exact executable serialization an
 
 ## Status
 
-**Entry Model → Established**
+**Entry Model → Established and Production-Proven**
 
-The conceptual distinction and relationship between Attestation and Trust Statement are established and are formalized by the completed Advanced Architecture. Exact executable serialization and production proof remain pending.
+- canonical Attestor output → Trust Statement
+- Attestation → governed, attributable assertion → production-exercised
+- Trust Statement → governed, attributable, bounded Attestor conclusion → production-exercised
+- assertion / conclusion distinction → demonstrated
+- eligible governed inputs → production-exercised
+- Evaluation Basis / Rule-Constrained Evaluation → production-exercised
+- Evaluation Outcome / Trust Statement distinction → demonstrated
+- authority preservation → demonstrated
+- provenance / traceability → demonstrated
+- scope / limitations → demonstrated
+- canonical ATT/TRST object distinction → demonstrated
+- machine structure → exercised through Schemas and Validator v0.5
+- production proof → **ESTABLISHED**
+
+## Continuing Entry-Model Governance
+
+Production proof is bounded to the canonical object classes and flow actually exercised.
+
+It does not establish that:
+
+- every Attestation Type has been production-tested;
+- every possible source class has been exercised;
+- every eligible input supports a conclusion;
+- every evaluation produces `supported`;
+- every Attestation produces a Trust Statement; or
+- every future implementation may alter the canonical object boundary.
+
+`Eligible ≠ Supported`
+
+`Attestation ≠ Trust Statement`
+
+`Evaluation Outcome ≠ Trust Statement`
+
+`Reference ≠ Support`
+
+**Reference does not transfer authority.**
