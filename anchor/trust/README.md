@@ -1,224 +1,278 @@
-# Trust
+# Satoshium Anchor — Trust
+
+**Path:** `/anchor/trust/`  
+**Role:** Trust-Related Artifact Integrity  
+**Institution:** Satoshium Anchor  
+**Status:** Active bounded integrity-preservation surface
 
 ## Overview
 
-Trust is the willingness to place confidence in an identity, claim, action, record, system, or process.
+The `/anchor/trust/` directory defines how Satoshium Anchor may preserve the integrity of externally governed **Trust Statements** and other trust-related artifacts without determining trustworthiness or becoming the trust authority.
 
-Trust influences decisions made by individuals, organizations, institutions, communities, and technological systems.
+Anchor does not:
 
-Within the Satoshium Anchor framework, trust is viewed as an outcome rather than a starting point.
+- issue Trust Statements;
+- determine trustworthiness;
+- calculate trust scores;
+- rank trusted entities;
+- maintain trust relationships;
+- aggregate trust history;
+- define universal trust semantics;
+- adjudicate trust disputes;
+- endorse trust methodologies.
 
-Trust emerges from identity, attribution, accountability, experience, transparency, verification, and reputation.
+Within the Satoshium Suite, **Attestor remains authoritative for Trust Statements**.
 
-Anchor does not seek to determine trust.
+Anchor's role begins only when the integrity of a Trust Statement or another trust-related artifact should be preserved through an **Integrity Reference**.
 
-Anchor seeks to explore the foundations that make trust possible.
+## Trust Boundary
 
----
+Trust is a judgment or assessment made by a person, institution, community, system, or governed Attestor process.
 
-## Purpose
+Anchor does not make that judgment.
 
-The purpose of trust is to reduce uncertainty.
+Anchor may preserve the integrity of the artifact in which that judgment is expressed.
 
-When individuals or systems make decisions, trust often helps determine:
+```text
+Trust Judgment
+≠
+Trust Artifact Integrity
+```
 
-* Which information to rely upon
-* Which claims to accept
-* Which entities to engage with
-* Which records to preserve
-* Which actions to authorize
+## Trust Statement
 
-Trust helps participants navigate complexity, risk, and uncertainty.
+A Trust Statement is an Attestor-owned canonical object expressing a governed trust-related conclusion or assessment.
 
----
+```text
+Attestor
+→ Trust Statement
 
-## What Trust Is
+Anchor
+→ Integrity Reference
+```
 
-Trust is:
+Attestor remains authoritative for:
 
-* Confidence
-* Reliance
-* Expectation
-* Judgment
-* Assessment
+- meaning;
+- trust conclusion;
+- lifecycle;
+- Versioning;
+- Correction;
+- publication.
 
-Trust reflects the degree to which an individual or system believes that an identity, claim, process, or record is worthy of confidence.
+Anchor may preserve integrity context for a defined Trust Statement representation without becoming the trust authority.
 
-Trust is often informed by evidence, experience, and context.
+## Trust Artifact
 
----
+A trust-related artifact may include:
 
-## What Trust Is Not
+- Trust Statement;
+- trust signal;
+- assessment;
+- recommendation;
+- warning;
+- confidence statement;
+- trust methodology;
+- evaluation framework;
+- scoring model;
+- decision rule;
+- governance document;
+- other governed trust representation.
 
-Trust is not:
+Anchor may preserve an Integrity Reference for such an artifact where durable integrity preservation has value.
 
-* Identity
-* Reputation
-* Verification
-* Certification
-* Authority
-* Truth
+## Canonical Representation
 
-While trust may be influenced by these concepts, none of them alone creates trust.
+Before Anchor generates integrity material, it should define:
 
-Trust remains a judgment.
+- the exact artifact representation;
+- the Representation Boundary;
+- the Source Institution;
+- the Source-System Identifier where available;
+- the trust-artifact type;
+- the integrity method;
+- the integrity value;
+- temporal context;
+- signature or other Verification Material where applicable.
 
----
+Anchor preserves the defined representation.
 
-## Foundational Principles
+It does not preserve an undefined concept of trust.
 
-### Trust Requires Identity
+## Trust Artifact Integrity
 
-Before trust can be evaluated, there must first be an identifiable subject.
+Anchor may preserve an Integrity Reference that allows later reviewers to determine whether a trust-related representation remains consistent with the representation originally anchored.
 
-Trust depends upon the ability to associate actions and claims with responsible entities.
+That question is bounded:
 
-### Trust Benefits from Attribution
+```text
+Integrity
+→ Has the anchored representation changed?
 
-Understanding who performed an action or made a claim improves the ability to evaluate trust.
+Trust
+→ Should confidence be placed in the subject,
+  statement, source, or conclusion?
+```
 
-Attribution creates accountability.
+Anchor answers only the integrity question.
 
-### Trust Benefits from Transparency
+## Trust vs. Verification
 
-Transparent systems make it easier to evaluate actions, records, and decisions.
+Anchor Integrity Verification may confirm consistency with an Integrity Reference.
 
-Opacity increases uncertainty.
+It does **not** determine whether the underlying Trust Statement should be accepted.
 
-### Trust Benefits from Verification
+A successful Verification establishes only what the integrity evidence supports.
 
-Verification may strengthen confidence in claims and records.
+## Trust vs. Certification
 
-However, verification alone does not guarantee trust.
+Certification may inform trust, but Certifier remains authoritative for certification decisions.
 
-### Trust Benefits from History
+Anchor does not turn certification into a trust judgment.
 
-Past behavior often influences future trust decisions.
+## Trust vs. Reputation
 
-Historical context provides valuable information for evaluating trustworthiness.
+Reputation may influence trust, but Anchor calculates neither trust nor reputation.
 
-### Trust Is Contextual
+Anchor may preserve Integrity References for artifacts produced by systems that do.
 
-Trust is rarely absolute.
+## Integrity of a Trust Statement
 
-An identity may be trusted in one context and not trusted in another.
+A Trust Statement may retain perfect cryptographic integrity while remaining:
 
-Trust often depends upon circumstances, expertise, risk, and experience.
+- disputable;
+- contextual;
+- outdated;
+- incomplete;
+- methodologically weak;
+- superseded.
 
----
+Therefore:
 
-## Trust and Reputation
+```text
+Integrity of a Trust Statement
+≠
+Validity of the Trust Judgment
+```
 
-Trust and reputation are closely related but distinct.
+Anchor may confirm that the representation has not changed.
 
-Reputation answers:
+It does not prove that the trust conclusion is correct.
 
-> What is known about this identity?
+## Trust Artifact Lifecycle
 
-Trust answers:
+A Trust Statement or other trust-related artifact may later be:
 
-> How much confidence should be placed in this identity?
+- superseded;
+- withdrawn;
+- corrected;
+- revoked;
+- replaced;
+- reissued.
 
-Reputation may contribute to trust assessments.
+Anchor should preserve the integrity lineage of the representation it actually anchored rather than silently rewriting the earlier state.
 
-Trust remains an independent judgment.
+```text
+Earlier Trust Representation
+→ Earlier Integrity Reference
 
----
+Later Trust Representation
+→ Later Anchor Version
+  or New Integrity Reference where required
+```
 
-## Trust and Verification
+## Source Trust Change vs. Anchor Correction
 
-Verification helps answer:
+A change by Attestor or another Source Institution to:
 
-> Is this claim authentic?
+- the trust judgment;
+- Trust Statement;
+- methodology;
+- lifecycle;
+- publication state;
 
-Trust helps answer:
+is a **Source Artifact change**.
 
-> Should confidence be placed in this claim?
+An Anchor error involving:
 
-Verification may strengthen trust, but trust often incorporates additional considerations.
+- wrong Source Artifact;
+- wrong representation;
+- wrong digest;
+- wrong timestamp;
+- wrong signer metadata;
+- other Anchor-owned information;
 
----
+may require an **Anchor Correction**.
 
-## Trust and Accountability
+```text
+Source Trust Change
+≠
+Anchor Correction
+```
 
-Accountability supports trust.
+## Privacy and Judgment Boundary
 
-When actions can be attributed to identifiable entities, participants gain additional information for evaluating trustworthiness.
+Trust-related artifacts may contain sensitive or evaluative information.
 
-Systems that preserve accountability often improve transparency.
+Anchor should preserve only the integrity context needed for the governed purpose.
 
-Transparency may improve trust.
+The minimum-necessary-data principle remains active.
 
----
+> **Preserve necessary integrity context. Do not amplify unnecessary trust judgments.**
 
-## Trust Relationships
+## Relationship to the Suite
 
-Trust may exist between many types of entities.
+Relevant institutional relationships include:
 
-Examples include:
+```text
+Atlas
+→ may provide authoritative intelligence
 
-* Individual to individual
-* Individual to organization
-* Organization to organization
-* Individual to system
-* Organization to system
-* Agent to agent
-* Human to AI
-* AI to system
+Certifier
+→ may provide certification determinations
 
-Anchor seeks to explore the structures through which such relationships may be understood.
+Registry
+→ may catalog authoritative records
 
----
+Chronicle
+→ may preserve qualifying historical memory
 
-## Relationship to Other Satoshium Systems
+Attestor
+→ may issue Trust Statements
 
-Trust is influenced by multiple systems within the Satoshium ecosystem.
+Anchor
+→ may preserve Integrity References for the relevant artifacts
+```
 
-* Anchor establishes identity and attribution.
-* Claims establish assertions.
-* Attestations connect claims to identities.
-* Certifier evaluates authenticity.
-* Registry preserves records.
-* Chronicle preserves historical context.
-* Beacon enables discovery.
-* Attestor may provide trust-related signals.
+These systems may inform one another while retaining separate authority.
 
-Together these systems provide information that may inform trust decisions.
+**REFERENCE DOES NOT TRANSFER AUTHORITY.**
 
-Trust itself remains a judgment made by participants.
+**Connection ≠ Identity.**  
+**Reference ≠ Derivation.**  
+**Reference ≠ Support.**  
+**Reference ≠ Authority Transfer.**
 
----
+## Current Institutional Position
 
-## Future Considerations
+The older Anchor model treated trust as part of Anchor's conceptual identity/trust framework.
 
-Future development may explore:
+That model is superseded.
 
-* Trust frameworks
-* Trust signals
-* Trust relationships
-* Reputation models
-* Agent trust
-* Organizational trust
-* AI trust
-* Trust interoperability
-* Delegated trust
+The current institutional role is narrower:
 
-No trust model has been formally adopted.
+```text
+Anchor
+→ preserves integrity of trust-related artifacts
 
----
+Attestor
+→ owns Trust Statements and trust-related conclusions
+```
 
-## Status
+Trust remains a bounded reference domain for Anchor, not an Anchor-owned authority domain.
 
-Trust is currently a conceptual component of the Satoshium Anchor framework.
+## Trust Principle
 
-Definitions, methodologies, standards, and implementation mechanisms remain under active development.
+> **Preserve trust artifacts. Do not become the trust authority.**
 
-Nothing in this document should be interpreted as a production trust framework or trust-scoring system.
-
----
-
-**Status:** Exploratory Concept
-
-**Version:** Draft 0.1
-
-**Maintained By:** Satoshium
+README reconciliation documents the current Anchor trust boundary. It does not redesign it.
