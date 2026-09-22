@@ -8,7 +8,7 @@
 
 The `/suite/standards/` directory defines the canonical rule layer used across the Satoshium Suite.
 
-Standards establish what the Suite expects, recognizes, evaluates, records, publishes, preserves, exchanges, and interprets across institutional implementations.
+Standards establish the expectations and rules that govern what Suite institutions recognize, evaluate, record, publish, preserve, exchange, and interpret within their respective authorities.
 
 This directory documents rule expectations.
 
@@ -28,7 +28,7 @@ The current page presents the following standards:
 - Interoperability Standard
 - Schema Standard
 - Terminology Standard
-- Versions
+- Versions Standard
 
 These standards collectively define the rule framework that supports consistent Suite behavior across institutions and records.
 
@@ -83,7 +83,7 @@ Defines expectations for machine-readable structures, shared objects, stable ide
 
 Defines canonical terms used across the Suite so that certification, attestation, registry, evidence, trust, and discovery language remains consistent.
 
-### Versions
+### Versions Standard
 
 Preserves the historical development of Satoshium Standards and identifies which version applies to a record, decision, or implementation.
 
@@ -116,19 +116,21 @@ The Standards layer may define expectations that affect:
 - terminology;
 - versioning.
 
-However, Standards do not themselves create:
+However, Standards do not themselves create the canonical outputs or exercise the operational authority of Suite institutions.
 
-- Certification Packages;
+Examples include:
+
+- Certifier Certification Packages;
 - Satoshium Registry Records;
 - Chronicle Entries;
-- Integrity References;
-- Discovery Signals;
-- Attestations;
-- Trust Statements;
-- workflow executions;
-- Atlas authoritative intelligence records.
+- Anchor Integrity References;
+- Beacon Discovery Signals / Discovery Metadata;
+- Attestor Attestations;
+- Attestor Trust Statements;
+- Navigator workflow definitions / orchestration; and
+- Atlas Authoritative Intelligence.
 
-Those remain institution-owned canonical objects.
+Those responsibilities remain with their originating Suite institutions.
 
 ## Repository Convention
 
