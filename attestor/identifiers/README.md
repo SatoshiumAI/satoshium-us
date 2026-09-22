@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/identifiers/`  
 **Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
+**Current Stage:** Operational Identifiers  
 **Canonical Responsibility:** `Attestor → Trust Statement`
 
 ## Purpose
@@ -87,19 +87,69 @@ An identifier establishes identity. It does not by itself establish:
 - trustworthiness; or
 - a Trust Statement conclusion.
 
-## Deferred Implementation Detail
+## Implementation Boundary
 
-This architecture establishes the canonical identifier families and governing semantics but leaves the following to later advanced architecture:
+The first production operation has exercised canonical identifier assignment, persistence, source-identifier preservation, machine validation of the production representations, and public class-specific URI representation.
 
-- allocation mechanics;
-- sequence registry behavior;
-- collision handling;
-- machine validation patterns;
-- URI representation;
-- version-addressing conventions;
-- operational assignment procedure.
+Implementation details remain subordinate to the established architecture, including:
 
-These belong respectively to Schemas, Validation, Versioning, Publication, and Production.
+- allocation and sequence-registry mechanics not otherwise fixed by Production;
+- collision-prevention mechanics;
+- future identifier-pattern changes, if ever governed;
+- version-addressing conventions beyond the production paths exercised; and
+- future operational allocation procedures.
+
+Schemas, Validation, Versioning, Publication, and Production govern their respective implementation responsibilities.
+
+## First Production Identifier Demonstration
+
+The first controlled production operation exercised both canonical Attestor identifier families:
+
+- `ATT-2026-0001` → first canonical production Attestation;
+- `TRST-2026-0001` → first canonical production Trust Statement.
+
+The operation demonstrated the assignment boundary:
+
+`Pre-Creation Preparation → No canonical production identifier`
+
+`Canonical Creation → ATT-2026-0001 / TRST-2026-0001 assigned`
+
+The identifiers were not used for representative fixtures or preallocated production placeholders. Representative validation fixtures remained in the separate `9001` range and were explicitly non-production.
+
+After canonical Creation, both identifiers persisted through:
+
+- relationship correction;
+- Validation;
+- Governed Review;
+- Conformance;
+- lifecycle activation;
+- Publication; and
+- final published-state revalidation.
+
+Neither identifier was replaced when lifecycle or publication state changed.
+
+The bounded relationship-serialization correction also preserved both canonical identifiers because the governed materiality determination did not require a new canonical object.
+
+**Identifier Architecture → DEMONSTRATED IN PRODUCTION**
+
+## Production Namespace and Publication Demonstration
+
+Production preserved source-owned identifiers including:
+
+- `SC-CERT-2026-0001`;
+- `SREG-2026-0001`;
+- `CHR-2026-0001`;
+- `ANCH-2026-0001`; and
+- `BEAC-2026-0001`.
+
+Those identifiers remained references to their originating Suite objects and were not reissued as ATT/TRST identifiers.
+
+The canonical Attestor objects were publicly represented through class-specific paths:
+
+- `/attestor/attestations/ATT-2026-0001/`
+- `/attestor/trust-statements/TRST-2026-0001/`
+
+This demonstrates public addressability without creating a generic Attestor record namespace for canonical ATT/TRST objects.
 
 ## Dependency Position
 
@@ -107,11 +157,42 @@ These belong respectively to Schemas, Validation, Versioning, Publication, and P
 
 ## Status
 
-**Identifiers → Established**
+**Identifiers → Established and Production-Proven**
 
-- Attestation identifier → `ATT-YYYY-NNNN`
-- Trust Statement identifier → `TRST-YYYY-NNNN`
-- Assignment → canonical Creation
-- Reuse → prohibited
-- Source identifiers → preserved as source-owned references
-- Production proof → pending
+- Attestation identifier → `ATT-YYYY-NNNN` → production-exercised
+- Trust Statement identifier → `TRST-YYYY-NNNN` → production-exercised
+- first production identities → `ATT-2026-0001` and `TRST-2026-0001`
+- assignment → canonical Creation → demonstrated
+- pre-creation non-allocation → demonstrated
+- representative / production separation → demonstrated
+- reuse → prohibited and avoided
+- persistence through correction → demonstrated
+- persistence through lifecycle activation → demonstrated
+- persistence through Publication → demonstrated
+- source identifiers → preserved as source-owned references
+- class-specific public addressability → demonstrated
+- production proof → **ESTABLISHED**
+
+## Continuing Identifier Governance
+
+Production proof does not establish that every future sequence-allocation or collision-handling implementation has been exercised.
+
+The standing boundaries remain:
+
+`Identifier ≠ Validation`
+
+`Identifier ≠ Conformance`
+
+`Identifier ≠ Lifecycle State`
+
+`Identifier ≠ Publication`
+
+`Identifier ≠ Evidence Sufficiency`
+
+`Identifier ≠ Evaluation Outcome`
+
+`Identifier ≠ Trustworthiness`
+
+A material change requiring a new canonical object requires a new canonical identifier.
+
+**Reference does not transfer authority.**
