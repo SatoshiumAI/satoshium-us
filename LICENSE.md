@@ -1,221 +1,292 @@
 # License
 
-**Project:** Satoshium
-
-**License:** MIT License
-
-Copyright Holder: Christopher D. Burris — Satoshium™ Intelligence Systems
+**Project:** Satoshium  
+**License:** MIT License  
+**Copyright Holder:** Christopher D. Burris — Satoshium™ Intelligence Systems
 
 ---
 
-# Overview
+## Governing License
 
 Satoshium is released under the MIT License.
 
-The MIT License is a permissive open-source license that allows individuals and organizations to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software, subject to the conditions contained within the license.
+The legally binding license terms governing this repository are contained in:
 
-The official legal license governing this repository is contained in the repository's `LICENSE` file.
+```text
+LICENSE.txt
+```
 
-This document exists to provide additional context regarding licensing philosophy and intended usage.
+The MIT License permits use, copying, modification, merging, publication, distribution, sublicensing, and sale of copies of the covered software and associated documentation, subject to the conditions stated in `LICENSE.txt`.
 
----
-
-# Licensing Philosophy
-
-Satoshium is founded upon principles of transparency, interoperability, accountability, preservation, discovery, and open participation.
-
-The Satoshium ecosystem is intended to explore the foundations of information, knowledge, verification, identity, governance, recordkeeping, discovery, and trust within digital environments.
-
-The decision to release Satoshium under the MIT License reflects the belief that foundational digital infrastructure should remain broadly accessible for study, implementation, adaptation, and improvement.
-
-Open licensing encourages:
-
-* Transparency
-* Collaboration
-* Education
-* Research
-* Innovation
-* Interoperability
-* Long-term preservation
+This Markdown document provides repository context and licensing guidance. It does not replace or modify the MIT License text.
 
 ---
 
-# Permitted Uses
+## Licensing Philosophy
 
-Subject to the terms of the MIT License, users may:
+Satoshium is founded upon principles of transparency, verification, accountability, interoperability, education, open participation, and long-horizon stewardship.
 
-* Use Satoshium for personal projects.
-* Use Satoshium within organizations.
-* Modify Satoshium.
-* Extend Satoshium.
-* Incorporate Satoshium into other software.
-* Create derivative works.
-* Distribute modified versions.
-* Use Satoshium commercially.
+The project explores how humans and intelligent systems can work with shared knowledge, verifiable information, transparent rules, governed institutional boundaries, and durable digital infrastructure.
 
----
+Open licensing supports:
 
-# Attribution
-
-The MIT License requires preservation of the copyright notice and license text.
-
-Users should retain appropriate attribution when redistributing licensed materials.
+- transparency;
+- collaboration;
+- education;
+- research;
+- innovation;
+- interoperability;
+- independent implementation;
+- long-term preservation and stewardship.
 
 ---
 
-# Ecosystem Components
+## Permitted Uses
 
-Satoshium currently includes multiple interoperable frameworks.
+Subject to the terms of the MIT License, covered materials may be:
 
-These include:
+- used for personal or organizational projects;
+- copied;
+- modified;
+- extended;
+- incorporated into other software;
+- used to create derivative works;
+- distributed;
+- sublicensed;
+- used commercially.
 
-* Atlas
-* Navigator
-* Certifier
-* Registry
-* Chronicle
-* Anchor
-* Beacon
-* Attestor
-
-Each component explores a distinct aspect of information, discovery, verification, preservation, identity, accountability, and trust.
-
-Individual repositories may contain additional licensing guidance specific to their respective domains.
+The controlling terms remain those in `LICENSE.txt`.
 
 ---
 
-# Standards and Documentation
+## Attribution
 
-Documentation contained within this repository is released under the same licensing framework as the repository unless otherwise stated.
+The MIT License requires the copyright notice and permission notice to be included in all copies or substantial portions of the covered Software.
 
-This includes, but is not limited to:
+Users redistributing licensed materials should preserve the required notice and license text.
 
-* Architectural documentation
-* Framework definitions
-* Standards documentation
-* Governance materials
-* Technical specifications
-* Workflow definitions
-* Examples
-* Supporting documentation
+Attribution also helps preserve project history, provenance, and ecosystem continuity.
 
 ---
 
-# No Warranty
+## Trademark and Brand Rights
+
+The MIT License grants rights in covered software and associated documentation. It does **not** grant permission to use Satoshium trademarks, brand identifiers, logos, or other branding in a manner that implies endorsement, affiliation, sponsorship, or official status.
+
+**Satoshium™** and related brand identifiers remain subject to applicable trademark rights and the published Satoshium Trademark Notice.
+
+Licensing permission should not be interpreted as a transfer of trademark ownership or institutional identity.
+
+---
+
+## Satoshium Ecosystem
+
+Satoshium is a Bitcoin-aligned ecosystem of public domains, operational systems, documentation surfaces, research environments, services, and formal institutions.
+
+The formal **Satoshium Suite** is operational and presently includes:
+
+| Institution | Canonical Responsibility |
+|---|---|
+| **Atlas** | Authoritative Intelligence |
+| **Navigator** | Workflow Definition / Orchestration |
+| **Certifier** | Certification Package |
+| **Registry** | Satoshium Registry Record |
+| **Chronicle** | Chronicle Entry |
+| **Anchor** | Integrity Reference |
+| **Beacon** | Discovery Signal / Discovery Metadata |
+| **Attestor** | Attestation + Rule-Constrained Evaluation + Trust Statement |
+
+Each institution retains its own authority, provenance, canonical objects, lifecycle, and responsibilities.
+
+Interoperability does not erase institutional boundaries.
+
+> **Reference does not transfer authority.**
+
+---
+
+## Operational and Institutional Context
+
+The existence of an operational Satoshium institution, service, canonical record, validation result, conformance determination, certification, integrity reference, discovery signal, attestation, evaluation outcome, or trust statement does not expand the MIT License or create guarantees beyond the defined scope of the relevant artifact.
+
+Satoshium preserves distinctions among:
+
+- institutional authority;
+- object identity;
+- provenance;
+- validation;
+- conformance;
+- lifecycle;
+- publication;
+- evaluation.
+
+Licensing permission does not transfer institutional authority or alter the meaning of a canonical Satoshium record.
+
+**Connection ≠ Identity.**  
+**Reference ≠ Derivation.**  
+**Reference ≠ Support.**  
+**Reference ≠ Authority Transfer.**
+
+---
+
+## Documentation
+
+Documentation in this repository is released under the repository's MIT licensing framework unless a file, directory, artifact, or notice states otherwise.
+
+This may include:
+
+- architectural documentation;
+- framework definitions;
+- specifications;
+- governance materials;
+- educational resources;
+- reference models;
+- technical documentation;
+- workflow documentation;
+- examples;
+- supporting materials.
+
+Third-party material remains subject to its own ownership and license terms.
+
+---
+
+## Third-Party Content
+
+Satoshium may reference external organizations, governments, institutions, publications, technologies, standards, datasets, services, repositories, or other third-party materials.
+
+Ownership of third-party content remains with its respective owners.
+
+Inclusion or reference does not imply:
+
+- ownership;
+- endorsement;
+- sponsorship;
+- affiliation.
+
+A reference to external material also does not transfer authority, provenance, or licensing rights beyond those supplied by the applicable owner or license.
+
+---
+
+## No Warranty
 
 Consistent with the MIT License, Satoshium is provided:
 
-> "AS IS", WITHOUT WARRANTY OF ANY KIND.
+> **"AS IS", WITHOUT WARRANTY OF ANY KIND.**
 
-No representation is made regarding:
+No independent representation is made here regarding:
 
-* Accuracy
-* Completeness
-* Reliability
-* Fitness for a particular purpose
-* Future suitability
-* Regulatory compliance
-* Operational outcomes
+- accuracy;
+- completeness;
+- reliability;
+- fitness for a particular purpose;
+- future suitability;
+- regulatory compliance;
+- operational outcomes.
 
-Users are responsible for evaluating the suitability of Satoshium for their specific needs.
+Users remain responsible for evaluating suitability for their own use.
 
 ---
 
-# Ecosystem Disclaimer
+## Ecosystem Disclaimer
 
-Satoshium provides frameworks relating to:
+Satoshium supports education, research, experimentation, documentation, software development, institutional records, verification, discovery, attestation, simulation, and public coordination.
 
-* Information
-* Knowledge
-* Discovery
-* Verification
-* Records
-* History
-* Identity
-* Governance
-* Reputation
-* Trust
+The existence of a framework, model, specification, methodology, service, simulation, record, certification, verification process, governance structure, integrity reference, discovery signal, attestation, evaluation, trust statement, or educational resource should not be interpreted as:
 
-The existence of a framework, methodology, standard, assessment, model, record, or reference should not be interpreted as:
-
-* Legal advice
-* Financial advice
-* Tax advice
-* Regulatory approval
-* Government authorization
-* Certification of truth
-* Guarantee of correctness
-* Endorsement
+- legal advice;
+- financial advice;
+- tax advice;
+- investment advice;
+- regulatory approval;
+- government authorization;
+- certification of truth beyond the defined scope of an applicable artifact;
+- guarantee of correctness.
 
 Users remain responsible for independently evaluating information and outcomes.
 
 ---
 
-# Third-Party Content
+## Active Development
 
-Satoshium may reference external organizations, governments, institutions, publications, technologies, standards, datasets, services, or other third-party materials.
+Satoshium remains under active long-horizon development even though the formal Satoshium Suite is operational.
 
-Ownership of referenced content remains with its respective owners.
+Future development may include:
 
-Inclusion within Satoshium does not imply:
+- additional governed production operations;
+- new or revised frameworks and methodologies;
+- research initiatives;
+- infrastructure and public services;
+- educational resources;
+- AI-assisted capabilities;
+- new ecosystem components;
+- reconciliation and interoperability work across existing systems.
 
-* Ownership
-* Endorsement
-* Sponsorship
-* Affiliation
+Operational status of an institution does not automatically establish the status, validity, conformance, publication state, or authority of future objects or implementations.
 
-Satoshium exists to provide interoperable frameworks, not to claim ownership of referenced materials.
-
----
-
-# Future Versions
-
-Future versions of Satoshium may introduce:
-
-* Additional frameworks
-* Expanded standards
-* Enhanced interoperability
-* Governance systems
-* AI-assisted capabilities
-* Research initiatives
-* New ecosystem components
-
-Unless otherwise specified, such additions are expected to remain subject to the repository license.
+Unless otherwise stated, future additions remain subject to the applicable repository license.
 
 ---
 
-# Long-Term Vision
+## Domain Ecosystem
 
-The long-term vision of Satoshium is to create an open and durable ecosystem of interoperable frameworks that support understanding, discovery, verification, preservation, identity, accountability, and trust across digital environments.
+Satoshium is expressed through multiple public domains and repositories, including:
 
-Open licensing supports that objective by allowing future developers, researchers, educators, organizations, institutions, and communities to build upon the ecosystem while preserving transparency, interoperability, and accessibility.
+- `satoshium.ai` — main public platform and architecture entry surface;
+- `satoshium.info` — knowledge, documentation, and architecture-workbench surfaces;
+- `satoshium.xyz` — experiments, Labs, simulations, and prototype frontier;
+- `satoshium.net` — infrastructure, Services, Signal, and coordination surfaces;
+- `satoshium.store` — cultural and economic surface;
+- `satoshium.link` — shared components and cross-domain continuity;
+- `satoshium.dev` — developer and public-build surface;
+- `satoshium.us` — U.S. jurisdiction-aware surface and public operational home of the Satoshium Suite;
+- `satoshium.games` — games and interactive experience surface.
+
+Each domain serves an implemented role within the broader ecosystem.
+
+Domain membership or cross-domain reference does not itself create or transfer institutional authority.
 
 ---
 
-# Reference
+## Repository-Specific Licensing
+
+Individual repositories, services, frameworks, directories, and domains may contain additional:
+
+- `LICENSE` or `LICENSE.txt`;
+- `LICENSE.md`;
+- legal notices;
+- governance documents;
+- security policies;
+- operational standards;
+- artifact-specific terms.
+
+Where repository-specific guidance exists, it should be read together with the governing license and applicable legal notices.
+
+---
+
+## Contact
+
+Questions or clarifications:
+
+**contact@satoshium.ai**
+
+---
+
+## Reference
 
 For the legally binding license terms governing this repository, see:
 
 ```text
-LICENSE
+LICENSE.txt
 ```
 
-located at the root of the repository.
+at the repository root.
 
 ---
 
-# Guiding Statement
+## Guiding Statement
 
-> Understanding begins with exploration.
->
-> Discovery leads to knowledge.
->
-> Knowledge benefits from verification.
->
-> Verification supports accountability.
->
-> Accountability strengthens trust.
->
-> Trust enables cooperation.
->
+> Understanding begins with knowledge.  
+> Knowledge benefits from verification.  
+> Verification strengthens trust.  
+> Trust enables cooperation.  
+> Cooperation expands possibility.  
 > Satoshium is released in that spirit.
