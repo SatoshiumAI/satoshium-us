@@ -132,7 +132,7 @@ The identity of a governed state of a canonical object.
 
 > **Version identity → Which governed state?**
 
-Exact version syntax remains implementation/open architecture and is not defined here.
+The first production objects exercise version identity as `V1.0`. Versioning governs when a change preserves the existing version and when a new canonical statement or governed version is required.
 
 ### Relevant State
 The material temporal, lifecycle, publication, or source-state context applicable to an Attestation, governed input, Evaluation, or Trust Statement.
@@ -146,7 +146,21 @@ The determination of whether an Attestor object satisfies the normative structur
 
 > **Valid ≠ Published**
 
-The exact Validation Result vocabulary and executable rules remain implementation work.
+Validation is operational through Validator v0.5.
+
+Established aggregate Validation Results are:
+- `valid`
+- `invalid`
+- `incomplete`
+- `error`
+
+Established per-rule dispositions are:
+- `pass`
+- `fail`
+- `not-applicable`
+- `not-tested`
+
+> **NOT-TESTED ≠ PASS**
 
 ### Conformance
 A determination that a declared target satisfies an applicable requirements set using required validation and evidence.
@@ -157,7 +171,19 @@ A determination that a declared target satisfies an applicable requirements set 
 
 > **Validation ≠ Conformance.**
 
-Conformance mechanics and final result vocabulary remain implementation work.
+Conformance is operational.
+
+Established Conformance dispositions are:
+- `satisfied`
+- `not-satisfied`
+- `not-applicable`
+- `not-demonstrated`
+
+Established Conformance outcomes are:
+- `conformant`
+- `nonconformant`
+- `undetermined`
+- `error`
 
 ## Controlled Attestation Types
 Adopted values:
@@ -190,14 +216,80 @@ Attestor definitions govern how those references participate in Attestor. They d
 ## Definition Governance
 Definitions follow established Attestor architecture.
 
-`Concept → Definition → Governed Use → Validation`
+`Concept → Definition → Governed Use → Validation / Governed Review → Conformance`
 
-Machine serialization, executable validation-result mechanics, conformance-result mechanics, and production-specific implementation details remain subordinate to the implementation and production layers.
+Machine serialization and executable mechanics remain subordinate to the governed definitions. Production has now exercised canonical ATT/TRST representations, Validation, governed Review, Conformance, lifecycle activation, Publication, and final-state revalidation.
+
+## First Production Definition Demonstration
+
+The first controlled production operation exercised the governed vocabulary in canonical objects and institutional actions.
+
+Key production uses included:
+
+- `ATT-2026-0001` → canonical **Attestation**;
+- `TRST-2026-0001` → canonical **Trust Statement**;
+- six Suite-source objects → **Eligible Governed Inputs** after Eligibility determinations;
+- `verification-related` → exercised **Attestation Type**;
+- `supported` → exercised **Evaluation Outcome**;
+- `draft → active` → exercised **Lifecycle States**;
+- `unpublished → published` → exercised **Publication States**;
+- `references` and `derived-from` → exercised **Relationships**;
+- `V1.0` → exercised **Version Identity**;
+- `valid` → exercised aggregate **Validation Result**;
+- `pass`, `not-applicable`, and `not-tested` → exercised Validation rule dispositions;
+- `satisfied` → exercised **Conformance disposition**;
+- `conformant` → exercised **Conformance outcome**;
+- `Attestor` and `Suite-source` authority contexts → represented in production context;
+- provenance and relevant-state distinctions → preserved through the evaluated evidence basis and final bounded conclusion.
+
+The operation also confirmed that **Trust Signal** is not a canonical Attestor object and that Correction is a governed activity rather than a separate canonical object class.
+
+**Definitions → DEMONSTRATED IN PRODUCTION**
+
+Production proof remains value-specific. Established terms and controlled values not required by the first operation are not thereby claimed as independently production-tested.
 
 ## Status
-**Definitions → Advanced Architecture reconciled.**
+**Definitions → Established and Production-Proven**
 
-The former “Supporting Terms” and “Deferred to Advanced Architecture” posture is no longer current. The supporting architecture now exists.
+- core Attestor definitions → established
+- supporting definitions → established
+- canonical Attestation / Trust Statement distinction → production-demonstrated
+- Eligibility / Eligible Governed Input → production-demonstrated
+- Evaluation / Evaluation Outcome distinction → production-demonstrated
+- Lifecycle / Publication distinction → production-demonstrated
+- Relationship semantics → production-demonstrated
+- Version Identity → production-demonstrated through `V1.0`
+- Validation vocabulary → established and production-exercised
+- Conformance vocabulary → established and production-exercised
+- Authority / provenance / relevant-state boundaries → production-demonstrated
+- Trust Signal → legacy/descriptive, noncanonical
+- Correction → governed activity, not separate canonical object class
+- Suite vocabulary boundary → preserved
+- production proof → **ESTABLISHED for terminology exercised**
+
+## Continuing Definition Governance
+
+Definitions govern meaning before implementation mechanics.
+
+Production use of a term does not broaden its definition, transfer source authority, or imply that every controlled value in the same vocabulary has been production-tested.
+
+`Attestation ≠ Trust Statement`
+
+`Eligibility ≠ Evaluation Outcome`
+
+`Outcome ≠ Conclusion ≠ Trust Statement Identity`
+
+`Canonical Creation ≠ Lifecycle Activation ≠ Publication`
+
+`Validation ≠ Evaluation`
+
+`Validation ≠ Conformance`
+
+`NOT-TESTED ≠ PASS`
+
+`Reference ≠ Support`
+
+**Reference does not transfer authority.**
 
 ## Files
 - `index.html` — public Definitions page.
