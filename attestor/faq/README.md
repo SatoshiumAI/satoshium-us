@@ -136,45 +136,56 @@ Attestor does not establish:
 Attestor produces bounded Trust Statements.
 
 ## Operational Status
-Attestor is **not yet operational**.
+Attestor is **Operational**.
 
-Completed:
-- Foundational Reconciliation;
-- Advanced Architecture;
-- Records / Reference Profiles reconciliation;
-- Schemas reconciliation;
-- Templates reconciliation;
-- Validation Architecture;
-- Conformance Architecture;
-- Publication Architecture;
-- Methodology;
-- Production Architecture.
+The first controlled production operation completed the governed path from eligible Suite-source inputs through canonical Attestation, Rule-Constrained Evaluation, canonical Trust Statement, Validation, Governed Review, Conformance, lifecycle activation, Publication, final-state revalidation, evidence preservation, post-operation institutional review, and Operational Proof.
 
-Current posture:
+First production canonical objects:
+- `ATT-2026-0001` — **Active · Published · V1.0**
+- `TRST-2026-0001` — **Active · Published · V1.0**
 
-**Implementation & Validation**
+Production Evaluation Outcome:
+- `supported`
 
-Remaining before operational proof:
-1. executable validation rules and Validation Result vocabulary;
-2. conformance mechanics and Conformance Result vocabulary;
-3. production-specific alignment;
-4. Production Readiness Gate;
-5. first real governed Trust Statement operation;
-6. preservation of production evidence;
-7. post-operation review;
-8. operational-proof determination.
+Production Validation:
+- `ATT-2026-0001` → `valid`
+- `TRST-2026-0001` → `valid`
+- mandatory `not-tested` → `0`
+
+Governed Review:
+- `25 / 25` → `SATISFIED`
+
+Production Conformance:
+- `ATT-2026-0001` → `conformant`
+- `TRST-2026-0001` → `conformant`
+
+Post-operation institutional review:
+- `11 PASS / 0 FAIL / 0 UNRESOLVED`
+
+Operational Proof:
+- **ESTABLISHED**
 
 ## What Remains Open?
-The architecture itself is no longer the primary open question.
+Attestor's institutional architecture and first operational proof are established.
 
-Remaining work concerns implementation and proof.
+Future work is continuing governance rather than a prerequisite to claiming operational status. Future Attestations, Evaluations, Trust Statements, corrections, source classes, specialized profiles, and implementation paths remain separately governed and must earn their own applicable Validation, Review, Conformance, lifecycle, and publication determinations.
 
-Exact machine serialization, executable validation, final validation/conformance result vocabularies, production-specific forms, and production evidence must be established and exercised without reopening settled institutional architecture unnecessarily.
+The first operation does not imply that:
+- every Attestation Type has been production-tested;
+- every Evaluation Outcome has been exercised;
+- every lifecycle or relationship value has been exercised;
+- external-source handling has been independently production-tested;
+- every specialized schema or template profile has been production-proven;
+- future operations inherit the first operation's conclusions.
 
 ## Status
-**FAQ → Advanced Architecture reconciled.**
+**FAQ → Operationally Reconciled**
 
-The former Foundational Reconciliation / “Advanced Architecture remains ahead” posture is historical and no longer current.
+The FAQ now reflects Attestor's established operational state and first production proof rather than the former Implementation & Validation posture.
+
+**Attestor → Operational**
+
+**Production proof → ESTABLISHED**
 
 ## Files
 - `index.html` — public FAQ page.
