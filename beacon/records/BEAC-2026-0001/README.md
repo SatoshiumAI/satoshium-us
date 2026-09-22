@@ -115,7 +115,17 @@ https://satoshium.us/chronicle/entries/CHR-2026-0001/
 **Integrity Reference:** `ANCH-2026-0001`  
 https://satoshium.us/anchor/anchored-items/ANCH-2026-0001/
 
-Registry, Chronicle, and Anchor retain authority over their own institutional objects.
+### Attestor
+
+**Attestation:** `ATT-2026-0001`  
+https://satoshium.us/attestor/attestations/ATT-2026-0001/
+
+**Trust Statement:** `TRST-2026-0001`  
+https://satoshium.us/attestor/trust-statements/TRST-2026-0001/
+
+Attestor later used `BEAC-2026-0001` as an eligible governed Suite-source input in its first controlled production operation. `TRST-2026-0001` is `derived-from` `ATT-2026-0001`; both Attestor objects reference `BEAC-2026-0001`.
+
+Registry, Chronicle, Anchor, and Attestor retain authority over their own institutional objects.
 
 ---
 
@@ -160,6 +170,14 @@ Satoshium Atlas owns:
 
 Satoshium Registry, Chronicle, and Anchor retain authority over their own respective objects.
 
+Satoshium Attestor owns:
+
+- `ATT-2026-0001`
+- `TRST-2026-0001`
+- Rule-Constrained Evaluation
+- the Attestor Evaluation Outcome
+- Attestor lifecycle and publication state
+
 > **Reference does not transfer authority.**
 
 Publication of this Beacon signal does not independently establish certification, registration standing, historical significance, integrity verification, trust, or substantive truth beyond Beacon's own discovery representation.
@@ -186,6 +204,18 @@ BEAC-2026-0001
 BEAC-2026-0001
 → related to ANCH-2026-0001
 ```
+
+Later Attestor references are directionally distinct:
+
+```text
+ATT-2026-0001
+→ references BEAC-2026-0001
+
+TRST-2026-0001
+→ references BEAC-2026-0001
+```
+
+`TRST-2026-0001` remains `derived-from ATT-2026-0001`.
 
 These descriptions do not freeze future machine relationship predicates.
 
@@ -284,8 +314,9 @@ Lifecycle and publication remain separate dimensions of Beacon governance.
 - Beacon Observation Date: September 13, 2026
 - Beacon Creation Date: September 13, 2026
 - Beacon Publication Date: September 13, 2026
+- Later Attestor Production Use: September 19, 2026
 
-Observation, creation, and publication are distinct institutional events.
+Observation, creation, publication, and later downstream institutional use are distinct events. The September 19 Attestor operation does not retroactively change Beacon's September 13 observation.
 
 ---
 
@@ -299,6 +330,8 @@ Beacon does not:
 - re-adjudicate the Certifier decision;
 - independently verify the substantive jurisdiction intelligence contained in the Atlas record;
 - treat Registry, Chronicle, or Anchor objects as co-equal subjects of this signal;
+- perform Attestor evaluation or issue a Trust Statement;
+- establish that the observed September 13 source condition remained unchanged through September 19 or any later date;
 - transfer authority from any referenced institution.
 
 A future material change to `SC-CERT-2026-0001` may require Beacon review, update, versioning, supersession, resolution, or withdrawal under Beacon governance.
