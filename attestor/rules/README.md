@@ -1,195 +1,181 @@
-# Satoshium Attestor — Rules
+# Satoshium Attestor — Trust Signals
 
 ## Page
-
-`/attestor/rules/`
+`/attestor/trust-signals/`
 
 ## Purpose
+This page preserves the historical **Trust Signals** concept while recording its final place in the operational Satoshium Attestor architecture.
 
-This page establishes the foundational operating rules of **Satoshium Attestor**.
+## Architectural Determination
+> **Trust Signal is legacy / descriptive Attestor terminology only.**
 
-The rules constrain how Attestor handles:
+Attestor does **not** establish Trust Signal as:
+- a canonical object;
+- a controlled record type;
+- an Evaluation Outcome;
+- a reputation object;
+- a confidence percentage;
+- a score;
+- a weighting mechanism;
+- a directional machine vocabulary.
 
-- Attestations;
-- Evidence;
-- authoritative references;
-- evaluation;
-- corrections and governed change;
-- provenance;
-- scope;
-- institutional authority;
-- Trust Statements.
+Trust-relevant considerations are represented through the architecture that already governs Attestations, eligible governed inputs, Evidence, Provenance, Relationships, Evaluation, limitations, uncertainty, Lifecycle, and Trust Statements.
 
-They are foundational architectural rules, not yet the complete machine-validation specification.
+A parallel Trust Signal object model is not required.
+
+## Critical Namespace Boundary
+> **Attestor trust signals are not Beacon Discovery Signals.**
+
+**Beacon → Discovery Signal / Discovery Metadata**
+
+**Attestor → Trust Statement**
+
+Beacon Discovery Signals are canonical Beacon outputs.
+
+Attestor “trust signal” is historical/descriptive language only.
+
+## Canonical Attestor Model
+`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
+
+Trust-relevant context may inform this process, but it is not an intervening canonical object.
+
+## Historical / Descriptive Context
+The phrase “trust signal” may still be useful in historical material or explanatory prose to describe information relevant to evaluation.
+
+Examples may include:
+- Attestation context;
+- Evidence context;
+- authoritative outcome context;
+- historical and relationship context;
+- accountability context;
+- conflicting or uncertain context.
+
+These are descriptive categories, not controlled Attestor values.
+
+## Evidence Boundary
+Evidence remains distinct from any interpretation made during evaluation.
+
+> **Evidence ≠ Trust Signal ≠ Evaluation Outcome**
+
+Evidence preserves its source, provenance, relevant state, authority, relevance, scope, and limitations.
+
+## Relationship Boundary
+The adopted relationship vocabulary includes:
+- `supports`
+- `references`
+- `derived-from`
+- `evaluates`
+- `results-in`
+- `supersedes`
+- `corrects`
+- `related-to`
+
+These relationships provide governed semantic structure without requiring a separate Trust Signal layer.
+
+> **supports ≠ supported**
+
+## Evaluation Boundary
+Adopted Evaluation Outcomes are:
+- `supported`
+- `partially-supported`
+- `not-supported`
+- `contradicted`
+- `indeterminate`
+
+These outcomes replace any need to interpret historical positive / negative / neutral / mixed / uncertain signal direction as formal Attestor vocabulary.
+
+> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
+
+## No Reputation or Scoring Model
+Attestor does not establish:
+- generic reputation;
+- a canonical reputation object;
+- reputation scoring;
+- trust scoring;
+- confidence percentages;
+- universal evidence weighting;
+- majority-source rules;
+- directional signal aggregation.
+
+The canonical institutional output remains the bounded **Trust Statement**.
+
+## Schema and Template Treatment
+Historical `trust-signal-schema.md` and `trust-signal-template.md` artifacts may be preserved for provenance and architectural history, but they are **legacy / historical only** and are not production Attestor schemas or templates.
+
+They must not be interpreted as evidence that Trust Signal remains a canonical object.
 
 ## Governing Principle
-
 > **Reference does not transfer authority.**
 
-Attestor may reference authoritative objects governed by other Satoshium Suite institutions without inheriting, replacing, or redefining their authority.
+## Production Confirmation
+The first controlled production operation confirms the architectural determination that a separate Trust Signal layer is unnecessary.
 
-## Foundational Rules
+The production path was:
 
-### Rule 1: Preserve Attribution
+`Eligible Governed Inputs → ATT-2026-0001 → Rule-Constrained Evaluation → supported → TRST-2026-0001`
 
-An Attestation, evidence source, authoritative reference, evaluation, correction, or Trust Statement should preserve sufficient attribution to identify who or what is responsible for the relevant assertion, source, or action.
+No canonical Trust Signal object was created between the governed inputs, Attestation, Evaluation, and Trust Statement.
 
-### Rule 2: Preserve Provenance
+No Trust Signal identifier was assigned.
 
-Attestor should preserve sufficient provenance to explain the origin, relationship, status, and relevant history of inputs and Attestor objects used during evaluation.
+No Trust Signal lifecycle or publication state was required.
 
-### Rule 3: Preserve Scope
+No Trust Signal schema or production template was invoked.
 
-Assertions, evidence relationships, evaluations, and Trust Statements must remain bounded by the scope in which they are supported.
+No confidence percentage, reputation score, directional signal, weighting mechanism, or signal aggregation was used.
 
-A narrow conclusion must not silently become a universal one.
+Trust-relevant context was represented through the canonical architecture already governing Eligibility, Evidence, Provenance, Authority, Relationships, Evaluation, limitations, and the bounded Trust Statement.
 
-### Rule 4: Preserve Authority Boundaries
+**Trust Signal noncanonical boundary → CONFIRMED IN PRODUCTION**
 
-Attestor may reference authoritative objects governed elsewhere, but it does not inherit, replace, or redefine their authority.
-
-### Rule 5: Preserve Evidence Context
-
-Evidence should remain connected to the assertion and evaluation for which it is relevant, including material limitations, conflicting information, and source status where applicable.
-
-### Rule 6: Preserve Traceability
-
-Relationships among Attestations, Evidence, authoritative references, evaluations, corrections, and Trust Statements should remain sufficiently traceable for review and validation.
-
-### Rule 7: Preserve Governed Change
-
-Corrections, clarifications, withdrawals, supersession, and other changes to Attestor-owned objects must not silently erase the prior state or provenance of the change.
-
-### Rule 8: Distinguish Current and Historical State
-
-Historically relevant prior states should remain traceable while being clearly distinguished from the currently effective state.
-
-### Rule 9: Do Not Claim Universal Truth
-
-A Trust Statement is a bounded Attestor conclusion produced under Attestor rules.
-
-It does not establish universal truth.
-
-### Rule 10: Do Not Convert Inputs into Conclusions
-
-No single evidence item, verification result, Certification Package, Discovery Signal, historical event, or other input automatically determines a Trust Statement.
-
-Attestor must perform its own governed evaluation.
-
-### Rule 11: Preserve Uncertainty
-
-Incomplete, conflicting, qualified, or insufficient inputs should result in preserved uncertainty rather than an unsupported stronger conclusion.
-
-### Rule 12: Support Interoperability Without Authority Transfer
-
-Attestor should exchange and reference governed information across the Suite without changing the canonical ownership, meaning, identifiers, lifecycle, or authority of referenced objects.
-
-## Rule Application
-
-The June-era page expressed the rule chain as:
-
-`Attribution → Transparency → Accountability → Trust`
-
-That progression is not carried forward as Attestor's operating model because Attestor does not produce “trust” as an institutional object.
-
-The reconciled model is:
-
-`Governed Inputs → Rule-Constrained Evaluation → Trust Statement`
-
-The foundational rules operate together as constraints on evaluation rather than as steps that mechanically manufacture trust.
-
-## Foundational Rules vs Validation Rules
-
-This distinction is important.
-
-The rules on this page express architectural requirements and institutional constraints.
-
-Advanced Attestor architecture should later determine which requirements become normative machine-validation rules.
-
-Conceptually:
-
-`Foundational Rule → Normative Requirement → Validation Rule → Conformance`
-
-This page therefore does not prematurely assign PASS/FAIL behavior, schemas, controlled values, or validation sequences.
-
-## Governance Boundary
-
-The pre-Suite page anticipated future:
-
-- trust frameworks;
-- dispute processes;
-- reputation guidance;
-- governance-related procedures.
-
-Those concepts are not adopted as a future Attestor roadmap by this reconciliation.
-
-Attestor may ultimately require institutional procedures for matters such as:
-
-- review;
-- dispute handling;
-- correction authorization;
-- publication;
-- lifecycle operations.
-
-Such procedures should be added only when required by Attestor's canonical responsibility.
-
-Attestor should not silently become the owner of:
-
-- a generic Suite-wide trust framework;
-- a reputation system;
-- Suite-wide governance authority.
-
-## Relationship to Other Suite Institutions
-
-Attestor may reference governed objects from other institutions, including Certification Packages, Satoshium Registry records, Chronicle Entries, Anchor Integrity References, Beacon Discovery Signals or Discovery Metadata, Atlas intelligence, Navigator workflow context, and other eligible sources.
-
-The Rules page governs **Attestor's use of those references**, not the source institutions themselves.
+The production operation also used `BEAC-2026-0001` as a governed reference while preserving Beacon's ownership of its Discovery Signal / Discovery Metadata. This operationally demonstrated that an Attestor historical “trust signal” concept is not a Beacon Discovery Signal and that reference does not transfer authority.
 
 ## Reconciliation Notes
+The architecture resolves the question that the foundational page deliberately left open.
 
-This revision updates the June-era pre-Suite Rules page.
+The adopted determination is:
+- retain the route `/attestor/trust-signals/` as explanatory and historical documentation;
+- retain “trust signal” only as descriptive language where useful;
+- do not establish a Trust Signal canonical object;
+- do not establish Trust Signal identifiers, lifecycle states, schemas, controlled values, scoring, directionality, weighting, or aggregation;
+- use the established Evidence, Provenance, Relationships, Evaluation, uncertainty, limitations, and Trust Statement architecture instead;
+- preserve a strict namespace boundary from Beacon Discovery Signals.
 
-Major changes include:
+## Status
+**Trust Signals → Legacy / Descriptive Boundary Established and Production-Confirmed**
 
-- replacing generic “trust-related recordkeeping” with Attestor-specific institutional constraints;
-- expanding the original eight broad principles into twelve foundational rules;
-- adding provenance as distinct from attribution;
-- adding scope;
-- adding authority boundaries;
-- adding evidence-context preservation;
-- adding governed change;
-- distinguishing current from historical state;
-- replacing “Separate Trust and Truth” with the more precise “Do Not Claim Universal Truth”;
-- establishing that inputs do not automatically become conclusions;
-- adding preservation of uncertainty;
-- strengthening interoperability with an explicit no-authority-transfer rule;
-- replacing `Attribution → Transparency → Accountability → Trust` with `Governed Inputs → Rule-Constrained Evaluation → Trust Statement`;
-- distinguishing foundational rules from future machine-validation rules;
-- removing generic trust frameworks and reputation guidance as assumed future Attestor responsibilities.
+- canonical Attestor Trust Signal object → not adopted
+- Trust Signal identifier family → not adopted
+- Trust Signal lifecycle / publication state → not adopted
+- Trust Signal controlled machine vocabulary → not adopted
+- Trust Signal production schema / template → not adopted
+- confidence / reputation scoring → not adopted
+- directional positive / negative / neutral / mixed / uncertain vocabulary → not adopted
+- weighting / aggregation model → not adopted
+- canonical Attestor output → Trust Statement
+- Beacon Discovery Signal namespace → preserved as Beacon-owned
+- `BEAC-2026-0001` reference boundary → production-demonstrated
+- first production operation → completed without a Trust Signal object layer
+- production confirmation → **ESTABLISHED**
 
-## Deferred to Advanced Architecture
+No further Trust Signal architecture is required for Attestor production.
 
-The following remain intentionally unresolved:
+Historical `trust-signal-schema.md` and `trust-signal-template.md` artifacts may remain for provenance, but they are legacy/non-operational and must not be presented as current production contracts.
 
-- normative rule identifiers;
-- MUST / SHOULD / MAY classification;
-- validation rule numbering;
-- PASS/FAIL conditions;
-- validation sequence;
-- evidence sufficiency requirements;
-- uncertainty representation;
-- conflict-resolution rules;
-- correction authorization;
-- dispute procedures;
-- publication rules;
-- lifecycle constraints;
-- Trust Statement generation criteria;
-- schemas;
-- controlled values;
-- conformance tests;
-- reference vectors.
+## Continuing Governance
+
+`Trust Signal ≠ Trust Statement`
+
+`Trust Signal ≠ Evaluation Outcome`
+
+`Trust Signal ≠ Beacon Discovery Signal`
+
+`Evidence ≠ Trust Signal ≠ Evaluation Outcome`
+
+`supports ≠ supported`
+
+**Reference does not transfer authority.**
 
 ## Files
-
-- `index.html` — public Rules page.
-- `README.md` — repository documentation for the Rules page.
+- `index.html` — public Trust Signals page.
+- `README.md` — repository documentation.
