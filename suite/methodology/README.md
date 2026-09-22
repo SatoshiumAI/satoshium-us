@@ -70,7 +70,7 @@ Defines how Satoshium converts standards, evidence, evaluation criteria, scoring
 
 The Satoshium Methodology transforms standards into repeatable practice.
 
-Its purpose is to ensure that certification, attestation, registry-entry, and verification processes follow documented procedures that can be reviewed, reproduced, and improved over time.
+Its purpose is to provide shared methodological foundations for certification, attestation, registration, historical preservation, integrity, discovery, validation, conformance, and other governed Suite processes that can be reviewed, reproduced, and improved over time.
 
 > **Standards establish expectations. Methodology ensures those expectations are applied consistently.**
 
