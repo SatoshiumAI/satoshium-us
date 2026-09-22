@@ -1,143 +1,271 @@
-# Satoshium Attestor — Controlled Values
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Attestor · Controlled Values</title>
+<meta name="description" content="The Satoshium Attestor Controlled Values architecture establishing normative vocabularies for Attestation types, lifecycle and publication states, evaluation outcomes, relationships, provenance, and authority context.">
+<link rel="canonical" href="https://satoshium.us/attestor/controlled-values/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
 
-**Path:** `/attestor/controlled-values/`  
-**Institution:** Satoshium Attestor  
-**Architecture Stage:** Advanced Architecture  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+*{box-sizing:border-box}
 
-## Purpose
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
 
-Controlled Values establish the normative vocabularies used by Attestor to classify governed objects, states, relationships, provenance, authority context, and evaluation outcomes.
+body{padding-top:80px}
 
-A controlled value classifies meaning within a defined Attestor context. It does not independently establish truth, authority, evidence sufficiency, validity, or trustworthiness.
+a{
+ color:var(--gold2);
+ text-decoration:none;
+}
 
-## Initial Controlled Vocabulary
+a:hover{
+ color:var(--gold);
+}
 
-### Attestation Type
+.wrap{
+ max-width:1120px;
+ margin:0 auto;
+ padding:0 18px;
+}
 
-- `identity`
-- `evidence`
-- `source-provenance`
-- `verification-related`
-- `relationship-condition`
-- `correction-supersession`
+.content{
+ padding:34px 18px 64px;
+}
 
-These are the established Attestation Type families. Exact profile requirements and applicability are governed by the applicable Schemas / Profiles and related Attestor architecture.
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
 
-### Lifecycle State
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
 
-- `draft`
-- `active`
-- `superseded`
-- `withdrawn`
-- `retired`
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
 
-Exact transitions and object-specific applicability are defined by Lifecycle.
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
 
-### Publication State
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
 
-- `unpublished`
-- `published`
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
 
-Canonical existence and public representation remain separate.
+.card h2{
+ margin:0 0 12px;
+ font-size:24px;
+ color:var(--gold2);
+}
 
-### Evaluation Outcome
+.card p{
+ margin:0;
+ color:var(--muted);
+}
 
-- `supported`
-- `partially-supported`
-- `not-supported`
-- `contradicted`
-- `indeterminate`
+.note{
+ margin-top:18px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
 
-Evaluation defines the exact evidentiary and rule conditions for these outcomes.
+.btn{
+ display:inline-block;
+ margin-top:16px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
 
-### Relationship Type
+.btn:hover{
+ background:rgba(214,163,74,.12);
+}
 
-- `supports`
-- `references`
-- `derived-from`
-- `evaluates`
-- `results-in`
-- `supersedes`
-- `corrects`
-- `related-to`
+@media (max-width:900px){
+ .grid{
+  grid-template-columns:1fr;
+ }
 
-Relationships defines directionality, permitted object combinations, and cardinality.
+ h1{
+  font-size:34px;
+ }
+}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
 
-### Provenance Mode
+<section class="hero">
+<div class="eyebrow">Attestor · Operational Controlled Values</div>
+<h1>Controlled Values</h1>
+<p class="lead">Controlled Values establish the <strong>normative vocabularies</strong> Attestor uses to classify governed objects, states, relationships, provenance, authority context, and evaluation outcomes consistently.</p>
+<p class="lead">The purpose is semantic discipline rather than scoring. Controlled values constrain institutional meaning so Attestor's established Schemas, Validation, Conformance, Publication, and Production architecture can operate against stable vocabulary.</p>
+<div class="note"><strong>Governing discipline:</strong> A controlled value classifies meaning within a defined field or relationship. It does not independently establish truth, authority, evidence sufficiency, or trustworthiness.</div>
+</section>
 
-- `direct`
-- `referenced`
-- `derived`
+<section class="grid"><article class="card"><h2>Vocabulary Discipline</h2><p>Controlled Values give repeated Attestor concepts one governed meaning. A value may be used normatively only when its meaning, scope, and permitted use are defined by Attestor architecture; free-form labels must not silently become institutional states or outcomes.</p></article>
+<article class="card"><h2>Attestation Types</h2><p>Attestation Type values classify the nature of the assertion without deciding its truth or evaluation outcome. The initial controlled families are <strong>identity</strong>, <strong>evidence</strong>, <strong>source-provenance</strong>, <strong>verification-related</strong>, <strong>relationship-condition</strong>, and <strong>correction-supersession</strong>. Their formal profile requirements are governed by the applicable Schemas / Profiles and related Attestor architecture.</p></article>
+<article class="card"><h2>Lifecycle States</h2><p>Attestor-owned objects use a bounded lifecycle vocabulary. The initial controlled states are <strong>draft</strong>, <strong>active</strong>, <strong>superseded</strong>, <strong>withdrawn</strong>, and <strong>retired</strong>. State transitions and object-specific applicability are governed by Lifecycle.</p></article>
+<article class="card"><h2>Publication States</h2><p>Canonical existence and public representation remain separate. Publication vocabulary is <strong>unpublished</strong> and <strong>published</strong>. Publication does not determine lifecycle state, validity, or evaluation outcome.</p></article>
+<article class="card"><h2>Evaluation Outcomes</h2><p>Attestor evaluation uses conclusion-oriented outcomes rather than confidence scores. The initial controlled outcomes are <strong>supported</strong>, <strong>partially-supported</strong>, <strong>not-supported</strong>, <strong>contradicted</strong>, and <strong>indeterminate</strong>. Evaluation governs the evidentiary and rule conditions for each.</p></article>
+<article class="card"><h2>Relationship Types</h2><p>Relationships describe governed connections without transferring ownership or authority. Initial controlled relationships are <strong>supports</strong>, <strong>references</strong>, <strong>derived-from</strong>, <strong>evaluates</strong>, <strong>results-in</strong>, <strong>supersedes</strong>, <strong>corrects</strong>, and <strong>related-to</strong>. Formal directionality and permitted relationship behavior are governed by Relationships.</p></article>
+<article class="card"><h2>Provenance Modes</h2><p>Provenance must distinguish how Attestor obtained or knows an input. Initial controlled provenance modes are <strong>direct</strong>, <strong>referenced</strong>, and <strong>derived</strong>. Provenance and Eligibility govern the applicable provenance meaning, admissibility, and metadata requirements.</p></article>
+<article class="card"><h2>Authority Context</h2><p>Authority vocabulary must distinguish who owns or governs meaning. Initial controlled authority contexts are <strong>Attestor</strong>, <strong>Suite-source</strong>, and <strong>external-source</strong>. These values classify authority context; they do not rank authority or trustworthiness.</p></article></section>
 
-Provenance defines exact meaning, eligibility, and metadata requirements.
+<section style="margin-top:18px;"><article class="card">
+<h2>Initial Controlled Vocabulary</h2>
+<p>The following values establish Attestor's normative controlled vocabulary. Their structural placement, applicability, transition rules, relationship behavior, and Validation treatment are governed by the corresponding established architecture.</p>
+<div class="note">
+<strong>Attestation Type</strong> → identity · evidence · source-provenance · verification-related · relationship-condition · correction-supersession<br><br>
+<strong>Lifecycle State</strong> → draft · active · superseded · withdrawn · retired<br><br>
+<strong>Publication State</strong> → unpublished · published<br><br>
+<strong>Evaluation Outcome</strong> → supported · partially-supported · not-supported · contradicted · indeterminate<br><br>
+<strong>Relationship Type</strong> → supports · references · derived-from · evaluates · results-in · supersedes · corrects · related-to<br><br>
+<strong>Provenance Mode</strong> → direct · referenced · derived<br><br>
+<strong>Authority Context</strong> → Attestor · Suite-source · external-source
+</div>
+</article></section>
 
-### Authority Context
+<section style="margin-top:18px;"><article class="card">
+<h2>Evaluation Is Not a Confidence Score</h2>
+<p>Attestor does not adopt the June-era confidence-scale or generic Trust Signal model as a normative controlled vocabulary. Evaluation outcomes express a bounded institutional conclusion about the assertion under review; they are not percentages, reputation scores, generalized confidence ratings, or automatic measures of trust.</p>
+<div class="note">Evaluation Outcome ≠ Confidence Percentage<br>Evaluation Outcome ≠ Reputation Score<br>Evaluation Outcome ≠ Trust Signal<br>Evaluation Outcome ≠ Universal Truth<br><br><strong>Attestor → Trust Statement</strong></div>
+</article></section>
 
-- `Attestor`
-- `Suite-source`
-- `external-source`
+<section style="margin-top:18px;"><article class="card">
+<h2>State Is Not Outcome</h2>
+<p>Lifecycle state, publication state, validation result, and evaluation outcome answer different institutional questions and must remain separate. An Active object is not necessarily Published; a Published object is not necessarily favorable; and a structurally Valid object does not imply that its assertion is Supported.</p>
+<div class="note">Lifecycle State → Where the object is in governed existence<br>Publication State → Whether a public representation is authorized<br>Validation Result → Whether structural and rule requirements are satisfied<br>Evaluation Outcome → What Attestor concludes from the governed evaluation</div>
+</article></section>
 
-These classify authority context; they do not rank authority or trustworthiness.
+<section style="margin-top:18px;"><article class="card">
+<h2>Validation and Conformance Values</h2>
+<p>Validation and Conformance now have established operational result vocabularies governed by their respective Attestor architectures. These vocabularies remain distinct from lifecycle state, publication state, and Evaluation Outcome.</p>
+<div class="note"><strong>Validation aggregate result</strong> → valid · invalid · incomplete · error<br><strong>Validation per-rule disposition</strong> → pass · fail · not-applicable · not-tested<br><br><strong>Conformance disposition</strong> → satisfied · not-satisfied · not-applicable · not-demonstrated<br><strong>Conformance outcome</strong> → conformant · nonconformant · undetermined · error<br><br>NOT-TESTED ≠ PASS<br>Validation ≠ Evaluation<br>Validation ≠ Conformance</div>
+</article></section>
 
-## Separation of Meaning
+<section style="margin-top:18px;"><article class="card">
+<h2>First Production Controlled-Value Demonstration</h2>
+<p>The first controlled production operation exercised controlled values across Attestation classification, lifecycle, publication, evaluation, relationships, provenance/authority context, Validation, and Conformance. The operation therefore moved Controlled Values from vocabulary architecture into governed institutional use.</p>
+<div class="note">
+Attestation Type → verification-related<br>
+Lifecycle State → draft → active<br>
+Publication State → unpublished → published<br>
+Evaluation Outcome → supported<br>
+Relationship Types → references · derived-from<br>
+Version → V1.0<br><br>
+Validation Aggregate → valid<br>
+Validation Rule Dispositions → pass · not-applicable · not-tested<br>
+Mandatory not-tested → 0<br><br>
+Conformance Disposition → satisfied<br>
+Conformance Outcome → conformant<br><br>
+<strong>Controlled Values → DEMONSTRATED IN PRODUCTION</strong>
+</div>
+<p style="margin-top:16px;">Production exercised only the values required by the first operation. Unused canonical values remain established but are not represented as independently production-tested merely because they belong to an exercised vocabulary family.</p>
+</article></section>
 
-Attestor keeps these concepts distinct:
+<section style="margin-top:18px;"><article class="card">
+<h2>Extensibility Rule</h2>
+<p>Controlled vocabularies may be extended only through governed architectural change. New values must have a defined meaning, a defined place in the Attestor object model, and no unresolved collision with existing Suite terminology. Implementations must not create unofficial values and treat them as canonical Attestor vocabulary.</p>
+<div class="note">Need identified → Meaning defined → Authority collision checked → Architecture updated → Validation updated → Value becomes canonical<br><br>Unregistered label → Not a canonical controlled value</div>
+</article></section>
 
-- **Lifecycle State** → where an object is in governed existence.
-- **Publication State** → whether public representation is authorized.
-- **Validation Result** → whether structural and rule requirements are satisfied.
-- **Evaluation Outcome** → Attestor's conclusion from governed evaluation.
+<section style="margin-top:18px;"><article class="card">
+<h2>Authority Boundary</h2>
+<p>Controlled Values govern Attestor's own semantic use. They do not redefine values owned by source institutions. When Attestor references a Certifier status, Registry state, Chronicle event type, Anchor result, Beacon Signal Type, Atlas classification, Navigator workflow state, or external vocabulary, the source meaning remains authoritative.</p>
+<div class="note">Attestor vocabulary → Governs Attestor meaning<br>Source vocabulary → Retains source meaning<br>Mapping → Must remain explicit where needed<br><br><strong>Governing principle:</strong> Reference does not transfer authority.</div>
+</article></section>
 
-An `active` object is not automatically `published`. A published object is not automatically favorable. Structural validity does not imply an assertion is `supported`.
+<section style="margin-top:18px;"><article class="card">
+<h2>Current Controlled-Values Position</h2>
+<p>Controlled Values are established and production-proven as Attestor's normative semantic vocabulary. The first production operation exercised representative values from the principal vocabularies while preserving the distinction among object classification, lifecycle state, publication state, evaluation outcome, relationship semantics, provenance/authority context, Validation, and Conformance.</p>
+<div class="note"><strong>Controlled Values → Established and Production-Proven</strong><br>
+Attestation Type vocabulary → Established; verification-related exercised<br>
+Lifecycle vocabulary → Established; draft / active exercised<br>
+Publication vocabulary → Established; unpublished / published exercised<br>
+Evaluation outcomes → Established; supported exercised<br>
+Relationship vocabulary → Established; references / derived-from exercised<br>
+Provenance modes → Established and represented in production context<br>
+Authority contexts → Established and represented in production context<br>
+Validation result vocabulary → Established and production-exercised<br>
+Conformance result vocabulary → Established and production-exercised<br>
+Confidence / reputation scoring → Not adopted<br>
+<strong>Production proof → ESTABLISHED for values actually exercised</strong></div>
+<p style="margin-top:16px;">Production proof does not imply that every canonical value has been exercised. Values such as superseded, withdrawn, retired, partially-supported, not-supported, contradicted, indeterminate, and other unneeded relationship or conformance dispositions remain established for governed use without being falsely characterized as production-tested by this operation.</p>
+<a class="btn" href="/attestor/">Back to Attestor →</a>
+</article></section>
 
-## No Confidence or Reputation Scale
-
-The June-era confidence-scale and generic Trust Signal model are not adopted as normative Attestor vocabulary.
-
-`Evaluation Outcome ≠ Confidence Percentage`
-
-`Evaluation Outcome ≠ Reputation Score`
-
-`Evaluation Outcome ≠ Trust Signal`
-
-`Evaluation Outcome ≠ Universal Truth`
-
-The canonical Attestor output remains the **Trust Statement**.
-
-## Reserved Vocabularies
-
-The exact executable result vocabularies for **Validation** and **Conformance** are deliberately not established here. Their governing architectures are established; result vocabularies remain reserved until implementation can define stable machine outcomes consistent with those architectures.
-
-Related normative responsibility is already assigned:
-
-- schema constraints → Schemas / Profiles;
-- transition rules → Lifecycle;
-- relationship behavior → Relationships;
-- evaluation conditions → Evaluation.
-
-## Extensibility
-
-New controlled values require governed architectural change:
-
-`Need Identified → Meaning Defined → Authority Collision Checked → Architecture Updated → Validation Updated → Canonical Value`
-
-Unofficial labels are not canonical Attestor controlled values.
-
-## Authority Boundary
-
-Attestor Controlled Values govern Attestor meaning only. Source-institution vocabularies retain their source-defined meaning.
-
-**Reference does not transfer authority.**
-
-## Dependency Position
-
-`Entry Model → Identifiers → Controlled Values → Authority → Provenance → Eligibility → Evaluation → Relationships → Lifecycle → Versioning → Schemas → Validation → Conformance → Publication → Templates → Methodology → Production`
-
-## Status
-
-**Controlled Values → Established**
-
-Normative vocabularies are established for Attestation Types, lifecycle, publication, evaluation outcomes, relationships, provenance modes, and authority contexts.
-
-Confidence/reputation scoring is not adopted. Validation and Conformance result vocabularies remain reserved for implementation.
+</main>
+<div class="wrap reflection"><hr>
+<div id="random-saying" style="margin-bottom:14px;color:#9aa7bd;max-width:760px;">Controlled vocabulary strengthens governance when every value has one bounded meaning and no value claims more than its architecture supports.</div>
+<hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+.then(response => response.text())
+.then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
