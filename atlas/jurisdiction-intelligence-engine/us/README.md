@@ -335,37 +335,39 @@ Canonical state packages preserve evidence and analysis boundaries within their 
 
 ## Relationship to the Satoshium Suite
 
-The United States package serves as an intelligence source for the broader Satoshium Suite.
+The United States package serves as an intelligence source for the broader Satoshium Suite while remaining an Atlas-owned jurisdiction dataset.
 
 ```text
 Atlas
-Organizes jurisdiction intelligence
+Authoritative Intelligence
 
 Navigator
-Explores and compares Atlas intelligence
+Workflow Definition / Orchestration
 
 Certifier
-Evaluates defined Atlas certification subjects
+Certification Package
 
 Registry
-Catalogs authoritative Atlas and Certifier records
+Satoshium Registry Record
 
 Chronicle
-Preserves relevant historical continuity
+Chronicle Entry
 
 Anchor
-Preserves integrity and reference relationships
+Integrity Reference
 
 Beacon
-Supports discovery
+Discovery Signal / Discovery Metadata
 
 Attestor
-Preserves accountable trust context
+Attestation + Rule-Constrained Evaluation + Trust Statement
 ```
 
-Atlas retains ownership of its state-level jurisdiction intelligence records.
+Atlas retains ownership and authority over its state-level jurisdiction intelligence records.
 
-Other Suite institutions reference Atlas records without transferring or duplicating ownership.
+Other Suite institutions may reference or consume eligible Atlas records under their own governed responsibilities, but those relationships do not transfer or duplicate Atlas authority.
+
+**REFERENCE DOES NOT TRANSFER AUTHORITY.**
 
 ---
 
@@ -379,7 +381,7 @@ The completed United States machine-readable dataset provides a stable foundatio
 * regional and corridor analysis
 * structured state discovery
 * historical change analysis
-* trust-context references
+* trust-context references, where governed and bounded to Atlas or Attestor responsibilities
 * dataset exports
 * versioned releases
 * future APIs
@@ -403,6 +405,7 @@ The United States package follows these enduring Atlas principles:
 * Institutional ownership must remain clear
 * State packages must remain independently reviewable
 * Interoperability must not transfer authority
+* Reference does not transfer authority
 
 ---
 
