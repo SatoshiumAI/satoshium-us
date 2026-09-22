@@ -2,8 +2,9 @@
 
 **Path:** `/suite/interoperability/`  
 **Scope:** Cross-institution Suite interoperability  
-**Production-Proven Institutions Represented:** Certifier · Registry · Chronicle · Anchor · Beacon  
-**Last Updated:** September 13, 2026
+**Production-Proven Institutions Represented:** Atlas · Certifier · Registry · Chronicle · Anchor · Beacon · Attestor  
+**Workflow Institution Represented:** Navigator  
+**Last Updated:** September 2026
 
 ---
 
@@ -29,7 +30,7 @@ Chronicle  → Chronicle Entry
 Anchor     → Integrity Reference
 Beacon     → Discovery Signal
 Attestor   → Trust Statement
-Navigator  → Workflow Definition
+Navigator  → Workflow Definition / Orchestration
 ```
 
 Discovery Metadata is a supporting Beacon layer rather than a separate canonical object type.
@@ -38,19 +39,22 @@ Discovery Metadata is a supporting Beacon layer rather than a separate canonical
 
 ## Production-Proven Object Set
 
-The inaugural Certifier production record is now connected to independent downstream production objects in four Suite institutions:
+The inaugural Certifier production record is now connected to independent governed objects across Registry, Chronicle, Anchor, Beacon, and Attestor, while the underlying certified jurisdiction intelligence remains governed by Atlas.
 
-| Institution | Production Object | Role |
+| Institution | Production Object / Subject | Role |
 |---|---|---|
+| Atlas | Jurisdiction Record — El Salvador | Authoritative underlying jurisdiction intelligence |
 | Certifier | `SC-CERT-2026-0001` | Certification Package / certification authority |
 | Registry | `SREG-2026-0001` | Registry-owned catalog record |
 | Chronicle | `CHR-2026-0001` | Chronicle-owned historical-preservation entry |
 | Anchor | `ANCH-2026-0001` | Anchor-owned Integrity Reference |
 | Beacon | `BEAC-2026-0001` | Beacon-owned Discovery Signal |
+| Attestor | `ATT-2026-0001` | Attestor-owned canonical Attestation |
+| Attestor | `TRST-2026-0001` | Attestor-owned canonical Trust Statement |
 
-These are five independent institution-owned objects.
+These are distinct institution-governed objects or source responsibilities connected through governed references and relationships.
 
-They are not one object moving through five systems.
+They are not one object moving through multiple systems.
 
 ---
 
@@ -86,6 +90,32 @@ Public record:
 https://satoshium.us/beacon/records/BEAC-2026-0001/
 
 ---
+
+## Attestor Production Relationship
+
+Attestor's first controlled production operation used eligible governed Suite-source inputs concerning `SC-CERT-2026-0001` to create and evaluate a canonical Attestation.
+
+```text
+Eligible Governed Inputs
+→ ATT-2026-0001
+→ Rule-Constrained Evaluation
+→ supported
+→ TRST-2026-0001
+```
+
+Production state:
+
+- `ATT-2026-0001` → **Active · Published · V1.0**
+- `TRST-2026-0001` → **Active · Published · V1.0**
+- Evaluation Outcome → `supported`
+- final Validator v0.5 state → `valid` for both canonical objects
+- Governed Review → `25 / 25 SATISFIED`
+- Conformance → `conformant` for both canonical objects
+- Operational Proof → **ESTABLISHED**
+
+The Trust Statement is `derived-from` `ATT-2026-0001`. Both production objects preserve governed `references` relationships to `SC-CERT-2026-0001`, `SREG-2026-0001`, `CHR-2026-0001`, `ANCH-2026-0001`, and `BEAC-2026-0001`.
+
+Attestor did not recertify the Certifier decision, redefine Atlas intelligence, extend Anchor integrity beyond its defined representation, rewrite Registry or Chronicle, or convert Beacon discovery authority into Attestor authority.
 
 ## Related Suite Objects
 
@@ -136,6 +166,19 @@ Owns:
 - Beacon lifecycle
 - publication state
 - Beacon-side relationships
+
+### Attestor
+
+Owns:
+
+- `ATT-2026-0001`
+- `TRST-2026-0001`
+- its governed Attestation;
+- Rule-Constrained Evaluation and resulting bounded conclusion;
+- Trust Statement lifecycle and publication state;
+- Attestor-side provenance and relationships.
+
+Attestor does not acquire the canonical authority of referenced source institutions.
 
 ---
 
@@ -188,15 +231,37 @@ Not every institution must participate in every workflow.
 
 ---
 
-## Beacon Status Boundary
+## Operational Interoperability Status
 
-`BEAC-2026-0001` is real production evidence for Suite interoperability.
+The production chain now demonstrates interoperability through Certifier, Registry, Chronicle, Anchor, Beacon, and Attestor while preserving Atlas source authority and the distinct workflow responsibility of Navigator.
 
-Beacon remains **Continuing Development** while production-evidence preservation and post-operation review remain pending.
+Beacon and Attestor are **Operational**. Their production objects do not collapse the authority or identity of the source objects they reference.
 
-The existence of the first published Beacon object does not automatically establish Beacon as Operational.
+The first Attestor operation additionally demonstrates that interoperability can carry governed source objects into Eligibility, Attestation, Evaluation, and Trust Statement formation without converting those source objects into Attestor-owned records.
 
----
+> **Connection ≠ Identity**
+
+> **Reference ≠ Derivation**
+
+> **Reference ≠ Support**
+
+> **Reference does not transfer authority.**
+
+## Status
+
+**Suite Interoperability → Established and Production-Proven**
+
+- independent canonical objects → production-demonstrated
+- durable cross-institution references → production-demonstrated
+- source authority preservation → production-demonstrated
+- source provenance / relevant state → production-demonstrated
+- relationship semantics → production-demonstrated
+- Attestor `references` / `derived-from` distinction → production-demonstrated
+- cross-institution Eligibility use → production-demonstrated
+- bounded Attestor conclusion over Suite-source inputs → production-demonstrated
+- connection without identity merger → production-demonstrated
+- reference without authority transfer → production-demonstrated
+- production proof → **ESTABLISHED**
 
 ## Governing Principle
 
