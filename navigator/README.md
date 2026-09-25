@@ -1,14 +1,18 @@
 # Satoshium Navigator
 
-**Understanding through exploration.**
+**Path:** `/navigator/`  
+**Institution:** Satoshium Navigator  
+**Role:** Workflow Definition / Orchestration  
+**Status:** Operational  
+**Version:** 1.0
 
-Satoshium Navigator is the query and exploration framework of the Satoshium ecosystem.
+Satoshium Navigator is the Workflow Definition / Orchestration institution of the Satoshium Suite.
 
-Navigator exists to help users discover, retrieve, compare, analyze, and understand information contained within Atlas and other connected systems.
+Navigator defines and coordinates governed workflows across independent Suite institutions while also providing structured exploration, retrieval, comparison, filtering, and presentation capabilities.
 
-While Atlas organizes intelligence, Registry organizes records, Chronicle preserves history, Certifier evaluates information, Anchor preserves integrity, Beacon improves discovery, and Attestor supports evidentiary assertions, Navigator provides the mechanism through which users interact with those resources.
+Navigator does not become authoritative for Atlas intelligence, Certifier certification, Registry records, Chronicle entries, Anchor integrity references, Beacon discovery metadata, or Attestor conclusions merely because it coordinates or presents work involving those institutions.
 
-Navigator transforms collections of records, signals, evidence, and related information into structured, searchable, and understandable outputs.
+**ORCHESTRATION DOES NOT TRANSFER OUTCOME AUTHORITY.**
 
 ---
 
@@ -34,7 +38,7 @@ Navigator provides a structured framework for discovering and interacting with i
 
 ## Core Mission
 
-The mission of Satoshium Navigator is to provide transparent, repeatable, and accessible exploration of information throughout the Satoshium ecosystem.
+The mission of Satoshium Navigator is to provide transparent, repeatable Workflow Definition / Orchestration and structured exploration across the Satoshium Suite.
 
 Navigator seeks to improve:
 
@@ -158,55 +162,33 @@ Navigator operates as one component within the broader Satoshium ecosystem.
 
 ```text
 Atlas
-  ↓
+→ Authoritative Intelligence
+
 Navigator
-  ↓
+→ Workflow Definition / Orchestration
+
 Certifier
-  ↓
+→ Certification Package
+
 Registry
-  ↓
+→ Satoshium Registry Record
+
 Chronicle
-  ↓
+→ Chronicle Entry
+
 Anchor
-  ↓
+→ Integrity Reference
+
 Beacon
-  ↓
+→ Discovery Signal / Discovery Metadata
+
 Attestor
+→ Attestation + Rule-Constrained Evaluation + Trust Statement
 ```
 
-### Atlas
+Navigator may coordinate workflows involving these institutions, but each institution remains authoritative for its own canonical objects and institutional responsibilities.
 
-Provides the underlying intelligence and information resources.
-
-### Navigator
-
-Provides exploration, retrieval, comparison, filtering, and viewing capabilities.
-
-### Certifier
-
-Evaluates information against defined standards and methodologies.
-
-### Registry
-
-Organizes and catalogs records.
-
-### Chronicle
-
-Preserves historical records and development history.
-
-### Anchor
-
-Preserves integrity references and permanence records.
-
-### Beacon
-
-Improves discoverability throughout the ecosystem.
-
-### Attestor
-
-Supports evidentiary assertions and trust-oriented frameworks.
-
-Together these systems contribute to a broader framework for information organization, exploration, verification, preservation, discovery, and trust.
+The order above is a responsibility listing, not a mandatory universal pipeline or dependency chain.
 
 ---
 
@@ -264,19 +246,24 @@ Additional documentation may be added as Navigator evolves.
 
 ## Current Status
 
-**Version:** 1.0
+**Version:** 1.0  
+**Institutional Status:** Operational  
+**Institutional Role:** Workflow Definition / Orchestration
 
-Navigator is currently focused on:
+Navigator is operational and currently supports:
 
-* Query Framework Development
-* Atlas Integration
-* Search Capabilities
-* Comparison Frameworks
-* Filtering Systems
-* Output Standardization
-* Ecosystem Interoperability
+* workflow definition;
+* workflow orchestration;
+* structured exploration;
+* Atlas integration;
+* search and query capabilities;
+* comparison frameworks;
+* filtering systems;
+* output standardization;
+* certification queries and automation concepts;
+* Suite interoperability surfaces.
 
-The initial objective is establishing a complete public Navigator framework capable of supporting exploration across the Satoshium ecosystem.
+Future development may extend these capabilities without redefining Navigator's institutional authority.
 
 ---
 
@@ -300,7 +287,7 @@ These principles guide both platform design and user interaction.
 
 ## Disclaimer
 
-Satoshium Navigator is an informational exploration framework.
+Satoshium Navigator is the Suite institution for Workflow Definition / Orchestration and also provides structured informational exploration capabilities.
 
 Navigator retrieves, organizes, compares, filters, and presents information based upon available records and system capabilities.
 
@@ -327,3 +314,46 @@ Users remain responsible for evaluating information and making decisions based u
 **Version:** 1.0
 
 **Maintainer:** Satoshium
+
+
+---
+
+## Institutional Boundary
+
+Navigator may:
+
+- define workflows;
+- coordinate participating Suite institutions;
+- organize execution order where a governed workflow requires it;
+- provide structured exploration and access;
+- present outputs produced through coordinated work.
+
+Navigator does not:
+
+- become authoritative for Atlas records;
+- issue Certification Packages;
+- create Satoshium Registry Records on Registry's behalf;
+- own Chronicle Entries;
+- establish Anchor integrity authority;
+- create Beacon discovery authority;
+- issue Attestor Trust Statements;
+- acquire another institution's outcome authority merely through orchestration.
+
+**Connection ≠ Identity.**  
+**Reference ≠ Authority Transfer.**  
+**Orchestration ≠ Outcome Ownership.**
+
+---
+
+## Repository Maintenance
+
+Navigator repository documentation should:
+
+- reflect Navigator as Operational;
+- preserve Workflow Definition / Orchestration as its institutional role;
+- treat exploration as a core capability, not the complete institutional definition;
+- avoid presenting the eight institutions as a mandatory universal linear pipeline;
+- preserve each institution's authority over its own canonical objects;
+- distinguish workflow coordination from substantive institutional outcomes.
+
+README reconciliation documents the architecture that exists. It does not redesign it.
