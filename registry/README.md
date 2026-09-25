@@ -1,8 +1,14 @@
 # Satoshium Registry
 
+**Path:** `/registry/`  
+**Institution:** Satoshium Registry  
+**Institutional Role:** Canonical Registration / Public Catalog  
+**Canonical Operational Object:** Satoshium Registry Entry (SREG)  
+**Status:** Operational
+
 **Structure through records. Continuity through references.**
 
-Satoshium Registry is the authoritative public catalog of institutional records created throughout the Satoshium Suite.
+Satoshium Registry is the Canonical Registration / Public Catalog institution of the Satoshium Suite.
 
 Registry exists to identify, classify, catalog, reference, connect, and preserve the discoverability of authoritative records produced by Satoshium institutions. It does not replace those records, duplicate their authority, or assume ownership over the work of the institutions that created them.
 
@@ -654,30 +660,30 @@ Operational implementation may also include:
 
 ## Current Status
 
-**Development Cycle:** August 2026  
-**Institutional Condition:** Operational Development and Publication  
+**Institutional Condition:** Operational  
+**Institutional Role:** Canonical Registration / Public Catalog  
+**Canonical Operational Object:** Satoshium Registry Entry (SREG)  
 **Foundation:** Constitutionally reconciled with Suite Standards, Suite Methodology, and Suite Interoperability
 
-The July Registry architecture established the institutional foundation.
+Registry is operational as the Suite institution responsible for canonical registration and the durable public catalog of institutional records.
 
-The August development cycle transforms that foundation into a complete operational Registry implementation.
+Its current operational architecture includes:
 
-Current priorities include:
+* SREG identity and publication;
+* Registry record types;
+* schemas and controlled values;
+* identifiers;
+* source-authority preservation;
+* registrability;
+* provenance and relationships;
+* validation;
+* lifecycle;
+* versions and corrections;
+* Catalog presentation;
+* History and Transparency;
+* Suite integration.
 
-* finalizing the SREG specification;
-* completing Registry record types;
-* publishing Registry schemas;
-* completing Registry policies and procedures;
-* implementing identifiers;
-* implementing lifecycle transitions;
-* implementing versions and corrections;
-* implementing relationships;
-* publishing machine-readable Registry artifacts;
-* creating initial SREG records;
-* completing cross-institutional interoperability;
-* preparing Registry for operational completion.
-
-The objective is for Registry to stand beside Atlas and Certifier as a completed operational institution within the Satoshium Suite.
+Future development may extend Registry capabilities without changing the established distinction between Registry-owned SREGs and authoritative Source Records owned by originating institutions.
 
 ---
 
