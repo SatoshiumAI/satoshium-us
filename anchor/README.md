@@ -2,6 +2,7 @@
 
 **Path:** `/anchor/`  
 **Institution:** Satoshium Anchor  
+**Institutional Role:** Integrity Preservation  
 **Canonical Object:** Integrity Reference  
 **Status:** Operational
 
