@@ -1,142 +1,398 @@
-# Satoshium Beacon
+<!DOCTYPE html>
 
-**Path:** `/beacon/`  
-**Institution:** Satoshium Beacon  
-**Institutional Role:** Discovery & Signals  
-**Canonical Object:** Discovery Signal  
-**Status:** Continuing Development  
-**Last Updated:** September 13, 2026
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicon.ico" rel="alternate icon"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="#d6a34a" name="theme-color"/>
+<title>Satoshium Beacon</title>
+<meta content="Satoshium Beacon — the Satoshium Suite institution for Discovery &amp; Signals, publishing Discovery Signals and discovery metadata while preserving provenance, traceability, and institutional authority." name="description"/>
+<link href="https://satoshium.us/beacon/" rel="canonical"/>
+<link crossorigin="" href="https://satoshium.link" rel="preconnect"/>
+<link href="https://satoshium.link" rel="dns-prefetch"/>
+<link href="https://static.cloudflareinsights.com" rel="dns-prefetch"/>
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
 
----
+*{box-sizing:border-box}
 
-## Overview
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
 
-Satoshium Beacon is the Satoshium Suite institution for **Discovery & Signals**.
+body{padding-top:80px}
 
-Beacon locates, surfaces, organizes, and preserves relevant discoveries as governed Discovery Signals while maintaining provenance, traceability, source identity, and institutional authority.
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
 
-Beacon's institutional architecture and Phase II production architecture are complete. The architecture has now been exercised through Beacon's first controlled production operation.
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
 
----
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
 
-## First Production Discovery Signal
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
 
-Beacon's inaugural production Discovery Signal is:
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
 
-**Identifier:** `BEAC-2026-0001`  
-**Title:** Active Operational Certification — Atlas Jurisdiction Record — El Salvador  
-**Signal Type:** Certification  
-**Lifecycle:** Active  
-**Publication:** Published  
-**Version:** 1.0  
-**Primary Source:** Satoshium Certifier · `SC-CERT-2026-0001`  
-**Published:** September 13, 2026
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
 
-Public record:
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
 
-https://satoshium.us/beacon/records/BEAC-2026-0001/
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
 
-Beacon Records:
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
 
-https://satoshium.us/beacon/records/
+.card p{
+ margin:0 0 14px;
+ color:var(--muted);
+}
 
-The signal identifies the existence and current active Operational certification of the Atlas Jurisdiction Record — El Salvador as represented by the canonical Certifier object `SC-CERT-2026-0001`.
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
 
----
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
 
-## Institutional Boundary
+.btn:hover{background:rgba(214,163,74,.12)}
 
-Beacon owns its Discovery Signals, discovery metadata, provenance, lifecycle state, publication state, indexes, and Beacon-side relationships.
+.muted{color:var(--muted)}
 
-Beacon may reference canonical objects maintained by other Suite institutions without duplicating them or assuming their authority.
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+</style>
+</head>
+<body>
+<div data-topbar="universe" id="topbar-slot"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+<section class="hero">
+<div class="eyebrow">Beacon · Discovery &amp; Signals</div>
+<h1>Satoshium Beacon</h1>
+<p class="lead">
+    Satoshium Beacon is the Satoshium Suite institution for Discovery &amp; Signals.
+    It locates, surfaces, organizes, and preserves relevant discoveries as governed
+    Discovery Signals while maintaining the path to their sources and canonical objects.
+  </p>
+<p class="lead">
+    Beacon's institutional and production architecture is defined and has now been exercised
+    through its first controlled production operation. <strong>BEAC-2026-0001</strong> is
+    Active and Published as Beacon's inaugural production Discovery Signal.
+  </p>
+</section>
+<section class="grid">
+<article class="card">
+<h2>Purpose</h2>
+<p>
+    Purpose explains why Beacon exists, what problem it solves, and how
+    discovery improves visibility across the Satoshium ecosystem.
+  </p>
+<a class="btn" href="/beacon/purpose/">
+    Open Purpose →
+  </a>
+</article>
+<article class="card">
+<h2>Discovery</h2>
+<p>
+    Discovery is the process of locating, surfacing, organizing, and
+    presenting relevant information that may otherwise remain difficult to find.
+  </p>
+<a class="btn" href="/beacon/discovery/">
+    Open Discovery →
+  </a>
+</article>
+<article class="card">
+<h2>Signals</h2>
+<p>
+    Discovery Signals are Beacon-owned objects documenting observations,
+    events, changes, indicators, updates, or relationships identified through
+    discovery as potentially relevant.
+  </p>
+<a class="btn" href="/beacon/signals/">
+    Open Signals →
+  </a>
+</article>
+<article class="card">
+<h2>Sources</h2>
+<p>
+    Sources provide origin, context, attribution, and traceability for
+    information surfaced through Beacon discovery processes.
+  </p>
+<a class="btn" href="/beacon/sources/">
+    Open Sources →
+  </a>
+</article>
+<article class="card">
+<h2>Indexes</h2>
+<p>
+    Indexes organize information to improve discovery, navigation,
+    classification, relationship mapping, and long-term accessibility.
+  </p>
+<a class="btn" href="/beacon/indexes/">
+    Open Indexes →
+  </a>
+</article>
+<article class="card">
+<h2>Queries</h2>
+<p>
+    Queries express discovery intent and context. They may be received
+    directly by Beacon or supplied through Navigator-defined workflows.
+  </p>
+<a class="btn" href="/beacon/queries/">
+    Open Queries →
+  </a>
+</article>
+<article class="card">
+<h2>Results</h2>
+<p>
+    Results are the discoveries generated through Beacon, including
+    surfaced signals, sources, records, relationships, and related context.
+  </p>
+<a class="btn" href="/beacon/results/">
+    Open Results →
+  </a>
+</article>
+<article class="card">
+<h2>Trust</h2>
+<p>
+    Trust defines the boundary between discovery and trust assessment.
+    Beacon may surface trust-related information, but it does not determine trust.
+  </p>
+<a class="btn" href="/beacon/trust/">
+    Open Trust →
+  </a>
+</article>
+<article class="card">
+<h2>Interoperability</h2>
+<p>
+    Interoperability explains how Beacon connects discovery across Atlas,
+    Navigator, Certifier, Registry, Chronicle, Anchor, and Attestor.
+  </p>
+<a class="btn" href="/beacon/interoperability/">
+    Open Interoperability →
+  </a>
+</article>
+<article class="card"><h2>Integration</h2><p>Integration defines how Beacon connects to Certifier, Registry, Chronicle, Anchor, and the broader Satoshium Suite while publishing discovery signals.</p><a class="btn" href="/beacon/integration/">Open Integration →</a></article><article class="card"><h2>Certification Signals</h2><p>Certification Signals define the discovery signals Beacon publishes to help users locate certification-related information without becoming the certification authority.</p><a class="btn" href="/beacon/certification-signals/">Open Certification Signals →</a></article><article class="card"><h2>Discovery Metadata</h2><p>Discovery Metadata defines the structured information Beacon uses to improve searchability, interoperability, filtering, and long-term discoverability.</p><a class="btn" href="/beacon/discovery-metadata/">Open Discovery Metadata →</a></article><article class="card">
+<h2>Status</h2>
+<p>
+    Status provides the current development state, capabilities,
+    limitations, roadmap, and implementation posture of Beacon.
+  </p>
+<a class="btn" href="/beacon/status/">
+    Open Status →
+  </a>
+</article>
+<article class="card">
+<h2>FAQ</h2>
+<p>
+    FAQ answers common questions about Beacon, discovery, signals,
+    sources, indexes, queries, results, verification, and trust boundaries.
+  </p>
+<a class="btn" href="/beacon/faq/">
+    Open FAQ →
+  </a>
+</article>
+</section>
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Production Architecture</h2>
+<p>
+      Phase II defines the canonical Discovery Signal, its institutional rules,
+      public representation, methodology, and controlled path into production.
+    </p>
+<div class="note">
+      Entry Model → Signal Types → Lifecycle → Identifier → Schemas → Validation →
+      Provenance → Authority → Relationships → Versioning → Publication → Records →
+      Individual Record → Methodology → Production
+    </div>
+</article>
+</section>
 
-> **Reference does not transfer authority.**
+<section style="margin-top:18px;">
+<article class="card">
+<h2>First Production Discovery Signal</h2>
+<p>
+  Beacon's production architecture has now produced its first canonical Discovery Signal:
+  <strong>BEAC-2026-0001</strong>.
+</p>
+<div class="note">
+  BEAC-2026-0001<br/>
+  Active Operational Certification — Atlas Jurisdiction Record — El Salvador<br/>
+  Signal Type → Certification<br/>
+  Lifecycle → Active<br/>
+  Publication → Published<br/>
+  Version → 1.0<br/>
+  Primary Source → Satoshium Certifier · SC-CERT-2026-0001<br/>
+  Published → September 13, 2026
+</div>
+<a class="btn" href="/beacon/records/BEAC-2026-0001/">Open BEAC-2026-0001 →</a>
+<a class="btn" href="/beacon/records/">Open Beacon Records →</a>
+</article>
+</section>
 
-For `BEAC-2026-0001`:
+<section class="grid">
+<article class="card"><h2>Discovery Signal Entry Model</h2><p>Defines the canonical Beacon production object and the institutional components required to represent a Discovery Signal.</p><a class="btn" href="/beacon/entry-model/">Open Entry Model →</a></article>
+<article class="card"><h2>Discovery Signal Types</h2><p>Defines Beacon's governed discovery classifications and distinguishes Signal Type from the identity and authority of the referenced source object.</p><a class="btn" href="/beacon/signal-types/">Open Signal Types →</a></article>
+<article class="card"><h2>Discovery Signal Lifecycle</h2><p>Defines how a Discovery Signal progresses through Draft, Active, Superseded, Resolved, or Withdrawn while publication remains separately governed.</p><a class="btn" href="/beacon/lifecycle/">Open Lifecycle →</a></article>
+<article class="card"><h2>Identifiers</h2><p>Defines the permanent BEAC-YYYY-NNNN identifier standard used for canonical Beacon Discovery Signals.</p><a class="btn" href="/beacon/identifiers/">Open Identifiers →</a></article>
+<article class="card"><h2>Schemas</h2><p>Defines the structural architecture for canonical Discovery Signals and supporting source, result, and operational representations.</p><a class="btn" href="/beacon/schemas/">Open Schemas →</a></article>
+<article class="card"><h2>Validation</h2><p>Defines Beacon's production-conformance gate for evaluating canonical identity, required structure, provenance, references, relationships, and schema conformity.</p><a class="btn" href="/beacon/validation/">Open Validation →</a></article>
+<article class="card"><h2>Discovery Provenance</h2><p>Defines how Beacon preserves the evidentiary path from source observation and discovery context to the resulting Discovery Signal.</p><a class="btn" href="/beacon/provenance/">Open Provenance →</a></article>
+<article class="card"><h2>Authority &amp; Reference Model</h2><p>Defines what Beacon owns, what referenced institutions and sources retain, and how discovery preserves authority without absorbing it.</p><a class="btn" href="/beacon/authority/">Open Authority →</a></article>
+<article class="card"><h2>Relationship Model</h2><p>Defines how Beacon represents meaningful connections among Discovery Signals, Suite objects, workflows, versions, and external sources without merging their identities.</p><a class="btn" href="/beacon/relationships/">Open Relationships →</a></article>
+<article class="card"><h2>Versioning &amp; Supersession</h2><p>Defines how Beacon preserves stable identity, material revisions, supersession, and historical continuity without silent overwrite.</p><a class="btn" href="/beacon/versioning/">Open Versioning →</a></article>
+<article class="card"><h2>Publication Model</h2><p>Defines the governed act that moves an eligible Discovery Signal from Unpublished to Published without changing its underlying authority.</p><a class="btn" href="/beacon/publication/">Open Publication →</a></article>
+<article class="card"><h2>Beacon Records</h2><p>Provides the human-facing register of published canonical Discovery Signals. Beacon Records now contains its first production listing, BEAC-2026-0001.</p><a class="btn" href="/beacon/records/">Open Records →</a></article>
+<article class="card"><h2>First Production Beacon Record</h2><p>BEAC-2026-0001 is the first published individual Beacon Record, identifying the active Operational certification of the Atlas Jurisdiction Record — El Salvador.</p><a class="btn" href="/beacon/records/BEAC-2026-0001/">Open BEAC-2026-0001 →</a></article>
+<article class="card"><h2>Discovery Methodology</h2><p>Defines the repeatable institutional process from observation and provenance through canonical creation, validation, publication, representation, and maintenance.</p><a class="btn" href="/beacon/methodology/">Open Methodology →</a></article>
+<article class="card"><h2>Production</h2><p>Defines the controlled path from completed architecture into actual institutional use and the first governed production operation.</p><a class="btn" href="/beacon/production/">Open Production →</a></article>
+</section>
 
-- Satoshium Certifier retains authority for `SC-CERT-2026-0001` and its certification determination, class, lifecycle, and status.
-- Satoshium Atlas retains authority over the underlying Atlas Jurisdiction Record — El Salvador.
-- Satoshium Beacon owns the Discovery Signal and its discovery representation.
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Beacon Framework</h2>
+<p>Beacon discovery may begin with a direct query or a Navigator-defined workflow. Beacon locates relevant information, publishes Discovery Signals and metadata, and preserves the path to the referenced source or canonical object.</p>
+<div class="note">Workflow / Query → Beacon Discovery → Discovery Signal / Metadata → Result / Referenced Source or Canonical Object</div>
+</article>
+</section>
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Role Within the Satoshium Suite</h2>
+<p>
+    Beacon occupies a distinct institutional role within the Suite.
+    Interoperability connects responsibilities while each institution retains
+    authority over its own canonical objects.
+  </p>
+<div class="note">Atlas → Authoritative Intelligence<br/>Navigator → Workflow Definition / Orchestration<br/>Beacon → Discovery Signal / Metadata<br/>Certifier → Certification Package<br/>Registry → SREG<br/>Chronicle → Chronicle Entry<br/>Anchor → Integrity Reference<br/>Attestor → Trust Statement</div>
+</article>
+</section>
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Beacon Authority Boundary</h2>
+<p>Beacon owns its Discovery Signals, discovery metadata, indexes, and discovery presentations. It may reference canonical objects maintained by other Suite institutions without duplicating them or assuming their authority.</p>
+<div class="note">Discovery does not become certification, registration, history, integrity, trust, authoritative intelligence, or workflow orchestration.<br/><br/>Reference does not transfer authority.</div>
+</article>
+</section>
+<section style="margin-top:18px;">
+<article class="card"><h2>Current Beacon Status</h2><p>Beacon is operational. Its institutional architecture and Phase II production architecture are complete, and the architecture has been exercised through the first controlled production operation.</p><div class="note">Phase I — Institutional Architecture &amp; Alignment → COMPLETE<br/>Phase II — Production Architecture → COMPLETE<br/>First Production Candidate → SC-CERT-2026-0001 selected and exercised<br/>BEAC-2026-0001 → Active · Published · Version 1.0<br/>Beacon Records → First production listing published<br/>First Production Operation → Publication complete<br/>Operational → Yes</div><a class="btn" href="/beacon/records/BEAC-2026-0001/">Open BEAC-2026-0001 →</a><a class="btn" href="/beacon/records/">Open Beacon Records →</a></article>
+</section>
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Beacon Workflow</h2>
+<p>
+    Beacon transforms scattered information into governed discovery references,
+    Discovery Signals, and metadata. It does not replace the institutions that
+    own authoritative intelligence, certification, registration, history,
+    integrity, trust, or workflow orchestration.
+  </p>
+<div class="note">Navigator may orchestrate. Beacon discovers and signals. Atlas, Certifier, Registry, Chronicle, Anchor, and Attestor retain authority for their institution-owned canonical objects.<br/><br/>Reference does not transfer authority.</div>
+</article>
+</section>
 
----
-
-## Production Architecture
-
-Phase II defines the governed production path:
-
-```text
-Entry Model
-→ Signal Types
-→ Lifecycle
-→ Identifier
-→ Schemas
-→ Validation
-→ Provenance
-→ Authority
-→ Relationships
-→ Versioning
-→ Publication
-→ Records
-→ Individual Record
-→ Methodology
-→ Production
-```
-
-The first production operation demonstrated that this architecture can support creation, review, lifecycle governance, publication, and public representation of a real Discovery Signal.
-
----
-
-## Current Beacon Status
-
-```text
-Phase I — Institutional Architecture & Alignment → COMPLETE
-Phase II — Production Architecture → COMPLETE
-First Production Candidate → SC-CERT-2026-0001 selected and exercised
-BEAC-2026-0001 → Active · Published · Version 1.0
-Beacon Records → First production listing published
-First Production Operation → Publication complete
-Production Evidence Preservation → Pending completion
-Post-Operation Review → Pending
-Operational → No
-```
-
-Beacon remains in **Continuing Development**.
-
-Publication of the first production Discovery Signal does not by itself make Beacon Operational. Production evidence must be preserved and the architecture reviewed against actual institutional use before Operational status is considered.
-
----
-
-## Next Institutional Step
-
-The next controlled sequence is:
-
-```text
-BEAC-2026-0001 Published
-→ Preserve production evidence
-→ Conduct post-operation review
-→ Validate architecture against actual use
-→ Consider Operational status only if supported
-```
-
----
-
-## Satoshium Suite Role
-
-```text
-Atlas     → Authoritative Intelligence
-Navigator → Workflow Definition / Orchestration
-Certifier → Certification Package
-Registry  → SREG
-Chronicle → Chronicle Entry
-Anchor    → Integrity Reference
-Beacon    → Discovery Signal / Discovery Metadata
-Attestor  → Trust Statement
-```
-
-Interoperability connects institutional responsibilities without transferring ownership or authority.
-
----
-
-## Governing Principle
-
-**Beacon discovers. Beacon signals. The source retains authority.**
+<section style="margin-top:18px;">
+<article class="card">
+<h2>Next Institutional Step</h2>
+<p>
+      Beacon's first production Discovery Signal has been created, validated, activated,
+      published, and entered into Beacon Records. Ongoing work now focuses on preserving
+      production evidence, post-operation review, additional production records, and continued hardening.
+    </p>
+<div class="note">
+      BEAC-2026-0001 Published → Preserve production evidence → Conduct post-operation review →
+      Continue production hardening and future Discovery Signals
+    </div>
+<a class="btn" href="/beacon/production/">Open Production Model →</a>
+<a class="btn" href="/beacon/records/BEAC-2026-0001/">Review First Production Record →</a>
+</article>
+</section>
+</main>
+<div class="wrap reflection">
+<hr/>
+<div class="muted" id="random-saying" style="margin-bottom:14px; max-width:760px;">Beacon discovers. Beacon signals. BEAC-2026-0001 begins Beacon's production record.</div>
+<hr/>
+<div id="footer-container"></div>
+</div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-container").innerHTML = data;
+  });
+</script>
+<script data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script>
+</body>
+</html>
