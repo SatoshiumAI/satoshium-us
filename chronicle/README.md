@@ -1,4 +1,10 @@
-# Chronicle
+# Satoshium Chronicle
+
+**Path:** `/chronicle/`  
+**Institution:** Satoshium Chronicle  
+**Institutional Role:** Historical Preservation  
+**Canonical Object:** Chronicle Entry  
+**Status:** Operational
 
 ## Overview
 
@@ -544,44 +550,40 @@ Defines Chronicle's constitutional preservation philosophy, institutional memory
 
 ### Status
 
-Documents Chronicle's current pre-operational maturity and readiness path.
+Documents Chronicle's current operational posture, production milestones, validation readiness, publication state, and ongoing hardening work.
 
 ---
 
 ## Current Status
 
-Chronicle is currently in:
+**Institutional Status:** Operational  
+**Institutional Role:** Historical Preservation  
+**Canonical Object:** Chronicle Entry
 
-```text
-Pre-Operational Architecture & Implementation Preparation
-```
+Chronicle is operational as the Satoshium Suite's historical-preservation institution.
 
-Its architectural foundation is substantially established.
+Its architecture has been exercised successfully in production through the publication of:
 
-Chronicle is **not yet production operational**.
+**`CHR-2026-0001`**
 
-Before production operation, remaining work includes:
+`CHR-2026-0001` is Chronicle's first canonical production Entry and preserves the July 5, 2026 issuance of `SC-CERT-2026-0001`.
 
-* Final Entry Model
-* Event Types
-* Identifier Architecture
-* Controlled Values
-* Relationship Rules
-* Provenance Model
-* Verification Rules
-* Validation Rules
-* Lifecycle rules
-* Versioning
-* Publication Procedure
-* Production Procedure
-* Final Base Schema
-* Certification Event-Type Profile
-* First production Chronicle Entry
-* Production Review
-* Public Entry publication
-* Public Entry Index
+Current production posture includes:
 
-September 2026 is intended as the operational-development cycle, not a guaranteed public launch date.
+* canonical Chronicle Entry publication;
+* CHR identifier assignment;
+* Preservation Eligibility;
+* Event-Type classification;
+* authoritative references;
+* Sources, Evidence, Provenance, and Relationships;
+* Verification;
+* Validation;
+* Publication Gate review;
+* publication;
+* versioning and corrections;
+* maintenance and historical preservation.
+
+Current work focuses on post-publication cleanup, documentation reconciliation, reciprocal Suite references, and continued production hardening rather than establishing Chronicle's first operational capability.
 
 See:
 
@@ -595,11 +597,9 @@ for the current detailed status.
 
 ## Operational Readiness
 
-Chronicle should not be considered operational simply because its documentation is published.
+Chronicle is operational because its full institutional process has been exercised in production.
 
-Operational readiness requires demonstrating that a qualifying occurrence can move through the full institutional process.
-
-Conceptually:
+The production path is:
 
 ```text
 Occurrence Identified
@@ -618,6 +618,8 @@ Verification
         ↓
 Validation
         ↓
+Publication Gate
+        ↓
 Publication
         ↓
 Maintenance / Versioning
@@ -625,7 +627,7 @@ Maintenance / Versioning
 Historical Preservation
 ```
 
-The first production Chronicle Entry should test the architecture as a working institutional system.
+`CHR-2026-0001` established operational proof that a qualifying occurrence can move through this architecture as a working institutional system.
 
 ---
 
@@ -681,8 +683,8 @@ Explanatory licensing context may also be provided within Chronicle documentatio
 
 ## Status
 
-**Active pre-operational specification.**
+**Operational.**
 
-This README reflects the reconciled Chronicle architecture and should remain aligned with the Chronicle Purpose, Entries, Records, Sources, Evidence, Verification, Corrections, Schemas, Integration, Certification Events, Historical Preservation, and Status documentation.
+This README reflects the reconciled Chronicle architecture and should remain aligned with the Chronicle Purpose, Entries, Records, Sources, Evidence, Verification, Validation, Lifecycle, Versioning, Corrections, Publication, Maintenance, Schemas, Integration, Certification Events, Historical Preservation, and Status documentation.
 
-The repository should continue evolving from reconciled architecture into production implementation, validation, publication, and long-term maintenance.
+The repository should continue evolving through post-publication maintenance, additional production Entries, documentation reconciliation, and long-term historical preservation without redefining Chronicle's established institutional role.
