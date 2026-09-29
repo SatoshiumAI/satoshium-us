@@ -2,7 +2,7 @@
 
 **Path:** `/suite/status/`  
 **Status Update:** September 2026  
-**Current Posture:** All listed institutions operational
+**Current Posture:** All eight formal Suite institutions operational
 
 ## Current Suite Posture
 
@@ -10,12 +10,13 @@ The Suite status page records the current institutional posture of the Satoshium
 
 Current grouping:
 
-- **Operational Systems Layer:** 9 institutions
+- **Formal Suite Institutions:** 8 institutions
+- **Operational:** 8 institutions
 - **Continuing Development:** 0 institutions
+- **Aegis:** External / pre-Suite
 
-Operational systems:
+Formal Suite institutions:
 
-- Aegis
 - Atlas
 - Navigator
 - Certifier
@@ -31,11 +32,13 @@ Status is reported institution by institution because each Suite component retai
 
 ## Institutional Status
 
-### Aegis
+## Aegis Boundary
 
-**Operational**
+Aegis remains an operational Satoshium subsystem outside the formal Suite roster.
 
-Protective services and resilience layer.
+**Classification:** External / pre-Suite
+
+Aegis is not counted among the eight formal Suite institutions.
 
 ### Atlas
 
