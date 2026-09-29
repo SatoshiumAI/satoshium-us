@@ -1,14 +1,8 @@
 # Satoshium Registry
 
-**Path:** `/registry/`  
-**Institution:** Satoshium Registry  
-**Institutional Role:** Canonical Registration / Public Catalog  
-**Canonical Operational Object:** Satoshium Registry Entry (SREG)  
-**Status:** Operational
-
 **Structure through records. Continuity through references.**
 
-Satoshium Registry is the Canonical Registration / Public Catalog institution of the Satoshium Suite.
+Satoshium Registry is the authoritative public catalog of institutional records created throughout the Satoshium Suite.
 
 Registry exists to identify, classify, catalog, reference, connect, and preserve the discoverability of authoritative records produced by Satoshium institutions. It does not replace those records, duplicate their authority, or assume ownership over the work of the institutions that created them.
 
@@ -118,8 +112,8 @@ Examples include:
 
 * Certification Package
 * SCRD
-* Atlas canonical jurisdiction record
-* Chronicle historical event
+* Atlas Jurisdiction Intelligence Package
+* Chronicle Entry
 * Anchor integrity reference
 * Beacon discovery signal
 * Attestor trust statement
@@ -660,30 +654,26 @@ Operational implementation may also include:
 
 ## Current Status
 
-**Institutional Condition:** Operational  
-**Institutional Role:** Canonical Registration / Public Catalog  
-**Canonical Operational Object:** Satoshium Registry Entry (SREG)  
+**Development Cycle:** August 2026  
+**Institutional Condition:** Operational Development and Publication  
 **Foundation:** Constitutionally reconciled with Suite Standards, Suite Methodology, and Suite Interoperability
 
-Registry is operational as the Suite institution responsible for canonical registration and the durable public catalog of institutional records.
+The July Registry architecture established the institutional foundation.
 
-Its current operational architecture includes:
+The August development cycle transforms that foundation into a complete operational Registry implementation.
 
-* SREG identity and publication;
-* Registry record types;
-* schemas and controlled values;
-* identifiers;
-* source-authority preservation;
-* registrability;
-* provenance and relationships;
-* validation;
-* lifecycle;
-* versions and corrections;
-* Catalog presentation;
-* History and Transparency;
-* Suite integration.
+Registry is Operational.
 
-Future development may extend Registry capabilities without changing the established distinction between Registry-owned SREGs and authoritative Source Records owned by originating institutions.
+Current posture includes:
+
+* canonical SREG specification established;
+* Registry record types established;
+* Registry schemas and identifiers implemented;
+* lifecycle, versioning, corrections, and relationships implemented;
+* machine-readable Registry artifacts published;
+* first production SREG (`SREG-2026-0001`) created and published;
+* public catalog operations established; and
+* Suite relationships exercised while preserving institutional authority boundaries.
 
 ---
 
