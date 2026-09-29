@@ -52,7 +52,7 @@ Defines the minimum information necessary to support objective, transparent, and
 
 **Path:** `/suite/methodology/certification-logic/`
 
-Defines the decision rules used to transform evidence, evaluation, and scoring into certification outcomes.
+Defines the decision rules used to transform evidence and evaluation into certification outcomes.
 
 ### Certification Schema
 
@@ -64,7 +64,7 @@ Defines the structured format used to represent certification records consistent
 
 **Path:** `/suite/methodology/decision-process/`
 
-Defines how Satoshium converts standards, evidence, evaluation criteria, scoring, and certification logic into official determinations.
+Defines how Satoshium converts standards, evidence, evaluation criteria, and certification logic into official determinations.
 
 ## Methodology Role
 
@@ -77,6 +77,8 @@ Its purpose is to provide shared methodological foundations for certification, a
 ## Architectural Boundary
 
 This Suite-level page is an organizational methodology surface. It does not replace the institution-specific governance, methodology, validation, conformance, lifecycle, publication, or production architecture of individual Satoshium institutions.
+
+Certifier retains authority over its institution-specific certification procedures and certification decisions; Suite Methodology remains a shared organizational surface rather than a transfer of institutional authority.
 
 Where an institution has adopted more specific governed procedures, those institution-specific requirements govern that institution's operation.
 
