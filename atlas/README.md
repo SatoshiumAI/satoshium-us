@@ -3,6 +3,7 @@
 **Path:** `/atlas/`  
 **Institution:** Satoshium Atlas  
 **Role:** Authoritative Intelligence  
+**Canonical Object:** Jurisdiction Intelligence Package  
 **Status:** Operational  
 **Foundation:** Version 1.0 Complete
 
@@ -50,7 +51,7 @@ Current published coverage includes:
 
 - 50 United States state packages;
 - 52 global country packages;
-- 102 canonical jurisdiction JSON records;
+- 102 machine-readable jurisdiction JSON representations;
 - 102 matched generation manifests;
 - 204 machine-readable JSON files overall;
 - Atlas media libraries;
@@ -66,7 +67,7 @@ Current published coverage includes:
 
 ## Human-Readable and Machine-Readable Records
 
-Atlas maintains authoritative human-readable source records and matched machine-readable representations.
+Atlas maintains governed Jurisdiction Intelligence Packages containing authoritative human-readable source layers and matched machine-readable representations.
 
 The current model is:
 
@@ -74,8 +75,8 @@ The current model is:
 Canonical Markdown Layers
 → authoritative human-readable source records
 
-Canonical JSON
-→ consolidated machine-readable representation
+Jurisdiction JSON
+→ derived consolidated machine-readable representation
 
 Generation Manifest
 → generation, validation, source-file, output-size,
