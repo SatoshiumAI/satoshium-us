@@ -1,66 +1,128 @@
 # Satoshium Suite
 
 **Path:** `/suite/`  
-**Purpose:** Operational systems layer of the Satoshium ecosystem  
-**Production Objects:** `BEAC-2026-0001` · `ATT-2026-0001` · `TRST-2026-0001`  
-**Last Updated:** September 2026
+**Purpose:** Formal operational institutional layer of the Satoshium ecosystem  
+**Formal Institutions:** 8  
+**Institutional Status:** 8 Operational  
+**Production Objects:** `SC-CERT-2026-0001` · `SREG-2026-0001` · `CHR-2026-0001` · `ANCH-2026-0001` · `BEAC-2026-0001` · `ATT-2026-0001` · `TRST-2026-0001`  
+**Suite Reconciliation:** COMPLETE — APPROVED · September 30, 2026  
+**Last Updated:** September 30, 2026
 
 ---
 
 ## Current Suite Posture
 
-The Suite landing page presents the Satoshium operational systems layer, including the released Suite institutions **Beacon** and **Attestor**.
+The formal Satoshium Suite consists of exactly eight institutions:
 
-Beacon:
+```text
+Atlas
+Navigator
+Certifier
+Registry
+Chronicle
+Anchor
+Beacon
+Attestor
+```
 
-**● Operational · Released September 2026**
+All eight are:
 
-Attestor:
+**● Operational**
 
-**● Operational · Released September 2026**
+Aegis remains historically and architecturally relevant to the broader Satoshium ecosystem, but its reconciled position is:
 
-Attestor's first controlled production operation produced `ATT-2026-0001` and `TRST-2026-0001`, both **Active · Published · V1.0**. Post-operation institutional review passed and Operational Proof was established.
+**External / Pre-Suite**
+
+Aegis is therefore not counted as a ninth formal Suite institution.
 
 ---
 
-## Beacon Advancement
+## Institutional Roles
 
-Beacon advanced ahead of its original roadmap.
+```text
+Atlas
+→ Authoritative Intelligence
 
-Phase I — Institutional Architecture & Alignment:
+Navigator
+→ Workflow Definition / Orchestration
 
-**Complete**
+Certifier
+→ Operational Certification
 
-Phase II — Production Architecture:
+Registry
+→ Canonical Registration / Public Catalog
 
-**Complete**
+Chronicle
+→ Historical Preservation
 
-First controlled production operation:
+Anchor
+→ Integrity Preservation
 
-**Publication complete**
+Beacon
+→ Discovery & Signals
 
-First production Discovery Signal:
+Attestor
+→ Governed Attestation & Rule-Constrained Evaluation
+```
 
-**`BEAC-2026-0001`**
+Each institution retains its own authority boundary and canonical responsibility.
 
-Title:
+> **Reference does not transfer authority.**
 
-**Active Operational Certification — Atlas Jurisdiction Record — El Salvador**
+---
 
-State:
+## Canonical Objects
 
-- **Signal Type:** Certification
-- **Lifecycle:** Active
-- **Publication:** Published
-- **Version:** 1.0
-- **Published:** September 13, 2026
-- **Primary Source:** `SC-CERT-2026-0001`
+```text
+Atlas
+→ Jurisdiction Intelligence Package
 
-Public record:
+Navigator
+→ Navigator Workflow Definition
 
-https://satoshium.us/beacon/records/BEAC-2026-0001/
+Certifier
+→ Certification Package
 
-Beacon is **Operational · Released September 2026**.
+Registry
+→ Satoshium Registry Entry (SREG)
+
+Chronicle
+→ Chronicle Entry
+
+Anchor
+→ Integrity Reference
+
+Beacon
+→ Discovery Signal
+
+Attestor
+→ Attestation
+→ Trust Statement
+```
+
+Supporting structures do not become competing canonical objects merely because they are named.
+
+Examples:
+
+```text
+Certification Decision
+→ contained determination
+
+Discovery Metadata
+→ supporting Beacon structure
+
+Integrity Subject
+→ protected-subject definition
+
+Evaluation Outcome
+→ controlled Attestor result
+
+Workflow Orchestration
+→ institutional function
+
+Occurrence
+→ Chronicle subject
+```
 
 ---
 
@@ -112,25 +174,115 @@ Eligible Governed Inputs
 
 > **Reference does not transfer authority.**
 
+The production lineage demonstrates real governed interoperability.
+
+It does **not** establish a mandatory universal production pipeline.
+
+> **Exercised Lineage ≠ Mandatory Architecture**
+
 ---
 
-## Institutional Roles
+## Lifecycle and Publication
+
+The Suite-wide lifecycle model preserves three distinct acts:
 
 ```text
-Aegis      → Protective Services
-Atlas      → Authoritative Intelligence
-Navigator  → Workflow Definition / Orchestration
-Certifier  → Certification Package
-Registry   → SREG
-Chronicle  → Chronicle Entry
-Anchor     → Integrity Reference
-Beacon     → Discovery Signal
-Attestor   → Trust Statement
+Canonical Creation
+≠ Lifecycle Activation
+≠ Publication
 ```
 
-Attestor canonical objects include the **Attestation** and **Trust Statement**. The Trust Statement is produced through Rule-Constrained Evaluation of eligible governed inputs.
+The governing rule is:
 
-Discovery Metadata is a supporting Beacon layer.
+> **Creation defines existence. Activation defines operative state. Publication defines accessibility.**
+
+Therefore:
+
+```text
+Created ≠ Active
+Active ≠ Published
+Published ≠ Valid
+Published ≠ Conformant
+Published ≠ True
+```
+
+Institutional status is also distinct from canonical-object lifecycle state.
+
+---
+
+## Authority and Provenance
+
+The reconciled Suite distinguishes:
+
+```text
+Authority
+→ who governs, owns, decides, or bears institutional responsibility
+
+Provenance
+→ where information originated and how it was obtained, moved, transformed, or preserved
+```
+
+Therefore:
+
+> **Authority ≠ Provenance**
+
+Cross-institution use, registration, preservation, integrity protection, discovery, orchestration, publication, and evaluation do not silently transfer source authority.
+
+---
+
+## Controlled Relationships
+
+The Suite-wide relationship vocabulary includes:
+
+```text
+references
+derived-from
+supports
+evaluates
+results-in
+supersedes
+corrects
+related-to
+```
+
+These relationships are intentionally distinct.
+
+```text
+Reference ≠ Derivation
+Reference ≠ Support
+Evaluates ≠ Results-In
+Supersedes ≠ Corrects
+Connection ≠ Identity
+```
+
+---
+
+## Controlled Semantic Distinctions
+
+The following distinctions are governing Suite semantics:
+
+```text
+Eligibility ≠ Validation
+Validation ≠ Conformance
+Validation ≠ Evaluation
+Verification ≠ Certification
+Evaluation ≠ Evaluation Outcome
+Evaluation Outcome ≠ Trust Statement
+Decision / Outcome ≠ Lifecycle State
+Correction ≠ Version
+Correction ≠ Deletion
+Supersession ≠ Mutation
+NOT-TESTED ≠ PASS
+```
+
+For Attestor:
+
+```text
+Attestation
+≠ Trust Statement
+```
+
+A Trust Statement is a bounded governed conclusion, not a universal truth declaration, universal trust rating, or certification.
 
 ---
 
@@ -142,28 +294,125 @@ The Suite is supported by:
 - Methodology
 - Interoperability
 - Status
+- Reconciliation
 
 Standards define the rule layer.
 
-Methodology defines repeatable application.
+Methodology defines repeatable shared implementation.
 
-Interoperability defines cross-institution coordination through durable references.
+Interoperability defines how independently governed institutions exchange durable references while preserving canonical objects, provenance, lifecycle, governance, and authority.
 
-Status records institutional posture and development state.
+Status reports current institutional posture.
+
+Reconciliation preserves the final Suite-wide institutional architecture and semantic boundaries established through the September 25–30, 2026 review.
+
+Public entry point:
+
+https://satoshium.us/suite/reconciliation/
 
 ---
 
-## Beacon Operational Release
+## Suite Reconciliation
+
+The formal **Satoshium Suite Reconciliation** was conducted September 25–30, 2026.
+
+It reconciled:
+
+```text
+formal Suite membership
+institutional roles
+canonical objects
+identifier families
+controlled terminology
+lifecycle / publication semantics
+correction / versioning semantics
+relationship vocabulary
+authority / provenance
+truth / trust / scoring terminology
+whole-Suite architecture
+documentation conformance
+adversarial consistency
+Interoperability Review handoff
+Universe Documentation Reconciliation handoff
+```
+
+Final completion test:
+
+```text
+Eight institutional roles coherent
+→ PASS
+
+Canonical object ownership coherent
+→ PASS
+
+Controlled terminology coherent
+→ PASS
+
+Authority boundaries coherent
+→ PASS
+
+Relationship semantics coherent
+→ PASS
+
+Lifecycle / publication semantics coherent
+→ PASS
+
+Operational statuses coherent
+→ PASS
+
+Known Suite contradictions resolved or explicitly reserved
+→ PASS
+
+Interoperability questions cleanly handed forward
+→ PASS
+
+Universe-wide documentation issues cleanly excluded
+→ PASS
+```
+
+Final result:
+
+```text
+PASS
+→ 10 / 10
+
+Known material Suite-level contradiction silently unresolved
+→ NONE
+```
+
+The reconciliation records are preserved under:
+
+```text
+/suite/reconciliation/
+```
+
+---
+
+## Beacon
 
 Beacon is classified:
 
 **● Operational · Released September 2026**
 
-Its first production Discovery Signal remains:
+First production Discovery Signal:
 
 `BEAC-2026-0001` — **Active · Published · Version 1.0**
 
-Operational release reflects completed production evidence preservation and post-operation review. It does not make future Beacon objects automatically valid, publishable, or correct.
+Title:
+
+**Active Operational Certification — Atlas Jurisdiction Record — El Salvador**
+
+Primary Source:
+
+`SC-CERT-2026-0001`
+
+Public record:
+
+https://satoshium.us/beacon/records/BEAC-2026-0001/
+
+Beacon governs discovery and signaling.
+
+Discovery does not create source authority, verification authority, certification authority, or Attestor authority.
 
 ---
 
@@ -187,10 +436,106 @@ Evaluation Outcome:
 
 Attestor completed its first controlled production operation, preserved its production evidence, passed post-operation institutional review, and established Operational Proof.
 
+Its mature governed path is:
+
+```text
+Eligible Governed Inputs
+→ Attestation
+→ Rule-Constrained Evaluation
+→ Trust Statement
+```
+
 Operational release demonstrates governed institutional capability. It does not make future Attestations, Trust Statements, evaluations, validations, conformance determinations, lifecycle acts, or publications automatically valid, conformant, correct, or successful.
+
+---
+
+## Aegis Boundary
+
+Aegis is deliberately outside the formal eight-institution Suite roster.
+
+Its current reconciled position is:
+
+```text
+Aegis
+→ External / Pre-Suite
+```
+
+Aegis may remain historically important and architecturally relevant to the broader Satoshium ecosystem.
+
+It is not a formal Suite institution.
+
+---
+
+## Legacy System Registry Boundary
+
+The legacy `SYS-*` System Registry is not the formal Registry.
+
+```text
+SYS-*
+→ Legacy / Pre-Suite Platform System Index
+
+SREG-*
+→ Formal Satoshium Registry object family
+```
+
+Therefore:
+
+> **SYS ≠ SREG**
+
+---
+
+## Legacy Layer Models
+
+Earlier Satoshium architecture may contain terms such as:
+
+```text
+Trust Layer
+Knowledge Layer
+Intelligence Layer
+Signal Layer
+Agent Layer
+Simulation Layer
+Interface Layer
+AI Platform Layer
+```
+
+These may remain historically or conceptually useful.
+
+They are not the current formal institutional architecture of the Satoshium Suite.
+
+---
+
+## Next Review Boundary
+
+Detailed technical interoperability questions have been handed forward to the **Interoperability Review**.
+
+That review will examine matters such as:
+
+```text
+cross-institution reference contracts
+machine serialization / schema compatibility
+identifier / reference resolution
+state / version propagation
+Navigator handoffs
+Registry exchange mechanics
+Beacon exchange mechanics
+Attestor governed-input ingestion
+relationship serialization
+external-system interoperability
+failure / unknown-state handling
+compatibility versioning
+```
+
+It must not reopen the settled Suite architecture merely to simplify implementation.
+
+Broader ecosystem documentation questions have been handed forward to the **Universe Documentation Reconciliation**.
 
 ---
 
 ## Governing Principle
 
 **Satoshium Suite connects distinct institutional responsibilities without erasing their boundaries.**
+
+And:
+
+> **Reference does not transfer authority.**
