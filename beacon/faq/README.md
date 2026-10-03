@@ -6,7 +6,7 @@ Beacon is the Satoshium Suite institution for **Discovery & Signals**.
 
 Its purpose is to help users and Suite workflows locate, surface, organize, and explore relevant information while preserving source attribution, provenance, traceability, context, and institutional authority.
 
-Beacon performs discovery and publishes Beacon-owned **Discovery Signals** and discovery metadata.
+Beacon performs discovery and publishes Beacon-owned **Discovery Signals** with supporting discovery metadata.
 
 ---
 
@@ -33,7 +33,7 @@ Beacon helps users and workflows locate information that may be relevant to a qu
 
 No.
 
-Certifier owns certification and verification authority.
+Certifier owns its governed certification determinations and supporting verification processes.
 
 Beacon may discover and reference verified or certified information, but discovery and verification remain separate institutional functions.
 
@@ -43,7 +43,7 @@ Beacon may discover and reference verified or certified information, but discove
 
 No.
 
-Certifier owns **Certification Packages** and the Suite's certification function.
+Certifier owns **Certification Packages** and the Suite's operational certification function.
 
 Beacon does not issue Certification Packages, approvals, or endorsements.
 
@@ -51,7 +51,7 @@ Beacon does not issue Certification Packages, approvals, or endorsements.
 
 ## Does Beacon create records?
 
-Beacon creates and owns its own Discovery Signals and discovery metadata.
+Beacon creates and owns its own Discovery Signals and the supporting discovery metadata associated with them.
 
 It does **not** create or assume authority over Registry records merely by discovering them.
 
@@ -97,7 +97,7 @@ Beacon may discover and reference Integrity References without assuming Anchor's
 
 No.
 
-Attestor owns **Trust Statements** and the Suite's trust-assessment function.
+Attestor governs Attestations, Rule-Constrained Evaluation, and bounded **Trust Statements** under explicit rules and evidence.
 
 Beacon may discover Trust Statements or publish trust-related Discovery Signals, but it does not independently determine trust.
 
@@ -189,7 +189,7 @@ A result does not become authoritative merely because it references authoritativ
 
 Navigator owns **Workflow Definition / Orchestration**.
 
-Beacon owns the discovery function and its Discovery Signals and discovery metadata.
+Beacon owns the discovery function, its Discovery Signals, and their supporting discovery metadata.
 
 Navigator may define or orchestrate a workflow requiring discovery.
 
@@ -213,12 +213,12 @@ The canonical institutional model is:
 
 * **Atlas → Authoritative Intelligence**
 * **Navigator → Workflow Definition / Orchestration**
-* **Beacon → Discovery Signal / Metadata**
-* **Certifier → Certification Package**
-* **Registry → SREG**
-* **Chronicle → Chronicle Entry**
-* **Anchor → Integrity Reference**
-* **Attestor → Trust Statement**
+* **Certifier → Operational Certification**
+* **Registry → Canonical Registration / Public Catalog**
+* **Chronicle → Historical Preservation**
+* **Anchor → Integrity Preservation**
+* **Beacon → Discovery & Signals**
+* **Attestor → Governed Attestation & Rule-Constrained Evaluation**
 
 Each institution owns its canonical responsibilities and objects.
 
@@ -271,13 +271,29 @@ Their discovery by Beacon does not make them Suite institutions or Suite-authori
 
 ## Is Beacon complete?
 
-No.
+Beacon is **Operational**, but that does not mean development has ended.
 
-Beacon is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
+Beacon completed the institutional threshold required for Operational status in September 2026 after its first controlled production operation, production evidence preservation, and post-operation review.
 
-Its operational schemas, discovery methods, signal structures, indexing mechanisms, result presentation, and workflow interfaces may continue to evolve.
+Its schemas, discovery methods, signal structures, indexing mechanisms, result presentation, workflow interfaces, and other capabilities may continue to evolve under an ongoing posture of **Operation · Maintenance · Refinement · Expansion**.
 
-Beacon should not be considered operational solely because its documentation or architecture is complete. Operational status requires the architecture to be proven through actual institutional use.
+Operational status reflects proven institutional use. It does not freeze future refinement or capability growth.
+
+---
+
+## What is Beacon's current status?
+
+Beacon is **Operational · September 2026**.
+
+```text
+Canonical Object → Discovery Signal
+Discovery Metadata → Supporting Structure
+First Production Discovery Signal → BEAC-2026-0001 · Active · Published · Version 1.0
+Production Evidence Preservation → Complete
+Post-Operation Review → Complete
+Production Proof → Established
+```
+
 
 ---
 
