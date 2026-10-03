@@ -3,9 +3,9 @@
 **Path:** `/beacon/status/`  
 **Institution:** Satoshium Beacon  
 **Institutional Role:** Discovery & Signals  
-**Current Status:** Continuing Development  
-**Current Stage:** First Controlled Production Operation — Publication Complete  
-**Last Updated:** September 13, 2026
+**Current Status:** Operational  
+**Current Stage:** Operation · Maintenance · Refinement · Expansion  
+**Last Updated:** October 2, 2026
 
 ---
 
@@ -68,12 +68,13 @@ Publish Individual Beacon Record → Complete
 Publish Beacon Records Listing → Complete
 ```
 
-The remaining institutional work is:
+The production closeout work is complete:
 
 ```text
-Preserve Production Evidence → Pending completion
-Conduct Post-Operation Review → Pending
-Operational Status Review → Not yet reached
+Preserve Production Evidence → Complete
+Conduct Post-Operation Review → Complete
+Operational Status Review → Complete
+Operational Proof → Established
 ```
 
 ---
@@ -121,13 +122,13 @@ Architecture defined
 → Operational status considered
 ```
 
-`BEAC-2026-0001` demonstrates the production-object and real institutional-use portions of this threshold.
+`BEAC-2026-0001` completed the production-object and real institutional-use portions of this threshold.
 
-Beacon is **not yet Operational**.
+Production evidence was then preserved and a post-operation review evaluated the architecture against actual governed use.
 
-Production evidence must still be preserved, followed by a post-operation review that evaluates whether the architecture performed correctly under actual governed use.
+That review supported Operational status.
 
-Only after that review should Operational status be considered.
+Beacon is **Operational**.
 
 ---
 
@@ -159,7 +160,7 @@ Satoshium Beacon owns:
 ## Current Status Summary
 
 ```text
-Beacon Status → Continuing Development
+Beacon Status → Operational
 Phase I → Complete
 Phase II → Complete
 First Production Discovery Signal → BEAC-2026-0001
@@ -167,25 +168,27 @@ Lifecycle → Active
 Publication → Published
 Version → 1.0
 Beacon Records → 1 published Discovery Signal
-Production Evidence Preservation → Pending completion
-Post-Operation Review → Pending
-Operational → No
+Production Evidence Preservation → Complete
+Post-Operation Review → Complete
+Production Proof → Established
+Operational → Yes · September 2026
 ```
 
 ---
 
-## Next Institutional Step
+## Current Institutional Posture
 
 ```text
 BEAC-2026-0001 Published
-→ Preserve production evidence
-→ Conduct post-operation review
-→ Validate architecture against actual use
-→ Consider Operational status only if supported
+→ Production evidence preserved
+→ Post-operation review complete
+→ Architecture validated against actual use
+→ Operational status established
+→ Operation · Maintenance · Refinement · Expansion
 ```
 
 ---
 
 ## Governing Principle
 
-**Architecture establishes the institution. Governed production tests it. Review determines whether the evidence supports Operational status.**
+**Architecture establishes the institution. Governed production tests it. Review determines whether the evidence supports Operational status. Beacon completed that threshold in September 2026.**
