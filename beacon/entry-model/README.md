@@ -10,6 +10,8 @@
 
 The Discovery Signal Entry Model defines the canonical structure of a Beacon-owned Discovery Signal.
 
+The **Discovery Signal** is Beacon's canonical object. **Discovery Metadata** is supporting structure associated with that object and is not a second canonical object.
+
 The conceptual structure is:
 
 ```text
@@ -112,6 +114,8 @@ The institutional architecture is defined and production-exercised. Remaining in
 Beacon Status → Operational · September 2026
 Phase I → Complete
 Phase II → Complete
+Canonical Object → Discovery Signal
+Discovery Metadata → Supporting Structure
 Entry Model → Defined and production-exercised
 First Production Discovery Signal → BEAC-2026-0001 · Active · Published
 ```
