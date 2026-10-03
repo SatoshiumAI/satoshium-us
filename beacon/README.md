@@ -46,7 +46,7 @@ The signal identifies the existence and current active Operational certification
 
 ## Institutional Boundary
 
-Beacon owns its Discovery Signals, discovery metadata, provenance, lifecycle state, publication state, indexes, and Beacon-side relationships.
+Beacon owns its Discovery Signals, supporting discovery metadata, provenance, lifecycle state, publication state, indexes, and Beacon-side relationships.
 
 Beacon may reference canonical objects maintained by other Suite institutions without duplicating them or assuming their authority.
 
@@ -94,9 +94,10 @@ Phase II — Production Architecture → COMPLETE
 First Production Candidate → SC-CERT-2026-0001 selected and exercised
 BEAC-2026-0001 → Active · Published · Version 1.0
 Beacon Records → First production listing published
-First Production Operation → Publication complete
+First Production Operation → COMPLETE
 Production Evidence Preservation → COMPLETE
 Post-Operation Review → COMPLETE
+Production Proof → ESTABLISHED
 Operational → Yes · September 2026
 ```
 
@@ -143,6 +144,8 @@ Attestor
 Beacon's canonical object is the **Discovery Signal**. Discovery Metadata remains supporting structure rather than a second canonical object.
 
 Interoperability connects institutional responsibilities without transferring ownership or authority.
+
+Trust-related discovery remains bounded: Beacon may surface trust-related information, while Attestor governs Attestations, Rule-Constrained Evaluation, and bounded Trust Statements.
 
 ---
 
