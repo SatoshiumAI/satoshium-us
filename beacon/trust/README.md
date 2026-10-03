@@ -8,7 +8,7 @@ Beacon may help users and Suite workflows discover trust-related information, bu
 
 Within the Satoshium Suite, Beacon owns Discovery Signals and discovery metadata.
 
-Attestor owns Trust Statements and the Suite's trust-assessment function.
+Attestor owns its canonical Attestations and Trust Statements and governs rule-constrained evaluation under explicit rules and evidence.
 
 These responsibilities are related through governed references but remain institutionally distinct.
 
@@ -27,7 +27,7 @@ Users and systems may seek to understand:
 * Which institution maintains the relevant canonical object
 * Whether later information has changed the context
 
-These questions require clear separation between discovery, certification and verification, and trust assessment.
+These questions require clear separation between discovery, certification, governed evaluation, and bounded Trust Statements.
 
 ---
 
@@ -48,7 +48,7 @@ Beacon may discover:
 
 Beacon does not determine trust merely by surfacing this information.
 
-Discovery and trust remain separate institutional functions.
+Discovery and Attestor-governed evaluation remain separate institutional functions.
 
 ---
 
@@ -58,9 +58,9 @@ Visibility should not be confused with validity.
 
 Discovery should not be confused with verification.
 
-Verification should not be confused with trust.
+Verification should not be confused with an Attestor evaluation outcome.
 
-Trust should not be confused with truth.
+A Trust Statement should not be confused with universal truth or universal trust.
 
 These concepts may inform one another, but they are not interchangeable.
 
@@ -147,9 +147,9 @@ External discovery does not convert an external source into a Suite institution 
 
 ## Trust and Verification
 
-Certification and verification are not identical to trust assessment.
+Certification and verification are not identical to Attestor's rule-constrained evaluation.
 
-Certifier owns Certification Packages and certification/verification authority.
+Certifier owns Certification Packages and its governed certification determinations and supporting verification processes.
 
 Attestor owns Trust Statements.
 
@@ -158,23 +158,23 @@ Beacon may discover and reference objects from both institutions without assumin
 A simplified distinction is:
 
 ```text
-Certifier → Certification Package
-Beacon    → Discovery Signal / Metadata
-Attestor  → Trust Statement
+Certifier → Operational Certification
+Beacon    → Discovery & Signals
+Attestor  → Governed Attestation & Rule-Constrained Evaluation
 ```
 
 ---
 
 ## Relationship to Attestor
 
-Attestor is the Suite institution responsible for Trust Statements.
+Attestor is the Suite institution for Governed Attestation & Rule-Constrained Evaluation and produces bounded Trust Statements under explicit rules and evidence.
 
 Beacon may discover, reference, and signal the relevance of an Attestor Trust Statement.
 
 Attestor remains authoritative for:
 
 * The Trust Statement
-* Its trust-assessment context
+* Its governed evaluation context
 * Its lifecycle
 * Its supporting attestation structure
 
@@ -186,7 +186,7 @@ The two institutions interoperate without transferring authority.
 
 ## Relationship to Certifier
 
-Certifier owns Certification Packages and certification/verification authority.
+Certifier owns Certification Packages and its governed certification determinations and supporting verification processes.
 
 Beacon may discover:
 
@@ -242,7 +242,7 @@ Navigator owns workflow definition and orchestration.
 
 A Navigator-defined workflow may require Beacon to discover trust-related information or locate a Trust Statement.
 
-Beacon may return Discovery Signals, discovery metadata, source references, and results to that workflow.
+Beacon may return Discovery Signals, supporting discovery metadata, source references, and results to that workflow.
 
 Navigator orchestrates.
 
@@ -262,12 +262,12 @@ The Suite institutional model remains:
 
 * **Atlas → Authoritative Intelligence**
 * **Navigator → Workflow Definition / Orchestration**
-* **Beacon → Discovery Signal / Metadata**
-* **Certifier → Certification Package**
-* **Registry → SREG**
-* **Chronicle → Chronicle Entry**
-* **Anchor → Integrity Reference**
-* **Attestor → Trust Statement**
+* **Certifier → Operational Certification**
+* **Registry → Canonical Registration / Public Catalog**
+* **Chronicle → Historical Preservation**
+* **Anchor → Integrity Preservation**
+* **Beacon → Discovery & Signals**
+* **Attestor → Governed Attestation & Rule-Constrained Evaluation**
 
 Discovery does not become trust.
 
@@ -309,7 +309,7 @@ Canonical identifiers and durable references should be preserved when available.
 
 ### Separation of Responsibilities
 
-Discovery, certification and verification, and trust assessment remain distinct institutional functions.
+Discovery, certification, and Attestor-governed rule-constrained evaluation remain distinct institutional functions.
 
 ### Neutrality
 
@@ -342,6 +342,16 @@ Beacon remains responsible for discovery.
 
 ## Status
 
-Beacon trust architecture is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
+Beacon is **Operational**.
 
-This document establishes the governing conceptual boundary between Beacon discovery, Certifier certification and verification, and Attestor trust assessment. Operational Trust Signal schemas, metadata requirements, workflow interfaces, and interoperability mechanisms may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
+This document establishes the governing boundary between Beacon discovery, Certifier operational certification, and Attestor governed attestation / rule-constrained evaluation.
+
+```text
+Beacon Status → Operational · September 2026
+Canonical Object → Discovery Signal
+Discovery Metadata → Supporting Structure
+Attestor Role → Governed Attestation & Rule-Constrained Evaluation
+Trust Statement → Bounded governed output, not universal truth or trust
+```
+
+Trust-related Discovery Signal profiles, metadata requirements, workflow interfaces, and interoperability mechanisms may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
