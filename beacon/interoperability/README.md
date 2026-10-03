@@ -4,7 +4,7 @@
 **Institution:** Satoshium Beacon  
 **Institutional Role:** Discovery & Signals  
 **First Production Interoperability Object:** `BEAC-2026-0001`  
-**Last Updated:** September 13, 2026
+**Last Updated:** October 2, 2026
 
 ---
 
@@ -25,12 +25,12 @@ It does not inherit their authority.
 ```text
 Atlas      → Authoritative Intelligence
 Navigator  → Workflow Definition / Orchestration
-Beacon     → Discovery Signal / Metadata
-Certifier  → Certification Package
-Registry   → SREG
-Chronicle  → Chronicle Entry
-Anchor     → Integrity Reference
-Attestor   → Trust Statement
+Certifier  → Operational Certification
+Registry   → Canonical Registration / Public Catalog
+Chronicle  → Historical Preservation
+Anchor     → Integrity Preservation
+Beacon     → Discovery & Signals
+Attestor   → Governed Attestation & Rule-Constrained Evaluation
 ```
 
 Each institution retains authority over its own canonical objects.
@@ -110,7 +110,7 @@ Owns:
 - `BEAC-2026-0001`
 - Discovery Signal
 - Beacon identifier
-- Discovery Metadata
+- supporting Discovery Metadata
 - discovery provenance
 - Beacon lifecycle
 - publication state
@@ -163,7 +163,24 @@ It does not own the referenced canonical objects.
 
 This is production evidence for Beacon interoperability.
 
-It does not by itself establish Beacon as Operational. Production evidence preservation and post-operation review remain required.
+The production evidence was subsequently preserved and the post-operation review completed. Those steps established Beacon's Operational status in September 2026.
+
+---
+
+## Current Institutional Status
+
+```text
+Beacon Status → Operational · September 2026
+Canonical Object → Discovery Signal
+Discovery Metadata → Supporting Structure
+First Production Interoperability Object → BEAC-2026-0001
+Production Evidence Preservation → Complete
+Post-Operation Review → Complete
+Production Proof → Established
+```
+
+Beacon's first production interoperability path remains direct from `SC-CERT-2026-0001` to `BEAC-2026-0001`. Related Registry, Chronicle, Anchor, and later Attestor objects provide context and relationships without becoming intermediate provenance steps.
+
 
 ---
 
