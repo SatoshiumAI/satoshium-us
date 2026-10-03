@@ -5,7 +5,7 @@
 **Institutional Role:** Discovery & Signals  
 **Canonical Object:** Discovery Signal  
 **Status:** Operational  
-**Last Updated:** September 2026
+**Last Updated:** October 2, 2026
 
 ---
 
@@ -102,6 +102,8 @@ Operational → Yes · September 2026
 
 Beacon is **Operational**. Operational status was established after its first production operation was completed, production evidence was preserved, and the architecture was reviewed against actual institutional use.
 
+The post-operation review is complete and the resulting production evidence established Beacon's operational proof. Beacon's current posture is therefore **Operation · Maintenance · Refinement · Expansion** rather than Continuing Development.
+
 ---
 
 ## Current Institutional Posture
@@ -113,15 +115,32 @@ Beacon's current posture is **Operation · Maintenance · Refinement · Expansio
 ## Satoshium Suite Role
 
 ```text
-Atlas     → Authoritative Intelligence
-Navigator → Workflow Definition / Orchestration
-Certifier → Certification Package
-Registry  → SREG
-Chronicle → Chronicle Entry
-Anchor    → Integrity Reference
-Beacon    → Discovery Signal / Discovery Metadata
-Attestor  → Trust Statement
+Atlas
+→ Authoritative Intelligence
+
+Navigator
+→ Workflow Definition / Orchestration
+
+Certifier
+→ Operational Certification
+
+Registry
+→ Canonical Registration / Public Catalog
+
+Chronicle
+→ Historical Preservation
+
+Anchor
+→ Integrity Preservation
+
+Beacon
+→ Discovery & Signals
+
+Attestor
+→ Governed Attestation & Rule-Constrained Evaluation
 ```
+
+Beacon's canonical object is the **Discovery Signal**. Discovery Metadata remains supporting structure rather than a second canonical object.
 
 Interoperability connects institutional responsibilities without transferring ownership or authority.
 
