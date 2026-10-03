@@ -4,7 +4,7 @@
 **Institution:** Satoshium Beacon  
 **Role:** Discovery & Signals  
 **First Production Discovery Signal:** `BEAC-2026-0001`  
-**Last Updated:** September 13, 2026
+**Last Updated:** October 2, 2026
 
 ---
 
@@ -20,7 +20,7 @@ Beacon discovery may surface:
 - relationships
 - historical context
 - integrity references
-- future trust statements
+- Trust Statements and governed Attestor outputs
 - external information
 
 ---
@@ -30,7 +30,7 @@ Beacon discovery may surface:
 ```text
 Workflow / Query
 → Discovery
-→ Discovery Signal / Metadata
+→ Discovery Signal + Supporting Metadata
 → Referenced Source or Canonical Object
 ```
 
@@ -114,7 +114,9 @@ Exercised through direct discovery of `SC-CERT-2026-0001`.
 
 ### Trust Discovery
 
-Future-facing until Attestor production architecture and objects support governed discovery.
+**Production-Capable**
+
+Attestor is Operational and now produces governed Attestations and bounded Trust Statements that Beacon may discover or reference while preserving Attestor authority.
 
 ### Future Discovery
 
@@ -160,11 +162,27 @@ Owns:
 
 - `BEAC-2026-0001`
 - Discovery Signal
-- Discovery Metadata
+- supporting Discovery Metadata
 - Beacon provenance
 - Beacon lifecycle
 - publication state
 - Beacon-side relationships
+
+---
+
+## Current Institutional Status
+
+```text
+Beacon Status → Operational · September 2026
+Canonical Object → Discovery Signal
+Discovery Metadata → Supporting Structure
+Attestor Status → Operational
+Trust Discovery → Production-Capable
+First Production Discovery Signal → BEAC-2026-0001 · Active · Published · Version 1.0
+```
+
+Trust-related discovery does not transfer Attestor authority to Beacon. Beacon may discover or reference Attestor-governed outputs, but Attestor retains authority for its Attestations, rule-constrained evaluations, and bounded Trust Statements.
+
 
 ---
 
