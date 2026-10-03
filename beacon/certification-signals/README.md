@@ -5,7 +5,7 @@
 **Canonical Object:** Discovery Signal  
 **Primary Signal Type:** Certification  
 **Production Example:** `BEAC-2026-0001`  
-**Last Updated:** September 13, 2026
+**Last Updated:** October 2, 2026
 
 ---
 
@@ -99,7 +99,7 @@ A certification Discovery Signal may preserve:
 - Primary Signal Type
 - Source Reference
 - Provenance
-- Discovery Metadata
+- supporting Discovery Metadata
 - Canonical References
 - Timestamps
 - Version
@@ -126,7 +126,7 @@ Satoshium Beacon owns:
 
 - its Discovery Signal;
 - `BEAC` identifier;
-- Discovery Metadata;
+- supporting Discovery Metadata;
 - discovery provenance;
 - Beacon lifecycle;
 - publication state;
@@ -147,6 +147,21 @@ It does not independently create, modify, revoke, renew, or adjudicate that cond
 - `ANCH-2026-0001` — Anchor
 
 Those objects remain governed by their respective institutions.
+
+---
+
+## Current Institutional Status
+
+```text
+Beacon Status → Operational · September 2026
+Canonical Object → Discovery Signal
+Discovery Metadata → Supporting Structure
+Primary Signal Type → Certification
+Production Example → BEAC-2026-0001 · Active · Published · Version 1.0
+```
+
+Certification-related Discovery Signals remain Beacon objects. Certifier retains authority for the underlying Certification Package, governed certification determinations, Certification Class, lifecycle, status, evidence review, and supporting verification processes.
+
 
 ---
 
