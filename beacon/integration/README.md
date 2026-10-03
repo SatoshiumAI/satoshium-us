@@ -5,7 +5,7 @@
 **Role:** Discovery & Signals  
 **Production Integration:** Certifier → Beacon  
 **Production Object:** `BEAC-2026-0001`  
-**Last Updated:** September 13, 2026
+**Last Updated:** October 2, 2026
 
 ---
 
@@ -13,7 +13,7 @@
 
 Beacon Integration defines how Beacon connects discovery to authoritative Suite information without assuming the authority of the canonical objects it references.
 
-Beacon owns its Discovery Signals, discovery metadata, provenance, lifecycle, publication state, and Beacon-side relationships.
+Beacon owns its Discovery Signals, supporting discovery metadata, provenance, lifecycle, publication state, and Beacon-side relationships.
 
 Referenced canonical objects remain under the authority of their originating institutions.
 
@@ -26,12 +26,12 @@ Referenced canonical objects remain under the authority of their originating ins
 ```text
 Atlas      → Authoritative Intelligence
 Navigator  → Workflow Definition / Orchestration
-Beacon     → Discovery Signal / Metadata
-Certifier  → Certification Package
-Registry   → SREG
-Chronicle  → Chronicle Entry
-Anchor     → Integrity Reference
-Attestor   → Trust Statement
+Certifier  → Operational Certification
+Registry   → Canonical Registration / Public Catalog
+Chronicle  → Historical Preservation
+Anchor     → Integrity Preservation
+Beacon     → Discovery & Signals
+Attestor   → Governed Attestation & Rule-Constrained Evaluation
 ```
 
 Integration connects these responsibilities without merging them.
@@ -110,7 +110,7 @@ Each remains owned by its respective institution.
 - `BEAC-2026-0001`
 - Discovery Signal
 - Beacon identifier
-- Discovery Metadata
+- supporting Discovery Metadata
 - discovery provenance
 - Beacon lifecycle
 - publication state
@@ -140,7 +140,7 @@ Navigator may define workflows that use Beacon discovery. Beacon does not assume
 
 ### Attestor
 
-Beacon may discover Trust Statements and trust context. Attestor retains authority for Trust Statements and trust assessment.
+Beacon may discover Trust Statements and related evaluation context. Attestor retains authority for its Attestations, rule-constrained evaluations, and bounded Trust Statements.
 
 ### Atlas
 
@@ -163,11 +163,11 @@ Beacon may discover Atlas intelligence. Atlas retains authority over Atlas intel
 
 This is the first real production evidence for Beacon interoperability.
 
-It does **not**, by itself, make Beacon Operational. Production evidence preservation and post-operation review remain required.
+The production evidence was subsequently preserved and the post-operation review completed. Those steps established Beacon's Operational status in September 2026.
 
 ---
 
-## Continuing Interoperability
+## Ongoing Interoperability
 
 Future development may extend the demonstrated production model through:
 
@@ -179,6 +179,24 @@ Future development may extend the demonstrated production model through:
 - search interfaces;
 - notification services;
 - automation and federation where later adopted.
+
+---
+
+## Current Institutional Status
+
+```text
+Beacon Status → Operational · September 2026
+Canonical Object → Discovery Signal
+Discovery Metadata → Supporting Structure
+First Production Integration → SC-CERT-2026-0001 → BEAC-2026-0001
+Production Evidence Preservation → Complete
+Post-Operation Review → Complete
+Production Proof → Established
+Current Posture → Operation · Maintenance · Refinement · Expansion
+```
+
+The demonstrated Certifier → Beacon path is exercised lineage, not a mandatory universal Suite pipeline. Related Registry, Chronicle, Anchor, and Attestor objects may provide context or later relationships without becoming intermediate provenance steps.
+
 
 ---
 
