@@ -4,8 +4,8 @@
 **Institution:** Satoshium Beacon  
 **Canonical Object:** Discovery Signal  
 **Production Object:** `BEAC-2026-0001`  
-**Beacon Status:** Continuing Development  
-**Last Updated:** September 13, 2026
+**Beacon Status:** Operational  
+**Last Updated:** October 2, 2026
 
 ---
 
@@ -107,8 +107,8 @@ Determine Lifecycle State → COMPLETE
 Decide Publication → COMPLETE
 Publish Beacon Record → COMPLETE
 Add Beacon Records Listing → COMPLETE
-Preserve Production Evidence → PENDING COMPLETION
-Conduct Post-Operation Review → PENDING
+Preserve Production Evidence → COMPLETE
+Conduct Post-Operation Review → COMPLETE
 ```
 
 ---
@@ -226,9 +226,9 @@ Satoshium Beacon owns:
 
 ## Production Evidence
 
-The production operation has generated real institutional evidence through the creation, validation, activation, publication, and public representation of `BEAC-2026-0001`.
+The production operation generated and preserved real institutional evidence through the creation, validation, activation, publication, and public representation of `BEAC-2026-0001`.
 
-The remaining task is to preserve the complete production-evidence package in a reviewable form and then conduct the formal post-operation review.
+The completed evidence package supported the formal post-operation review and the determination that Beacon's architecture functioned coherently under governed production use.
 
 Production evidence should cover:
 
@@ -262,41 +262,68 @@ Architecture defined
 → Operational status considered
 ```
 
-The first production object now exists and has been exercised through publication.
+The first production object exists and has been exercised through publication.
 
-Beacon remains **Continuing Development** because production evidence preservation and post-operation review are not yet complete.
+Production evidence preservation and post-operation review were subsequently completed.
 
-Operational status must not be declared automatically.
+Operational status was not declared automatically. The completed review supported the determination that Beacon is **Operational**.
 
 ---
 
 ## Current Status
 
 ```text
-Beacon Status → Continuing Development
+Beacon Status → Operational
 Phase I → Complete
 Phase II → Complete
 First Candidate → SC-CERT-2026-0001
 BEAC-2026-0001 → Active · Published · Version 1.0
-First Production Operation → Publication complete
-Production Evidence Preservation → Pending completion
-Post-Operation Review → Pending
-Production Proof → In progress
-Operational → No
+First Production Operation → Complete
+Production Evidence Preservation → Complete
+Post-Operation Review → Complete
+Production Proof → Established
+Operational Review → Complete
+Operational → Yes · September 2026
 ```
 
 ---
 
-## Next Institutional Step
+## Current Institutional Posture
 
 ```text
 BEAC-2026-0001 Published
-→ Preserve complete production evidence
-→ Conduct post-operation review
-→ Validate architecture against actual use
-→ Resolve or accept identified defects
-→ Consider Operational status only if supported
+→ Production evidence preserved
+→ Post-operation review complete
+→ Architecture validated against actual use
+→ Operational status established
+→ Operation · Maintenance · Refinement · Expansion
 ```
+
+
+---
+
+## Production Closeout
+
+Beacon completed the full first-operation threshold in September 2026:
+
+```text
+Production operation
+→ COMPLETE
+
+Production evidence preservation
+→ COMPLETE
+
+Post-operation review
+→ COMPLETE
+
+Production proof
+→ ESTABLISHED
+
+Operational status
+→ ESTABLISHED
+```
+
+The historical rule remains unchanged: production object creation alone does not establish Operational status. Beacon crossed the threshold only after governed use, preserved evidence, and formal review.
 
 ---
 
