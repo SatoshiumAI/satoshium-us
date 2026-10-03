@@ -4,7 +4,7 @@
 **Institution:** Satoshium Beacon  
 **Canonical Object:** Discovery Signal  
 **First Production Signal:** `BEAC-2026-0001`  
-**Last Updated:** September 13, 2026
+**Last Updated:** October 2, 2026
 
 ---
 
@@ -135,7 +135,7 @@ Beacon owns:
 
 - `BEAC-2026-0001`
 - the Discovery Signal
-- Discovery Metadata
+- supporting Discovery Metadata
 - Beacon provenance
 - Beacon lifecycle
 - publication state
@@ -148,13 +148,27 @@ Beacon owns:
 ```text
 Workflow / Query
 → Discovery
-→ Discovery Signal / Metadata
+→ Discovery Signal + Supporting Metadata
 → Referenced Source or Canonical Object
 ```
 
 Not every observation becomes a canonical Discovery Signal.
 
 Creation is the institutional event that transforms a sufficiently relevant constructed discovery into a canonical Beacon object.
+
+---
+
+## Current Institutional Status
+
+```text
+Beacon Status → Operational · September 2026
+Canonical Object → Discovery Signal
+Discovery Metadata → Supporting Structure
+First Production Signal → BEAC-2026-0001 · Active · Published · Version 1.0
+```
+
+The Discovery Signal remains Beacon's canonical object. Discovery Metadata is supporting structure associated with the signal and is not a second canonical object.
+
 
 ---
 
