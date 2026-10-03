@@ -3,8 +3,8 @@
 **Path:** `/beacon/records/`  
 **Institution:** Satoshium Beacon  
 **Purpose:** Human-facing register of published canonical Discovery Signals  
-**Status:** Production use begun  
-**Last Updated:** September 13, 2026
+**Status:** Active Production Use · Beacon Operational  
+**Last Updated:** October 2, 2026
 
 ---
 
@@ -104,19 +104,21 @@ Beacon Records inclusion establishes public discoverability within Beacon. It do
 ## Current Production State
 
 ```text
-Beacon Status → Continuing Development
+Beacon Status → Operational
 Phase I → Complete
 Phase II → Complete
-First Controlled Production Operation → In progress
+First Controlled Production Operation → Complete
 First Production Discovery Signal → BEAC-2026-0001
 Lifecycle → Active
 Publication → Published
 Production Records → 1 published Discovery Signal
-Production Evidence Preservation → Pending completion
-Post-Operation Review → Pending
+Production Evidence Preservation → Complete
+Post-Operation Review → Complete
+Production Proof → Established
+Operational → Yes · September 2026
 ```
 
-Beacon should not be treated as Operational solely because its first production signal has been published. Production evidence and post-operation review remain part of the controlled operation.
+Beacon was not treated as Operational solely because its first production signal was published. Operational status was established only after production evidence was preserved and the post-operation review confirmed that Beacon's architecture functioned coherently under governed use.
 
 ---
 
