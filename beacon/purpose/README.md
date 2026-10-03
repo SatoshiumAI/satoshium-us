@@ -46,12 +46,12 @@ Beacon helps bring information into view while preserving the authority of its s
 
 ## Beacon-Owned Objects
 
-Beacon is responsible for the Discovery Signals and discovery metadata it publishes.
+Beacon is responsible for the Discovery Signals it publishes and for the supporting discovery metadata associated with those signals.
 
-Beacon-owned objects may include:
+Beacon-owned structures may include:
 
-* Discovery Signals
-* Discovery metadata
+* Discovery Signals — Beacon's canonical object
+* Discovery metadata — supporting structure
 * Source references
 * Discovery context
 * Relationships between discovered objects
@@ -157,12 +157,12 @@ The institutional model is:
 
 * **Atlas → Authoritative Intelligence**
 * **Navigator → Workflow Definition / Orchestration**
-* **Beacon → Discovery Signal / Metadata**
-* **Certifier → Certification Package**
-* **Registry → SREG**
-* **Chronicle → Chronicle Entry**
-* **Anchor → Integrity Reference**
-* **Attestor → Trust Statement**
+* **Certifier → Operational Certification**
+* **Registry → Canonical Registration / Public Catalog**
+* **Chronicle → Historical Preservation**
+* **Anchor → Integrity Preservation**
+* **Beacon → Discovery & Signals**
+* **Attestor → Governed Attestation & Rule-Constrained Evaluation**
 
 Each institution serves a distinct purpose and retains authority over its own canonical objects.
 
@@ -201,6 +201,8 @@ That mission is implemented through transparent, attributable, traceable, and in
 
 ## Status
 
-Beacon is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
+Beacon is **Operational**.
 
-Its standards, schemas, discovery methods, interoperability capabilities, and operational features may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
+Its institutional and production architecture has been exercised through the first controlled production operation, production evidence preservation, and post-operation review. `BEAC-2026-0001` is Active · Published · Version 1.0, and Beacon's production proof is established.
+
+Beacon's current posture is **Operation · Maintenance · Refinement · Expansion**. Its standards, schemas, discovery methods, interoperability capabilities, and operational features may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
