@@ -2,18 +2,18 @@
 
 **Path:** `/beacon/discovery-metadata/`  
 **Institution:** Satoshium Beacon  
-**Supporting Institutional Layer:** Discovery Metadata  
+**Supporting Structure:** Discovery Metadata  
 **Canonical Object:** Discovery Signal  
 **First Production Example:** `BEAC-2026-0001`  
-**Last Updated:** September 13, 2026
+**Last Updated:** October 2, 2026
 
 ---
 
 ## Purpose
 
-Discovery Metadata is Beacon-owned structured information used to make discoverable information easier to locate, organize, interpret, filter, trace, and relate across institutional boundaries.
+Discovery Metadata is Beacon-owned supporting structured information used to make discoverable information easier to locate, organize, interpret, filter, trace, and relate across institutional boundaries.
 
-Discovery Metadata supports the canonical Beacon Discovery Signal.
+Discovery Metadata supports the canonical Beacon Discovery Signal and is not a second canonical object.
 
 It does not replace the canonical objects that Beacon references.
 
@@ -155,7 +155,7 @@ This moves Discovery Metadata beyond a purely conceptual model while preserving 
 
 ---
 
-## Continuing Development
+## Future Metadata Development
 
 The following remain available for later development:
 
@@ -171,6 +171,23 @@ The following remain available for later development:
 - discovery analytics.
 
 No machine representation should be treated as frozen merely because the conceptual production fields have now been exercised.
+
+---
+
+## Current Institutional Status
+
+```text
+Beacon Status → Operational · September 2026
+Canonical Object → Discovery Signal
+Discovery Metadata → Supporting Structure
+BEAC-2026-0001 → Active · Published · Version 1.0
+Production Evidence Preservation → Complete
+Post-Operation Review → Complete
+Production Proof → Established
+```
+
+Beacon's metadata capabilities may continue to evolve without changing Beacon's Operational institutional status or the canonical-object boundary.
+
 
 ---
 
