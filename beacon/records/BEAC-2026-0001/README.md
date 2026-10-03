@@ -236,6 +236,9 @@ The inaugural Beacon production operation proceeded through the following stages
 9. Determine State — Complete
 10. Decide Publication — Complete
 11. Publish — Complete
+12. Preserve Production Evidence — Complete
+13. Conduct Post-Operation Review — Complete
+14. Establish Production Proof — Complete
 
 Candidate-selection criteria:
 
@@ -272,6 +275,31 @@ MEANINGFUL → PASS
 **Review Outcome:** Approved to Proceed
 
 Machine serialization and exact machine relationship predicates were not frozen as part of this initial production operation.
+
+---
+
+## Production Closeout
+
+Following publication, Beacon preserved the complete first-operation evidence package and completed its formal post-operation review.
+
+The review confirmed that the Beacon architecture functioned coherently under governed institutional use and supported Beacon's Operational status.
+
+```text
+Production Evidence Preservation → Complete
+Post-Operation Review → Complete
+Production Proof → Established
+Beacon Institutional Status → Operational · September 2026
+```
+
+This institutional closeout does **not** change the canonical state of `BEAC-2026-0001`.
+
+The Discovery Signal remains:
+
+```text
+Lifecycle → Active
+Publication → Published
+Version → 1.0
+```
 
 ---
 
@@ -359,6 +387,8 @@ https://satoshium.us/beacon/records/BEAC-2026-0001/
 Beacon is the Satoshium Suite institution for **Discovery & Signals**.
 
 Its canonical object is the **Discovery Signal**.
+
+Beacon is **Operational · September 2026**. Its first controlled production operation, production evidence preservation, and post-operation review are complete, and production proof is established.
 
 Beacon makes significant information discoverable while preserving source provenance, institutional ownership, lifecycle state, publication state, and authority boundaries.
 
