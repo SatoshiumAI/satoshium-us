@@ -1,389 +1,244 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="alternate icon" href="/assets/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<meta name="theme-color" content="#d6a34a">
-
-<title>Satoshium Suite · Decision Process</title>
-<meta name="description" content="The Satoshium Decision Process defines how certification determinations are reached using standards, methodology, evidence, evaluation, and certification logic.">
-<link rel="canonical" href="https://satoshium.us/suite/methodology/decision-process/">
-
-<link rel="preconnect" href="https://satoshium.link" crossorigin>
-<link rel="dns-prefetch" href="https://satoshium.link">
-<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
-
-<style>
-
-:root{
- --bg:#07090d;
- --panel:#0c1018;
- --text:#e8edf7;
- --muted:#9aa7bd;
- --gold:#d6a34a;
- --gold2:#f4c36a;
- --line:rgba(214,163,74,.18);
-}
-
-*{box-sizing:border-box;}
-
-html,body{
-margin:0;
-padding:0;
-background:var(--bg);
-color:var(--text);
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-line-height:1.6;
-scroll-behavior:smooth;
-}
-
-body{padding-top:80px;}
-
-.wrap{
-max-width:1120px;
-margin:auto;
-padding:0 18px;
-}
-
-.content{
-padding:34px 18px 64px;
-}
-
-.hero{
-border:1px solid var(--line);
-border-radius:22px;
-padding:28px 24px;
-margin-bottom:18px;
-
-background:
-radial-gradient(circle at top right,rgba(214,163,74,.12),transparent 30%),
-linear-gradient(to bottom right,
-rgba(12,16,24,.97),
-rgba(12,16,24,.90));
-}
-
-.eyebrow{
-display:inline-flex;
-padding:8px 14px;
-border:1px solid rgba(214,163,74,.24);
-border-radius:999px;
-color:var(--gold2);
-font-size:13px;
-font-weight:700;
-letter-spacing:.08em;
-text-transform:uppercase;
-}
-
-h1{
-margin:10px 0 12px;
-font-size:44px;
-color:var(--gold2);
-}
-
-.lead{
-max-width:920px;
-font-size:20px;
-color:var(--muted);
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:18px;
-margin-top:18px;
-}
+# Certification Decision Process
 
-.card{
-background:linear-gradient(to bottom right,
-rgba(12,16,24,.95),
-rgba(12,16,24,.88));
-border:1px solid rgba(214,163,74,.15);
-border-radius:18px;
-padding:22px;
-}
+**Path:** `/suite/methodology/decision-process/`  
+**Surface:** Satoshium Suite · Methodology  
+**Status:** Current repository documentation
 
-.card h2{
-margin:0 0 10px;
-font-size:24px;
-color:var(--gold2);
-}
+## Purpose
 
-.card p{
-margin:0;
-color:var(--muted);
-}
+This directory documents the Satoshium Suite **Certification Decision Process** methodology surface.
 
-.note{
-margin-top:16px;
-padding:14px 16px;
-border:1px solid var(--line);
-border-radius:14px;
-background:rgba(214,163,74,.05);
-color:var(--muted);
-}
+The Certification Decision Process describes how governed **Certifier / certification-domain inputs** are brought together to produce documented, reviewable certification determinations.
 
-@media(max-width:900px){
-.grid{grid-template-columns:1fr;}
-h1{font-size:34px;}
-}
+It is not the governance decision process for the Satoshium Suite and does not govern Governance Decision Records (GDRs).
 
-</style>
+The public page for this directory is:
 
-</head>
+- `index.html`
 
-<body>
+This README documents the repository role and architectural boundaries of the directory. It does not replace the public presentation in `index.html`.
 
-<div id="topbar-slot" data-topbar="universe"></div>
-<script src="/components/topbar-loader.js"></script>
+## Methodology Role
 
-<main class="wrap content">
+The Certification Decision Process is part of the Satoshium Suite Methodology as a **certification-specific methodology surface**.
 
-<section class="hero">
+Its role is to explain how applicable standards, eligible evidence, evaluation results, explicitly adopted scoring, and certification logic participate in a governed Certifier determination.
 
-<div class="eyebrow">
+The Decision Process should support outcomes that are:
 
-Suite · Methodology
+- understandable;
+- repeatable;
+- transparent;
+- attributable;
+- reviewable; and
+- reproducible under the same governing conditions.
 
-</div>
+The Certification Decision Process does not itself create institutional authority. Certification authority remains with Satoshium Certifier under the established Suite architecture.
 
-<h1>
+It also does not create Suite Governance authority, institutional approval authority, or a Governance Decision Record.
 
-Decision Process
+## Scope Boundary
 
-</h1>
+This methodology surface governs **certification determinations only**.
 
-<p class="lead">
+```text
+Certification Decision Process
+→ Certifier / certification-domain methodology
 
-The Decision Process defines how Satoshium converts
-standards, evidence, evaluation criteria, scoring,
-and certification logic into official certification
-determinations.
+Governance Decision Lifecycle
+→ Suite Governance
 
-</p>
+Governance Decision Record (GDR)
+→ formal governance decision record
+```
 
-<p class="lead">
+Therefore:
 
-Every certification decision should be understandable,
-repeatable, transparent, and supported by documented
-reasoning.
+```text
+CERTIFICATION DECISION
+≠ GOVERNANCE DECISION
 
-</p>
+CERTIFICATION DETERMINATION
+≠ GDR
 
-</section>
+CERTIFIER REVIEW
+≠ SUITE GOVERNANCE REVIEW
 
-<section class="grid">
+CERTIFIER APPROVAL
+≠ CONSTITUTIONAL APPROVAL
+```
 
-<article class="card">
+A certification determination may be important across the Suite, but it does not become a Suite Governance decision merely because other institutions reference, register, preserve, discover, or evaluate it.
 
-<h2>Decision Inputs</h2>
+## Decision Inputs
 
-<p>
+A certification decision may consume governed inputs defined by the applicable standards, methodology, evidence requirements, evaluation process, explicitly adopted scoring model, and certification logic.
 
-Certification decisions are based upon applicable
-standards, evidence, evaluation results,
-scores, trust assessments,
-and certification logic.
+Each input retains its own meaning and authority boundary.
 
-</p>
+In particular:
 
-</article>
+- eligibility is not an evaluation outcome;
+- validation is not evaluation;
+- validation is not eligibility;
+- validation is not conformance;
+- evidence validity does not itself determine certification;
+- scoring does not independently create a certification determination; and
+- reference to another governed object does not transfer authority over that object.
 
-<article class="card">
+## Decision Reasoning
 
-<h2>Decision Outcomes</h2>
+Decision reasoning should be sufficiently documented so that an independent reviewer can understand how the governed inputs produced the certification determination.
 
-<p>
+The reasoning should preserve:
 
-Possible outcomes include:
+- the applicable standards and methodology;
+- the evidence considered;
+- the evaluation result;
+- any governed scoring;
+- the certification logic applied;
+- the resulting determination; and
+- the provenance necessary to review the decision.
 
-Certified
+A certification decision should not appear arbitrary or depend upon undocumented reasoning.
 
-Conditionally Certified
+Within this surface, "decision" means a **Certifier certification determination**. It does not mean a Suite Governance determination or constitutional approval.
 
-Denied
+## Human Review
 
-Suspended
+The methodology may provide for documented human review where professional judgment, exception handling, appeals, or procedural review are required.
 
-Revoked
+Human review remains governed by the applicable certification standards and methodology.
 
-Expired
+Human review does not become Suite Governance review merely because the determination may have cross-institution consequences.
 
-Renewed
+Human involvement does not permit undocumented alteration of canonical records, authority boundaries, or lifecycle semantics.
 
-Archived
+## Automated Review
 
-</p>
+Where the governing methodology permits deterministic execution, software may apply certification logic consistently.
 
-</article>
+Automation is an implementation mechanism.
 
-<article class="card">
+It does not independently acquire Certifier authority, governance authority, or approval authority. Software execution must preserve the same evidentiary, provenance, relationship, lifecycle, and institutional boundaries that apply to human review.
 
-<h2>Human Review</h2>
+## AI Assistance
 
-<p>
+Artificial intelligence may assist with functions such as evidence review, summarization, or recommendation where permitted by the governing methodology.
 
-Methodology should support documented human review
-whenever professional judgment,
-exception handling,
-or appeals become necessary.
+AI assistance must remain subordinate to the governed certification process.
 
-</p>
+An AI-generated recommendation is not, by itself, a certification determination.
 
-</article>
+## Appeals and Corrections
 
-<article class="card">
+The Certification Decision Process may support certification-domain review when additional evidence, corrections, or procedural concerns are presented.
 
-<h2>Automated Review</h2>
+Appeals and corrections must preserve the established historical and lifecycle disciplines:
 
-<p>
+- correction is not deletion;
+- correction is not automatically a new version;
+- correction does not itself determine a versioning decision;
+- supersession is not mutation; and
+- changed canonical conclusions require appropriately governed canonical treatment.
 
-Where appropriate,
-deterministic certification logic
-may allow software to produce
-consistent certification decisions.
+Historical records should remain historically accurate.
 
-</p>
+## Decision Documentation
 
-</article>
+Every certification determination should contain or be accompanied by sufficient documentation to support independent review.
 
-<article class="card">
+Decision documentation should make clear:
 
-<h2>Appeals</h2>
+- what was evaluated;
+- what evidence was used;
+- which standards and methodology applied;
+- what logic was executed;
+- what determination resulted; and
+- which institution owns the authoritative record.
 
-<p>
+Documentation does not transfer authority.
 
-Certification decisions may be reviewed
-when additional evidence,
-corrections,
-or procedural concerns
-are presented.
+## Relationship to Certifier
 
-</p>
+Satoshium Certifier is the Suite institution responsible for certification operations and the Certification Package.
 
-</article>
+This Certification Decision Process methodology surface supports that institution by documenting the reasoning framework under which certification determinations are reached.
 
-<article class="card">
+The methodology does not replace Certifier and does not independently issue certification objects.
 
-<h2>Decision Documentation</h2>
+## Relationship to Suite Governance
 
-<p>
+This surface must remain distinct from the governance lifecycle established during the Satoshium Suite Governance Review.
 
-Every certification decision should include
-sufficient explanation
-to allow independent review
-of the reasoning.
+Suite Governance follows its own lifecycle:
 
-</p>
+```text
+Proposal
+→ Classification
+→ Review
+→ Determination
+→ Approval
+→ Governance Decision Record (GDR)
+→ Publication
+→ Implementation
+→ Preservation
+```
 
-</article>
+That lifecycle governs governance decisions.
 
-<article class="card">
+The Certification Decision Process governs Certifier determinations.
 
-<h2>Future AI Assistance</h2>
+```text
+Certification Decision Process
+≠ Governance Decision Lifecycle
 
-<p>
+Certification Determination
+≠ Governance Determination
 
-Artificial intelligence may assist
-with evidence review,
-summarization,
-and recommendation,
-while final decisions remain governed
-by published methodology.
+Certification Record
+≠ Governance Decision Record
+```
 
-</p>
+If a certification-related matter proposes a change to institutional role, canonical ownership, Suite membership, authority allocation, or another constitutional boundary, the matter must leave this certification methodology surface and enter the applicable Suite Governance / Architecture Reconciliation process.
 
-</article>
+## Relationship to Other Suite Institutions
 
-<article class="card">
+Other Suite institutions may reference certification records or related outputs according to their own canonical responsibilities.
 
-<h2>Institutional Consistency</h2>
+Those interactions do not make the Certification Decision Process a cross-institution decision authority.
 
-<p>
+Those references must preserve institutional boundaries.
 
-Equivalent evidence evaluated
-under equivalent standards
-should produce equivalent decisions
-regardless of reviewer.
+In particular:
 
-</p>
+- Registry reference does not make Registry the certification authority.
+- Chronicle records chronology rather than certification authority.
+- Anchor establishes integrity references rather than certification authority.
+- Beacon provides governed Discovery Signals; Discovery Metadata remains supporting Beacon structure.
+- Attestor may consume eligible governed certification objects as referenced inputs while preserving Certifier as the source authority for those objects.
 
-</article>
+Reference does not equal derivation, support, identity, or authority transfer.
 
-</section>
+## Repository Expectations
 
-<section style="margin-top:18px;">
+Changes to this directory should preserve:
 
-<article class="card">
+1. the distinction between methodology and institutional authority;
+2. the distinction between inputs, evaluation, decision, lifecycle state, and publication;
+3. the distinction between certification determinations and later trust-related conclusions;
+4. evidence and provenance boundaries;
+5. documented and reproducible reasoning;
+6. historical accuracy; and
+7. consistency with the governing Suite standards, methodology, and Certifier architecture;
+8. explicit certification-domain scope;
+9. separation of certification determinations from governance determinations;
+10. separation of Certifier review from Suite Governance review;
+11. separation of certification records from Governance Decision Records (GDRs); and
+12. escalation of constitutional matters to Suite Governance / Architecture Reconciliation.
 
-<h2>Methodology Role</h2>
+Changes that would redefine certification outcomes, lifecycle semantics, trust relationships, or institutional authority require the appropriate governed architectural review rather than a documentation-only edit.
 
-<p>
+## Governing Principle
 
-The Decision Process represents
-the final reasoning layer
-of the Satoshium Certification Methodology.
-
-It transforms standards,
-evidence,
-evaluation,
-logic,
-and scoring
-into transparent,
-documented,
-and reviewable certification outcomes.
-
-</p>
-
-<div class="note">
-
-A certification decision should never appear arbitrary.
-Every outcome should be explainable,
-reviewable,
-and reproducible.
-
-</div>
-
-</article>
-
-</section>
-
-</main>
-
-<div class="wrap reflection">
-
-<hr>
-
-<div id="random-saying"
-style="color:#9aa7bd;margin-bottom:14px;max-width:760px;">
-
-Good methodology explains not only what was decided,
-but why it was decided.
-
-</div>
-
-<hr>
-
-<div id="footer-container"></div>
-
-</div>
-
-<script src="https://satoshium.link/assets/sayings.js"></script>
-
-<script>
-fetch("https://satoshium.link/components/footer.html")
-.then(response=>response.text())
-.then(data=>{
-document.getElementById("footer-container").innerHTML=data;
-});
-</script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
-
-</body>
-</html>
+**A certification determination should be explainable, reviewable, reproducible, and governed by the certification methodology that produced it; it is not a Suite Governance decision.**
