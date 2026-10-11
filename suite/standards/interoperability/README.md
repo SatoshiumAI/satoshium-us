@@ -1,287 +1,217 @@
-# Interoperability Standard
+# Satoshium Interoperability Standard
 
-## Overview
+**Path:** `/suite/standards/interoperability/`  
+**Surface:** Satoshium Suite · Standards · Interoperability  
+**Status:** Current repository documentation  
+**Last Updated:** October 11, 2026
 
-The **Satoshium Interoperability Standard** defines how Suite tools, records, schemas, references, verification material, and external systems communicate without losing meaning.
+## Purpose
 
-The governing principle is:
+This directory documents the **Satoshium Interoperability Standard**, the Suite-wide standards surface governing shared expectations for cross-institution exchange, compatibility, references, identifiers, serialization, resolution, handoffs, state/version propagation, and meaning preservation.
 
-> Interoperability is not merely data exchange. It is preservation of meaning across systems.
+Interoperability operates within settled institutional architecture.
 
----
+It does not redefine that architecture.
 
 ## Standard Role
 
-Interoperability allows Satoshium institutions to remain independent while still exchanging and referencing governed records.
+The Interoperability Standard defines expectations for how independently governed Suite institutions can exchange information while preserving:
+
+- institutional identity;
+- canonical ownership;
+- source authority;
+- provenance;
+- lifecycle state;
+- publication state;
+- relationship semantics;
+- version identity;
+- correction and supersession history; and
+- historical traceability.
+
+The ratified hierarchy is:
 
 ```text
-Atlas
-Certifier
-Registry
-Chronicle
-Anchor
-Beacon
-Attestor
-Navigator
+Settled Institutional Architecture
+→ Suite Governance
+→ Interoperability
+→ Implementation
 ```
 
-may all use shared technical conventions without transferring institutional authority.
+Therefore:
 
-> Reference does not transfer authority.
+> **Interoperability is subordinate to settled institutional architecture.**
 
----
+## Shared Interfaces
 
-# Shared Interfaces
+Shared interfaces may define common requirements for:
 
-Shared interfaces may exchange:
+- references;
+- identifiers;
+- reference envelopes;
+- schemas;
+- serialization;
+- resolution;
+- compatibility;
+- lifecycle/publication state exchange;
+- version propagation;
+- correction propagation;
+- failure / unknown-state behavior; and
+- external-system exchange.
 
-- record identifiers;
-- canonical URLs;
-- schema Versions;
-- Controlled Values;
-- canonical representations;
-- integrity evidence;
-- verification material;
-- publication metadata;
-- relationship metadata.
+Interface rules govern exchange.
 
-A shared interface should preserve enough context to interpret the transferred value correctly.
+They do not transfer authority.
 
----
+## Record Compatibility
 
-# Record Compatibility
+Compatibility determines whether a receiving institution can interpret or process an exchanged record or reference under its applicable requirements.
 
-Records exchanged across the Suite should remain understandable outside the system that created them.
-
-Compatibility requires preserving distinctions such as:
+The governing distinction is:
 
 ```text
-Source-System Identifier
-≠
-receiving-system identifier
-
-Source Version
-≠
-receiving-system Version
-
-Source status
-≠
-receiving-system state
+INTEROPERABILITY FAILURE
+≠ SOURCE INVALIDITY
 ```
 
----
+A receiving institution may reject an exchange because it is incompatible, incomplete, unsupported, or outside the receiving interface.
 
-# Meaning Preservation
+That failure does **not** invalidate the source institution's canonical object unless the source institution's own governance establishes that result.
 
-An exchanged value should retain its governed meaning.
+## Compatibility Review
 
-For example:
+Compatibility review may identify:
+
+- exchange consequences;
+- implementation blockers;
+- required mappings;
+- migration requirements;
+- version incompatibilities;
+- unsupported relationship forms; and
+- failure / unknown states.
+
+It does not acquire approval authority merely by reviewing compatibility.
 
 ```text
-canonical_json
+COMPATIBILITY REVIEW
+≠ GOVERNANCE VETO
+
+INTEROPERABILITY REVIEW
+≠ AUTOMATIC APPROVAL AUTHORITY
 ```
 
-must mean the same thing when used by Certifier, Registry, Chronicle, Anchor, Attestor, or another Suite institution.
+Review participation does not create ownership or constitutional authority.
 
-The Suite Schemas Standard therefore governs its canonicalization semantics.
+## Constitutional Escalation Boundary
 
----
+If interoperability work exposes a proposed change to:
 
-# Canonical JSON Interoperability
+- institutional role;
+- canonical ownership;
+- Suite membership;
+- institutional sovereignty;
+- source authority;
+- constitutional dependency;
+- canonical-object identity; or
+- mandatory Suite-wide architecture,
 
-For Suite records using:
+the matter must leave Interoperability and enter the applicable **Suite Governance / Architecture Reconciliation** process.
+
+Interoperability may identify the issue.
+
+It may not resolve a constitutional question by technical convention.
+
+## Authority Discipline
+
+The Standard must preserve:
 
 ```text
-Representation Type
-→ canonical_json
+REFERENCE DOES NOT TRANSFER AUTHORITY
+
+INTEROPERABILITY
+≠ AUTHORITY TRANSFER
+
+CONNECTION
+≠ IDENTITY
+
+REFERENCE
+≠ DERIVATION
+
+REFERENCE
+≠ SUPPORT
+
+COMPATIBILITY
+≠ SOURCE AUTHORITY
+
+IMPLEMENTATION
+≠ GOVERNANCE AUTHORITY
 ```
 
-the shared canonicalization rule is:
+## Meaning Preservation
+
+Interoperability should preserve the governed meaning of exchanged information.
+
+Translation may change representation.
+
+It must not silently change:
+
+- source authority;
+- canonical ownership;
+- lifecycle meaning;
+- publication meaning;
+- relationship meaning;
+- evaluation meaning;
+- certification meaning; or
+- historical state.
+
+## Relationship to Suite Governance
+
+The Interoperability Standard is a standards instrument.
+
+The broader **Satoshium Suite Governance Model** governs constitutional authority and change.
+
+The current controlling governance decision is:
 
 ```text
-RFC 8785 — JSON Canonicalization Scheme (JCS)
-UTF-8
+GDR-2026-0026
+→ Satoshium Suite Governance Model
+→ APPROVED
+→ EFFECTIVE
 ```
 
-A receiving Suite institution should not reinterpret `canonical_json` under a conflicting local normalization scheme.
+Suite Governance determines whether a proposed change affects constitutional architecture.
 
----
+Interoperability then operates within the resulting settled architecture.
 
-# Cryptographic Digest Interoperability
+## Relationship to Suite Interoperability
 
-When a Suite record exchanges or preserves a cryptographic digest, the record should identify:
+This Standard defines shared interoperability expectations.
+
+The operational `/suite/interoperability/` surface documents the actual cross-institution model, review results, production-proven relationships, compatibility position, and implementation follow-through.
 
 ```text
-Integrity Method
-Algorithm
-Digest Value
-Digest Encoding
+Interoperability Standard
+→ shared expectations
+
+Suite Interoperability
+→ applied cross-institution architecture and review record
 ```
 
-The initial Suite-approved digest profile is:
+## Repository Expectations
 
-```text
-Integrity Method
-→ cryptographic_digest
+Changes to this directory should preserve:
 
-Algorithm
-→ SHA-256
+1. interoperability subordinate to settled architecture;
+2. institutional identity;
+3. canonical ownership;
+4. source authority;
+5. provenance;
+6. lifecycle / publication distinctions;
+7. relationship semantics;
+8. version and correction history;
+9. `INTEROPERABILITY FAILURE ≠ SOURCE INVALIDITY`;
+10. `COMPATIBILITY REVIEW ≠ GOVERNANCE VETO`; and
+11. escalation of constitutional questions to Suite Governance.
 
-Digest Encoding
-→ lowercase hexadecimal
+## Governing Principle
 
-Expected encoded length
-→ 64 hexadecimal characters
-```
-
-This profile supplies an interoperable starting point for production.
-
----
-
-## SHA-256 Is an Initial Profile, Not a Permanent Definition
-
-Satoshium should remain algorithm-agile.
-
-```text
-SHA-256
-→ approved initial algorithm
-
-future stronger / successor algorithm
-→ may be introduced through governed revision
-```
-
-Historical records using SHA-256 should remain interpretable after a successor algorithm is introduced.
-
-Algorithm replacement should occur through explicit governance rather than silent reinterpretation.
-
----
-
-# Digest Comparison
-
-Where SHA-256 digest values are compared, interoperable comparison uses the decoded cryptographic value represented by the governed lowercase hexadecimal serialization.
-
-For the canonical serialized form:
-
-```text
-64 lowercase hexadecimal characters
-```
-
-should represent the 32-byte SHA-256 digest.
-
----
-
-# External Alignment
-
-Satoshium may align with external technical standards where doing so improves reproducibility and interoperability.
-
-The current first production alignment includes:
-
-```text
-RFC 8785
-→ canonical JSON serialization
-
-SHA-256
-→ initial cryptographic digest algorithm
-```
-
-Adopting an external technical standard does not transfer Satoshium institutional authority to that external standards body or implementation.
-
----
-
-# Verification Data
-
-When verification information crosses system boundaries, it should preserve at least the context necessary to understand:
-
-```text
-what representation was tested
-which canonicalization rule applied
-which Integrity Method applied
-which algorithm applied
-which expected value was used
-what Verification Result was reached
-```
-
-A digest without algorithm and representation context is insufficient as a durable interoperable record.
-
----
-
-# Relationship to Schemas
-
-The Schemas Standard governs structured representation.
-
-The Interoperability Standard governs shared interpretation and exchange.
-
-For the first production path:
-
-```text
-Suite Schemas Standard
-→ canonical_json = RFC 8785 JCS
-
-Suite Interoperability Standard
-→ SHA-256 + lowercase hexadecimal digest profile
-
-Anchor
-→ applies both to its first Integrity Reference
-```
-
----
-
-# Institutional Specialization
-
-Institutions may define narrower operational requirements when needed.
-
-They should inherit Suite-wide rules rather than redefine them.
-
-```text
-Suite Standard
-        ↓
-Institution-specific requirement
-        ↓
-Procedure / Schema Profile
-        ↓
-Production Record
-```
-
----
-
-# Current Freeze Decisions
-
-### Canonical JSON Interoperability
-
-```text
-canonical_json → RFC 8785 JCS
-encoding → UTF-8
-```
-
-### Initial Cryptographic Digest Profile
-
-```text
-method → cryptographic_digest
-algorithm → SHA-256
-digest encoding → lowercase hexadecimal
-encoded length → 64 characters
-```
-
-### Still Unfrozen
-
-```text
-signature interoperability profile
-timestamp interoperability profile
-Merkle commitment profile
-Bitcoin commitment profile
-algorithm deprecation procedure
-successor digest algorithms
-external proof interchange profiles
-```
-
----
-
-## Status
-
-**Suite Standard · Production-Reconciled**
-
-The Interoperability Standard now defines the first Suite-wide digest and canonical-representation interoperability requirements required by live production architecture.
-
-**Version:** 1.0-draft
-
-**Maintained By:** Satoshium
+**Interoperability may constrain exchange, but it may not reallocate authority.**
