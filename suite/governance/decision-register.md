@@ -1,6 +1,6 @@
 # Satoshium Suite Governance Decision Register
 
-**Date:** October 14, 2026  
+**Date:** October 11, 2026  
 **Source Review:** Satoshium Suite Governance Review  
 **Register Scope:** Material and Constitutional determinations made during the completed Governance Review  
 **Status:** COMPLETE — APPROVED  
