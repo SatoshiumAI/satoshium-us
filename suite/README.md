@@ -2,17 +2,19 @@
 
 **Path:** `/suite/`  
 **Purpose:** Formal operational institutional layer of the Satoshium ecosystem  
-**Formal Institutions:** 8  
+**Current Formal Institutions:** 8  
 **Institutional Status:** 8 Operational  
 **Production Objects:** `SC-CERT-2026-0001` · `SREG-2026-0001` · `CHR-2026-0001` · `ANCH-2026-0001` · `BEAC-2026-0001` · `ATT-2026-0001` · `TRST-2026-0001`  
 **Suite Reconciliation:** COMPLETE — APPROVED · September 30, 2026  
-**Last Updated:** September 30, 2026
+**Suite Governance Review:** COMPLETE — APPROVED · October 11, 2026  
+**Current Governance Model:** `GDR-2026-0026` — Satoshium Suite Governance Model  
+**Last Updated:** October 11, 2026
 
 ---
 
 ## Current Suite Posture
 
-The formal Satoshium Suite consists of exactly eight institutions:
+The current formal Satoshium Suite consists of eight institutions:
 
 ```text
 Atlas
@@ -33,7 +35,9 @@ Aegis remains historically and architecturally relevant to the broader Satoshium
 
 **External / Pre-Suite**
 
-Aegis is therefore not counted as a ninth formal Suite institution.
+Aegis is therefore not counted among the current formal Suite institutions.
+
+The current eight-institution roster is the Suite's present constitutional state. It is not a permanent numerical ceiling; future institutional admission requires formal Constitutional Governance.
 
 ---
 
@@ -292,13 +296,16 @@ The Suite is supported by:
 
 - Standards
 - Methodology
+- Governance
 - Interoperability
 - Status
 - Reconciliation
 
-Standards define the rule layer.
+Standards define shared expectations and governed rule surfaces.
 
-Methodology defines repeatable shared implementation.
+Methodology defines shared implementation principles and repeatable methods.
+
+Governance protects constitutional authority, institutional sovereignty, canonical ownership, governance decisions, change control, versioning, accountability, and historical preservation across the Suite.
 
 Interoperability defines how independently governed institutions exchange durable references while preserving canonical objects, provenance, lifecycle, governance, and authority.
 
@@ -306,11 +313,77 @@ Status reports current institutional posture.
 
 Reconciliation preserves the final Suite-wide institutional architecture and semantic boundaries established through the September 25–30, 2026 review.
 
-Public entry point:
+The governing relationship is not a vertical ownership stack:
 
-https://satoshium.us/suite/reconciliation/
+```text
+Suite Governance
+→ protects constitutional boundaries
+
+Suite Standards
+→ define shared expectations
+
+Suite Methodology
+→ defines shared implementation principles
+
+Interoperability
+→ governs exchange within settled architecture
+
+Institutional Governance
+→ governs institution-owned responsibilities
+```
+
+Suite Governance does not absorb institutional operations.
+
+Public entry points:
+
+- https://satoshium.us/suite/governance/
+- https://satoshium.us/suite/reconciliation/
+- https://satoshium.us/suite/interoperability/
 
 ---
+
+
+## Suite Governance
+
+The formal **Satoshium Suite Governance Review** was completed October 11, 2026.
+
+It established the constitutional model governing:
+
+```text
+Suite Governance vs. Institutional Governance
+institutional sovereignty
+authority non-transfer
+canonical ownership
+Routine / Material / Constitutional change
+institutional change and membership
+governance decision lifecycle
+Governance Decision Records (GDRs)
+Governance Decision Register
+versioning / supersession / correction
+transparency
+historical preservation
+future constitutional change
+```
+
+The controlling governance doctrine is:
+
+> **Authority follows the governed subject.**
+
+And:
+
+> **Suite Governance governs the boundaries that make the Suite coherent. Institutional Governance governs the work that makes each institution operational.**
+
+The current controlling governance decision is:
+
+```text
+GDR-2026-0026
+→ Satoshium Suite Governance Model
+→ APPROVED
+→ EFFECTIVE
+```
+
+The current eight-institution roster is the present constitutional state, not a permanent numerical ceiling.
+
 
 ## Suite Reconciliation
 
@@ -507,9 +580,11 @@ They are not the current formal institutional architecture of the Satoshium Suit
 
 ## Next Review Boundary
 
-Detailed technical interoperability questions have been handed forward to the **Interoperability Review**.
+The **Interoperability Review** and **Suite Governance Review** are both COMPLETE — APPROVED.
 
-That review will examine matters such as:
+Remaining work is bounded implementation, targeted documentation correction, institutional follow-through, and future governance only when an actual Routine, Material, or Constitutional change is proposed.
+
+The completed Interoperability Review examined matters such as:
 
 ```text
 cross-institution reference contracts
