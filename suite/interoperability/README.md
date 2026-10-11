@@ -4,7 +4,7 @@
 **Scope:** Cross-institution Suite interoperability  
 **Production-Proven Institutions Represented:** Atlas · Certifier · Registry · Chronicle · Anchor · Beacon · Attestor  
 **Workflow Institution Represented:** Navigator  
-**Last Updated:** September 2026
+**Last Updated:** October 11, 2026
 
 ---
 
@@ -17,6 +17,17 @@ Suite Interoperability defines how independent Satoshium institutions exchange d
 Interoperability connects responsibilities.
 
 It does not merge institutions.
+
+The ratified governance hierarchy is:
+
+```text
+Settled Institutional Architecture
+→ Suite Governance
+→ Interoperability
+→ Implementation
+```
+
+Interoperability is subordinate to settled institutional architecture. It may govern exchange, compatibility, serialization, reference resolution, handoff mechanics, and state/version propagation, but it may not redefine institutional role, canonical ownership, Suite membership, source authority, or constitutional dependency.
 
 ---
 
@@ -130,6 +141,39 @@ These provide contextual Suite relationships.
 They are not intermediate provenance steps for Beacon.
 
 ---
+
+## Governance Boundary
+
+The October 11, 2026 Suite Governance Review ratified the following interoperability limits:
+
+```text
+INTEROPERABILITY FAILURE
+≠ SOURCE INVALIDITY
+
+COMPATIBILITY REVIEW
+≠ GOVERNANCE VETO
+
+INTEROPERABILITY REVIEW
+≠ AUTOMATIC APPROVAL AUTHORITY
+
+INTEROPERABILITY
+≠ AUTHORITY TRANSFER
+```
+
+A receiving institution may reject an exchange because the input is incompatible with its interface or requirements. That interoperability failure does **not** invalidate the source institution's canonical object unless the source institution's own governance establishes that result.
+
+Likewise, an interoperability or compatibility review may identify exchange consequences, implementation blockers, or migration requirements without acquiring constitutional or institutional approval authority.
+
+If interoperability reveals a proposed change to:
+
+- institutional role;
+- canonical ownership;
+- Suite membership;
+- institutional sovereignty;
+- source authority; or
+- constitutional dependency,
+
+the matter must leave Interoperability and enter the applicable Suite Governance / Architecture Reconciliation process.
 
 ## Authority Boundaries
 
@@ -261,8 +305,11 @@ The first Attestor operation additionally demonstrates that interoperability can
 - bounded Attestor conclusion over Suite-source inputs → production-demonstrated
 - connection without identity merger → production-demonstrated
 - reference without authority transfer → production-demonstrated
+- interoperability subordinate to settled architecture → **RATIFIED**
+- interoperability failure ≠ source invalidity → **RATIFIED**
+- compatibility review ≠ governance veto → **RATIFIED**
 - production proof → **ESTABLISHED**
 
 ## Governing Principle
 
-**Stable objects + clear authority boundaries + durable references + repeatable workflows = interoperable institutions.**
+**Interoperability connects governed institutions within settled architecture. It may constrain exchange, but it may not reallocate authority.**
