@@ -1,6 +1,6 @@
 # Satoshium Suite Governance Review — Out-of-Scope Handoff Register
 
-**Date:** October 14, 2026  
+**Date:** October 11, 2026  
 **Source:** Satoshium Suite Governance Review  
 **Purpose:** Preserve matters identified during Governance Review that belong outside Governance scope  
 **Status:** COMPLETE — APPROVED
