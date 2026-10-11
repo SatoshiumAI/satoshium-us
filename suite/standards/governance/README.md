@@ -21,10 +21,13 @@ The Governance Standard defines the institutional expectations that keep Satoshi
 Within the Suite architecture:
 
 - **Standards define expectations.**
-- **Methodology defines implementation.**
-- **Governance controls how standards change over time.**
+- **Methodology defines shared implementation principles.**
+- **Standards Governance controls how official Suite standards change over time.**
+- **Suite Governance governs constitutional authority, institutional sovereignty, governance decisions, change control, and historical preservation across the Suite.**
 
-Governance does not replace the authority of the Suite institution responsible for applying a standard operationally.
+The **Governance Standard** and the broader **Suite Governance Model** are related but distinct. This directory governs the maintenance and evolution of Suite Standards; it does not itself constitute the Suite's complete constitutional governance framework.
+
+Standards Governance does not replace the authority of the Suite institution responsible for applying a standard operationally, and participation in standards review does not transfer canonical ownership or institutional authority.
 
 ## Standards Governance
 
@@ -41,6 +44,52 @@ Governance responsibilities should identify:
 - historical preservation requirements.
 
 Stewardship of a standard does not transfer authority over the canonical objects produced by institutions implementing that standard.
+
+
+## Relationship to Suite Governance
+
+The **Satoshium Governance Standard** is a standards-governance instrument.
+
+The broader **Satoshium Suite Governance Model** governs:
+
+- Suite Governance vs. Institutional Governance;
+- institutional sovereignty;
+- authority boundaries and authority non-transfer;
+- canonical ownership;
+- Routine, Material, and Constitutional change;
+- governance decision roles and lifecycle;
+- Governance Decision Records (GDRs);
+- the Governance Decision Register;
+- constitutional admission and institutional structural change;
+- versioning, supersession, correction, transparency, and historical preservation.
+
+The relationship is:
+
+```text
+Governance Standard
+→ governs the maintenance and evolution of Suite Standards
+
+Suite Governance Model
+→ governs constitutional authority, institutional sovereignty,
+   institutional change, governance decisions, change control,
+   and preservation across the Suite
+```
+
+The Suite Governance Model is the controlling framework when a matter would alter institutional role, canonical ownership, Suite membership, authority allocation, or another constitutional boundary.
+
+Current governance records are maintained under:
+
+- `suite/governance/reconciliation/`
+- `suite/governance/decision-register.md`
+
+The current controlling governance decision is:
+
+```text
+GDR-2026-0026
+→ Satoshium Suite Governance Model
+→ APPROVED
+→ EFFECTIVE
+```
 
 ## Change Management
 
@@ -108,7 +157,9 @@ Standards define expectations.
 
 Methodology defines implementation.
 
-Governance determines how the standards themselves are reviewed and changed over time.
+The Governance Standard determines how the standards themselves are reviewed and changed over time.
+
+The broader Suite Governance Model separately governs authority, sovereignty, decision rights, constitutional change, and preservation across the Suite.
 
 Methodology changes may be governed by their own applicable processes, but the Governance Standard should preserve the distinction between changing an expectation and changing its implementation.
 
@@ -136,11 +187,27 @@ Changes to this directory should preserve:
 4. historical preservation;
 5. transparency and reviewability;
 6. the distinction between standards, methodology, and institutional operations; and
-7. consistency with the governing Suite architecture.
+7. consistency with the governing Suite architecture; and
+8. consistency with the ratified Satoshium Suite Governance Model.
 
-Changes that would redefine institutional authority, governance ownership, approval authority, or the substantive content of another standard require the appropriate governed architectural review rather than a documentation-only edit.
+Changes that would redefine institutional authority, canonical ownership, Suite membership, institutional role, constitutional dependency, approval authority, or the substantive content of another standard require the appropriate governed review rather than a documentation-only edit.
+
+For governance classification:
+
+```text
+Routine
+→ may remain within the owning institution or standards-maintenance authority
+
+Material
+→ requires review appropriate to the governed subject and shared impact
+
+Constitutional
+→ requires Formal Suite Governance
+```
+
+Review participation does not itself create approval authority.
 
 ## Governing Principle
 
-**Governance protects the integrity of standards by ensuring that change is documented, reviewable, versioned, and historically preserved.**
+**Standards Governance protects the integrity of standards by ensuring that change is documented, reviewable, versioned, and historically preserved, while the broader Suite Governance Model preserves constitutional authority, institutional sovereignty, and historical continuity across the Suite.**
 
