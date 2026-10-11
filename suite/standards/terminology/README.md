@@ -6,7 +6,7 @@
 
 ## Purpose
 
-This directory documents the **Satoshium Terminology Standard**, the Suite-wide standards layer governing official vocabulary, naming conventions, controlled terminology, and cross-reference semantics.
+This directory documents the **Satoshium Terminology Standard**, the Suite-wide standards layer governing official vocabulary, naming conventions, controlled terminology, governance vocabulary, and cross-reference semantics.
 
 The public page for this directory is:
 
@@ -51,16 +51,221 @@ Definitions should preserve clear distinctions between concepts such as:
 - conformance;
 - publication;
 - attestation;
-- trust statement;
-- integrity reference;
-- registry record;
-- discovery metadata;
+- Trust Statement;
+- Integrity Reference;
+- Registry Entry;
+- Discovery Signal;
 - lifecycle state;
 - correction;
-- supersession; and
-- provenance.
+- supersession;
+- provenance;
+- Suite Governance;
+- Institutional Governance;
+- Institutional Sovereignty;
+- Routine Change;
+- Material Change;
+- Constitutional Change;
+- Governed Subject;
+- Canonical Ownership;
+- Authority Transfer;
+- Governance Decision Record (GDR);
+- Governance Decision Register;
+- Architecture Reconciliation; and
+- Constitutional Admission.
 
 Where a term has a governed institutional meaning, documentation should not casually broaden or weaken that meaning.
+
+## Governance Vocabulary
+
+The October 11, 2026 Satoshium Suite Governance Review established the following governed vocabulary.
+
+### Suite Governance
+
+**Suite Governance** protects the constitutional whole.
+
+It governs shared constitutional boundaries, including:
+
+- formal Suite membership;
+- institutional role assignment;
+- canonical ownership assignment;
+- authority allocation;
+- constitutional dependencies;
+- institutional structural change; and
+- other matters whose governed subject is the Suite itself.
+
+Suite Governance does not become routine operational authority over institution-owned work.
+
+### Institutional Governance
+
+**Institutional Governance** governs the work and decisions that belong to an institution within its settled authority.
+
+It includes institution-owned responsibilities such as:
+
+- canonical object stewardship;
+- lifecycle decisions;
+- Corrections;
+- Versioning;
+- institution-specific Rules;
+- institution-specific Policies;
+- institution-specific Procedures; and
+- institution-specific determinations.
+
+### Institutional Sovereignty
+
+**Institutional Sovereignty** means that each formal Suite institution retains distinct authority over its settled operational domain and canonical responsibilities, subject to applicable Suite-level constitutional constraints.
+
+```text
+INSTITUTIONAL SOVEREIGNTY
+≠ UNLIMITED AUTHORITY
+
+SUITE CONSTRAINT
+≠ SUITE OWNERSHIP
+```
+
+### Governed Subject
+
+The **Governed Subject** is the thing whose authority, state, rule, object, process, or constitutional condition is being governed.
+
+The controlling rule is:
+
+> **Authority follows the governed subject.**
+
+### Routine Change
+
+A **Routine Change** is a change that remains within settled authority and does not materially alter shared architecture, canonical ownership, institutional role, or constitutional boundaries.
+
+Routine change may remain within the owning institution or standards-maintenance authority.
+
+### Material Change
+
+A **Material Change** affects a governed subject in a way that requires broader review because of meaningful shared impact, compatibility consequences, or cross-institution effects.
+
+For institution-owned Material change:
+
+```text
+Institution
+→ retains determination / approval authority
+
+Suite
+→ performs coherence / shared-impact review
+```
+
+Suite review does not automatically create co-ownership or co-approval authority.
+
+### Constitutional Change
+
+A **Constitutional Change** alters the formal Suite architecture, including matters such as:
+
+- institutional membership;
+- institutional role;
+- canonical ownership;
+- authority allocation;
+- institutional merger, division, retirement, removal, or successor status; or
+- other changes to settled constitutional boundaries.
+
+Constitutional Change requires Formal Suite Governance.
+
+### Canonical Ownership
+
+**Canonical Ownership** is the governed authority over a canonical object's identity, lifecycle, correction, Versioning, publication, and substantive canonical state.
+
+```text
+SHARED CUSTODY
+≠ SHARED OWNERSHIP
+
+MULTIPLE REPRESENTATIONS
+≠ MULTIPLE AUTHORITIES
+```
+
+Canonical ownership may change only through explicit Constitutional Governance.
+
+### Authority Transfer
+
+**Authority Transfer** is an explicit governed reassignment of authority from one constitutional or institutional owner to another.
+
+Authority transfer does not arise merely from:
+
+- reference;
+- registration;
+- workflow participation;
+- orchestration;
+- interoperability;
+- technical dependency;
+- Suite membership;
+- review participation; or
+- repeated practice.
+
+### Governance Decision Record (GDR)
+
+A **Governance Decision Record (GDR)** is the formal record of a governed governance decision.
+
+A GDR preserves:
+
+- decision identity;
+- governed subject;
+- classification;
+- determination;
+- approval;
+- effective standing;
+- affected institutions or objects where applicable;
+- supersession / correction relationships; and
+- historical traceability.
+
+```text
+GDR IDENTITY
+≠ DOCUMENT VERSION
+```
+
+### Governance Decision Register
+
+The **Governance Decision Register** is the authoritative index of formal governance decisions.
+
+It provides both:
+
+```text
+CURRENT-STATE INDEX
++
+HISTORICAL-LINEAGE INDEX
+```
+
+The current controlling Suite Governance decision is:
+
+```text
+GDR-2026-0026
+→ Satoshium Suite Governance Model
+→ APPROVED
+→ EFFECTIVE
+```
+
+### Architecture Reconciliation
+
+**Architecture Reconciliation** is the governed review used when a material contradiction, ambiguity, or proposed change may affect settled Suite architecture.
+
+It may resolve or escalate questions involving:
+
+- institutional role;
+- canonical ownership;
+- authority boundaries;
+- relationship semantics;
+- lifecycle semantics;
+- constitutional dependency; or
+- Suite membership.
+
+Architecture Reconciliation is not ordinary documentation cleanup.
+
+### Constitutional Admission
+
+**Constitutional Admission** is the formal Suite Governance act by which a new institution becomes a formal member of the Satoshium Suite.
+
+Operational maturity, public visibility, integration, branding, repeated use, or technical importance do not create Suite membership by themselves.
+
+```text
+NEW CAPABILITY
+≠ NEW INSTITUTION
+
+DE FACTO MEMBERSHIP
+→ NOT RECOGNIZED
+```
 
 ## Naming Conventions
 
@@ -130,6 +335,15 @@ Terminology throughout the Suite should preserve these established distinctions:
 - Reference ≠ Support
 - Connection ≠ Identity
 - Changed Conclusion = Changed Canonical Statement
+- Review ≠ Approval
+- Suite Review ≠ Suite Ownership
+- Version ≠ Decision
+- GDR Identity ≠ Document Version
+- Interoperability Failure ≠ Source Invalidity
+- Compatibility Review ≠ Governance Veto
+- New Capability ≠ New Institution
+- Shared Custody ≠ Shared Ownership
+- Multiple Representations ≠ Multiple Authorities
 - NOT-TESTED NEVER EQUALS PASS
 
 Most importantly:
@@ -179,6 +393,30 @@ Eligible Governed Inputs
 
 Attestor terminology must not imply universal truth, source-authority transfer, or substitution for another Suite institution.
 
+## Relationship to Suite Governance
+
+The Terminology Standard records and preserves the vocabulary established by the ratified Satoshium Suite Governance Model.
+
+It does not independently create governance authority.
+
+```text
+Terminology
+→ defines governed meaning
+
+Governance
+→ establishes governed authority / decisions
+```
+
+A terminology edit may clarify language.
+
+It may not silently create:
+
+- a new institution;
+- new canonical ownership;
+- new approval authority;
+- a new constitutional dependency; or
+- a new Governance Decision.
+
 ## Historical Discipline
 
 Historical terminology should remain accurate to the period in which it was used where the historical record itself is being preserved.
@@ -197,10 +435,15 @@ Changes to this directory should preserve:
 4. exact relationship semantics;
 5. institutional authority boundaries;
 6. historical terminology accuracy; and
-7. consistency with the governing Suite standards and architecture.
+7. consistency with the governing Suite standards and architecture;
+8. current Governance Review vocabulary;
+9. separation of Suite Governance from Institutional Governance;
+10. explicit change-classification terminology;
+11. GDR and Governance Decision Register terminology; and
+12. constitutional terminology for ownership, membership, and architecture reconciliation.
 
 Changes that would redefine institutional meaning, canonical object identity, relationship semantics, or authority allocation require the appropriate governed architectural review rather than a documentation-only edit.
 
 ## Governing Principle
 
-**Consistent language supports consistent understanding, but terminology must preserve the architecture rather than redefine it.**
+**Consistent language supports consistent governance and understanding, but terminology must preserve the architecture and authority model rather than redefine them.**
