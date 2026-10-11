@@ -6,9 +6,11 @@
 
 ## Purpose
 
-This directory documents the Satoshium Suite **Evidence Requirements** methodology surface.
+This directory documents the Satoshium Suite **Certification Evidence Requirements** methodology surface.
 
-Evidence Requirements define the minimum evidentiary foundation necessary to support objective, transparent, repeatable, and independently reviewable certification processes.
+Evidence Requirements define the minimum evidentiary foundation necessary to support objective, transparent, repeatable, and independently reviewable **Certifier / certification-domain processes**.
+
+They are not universal Suite evidence rules and do not automatically govern the evidentiary requirements of Attestor or any other Suite institution.
 
 The public page for this directory is:
 
@@ -18,11 +20,44 @@ This README documents the repository role and architectural boundaries of the di
 
 ## Methodology Role
 
-Evidence Requirements are part of the Satoshium Suite Methodology.
+Evidence Requirements are part of the Satoshium Suite Methodology as a **certification-specific methodology surface**.
 
-Their role is to define what information must be available before governed certification evaluation can proceed.
+Their role is to define what information must be available before governed **certification evaluation** can proceed.
 
-Evidence Requirements support later evaluation criteria, scoring, certification logic, and certification decisions, but evidence alone does not create a certification outcome.
+Evidence Requirements may support later Certification Evaluation Criteria, scoring where explicitly adopted, certification logic, and certification determinations, but evidence alone does not create a certification outcome, institutional authority, or a Trust Statement.
+
+## Scope Boundary
+
+This methodology surface governs **certification evidence requirements only**.
+
+```text
+Certification Evidence Requirements
+→ Certifier / certification-domain methodology
+
+Attestor Evidence / Input Eligibility
+→ governed by Attestor's own rules
+
+Other Institutional Evidence Requirements
+→ governed by the applicable institution
+```
+
+Therefore:
+
+```text
+CERTIFICATION EVIDENCE REQUIREMENTS
+≠ UNIVERSAL SUITE EVIDENCE RULES
+
+CERTIFICATION EVIDENCE
+≠ ATTESTOR ELIGIBLE GOVERNED INPUTS
+
+EVIDENCE SUFFICIENCY
+≠ CERTIFICATION DETERMINATION
+
+EVIDENCE
+≠ TRUST STATEMENT
+```
+
+Other Suite institutions may reference or consume certification-related evidence where permitted, but they do not inherit these evidence requirements automatically.
 
 ## Current Evidence Categories
 
@@ -50,13 +85,13 @@ Supporting evidence must remain distinguishable from primary evidence and must n
 
 Evidence originating from independent sources capable of confirming or strengthening confidence in the evidentiary foundation.
 
-Independent verification supports evaluation but does not independently determine certification status or establish universal truth.
+Independent verification supports certification evaluation but does not independently determine certification status, create institutional authority, or establish universal truth.
 
 ### Evidence Integrity
 
 Evidence should remain authentic, complete, unaltered, and suitable for long-term preservation.
 
-Integrity assessment is distinct from evaluation, eligibility, conformance, publication, and downstream trust conclusions.
+Integrity assessment is distinct from evaluation, eligibility, conformance, publication, certification determination, and downstream Attestor Trust Statements.
 
 ### Evidence Traceability
 
@@ -90,8 +125,12 @@ Evidence Requirements must preserve the established Suite distinctions:
 - valid does not mean true;
 - valid does not mean supported;
 - reference does not equal derivation;
-- reference does not equal support; and
-- reference does not transfer authority.
+- reference does not equal support;
+- reference does not transfer authority;
+- certification evidence requirements are not universal Suite evidence rules;
+- evidence sufficiency is not a certification determination;
+- certification evidence is not an Attestor Trust Statement; and
+- downstream use does not imply adoption of Certifier evidence rules.
 
 Evidence may support a governed certification process without becoming the certification decision itself.
 
@@ -105,9 +144,35 @@ The presence of sufficient evidence does not predetermine the result of evaluati
 
 ## Relationship to Scoring and Certification Logic
 
-Scoring and certification logic may consume governed evaluation results based on the accepted evidentiary record.
+Scoring, where explicitly adopted by the governing certification methodology, and certification logic may consume governed evaluation results based on the accepted evidentiary record.
 
 Evidence does not independently create a score, decision, lifecycle state, publication state, or trust conclusion.
+
+## Relationship to Attestor
+
+Attestor operates under its own canonical flow:
+
+```text
+Eligible Governed Inputs
+→ Attestation
+→ Rule-Constrained Evaluation
+→ Trust Statement
+```
+
+Certification Evidence Requirements do not define Attestor input eligibility merely because a certification record, evidence item, or source record may later be referenced by Attestor.
+
+```text
+Certification Evidence
+≠ Attestor Eligibility
+
+Certification Evidence Requirement
+≠ Attestor Evaluation Rule
+
+Evidence Sufficiency
+≠ Trust Statement
+```
+
+Any use of certification-related evidence inside Attestor remains governed by Attestor's own eligibility rules, Rule-Constrained Evaluation, provenance requirements, and authority.
 
 ## Relationship to Certifier
 
@@ -116,6 +181,35 @@ Satoshium Certifier is the Suite institution responsible for certification opera
 Evidence Requirements support Certifier by defining the evidentiary foundation required by the certification methodology.
 
 They do not independently issue certifications or become the authoritative source for referenced evidence objects.
+
+## Cross-Institution Boundary
+
+Certification evidence may later be:
+
+- referenced by Registry;
+- preserved by Chronicle;
+- integrity-referenced by Anchor;
+- discovered through Beacon;
+- consumed as an eligible governed input by Attestor; or
+- used within Navigator-defined workflows.
+
+Those interactions do not make Certification Evidence Requirements a cross-institution authority layer.
+
+```text
+REFERENCE
+≠ EVIDENCE-RULE ADOPTION
+
+DOWNSTREAM USE
+≠ AUTHORITY TRANSFER
+
+PRESERVATION
+≠ SOURCE OWNERSHIP
+
+INTEGRITY REFERENCE
+≠ EVIDENCE OWNERSHIP
+```
+
+Each institution applies its own rules to the evidence, references, or records it governs.
 
 ## Provenance and Authority
 
@@ -150,10 +244,15 @@ Changes to this directory should preserve:
 4. authority boundaries for source records;
 5. sufficient traceability for independent review;
 6. historical accuracy and preservation discipline; and
-7. consistency with the governing Suite standards, methodology, and Certifier architecture.
+7. consistency with the governing Suite standards, methodology, and Certifier architecture;
+8. explicit certification-domain scope;
+9. separation of certification evidence requirements from Attestor input eligibility;
+10. explicit scoring adoption where scoring is used;
+11. downstream institutional independence; and
+12. the distinction between evidence sufficiency, certification determination, and Trust Statement.
 
 Changes that would redefine the relationship between certification evidence and Attestor trust conclusions require the appropriate governed architectural review rather than a documentation-only edit.
 
 ## Governing Principle
 
-**Strong certification depends on sufficient, traceable, governed evidence whose source authority remains intact.**
+**Strong certification depends on sufficient, traceable, governed evidence whose source authority remains intact; certification evidence requirements do not become universal Suite evidence rules or Attestor trust logic.**
