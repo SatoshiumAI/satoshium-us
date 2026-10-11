@@ -8,7 +8,9 @@
 
 This directory documents the Satoshium Suite **Certification Workflow** methodology surface.
 
-The Certification Workflow defines the repeatable operational sequence used to perform certification work consistently, transparently, and reviewably across the Suite.
+The Certification Workflow defines the repeatable operational sequence used to perform **Certifier / certification-domain work** consistently, transparently, and reviewably.
+
+It is not a universal workflow for the Satoshium Suite.
 
 The public page for this directory is:
 
@@ -18,7 +20,7 @@ This README documents the repository role and architectural boundaries of the di
 
 ## Methodology Role
 
-The Certification Workflow is part of the Satoshium Suite Methodology.
+The Certification Workflow is part of the Satoshium Suite Methodology as a **certification-specific methodology surface**.
 
 Its role is to define how certification work is performed within the broader stages described by the Certification Lifecycle.
 
@@ -26,7 +28,39 @@ The lifecycle describes when governed stages occur.
 
 The workflow describes the operational work performed within those stages.
 
-Workflow does not independently create institutional authority, certification outcomes, lifecycle activation, publication state, or trust statements.
+Workflow does not independently create institutional authority, certification outcomes, lifecycle activation, publication state, or Trust Statements.
+
+It also does not create a mandatory cross-institution production sequence.
+
+## Scope Boundary
+
+The Certification Workflow governs the work performed within certification-domain activity.
+
+It does **not** define the canonical workflow or lifecycle of every Suite institution.
+
+```text
+Certification Workflow
+→ Certifier / certification-domain methodology
+
+Navigator Workflow Definition
+→ Navigator-owned canonical object
+
+Institutional Operations
+→ governed by the institution that owns the work
+```
+
+The existence of a certification workflow does not require Registry, Chronicle, Anchor, Beacon, Attestor, Atlas, or Navigator to participate in every certification operation.
+
+```text
+CONCEPTUAL SEQUENCE
+≠ MANDATORY PIPELINE
+
+EXERCISED LINEAGE
+≠ MANDATORY ARCHITECTURE
+
+WORKFLOW PARTICIPATION
+≠ AUTHORITY TRANSFER
+```
 
 ## Workflow Stages
 
@@ -81,7 +115,7 @@ Canonical creation must remain distinct from lifecycle activation and publicatio
 
 ### Publication
 
-Where governed publication is appropriate, certification information may be made available through the applicable publication, registration, integrity-reference, discovery, or repository surfaces.
+Where governed Certifier publication is appropriate, certification information may be published under Certifier authority and may later be referenced by independently governed Registry, Anchor, Beacon, Chronicle, Attestor, or other Suite surfaces.
 
 Publication does not transfer Certifier authority to another Suite institution.
 
@@ -113,19 +147,29 @@ The workflow does not independently issue certification objects or become the so
 
 ## Relationship to Navigator
 
-Navigator owns workflow definition and orchestration within the formal Suite architecture.
+Navigator owns **Workflow Definition / Orchestration** and the canonical **Navigator Workflow Definition**.
 
-Certification Workflow methodology may therefore be implemented or orchestrated through Navigator according to the governed Suite design.
+The Certification Workflow is methodology. It is not itself a Navigator Workflow Definition.
 
-That operational relationship does not transfer Certifier's certification authority to Navigator.
+Where a certification process is orchestrated through Navigator, Navigator may define routing, coordination, handoffs, and workflow-local state without acquiring Certifier authority or ownership of the certification determination.
 
-Navigator coordinates work.
+```text
+Certification Workflow Methodology
+≠ Navigator Workflow Definition
 
-Certifier remains responsible for certification operations and certification outputs.
+Navigator Orchestration
+≠ Certification Authority
+```
+
+Navigator coordinates governed workflow activity.
+
+Certifier remains responsible for certification operations, certification determinations, and Certification Packages.
 
 ## Relationship to Other Suite Institutions
 
-Other Suite institutions may participate in or receive outputs from the certification workflow according to their own canonical responsibilities.
+Other Suite institutions may participate in, reference, or receive outputs associated with certification activity according to their own canonical responsibilities.
+
+Their involvement is conditional and governed independently; it is not a required stage of the Certification Workflow.
 
 For example:
 
@@ -137,6 +181,41 @@ For example:
 - Atlas may provide authoritative intelligence or structural context.
 
 Participation, reference, registration, anchoring, discovery, or attestation does not transfer certification authority.
+
+## Cross-Institution Workflow Boundary
+
+The Suite may exercise a sequence such as:
+
+```text
+Certification
+→ Registration
+→ Historical Preservation
+→ Integrity Preservation
+→ Discovery
+→ Attestation
+```
+
+That sequence may be useful as an exercised lineage or workflow example.
+
+It is not the universal architecture.
+
+No certification workflow rule may silently require:
+
+- Registry registration;
+- Chronicle preservation;
+- Anchor integrity preservation;
+- Beacon discovery;
+- Attestor evaluation;
+- Navigator orchestration; or
+- Atlas participation
+
+unless the governing workflow or applicable institution-specific rules explicitly require that participation.
+
+The governing doctrine is:
+
+> **Conceptual Sequence ≠ Mandatory Pipeline**
+
+> **Exercised Lineage ≠ Mandatory Architecture**
 
 ## Workflow Boundaries
 
@@ -157,8 +236,11 @@ The workflow must preserve these established distinctions:
 - correction is not automatically a new version;
 - supersession is not mutation;
 - reference does not equal derivation;
-- reference does not equal support; and
-- reference does not transfer authority.
+- reference does not equal support;
+- reference does not transfer authority;
+- workflow participation does not transfer authority;
+- certification workflow methodology is not a Navigator Workflow Definition; and
+- exercised lineage is not mandatory architecture.
 
 ## Historical Discipline
 
@@ -179,10 +261,14 @@ Changes to this directory should preserve:
 5. evidence provenance and source authority;
 6. separation between canonical creation, lifecycle activation, and publication;
 7. historical accuracy; and
-8. consistency with the governing Suite standards, methodology, and institutional architecture.
+8. consistency with the governing Suite standards, methodology, and institutional architecture;
+9. explicit certification-domain scope;
+10. separation between Certification Workflow methodology and Navigator Workflow Definitions;
+11. optional / governed downstream institutional participation; and
+12. the distinction between exercised sequence and mandatory architecture.
 
 Changes that would redefine certification authority, validation semantics, trust relationships, publication semantics, or cross-institution workflow responsibilities require the appropriate governed architectural review rather than a documentation-only edit.
 
 ## Governing Principle
 
-**A lifecycle defines when certification stages occur. A workflow defines how governed work is performed within those stages.**
+**The Certification Workflow defines how certification-domain work is performed; it does not impose a universal Suite pipeline, create Navigator canonical objects, or transfer institutional authority.**
