@@ -6,7 +6,9 @@
 
 ## Purpose
 
-This directory documents the **Satoshium Certification Standard**, the Suite-wide standards layer governing certification expectations.
+This directory documents the **Satoshium Certification Standard**, the Suite-wide standards surface governing certification expectations.
+
+The Standard defines certification rules and expectations. It does not create generalized Suite-wide certification authority.
 
 The public page for this directory is:
 
@@ -26,6 +28,17 @@ Within the Suite architecture:
 
 The Certification Standard therefore does not replace Certifier and does not itself execute certification operations.
 
+```text
+Certification Standard
+→ defines certification expectations
+
+Certifier
+→ exercises certification authority
+→ produces the Certification Package
+```
+
+Adoption, reference, implementation, or downstream use of the Certification Standard does not transfer Certifier authority.
+
 ## Relationship to Certifier
 
 Satoshium Certifier is the formal Suite institution responsible for certification operations and the Certification Package.
@@ -42,7 +55,9 @@ The current Certification Standard surface links to the following methodology ar
 
 ### Certification Lifecycle
 
-Defines the temporal progression of certification activity.
+Defines the temporal progression of **Certifier / certification-domain activity**.
+
+It is not the lifecycle model for every Suite institution.
 
 Path:
 
@@ -52,7 +67,9 @@ Lifecycle must preserve the distinctions between canonical creation, activation,
 
 ### Certification Workflow
 
-Defines how certification work is operationally performed within lifecycle stages.
+Defines how **Certifier / certification-domain work** is operationally performed within lifecycle stages.
+
+It is not a universal Suite workflow or mandatory cross-institution pipeline.
 
 Path:
 
@@ -62,7 +79,9 @@ Workflow remains distinct from lifecycle and does not transfer Certifier authori
 
 ### Evaluation Criteria
 
-Defines the objective criteria applied during certification evaluation.
+Defines the criteria applied during **certification evaluation**.
+
+The criteria do not become general Attestor evaluation criteria or universal Suite evaluation rules merely because they are Suite-published methodology.
 
 Path:
 
@@ -72,7 +91,9 @@ Evaluation criteria support evaluation but do not independently determine certif
 
 ### Evidence Requirements
 
-Defines the evidentiary foundation required for certification activity.
+Defines the evidentiary foundation required for **certification activity**.
+
+These requirements do not automatically govern the evidentiary rules of every other Suite institution.
 
 Path:
 
@@ -82,7 +103,9 @@ Evidence must preserve provenance and source authority.
 
 ### Certification Logic
 
-Defines governed decision logic used within the certification methodology.
+Defines governed decision logic used within **Certifier / certification-domain methodology**.
+
+Certification logic is not Suite Governance decision logic and does not create cross-institution approval authority.
 
 Path:
 
@@ -93,6 +116,8 @@ Certification logic supports repeatable decision-making but does not independent
 ### Certification Schema
 
 Defines structured representation requirements for certification records.
+
+The schema is a representation contract. It is not the canonical object itself and does not create canonical ownership.
 
 Path:
 
@@ -106,11 +131,62 @@ The current public surface also identifies supporting standards areas for:
 
 - scoring;
 - trust-related rules; and
-- governance.
+- standards governance.
 
-Those standards must remain consistent with the mature Suite architecture and with the authority boundaries of Certifier and Attestor.
+Those standards remain bounded by the ratified Suite architecture.
 
-Where trust terminology overlaps with Attestor's governed Trust Statement semantics, the meaning should be reconciled through the appropriate Suite-level architectural review rather than inferred from terminology alone.
+In particular:
+
+```text
+Scoring Standard
+→ applies only where scoring is explicitly adopted
+
+Score
+≠ certification authority
+≠ Trust Statement
+≠ universal trust status
+
+Trust Standard
+→ shared trust-related expectations
+≠ universal Suite trust authority
+
+Governance Standard
+→ governs maintenance and evolution of Suite Standards
+
+Suite Governance Model
+→ governs constitutional authority and change
+```
+
+Certification terminology must not be used to broaden Certifier authority into another institution's domain.
+
+## Cross-Institution Boundary
+
+Certification may participate in broader Suite workflows, but certification does not become the governing authority for downstream institutional actions.
+
+```text
+Certification
+→ may be referenced by Registry
+→ may be preserved by Chronicle
+→ may be integrity-referenced by Anchor
+→ may be discovered by Beacon
+→ may be consumed as an eligible governed input by Attestor
+→ may participate in Navigator-defined workflows
+```
+
+Those relationships do not create a mandatory universal pipeline.
+
+```text
+CONCEPTUAL SEQUENCE
+≠ MANDATORY PIPELINE
+
+EXERCISED LINEAGE
+≠ MANDATORY ARCHITECTURE
+
+REFERENCE
+≠ AUTHORITY TRANSFER
+```
+
+Each downstream institution independently governs its own canonical object, lifecycle, publication state, correction, versioning, and institutional determination.
 
 ## Institutional Boundaries
 
@@ -140,7 +216,7 @@ Integrity reference does not equal certification authority, certification determ
 
 ### Beacon
 
-Provides discovery signals and discovery metadata.
+Provides governed Discovery Signals. Discovery Metadata remains supporting Beacon structure.
 
 Discovery does not equal derivation, publication authority, or certification authority.
 
@@ -185,8 +261,38 @@ This directory must preserve the Suite's established distinctions:
 - correction is not deletion;
 - supersession is not mutation;
 - reference does not equal derivation;
-- reference does not equal support; and
-- reference does not transfer authority.
+- reference does not equal support;
+- reference does not transfer authority;
+- standard adoption does not transfer authority;
+- certification outcome does not become a Trust Statement;
+- Certification Workflow does not become a universal Suite workflow;
+- Certification Lifecycle does not become a universal Suite lifecycle; and
+- Certification Schema does not become the canonical Certification Package.
+
+## Relationship to Suite Governance
+
+The Certification Standard operates within the settled Suite architecture.
+
+It does not govern constitutional authority, institutional membership, canonical ownership reassignment, or other constitutional changes.
+
+If a proposed certification rule would change:
+
+- Certifier's institutional role;
+- canonical ownership of the Certification Package;
+- another institution's authority;
+- Suite membership;
+- constitutional dependencies; or
+- mandatory cross-institution architecture,
+
+the matter must leave standards maintenance and enter the applicable **Suite Governance / Architecture Reconciliation** process.
+
+```text
+Certification Standard
+≠ Suite Governance
+
+Standards Governance
+≠ Constitutional Governance
+```
 
 ## Historical Discipline
 
@@ -206,11 +312,15 @@ Changes to this directory should preserve:
 4. provenance and relationship semantics;
 5. the distinction between certification and Attestor trust conclusions;
 6. historical accuracy and version discipline; and
-7. consistency with the governing Suite architecture.
+7. consistency with the governing Suite architecture;
+8. explicit separation between Certification Standard and Certifier authority;
+9. certification-specific scope of linked Methodology child pages;
+10. downstream institutional independence;
+11. separation between certification outcomes and Attestor Trust Statements; and
+12. escalation of constitutional changes to Suite Governance / Architecture Reconciliation.
 
 Changes that would redefine institutional roles, trust semantics, canonical objects, publication authority, or cross-institution responsibilities require the appropriate governed architectural review rather than a documentation-only edit.
 
 ## Governing Principle
 
-**Standards define expectations. Methodology defines implementation. Certifier performs certification.**
-
+**The Certification Standard defines certification expectations. Certification Methodology defines certification implementation. Certifier exercises certification authority and produces the Certification Package.**
