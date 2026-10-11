@@ -2,7 +2,9 @@
 
 ## Overview
 
-The **Satoshium Schemas Standard** defines Suite-wide expectations for machine-readable records, structured data models, canonical representations, validation-ready objects, and schema evolution.
+The **Satoshium Schemas Standard** defines Suite-wide expectations for machine-readable records, structured data models, canonical representations, validation-ready structures, and schema evolution.
+
+Schemas describe governed representations and structural constraints. They do not themselves create canonical objects, canonical ownership, institutional authority, or substantive conclusions.
 
 The governing principle is:
 
@@ -49,7 +51,50 @@ Each institution remains authoritative for its own canonical object.
 
 > Reference does not transfer authority.
 
+The same constitutional discipline applies to schemas:
+
+```text
+SCHEMA
+≠ CANONICAL OBJECT
+
+SHARED SCHEMA
+≠ SHARED OWNERSHIP
+
+SCHEMA CONFORMANCE
+≠ INSTITUTIONAL AUTHORITY
+```
+
 ---
+
+## Schema vs. Canonical Object
+
+A schema defines the structure expected of a representation.
+
+A canonical object is the institution-owned governed object whose identity, lifecycle, correction, versioning, publication, and substantive canonical state are controlled by the owning institution.
+
+Therefore:
+
+```text
+Schema
+→ structural contract / representation rules
+
+Canonical Object
+→ institution-owned governed object
+```
+
+A schema may describe one or more representations of a canonical object.
+
+That does not make the schema the canonical object.
+
+```text
+SCHEMA
+≠ CANONICAL OBJECT
+
+MULTIPLE REPRESENTATIONS
+≠ MULTIPLE AUTHORITIES
+```
+
+Canonical ownership remains where the Suite architecture assigns it.
 
 ## Required Fields
 
@@ -71,14 +116,24 @@ Required fields should be driven by institutional need rather than structural sy
 
 Structured Suite records should be validated before entering a governed production state when their institution requires formal validation.
 
-Schema validation may establish structural conformance.
+Schema validation may establish structural conformance to the applicable schema.
 
 Institutional Validation may additionally evaluate requirements that cannot be expressed completely in a machine schema.
+
+Neither schema validation nor schema conformance independently establishes source authority, truth, certification, trust, publication state, lifecycle state, or canonical ownership.
 
 ```text
 Schema conformance
 ≠
 complete institutional Validation
+
+Schema conformance
+≠
+source authority
+
+Schema conformance
+≠
+certification / trust / publication
 ```
 
 ---
@@ -169,7 +224,31 @@ An institutional profile may constrain:
 
 without contradicting Suite-wide rules.
 
+An institutional profile may specialize structure, but specialization does not transfer canonical ownership to the Schemas layer or create shared ownership with other institutions.
+
 ---
+
+## Shared Structure vs. Shared Ownership
+
+The use of shared schema conventions improves interoperability.
+
+It does not merge institutional objects or authority.
+
+```text
+SHARED STRUCTURE
+≠ SHARED OWNERSHIP
+
+SHARED FIELD NAME
+≠ SHARED AUTHORITY
+
+SHARED IDENTIFIER PATTERN
+≠ SHARED CANONICAL IDENTITY
+
+SCHEMA REUSE
+≠ AUTHORITY TRANSFER
+```
+
+Where two institutions use similar or identical structural fields, each institution still owns the canonical object and lifecycle authority assigned to it by Suite architecture.
 
 ## Anchor Application
 
@@ -217,6 +296,8 @@ Schemas define structure.
 
 Interoperability defines how those structures are exchanged, referenced, and interpreted across systems.
 
+Interoperability may require structural compatibility, but compatibility does not create canonical ownership or invalidate the source object merely because an exchange fails.
+
 ```text
 Schemas
 → structure
@@ -243,7 +324,39 @@ Anchor schema
 
 Using shared Suite conventions does not merge those institutional objects.
 
+The Schemas Standard also does not become the authority layer for those objects merely because it defines their machine-readable structure.
+
 ---
+
+# Governance Boundary
+
+Schema work operates within settled Suite architecture.
+
+A schema change may alter representation requirements.
+
+It may not silently alter:
+
+- institutional role;
+- canonical ownership;
+- canonical object identity;
+- Suite membership;
+- authority allocation; or
+- constitutional dependency.
+
+If a proposed schema change would change one of those architectural matters, the issue must move to the applicable **Suite Governance / Architecture Reconciliation** process.
+
+```text
+SCHEMA CHANGE
+≠ ARCHITECTURAL AUTHORITY
+
+SCHEMA SOPHISTICATION
+≠ CANONICALIZATION
+
+CANONICALIZATION SIGNALS
+≠ CANONICALIZATION
+```
+
+Canonical ownership may change only through explicit Constitutional Governance.
 
 # Current Freeze Decisions
 
@@ -264,6 +377,8 @@ institution-specific Controlled Values
 method-specific profile constraints
 publication requirements
 validation procedures
+canonical object ownership
+institutional lifecycle authority
 ```
 
 ---
@@ -277,3 +392,10 @@ The Schemas Standard now defines the first Suite-wide canonical representation r
 **Version:** 1.0-draft
 
 **Maintained By:** Satoshium
+
+
+---
+
+## Governing Principle
+
+**Schemas define structure. Institutions own canonical objects. Shared structure improves interoperability without creating shared ownership or authority.**
