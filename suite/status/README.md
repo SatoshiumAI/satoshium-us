@@ -1,8 +1,10 @@
 # Satoshium Suite — Status
 
 **Path:** `/suite/status/`  
-**Status Update:** September 2026  
-**Current Posture:** All eight formal Suite institutions operational
+**Status Update:** October 11, 2026  
+**Current Posture:** All eight current formal Suite institutions operational  
+**Suite Governance Review:** COMPLETE — APPROVED · October 11, 2026  
+**Current Governance Model:** `GDR-2026-0026` — Satoshium Suite Governance Model
 
 ## Current Suite Posture
 
@@ -10,7 +12,7 @@ The Suite status page records the current institutional posture of the Satoshium
 
 Current grouping:
 
-- **Formal Suite Institutions:** 8 institutions
+- **Current Formal Suite Institutions:** 8 institutions
 - **Operational:** 8 institutions
 - **Continuing Development:** 0 institutions
 - **Aegis:** External / pre-Suite
@@ -38,7 +40,9 @@ Aegis remains an operational Satoshium subsystem outside the formal Suite roster
 
 **Classification:** External / pre-Suite
 
-Aegis is not counted among the eight formal Suite institutions.
+Aegis is not counted among the eight current formal Suite institutions.
+
+The current eight-institution roster is the Suite's present constitutional state. It is not a permanent numerical ceiling; future institutional admission requires formal Constitutional Governance.
 
 ### Atlas
 
@@ -50,7 +54,8 @@ Authoritative jurisdiction intelligence.
 
 **Operational**
 
-Workflow definition and orchestration.
+**Institutional Role:** Workflow Definition / Orchestration  
+**Canonical Object:** Navigator Workflow Definition.
 
 ### Certifier
 
@@ -88,6 +93,10 @@ First production Integrity Reference:
 
 **Operational · September 2026**
 
+**Institutional Role:** Discovery & Signals  
+**Canonical Object:** Discovery Signal  
+**Supporting Structure:** Discovery Metadata
+
 First production Discovery Signal:
 
 `BEAC-2026-0001`
@@ -102,6 +111,9 @@ Production state:
 ### Attestor
 
 **Operational · Released September 2026**
+
+**Institutional Role:** Governed Attestation & Rule-Constrained Evaluation  
+**Canonical Objects:** Attestation; Trust Statement
 
 First production Attestation:
 
@@ -118,6 +130,42 @@ Production state:
 - Governed Review — 25 / 25 SATISFIED
 - Post-Operation Institutional Review — 11 PASS · 0 FAIL · 0 UNRESOLVED
 - Operational Proof — ESTABLISHED
+
+
+## Suite Governance Status
+
+The **Satoshium Suite Governance Review** was completed and approved on October 11, 2026.
+
+It established the constitutional governance model for:
+
+- institutional sovereignty;
+- authority boundaries and authority non-transfer;
+- canonical ownership;
+- Routine / Material / Constitutional change;
+- institutional change and membership;
+- governance decisions and approval boundaries;
+- Governance Decision Records;
+- the Governance Decision Register;
+- versioning, correction, and supersession;
+- transparency and historical preservation.
+
+The current controlling governance decision is:
+
+```text
+GDR-2026-0026
+→ Satoshium Suite Governance Model
+→ APPROVED
+→ EFFECTIVE
+```
+
+The governing boundary is:
+
+> **Suite Governance governs the boundaries that make the Suite coherent. Institutional Governance governs the work that makes each institution operational.**
+
+And:
+
+> **Authority follows the governed subject.**
+
 
 ## Production Milestones
 
