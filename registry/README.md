@@ -2,11 +2,13 @@
 
 **Structure through records. Continuity through references.**
 
-Satoshium Registry is the authoritative public catalog of institutional records created throughout the Satoshium Suite.
+Satoshium Registry is the Satoshium Suite institution responsible for **Canonical Registration / Public Catalog**.
 
-Registry exists to identify, classify, catalog, reference, connect, and preserve the discoverability of authoritative records produced by Satoshium institutions. It does not replace those records, duplicate their authority, or assume ownership over the work of the institutions that created them.
+Registry exists to identify, classify, catalog, reference, connect, and preserve the discoverability of authoritative records produced by Satoshium institutions through its canonical **Satoshium Registry Entry (SREG)**.
 
-Registry implements the constitutional foundations of the Satoshium Suite through:
+Registry does not replace source records, duplicate source authority, or assume ownership over the work of the institutions that created them.
+
+Registry operates within the settled Satoshium Suite architecture through:
 
 * Satoshium Suite Standards
 * Satoshium Suite Methodology
@@ -18,27 +20,36 @@ Registry implements the constitutional foundations of the Satoshium Suite throug
 
 ## Institutional Position
 
-Registry operates within the Suite-wide implementation hierarchy:
+Registry is one of the **eight current sovereign Suite institutions**.
+
+Its settled role is:
 
 ```text
-Suite Standards
-  ↓
-Suite Methodology
-  ↓
-Suite Interoperability
-  ↓
-Registry Institutional Implementation
-  ↓
-Satoshium Registry Entry (SREG)
+Registry
+→ Canonical Registration / Public Catalog
+
+Canonical Operational Object
+→ Satoshium Registry Entry (SREG)
 ```
 
-Suite Standards define the expectations that Registry must satisfy.
+Suite Standards define shared expectations.
 
-Suite Methodology defines the repeatable, reviewable, and maintainable approach used to apply those expectations.
+Suite Methodology defines shared implementation principles where applicable.
 
-Suite Interoperability defines how Registry exchanges references with other Suite institutions while preserving clear authority boundaries.
+Suite Interoperability governs cross-institution exchange and compatibility while remaining subordinate to settled architecture.
 
-Registry institutional implementation translates those shared foundations into Registry rules, policies, schemas, lifecycle states, procedures, identifiers, relationships, and public catalog entries.
+Registry Institutional Governance controls Registry-owned rules, policies, procedures, schemas, lifecycle states, identifiers, relationships, publication, correction, and public catalog operations within Registry's settled authority.
+
+```text
+SUITE CONSTRAINT
+≠ SUITE OWNERSHIP
+
+INTEROPERABILITY
+≠ AUTHORITY TRANSFER
+
+REFERENCE
+≠ AUTHORITY TRANSFER
+```
 
 ---
 
@@ -114,10 +125,10 @@ Examples include:
 * SCRD
 * Atlas Jurisdiction Intelligence Package
 * Chronicle Entry
-* Anchor integrity reference
-* Beacon discovery signal
-* Attestor trust statement
-* Navigator workflow definition
+* Anchor Integrity Reference
+* Beacon Discovery Signal
+* Attestor Trust Statement
+* Navigator Workflow Definition
 * Tool or institutional publication
 
 Registry catalogs the source record.
@@ -158,6 +169,18 @@ The originating institution remains authoritative for:
 
 An SREG may report or reference those source-controlled values, but Registry does not redefine them.
 
+Registry's authority follows the governed subject:
+
+```text
+Registry-owned subject
+→ Registry authority
+
+Source-owned subject
+→ Source Institution authority
+```
+
+**Exclusive Institutional Authority ≠ Unlimited Authority.**
+
 ---
 
 ## Registry Scope
@@ -171,7 +194,9 @@ The initial operational Registry supports SREGs for:
 * Attestation Records
 * Signal Records
 
-Registry may also support additional controlled record types where those types are defined, documented, schema-compatible, and approved through Registry governance.
+Registry may also support additional controlled Registry Record Types where those types are defined, documented, schema-compatible, and approved through Registry governance **within Registry's settled authority**.
+
+A new Registry Record Type is a Registry classification. It does not create a new Suite institution, new canonical ownership, or new constitutional authority.
 
 Potential additional types include:
 
@@ -214,11 +239,24 @@ Publish
 Maintain Lifecycle, Versions, Corrections, and Archival Continuity
 ```
 
-This method is separate from the certification workflow.
+This method is Registry's own institutional process.
+
+It is separate from Certifier's certification workflow and from every other institution's lifecycle.
 
 Certifier determines certification outcomes.
 
 Registry determines whether and how an authoritative record is cataloged.
+
+```text
+REGISTRATION
+≠ CERTIFICATION
+
+REGISTRY LIFECYCLE
+≠ SOURCE LIFECYCLE
+
+CONCEPTUAL SEQUENCE
+≠ MANDATORY PIPELINE
+```
 
 ---
 
@@ -248,7 +286,17 @@ Every SREG should preserve, at minimum, the following conceptual information:
 * supersession information
 * archival information
 
-The final machine-readable schema defines the authoritative field names, validation requirements, permitted values, and structural rules.
+The governed Registry schema defines the authoritative structural field names, validation requirements, permitted values, and representation rules for SREGs.
+
+Schema authority is structural.
+
+```text
+SCHEMA
+≠ CANONICAL OBJECT
+
+SCHEMA CONFORMANCE
+≠ SOURCE AUTHORITY
+```
 
 ---
 
@@ -310,6 +358,19 @@ Registry therefore preserves both:
 
 * the current institutional condition of the SREG; and
 * the reported or referenced condition of the authoritative source record.
+
+Where historical states are preserved:
+
+```text
+CURRENT
+≠ HISTORICAL
+
+PRESERVED
+≠ CURRENT
+
+SUPERSEDED
+≠ DELETED
+```
 
 ---
 
@@ -382,6 +443,17 @@ A source record may change without the SREG schema changing.
 A SREG may be corrected without the source record changing.
 
 A schema may evolve while older SREGs remain preserved under their original schema version.
+
+```text
+VERSION
+≠ DECISION
+
+CORRECTION
+≠ VERSION
+
+SUPERSESSION
+≠ MUTATION
+```
 
 ---
 
@@ -502,35 +574,35 @@ Each institution retains a distinct responsibility and canonical object.
 
 ### Atlas
 
-Creates jurisdiction intelligence, canonical jurisdiction records, evidence resources, and machine-readable Atlas packages.
+Provides **Authoritative Intelligence** through the canonical **Jurisdiction Intelligence Package**.
 
 ### Certifier
 
-Evaluates subjects and creates certifications, including the canonical Certification Package and related artifacts such as the SCPR, SCR, and SCRD.
+Performs **Operational Certification** and owns the canonical **Certification Package**.
 
 ### Registry
 
-Creates SREGs that catalog authoritative institutional records and preserve their discoverability and relationships.
+Performs **Canonical Registration / Public Catalog** and owns the canonical **Satoshium Registry Entry (SREG)**.
 
 ### Chronicle
 
-Creates and preserves historical events and institutional chronology.
+Performs **Historical Preservation** and owns the canonical **Chronicle Entry**.
 
 ### Anchor
 
-Creates and preserves integrity references, hashes, timestamps, signatures, and durable verification points.
+Performs **Integrity Preservation** and owns the canonical **Integrity Reference**.
 
 ### Beacon
 
-Creates discovery signals and discovery metadata that help records be found, interpreted, and distributed.
+Performs **Discovery & Signals** and owns the canonical **Discovery Signal**. Discovery Metadata remains supporting structure.
 
 ### Attestor
 
-Creates trust statements, attestations, validations, and supporting verification references.
+Performs **Governed Attestation & Rule-Constrained Evaluation** and owns canonical **Attestations** and **Trust Statements**.
 
 ### Navigator
 
-Creates workflow definitions and coordinates cross-system operational activity.
+Performs **Workflow Definition / Orchestration** and owns the canonical **Navigator Workflow Definition**.
 
 ---
 
@@ -545,25 +617,30 @@ Registry follows the Suite Interoperability model:
 * public relationships remain traceable;
 * interoperability does not merge institutional authority.
 
-Example certification relationship:
+An exercised certification-to-registration relationship may be represented as:
 
 ```text
-Atlas Resource
-  ↓
-Certifier Evaluation
-  ↓
-Certification Package
-  ↓
-SCRD
-  ↓
+Certification Package / Certifier source record
+  ↓ referenced by
 SREG
 ```
 
 The Certification Package remains Certifier's canonical certification object.
 
-The SCRD remains Certifier's canonical certified record.
-
 The SREG remains Registry's canonical catalog entry.
+
+Any exercised lineage involving Atlas, Certifier, Registry, Chronicle, Anchor, Beacon, or Attestor is evidence of interoperability, not a mandatory Suite pipeline.
+
+```text
+PRODUCTION-PROVEN
+≠ CONSTITUTIONALLY REQUIRED
+
+INTEROPERABILITY FAILURE
+≠ SOURCE INVALIDITY
+
+COMPATIBILITY REVIEW
+≠ GOVERNANCE VETO
+```
 
 ---
 
@@ -584,7 +661,7 @@ Registry validation is limited to Registry responsibilities, such as:
 
 Certifier evaluates certification evidence.
 
-Attestor creates attestations and trust statements.
+Attestor creates governed Attestations and bounded Trust Statements through Rule-Constrained Evaluation.
 
 Anchor preserves integrity references.
 
@@ -654,15 +731,11 @@ Operational implementation may also include:
 
 ## Current Status
 
-**Development Cycle:** August 2026  
-**Institutional Condition:** Operational Development and Publication  
-**Foundation:** Constitutionally reconciled with Suite Standards, Suite Methodology, and Suite Interoperability
+**Institutional Condition:** Operational  
+**Governance Alignment:** October 11, 2026  
+**Canonical Operational Object:** Satoshium Registry Entry (SREG)
 
-The July Registry architecture established the institutional foundation.
-
-The August development cycle transforms that foundation into a complete operational Registry implementation.
-
-Registry is Operational.
+Registry is one of the eight current operational Suite institutions.
 
 Current posture includes:
 
@@ -677,11 +750,41 @@ Current posture includes:
 
 ---
 
+## Governance Boundary
+
+Registry governs Registry-owned subjects within its settled institutional authority.
+
+```text
+Routine Registry Change
+→ Registry Governance
+
+Institution-Owned Material Change
+→ Registry determines / approves
+→ Suite coherence or shared-impact review where applicable
+
+Constitutional Change
+→ Formal Suite Governance
+```
+
+Changes to Registry's institutional role, canonical ownership of the SREG, Suite membership, authority allocation, or constitutional position cannot be made through ordinary Registry documentation, schemas, policies, procedures, or repeated practice.
+
+```text
+CHANGE WITHIN AUTHORITY
+→ may remain institutional
+
+CHANGE TO AUTHORITY
+→ requires Suite Governance
+
+NEW CAPABILITY
+≠ NEW INSTITUTION
+```
+
 ## Guiding Principles
 
 Registry is governed by the following institutional principles:
 
-* Authority remains with the originating institution.
+* Authority follows the governed subject.
+* Authority remains with the originating institution for source-controlled subjects.
 * Registry catalogs rather than replaces.
 * SREG is Registry's canonical operational object.
 * Every SREG references an authoritative source record.
@@ -694,7 +797,7 @@ Registry is governed by the following institutional principles:
 * Relationships should remain traceable.
 * Schemas should remain machine-readable and human-understandable.
 * Historical continuity should be preserved.
-* Interoperability should strengthen institutional separation.
+* Interoperability may connect institutions but may not redefine them.
 * Documentation should replace assumption.
 * Preservation should not erase provenance.
 
