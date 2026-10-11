@@ -49,6 +49,26 @@ This distinction is important:
 - Institutions perform their own governed operations.
 - Canonical objects remain owned by their originating institutions.
 
+
+The broader Governance Review adds an additional governing distinction:
+
+```text
+Suite Governance
+→ protects constitutional boundaries and shared governance controls
+
+Institutional Governance
+→ governs institution-owned responsibilities and canonical authority
+```
+
+The current controlling governance decision is:
+
+```text
+GDR-2026-0026
+→ Satoshium Suite Governance Model
+→ APPROVED
+→ EFFECTIVE
+```
+
 ## Standard Categories
 
 ### Certification Standard
@@ -61,15 +81,55 @@ Defines what counts as evidence, how evidence is categorized, how evidence quali
 
 ### Trust Standard
 
-Defines how trust signals are identified, interpreted, bounded, and communicated across Suite records and public verification surfaces.
+Defines shared trust-related expectations, terminology, scope, and communication boundaries without creating generalized Suite-wide trust authority.
+
+The Trust Standard does **not** create:
+
+- a universal Suite-wide trust authority;
+- a canonical Suite-wide `Trust Signal` object;
+- a generic `trusted` status;
+- authority over Attestor-owned Trust Statements; or
+- authority over Beacon-owned Discovery Signals.
+
+Canonical institutional boundaries remain:
+
+```text
+Attestor
+→ Trust Statement
+
+Beacon
+→ Discovery Signal
+```
 
 ### Scoring Standard
 
-Defines how scores may be calculated, bounded, explained, and connected to certification outcomes without replacing human-readable evidence.
+Defines how scores may be calculated, bounded, explained, and connected to governed outcomes in contexts that explicitly adopt scoring.
+
+It does **not** create generalized Suite-wide scoring authority.
+
+```text
+Score
+≠ Trust Statement
+
+Score
+≠ universal trust status
+```
+
+Institutional adoption of scoring remains explicit and subject to the authority of the institution applying it.
 
 ### Governance Standard
 
-Defines how standards are maintained, changed, versioned, deprecated, and preserved as the Suite matures.
+Defines how official Suite Standards are maintained, changed, versioned, deprecated, superseded, and preserved.
+
+The Governance Standard is a **standards-governance instrument**. It is distinct from the broader **Satoshium Suite Governance Model**, which governs constitutional authority, institutional sovereignty, canonical ownership, governance decisions, change control, constitutional admission, accountability, and historical preservation across the Suite.
+
+```text
+Governance Standard
+→ governs maintenance and evolution of Suite Standards
+
+Suite Governance Model
+→ governs constitutional authority and change across the Suite
+```
 
 ### Interoperability Standard
 
@@ -124,7 +184,7 @@ Examples include:
 - Satoshium Registry Records;
 - Chronicle Entries;
 - Anchor Integrity References;
-- Beacon Discovery Signals / Discovery Metadata;
+- Beacon Discovery Signals; Discovery Metadata remains supporting structure;
 - Attestor Attestations;
 - Attestor Trust Statements;
 - Navigator workflow definitions / orchestration; and
@@ -163,6 +223,8 @@ Repository maintenance for `/suite/standards/` should:
 - preserve historical versions rather than silently overwriting them;
 - keep terminology and schema expectations synchronized with adopted Suite architecture;
 - avoid introducing implementation details into a standard unless the standard explicitly governs them;
-- distinguish standards from methodology and operational evidence.
+- distinguish standards from methodology and operational evidence;
+- distinguish the Governance Standard from the broader Suite Governance Model;
+- avoid language implying generalized Suite-wide trust or scoring authority.
 
 README reconciliation documents the Standards architecture that exists. It does not redesign it.
