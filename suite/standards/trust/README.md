@@ -6,7 +6,7 @@
 
 ## Purpose
 
-This directory documents the **Satoshium Trust Standard**, the Suite-wide standards surface governing trust-related terminology, expectations, communication, and preservation.
+This directory documents the **Satoshium Trust Standard**, the Suite-wide standards surface governing shared trust-related terminology, expectations, communication, and preservation **without creating generalized Suite-wide trust authority**.
 
 The public page for this directory is:
 
@@ -16,7 +16,9 @@ This README documents the repository role and architectural boundaries of the di
 
 ## Standard Role
 
-The Trust Standard defines Suite-wide expectations for how trust-related concepts are described, evaluated, communicated, and preserved.
+The Trust Standard defines shared expectations for how trust-related concepts are described, bounded, communicated, and preserved across the Suite.
+
+It does **not** create a universal trust authority, a universal trust status, or a canonical Suite-wide `Trust Signal` object.
 
 Within the current Suite architecture, trust-related standards must remain consistent with Attestor's canonical responsibility for producing governed Trust Statements.
 
@@ -47,6 +49,20 @@ Methodology defines implementation.
 
 Attestor performs the governed trust-related operation within its institutional boundary.
 
+
+The Trust Standard does not become an Attestor authority layer, and Attestor does not become universal Suite trust authority merely because it produces Trust Statements.
+
+```text
+Trust Standard
+≠ Attestor
+
+Attestor
+≠ universal trust authority
+
+Trust Statement
+≠ universal truth
+```
+
 ## Trust Principles
 
 Trust Principles define the expectations under which trust-related conclusions or communications should remain:
@@ -63,13 +79,37 @@ Trust should not be treated as universal, absolute, or detached from the governe
 
 ## Trust Signals
 
-The current public surface uses the term **Trust Signals** for signals communicating confidence, integrity, or verification status.
+The historical/public term **Trust Signals** must not be interpreted as a canonical Suite-wide object family or a universal trust authority.
 
-That terminology should be interpreted cautiously until Suite Reconciliation confirms its exact relationship to Attestor Trust Statements and other institutional status signals.
+The reconciled and ratified institutional model preserves:
+
+```text
+Attestor
+→ Trust Statement
+
+Beacon
+→ Discovery Signal
+```
+
+Therefore:
+
+```text
+Trust Signal
+→ generic / descriptive terminology only unless explicitly governed
+
+Trust Signal
+≠ Trust Statement
+
+Trust Signal
+≠ Discovery Signal
+
+Trust Signal
+≠ universal trust status
+```
 
 A signal is not automatically a Trust Statement.
 
-A status indicator is not automatically an evaluation outcome.
+A status indicator is not automatically an Evaluation Outcome.
 
 A verification result is not automatically a trust conclusion.
 
@@ -134,11 +174,11 @@ A valid Anchor-related integrity result does not independently establish trust.
 
 ## Relationship to Beacon
 
-Beacon provides discovery signals and discovery metadata.
+Beacon provides governed Discovery Signals. Discovery Metadata remains supporting Beacon structure.
 
 Discovery does not equal trust.
 
-A discoverable object is not automatically supported, conformant, valid, or trusted.
+A Discovery Signal does not become a Trust Statement, and a discoverable object is not automatically supported, conformant, valid, or trusted.
 
 ## Relationship to Navigator and Atlas
 
@@ -178,6 +218,26 @@ Most importantly:
 
 **REFERENCE DOES NOT TRANSFER AUTHORITY.**
 
+## Suite-Wide Trust Authority Boundary
+
+The Trust Standard must preserve the following constitutional limits:
+
+```text
+NO universal Suite-wide trust authority
+
+NO canonical Suite-wide Trust Signal object
+
+NO generic Suite-wide trusted status
+
+NO transfer of Attestor authority through standards adoption
+
+NO transfer of Beacon authority through trust terminology
+```
+
+Trust-related standards may define shared expectations and vocabulary.
+
+They may not silently create a new canonical object, cross-institution authority, or universal conclusion layer.
+
 ## Truth Boundary
 
 The Trust Standard must not imply that Satoshium establishes universal truth.
@@ -209,10 +269,13 @@ Changes to this directory should preserve:
 5. source authority and provenance;
 6. lifecycle and publication distinctions;
 7. historical accuracy; and
-8. consistency with the governing Suite architecture.
+8. consistency with the governing Suite architecture;
+9. no generalized Suite-wide trust authority;
+10. no canonical Suite-wide `Trust Signal` object unless explicitly established through governed architecture; and
+11. preservation of the distinction between Beacon Discovery Signals and Attestor Trust Statements.
 
 Changes that would redefine Trust Statement semantics, cross-institution trust authority, or the relationship between certification and trust require the appropriate governed architectural review rather than a documentation-only edit.
 
 ## Governing Principle
 
-**Trust is governed, attributable, bounded, and reviewable; it is not assumed, universal, or transferable by reference.**
+**Trust-related standards may define shared expectations, but trust authority remains bounded by institution, object, inputs, rules, and scope. Trust is not assumed, universal, or transferable by reference.**
