@@ -8,6 +8,8 @@ A command-line toolkit for generating, validating, and organizing certification 
 
 ---
 
+**Migration assessment:** [`docs/protocol-migration-assessment-2026-10-23.md`](docs/protocol-migration-assessment-2026-10-23.md) records the current executable contract, safety boundaries, dependencies, regression criteria, and deferred migration decision. This is an assessment, **not** a completed toolkit migration.
+
 ## Overview
 
 The **Certification Package** is Certifier's canonical operational object. Within this toolkit, `certification_package.json` is its source representation for generating derivative files; use of this JSON format does not itself create or approve a certification.
