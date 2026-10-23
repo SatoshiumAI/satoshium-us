@@ -18,7 +18,7 @@ This `README.md` serves as the directory-level documentation for that page.
 
 The purpose of this directory is to define how Satoshium Registry confirms that a constructed Satoshium Registry Entry, or SREG, satisfies the structural, institutional, identifier, provenance, relationship, version, lifecycle, status, correction, and publication requirements governing Registry records.
 
-Validation determines whether a SREG is ready for official publication or continued presentation as a valid Registry object.
+Validation determines whether the constructed SREG meets applicable Registry validation requirements. Publication readiness may be assessed during validation, but a validation result does not itself activate or publish a SREG.
 
 Validation does not certify the substantive truth of the Authoritative Source Record.
 
@@ -44,14 +44,15 @@ Publication
 
 Registrability determines whether Registry should create the SREG.
 
-Validation determines whether the constructed SREG conforms to the applicable Registry requirements.
+Validation assesses whether the constructed SREG conforms to the applicable Registry requirements. Registrability, validation result, conformance assessment, lifecycle activation, and publication remain distinct determinations or actions.
 
 ---
 
 ## Core Principle
 
 ```text
-Validation confirms Registry conformance.
+Validation assesses SREG conformance to specified Registry requirements.
+Conformance does not itself authorize publication.
 Certification evaluates a subject.
 ```
 
