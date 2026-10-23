@@ -94,14 +94,14 @@ means the decision is part of the current Suite Governance Model as of October 1
 | **GDR-2026-0016** | 2026-10-11 | Governance correction procedures for erroneous text, incorrect implementation, obsolete governance, and conflicting governance | MATERIAL | Suite-wide | Potentially all | APPROVED | EFFECTIVE | 1.0 | None |
 | **GDR-2026-0017** | 2026-10-11 | Governance Decision Record model and minimum required fields | MATERIAL | Suite-wide | Governance decisions | APPROVED | EFFECTIVE | 1.0 | None |
 | **GDR-2026-0018** | 2026-10-11 | Formal Governance Decision Register is required | MATERIAL | Suite-wide | Governance decisions | APPROVED | EFFECTIVE | 1.0 | Implemented by this register |
-| **GDR-2026-0019** | 2026-10-14 | Material institution-owned matters receive Suite coherence review without automatic Suite co-approval | MATERIAL | All eight | Potentially all | APPROVED | EFFECTIVE | 1.0 | Clarifies GDR-2026-0002 and GDR-2026-0013 |
-| **GDR-2026-0020** | 2026-10-14 | Canonical ownership may change only through explicit Constitutional governance; functional ownership transfer is also subject to review | CONSTITUTIONAL | All eight | All canonical objects | APPROVED | EFFECTIVE | 1.0 | None |
-| **GDR-2026-0021** | 2026-10-14 | Current eight-institution roster is not a permanent numerical ceiling; future institutions may be admitted through existing Constitutional governance | CONSTITUTIONAL | Suite-wide | Future canonical objects | APPROVED | EFFECTIVE | 1.0 | Clarifies GDR-2026-0001 and GDR-2026-0008 |
-| **GDR-2026-0022** | 2026-10-14 | Supporting-object sophistication does not create canonical status; explicit canonical-status review is required | MATERIAL | All eight | Supporting objects / proposed canonical objects | APPROVED | EFFECTIVE | 1.0 | None |
-| **GDR-2026-0023** | 2026-10-14 | Interoperability remains subordinate to settled institutional architecture and cannot create hidden authority or constitutional dependency | CONSTITUTIONAL | All eight | All interoperating canonical objects | APPROVED | EFFECTIVE | 1.0 | None |
-| **GDR-2026-0024** | 2026-10-14 | Current governance and historical governance must remain simultaneously distinguishable and preserved | MATERIAL | Suite-wide | Governance artifacts | APPROVED | EFFECTIVE | 1.0 | None |
-| **GDR-2026-0025** | 2026-10-14 | Governance layers may cooperate but may not silently absorb one another's functions or authority | MATERIAL | Suite-wide | None directly | APPROVED | EFFECTIVE | 1.0 | None |
-| **GDR-2026-0026** | 2026-10-14 | Final Satoshium Suite Governance Model adopted as the controlling governance architecture | CONSTITUTIONAL | All eight; future Suite membership | All canonical objects and governance structures | APPROVED | EFFECTIVE | 1.0 | Consolidates GDR-2026-0001 through GDR-2026-0025 |
+| **GDR-2026-0019** | 2026-10-11 | Material institution-owned matters receive Suite coherence review without automatic Suite co-approval | MATERIAL | All eight | Potentially all | APPROVED | EFFECTIVE | 1.0 | Clarifies GDR-2026-0002 and GDR-2026-0013 |
+| **GDR-2026-0020** | 2026-10-11 | Canonical ownership may change only through explicit Constitutional governance; functional ownership transfer is also subject to review | CONSTITUTIONAL | All eight | All canonical objects | APPROVED | EFFECTIVE | 1.0 | None |
+| **GDR-2026-0021** | 2026-10-11 | Current eight-institution roster is not a permanent numerical ceiling; future institutions may be admitted through existing Constitutional governance | CONSTITUTIONAL | Suite-wide | Future canonical objects | APPROVED | EFFECTIVE | 1.0 | Clarifies GDR-2026-0001 and GDR-2026-0008 |
+| **GDR-2026-0022** | 2026-10-11 | Supporting-object sophistication does not create canonical status; explicit canonical-status review is required | MATERIAL | All eight | Supporting objects / proposed canonical objects | APPROVED | EFFECTIVE | 1.0 | None |
+| **GDR-2026-0023** | 2026-10-11 | Interoperability remains subordinate to settled institutional architecture and cannot create hidden authority or constitutional dependency | CONSTITUTIONAL | All eight | All interoperating canonical objects | APPROVED | EFFECTIVE | 1.0 | None |
+| **GDR-2026-0024** | 2026-10-11 | Current governance and historical governance must remain simultaneously distinguishable and preserved | MATERIAL | Suite-wide | Governance artifacts | APPROVED | EFFECTIVE | 1.0 | None |
+| **GDR-2026-0025** | 2026-10-11 | Governance layers may cooperate but may not silently absorb one another's functions or authority | MATERIAL | Suite-wide | None directly | APPROVED | EFFECTIVE | 1.0 | None |
+| **GDR-2026-0026** | 2026-10-11 | Final Satoshium Suite Governance Model adopted as the controlling governance architecture | CONSTITUTIONAL | All eight; future Suite membership | All canonical objects and governance structures | APPROVED | EFFECTIVE | 1.0 | Consolidates GDR-2026-0001 through GDR-2026-0025 |
 
 ---
 
@@ -316,8 +316,8 @@ Proposal
 **Decision:** Suite review of an institution-owned Material matter is a coherence review and does not itself transfer determination or approval authority to Suite Governance.
 
 **Review Artifacts:**  
-`satoshium-suite-governance-review-authority-adversarial-test-2026-10-14.md`  
-`satoshium-suite-governance-review-final-discrepancy-resolution-2026-10-14.md`
+`satoshium-suite-governance-review-authority-adversarial-test-2026-10-11.md`  
+`satoshium-suite-governance-review-final-discrepancy-resolution-2026-10-11.md`
 
 ---
 
@@ -326,7 +326,7 @@ Proposal
 **Decision:** Canonical ownership may change only through explicit Constitutional governance. Functional transfer of essential canonical powers is also subject to the ownership test.
 
 **Review Artifact:**  
-`satoshium-suite-governance-review-canonical-ownership-adversarial-test-2026-10-14.md`
+`satoshium-suite-governance-review-canonical-ownership-adversarial-test-2026-10-11.md`
 
 ---
 
@@ -335,7 +335,7 @@ Proposal
 **Decision:** The present eight-institution roster is the current constitutional state, not an immutable numerical ceiling. A future Institution #9 may be admitted through the existing Constitutional model.
 
 **Review Artifact:**  
-`satoshium-suite-governance-review-future-institution-adversarial-test-2026-10-14.md`
+`satoshium-suite-governance-review-future-institution-adversarial-test-2026-10-11.md`
 
 ---
 
@@ -344,8 +344,8 @@ Proposal
 **Decision:** Supporting-object sophistication does not create canonical status. Authority-like independent identity, lifecycle, versioning, publication, correction, and cross-institution use trigger explicit canonical-status review.
 
 **Review Artifacts:**  
-`satoshium-suite-governance-review-institutional-change-adversarial-test-2026-10-14.md`  
-`satoshium-suite-governance-review-final-discrepancy-resolution-2026-10-14.md`
+`satoshium-suite-governance-review-institutional-change-adversarial-test-2026-10-11.md`  
+`satoshium-suite-governance-review-final-discrepancy-resolution-2026-10-11.md`
 
 ---
 
@@ -354,7 +354,7 @@ Proposal
 **Decision:** Interoperability governs exchange behavior but remains subordinate to settled institutional architecture and may not create hidden authority, ownership transfer, or constitutional dependency.
 
 **Review Artifact:**  
-`satoshium-suite-governance-review-interoperability-governance-adversarial-test-2026-10-14.md`
+`satoshium-suite-governance-review-interoperability-governance-adversarial-test-2026-10-11.md`
 
 ---
 
@@ -363,7 +363,7 @@ Proposal
 **Decision:** Current governance must remain distinguishable from preserved historical governance through explicit status, version, effective-state, supersession, and Register controls.
 
 **Review Artifact:**  
-`satoshium-suite-governance-review-historical-continuity-adversarial-test-2026-10-14.md`
+`satoshium-suite-governance-review-historical-continuity-adversarial-test-2026-10-11.md`
 
 ---
 
@@ -372,7 +372,7 @@ Proposal
 **Decision:** Governance layers may cooperate but may not silently absorb functions or authority assigned to another governance layer.
 
 **Review Artifact:**  
-`satoshium-suite-governance-review-governance-layer-removal-test-2026-10-14.md`
+`satoshium-suite-governance-review-governance-layer-removal-test-2026-10-11.md`
 
 ---
 
@@ -381,10 +381,10 @@ Proposal
 **Decision:** The final **Satoshium Suite Governance Model** is adopted as the controlling governance architecture following successful adversarial testing and resolution of all remaining governance discrepancies.
 
 **Review Artifact:**  
-`satoshium-suite-governance-model-2026-10-14.md`
+`satoshium-suite-governance-model-2026-10-11.md`
 
 **Supporting Artifact:**  
-`satoshium-suite-governance-review-final-discrepancy-resolution-2026-10-14.md`
+`satoshium-suite-governance-review-final-discrepancy-resolution-2026-10-11.md`
 
 ---
 
