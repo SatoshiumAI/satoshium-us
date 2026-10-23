@@ -2,7 +2,7 @@
 # Signals Update Protocol
 ## Satoshium Atlas — Jurisdiction Intelligence Engine
 
-Defines how jurisdiction signals evolve while preserving evidence → signals derivation integrity.
+Defines how Atlas jurisdiction signals evolve within the Jurisdiction Intelligence Package while preserving evidence → signals derivation integrity.
 
 This version includes downstream corridor-assignment-matrix synchronization guidance.
 
@@ -62,7 +62,40 @@ If matrix alignment changes:
 - update corridor registry participation (if applicable)
 - record adjustment in change-log.md
 
-Signals remain upstream authority relative to corridor classification.
+Signals remain the governed upstream basis for corridor classification within Atlas. This directionality does not create a separate institutional authority or canonical object.
+
+---
+
+## 🏛️ Protocol Authority Boundary
+
+This protocol is Atlas-owned institutional doctrine.
+
+It governs how Atlas updates supporting signal layers inside governed Jurisdiction Intelligence Packages.
+
+It does not create:
+
+- a new canonical object;
+- a Suite-wide protocol authority;
+- authority outside Atlas;
+- independent authority for signals, trust dimensions, profiles, metadata, or corridor structures.
+
+```text
+Atlas
+→ Authoritative Intelligence
+
+Jurisdiction Intelligence Package
+→ canonical Atlas object
+
+Signals Update Protocol
+→ Atlas-owned update doctrine
+
+Signals / Trust Dimensions / Profiles / Metadata / Corridors
+→ governed supporting structures within Atlas
+```
+
+**Protocol rule ≠ canonical-object ownership.**
+
+**Supporting structure ≠ independent institutional authority.**
 
 ---
 
