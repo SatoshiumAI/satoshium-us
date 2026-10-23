@@ -91,6 +91,7 @@ It supports Certifier operations, repeatability, and release readiness. It does 
 </div>
 
 <div class="warning">
+<strong>Legacy protocol contract:</strong> the current command-line toolkit generates historical <code>SCHR</code> and <code>SATR</code> request stubs and uses a 13-file placeholder-based release check. These are not canonical Chronicle <code>CHR</code> entries or Attestor <code>ATT</code>/<code>TRST</code> objects. Registry and Anchor stubs are likewise not institution-issued records. The checker does not establish certification, conformance, other institutions’ decisions, or permission to publish; downstream participation is conditional, not a mandatory Suite-wide pipeline. A migration of the runnable formats requires separate implementation tests.<br><br>
 <strong>Execution note:</strong> this page does not run Python in the browser. The toolkit runs locally from the command line or through GitHub Actions. This page serves as the operating console, documentation index, and quick-start guide.
 </div>
 </section>
@@ -101,8 +102,8 @@ Certification Package<br>↓<br>
 SCPR<br>↓<br>
 SCR<br>↓<br>
 SCRD HTML / SCRD JSON<br>↓<br>
-SREG / SCHR / ANCH / SATR
-<small>Canonical source first. Generated representations and Suite references follow.</small>
+Legacy request stubs: SREG / SCHR / ANCH / SATR
+<small>Illustrative local generator outputs, not a mandatory Suite pipeline or institution-issued downstream records.</small>
 </div>
 </div>
 
@@ -213,7 +214,7 @@ The workflow is intended to confirm syntax, imports, unit tests, fixture behavio
 <ul>
 <li>Use the toolkit to harden <strong>SC-CERT-2026-0000</strong>.</li>
 <li>Use generated outputs to test repeatability.</li>
-<li>Use release checks before publishing any certification package.</li>
+<li>Use the legacy release check for local completeness only; publication requires separate Certifier-governed authorization.</li>
 <li>Use GitHub Actions as the final sanity check before relying on generated artifacts.</li>
 </ul>
 <span class="status">Operational Support</span>
