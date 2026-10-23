@@ -1,5 +1,9 @@
 # Evidence Attestation Schema — Foundational Candidate Profile
 
+> **PROTOCOL REVIEW NOTICE — October 23, 2026 · HISTORICAL PROFILE DESIGN**  
+> The Attestor `evidence` and `source-provenance` Attestation Types have been adopted in current architecture. This June foundational document remains a **historical candidate design** of profile-specific fields and semantics; it is **not** an executable, production-conformant profile simply because the Type is adopted. Governed base Attestation requirements, current controlled values, Eligibility, Evaluation, Validation, and Conformance continue to control. The original exploratory content below is preserved for traceability. **Type adoption ≠ specialized profile conformance.**
+
+
 ## Purpose
 This document preserves the early concept of a specialized Attestation concerning Evidence.
 

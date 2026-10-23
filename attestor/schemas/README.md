@@ -11,7 +11,7 @@ This directory contains the structural schema layer through which adopted Attest
 Schemas implement adopted architecture. They do not independently create new canonical objects, authority, controlled values, or institutional responsibilities.
 
 ## Canonical Responsibility
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 ## Governing Principle
 > **Reference does not transfer authority.**
@@ -22,8 +22,8 @@ Schemas implement adopted architecture. They do not independently create new can
 ## Files
 - `attestation-schema.md` — canonical structural schema for a governed Attestation (`ATT-YYYY-NNNN`), including authority, provenance, lifecycle, publication, relationships, versioning, and validation boundaries; exercised by `ATT-2026-0001`.
 - `trust-statement-schema.md` — canonical structural schema for a Trust Statement (`TRST-YYYY-NNNN`); exercised by `TRST-2026-0001`.
-- `evidence-attestation-schema.md` — specialized profile for the adopted `evidence` Attestation Type.
-- `source-attestation-schema.md` — specialized profile for the adopted `source-provenance` Attestation Type.
+- `evidence-attestation-schema.md` — historical foundational **candidate profile document** for the now-adopted `evidence` Attestation Type; its provisional fields and relationship tokens are not the current executable profile contract.
+- `source-attestation-schema.md` — historical foundational **candidate profile document** for the now-adopted `source-provenance` Attestation Type; its provisional fields and relationship tokens are not the current executable profile contract.
 - `correction-attestation-template.md` — governed correction/change profile used with Lifecycle and Versioning; not a separate canonical object class.
 - `trust-signal-schema.md` — retained historical legacy artifact; Trust Signal is not a canonical Attestor object.
 - `index.html` — public landing page.
