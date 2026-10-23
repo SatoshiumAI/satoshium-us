@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **24 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **36 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -54,3 +54,16 @@ The non-truncated Git tree at baseline `64a46f59037a82f881679a1b18e932e29fbcb003
 - All **12/12** pages were independently re-fetched at that new branch HEAD and contained **zero obsolete fallback `link` elements**.
 
 **Cumulative Atlas expanded-audit checkpoint: 24/223 pages checked; 199 pages remain.** Cumulative checked local literal href/src occurrences: **114**; fragment-only references **124**, all resolved. These are bounded static-file counts, not proof of live HTTP serving, script-generated navigation, or external destinations. The Atlas review remains **ACTIVE — PARTIAL COVERAGE**.
+
+## Expanded country-page batch three — pages 25–36
+
+The fresh non-truncated repository tree at baseline `5cf90cb63c10b15867f8c0b0f4b56411b3381baa` confirmed 223 Atlas public index pages. Twelve lexicographic paths were checked: Georgia, Germany, Hong Kong, Iceland, countries directory index, India, Indonesia, Ireland, Israel, Italy, Japan and Kazakhstan.
+
+- **77 local literal `href`/`src` references** were checked against repository file/index destinations, including 56 from the country directory page.
+- **92 fragment-only references** were checked against literal local IDs; all resolved.
+- **Six unresolved references** were obsolete fallback icons across Germany, Israel and Japan; no other missing local destinations were found.
+- The six obsolete optional icon `link` elements were removed from the three affected pages; existing valid SVG favicon links remain.
+- Correction commit: `5c68372e551bffbd8b1031d303467f16398a020a`.
+- All **12/12** batch-three pages were independently re-fetched after that commit; none retained missing fallback icon `link` elements.
+
+**Cumulative expanded Atlas checkpoint: 36/223 pages reviewed; 187 pages remain.** Cumulative local literal resource references examined: **191**; local fragment references examined: **216**, all resolved. This does not certify live HTTP, JavaScript runtime navigation, externally linked destinations, CSS URL resources, or broader executable integration. **Atlas remains ACTIVE — PARTIAL COVERAGE.**
