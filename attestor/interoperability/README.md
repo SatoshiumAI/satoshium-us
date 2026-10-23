@@ -14,7 +14,7 @@ It allows governed information to participate in Attestor without losing the mea
 > **Reference does not transfer authority.**
 
 ## Canonical Responsibility
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 Interoperability supports Attestor's ability to produce governed Trust Statements without absorbing the canonical responsibilities of source institutions.
 
@@ -129,11 +129,11 @@ No particular external standard, protocol, API, or transport is required by the 
 - **Atlas → Authoritative Intelligence**
 - **Navigator → Workflow Definition / Orchestration**
 - **Certifier → Certification Package**
-- **Registry → Satoshium Registry Record**
+- **Registry → Satoshium Registry Entry (SREG)**
 - **Chronicle → Chronicle Entry**
 - **Anchor → Integrity Reference**
 - **Beacon → Discovery Signal / Discovery Metadata**
-- **Attestor → Trust Statement**
+- **Attestor → Attestation + Trust Statement**
 
 Each institution retains authority for its canonical objects.
 
