@@ -3,7 +3,7 @@
 **Path:** `/attestor/validation/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Validation  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 

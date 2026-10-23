@@ -1,5 +1,9 @@
 # Satoshium Attestor — Executable Validator v0.3
 
+> **VERSIONED IMPLEMENTATION RECORD — NOT CURRENT PRODUCTION VALIDATOR**  
+> This v0.3 directory preserves an earlier executable rule-coverage milestone. The first production ATT and TRST final-state validation reports identify Validator **v0.5** and record aggregate outcome `valid`. Do not attribute v0.5 behavior to this v0.3 code, or treat this historical coverage result as a new production validation. Compare versions only using their own executable code, reports, and governed Review evidence.  
+> **Not-tested ≠ pass; machine validation ≠ governed Review ≠ substantive Evaluation ≠ Conformance ≠ Publication.**
+
 ## Step 9 — Final Focused Coverage Closure
 
 Validator v0.3 explicitly accounts for the complete canonical 91-rule `VAL-*` catalog.
