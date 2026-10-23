@@ -980,31 +980,21 @@ Lifecycle connects these systems into the institutional journey of the canonical
 
 ---
 
-## Next Operational Dependencies
+## Operational Relationships
 
-The Lifecycle Model directly informs:
+The Lifecycle Model informs Chronicle Corrections, Versioning, Registry-independent Chronicle status, Publication State, the Chronicle Base Schema, Event-Type Profiles, Validation, and the Entry Production Procedure.
 
-* Corrections
-* Versioning
-* Status reconciliation
-* Publication State rules
-* Chronicle Base Schema
-* Certification Event-Type Profile
-* Validation
-* Production Procedure
-* First production Chronicle Entry
+The model has now been exercised through **CHR-2026-0001 Entry Version 1**. That Entry passed Verification and Validation, received separate Publication Gate approval, and entered published production state on August 22, 2026. The public Lifecycle page documents the first production application.
 
-The first production Entry should test whether the conceptual lifecycle is complete, proportionate, and free of redundant states.
+This exercised sequence demonstrates the model without establishing a rigid universal order for every Entry or converting a workflow step into a separate canonical object.
 
 ---
 
 ## Status
 
-**Active pre-operational Chronicle Entry Lifecycle specification.**
+**Operational — Production-Exercised Chronicle Entry Lifecycle Model.**
 
-The complete conceptual lifecycle is established.
-
-Initial Lifecycle State values are governed through the Controlled Values Registry:
+Lifecycle State values remain governed through the Chronicle Controlled Values Registry:
 
 ```text
 Draft
@@ -1014,4 +1004,6 @@ Withdrawn
 Preserved
 ```
 
-The final transition rules, relationship between Entry Status and Lifecycle State, role of Preserved, abandonment handling, reactivation rules, and publication gating should be finalized through later Phase VI and production-development work.
+Chronicle Entry Lifecycle State, Verification State, Validation Result, and Publication State remain distinct. The first production exercise establishes operational use of the current model; it does not imply that every possible transition, abandonment, reactivation, correction, withdrawal, or supersession path has been exercised.
+
+Further transition refinements belong within Chronicle's settled authority and must preserve earlier Entry identity, version lineage, and historical truth. **Publication approval ≠ publication; correction ≠ automatic new version; supersession ≠ mutation.**
