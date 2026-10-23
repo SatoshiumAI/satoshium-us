@@ -213,26 +213,28 @@ Whether Validation records receive their own institutional identifiers remains u
 
 ---
 
-## First Production Test
+## First Production Application
 
-The first production Integrity Reference should test the rule set rather than merely comply with it.
+The first published production Integrity Reference, `ANCH-2026-0001`, has exercised the Validation and Publication boundaries. Its defined source representation is the complete canonical JSON for `SCRD-SC-CERT-2026-0001`.
 
-After first production, review:
+This first production case establishes operational use of the current rule framework; it does **not** prove every possible rule, failure path, or later extension has been exercised. Future reviews should assess:
 
 ```text
-rules that blocked useful production
-rules that failed to catch ambiguity
-rules that duplicated Schema
+rules that block useful production
+rules that fail to catch ambiguity
+rules that duplicate Schema
 rules that should become machine-enforced
 rules that should remain procedural
 new rules proven necessary
 ```
 
+Validation PASS alone does not perform Initial Verification, approve the Publication Gate, or publish the Integrity Reference.
+
 ---
 
 ## Status
 
-**Post-Foundational Architecture**
+**Operational · Production-Exercised Anchor Validation**
 
 Anchor Validation semantics, PASS/FAIL behavior, rule families, rule numbering, publication relationship, and identifier-assignment timing are now defined.
 
