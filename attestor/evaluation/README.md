@@ -3,7 +3,7 @@
 **Path:** `/attestor/evaluation/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Evaluation  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 
