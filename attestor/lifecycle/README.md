@@ -3,7 +3,7 @@
 **Path:** `/attestor/lifecycle/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Lifecycle  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 
