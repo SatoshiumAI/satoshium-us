@@ -267,6 +267,89 @@ DE FACTO MEMBERSHIP
 → NOT RECOGNIZED
 ```
 
+## Protocol & Interface Vocabulary
+
+The Suite uses several implementation-level terms that must remain subordinate to settled architecture.
+
+### Protocol
+
+A **Protocol** is a governed set of rules describing how an action, update, exchange, validation, or coordinated interaction is performed within an existing authority boundary.
+
+A protocol may define sequence, prerequisites, state handling, evidence requirements, serialization, or update behavior.
+
+A protocol does not create institutional authority, canonical ownership, Suite membership, or constitutional dependency merely because it is named or implemented.
+
+```text
+PROTOCOL
+≠ INSTITUTION
+
+PROTOCOL
+≠ CANONICAL OBJECT
+
+PROTOCOL
+≠ AUTHORITY TRANSFER
+
+PROTOCOL-SPECIFIC SEQUENCE
+≠ SUITE-WIDE MANDATORY PIPELINE
+```
+
+### Contract
+
+A **Contract** is a declared structural or semantic requirement set used by an implementation, object representation, validator, exchange, or handoff.
+
+Contracts may be machine-readable or human-readable.
+
+A contract must identify or inherit the authority context under which it operates.
+
+```text
+CONTRACT
+→ constrains representation / interaction
+
+CONTRACT
+≠ constitutional authority
+
+CONTRACT
+≠ canonical ownership
+```
+
+### Interface
+
+An **Interface** is a governed boundary through which one system, institution, component, or external participant exchanges requests, references, records, results, or state.
+
+An interface may accept or reject an exchange according to applicable requirements.
+
+Interface compatibility does not determine the validity or authority of the source object.
+
+```text
+INTERFACE FAILURE
+≠ SOURCE INVALIDITY
+```
+
+### Handoff
+
+A **Handoff** is a traceable transfer of a request, reference, context, or work item from one workflow step or participant to another.
+
+A handoff may carry authority context.
+
+It does not carry or transfer institutional authority unless explicit authorized governance separately establishes such a transfer.
+
+For Navigator:
+
+```text
+HANDOFF
+→ workflow coordination
+
+HANDOFF
+≠ authority transfer
+
+WORKFLOW HANDOFF
+≠ institutional determination
+```
+
+These terms describe governed implementation behavior.
+
+They do not alter the settled institutional architecture.
+
 ## Naming Conventions
 
 Naming Conventions establish consistent treatment of:
