@@ -43,7 +43,7 @@ The purpose of this directory is to explain:
 
 ## Constitutional Position
 
-Registry Schemas operate within the following hierarchy:
+Registry Schemas operate through the following **structural application sequence**. This is not a hierarchy of institutional authority, nor does a schema grant certification, registrability, lifecycle activation, or publication:
 
 ```text
 Suite Schema Standard
@@ -84,7 +84,7 @@ Adds controlled requirements for one approved Registry Record Type.
 
 ### Published SREG
 
-The resulting human-readable and machine-readable Registry Entry.
+The resulting human-readable and machine-readable Registry Entry **after** separately governed validation, Registry lifecycle, and publication steps. Schema conformity alone does not publish an Entry.
 
 ---
 
@@ -101,7 +101,7 @@ Shared SREG structure
   +
 Type-specific profile
   =
-Validated Registry Entry
+Entry structure to be checked against applicable requirements
 ```
 
 ---
