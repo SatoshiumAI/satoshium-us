@@ -318,7 +318,7 @@ Event-Type Profiles may add:
 * Verification requirements
 * Validation requirements
 
-The first anticipated operational profile is the **Certification Event-Type Profile**.
+The first production Event-Type Profile is the **Certification Event-Type Profile**, exercised with `CHR-2026-0001` Entry Version 1. It specializes the Chronicle Base Schema without creating another canonical Chronicle object.
 
 Supporting schemas currently include:
 
