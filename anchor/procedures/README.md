@@ -102,9 +102,9 @@ They do not transfer Source authority.
 
 ## Status
 
-**Post-Foundational Architecture · Pre-Production Reconciled**
+**Operational · First Production Exercised**
 
-The initial production procedure set is now defined, including formal staged Validation.
+The initial production procedure set, including formal staged Validation, has been exercised in the first published Anchor Integrity Reference, `ANCH-2026-0001`. This production record is bounded to the defined `SCRD-SC-CERT-2026-0001` canonical JSON representation. The production exercise does not imply that all correction, maintenance, extension, or failure paths have been exercised.
 
 The following remain intentionally unfrozen:
 
@@ -119,7 +119,7 @@ first-production checklist refinements
 Bitcoin-specific procedures
 ```
 
-The first production Integrity Reference should be used to test and refine these procedures.
+The first production Integrity Reference has established an operational precedent. Future cases should continue to test and refine these procedures without changing their authority boundaries or silently expanding the representation covered by an Integrity Reference.
 
 **Version:** 1.0-draft
 
