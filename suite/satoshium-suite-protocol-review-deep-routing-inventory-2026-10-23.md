@@ -2,7 +2,8 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Review status:** ACTIVE — PARTIAL COVERAGE  
+**Current routing-inventory status (October 23 follow-up):** COMPLETE — APPROVED (defined repository-level nested index.html scope)  
+**Initial bounded pass:** 84 pages; historically partial — preserved below  
 **Disposition for checked pages:** CONFIRM — PASS (repository-level link resolution only)  
 **Governance baseline:** Suite Reconciliation, September 30, 2026; Suite Governance Model, October 11, 2026 (`GDR-2026-0026`).
 
@@ -63,5 +64,34 @@ Shared `/assets/` resource paths were excluded from the page-route check.
 **Code or public-page correction required in this bounded pass:** None.
 
 **Architectural CHANGE required:** None.
+
+> Authority follows the governed subject. Reference does not transfer authority.
+
+---
+
+## October 23, 2026 follow-up — Outstanding Atlas coverage closed
+
+**Disposition:** COMPLETE — APPROVED for the defined nested public `index.html` **repository root-relative href destination** inventory. The initial 84-page bounded pass above is preserved as the historical first stage and was **not** a complete result when issued.
+
+All **162 Atlas nested pages** that were previously outstanding have now been fetched and checked against the untruncated `phase004` Git tree at `de1fb7ee988bd2a5c50fc738d5578a52279b4267`.
+
+### Consolidated current coverage
+
+| Nested page class | Initial pages | Additional pages | Total checked | Unresolved root-relative repository destinations |
+|---|---:|---:|---:|---:|
+| Published institutional production/profile pages | 11 | 0 | 11 | 0 |
+| Nested Suite methodology and standards pages | 17 | 0 | 17 | 0 |
+| Atlas nested jurisdiction, certification, and orientation pages | 56 | 162 | 218 | 0 |
+| **Total** | **84** | **162** | **246** | **0** |
+
+The initial Atlas set covered path indices 0–41, 60–66, and 155–161 in the 218-file lexicographic nested-Atlas `index.html` set. The continuation covered indices 42–59, 67–154, and 162–217. These disjoint sets cover every enumerated nested Atlas page (218/218).
+
+**Current disposition:** first-level repository `href` inventory: 200/200 PASS (separate record); this deeper nested `index.html` inventory: 246/246 PASS. No additional HTML correction or architectural change was required to close the remaining Atlas coverage.
+
+### Still outside this certification
+
+Repository destination existence is not deployed HTTP/HTTPS verification. The exclusions above remain in force: live serving, redirects, external URLs, CSS/JavaScript/assets, dynamically generated links, untested relative references outside the five checked institutional-record links, fragments, browser behavior, and non-`index.html` public files. In particular, the Attestor Generation, Attestor Publication, and Suite Governance deployed URLs remain **OPEN — DEPLOYMENT VERIFICATION**.
+
+**Suite Protocol Review as a whole remains ACTIVE**; completion of this scoped routing inventory does not resolve unrelated executable interoperability, implementation, or deployment gates.
 
 > Authority follows the governed subject. Reference does not transfer authority.
