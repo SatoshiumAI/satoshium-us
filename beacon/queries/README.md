@@ -250,7 +250,7 @@ The Suite institutional model remains:
 * **Registry → SREG**
 * **Chronicle → Chronicle Entry**
 * **Anchor → Integrity Reference**
-* **Attestor → Trust Statement**
+* **Attestor → Attestation + Trust Statement (through governed Rule-Constrained Evaluation)**
 
 Beacon may discover and reference these objects.
 
@@ -306,12 +306,12 @@ Beacon query capabilities may include:
 * Canonical-object queries
 * Navigator workflow interfaces
 
-Specific implementations may evolve as Beacon advances toward production.
+Specific query implementations may continue to evolve within Beacon's operational discovery institution. The first Beacon Discovery Signal, `BEAC-2026-0001`, is already Active and Published; that production operation does not establish that every advanced query capability above is implemented.
 
 ---
 
 ## Status
 
-Beacon query architecture is undergoing Suite alignment and production preparation ahead of its originally planned November 2026 development window.
+Beacon is **Operational** and production-exercised through `BEAC-2026-0001`. This document describes the conceptual Query capability; advanced query schemas, filtering engines, and Navigator interfaces remain separately assessable capabilities and must not be assumed implemented solely because Beacon has a published Discovery Signal.
 
 This document establishes the governing conceptual relationship between queries, Navigator orchestration, and Beacon discovery. Operational query schemas, filtering methods, workflow interfaces, and technical specifications may continue to evolve while remaining aligned with Satoshium Suite Standards, Methodology, Interoperability, and Status conventions.
