@@ -3,7 +3,7 @@
 **Path:** `/attestor/authority/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Authority  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 
@@ -60,11 +60,11 @@ A Trust Statement is authoritative as an **Attestor conclusion within its define
 - Atlas → Authoritative Intelligence
 - Navigator → Workflow Definition / Orchestration
 - Certifier → Certification Package
-- Registry → Satoshium Registry Record
+- Registry → Satoshium Registry Entry (SREG)
 - Chronicle → Chronicle Entry
 - Anchor → Integrity Reference
 - Beacon → Discovery Signal / Discovery Metadata
-- Attestor → Trust Statement
+- Attestor → Attestation + Trust Statement
 
 Attestor may reference these objects without reissuing or replacing their institutional authority.
 
