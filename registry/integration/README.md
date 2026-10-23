@@ -33,18 +33,28 @@ Integration must strengthen institutional separation rather than blur it.
 
 ## Constitutional Position
 
-Registry Integration operates beneath the Satoshium Suite constitutional hierarchy:
+Registry Integration operates within settled Suite architecture.
+
+It applies Suite-wide expectations and interoperability rules without turning those layers into a vertical ownership chain.
 
 ```text
+Suite Governance
+→ protects constitutional boundaries
+
 Suite Standards
-  ↓
+→ define shared expectations
+
 Suite Methodology
-  ↓
+→ defines shared implementation principles
+
 Suite Interoperability
-  ↓
+→ governs exchange within settled architecture
+
 Registry Integration
-  ↓
+→ applies those foundations within Registry authority
+
 Satoshium Registry Entry (SREG)
+→ Registry-owned canonical object
 ```
 
 ### Suite Standards
@@ -74,14 +84,14 @@ Registry is authoritative for the SREG.
 The Source Institution is authoritative for the Source Record.
 
 ```text
-Atlas creates intelligence.
-Certifier creates certifications.
-Registry creates SREGs.
-Chronicle creates historical events.
-Anchor creates integrity references.
-Beacon creates discovery signals.
-Attestor creates trust statements.
-Navigator creates workflow definitions.
+Atlas governs Jurisdiction Intelligence Packages.
+Certifier governs Certification Packages.
+Registry creates and governs SREGs.
+Chronicle creates and governs Chronicle Entries.
+Anchor creates and governs Integrity References.
+Beacon creates and governs Discovery Signals.
+Attestor creates and governs Attestations and Trust Statements.
+Navigator creates and governs Navigator Workflow Definitions.
 ```
 
 Interoperability connects these objects.
@@ -733,8 +743,10 @@ Those forms of authority remain with the applicable Source Institution, Source R
 
 ## Guiding Statement
 
-> The Source Institution creates authority.
+> Authority follows the governed subject.
 >
-> Registry creates the SREG.
+> The Source Institution retains authority over its Source Record.
 >
-> Interoperability preserves the relationship between them.
+> Registry creates and governs the SREG.
+>
+> Interoperability preserves the relationship without transferring authority.
