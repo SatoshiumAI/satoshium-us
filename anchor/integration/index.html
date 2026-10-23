@@ -201,7 +201,7 @@ h1{
     Chronicle → Chronicle Entry<br>
     Anchor → Integrity Reference<br>
     Beacon → Discovery Signal / Metadata<br>
-    Attestor → Trust Statement<br>
+    Attestor → Attestation + Trust Statement<br>
     Navigator → Workflow Definition
   </div>
 
@@ -339,23 +339,26 @@ h1{
 <section style="margin-top:18px;">
 
 <article class="card">
-  <h2>Registry and Chronicle Production Examples</h2>
+  <h2>First Production Integration</h2>
 
   <p>
-    The current production Suite provides concrete authoritative objects that
-    may later become Anchor candidates:
+    Anchor has completed its first end-to-end production integrity operation through
+    <strong>ANCH-2026-0001</strong>.
   </p>
 
   <div class="note">
-    SC-CERT-2026-0001 → Certifier-owned Certification Package<br>
-    SREG-2026-0001 → Registry-owned Satoshium Registry Entry<br>
-    CHR-2026-0001 → Chronicle-owned Chronicle Entry
+    Source Institution → Satoshium Certifier<br>
+    Source Artifact → SCRD-SC-CERT-2026-0001<br>
+    Representation Type → canonical_json<br>
+    Canonicalization → RFC 8785 JCS / UTF-8<br>
+    Integrity Method → cryptographic_digest · SHA-256<br>
+    Anchor Object → ANCH-2026-0001 · Active · Published
   </div>
 
   <p style="margin-top:14px;">
-    Anchor has not yet assigned production Integrity References to these
-    artifacts. They serve as useful future integration candidates after the
-    Anchor production architecture is complete.
+    ANCH-2026-0001 preserves integrity context for the defined representation of the
+    Certifier source artifact. It does not certify the source artifact, prove its
+    substantive truth, or become authoritative for its certification meaning.
   </p>
 </article>
 

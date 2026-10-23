@@ -70,7 +70,7 @@ Beacon
 → Discovery Signal / Metadata
 
 Attestor
-→ Trust Statement
+→ Attestation + Trust Statement
 
 Navigator
 → Workflow Definition
@@ -318,26 +318,37 @@ This question should be resolved through later production rules.
 
 ---
 
-# Current Production Suite Examples
+# Current Production Integration
 
-The current production Suite provides concrete authoritative records:
+Anchor has completed its first end-to-end production integrity operation.
 
 ```text
-SC-CERT-2026-0001
-→ Certifier-owned Certification Package
+Source Institution
+→ Satoshium Certifier
 
-SREG-2026-0001
-→ Registry-owned Satoshium Registry Entry
+Source Artifact
+→ SCRD-SC-CERT-2026-0001
 
-CHR-2026-0001
-→ Chronicle-owned Chronicle Entry
+Defined Canonical Representation
+→ canonical_json
+→ RFC 8785 JCS / UTF-8
+
+Integrity Method
+→ cryptographic_digest
+→ SHA-256
+
+Anchor Integrity Reference
+→ ANCH-2026-0001
+→ Active · Published
 ```
 
-These are useful future Anchor integration candidates.
+This production relationship demonstrates Anchor's reference-first model without transferring authority over the Certifier source artifact.
 
-Anchor has not yet assigned production Integrity References to them.
+`ANCH-2026-0001` preserves integrity context for the defined representation of `SCRD-SC-CERT-2026-0001`.
 
-They should not be treated as anchored until the Anchor production architecture is complete and an actual anchoring procedure is executed.
+It does not certify the source artifact, prove its substantive truth, or become authoritative for its certification meaning.
+
+Other Suite artifacts may become future Anchor subjects when governed production use warrants them.
 
 ---
 
@@ -556,27 +567,34 @@ Anchor should strengthen the Suite by making important artifacts more independen
 
 ## Status
 
-**Foundation Reconciliation**
+**Operational · Production-Proven**
 
-This Integration document reflects the current post-Suite Anchor model.
+Anchor has completed its first production cycle through `ANCH-2026-0001`.
 
-The following remain intentionally unfrozen pending later architecture and production testing:
+Established operational surfaces now include:
 
 ```text
-Anchor identifier format
-Integrity Method Controlled Values
-Integrity State values
-Verification Result values
-Schema requirements
-Validation architecture
-Publication architecture
-Lifecycle values
-Versioning rules
-Correction rules
-reciprocal reference requirements
-first production Integrity Reference
+Anchor identifiers
+Controlled Values
+Relationships
+Provenance
+Schemas
+Validation
+Verification
+Lifecycle
+Versioning
+Corrections
+Publication
+Maintenance
+Production Procedures
 ```
 
-**Version:** 1.0-draft
+The first production implementation uses canonical JSON, RFC 8785 JCS, UTF-8, and SHA-256.
+
+Those implementation choices document the current production record; they do not make Anchor permanently dependent on a single technology.
+
+Future production expansion remains governed by established Anchor architecture and applicable Suite standards.
+
+**Version:** 1.0
 
 **Maintained By:** Satoshium
