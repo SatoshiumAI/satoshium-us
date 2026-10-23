@@ -1,6 +1,10 @@
 # End-to-End Workflow Guide
 
-This guide walks through the complete lifecycle of a Satoshium certification using the `satoshium-certifier-ops-toolkit`.
+> **PROTOCOL REVIEW NOTICE — October 23, 2026: LEGACY TOOLKIT CONTRACT**  
+> This toolkit is a runnable artifact-generation and field-checking utility, **not** an independent certification authority or an implementation of every current Suite protocol. Several existing outputs and checks retain historical labels (`SCHR`, `SATR`) and an all-artifacts release checklist. These do **not** create Chronicle Entries, Anchor Integrity References, Registry Entries, Attestations, or Trust Statements, and do not make downstream institutional actions mandatory. Current Suite and institutional documentation controls. **Validation pass ≠ eligibility, conformance, certification, publication, or cross-institutional approval.** The code and generated formats remain unchanged pending a separately tested migration.
+
+
+This guide walks through the toolkit's **legacy local generation workflow**, not the complete governed certification lifecycle or a required Suite-wide workflow.
 
 ---
 
@@ -126,9 +130,9 @@ Done. 12 artifacts generated.
 
 ---
 
-## Step 5 — Complete the Stub Artifacts
+## Step 5 — Review Legacy Stub Artifacts (Conditional Only)
 
-The four stub files (`sreg_stub.json`, `schr_stub.json`, `anch_stub.json`, `satr_stub.json`) are pre-filled with known values from the package but contain placeholders that must be completed before submission:
+The four generated stub files (`sreg_stub.json`, `schr_stub.json`, `anch_stub.json`, `satr_stub.json`) are **historical toolkit placeholders**. Do not interpret their presence or the table below as instructions to create downstream records or as a required submission sequence. These stub formats have **not** been migrated to the current Chronicle (`CHR`) and Attestor (`ATT` / `TRST`) contracts. Only the relevant institution may create/govern its canonical objects. The table describes fields expected by the existing utility, **not** required current institution fields:
 
 | Stub | Fields to complete |
 |---|---|
@@ -145,9 +149,11 @@ The four stub files (`sreg_stub.json`, `schr_stub.json`, `anch_stub.json`, `satr
 python scripts/check_release.py output/SC-CERT-2026-0000
 ```
 
-**What it checks:**
-- All 13 expected artifact files are present
+**What it checks (legacy implementation only):**
+- All 13 legacy toolkit-expected artifact files are present
 - No placeholder markers remain in any file
+
+**Not checked:** independent institutional approvals, all current schema/contract semantics, eligibility, conformance, certification, Attestor evaluation, or publication authorization. A release-check PASS is **not** an authorization to publish and may fail merely because a non-required downstream stub remains uncompleted.
 
 **Pass output:**
 
@@ -198,7 +204,7 @@ python scripts/check_release.py output/SC-CERT-2026-XXXX
 
 ## Pushing to GitHub
 
-See [README.md](../README.md#pushing-to-github) for the full push workflow.
+The following Git commands are illustrative only. Generated `output/` is git-ignored in this toolkit; confirm the intended location and artifact governance before committing or publishing. See the repository's applicable deployment procedures.
 
 ```bash
 git add output/SC-CERT-2026-0000

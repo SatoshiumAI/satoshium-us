@@ -1,18 +1,22 @@
 # satoshium-certifier-ops-toolkit
 
+> **PROTOCOL REVIEW NOTICE — October 23, 2026: LEGACY TOOLKIT CONTRACT**  
+> This toolkit is a runnable artifact-generation and field-checking utility, **not** an independent certification authority or an implementation of every current Suite protocol. Several existing outputs and checks retain historical labels (`SCHR`, `SATR`) and an all-artifacts release checklist. These do **not** create Chronicle Entries, Anchor Integrity References, Registry Entries, Attestations, or Trust Statements, and do not make downstream institutional actions mandatory. Current Suite and institutional documentation controls. **Validation pass ≠ eligibility, conformance, certification, publication, or cross-institutional approval.** The code and generated formats remain unchanged pending a separately tested migration.
+
+
 A command-line toolkit for generating, validating, and organizing certification artifacts for the **Satoshium Suite**.
 
 ---
 
 ## Overview
 
-The **Certification Package JSON** is the canonical operational certification object from which all certification artifacts are generated.
+The **Certification Package** is Certifier's canonical operational object. Within this toolkit, `certification_package.json` is its source representation for generating derivative files; use of this JSON format does not itself create or approve a certification.
 
 This toolkit helps you:
 - Initialize a new certification folder from a certification ID
 - Generate all certification artifacts from the canonical Certification Package
 - Validate the Certification Package against required operational fields
-- Validate certification publication readiness
+- Run a legacy file-completeness and placeholder release check (not a publication authorization)
 
 ---
 
@@ -35,6 +39,10 @@ This toolkit helps you:
 | Release Checklist Markdown | `release_checklist.md` | Pre-release artifact completeness checklist |
 
 ---
+
+## Current interoperability boundary
+
+The current production identifier families are **SREG**, **CHR**, **ANCH**, **BEAC**, **ATT**, and **TRST**, each governed by its originating institution. The toolkit's `schr_stub.json` and `satr_stub.json` are historical request/placeholder formats, **not** current canonical identifiers. Its `sreg_stub.json` and `anch_stub.json` are likewise only prospective preparation artifacts, not institution-issued records. The 13-file checklist is the legacy toolkit's local completeness rule, not a Suite-wide publication requirement. Use current institution-controlled records, validation procedures, and decisions for actual interoperability.
 
 ## Requirements
 
