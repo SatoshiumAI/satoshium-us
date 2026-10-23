@@ -177,7 +177,7 @@ Validator v0.5 supports:
 
 - target-object validation;
 - governed Validation Result reporting;
-- registry-aware validation where required;
+- identifier/process-context-aware validation where required;
 - execution-context input;
 - separation of contextual results from object-local results;
 - deterministic and conditional rule execution;

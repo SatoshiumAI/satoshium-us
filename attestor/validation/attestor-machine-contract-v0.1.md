@@ -41,7 +41,7 @@ Trust Statement identifier:
 
 `^TRST-[0-9]{4}-[0-9]{4}$`
 
-This expression validates representation only. Allocation, uniqueness, reuse prevention, and creation-year truth require authoritative registry/process context.
+This expression validates representation only. Allocation, uniqueness, reuse prevention, and creation-year truth require Attestor-governed identifier/process context. The formal Satoshium Registry may reference Attestor objects through its own SREG architecture, but it does not allocate or govern ATT/TRST identifiers.
 
 ### 3.2 Timestamps
 
