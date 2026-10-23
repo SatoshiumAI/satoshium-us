@@ -9,7 +9,7 @@ Attestation Types provide the governed classification vocabulary for canonical A
 An Attestation Type classifies the **assertion expressed by the Attestation**. It does not redefine the type, identity, or authority of a referenced Suite or external source object.
 
 ## Canonical Context
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 

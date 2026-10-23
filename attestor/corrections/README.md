@@ -43,7 +43,7 @@ Attestor does not establish a separate **Correction Record** as another canonica
 
 Attestor's canonical responsibility remains:
 
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 Correction is represented through the applicable governed combination of:
 

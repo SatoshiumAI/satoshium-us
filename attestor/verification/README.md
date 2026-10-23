@@ -23,7 +23,7 @@ with the current canonical responsibilities:
 
 **Certifier → Certification Package**
 
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 This distinction matters because “verification” is an activity or outcome that may exist in multiple governed contexts. It should not be treated as Attestor's object, nor should Certifier's canonical responsibility be reduced to a generic verification label.
 
@@ -107,7 +107,7 @@ The pre-Suite page stated that verification outcomes may become Trust Signals.
 
 That claim is not carried forward as established architecture.
 
-The canonical Attestor output is the **Trust Statement**. A verification-related outcome may be relevant governed input or context without requiring creation of a separate Trust Signal object. The generic Trust Signal model is not the canonical production output.
+The **Trust Statement** is Attestor's canonical evaluated conclusion; the **Attestation** is its separate canonical assertion object. A verification-related outcome may be relevant governed input or context without requiring creation of a separate Trust Signal object. The generic Trust Signal model is not the canonical production output.
 
 ## Reconciliation Notes
 
