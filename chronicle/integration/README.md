@@ -581,16 +581,18 @@ It does not erase institutional boundaries.
 
 ---
 
-## Suite-Level Terminology Note
+## Current Terminology Position
 
-The current Suite Interoperability architecture has historically described Chronicle's institutional object as a "Historical Event."
+Suite Reconciliation and the Interoperability Review have resolved Chronicle's shared object terminology.
 
-Chronicle's reconciled architecture establishes a more precise distinction:
+The current distinction is:
 
-* Historical occurrence or event = what happened
-* Chronicle Entry = the canonical Chronicle object preserving that qualifying occurrence
+* historical occurrence / event = what happened;
+* Chronicle Entry = Chronicle's canonical object preserving a qualifying occurrence.
 
-Future Suite-level Interoperability language should be updated to reflect this distinction so the shared Suite object model remains consistent.
+Current Suite documentation should use **Chronicle Entry** for the canonical object and may use occurrence / event only for the underlying historical fact.
+
+This is a settled terminology boundary rather than an open interoperability issue.
 
 ---
 
@@ -615,8 +617,10 @@ Future integration should preserve the authority boundaries established here.
 
 ## Status
 
-Draft operational specification.
+**Operational · Production-Proven Integration**
 
-This README reflects the reconciled Chronicle Integration architecture and is aligned with the current Satoshium Suite Standards, Methodology, and Interoperability framework.
+Chronicle is operational and has exercised the integration model through its first canonical production Chronicle Entry.
 
-Identifier rules, relationship types, provenance requirements, Event-Type Profiles, validation rules, publication procedures, and cross-system reference structures may evolve as Chronicle operational development continues.
+This README reflects the reconciled Chronicle Integration architecture and is aligned with current Suite Standards, Methodology, Interoperability, and Governance.
+
+Future identifier, relationship, profile, validation, publication, and cross-system reference refinements remain institution-owned evolution within settled Chronicle authority unless a proposed change affects shared or constitutional architecture.
