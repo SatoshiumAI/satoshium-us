@@ -26,6 +26,8 @@ It does not merge their authority.
 
 The inaugural production certification demonstrates the following cross-Suite path:
 
+**Diagram scope:** This flow summarizes the inaugural exercised production set and conditional downstream institutional relationships. It is **not a mandatory Suite-wide pipeline**. Each institution independently governs its own canonical object, and not every certification requires every downstream object or operation.
+
 ```text
 Certification Subject
         ↓
