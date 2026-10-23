@@ -3,7 +3,7 @@
 **Path:** `/attestor/controlled-values/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Controlled Values  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 

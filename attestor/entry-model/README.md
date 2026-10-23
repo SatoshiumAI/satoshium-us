@@ -3,7 +3,7 @@
 **Path:** `/attestor/entry-model/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Entry Model  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 
