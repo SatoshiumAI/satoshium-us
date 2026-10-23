@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/templates/`  
 **Current Stage:** Operational Implementation Layer  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 

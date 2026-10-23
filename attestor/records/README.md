@@ -2,7 +2,7 @@
 
 **Path:** `/attestor/records/`  
 **Current Stage:** Operational Reference Profiles  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 
