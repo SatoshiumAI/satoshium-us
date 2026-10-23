@@ -9,7 +9,7 @@
 
 This directory documents **Satoshium Navigator Integration**.
 
-Navigator Integration defines how Navigator coordinates operational workflows across the Satoshium Suite while preserving the independent authority and canonical responsibilities of participating institutions.
+Navigator Integration defines how Navigator coordinates operational workflows across the Satoshium Suite while preserving the independent authority and canonical responsibilities of participating institutions. The approved Navigator Workflow Handoff contract from the Suite Interoperability Review governs implementation-level handoffs.
 
 Navigator exists to connect institutional work without absorbing institutional authority.
 
@@ -182,6 +182,47 @@ A companion Navigator rule is:
 
 **COORDINATION DOES NOT TRANSFER AUTHORITY.**
 
+## Approved Handoff Contract
+
+The Suite Interoperability Review established the Navigator Workflow Handoff contract as the governing implementation-level exchange model for Navigator-coordinated institutional work.
+
+A handoff should preserve enough governed context to reconstruct:
+
+- workflow definition and execution context;
+- sending step and receiving institution;
+- requested action;
+- input references and provenance;
+- authority context;
+- required preconditions;
+- expected output class/reference;
+- completion criteria;
+- failure, retry, timeout, unavailable, and unknown-state handling;
+- timestamp and traceability context.
+
+The exact serialization may vary by implementation.
+
+The semantic boundary may not.
+
+```text
+Navigator Handoff
+→ requests institutional action
+
+Participating Institution
+→ applies its own rules
+
+Institutional Output / Response
+→ remains institution-owned
+
+Navigator
+→ records workflow result
+```
+
+**ORCHESTRATION ≠ AUTHORITY.**
+
+**WORKFLOW-SPECIFIC SEQUENCE ≠ SUITE-WIDE ARCHITECTURE.**
+
+**WORKFLOW FAILURE ≠ INSTITUTIONAL FAILURE.**
+
 ## Workflow Orchestration
 
 A generalized Suite workflow may look like:
@@ -257,26 +298,11 @@ Navigator Integration should preserve the following distinctions:
 - reference ≠ support;
 - connection ≠ identity.
 
-## Suite Reconciliation Flag
+## Current Review State
 
-The architecture is fundamentally strong.
+Suite Reconciliation and the Suite Interoperability Review are **COMPLETE — APPROVED**.
 
-Suite Reconciliation should review only a limited set of terminology details:
-
-1. **“Beacon publishes discovery”**  
-   This is directionally correct but may be better expressed using Beacon's mature object language: Discovery Signals, Discovery Metadata, lifecycle, and publication.
-
-2. **“Attestor produces trust statements”**  
-   Current terminology should consistently preserve the complete Attestor flow:
-   `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`.
-
-3. **Workflow linearity**  
-   The representative flow should remain clearly illustrative rather than interpreted as a mandatory universal sequence for every Suite matter.
-
-4. **Registry wording**  
-   “Registry catalogs records” is useful shorthand, but Suite Reconciliation may confirm whether “Registry Entry” / SREG terminology should be preferred in all integration documentation.
-
-These are terminology and explanatory refinements, not architectural defects.
+The prior reconciliation questions for Beacon terminology, Attestor terminology, workflow linearity, and Registry wording have been resolved in current Suite architecture. Navigator Integration must therefore preserve the settled terms and handoff boundaries rather than carrying those items as open flags.
 
 ## Repository Expectations
 
