@@ -998,30 +998,22 @@ It does not replace the canonical Chronicle Entry.
 
 ---
 
-## Next Operational Dependencies
+## Operational Relationships
 
-The Verification Procedure directly informs:
+The Verification Procedure informs Chronicle Lifecycle, Versioning, Corrections, the Chronicle Base Schema, applicable Event-Type Profiles, Validation, the Entry Production Procedure, and publication readiness.
 
-* Lifecycle
-* Versioning
-* Corrections
-* Chronicle Base Schema
-* Certification Event-Type Profile
-* Validation
-* Production Procedure
-* First production Chronicle Entry
-* Publication requirements
+The sequence has been exercised in production through **CHR-2026-0001 Entry Version 1**, verified on August 22, 2026 before Validation and the separate Publication Gate. The public Verification page documents that production exercise.
 
-The first production Chronicle Entry should be used to test whether this Verification sequence is complete, proportionate, and operationally practical.
+Further implementation refinements may be made within Chronicle's established authority, but they do not reverse the completed production exercise or make Verification a new canonical object.
 
 ---
 
 ## Status
 
-**Active pre-operational Chronicle Verification Procedure specification.**
+**Operational — Production-Exercised Chronicle Verification Procedure.**
 
-The Verification State vocabulary is governed through the Chronicle Controlled Values Registry.
+The Verification State vocabulary remains governed through the Chronicle Controlled Values Registry.
 
-The procedure now defines what Chronicle Verification actually verifies and establishes the authority boundary against re-adjudicating another institution's determinations.
+Verification reviews the integrity and traceability of Chronicle's historical representation. It does not establish absolute historical truth or re-adjudicate determinations of Certifier, Registry, Anchor, Beacon, Attestor, Navigator, or Atlas.
 
-Final Verification Record structure, reviewer-role requirements, automation rules, Event-Type-specific checks, and publication gating remain subject to later operational-development steps.
+**Verification ≠ Validation ≠ Publication. Reference does not transfer authority.**
