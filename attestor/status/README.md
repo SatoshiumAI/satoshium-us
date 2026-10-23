@@ -9,7 +9,7 @@ This page records the **current institutional and operational status** of Satosh
 It distinguishes established architecture, demonstrated production capability, and the governance that remains applicable to every future Attestor operation.
 
 ## Canonical Responsibility
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 A Trust Statement is a governed, attributable, bounded conclusion produced through Rule-Constrained Evaluation of an Attestation against eligible governed inputs.
 
@@ -221,7 +221,7 @@ Trust Signal remains a legacy/noncanonical artifact. It is not a canonical Attes
 `Chronicle → Chronicle Entry`  
 `Anchor → Integrity Reference`  
 `Beacon → Discovery Signal / Discovery Metadata`  
-`Attestor → Trust Statement`
+`Attestor → Attestation + Trust Statement`
 
 ## Status Summary
 
