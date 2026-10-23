@@ -3,7 +3,7 @@
 **Path:** `/attestor/methodology/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Methodology  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 

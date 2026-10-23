@@ -3,7 +3,7 @@
 **Path:** `/attestor/provenance/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Provenance  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 

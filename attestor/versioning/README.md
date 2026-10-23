@@ -3,7 +3,7 @@
 **Path:** `/attestor/versioning/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Versioning  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 

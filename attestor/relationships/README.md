@@ -3,7 +3,7 @@
 **Path:** `/attestor/relationships/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Relationships  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 

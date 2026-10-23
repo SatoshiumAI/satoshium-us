@@ -3,7 +3,7 @@
 **Path:** `/attestor/identifiers/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Identifiers  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 
