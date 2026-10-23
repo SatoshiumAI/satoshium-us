@@ -3,7 +3,11 @@
 **Path:** `/attestor/publication/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Publication  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
+
+## Repository Publication Entry Point
+
+The canonical public route is `/attestor/publication/`. The repository now supplies `index.html` at this location for conventional static directory routing, alongside the previously retained `index.htm` compatibility copy. The public-page content is equivalent. This change addresses the repository entry-point mismatch; **deployed URL behavior still requires independent live verification**.
 
 ## Purpose
 
