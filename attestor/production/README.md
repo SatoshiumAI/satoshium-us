@@ -3,7 +3,7 @@
 **Path:** `/attestor/production/`  
 **Institution:** Satoshium Attestor  
 **Institutional Stage:** Operational Production  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 
