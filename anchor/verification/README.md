@@ -965,7 +965,7 @@ provided the underlying JSON data is equivalent under the governed canonicalizat
 
 This avoids making cosmetic formatting changes look like substantive integrity changes.
 
-The exact named canonicalization standard and digest algorithm remain the next production decisions and must be recorded before integrity material is generated.
+For the first published production Integrity Reference, `ANCH-2026-0001`, these choices have been made and exercised: **RFC 8785 JCS**, **UTF-8**, and **SHA-256**, applied to the complete defined `SCRD-SC-CERT-2026-0001` canonical JSON representation. The resulting integrity evidence is limited to that representation; matching does not certify the underlying source or its conclusions.
 
 ---
 
@@ -1017,8 +1017,8 @@ Verification-to-Integrity-State transition rules beyond current
 
 ```text
 deterministic JSON canonicalization / serialization required
-exact named canonicalization standard → next decision
-digest algorithm → next decision
+RFC 8785 JCS / UTF-8 → established in first production case
+SHA-256 → established in first production case
 ```
 
 ---
@@ -1033,7 +1033,7 @@ Anchor Verification should preserve the distinction between demonstrated consist
 
 ## Status
 
-**Post-Foundational Architecture · First-Production Verification Reconciled**
+**Operational · Production-Exercised Integrity Verification**
 
 Integrity Verification semantics, staged Validation relationship, formal procedure relationship, and the first production SCRD JSON application are now defined.
 
@@ -1043,13 +1043,17 @@ The first production-frozen Verification Result is:
 match
 ```
 
-The next production decisions are:
+The first production implementation is established:
 
 ```text
-exact named JSON canonicalization / serialization standard
-digest algorithm
-Integrity Value encoding
+ANCH-2026-0001
+RFC 8785 JCS / UTF-8
+SHA-256
+Defined SCRD canonical JSON representation
+Verification Result: match
 ```
+
+Further encoding and method extensions remain governed follow-on implementation questions, not unmade decisions for the first production instance.
 
 Failure-result vocabulary and more complex Verification structures remain intentionally unfrozen until production proves they are necessary.
 
