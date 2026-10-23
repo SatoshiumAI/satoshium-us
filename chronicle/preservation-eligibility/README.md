@@ -952,8 +952,18 @@ These should not be created until production use demonstrates a need.
 
 ## Status
 
-**Active pre-operational Chronicle Preservation Eligibility Model specification.**
+**Operational · Production-Exercised Preservation Eligibility Model**
 
-Historical Significance is incorporated as a principal preservation rationale rather than maintained as a separate institutional page.
+The Preservation Eligibility model has been exercised in production through the eligibility determination that admitted the occurrence represented by `CHR-2026-0001`.
 
-Automatic Preservation Classes, final Eligibility Decision states, Historical Significance vocabulary, and Event-Type-specific preservation rules remain intentionally provisional until Chronicle gains production experience.
+That production use confirms the core admission sequence:
+
+```text
+Occurrence
+→ Preservation Eligibility
+→ Chronicle Entry
+```
+
+Historical Significance remains incorporated as a principal preservation rationale rather than maintained as a separate institutional page.
+
+Automatic Preservation Classes, additional controlled significance vocabulary, and future Event-Type-specific preservation rules may continue to evolve through Chronicle governance and production experience without reopening the settled institutional architecture.
