@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **12 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **24 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -41,3 +41,16 @@ Afterward, branch HEAD `3fc11e4761b58b4e262d6f845f49321d248a9bb1` and all 12 sam
 **NO ARCHITECTURAL CHANGE:** The Atlas authoritative-intelligence boundary and canonical-object terminology issue remain independently governed.
 
 > Authority follows the governed subject. Reference does not transfer authority.
+
+## Expanded country-page batch two — pages 13–24
+
+The non-truncated Git tree at baseline `64a46f59037a82f881679a1b18e932e29fbcb003` confirmed the same 223 Atlas `index.html` pages. The next twelve lexicographically ordered pages — Austria, Brazil, Canada, Chile, China, Costa Rica, Czech Republic, Denmark, El Salvador, Estonia, Finland and France — were checked by exact repository path.
+
+- **29 local literal `href`/`src` references** checked against repository paths; 10 missing occurrences were only obsolete fallback icon links.
+- **100 fragment-only links** checked against exact page IDs; **100/100 resolved**.
+- No missing non-icon local destinations were found. France's local links to Germany and the United Kingdom resolved within the repository tree.
+- Five affected pages (Canada, Denmark, Estonia, Finland and France) each had two nonexistent optional fallback icon references removed, retaining existing SVG favicon references. China and Costa Rica were not edited merely for out-of-scope source-text occurrences of the obsolete paths.
+- Correction commit: `4f1347006f726dc70b2c9001ebb0af681830d6f4`.
+- All **12/12** pages were independently re-fetched at that new branch HEAD and contained **zero obsolete fallback `link` elements**.
+
+**Cumulative Atlas expanded-audit checkpoint: 24/223 pages checked; 199 pages remain.** Cumulative checked local literal href/src occurrences: **114**; fragment-only references **124**, all resolved. These are bounded static-file counts, not proof of live HTTP serving, script-generated navigation, or external destinations. The Atlas review remains **ACTIVE — PARTIAL COVERAGE**.
