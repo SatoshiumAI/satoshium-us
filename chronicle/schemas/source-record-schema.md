@@ -1,101 +1,80 @@
-# Chronicle Evidence Record Schema
+# Chronicle Source Record Schema
+
+> **Protocol Review Restoration — October 23, 2026**  
+> This Source Record specification was restored from its distinct August 16, 2026 repository version after the August 23 file revision inadvertently duplicated the Evidence Record Schema. It remains a **supporting Chronicle-owned record specification**, not the canonical Chronicle object or an independently established production JSON schema. Historical Phase VII status and deferred design questions below are preserved as written; current architecture and production state are governed by later Chronicle and Suite documentation. **Source ≠ Evidence ≠ Provenance ≠ Verification. Reference does not transfer authority.**
 
 ## Purpose
 
-The Chronicle Evidence Record Schema defines the Chronicle-owned supporting structure used to identify, describe, link, and preserve Evidence relevant to Satoshium Chronicle.
+The Chronicle Source Record Schema defines the Chronicle-owned supporting structure used to identify, describe, reference, and preserve Sources used by Satoshium Chronicle.
 
-An Evidence Record answers:
+A Source Record answers the institutional question:
 
-> What material bears on the Chronicle Entry or claim?
+> Where did this information come from?
 
-Evidence may:
+A Source Record preserves enough structured information to make a Source identifiable, attributable, traceable, reviewable, and historically durable.
 
-* Support
-* Challenge
-* Contradict
-* Clarify
-* Corroborate
-* Contextualize
-* Limit confidence
+A Source Record is not the canonical Chronicle historical object.
 
-Evidence supports Chronicle's historical representation.
+The canonical object remains the **Chronicle Entry**.
 
-It does not become the authoritative event itself.
+A Source Record also does not become authoritative merely because Chronicle preserves or references it.
 
 The governing principle is:
 
-> Evidence supports the historical representation. It does not become the event.
+> Identify the Source. Preserve the reference. Trace the path. Keep authority visible.
 
 ---
 
 # Canonical Role
 
-A Chronicle Evidence Record is a **supporting Chronicle-owned record**.
-
-It is not the canonical historical-preservation object.
-
-The canonical Chronicle object remains:
-
-```text
-Chronicle Entry
-```
+A Chronicle Source Record is a **supporting Chronicle-owned record**.
 
 Conceptually:
 
 ```text
-Chronicle Entry or Claim
-        ↑
-Evidence Relationship
-        ↑
-Evidence Record
+Chronicle Entry
+      ↓
+Source Reference
+      ↓
+Source Record
+      ↓
+Evidence / Provenance / Verification Context
 ```
 
-An Evidence Record exists to preserve:
+A Source Record exists when Chronicle needs more structure than a simple direct Source reference can provide.
 
-* Evidence identity
-* Evidence Type
-* Source linkage
+Examples include situations requiring:
+
+* structured Source identity
+* attribution
+* archival context
+* material limitations
 * Provenance
-* relationship to Entry or claim
-* limitations
-* integrity information
+* reuse across Entries
+* integrity metadata
 * Version lineage
-* review context
+* public Source discovery
+* Validation
+
+A direct external reference may be sufficient when those additional requirements are unnecessary.
 
 ---
 
-# Evidence Is Not Authority
-
-An Evidence Record may refer to an authoritative Suite object.
-
-That does not transfer authority to Chronicle.
-
-Examples:
-
-* Certification Package remains authoritative within Certifier.
-* SREG Registry Entry remains authoritative within Registry.
-* Integrity Reference remains authoritative within Anchor.
-* Trust Statement remains authoritative within Attestor.
-
-Chronicle may use such objects as Authoritative Evidence while preserving their originating authority.
-
----
-
-# Evidence, Source, Provenance, and Verification
+# Source, Evidence, Provenance, and Verification
 
 These concepts remain distinct.
-
-## Evidence
-
-Answers:
-
-> What material bears on the Chronicle Entry or claim?
 
 ## Source
 
 Answers:
 
 > Where did the information come from?
+
+## Evidence
+
+Answers:
+
+> What material bears on the Chronicle Entry or claim?
 
 ## Provenance
 
@@ -107,45 +86,85 @@ Answers:
 
 Answers:
 
-> Has Chronicle reviewed its own historical representation and the supporting material relevant to that review?
+> Has Chronicle reviewed the relevant aspects of its own historical representation and supporting references?
 
 Conceptually:
 
 ```text
-Evidence ≠ Source ≠ Provenance ≠ Verification
+Source ≠ Evidence ≠ Provenance ≠ Verification
 ```
+
+A Source Record should not duplicate Evidence or Provenance structures unnecessarily.
 
 ---
 
-# Supporting Schema Status
+# Source Contexts
 
-This specification defines Chronicle's human-readable supporting architecture for an
-Evidence Record when a separate Chronicle-owned Evidence Record is operationally justified.
+Chronicle recognizes three operational Source contexts.
 
-The canonical human-readable file is:
+## Authoritative Source Record
+
+A Chronicle Source Record documenting an authoritative object or institutional Source.
+
+The Source Record itself does not become the authority.
+
+Authority remains with the originating institution or system.
+
+---
+
+## Supporting Source
+
+A Source used for:
+
+* context
+* corroboration
+* background
+* attribution
+* interpretation
+* temporal detail
+* historical understanding
+
+A Supporting Source may be highly useful without being authoritative for the underlying institutional action.
+
+---
+
+## Referenced External Source
+
+A Source outside Chronicle, and possibly outside the Suite, referenced directly where a separate Source Record would add little operational value.
+
+A direct reference may be sufficient when the Source is:
+
+* stable
+* narrowly used
+* easily identifiable
+* adequately attributable
+* not in need of independent Chronicle lifecycle treatment
+
+---
+
+# Production Status
+
+This specification defines the Phase VII production architecture for Chronicle Source Records.
+
+The current canonical human-readable file is:
 
 ```text
-evidence-record-schema.md
+source-record-schema.md
 ```
 
-Chronicle's first production Entry, `CHR-2026-0001`, did **not** require a separate
-Evidence Record. Supporting Certifier materials had evidentiary value during review,
-but direct Source and authoritative references were sufficient.
-
-A machine-readable implementation:
+A future machine-readable implementation may be created as:
 
 ```text
-evidence-record-schema.json
+source-record-schema.json
 ```
 
-should remain deferred until Chronicle creates and exercises a real production
-Evidence Record whose independent structure adds durable institutional value.
+only after the production field boundary is exercised against a real Chronicle Entry and Source Record.
 
 ---
 
 # Field Architecture
 
-The Evidence Record Schema distinguishes:
+The Source Record Schema distinguishes:
 
 ```text
 Required
@@ -153,73 +172,71 @@ Conditional
 Optional
 ```
 
-A field should not be Required unless every production Evidence Record needs it.
+A field should not be Required unless every production Source Record needs it.
 
 ---
 
 # Universal Required Fields
 
-Every production Chronicle Evidence Record should contain:
+Every production Chronicle Source Record should contain:
 
 ```text
-evidence_id
+source_id
 schema_id
 schema_version
-evidence_record_version
+source_record_version
 
 title
-evidence_type
+source_type
 
 provenance
 
 created_at
 ```
 
-These fields define the minimum Evidence Record identity and traceability structure.
+These form the minimum Source Record identity and traceability structure.
 
 ---
 
 # Identity Fields
 
-## `evidence_id`
+## `source_id`
 
-Stable unique identifier assigned to the Chronicle Evidence Record.
+Stable unique identifier assigned to the Chronicle Source Record.
 
 **Requirement:** Required.
 
-The final Evidence Record identifier namespace remains to be formally established.
+The final Source Record identifier namespace remains to be formally established.
 
-Until approved, implementation should not invent a permanent namespace casually.
+Until that identifier architecture is approved, production implementation should not invent a permanent namespace casually.
 
-The identifier should remain:
+The Source Record identifier must remain:
 
-* unique
 * stable
+* unique
 * non-reusable
-* independent of Evidence Type
-* independent of Verification State
-* independent of Publication State
-* independent of Version
+* independent of Source Type
+* independent of publication or verification state
 
 ---
 
 ## `schema_id`
 
-Stable identifier for the Evidence Record Schema.
+Stable identifier for the Source Record Schema.
 
 **Requirement:** Required.
 
 Initial value:
 
 ```text
-chronicle-evidence-record
+chronicle-source-record
 ```
 
 ---
 
 ## `schema_version`
 
-Version of the Evidence Record Schema governing the record.
+Version of the Source Record Schema governing the record.
 
 **Requirement:** Required.
 
@@ -229,13 +246,13 @@ Initial production convention:
 1.0.0
 ```
 
-Schema Version is distinct from Evidence Record Version.
+Schema Version is distinct from Source Record Version.
 
 ---
 
-## `evidence_record_version`
+## `source_record_version`
 
-Sequential preserved Version of the same Chronicle Evidence Record.
+Sequential preserved Version of the same Chronicle Source Record.
 
 **Requirement:** Required.
 
@@ -245,17 +262,16 @@ Initial value:
 1
 ```
 
-Material changes should advance Evidence Record Version where historical or review meaning changes.
+Material changes should advance the Source Record Version when they alter institutional meaning or review context.
 
-Examples:
+Examples may include:
 
-* changed Evidence identity
-* changed Evidence Type
-* changed Entry / claim linkage
+* changed Source identity
+* changed attribution
 * changed Provenance
-* changed limitation
-* changed integrity representation
-* changed Source reference
+* changed archival representation
+* material limitation discovery
+* changed authoritative reference
 
 ---
 
@@ -263,167 +279,187 @@ Examples:
 
 ## `title`
 
-Concise human-readable title describing the Evidence.
+Concise human-readable title identifying the Source.
 
 **Requirement:** Required.
 
 Example:
 
 ```text
-Screenshot of Chronicle Launch Page
+Satoshium Chronicle Public Launch Page
 ```
 
 ---
 
 ## `description`
 
-Brief factual description of the Evidence item.
+Brief factual description of the Source.
 
 **Requirement:** Conditional.
 
-Required when the title alone does not adequately identify or explain the Evidence.
+Required when the title alone does not adequately explain what the Source is.
 
 ---
 
-# Evidence Type
+# Source Type
 
-## `evidence_type`
+## `source_type`
 
-Controlled classification identifying the Evidence category.
+Controlled classification identifying the type of Source.
 
 **Requirement:** Required.
 
-Approved Chronicle Evidence Type values are:
+Approved Chronicle Source Type values are:
 
 ```text
-authoritative_evidence
-documentary_evidence
-repository_evidence
-archival_evidence
-machine_generated_evidence
-testimonial_evidence
-contextual_evidence
+authoritative_record
+institutional_document
+web_page
+repository_record
+dataset
+archive
+statement
 other
 ```
 
 Human-readable labels:
 
 ```text
-Authoritative Evidence
-Documentary Evidence
-Repository Evidence
-Archival Evidence
-Machine-Generated Evidence
-Testimonial Evidence
-Contextual Evidence
+Authoritative Record
+Institutional Document
+Web Page
+Repository Record
+Dataset
+Archive
+Statement
 Other
 ```
 
 Rules:
 
-* Evidence Type describes what kind of Evidence this is.
-* Evidence Type does not establish evidentiary strength by itself.
-* Evidence Type does not define the Evidence Relationship.
+* Source Type describes what kind of Source this is.
+* Source Type does not establish institutional authority by itself.
+* Source Type does not replace Source Role.
 * `other` should be used only when no approved value accurately fits.
 * Repeated use of `other` should trigger Controlled Values review.
 
 ---
 
-# Evidence Relationship
+# Source Role
 
-## `evidence_relationship`
+## `source_role`
 
-Describes how the Evidence bears on the Chronicle Entry or claim.
+Describes the Source's role in relation to an Entry, claim, Evidence item, or historical representation.
 
 **Requirement:** Conditional.
 
-Required when an Evidence Record is linked to an Entry or claim and the evidentiary function needs explicit structured representation.
+Source Role is **not yet a frozen Controlled Value set**.
 
-Candidate relationship semantics include:
+Candidate concepts include:
 
 ```text
-supports
-challenges
-contradicts
-clarifies
-corroborates
-contextualizes
-limits_confidence
+authoritative
+supporting
+primary
+secondary
+contextual
+archival
+corroborating
+reference
 ```
 
-These values are **not yet a frozen Controlled Value set**.
+These terms remain provisional.
 
-Chronicle should not formalize them merely for architectural completeness.
+Source Role should become a formal Controlled Value set only when production use demonstrates a stable need.
 
-They should become governed Controlled Values only when production schema and review use demonstrate the need.
+Source Type and Source Role must remain distinct.
 
 ---
 
-# Evidence Linkage
+# Creator and Publisher
 
-## `related_entry_references`
+## `creator`
 
-References to Chronicle Entries associated with the Evidence.
+Entity, person, organization, institution, or system responsible for creating the Source.
 
 **Requirement:** Conditional.
 
-Required when the Evidence Record exists in support of or relation to one or more Chronicle Entries.
+Required when known and materially relevant.
 
 ---
 
-## `related_claim_references`
+## `publisher`
 
-References to specific claims, fields, assertions, or propositions within a Chronicle Entry.
+Entity, person, organization, institution, or system responsible for publishing or distributing the Source.
 
 **Requirement:** Conditional.
 
-Used when Chronicle supports structured claim-level Evidence linkage.
+Creator and publisher may be the same.
 
-This should not be required where Entry-level linkage is sufficient.
+They should not be assumed to be identical.
 
 ---
 
-## `related_evidence_references`
+# Source Reference and Location
 
-References to associated Evidence Records.
+## `stable_reference`
+
+Stable identifier, canonical reference, archive identifier, repository identifier, government record number, dataset identifier, DOI-like identifier, commit reference, or other durable Source identity.
 
 **Requirement:** Conditional.
 
-Used when another Evidence Record is materially relevant to interpretation, corroboration, conflict, or lineage.
+Preferred over a bare URL where available.
+
+Examples may include:
+
+```text
+SC-CERT-2026-0001
+SREG-2026-0001
+repository commit
+archive identifier
+dataset identifier
+```
 
 ---
 
-## `related_correction_references`
+## `source_location`
 
-References to Correction Records affecting this Evidence Record or its use in Chronicle.
+Location where the Source can be accessed.
 
 **Requirement:** Conditional.
 
-Required when a formal Correction applies.
+May include:
+
+```text
+https://...
+repository://...
+archive://...
+```
+
+A URL is a location.
+
+It is not necessarily the Source's identity.
 
 ---
 
-# Source Linkage
+## `archive_reference`
 
-## `source_reference`
-
-Reference to the Source from which the Evidence originated or was obtained.
+Reference to an archived or preserved representation of the Source.
 
 **Requirement:** Conditional.
 
-Required when a Source is separately identifiable and materially relevant.
+Required when:
 
-A Source Record may or may not be necessary.
-
-The Source architecture determines whether a direct Source reference is sufficient.
+* the original Source is unstable
+* the original Source is unavailable
+* Chronicle relies on an archived representation
+* long-term reviewability depends on the archive
 
 ---
 
-# Authoritative Record Linkage
+## `authoritative_record_reference`
 
-## `authoritative_record_references`
-
-References to authoritative Suite or external institutional objects associated with the Evidence.
+Reference to an authoritative external or Suite object when the Source itself corresponds to such a record.
 
 **Requirement:** Conditional.
 
@@ -439,39 +475,61 @@ Examples may include:
 
 Rules:
 
-* Chronicle references the authoritative object.
-* Chronicle does not flatten that object into generic Evidence authority.
-* Authority remains with the originating institution.
+* Chronicle references the object.
+* Chronicle does not duplicate its authoritative schema.
+* Chronicle does not inherit its institutional authority.
 
 ---
 
-# Creator and Origin Fields
+# Temporal Fields
 
-## `original_creator`
-
-Entity, institution, system, or person responsible for creating the original Evidence material.
-
-**Requirement:** Conditional.
-
-Required when known and material to interpretation.
-
----
+Temporal fields should remain distinct.
 
 ## `original_created_at`
 
-Date or timestamp associated with creation of the original Evidence.
+Date or timestamp associated with creation of the Source.
 
 **Requirement:** Conditional.
 
 ---
 
-## `observed_or_collected_at`
+## `published_at`
 
-Date or timestamp when Chronicle or another documented process observed, collected, acquired, or preserved the Evidence.
+Date or timestamp associated with publication or release of the Source.
 
 **Requirement:** Conditional.
 
-This should remain distinct from the original creation time.
+---
+
+## `accessed_at`
+
+Date or timestamp when Chronicle accessed the Source.
+
+**Requirement:** Conditional.
+
+Required for mutable Sources where later review needs to know when Chronicle observed the Source.
+
+---
+
+## `captured_at`
+
+Date or timestamp when Chronicle captured, archived, downloaded, exported, or otherwise preserved the Source.
+
+**Requirement:** Conditional.
+
+These timestamps should not be collapsed into one generic access timestamp.
+
+---
+
+## `created_at`
+
+Date and time Chronicle created the Source Record.
+
+**Requirement:** Required.
+
+This is Chronicle record time.
+
+It is not Source creation time.
 
 ---
 
@@ -479,11 +537,11 @@ This should remain distinct from the original creation time.
 
 ## `provenance`
 
-Structured information describing how the Evidence originated, was obtained, moved, transformed, and entered Chronicle.
+Structured information describing how the Source originated, was discovered, accessed, captured, transferred, transformed, archived, and entered Chronicle.
 
 **Requirement:** Required.
 
-Every production Evidence Record should preserve, at minimum:
+Every production Source Record should preserve, at minimum:
 
 ```text
 origin
@@ -501,45 +559,69 @@ limitations
 
 Expanded Provenance may include:
 
+* discovery method
+* capture method
 * transfer history
 * transformation history
-* archival path
+* archive path
 * preservation history
-* collection context
-* chain-of-custody information
 * integrity metadata
 
-The Chronicle Provenance Model governs meaning.
+The Provenance Model governs meaning.
+
+The Source Record Schema should not redefine that model independently.
 
 ---
 
-# Evidence Quality
+# Entry Linkage
 
-## `quality_assessment`
+## `related_entry_references`
 
-Structured or narrative assessment of Evidence quality factors.
+References to Chronicle Entries associated with the Source.
 
-**Requirement:** Optional / Conditional.
+**Requirement:** Conditional.
 
-Relevant factors may include:
+Required when the Source Record exists because one or more Chronicle Entries rely upon it.
 
-* Authority
-* Independence
-* Completeness
-* Authenticity
-* Timeliness
-* Reproducibility
-* Traceability
-* Resistance to alteration
-* Resistance to misinterpretation
-* Corroboration
-* Contextual adequacy
+A Source Record may be reused across multiple Entries.
 
-Rules:
+---
 
-* Quality assessment should not collapse into an unsupported universal numerical score.
-* Quality factors are review inputs, not authority claims.
-* Different Event-Type Profiles may weigh quality factors differently.
+# Evidence Linkage
+
+## `related_evidence_references`
+
+References to Evidence Records or Evidence items associated with the Source.
+
+**Requirement:** Conditional.
+
+A Source may contain or produce multiple Evidence items.
+
+The Source Record should not flatten those Evidence items into the Source itself.
+
+---
+
+# Correction Linkage
+
+## `related_correction_references`
+
+References to Correction Records affecting this Source Record or its relationship to Chronicle.
+
+**Requirement:** Conditional.
+
+Required when a formal Correction applies.
+
+---
+
+# Related Sources
+
+## `related_source_references`
+
+References to other Source Records.
+
+**Requirement:** Conditional.
+
+Where structured Relationship semantics matter, approved Chronicle Relationship Types should be used.
 
 ---
 
@@ -547,7 +629,7 @@ Rules:
 
 ## `limitations`
 
-Structured or narrative description of known Evidence limitations.
+Structured or narrative description of known Source limitations.
 
 **Requirement:** Conditional.
 
@@ -556,20 +638,34 @@ Required when material limitations exist.
 Examples may include:
 
 * incomplete
-* conflicting
 * stale
-* missing Provenance
-* unverifiable
-* broken reference
+* unavailable
+* archived copy only
 * ambiguous authorship
-* uncertain date
-* limited context
-* derivative or altered material
-* archive-only representation
+* broken reference
+* conflicting publication date
+* derivative
+* missing Provenance
+* context-limited
+* altered or reformatted representation
 
 Limitations are part of the historical record.
 
-They should remain visible over time.
+They should not be hidden merely because the Source remains useful.
+
+---
+
+# Reliability Notes
+
+## `reliability_notes`
+
+Narrative or structured observations relevant to Source reliability.
+
+**Requirement:** Optional.
+
+This field should not become a universal truth score.
+
+Chronicle should avoid unsupported numerical reliability scoring unless later Suite standards explicitly require it.
 
 ---
 
@@ -577,7 +673,7 @@ They should remain visible over time.
 
 ## `checksum`
 
-Cryptographic checksum or digest associated with the Evidence object.
+Cryptographic checksum or digest for preserved Source material.
 
 **Requirement:** Optional / Conditional.
 
@@ -591,40 +687,30 @@ sha256:<HASH>
 
 ## `digital_signature_reference`
 
-Reference to a digital signature or signature-verification artifact.
+Reference to a signature or signature-verification artifact.
 
 **Requirement:** Conditional.
-
----
-
-## `chain_of_custody`
-
-Structured or narrative information describing Evidence handling history.
-
-**Requirement:** Conditional.
-
-Use only where the nature of the Evidence makes chain-of-custody meaningful.
 
 ---
 
 ## `integrity_metadata`
 
-Other integrity information relevant to authenticity, completeness, alteration risk, or preservation.
+Other integrity information relevant to the Source.
 
 **Requirement:** Optional / Conditional.
 
-Potential examples:
+May include:
 
 * repository commit
 * timestamp
 * immutable object identifier
 * Anchor Integrity Reference
+* content hash
 * file metadata
-* archival capture identifier
 
 Integrity metadata supports reviewability.
 
-It does not replace Provenance.
+It does not replace Provenance or authority.
 
 ---
 
@@ -632,15 +718,15 @@ It does not replace Provenance.
 
 ## `preservation_notes`
 
-Information describing archival state, preservation method, availability, or long-term accessibility.
+Information describing archival state, capture method, long-term accessibility, or preservation limitations.
 
 **Requirement:** Conditional.
 
-A formal Evidence Preservation State vocabulary is **not yet frozen**.
+A separate Controlled Preservation State is **not yet frozen** for Source Records.
 
-Therefore the schema should not invent a production `preservation_status` enumeration at this stage.
+Therefore the schema should not invent a production `preservation_status` vocabulary at this stage.
 
-If production use demonstrates a stable need, Preservation State can later be introduced through schema evolution.
+If production experience demonstrates the need, Preservation State can later be added through schema evolution.
 
 ---
 
@@ -648,7 +734,7 @@ If production use demonstrates a stable need, Preservation State can later be in
 
 ## `verification_state`
 
-Chronicle Verification State associated with the Evidence Record where Chronicle separately reviews Evidence-level questions.
+Chronicle Verification State associated with the Source Record where Chronicle separately reviews Source-level questions.
 
 **Requirement:** Conditional.
 
@@ -672,19 +758,19 @@ Verified with Limitations
 Unresolved
 ```
 
-Evidence-level Verification may review:
+Source-level Verification may review:
 
-* authenticity
-* consistency
-* corroboration
+* Source existence
+* attribution
+* creator / publisher identity
+* publication date
+* access consistency
+* archive consistency
 * Provenance
-* traceability
-* temporal consistency
-* linkage
-* integrity information
 * limitations
+* reference integrity
 
-Verification does not re-adjudicate another institution's determination.
+Verification does not convert the Source into Chronicle authority.
 
 ---
 
@@ -694,13 +780,13 @@ References to separately preserved Verification activity or records.
 
 **Requirement:** Conditional.
 
-Whether Chronicle needs distinct Verification Records remains a later production decision.
+Whether a distinct Verification Record is required remains subject to later production architecture.
 
 ---
 
 # Validation
 
-The Evidence Record Schema is designed for Validation.
+The Source Record Schema is designed for Validation.
 
 It does not presently require a universal embedded:
 
@@ -708,20 +794,18 @@ It does not presently require a universal embedded:
 validation_state
 ```
 
-Chronicle's production Validation architecture establishes Version-specific Validation
-for Chronicle Entries. Validation-result storage for an independently governed Evidence
-Record remains undefined until a production Evidence Record implementation exists.
+The Validation Procedure should determine where validation results are preserved.
 
 Validation may test:
 
-* Evidence Record identifier integrity
+* Source Record identifier integrity
 * schema conformance
 * required fields
-* Evidence Type Controlled Values
-* Entry linkage
-* claim linkage
-* Source linkage
+* Controlled Values
+* reference integrity
 * Provenance requirements
+* Entry linkage
+* Evidence linkage
 * Version linkage
 * publication prerequisites
 
@@ -735,16 +819,25 @@ Schema ≠ Verification ≠ Validation
 
 # Lifecycle
 
-A separate production `evidence_status` field is not yet required.
+A separate production `source_status` field is not yet required.
 
-The Lifecycle State vocabulary established for Chronicle Entries should not automatically be applied to Evidence Records without evidence that the same lifecycle model fits.
+Chronicle's currently approved Lifecycle State values were established for Chronicle Entries:
 
-The Evidence Record lifecycle may conceptually include:
+```text
+Draft
+Active
+Superseded
+Withdrawn
+Preserved
+```
+
+They should not automatically be applied to Source Records without operational evidence that the same state model fits.
+
+The Source Record lifecycle may still conceptually include:
 
 ```text
 identified
 structured
-linked
 reviewed
 validated
 used
@@ -753,7 +846,7 @@ corrected / versioned
 preserved
 ```
 
-These are process concepts, not approved Evidence Record Controlled Values.
+But those process stages should not be prematurely converted into Controlled Values.
 
 ---
 
@@ -761,7 +854,7 @@ These are process concepts, not approved Evidence Record Controlled Values.
 
 ## `publication_state`
 
-Publication State of the Evidence Record when Chronicle independently publishes the Evidence Record.
+Publication State of the Source Record when Source Records themselves are independently published.
 
 **Requirement:** Conditional.
 
@@ -774,63 +867,62 @@ published
 withdrawn_from_publication
 ```
 
-Not every Evidence Record should necessarily be public even when its Chronicle Entry is public.
+Not every Source Record must be public merely because an associated Chronicle Entry is public.
 
 ---
 
 ## `published_record_at`
 
-Date and time Chronicle published the Evidence Record.
+Date and time the Source Record itself was published by Chronicle.
 
 **Requirement:** Conditional.
 
-Required when:
+Required when `publication_state` is:
 
 ```text
-publication_state: published
+published
 ```
 
-This is distinct from `original_created_at`.
+This field is distinct from the Source's own `published_at`.
 
 ---
 
 # Versioning
 
-## `evidence_record_version`
+## `source_record_version`
 
-Sequential Version of the Evidence Record.
+Sequential Version of the Source Record.
 
 **Requirement:** Required.
 
-Material Evidence Record changes should create a new Version where a future reviewer would reasonably need to know that the prior record said something materially different.
+Material Source Record changes should create a new Version when a future reviewer would reasonably need to know that the prior Source Record said something materially different.
 
-Potential triggers:
+Examples:
 
-* Evidence Type correction
-* Source linkage change
-* Entry / claim linkage change
-* Provenance change
-* integrity correction
-* limitation discovery
-* relationship change
+* Source attribution changes
+* Source identity changes
+* Provenance changes
+* archive representation changes
+* material limitation changes
+* authoritative-reference changes
 
 ---
 
 ## `prior_version_reference`
 
-Reference to the immediately prior preserved Evidence Record Version.
+Reference to the immediately prior preserved Source Record Version.
 
 **Requirement:** Conditional.
 
 Required for Version 2 and later when prior Version linkage is represented directly.
 
-Prior substantive Evidence Record states should remain preserved.
+Prior substantive Source Record states should remain preserved.
 
 ---
 
 # Corrections
 
-An Evidence Record may be corrected through Chronicle's Correction architecture.
+A Source Record may be corrected through Chronicle's Correction architecture.
 
 Material Corrections should preserve:
 
@@ -843,16 +935,7 @@ Affected fields
 Resulting Version
 ```
 
-Chronicle must not silently rewrite:
-
-* Evidence identity
-* Evidence Type
-* Entry linkage
-* claim linkage
-* Source linkage
-* Provenance
-* limitations
-* integrity information
+Chronicle must not silently rewrite material Source identity, attribution, Provenance, limitations, or archival context.
 
 ---
 
@@ -864,13 +947,13 @@ Optional discovery metadata.
 
 **Requirement:** Optional.
 
-Tags should not replace Evidence Type or Evidence Relationship.
+Tags should not replace Source Type or later approved Source Role values.
 
 ---
 
 ## `jurisdiction`
 
-Geographic, legal, organizational, or operational scope associated with the Evidence.
+Geographic, legal, organizational, or operational scope associated with the Source.
 
 **Requirement:** Optional / Conditional.
 
@@ -880,73 +963,63 @@ Where important, Chronicle should prefer stable identifiers or authoritative ref
 
 # Fields Intentionally Not Frozen
 
-The following concepts remain intentionally unresolved:
+The following concepts remain intentionally provisional:
 
 ```text
-evidence_relationship controlled vocabulary
+source_role
 preservation_state
 validation_state location
-evidence_record identifier namespace
+source_record identifier namespace
 ```
 
-These should not be frozen until production evidence demonstrates a stable institutional need.
+They should not be turned into production Controlled Values merely to make the schema appear complete.
+
+Production experience should determine whether they are necessary.
 
 ---
 
-# Deprecated Legacy Evidence Types
+# Deprecated Legacy Concepts
 
-The following older draft categories should not govern production Evidence Records:
+The following older draft concepts should not govern production Source Records.
+
+## Legacy Source Type vocabulary
+
+Do not use older ad hoc values such as:
 
 ```text
-primary_source
-secondary_source
-institutional_record
-self_attestation
-cryptographic_record
-metadata
-screenshot
-image
-archive
-audio
-video
-receipt
-witness_statement
-other_approved
-
+webpage
 document
-digital_record
-physical_artifact
-measurement
-log
-testimonial
+publication
+database
+public_record
+interview
+broadcast
+social_post
+authoritative_suite_record
+other_approved
 ```
 
-Use the approved Evidence Type vocabulary instead.
+unless they map to an approved Source Type.
+
+Use the current Controlled Values instead.
 
 ---
 
-# Deprecated Legacy Fields
+## `access_timestamp`
 
-## `collection_timestamp`
-
-Deprecated as ambiguous.
+Deprecated as an ambiguous universal time field.
 
 Use:
 
 ```text
 original_created_at
-observed_or_collected_at
+published_at
+accessed_at
+captured_at
+created_at
 ```
 
 according to meaning.
-
----
-
-## `collector`
-
-Deprecated as a universal acquisition-actor field.
-
-Use Provenance and explicit actor fields only where needed.
 
 ---
 
@@ -970,7 +1043,7 @@ Use:
 
 ```text
 schema_version
-evidence_record_version
+source_record_version
 ```
 
 ---
@@ -979,156 +1052,102 @@ evidence_record_version
 
 Deprecated.
 
-Use explicit role fields where operationally necessary.
+Use explicit fields such as:
+
+```text
+creator
+publisher
+```
+
+where applicable.
 
 ---
 
-# Illustrative Supporting-Record Example
+# Production Example
 
-The following example demonstrates the current human-readable Evidence Record architecture.
+The following example demonstrates the current production architecture.
 
-It is **not** an Evidence Record created for `CHR-2026-0001`, and it does not establish
-a permanent Evidence Record identifier namespace.
+The Source Record identifier remains illustrative until its namespace is formally established.
 
 ```yaml
-evidence_id: <EVIDENCE-IDENTIFIER>
-schema_id: chronicle-evidence-record
+source_id: <SOURCE-IDENTIFIER>
+schema_id: chronicle-source-record
 schema_version: 1.0.0
-evidence_record_version: 1
+source_record_version: 1
 
-title: Screenshot of Chronicle Launch Page
+title: Satoshium Chronicle Public Launch Page
 
 description: >
-  Screenshot showing the public Chronicle homepage as it appeared
-  at the documented capture time.
+  Public Satoshium webpage documenting Chronicle.
 
-evidence_type: archival_evidence
+source_type: web_page
 
-evidence_relationship: contextualizes
+creator: Satoshium
+publisher: Satoshium
 
-source_reference: <SOURCE-REFERENCE>
+published_at: 2026-09-01T00:00:00Z
+accessed_at: 2026-09-01T09:00:00Z
+captured_at: 2026-09-01T09:05:00Z
+
+source_location: https://example.com/chronicle
+
+provenance:
+  origin: satoshium_web
+  acquisition_method: direct_web_access
+  retrieved_at: 2026-09-01T09:00:00Z
 
 related_entry_references:
   - CHR-2026-0001
 
-original_created_at: 2026-09-01T09:15:00Z
-observed_or_collected_at: 2026-09-01T09:15:00Z
-
-provenance:
-  origin: public_chronicle_webpage
-  acquisition_method: direct_capture
-  retrieved_at: 2026-09-01T09:15:00Z
-
 verification_state: not_reviewed
+
 publication_state: not_published
 
-created_at: 2026-09-01T09:20:00Z
+created_at: 2026-09-01T09:10:00Z
 ```
 
-This example does not freeze `contextualizes` as an approved Evidence Relationship Controlled Value.
+This example does not establish a permanent Source Record identifier format.
 
 ---
 
-# First Production Lesson
+# Source Record Creation Test
 
-`CHR-2026-0001` established an important Evidence-model precedent:
+A separate Source Record should ordinarily be created when one or more of the following are true:
 
-```text
-Separate Evidence Record required? No.
-```
-
-The Certification Process Report, Certification Receipt, and SCRD artifacts had
-evidentiary value during Chronicle review, but Chronicle did not create duplicate
-Evidence Records merely to repackage material already preserved through durable Source
-and authoritative references.
-
-This confirms:
-
-> A Source may have evidentiary value without requiring a duplicate Evidence object.
-
-and:
-
-> Minimum necessary structure first.
-
----
-
-# Evidence Record Creation Test
-
-A separate Evidence Record should ordinarily be created when one or more of the following are true:
-
-* Evidence needs structured identity
-* Entry / claim linkage must be explicit
-* Source linkage is material
-* Provenance is material
+* structured identity is required
+* attribution is material
 * limitations are material
+* Provenance is complex
+* the Source is reused across Entries
+* archival context matters
 * integrity metadata matters
-* Evidence is reused across Entries
-* independent Versioning is needed
+* independent Versioning is required
 * an Event-Type Profile requires it
 * Validation requires it
-* public Evidence discovery is needed
+* public Source discovery is needed
 
-Otherwise a direct Evidence reference may be sufficient.
-
----
-
-# Evidence and Preservation Eligibility
-
-Evidence sufficiency and Preservation Eligibility remain separate.
-
-Preservation Eligibility asks:
-
-> Should Chronicle preserve this Occurrence?
-
-Evidence sufficiency asks:
-
-> Is the available Evidence adequate for the historical purpose for which it is being used?
-
-A Preservation-Eligible Occurrence may still have:
-
-* incomplete Evidence
-* conflicting Evidence
-* limited Evidence
-* unresolved Evidence
-
-Chronicle should preserve those limitations transparently.
+Otherwise a direct Source reference may be sufficient.
 
 ---
 
-# Evidence and Event-Type Profiles
-
-An Event-Type Profile may strengthen Evidence requirements.
-
-A Profile may require:
-
-* specific Evidence Types
-* minimum authoritative Evidence
-* specific Source references
-* Provenance minimums
-* Evidence Relationship semantics
-* integrity information
-* Verification expectations
-
-The Base Evidence Record Schema should remain general enough to support those requirements without becoming Event-Type-specific.
-
----
-
-# Evidence Record Lifecycle
+# Source Record Lifecycle
 
 A generalized operational path may be:
 
 ```text
-Evidence Identified
+Source Identified
       ↓
-Need for Evidence Record Assessed
+Need for Source Record Assessed
       ↓
-Evidence Record Created
+Source Record Created
       ↓
-Evidence Type Assigned
+Source Type Assigned
       ↓
-Source / Provenance Recorded
+Attribution / Dates / References Recorded
       ↓
-Entry / Claim Linkage Established
+Provenance Recorded
+      ↓
+Entry / Evidence Linkage Established
       ↓
 Limitations / Integrity Recorded
       ↓
@@ -1143,44 +1162,53 @@ Correction / Versioning when Necessary
 Historical Preservation
 ```
 
-Not every Evidence Record requires public publication or separate Verification.
+Not every Source Record will require public publication or separate Verification.
 
 ---
 
 # Authority Boundary
 
-Chronicle Evidence Records preserve evidentiary relevance.
+Chronicle Source Records document Sources.
 
-They do not absorb institutional authority.
+They do not replace institutional authority.
 
-The rule remains:
+Examples:
 
-> Evidence may reference authority. Evidence does not become the authority.
+* Certification Package remains authoritative within Certifier.
+* SREG Registry Entry remains authoritative within Registry.
+* Integrity Reference remains authoritative within Anchor.
+* Trust Statement remains authoritative within Attestor.
+* Workflow Definition remains authoritative within Navigator.
+* Atlas records remain authoritative within Atlas.
+
+Chronicle may document those objects through Source Records.
+
+Authority remains where it originated.
 
 ---
 
 # Validation Expectations
 
-When Chronicle creates a production Evidence Record, it should be validated against:
+A production Source Record should ultimately be validated against:
 
-* Evidence Record Schema
-* Evidence Record identifier rules
+* Source Record Schema
+* Source Record identifier rules
 * required fields
-* Evidence Type Controlled Values
-* Entry linkage
-* claim linkage where used
-* Source references
+* Source Type Controlled Values
+* reference integrity
 * Provenance requirements
+* related Entry references
+* related Evidence references
 * Versioning rules
 * publication prerequisites
 
-Evidence Relationship should not be validated against a frozen vocabulary until formally governed.
+Source Role should not be validated against a frozen vocabulary until Source Role is formally governed.
 
 ---
 
 # Schema Versioning and Compatibility
 
-Every production Evidence Record should remain associated with the Evidence Record Schema Version that governed it.
+Every production Source Record should remain associated with the Source Record Schema Version that governed it.
 
 Schema evolution should preserve:
 
@@ -1192,68 +1220,65 @@ Schema evolution should preserve:
 * Validation behavior
 * historical interpretability
 
-Older Evidence Records should remain understandable under the Schema Version that originally governed them.
+Older Source Records should remain understandable under the schema Version that originally governed them.
 
 ---
 
 # Design Principles
 
-## Evidence Supports Representation
+## Source Identity First
 
-Evidence supports Chronicle's historical representation.
+A Source Record exists to identify and trace a Source.
 
-It does not become the event.
+## Source ≠ Evidence
 
-## Evidence ≠ Source
-
-Evidence and Source remain distinct.
+Source and Evidence remain distinct.
 
 ## Provenance Is Required
 
-Evidence without information-path traceability is institutionally incomplete.
+A Source Record without information-path traceability is institutionally incomplete.
 
-## Controlled Evidence Types
+## Stable Reference Over Bare URL
 
-Production Evidence Types come from the Controlled Values Registry.
-
-## Relationship Semantics Remain Provisional
-
-Do not freeze Evidence Relationship values prematurely.
+Prefer durable identity where possible.
 
 ## Authority Remains External
 
-Authoritative objects retain their originating institutional authority.
+Chronicle does not become authoritative for an external object by documenting it.
+
+## Controlled Source Types
+
+Production Source Type values come from the Controlled Values Registry.
+
+## Source Role Remains Provisional
+
+Do not freeze Source Role prematurely.
 
 ## Preserve Limitations
 
-Conflicting, incomplete, stale, or uncertain Evidence remains visible.
+Uncertainty and Source weakness remain visible.
 
 ## Preserve Prior States
 
-Material Evidence Record changes remain Versioned and traceable.
+Material Source Record changes remain Versioned and traceable.
 
 ---
 
 # Guiding Principle
 
-> Evidence supports the historical representation. It does not become the event.
-
-And operationally:
-
-> Preserve the Evidence. Preserve its relationship. Preserve its limitations.
+> Identify the Source. Preserve the reference. Trace the path. Keep authority visible.
 
 ---
 
 ## Status
 
-**Chronicle supporting Evidence Record Schema specification.**
+**Phase VII reconciled Chronicle Source Record Schema specification.**
 
-The Evidence Record Schema is now aligned with:
+The Source Record Schema is now aligned with:
 
 * Chronicle Base Schema
-* Evidence architecture
-* Controlled Values Registry
 * Source architecture
+* Controlled Values Registry
 * Provenance Model
 * Relationship Model
 * Verification Procedure
@@ -1261,12 +1286,8 @@ The Evidence Record Schema is now aligned with:
 * Corrections
 * authority boundaries
 
-The approved Evidence Type vocabulary is incorporated.
+The approved Source Type vocabulary is incorporated.
 
-Evidence Relationship Controlled Values, Evidence Record identifier namespace,
-Preservation State, and supporting-record Validation-result storage remain intentionally
-unresolved pending a real production Evidence Record.
+Source Role, Source Record identifier namespace, Preservation State, and the location of Validation results remain intentionally unresolved pending operational evidence.
 
-No machine-readable `evidence-record-schema.json` should be created merely for symmetry.
-It should be introduced only after this specification is exercised against a production
-Evidence Record that Chronicle actually needs.
+A machine-readable `source-record-schema.json` should be created only after this human-readable specification is tested against the first production Source Record.
