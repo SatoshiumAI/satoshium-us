@@ -18,7 +18,7 @@ It establishes:
 
 ## Canonical Responsibility
 
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 Attestor's institutional scope exists to support this canonical responsibility.
 
@@ -127,9 +127,9 @@ Attestor does not create or redefine Beacon's canonical signal architecture.
 
 ### Attestor
 
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
-Attestor alone owns its governed Trust Statement within this institutional mapping.
+Attestor governs its own Attestations and bounded Trust Statements within this institutional mapping.
 
 ## Other Governed Sources
 
@@ -188,7 +188,7 @@ The reconciled mapping is:
 `Chronicle → Chronicle Entry`
 `Anchor → Integrity Reference`
 `Beacon → Discovery Signal / Discovery Metadata`
-`Attestor → Trust Statement`
+`Attestor → Attestation + Trust Statement`
 
 This mapping preserves each institution's canonical responsibility rather than reducing institutions to broad functional labels.
 

@@ -12,7 +12,7 @@ Definitions apply within Attestor's institutional scope and do not redefine cano
 > **Reference does not transfer authority.**
 
 ## Canonical Institutional Model
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 `Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
 
@@ -22,7 +22,7 @@ Definitions apply within Attestor's institutional scope and do not redefine cano
 A governed, attributable assertion used by Attestor to express a bounded statement about a subject, record, relationship, condition, event, or other trust-relevant matter.
 
 ### Trust Statement
-Attestor's canonical institutional output: a governed, attributable, bounded conclusion produced through Rule-Constrained Evaluation of an Attestation against eligible governed inputs.
+One of Attestor's two canonical objects: a governed, attributable, bounded conclusion produced through Rule-Constrained Evaluation of an Attestation against eligible governed inputs.
 
 ### Evidence
 Supporting material or an authoritative reference used by Attestor to evaluate an Attestation and support a Trust Statement. Evidence retains its source, provenance, relevant state, relevance, and authority context.

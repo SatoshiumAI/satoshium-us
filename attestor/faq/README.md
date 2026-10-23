@@ -9,7 +9,7 @@ This page provides concise explanatory answers about the established architectur
 The FAQ reflects adopted architecture. It does not independently create canonical objects, controlled values, lifecycle states, or machine rules.
 
 ## Canonical Responsibility
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 A Trust Statement is a governed, attributable, bounded Attestor conclusion produced through Rule-Constrained Evaluation of an Attestation against eligible governed inputs.
 
@@ -22,13 +22,13 @@ A Trust Statement is a governed, attributable, bounded Attestor conclusion produ
 ## Core Answers
 
 ### What is Attestor?
-Attestor is the Satoshium Suite institution responsible for producing governed, attributable, bounded Trust Statements through Rule-Constrained Evaluation.
+Attestor is the Satoshium Suite institution responsible for governed Attestations and Rule-Constrained Evaluation that produces bounded Trust Statements.
 
 ### What is an Attestation?
 A governed, attributable assertion.
 
 ### What is a Trust Statement?
-Attestor's canonical institutional output: a governed, attributable, bounded conclusion.
+An Attestor-owned canonical conclusion produced through Rule-Constrained Evaluation of an Attestation.
 
 ### Does Attestor determine universal truth?
 No.
@@ -53,7 +53,7 @@ It must remain distinct from:
 - **Chronicle → Chronicle Entry**
 - **Anchor → Integrity Reference**
 - **Beacon → Discovery Signal / Discovery Metadata**
-- **Attestor → Trust Statement**
+- **Attestor → Attestation + Trust Statement**
 
 Attestor may reference eligible governed outputs from these institutions without assuming their canonical authority.
 

@@ -24,7 +24,7 @@ They are foundational architectural commitments. Applicable commitments are now 
 
 ## Canonical Responsibility
 
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 ## Governing Principle
 
@@ -294,7 +294,7 @@ Attestor does not seek to establish:
 - generic reputation;
 - an automatic trust score.
 
-Its canonical output is the **Trust Statement**.
+Its canonical objects are **Attestation** and **Trust Statement**. The Trust Statement is the bounded conclusion produced through Rule-Constrained Evaluation.
 
 A Trust Statement should remain bounded by what its evidence, provenance, scope, limitations, status, and authority support.
 
