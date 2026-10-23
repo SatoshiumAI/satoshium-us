@@ -1,6 +1,8 @@
 # MANIFEST — satoshium-certifier-ops-toolkit
 
-Complete file listing for version 0.1.0. Every file in the repository and its purpose.
+Historical file inventory for toolkit version 0.1.0 and its original 13-artifact executable contract. Counts and file listings below describe that versioned snapshot; they are **not a live count of files in this directory following later documentation updates**.
+
+> **PROTOCOL REVIEW NOTICE — October 23, 2026:** This manifest preserves the legacy v0.1.0 inventory and historical names (`SCHR`, `SATR`) for reproducibility. Historical integration stubs are local preparation artifacts, **not** current canonical CHR, ATT, or TRST objects or mandatory Suite-wide requirements. The 13-file check is local placeholder/file completeness only, **not** governed certification, institutional approval, or publication authority. The current migration assessment is [`docs/protocol-migration-assessment-2026-10-23.md`](docs/protocol-migration-assessment-2026-10-23.md). Executable migration has **not** been performed.
 
 ---
 
