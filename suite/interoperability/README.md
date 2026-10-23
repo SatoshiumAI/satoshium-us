@@ -4,7 +4,7 @@
 **Scope:** Cross-institution Suite interoperability  
 **Production-Proven Institutions Represented:** Atlas · Certifier · Registry · Chronicle · Anchor · Beacon · Attestor  
 **Workflow Institution Represented:** Navigator  
-**Last Updated:** October 11, 2026
+**Last Updated:** October 23, 2026
 
 ---
 
@@ -40,7 +40,7 @@ Registry   → SREG
 Chronicle  → Chronicle Entry
 Anchor     → Integrity Reference
 Beacon     → Discovery Signal
-Attestor   → Trust Statement
+Attestor   → Attestation + Trust Statement
 Navigator  → Workflow Definition / Orchestration
 ```
 
@@ -267,7 +267,7 @@ Registry catalogs authoritative records.
 Chronicle preserves qualifying historical Occurrences.
 Anchor preserves governed Integrity References.
 Beacon publishes Discovery Signals.
-Attestor produces Trust Statements.
+Attestor creates Attestations and produces bounded Trust Statements through Rule-Constrained Evaluation.
 Navigator orchestrates workflows.
 ```
 
