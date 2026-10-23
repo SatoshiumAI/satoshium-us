@@ -1,3 +1,9 @@
+> **HISTORICAL DOCUMENT — NON-CONTROLLING**  
+> This July 2026 document is preserved as historical Certifier development material. It predates the September 2026 Suite Reconciliation, the October 2026 Interoperability Review, and the October 2026 Suite Governance Review. Current institutional roles, canonical objects, authority boundaries, identifier families, interoperability semantics, and workflow requirements are governed by the current Suite and institution documentation. Historical language below must not be interpreted as current architecture.  
+> **Current governing rules include:** Authority follows the governed subject; Reference does not transfer authority; Conceptual sequence ≠ mandatory pipeline; Exercised lineage ≠ mandatory architecture.
+
+---
+
 # Satoshium Certifier
 
 # Workflow Diagram
