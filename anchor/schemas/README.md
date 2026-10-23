@@ -178,9 +178,9 @@ This preserves institutional structure while allowing implementation-specific de
 
 ## Status
 
-**Post-Foundational Architecture · First-Production Schema Reconciled**
+**Operational · Production-Exercised Integrity Reference Base Schema**
 
-The Integrity Reference now has a formal base data structure aligned with the first production candidate.
+The Integrity Reference has a formal base data structure exercised by the first published production Integrity Reference, `ANCH-2026-0001`. Its source representation is `SCRD-SC-CERT-2026-0001` (complete canonical SCRD JSON). This production implementation uses UTF-8, RFC 8785 JSON Canonicalization Scheme (JCS), and SHA-256; it preserves integrity of the defined representation, not source truth or certification meaning.
 
 The schema now machine-enforces the minimum vocabulary required for:
 
@@ -210,18 +210,15 @@ archived
 The following remain intentionally unfrozen or pending the next production decision:
 
 ```text
-Anchor Identifier syntax
-canonicalization / serialization method
-digest algorithm
-Integrity Value encoding
+additional identifier/method/encoding conventions beyond the first production implementation
 additional Controlled Value tokens
 method-specific conditional requirements
 Bitcoin-specific extension
 Correction Type enumeration
 separate Verification Record identity
-first production Integrity Reference instance
+future Integrity Reference instances and methods beyond the exercised production case
 ```
 
-**Version:** 1.0-draft
+**Schema documentation version:** 1.0-draft (retained label; production use of the current schema is established)
 
 **Maintained By:** Satoshium
