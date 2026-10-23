@@ -41,6 +41,7 @@ Satoshium Registry Entry
 Chronicle Entry
 Integrity Reference
 Discovery Signal / Metadata
+Attestation
 Trust Statement
 Workflow Definition
 Atlas structured records
