@@ -38,3 +38,17 @@ This audit does not certify external destinations, canonical/redirect deployment
 **Disposition:** Missing icon links RESOLVED — VERIFIED; other scoped local path presence CONFIRM — PASS; Registry FAQ content/format CORRECT — OPEN. **Architecture change required: none.**
 
 > Authority follows the governed subject. Reference does not transfer authority.
+
+---
+
+## October 23 follow-up — Registry FAQ public entry corrected
+
+**Disposition of the previously open Registry FAQ finding:** **RESOLVED — VERIFIED (repository level)**.
+
+At commit `627665bc6041fe02642171b00a03202acbc9eec1`, `registry/faq/index.html` was replaced with an actual Registry-specific HTML public page sourced from the pre-existing Registry FAQ `registry/faq/README.md`. The earlier misplaced Certifier Markdown remains recoverable in Git history, including original commit `a04dc2c5f0a90203d28b6ad1279f2c0de908db11`.
+
+The replacement uses the existing Registry public-page design conventions: dark/gold styling, topbar loader, canonical `https://satoshium.us/registry/faq/`, SVG favicon, source README link, footer integration, and the same Cloudflare analytics token as neighboring Registry pages. All **49** Registry README FAQ questions were represented as section headings without importing the incorrect Certifier-only entry text. The content and authority boundaries remain grounded in the Registry README, not newly invented policy.
+
+Independent post-commit HEAD and HTML re-fetch confirmed: valid HTML document envelope; all 49 FAQ headings included; no missing FAQ headings; Registry page title and canonical URL; SVG favicon; no missing ICO/Apple-touch PNG references; expected source README link and navigation/analytics references. **No browser or live deployment HTTP check is claimed.**
+
+**Updated review disposition:** Registry resource/link audit COMPLETE — APPROVED; Registry FAQ repository-format/content correction RESOLVED — VERIFIED; live serving remains outside the scope of this review. The historical open-finding text above is preserved to document why the correction was made.
