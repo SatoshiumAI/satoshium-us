@@ -350,7 +350,7 @@ The Source Institution states or controls the relationship.
 
 ### Derived
 
-The relationship is derived from structured evidence or interoperable source data.
+The relationship is derived from structured evidence or interoperable source data. **Derived** describes the basis of a relationship assertion; it does not mean that a referenced record is a derived canonical object, that reference establishes substantive support, or that authority transfers between institutions. Record the asserting authority, source evidence, relationship type, and applicable version context separately.
 
 ### Provisional
 
