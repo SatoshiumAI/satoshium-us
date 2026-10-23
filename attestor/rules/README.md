@@ -1,181 +1,88 @@
-# Satoshium Attestor — Trust Signals
+# Satoshium Attestor — Rules
 
-## Page
-`/attestor/trust-signals/`
+**Path:** `/attestor/rules/`  
+**Institution:** Satoshium Attestor  
+**Status:** Established and Production-Proven  
+**Canonical Objects:** Attestation (`ATT`) and Trust Statement (`TRST`)
 
 ## Purpose
-This page preserves the historical **Trust Signals** concept while recording its final place in the operational Satoshium Attestor architecture.
 
-## Architectural Determination
-> **Trust Signal is legacy / descriptive Attestor terminology only.**
+This directory documents the foundational institutional rules that constrain how Attestor forms and governs Attestations, assesses eligible inputs, performs Rule-Constrained Evaluation, and issues bounded Trust Statements.
 
-Attestor does **not** establish Trust Signal as:
-- a canonical object;
-- a controlled record type;
-- an Evaluation Outcome;
-- a reputation object;
-- a confidence percentage;
-- a score;
-- a weighting mechanism;
-- a directional machine vocabulary.
+The canonical public explanation is `index.html`. This README documents **the Rules surface**, not the separate legacy `/attestor/trust-signals/` terminology.
 
-Trust-relevant considerations are represented through the architecture that already governs Attestations, eligible governed inputs, Evidence, Provenance, Relationships, Evaluation, limitations, uncertainty, Lifecycle, and Trust Statements.
-
-A parallel Trust Signal object model is not required.
-
-## Critical Namespace Boundary
-> **Attestor trust signals are not Beacon Discovery Signals.**
-
-**Beacon → Discovery Signal / Discovery Metadata**
-
-**Attestor → Trust Statement**
-
-Beacon Discovery Signals are canonical Beacon outputs.
-
-Attestor “trust signal” is historical/descriptive language only.
-
-## Canonical Attestor Model
-`Eligible Governed Inputs → Attestation → Rule-Constrained Evaluation → Trust Statement`
-
-Trust-relevant context may inform this process, but it is not an intervening canonical object.
-
-## Historical / Descriptive Context
-The phrase “trust signal” may still be useful in historical material or explanatory prose to describe information relevant to evaluation.
-
-Examples may include:
-- Attestation context;
-- Evidence context;
-- authoritative outcome context;
-- historical and relationship context;
-- accountability context;
-- conflicting or uncertain context.
-
-These are descriptive categories, not controlled Attestor values.
-
-## Evidence Boundary
-Evidence remains distinct from any interpretation made during evaluation.
-
-> **Evidence ≠ Trust Signal ≠ Evaluation Outcome**
-
-Evidence preserves its source, provenance, relevant state, authority, relevance, scope, and limitations.
-
-## Relationship Boundary
-The adopted relationship vocabulary includes:
-- `supports`
-- `references`
-- `derived-from`
-- `evaluates`
-- `results-in`
-- `supersedes`
-- `corrects`
-- `related-to`
-
-These relationships provide governed semantic structure without requiring a separate Trust Signal layer.
-
-> **supports ≠ supported**
-
-## Evaluation Boundary
-Adopted Evaluation Outcomes are:
-- `supported`
-- `partially-supported`
-- `not-supported`
-- `contradicted`
-- `indeterminate`
-
-These outcomes replace any need to interpret historical positive / negative / neutral / mixed / uncertain signal direction as formal Attestor vocabulary.
-
-> **Outcome ≠ Conclusion ≠ Trust Statement Identity**
-
-## No Reputation or Scoring Model
-Attestor does not establish:
-- generic reputation;
-- a canonical reputation object;
-- reputation scoring;
-- trust scoring;
-- confidence percentages;
-- universal evidence weighting;
-- majority-source rules;
-- directional signal aggregation.
-
-The canonical institutional output remains the bounded **Trust Statement**.
-
-## Schema and Template Treatment
-Historical `trust-signal-schema.md` and `trust-signal-template.md` artifacts may be preserved for provenance and architectural history, but they are **legacy / historical only** and are not production Attestor schemas or templates.
-
-They must not be interpreted as evidence that Trust Signal remains a canonical object.
-
-## Governing Principle
 > **Reference does not transfer authority.**
 
-## Production Confirmation
-The first controlled production operation confirms the architectural determination that a separate Trust Signal layer is unnecessary.
+## Twelve Foundational Rules
 
-The production path was:
+The public Rules page establishes:
 
-`Eligible Governed Inputs → ATT-2026-0001 → Rule-Constrained Evaluation → supported → TRST-2026-0001`
+1. **Preserve Attribution** — identify the accountable origin of assertions, sources, Attestor objects, and actions.
+2. **Preserve Provenance** — retain origin, relationships, status, and relevant input and object history.
+3. **Preserve Scope** — keep assertions, evidence relationships, evaluations, and conclusions bounded.
+4. **Preserve Authority Boundaries** — referencing other institutions' objects never transfers their authority.
+5. **Preserve Evidence Context** — retain material source status, limitations, and conflicting information.
+6. **Preserve Traceability** — make inputs, evaluations, records, corrections, and conclusions reviewable.
+7. **Preserve Governed Change** — corrections, withdrawals, and supersession must not silently erase history.
+8. **Distinguish Current and Historical State** — preserve lineage without confusing past states with current state.
+9. **Do Not Claim Universal Truth** — Trust Statements make bounded conclusions, not universal truth determinations.
+10. **Do Not Convert Inputs into Conclusions** — no single input automatically determines a Trust Statement; Attestor performs its own governed evaluation.
+11. **Preserve Uncertainty** — incomplete, conflicting, or insufficient evidence must not produce exaggerated conclusions.
+12. **Support Interoperability Without Authority Transfer** — cross-Suite references preserve each institution's independent canonical ownership and meaning.
 
-No canonical Trust Signal object was created between the governed inputs, Attestation, Evaluation, and Trust Statement.
+These rules operate together; they are not a mandatory cross-institutional pipeline.
 
-No Trust Signal identifier was assigned.
+## Rule Application and Institutional Boundaries
 
-No Trust Signal lifecycle or publication state was required.
+```text
+Eligible Governed Inputs
+        ↓
+Attestation (ATT)
+        ↓
+Rule-Constrained Evaluation
+        ↓
+Trust Statement (TRST)
+```
 
-No Trust Signal schema or production template was invoked.
+**Attestation formation ≠ Eligibility ≠ Evaluation ≠ Validation ≠ Conformance ≠ Lifecycle Activation ≠ Publication.**
 
-No confidence percentage, reputation score, directional signal, weighting mechanism, or signal aggregation was used.
+The institutional rules inform normative requirements, schemas/profiles, Validation, governed Review, and Conformance, but not every rule is reducible to the same machine check.
 
-Trust-relevant context was represented through the canonical architecture already governing Eligibility, Evidence, Provenance, Authority, Relationships, Evaluation, limitations, and the bounded Trust Statement.
+```text
+Principle → Rule → Normative Requirement
+                        ↓
+             Validation / Governed Review
+                        ↓
+                   Conformance
+```
 
-**Trust Signal noncanonical boundary → CONFIRMED IN PRODUCTION**
+An executable validation outcome does not substitute for a substantive Evaluation Outcome or a governing publication action.
 
-The production operation also used `BEAC-2026-0001` as a governed reference while preserving Beacon's ownership of its Discovery Signal / Discovery Metadata. This operationally demonstrated that an Attestor historical “trust signal” concept is not a Beacon Discovery Signal and that reference does not transfer authority.
+**NOT-TESTED ≠ PASS. Valid ≠ Published. Conformant ≠ Published. Reference ≠ Support.**
 
-## Reconciliation Notes
-The architecture resolves the question that the foundational page deliberately left open.
+## First Production Demonstration
 
-The adopted determination is:
-- retain the route `/attestor/trust-signals/` as explanatory and historical documentation;
-- retain “trust signal” only as descriptive language where useful;
-- do not establish a Trust Signal canonical object;
-- do not establish Trust Signal identifiers, lifecycle states, schemas, controlled values, scoring, directionality, weighting, or aggregation;
-- use the established Evidence, Provenance, Relationships, Evaluation, uncertainty, limitations, and Trust Statement architecture instead;
-- preserve a strict namespace boundary from Beacon Discovery Signals.
+The first controlled Attestor production operation exercised this framework with:
 
-## Status
-**Trust Signals → Legacy / Descriptive Boundary Established and Production-Confirmed**
+- `ATT-2026-0001` — canonical Attestation;
+- a bounded Rule-Constrained Evaluation with outcome `supported`;
+- `TRST-2026-0001` — canonical Trust Statement;
+- governed Validation, Review, Conformance, lifecycle, and publication steps, separately evidenced.
 
-- canonical Attestor Trust Signal object → not adopted
-- Trust Signal identifier family → not adopted
-- Trust Signal lifecycle / publication state → not adopted
-- Trust Signal controlled machine vocabulary → not adopted
-- Trust Signal production schema / template → not adopted
-- confidence / reputation scoring → not adopted
-- directional positive / negative / neutral / mixed / uncertain vocabulary → not adopted
-- weighting / aggregation model → not adopted
-- canonical Attestor output → Trust Statement
-- Beacon Discovery Signal namespace → preserved as Beacon-owned
-- `BEAC-2026-0001` reference boundary → production-demonstrated
-- first production operation → completed without a Trust Signal object layer
-- production confirmation → **ESTABLISHED**
+The public Rules page reports **25/25 governed Review requirements satisfied**, **ATT and TRST conformant**, and a **post-operation institutional review of 11 PASS / 0 FAIL / 0 UNRESOLVED**.
 
-No further Trust Signal architecture is required for Attestor production.
+This is proof of the assessed first operation, not advance approval of future objects, evaluation outcomes, processes, or publication.
 
-Historical `trust-signal-schema.md` and `trust-signal-template.md` artifacts may remain for provenance, but they are legacy/non-operational and must not be presented as current production contracts.
+## Relationship to Other Attestor Surfaces
 
-## Continuing Governance
+- `../eligibility/` — evaluation-specific admission of governed inputs;
+- `../attestation-generation/` — formation and canonical creation of an Attestation;
+- `../evaluation/` — Rule-Constrained Evaluation and bounded outcome;
+- `../validation/` — normative object validation;
+- `../conformance/` — declared scope of conformance determinations;
+- `../production/` — first production record and operational proof;
+- `../trust-signals/` — **legacy/descriptive terminology only**, not a canonical Trust Signal object or a Beacon Discovery Signal.
 
-`Trust Signal ≠ Trust Statement`
+## Governing Position
 
-`Trust Signal ≠ Evaluation Outcome`
-
-`Trust Signal ≠ Beacon Discovery Signal`
-
-`Evidence ≠ Trust Signal ≠ Evaluation Outcome`
-
-`supports ≠ supported`
-
-**Reference does not transfer authority.**
-
-## Files
-- `index.html` — public Trust Signals page.
-- `README.md` — repository documentation.
+Attestor's two canonical objects remain **Attestation** and **Trust Statement**. The rules constrain their formation, evaluation, validation, change, and publication without creating a reputation model, generic trust score, additional canonical Trust Signal, or authority over other Suite institutions.
