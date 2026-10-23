@@ -9,7 +9,7 @@ This page defines the established institutional integration model for **Satoshiu
 Integration concerns how Attestor receives, resolves, references, and uses governed information from the Satoshium Suite and eligible external sources without transferring source authority.
 
 ## Canonical Responsibility
-**Attestor → Trust Statement**
+**Attestor → Attestation + Trust Statement**
 
 ## Governing Principle
 > **Reference does not transfer authority.**
@@ -84,11 +84,11 @@ Eligibility is evaluation-specific:
 - **Atlas → Authoritative Intelligence**
 - **Navigator → Workflow Definition / Orchestration**
 - **Certifier → Certification Package**
-- **Registry → Satoshium Registry Record**
+- **Registry → Satoshium Registry Entry (SREG)**
 - **Chronicle → Chronicle Entry**
 - **Anchor → Integrity Reference**
 - **Beacon → Discovery Signal / Discovery Metadata**
-- **Attestor → Trust Statement**
+- **Attestor → Attestation + Trust Statement**
 
 Attestor may reference eligible governed objects from these institutions while preserving the originating institution's authority.
 
