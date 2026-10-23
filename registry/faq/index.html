@@ -1,427 +1,543 @@
-# Frequently Asked Questions (FAQ)
-
-## What is Satoshium Certifier?
-
-Satoshium Certifier is the operational certification implementation of the Satoshium Suite. It reviews defined Certification Subjects against applicable Suite Standards and Suite Methodology, evaluates supporting Evidence, reaches certification determinations, and preserves the result through a canonical Certification Package.
-
-Certifier is authoritative for its own certification actions, Certification Packages, Certification Classes, lifecycle, and generated certification artifacts.
-
-Its purpose is not merely to record information, but to preserve how a subject was reviewed, what evidence was considered, what determination was reached, and how that result can be independently reviewed later.
-
----
-
-## What does Certifier certify?
-
-Certifier supports certification of defined digital subjects such as:
-
-* Pages
-* Reports
-* Services
-* Workflows
-* Datasets
-* Tools
-
-Additional subject categories may be introduced through documented Certifier and Suite governance.
-
----
-
-## What is a Certification Target?
-
-A Certification Target is the item being reviewed.
-
-Examples include:
-
-* A webpage
-* A published report
-* A software tool
-* A workflow
-* A dataset
-* A service
-
-The target is the subject of the certification process.
-
----
-
-## What is certification?
-
-Certification is the process of reviewing a target against a documented standard, evaluating supporting evidence, and recording a determination.
-
-Certification is intended to create a transparent and reviewable record of that process.
-
----
-
-## What is a Certification Package?
-
-The Certification Package is Certifier's canonical operational record for a certification.
-
-It preserves the Certification Subject, certification boundary, governing Standards, applied Methodology, Evidence Inventory, evaluation, determination, Certification Class, lifecycle information, and generated artifact relationships.
-
-Reports, receipts, certified records, and downstream Suite references derive from the Certification Package.
-
-Reference does not transfer authority: the subject system retains authority over the subject it owns.
-
----
-
-## Does certification guarantee correctness?
-
-No.
-
-Certification documents a review performed according to a defined standard and available evidence at a specific point in time.
-
-Certification does not guarantee:
-
-* Accuracy
-* Completeness
-* Future performance
-* Regulatory compliance
-* Legal validity
-
-Certification records document review outcomes rather than absolute truth.
-
----
-
-## What standards are used?
-
-Certifier uses documented Certification Standards.
-
-Standards define:
-
-* Scope
-* Requirements
-* Evaluation criteria
-* Evidence requirements
-* Determination guidance
-
-All certification activities should be traceable to an applicable standard.
-
----
-
-## What evidence can be used?
-
-Certifier may use evidence appropriate to the applicable Standard and Certification Subject, including:
-
-* Canonical records
-* Reports
-* Structured data
-* URLs and durable references
-* Screenshots or captures
-* Hashes and integrity metadata
-* Notes and review observations
-* Supporting institutional artifacts
-
-Evidence requirements are governed by the applicable Suite Standards and Certifier methodology rather than by a single universal evidence list.
-
----
-
-## What are Certification Classes?
-
-Certification Classes communicate the level of certification granted.
-
-Version 1.0 defines:
-
-### Informational
-
-The target exists and has been documented.
-
-### Operational
-
-The target exists, is documented, and demonstrates operation.
-
-### Verified
-
-The target has been reviewed against an established standard and is supported by documented evidence.
-
----
-
-## What are Certification Outcome, Certification Status, and Lifecycle State?
-
-These concepts describe different parts of a certification record.
-
-**Certification Outcome** records the determination reached by Certifier for the defined review.
-
-Example:
-
-```text
-Certified
-```
-
-**Certification Status** communicates the current certification-domain condition of that issued certification.
-
-Example:
-
-```text
-Issued · Active
-```
-
-**Lifecycle State** describes where the certification record exists in its broader institutional lifecycle.
-
-These concepts should not be collapsed into one generic status field.
-
----
-
-## What is a Certification Report?
-
-A Certification Report is the detailed review record supporting a certification event.
-
-Reports document:
-
-* Evidence reviewed
-* Findings
-* Methodology
-* Determinations
-* Conditions
-* Recommendations
-
-Reports provide the reasoning behind certification outcomes.
-
----
-
-## What are SCPR, SCR, and SCRD?
-
-Certifier uses several generated artifact forms derived from the canonical Certification Package:
-
-```text
-SCPR
-Certification Process Report
-
-SCR
-Certification Receipt
-
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#d6a34a">
+<title>Satoshium Registry FAQ</title>
+<meta name="description" content="Frequently asked questions about the Satoshium Registry, Registry Entries (SREG), source authority, registration, publication, and interoperability.">
+<link rel="canonical" href="https://satoshium.us/registry/faq/">
+<link rel="preconnect" href="https://satoshium.link" crossorigin>
+<link rel="dns-prefetch" href="https://satoshium.link">
+<link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+<style>
+:root{
+ --bg:#07090d;
+ --panel:#0c1018;
+ --text:#e8edf7;
+ --muted:#9aa7bd;
+ --gold:#d6a34a;
+ --gold2:#f4c36a;
+ --line:rgba(214,163,74,.18);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ margin:0;
+ padding:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+ line-height:1.6;
+ scroll-behavior:smooth;
+}
+
+body{padding-top:80px}
+
+a{color:var(--gold2);text-decoration:none}
+a:hover{color:var(--gold)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.content{padding:34px 18px 64px}
+
+.hero{
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:28px 24px;
+ margin-bottom:18px;
+ background:
+ radial-gradient(circle at top right, rgba(214,163,74,.12), transparent 30%),
+ linear-gradient(to bottom right, rgba(12,16,24,.97), rgba(12,16,24,.90));
+}
+
+.eyebrow{
+ display:inline-flex;
+ padding:8px 14px;
+ border:1px solid rgba(214,163,74,.24);
+ border-radius:999px;
+ color:var(--gold2);
+ font-size:13px;
+ font-weight:700;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+
+h1{
+ margin:10px 0 12px;
+ font-size:44px;
+ color:var(--gold2);
+}
+
+.lead{
+ max-width:920px;
+ color:var(--muted);
+ font-size:20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:18px;
+ margin-top:18px;
+}
+
+.card{
+ background:linear-gradient(to bottom right,rgba(12,16,24,.95),rgba(12,16,24,.88));
+ border:1px solid rgba(214,163,74,.15);
+ border-radius:18px;
+ padding:22px;
+}
+
+.card h2{
+ margin:0 0 10px;
+ font-size:24px;
+ color:var(--gold2);
+}
+
+.card h3{
+ margin:18px 0 8px;
+ font-size:18px;
+ color:var(--gold2);
+}
+
+.card p,
+.card li{
+ color:var(--muted);
+}
+
+.card p{margin:0 0 14px}
+
+.card ul{
+ margin:10px 0 0;
+ padding-left:22px;
+}
+
+.card li{margin:7px 0}
+
+.note{
+ margin-top:16px;
+ padding:14px 16px;
+ border:1px solid var(--line);
+ border-radius:14px;
+ background:rgba(214,163,74,.05);
+ color:var(--muted);
+}
+
+.flow{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:9px;
+ margin-top:16px;
+ color:var(--muted);
+}
+
+.flow strong{
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.flow span{color:var(--gold)}
+
+.btn{
+ display:inline-block;
+ margin-top:14px;
+ margin-right:10px;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid rgba(214,163,74,.24);
+ background:rgba(214,163,74,.06);
+ color:var(--gold2);
+ font-weight:700;
+}
+
+.btn:hover{background:rgba(214,163,74,.12)}
+
+.muted{color:var(--muted)}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:34px}
+}
+
+.faq-item{margin:0 0 16px}
+.faq-item h2{font-size:23px}
+.faq-item blockquote{margin:12px 0;padding:12px 18px;border-left:3px solid var(--gold);color:var(--muted)}
+.faq-item pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#080b11;padding:14px;border-radius:12px;color:var(--gold2)}
+.faq-item code{font-family:ui-monospace,Consolas,monospace}
+.faq-item ul{margin:12px 0;padding-left:24px}
+</style>
+</head>
+<body>
+<div id="topbar-slot" data-topbar="universe"></div>
+<script src="/components/topbar-loader.js"></script>
+<main class="wrap content">
+<section class="hero"><div class="eyebrow">Registry · Frequently Asked Questions</div>
+<h1>Satoshium Registry FAQ</h1>
+<p class="lead">Questions about Registry's institutional role, its SREG entries, and the boundaries between cataloging records and owning their underlying authority.</p>
+<p><a class="btn" href="/registry/">Registry Home</a><a class="btn" href="/registry/definitions/">Registry Definitions</a><a class="btn" href="/registry/faq/README.md">Source FAQ (Markdown)</a></p>
+</section>
+<p>This document answers common questions about the role, authority, structure, operation, and interoperability of Satoshium Registry within the Satoshium Suite.</p>
+<p>Where a Registry answer depends on a Suite-wide rule, the applicable Satoshium Suite Standards, Methodology, and Interoperability architecture govern.</p>
+<section class="card faq-item" id="question-01"><h2>What is Satoshium Registry?</h2>
+<p>Satoshium Registry is the authoritative public catalog of institutional records created throughout the Satoshium Suite.</p>
+<p>Registry identifies, classifies, references, connects, and preserves the discoverability of authoritative source records through the canonical Satoshium Registry Entry, or SREG.</p>
+<p>Registry does not replace the records created by other institutions.</p>
+</section>
+<section class="card faq-item" id="question-02"><h2>Why does Registry exist?</h2>
+<p>Registry exists because authoritative records can become difficult to locate, distinguish, connect, and preserve when they are distributed across multiple institutions, repositories, pages, schemas, and publication systems.</p>
+<p>Registry provides:</p>
+<ul><li>stable identification;</li><li>controlled classification;</li><li>structured references;</li><li>public discoverability;</li><li>relationship mapping;</li><li>lifecycle continuity;</li><li>version history;</li><li>long-term catalog preservation.</li></ul>
+</section>
+<section class="card faq-item" id="question-03"><h2>How does Registry fit within the Satoshium Suite?</h2>
+<p>Registry operates within the Suite-wide implementation hierarchy:</p>
+<pre><code>Suite Standards
+  ↓
+Suite Methodology
+  ↓
+Suite Interoperability
+  ↓
+Registry Institutional Implementation
+  ↓
+Satoshium Registry Entry (SREG)</code></pre>
+<p>Suite Standards define shared expectations.</p>
+<p>Suite Methodology defines repeatable implementation principles.</p>
+<p>Suite Interoperability defines how institutions exchange references while preserving authority boundaries.</p>
+<p>Registry applies those foundations through its own rules, policies, procedures, schemas, lifecycle, and public entries.</p>
+</section>
+<section class="card faq-item" id="question-04"><h2>Does Registry create authority?</h2>
+<p>No.</p>
+<p>Registry does not create authority merely by cataloging a record.</p>
+<p>Authority remains with the institution that created and maintains the authoritative source record.</p>
+<p>Registry is authoritative only for Registry-owned information, including:</p>
+<ul><li>Registry identifiers;</li><li>Registry record types;</li><li>Registry status;</li><li>Registry lifecycle states;</li><li>Registry relationships;</li><li>Registry versions;</li><li>Registry corrections;</li><li>Registry publication history.</li></ul>
+</section>
+<section class="card faq-item" id="question-05"><h2>What is a Satoshium Registry Entry?</h2>
+<p>A Satoshium Registry Entry, abbreviated SREG, is Registry's canonical operational object.</p>
+<p>A SREG identifies, classifies, references, and connects an authoritative source record.</p>
+<p>A SREG may contain:</p>
+<ul><li>Registry identifier;</li><li>Registry record type;</li><li>title;</li><li>source institution;</li><li>source-record identifier;</li><li>source-record version;</li><li>source-record status;</li><li>Registry status;</li><li>Registry lifecycle state;</li><li>Registry entry version;</li><li>schema version;</li><li>references;</li><li>relationships;</li><li>registration and update dates;</li><li>correction, supersession, revocation, or archival history.</li></ul>
+</section>
+<section class="card faq-item" id="question-06"><h2>What is the relationship between Registry, SREG, Record Type, and Source Record?</h2>
+<p>Registry uses the following canonical hierarchy:</p>
+<pre><code>Satoshium Registry
+  ↓
+Registry Entry (SREG)
+  ↓
+Registry Record Type
+  ↓
+Authoritative Source Record</code></pre>
+<p>Registry is the institution.</p>
+<p>The SREG is the canonical Registry object.</p>
+<p>The Registry Record Type is the controlled classification assigned to the SREG.</p>
+<p>The Authoritative Source Record is the record owned by the originating institution.</p>
+</section>
+<section class="card faq-item" id="question-07"><h2>What is an Authoritative Source Record?</h2>
+<p>An Authoritative Source Record is the record created and maintained by the originating institution.</p>
+<p>Examples include:</p>
+<ul><li>a Certification Package;</li><li>an SCRD;</li><li>an Atlas canonical jurisdiction record;</li><li>a Chronicle Entry;</li><li>an Anchor integrity reference;</li><li>a Beacon discovery signal;</li><li>an Attestor trust statement;</li><li>a Navigator workflow definition;</li><li>a tool publication;</li><li>a media resource.</li></ul>
+<p>Registry catalogs the source record but does not replace it.</p>
+</section>
+<section class="card faq-item" id="question-08"><h2>What is a Registry Record?</h2>
+<p>Registry Record is a general term for information formally maintained by Registry.</p>
+<p>In operational use, the canonical Registry Record is the SREG.</p>
+<p>The term should not be interpreted to mean that Registry owns the authoritative source record being cataloged.</p>
+</section>
+<section class="card faq-item" id="question-09"><h2>What is a Registry Entry?</h2>
+<p>A Registry Entry is the published human-readable or machine-readable representation of a SREG.</p>
+<p>A Registry Entry may appear as:</p>
+<ul><li>an HTML page;</li><li>a JSON file;</li><li>an API response;</li><li>a structured catalog listing;</li><li>another approved Registry publication format.</li></ul>
+</section>
+<section class="card faq-item" id="question-10"><h2>Is Registry the same as Certifier?</h2>
+<p>No.</p>
+<p>Certifier evaluates subjects under applicable standards and methodology and creates certification artifacts.</p>
+<p>Registry creates SREGs that catalog those authoritative certification records.</p>
+<p>A typical certification path is:</p>
+<pre><code>Atlas Resource
+  ↓
+Certifier Evaluation
+  ↓
+Certification Package
+  ↓
 SCRD
-Satoshium Certified Record
-```
-
-The SCPR preserves the detailed review process and reasoning.
-
-The SCR provides a concise public-facing certification receipt.
-
-The SCRD provides the certified-record representation in human-readable and, where published, machine-readable form.
-
-These artifacts must remain traceable to and materially consistent with the canonical Certification Package.
-
----
-
-## What is a Certification Receipt?
-
-A Certification Receipt is a concise public-facing summary of a certification event.
-
-Receipts provide proof that certification occurred while referencing supporting reports and records.
-
----
-
-## What is the difference between a Report and a Receipt?
-
-A simple way to think about it:
-
-```text
-Evidence
-     ↓
-Report
-     ↓
-Receipt
-```
-
-Evidence supports the review.
-
-The Report explains the review.
-
-The Receipt summarizes the review.
-
----
-
-## Why are hashes used?
-
-Hashes support integrity verification.
-
-They help answer a simple question:
-
-> Is this the same artifact that was originally reviewed?
-
-Hashes do not prove correctness.
-
-They help verify consistency.
-
----
-
-## Why are notes considered evidence?
-
-Notes preserve observations, assumptions, limitations, clarifications, and reviewer reasoning.
-
-They help explain how findings and determinations were reached.
-
-Notes preserve context that might otherwise be lost.
-
----
-
-## Does Certifier require human review?
-
-Not necessarily.
-
-Version 1.0 supports:
-
-* Human review
-* AI-assisted review
-* Human-AI-assisted review
-* Automated review
-
-The applicable standard determines the review requirements.
-
----
-
-## Can AI perform certification?
-
-AI may assist certification activities.
-
-Examples include:
-
-* Evidence collection
-* Analysis
-* Documentation
-* Review support
-
-However, AI-generated observations should not automatically be treated as authoritative conclusions.
-
-Certification should remain transparent and reviewable.
-
----
-
-## What is Registry?
-
-Satoshium Registry is the Suite institution responsible for canonical registration, durable SREG identity, classification, provenance, validation, publication, and public discovery of registered institutional records.
-
-Certifier creates and owns the certification record.
-
-Registry may create a SREG that catalogs that Certification Package while Certifier retains certification authority.
-
----
-
-## What is Chronicle?
-
-Satoshium Chronicle is the Suite institution responsible for preserving qualifying historical Occurrences through canonical Chronicle Entries.
-
-A qualifying certification Occurrence may be preserved by Chronicle, but Chronicle does not own or re-adjudicate the certification action. Certifier remains authoritative for the Certification Package and determination.
-
----
-
-## What is Anchor?
-
-Satoshium Anchor is the Suite institution designed to preserve integrity references, hashes, timestamps, signatures, and durable verification points.
-
-Anchor supports integrity without replacing Certifier's authority over certification records.
-
----
-
-## What is Attestor?
-
-Satoshium Attestor is the Suite institution designed to support attestations, trust statements, and independent verification of selected claims and relationships.
-
-Attestation does not replace Certifier's certification authority.
-
----
-
-## How does Certifier fit into Satoshium?
-
-At a high level:
-
-```text
-Atlas
-   ↓
-Certifier
-   ↓
-Registry
-   ↓
-Chronicle
-   ↓
-Anchor
-   ↓
-Beacon
-   ↓
-Attestor
-   ↓
-Navigator
-```
-
-Atlas creates information.
-
-Certifier reviews information.
-
-Registry catalogs authoritative records through SREGs.
-
-Chronicle preserves qualifying historical memory.
-
-Anchor preserves integrity references.
-
-Beacon supports discovery signals and metadata.
-
-Attestor supports attestations and trust statements.
-
-Navigator coordinates workflows and cross-system activity.
-
-Together they form a connected Suite while preserving independent institutional authority.
-
-A production example now exists:
-
-```text
-Atlas Jurisdiction Record — El Salvador
-        ↓
+  ↓
+SREG</code></pre>
+<p>The Certification Package and SCRD remain Certifier-owned records.</p>
+<p>The SREG remains Registry's catalog entry.</p>
+</section>
+<section class="card faq-item" id="question-11"><h2>Is Registry the same as Atlas?</h2>
+<p>No.</p>
+<p>Atlas creates jurisdiction intelligence, canonical jurisdiction records, evidence resources, and machine-readable Atlas packages.</p>
+<p>Registry may create Jurisdiction SREGs or other applicable entries that catalog Atlas records.</p>
+<p>Atlas remains authoritative for Atlas content.</p>
+</section>
+<section class="card faq-item" id="question-12"><h2>Is Registry the same as Chronicle?</h2>
+<p>No.</p>
+<p>Chronicle preserves qualifying historical Occurrences through canonical Chronicle Entries and institutional chronology.</p>
+<p>Registry may catalog or cross-reference Chronicle Entries, but Chronicle remains authoritative for Chronicle-owned historical-preservation records.</p>
+</section>
+<section class="card faq-item" id="question-13"><h2>Is Registry the same as Anchor?</h2>
+<p>No.</p>
+<p>Anchor creates and preserves integrity references, hashes, timestamps, signatures, and durable verification points.</p>
+<p>Registry may reference those integrity records within a SREG.</p>
+<p>Registry does not replace Anchor's integrity function.</p>
+</section>
+<section class="card faq-item" id="question-14"><h2>Is Registry the same as Beacon?</h2>
+<p>No.</p>
+<p>Beacon creates discovery signals and discovery metadata.</p>
+<p>Registry organizes authoritative records and preserves structured discoverability.</p>
+<p>The institutions may interoperate, but they retain separate canonical objects and responsibilities.</p>
+</section>
+<section class="card faq-item" id="question-15"><h2>Is Registry the same as Attestor?</h2>
+<p>No.</p>
+<p>Attestor creates trust statements, attestations, validations, and supporting verification references.</p>
+<p>Registry may catalog those outputs through Attestation SREGs.</p>
+<p>Registration does not itself create an attestation.</p>
+</section>
+<section class="card faq-item" id="question-16"><h2>Is Registry the same as Navigator?</h2>
+<p>No.</p>
+<p>Navigator defines and coordinates workflows across one or more Suite institutions.</p>
+<p>Registry may catalog workflow definitions or participate in coordinated processes, but Navigator remains responsible for workflow orchestration.</p>
+</section>
+<section class="card faq-item" id="question-17"><h2>What kinds of records can Registry catalog?</h2>
+<p>Initial supported Registry Record Types include:</p>
+<ul><li>Tool;</li><li>Jurisdiction;</li><li>Media;</li><li>Certification;</li><li>Attestation;</li><li>Signal.</li></ul>
+<p>Additional controlled Record Types may be added through documented Registry governance.</p>
+<p>Potential future types may include:</p>
+<ul><li>Historical;</li><li>Integrity Reference;</li><li>Discovery;</li><li>Workflow;</li><li>Schema;</li><li>Policy;</li><li>Governance;</li><li>Preservation.</li></ul>
+</section>
+<section class="card faq-item" id="question-18"><h2>What is a Registry Record Type?</h2>
+<p>A Registry Record Type is the controlled primary classification assigned to a SREG.</p>
+<p>The Record Type determines how the entry is organized, which profile applies, and what additional fields or relationships may be required.</p>
+<p>A Record Type does not create authority over the source record.</p>
+</section>
+<section class="card faq-item" id="question-19"><h2>What is a Record-Type Profile?</h2>
+<p>A Record-Type Profile is a schema extension that adds type-specific requirements to the common SREG structure.</p>
+<p>For example, a Certification Record may require fields that do not apply to a Media Record.</p>
+<p>All profiles extend the shared SREG Base Schema.</p>
+</section>
+<section class="card faq-item" id="question-20"><h2>What is classification?</h2>
+<p>Classification is the process of assigning a SREG to an approved Registry Record Type and, where applicable, additional controlled subtypes.</p>
+<p>Classification improves:</p>
+<ul><li>organization;</li><li>discoverability;</li><li>validation;</li><li>schema application;</li><li>relationship mapping;</li><li>interoperability.</li></ul>
+</section>
+<section class="card faq-item" id="question-21"><h2>What is registrability?</h2>
+<p>Registrability is the condition of being eligible for inclusion in Registry.</p>
+<p>A source record may be registrable when:</p>
+<ul><li>an identifiable source record exists;</li><li>the source institution can be identified;</li><li>sufficient provenance is available;</li><li>the record fits an approved Record Type;</li><li>required references exist;</li><li>the proposed SREG can satisfy applicable schema and policy requirements.</li></ul>
+<p>Registrability does not imply certification, endorsement, or legal approval.</p>
+</section>
+<section class="card faq-item" id="question-22"><h2>What is registration?</h2>
+<p>Registration is the formal Registry action through which a SREG is created, assigned a Registry Identifier, validated, and entered into the public catalog.</p>
+<p>Registration applies to the SREG.</p>
+<p>It does not transfer ownership of the source record.</p>
+</section>
+<section class="card faq-item" id="question-23"><h2>What is a Registry Identifier?</h2>
+<p>A Registry Identifier is a stable and unique value assigned by Registry to a SREG.</p>
+<p>It identifies the SREG itself.</p>
+<p>It does not replace:</p>
+<ul><li>a Certification Identifier;</li><li>a Certification Package identifier;</li><li>an SCRD identifier;</li><li>an Atlas resource identifier;</li><li>an attestation identifier;</li><li>another source-system identifier.</li></ul>
+</section>
+<section class="card faq-item" id="question-24"><h2>What is a Source-System Identifier?</h2>
+<p>A Source-System Identifier is an identifier assigned by the originating institution to its own record.</p>
+<p>A SREG should preserve the Source-System Identifier whenever one exists.</p>
+<p>Registry and source identifiers remain distinct.</p>
+</section>
+<section class="card faq-item" id="question-25"><h2>What is a schema?</h2>
+<p>A schema is a formal definition of the structure, fields, value types, constraints, and validation rules applicable to a Registry object.</p>
+<p>Registry schemas implement the Satoshium Suite Schema Standard.</p>
+</section>
+<section class="card faq-item" id="question-26"><h2>How are Registry schemas organized?</h2>
+<p>Registry follows this schema hierarchy:</p>
+<pre><code>Suite Schema Standard
+  ↓
+Registry Schema Specification
+  ↓
+SREG Base Schema
+  ↓
+Record-Type Profiles
+  ↓
+Published SREG JSON Records</code></pre>
+<p>The Registry Schema Specification defines institution-wide requirements.</p>
+<p>The SREG Base Schema defines common fields.</p>
+<p>Record-Type Profiles add type-specific requirements.</p>
+<p>Published JSON records are validated instances.</p>
+</section>
+<section class="card faq-item" id="question-27"><h2>Are Registry records human-readable and machine-readable?</h2>
+<p>Yes.</p>
+<p>Registry is intended to publish both:</p>
+<ul><li>human-readable Registry Entry pages; and</li><li>machine-readable SREG records.</li></ul>
+<p>The two forms should describe the same Registry object consistently.</p>
+</section>
+<section class="card faq-item" id="question-28"><h2>What is metadata?</h2>
+<p>Metadata is structured descriptive information associated with a SREG or source record.</p>
+<p>Registry-owned metadata may include:</p>
+<ul><li>Registry Identifier;</li><li>Registry Record Type;</li><li>Registry Status;</li><li>Registry Lifecycle State;</li><li>Registry Entry Version;</li><li>Registry relationships;</li><li>Registry publication dates.</li></ul>
+<p>Source-reported metadata may include:</p>
+<ul><li>source identifier;</li><li>source version;</li><li>source status;</li><li>certification outcome;</li><li>source publication date.</li></ul>
+</section>
+<section class="card faq-item" id="question-29"><h2>What is the difference between Registry Status and source-record status?</h2>
+<p>Registry Status describes the condition of the SREG within Registry.</p>
+<p>Source-record status describes the condition of the authoritative source record as determined by the source institution.</p>
+<p>They are separate.</p>
+<p>For example:</p>
+<pre><code>Certification Outcome: Certified
+Certification Status: Revoked
+Registry Status: Active</code></pre>
+<p>In that case, the SREG may remain publicly active as a historical catalog entry while accurately reporting that the certification itself has been revoked.</p>
+</section>
+<section class="card faq-item" id="question-30"><h2>What lifecycle states can a SREG have?</h2>
+<p>Initial Registry lifecycle states include:</p>
+<ul><li>Pending Registration;</li><li>Registered;</li><li>Active;</li><li>Updated;</li><li>Superseded;</li><li>Revoked;</li><li>Archived.</li></ul>
+<p>These states are not necessarily a single mandatory linear sequence.</p>
+<p>Permitted transitions depend on the reason for change and the condition of both the SREG and the source record.</p>
+</section>
+<section class="card faq-item" id="question-31"><h2>Can Registry records change over time?</h2>
+<p>Yes.</p>
+<p>A SREG may be:</p>
+<ul><li>updated;</li><li>corrected;</li><li>superseded;</li><li>revoked;</li><li>archived;</li><li>migrated to a newer schema;</li><li>expanded with additional relationships or references.</li></ul>
+<p>Material changes should remain documented and versioned.</p>
+</section>
+<section class="card faq-item" id="question-32"><h2>Does Registry preserve history?</h2>
+<p>Yes.</p>
+<p>Registry preserves historical continuity through:</p>
+<ul><li>prior SREG versions;</li><li>correction history;</li><li>supersession records;</li><li>revocation records;</li><li>archival records;</li><li>historical references;</li><li>durable relationships;</li><li>source and version metadata.</li></ul>
+<p>Archived does not mean deleted.</p>
+</section>
+<section class="card faq-item" id="question-33"><h2>What is a Registry correction?</h2>
+<p>A Registry correction is a documented change to Registry-owned information.</p>
+<p>Corrections may address:</p>
+<ul><li>identifiers;</li><li>titles;</li><li>classifications;</li><li>references;</li><li>relationships;</li><li>dates;</li><li>versions;</li><li>status values;</li><li>formatting;</li><li>schema compliance.</li></ul>
+<p>Registry corrections must not silently rewrite the authoritative source record.</p>
+</section>
+<section class="card faq-item" id="question-34"><h2>What happens when the source record changes?</h2>
+<p>Registry may update the SREG to reflect the new source version, status, location, or related metadata.</p>
+<p>The Registry update should remain distinguishable from the source change.</p>
+<p>Registry should preserve:</p>
+<ul><li>the prior SREG version;</li><li>the source version previously referenced;</li><li>the date and reason for the update;</li><li>the new source reference;</li><li>any resulting relationship or lifecycle changes.</li></ul>
+</section>
+<section class="card faq-item" id="question-35"><h2>Can Registry reference external resources?</h2>
+<p>Yes.</p>
+<p>Registry may reference:</p>
+<ul><li>documents;</li><li>websites;</li><li>repositories;</li><li>reports;</li><li>datasets;</li><li>media;</li><li>certifications;</li><li>attestations;</li><li>historical records;</li><li>public records;</li><li>other external resources.</li></ul>
+<p>Registry does not necessarily own, control, endorse, or preserve the full content of those resources.</p>
+</section>
+<section class="card faq-item" id="question-36"><h2>Does Registry duplicate every source record?</h2>
+<p>No.</p>
+<p>Registry's primary responsibility is to preserve the structured path back to authority.</p>
+<p>A SREG may preserve:</p>
+<ul><li>identity;</li><li>source institution;</li><li>source identifier;</li><li>canonical reference;</li><li>status metadata;</li><li>version metadata;</li><li>relationships;</li><li>integrity references;</li><li>historical continuity.</li></ul>
+<p>Registry may publish approved copies or supporting artifacts where appropriate, but duplication is not required for Registry authority.</p>
+</section>
+<section class="card faq-item" id="question-37"><h2>Does a Registry Entry prove authenticity?</h2>
+<p>No.</p>
+<p>A Registry Entry alone does not prove:</p>
+<ul><li>authenticity;</li><li>certification;</li><li>attestation;</li><li>ownership;</li><li>legal rights;</li><li>government recognition;</li><li>regulatory approval;</li><li>endorsement.</li></ul>
+<p>Registry catalogs claims, records, and relationships according to defined structures.</p>
+<p>Verification must come from the appropriate source, institution, integrity reference, certification, or attestation process.</p>
+</section>
+<section class="card faq-item" id="question-38"><h2>Does Registry certify records?</h2>
+<p>No.</p>
+<p>Certifier performs certification.</p>
+<p>Registry may catalog certification records, but registration is not certification.</p>
+</section>
+<section class="card faq-item" id="question-39"><h2>Does Registry verify records?</h2>
+<p>Registry validates Registry structure and references within its own institutional scope.</p>
+<p>Registry may confirm that:</p>
+<ul><li>a referenced source exists;</li><li>the source institution is identified;</li><li>the source identifier is present;</li><li>the Record Type is valid;</li><li>required fields exist;</li><li>the SREG satisfies its schema.</li></ul>
+<p>That validation does not necessarily verify the substantive truth of the source record.</p>
+</section>
+<section class="card faq-item" id="question-40"><h2>What is the difference between validation and verification?</h2>
+<p>Validation determines whether a Registry object satisfies applicable Registry schema, terminology, policy, and structural requirements.</p>
+<p>Verification confirms a claim, identity, record, or integrity assertion through an appropriate authority or method.</p>
+<p>Registry validates SREGs.</p>
+<p>Other institutions may perform certification, attestation, integrity verification, or substantive review.</p>
+</section>
+<section class="card faq-item" id="question-41"><h2>What are Registry Rules?</h2>
+<p>Registry Rules define institution-specific operating expectations subordinate to Satoshium Suite Standards.</p>
+<p>They establish what Registry must preserve, require, or protect.</p>
+</section>
+<section class="card faq-item" id="question-42"><h2>What are Registry Policies?</h2>
+<p>Registry Policies define the implementation requirements used to apply Registry Rules.</p>
+<p>Policies may govern:</p>
+<ul><li>registrability;</li><li>identifier assignment;</li><li>classification;</li><li>source-authority confirmation;</li><li>reference validation;</li><li>publication;</li><li>lifecycle;</li><li>versioning;</li><li>corrections;</li><li>supersession;</li><li>revocation;</li><li>archival;</li><li>interoperability.</li></ul>
+</section>
+<section class="card faq-item" id="question-43"><h2>What are Registry Procedures?</h2>
+<p>Registry Procedures define the repeatable operational steps used to implement Registry Policies.</p>
+<p>Procedures should be documented, reviewable, and reproducible.</p>
+</section>
+<section class="card faq-item" id="question-44"><h2>What methodology does Registry use?</h2>
+<p>Registry uses a Registry-specific institutional method aligned with Suite Methodology Principles:</p>
+<pre><code>Identify or Receive Source Record
+  ↓
+Confirm Source Institution and Authority
+  ↓
+Determine Registrability
+  ↓
+Assign Registry Record Type
+  ↓
+Assign Registry Identifier
+  ↓
+Create Source and Relationship References
+  ↓
+Construct SREG
+  ↓
+Validate Schema and Terminology
+  ↓
+Publish
+  ↓
+Maintain Lifecycle, Versions, Corrections, and Archival Continuity</code></pre>
+<p>This method is separate from the Certifier evaluation workflow.</p>
+</section>
+<section class="card faq-item" id="question-45"><h2>How does Registry support interoperability?</h2>
+<p>Registry supports interoperability through:</p>
+<ul><li>stable Registry identifiers;</li><li>preserved source identifiers;</li><li>controlled Record Types;</li><li>shared terminology;</li><li>machine-readable schemas;</li><li>typed relationships;</li><li>canonical references;</li><li>version metadata;</li><li>clear institutional ownership;</li><li>cross-system mappings.</li></ul>
+<p>Interoperability connects institutions without merging their responsibilities.</p>
+<p>The first production interoperability chain demonstrates this principle:</p>
+<pre><code>Atlas Jurisdiction Record — El Salvador
+  ↓ certified by
 SC-CERT-2026-0001
-        ↓
+  ↓ registered as
 SREG-2026-0001
-        ↓
-CHR-2026-0001
-```
-
-Each system owns its own object. Reference does not transfer authority.
-
----
-
-## Is Certifier open source?
-
-Yes.
-
-Certifier is released under the MIT License unless otherwise specified.
-
-See:
-
-```text
-LICENSE
-```
-
-for the governing license terms.
-
----
-
-## What is the long-term vision of Certifier?
-
-The long-term vision of Certifier is to create a transparent and durable framework for documenting review, evidence, certification, and trust across digital systems.
-
-The objective is not simply to issue certifications.
-
-The objective is to create certification records that remain understandable, reviewable, and useful years into the future.
-
----
-
-## Where should I start?
-
-New contributors are encouraged to begin with:
-
-```text
-README.md
-docs/certifier-overview.md
-docs/certification-philosophy.md
-docs/workflow-diagram.md
-```
-
-These documents provide the best introduction to the Certifier framework.
-
----
-
-## Guiding Statement
-
-> Trust should not depend upon memory.
->
-> Trust should not depend upon reputation.
->
-> Trust should be supported by standards, evidence, and reviewable records.
->
-> Satoshium Certifier exists to help preserve those records.
+  ↓ historically preserved by
+CHR-2026-0001</code></pre>
+<p>Registry owns the SREG. Certifier owns the certification. Atlas owns the subject record. Chronicle owns the Chronicle Entry.</p>
+<p>Reference does not transfer authority.</p>
+</section>
+<section class="card faq-item" id="question-46"><h2>Is Registry decentralized?</h2>
+<p>Registry's current institutional implementation is focused on establishing the authoritative public catalog, SREG specification, schemas, policies, procedures, and interoperability model.</p>
+<p>Future distribution, replication, or decentralized publication mechanisms may be considered through documented governance.</p>
+<p>The current architecture should not be described as decentralized unless such mechanisms are formally implemented and published.</p>
+</section>
+<section class="card faq-item" id="question-47"><h2>Is Registry complete?</h2>
+<p>Yes. Registry is operational as a production Suite institution.</p>
+<p>The inaugural production Registry Entry, <code>SREG-2026-0001</code>, was established and published on August 2, 2026 for Certification Package <code>SC-CERT-2026-0001</code>.</p>
+<p>A post-publication quality review completed on August 14, 2026 confirmed alignment among the human-readable Registry Entry, machine-readable record, Registry schema architecture, authority boundaries, provenance, relationships, Validation, and Publication.</p>
+<p>Registry remains subject to continued maintenance, new registrations, schema evolution, Corrections, Versioning, and interoperability hardening. Operational does not mean frozen.</p>
+</section>
+<section class="card faq-item" id="question-48"><h2>What is Registry's current development goal?</h2>
+<p>Registry's current goal is continued production operation and institutional hardening.</p>
+<p>That includes:</p>
+<ul><li>registering additional authoritative records when justified;</li><li>maintaining SREG versions and lifecycle state;</li><li>preserving Corrections and historical continuity;</li><li>strengthening cross-Suite references;</li><li>evolving schemas and Record-Type Profiles through governance;</li><li>maintaining human-readable and machine-readable consistency;</li><li>preserving public discoverability and the path back to authority.</li></ul>
+</section>
+<section class="card faq-item" id="question-49"><h2>What is the ultimate goal of Registry?</h2>
+<p>The ultimate goal of Registry is to ensure that authoritative records remain:</p>
+<ul><li>identifiable;</li><li>discoverable;</li><li>understandable;</li><li>connected;</li><li>versioned;</li><li>traceable;</li><li>historically preserved;</li><li>interoperable across time.</li></ul>
+<p>Registry exists to preserve the public path back to authority.</p>
+</section>
+<h2>Guiding Statement</h2>
+<blockquote>Institutions create authoritative records.<br><br>Registry creates the path back to them.<br><br>The source retains authority.<br><br>The SREG preserves discovery.</blockquote>
+<section class="card"><h2>Source and governing context</h2><p>This page presents the Registry FAQ maintained in <a href="/registry/faq/README.md">registry/faq/README.md</a>. Where an answer depends on Suite-wide rules, applicable Suite Standards, Methodology and Interoperability governance control. A catalog reference does not transfer authority over the referenced source record.</p></section>
+</main>
+<div class="wrap"><hr><div id="footer-container"></div></div>
+<script src="https://satoshium.link/assets/sayings.js"></script>
+<script>
+fetch("https://satoshium.link/components/footer.html")
+ .then(response => response.text())
+ .then(data => { document.getElementById("footer-container").innerHTML = data; });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"7f213230316f434c9ad7f0f958bfdfd1"}'></script>
+</body>
+</html>
