@@ -1,13 +1,13 @@
 # Satoshium Attestor — Attestation Generation
 
 **Repository Path:** `/attestor/attestation-generation/`  
-**Declared Public Route:** `/attestor/generation/` (route-resolution review required)  
+**Canonical Public Route:** `/attestor/generation/` (repository entry point added October 23, 2026; live deployment unverified)  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational — Production-Exercised  
 **Canonical Output:** `ATT-YYYY-NNNN` Attestation  
 **Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
-**Repository/public-route distinction:** This README and its `index.html` live under `/attestor/attestation-generation/` in the GitHub tree, while the existing HTML canonical URL and documented links use `/attestor/generation/`. This review does not assume a redirect, rewrite, or deployed alias exists. Verify production route resolution before changing public URLs or links. Neither path distinction changes Attestor's canonical object ownership.
+**Repository/public-route resolution:** The published-page canonical URL and existing links designate `/attestor/generation/`. A matching repository entry point now exists at `/attestor/generation/index.html`, containing an unchanged copy of the reviewed page. The historical `/attestor/attestation-generation/index.html` remains as a compatibility copy; both use the same canonical URL. This resolves the missing repository directory, but **does not establish live deployment, redirects, or HTTP availability**, which require independent verification. Neither path changes Attestor's canonical object ownership.
 
 ## Purpose
 
