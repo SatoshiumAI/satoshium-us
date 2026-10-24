@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **168 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **180 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -203,3 +203,16 @@ A fresh non-truncated recursive `phase004` tree at baseline `610db07ed2315308ca5
 - **Disposition: COMPLETE — APPROVED** for this 12-page literal-local-resource audit unit, with the separate canonical findings expressly **OPEN**.
 
 **Cumulative Atlas expanded audit: 168/223 pages reviewed; 55 remain.** Cumulative checked local literal `href`/`src` occurrences: **722**; cumulative fragment-only references inspected: **961**, including the seven invalid state-index links corrected in batch seven. There are no known unresolved local destinations or fragments within the completed bounded page checks. Canonical serving, CSS URL references, dynamic JavaScript navigation, external URLs and executable production integration are not certified. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
+
+## Atlas expanded resource-routing batch fifteen — pages 169–180
+
+At baseline `98bdc60e48fc25e06cb71315dacd7a41f3435898`, fresh non-truncated recursive `phase004` Git tree confirmed 223 Atlas public `index.html` pages. This batch comprised Vietnam Media country orientation, global/orientation, overall orientation and U.S. orientation landing pages, and U.S. Media orientation state pages Alabama through Delaware.
+
+- **55 literal local `href`/`src` references** checked against repository file and index destinations; the only **six missing occurrences** were the optional nonexistent `/assets/favicon.ico` and `/assets/apple-touch-icon.png` references in three orientation landing pages.
+- **Zero fragment-only links** were present in these 12 pages; no fragment resolution claim is made where none occur.
+- **126 external or special-scheme literal attribute occurrences** were excluded from local repository checks and not verified as reachable.
+- Removed exactly six obsolete fallback `link` elements from `atlas/media/orientation/global/index.html`, `atlas/media/orientation/index.html` and `atlas/media/orientation/us/index.html`; retained valid SVG favicon links and otherwise preserved content.
+- Correction commit: `d23c134946b46d6d0544573f6715d4ebafdc0c74`.
+- All **12/12** pages independently re-fetched at the correction HEAD: none retain obsolete fallback icon `link` elements; all retain a valid SVG favicon reference.
+
+**Cumulative Atlas expanded audit: 180/223 pages reviewed; 43 remain.** Literal local `href`/`src` references inspected: **777**; fragment-only links inspected: **961**, including seven broken state-index anchors already corrected in batch seven. No known unresolved local destinations or fragments remain within the reviewed static scope. The two previously flagged Media orientation canonical discrepancies remain **OPEN — CANONICAL/ROUTE RECONCILIATION**, separate from these corrected local resources. Live HTTP, external destinations, JS-generated routes, CSS URLs and generalized integration remain excluded. Atlas overall remains **ACTIVE — PARTIAL COVERAGE**.
