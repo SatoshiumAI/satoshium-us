@@ -32,6 +32,9 @@ Status seeks to improve clarity, accountability, and long-term continuity.
 
 ## Current Status
 
+**Current institutional reconciliation (September 30, 2026):** Navigator is an **Operational** formal Satoshium Suite institution whose institutional role is **Workflow Definition / Orchestration** and whose canonical object is the **Navigator Workflow Definition**. Workflow Orchestration is its institutional function, not another canonical object. The exploration, query, comparison, filtering, and development-priority descriptions below document Navigator's supporting interfaces and historical planning context; they do not replace this controlling institutional responsibility. References to Atlas intelligence or other Suite objects do not transfer their source authority to Navigator.
+
+
 **Project:** Satoshium Navigator
 
 **Classification:** Query and Exploration Framework

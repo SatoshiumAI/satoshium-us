@@ -3,7 +3,8 @@
 **Path:** `/atlas/`  
 **Institution:** Satoshium Atlas  
 **Role:** Authoritative Intelligence  
-**Canonical Object:** Jurisdiction Intelligence Package  
+**Canonical Object:** Jurisdiction Intelligence Record  
+**Canonical Package:** Jurisdiction Intelligence Package  
 **Status:** Operational  
 **Foundation:** Version 1.0 Complete
 
