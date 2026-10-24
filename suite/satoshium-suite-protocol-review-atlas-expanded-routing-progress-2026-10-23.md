@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **156 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **168 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -190,3 +190,16 @@ The fresh non-truncated recursive `phase004` tree at baseline `79d4e81ecbe3b6d6e
 - **No HTML correction or correction commit required. Disposition: COMPLETE — APPROVED** for this bounded 12-page review unit.
 
 **Cumulative Atlas expanded audit: 156/223 pages reviewed; 67 remain.** Cumulative literal local `href`/`src` references checked: **674**; cumulative fragment-only references inspected: **961**, including the seven invalid state-index navigation fragments already corrected in batch seven. No known unresolved literal local destinations or fragments remain in reviewed pages. Live deployment, CSS URLs, externally hosted destinations, script-generated routing and inter-institution execution are separate unverified gates. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
+
+## Atlas expanded resource-routing batch fourteen — pages 157–168
+
+A fresh non-truncated recursive `phase004` tree at baseline `610db07ed2315308ca537730b2fdce848ceb166f` confirmed 223 Atlas public `index.html` pages. The twelve lexicographic Atlas Media orientation country pages were `saudia-arabia` (actual repository spelling), Singapore, South Africa, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Turkey, United Arab Emirates and United Kingdom.
+
+- **48 literal local `href`/`src` references** were examined: **48/48 resolved** to repository files or index targets.
+- **Zero fragment-only links** were present; no fragment check result is claimed where none existed.
+- **72 external/special-scheme attribute occurrences** were outside this local repository test and remain unverified as live destinations.
+- No nonexistent optional favicon fallback elements or other missing local resource targets. All twelve retained `/assets/favicon.svg`. **No HTML resource correction required.**
+- **Separate OPEN — CANONICAL/ROUTE RECONCILIATION flags:** `atlas/media/orientation/global/countries/saudia-arabia/index.html` declares canonical URL `https://satoshium.us/atlas/media/orientation/global/saudi-arabia/`, and `atlas/media/orientation/global/countries/sweden/index.html` declares `https://satoshium.us/atlas/media/orientation/global/sweden/`. Both differ from their repository file paths. The former also involves `saudia-arabia` vs `saudi-arabia` spelling. This bounded static resource audit did not establish deployed redirects/serving; do not silently rename directories or assert that the live URLs fail. Carry both into the broader canonical, redirect, and deployment verification gate.
+- **Disposition: COMPLETE — APPROVED** for this 12-page literal-local-resource audit unit, with the separate canonical findings expressly **OPEN**.
+
+**Cumulative Atlas expanded audit: 168/223 pages reviewed; 55 remain.** Cumulative checked local literal `href`/`src` occurrences: **722**; cumulative fragment-only references inspected: **961**, including the seven invalid state-index links corrected in batch seven. There are no known unresolved local destinations or fragments within the completed bounded page checks. Canonical serving, CSS URL references, dynamic JavaScript navigation, external URLs and executable production integration are not certified. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
