@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **180 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **192 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -216,3 +216,16 @@ At baseline `98bdc60e48fc25e06cb71315dacd7a41f3435898`, fresh non-truncated recu
 - All **12/12** pages independently re-fetched at the correction HEAD: none retain obsolete fallback icon `link` elements; all retain a valid SVG favicon reference.
 
 **Cumulative Atlas expanded audit: 180/223 pages reviewed; 43 remain.** Literal local `href`/`src` references inspected: **777**; fragment-only links inspected: **961**, including seven broken state-index anchors already corrected in batch seven. No known unresolved local destinations or fragments remain within the reviewed static scope. The two previously flagged Media orientation canonical discrepancies remain **OPEN — CANONICAL/ROUTE RECONCILIATION**, separate from these corrected local resources. Live HTTP, external destinations, JS-generated routes, CSS URLs and generalized integration remain excluded. Atlas overall remains **ACTIVE — PARTIAL COVERAGE**.
+
+## Atlas expanded resource-routing batch sixteen — pages 181–192
+
+A fresh complete, non-truncated recursive Git tree at baseline `b74353b2ee05137e77cc29f5a909b1d1988d3c77` enumerated 223 Atlas public `index.html` pages. The next twelve lexicographic Media orientation U.S. state pages: Florida, Georgia, Hawaii, Idaho, Illinois, the U.S. states Media orientation directory index, Indiana, Iowa, Kansas, Kentucky, Louisiana and Maine were fetched and inspected.
+
+- **49 literal local `href`/`src` occurrences** checked against repository file/index destinations; the only two unresolved targets were nonexistent optional favicon fallbacks in `atlas/media/orientation/us/states/index.html`.
+- **Zero fragment-only links** occurred in the sample, so no fragment validation outcome is asserted for this batch.
+- **122 external/special-scheme attribute occurrences** were excluded and not certified as reachable.
+- Removed exactly two obsolete fallback `link` elements from the states directory index, preserving its valid SVG favicon. Other 11 pages were unchanged.
+- Correction commit: `931fc3111fec0c51f90777e512b3f8143db776e4`.
+- All **12/12** pages were independently re-fetched at that correction HEAD and passed obsolete-icon checks, retaining valid SVG favicon references.
+
+**Cumulative Atlas expanded audit: 192/223 pages reviewed; 31 remain.** Cumulative checked local literal `href`/`src` occurrences: **826**; fragment-only links inspected: **961**, including seven broken state-index anchors previously corrected in batch seven. No known unresolved local destinations or fragment links remain in covered pages. The two separate canonical-route discrepancies from batch fourteen remain **OPEN — CANONICAL/ROUTE RECONCILIATION**. Live HTTP, external destinations, CSS URLs, dynamically built routing and executable integration remain outside this static check. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
