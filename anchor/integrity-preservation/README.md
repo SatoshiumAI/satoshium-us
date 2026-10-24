@@ -706,6 +706,12 @@ A shorter operational expression is:
 
 ---
 
+## Current-state notice — October 23, 2026
+
+The **Foundation Reconciliation** status and `1.0-draft` label preserved below describe this document's earlier architecture-development stage. They are **not** the current operational standing of Satoshium Anchor. The current `anchor/status/README.md` records Anchor as **Operational**, with first published Integrity Reference `ANCH-2026-0001`, established production identifiers, controlled values, validation, verification, publication, and maintenance. Bitcoin commitment is explicitly **not required / not adopted as a production requirement**. The historical future-tense items below should therefore not be interpreted as current blockers or as authority to redesign settled Anchor architecture.
+
+---
+
 ## Status
 
 **Foundation Reconciliation**
