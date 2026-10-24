@@ -548,6 +548,12 @@ Even then, internal institutional history should be preserved where permitted.
 
 ---
 
+## Current production-state notice — October 23, 2026
+
+The Publication State candidate discussion and later **Post-Foundational Architecture / unfrozen** summary retained below document an **earlier architecture-development stage**; they are not the controlling current production enumeration. The subsequently established `anchor/controlled-values/README.md` explicitly recognizes only **`unpublished`** and **`published`** as the initial production Publication State values. The `withdrawn_from_publication` value below remains a historical **candidate**, not an adopted third production token merely by appearing in this document. Publication Gate decisions (`APPROVED` / `NOT APPROVED`) remain separate from Publication State. The current `anchor/status/README.md` identifies `ANCH-2026-0001` as published and Anchor as Operational. Further values or procedures must undergo the applicable governed adoption and validation rather than being inferred from this earlier draft.
+
+---
+
 # Publication State
 
 Publication architecture proves the need for a durable Publication State category.
