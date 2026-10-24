@@ -25,11 +25,11 @@ All local literal `href`/`src` paths outside the corrected icon fallbacks resolv
 
 ## Follow-up findings explicitly NOT silently fixed
 
-- **Duplicate element IDs on repository-root `index.html`:** `main-content` occurs twice, and `heading-why` occurs twice. This is a confirmed source-level HTML ID uniqueness issue. Assess which duplicate element should retain each ID, with accessibility and fragment targets in mind, before a bounded HTML correction.
+- **Homepage ID correction:** Source review determined that `main-content` occurs once in an actual HTML element and once in a comment; it was not a duplicate element ID. The original HTML did have two actual `heading-why` IDs. The first (`Satoshium Suite`) was preserved and the second (`Why This Layer Exists`) was changed to `heading-why-this-layer` in a narrowly bounded follow-up; see subsequent correction commit history. The new ID is unique within the page.
 - **Atlas `atlas/media/orientation/us/states/temp.html`:** favicon URLs point to absolute `https://satoshium.info/assets/...` paths, not repository-local paths. Public purpose, deployment status and those external asset responses are unverified. Do not assume the path is a currently published page or that external assets fail.
 - **Attestor `publication/index.htm`:** coexistence with `publication/index.html` is confirmed, but live index precedence is not demonstrated by the Git tree.
 - **External absolute HTTPS references, CSS `url(...)`, JavaScript-computed paths, dynamic DOM, browser performance, live routing and response status** remain outside this bounded static literal attribute audit. The topbar loader's generated targets need an explicit separate check.
 
-**Next:** assess root-page duplicate IDs and script-generated navigation as bounded follow-ups; retain Atlas Media canonical conflicts and four deployed route verifications as OPEN. Keep all eight Suite institutions Operational and their approved canonical boundaries unchanged.
+**Next:** assess script-generated navigation as bounded follow-ups; retain Atlas Media canonical conflicts and four deployed route verifications as OPEN. Keep all eight Suite institutions Operational and their approved canonical boundaries unchanged.
 
 > Authority follows the governed subject. Reference does not transfer authority.
