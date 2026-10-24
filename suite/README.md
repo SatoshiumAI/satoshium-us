@@ -8,7 +8,7 @@
 **Suite Reconciliation:** COMPLETE — APPROVED · September 30, 2026  
 **Suite Governance Review:** COMPLETE — APPROVED · October 11, 2026  
 **Current Governance Model:** `GDR-2026-0026` — Satoshium Suite Governance Model  
-**Last Updated:** October 11, 2026
+**Last Updated:** October 24, 2026
 
 ---
 
@@ -79,7 +79,8 @@ Each institution retains its own authority boundary and canonical responsibility
 
 ```text
 Atlas
-→ Jurisdiction Intelligence Package
+→ Jurisdiction Intelligence Record (canonical object)
+→ Jurisdiction Intelligence Package (canonical package)
 
 Navigator
 → Navigator Workflow Definition
