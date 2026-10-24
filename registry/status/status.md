@@ -84,7 +84,15 @@ Reference does not transfer authority.
 
 ---
 
-## Current Registry Development Condition
+## Current institutional status — October 23, 2026
+
+**Institutional Status: Operational.** Registry is an operational formal Satoshium Suite institution responsible for **Canonical Registration / Public Catalog**, with the canonical **Satoshium Registry Entry (SREG)**. Its first production entry is `SREG-2026-0001`. This status is established by the subsequently completed institutional production and reconciliation work; it does not imply generalized automated cross-institution integration.
+
+The following **“Current Registry Development Condition”** section is retained as an earlier implementation-stage account. Its historical `Active Institutional Implementation` label and forward-looking statements do **not** supersede Registry's present Operational status or imply that production has not occurred. Registry Status, Registry Lifecycle State, and Source-Record Status remain separate authority domains.
+
+---
+
+## Historical development-stage account (retained from earlier documentation)
 
 **Project:** Satoshium Registry
 
