@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **204 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **216 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -241,3 +241,15 @@ The fresh complete non-truncated recursive `phase004` tree at baseline `0db54c5f
 - **No HTML changes needed. Disposition: COMPLETE — APPROVED** for this 12-page bounded review unit.
 
 **Cumulative Atlas expanded audit: 204/223 pages reviewed; 19 remain.** Cumulative checked local literal `href`/`src` occurrences: **874**; cumulative fragment-only links inspected: **961**, including seven invalid state-index anchors already corrected in batch seven. No known unresolved local repository destinations or fragment references remain in reviewed pages. The two canonical metadata/path discrepancies from batch fourteen remain **OPEN — CANONICAL/ROUTE RECONCILIATION**. Live served URLs, external destination availability, CSS URL references, dynamic routes, and production integration remain outside the scope. Atlas overall remains **ACTIVE — PARTIAL COVERAGE**.
+
+## Atlas expanded resource-routing batch eighteen — pages 205–216
+
+Fresh non-truncated recursive `phase004` tree at baseline `df49eac4465ce917d7cdb58f97691eae61adbfeb` confirmed 223 Atlas public `index.html` pages. The twelve lexicographic Atlas Media U.S. state orientation files examined were New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina, South Dakota, Tennessee and Texas.
+
+- **48 literal local `href`/`src` references** checked against repository file or directory-index targets; **48/48 resolved**.
+- **Zero fragment-only links** occurred; no fragment validation claim is made for this batch.
+- **72 external/special-scheme reference occurrences** were excluded from repository-local checks, with no live availability inference.
+- No missing fallback favicon references or other missing local targets; all twelve retain their existing `/assets/favicon.svg` references.
+- **No HTML modifications. Disposition: COMPLETE — APPROVED** for this bounded 12-page review unit.
+
+**Cumulative Atlas expanded audit: 216/223 pages reviewed; 7 remain.** Cumulative local literal `href`/`src` occurrences inspected: **922**; cumulative fragment-only references inspected: **961**, including seven invalid state-index navigation fragments already corrected in batch seven. No known unresolved local destinations or fragments remain within the reviewed bounded scope. The two previously identified Media orientation canonical URL/path discrepancies remain **OPEN — CANONICAL/ROUTE RECONCILIATION**. Live HTTP, external destinations, CSS URLs, script-built routing and production integration remain separate gates. **Atlas remains ACTIVE — PARTIAL COVERAGE.**
