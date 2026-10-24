@@ -1,0 +1,32 @@
+name: Public Route Evidence Audit
+
+on:
+  push:
+    branches: [phase004]
+    paths:
+      - '.github/workflows/public-route-evidence-audit.yml'
+      - 'suite/audits/public-route-audit.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  route-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Observe public HTTPS endpoints
+        run: python suite/audits/public-route-audit.py
+      - name: Preserve observation artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-route-evidence
+          path: public-route-audit-results.json
+          if-no-files-found: warn
