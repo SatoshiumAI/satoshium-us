@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **84 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **96 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -116,3 +116,16 @@ At baseline `de511e424c5d453e74318c0e94ebf62079b65687`, the fresh, non-truncated
 - All **12/12** pages were independently re-fetched from that commit's new HEAD. None retain obsolete fallback `link` elements; every remaining fragment-only `href` resolves to an exact local literal `id`.
 
 **Cumulative Atlas expanded-audit checkpoint: 84/223 pages reviewed; 139 remain.** Cumulative local literal `href`/`src` references: **385**; cumulative fragment-only references inspected **641**, including the seven now-corrected invalid links. These counts describe inspected references prior to correction, not the number of post-correction active links. The audit establishes bounded repository-static routing only, not live serving, dynamically constructed links, CSS URLs, external destinations or executable integration. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
+
+## Atlas expanded resource-routing batch eight — pages 85–96
+
+The current non-truncated tree at baseline `763b185fb240f08f65dd49a9a86663e3057332ea` confirmed 223 Atlas public `index.html` files. The next twelve lexicographic state pages — Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire and New Jersey — were independently inspected.
+
+- **48 literal local `href`/`src` references** resolved against the repository tree; the only 24 missing targets were two optional fallback icon paths in each page.
+- **120 fragment-only links**, all resolved against literal local IDs.
+- No other unresolved local destinations or fragment targets were found in this bounded audit.
+- Removed 24 obsolete fallback `link` elements across 12 pages while retaining the existing valid SVG favicon references.
+- Correction commit: `ab4a1731ce8abfb8fb65d6ef73ed449c90de329b`.
+- **12/12 pages** independently re-fetched at the new correction HEAD and confirmed no obsolete fallback `link` elements, no unresolved literal fragment links, and retained SVG favicon references.
+
+**Cumulative Atlas expanded audit: 96/223 pages reviewed; 127 remain.** Cumulative inspected literal local `href`/`src` references: **433**. Cumulative fragment-only references inspected: **761**, including seven invalid navigation links previously corrected in batch seven; no unresolved fragments remain in the reviewed pages. The counts refer to source references inspected, not live deployment requests. Excluded scopes remain external destinations, dynamically generated navigation, CSS URLs, live serving and executable Suite integration. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
