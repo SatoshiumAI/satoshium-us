@@ -1,0 +1,35 @@
+name: Public Topbar Browser Audit
+
+on:
+  push:
+    branches: [phase004]
+    paths:
+      - '.github/workflows/public-topbar-browser-audit.yml'
+      - 'suite/audits/topbar-browser-audit.cjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-topbar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser audit dependencies
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Observe shared topbar DOM and active state
+        run: node suite/audits/topbar-browser-audit.cjs
+      - name: Preserve observations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: topbar-browser-observations
+          path: topbar-browser-results.json
+          if-no-files-found: warn
