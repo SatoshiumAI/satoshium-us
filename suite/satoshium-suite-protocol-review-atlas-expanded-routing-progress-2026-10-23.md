@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **48 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **60 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -79,3 +79,15 @@ The non-truncated repository Git tree at baseline `89ac32d696379df5062ce89fef058
 - Correction commit `712165504cf9b60587103846529bb44c29e0005e` was independently checked by fresh-fetching all **12/12** country pages against the new branch HEAD; none retained obsolete fallback link elements.
 
 **Cumulative Atlas expanded-routing coverage: 48/223 pages reviewed, 175 remain.** **209 local literal `href`/`src` references** and **312 local fragment links** have been checked cumulatively (all fragments resolved). Findings are repository-static checks only; deployed URL serving, external destinations, dynamically generated routing, CSS references and executable integration are not thereby certified. **Atlas remains ACTIVE — PARTIAL COVERAGE.**
+
+## Expanded country-page batch five — pages 49–60
+
+The fresh non-truncated tree at baseline `0681c8b38ce9660c2190e65da951c271a8abf6d6` confirmed 223 Atlas public entry pages. The next twelve lexicographic country pages (Rwanda, Saudi Arabia, Singapore, South Africa, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Turkey, United Arab Emirates) were inspected by path.
+
+- **27 local literal href/src references** checked against repository file/index destinations; ten unresolved occurrences were exclusively obsolete fallback icon paths in five pages.
+- **105 fragment-only links** checked against literal local IDs, **105/105 resolved**.
+- No other missing local destinations identified within the static bounded check.
+- Removed two obsolete optional fallback icon `link` elements each from Singapore, South Korea, Sweden, Switzerland and United Arab Emirates, retaining SVG favicons.
+- Correction commit: `80c68881ab30b51cf3b1715f97137bd0a442f994`. All **12/12** batch-five pages independently re-fetched at that HEAD; zero remaining obsolete fallback `link` elements.
+
+**Cumulative Atlas expanded audit: 60/223 pages reviewed; 163 pages remain.** Cumulative local literal `href`/`src` references: **236**; fragment-only references: **417**, all resolved. This certifies only the defined repository-static inspection, not live deployment, external URLs, JS-generated routes, CSS URLs or executable integration. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
