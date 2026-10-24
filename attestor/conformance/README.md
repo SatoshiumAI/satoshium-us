@@ -3,7 +3,7 @@
 **Path:** `/attestor/conformance/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Conformance  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 

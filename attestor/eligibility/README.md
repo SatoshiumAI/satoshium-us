@@ -3,7 +3,7 @@
 **Path:** `/attestor/eligibility/`  
 **Institution:** Satoshium Attestor  
 **Current Stage:** Operational Eligibility  
-**Canonical Responsibility:** `Attestor → Trust Statement`
+**Canonical Responsibility:** `Attestor → Attestation + Trust Statement`
 
 ## Purpose
 
