@@ -117,7 +117,7 @@
     }
 
     if (hostIs("satoshium.ai", "www.satoshium.ai")) {
-      setActive("main-site");
+      setActive("platform");
       return;
     }
 
