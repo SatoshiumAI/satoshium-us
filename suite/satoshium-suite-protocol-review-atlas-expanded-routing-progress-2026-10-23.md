@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **108 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **120 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -142,3 +142,16 @@ The fresh non-truncated tree at baseline `c69eef1c9d9e82a25f4123ca90c2a296d7f0d4
 - All **12/12 pages** independently re-fetched at the new correction HEAD, with no obsolete fallback `link` elements, all remaining fragment-only links valid and all existing SVG references intact.
 
 **Cumulative Atlas expanded audit: 108/223 pages reviewed; 115 remain.** Cumulative local literal `href`/`src` references inspected: **481**; cumulative fragment-only references inspected: **881**, including the seven previously corrected invalid links from batch seven. No known unresolved fragments or non-favicon local destinations remain in the covered pages. The check is repository-static and excludes live serving, external destinations, CSS URLs, dynamically generated navigation and executable Suite integration. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
+
+## Atlas expanded resource-routing batch ten — pages 109–120
+
+The fresh complete, non-truncated `phase004` Git tree at baseline `bee49749230f113fbbeb008653882bb6a58abd3f` listed 223 Atlas public `index.html` pages. The next twelve lexicographic paths comprise Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin and Wyoming state pages, the Atlas Media landing page, and Argentina, Armenia and Australia Media orientation pages.
+
+- **49 literal local `href`/`src` references** checked against repository file/index destinations; exactly 18 missing targets were obsolete optional fallback icons (two each across nine pages).
+- **80 fragment-only links** checked against exact local literal IDs, all 80 resolved.
+- No other unresolved local destinations were found within this bounded scope.
+- Removed exactly 18 obsolete fallback `link` tags across the eight state pages and `atlas/media/index.html`, retaining valid SVG favicons. All three media orientation country pages were unchanged.
+- Correction commit: `30fd0f4e40cfe4bd241a2ef4c53f31d5dd199c14`.
+- All **12/12** pages independently re-fetched at that correction HEAD; no obsolete fallback `link` tags or unresolved local fragments remained, with existing SVG favicon references preserved.
+
+**Cumulative Atlas expanded audit: 120/223 pages reviewed; 103 remain.** Cumulative local literal `href`/`src` occurrences inspected: **530**; cumulative fragment-only references inspected: **961**, including the seven previously corrected inert navigation links from batch seven. Counts record checks against pre-correction files; they are not post-edit active-link totals. Review remains bounded to repository-static literal resource/fragment validation; live HTTP serving, external destinations, dynamic navigation, CSS URLs and actual production integration remain separate gates. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
