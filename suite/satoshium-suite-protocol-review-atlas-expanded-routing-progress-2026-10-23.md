@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **36 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **48 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -67,3 +67,15 @@ The fresh non-truncated repository tree at baseline `5cf90cb63c10b15867f8c0b0f4b
 - All **12/12** batch-three pages were independently re-fetched after that commit; none retained missing fallback icon `link` elements.
 
 **Cumulative expanded Atlas checkpoint: 36/223 pages reviewed; 187 pages remain.** Cumulative local literal resource references examined: **191**; local fragment references examined: **216**, all resolved. This does not certify live HTTP, JavaScript runtime navigation, externally linked destinations, CSS URL resources, or broader executable integration. **Atlas remains ACTIVE — PARTIAL COVERAGE.**
+
+## Expanded country-page batch four — pages 37–48
+
+The non-truncated repository Git tree at baseline `89ac32d696379df5062ce89fef058e436d8cc882` contained **223 Atlas index entry pages**. Twelve lexicographic country pages, Kenya through Russia, were fetched by path and reviewed (Kenya, Malaysia, Netherlands, New Zealand, Nigeria, Norway, Panama, Philippines, Poland, Portugal, Qatar and Russia).
+
+- **18 local literal `href`/`src` references** checked against repository file or directory-index targets; four obsolete fallback icon occurrences found, two each for Netherlands and Norway.
+- **96 fragment-only references**, all resolved to local literal ID values.
+- No other missing local destinations identified in this bounded check.
+- Removed exactly four nonexistent favicon fallback `link` tags, retaining the existing SVG favicon links for the two corrected pages.
+- Correction commit `712165504cf9b60587103846529bb44c29e0005e` was independently checked by fresh-fetching all **12/12** country pages against the new branch HEAD; none retained obsolete fallback link elements.
+
+**Cumulative Atlas expanded-routing coverage: 48/223 pages reviewed, 175 remain.** **209 local literal `href`/`src` references** and **312 local fragment links** have been checked cumulatively (all fragments resolved). Findings are repository-static checks only; deployed URL serving, external destinations, dynamically generated routing, CSS references and executable integration are not thereby certified. **Atlas remains ACTIVE — PARTIAL COVERAGE.**
