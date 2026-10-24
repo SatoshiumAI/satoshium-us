@@ -29,14 +29,14 @@ python -m unittest tests.test_new_certification -v
 | `scripts/new_certification.py` | `test_new_certification.py` | Folder creation, certification_id propagation, valid JSON output, duplicate prevention |
 | `src/validator.py` | `test_validator.py` | Clean package passes, placeholder detection, missing field detection, invalid status detection, warning vs error distinction |
 | `src/generator.py` | `test_generator.py` | All 12 artifacts created, Markdown content accuracy, JSON validity and field accuracy, HTML escaping, edge cases (empty evidence, missing optional fields) |
-| `src/checklist.py` | `test_checklist.py` | Empty dir detection, all-present pass, partial-present report, placeholder scanning, occurrence counts, summary text |
+| `src/checklist.py` | `test_checklist.py` | Empty dir detection, all-present pass, partial-present report, placeholder scanning, occurrence counts, summary text, unreadable/invalid UTF-8 fail-closed cases and CLI nonzero exit |
 
 ## What the Tests Do Not Cover
 
 - End-to-end CLI execution via `subprocess` (this is verified by the GitHub Actions workflow)
 - Network access (there is none — stdlib only)
 - Schema validation against `schema/*.schema.json` (JSON Schema validation requires `jsonschema`; the schema files are reference-only and are not enforced at runtime)
-- File permission errors on unusual OS configurations
+- Actual OS permission models across systems (simulated PermissionError is covered, plus a real invalid-UTF-8 read failure)
 
 ## Smoke Test (Manual)
 

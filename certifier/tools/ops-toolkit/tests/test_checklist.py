@@ -17,6 +17,8 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
+import subprocess
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -194,6 +196,57 @@ class TestCheckForPlaceholders(unittest.TestCase):
         f.write_text("PLACEHOLDER and YYYY-MM-DD", encoding="utf-8")
         found = check_for_placeholders(f)
         self.assertEqual(len(found), 2)
+
+
+
+class TestChecklistUnreadableArtifacts(unittest.TestCase):
+    """A present but unreadable artifact must never result in a release PASS."""
+
+    def setUp(self):
+        self.tmpdir = Path(tempfile.mkdtemp())
+        _create_all_artifacts(self.tmpdir, with_placeholders=False)
+
+    def tearDown(self):
+        shutil.rmtree(self.tmpdir, ignore_errors=True)
+
+    def test_permission_error_is_explicit_and_fails_closed(self):
+        unreadable = self.tmpdir / "scr.md"
+        original_read = Path.read_text
+
+        def simulated_read(path, *args, **kwargs):
+            if path == unreadable:
+                raise PermissionError("simulated access denied")
+            return original_read(path, *args, **kwargs)
+
+        with patch.object(Path, "read_text", simulated_read):
+            result = run_checklist(str(self.tmpdir))
+
+        self.assertIn("scr.md", result.present)
+        self.assertEqual(result.missing, [])
+        self.assertEqual(len(result.read_errors), 1)
+        self.assertEqual(result.read_errors[0][0], "scr.md")
+        self.assertIn("PermissionError", result.read_errors[0][1])
+        self.assertFalse(result.is_complete)
+        self.assertIn("scr.md", result.summary())
+        self.assertIn("FAILED", result.summary())
+
+    def test_invalid_utf8_file_fails_closed(self):
+        (self.tmpdir / "scr.md").write_bytes(b"\xff\xfe")
+        result = run_checklist(str(self.tmpdir))
+        self.assertFalse(result.is_complete)
+        self.assertTrue(any(name == "scr.md" and "UnicodeDecodeError" in error
+                            for name, error in result.read_errors))
+        self.assertIn("FAILED", result.summary())
+
+    def test_cli_returns_failure_for_invalid_utf8_file(self):
+        (self.tmpdir / "scr.md").write_bytes(b"\xff\xfe")
+        command = [sys.executable, str(REPO_ROOT / "scripts" / "check_release.py"),
+                   str(self.tmpdir)]
+        result = subprocess.run(command, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn("FAILED", result.stdout)
+        self.assertIn("scr.md", result.stdout)
+        self.assertIn("UnicodeDecodeError", result.stdout)
 
 
 class TestChecklistSummaryOutput(unittest.TestCase):

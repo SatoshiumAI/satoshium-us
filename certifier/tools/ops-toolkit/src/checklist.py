@@ -12,10 +12,11 @@ class ChecklistResult:
         self.present: List[str] = []
         self.missing: List[str] = []
         self.placeholder_warnings: List[Tuple[str, List[str]]] = []
+        self.read_errors: List[Tuple[str, str]] = []
 
     @property
     def is_complete(self) -> bool:
-        return len(self.missing) == 0 and len(self.placeholder_warnings) == 0
+        return not self.missing and not self.placeholder_warnings and not self.read_errors
 
     def summary(self) -> str:
         lines = []
@@ -46,6 +47,11 @@ class ChecklistResult:
                 for m in markers:
                     lines.append(f"    • {m}")
 
+        if self.read_errors:
+            lines.append("\n❌  Artifacts that could not be read:")
+            for fname, error in self.read_errors:
+                lines.append(f"  {fname}: {error}")
+
         lines.append("")
         if self.is_complete:
             lines.append("🟢  Release check PASSED — all artifacts present and no placeholders found.")
@@ -58,14 +64,11 @@ class ChecklistResult:
 def check_for_placeholders(filepath: Path) -> List[str]:
     """Return a list of placeholder markers found in the given file."""
     found = []
-    try:
-        text = filepath.read_text(encoding="utf-8")
-        for marker in PLACEHOLDER_MARKERS:
-            occurrences = text.count(marker)
-            if occurrences > 0:
-                found.append(f"{marker!r} appears {occurrences}x")
-    except Exception:
-        pass
+    text = filepath.read_text(encoding="utf-8")
+    for marker in PLACEHOLDER_MARKERS:
+        occurrences = text.count(marker)
+        if occurrences > 0:
+            found.append(f"{marker!r} appears {occurrences}x")
     return found
 
 
@@ -77,9 +80,13 @@ def run_checklist(cert_dir: str) -> ChecklistResult:
         artifact_path = base / artifact_name
         if artifact_path.exists():
             result.present.append(artifact_name)
-            placeholders = check_for_placeholders(artifact_path)
-            if placeholders:
-                result.placeholder_warnings.append((artifact_name, placeholders))
+            try:
+                placeholders = check_for_placeholders(artifact_path)
+            except (OSError, UnicodeError) as exc:
+                result.read_errors.append((artifact_name, f"{type(exc).__name__}: {exc}"))
+            else:
+                if placeholders:
+                    result.placeholder_warnings.append((artifact_name, placeholders))
         else:
             result.missing.append(artifact_name)
 
