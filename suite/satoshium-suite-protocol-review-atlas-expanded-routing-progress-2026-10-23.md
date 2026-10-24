@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **60 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **72 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -91,3 +91,15 @@ The fresh non-truncated tree at baseline `0681c8b38ce9660c2190e65da951c271a8abf6
 - Correction commit: `80c68881ab30b51cf3b1715f97137bd0a442f994`. All **12/12** batch-five pages independently re-fetched at that HEAD; zero remaining obsolete fallback `link` elements.
 
 **Cumulative Atlas expanded audit: 60/223 pages reviewed; 163 pages remain.** Cumulative local literal `href`/`src` references: **236**; fragment-only references: **417**, all resolved. This certifies only the defined repository-static inspection, not live deployment, external URLs, JS-generated routes, CSS URLs or executable integration. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
+
+## Atlas expanded resource-routing batch six — pages 61–72
+
+The non-truncated `phase004` tree at baseline `e96e6612da89ceb6de7343a0f02c145c3d603810` confirmed 223 Atlas public `index.html` pages. The next twelve lexicographic files covered United Kingdom, Vietnam, the Global, Jurisdiction Intelligence Engine and U.S. landing pages, and Alabama through Connecticut state pages.
+
+- **51 local literal `href`/`src` references** checked against repository files and public index destinations; the **22 missing references** were exclusively optional fallback icon paths across eleven pages.
+- **88 fragment-only links** checked against literal IDs in their respective pages; **88/88 resolved**.
+- No other missing local destinations were identified in this bounded inspection.
+- Removed exactly 22 obsolete fallback `link` tags from 11 pages, preserving all existing valid SVG favicon declarations. Vietnam required no changes.
+- Correction commit `ce0d65463de2a09542bed34d84ab9566a3b9f5b1`. All **12/12 pages** were independently re-fetched at that HEAD and confirmed to contain no obsolete fallback icon `link` elements.
+
+**Cumulative Atlas expanded audit: 72/223 pages reviewed; 151 remain.** Local literal `href`/`src` references: **287** examined; fragment-only references **505**, all resolved. This static review does not establish live HTTP serving, runtime JavaScript navigation, CSS URL coverage, external link availability or integrated production operation. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
