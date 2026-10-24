@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const targets = [
   { url: 'https://satoshium.us/suite/', active: 'us' },
   { url: 'https://satoshium.us/suite/interoperability/', active: 'us' },
-  { url: 'https://satoshium.ai/', active: 'platform' }
+  { url: 'https://satoshium.ai/', active: 'home' }
 ];
 (async () => {
   const browser = await chromium.launch({headless:true});

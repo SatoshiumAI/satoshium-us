@@ -24,6 +24,7 @@ class Metadata(HTMLParser):
         self.title = ""
         self.in_title = False
         self.canonical = None
+        self.og_url = None
         self.description = None
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
@@ -31,6 +32,8 @@ class Metadata(HTMLParser):
             self.in_title = True
         if tag == "link" and "canonical" in attributes.get("rel", "").lower().split():
             self.canonical = attributes.get("href")
+        if tag == "meta" and attributes.get("property", "").lower() == "og:url":
+            self.og_url = attributes.get("content")
         if tag == "meta" and attributes.get("name", "").lower() == "description":
             self.description = attributes.get("content")
     def handle_endtag(self, tag):
@@ -76,6 +79,8 @@ def probe(path):
             "content_type": response.headers.get("Content-Type", ""),
             "title": meta.title.strip()[:180],
             "canonical": meta.canonical,
+            "og_url": meta.og_url,
+            "canonical_matches_served_url": meta.canonical == response.geturl(),
             "description": (meta.description or "")[:180],
             "body_sample_bytes": len(content),
         })
