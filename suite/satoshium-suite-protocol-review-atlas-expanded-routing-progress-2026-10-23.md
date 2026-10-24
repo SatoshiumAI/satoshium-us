@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **72 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **84 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -103,3 +103,16 @@ The non-truncated `phase004` tree at baseline `e96e6612da89ceb6de7343a0f02c145c3
 - Correction commit `ce0d65463de2a09542bed34d84ab9566a3b9f5b1`. All **12/12 pages** were independently re-fetched at that HEAD and confirmed to contain no obsolete fallback icon `link` elements.
 
 **Cumulative Atlas expanded audit: 72/223 pages reviewed; 151 remain.** Local literal `href`/`src` references: **287** examined; fragment-only references **505**, all resolved. This static review does not establish live HTTP serving, runtime JavaScript navigation, CSS URL coverage, external link availability or integrated production operation. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
+
+## Atlas expanded resource-routing batch seven — pages 73–84
+
+At baseline `de511e424c5d453e74318c0e94ebf62079b65687`, the fresh, non-truncated Git tree confirmed 223 Atlas `index.html` pages. The twelve lexicographic pages covered Delaware, Florida, Georgia, Hawaii, Idaho, Illinois, the U.S. states index landing page, Indiana, Iowa, Kansas, Kentucky and Louisiana.
+
+- **98 local literal `href`/`src` references** checked against repository targets; **24 unresolved paths** all referenced obsolete optional `/assets/favicon.ico` or `/assets/apple-touch-icon.png` from twelve pages.
+- **136 local fragment-only references** examined. The state-index navigation exposed **seven missing targets**, `#B`, `#E`, `#J`, `#Q`, `#X`, `#Y`, and `#Z`. The alphabetical sections present in the page contain no U.S. states beginning with those letters; the correction removed only those seven inert navigation anchors rather than inventing placeholder sections.
+- Other local fragment references resolved and no other missing local destinations were identified.
+- Removed exactly 24 obsolete optional fallback `link` elements from twelve pages, retaining their existing valid SVG favicon links.
+- Correction commit: `d2a96e561ccbc4c18dc66a602fceade258464d79`.
+- All **12/12** pages were independently re-fetched from that commit's new HEAD. None retain obsolete fallback `link` elements; every remaining fragment-only `href` resolves to an exact local literal `id`.
+
+**Cumulative Atlas expanded-audit checkpoint: 84/223 pages reviewed; 139 remain.** Cumulative local literal `href`/`src` references: **385**; cumulative fragment-only references inspected **641**, including the seven now-corrected invalid links. These counts describe inspected references prior to correction, not the number of post-correction active links. The audit establishes bounded repository-static routing only, not live serving, dynamically constructed links, CSS URLs, external destinations or executable integration. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
