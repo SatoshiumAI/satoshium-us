@@ -33,7 +33,7 @@ python -m unittest tests.test_new_certification -v
 
 ## What the Tests Do Not Cover
 
-- End-to-end CLI execution via `subprocess` (this is verified by the GitHub Actions workflow)
+- Full create → validate → generate → publish institutional production flow; the scoped GitHub Actions workflow only runs toolkit tests and three release-check CLI fixtures
 - Network access (there is none — stdlib only)
 - Schema validation against `schema/*.schema.json` (JSON Schema validation requires `jsonschema`; the schema files are reference-only and are not enforced at runtime)
 - Actual OS permission models across systems (simulated PermissionError is covered, plus a real invalid-UTF-8 read failure)

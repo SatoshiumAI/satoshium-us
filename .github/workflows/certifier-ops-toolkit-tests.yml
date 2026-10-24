@@ -1,0 +1,56 @@
+name: Certifier Ops Toolkit Tests
+
+on:
+  push:
+    branches: [phase004]
+    paths:
+      - 'certifier/tools/ops-toolkit/**'
+      - '.github/workflows/certifier-ops-toolkit-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certifier-toolkit-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: certifier/tools/ops-toolkit
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run entire unittest suite
+        run: python -m unittest discover tests -v
+      - name: Verify clean fixture CLI PASS
+        run: python scripts/check_release.py tests/fixtures/complete-certification
+      - name: Verify incomplete fixture CLI fails
+        shell: bash
+        run: |
+          set +e
+          python scripts/check_release.py tests/fixtures/incomplete-certification > /tmp/certifier-incomplete.log 2>&1
+          result=$?
+          set -e
+          cat /tmp/certifier-incomplete.log
+          test "$result" -eq 1
+          grep -q 'FAILED' /tmp/certifier-incomplete.log
+      - name: Verify invalid UTF-8 CLI fails
+        shell: bash
+        run: |
+          set -e
+          tmpdir=$(mktemp -d)
+          trap 'rm -rf "$tmpdir"' EXIT
+          cp tests/fixtures/complete-certification/* "$tmpdir/"
+          printf '\377\376' > "$tmpdir/scr.md"
+          set +e
+          python scripts/check_release.py "$tmpdir" > /tmp/certifier-encoding.log 2>&1
+          result=$?
+          set -e
+          cat /tmp/certifier-encoding.log
+          test "$result" -eq 1
+          grep -q 'UnicodeDecodeError' /tmp/certifier-encoding.log
+          grep -q 'FAILED' /tmp/certifier-encoding.log
