@@ -2,7 +2,7 @@
 
 **Date:** October 23, 2026  
 **Branch:** `phase004`  
-**Disposition:** COMPLETE — APPROVED for the first **144 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
+**Disposition:** COMPLETE — APPROVED for the first **156 Atlas pages** examined in this expanded resource audit; **ACTIVE — PARTIAL COVERAGE** for Atlas overall.  
 **Suite Protocol Review:** ACTIVE
 
 ## Distinction from prior work
@@ -178,3 +178,15 @@ The fresh non-truncated recursive `phase004` Git tree at baseline `de812e8c4cadc
 - **Disposition: COMPLETE — APPROVED** for this specific bounded 12-page review unit; Atlas overall remains active.
 
 **Cumulative Atlas expanded audit: 144/223 public pages reviewed; 79 remain.** Cumulative literal local `href`/`src` references examined: **626**; cumulative fragment-only references inspected: **961**, including seven previously corrected broken state-index anchors from batch seven. No known unresolved literal local destinations or fragment targets remain in reviewed pages. Static-file existence is not evidence of successful live HTTP serving, CSS asset loading, external destination availability, script-built routing or executable inter-institution integration. **Atlas remains ACTIVE — PARTIAL COVERAGE.**
+
+## Atlas expanded resource-routing batch thirteen — pages 145–156
+
+The fresh non-truncated recursive `phase004` tree at baseline `79d4e81ecbe3b6d6ed7755ef21585c9dd130bb8a` confirmed 223 Atlas public index entry pages. The twelve lexicographic Atlas Media country orientation files for Malaysia, Netherlands, New Zealand, Nigeria, Norway, Panama, Philippines, Poland, Portugal, Qatar, Russia and Rwanda were individually fetched and inspected.
+
+- **48 literal local `href`/`src` references** examined against repository file or public directory-index destinations: **48/48 resolved**.
+- **Zero fragment-only links** were present; no fragment validation result is claimed where none occurred.
+- **72 external/special-scheme attribute occurrences** were excluded from local repository validation; availability and runtime behavior are not certified.
+- No obsolete fallback favicon references or other missing local resources were found. All 12 pages retain existing valid `/assets/favicon.svg` declarations.
+- **No HTML correction or correction commit required. Disposition: COMPLETE — APPROVED** for this bounded 12-page review unit.
+
+**Cumulative Atlas expanded audit: 156/223 pages reviewed; 67 remain.** Cumulative literal local `href`/`src` references checked: **674**; cumulative fragment-only references inspected: **961**, including the seven invalid state-index navigation fragments already corrected in batch seven. No known unresolved literal local destinations or fragments remain in reviewed pages. Live deployment, CSS URLs, externally hosted destinations, script-generated routing and inter-institution execution are separate unverified gates. Atlas remains **ACTIVE — PARTIAL COVERAGE**.
